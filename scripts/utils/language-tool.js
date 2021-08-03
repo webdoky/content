@@ -4,7 +4,9 @@ import sleep from "./sleep.js";
 
 const START_COMMAND = "docker run -d -p 8010:8010 erikvl87/languagetool";
 const STOP_COMMAND =
-  'docker stop $(docker ps -a -q --filter ancestor=erikvl87/languagetool --format="{{.ID}}")';
+  process.platform === "win32"
+    ? 'FOR /f "tokens=*" %i IN (\'docker ps -a -q --filter ancestor=erikvl87/languagetool --format="{{.ID}}"\') DO docker stop %i'
+    : 'docker stop $(docker ps -a -q --filter ancestor=erikvl87/languagetool --format="{{.ID}}")';
 const TIMEOUT = 8000;
 
 async function checkLanguageTool() {
