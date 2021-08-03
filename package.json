@@ -14,7 +14,7 @@
   "repository": "https://github.com/webdoky/content",
   "scripts": {
     "check": "node scripts/check.js",
-    "postinstall": "docker pull erikvl87/languagetool"
+    "postinstall": "docker build . -t lt-custom"
   },
   "type": "module",
   "version": "1.0.0"
