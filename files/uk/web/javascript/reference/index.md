@@ -16,11 +16,11 @@ tags:
 ---
 {{JsSidebar}}
 
-Ця частина розділу про JavaScript на MDN слугує сховищем фактів про мову JavaScript. Читати більше [про цей довідник](/en-US/docs/Web/JavaScript/Reference/About).
+Ця частина розділу про JavaScript на MDN слугує сховищем фактів про мову JavaScript. Докладніше [про цей довідник](/en-US/docs/Web/JavaScript/Reference/About).
 
 ## Вбудовані об'єкти
 
-[Стандартні вбудовані об'єкти JavaScript](/en-US/docs/Web/JavaScript/Reference/Global_Objects), разом з їх властивостями і методами.
+[Стандартні вбудовані об'єкти JavaScript](/en-US/docs/Web/JavaScript/Reference/Global_Objects), разом з їхніми властивостями і методами.
 
 ### Властивості-значення
 
@@ -145,9 +145,9 @@ tags:
 
 ## Інструкції
 
-[Інструкції та об'явлення JavaScript](/en-US/docs/Web/JavaScript/Reference/Statements)
+[Інструкції та оголошення JavaScript](/en-US/docs/Web/JavaScript/Reference/Statements)
 
-### Управління потоком виконання
+### Керування потоком виконання
 
 - {{jsxref("Statements/block", "Block", "", 1)}}
 - {{jsxref("Statements/Empty", "Empty statement", "", 1)}}
@@ -158,7 +158,7 @@ tags:
 - {{jsxref("Statements/throw", "throw")}}
 - {{jsxref("Statements/try...catch", "try...catch")}}
 
-### Об'явлення
+### Оголошення
 
 - {{jsxref("Statements/var", "var")}}
 - {{jsxref("Statements/let", "let")}}
@@ -246,7 +246,7 @@ tags:
 - {{JSxRef("Operators/Remainder", "%")}}
 - {{JSxRef("Operators/Exponentiation", "**")}}
 
-### Оператори відношення
+### Реляційні оператори
 
 - {{JSxRef("Operators/in", "in")}}
 - {{JSxRef("Operators/instanceof", "instanceof")}}
@@ -315,7 +315,7 @@ tags:
 
 - [`arguments`](/en-US/docs/Web/JavaScript/Reference/Functions/arguments)
 - [Стрілкові функції](/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
-- [Параметри за замовчуванням](/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)
+- [Усталені параметри](/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)
 - [Решта параметрів](/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters)
 
 ## Додаткові довідкові сторінки
