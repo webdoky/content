@@ -1,0 +1,177 @@
+---
+title: 'CSS: Каскадні таблиці стилів'
+slug: Web/CSS
+tags:
+- CSS
+- Каскадні таблиці стилів
+- Дизайн
+- Посібник
+- Вітрина
+- Компонування
+- Довідник
+- Таблиці стилів
+- Стилі
+- l10n:priority
+translation_of: Web/CSS
+---
+<div>{{CSSRef}}</div>
+
+<p><strong>Каскадні таблиці стилів</strong> (<strong>CSS</strong>) &mdash; мова <a
+        href="/uk/docs/Web/API/StyleSheet">стилів</a>, що використовується для задання вигляду документів, написаних
+    мовою <a href="/uk/docs/Web/HTML" title="Мова розмітки гіпертексту">HTML</a> або <a
+        href="/uk/docs/Web/XML/XML_introduction">XML</a> (включно із діалектами XML, як-от <a
+        href="/uk/docs/Web/SVG">SVG</a>, <a href="/uk/docs/Web/MathML">MathML</a> чи {{Glossary("XHTML")}}). CSS описує,
+    який вигляд елементи матимуть на екрані, папері, у мовленні чи в іншому вигляді.</p>
+
+<p>CSS належить до ключових мов <strong>відкритого вебу</strong> і стандартизована між вебпереглядачами згідно зі <a
+        href="https://w3.org/Style/CSS/#specs">специфікаціями W3C</a>. У минулому розробка різних частин специфікації
+    CSS
+    велася паралельно, що давало змогу випускати свіжі рекомендації у форматі редакцій. Ви могли чути про CSS1, CSS 2.1,
+    CSS3. Між тим, CSS4 так і не стала офіційною редакцією.</p>
+
+<p>Починаючи від CSS3, обсяг специфікації помітно зростав. Прогрес різних модулів CSS почав настільки сильно
+    відрізнятись, що стало більш ефективним <a href="https://www.w3.org/Style/CSS/current-work">розробляти та випускати
+        рекомендації для кожного модуля окремо</a>. Замість оформлення редакцій специфікації CSS, W3C тепер періодично
+    робить знімок <a href="https://www.w3.org/TR/css/">найсвіжішого стабільного стану специфікації CSS</a>.</p>
+
+<h2 id="Key_resources">Ключові матеріали</h2>
+
+<dl>
+    <dt>Вступ до CSS</dt>
+    <dd>Якщо ви новачок у веброзробці, обов‘язково прочитайте нашу статтю <a
+            href="/uk/docs/Learn/Getting_started_with_the_web/CSS_basics">основи CSS</a>, щоб дізнатися, що таке CSS та
+        як їх використовувати.</dd>
+    <dt>Підручники з CSS</dt>
+    <dd>Наша <a href="/uk/docs/Learn/CSS">зона вивчення CSS</a> містить силу-силенну підручників, щоб допомогти на шляху
+        від початкового до високого рівня майстерності, покриваючи усі засадничі принципи.</dd>
+    <dt>Довідник з CSS</dt>
+    <dd>Наша <a href="/uk/docs/Web/CSS/Reference">вичерпна довідка CSS</a> для загартованих веброзробників описує кожну
+        властивість та концепцію CSS.</dd>
+</dl>
+
+<div class="callout">
+    <h4 id="Looking_to_become_a_front-end_web_developer">Бажаєте стати розробником клієнтської частини?</h4>
+
+    <p>Ми зібрали курс, що включає усю істотну інформацію, котру слід обробити на шляху до вашої цілі.</p>
+
+    <p><a href="/uk/docs/Learn/Front-end_web_developer"><strong>Розпочати</strong></a></p>
+
+</div>
+
+<h2 class="Documentation" id="Tutorials">Підручники</h2>
+
+<p>Наша <a href="/uk/docs/Learn/CSS">зона вивчення CSS</a> містить низку модулів, що навчають CSS з нуля, &mdash;
+    попередні
+    знання не потрібні.</p>
+
+<dl>
+    <dt><a href="/uk/docs/Learn/CSS/First_steps">Перші кроки у CSS</a></dt>
+    <dd>CSS (каскадні таблиці стилів) використовуються для стилізації та створення вебсторінок &mdash; наприклад, для
+        зміни
+        шрифту, кольору, розміру, інтервалів вашого контенту, поділу його на кілька стовпчиків, або додавання анімацій
+        та
+        інших декоративних особливостей. Цей модуль дасть м‘який початок вашому шляху до майстерності в CSS у вигляді
+        основ того, як вони працюють, який вигляд має синтаксис, і як можна почати використовувати їх для стилізації
+        HTML.</dd>
+    <dt><a href="/uk/docs/Learn/CSS/Building_blocks">Структурні елементи CSS</a></dt>
+    <dd>
+        <p>Цей модуль продовжує там, де <a href="/uk/docs/Learn/CSS/First_steps">Перші кроки у CSS</a> зупинились, —
+            тепер, ознайомившись із мовою та її синтаксисом, і отримавши деякий базовий досвід її
+            використання, пора дещо заглибитись. Цей описує каскадність та наслідування, всі доступні типи
+            селекторів, одиниці вимірювання, розміри, стилізацію тла та меж і багато іншого.</p>
+
+        <p>Його метою є надання набору інструментів для написання грамотного CSS та допомога у розумінні всієї
+            необхідної
+            теорії перед переходом до більш специфічних дисциплін, як-от <a
+                href="/uk/docs/Learn/CSS/Styling_text">стилізація тексту</a> та <a
+                href="/uk/docs/Learn/CSS/CSS_layout">CSS-верстання</a>.</p>
+    </dd>
+    <dt><a href="/uk/docs/Learn/CSS/Styling_text">Стилізація тексту</a></dt>
+    <dd>Після ознайомлення з основами мови CSS, наступною темою є стилізація тексту &mdash; одна з найбільш поширених
+        справ,
+        котрі
+        доводиться робити на CSS. Тут ми розглянемо основи стилізації тексту, включно з установленням шрифту,
+        жирності, нахилу, відступу між рядками та між літерами, тіней та інших особливостей тексту. Ми
+        завершуємо модуль оглядом застосування власних шрифтів для вашої сторінки та стилізації списків і посилань.
+    </dd>
+    <dt><a href="/uk/docs/Learn/CSS/CSS_layout">CSS-верстання</a></dt>
+    <dd>В цій точці шляху засади CSS уже пройдені, ви вже знаєте, як стилізувати текст, і як стилізувати й маніпулювати
+        блоками, в котрих вміщається контент. Тепер пора поглянути на те, як розташувати ці блоки на сторінці й відносно
+        одне одного. Необхідні умови виконано, можемо заглиблюватись у CSS верстку,
+        поглянути на різні налаштування екранів, сучасні інструменти компонування, як-от flexbox, CSS grid та
+        позиціювання,
+        а також на деякі застарілі техніки, про які вам все ж слід знати.</dd>
+    <dt><a href="/uk/docs/Learn/CSS/Howto">Використовуйте CSS для подолання поширених проблем</a></dt>
+    <dd>Цей модуль містить посилання на розділи з поясненнями як користуватися CSS для подолання поширених
+        проблем під час створення вебсторінки.</dd>
+</dl>
+
+
+<h2 class="Tools" id="Reference">Довідка</h2>
+
+<ul>
+    <li><a href="/uk/docs/Web/CSS/Reference">CSS довідка</a>: Ця вичерпна довідка для загартованих веброзробників
+        описує кожну властивість і кожну концепцію CSS.</li>
+    <li>Ключові концепції CSS:
+        <ul>
+            <li><a href="/uk/docs/Web/CSS/Syntax">Синтаксис та форми мови</a></li>
+            <li><a href="/uk/docs/Web/CSS/Specificity">Специфічність</a>, <a
+                    href="/uk/docs/Web/CSS/inheritance">наслідування</a> та <a
+                    href="/uk/docs/Web/CSS/Cascade">каскадність</a></li>
+            <li><a href="/uk/docs/Web/CSS/CSS_Values_and_Units">Одиниці вимірювання і значення CSS</a> та <a
+                    href="/uk/docs/Web/CSS/CSS_Functions">функціональні нотації</a></li>
+            <li><a href="/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model">Блокова модель</a> та <a
+                    href="/uk/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing">перекриття зовнішніх відступів</a>
+            </li>
+            <li><a href="/uk/docs/Web/CSS/Containing_block">Місткий блок</a></li>
+            <li><a href="/uk/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context"
+                    title="Контекст перекриття">Контекст перекриття</a> та <a
+                    href="/uk/docs/Web/Guide/CSS/Block_formatting_context"
+                    title="Контекст блокового форматування">блоково-форматований</a> контекст</li>
+            <li><a href="/uk/docs/Web/CSS/initial_value">Початкові</a>, <a
+                    href="/uk/docs/Web/CSS/computed_value">обчислені</a>, <a
+                    href="/uk/docs/Web/CSS/used_value">використані</a> та <a
+                    href="/uk/docs/Web/CSS/actual_value">дійсні</a> значення</li>
+            <li><a href="/uk/docs/Web/CSS/Shorthand_properties">Скорочені властивості CSS</a></li>
+            <li><a href="/uk/docs/Web/CSS/CSS_Flexible_Box_Layout">Flex-верстання у CSS</a></li>
+            <li><a href="/uk/docs/Web/CSS/CSS_Grid_Layout">Grid-верстання у CSS</a></li>
+            <li><a href="/uk/docs/Web/CSS/CSS_Selectors">Селектори CSS</a></li>
+            <li><a href="/uk/docs/Web/CSS/Media_Queries">Медіазапити</a></li>
+            <li><a href="/uk/docs/Web/CSS/animation">Анімація</a></li>
+        </ul>
+    </li>
+</ul>
+
+<h2 class="Tools" id="Cookbook">Книга рецептів</h2>
+
+<p><a href="/uk/docs/Web/CSS/Layout_cookbook">Книга рецептів CSS</a> прагне зібрати докупи рецепти загальноприйнятих
+    шаблонів компонування та іншого, що може знадобитись під час розробки
+    ваших вебсайтів. Окрім надання коду, котрий можна використовувати як стартову точку власних проєктів, ці рецепти
+    показують різні способи застосування специфікацій компонування, і рішень, котрі можуть бути прийняті розробником.
+</p>
+
+<h2 class="Tools" id="Tools_for_CSS_development">Інструменти CSS-розробки</h2>
+
+<ul>
+    <li>Для перевірки валідності CSS можна застосовувати <a href="https://jigsaw.w3.org/css-validator/">Службу
+            перевірки CSS від W3C</a>. Це незамінний інструмент зневадження.</li>
+    <li><a href="/uk/docs/Tools">Інструменти розробника Firefox</a> дають змогу переглядати CSS сторінки на льоту за
+        допомогою <a href="/uk/docs/Tools/Page_Inspector">Інспектора</a> та <a
+            href="/uk/docs/Tools/Style_Editor">Редактора стилів</a>.</li>
+    <li><a class="link-https" href="https://addons.mozilla.org/uk/firefox/addon/web-developer/">Розширення
+            веброзробника</a> для Firefox дає змогу відстежувати та редагувати на льоту CSS на відображених вебсайтах.
+    </li>
+    <li>вебспільнота створила чимало інших <a href="/uk/docs/Web/CSS/Tools">різноманітних CSS інструментів</a>, готових
+        до використання.</li>
+</ul>
+
+<h2 id="See_also">Також перегляньте</h2>
+
+<ul>
+    <li><a href="/uk/docs/Web/Demos_of_open_web_technologies#css">CSS демо</a>: Отримайте творчий заряд від перегляду
+        прикладів свіжих CSS технологій у дії.</li>
+    <li>веб мови, до яких часто застосовують CSS: <a href="/uk/docs/Web/HTML">HTML</a>, <a
+            href="/uk/docs/Web/SVG">SVG</a>, <a href="/uk/docs/Web/MathML">MathML</a>, {{Glossary("XHTML")}} та <a
+            href="/uk/docs/Web/XML/XML_introduction">XML</a>.</li>
+    <li><a href="https://stackoverflow.com/questions/tagged/css">Питання про CSS на Stack Overflow</a></li>
+</ul>
