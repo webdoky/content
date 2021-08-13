@@ -17,19 +17,29 @@ export default function printCorrection(correction) {
   const contextEnd = correction.context.text.slice(
     correction.context.offset + correction.context.length
   );
-  console.info(`${contextStart}${chalk.yellow(contextEssence)}${contextEnd}`);
   console.info(
-    correction.context.text.slice(
-      correction.context.offset,
-      correction.context.offset + correction.context.length
-    )
+    `${contextStart}${chalk.bgYellow.black(contextEssence)}${contextEnd}`
   );
   if (correction.replacements && correction.replacements.length > 0) {
     console.info(
-      chalk.green(
+      `${chalk.red(
+        correction.context.text.slice(
+          correction.context.offset,
+          correction.context.offset + correction.context.length
+        )
+      )} -> ${chalk.green(
         correction.replacements
           .map((replacement) => `${replacement.value}?`)
           .join(" ")
+      )}`
+    );
+  } else {
+    console.info(
+      chalk.red(
+        correction.context.text.slice(
+          correction.context.offset,
+          correction.context.offset + correction.context.length
+        )
       )
     );
   }
