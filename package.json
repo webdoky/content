@@ -3,7 +3,8 @@
     "axios": "0.21.1",
     "chalk": "~4.1.2",
     "glob": "~7.1.7",
-    "html-to-text": "~8.0.0"
+    "html-to-text": "~8.0.0",
+    "markdown-it": "~12.2.0"
   },
   "engines": {
     "node": ">= 14"
@@ -14,7 +15,8 @@
   "repository": "https://github.com/webdoky/content",
   "scripts": {
     "check": "node scripts/check.js",
-    "postinstall": "docker build . -t lt-custom"
+    "postinstall": "docker build . -t lt-custom",
+    "rebuild": "docker build . --no-cache -t lt-custom"
   },
   "type": "module",
   "version": "1.0.0"
