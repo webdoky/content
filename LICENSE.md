@@ -5,6 +5,7 @@ The content of this repository is a localized version of [MDN's content](https:/
 ## License for all prose content
 
 All prose content is a localized version of [texts in this repository](https://github.com/mdn/content/), translated by the WebDoky project team, and it's community, and available under this license ([CC-BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)).
+Original texts were created by [MDN community](https://developer.mozilla.org).
 
 ### Text of CC-BY-SA-2.5 license
 
