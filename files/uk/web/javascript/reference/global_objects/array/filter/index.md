@@ -125,7 +125,7 @@ if (!Array.prototype.filter){
 
 ### Відфільтровування малих значень
 
-Наступний приклад за допомогою `filter()` створює масив відфільтрованих значень, серед яких відсутні числа до `10`.
+Наступний приклад за допомогою `filter()` створює масив відфільтрованих значень, до якого не потраплять числа, менші за `10`.
 
 ```js
 function isBigEnough(value) {
@@ -194,13 +194,13 @@ console.log('Кількість некоректних значень = ', inval
 
 ### Пошук у масиві
 
-Наступний приклад фільтрує вміст масиву на основі певного критерію пошуку, за допомогою `filter()`.
+Наступний приклад за допомогою `filter()` фільтрує вміст масиву за певним критерієм пошуку.
 
 ```js
 let fruits = ['apple', 'banana', 'grapes', 'mango', 'orange']
 
 /**
- * Фільтрує елементи масиву на основі критерію пошуку (запиту)
+ * Фільтрує елементи масиву за певним критерієм пошуку (запиту)
  */
 function filterItems(arr, query) {
   return arr.filter(function(el) {
@@ -218,7 +218,7 @@ console.log(filterItems(fruits, 'an'))  // ['banana', 'mango', 'orange']
 const fruits = ['apple', 'banana', 'grapes', 'mango', 'orange']
 
 /**
- * Фільтрує елементи масиву на основі критерію пошуку (запиту)
+ * Фільтрує елементи масиву за певним критерієм пошуку (запиту)
  */
 const filterItems = (arr, query) => {
   return arr.filter(el => el.toLowerCase().indexOf(query.toLowerCase()) !== -1)
@@ -278,7 +278,7 @@ console.log(deleteWords)
 
 ## Дивіться також
 
-- Поліфіл методу `Array.prototype.filter` доступний в [`core-js`](https://github.com/zloirock/core-js#ecmascript-array)
+- Поліфіл методу `Array.prototype.filter` доступний у [`core-js`](https://github.com/zloirock/core-js#ecmascript-array)
 - {{jsxref("Array.prototype.forEach()")}}
 - {{jsxref("Array.prototype.every()")}}
 - {{jsxref("Array.prototype.some()")}}
