@@ -16,11 +16,11 @@ tags:
 ---
 {{JsSidebar}}
 
-Ця частина розділу про JavaScript на MDN слугує сховищем фактів про мову JavaScript. Докладніше [про цей довідник](/en-US/docs/Web/JavaScript/Reference/About).
+Ця частина розділу про JavaScript на MDN слугує сховищем фактів про мову JavaScript. Докладніше [про цей довідник](/uk/docs/Web/JavaScript/Reference/About).
 
 ## Вбудовані об'єкти
 
-[Стандартні вбудовані об'єкти JavaScript](/en-US/docs/Web/JavaScript/Reference/Global_Objects), разом з їхніми властивостями і методами.
+[Стандартні вбудовані об'єкти JavaScript](/uk/docs/Web/JavaScript/Reference/Global_Objects), разом з їхніми властивостями і методами.
 
 ### Властивості-значення
 
@@ -145,7 +145,7 @@ tags:
 
 ## Інструкції
 
-[Інструкції та оголошення JavaScript](/en-US/docs/Web/JavaScript/Reference/Statements)
+[Інструкції та оголошення JavaScript](/uk/docs/Web/JavaScript/Reference/Statements)
 
 ### Керування потоком виконання
 
@@ -192,7 +192,7 @@ tags:
 
 ## Вирази та оператори
 
-[Вирази та оператори JavaScript](/en-US/docs/Web/JavaScript/Reference/Operators).
+[Вирази та оператори JavaScript](/uk/docs/Web/JavaScript/Reference/Operators).
 
 ### Основні вирази
 
@@ -311,16 +311,16 @@ tags:
 
 ## Функції
 
-У цьому розділі задокументовано, як працювати з [функціями у JavaScript](/en-US/docs/Web/JavaScript/Reference/Functions) при розробці ваших застосунків.
+У цьому розділі задокументовано, як працювати з [функціями у JavaScript](/uk/docs/Web/JavaScript/Reference/Functions) при розробці ваших застосунків.
 
-- [`arguments`](/en-US/docs/Web/JavaScript/Reference/Functions/arguments)
-- [Стрілкові функції](/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
-- [Усталені параметри](/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)
-- [Решта параметрів](/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters)
+- [`arguments`](/uk/docs/Web/JavaScript/Reference/Functions/arguments)
+- [Стрілкові функції](/uk/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+- [Усталені параметри](/uk/docs/Web/JavaScript/Reference/Functions/Default_parameters)
+- [Решта параметрів](/uk/docs/Web/JavaScript/Reference/Functions/rest_parameters)
 
 ## Додаткові довідкові сторінки
 
-- [Лексична граматика](/en-US/docs/Web/JavaScript/Reference/Lexical_grammar)
-- [Типи та структури даних](/en-US/docs/Web/JavaScript/Data_structures)
-- [Суворий режжим](/en-US/docs/Web/JavaScript/Reference/Strict_mode)
-- [Застарілий функціонал](/en-US/docs/Web/JavaScript/Reference/Deprecated_and_obsolete_features)
+- [Лексична граматика](/uk/docs/Web/JavaScript/Reference/Lexical_grammar)
+- [Типи та структури даних](/uk/docs/Web/JavaScript/Data_structures)
+- [Суворий режжим](/uk/docs/Web/JavaScript/Reference/Strict_mode)
+- [Застарілий функціонал](/uk/docs/Web/JavaScript/Reference/Deprecated_and_obsolete_features)
