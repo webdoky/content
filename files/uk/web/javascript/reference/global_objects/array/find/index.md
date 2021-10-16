@@ -154,7 +154,7 @@ array.find(function(value, index) {
   // 5-й елемент все ж опрацьовується, хоча ми його видалили
   console.log('Visited index ', index, ' with value ', value);
 });
-// очікуваний результат:
+// очікуваний вивід:
 // Deleting array[5] with value 5
 // Visited index 0 with value 0
 // Visited index 1 with value 1
