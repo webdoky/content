@@ -70,12 +70,12 @@ let citrus = fruits.slice(1, 3)
 // citrus містить ['Orange','Lemon']
 ```
 
-### Застосування функції зрізу
+### Застосування функції `slice`
 
 В цьому прикладі `slice` створює новий масив `newCar` з `myCar`. Обидва містять посилання на об'єкт `myHonda`. Коли колір `myHonda` змінюється на `purple`, обидва масиви показують цю зміну.
 
 ```js
-// За допомогою функції зрізу створити newCar з myCar.
+// За допомогою slice() створити newCar з myCar.
 let myHonda = { color: 'red', wheels: 4, engine: { cylinders: 4, size: 2.2 } }
 let myCar = [myHonda, 2, 'cherry condition', 'purchased 1997']
 let newCar = myCar.slice(0, 2)
@@ -111,7 +111,7 @@ newCar[0].color = purple
 
 ### Масивоподібні об‘єкти
 
-За допомогою методу `slice` можна також перетворити масивоподібний об'єкт чи колекцію у новий масив. Потрібно лише прив'язати цей метод до об'єкта. Зокрема, об'єкт {{jsxref("Functions/arguments", "arguments")}} в функції є прикладом такого 'масивоподібного об'єкту'.
+За допомогою методу `slice` можна також перетворити масивоподібний об'єкт чи колекцію у новий масив. Потрібно лише {{jsxref("Function.prototype.bind", "прив'язати")}} цей метод до об'єкта. Зокрема, об'єкт {{jsxref("Functions/arguments", "arguments")}} в функції є прикладом такого 'масивоподібного об'єкту'.
 
 ```js
 function list() {
