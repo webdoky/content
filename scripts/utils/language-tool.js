@@ -1,4 +1,5 @@
 import axios from "axios";
+import disabledRules from "./disabled-rules.js";
 import execute from "./execute.js";
 import sleep from "./sleep.js";
 
@@ -36,7 +37,7 @@ function requestLanguageTool(data) {
   const params = new URLSearchParams();
   Object.entries(data).forEach(([key, value]) => params.append(key, value));
   // Disables check for unrecommended words
-  params.append("disabledRules", "UK_SIMPLE_REPLACE_SOFT");
+  params.append("disabledRules", disabledRules.join(','));
   return axios.post("http://localhost:8010/v2/check", params, {
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",

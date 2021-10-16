@@ -3,7 +3,7 @@ import checkFile from "./utils/check-file.js";
 
 async function getAllFiles() {
   return new Promise((resolve, reject) => {
-    glob("files/uk/**/*.html", { nodir: true }, (err, filePaths) => {
+    glob("files/uk/**/*.@(html|md)", { nodir: true }, (err, filePaths) => {
       console.debug(filePaths);
       if (err) {
         reject(err);
