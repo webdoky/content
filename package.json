@@ -14,10 +14,30 @@
   "private": false,
   "repository": "https://github.com/webdoky/content",
   "scripts": {
-    "check": "node scripts/check.js",
+    "check": "node --experimental-specifier-resolution=node ./scripts/check.js",
     "postinstall": "docker build . -t lt-custom",
-    "rebuild": "docker build . --no-cache -t lt-custom"
+    "rebuild": "docker build . --no-cache -t lt-custom",
+    "fix": "eslint . --fix",
+    "lint": "eslint ."
   },
   "type": "module",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "devDependencies": {
+    "eslint": "~7.32.0",
+    "eslint-config-airbnb-base": "~14.2.1",
+    "eslint-config-prettier": "~8.3.0",
+    "eslint-plugin-array-func": "~3.1.7",
+    "eslint-plugin-editorconfig": "~3.0.2",
+    "eslint-plugin-eslint-comments": "~3.2.0",
+    "eslint-plugin-import": "~2.24.2",
+    "eslint-plugin-jest": "~24.4.0",
+    "eslint-plugin-node": "~11.1.0",
+    "eslint-plugin-prettier": "~4.0.0",
+    "eslint-plugin-promise": "~5.1.0",
+    "eslint-plugin-security-node": "~1.0.14",
+    "eslint-plugin-simple-import-sort": "~7.0.0",
+    "eslint-plugin-unicorn": "~36.0.0",
+    "jest": "~27.2.0",
+    "prettier": "~2.4.0"
+  }
 }

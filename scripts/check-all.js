@@ -1,12 +1,14 @@
-import glob from "glob";
-import checkFile from "./utils/check-file.js";
+import glob from 'glob';
+
+import checkFile from './utils/check-file';
+import sequentialAsyncEvery from './utils/sequential-async-every';
 
 async function getAllFiles() {
   return new Promise((resolve, reject) => {
-    glob("files/uk/**/*.@(html|md)", { nodir: true }, (err, filePaths) => {
+    glob('files/uk/**/*.@(html|md)', { nodir: true }, (error, filePaths) => {
       console.debug(filePaths);
-      if (err) {
-        reject(err);
+      if (error) {
+        reject(error);
         return;
       }
       resolve(filePaths);
@@ -15,11 +17,5 @@ async function getAllFiles() {
 }
 
 export default async function checkAll() {
-  const allFilePaths = await getAllFiles();
-  for (let filePath of allFilePaths) {
-    if (!(await checkFile(filePath))) {
-      return false;
-    }
-  }
-  return true;
+  return sequentialAsyncEvery(await getAllFiles(), checkFile);
 }
