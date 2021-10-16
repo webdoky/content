@@ -88,7 +88,7 @@ if (!Array.prototype.filter){
         throw new TypeError();
 
     var len = this.length >>> 0,
-        res = new Array(len), // заздалегідь виділяємо новий масив
+        res = new Array(len), // заздалегідь створюємо новий масив
         t = this, c = 0, i = -1;
 
     var kValue;
