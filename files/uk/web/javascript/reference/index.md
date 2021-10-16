@@ -20,7 +20,7 @@ tags:
 
 ## Вбудовані об'єкти
 
-[Стандартні вбудовані об'єкти JavaScript](/uk/docs/Web/JavaScript/Reference/Global_Objects), разом з їхніми властивостями і методами.
+[Стандартні вбудовані об'єкти JavaScript](/uk/docs/Web/JavaScript/Reference/Global_Objects), разом з їхніми властивостями й методами.
 
 ### Властивості-значення
 
@@ -322,5 +322,5 @@ tags:
 
 - [Лексична граматика](/uk/docs/Web/JavaScript/Reference/Lexical_grammar)
 - [Типи та структури даних](/uk/docs/Web/JavaScript/Data_structures)
-- [Суворий режжим](/uk/docs/Web/JavaScript/Reference/Strict_mode)
+- [Суворий режим](/uk/docs/Web/JavaScript/Reference/Strict_mode)
 - [Застарілий функціонал](/uk/docs/Web/JavaScript/Reference/Deprecated_and_obsolete_features)

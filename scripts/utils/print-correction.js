@@ -1,4 +1,4 @@
-import chalk from "chalk";
+import chalk from 'chalk';
 
 export default function printCorrection(correction) {
   if (correction.shortMessage) {
@@ -8,40 +8,40 @@ export default function printCorrection(correction) {
   console.info(chalk.gray(correction.rule.description));
   const contextStart = correction.context.text.slice(
     0,
-    correction.context.offset
+    correction.context.offset,
   );
   const contextEssence = correction.context.text.slice(
     correction.context.offset,
-    correction.context.offset + correction.context.length
+    correction.context.offset + correction.context.length,
   );
   const contextEnd = correction.context.text.slice(
-    correction.context.offset + correction.context.length
+    correction.context.offset + correction.context.length,
   );
   console.info(
-    `${contextStart}${chalk.bgYellow.black(contextEssence)}${contextEnd}`
+    `${contextStart}${chalk.bgYellow.black(contextEssence)}${contextEnd}`,
   );
   if (correction.replacements && correction.replacements.length > 0) {
     console.info(
       `${chalk.red(
         correction.context.text.slice(
           correction.context.offset,
-          correction.context.offset + correction.context.length
-        )
+          correction.context.offset + correction.context.length,
+        ),
       )} -> ${chalk.green(
         correction.replacements
           .map((replacement) => `${replacement.value}?`)
-          .join(" ")
-      )}`
+          .join(' '),
+      )}`,
     );
   } else {
     console.info(
       chalk.red(
         correction.context.text.slice(
           correction.context.offset,
-          correction.context.offset + correction.context.length
-        )
-      )
+          correction.context.offset + correction.context.length,
+        ),
+      ),
     );
   }
-  console.info("====================================");
+  console.info('====================================');
 }
