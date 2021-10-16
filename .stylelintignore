@@ -1,8 +1,0 @@
-node_modules
-build
-bin
-obj
-Procfile
-*.*
-!**/*.css
-!**/*.scss

@@ -32,6 +32,29 @@ function getText(filePath) {
   }
 }
 
+const markdownIt = new MarkdownIt({
+  // breaks: true,
+});
+
+function convertHtmlToText(html) {
+  return convert(html, { ignoreHref: true });
+}
+
+function convertMarkdownToHtml(markdown) {
+  return markdownIt.render(markdown);
+}
+
+function getText(filePath) {
+  const content = fs.readFileSync(filePath, "utf8");
+  if(filePath.endsWith('.html')) {
+    return convertHtmlToText(content);
+  }
+  if(filePath.endsWith('.md')) {
+    const html = convertMarkdownToHtml(content);
+    return convertHtmlToText(html);
+  }
+}
+
 export default async function checkFile(filePath) {
   console.debug(`checkFile(${filePath})`);
   const text = getText(filePath);

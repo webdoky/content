@@ -23,7 +23,6 @@ yarn-error.log*
 .DS_Store
 !.eslintrc.js
 !.eslintrc.cjs
-!.stylelintrc.js
 coverage/
 *-sw.js
 lib/

@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "axios": "0.21.1",
+    "axios": "0.23.0",
     "chalk": "~4.1.2",
     "glob": "~7.1.7",
     "html-to-text": "~8.0.0",
@@ -14,7 +14,7 @@
   "private": false,
   "repository": "https://github.com/webdoky/content",
   "scripts": {
-    "check": "node --experimental-specifier-resolution=node ./scripts/check.js",
+    "check": "node --experimental-specifier-resolution=node scripts/check.js",
     "postinstall": "docker build . -t lt-custom",
     "rebuild": "docker build . --no-cache -t lt-custom",
     "fix": "eslint . --fix",
