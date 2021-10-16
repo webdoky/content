@@ -47,7 +47,7 @@ filter(function callbackFn(element, index, array) { ... }, thisArg)
     - `element`
       - : Поточний елемент масиву, що опрацьовується функцією.
     - `index`{{optional_inline}}
-      - : Порядковий номер елементу, що зараз опрацьовується.
+      - : Індекс елементу, що опрацьовується.
     - `array`{{optional_inline}}
       - : Початковий масив, на якому було викликано функцію `filter`.
 
