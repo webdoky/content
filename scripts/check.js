@@ -1,23 +1,21 @@
-import checkAll from "./check-all.js";
-import checkFile from "./utils/check-file.js";
+import checkFile from './utils/check-file';
 import {
   startLanguageTool,
   stopLanguageTool,
   waitForLanguageTool,
-} from "./utils/language-tool.js";
+} from './utils/language-tool';
+import checkAll from './check-all';
 
-const [, , targetFile] = process.argv;
+const CLI_ARGUMENT = 2;
+
+const targetFile = process.argv[CLI_ARGUMENT];
 
 async function check() {
   let result = true;
   try {
     await startLanguageTool();
     await waitForLanguageTool();
-    if (!targetFile) {
-      result = await checkAll();
-    } else {
-      result = await checkFile(targetFile);
-    }
+    result = await (targetFile ? checkFile(targetFile) : checkAll());
   } finally {
     await stopLanguageTool();
   }
