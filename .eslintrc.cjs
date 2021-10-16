@@ -135,5 +135,7 @@ module.exports = {
     'unicorn/no-process-exit': 'off',
     'no-process-exit': 'off',
     'unicorn/no-array-for-each': 'off',
+    'unicorn/prefer-top-level-await': 'off',
+    'unicorn/no-array-reduce': 'off',
   },
 };

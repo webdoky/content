@@ -6,8 +6,9 @@ import {
 } from './utils/language-tool';
 import checkAll from './check-all';
 
-// eslint-disable-next-line no-magic-numbers
-const targetFile = process.argv[2];
+const CLI_ARGUMENT = 2;
+
+const targetFile = process.argv[CLI_ARGUMENT];
 
 async function check() {
   let result = true;
@@ -21,5 +22,4 @@ async function check() {
   process.exit(result ? 0 : 1);
 }
 
-// eslint-disable-next-line unicorn/prefer-top-level-await
 check();

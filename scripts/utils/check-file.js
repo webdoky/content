@@ -8,30 +8,48 @@ import debug from './debug';
 import { checkText } from './language-tool';
 import printCorrection from './print-correction';
 
-const JSON_PADDING = 2;
-
 const markdownIt = new MarkdownIt({
   // breaks: true,
 });
 
+function stripCodeListings(html) {
+  debug('stripCodeListings(...)');
+  // Only removes multiline listings
+  const modifiedHtml = html.replace(
+    /<code(?: [^>]+)*>[\S\s]*\n[\S\s]*(<\/code>)/gim,
+    '',
+  );
+  return modifiedHtml.replace(/<code(?: [^>]+)*>(.+)<\/code>/gi, '"$1"');
+}
+
+function stripGlossaryInterpolation(text) {
+  debug('stripGlossaryInterpolation(...)');
+  let modifiedText = text.replace(/{{\w+}}/gi, '');
+  modifiedText = modifiedText.replace(
+    /{{\w+\(["'].+["'],\s+["']([^"']+)["'](?:, .+)*\)}}/gim,
+    '"$1"',
+  );
+  return modifiedText.replace(/{{\w+\(["']([^"']+)["']\)}}/gim, '"$1"');
+}
+
 function convertHtmlToText(html) {
-  return convert(html, {
-    ignoreHref: true,
-    selectors: [
-      {
-        format: 'skip',
-        selector: 'code',
-      },
-    ],
-  });
+  debug('convertHtmlToText(...)');
+  const result = stripGlossaryInterpolation(
+    convert(stripCodeListings(html), {
+      ignoreHref: true,
+    }),
+  );
+  debug(result);
+  return result;
 }
 
 function convertMarkdownToHtml(markdown) {
+  debug('convertMarkdownToHtml(...)');
   return markdownIt.render(markdown);
 }
 
-// eslint-disable-next-line consistent-return
 function getText(filePath) {
+  debug('getText(...)');
   const content = fs.readFileSync(filePath, 'utf8');
   if (filePath.endsWith('.html')) {
     return convertHtmlToText(content);
@@ -40,6 +58,7 @@ function getText(filePath) {
     const html = convertMarkdownToHtml(content);
     return convertHtmlToText(html);
   }
+  throw new Error('Unknown file extension');
 }
 
 export default async function checkFile(filePath) {
@@ -52,8 +71,8 @@ export default async function checkFile(filePath) {
     console.info(`${filePath}: ${chalk.green('OK')}`);
     return true;
   }
-  console.error(`${filePath}: ${chalk.red('FAIL')}`);
-  debug(JSON.stringify(corrections, null, JSON_PADDING));
+  console.info(`${filePath}: ${chalk.red('FAIL')}`);
+  // debug(JSON.stringify(corrections, null, JSON_PADDING));
   corrections.forEach((element) => {
     printCorrection(element);
   });

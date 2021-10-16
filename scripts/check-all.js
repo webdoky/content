@@ -2,7 +2,7 @@ import glob from 'glob';
 
 import checkFile from './utils/check-file';
 import debug from './utils/debug';
-import sequentialAsyncForEach from './utils/sequential-async-for-each';
+import sequentialAsyncMap from './utils/sequential-async-map';
 
 async function getAllFiles() {
   return new Promise((resolve, reject) => {
@@ -18,5 +18,7 @@ async function getAllFiles() {
 }
 
 export default async function checkAll() {
-  return sequentialAsyncForEach(await getAllFiles(), checkFile);
+  return (await sequentialAsyncMap(await getAllFiles(), checkFile)).every(
+    (value) => value,
+  );
 }
