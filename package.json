@@ -15,6 +15,7 @@
   "repository": "https://github.com/webdoky/content",
   "scripts": {
     "check": "node --experimental-specifier-resolution=node scripts/check.js",
+    "check:debug": "DEBUG=true yarn run check",
     "postinstall": "docker build . -t lt-custom",
     "rebuild": "docker build . --no-cache -t lt-custom",
     "fix": "eslint . --fix",

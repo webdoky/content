@@ -1,7 +1,9 @@
 import childProcess from 'child_process';
 
+import debug from './debug';
+
 export default async function execute(command) {
-  console.debug(command);
+  debug(command);
   const statusCode = await new Promise((resolve, reject) => {
     const process = childProcess.exec(command);
     process.on('error', reject);

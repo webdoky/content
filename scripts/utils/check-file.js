@@ -1,8 +1,10 @@
 import fs from 'fs';
 
+import chalk from 'chalk';
 import { convert } from 'html-to-text';
 import MarkdownIt from 'markdown-it';
 
+import debug from './debug';
 import { checkText } from './language-tool';
 import printCorrection from './print-correction';
 
@@ -13,7 +15,15 @@ const markdownIt = new MarkdownIt({
 });
 
 function convertHtmlToText(html) {
-  return convert(html, { ignoreHref: true });
+  return convert(html, {
+    ignoreHref: true,
+    selectors: [
+      {
+        format: 'skip',
+        selector: 'code',
+      },
+    ],
+  });
 }
 
 function convertMarkdownToHtml(markdown) {
@@ -33,14 +43,17 @@ function getText(filePath) {
 }
 
 export default async function checkFile(filePath) {
-  console.debug(`checkFile(${filePath})`);
+  console.info('\n\n');
+  debug(`checkFile(${filePath})`);
   const text = getText(filePath);
   // console.debug(text);
   const corrections = await checkText(text);
   if (!corrections || corrections.length === 0) {
+    console.info(`${filePath}: ${chalk.green('OK')}`);
     return true;
   }
-  console.debug(JSON.stringify(corrections, null, JSON_PADDING));
+  console.error(`${filePath}: ${chalk.red('FAIL')}`);
+  debug(JSON.stringify(corrections, null, JSON_PADDING));
   corrections.forEach((element) => {
     printCorrection(element);
   });

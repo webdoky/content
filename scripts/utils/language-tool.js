@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+import debug from './debug';
 import disabledRules from './disabled-rules';
 import execute from './execute';
 import forever from './forever';
@@ -31,7 +32,7 @@ async function checkLanguageTool() {
       language: 'en-US',
       text: 'Hello',
     });
-    console.debug(result);
+    debug(result);
     return result.statusText === 'OK';
   } catch {
     return false;
@@ -39,7 +40,7 @@ async function checkLanguageTool() {
 }
 
 export async function checkText(text) {
-  console.debug('checkText(...)');
+  debug('checkText(...)');
   return (
     await requestLanguageTool({
       language: 'uk-UA',
