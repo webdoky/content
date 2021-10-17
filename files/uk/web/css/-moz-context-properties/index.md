@@ -95,4 +95,4 @@ browser-compat: css.properties.-moz-context-properties
 - [Використання зображень у HTML](/uk/docs/Web/Media/images)
 - [Додання векторної графіки до вебсторінок](/uk/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web)
 - [SVG у якості зображення](/uk/docs/Web/SVG/SVG_as_an_Image)
-- [Чуйні зображення](/uk/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
+- [Адаптивні зображення](/uk/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
