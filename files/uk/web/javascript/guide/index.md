@@ -127,9 +127,9 @@ tags:
 - [Створення ієрархій об’єктів](/uk/docs/Web/JavaScript/Guide/Details_of_the_Object_Model#creating_the_hierarchy)
 - [Наслідування](/uk/docs/Web/JavaScript/Guide/Details_of_the_Object_Model#property_inheritance_revisited)
 
-## Promises
+## Проміси
 
-Огляд: [Promises](/uk/docs/Web/JavaScript/Guide/Using_promises)
+Огляд: [Проміси](/uk/docs/Web/JavaScript/Guide/Using_promises)
 
 - [Гарантії](/uk/docs/Web/JavaScript/Guide/Using_promises#guarantees)
 - [Ланцюг викликів](/uk/docs/Web/JavaScript/Guide/Using_promises#chaining)
