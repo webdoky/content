@@ -132,7 +132,7 @@ tags:
 Огляд: [Проміси](/uk/docs/Web/JavaScript/Guide/Using_promises)
 
 - [Гарантії](/uk/docs/Web/JavaScript/Guide/Using_promises#guarantees)
-- [Ланцюг викликів](/uk/docs/Web/JavaScript/Guide/Using_promises#chaining)
+- [Зв’язування](/uk/docs/Web/JavaScript/Guide/Using_promises#chaining)
 - [Поширення помилок](/uk/docs/Web/JavaScript/Guide/Using_promises#error_propagation)
 - [Композиція](/uk/docs/Web/JavaScript/Guide/Using_promises#composition)
 - [Терміни](/uk/docs/Web/JavaScript/Guide/Using_promises#timing)
