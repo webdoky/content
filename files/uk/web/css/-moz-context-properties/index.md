@@ -53,7 +53,7 @@ browser-compat: css.properties.-moz-context-properties
 
 ## Приклади
 
-### Розкриття fill та stroke SVG зображенню
+### Розкриття `fill` та `stroke` SVG зображенню
 
 У цьому прикладі маємо простий SVG, вбудований за допомогою `<img>` елемента.
 
