@@ -15,9 +15,9 @@ tags:
 
 Сам **глобальний об'єкт** доступний із використанням оператора {{JSxRef("Operators/this", "this")}} у глобальній області видимості. Насправді глобальна область видимості **складається з** властивостей цього глобального об'єкта, включно з успадкованими полями, якщо такі є.
 
-Інші об'єкти у глобальній області видимості є або [створеними користувацьким скриптом](/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#creating_new_objects), або ж надані застосунком хоста. Ті хост-об'єкти, що доступні в контексті браузера, задокументовано у [довіднику з API](/en-US/docs/Web/API).
+Інші об'єкти у глобальній області видимості є або [створеними користувацьким скриптом](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#creating_new_objects), або ж надані застосунком хоста. Ті хост-об'єкти, що доступні в контексті браузера, задокументовано у [довіднику з API](/uk/docs/Web/API).
 
-Більше інформації про відмінності між [DOM](/en-US/docs/Web/API/Document_Object_Model) і ядром [JavaScript](/en-US/docs/Web/JavaScript), можна знайти в [технологічному огляді JavaScript](/en-US/docs/Web/JavaScript/JavaScript_technologies_overview).
+Більше інформації про відмінності між [DOM](/uk/docs/Web/API/Document_Object_Model) і ядром [JavaScript](/uk/docs/Web/JavaScript), можна знайти в [технологічному огляді JavaScript](/uk/docs/Web/JavaScript/JavaScript_technologies_overview).
 
 ## Стандартні об'єкти за категоріями
 
