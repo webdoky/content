@@ -79,7 +79,7 @@ browser-compat: css.properties.-moz-context-properties
 
 Тут ми встановлюємо атрибут зображення `src` у URI, що містить просте SVG зображення; `<rect>` всередині приймає значення `fill` та `stroke` від {{SVGAttr("fill")}} та {{SVGAttr("stroke")}}, встановлених на `<img>` елементі, шляхом передачі властивостям `<img>` ключових слів `context-fill`/`context-stroke` у якості їх значень, поруч із резервним кольором заповнення (червоним), котрий буде використаний, якщо SVG завантажать окремо у вікні верхнього рівня (де не буде контекстного елементу для отримання контекстних значень із нього). Зверніть увагу, що якщо колір встановлений напряму на SVG, але контекстний колір також вказаний, то контекстний колір заміщає напряму встановлений колір.
 
-> **Зверніть увагу:** Ви можете переглянути [працюючий приклад на Github](https://mdn.github.io/css-examples/moz-context-properties/).
+> **Зверніть увагу:** Ви можете переглянути [робочий приклад на Github](https://mdn.github.io/css-examples/moz-context-properties/).
 
 ## Специфікації
 
@@ -91,8 +91,8 @@ browser-compat: css.properties.-moz-context-properties
 
 ## Дивіться також
 
-- [Розширення CSS від Mozilla](/en-US/docs/Web/CSS/Mozilla_Extensions)
-- [Використання зображень у HTML](/en-US/docs/Web/Media/images)
-- [Додання векторної графіки до вебсторінок](/en-US/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web)
-- [SVG у якості зображення](/en-US/docs/Web/SVG/SVG_as_an_Image)
-- [Чуйні зображення](/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
+- [Розширення CSS від Mozilla](/uk/docs/Web/CSS/Mozilla_Extensions)
+- [Використання зображень у HTML](/uk/docs/Web/Media/images)
+- [Додання векторної графіки до вебсторінок](/uk/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web)
+- [SVG у якості зображення](/uk/docs/Web/SVG/SVG_as_an_Image)
+- [Чуйні зображення](/uk/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
