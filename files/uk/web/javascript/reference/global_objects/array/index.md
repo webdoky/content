@@ -18,7 +18,7 @@ browser-compat: javascript.builtins.Array
 
 Масиви &mdash; це подібні до списків об'єкти, чий прототип володіє методами для перебирання елементів та операцій зміни. Ні довжина масиву у JavaScript, ні тип його елементів не є фіксованими. Позаяк довжина масиву може змінитися в будь-який момент, і дані можуть перебувати в несуміжних місцях масиву, масиви у JavaScript не можуть бути гарантовано щільними; це залежить від того, як програміст їх використовує. Загалом це доволі зручні характеристики; проте якщо ці особливості для вашого конкретного випадку, ви можете розглянути можливість використання типізованих масивів.
 
-Масиви не можуть використовувати рядок як індекс елементу (так, як це працює в [асоціативному масиві](https://en.wikipedia.org/wiki/Associative_array)), але повинні використовувати цілі числа. Задання, або доступ до значення за не цілочисельним індексом при використанні [квадратних дужок](/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#objects_and_properties) (або [крапкової нотації](/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors)) не задасть і не поверне елемент з масиву, проте змінить або поверне відповідну змінну у [колекції властивостей об'єкту](/en-US/docs/Web/JavaScript/Data_structures#properties) цього масиву. Властивості об'єкту масиву відокремлені від власне послідовності елементів масиву, і [операції для перебирання і мутації](/en-US/docs/Web/JavaScript/Guide/Indexed_collections#array_methods) масивів не можуть застосовуватися до цих іменованих полів.
+Масиви не можуть використовувати рядок як індекс елементу (так, як це працює в [асоціативному масиві](https://en.wikipedia.org/wiki/Associative_array)), але повинні використовувати цілі числа. Задання, або доступ до значення за не цілочисельним індексом при використанні [квадратних дужок](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#objects_and_properties) (або [крапкової нотації](/uk/docs/Web/JavaScript/Reference/Operators/Property_Accessors)) не задасть і не поверне елемент з масиву, проте змінить або поверне відповідну змінну у [колекції властивостей об'єкту](/uk/docs/Web/JavaScript/Data_structures#properties) цього масиву. Властивості об'єкту масиву відокремлені від власне послідовності елементів масиву, і [операції для перебирання і мутації](/uk/docs/Web/JavaScript/Guide/Indexed_collections#array_methods) масивів не можуть застосовуватися до цих іменованих полів.
 
 ### Загальні операції
 
@@ -292,7 +292,7 @@ const myArray = myRe.exec('cdbBdbsbz')
 - {{jsxref("Array.prototype.length")}}
   - : Відображає кількість елементів у масиві.
 - {{jsxref("Array/@@unscopables", "Array.prototype[@@unscopables]")}}
-  - : Символ, що містить імена властивостей, які слід виключати з області прив'язки [`with`](/en-US/docs/Web/JavaScript/Reference/Statements/with).
+  - : Символ, що містить імена властивостей, які слід виключати з області прив'язки [`with`](/uk/docs/Web/JavaScript/Reference/Statements/with).
 
 ## Методи екземпляру
 
@@ -461,8 +461,8 @@ console.table(values)
 
 - З настанов із JavaScript:
 
-  - [“Індексування властивостей обʼєкту”](/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#indexing_object_properties)
-  - [“Індексовані колекції: об'єкт `Array`”](/en-US/docs/Web/JavaScript/Guide/Indexed_collections#array_object)
+  - [“Індексування властивостей обʼєкту”](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#indexing_object_properties)
+  - [“Індексовані колекції: об'єкт `Array`”](/uk/docs/Web/JavaScript/Guide/Indexed_collections#array_object)
 
-- [Типізовані масиви](/en-US/docs/Web/JavaScript/Typed_arrays)
-- [RangeError: invalid array length](/en-US/docs/Web/JavaScript/Reference/Errors/Invalid_array_length)
+- [Типізовані масиви](/uk/docs/Web/JavaScript/Typed_arrays)
+- [RangeError: invalid array length](/uk/docs/Web/JavaScript/Reference/Errors/Invalid_array_length)
