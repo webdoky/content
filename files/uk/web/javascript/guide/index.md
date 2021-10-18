@@ -34,9 +34,9 @@ tags:
 - [Структури і типи даних](/uk/docs/Web/JavaScript/Guide/Grammar_and_types#data_structures_and_types)
 - [Літерали](/uk/docs/Web/JavaScript/Guide/Grammar_and_types#literals)
 
-## Керування потоком та обробкою помилок
+## Керування потоком виконання та обробкою помилок
 
-Огляд: [Керування потоком та обробкою помилок](/uk/docs/Web/JavaScript/Guide/Control_flow_and_error_handling)
+Огляд: [Керування потоком виконання та обробкою помилок](/uk/docs/Web/JavaScript/Guide/Control_flow_and_error_handling)
 
 - [`if...else`](/uk/docs/Web/JavaScript/Guide/Control_flow_and_error_handling#if...else_statement)
 - [`switch`](/uk/docs/Web/JavaScript/Guide/Control_flow_and_error_handling#switch_statement)
