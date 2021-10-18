@@ -123,7 +123,7 @@ tags:
 
 Огляд: [Деталі об’єктної моделі](/uk/docs/Web/JavaScript/Guide/Details_of_the_Object_Model)
 
-- [ООП на основі прототипу](/uk/docs/Web/JavaScript/Guide/Details_of_the_Object_Model#class-based_vs._prototype-based_languages)
+- [ООП на основі прототипів](/uk/docs/Web/JavaScript/Guide/Details_of_the_Object_Model#class-based_vs._prototype-based_languages)
 - [Створення ієрархій об’єктів](/uk/docs/Web/JavaScript/Guide/Details_of_the_Object_Model#creating_the_hierarchy)
 - [Наслідування](/uk/docs/Web/JavaScript/Guide/Details_of_the_Object_Model#property_inheritance_revisited)
 
