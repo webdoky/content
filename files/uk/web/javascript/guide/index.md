@@ -101,7 +101,7 @@ tags:
 - [Масиви](/uk/docs/Web/JavaScript/Guide/Indexed_collections#array_object)
 - [Типізовані масиви](/uk/docs/Web/JavaScript/Guide/Indexed_collections#typed_arrays)
 
-## Колекції ключів
+## Колекції з ключами
 
 Огляд: [Колекції ключів](/uk/docs/Web/JavaScript/Guide/Keyed_collections)
 
