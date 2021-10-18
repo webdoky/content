@@ -64,7 +64,7 @@ tags:
 - [Область видимості функції](/uk/docs/Web/JavaScript/Guide/Functions#function_scope)
 - [Замикання](/uk/docs/Web/JavaScript/Guide/Functions#closures)
 - [Аргументи](/uk/docs/Web/JavaScript/Guide/Functions#using_the_arguments_object) & [параметри](/uk/docs/Web/JavaScript/Guide/Functions#function_parameters)
-- [Функції стрілки](/uk/docs/Web/JavaScript/Guide/Functions#arrow_functions)
+- [Стрілкові функції](/uk/docs/Web/JavaScript/Guide/Functions#arrow_functions)
 
 ## Вирази та оператори
 
@@ -142,7 +142,7 @@ tags:
 Огляд: [Ітератори та генератори](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators)
 
 - [Ітератори](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators#iterators)
-- [Ітерації](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators#iterables)
+- [Ітеровані об‘єкти](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators#iterables)
 - [Генератори](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators#generators)
 
 ## Метапрограмування
