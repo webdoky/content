@@ -1,0 +1,163 @@
+---
+title: '-moz-image-rect'
+slug: Web/CSS/-moz-image-rect
+tags:
+  - CSS
+  - CSS Function
+  - CSS Images
+  - CSS:Mozilla Extensions
+  - Function
+  - Non-standard
+  - Reference
+browser-compat: css.types.-moz-image-rect
+---
+{{CSSRef}}{{Non-standard_Header}}
+
+Властивість [CSS](/uk/docs/Web/CSS) **`-moz-image-rect`** для {{CSSxRef("background-image")}} дає змогу використовувати частину більшого зображення у якості тла.
+
+## Синтаксис
+
+```css
+-moz-image-rect({{CSSxRef("url()")}}, top, right, bottom, left);
+```
+
+### Значення
+
+- {{CSSxRef("url()")}}
+  - : URI зображення, з якої потрібно отримати підзображення.
+- `top`
+  - : Верхній край підзображення, вказаний у вигляді {{CSSxRef("&lt;integer&gt;")}} або {{CSSxRef("&lt;percentage&gt;")}}, у межах вказаного зображення.
+- `right`
+  - : Правий край підзображення, вказаний у вигляді {{CSSxRef("&lt;integer&gt;")}} або {{CSSxRef("&lt;percentage&gt;")}}, у межах вказаного зображення.
+- `bottom`
+  - : Нижній край підзображення, вказаний у вигляді {{CSSxRef("&lt;integer&gt;")}} або {{CSSxRef("&lt;percentage&gt;")}}, у межах вказаного зображення.
+- `left`
+  - : Лівий край підзображення, вказаний у вигляді {{CSSxRef("&lt;integer&gt;")}} або {{CSSxRef("&lt;percentage&gt;")}}, у межах вказаного зображення.
+
+## Опис
+
+Ця властивість дає змогу, наприклад, використовувати різні частини одного великого зображення у якості тла у різних частинах вмісту.
+
+Це працює вельми подібно до властивості {{CSSxRef("-moz-image-region")}}, котра використовується вкупі із властивістю {{CSSxRef("list-style-image")}} для використання частин зображення у якості куль списків. Втім, властивість `-moz-image-rect` може використовуватись для встановлення будь-якого CSS-тла.
+
+Синтаксис прямокутника подібний до функції [`rect()`](/uk/docs/Web/CSS/shape#syntax), що генерує {{CSSxRef("&lt;shape&gt;")}} CSS-тип. Усі чотири значення відносні до верхнього лівого краю зображення.
+
+## Приклади
+
+Цей приклад завантажує зображення і використовує його у чотирьох сегментах, аби намалювати лого Firefox у чотирьох {{HTMLElement("div")}} блоках. Кліки по їх контейнеру змусять чотири сегменти чергуватись шляхом обміну значень властивості {{CSSxRef("background-image")}} між чотирма {{HTMLElement("div")}} блоками.
+
+### CSS
+
+CSS описує один стиль контейнера, далі стилі чотирьох блоків, котрі утворюють повне зображення.
+
+Контейнер має наступний вигляд:
+
+```css
+#container {
+  width:267px;
+  height:272px;
+  top:100px;
+  left:100px;
+  position:absolute;
+  font-size:16px;
+  text-shadow:white 0px 0px 6px;
+  text-align:center;
+}
+```
+
+Далі чотири блоки описують сегменти зображення.
+
+```css
+#box1 {
+  background-image: -moz-image-rect(url(firefox.png), 0%, 50%, 50%, 0%);
+  width:133px;
+  height:136px;
+  position:absolute;
+}
+```
+
+Код вище - верхній лівий кут зображення. Описано прямокутник, що містить верхню ліву чверть зображення з файлу `firefox.jpg`.
+
+```css
+#box2 {
+  background-image: -moz-image-rect(url(firefox.png), 0%, 100%, 50%, 50%);
+  width:133px;
+  height:136px;
+  position:absolute;
+}
+```
+
+Код вище описує верхній правий кут зображення.
+
+Інші кути описані аналогічно:
+
+```css
+#box3 {
+  background-image: -moz-image-rect(url(firefox.png), 50%, 50%, 100%, 0%);
+  width:133px;
+  height:136px;
+  position:absolute;
+}
+#box4 {
+  background-image: -moz-image-rect(url(firefox.png), 50%, 100%, 100%, 50%);
+  width:133px;
+  height:136px;
+  position:absolute;
+}
+```
+
+### HTML
+
+HTML код доволі простий:
+
+```html
+<div id="container" onclick="rotate()">
+  <div id="box1" style="left:0px;top:0px;">Верхній лівий</div>
+  <div id="box2" style="left:133px;top:0px;">Верхній правий</div>
+  <div id="box3" style="left:0px;top:136px;">Нижній лівий</div>
+  <div id="box4" style="left:133px;top:136px;">Нижній правий</div>
+</div>
+```
+
+Такий код розміщує чотири сегменти зображення у сітці, по два в рядку та по два у стовпці. Ці сегменти вкупі розташовані всередині більшого {{HTMLElement("div")}} блоку, чиє основне призначення - отримувати події кліку та направляти їх до JavaScript коду.
+
+### Код на JavaScript
+
+Цей код обробляє подію кліку, коли контейнер отримує клік миші.
+
+```js
+function rotate() {
+  var prevStyle = window.getComputedStyle(document.getElementById("box4"), null).getPropertyValue("background-image");
+
+  // Тепер, оскільки збережене останнє значення, починається чергування
+
+  for (var i=1; i<=4; i++) {
+    var curId = "box" + i;
+
+    // Зсування зображень тла
+
+    var curStyle = window.getComputedStyle(document.getElementById(curId), null).getPropertyValue("background-image");
+    document.getElementById(curId).style.backgroundImage = prevStyle;
+    prevStyle = curStyle;
+  }
+}
+```
+
+Тут використовується {{DOMxRef("window.getComputedStyle()")}} для отримання стилю кожного елементу, зсуваючи його до наступного елементу. Зверніть увагу, що до початку чергування зберігається копія стилю останнього блоку, оскільки він буде перезаписаний стилем третього елементу. Копіюючи значення властивості {{CSSxRef("background-image")}} від першого елементу до наступного з кожним кліком миші, досягається бажаний ефект.
+
+### На що це схоже
+
+{{EmbedLiveSample("Examples","400","400")}}
+
+## Специфікації
+
+Не є частиною жодного стандарту.
+
+## Сумісність з браузерами
+
+{{Compat}}
+
+## Дивіться також
+
+- [Розширення CSS від Mozilla](/uk/docs/Web/CSS/Mozilla_Extensions)
+- [Модуль CSS тла та меж](/uk/docs/Web/CSS/CSS_Backgrounds_and_Borders)
