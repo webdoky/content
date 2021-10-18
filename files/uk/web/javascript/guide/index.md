@@ -1,14 +1,14 @@
 ---
-title: JavaScript Guide
+title: Посібник з JavaScript
 slug: Web/JavaScript/Guide
 tags:
 - Guide
 - JavaScript
 - l10n:priority
 ---
-{{jsSidebar("Посібник по JavaScript")}}
+{{jsSidebar("Посібник з JavaScript")}}
 
-Посібник по JavaScript показує вам, як користуватися [JavaScript](/uk/docs/Web/JavaScript) і дає короткий огляд мови. Якщо вам потрібна вичерпна інформація про особливість мови, зверніть увагу на [Довідник по JavaScript](/uk/docs/Web/JavaScript/Reference).
+Посібник з JavaScript показує вам, як користуватися [JavaScript](/uk/docs/Web/JavaScript) і дає короткий огляд мови. Якщо вам потрібна вичерпна інформація про особливість мови, зверніть увагу на [Довідник з JavaScript](/uk/docs/Web/JavaScript/Reference).
 
 Цей посібник поділено на наступні розділи.
 
@@ -34,9 +34,9 @@ tags:
 - [Структури і типи даних](/uk/docs/Web/JavaScript/Guide/Grammar_and_types#data_structures_and_types)
 - [Літерали](/uk/docs/Web/JavaScript/Guide/Grammar_and_types#literals)
 
-## Управління потоком та обробкою помилок
+## Керування потоком та обробкою помилок
 
-Огляд: [Управління потоком та обробкою помилок](/uk/docs/Web/JavaScript/Guide/Control_flow_and_error_handling)
+Огляд: [Керування потоком та обробкою помилок](/uk/docs/Web/JavaScript/Guide/Control_flow_and_error_handling)
 
 - [`if...else`](/uk/docs/Web/JavaScript/Guide/Control_flow_and_error_handling#if...else_statement)
 - [`switch`](/uk/docs/Web/JavaScript/Guide/Control_flow_and_error_handling#switch_statement)
@@ -63,14 +63,14 @@ tags:
 - [Виклик функцій](/uk/docs/Web/JavaScript/Guide/Functions#calling_functions)
 - [Область видимості функції](/uk/docs/Web/JavaScript/Guide/Functions#function_scope)
 - [Замикання](/uk/docs/Web/JavaScript/Guide/Functions#closures)
-- [Агрументи](/uk/docs/Web/JavaScript/Guide/Functions#using_the_arguments_object) & [параметри](/uk/docs/Web/JavaScript/Guide/Functions#function_parameters)
+- [Аргументи](/uk/docs/Web/JavaScript/Guide/Functions#using_the_arguments_object) & [параметри](/uk/docs/Web/JavaScript/Guide/Functions#function_parameters)
 - [Функції стрілки](/uk/docs/Web/JavaScript/Guide/Functions#arrow_functions)
 
 ## Вирази та оператори
 
 Огляд: [Вирази та оператори](/uk/docs/Web/JavaScript/Guide/Expressions_and_Operators)
 
-- [Призначення](/uk/docs/Web/JavaScript/Guide/Expressions_and_Operators#assignment_operators) & [Порівняння](/uk/docs/Web/JavaScript/Guide/Expressions_and_Operators#comparison_operators)
+- [Присвоєння](/uk/docs/Web/JavaScript/Guide/Expressions_and_Operators#assignment_operators) & [Порівняння](/uk/docs/Web/JavaScript/Guide/Expressions_and_Operators#comparison_operators)
 - [Арифметичні оператори](/uk/docs/Web/JavaScript/Guide/Expressions_and_Operators#arithmetic_operators)
 - [Побітові](/uk/docs/Web/JavaScript/Guide/Expressions_and_Operators#bitwise_operators) & [логічні оператори](/uk/docs/Web/JavaScript/Guide/Expressions_and_Operators#logical_operators)
 - [Умовний (тернарний) оператор](</uk/docs/Web/JavaScript/Guide/Expressions_and_Operators#conditional_(ternary)_operator>)
@@ -135,7 +135,7 @@ tags:
 - [Зв’язування](/uk/docs/Web/JavaScript/Guide/Using_promises#chaining)
 - [Поширення помилок](/uk/docs/Web/JavaScript/Guide/Using_promises#error_propagation)
 - [Композиція](/uk/docs/Web/JavaScript/Guide/Using_promises#composition)
-- [Терміни](/uk/docs/Web/JavaScript/Guide/Using_promises#timing)
+- [Хронометраж](/uk/docs/Web/JavaScript/Guide/Using_promises#timing)
 
 ## Ітератори та генератори
 
@@ -145,9 +145,9 @@ tags:
 - [Ітерації](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators#iterables)
 - [Генератори](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators#generators)
 
-## Мета програмування
+## Метапрограмування
 
-Огляд: [Мета програмування](/uk/docs/Web/JavaScript/Guide/Meta_programming)
+Огляд: [Метапрограмування](/uk/docs/Web/JavaScript/Guide/Meta_programming)
 
 - [`Proxy`](/uk/docs/Web/JavaScript/Guide/Meta_programming#proxies)
 - [Обробники та пастки](/uk/docs/Web/JavaScript/Guide/Meta_programming#handlers_and_traps)
@@ -158,11 +158,11 @@ tags:
 
 Огляд: [Модулі JavaScript](/uk/docs/Web/JavaScript/Guide/Modules)
 
-- [Експорт](/uk/docs/Web/JavaScript/Guide/Modules#exporting_module_features)
+- [Експортування](/uk/docs/Web/JavaScript/Guide/Modules#exporting_module_features)
 - [Імпортування](/uk/docs/Web/JavaScript/Guide/Modules#importing_features_into_your_script)
-- [Експорт за замовчуванням](/uk/docs/Web/JavaScript/Guide/Modules#default_exports_versus_named_exports)
-- [Можливості перейменування](/uk/docs/Web/JavaScript/Guide/Modules#renaming_imports_and_exports)
-- [Агрегуючі модулі](/uk/docs/Web/JavaScript/Guide/Modules#aggregating_modules)
-- [Динамічне завантаження модуля](/uk/docs/Web/JavaScript/Guide/Modules#dynamic_module_loading)
+- [Усталений експорт](/uk/docs/Web/JavaScript/Guide/Modules#default_exports_versus_named_exports)
+- [Експорт та імпорт з перейменуванням](/uk/docs/Web/JavaScript/Guide/Modules#renaming_imports_and_exports)
+- [Агрегування модулів](/uk/docs/Web/JavaScript/Guide/Modules#aggregating_modules)
+- [Динамічне завантаження модулів](/uk/docs/Web/JavaScript/Guide/Modules#dynamic_module_loading)
 
 {{Next("Web/JavaScript/Guide/Introduction")}}
