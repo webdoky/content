@@ -13,7 +13,7 @@ browser-compat: css.types.-moz-image-rect
 ---
 {{CSSRef}}{{Non-standard_Header}}
 
-Властивість [CSS](/uk/docs/Web/CSS) **`-moz-image-rect`** для {{CSSxRef("background-image")}} дає змогу використовувати частину більшого зображення у якості тла.
+Властивість [CSS](/uk/docs/Web/CSS) **`-moz-image-rect`** для {{CSSxRef("background-image")}} дає змогу використовувати частину більшого зображення як тло.
 
 ## Синтаксис
 
