@@ -27,11 +27,11 @@ tags:
 
 Огляд: [Граматика і типи](/uk/docs/Web/JavaScript/Guide/Grammar_and_types)
 
-- [Основний синтакс та коментарі](/uk/docs/Web/JavaScript/Guide/Grammar_and_types#basics)
+- [Основний синтаксис та коментарі](/uk/docs/Web/JavaScript/Guide/Grammar_and_types#basics)
 - [Оголошення](/uk/docs/Web/JavaScript/Guide/Grammar_and_types#declarations)
 - [Область видимості змінної](/uk/docs/Web/JavaScript/Guide/Grammar_and_types#variable_scope)
 - [Підняття змінної](/uk/docs/Web/JavaScript/Guide/Grammar_and_types#variable_hoisting)
-- [Структури і типи даних](/uk/docs/Web/JavaScript/Guide/Grammar_and_types#data_structures_and_types)
+- [Структури та типи даних](/uk/docs/Web/JavaScript/Guide/Grammar_and_types#data_structures_and_types)
 - [Літерали](/uk/docs/Web/JavaScript/Guide/Grammar_and_types#literals)
 
 ## Керування потоком виконання та обробкою помилок
