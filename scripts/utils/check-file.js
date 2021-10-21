@@ -24,12 +24,12 @@ function stripCodeListings(html) {
 
 function stripGlossaryInterpolation(text) {
   debug('stripGlossaryInterpolation(...)');
-  let modifiedText = text.replace(/{{\w+}}/gi, '');
+  let modifiedText = text.replace(/{{\s?\w+\s?}}/gi, '');
   modifiedText = modifiedText.replace(
-    /{{\w+\(["'].+["'],\s+["']([^"']+)["'](?:, .+)*\)}}/gim,
+    /{{\s?\w+\(["'].+["'],\s+["']([^"']+)["'](?:, .+)*\)\s?}}/gim,
     '"$1"',
   );
-  return modifiedText.replace(/{{\w+\(["']([^"']+)["']\)}}/gim, '"$1"');
+  return modifiedText.replace(/{{\s?\w+\(["']([^"']+)["']\)\s?}}/gim, '"$1"');
 }
 
 function convertHtmlToText(html) {
