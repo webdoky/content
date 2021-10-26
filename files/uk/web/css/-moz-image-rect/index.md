@@ -26,7 +26,7 @@ browser-compat: css.types.-moz-image-rect
 - {{CSSxRef("url()")}}
   - : URI зображення, з якої потрібно отримати підзображення.
 - `top`
-  - : Верхній край підзображення, вказаний у вигляді {{CSSxRef("&lt;integer&gt;")}} або {{CSSxRef("&lt;percentage&gt;")}}, у межах вказаного зображення.
+  - : Верхній край підзображення, заданий як {{CSSxRef("&lt;integer&gt;")}} або {{CSSxRef("&lt;percentage&gt;")}}, у межах вказаного зображення.
 - `right`
   - : Правий край підзображення, вказаний у вигляді {{CSSxRef("&lt;integer&gt;")}} або {{CSSxRef("&lt;percentage&gt;")}}, у межах вказаного зображення.
 - `bottom`
