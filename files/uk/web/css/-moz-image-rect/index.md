@@ -32,7 +32,7 @@ browser-compat: css.types.-moz-image-rect
 - `bottom`
   - : Нижній край підзображення, заданий як {{CSSxRef("&lt;integer&gt;")}} або {{CSSxRef("&lt;percentage&gt;")}}, у межах вказаного зображення.
 - `left`
-  - : Лівий край підзображення, вказаний у вигляді {{CSSxRef("&lt;integer&gt;")}} або {{CSSxRef("&lt;percentage&gt;")}}, у межах вказаного зображення.
+  - : Лівий край підзображення, заданий як {{CSSxRef("&lt;integer&gt;")}} або {{CSSxRef("&lt;percentage&gt;")}}, у межах вказаного зображення.
 
 ## Опис
 
