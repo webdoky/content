@@ -59,7 +59,7 @@ browser-compat: css.properties.-moz-image-region
   -moz-image-region: rect(0px, 4px, 4px, 0px);
 }
 #example-button:hover {
-  /* використати 4-по-4 зону, розташовану праворуч від попередньої зони, для кнопки, над котрою курсор миші */
+  /* використати 4-по-4 зону  праворуч від попередньої, для кнопки, на яку наведено курсор миші */
   -moz-image-region: rect(0px, 8px, 4px, 4px);
 }
 ```
