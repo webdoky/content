@@ -48,7 +48,7 @@ browser-compat: css.properties.-moz-orient
 <progress max="100" value="75"></progress>
 
 <p>
- Наступний прогресбар &mdash;
+ Наступний індикатор виконання &mdash;
  вертикальний:
 </p>
 <progress class="vert" max="100" value="75"></progress>
