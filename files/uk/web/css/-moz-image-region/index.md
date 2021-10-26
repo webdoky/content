@@ -54,7 +54,7 @@ browser-compat: css.properties.-moz-image-region
 
 ```css
 #example-button {
-  /* показати лише зону 4-по-4 пікселі з верхнього лівого кута зображення */
+  /* показати лише зону 4-по-4 пікселі від верхнього лівого кута зображення */
   list-style-image: url("chrome://example/skin/example.png");
   -moz-image-region: rect(0px, 4px, 4px, 0px);
 }
