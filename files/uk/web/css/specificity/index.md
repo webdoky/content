@@ -27,7 +27,7 @@ tags:
 2.  [Селектори класу](/uk/docs/Web/CSS/Class_selectors) (наприклад, `.example`), селектори атрибуту (наприклад, `[type="radio"]`) та псевдокласи (наприклад, `:hover`).
 3.  [Селектори ідентифікатора](/uk/docs/Web/CSS/ID_selectors) (наприклад, `#example`).
 
-Загальний селектор ({{CSSxRef("Universal_selectors", "*")}}), комбінатори ({{CSSxRef("Adjacent_sibling_combinator", "+")}}, {{CSSxRef("Child_combinator", "&gt;")}}, {{CSSxRef("General_sibling_combinator", "~")}}, ['` `'](/uk/docs/Web/CSS/Descendant_combinator), {{CSSxRef("Column_combinator", "||")}}) та псевдоклас заперечення ({{CSSxRef(":not", ":not()")}}) не впливають на специфічність. (Селектори, оголошені _всередині_ `:not()`, втім, впливають.)
+Універсальний селектор ({{CSSxRef("Universal_selectors", "*")}}), комбінатори ({{CSSxRef("Adjacent_sibling_combinator", "+")}}, {{CSSxRef("Child_combinator", "&gt;")}}, {{CSSxRef("General_sibling_combinator", "~")}}, ['` `'](/uk/docs/Web/CSS/Descendant_combinator), {{CSSxRef("Column_combinator", "||")}}) та псевдоклас заперечення ({{CSSxRef(":not", ":not()")}}) не впливають на специфічність. (Селектори, оголошені _всередині_ `:not()`, втім, впливають.)
 
 Щоб отримати більше інформації, відвідайте: ["Специфічність" у "каскадності та успадкуванні"](/uk/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance#Specificity_2), а також відвідайте: <https://specifishity.com>
 
