@@ -11,7 +11,7 @@ browser-compat: javascript.operators
 ---
 {{JSSidebar("Operators")}}
 
-Цей розділ документує всі оператори, вирази, і ключові слова мови JavaScript.
+Цей розділ документує всі оператори, вирази і ключові слова мови JavaScript.
 
 ## Вирази та оператори за категоріями
 
@@ -48,14 +48,14 @@ browser-compat: javascript.operators
 
 ### Вирази лівої сторони
 
-Лівостороннії значення є пунктом призначення для присвоєння.
+Лівосторонні значення є пунктом призначення для присвоєння.
 
 - {{JSxRef("Operators/Property_accessors", "Засоби доступу до властивостей", "", 1)}}
   - : Оператор доступу до членів надає доступ до методу чи властивості об'єкта (`object.property` і `object["property"]`).
 - {{JSxRef("Operators/new", "new")}}
   - : Оператор `new` створює новий екземпляр об'єкта за допомогою переданого конструктора.
 - {{JSxRef("Operators/new%2Etarget", "new.target")}}
-  - : Всередині конструктора, `new.target` посилається на конструктор, який було викликано оператором {{JSxRef("Operators/new", "new")}}.
+  - : Всередині конструктора `new.target` посилається на конструктор, який було викликано оператором {{JSxRef("Operators/new", "new")}}.
 - {{JSxRef("Statements/import%2Emeta", "import.meta")}}
   - : Об'єкт, що розкриває контекст-специфічні метадані JavaScript-модуля.
 - {{JSxRef("Operators/super", "super")}}
@@ -87,7 +87,7 @@ browser-compat: javascript.operators
 - {{JSxRef("Operators/typeof", "typeof")}}
   - : Оператор `typeof` визначає тип переданого об'єкту.
 - {{JSxRef("Operators/Unary_plus", "+")}}
-  - : Опертор «унарний плюс» перетворює операнд на значення типу Number.
+  - : Оператор «унарний плюс» перетворює операнд на значення типу Number.
 - {{JSxRef("Operators/Unary_negation", "-")}}
   - : Опертор «унарний мінус» перетворює операнд на значення типу Number, а потім робить його від'ємним.
 - {{JSxRef("Operators/Bitwise_NOT", "~")}}
@@ -106,7 +106,7 @@ browser-compat: javascript.operators
 - {{JSxRef("Operators/Division", "/")}}
   - : Оператор ділення.
 - {{JSxRef("Operators/Multiplication", "*")}}
-  - : Оператор добутку.
+  - : Оператор множення.
 - {{JSxRef("Operators/Remainder", "%")}}
   - : Оператор взяття остачі від ділення.
 - {{JSxRef("Operators/Exponentiation", "**")}}
@@ -114,10 +114,10 @@ browser-compat: javascript.operators
 
 ### Оператори відношення
 
-Оператор порівняння порівнює операнди, і повертає булеве значення залежно від того, чи порівняння є істинним.
+Оператор порівняння порівнює операнди і повертає булеве значення, котре залежить від того, чи виконується умова порівняння.
 
 - {{JSxRef("Operators/in", "in")}}
-  - : Оператор `in` визначає, чи об'єкт містить передану властивість.
+  - : Оператор `in` визначає, чи об'єкт містить властивість за переданим іменем.
 - {{JSxRef("Operators/instanceof", "instanceof")}}
   - : Оператор `instanceof` визначає, чи є об'єкт екземпляром іншого об'єкта.
 - {{JSxRef("Operators/Less_than", "&lt;")}}
