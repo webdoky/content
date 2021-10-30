@@ -78,7 +78,7 @@ reduce(function callbackFn(previousValue, currentValue, currentIndex, array) { .
 > - *currentIndex*, (індекс поточного елемента)
 > - об'єкт, що наразі опрацьовується
 >
-> Коли *callbackfn* викликається вперше, *previousValue* і *currentValue* можуть мати один із двох наступних значень:
+> Коли *callbackfn* викликається вперше, *previousValue* і *currentValue* можуть отримати значення двома шляхами:
 > - Якщо *initialValue* було передано у виклику `reduce`, то *previousValue* буде дорівнювати *initialValue*, а *currentValue* матиме значення першого елемента масиву.
 > - Якщо *initialValue* передано не було, то *previousValue* буде дорівнювати першому значенню в масиві, а *currentValue* — другому.
 > У випадку, якщо масив не містить елементів, і *initialValue* не задано, буде викинута помилка {{jsxref("TypeError")}}.
