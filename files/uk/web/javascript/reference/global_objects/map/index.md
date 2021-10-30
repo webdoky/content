@@ -64,7 +64,7 @@ browser-compat: javascript.builtins.Map
         Ключі в <code>Map</code> можуть мати будь-яке значення (включно з функціями, об'єктами та будь-якими примітивними значеннями).
       </td>
       <td>
-        Ключі в <code>Object</code> повинні мати або тип {{jsxref("String")}}, або {{jsxref("Symbol")}}.
+        Ключі в <code>Object</code> повинні мати тип або {{jsxref("String")}}, або {{jsxref("Symbol")}}.
       </td>
     </tr>
     <tr>
