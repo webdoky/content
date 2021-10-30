@@ -1,5 +1,12 @@
 # WebDoky - контент
 
+[![uk](https://img.shields.io/badge/lang-uk-green.svg)](https://github.com/webdoky/content/blob/master/README.md)
+[![en](https://img.shields.io/badge/lang-en-yellow.svg)](https://github.com/webdoky/content/blob/master/README.en.md)
+
+## Що це
+
+Тут знаходиться вміст вебдокументації з [WebDoky](https://webdoky.org/). Фактично це статті з [MDN](https://github.com/mdn/content), перекладені українською (див. [ліцензію на вміст цього репозиторію](https://github.com/webdoky/content/blob/master/LICENSE.md))
+
 ## LanguageTool перевірка
 
 У репозиторій вбудована перевірка тексту (в форматі HTML або Markdown) в репозиторії за допомогою докеризованого LanguageTool. Наразі працює лише на Unix-подібних ОС [https://github.com/webdoky/content/issues/12]
