@@ -345,6 +345,6 @@ h1 {
 
 ## Дивіться також
 
-- Калькулятор специфічності: інтерактивний вебсайт для тестування та розуміння CSS-правил користувача - <https://specificity.keegan.st/>
+- Калькулятор специфічності: інтерактивний вебсайт для тестування та розуміння CSS-правил — <https://specificity.keegan.st/>
 - Специфічність селекторів CSS3 - [http://www.w3.org/TR/selectors/#specificity](https://www.w3.org/TR/selectors/#specificity)
 - {{CSS_Key_Concepts}}
