@@ -16,7 +16,7 @@ browser-compat: javascript.builtins.String
 ## Опис
 
 Рядки корисні для зберігання тих даних, які можна представити в текстовій формі. Деякі з найбільш вживаних операцій з рядками включають: визначення їхньої {{jsxref("String.length",
-  "довжини")}}, збирання і з'єднання їх докупи за допомогою [операторів + та += для роботи з рядками](/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#string_operators), перевірки наявності чи знаходження позиції підрядка за допомогою методу {{jsxref("String.prototype.indexOf()", "indexOf()")}}, або ж витягання певних підрядків за допомогою методу {{jsxref("String.prototype.substring()", "substring()")}}.
+  "довжини")}}, збирання і з'єднання їх докупи за допомогою [операторів + та += для роботи з рядками](/uk/docs/Web/JavaScript/Guide/Expressions_and_Operators#string_operators), перевірки наявності чи знаходження позиції підрядка за допомогою методу {{jsxref("String.prototype.indexOf()", "indexOf()")}}, або ж витягання певних підрядків за допомогою методу {{jsxref("String.prototype.substring()", "substring()")}}.
 
 ### Створення рядків
 
@@ -34,7 +34,7 @@ const string4 = new String("Об'єкт рядка");
 
 Рядкові примітиви та об'єкти-рядки в більшості випадків взаємозамінні. Дивіться розділ "[Рядки-примітиви та рядки-об'єкти](#string_primitives_and_string_objects)" нижче.
 
-Рядкові літерали позначаються одинарними або подвійними лапками — які в середовищі JavaScript опрацьовуються ідентично — або ж через символ «гравіс» <kbd>`</kbd>. Останній позначає так званий [шаблонний літерал](/en-US/docs/Web/JavaScript/Reference/Template_literals) — форму рядкового літерала, яка дозволяє вставляти вирази в рядок (інтерполяція).
+Рядкові літерали позначаються одинарними або подвійними лапками — які в середовищі JavaScript опрацьовуються ідентично — або ж через символ «гравіс» <kbd>`</kbd>. Останній позначає так званий [шаблонний літерал](/uk/docs/Web/JavaScript/Reference/Template_literals) — форму рядкового літерала, яка дозволяє вставляти вирази в рядок (інтерполяція).
 
 ### Доступ до окремих символів
 
@@ -54,7 +54,7 @@ return 'cat'[1] // повертає "a"
 
 ### Порівняння рядків
 
-В мові «C» для порівняння рядків використовується функція `strcmp()`. У JavaScript для цього існують [оператори більше та менше](/en-US/docs/Web/JavaScript/Reference/Operators):
+В мові «C» для порівняння рядків використовується функція `strcmp()`. У JavaScript для цього існують [оператори більше та менше](/uk/docs/Web/JavaScript/Reference/Operators):
 
 ```js
 let a = 'a'
@@ -138,7 +138,7 @@ console.log(eval(s2.valueOf()))  // повертає число 4
 
 #### Спосіб 1
 
-Можна використати оператор [+](/en-US/docs/Web/JavaScript/Reference/Operators/Addition) для з'єднання докупи декількох рядків, як це показано нижче:
+Можна використати оператор [+](/uk/docs/Web/JavaScript/Reference/Operators/Addition) для з'єднання докупи декількох рядків, як це показано нижче:
 
 ```js
 let longString = "Це — дуже довга стрічка тексту, яку потрібно " +
@@ -337,7 +337,7 @@ String(undefinedVar);     // "undefined"
 
 ## Дивіться також
 
-- [Настанови з JavaScript — форматування тексту](/en-US/docs/Web/JavaScript/Guide/Text_formatting)
+- [Настанови з JavaScript — форматування тексту](/uk/docs/Web/JavaScript/Guide/Text_formatting)
 - {{jsxref("RegExp")}}
 - {{domxref("DOMString")}}
-- [Бінарні рядки](/en-US/docs/Web/API/DOMString/Binary)
+- [Бінарні рядки](/uk/docs/Web/API/DOMString/Binary)
