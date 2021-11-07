@@ -16,7 +16,7 @@ browser-compat: javascript.operators.conditional
 ---
 {{jsSidebar("Operators")}}
 
-**Умовний (тернарний) оператор** — це єдиний оператор в JavaScript, який приймає три операнди: умова зі знаком питання (`?`) за нею, далі вираз, який слід виконати, якщо умова {{Glossary("truthy", "істинна")}}, слідом за якою двокрапка (`:`), і нарешті вираз, який виконається, якщо умова є {{Glossary("falsy", "хибною")}}. Цей оператор часто використовується як скорочення для інструкції [`if`](/en-US/docs/Web/JavaScript/Reference/Statements/if...else).
+**Умовний (тернарний) оператор** — це єдиний оператор в JavaScript, який приймає три операнди: умова зі знаком питання (`?`) за нею, далі вираз, який слід виконати, якщо умова {{Glossary("truthy", "істинна")}}, слідом за якою двокрапка (`:`), і нарешті вираз, який виконається, якщо умова є {{Glossary("falsy", "хибною")}}. Цей оператор часто використовується як скорочення для інструкції [`if`](/uk/docs/Web/JavaScript/Reference/Statements/if...else).
 
 {{EmbedInteractiveExample("pages/js/expressions-conditionaloperators.html")}}
 
@@ -95,8 +95,8 @@ function example(…) {
 
 ## Дивіться також
 
-- [Інструкція "if"](/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
-- [Оператор нульового злиття](/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator)
-- [Необов'язкові послідовності](/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
-- [Приймання рішень в коді — умовні вирази](/en-US/docs/Learn/JavaScript/Building_blocks/conditionals)
-- [Вирази та оператори](/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators)
+- [Інструкція "if"](/uk/docs/Web/JavaScript/Reference/Statements/if...else)
+- [Оператор нульового злиття](/uk/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator)
+- [Необов'язкові послідовності](/uk/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
+- [Приймання рішень в коді — умовні вирази](/uk/docs/Learn/JavaScript/Building_blocks/conditionals)
+- [Вирази та оператори](/uk/docs/Web/JavaScript/Guide/Expressions_and_Operators)
