@@ -51,7 +51,7 @@ browser-compat: javascript.operators
 Лівосторонні значення є пунктом призначення для присвоєння.
 
 - {{JSxRef("Operators/Property_accessors", "Засоби доступу до властивостей", "", 1)}}
-  - : Оператор доступу до членів надає доступ до методу чи властивості об'єкта (`object.property` і `object["property"]`).
+  - : Оператор доступу до членів надає доступ до методу чи властивості об'єкта (`object.property` та `object["property"]`).
 - {{JSxRef("Operators/new", "new")}}
   - : Оператор `new` створює новий екземпляр об'єкта за допомогою переданого конструктора.
 - {{JSxRef("Operators/new%2Etarget", "new.target")}}
