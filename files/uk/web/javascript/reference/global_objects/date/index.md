@@ -132,7 +132,7 @@ browser-compat: javascript.builtins.Date
 - {{jsxref("Date.prototype.toJSON()")}}
   - : Повертає рядок, що відповідає даті в {{jsxref("Date")}}, сформований за допомогою {{jsxref("Date.prototype.toISOString()", "toISOString()")}}. Призначений для використання функцією {{jsxref("JSON.stringify()")}}.
 - {{jsxref("Date.prototype.toGMTString()")}}
-  - : Повертає рядок, що відповідає даті в {{jsxref("Date")}} відносно часової зони GMT (UTC). Замість цього метода застосовуйте {{jsxref("Date.prototype.toUTCString()", "toUTCString()")}}.
+  - : Повертає рядок, що відповідає даті в {{jsxref("Date")}} відносно часової зони GMT (UTC). Замість цього методу застосовуйте {{jsxref("Date.prototype.toUTCString()", "toUTCString()")}}.
 - {{jsxref("Date.prototype.toLocaleDateString()")}}
   - : Повертає порцію об'єкта `Date`, що містить дату, як рядок, оформлений з урахуванням локально специфічних деталей на основі системних налаштувань.
 - {{jsxref("Date.prototype.toLocaleString()")}}
