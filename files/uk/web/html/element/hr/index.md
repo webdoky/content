@@ -1,5 +1,5 @@
 ---
-title: '<hr>: The Thematic Break (Horizontal Rule) element'
+title: '<hr> (горизонтальне правило): Елемент що розділяє через зміну теми'
 slug: Web/HTML/Element/hr
 tags:
   - Element
@@ -11,11 +11,11 @@ browser-compat: html.elements.hr
 
 {{HTMLRef}}
 
-The **`<hr>`** [HTML](/en-US/docs/Web/HTML) element represents a thematic break between paragraph-level elements: for example, a change of scene in a story, or a shift of topic within a section.
+Елемент **<hr>** в [HTML](/uk/docs/Web/HTML)  відокремлює параграфи, наприклад коли змінюється сцена в історії, чи коли змінюємо тему всередині секції.
 
 {{EmbedInteractiveExample("pages/tabbed/hr.html", "tabbed-shorter")}}
 
-Historically, this has been presented as a horizontal rule or line. While it may still be displayed as a horizontal rule in visual browsers, this element is now defined in semantic terms, rather than presentational terms, so if you wish to draw a horizontal line, you should do so using appropriate CSS.
+Історично, елемент **<hr>**,  як "горизонтальне правило" презентував горизонтальну лінію, що розділяє зміст. Але ж сьогодні ми говоримо про **<hr>** у семантичному сенсі більш ніж у графічному. Одже, якщо бажаєте просто провести горизонтальну лінію, робить це за допомогою відповідного CSS.
 
 <table class="properties">
   <tbody>
@@ -65,22 +65,23 @@ Historically, this has been presented as a horizontal rule or line. While it may
   </tbody>
 </table>
 
-## Attributes
+## Атрибути елементу
 
 This element's attributes include the [global attributes](/en-US/docs/Web/HTML/Global_attributes).
+Атрибути <hr> елементу включають [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
 
 - {{htmlattrdef("align")}} {{deprecated_inline}}
-  - : Sets the alignment of the rule on the page. If no value is specified, the default value is `left`.
+  - : Вирівнює обрані елементи на сторінці. Значення за замовчання — вирівнювати по лівому боку.
 - {{htmlattrdef("color")}} {{Non-standard_inline}}
-  - : Sets the color of the rule through color name or hexadecimal value.
+  - : Визначає колір обраних елементів згідно з шістнадцятковою номенклатурою кольорів.
 - {{htmlattrdef("noshade")}} {{deprecated_inline}}
-  - : Sets the rule to have no shading.
+  - : Визначає, що обрані елементи позбавлені тіні.
 - {{htmlattrdef("size")}} {{deprecated_inline}}
-  - : Sets the height, in pixels, of the rule.
+  - : Встановлює висоту обраних елементів на сторінці у пікселях.
 - {{htmlattrdef("width")}} {{deprecated_inline}}
-  - : Sets the length of the rule on the page through a pixel or percentage value.
+  - : Встановлює довжину  обраних елементів на сторінці у пікселях чи відсотках від сторінки.
 
-## Example
+## Приклад
 
 ### HTML
 
@@ -102,18 +103,18 @@ This element's attributes include the [global attributes](/en-US/docs/Web/HTML/G
 </p>
 ```
 
-### Result
+### Результат
 
 {{EmbedLiveSample("Example")}}
 
-## Specifications
+## Специфікації
 
 {{Specifications}}
 
-## Browser compatibility
+## Сумісність з браузерами
 
 {{Compat}}
 
-## See also
+## Також дивиться
 
 - {{HTMLElement('p')}}
