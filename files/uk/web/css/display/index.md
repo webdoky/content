@@ -15,7 +15,7 @@ browser-compat: css.properties.display
 
 Властивість [CSS](/uk/docs/Web/CSS) **`display`** встановлює, як розглядається елемент: як [блоковий чи вбудований елемент](/uk/docs/Web/CSS/CSS_Flow_Layout), і яке компонування буде застосовано до його нащадків: [потокове](/uk/docs/Web/CSS/CSS_Flow_Layout), [сіткове](/uk/docs/Web/CSS/CSS_Grid_Layout) чи [гнучке](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout).
 
-Формально кажучи, властивість **`display`** встановлює для елемента внутрішній та зовнішній _типи відображення_. Зовнішній тип визначає участь елемента у [потоковому компонуванні](/uk/docs/Web/CSS/CSS_Flow_Layout); внутрішній тип визначає компонування нащадків. Деякі значення `display` повністю описані у власних специфікаціях; до прикладу, деталі того, що відбувається при встановленні `display: flex` визначено у специфікації Гучкої блокової моделі CSS. Перегляньте [таблицю у кінці цього документа](#specifications) з усіма окремими специфікаціями.
+Формально кажучи, властивість **`display`** встановлює для елемента внутрішній та зовнішній _типи відображення_. Зовнішній тип визначає участь елемента у [потоковому компонуванні](/uk/docs/Web/CSS/CSS_Flow_Layout); внутрішній тип визначає компонування нащадків. Деякі значення `display` повністю описані у власних специфікаціях; до прикладу, деталі того, що відбувається при встановленні `display: flex` визначено у специфікації Гнучкої блокової моделі CSS. Перегляньте [таблицю у кінці цього документа](#specifications) з усіма окремими специфікаціями.
 
 ## Синтаксис
 
@@ -72,14 +72,14 @@ display: unset;
 ### Всередину
 
 - {{CSSxRef("&lt;display-inside&gt;")}}
-  - : Ці ключові слова вказують внутрішній тип представлення елемента, що визначає тип форматування контекста, в якому його вміст розташовано (припускаючи, що елемент не є заміненим).
+  - : Ці ключові слова вказують внутрішній тип представлення елемента, що визначає тип форматування контексту, в якому його вміст розташовано (припускаючи, що елемент не є заміненим).
 
 {{page("/uk/docs/Web/CSS/display-inside", "Синтаксис")}}
 
 ### Пункт списку
 
 - {{CSSxRef("&lt;display-listitem&gt;")}}
-  - : Елемент генерує блок для вмісту та окремий вбудований блок пункта списку.
+  - : Елемент генерує блок для вмісту та окремий вбудований блок пункту списку.
 
 {{page("/uk/docs/Web/CSS/display-listitem", "Syntax")}}
 
@@ -154,17 +154,17 @@ display: unset;
 - [Засади flex-блоку](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)
 - [Шикування елементів у flex-контейнері](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container)
 - [Контроль за пропорціями flex-елементів за основною віссю](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Controlling_Ratios_of_Flex_Items_Along_the_Main_Ax)
-- [Кросбраузерні flex-блокові домішки](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Backwards_Compatibility_of_Flexbox)
-- [Опанування переносу flex-елементів](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Mastering_Wrapping_of_Flex_Items)
+- [Кросбраузерні flex блокові домішки](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Backwards_Compatibility_of_Flexbox)
+- [Опанування перенесення flex-елементів](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Mastering_Wrapping_of_Flex_Items)
 - [Порядок flex-елементів](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Ordering_Flex_Items)
 - [Взаємини flex-блоку та інших способів компонування](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Relationship_of_Flexbox_to_Other_Layout_Methods)
-- [Зворотня сумісність flex-блоку](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Backwards_Compatibility_of_Flexbox)
+- [Зворотна сумісність flex-блоку](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Backwards_Compatibility_of_Flexbox)
 - [Типові випадки використання flex-блоку](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Typical_Use_Cases_of_Flexbox)
 
 ### display: grid
 
 - [Засади сіткового компонування](/uk/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout)
-- [Взаємини із іншими способами компонування](/uk/docs/Web/CSS/CSS_Grid_Layout/Relationship_of_Grid_Layout)
+- [Взаємини з іншими способами компонування](/uk/docs/Web/CSS/CSS_Grid_Layout/Relationship_of_Grid_Layout)
 - [Розташування за grid-лініями](/uk/docs/Web/CSS/CSS_Grid_Layout/Line-based_Placement_with_CSS_Grid)
 - [Сіткові зони шаблонів](/uk/docs/Web/CSS/CSS_Grid_Layout/Grid_Template_Areas)
 - [Компонування з використанням іменованих grid-ліній](/uk/docs/Web/CSS/CSS_Grid_Layout/Layout_using_Named_Grid_Lines)
@@ -179,13 +179,13 @@ display: unset;
 
 ### display: none
 
-Використання `display` значення `none` на елементі прибере його із [дерева доступності](/uk/docs/Learn/Accessibility/What_is_accessibility#accessibility_apis). Це призведе до того, що елемент та його нащадки більше не будуть оголошені технологією читачів екрану.
+Використання `display` значення `none` на елементі прибере його із [дерева доступності](/uk/docs/Learn/Accessibility/What_is_accessibility#accessibility_apis). Це призведе до того, що елемент та його нащадки більше не будуть оголошені технологією читачів екрана.
 
-Якщо потрібно візуально приховате елемент, більш доступною альтернативою є використання [комбінації властивостей](https://gomakethings.com/hidden-content-for-better-a11y/#hiding-the-link) для видимого усунення з екрану, але збереження для розбору допоміжними технологіями, наприклад, читачами екрану.
+Якщо потрібно візуально приховати елемент, більш доступною альтернативою є використання [комбінації властивостей](https://gomakethings.com/hidden-content-for-better-a11y/#hiding-the-link) для видимого усунення з екрана, але збереження для розбору допоміжними технологіями, наприклад, читачами екрану.
 
 ### display: contents
 
-Поточні реалізації у більшості браузерів приберуть із [дерева доступності](/uk/docs/Learn/Accessibility/What_is_accessibility#accessibility_apis) будь-який елемент із `display` значенням `contents` (залишивши у дереві його нащадків). Це призведе до того, що сам елемент більше не буде оголошений технологією читання екрану. Це некоректна поведінка згідно [специфікації CSS](https://drafts.csswg.org/css-display/#valdef-display-contents).
+Поточні реалізації у більшості браузерів приберуть із [дерева доступності](/uk/docs/Learn/Accessibility/What_is_accessibility#accessibility_apis) будь-який елемент із `display` значенням `contents` (залишивши у дереві його нащадків). Це призведе до того, що сам елемент більше не буде оголошений технологією читання екрану. Це некоректна поведінка згідно зі [специфікацією CSS](https://drafts.csswg.org/css-display/#valdef-display-contents).
 
 - [Більш доступна розмітка із display: contents | Гідде де Вріс](https://hiddedevries.nl/en/blog/2018-04-21-more-accessible-markup-with-display-contents)
 - [Display: Contents не є скиданням CSS | Адріан Розеллі](http://adrianroselli.com/2018/05/display-contents-is-not-a-css-reset.html)
@@ -196,8 +196,8 @@ display: unset;
 
 - [Коротка нотатка про те, що властивість CSS display робить із семантикою таблиці — The Paciello Group](https://developer.paciellogroup.com/blog/2018/03/short-note-on-what-css-display-properties-do-to-table-semantics/)
 - [Прихований вміст для кращої доступності | Go Make Things](https://gomakethings.com/hidden-content-for-better-a11y/)
-- [MDN: Розуміння Настанов доступності веб-контенту, Настанова 1.3, пояснення](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#guideline_1.3_%e2%80%94_create_content_that_can_be_presented_in_different_ways)
-- [Розуміння критерію успіху 1.3.1 | W3C Розуміння Настанов доступності веб-контенту 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/content-structure-separation-programmatic.html)
+- [MDN: Розуміння Настанов доступності вебконтенту, Настанова 1.3, пояснення](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#guideline_1.3_%e2%80%94_create_content_that_can_be_presented_in_different_ways)
+- [Розуміння критерію успіху 1.3.1 | W3C Розуміння Настанов доступності вебконтенту 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/content-structure-separation-programmatic.html)
 
 ## Формальне визначення
 
