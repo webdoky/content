@@ -93,7 +93,7 @@ display: unset;
 ### Блокові
 
 - {{CSSxRef("&lt;display-box&gt;")}}
-  - : Ці значення визначають, чи створює елемент блоки представлення взагалі.
+  - : Ці значення визначають, чи задає елемент візуальні рамки взагалі.
 
 {{page("/uk/docs/Web/CSS/display-box", "Синтаксис")}}
 
@@ -137,7 +137,7 @@ display: unset;
 
 ## Опис
 
-Окремі сторінки для різних типів значень, котрі може прийняти властивість `display`, містять численні приклади цих значень в дії &mdash; дивіться розділ {{anch("Syntax")}}. На додачу &mdash; перегляньте наступний матеріал, що покриває різні значення display у заглибленні.
+Окремі сторінки для різних типів значень, котрі може прийняти властивість `display`, містять численні приклади цих значень в дії &mdash; дивіться розділ {{anch("Syntax")}}. На додачу &mdash; перегляньте наступний матеріал, що поглиблено описує різні значення display.
 
 - [Пристосування до двослівного синтаксису display](/uk/docs/Web/CSS/display/two-value_syntax_of_display)
 
@@ -154,7 +154,7 @@ display: unset;
 - [Засади flex-блоку](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)
 - [Шикування елементів у flex-контейнері](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container)
 - [Контроль за пропорціями flex-елементів за основною віссю](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Controlling_Ratios_of_Flex_Items_Along_the_Main_Ax)
-- [Кросбраузерні flex блокові домішки](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Backwards_Compatibility_of_Flexbox)
+- [Кросбраузерні flex-блокові домішки](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Backwards_Compatibility_of_Flexbox)
 - [Опанування перенесення flex-елементів](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Mastering_Wrapping_of_Flex_Items)
 - [Порядок flex-елементів](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Ordering_Flex_Items)
 - [Взаємини flex-блоку та інших способів компонування](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Relationship_of_Flexbox_to_Other_Layout_Methods)
@@ -166,10 +166,10 @@ display: unset;
 - [Засади сіткового компонування](/uk/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout)
 - [Взаємини з іншими способами компонування](/uk/docs/Web/CSS/CSS_Grid_Layout/Relationship_of_Grid_Layout)
 - [Розташування за grid-лініями](/uk/docs/Web/CSS/CSS_Grid_Layout/Line-based_Placement_with_CSS_Grid)
-- [Сіткові зони шаблонів](/uk/docs/Web/CSS/CSS_Grid_Layout/Grid_Template_Areas)
+- [Шаблонні зони в сітках](/uk/docs/Web/CSS/CSS_Grid_Layout/Grid_Template_Areas)
 - [Компонування з використанням іменованих grid-ліній](/uk/docs/Web/CSS/CSS_Grid_Layout/Layout_using_Named_Grid_Lines)
 - [Автоматичне розташування у сітковому компонуванні](/uk/docs/Web/CSS/CSS_Grid_Layout/Auto-placement_in_CSS_Grid_Layout)
-- [Блокове шикування у сітковому компонуванні](/uk/docs/Web/CSS/CSS_Grid_Layout/Box_Alignment_in_CSS_Grid_Layout)
+- [Шикування блоків у сітковому компонуванні](/uk/docs/Web/CSS/CSS_Grid_Layout/Box_Alignment_in_CSS_Grid_Layout)
 - [Сітки, логічні значення та режими письма](/uk/docs/Web/CSS/CSS_Grid_Layout/CSS_Grid_Logical_Values_and_Writing_Modes)
 - [Сіткове компонування CSS та доступність](/uk/docs/Web/CSS/CSS_Grid_Layout/CSS_Grid_Layout_and_Accessibility)
 - [Сіткове компонування CSS та поступове поліпшення підтримки](/uk/docs/Web/CSS/CSS_Grid_Layout/CSS_Grid_and_Progressive_Enhancement)
@@ -179,13 +179,13 @@ display: unset;
 
 ### display: none
 
-Використання `display` значення `none` на елементі прибере його із [дерева доступності](/uk/docs/Learn/Accessibility/What_is_accessibility#accessibility_apis). Це призведе до того, що елемент та його нащадки більше не будуть оголошені технологією читачів екрана.
+Використання `display` значення `none` на елементі прибере його із [дерева доступності](/uk/docs/Learn/Accessibility/What_is_accessibility#accessibility_apis). Це призведе до того, що елемент та його нащадки більше не будуть оголошені технологією зчитування з екрану.
 
 Якщо потрібно візуально приховати елемент, більш доступною альтернативою є використання [комбінації властивостей](https://gomakethings.com/hidden-content-for-better-a11y/#hiding-the-link) для видимого усунення з екрана, але збереження для розбору допоміжними технологіями, наприклад, читачами екрану.
 
 ### display: contents
 
-Поточні реалізації у більшості браузерів приберуть із [дерева доступності](/uk/docs/Learn/Accessibility/What_is_accessibility#accessibility_apis) будь-який елемент із `display` значенням `contents` (залишивши у дереві його нащадків). Це призведе до того, що сам елемент більше не буде оголошений технологією читання екрану. Це некоректна поведінка згідно зі [специфікацією CSS](https://drafts.csswg.org/css-display/#valdef-display-contents).
+Поточні реалізації у більшості браузерів приберуть із [дерева доступності](/uk/docs/Learn/Accessibility/What_is_accessibility#accessibility_apis) будь-який елемент із значенням `contents` властивості `display` (залишивши у дереві його нащадків). Це призведе до того, що сам елемент більше не буде оголошений технологією читання екрану. Це некоректна поведінка згідно зі [специфікацією CSS](https://drafts.csswg.org/css-display/#valdef-display-contents).
 
 - [Більш доступна розмітка із display: contents | Гідде де Вріс](https://hiddedevries.nl/en/blog/2018-04-21-more-accessible-markup-with-display-contents)
 - [Display: Contents не є скиданням CSS | Адріан Розеллі](http://adrianroselli.com/2018/05/display-contents-is-not-a-css-reset.html)
@@ -196,8 +196,8 @@ display: unset;
 
 - [Коротка нотатка про те, що властивість CSS display робить із семантикою таблиці — The Paciello Group](https://developer.paciellogroup.com/blog/2018/03/short-note-on-what-css-display-properties-do-to-table-semantics/)
 - [Прихований вміст для кращої доступності | Go Make Things](https://gomakethings.com/hidden-content-for-better-a11y/)
-- [MDN: Розуміння Настанов доступності вебконтенту, Настанова 1.3, пояснення](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#guideline_1.3_%e2%80%94_create_content_that_can_be_presented_in_different_ways)
-- [Розуміння критерію успіху 1.3.1 | W3C Розуміння Настанов доступності вебконтенту 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/content-structure-separation-programmatic.html)
+- [MDN: Розуміння Вказівок з доступності вебконтенту, пояснення Вказівки 1.3](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#guideline_1.3_%e2%80%94_create_content_that_can_be_presented_in_different_ways)
+- [Розуміння критерію успіху 1.3.1 | W3C Розуміння Вказівок з доступності вебконтенту 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/content-structure-separation-programmatic.html)
 
 ## Формальне визначення
 
