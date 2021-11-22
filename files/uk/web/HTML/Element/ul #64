@@ -1,0 +1,180 @@
+---
+title: 'Елемент <ul> — невпорядкований перелік'
+slug: Web/HTML/Element/ul
+tags:
+  - Element
+  - HTML
+  - HTML grouping content
+  - Reference
+browser-compat: html.elements.ul
+---
+
+{{HTMLRef}}
+
+Елемент <ul> в [HTML](/uk/docs/Web/HTML) репрезентує невпорядкований перелік, який зазвичай відображується з маркерами перед рядками.
+
+{{EmbedInteractiveExample("pages/tabbed/ul.html", "tabbed-standard")}}
+
+<table class="properties">
+  <tbody>
+    <tr>
+      <th scope="row">
+        <a href="/uk/docs/Web/Guide/HTML/Content_categories"
+          >Категорії контенту</a
+        >
+      </th>
+      <td>
+        У звичайному контенті <ul> елемент стає видимим, якщо він утримує хоча б один елемент змісту <li> всередині себе.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволений зміст</th>
+      <td>
+        Елементи <li>, <script>, <template>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Необов'язкові позначки</th>
+      <td>Нема. Відкривна та закривна позначки обов'язкові.</td>
+    </tr>
+    <tr>
+      <th scope="row">Батьківські елементи</th>
+      <td>
+        Будь-який елемент що містить звичайний контент.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Безпосередня роль</th>
+      <td>
+        Перелік
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені ролі</th>
+      <td>
+        Директорія, група, перелік у рамочці, меню, бар меню, без ролі, презентація, радіо група, перелік закладок, панель інструментів, дерево.
+    </tr>
+    <tr>
+      <th scope="row">Інтерфейс документації об'єкту</th>
+      <td>{{domxref("HTMLUListElement")}}</td>
+    </tr>
+  </tbody>
+</table>
+
+## Атрибути
+
+Елемент <ul> включає [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
+
+- {{ htmlattrdef("compact") }} {{Deprecated_inline}}
+
+  - : Цей атрибут вказує що перелік повинний бути компактним. Визначення компактності залежить від браузера чи системи де елемент застосовано. Не в усіх браузерах працює.
+
+    > **ПОПЕРЕДЖЕННЯ:** не використати цей атрибут, бо він є застарілим. Використайте CSS. Для досягнення ефекту атрибута compact можна використати CSS команду line-hight зі значенням 80%.
+
+- {{ htmlattrdef("type") }} {{Deprecated_inline}}
+
+  - : Цей атрибут визначає яки маркери будуть використані у переліку. Значення що були введені в HTML3.2, і підтримані в HTML4.0/4.01 наступні:
+
+    - `бульбашка`
+    - `груба крапка`
+    - `квадратик`
+    - `трикутник`
+
+
+    Останнє значення, трикутник, було введено в інтерфейсі WebTV, але не усі браузери його підтримують.
+
+    Якщо атрибут type  не вказано, навіть через CSS list-style-type команду, то браузери застосовують значення за замовчання, що залежать від глибини рівнів переліку.
+
+    > **ПОПЕРЕДЖЕННЯ:** не використати цей атрибут, бо він є застарілим. Використайте CSS команду list-style-type.
+
+## Поради що до використання
+
+- Використайте <ul> елемент коли нема сенсу впорядковувати перелік через номери. Зазвичай невпорядковані переліки мають маркери у вигляді крапок, бульбашок, чи квадратиків. Стиль маркерів не визначається через HTML код сторінки, але може бути вказаний через CSS команду list-style-type.
+- Елементи <ul> (невпорядкований перелік) і <ol> (впорядкований через номери перелік) можуть мати скільки завгодно рівнів поміщення один в один. На кожному рівні можна використати як впорядкований, так і не впорядкований перелік.
+- Як визначити який тип переліку використати? Дуже легко. Спробуй поміняти порядок пунктів у переліку. Якщо це впливає на сенс, то тре використати перелік впорядкований через номери — елемент <ol>.
+
+## Приклади
+
+### Простий перелік
+
+```html
+<ul>
+  <li>first item</li>
+  <li>second item</li>
+  <li>third item</li>
+</ul>
+```
+
+Результат коду буде таким:
+
+{{EmbedLiveSample("Simple_example", 400, 100)}}
+
+### Багаторівневий перелік
+
+```html
+<ul>
+  <li>first item</li>
+  <li>second item
+  <!-- Look, the closing </li> tag is not placed here! -->
+    <ul>
+      <li>second item first subitem</li>
+      <li>second item second subitem
+      <!-- Same for the second nested unordered list! -->
+        <ul>
+          <li>second item second subitem first sub-subitem</li>
+          <li>second item second subitem second sub-subitem</li>
+          <li>second item second subitem third sub-subitem</li>
+        </ul>
+      </li> <!-- Closing </li> tag for the li that
+                  contains the third unordered list -->
+      <li>second item third subitem</li>
+    </ul>
+  <!-- Here is the closing </li> tag -->
+  </li>
+  <li>third item</li>
+</ul>
+```
+
+Результат коду буде таким:
+
+{{EmbedLiveSample("Nesting_a_list", 400, 220)}}
+
+### Впорядкований перелік, що містить невпорядкований перелік
+
+```html
+<ul>
+  <li>first item</li>
+  <li>second item
+  <!-- Look, the closing </li> tag is not placed here! -->
+    <ol>
+      <li>second item first subitem</li>
+      <li>second item second subitem</li>
+      <li>second item third subitem</li>
+    </ol>
+  <!-- Here is the closing </li> tag -->
+  </li>
+  <li>third item</li>
+</ul>
+```
+
+Результат коду буде таким:
+
+{{EmbedLiveSample("Ordered_list_inside_unordered_list", 400, 150)}}
+
+## Специфікація
+
+{{Specifications}}
+
+## Сумісність з браузерами
+
+{{Compat}}
+
+## Також дивиться
+
+- Інші HTML елементи що до переліків: <ol>, <li>, <menu>
+- Команди CSS, що можуть бути корисними для <ul> елементу:
+
+  - Команда list-style для визначення зовнішній вигляд переліку
+  - [CSS counters](/uk/docs/Web/CSS/CSS_Counter_Styles/Using_CSS_counters) допоможе контролювати переліки зі складною структурою рівнів
+  - Команда line-hight виконує функцію застарілого HTML атрибута compact
+  - Команда margin допоможе ідентифікувати перелік
