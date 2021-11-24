@@ -16,7 +16,7 @@ browser-compat: javascript.operators.conditional
 ---
 {{jsSidebar("Operators")}}
 
-**Умовний (тернарний) оператор** — це єдиний оператор в JavaScript, який приймає три операнди: умова зі знаком питання (`?`) за нею, далі вираз, який слід виконати, якщо умова {{Glossary("truthy", "істинна")}}, слідом за якою двокрапка (`:`), і нарешті вираз, який виконається, якщо умова є {{Glossary("falsy", "хибною")}}. Цей оператор часто використовується як скорочення для інструкції [`if`](/uk/docs/Web/JavaScript/Reference/Statements/if...else).
+**Умовний (тернарний) оператор** — це єдиний оператор у JavaScript, який приймає три операнди: умова зі знаком питання (`?`) після неї, далі вираз, який слід виконати, якщо умова {{Glossary("truthy", "істинна")}}, слідом за якою двокрапка (`:`), і нарешті – вираз, який виконається, якщо умова {{Glossary("falsy", "хибна")}}. Цей оператор часто використовується як скорочення для інструкції [`if`](/uk/docs/Web/JavaScript/Reference/Statements/if...else).
 
 {{EmbedInteractiveExample("pages/js/expressions-conditionaloperators.html")}}
 
@@ -31,13 +31,13 @@ condition ? exprIfTrue : exprIfFalse
 - `condition`
   - : Вираз, значення якого буде використано як умову.
 - `exprIfTrue`
-  - : Вираз, який буде обраховано, якщо `condition` зводиться до {{Glossary("truthy", "істинного")}} значення (те значення, яке дорівнює `true`, або може бути перетворено в нього).
+  - : Вираз, який буде обчислено, якщо `condition` зводиться до {{Glossary("truthy", "істинного")}} значення (такого, яке еквівалентно `true`).
 - `exprIfFalse`
-  - : Вираз, який буде обраховано, якщо `condition` є {{Glossary("falsy", "хибним")}} (значення, яке можна перетворити на `false`).
+  - : Вираз, який буде обчислено, якщо значення `condition` є {{Glossary("falsy", "хибним")}} (значенням, еквівалентним `false`).
 
 ## Опис
 
-На додачу до `false`, є такі можливі "хибні" значення: `null`, `NaN`, `0`, порожній рядок (`""`), і `undefined`. Якщо `condition` складається з будь-якого з цих значень, результатом всього умовного виразу буде результат виконання виразу `exprIfFalse`.
+На додачу до `false`, "хибними" значеннями є: `null`, `NaN`, `0`, порожній рядок (`""`) і `undefined`. Якщо значення `condition` належить до цього переліку, результатом всього умовного виразу буде результат виконання виразу `exprIfFalse`.
 
 ## Приклади
 
@@ -45,22 +45,22 @@ condition ? exprIfTrue : exprIfFalse
 
 ```js
 var age = 26;
-var beverage = (age >= 21) ? "Beer" : "Juice";
-console.log(beverage); // "Beer"
+var beverage = (age >= 21) ? "Пиво" : "Сік";
+console.log(beverage); // "Пиво"
 ```
 
 ### Обробка нульових значень
 
-Одним із поширених застосувань умовного виразу є обробка значення, яке може дорівнювати `null`:
+Одне з поширених застосувань умовного виразу — це обробка значення, яке може дорівнювати `null`:
 
 ```js
 let greeting = person => {
-    let name = person ? person.name : `stranger`
-    return `Howdy, ${name}`
+    let name = person ? person.name : `незнайомцю`
+    return `Агов, ${name}`
 }
 
-console.log(greeting({name: `Alice`}));  // "Howdy, Alice"
-console.log(greeting(null));             // "Howdy, stranger"
+console.log(greeting({name: `Аліса`}));  // "Howdy, Alice"
+console.log(greeting(null));             // "Агов, незнайомцю"
 ```
 
 ### Ланцюжки умовних виразів
