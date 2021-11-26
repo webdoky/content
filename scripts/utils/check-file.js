@@ -15,21 +15,21 @@ const markdownIt = new MarkdownIt({
 function stripCodeListings(html) {
   debug('stripCodeListings(...)');
   // Only removes multiline listings
-  const modifiedHtml = html.replace(
-    /<code(?: [^>]+)*>[\S\s]*\n[\S\s]*(<\/code>)/gim,
+  const modifiedHtml = html.replace(/<code(?: [^>]+)*>(.+?)<\/code>/gi, '"$1"');
+  return modifiedHtml.replace(
+    /<code(?: [^>]+)*>[\S\s]*?\n[\S\s]*?(<\/code>)/gim,
     '',
   );
-  return modifiedHtml.replace(/<code(?: [^>]+)*>(.+)<\/code>/gi, '"$1"');
 }
 
 function stripGlossaryInterpolation(text) {
   debug('stripGlossaryInterpolation(...)');
   let modifiedText = text.replace(/{{\s?\w+\s?}}/gi, '');
   modifiedText = modifiedText.replace(
-    /{{\s?\w+\(["'].+["'],\s+["']([^"']+)["'](?:, .+)*\)\s?}}/gim,
+    /{{\s?\w+\(["'][^"']+["'],\s*["']([^"']+)["'](?:,\s*.+)*\)\s*?}}/gim,
     '"$1"',
   );
-  return modifiedText.replace(/{{\s?\w+\(["']([^"']+)["']\)\s?}}/gim, '"$1"');
+  return modifiedText.replace(/{{\s?\w+\(["']?([^"']+)["']?\)\s?}}/gim, '"$1"');
 }
 
 function convertHtmlToText(html) {
