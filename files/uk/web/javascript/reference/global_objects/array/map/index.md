@@ -30,10 +30,10 @@ map(callbackFn)
 map(callbackFn, thisArg)
 
 // Функція зворотного виклику, оголошена на місці
-map(function callbackFn(element) { ... })
-map(function callbackFn(element, index) { ... })
-map(function callbackFn(element, index, array){ ... })
-map(function callbackFn(element, index, array) { ... }, thisArg)
+map(function (element) { ... })
+map(function (element, index) { ... })
+map(function (element, index, array) { ... })
+map(function (element, index, array) { ... }, thisArg)
 ```
 
 ### Параметри

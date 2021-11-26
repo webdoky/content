@@ -30,10 +30,10 @@ forEach(callbackFn)
 forEach(callbackFn, thisArg)
 
 // Функція зворотного виклику, оголошена на місці
-forEach(function callbackFn(element) { ... })
-forEach(function callbackFn(element, index) { ... })
-forEach(function callbackFn(element, index, array){ ... })
-forEach(function callbackFn(element, index, array) { ... }, thisArg)
+forEach(function (element) { ... })
+forEach(function (element, index) { ... })
+forEach(function (element, index, array) { ... })
+forEach(function (element, index, array) { ... }, thisArg)
 ```
 
 ### Параметри
@@ -78,7 +78,7 @@ forEach(function callbackFn(element, index, array) { ... }, thisArg)
 Метод `forEach()` не змінює масив, на якому він викликається. (Хоча,
 `callbackFn` може це робити)
 
-> **Зауваження:** Не існує способу зупинити або перервати цикл `forEach()` окрім 
+> **Зауваження:** Не існує способу зупинити або перервати цикл `forEach()` окрім
 > як шляхом викидання винятку. Якщо вам потрібна можливість перервати цикл, метод `forEach()`
 > для цього не підходить.
 >
@@ -94,7 +94,7 @@ forEach(function callbackFn(element, index, array) { ... }, thisArg)
 >
 > Методи масиву, як от {{jsxref("Array.prototype.every()", "every()")}},
 > {{jsxref("Array.prototype.some()", "some()")}}, {{jsxref("Array.prototype.find()", "find()")}}, і {{jsxref("Array.prototype.findIndex()", "findIndex()")}} перевіряють
-> елементи масиву за допомогою предикату, що повертає істинне значення, якщо 
+> елементи масиву за допомогою предикату, що повертає істинне значення, якщо
 > продовження перебирання масиву є необхідним.
 
 > **Зауваження:** `forEach` приймає синхронну функцію.

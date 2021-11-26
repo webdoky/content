@@ -30,10 +30,10 @@ filter(callbackFn)
 filter(callbackFn, thisArg)
 
 // Функція зворотного виклику, яка оголошена на місці
-filter(function callbackFn(element) { ... })
-filter(function callbackFn(element, index) { ... })
-filter(function callbackFn(element, index, array){ ... })
-filter(function callbackFn(element, index, array) { ... }, thisArg)
+filter(function (element) { ... })
+filter(function (element, index) { ... })
+filter(function (element, index, array) { ... })
+filter(function (element, index, array) { ... }, thisArg)
 ```
 
 ### Параметри
@@ -49,7 +49,7 @@ filter(function callbackFn(element, index, array) { ... }, thisArg)
     - `index`{{optional_inline}}
       - : Індекс елементу, що опрацьовується.
     - `array`{{optional_inline}}
-      - : Початковий масив, на якому було викликано функцію `filter`.
+      - : Початковий масив, на якому було викликано функцію `filter()`.
 
 - `thisArg`{{optional_inline}}
   - : Значення, що буде підставлено як `this` під час виконання `callbackFn`.
@@ -68,7 +68,7 @@ filter(function callbackFn(element, index, array) { ... }, thisArg)
 2.  порядковий номер елементу в масиві
 3.  власне об'єкт масиву, над яким виконується фільтрація
 
-Якщо методу `filter` надається параметр `thisArg`, його буде використано як значення `this`. Інакше, `this` матиме значення `undefined`. Однак загалом значення `this`, яке отримає функція `callback`, визначається згідно з [загальними правилами визначення значення `this`, доступного для функції](/en-US/docs/Web/JavaScript/Reference/Operators/this).
+Якщо методу `filter` надається параметр `thisArg`, його буде використано як значення `this`. Інакше, `this` матиме значення `undefined`. Однак загалом значення `this`, яке отримає функція `callbackFn`, визначається згідно з [загальними правилами визначення значення `this`, доступного для функції](/en-US/docs/Web/JavaScript/Reference/Operators/this).
 
 Метод `filter()` не змінює початковий масив, на якому його викликають.
 
