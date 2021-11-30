@@ -13,7 +13,7 @@ browser-compat: javascript.builtins.Array.indexOf
 ---
 {{JSRef}}
 
-Метод **`indexOf()`** повертає перший індекс, за яким даний елемент можна знайти в масиві, або -1 - якщо його немає.
+Метод **`indexOf()`** повертає перший індекс, за яким даний елемент можна знайти в масиві, або -1 &mdash; якщо його немає.
 
 {{EmbedInteractiveExample("pages/js/array-indexof.html")}}
 
@@ -29,7 +29,7 @@ indexOf(searchElement, fromIndex)
 - `searchElement`
   - : Шуканий елемент у масиві.
 - `fromIndex` {{optional_inline}}
-  - : Індекс, з якого потрібно почати пошук. Якщо індекс більший або дорівнює довжині масиву, повертається -1 - це означає, що пошук у масиві виконуватись не буде. Якщо надане значення індексу є від’ємним числом, воно приймається як зміщення від кінця масиву. Примітка: якщо наданий індекс є від’ємним, пошук у масиві все одно виконується спереду назад. Якщо наданий індекс дорівнює 0, пошук буде здійснюватися в усьому масиві. Усталено: 0 (перевіряється весь масив).
+  - : Індекс, з якого потрібно почати пошук. Якщо індекс більший або дорівнює довжині масиву, повертається -1: це означає, що пошук у масиві виконуватись не буде. Якщо надане значення індексу є від’ємним числом, то воно приймається як зміщення від кінця масиву. Примітка: якщо наданий індекс є від’ємним, то пошук у масиві все одно виконується від початку до кінця. Якщо наданий індекс дорівнює 0 &mdash; пошук буде здійснюватися в усьому масиві. Усталено: 0 (перевіряється весь масив).
 
 ### Повернене значення
 
@@ -37,7 +37,7 @@ indexOf(searchElement, fromIndex)
 
 ## Опис
 
-`indexOf()` порівнює `searchElement` з елементами масиву, використовуючи [строгу рівність](/uk/docs/Web/JavaScript/Reference/Operators/Strict_equality) (той самий метод, що використовується оператором === або потрійної рівності).
+`indexOf()` порівнює `searchElement` з елементами масиву, використовуючи [строгу рівність](/uk/docs/Web/JavaScript/Reference/Operators/Strict_equality) (той самий метод, що використовується оператором потрійної рівності `===`).
 
 > **Примітка:** Для методу String див.
 > {{jsxref("String.prototype.indexOf()")}}.
@@ -78,18 +78,18 @@ console.log(indices);
 function updateVegetablesCollection (veggies, veggie) {
     if (veggies.indexOf(veggie) === -1) {
         veggies.push(veggie);
-        console.log('New veggies collection is : ' + veggies);
+        console.log('Нова овочева колекція: ' + veggies);
     } else if (veggies.indexOf(veggie) > -1) {
-        console.log(veggie + ' already exists in the veggies collection.');
+        console.log(veggie + ' уже є в овочевій колекції.');
     }
 }
 
-var veggies = ['potato', 'tomato', 'chillies', 'green-pepper'];
+var veggies = ['картопля', 'помідор', 'червоний гострий перець', 'зелений болгарський перець'];
 
-updateVegetablesCollection(veggies, 'spinach');
-// Нова колекція veggies: potato,tomato,chillies,green-pepper,spinach
-updateVegetablesCollection(veggies, 'spinach');
-// spinach вже є в колекції veggies.
+updateVegetablesCollection(veggies, 'шпинат');
+// Нова колекція veggies: картопля,помідор,червоний гострий перець,зелений болгарський перець,шпинат
+updateVegetablesCollection(veggies, 'шпинат');
+// шпинат уже є в овочевій колекції.
 ```
 
 ## Поліфіл
@@ -134,7 +134,7 @@ if (!Array.prototype.indexOf) {
     "use strict";
     var k;
 
-    // 1. Нехай o буде результатом виклику ToObject, передаючи
+    // 1. Нехай o буде результатом виклику Object, передаючи
     //    значення this як аргумент.
     if (this == null) {
       throw new TypeError('"this" is null or not defined');
@@ -173,7 +173,7 @@ if (!Array.prototype.indexOf) {
       // b. Нехай kPresent буде результатом виклику
       //    внутрішнього методу HasProperty для o з аргументом Pk.
       //   Цей крок можна поєднати з c
-      // c. Якщо значеня kPresent - істинне, то
+      // c. Якщо значення kPresent - істинне, то
       //    i.  Нехай elementK буде результатом виклику
       //        внутрішнього методу Get для o з аргументом ToString(k).
       //   ii.  Нехай те саме буде результатом застосування
