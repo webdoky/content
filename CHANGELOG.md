@@ -2,17 +2,26 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unversioned]
+## [2021.11.26 - 2021.12.03]
+
+* **Переклад:** translation(CSS): /docs/Web/CSS/display ([d75a003](https://github.com/webdoky/content/commit/d75a00361e3563afb1303089e6736bd334f21737))
+
+## [2021.11.19 - 2021.11.26]
 
 * **Переклад:** /docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify ([cdc278d](https://github.com/webdoky/content/commit/cdc278d5171398f25c0499743c03e2a8229fcc80))
 * **Переклад:** /docs/Web/JavaScript/Reference/Global_Objects/Object/entries ([ed03db1](https://github.com/webdoky/content/commit/ed03db15c0bc478cdff3436264762ba17f567833))
 * **Переклад:** /Web/JavaScript/Reference/Operators/Conditional_Operator ([f07a3d1](https://github.com/webdoky/content/commit/f07a3d11a061802280422bb77612d42675320a60))
 * **Переклад:** /docs/Web/JavaScript/Reference/Global_Objects/String  ([714d21b](https://github.com/webdoky/content/commit/714d21ba70b03b9c4d32a42c366fab50faafe585))
 * **Виправлення:** check-file.js, strip regex ([6fc147f](https://github.com/webdoky/content/commit/6fc147f38dcdc5d9a36823be8d5122bffac3e8ff))
+
+## [2021.11.12 - 2021.11.19]
+
 * **Переклад:** bring the outdated JS pages up to date ([094768d](https://github.com/webdoky/content/commit/094768df258c8e13b93c34eac5f53376445362f1))
 * **Виправлення:** address the issues found by lt that happened while it wasn't working ([673ccf6](https://github.com/webdoky/content/commit/673ccf697483f7dc76db57392786866ba3fd7f5f))
+
+## [2021.11.05 - 2021.11.12]
+
 * **Переклад:** /docs/Web/JavaScript/Guide/Regular_Expressions  ([6f23828](https://github.com/webdoky/content/commit/6f238284e8d7759867612aa010694851758bfc38))
 * **Переклад:** /docs/Web/JavaScript/Reference/Operators  ([f4d1b83](https://github.com/webdoky/content/commit/f4d1b834c61cfb3d9aed8e7e9991f8466faa873b))
 * **Переклад:** /docs/Web/JavaScript/Reference/Global_Objects/Map  ([29ec306](https://github.com/webdoky/content/commit/29ec306a4ca5aa2adb8d051a0d30b3359bb89e50))
@@ -21,7 +30,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * **Переклад:** /web/javascript/reference/global_objects/array/splice/index.md  ([6dd4ab9](https://github.com/webdoky/content/commit/6dd4ab9b69fe0c898db53ba63fc0e5235f3d95ca))
 * **Виправлення:** fix indentation in js index ([e9f8a0f](https://github.com/webdoky/content/commit/e9f8a0fd89eb55ad1db153d9dd872b250dfe50d7))
 * **Переклад:** /docs/Web/JavaScript/Reference/Global_Objects/Array/includes ([b07cfc7](https://github.com/webdoky/content/commit/b07cfc799918e645360b38f81805d21764d96498))
+## [2021.10.29 - 2021.11.05]
+
 * **Переклад:** web/css/specificity/index.md  ([a3fa2a3](https://github.com/webdoky/content/commit/a3fa2a34f3bb2debfc7fdac08f1baf3b87964987))
+
+## [2021.09.03 - 2021.10.29]
+
 * **Переклад:** web/css/-moz-image-region/index.md  ([8e91ebb](https://github.com/webdoky/content/commit/8e91ebb76df2ccd525bf58746cd9b0fda0e6d5fb))
 * **Переклад:** web/css/-moz-orient/index.md  ([68738c0](https://github.com/webdoky/content/commit/68738c0eed7d9744aece0549e65b7d8f523951ab))
 * **Переклад:** web/css/-moz-image-rect/index.md  ([ccd2f00](https://github.com/webdoky/content/commit/ccd2f00b868f7e9df3e157ca02f5dde3f0d3b9ad))
