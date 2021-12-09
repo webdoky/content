@@ -10,7 +10,7 @@ browser-compat: javascript.builtins.Math.PI
 ---
 {{JSRef}}
 
-Властивість **`Math.PI`** позначає співвідношення довжини кола до його діаметр, що наближено дорівнює 3.14159:
+Властивість **`Math.PI`** позначає співвідношення довжини кола до його діаметру, що наближено дорівнює 3.14159:
 
 <math display="block"><semantics><mrow><mstyle mathvariant="monospace"><mi>Math.PI</mi></mstyle><mo>=</mo><mi>π</mi><mo>≈</mo><mn>3.14159</mn></mrow><annotation encoding="TeX">\mathtt{\mi{Math.PI}} = \pi \approx 3.14159</annotation></semantics></math>
 
@@ -18,7 +18,7 @@ browser-compat: javascript.builtins.Math.PI
 
 ## Опис
 
-Оскільки `PI` — це статична властивість об'єкта `Math`, її потрібно використовувати через `Math.PI`. Не слід звертатись до неї, як до властивості створеного вами об'єкту `Math` (`Math` не є конструктором).
+Оскільки `PI` — це статична властивість об'єкта `Math`, її потрібно використовувати через `Math.PI`. Не слід звертатись до неї як до властивості власноруч створеного екземпляра `Math` (`Math` не є конструктором).
 
 ## Приклади
 
