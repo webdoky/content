@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2021.12.03 - 2021.12.10]
+
+* **Переклад:** translation(CSS): /docs/Web/CSS/display ([e59c75e](https://github.com/webdoky/content/commit/e59c75ee2ac7cdb73f6279ec64c23dfc318bb26e))
+* **Переклад:** translation(JS): docs/Web/JavaScript/Reference/Global_Objects/Object/keys ([533fa52](https://github.com/webdoky/content/commit/533fa52ef6e8a8c1bafed1e3fe6510c784e24c3a))
+* **Переклад:** translation(JS): docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf ([c6b3671](https://github.com/webdoky/content/commit/c6b367180cf86e398f699946b11e135ca1dae889))
+
 ## [2021.11.26 - 2021.12.03]
 
 * **Переклад:** translation(CSS): /docs/Web/CSS/display ([d75a003](https://github.com/webdoky/content/commit/d75a00361e3563afb1303089e6736bd334f21737))
