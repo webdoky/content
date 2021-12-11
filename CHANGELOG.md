@@ -2,10 +2,61 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [2021.11.26 - 2021.12.03]
+
+* **Переклад:** translation(CSS): /docs/Web/CSS/display ([d75a003](https://github.com/webdoky/content/commit/d75a00361e3563afb1303089e6736bd334f21737))
+
+## [2021.11.19 - 2021.11.26]
+
+* **Переклад:** /docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify ([cdc278d](https://github.com/webdoky/content/commit/cdc278d5171398f25c0499743c03e2a8229fcc80))
+* **Переклад:** /docs/Web/JavaScript/Reference/Global_Objects/Object/entries ([ed03db1](https://github.com/webdoky/content/commit/ed03db15c0bc478cdff3436264762ba17f567833))
+* **Переклад:** /Web/JavaScript/Reference/Operators/Conditional_Operator ([f07a3d1](https://github.com/webdoky/content/commit/f07a3d11a061802280422bb77612d42675320a60))
+* **Переклад:** /docs/Web/JavaScript/Reference/Global_Objects/String  ([714d21b](https://github.com/webdoky/content/commit/714d21ba70b03b9c4d32a42c366fab50faafe585))
+* **Виправлення:** check-file.js, strip regex ([6fc147f](https://github.com/webdoky/content/commit/6fc147f38dcdc5d9a36823be8d5122bffac3e8ff))
+
+## [2021.11.12 - 2021.11.19]
+
+* **Переклад:** bring the outdated JS pages up to date ([094768d](https://github.com/webdoky/content/commit/094768df258c8e13b93c34eac5f53376445362f1))
+* **Виправлення:** address the issues found by lt that happened while it wasn't working ([673ccf6](https://github.com/webdoky/content/commit/673ccf697483f7dc76db57392786866ba3fd7f5f))
+
+## [2021.11.05 - 2021.11.12]
+
+* **Переклад:** /docs/Web/JavaScript/Guide/Regular_Expressions  ([6f23828](https://github.com/webdoky/content/commit/6f238284e8d7759867612aa010694851758bfc38))
+* **Переклад:** /docs/Web/JavaScript/Reference/Operators  ([f4d1b83](https://github.com/webdoky/content/commit/f4d1b834c61cfb3d9aed8e7e9991f8466faa873b))
+* **Переклад:** /docs/Web/JavaScript/Reference/Global_Objects/Map  ([29ec306](https://github.com/webdoky/content/commit/29ec306a4ca5aa2adb8d051a0d30b3359bb89e50))
+* **Переклад:** /docs/Web/JavaScript/Reference/Global_Objects/Array/sort ([526bbfe](https://github.com/webdoky/content/commit/526bbfe097c8b16d0c8bbb3c4cb765060bbc6f1c))
+* **Переклад:** Web/JavaScript/Reference/Global_Objects/Array/Reduce  ([4225df2](https://github.com/webdoky/content/commit/4225df233528c6a54725d50dd3f48b0c4b4b044a))
+* **Переклад:** /web/javascript/reference/global_objects/array/splice/index.md  ([6dd4ab9](https://github.com/webdoky/content/commit/6dd4ab9b69fe0c898db53ba63fc0e5235f3d95ca))
+* **Виправлення:** fix indentation in js index ([e9f8a0f](https://github.com/webdoky/content/commit/e9f8a0fd89eb55ad1db153d9dd872b250dfe50d7))
+* **Переклад:** /docs/Web/JavaScript/Reference/Global_Objects/Array/includes ([b07cfc7](https://github.com/webdoky/content/commit/b07cfc799918e645360b38f81805d21764d96498))
+## [2021.10.29 - 2021.11.05]
+
+* **Переклад:** web/css/specificity/index.md  ([a3fa2a3](https://github.com/webdoky/content/commit/a3fa2a34f3bb2debfc7fdac08f1baf3b87964987))
+
+## [2021.09.03 - 2021.10.29]
+
+* **Переклад:** web/css/-moz-image-region/index.md  ([8e91ebb](https://github.com/webdoky/content/commit/8e91ebb76df2ccd525bf58746cd9b0fda0e6d5fb))
+* **Переклад:** web/css/-moz-orient/index.md  ([68738c0](https://github.com/webdoky/content/commit/68738c0eed7d9744aece0549e65b7d8f523951ab))
+* **Переклад:** web/css/-moz-image-rect/index.md  ([ccd2f00](https://github.com/webdoky/content/commit/ccd2f00b868f7e9df3e157ca02f5dde3f0d3b9ad))
+* **Переклад:** web/css/-moz-outline-radius-*/index.md ([bc45079](https://github.com/webdoky/content/commit/bc450797051ee88a4d7eb96ac58d13e93906ee42))
+* **Виправлення:** Fixed typos & ran check  ([54ba4b6](https://github.com/webdoky/content/commit/54ba4b6ff1395551f05599dc1d5eeffcbb730691))
+* **Переклад:** web/css/-moz-force-broken-image-icon/index.md  ([26e9273](https://github.com/webdoky/content/commit/26e9273d6325171716455f2dae4ad18d079e346d))
+* **Переклад:** web/css/-moz-float-edge/index.md ([2f60409](https://github.com/webdoky/content/commit/2f604092fb1ee39fd5a026f003116d80d6d033c2))
+* **Переклад:** Translation of web/javascript/guide ([a1f3756](https://github.com/webdoky/content/commit/a1f37560a573093948e0e6e23933d5518808cb30))
+* **Переклад:** Translation of web/css/-moz-context-properties/index.md ([a47b5c8](https://github.com/webdoky/content/commit/a47b5c8d8b2e80fba40c38e37ea2bcb9f5c056b2))
+* **Переклад:** translate javascript/reference/global_objects/date/index.md ([438d561](https://github.com/webdoky/content/commit/438d56108483330f34ea504c132cb47366623bec))
+* **Переклад:** Translation of web/css/--\_star\_/index.md ([b6d075c](https://github.com/webdoky/content/commit/b6d075c1dcca62fd5d8155c2d15ae55b78621506))
+* **Переклад:** translate web-js-ref-global_objects-array-filter page ([524f49c](https://github.com/webdoky/content/commit/524f49cc7547bbdb4a0c8375ba379698f0540454))
+* **Переклад:** translate reference page for Array.map() ([96d35f1](https://github.com/webdoky/content/commit/96d35f159780ed539568d58cb34fd3697e8b9e3d))
+* **Переклад:** translate the reference page of Array.find() ([c7705e3](https://github.com/webdoky/content/commit/c7705e3d1899b7eb0e2e9a01c66ad0e60ac55e93))
+* **Переклад:** translate reference page for Array.slice() method ([ab6513b](https://github.com/webdoky/content/commit/ab6513bceeb4d2f12d10814a1fa34c6f749ee498))
+* **Переклад:** translate index reference page for Promise ([439b8c6](https://github.com/webdoky/content/commit/439b8c6557d4f114dfb64229814176f8cf5e16bc))
+* **Переклад:** Translation of web/css/index.md ([587cf30](https://github.com/webdoky/content/commit/587cf302ae4971824aad953e3da8d3e1ac8d7353))
+* **Переклад:** web-js-ref-global_objects-array-foreach page ([6ebdfd0](https://github.com/webdoky/content/commit/6ebdfd05ceb43db449c02c37ca81afc5a6e8b8b8))
+* **Виправлення:** виправив посилання на вебдоки всередині вмісту ([81df5ea](https://github.com/webdoky/content/commit/81df5ea8396c5da42d8aa6fa5ba0170b410def5b))
 
 ## [Unreleased]
-
 * **Переклад:** перекладено web/index ([82149a4](https://github.com/webdoky/content/commit/82149a40d2c98e26d72018e74ad5094ae2195da7))
 * **Рутина:** додано кращу атрибуцію в ліцензії ([87ce238b](https://github.com/webdoky/content/commit/87ce238b4710f1b3c28b59846b46e0b05c373c97))
 * **Рутина:** додано ліцензію ([2f79da96](https://github.com/webdoky/content/commit/2f79da963c9040500a2da8c60ed0633a589917eb))
