@@ -3,9 +3,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2021.12.10 - 2021.12.17]
+
+* **Переклад:** translation(JS): Math ceil and floor ([e7fba7d](https://github.com/webdoky/content/commit/e7fba7d11c9dc62ed3c8eb6e235164f84281f40f))
+* **Переклад:** translation(JS): Math sqrt and cbrt ([460a1e4](https://github.com/webdoky/content/commit/460a1e42ab9128c125d66cb63eaececf992f166f))
+* **Переклад:** translation(JS): Math atan, atan2 and atanh ([ae69964](https://github.com/webdoky/content/commit/ae699649c0d51d1ab5616f02954328ca87bc5d04))
+* **Переклад:** translation(JS): Math asin and asinh ([f3ee4ff](https://github.com/webdoky/content/commit/f3ee4ffffdf08e844320210a922f41b694a7b2f6))
+* **Переклад:** translation(JS): /Web/JavaScript/Reference/Global_Objects/Math/acosh ([1f3ffa6](https://github.com/webdoky/content/commit/1f3ffa68397751a3bd74763eecd06515454ecb00))
+* **Переклад:** translation(JS): /Web/JavaScript/Reference/Global_Objects/Math/acos ([8e84c7c](https://github.com/webdoky/content/commit/8e84c7c6e1ccd638260af13b159780f657b6cc88))
+* **Переклад:** translation(JS): Math constants: log2e, pi, sqrt1_2, sqrt2 ([c0da692](https://github.com/webdoky/content/commit/c0da6921a7d2f39f38ef9aadd6bda48ac678c856))
+* **Переклад:** translation(JS): Math: constants e, ln10, ln2, log10e ([ec285c2](https://github.com/webdoky/content/commit/ec285c2a940ec65886a37184ec5223f57c684bd0))
+* **Переклад:** translation(JS): /Web/JavaScript/Reference/Global_Objects/Math ([8d917b5](https://github.com/webdoky/content/commit/8d917b52382e0e356d15e37119db490b34967d98))
+* **Переклад:** translation(JS): docs/Web/JavaScript/Reference/Global_Objects/String/split ([8d917b5](https://github.com/webdoky/content/commit/8e4b33dc6a8c4fad4a49ff0bf61a2569ce3e165d))
+
 ## [2021.12.03 - 2021.12.10]
 
-* **Переклад:** translation(CSS): /docs/Web/CSS/display ([e59c75e](https://github.com/webdoky/content/commit/e59c75ee2ac7cdb73f6279ec64c23dfc318bb26e))
+* **Переклад:** translation(JS): docs/Web/JavaScript/Reference/Classes ([e59c75e](https://github.com/webdoky/content/commit/e59c75ee2ac7cdb73f6279ec64c23dfc318bb26e))
 * **Переклад:** translation(JS): docs/Web/JavaScript/Reference/Global_Objects/Object/keys ([533fa52](https://github.com/webdoky/content/commit/533fa52ef6e8a8c1bafed1e3fe6510c784e24c3a))
 * **Переклад:** translation(JS): docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf ([c6b3671](https://github.com/webdoky/content/commit/c6b367180cf86e398f699946b11e135ca1dae889))
 
