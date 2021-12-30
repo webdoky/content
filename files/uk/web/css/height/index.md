@@ -16,7 +16,7 @@ browser-compat: css.properties.height
 
 {{CSSRef}}
 
-Властивість CSS **`height`** вказує висоту елемента. Як усталено, властивість визначає висоту [області вмісту](/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#content_area). Втім, якщо властивість {{cssxref("box-sizing")}} має значення `border-box`, то вказане значення стає висотою [відмежованої області](/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#border_area).
+Властивість CSS **`height`** вказує висоту елемента. Як усталено, властивість визначає висоту [області вмісту](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#content_area). Втім, якщо властивість {{cssxref("box-sizing")}} має значення `border-box`, то вказане значення стає висотою [відмежованої області](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#border_area).
 
 {{EmbedInteractiveExample("pages/css/height.html")}}
 
@@ -50,7 +50,7 @@ height: unset;
 - {{cssxref("&lt;length&gt;")}}
   - : Визначає висоту у вигляді абсолютного значення.
 - {{cssxref("&lt;percentage&gt;")}}
-  - : Визначає висоту у вигляді процентів від висоти контейнерного блока.
+  - : Визначає висоту у вигляді відсотків від висоти контейнерного блока.
 - `auto`
   - : Браузер обчислить та обере висоту для обраного елемента.
 - `max-content`
@@ -77,7 +77,7 @@ height: unset;
 
 ## Приклади
 
-### Встановлення висоти за допомогою пікселів та процентів
+### Встановлення висоти за допомогою пікселів та відсотків
 
 #### HTML
 
@@ -130,8 +130,8 @@ div {
 
 ## Дивіться також
 
-- [Коробкова модель](/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+- [Блокова модель](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
 - {{cssxref("width")}}
 - {{cssxref("box-sizing")}}
 - {{cssxref("min-height")}}, {{cssxref("max-height")}}
-- Відображені логічні властивості: {{cssxref("block-size")}}, {{cssxref("inline-size")}}
+- Відповідні логічні властивості: {{cssxref("block-size")}}, {{cssxref("inline-size")}}
