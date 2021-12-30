@@ -49,7 +49,7 @@ width: unset;
 - {{cssxref("&lt;length&gt;")}}
   - : Визначає ширину у вигляді абсолютного значення.
 - {{cssxref("&lt;percentage&gt;")}}
-  - : Визначає ширину у вигляді процентів від ширини контейнерного блока.
+  - : Визначає ширину у вигляді відсотків від ширини контейнерного блока.
 - `auto`
   - : Браузер обчислить та обере ширину для обраного елемента.
 - `max-content`
@@ -115,7 +115,7 @@ p.goldie {
 
 {{EmbedLiveSample('Pixels_and_ems', '500px', '64px')}}
 
-### Проценти
+### Відсотки
 
 ```css
 .percent {
@@ -176,8 +176,8 @@ p.minblue {
 
 ## Дивіться також
 
-- [Коробкова модель](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+- [Блокова модель](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
 - {{cssxref("height")}}
 - {{cssxref("box-sizing")}}
 - {{cssxref("min-width")}}, {{cssxref("max-width")}}
-- Відображені логічні властивості: {{cssxref("block-size")}}, {{cssxref("inline-size")}}
+- Відповідні логічні властивості: {{cssxref("block-size")}}, {{cssxref("inline-size")}}
