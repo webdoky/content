@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2021-12-31 - 2022-01-07]
+
+...
+
+## [2021-12-31 - 2022-01-07]
+
+...
+
 ## [2021.12.24 - 2021.12.31]
 
 * **Переклад:** translation(CSS): css/css_flexible_box_layout/aligning_items_in_a_flex_container ([776c96a](https://github.com/webdoky/content/commit/776c96a2fd3ec79ea5e958c19cf43eb8a5fa47ee))
