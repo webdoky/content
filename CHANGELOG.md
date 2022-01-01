@@ -26,6 +26,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 * **Оновлення перекладу:** Translation(CSS): display. Update ([898d38a](https://github.com/webdoky/content/commit/898d38aeef49cf8e12d51062351b240ac8e5cdd2))
 
 ## [2021.12.17 - 2021.12.24]
+
+...
 ## [2021.12.10 - 2021.12.17]
 
 * **Переклад:** translation(JS): Math ceil and floor ([e7fba7d](https://github.com/webdoky/content/commit/e7fba7d11c9dc62ed3c8eb6e235164f84281f40f))
