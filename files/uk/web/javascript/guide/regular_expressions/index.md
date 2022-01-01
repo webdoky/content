@@ -10,6 +10,7 @@ tags:
   - Regular Expressions
   - regex
 ---
+
 {{jsSidebar("JavaScript Guide")}} {{PreviousNext("Web/JavaScript/Guide/Text_formatting", "Web/JavaScript/Guide/Indexed_collections")}}
 
 Регулярні вирази — це паттерни, які застосовуються для пошуку збігів з комбінаціями символів у рядках. У JavaScript регулярні вирази також є об'єктами. Ці паттерни використовуються методами об'єкта {{jsxref("RegExp")}}: {{jsxref("RegExp.exec", "exec()")}} і {{jsxref("RegExp.test", "test()")}}, і методами {{jsxref("String")}}: {{jsxref("String.match", "match()")}}, {{jsxref("String.matchAll", "matchAll()")}}, {{jsxref("String.replace", "replace()")}}, {{jsxref("String.replaceAll", "replaceAll()")}}, {{jsxref("String.search", "search()")}} і {{jsxref("String.split", "split()")}}.
@@ -22,8 +23,8 @@ tags:
 - Використавши літерал регулярного виразу, який складається з паттерну, оточеного косими рисками, як показано нижче:
 
   ```js
-    let re = /ab+c/;
-    ```
+  let re = /ab+c/;
+  ```
 
   Літерали регулярного виразу забезпечують компіляцію виразу під час завантаження скрипта.
   Якщо регулярний вираз залишається незмінним, такий варіант може покращити швидкодію.
@@ -31,8 +32,8 @@ tags:
 - Або ж викликавши конструктор об'єкту {{jsxref("RegExp")}}, як показано:
 
   ```js
-    let re = new RegExp('ab+c');
-    ```
+  let re = new RegExp('ab+c');
+  ```
 
   Використання конструктора забезпечує компіляцію регулярного виразу під час виконання програми.
   Конструктор слід використовувати, якщо наперед невідомо, чи паттерн буде змінюватись, або ж якщо паттерн іще невідомий, і його буде отримано пізніше з інших джерел (наприклад, введено користувачем).
@@ -192,16 +193,16 @@ _Чому це не вбудовано всередину JavaScript?_ Була 
 
 Регулярні вирази з методами об'єкту {{jsxref("RegExp")}}, такими як {{jsxref("RegExp/test", "test()")}} і {{jsxref("RegExp/exec", "exec()")}}, а також із методами {{jsxref("String")}}: {{jsxref("String/match", "match()")}}, {{jsxref("String/replace", "replace()")}}, {{jsxref("String/search", "search()")}} і {{jsxref("String/split", "split()")}}.
 
-| Метод                                                            | Опис                                                                                                                |
-| ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| {{jsxref("RegExp.exec", "exec()")}}                              | Виконує пошук збігу в рядку. Повертає масив з інформацією або ж `null`, якщо збігів не знайдено.                    |
-| {{jsxref("RegExp.test", "test()")}}                              | Перевіряє рядок на збіг. Повертає `true` або `false`.                                                               |
-| {{jsxref("String.match", "match()")}}                            | Повертає масив, що містить всі знайдені збіги, включно з групами захоплення, або ж `null`, якщо збігів не знайдено. |
-| {{jsxref("String.matchAll", "matchAll()")}}                      | Повертає ітератор, що містить всі знайдені збіги, включно з групами захоплення.                                     |
-| {{jsxref("String.search", "search()")}}                          | Перевіряє рядок на наявність збігів. Повертає індекс збігу, або `-1`, якщо пошук завершився невдачею.               |
-| {{jsxref("String.replace", "replace()")}}                        | Виконує пошук збігу в рядку, і заміняє знайдену частину рядка переданим рядком для заміни.                          |
-| {{jsxref("String.replaceAll", "replaceAll()")}}                  | Виконує пошук всіх збігів у рядку, і заміняє знайдені частини рядка переданим рядком для заміни.                    |
-| {{jsxref("String.split", "split()")}}                            | Використовує регулярний вираз або фіксований рядок для того, щоб розбити початковий рядок на масив підрядків.       |
+| Метод                                           | Опис                                                                                                                |
+| ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| {{jsxref("RegExp.exec", "exec()")}}             | Виконує пошук збігу в рядку. Повертає масив з інформацією або ж `null`, якщо збігів не знайдено.                    |
+| {{jsxref("RegExp.test", "test()")}}             | Перевіряє рядок на збіг. Повертає `true` або `false`.                                                               |
+| {{jsxref("String.match", "match()")}}           | Повертає масив, що містить всі знайдені збіги, включно з групами захоплення, або ж `null`, якщо збігів не знайдено. |
+| {{jsxref("String.matchAll", "matchAll()")}}     | Повертає ітератор, що містить всі знайдені збіги, включно з групами захоплення.                                     |
+| {{jsxref("String.search", "search()")}}         | Перевіряє рядок на наявність збігів. Повертає індекс збігу, або `-1`, якщо пошук завершився невдачею.               |
+| {{jsxref("String.replace", "replace()")}}       | Виконує пошук збігу в рядку, і заміняє знайдену частину рядка переданим рядком для заміни.                          |
+| {{jsxref("String.replaceAll", "replaceAll()")}} | Виконує пошук всіх збігів у рядку, і заміняє знайдені частини рядка переданим рядком для заміни.                    |
+| {{jsxref("String.split", "split()")}}           | Використовує регулярний вираз або фіксований рядок для того, щоб розбити початковий рядок на масив підрядків.       |
 
 Якщо потрібно визначити, чи паттерн присутній в рядку, використовуйте методи `test()` або `search()`. Для отримання докладнішої інформації (коштом повільнішого виконання) застосовуйте методи `exec()` чи `match()`.
 Якщо використовується метод `exec()` чи `match()`, і знаходиться збіг, ці методи повертають масив, і оновлюють властивості пов'язаного об'єкта регулярного виразу, і також властивості глобального об'єкта `RegExp`. Якщо збіг знайти не вдалося, то метод `exec()` поверне `null` (який зрештою зводиться до `false`).
@@ -217,9 +218,9 @@ var myArray = myRe.exec('cdbbdbsbz');
 
 ```js
 var myArray = /d(b+)d/g.exec('cdbbdbsbz');
-    // так само, як і з "cdbbdbsbz".match(/d(b+)d/g); однак,
-    // "cdbbdbsbz".match(/d(b+)d/g) виводить Array [ "dbbd" ], в той час як
-    // /d(b+)d/g.exec('cdbbdbsbz') виводить Array [ 'dbbd', 'bb', index: 1, input: 'cdbbdbsbz' ].
+// так само, як і з "cdbbdbsbz".match(/d(b+)d/g); однак,
+// "cdbbdbsbz".match(/d(b+)d/g) виводить Array [ "dbbd" ], в той час як
+// /d(b+)d/g.exec('cdbbdbsbz') виводить Array [ 'dbbd', 'bb', index: 1, input: 'cdbbdbsbz' ].
 ```
 
 (Дивіться більше інформації цю різницю в поведінці у частині [Застосування прапорця глобального пошуку з `exec()`](#using_the_global_search_flag_with_exec).)
@@ -312,15 +313,15 @@ console.log('Поле lastIndex має значення ' + /d(b+)d/g.lastIndex)
 
 Регулярні вирази мають необов'язкові опції, що дозволяє використовувати таку функціональність, як глобальний пошук чи пошук без врахування регістру літер. Ці опції можна використовувати окремо або разом, у будь-якому порядку, і вони входять в сам регулярний вираз.
 
-| Прапорець | Опис                                                                                                                                         | Відповідна властивість                                                                                 |
-| ---- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| `d`  | Згенерувати індекси для збігів підрядків.                                                                                                                     | [`RegExp.prototype.hasIndices`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/hasIndices) |
-| `g`  | Глобальний пошук.                                                                                                                                      | [`RegExp.prototype.global`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/global)         |
-| `i`  | Пошук, нечутливий до регістру.                                                                                                                            | [`RegExp.prototype.ignoreCase`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/ignoreCase) |
-| `m`  | Багаторядковий пошук.                                                                                                                                  | [`RegExp.prototype.multiline`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/multiline)   |
-| `s`  | Дозволяє `.` позначати символи початку нового рядка.                                                                                                             | [`RegExp.prototype.dotAll`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/dotAll)         |
-| `u`  | "unicode"; сприймає паттерн як послідовність кодів юнікоду.                                                                                    | [`RegExp.prototype.unicode`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/unicode)       |
-| `y`  | Виконує «липкий» пошук, який починає пошук збігів з поточної позиції цільового рядка. Дивіться {{jsxref("RegExp.sticky", "sticky")}}. | [`RegExp.prototype.sticky`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/sticky)         |
+| Прапорець | Опис                                                                                                                                  | Відповідна властивість                                                                              |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `d`       | Згенерувати індекси для збігів підрядків.                                                                                             | [`RegExp.prototype.hasIndices`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/hasIndices) |
+| `g`       | Глобальний пошук.                                                                                                                     | [`RegExp.prototype.global`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/global)         |
+| `i`       | Пошук, нечутливий до регістру.                                                                                                        | [`RegExp.prototype.ignoreCase`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/ignoreCase) |
+| `m`       | Багаторядковий пошук.                                                                                                                 | [`RegExp.prototype.multiline`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/multiline)   |
+| `s`       | Дозволяє `.` позначати символи початку нового рядка.                                                                                  | [`RegExp.prototype.dotAll`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/dotAll)         |
+| `u`       | "unicode"; сприймає паттерн як послідовність кодів юнікоду.                                                                           | [`RegExp.prototype.unicode`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/unicode)       |
+| `y`       | Виконує «липкий» пошук, який починає пошук збігів з поточної позиції цільового рядка. Дивіться {{jsxref("RegExp.sticky", "sticky")}}. | [`RegExp.prototype.sticky`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/sticky)         |
 
 Щоб включити опцію («flag») в регулярний вираз, використовується такий синтаксис:
 
@@ -368,7 +369,8 @@ var re = new RegExp('\\w+\\s', 'g');
 Поведінка, що асоціюється з використанням прапорця `g` є дещо іншою, якщо використовується метод `.exec()`. Ролі "класу" та "аргументу" міняються місцями: у випадку з `.match()` клас (або тип даних) рядка володіє методом, а регулярний вираз — лише аргумент, тоді як у випадку з `.exec()` це сам регулярний вираз володіє методом, а рядок — просто аргумент. Порівняємо _`str.match(re)`_ із _`re.exec(str)`_. Прапорець `g` використовується з методом **`.exec()`** для отримання ітеративного виконання.
 
 ```js
-var xArray; while(xArray = re.exec(str)) console.log(xArray);
+var xArray;
+while ((xArray = re.exec(str))) console.log(xArray);
 // виводить:
 // ["fee ", index: 0, input: "fee fi fo fum"]
 // ["fi ", index: 4, input: "fee fi fo fum"]
@@ -403,12 +405,14 @@ var xArray; while(xArray = re.exec(str)) console.log(xArray);
 ```html
 <p>
   Введіть ваш номер телефону (з кодом області) та натисність "Перевірити".
-  <br>
+  <br />
   Очікуваний формат номера: ###-###-####.
 </p>
 <form action="#" onSubmit="return false">
-  <input id="phone">
-    <button onClick="testInfo(document.querySelector('#phone'));">Перевірити</button>
+  <input id="phone" />
+  <button onClick="testInfo(document.querySelector('#phone'));">
+    Перевірити
+  </button>
 </form>
 <p id="out"></p>
 ```

@@ -8,6 +8,7 @@ tags:
   - Reference
 browser-compat: javascript.builtins.Math.SQRT1_2
 ---
+
 {{JSRef}}
 
 Властивість **`Math.SQRT1_2`** позначає квадратний корінь з 1/2, що наближено дорівнює 0.707:

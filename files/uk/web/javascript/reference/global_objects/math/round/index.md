@@ -9,6 +9,7 @@ tags:
   - Reference
 browser-compat: javascript.builtins.Math.round
 ---
+
 {{JSRef}}
 
 Функція **`Math.round()`** повертає значення числа, округлене до найближчого цілого.
@@ -18,7 +19,7 @@ browser-compat: javascript.builtins.Math.round
 ## Синтаксис
 
 ```js
-Math.round(x)
+Math.round(x);
 ```
 
 ### Параметри
@@ -41,10 +42,10 @@ Math.round(x)
 ### Застосування `round()`
 
 ```js
-Math.round( 20.49); //  20
-Math.round( 20.5 ); //  21
-Math.round( 42   ); //  42
-Math.round(-20.5 ); // -20
+Math.round(20.49); //  20
+Math.round(20.5); //  21
+Math.round(42); //  42
+Math.round(-20.5); // -20
 Math.round(-20.51); // -21
 ```
 

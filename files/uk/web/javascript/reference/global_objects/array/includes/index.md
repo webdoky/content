@@ -12,6 +12,7 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.Array.includes
 ---
+
 {{JSRef}}
 
 Метод **`includes()`** визначає, чи містить масив вказане значення серед своїх елементів, і повертає `true` чи `false` відповідно до результату.
@@ -21,8 +22,8 @@ browser-compat: javascript.builtins.Array.includes
 ## Синтаксис
 
 ```js
-includes(searchElement)
-includes(searchElement, fromIndex)
+includes(searchElement);
+includes(searchElement, fromIndex);
 ```
 
 ### Параметри
@@ -52,12 +53,13 @@ includes(searchElement, fromIndex)
 ## Приклади
 
 ```js
-[1, 2, 3].includes(2)         // true
-[1, 2, 3].includes(4)         // false
-[1, 2, 3].includes(3, 3)      // false
-[1, 2, 3].includes(3, -1)     // true
-[1, 2, NaN].includes(NaN)     // true
-["1", "2", "3"].includes(3)   // false
+[1, 2, 3]
+  .includes(2) // true
+  [(1, 2, 3)].includes(4) // false
+  [(1, 2, 3)].includes(3, 3) // false
+  [(1, 2, 3)].includes(3, -1) // true
+  [(1, 2, NaN)].includes(NaN) // true
+  [('1', '2', '3')].includes(3); // false
 ```
 
 ### Якщо `fromIndex` дорівнює довжині масиву, або більший за неї
@@ -65,10 +67,10 @@ includes(searchElement, fromIndex)
 У випадку, якщо `fromIndex` більший або дорівнює довжині масиву – буде повернуто значення `false`. В такому разі пошук виконуватись не буде.
 
 ```js
-let arr = ['a', 'b', 'c']
+let arr = ['a', 'b', 'c'];
 
-arr.includes('c', 3)    // false
-arr.includes('c', 100)  // false
+arr.includes('c', 3); // false
+arr.includes('c', 100); // false
 ```
 
 ### Якщо обчислений індекс менший за 0
@@ -80,12 +82,12 @@ arr.includes('c', 100)  // false
 // fromIndex дорівнює -100
 // обчислений індекс дорівнює 3 + (-100) = -97
 
-let arr = ['a', 'b', 'c']
+let arr = ['a', 'b', 'c'];
 
-arr.includes('a', -100) // true
-arr.includes('b', -100) // true
-arr.includes('c', -100) // true
-arr.includes('a', -2)   // false
+arr.includes('a', -100); // true
+arr.includes('b', -100); // true
+arr.includes('c', -100); // true
+arr.includes('a', -2); // false
 ```
 
 ### Застосування includes() як загального методу
@@ -95,10 +97,10 @@ arr.includes('a', -2)   // false
 Наступний приклад ілюструє виклик методу `includes()` на об'єкті [arguments](/uk/docs/Web/JavaScript/Reference/Functions/arguments) функції.
 
 ```js
-(function() {
-  console.log(Array.prototype.includes.call(arguments, 'a'))  // true
-  console.log(Array.prototype.includes.call(arguments, 'd'))  // false
-})('a','b','c')
+(function () {
+  console.log(Array.prototype.includes.call(arguments, 'a')); // true
+  console.log(Array.prototype.includes.call(arguments, 'd')); // false
+})('a', 'b', 'c');
 ```
 
 ## Специфікації

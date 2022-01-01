@@ -8,6 +8,7 @@ tags:
   - Reference
 browser-compat: javascript.builtins.Math.log
 ---
+
 {{JSRef}}
 
 Функція **`Math.log()`** повертає натуральний логарифм (за основою {{jsxref("Math.E", "e")}}) числа, а саме:
@@ -44,7 +45,7 @@ browser-compat: javascript.builtins.Math.log
 ## Синтаксис
 
 ```js
-Math.log(x)
+Math.log(x);
 ```
 
 ### Параметри
@@ -72,8 +73,8 @@ Math.log(x)
 
 ```js
 Math.log(-1); // NaN, вихід за межі області визначення
-Math.log(0);  // -Infinity
-Math.log(1);  // 0
+Math.log(0); // -Infinity
+Math.log(1); // 0
 Math.log(10); // 2.302585092994046
 ```
 

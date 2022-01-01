@@ -11,6 +11,7 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.Array.sort
 ---
+
 {{JSRef}}
 
 Метод **`sort()`** сортує елементи масиву _[на місці](https://en.wikipedia.org/wiki/In-place_algorithm)_ й повертає відсортований масив. Усталений порядок сортування — в порядку зростання, заснований на перетворенні елементів у рядки, а потім порівнянні їхніх послідовностей зі значень кодів UTF-16.
@@ -59,7 +60,7 @@ sort(function compareFn(firstEl, secondEl) { ... })
 Якщо було передано функцію порівняння `compareFunction`, всі елементи масиву, котрі не є `undefined`, сортуються відповідно поверненого значення функції порівняння (всі елементи, які містять `undefined`, складаються в кінець масиву без викликання `compareFunction`).
 
 | Повернене значення `compareFunction(a, b)` | Порядок сортування                    |
-|--------------------------------------------|---------------------------------------|
+| ------------------------------------------ | ------------------------------------- |
 | > 0                                        | сортує `b` перед `a`                  |
 | < 0                                        | сортує `a` перед `b`                  |
 | === 0                                      | зберігає початковий порядок `a` і `b` |
@@ -93,7 +94,7 @@ function compareNumbers(a, b) {
 
 ```js
 var numbers = [4, 2, 5, 1, 3];
-numbers.sort(function(a, b) {
+numbers.sort(function (a, b) {
   return a - b;
 });
 console.log(numbers);
@@ -120,7 +121,7 @@ var items = [
   { name: 'And', value: 45 },
   { name: 'The', value: -12 },
   { name: 'Magnetic', value: 13 },
-  { name: 'Zeros', value: 37 }
+  { name: 'Zeros', value: 37 },
 ];
 
 // сортувати за властивістю value
@@ -129,7 +130,7 @@ items.sort(function (a, b) {
 });
 
 // сортувати за властивістю name
-items.sort(function(a, b) {
+items.sort(function (a, b) {
   var nameA = a.name.toUpperCase(); // ігноруємо малі та великі літери
   var nameB = b.name.toUpperCase(); // ігноруємо малі та великі літери
   if (nameA < nameB) {
@@ -200,7 +201,7 @@ const data = ['delta', 'alpha', 'charlie', 'bravo'];
 // тимчасовий масив містить об'єкти з позицією елемента в оригінальному масиві, і значенням для сортування
 const mapped = data.map((v, i) => {
   return { i, value: someSlowOperation(v) };
-})
+});
 
 // сортуємо тимчасовий масив, що містить уже обраховані значення
 mapped.sort((a, b) => {
@@ -213,7 +214,7 @@ mapped.sort((a, b) => {
   return 0;
 });
 
-const result = mapped.map(v => data[v.i]);
+const result = mapped.map((v) => data[v.i]);
 ```
 
 Існує опенсорсна бібліотека [mapsort](https://null.house/open-source/mapsort), котра реалізовує такий підхід.
@@ -226,10 +227,10 @@ const result = mapped.map(v => data[v.i]);
 
 ```js
 const students = [
-  { name: "Alex",   grade: 15 },
-  { name: "Devlin", grade: 15 },
-  { name: "Eagle",  grade: 13 },
-  { name: "Sam",    grade: 14 },
+  { name: 'Alex', grade: 15 },
+  { name: 'Devlin', grade: 15 },
+  { name: 'Eagle', grade: 13 },
+  { name: 'Sam', grade: 14 },
 ];
 ```
 
@@ -243,10 +244,10 @@ students.sort((firstItem, secondItem) => firstItem.grade - secondItem.grade);
 
 ```js
 [
-  { name: "Eagle",  grade: 13 },
-  { name: "Sam",    grade: 14 },
-  { name: "Alex",   grade: 15 }, // збережено первісне сортування для однакових оцінок (стабільше сортування)
-  { name: "Devlin", grade: 15 }, // збережено первісне сортування для однакових оцінок (стабільше сортування)
+  { name: 'Eagle', grade: 13 },
+  { name: 'Sam', grade: 14 },
+  { name: 'Alex', grade: 15 }, // збережено первісне сортування для однакових оцінок (стабільше сортування)
+  { name: 'Devlin', grade: 15 }, // збережено первісне сортування для однакових оцінок (стабільше сортування)
 ];
 ```
 
@@ -256,10 +257,10 @@ students.sort((firstItem, secondItem) => firstItem.grade - secondItem.grade);
 
 ```js
 [
-  { name: "Eagle",  grade: 13 },
-  { name: "Sam",    grade: 14 },
-  { name: "Devlin", grade: 15 }, // первісне сортування не збережено
-  { name: "Alex",   grade: 15 }, // первісне сортування не збережено
+  { name: 'Eagle', grade: 13 },
+  { name: 'Sam', grade: 14 },
+  { name: 'Devlin', grade: 15 }, // первісне сортування не збережено
+  { name: 'Alex', grade: 15 }, // первісне сортування не збережено
 ];
 ```
 

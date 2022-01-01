@@ -8,9 +8,10 @@ tags:
   - Reference
 browser-compat: javascript.builtins.Math.LN2
 ---
+
 {{JSRef}}
 
-Властивість  **`Math.LN2`** відображає натуральний логарифм 2, що наближено дорівнює 0.693:
+Властивість **`Math.LN2`** відображає натуральний логарифм 2, що наближено дорівнює 0.693:
 
 <math display="block"><semantics><mrow><mstyle mathvariant="monospace"><mi>Math.LN2</mi></mstyle><mo>=</mo><mo lspace="0em" rspace="0em">ln</mo><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo><mo>≈</mo><mn>0.693</mn></mrow><annotation encoding="TeX">\mathtt{\mi{Math.LN2}} = \ln(2) \approx 0.693</annotation></semantics></math>
 

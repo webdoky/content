@@ -9,6 +9,7 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.Math.cbrt
 ---
+
 {{JSRef}}
 
 Функція **`Math.cbrt()`** повертає кубічний корінь числа, а саме:
@@ -44,7 +45,7 @@ browser-compat: javascript.builtins.Math.cbrt
 ## Синтаксис
 
 ```js
-Math.cbrt(x)
+Math.cbrt(x);
 ```
 
 ### Параметри
@@ -78,11 +79,11 @@ Math.cbrt(x)
 
 ```js
 if (!Math.cbrt) {
-  Math.cbrt = (function(pow) {
-    return function cbrt(x){
-      // впевнимося, що від'ємні числа так і залишаться від'ємними:
-      return x < 0 ? -pow(-x, 1/3) : pow(x, 1/3);
-    };
+  Math.cbrt = (function (pow) {
+    return function cbrt(x) {
+      // впевнимося, що від'ємні числа так і залишаться від'ємними:
+      return x < 0 ? -pow(-x, 1 / 3) : pow(x, 1 / 3);
+    };
   })(Math.pow); // локалізуємо Math.pow для підвищення ефективності
 }
 ```
@@ -100,7 +101,7 @@ Math.cbrt(0); // 0
 Math.cbrt(1); // 1
 Math.cbrt(Infinity); // Infinity
 Math.cbrt(null); // 0
-Math.cbrt(2);  // 1.2599210498948732
+Math.cbrt(2); // 1.2599210498948732
 ```
 
 ## Специфікації

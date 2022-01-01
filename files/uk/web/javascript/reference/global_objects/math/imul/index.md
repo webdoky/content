@@ -10,6 +10,7 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.Math.imul
 ---
+
 {{JSRef}}
 
 Функція **`Math.imul()`** повертає результат C-подібного 32-бітного множення двох аргументів.
@@ -19,7 +20,7 @@ browser-compat: javascript.builtins.Math.imul
 ## Синтаксис
 
 ```js
-Math.imul(a, b)
+Math.imul(a, b);
 ```
 
 ### Параметри
@@ -46,9 +47,9 @@ Math.imul(a, b)
 ### Застосування Math.imul()
 
 ```js
-Math.imul(2, 4);          // 8
-Math.imul(-1, 8);         // -8
-Math.imul(-2, -2);        // 4
+Math.imul(2, 4); // 8
+Math.imul(-1, 8); // -8
+Math.imul(-2, -2); // 4
 Math.imul(0xffffffff, 5); // -5
 Math.imul(0xfffffffe, 5); // -10
 ```
@@ -58,33 +59,35 @@ Math.imul(0xfffffffe, 5); // -10
 Цей функціонал можна відтворити за допомогою наступної функції:
 
 ```js
-if (!Math.imul) Math.imul = function(a, b) {
-  var aHi = (a >>> 16) & 0xffff;
-  var aLo = a & 0xffff;
-  var bHi = (b >>> 16) & 0xffff;
-  var bLo = b & 0xffff;
-  // зміщення на 0 фіксує знак у старшій частині
-  // кінцеве |0 перетворює беззнакове значення на число зі знаком
-  return ((aLo * bLo) + (((aHi * bLo + aLo * bHi) << 16) >>> 0) | 0);
-};
+if (!Math.imul)
+  Math.imul = function (a, b) {
+    var aHi = (a >>> 16) & 0xffff;
+    var aLo = a & 0xffff;
+    var bHi = (b >>> 16) & 0xffff;
+    var bLo = b & 0xffff;
+    // зміщення на 0 фіксує знак у старшій частині
+    // кінцеве |0 перетворює беззнакове значення на число зі знаком
+    return (aLo * bLo + (((aHi * bLo + aLo * bHi) << 16) >>> 0)) | 0;
+  };
 ```
 
 Однак, наступна функція — більш продуктивна, оскільки є ймовірність, що ті браузери, всередині яких цей поліфіл може використовуватись, не застосовують цілочисельний тип для оптимізації в JavaScript, натомість використовуючи числа з рухомою комою для всіх значень.
 
 ```js
-if (!Math.imul) Math.imul = function(opA, opB) {
-  opB |= 0; // впевнімося, що opB — ціле число. opA буде приведено автоматично.
-  // Числа з рухомою комою дають нам 53 бітів точності, в межах яким ми можемо працювати,
-  // плюс 1 знаковий біт, який, зручно для користувача, обробляється автоматично:
-  // 1. 0x003fffff /*opA & 0x000fffff*/ * 0x7fffffff /*opB*/ = 0x1fffff7fc00001
-  //    0x1fffff7fc00001 < Number.MAX_SAFE_INTEGER /*0x1fffffffffffff*/
-  var result = (opA & 0x003fffff) * opB;
-  // 2. Ми можемо прибрати зведення до цілого з наведеної вище інструкції, оскільки:
-  //    0x1fffff7fc00001 + 0xffc00000 = 0x1fffffff800001
-  //    0x1fffffff800001 < Number.MAX_SAFE_INTEGER /*0x1fffffffffffff*/
-  if (opA & 0xffc00000 /*!== 0*/) result += (opA & 0xffc00000) * opB |0;
-  return result |0;
-};
+if (!Math.imul)
+  Math.imul = function (opA, opB) {
+    opB |= 0; // впевнімося, що opB — ціле число. opA буде приведено автоматично.
+    // Числа з рухомою комою дають нам 53 бітів точності, в межах яким ми можемо працювати,
+    // плюс 1 знаковий біт, який, зручно для користувача, обробляється автоматично:
+    // 1. 0x003fffff /*opA & 0x000fffff*/ * 0x7fffffff /*opB*/ = 0x1fffff7fc00001
+    //    0x1fffff7fc00001 < Number.MAX_SAFE_INTEGER /*0x1fffffffffffff*/
+    var result = (opA & 0x003fffff) * opB;
+    // 2. Ми можемо прибрати зведення до цілого з наведеної вище інструкції, оскільки:
+    //    0x1fffff7fc00001 + 0xffc00000 = 0x1fffffff800001
+    //    0x1fffffff800001 < Number.MAX_SAFE_INTEGER /*0x1fffffffffffff*/
+    if (opA & 0xffc00000 /*!== 0*/) result += ((opA & 0xffc00000) * opB) | 0;
+    return result | 0;
+  };
 ```
 
 ## Специфікації

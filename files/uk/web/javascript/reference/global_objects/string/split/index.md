@@ -10,6 +10,7 @@ tags:
   - String
 browser-compat: javascript.builtins.String.split
 ---
+
 {{JSRef}}
 
 Метод **`split()`** розділяє {{jsxref("String", "рядок")}} на впорядкований набір підрядків, кладе їх у масив і одразу повертає його. Розділення виконується шляхом пошуку патерну, причому патерн передається першим аргументом під час виклику методу.
@@ -19,9 +20,9 @@ browser-compat: javascript.builtins.String.split
 ## Синтаксис
 
 ```js
-split()
-split(separator)
-split(separator, limit)
+split();
+split(separator);
+split(separator, limit);
 ```
 
 ### Параметри
@@ -64,10 +65,10 @@ split(separator, limit)
 Якщо початковий рядок порожній, `split()` поверне масив з одним порожнім рядком замість порожнього масиву. Якщо ж обидва значення — і рядок, і розділювач — це порожні рядки, буде повернено порожній масив.
 
 ```js
-const myString = ''
-const splits = myString.split()
+const myString = '';
+const splits = myString.split();
 
-console.log(splits)
+console.log(splits);
 
 // ↪ [""]
 ```
@@ -76,22 +77,27 @@ console.log(splits)
 
 ```js
 function splitString(stringToSplit, separator) {
-  const arrayOfStrings = stringToSplit.split(separator)
+  const arrayOfStrings = stringToSplit.split(separator);
 
-  console.log('Початковий рядок — ', stringToSplit)
-  console.log('Розділювач — ', separator)
-  console.log('Масив містить ', arrayOfStrings.length, ' елементів: ', arrayOfStrings.join(' / '))
+  console.log('Початковий рядок — ', stringToSplit);
+  console.log('Розділювач — ', separator);
+  console.log(
+    'Масив містить ',
+    arrayOfStrings.length,
+    ' елементів: ',
+    arrayOfStrings.join(' / '),
+  );
 }
 
-const tempestString = 'Який чудесний світ новий оцей, де отакі є люди!'
-const monthString = 'Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec'
+const tempestString = 'Який чудесний світ новий оцей, де отакі є люди!';
+const monthString = 'Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec';
 
-const space = ' '
-const comma = ','
+const space = ' ';
+const comma = ',';
 
-splitString(tempestString, space)
-splitString(tempestString)
-splitString(monthString, comma)
+splitString(tempestString, space);
+splitString(tempestString);
+splitString(monthString, comma);
 ```
 
 Цей приклад видає наступний вивід:
@@ -115,20 +121,21 @@ splitString(monthString, comma)
 В наступному прикладі, `split()` шукає нуль чи більше пробілів, за якими йде крапка з комою й знову нуль чи більше пробілів, і, коли знаходить, видаляє їх з рядка. Масив `nameList` містить результат, повернений з `split()`.
 
 ```js
-const names = 'Сергій Мельник ;Антон Коваленко; Олена Шевченко ; Михайло Бондаренко ;Євген Бойко '
+const names =
+  'Сергій Мельник ;Антон Коваленко; Олена Шевченко ; Михайло Бондаренко ;Євген Бойко ';
 
-console.log(names)
+console.log(names);
 
-const re = /\s*(?:;|$)\s*/
-const nameList = names.split(re)
+const re = /\s*(?:;|$)\s*/;
+const nameList = names.split(re);
 
-console.log(nameList)
+console.log(nameList);
 ```
 
 Цей код записує два рядки: перший містить початкову стрічку тексту, а другий — масив із результатами.
 
 ```plain
-Сергій Мельник ;Антон Коваленко; Олена Шевченко ; Михайло Бондаренко ;Євген Бойко 
+Сергій Мельник ;Антон Коваленко; Олена Шевченко ; Михайло Бондаренко ;Євген Бойко
 [ "Сергій Мельник", "Антон Коваленко", "Олена Шевченко", "Михайло Бондаренко", "Євген Бойко", "" ]
 ```
 
@@ -137,16 +144,16 @@ console.log(nameList)
 В наступному прикладі `split()` шукає пробіли в рядку, і повертає перші три відділених значення з-поміж тих, які знаходить.
 
 ```js
-const myString = 'Здрастуй, світе. Як ся маєш?'
-const splits = myString.split(' ', 3)
+const myString = 'Здрастуй, світе. Як ся маєш?';
+const splits = myString.split(' ', 3);
 
-console.log(splits)
+console.log(splits);
 ```
 
 Цей скрипт виводить наступне:
 
 ```js
-["Здрастуй,", "світе.", "Як"]
+['Здрастуй,', 'світе.', 'Як'];
 ```
 
 ### Розділення рядка за регулярним виразом `RegExp` для включення частин розділювача в результат
@@ -154,16 +161,16 @@ console.log(splits)
 Якщо `separator` є регулярним виразом, що містить дужки для захоплення ` (``) `, знайдені збіги будуть також включені до масиву.
 
 ```js
-const myString = 'Здрастуй 1 слово. Речення номер 2.'
-const splits = myString.split(/(\d)/)
+const myString = 'Здрастуй 1 слово. Речення номер 2.';
+const splits = myString.split(/(\d)/);
 
-console.log(splits)
+console.log(splits);
 ```
 
 Цей скрипт виводить наступне:
 
 ```js
-[ "Здрастуй ", "1", " слово. Речення номер ", "2", "." ]
+['Здрастуй ', '1', ' слово. Речення номер ', '2', '.'];
 ```
 
 > **Зауваження:** `\d` шукає збіги з [класом символів](/uk/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes), що відповідає цифрам від 0 до 9.
@@ -173,8 +180,8 @@ console.log(splits)
 > **Застереження:** Це не дуже надійний спосіб перевернути рядок:
 >
 > ```js example-bad
-> const str = 'asdfghjkl'
-> const strReverse = str.split('').reverse().join('')
+> const str = 'asdfghjkl';
+> const strReverse = str.split('').reverse().join('');
 > // 'lkjhgfdsa'
 >
 > // split() повертає масив, до якого можна застосувати reverse() і join()
@@ -183,8 +190,8 @@ console.log(splits)
 > Це не працює, якщо рядок містить групи графем, навіть за умови, якщо `split()` правильно обробляє юнікод. (Натомість краще використати [esrever](https://github.com/mathiasbynens/esrever), наприклад.)
 >
 > ```js example-bad
-> const str = 'mañana mañana'
-> const strReverse = str.split('').reverse().join('')
+> const str = 'mañana mañana';
+> const strReverse = str.split('').reverse().join('');
 > // => "anãnam anañam" // зауважте, що перше слово містить ã замість ñ
 > ```
 >

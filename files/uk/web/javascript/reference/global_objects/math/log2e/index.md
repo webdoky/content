@@ -8,6 +8,7 @@ tags:
   - Reference
 browser-compat: javascript.builtins.Math.LOG2E
 ---
+
 {{JSRef}}
 
 Властивість **`Math.LOG2E`** відображає логарифм `e` за основою 2, що наближено дорівнює 1.442:

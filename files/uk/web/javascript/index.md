@@ -8,6 +8,7 @@ tags:
   - l10n:priority
 translation_of: Web/JavaScript
 ---
+
 {{JsSidebar}}
 
 **JavaScript** (**JS**) &mdash; це невибаглива до ресурсів мова програмування з {{Glossary("First-class Function", "функціями першого класу")}}, код якої інтерпретується, або компілюється ["на льоту"](https://uk.wikipedia.org/wiki/JIT-%D0%BA%D0%BE%D0%BC%D0%BF%D1%96%D0%BB%D1%8F%D1%86%D1%96%D1%8F). Хоча JavaScript насамперед відома як скриптова мова для вебсторінок, вона також використовується у [багатьох не браузерних середовищах](https://en.wikipedia.org/wiki/JavaScript#Other_usage), як от: {{Glossary("Node.js")}}, [Apache CouchDB](https://couchdb.apache.org/) та [Adobe Acrobat](https://www.adobe.com/devnet/acrobat/javascript.html). JavaScript — це {{Glossary("Prototype-based programming", "прототипна")}}, однопотокова динамічна мова, що має декілька парадигм та підтримує об'єктноорієнтований, та декларативні (зокрема функційне програмування) стилі. Більше [про JavaScript](/uk/docs/Web/JavaScript/About_JavaScript).

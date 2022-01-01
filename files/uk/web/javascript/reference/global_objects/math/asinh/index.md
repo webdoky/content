@@ -9,6 +9,7 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.Math.asinh
 ---
+
 {{JSRef}}
 
 Функція **`Math.asinh()`** повертає гіперболічний арксинус числа, а саме:
@@ -40,7 +41,7 @@ browser-compat: javascript.builtins.Math.asinh
 ## Синтаксис
 
 ```js
-Math.asinh(x)
+Math.asinh(x);
 ```
 
 ### Параметри
@@ -61,8 +62,8 @@ Math.asinh(x)
 ### Застосування Math.asinh()
 
 ```js
-Math.asinh(1);  // 0.881373587019543
-Math.asinh(0);  // 0
+Math.asinh(1); // 0.881373587019543
+Math.asinh(0); // 0
 ```
 
 ## Поліфіл
@@ -70,19 +71,25 @@ Math.asinh(0);  // 0
 Можна відтворити метод `Math.asinh` за допомогою наступної функції:
 
 ```js
-if (!Math.asinh) Math.asinh = function(x) {
-    var absX = Math.abs(x), w
-    if (absX < 3.725290298461914e-9) // |x| < 2^-28
-        return x
-    if (absX > 268435456) // |x| > 2^28
-        w = Math.log(absX) + Math.LN2
-    else if (absX > 2) // 2^28 >= |x| > 2
-        w = Math.log(2 * absX + 1 / (Math.sqrt(x * x + 1) + absX))
+if (!Math.asinh)
+  Math.asinh = function (x) {
+    var absX = Math.abs(x),
+      w;
+    if (absX < 3.725290298461914e-9)
+      // |x| < 2^-28
+      return x;
+    if (absX > 268435456)
+      // |x| > 2^28
+      w = Math.log(absX) + Math.LN2;
+    else if (absX > 2)
+      // 2^28 >= |x| > 2
+      w = Math.log(2 * absX + 1 / (Math.sqrt(x * x + 1) + absX));
     else
-        var t = x * x, w = Math.log1p(absX + t / (1 + Math.sqrt(1 + t)))
+      var t = x * x,
+        w = Math.log1p(absX + t / (1 + Math.sqrt(1 + t)));
 
-    return x > 0 ? w : -w
-}
+    return x > 0 ? w : -w;
+  };
 ```
 
 Для методу `Math.log1p` теж можна зробити поліфіл; дивіться деталі на сторінці [Math.log1p](/uk/docs/Web/JavaScript/Reference/Global_Objects/Math/log1p).

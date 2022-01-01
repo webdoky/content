@@ -10,6 +10,7 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.Map
 ---
+
 {{JSRef}}
 
 Об'єкт **`Map`** містить пари ключ-значення і запам'ятовує порядок вставки ключів у об'єкт. Будь-які значення (і об'єкти, і {{glossary("Primitive", "примітивні значення")}}) можуть використовуватись і як ключ, і як значення.
@@ -189,33 +190,33 @@ browser-compat: javascript.builtins.Map
 Отже, може скластися враження, що це працює таким чином:
 
 ```js example-bad
-const wrongMap = new Map()
-wrongMap['bla'] = 'blaa'
-wrongMap['bla2'] = 'blaaa2'
+const wrongMap = new Map();
+wrongMap['bla'] = 'blaa';
+wrongMap['bla2'] = 'blaaa2';
 
-console.log(wrongMap)  // Map { bla: 'blaa', bla2: 'blaaa2' }
+console.log(wrongMap); // Map { bla: 'blaa', bla2: 'blaaa2' }
 ```
 
 Однак цей спосіб встановлення властивості ніяк не взаємодіє зі структурою даних `Map`. Він лише використовує особливість звичайного об'єкту. Значення 'bla' не збереглося всередині `Map` для запитів. Інші операції на даних зазнають невдачі:
 
 ```js example-bad
-wrongMap.has('bla')    // false
-wrongMap.delete('bla') // false
-console.log(wrongMap)  // Map { bla: 'blaa', bla2: 'blaaa2' }
+wrongMap.has('bla'); // false
+wrongMap.delete('bla'); // false
+console.log(wrongMap); // Map { bla: 'blaa', bla2: 'blaaa2' }
 ```
 
 Правильно використовувати `Map` для зберігання даних через метод `set(key, value)`.
 
 ```js example-good
-const contacts = new Map()
-contacts.set('Jessie', {phone: "213-555-1234", address: "123 N 1st Ave"})
-contacts.has('Jessie') // true
-contacts.get('Hilary') // undefined
-contacts.set('Hilary', {phone: "617-555-4321", address: "321 S 2nd St"})
-contacts.get('Jessie') // {phone: "213-555-1234", address: "123 N 1st Ave"}
-contacts.delete('Raymond') // false
-contacts.delete('Jessie') // true
-console.log(contacts.size) // 1
+const contacts = new Map();
+contacts.set('Jessie', { phone: '213-555-1234', address: '123 N 1st Ave' });
+contacts.has('Jessie'); // true
+contacts.get('Hilary'); // undefined
+contacts.set('Hilary', { phone: '617-555-4321', address: '321 S 2nd St' });
+contacts.get('Jessie'); // {phone: "213-555-1234", address: "123 N 1st Ave"}
+contacts.delete('Raymond'); // false
+contacts.delete('Jessie'); // true
+console.log(contacts.size); // 1
 ```
 
 ## Конструктор
@@ -258,35 +259,35 @@ console.log(contacts.size) // 1
   - : Повертає новий об'єкт Iterator, який містить **масив `[key, value]`** на кожний елемент об'єкту `Map`, у порядку їх вставки.
 - {{jsxref("Map.forEach", "Map.prototype.forEach(<var>callbackFn</var>[,
     <var>thisArg</var>])")}}
-  - : Викликає функцію `callbackFn` один раз для кожної пари ключ-значення, наявної  в об'єкті `Map`, в порядку вставки. Якщо в метод `forEach` передано параметр `thisArg`, його буде використано як значення `this` для кожної функції зворотного виклику.
+  - : Викликає функцію `callbackFn` один раз для кожної пари ключ-значення, наявної в об'єкті `Map`, в порядку вставки. Якщо в метод `forEach` передано параметр `thisArg`, його буде використано як значення `this` для кожної функції зворотного виклику.
 
 ## Приклади
 
 ### Застосування об'єкту `Map`
 
 ```js
-const myMap = new Map()
+const myMap = new Map();
 
-const keyString = 'a string'
-const keyObj    = {}
-const keyFunc   = function() {}
+const keyString = 'a string';
+const keyObj = {};
+const keyFunc = function () {};
 
 // встановлення значень
-myMap.set(keyString, "значення, асоційоване з рядком")
-myMap.set(keyObj, 'значення, асоційоване з об\'єктом')
-myMap.set(keyFunc, 'значення, асоційоване з функцією')
+myMap.set(keyString, 'значення, асоційоване з рядком');
+myMap.set(keyObj, "значення, асоційоване з об'єктом");
+myMap.set(keyFunc, 'значення, асоційоване з функцією');
 
-myMap.size              // 3
+myMap.size; // 3
 
 // отримання значень
-myMap.get(keyString)    // "значення, асоційоване з рядком"
-myMap.get(keyObj)       // "значення, асоційоване з об\'єктом"
-myMap.get(keyFunc)      // "значення, асоційоване з функцією"
+myMap.get(keyString); // "значення, асоційоване з рядком"
+myMap.get(keyObj); // "значення, асоційоване з об\'єктом"
+myMap.get(keyFunc); // "значення, асоційоване з функцією"
 
-myMap.get('a string')    // "значення, асоційоване з рядком"
-                         // оскільки keyString === 'a string'
-myMap.get({})            // undefined, оскільки keyObj !== {}
-myMap.get(function() {}) // undefined, оскільки keyFunc !== function () {}
+myMap.get('a string'); // "значення, асоційоване з рядком"
+// оскільки keyString === 'a string'
+myMap.get({}); // undefined, оскільки keyObj !== {}
+myMap.get(function () {}); // undefined, оскільки keyFunc !== function () {}
 ```
 
 ### Застосування NaN як ключів для `Map`
@@ -294,14 +295,14 @@ myMap.get(function() {}) // undefined, оскільки keyFunc !== function () 
 Значення {{jsxref("NaN")}} також можна використовувати як ключ. І хоча кожне значення `NaN` не дорівнює саме собі (вираз `NaN !== NaN` — істинний), наступний приклад спрацює, тому що значення `NaN` неможливо розрізнити одне від одного:
 
 ```js
-const myMap = new Map()
-myMap.set(NaN, 'не число')
+const myMap = new Map();
+myMap.set(NaN, 'не число');
 
-myMap.get(NaN)
+myMap.get(NaN);
 // "не число"
 
-const otherNaN = Number('foo')
-myMap.get(otherNaN)
+const otherNaN = Number('foo');
+myMap.get(otherNaN);
 // "не число"
 ```
 
@@ -310,30 +311,30 @@ myMap.get(otherNaN)
 Об'єкти `Map` можна перебирати за допомогою циклу `for..of`:
 
 ```js
-const myMap = new Map()
-myMap.set(0, 'нуль')
-myMap.set(1, 'один')
+const myMap = new Map();
+myMap.set(0, 'нуль');
+myMap.set(1, 'один');
 
 for (const [key, value] of myMap) {
-  console.log(key + ' = ' + value)
+  console.log(key + ' = ' + value);
 }
 // 0 = нуль
 // 1 = один
 
 for (const key of myMap.keys()) {
-  console.log(key)
+  console.log(key);
 }
 // 0
 // 1
 
 for (const value of myMap.values()) {
-  console.log(value)
+  console.log(value);
 }
 // нуль
 // один
 
 for (const [key, value] of myMap.entries()) {
-  console.log(key + ' = ' + value)
+  console.log(key + ' = ' + value);
 }
 // 0 = нуль
 // 1 = один
@@ -344,9 +345,9 @@ for (const [key, value] of myMap.entries()) {
 Об'єкти `Map` можна перебирати за допомогою методу {{jsxref("Map.prototype.forEach", "forEach()")}}:
 
 ```js
-myMap.forEach(function(value, key) {
-  console.log(key + ' = ' + value)
-})
+myMap.forEach(function (value, key) {
+  console.log(key + ' = ' + value);
+});
 // 0 = нуль
 // 1 = один
 ```
@@ -354,21 +355,24 @@ myMap.forEach(function(value, key) {
 ### Зв'язок з масивами
 
 ```js
-const kvArray = [['key1', 'value1'], ['key2', 'value2']]
+const kvArray = [
+  ['key1', 'value1'],
+  ['key2', 'value2'],
+];
 
 // Використаємо звичайний конструктор Map, щоб перетворити двовимірний масив комбінацій ключ-значення у `Map`
-const myMap = new Map(kvArray)
+const myMap = new Map(kvArray);
 
-myMap.get('key1') // повертає "value1"
+myMap.get('key1'); // повертає "value1"
 
 // Використаємо Array.from(), щоб перетворити об'єкт `Map` у двовимірний масив пар ключ-значення
-console.log(Array.from(myMap)) // Покаже точнісінько такий самий масив, як kvArray
+console.log(Array.from(myMap)); // Покаже точнісінько такий самий масив, як kvArray
 
 // Лаконічний спосіб зробити те саме, за допомогою спред-оператора
-console.log([...myMap])
+console.log([...myMap]);
 
 // Або ж використовуйте ітератори keys() чи values(), і перетворюйте їх у масив
-console.log(Array.from(myMap.keys())) // ["key1", "key2"]
+console.log(Array.from(myMap.keys())); // ["key1", "key2"]
 ```
 
 ### Клонування і злиття об'єктів `Map`
@@ -376,14 +380,12 @@ console.log(Array.from(myMap.keys())) // ["key1", "key2"]
 Так само як і масиви, об'єкти `Map` можна клонувати:
 
 ```js
-const original = new Map([
-  [1, 'one']
-])
+const original = new Map([[1, 'one']]);
 
-const clone = new Map(original)
+const clone = new Map(original);
 
-console.log(clone.get(1))       // one
-console.log(original === clone) // false (корисно для поверхневого порівняння)
+console.log(clone.get(1)); // one
+console.log(original === clone); // false (корисно для поверхневого порівняння)
 ```
 
 > **Зауваження:** Майте на увазі, що _власне дані_ тут клоновано не було.
@@ -395,20 +397,20 @@ const first = new Map([
   [1, 'one'],
   [2, 'two'],
   [3, 'three'],
-])
+]);
 
 const second = new Map([
   [1, 'uno'],
-  [2, 'dos']
-])
+  [2, 'dos'],
+]);
 
 // Зливаємо докупи два об'єкти `Map`. У разі конфлікту ключів наступний перезапише попередній.
 // Спред-оператор фактично перетворює `Map` у масив
-const merged = new Map([...first, ...second])
+const merged = new Map([...first, ...second]);
 
-console.log(merged.get(1)) // uno
-console.log(merged.get(2)) // dos
-console.log(merged.get(3)) // three
+console.log(merged.get(1)); // uno
+console.log(merged.get(2)); // dos
+console.log(merged.get(3)); // three
 ```
 
 Об'єкти `Map` можна також об'єднувати з іншими масивами:
@@ -418,19 +420,19 @@ const first = new Map([
   [1, 'one'],
   [2, 'two'],
   [3, 'three'],
-])
+]);
 
 const second = new Map([
   [1, 'uno'],
-  [2, 'dos']
-])
+  [2, 'dos'],
+]);
 
 // Зливаємо докупи об'єкти `Map` з масивом. У разі конфлікту ключів наступний перезапише попередній.
-const merged = new Map([...first, ...second, [1, 'eins']])
+const merged = new Map([...first, ...second, [1, 'eins']]);
 
-console.log(merged.get(1)) // eins
-console.log(merged.get(2)) // dos
-console.log(merged.get(3)) // three
+console.log(merged.get(1)); // eins
+console.log(merged.get(2)); // dos
+console.log(merged.get(3)); // three
 ```
 
 ## Специфікації

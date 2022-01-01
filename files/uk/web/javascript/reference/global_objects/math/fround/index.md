@@ -11,6 +11,7 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.Math.fround
 ---
+
 {{JSRef}}
 
 Функція **`Math.fround()`** приймає {{jsxref("Number", "число")}} і повертає його найближчий його відповідник у форматі 32-бітного числа з рухомою комою {{interwiki("wikipedia", "Single-precision floating-point format", "одинарної точності")}}.
@@ -20,7 +21,7 @@ browser-compat: javascript.builtins.Math.fround
 ## Синтаксис
 
 ```js
-Math.fround(doubleFloat)
+Math.fround(doubleFloat);
 ```
 
 ### Параметри
@@ -80,32 +81,35 @@ Math.fround(NaN); // NaN
 Цей функціонал можна відтворити за допомогою наступної функції, за наявності підтримки для {{jsxref("Float32Array")}}:
 
 ```js
-Math.fround = Math.fround || (function (array) {
-  return function(x) {
-    return array[0] = x, array[0];
-  };
-})(new Float32Array(1));
+Math.fround =
+  Math.fround ||
+  (function (array) {
+    return function (x) {
+      return (array[0] = x), array[0];
+    };
+  })(new Float32Array(1));
 ```
 
 Підтримка старіших браузерів також можлива, проте працюватиме повільніше:
 
 ```js
-if (!Math.fround) Math.fround = function(arg) {
-  arg = Number(arg);
-  // Одразу повернемо результат для ±0 і NaN.
-  if (!arg) return arg;
-  var sign = arg < 0 ? -1 : 1;
-  if (sign < 0) arg = -arg;
-  // Обчислимо показник степеня (8 бітів, зі знаком).
-  var exp = Math.floor(Math.log(arg) / Math.LN2);
-  var powexp = Math.pow(2, Math.max(-126, Math.min(exp, 127)));
-  // Обробляємо піднормальні результати: старша цифра буде нулем, якщо всі біти показника степеня також нулі.
-  var leading = exp < -127 ? 0 : 1;
-  // Обчислимо 23 біти мантиси — обернені, для округлення в напрямку нуля.
-  var mantissa = Math.round((leading - arg / powexp) * 0x800000);
-  if (mantissa <= -0x800000) return sign * Infinity;
-  return sign * powexp * (leading - mantissa / 0x800000);
-};
+if (!Math.fround)
+  Math.fround = function (arg) {
+    arg = Number(arg);
+    // Одразу повернемо результат для ±0 і NaN.
+    if (!arg) return arg;
+    var sign = arg < 0 ? -1 : 1;
+    if (sign < 0) arg = -arg;
+    // Обчислимо показник степеня (8 бітів, зі знаком).
+    var exp = Math.floor(Math.log(arg) / Math.LN2);
+    var powexp = Math.pow(2, Math.max(-126, Math.min(exp, 127)));
+    // Обробляємо піднормальні результати: старша цифра буде нулем, якщо всі біти показника степеня також нулі.
+    var leading = exp < -127 ? 0 : 1;
+    // Обчислимо 23 біти мантиси — обернені, для округлення в напрямку нуля.
+    var mantissa = Math.round((leading - arg / powexp) * 0x800000);
+    if (mantissa <= -0x800000) return sign * Infinity;
+    return sign * powexp * (leading - mantissa / 0x800000);
+  };
 ```
 
 ## Специфікації

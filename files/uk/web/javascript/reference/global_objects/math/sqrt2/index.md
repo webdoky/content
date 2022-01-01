@@ -8,6 +8,7 @@ tags:
   - Reference
 browser-compat: javascript.builtins.Math.SQRT2
 ---
+
 {{JSRef}}
 
 Властивість **`Math.SQRT2`** позначає квадратний корінь з 2, що приблизно дорівнює 1.414:

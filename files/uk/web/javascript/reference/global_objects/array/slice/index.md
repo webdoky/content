@@ -9,6 +9,7 @@ tags:
   - Reference
 browser-compat: javascript.builtins.Array.slice
 ---
+
 {{JSRef}}
 
 Метод **`slice()`** повертає поверхневу копію (зріз) певної частини масиву, взяту від елемента за індексом `start` (включно) до елемента за індексом `end` (не включно), у вигляді нового масиву. Початковий масив не змінюється.
@@ -18,9 +19,9 @@ browser-compat: javascript.builtins.Array.slice
 ## Синтаксис
 
 ```js
-slice()
-slice(start)
-slice(start, end)
+slice();
+slice(start);
+slice(start, end);
 ```
 
 ### Параметри
@@ -63,8 +64,8 @@ slice(start, end)
 ### Повернення частини наявного масиву
 
 ```js
-let fruits = ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango']
-let citrus = fruits.slice(1, 3)
+let fruits = ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango'];
+let citrus = fruits.slice(1, 3);
 
 // fruits містить ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango']
 // citrus містить ['Orange','Lemon']
@@ -76,24 +77,24 @@ let citrus = fruits.slice(1, 3)
 
 ```js
 // За допомогою slice() створити newCar з myCar.
-let myHonda = { color: 'red', wheels: 4, engine: { cylinders: 4, size: 2.2 } }
-let myCar = [myHonda, 2, 'cherry condition', 'purchased 1997']
-let newCar = myCar.slice(0, 2)
+let myHonda = { color: 'red', wheels: 4, engine: { cylinders: 4, size: 2.2 } };
+let myCar = [myHonda, 2, 'cherry condition', 'purchased 1997'];
+let newCar = myCar.slice(0, 2);
 
 // Показати значення myCar, newCar, і колір myHonda,
 // на який посилаються обидва масиви.
-console.log('myCar = ' + JSON.stringify(myCar))
-console.log('newCar = ' + JSON.stringify(newCar))
-console.log('myCar[0].color = ' + myCar[0].color)
-console.log('newCar[0].color = ' + newCar[0].color)
+console.log('myCar = ' + JSON.stringify(myCar));
+console.log('newCar = ' + JSON.stringify(newCar));
+console.log('myCar[0].color = ' + myCar[0].color);
+console.log('newCar[0].color = ' + newCar[0].color);
 
 // Змінити колір myHonda.
-myHonda.color = 'purple'
-console.log('The new color of my Honda is ' + myHonda.color)
+myHonda.color = 'purple';
+console.log('The new color of my Honda is ' + myHonda.color);
 
 // Показати колір myHonda, на який посилаються обидва масиви.
-console.log('myCar[0].color = ' + myCar[0].color)
-console.log('newCar[0].color = ' + newCar[0].color)
+console.log('myCar[0].color = ' + myCar[0].color);
+console.log('newCar[0].color = ' + newCar[0].color);
 ```
 
 Скрипт надрукує такий текст:
@@ -115,10 +116,10 @@ newCar[0].color = purple
 
 ```js
 function list() {
-  return Array.prototype.slice.call(arguments)
+  return Array.prototype.slice.call(arguments);
 }
 
-let list1 = list(1, 2, 3) // [1, 2, 3]
+let list1 = list(1, 2, 3); // [1, 2, 3]
 ```
 
 Для прив'язування можна також застосувати метод {{jsxref("Function.prototype.call", "call()")}} об'єкту {{jsxref("Function")}}, і скоротити запис до `[].slice.call(arguments)` замість `Array.prototype.slice.call`.
@@ -126,14 +127,14 @@ let list1 = list(1, 2, 3) // [1, 2, 3]
 Зрештою, це можна іще спростити, використавши {{jsxref("Function.prototype.bind", "bind")}}.
 
 ```js
-let unboundSlice = Array.prototype.slice
-let slice = Function.prototype.call.bind(unboundSlice)
+let unboundSlice = Array.prototype.slice;
+let slice = Function.prototype.call.bind(unboundSlice);
 
 function list() {
-  return slice(arguments)
+  return slice(arguments);
 }
 
-let list1 = list(1, 2, 3) // [1, 2, 3]
+let list1 = list(1, 2, 3); // [1, 2, 3]
 ```
 
 ## Специфікації

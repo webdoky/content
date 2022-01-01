@@ -11,6 +11,7 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.Promise
 ---
+
 {{JSRef}}
 
 Об'єкт **`Promise`** відображає успішне (або невдале) завершення якоїсь асинхронної операції, і значення її результату.
@@ -64,22 +65,34 @@ myPromise
 
 ```js
 myPromise
-.then(handleResolvedA)
-.then(handleResolvedB)
-.then(handleResolvedC)
-.catch(handleRejectedAny);
+  .then(handleResolvedA)
+  .then(handleResolvedB)
+  .then(handleResolvedC)
+  .catch(handleRejectedAny);
 ```
 
 Реалізація послідовності промісів, записана із застосуванням {{JSxRef("Functions/Arrow_functions", "виразу стрілкової функції", "", 1)}} для функцій зворотного виклику, може виглядати десь так:
 
 ```js
 promise1
-.then(value => { return value + ' іще ланка'; })
-.then(value => { return value + ' і знову ланка'; })
-.then(value => { return value + ' і знову'; })
-.then(value => { return value + ' і знову'; })
-.then(value => { console.log(value) })
-.catch(err => { console.log(err) });
+  .then((value) => {
+    return value + ' іще ланка';
+  })
+  .then((value) => {
+    return value + ' і знову ланка';
+  })
+  .then((value) => {
+    return value + ' і знову';
+  })
+  .then((value) => {
+    return value + ' і знову';
+  })
+  .then((value) => {
+    console.log(value);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 ```
 
 Стан, з яким завершується проміс, визначає результат, яким "залагоджується" наступний проміс у послідовності. "Виконаний" стан позначає успішне завершення промісу, в той час, як стан "відхилено" позначає невдачу. Результат, повернутий кожним промісом у послідовності, передається далі до наступного `.then()`, тоді як причина, з якої було відхилено якийсь із промісів, передається тільки до наступного обробника помилки у послідовності.
@@ -107,12 +120,14 @@ const promiseC = promiseA.then(handleFulfilled2, handleRejected2);
 Можна прив'язати якусь дію до вже "залагодженого" промісу. В цьому випадку, дію (якщо це допустимо) буде виконано при першій ліпшій асинхронній можливості. Зауважте, що проміси гарантовано асинхронні. Таким чином, дія для уже "залагодженого" промісу трапиться лише після того, як стек викликів буде очищено, і пройде мить таймера рушія. Цей ефект дуже схожий до результату виконання `setTimeout(action,10)`.
 
 ```js
-const promiseA = new Promise( (resolutionFunc,rejectionFunc) => {
-    resolutionFunc(777);
+const promiseA = new Promise((resolutionFunc, rejectionFunc) => {
+  resolutionFunc(777);
 });
 // В цей момент "promiseA" уже залагоджено.
-promiseA.then( (val) => console.log("асинхронний запис із таким значенням:",val) );
-console.log("запис одразу");
+promiseA.then((val) =>
+  console.log('асинхронний запис із таким значенням:', val),
+);
+console.log('запис одразу');
 
 // виводить результати в такому порядку:
 // запис одразу
@@ -128,13 +143,13 @@ console.log("запис одразу");
 Щоб краще це проілюструвати, подивімось на те, як вбудований в документ [`<iframe>`](/en-US/docs/Web/HTML/Element/iframe) спілкується зі своїм хазяїном. Оскільки всі веб-API мають на увазі поточний установчий об'єкт, наступний код буде працювати в усіх браузерах:
 
 ```html
-<!DOCTYPE html>
-<iframe></iframe> <!-- окрема область тут -->
-<script> // і також окрема область тут
-  const bound = frames[0].postMessage.bind(
-    frames[0], "some data", "*");
-    // bound містить вбудовану функцію, тобто тут немає
-    // користувацького коду на стеку, тож яку область ми використаємо?
+<!DOCTYPE html> <iframe></iframe>
+<!-- окрема область тут -->
+<script>
+  // і також окрема область тут
+  const bound = frames[0].postMessage.bind(frames[0], 'some data', '*');
+  // bound містить вбудовану функцію, тобто тут немає
+  // користувацького коду на стеку, тож яку область ми використаємо?
   window.setTimeout(bound);
   // це все ще працює, оскільки ми використовуємо молодшу
   // область (поточну) на стеку
@@ -144,13 +159,13 @@ console.log("запис одразу");
 Та сама ідея, але накладена на проміси. Змінимо трохи код вище, і отримаємо таке:
 
 ```html
-<!DOCTYPE html>
-<iframe></iframe> <!-- окрема область тут -->
-<script> // і також окрема область тут
-  const bound = frames[0].postMessage.bind(
-    frames[0], "some data", "*");
-    // bound містить вбудовану функцію, тобто тут немає
-    // користувацького коду на стеку, тож яку область ми використаємо?
+<!DOCTYPE html> <iframe></iframe>
+<!-- окрема область тут -->
+<script>
+  // і також окрема область тут
+  const bound = frames[0].postMessage.bind(frames[0], 'some data', '*');
+  // bound містить вбудовану функцію, тобто тут немає
+  // користувацького коду на стеку, тож яку область ми використаємо?
   Promise.resolve(undefined).then(bound);
   // це все ще працює, оскільки ми використовуємо молодшу
   // область (поточну) на стеку
@@ -164,7 +179,7 @@ console.log("запис одразу");
 <!DOCTYPE html>
 <iframe src="x.html"></iframe>
 <script>
-  const bound = frames[0].postMessage.bind(frames[0], "some data", "*");
+  const bound = frames[0].postMessage.bind(frames[0], 'some data', '*');
   Promise.resolve(undefined).then(bound);
 </script>
 ```
@@ -173,11 +188,15 @@ console.log("запис одразу");
 <!-- x.html -->
 <!DOCTYPE html>
 <script>
-window.addEventListener("message", (event) => {
-  document.querySelector("#text").textContent = "hello";
-  // Цей код спрацює лише у браузерах, які відстежують поточний установчий об'єкт
-  console.log(event);
-}, false);
+  window.addEventListener(
+    'message',
+    (event) => {
+      document.querySelector('#text').textContent = 'hello';
+      // Цей код спрацює лише у браузерах, які відстежують поточний установчий об'єкт
+      console.log(event);
+    },
+    false,
+  );
 </script>
 ```
 
@@ -207,6 +226,7 @@ window.addEventListener("message", (event) => {
     Повертає проміс, який виконується після того, як всі передані в нього проміси або виконуються, або відхиляються. В цей повернений проміс передається масив об'єктів відповідно до результатів кожного з початкових промісів.
 
 - {{JSxRef("Promise.any", "Promise.any(iterable)")}}
+
   - : Приймає масив об'єктів типу Promise. Як тільки хоча б один із цих промісів виконується, повертає єдиний проміс, який виконується із результатом роботи виконаного промісу з масиву.
 
 - {{JSxRef("Promise.race", "Promise.race(iterable)")}}
@@ -227,7 +247,7 @@ window.addEventListener("message", (event) => {
 
 ## Методи екземпляру
 
-Ознайомтесь із [Настановами з мікрозавдань](/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide "Microtask_guide"), щоб дізнатись більше про те, як ці методи працюють із чергою і сервісами мікрозавдань.
+Ознайомтесь із [Настановами з мікрозавдань](/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide 'Microtask_guide'), щоб дізнатись більше про те, як ці методи працюють із чергою і сервісами мікрозавдань.
 
 - {{jsxref("Promise.prototype.catch()")}}
   - : Додає обробник відхилення до промісу, і повертає новий проміс, який виконується або з результатом виконання переданої функції зворотного виклику, або — якщо проміс завершився успішно — результатом, з яким завершився попередній проміс.
@@ -245,15 +265,15 @@ let myFirstPromise = new Promise((resolve, reject) => {
   // Викликаємо resolve(...), коли те, що ми робимо асинхронно, завершилося успіхом, і reject(...), якщо операція була невдалою.
   // В цьому прикладі використаємо setTimeout(...), для симуляції асинхронного коду.
   // На практиці тут буде щось схоже на XHR чи HTML5 API.
-  setTimeout( function() {
-    resolve("Success!")  // Ура! Все пройшло добре!
-  }, 250)
-})
+  setTimeout(function () {
+    resolve('Success!'); // Ура! Все пройшло добре!
+  }, 250);
+});
 
 myFirstPromise.then((successMessage) => {
   // successMessage — це будь-яке значення, яке ми передаємо в функцію resolve(...) вище.
   // Воно не зобов'язане бути рядком, проте якщо це просто повідомлення про успіх — воно ймовірно буде рядком.
-  console.log("Ура! " + successMessage)
+  console.log('Ура! ' + successMessage);
 });
 ```
 
@@ -268,37 +288,36 @@ myFirstPromise.then((successMessage) => {
 Цей код може запускатися в середовищі NodeJS. Він буде більш зрозумілим, якщо переглянути помилки, які виникнуть у процесі виконання. Щоб збільшити кількість помилок, змініть значення `threshold`.
 
 ```js
-"use strict";
+'use strict';
 
 // Для експерименту з обробкою помилок, значення "threshold" приводять до помилок випадковим чином
 const THRESHOLD_A = 8; // можна використати 0, щоб гарантувати помилку
 
 function tetheredGetNumber(resolve, reject) {
   try {
-    setTimeout(
-      function() {
-        const randomInt = Date.now();
-        const value = randomInt % 10;
-        try {
-          if(value >= THRESHOLD_A) {
-            throw new Error(`Завелике значення: ${value}`);
-          }
-        } catch(msg) {
-            reject(`Помилка в функції зворотного виклику ${msg}`);
+    setTimeout(function () {
+      const randomInt = Date.now();
+      const value = randomInt % 10;
+      try {
+        if (value >= THRESHOLD_A) {
+          throw new Error(`Завелике значення: ${value}`);
         }
+      } catch (msg) {
+        reject(`Помилка в функції зворотного виклику ${msg}`);
+      }
       resolve(value);
       return;
     }, 500);
     // Щоб поекспериментувати з помилкою при налаштуванні, розкоментуйте наступний 'throw'.
     // throw new Error("Пилка налаштування");
-  } catch(err) {
+  } catch (err) {
     reject(`Помилка під час налаштування: ${err}`);
   }
   return;
 }
 
 function determineParity(value) {
-  const isOdd = value % 2 ? true : false ;
+  const isOdd = value % 2 ? true : false;
   const parityInfo = { theNumber: value, isOdd: isOdd };
   return parityInfo;
 }
@@ -310,36 +329,35 @@ function troubleWithGetNumber(reason) {
 
 function promiseGetWord(parityInfo) {
   // Функція "tetheredGetWord()" отримує "parityInfo" як змінну замикання.
-  const tetheredGetWord = function(resolve,reject) {
+  const tetheredGetWord = function (resolve, reject) {
     const theNumber = parityInfo.theNumber;
     const threshold_B = THRESHOLD_A - 1;
-    if(theNumber >= threshold_B) {
+    if (theNumber >= threshold_B) {
       reject(`Все ще завелике значення: ${theNumber}`);
     } else {
       parityInfo.wordEvenOdd = parityInfo.isOdd ? 'odd' : 'even';
       resolve(parityInfo);
     }
     return;
-  }
+  };
   return new Promise(tetheredGetWord);
 }
 
-(new Promise(tetheredGetNumber))
-  .then(determineParity,troubleWithGetNumber)
+new Promise(tetheredGetNumber)
+  .then(determineParity, troubleWithGetNumber)
   .then(promiseGetWord)
   .then((info) => {
-    console.log("Отримали: ",info.theNumber," , ", info.wordEvenOdd);
+    console.log('Отримали: ', info.theNumber, ' , ', info.wordEvenOdd);
     return info;
   })
   .catch((reason) => {
-    if(reason === -999) {
-      console.error("Маємо помилку, оброблену раніше");
-    }
-    else {
+    if (reason === -999) {
+      console.error('Маємо помилку, оброблену раніше');
+    } else {
       console.error(`Проблема з promiseGetWord(): ${reason}`);
     }
-   })
-  .finally((info) => console.log("Все зроблено"));
+  })
+  .finally((info) => console.log('Все зроблено'));
 ```
 
 ### Поглиблений приклад
@@ -360,7 +378,7 @@ function promiseGetWord(parityInfo) {
 #### JavaScript
 
 ```js
-"use strict";
+'use strict';
 let promiseCount = 0;
 
 function testPromise() {
@@ -372,17 +390,20 @@ function testPromise() {
   let p1 = new Promise((resolve, reject) => {
     // Функція, яка працює над виконанням промісу,
     // викликається з можливістю або виконати, або відхилити проміс
-    log.insertAdjacentHTML('beforeend', thisPromiseCount + ') Конструктор промісу<br>');
+    log.insertAdjacentHTML(
+      'beforeend',
+      thisPromiseCount + ') Конструктор промісу<br>',
+    );
     // Це лише приклад того, як може виникнути асинхронність
-    window.setTimeout(function() {
-        // Виконуємо проміс!
-        resolve(thisPromiseCount);
+    window.setTimeout(function () {
+      // Виконуємо проміс!
+      resolve(thisPromiseCount);
     }, Math.random() * 2000 + 1000);
   });
 
   // Оголошуємо через виклик then(), що саме потрібно зробити, коли проміс виконується,
   // а за допомогою виклику catch() — що робити, якщо проміс відхилено
-  p1.then(function(val) {
+  p1.then(function (val) {
     // Записуємо значення, з яким виконався проміс
     log.insertAdjacentHTML('beforeend', val + ') Проміс виконано<br>');
   }).catch((reason) => {
@@ -390,15 +411,19 @@ function testPromise() {
     console.log(`Тут оброблено відхилений проміс (${reason}).`);
   });
   // end
-  log.insertAdjacentHTML('beforeend', thisPromiseCount + ') Проміс створено<br>');
+  log.insertAdjacentHTML(
+    'beforeend',
+    thisPromiseCount + ') Проміс створено<br>',
+  );
 }
 
-if ("Promise" in window) {
-  let btn = document.getElementById("make-promise");
-  btn.addEventListener("click",testPromise);
+if ('Promise' in window) {
+  let btn = document.getElementById('make-promise');
+  btn.addEventListener('click', testPromise);
 } else {
   log = document.getElementById('log');
-  log.textContent = "Приклад не працює, оскільки цей браузер не підтримує інтерфейс <code>Promise<code>.";
+  log.textContent =
+    'Приклад не працює, оскільки цей браузер не підтримує інтерфейс <code>Promise<code>.';
 }
 ```
 

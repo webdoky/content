@@ -8,6 +8,7 @@ tags:
   - Reference
 browser-compat: javascript.builtins.Math.atan2
 ---
+
 {{JSRef}}
 
 Функція **`Math.atan2()`** повертає плоский кут (в радіанах) між додатним напрямком осі Ox, і променем з точки (0,0) до точки (x,y), для переданих аргументів `Math.atan2(y,x)`.
@@ -17,7 +18,7 @@ browser-compat: javascript.builtins.Math.atan2
 ## Синтаксис
 
 ```js
-Math.atan2(y, x)
+Math.atan2(y, x);
 ```
 
 ### Параметри

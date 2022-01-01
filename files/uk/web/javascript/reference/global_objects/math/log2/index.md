@@ -10,6 +10,7 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.Math.log2
 ---
+
 {{JSRef}}
 
 Функція **`Math.log2()`** повертає логарифм числа за основою 2, а саме:
@@ -45,7 +46,7 @@ browser-compat: javascript.builtins.Math.log2
 ## Синтаксис
 
 ```js
-Math.log2(x)
+Math.log2(x);
 ```
 
 ### Параметри
@@ -70,9 +71,10 @@ Math.log2(x)
 Цей поліфіл відтворює функцію `Math.log2`. Зауважте, що він повертає неточні результати на деяких вхідних даних (зокрема 1 << 29). Для роботи з бітовими масками обгорніть його в {{jsxref("Math.round()")}}.
 
 ```js
-if (!Math.log2) Math.log2 = function(x) {
-  return Math.log(x) * Math.LOG2E;
-};
+if (!Math.log2)
+  Math.log2 = function (x) {
+    return Math.log(x) * Math.LOG2E;
+  };
 ```
 
 ## Приклади
@@ -80,11 +82,11 @@ if (!Math.log2) Math.log2 = function(x) {
 ### Застосування Math.log2()
 
 ```js
-Math.log2(3);    // 1.584962500721156
-Math.log2(2);    // 1
-Math.log2(1);    // 0
-Math.log2(0);    // -Infinity
-Math.log2(-2);   // NaN
+Math.log2(3); // 1.584962500721156
+Math.log2(2); // 1
+Math.log2(1); // 0
+Math.log2(0); // -Infinity
+Math.log2(-2); // NaN
 Math.log2(1024); // 10
 ```
 

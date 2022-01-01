@@ -14,6 +14,7 @@ tags:
   - l10n:priority
   - programming
 ---
+
 {{JsSidebar}}
 
 Ця частина розділу про JavaScript на MDN слугує сховищем фактів про мову JavaScript. Докладніше [про цей довідник](/uk/docs/Web/JavaScript/Reference/About).

@@ -9,6 +9,7 @@ tags:
   - Reference
 browser-compat: javascript.operators
 ---
+
 {{JSSidebar("Operators")}}
 
 Цей розділ документує всі оператори, вирази й ключові слова мови JavaScript.

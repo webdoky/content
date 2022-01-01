@@ -10,6 +10,7 @@ tags:
   - Reference
 browser-compat: javascript.builtins.Array
 ---
+
 {{JSRef}}
 
 Клас **`Array`** у JavaScript - це глобальний об'єкт, що використовується для створення масивів, які є високорівневими об'єктами, подібними до списків.
@@ -25,28 +26,28 @@ browser-compat: javascript.builtins.Array
 **Створення масиву**
 
 ```js
-let fruits = ['Apple', 'Banana']
+let fruits = ['Apple', 'Banana'];
 
-console.log(fruits.length)
+console.log(fruits.length);
 // 2
 ```
 
 **Доступ до елементу масиву із використанням індексу позиції**
 
 ```js
-let first = fruits[0]
+let first = fruits[0];
 // Apple
 
-let last = fruits[fruits.length - 1]
+let last = fruits[fruits.length - 1];
 // Banana
 ```
 
 **Перебирання елементів масиву у циклі**
 
 ```js
-fruits.forEach(function(item, index, array) {
-  console.log(item, index)
-})
+fruits.forEach(function (item, index, array) {
+  console.log(item, index);
+});
 // Apple 0
 // Banana 1
 ```
@@ -54,45 +55,45 @@ fruits.forEach(function(item, index, array) {
 **Додавання елементу в кінець масиву**
 
 ```js
-let newLength = fruits.push('Orange')
+let newLength = fruits.push('Orange');
 // ["Apple", "Banana", "Orange"]
 ```
 
 **Видалення елементу на кінці масиву**
 
 ```js
-let last = fruits.pop() // видаляємо Orange (з кінця)
+let last = fruits.pop(); // видаляємо Orange (з кінця)
 // ["Apple", "Banana"]
 ```
 
 **Видалення елементу з початку масиву**
 
 ```js
-let first = fruits.shift() // видаляємо Apple на початку
+let first = fruits.shift(); // видаляємо Apple на початку
 // ["Banana"]
 ```
 
 **Додавання елементу в початок масиву**
 
 ```js
-let newLength = fruits.unshift('Strawberry') // додаємо на початку
+let newLength = fruits.unshift('Strawberry'); // додаємо на початку
 // ["Strawberry", "Banana"]
 ```
 
 **Знаходження індексу елементу в масиві**
 
 ```js
-fruits.push('Mango')
+fruits.push('Mango');
 // ["Strawberry", "Banana", "Mango"]
 
-let pos = fruits.indexOf('Banana')
+let pos = fruits.indexOf('Banana');
 // 1
 ```
 
 **Видалення елементу з конкретної позиції**
 
 ```js
-let removedItem = fruits.splice(pos, 1) // так видаляється елемент
+let removedItem = fruits.splice(pos, 1); // так видаляється елемент
 
 // ["Strawberry", "Mango"]
 ```
@@ -100,28 +101,28 @@ let removedItem = fruits.splice(pos, 1) // так видаляється еле�
 **Видалення декількох елементів за їх позицією**
 
 ```js
-let vegetables = ['Cabbage', 'Turnip', 'Radish', 'Carrot']
-console.log(vegetables)
+let vegetables = ['Cabbage', 'Turnip', 'Radish', 'Carrot'];
+console.log(vegetables);
 // ["Cabbage", "Turnip", "Radish", "Carrot"]
 
-let pos = 1
-let n = 2
+let pos = 1;
+let n = 2;
 
-let removedItems = vegetables.splice(pos, n)
+let removedItems = vegetables.splice(pos, n);
 // так видаляється елементи, n задає кількість елементів, які слід видалити,
 // починаючи з заданого індексу - позиції pos, і продовжуючи в напрямку кінця масиву.
 
-console.log(vegetables)
+console.log(vegetables);
 // ["Cabbage", "Carrot"] (початковий масив було змінено)
 
-console.log(removedItems)
+console.log(removedItems);
 // ["Turnip", "Radish"]
 ```
 
 **Копіювання масиву**
 
 ```js
-let shallowCopy = fruits.slice() // так робимо копію масиву
+let shallowCopy = fruits.slice(); // так робимо копію масиву
 // ["Strawberry", "Mango"]
 ```
 
@@ -132,10 +133,10 @@ let shallowCopy = fruits.slice() // так робимо копію масиву
 Використання некоректного числового індексу повертає `undefined`.
 
 ```js
-let arr = ['це перший елемент', 'це другий елемент', 'це останній елемент']
-console.log(arr[0])              // виводить 'це перший елемент'
-console.log(arr[1])              // виводить 'це другий елемент'
-console.log(arr[arr.length - 1]) // виводить 'це останній елемент'
+let arr = ['це перший елемент', 'це другий елемент', 'це останній елемент'];
+console.log(arr[0]); // виводить 'це перший елемент'
+console.log(arr[1]); // виводить 'це другий елемент'
+console.log(arr[arr.length - 1]); // виводить 'це останній елемент'
 ```
 
 Елементи масиву є властивостями об'єкту у тому ж розумінні, що й `toString` є властивістю (щоправда, якщо бути точним, `toString()` &mdash; це метод). Однак, спроба доступитися до елементу масиву наступним чином викине помилку синтаксису, оскільки таке ім'я властивості не є коректним:
@@ -164,7 +165,7 @@ renderer['3d'].setTexture(model, 'character.png')  // працює вірно
 Цифра `2` у `years[2]` приводиться до рядка самим рушієм JavaScript через неявну `toString` конвертацію. Як наслідок, `'2'` і `'02'` будуть посилатися на дві різні комірки в об'єкті `years`, і наступний приклад цілком може вивести в результаті `true`:
 
 ```js
-console.log(years['2'] != years['02'])
+console.log(years['2'] != years['02']);
 ```
 
 ### Зв'язок між довжиною і числовими полями масиву
@@ -176,37 +177,37 @@ console.log(years['2'] != years['02'])
 Інші методи (наприклад, {{jsxref("Array.push", "push()")}}, {{jsxref("Array.splice", "splice()")}}, та інші) іще й призводять до змін у властивості {{jsxref("Array.length", "length")}} масиву.
 
 ```js
-const fruits = []
-fruits.push('banana', 'apple', 'peach')
+const fruits = [];
+fruits.push('banana', 'apple', 'peach');
 
-console.log(fruits.length) // 3
+console.log(fruits.length); // 3
 ```
 
 Під час задання властивості в масиві, коли назва властивості є коректним числовим індексом, і водночас цей індекс вказує за поточні межі масиву, рушій внесе відповідні зміни до значення властивості {{jsxref("Array.length", "length")}} масиву:
 
 ```js
-fruits[5] = 'mango'
-console.log(fruits[5])            // 'mango'
-console.log(Object.keys(fruits))  // ['0', '1', '2', '5']
-console.log(fruits.length)        // 6
+fruits[5] = 'mango';
+console.log(fruits[5]); // 'mango'
+console.log(Object.keys(fruits)); // ['0', '1', '2', '5']
+console.log(fruits.length); // 6
 ```
 
 Збільшення довжини {{jsxref("Array.length", "length")}} масиву.
 
 ```js
-fruits.length = 10
-console.log(fruits)              // ['banana', 'apple', 'peach', empty x 2, 'mango', empty x 4]
-console.log(Object.keys(fruits)) // ['0', '1', '2', '5']
-console.log(fruits.length)       // 10
-console.log(fruits[8])           // undefined
+fruits.length = 10;
+console.log(fruits); // ['banana', 'apple', 'peach', empty x 2, 'mango', empty x 4]
+console.log(Object.keys(fruits)); // ['0', '1', '2', '5']
+console.log(fruits.length); // 10
+console.log(fruits[8]); // undefined
 ```
 
 Однак, зменшення значення властивості {{jsxref("Array.length", "length")}} масиву видаляє елементи.
 
 ```js
-fruits.length = 2
-console.log(Object.keys(fruits)) // ['0', '1']
-console.log(fruits.length)       // 2
+fruits.length = 2;
+console.log(Object.keys(fruits)); // ['0', '1']
+console.log(fruits.length); // 2
 ```
 
 Це докладніше описано на сторінці {{jsxref("Array.length")}}.
@@ -222,8 +223,8 @@ console.log(fruits.length)       // 2
 // Запам'ятати літери "b" та наступні "d", що збіглися
 // Ігнорувати регістр літер
 
-const myRe = /d(b+)(d)/i
-const myArray = myRe.exec('cdbBdbsbz')
+const myRe = /d(b+)(d)/i;
+const myArray = myRe.exec('cdbBdbsbz');
 ```
 
 Поля та елементи, які будуть повернуті в результаті цього зіставлення, виглядають так:
@@ -366,12 +367,12 @@ const myArray = myRe.exec('cdbBdbsbz')
 Наступний приклад створює масив `msgArray` довжиною `0`, а потім присвоює значення за індексами `msgArray[0]` та `msgArray[99]`, змінюючи таким чином довжину `length` масиву до `100`.
 
 ```js
-let msgArray = []
-msgArray[0] = 'Hello'
-msgArray[99] = 'world'
+let msgArray = [];
+msgArray[0] = 'Hello';
+msgArray[99] = 'world';
 
 if (msgArray.length === 100) {
-  console.log('The length is 100.')
+  console.log('The length is 100.');
 }
 ```
 
@@ -381,21 +382,22 @@ if (msgArray.length === 100) {
 
 ```js
 let board = [
-  ['R','N','B','Q','K','B','N','R'],
-  ['P','P','P','P','P','P','P','P'],
-  [' ',' ',' ',' ',' ',' ',' ',' '],
-  [' ',' ',' ',' ',' ',' ',' ',' '],
-  [' ',' ',' ',' ',' ',' ',' ',' '],
-  [' ',' ',' ',' ',' ',' ',' ',' '],
-  ['p','p','p','p','p','p','p','p'],
-  ['r','n','b','q','k','b','n','r'] ]
+  ['R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'],
+  ['P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'],
+  [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+  [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+  [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+  [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+  ['p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'],
+  ['r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'],
+];
 
-console.log(board.join('\n') + '\n\n')
+console.log(board.join('\n') + '\n\n');
 
 // Перемістити королівського пішака на 2 клітинки вперед
-board[4][4] = board[6][4]
-board[6][4] = ' '
-console.log(board.join('\n'))
+board[4][4] = board[6][4];
+board[6][4] = ' ';
+console.log(board.join('\n'));
 ```
 
 Результат виконання:
@@ -423,14 +425,11 @@ r,n,b,q,k,b,n,r
 ### Оформлення набору значень у таблицю із використанням масиву
 
 ```js
-values = []
-for (let x = 0; x < 10; x++){
- values.push([
-  2 ** x,
-  2 * x ** 2
- ])
+values = [];
+for (let x = 0; x < 10; x++) {
+  values.push([2 ** x, 2 * x ** 2]);
 }
-console.table(values)
+console.table(values);
 ```
 
 Дає наступний результат

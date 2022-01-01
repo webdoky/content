@@ -10,6 +10,7 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.Math.log1p
 ---
+
 {{JSRef}}
 
 Функція **`Math.log1p()`** повертає натуральний логарифм (за основою {{jsxref("Math.E", "e")}}) значення `1 + число`, а саме:
@@ -39,7 +40,7 @@ browser-compat: javascript.builtins.Math.log1p
 ## Синтаксис
 
 ```js
-Math.log1p(x)
+Math.log1p(x);
 ```
 
 ### Параметри
@@ -67,8 +68,8 @@ Math.log1p(x)
 ### Застосування `Math.log1p()`
 
 ```js
-Math.log1p(1);  // 0.6931471805599453
-Math.log1p(0);  // 0
+Math.log1p(1); // 0.6931471805599453
+Math.log1p(0); // 0
 Math.log1p(-1); // -Infinity
 Math.log1p(-2); // NaN
 ```

@@ -14,6 +14,7 @@ tags:
   - ternary
 browser-compat: javascript.operators.conditional
 ---
+
 {{jsSidebar("Operators")}}
 
 **Умовний (тернарний) оператор** — це єдиний оператор у JavaScript, який приймає три операнди: умова зі знаком питання (`?`) після неї, далі вираз, який слід виконати, якщо умова {{Glossary("truthy", "істинна")}}, слідом за якою двокрапка (`:`), і нарешті – вираз, який виконається, якщо умова {{Glossary("falsy", "хибна")}}. Цей оператор часто використовується як скорочення для інструкції [`if`](/uk/docs/Web/JavaScript/Reference/Statements/if...else).
@@ -23,7 +24,7 @@ browser-compat: javascript.operators.conditional
 ## Синтаксис
 
 ```js
-condition ? exprIfTrue : exprIfFalse
+condition ? exprIfTrue : exprIfFalse;
 ```
 
 ### Параметри
@@ -45,7 +46,7 @@ condition ? exprIfTrue : exprIfFalse
 
 ```js
 var age = 26;
-var beverage = (age >= 21) ? "Пиво" : "Сік";
+var beverage = age >= 21 ? 'Пиво' : 'Сік';
 console.log(beverage); // "Пиво"
 ```
 
@@ -54,13 +55,13 @@ console.log(beverage); // "Пиво"
 Одне з поширених застосувань умовного виразу — це обробка значення, яке може дорівнювати `null`:
 
 ```js
-let greeting = person => {
-    let name = person ? person.name : `незнайомцю`
-    return `Агов, ${name}`
-}
+let greeting = (person) => {
+  let name = person ? person.name : `незнайомцю`;
+  return `Агов, ${name}`;
+};
 
-console.log(greeting({name: `Аліса`}));  // "Howdy, Alice"
-console.log(greeting(null));             // "Агов, незнайомцю"
+console.log(greeting({ name: `Аліса` })); // "Howdy, Alice"
+console.log(greeting(null)); // "Агов, незнайомцю"
 ```
 
 ### Ланцюжки умовних виразів

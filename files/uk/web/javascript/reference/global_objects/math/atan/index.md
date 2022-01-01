@@ -8,6 +8,7 @@ tags:
   - Reference
 browser-compat: javascript.builtins.Math.atan
 ---
+
 {{JSRef}}
 
 Функція **`Math.atan()`** повертає арктангенс (в радіанах) переданого числа, а саме:
@@ -48,7 +49,7 @@ browser-compat: javascript.builtins.Math.atan
 ## Синтаксис
 
 ```js
-Math.atan(x)
+Math.atan(x);
 ```
 
 ### Параметри
@@ -80,12 +81,12 @@ Math.atan(x)
 ### Застосування Math.atan()
 
 ```js
-Math.atan(1);   // 0.7853981633974483
-Math.atan(0);   // 0
-Math.atan(-0);  // -0
+Math.atan(1); // 0.7853981633974483
+Math.atan(0); // 0
+Math.atan(-0); // -0
 
-Math.atan(Infinity);   //  1.5707963267948966
-Math.atan(-Infinity);  // -1.5707963267948966
+Math.atan(Infinity); //  1.5707963267948966
+Math.atan(-Infinity); // -1.5707963267948966
 
 // Кут, який формує пряма [(0,0);(x,y)] з віссю Ox в декартовій системі координат
 Math.atan(y / x);

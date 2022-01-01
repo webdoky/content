@@ -148,7 +148,6 @@ display: unset;
     - `ruby-text-container` {{Experimental_Inline}}
       - : Такі елементи поводяться неначе елементи HTML {{HTMLElement("rtc")}}.
 
-
 ### Блокові
 
 - {{CSSxRef("&lt;display-box&gt;")}}

@@ -11,6 +11,7 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.Array.map
 ---
+
 {{JSRef}}
 
 Метод **`map()`** **створює новий масив**, наповнений результатами виклику переданої функції на кожному з елементів початкового масиву.
@@ -93,7 +94,7 @@ map(function (element, index, array) { ... }, thisArg)
 
 ## Поліфіл
 
-Метод `map` було додано до 5-ї редакції стандарту ECMA-262.  Тобто, він може бути доступний не у всіх його реалізаціях.
+Метод `map` було додано до 5-ї редакції стандарту ECMA-262. Тобто, він може бути доступний не у всіх його реалізаціях.
 
 Цю проблему можна обійти шляхом додавання наступного коду на початку скрипту. Фактично це дозволить використовувати `map` у реалізаціях ECMA-262, які не підтримують його нативно. Це точнісінько той самий алгоритм, який наведено у 5-й редакції ECMA-262, з поправкою на припущення, що {{jsxref("Object")}}, {{jsxref("TypeError")}} та {{jsxref("Array")} мають свої початкові значення, і що `callback.call` зводиться до початкового значення {{jsxref("Function.prototype.call()")}}.
 
@@ -101,9 +102,7 @@ map(function (element, index, array) { ... }, thisArg)
 // Етапи створення ECMA-262, 5 редакція, 15.4.4.19
 // Посилання: https://es5.github.io/#x15.4.4.19
 if (!Array.prototype.map) {
-
-  Array.prototype.map = function(callback/*, thisArg*/) {
-
+  Array.prototype.map = function (callback /*, thisArg*/) {
     var T, A, k;
 
     if (this == null) {
@@ -140,7 +139,6 @@ if (!Array.prototype.map) {
 
     // 8. Повторювати, поки k < len
     while (k < len) {
-
       var kValue, mappedValue;
 
       // a. Нехай Pk буде ToString(k).
@@ -150,7 +148,6 @@ if (!Array.prototype.map) {
       //   Цей крок можна об'єднати з пунктом c
       // c. Якщо kPresent — істина, то
       if (k in O) {
-
         // i. Нехай kValue — це результат викликання внутрішнього методу Get
         //    об'єкту O з аргументом Pk.
         kValue = O[k];
@@ -196,10 +193,10 @@ if (!Array.prototype.map) {
 Наступний код приймає масив чисел, і створює новий масив, який містить квадратні корені з чисел із першого масиву.
 
 ```js
-let numbers = [1, 4, 9]
-let roots = numbers.map(function(num) {
-    return Math.sqrt(num)
-})
+let numbers = [1, 4, 9];
+let roots = numbers.map(function (num) {
+  return Math.sqrt(num);
+});
 // roots тепер         [1, 2, 3]
 // numbers залишається [1, 4, 9]
 ```
@@ -209,15 +206,17 @@ let roots = numbers.map(function(num) {
 Наступний код приймає масив об'єктів, і створює новий масив, який містить нові об'єкти у зміненому форматі.
 
 ```js
-let kvArray = [{key: 1, value: 10},
-               {key: 2, value: 20},
-               {key: 3, value: 30}]
+let kvArray = [
+  { key: 1, value: 10 },
+  { key: 2, value: 20 },
+  { key: 3, value: 30 },
+];
 
-let reformattedArray = kvArray.map(obj => {
-   let rObj = {}
-   rObj[obj.key] = obj.value
-   return rObj
-})
+let reformattedArray = kvArray.map((obj) => {
+  let rObj = {};
+  rObj[obj.key] = obj.value;
+  return rObj;
+});
 // reformattedArray тепер [{1: 10}, {2: 20}, {3: 30}],
 
 // kvArray залишається таким:
@@ -231,10 +230,10 @@ let reformattedArray = kvArray.map(obj => {
 Наступний код показує, як `map` працює з функцією, яка приймає лише один аргумент. Аргументу буде автоматично присвоєно значення кожного з елементів масиву, поки `map` проходить в циклі крізь початковий масив.
 
 ```js
-let numbers = [1, 4, 9]
-let doubles = numbers.map(function(num) {
-  return num * 2
-})
+let numbers = [1, 4, 9];
+let doubles = numbers.map(function (num) {
+  return num * 2;
+});
 
 // doubles тепер       [2, 8, 18]
 // numbers залишається [1, 4, 9]
@@ -245,10 +244,10 @@ let doubles = numbers.map(function(num) {
 Цей приклад показує, як застосувати функцію `map` на {{jsxref("String")}}, щоб отримати масив байтів, де кожен елемент означає значення символу в кодуванні ASCII:
 
 ```js
-let map = Array.prototype.map
-let a = map.call('Hello World', function(x) {
-  return x.charCodeAt(0)
-})
+let map = Array.prototype.map;
+let a = map.call('Hello World', function (x) {
+  return x.charCodeAt(0);
+});
 // a тепер виглядає так: [72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]
 ```
 
@@ -259,10 +258,10 @@ let a = map.call('Hello World', function(x) {
 В цьому випадку ми отримаємо значення всі вибраних на екрані елементів `option`:
 
 ```js
-let elems = document.querySelectorAll('select option:checked')
-let values = Array.prototype.map.call(elems, function(obj) {
-  return obj.value
-})
+let elems = document.querySelectorAll('select option:checked');
+let values = Array.prototype.map.call(elems, function (obj) {
+  return obj.value;
+});
 ```
 
 Простіший спосіб — застосувати метод {{jsxref("Array.from()")}}.
@@ -277,7 +276,7 @@ let values = Array.prototype.map.call(elems, function(obj) {
 Припустимо, у нас є:
 
 ```js
-["1", "2", "3"].map(parseInt)
+['1', '2', '3'].map(parseInt);
 ```
 
 В той час, коли хтось може очікувати щось, схоже на `[1, 2, 3]`, фактичний результат є `[1, NaN, NaN]`.
@@ -296,42 +295,49 @@ let values = Array.prototype.map.call(elems, function(obj) {
 
 ```js
 // parseInt(string, radix) -> map(parseInt(value, index))
-/*  перша ітерація (index is 0): */ parseInt("1", 0)  // 1
-/*  друга ітерація (index is 1): */ parseInt("2", 1)  // NaN
-/*  третя ітерація (index is 2): */ parseInt("3", 2)  // NaN
+/*  перша ітерація (index is 0): */ parseInt('1', 0); // 1
+/*  друга ітерація (index is 1): */ parseInt('2', 1); // NaN
+/*  третя ітерація (index is 2): */ parseInt('3', 2); // NaN
 ```
 
 Як розв'язати цю проблему.
 
 ```js
 function returnInt(element) {
-  return parseInt(element, 10)
+  return parseInt(element, 10);
 }
 
 ['1', '2', '3'].map(returnInt); // [1, 2, 3]
 // В результаті маємо масив чисел (як і очікувалось)
 
 // Те саме, що і вище, але у лаконічному записі через стрілкову функцію
-['1', '2', '3'].map( str => parseInt(str) )
+['1', '2', '3']
+  .map((str) => parseInt(str))
 
-// Простіший спосіб і досягнути того ж, і уникнути підводного каменю:
-['1', '2', '3'].map(Number)  // [1, 2, 3]
+  [
+    // Простіший спосіб і досягнути того ж, і уникнути підводного каменю:
+    ('1', '2', '3')
+  ].map(Number) // [1, 2, 3]
 
-// Але на відміну від parseInt(), Number() також поверне і число з рухомою крапкою, і (розібраний) експоненціальний запис:
-['1.1', '2.2e2', '3e300'].map(Number)  // [1.1, 220, 3e+300]
+  [
+    // Але на відміну від parseInt(), Number() також поверне і число з рухомою крапкою, і (розібраний) експоненціальний запис:
+    ('1.1', '2.2e2', '3e300')
+  ].map(Number) // [1.1, 220, 3e+300]
 
-// Для порівняння, якби ми застосували parseInt() на попередньому масиві:
-['1.1', '2.2e2', '3e300'].map( str => parseInt(str) ) // [1, 2, 3]
+  [
+    // Для порівняння, якби ми застосували parseInt() на попередньому масиві:
+    ('1.1', '2.2e2', '3e300')
+  ].map((str) => parseInt(str)); // [1, 2, 3]
 ```
 
 Інакший варіант результату виклику методу `map` із функцією {{jsxref("parseInt")}} як аргументом виглядає так:
 
 ```js
-let xs = ['10', '10', '10']
+let xs = ['10', '10', '10'];
 
-xs = xs.map(parseInt)
+xs = xs.map(parseInt);
 
-console.log(xs)
+console.log(xs);
 // 10,NaN,2 в результаті може бути несподіваним, з урахуванням опису вище.
 ```
 
@@ -340,12 +346,12 @@ console.log(xs)
 Коли не повертається нічого, або {{jsxref("undefined")}}, маємо:
 
 ```js
-let numbers = [1, 2, 3, 4]
-let filteredNumbers = numbers.map(function(num, index) {
+let numbers = [1, 2, 3, 4];
+let filteredNumbers = numbers.map(function (num, index) {
   if (index < 3) {
-     return num
+    return num;
   }
-})
+});
 // index починається з нуля 0, тому filterNumbers містять 1,2,3 і undefined.
 // filteredNumbers має [1, 2, 3, undefined]
 // numbers залишається [1, 2, 3, 4]

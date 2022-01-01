@@ -8,6 +8,7 @@ tags:
   - Reference
 browser-compat: javascript.builtins.Math.acos
 ---
+
 {{JSRef}}
 
 Функція **`Math.acos()`** повертає арккосинус (в радіанах) числа, а саме:
@@ -55,7 +56,7 @@ browser-compat: javascript.builtins.Math.acos
 ## Синтаксис
 
 ```js
-Math.acos(x)
+Math.acos(x);
 ```
 
 ### Параметри
@@ -78,12 +79,12 @@ Math.acos(x)
 ### Застосування Math.acos()
 
 ```js
-Math.acos(-2);  // NaN
-Math.acos(-1);  // 3.141592653589793
-Math.acos(0);   // 1.5707963267948966
+Math.acos(-2); // NaN
+Math.acos(-1); // 3.141592653589793
+Math.acos(0); // 1.5707963267948966
 Math.acos(0.5); // 1.0471975511965979
-Math.acos(1);   // 0
-Math.acos(2);   // NaN
+Math.acos(1); // 0
+Math.acos(2); // NaN
 ```
 
 Для значень менших за -1 чи більших від 1 – `Math.acos()` поверне {{jsxref("NaN")}}.

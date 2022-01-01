@@ -11,6 +11,7 @@ tags:
   - recipe:css-property
 browser-compat: css.properties.-moz-float-edge
 ---
+
 {{CSSRef}}{{Non-standard_header}}
 
 Нестандартна властивість **`-moz-float-edge`** [CSS](/uk/docs/Web/CSS) вказує, чи включають властивості висоти та ширини зовнішні відступи, межі та товщину внутрішніх відступів.

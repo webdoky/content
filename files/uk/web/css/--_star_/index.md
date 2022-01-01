@@ -8,6 +8,7 @@ tags:
   - Reference
 browser-compat: css.properties.custom-property
 ---
+
 {{CSSRef}}
 
 Імена властивостей, що починаються з `--`, наприклад, `--example-name`, є _кастомними властивостями_, котрі містять значення, що можуть бути використані в інших оголошеннях за допомогою функції {{cssxref("var()")}}.
@@ -41,7 +42,9 @@ browser-compat: css.properties.custom-property
 <p id="firstParagraph">Цей параграф повинен мати синє тло та жовтий текст.</p>
 <p id="secondParagraph">Цей параграф повинен мати жовте тло та синій текст.</p>
 <div id="container">
-  <p id="thirdParagraph">Цей параграф повинен мати зелене тло та жовтий текст.</p>
+  <p id="thirdParagraph">
+    Цей параграф повинен мати зелене тло та жовтий текст.
+  </p>
 </div>
 ```
 

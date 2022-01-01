@@ -10,6 +10,7 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.Math.tanh
 ---
+
 {{JSRef}}
 
 Функція **`Math.tanh()`** повертає гіперболічний тангенс числа, а саме:
@@ -53,7 +54,7 @@ browser-compat: javascript.builtins.Math.tanh
 ## Синтаксис
 
 ```js
-Math.tanh(x)
+Math.tanh(x);
 ```
 
 ### Параметри
@@ -74,10 +75,13 @@ Math.tanh(x)
 Це можна відтворити за допомогою функції {{jsxref("Math.exp()")}}:
 
 ```js
-Math.tanh = Math.tanh || function(x){
-    var a = Math.exp(+x), b = Math.exp(-x);
-    return a == Infinity ? 1 : b == Infinity ? -1 : (a - b) / (a + b);
-}
+Math.tanh =
+  Math.tanh ||
+  function (x) {
+    var a = Math.exp(+x),
+      b = Math.exp(-x);
+    return a == Infinity ? 1 : b == Infinity ? -1 : (a - b) / (a + b);
+  };
 ```
 
 ## Приклади
@@ -85,9 +89,9 @@ Math.tanh = Math.tanh || function(x){
 ### Застосування Math.tanh()
 
 ```js
-Math.tanh(0);        // 0
+Math.tanh(0); // 0
 Math.tanh(Infinity); // 1
-Math.tanh(1);        // 0.7615941559557649
+Math.tanh(1); // 0.7615941559557649
 ```
 
 ## Специфікації

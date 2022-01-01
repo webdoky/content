@@ -10,6 +10,7 @@ tags:
   - recipe:css-property
 browser-compat: css.properties.-moz-image-region
 ---
+
 {{CSSRef}}{{Non-standard_Header}}
 
 Для певних XUL елементів та псевдоелементів, що використовують зображення із властивості {{CSSxRef("list-style-image")}}, ця властивість вказує ділянку зображення, що використовується замість усього зображення. Це дає змогу елементам використовувати різні шматки одного й того ж зображення для покращення швидкодії.
@@ -55,7 +56,7 @@ browser-compat: css.properties.-moz-image-region
 ```css
 #example-button {
   /* показати лише зону 4-по-4 пікселі від верхнього лівого кута зображення */
-  list-style-image: url("chrome://example/skin/example.png");
+  list-style-image: url('chrome://example/skin/example.png');
   -moz-image-region: rect(0px, 4px, 4px, 0px);
 }
 #example-button:hover {

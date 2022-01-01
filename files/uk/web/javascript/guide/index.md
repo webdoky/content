@@ -2,10 +2,11 @@
 title: Посібник з JavaScript
 slug: Web/JavaScript/Guide
 tags:
-- Guide
-- JavaScript
-- l10n:priority
+  - Guide
+  - JavaScript
+  - l10n:priority
 ---
+
 {{jsSidebar("Посібник з JavaScript")}}
 
 Посібник з JavaScript показує вам, як користуватися [JavaScript](/uk/docs/Web/JavaScript) і дає короткий огляд мови. Якщо вам потрібна вичерпна інформація про особливість мови, зверніть увагу на [Довідник з JavaScript](/uk/docs/Web/JavaScript/Reference).

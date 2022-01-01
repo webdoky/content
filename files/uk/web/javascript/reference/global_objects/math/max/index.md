@@ -13,6 +13,7 @@ tags:
   - max
 browser-compat: javascript.builtins.Math.max
 ---
+
 {{JSRef}}
 
 Функція **`Math.max()`** повертає найбільше значення з-поміж переданих нуля чи більше вхідних чисел, або {{jsxref("NaN")}}, якщо будь-який з аргументів не є числом і не може бути приведений до числа.
@@ -50,9 +51,9 @@ Math.max(value0, value1, ... , valueN)
 ### Застосування Math.max()
 
 ```js
-Math.max(10, 20);   //  20
+Math.max(10, 20); //  20
 Math.max(-10, -20); // -10
-Math.max(-10, 20);  //  20
+Math.max(-10, 20); //  20
 ```
 
 ### Отримання найбільшого з елементів масиву
@@ -60,9 +61,9 @@ Math.max(-10, 20);  //  20
 Для отримання найбільшого з числових елементів масиву можна застосувати {{jsxref("Array.prototype.reduce", "Array.reduce()")}}, шляхом порівняння кожного зі значень:
 
 ```js
-var arr = [1,2,3];
-var max = arr.reduce(function(a, b) {
-    return Math.max(a, b);
+var arr = [1, 2, 3];
+var max = arr.reduce(function (a, b) {
+  return Math.max(a, b);
 }, 0);
 ```
 

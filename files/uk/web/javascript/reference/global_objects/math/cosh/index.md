@@ -9,6 +9,7 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.Math.cosh
 ---
+
 {{JSRef}}
 
 Функція **`Math.cosh()`** повертає гіперболічний косинус числа, який можна виразити за допомогою {{jsxref("Math.E", "сталої «e»", "", 1)}}:
@@ -30,7 +31,7 @@ e^{-x}}{2}</annotation></semantics></math>
 ## Синтаксис
 
 ```js
-Math.cosh(x)
+Math.cosh(x);
 ```
 
 ### Параметри
@@ -51,8 +52,8 @@ Math.cosh(x)
 ### Застосування Math.cosh()
 
 ```js
-Math.cosh(0);  // 1
-Math.cosh(1);  // 1.5430806348152437
+Math.cosh(0); // 1
+Math.cosh(1); // 1.5430806348152437
 Math.cosh(-1); // 1.5430806348152437
 ```
 
@@ -61,18 +62,22 @@ Math.cosh(-1); // 1.5430806348152437
 Цю функцію можна відтворити за допомогою методу {{jsxref("Math.exp()")}}:
 
 ```js
-Math.cosh = Math.cosh || function(x) {
-  return (Math.exp(x) + Math.exp(-x)) / 2;
-}
+Math.cosh =
+  Math.cosh ||
+  function (x) {
+    return (Math.exp(x) + Math.exp(-x)) / 2;
+  };
 ```
 
 або навіть з одним викликом функції {{jsxref("Math.exp()")}}:
 
 ```js
-Math.cosh = Math.cosh || function(x) {
-  var y = Math.exp(x);
-  return (y + 1 / y) / 2;
-};
+Math.cosh =
+  Math.cosh ||
+  function (x) {
+    var y = Math.exp(x);
+    return (y + 1 / y) / 2;
+  };
 ```
 
 ## Специфікації

@@ -11,6 +11,7 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.Array.filter
 ---
+
 {{JSRef}}
 
 Метод **`filter()`** **створює новий масив**, що містить всі елементи попереднього, які пройшли перевірку наданою функцією.
@@ -81,34 +82,35 @@ filter(function (element, index, array) { ... }, thisArg)
 Цю проблему можна обійти шляхом додавання наступного коду на початку скрипту. Фактично це дозволить використовувати `filter()` у реалізаціях ECMA-262, які не підтримують його нативно. Цей алгоритм цілком еквівалентний наведеному в 5-й редакції ECMA-262, за умов, що `fn.call` зводиться до початкового значення {{jsxref("Function.prototype.bind()")}}, і що {{jsxref("Array.prototype.push()")}} містить своє вихідне значення.
 
 ```js
-if (!Array.prototype.filter){
-  Array.prototype.filter = function(func, thisArg) {
+if (!Array.prototype.filter) {
+  Array.prototype.filter = function (func, thisArg) {
     'use strict';
-    if ( ! ((typeof func === 'Function' || typeof func === 'function') && this) )
-        throw new TypeError();
+    if (!((typeof func === 'Function' || typeof func === 'function') && this))
+      throw new TypeError();
 
     var len = this.length >>> 0,
-        res = new Array(len), // заздалегідь створюємо новий масив
-        t = this, c = 0, i = -1;
+      res = new Array(len), // заздалегідь створюємо новий масив
+      t = this,
+      c = 0,
+      i = -1;
 
     var kValue;
-    if (thisArg === undefined){
-      while (++i !== len){
+    if (thisArg === undefined) {
+      while (++i !== len) {
         // перевіряємо, чи масив має якесь значення за даним індексом
-        if (i in this){
+        if (i in this) {
           kValue = t[i]; // на випадок, якщо t міняється всередині функції зворотного виклику
-          if (func(t[i], i, t)){
+          if (func(t[i], i, t)) {
             res[c++] = kValue;
           }
         }
       }
-    }
-    else{
-      while (++i !== len){
+    } else {
+      while (++i !== len) {
         // перевіряємо, чи масив має якесь значення за даним індексом
-        if (i in this){
+        if (i in this) {
           kValue = t[i];
-          if (func.call(thisArg, t[i], i, t)){
+          if (func.call(thisArg, t[i], i, t)) {
             res[c++] = kValue;
           }
         }
@@ -129,10 +131,10 @@ if (!Array.prototype.filter){
 
 ```js
 function isBigEnough(value) {
-  return value >= 10
+  return value >= 10;
 }
 
-let filtered = [12, 5, 8, 130, 44].filter(isBigEnough)
+let filtered = [12, 5, 8, 130, 44].filter(isBigEnough);
 // відфільтрований результат має [12, 130, 44]
 ```
 
@@ -166,29 +168,29 @@ let arr = [
   { id: 0 },
   { id: 3 },
   { id: 12.2 },
-  { },
+  {},
   { id: null },
   { id: NaN },
-  { id: 'undefined' }
-]
+  { id: 'undefined' },
+];
 
-let invalidEntries = 0
+let invalidEntries = 0;
 
 function filterByID(item) {
   if (Number.isFinite(item.id) && item.id !== 0) {
-    return true
+    return true;
   }
-  invalidEntries++
+  invalidEntries++;
   return false;
 }
 
-let arrByID = arr.filter(filterByID)
+let arrByID = arr.filter(filterByID);
 
-console.log('Відфільтрований масив\n', arrByID)
+console.log('Відфільтрований масив\n', arrByID);
 // Відфільтрований масив
 // [{ id: 15 }, { id: -1 }, { id: 3 }, { id: 12.2 }]
 
-console.log('Кількість некоректних значень = ', invalidEntries)
+console.log('Кількість некоректних значень = ', invalidEntries);
 // Кількість некоректних значень = 5
 ```
 
@@ -197,35 +199,37 @@ console.log('Кількість некоректних значень = ', inval
 Наступний приклад за допомогою `filter()` фільтрує вміст масиву за певним критерієм пошуку.
 
 ```js
-let fruits = ['apple', 'banana', 'grapes', 'mango', 'orange']
+let fruits = ['apple', 'banana', 'grapes', 'mango', 'orange'];
 
 /**
  * Фільтрує елементи масиву за певним критерієм пошуку (запиту)
  */
 function filterItems(arr, query) {
-  return arr.filter(function(el) {
-      return el.toLowerCase().indexOf(query.toLowerCase()) !== -1
-  })
+  return arr.filter(function (el) {
+    return el.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+  });
 }
 
-console.log(filterItems(fruits, 'ap'))  // ['apple', 'grapes']
-console.log(filterItems(fruits, 'an'))  // ['banana', 'mango', 'orange']
+console.log(filterItems(fruits, 'ap')); // ['apple', 'grapes']
+console.log(filterItems(fruits, 'an')); // ['banana', 'mango', 'orange']
 ```
 
 #### Реалізація ES2015
 
 ```js
-const fruits = ['apple', 'banana', 'grapes', 'mango', 'orange']
+const fruits = ['apple', 'banana', 'grapes', 'mango', 'orange'];
 
 /**
  * Фільтрує елементи масиву за певним критерієм пошуку (запиту)
  */
 const filterItems = (arr, query) => {
-  return arr.filter(el => el.toLowerCase().indexOf(query.toLowerCase()) !== -1)
-}
+  return arr.filter(
+    (el) => el.toLowerCase().indexOf(query.toLowerCase()) !== -1,
+  );
+};
 
-console.log(filterItems(fruits, 'ap'))  // ['apple', 'grapes']
-console.log(filterItems(fruits, 'an'))  // ['banana', 'mango', 'orange']
+console.log(filterItems(fruits, 'ap')); // ['apple', 'grapes']
+console.log(filterItems(fruits, 'an')); // ['banana', 'mango', 'orange']
 ```
 
 ### Внесення змін до початкового масиву (зміна, додавання і видалення елементів)
@@ -234,36 +238,36 @@ console.log(filterItems(fruits, 'an'))  // ['banana', 'mango', 'orange']
 
 ```js
 // Змінювання кожного слова
-let words = ['spray', 'limit', 'exuberant', 'destruction','elite', 'present']
+let words = ['spray', 'limit', 'exuberant', 'destruction', 'elite', 'present'];
 
-const modifiedWords = words.filter( (word, index, arr) => {
-  arr[index+1] +=' extra'
-  return word.length < 6
-})
+const modifiedWords = words.filter((word, index, arr) => {
+  arr[index + 1] += ' extra';
+  return word.length < 6;
+});
 
-console.log(modifiedWords)
+console.log(modifiedWords);
 // Зверніть увагу, в масиві є три слова з довжиною до 6 літер, але оскільки всі наступні змінюються, в результаті отримуємо лише одне
 // ["spray"]
 
 // Додавання нових слів
-words = ['spray', 'limit', 'exuberant', 'destruction','elite', 'present']
-const appendedWords = words.filter( (word, index, arr) => {
-  arr.push('new')
-  return word.length < 6
-})
+words = ['spray', 'limit', 'exuberant', 'destruction', 'elite', 'present'];
+const appendedWords = words.filter((word, index, arr) => {
+  arr.push('new');
+  return word.length < 6;
+});
 
-console.log(appendedWords)
+console.log(appendedWords);
 // Лише три слова проходять перевірку, хоча масив `words` тепер має значно більше слів, що містять до 6 літер
 // ["spray" ,"limit" ,"elite"]
 
 // Видалення слів
-words = ['spray', 'limit', 'exuberant', 'destruction', 'elite', 'present']
-const deleteWords = words.filter( (word, index, arr) => {
-  arr.pop()
-  return word.length < 6
-})
+words = ['spray', 'limit', 'exuberant', 'destruction', 'elite', 'present'];
+const deleteWords = words.filter((word, index, arr) => {
+  arr.pop();
+  return word.length < 6;
+});
 
-console.log(deleteWords)
+console.log(deleteWords);
 // Слово 'elite' взагалі не потрапляє до масиву з результатами, позаяк воно викидається з `words` до того, як фільтр добереться до нього
 // ["spray" ,"limit"]
 ```

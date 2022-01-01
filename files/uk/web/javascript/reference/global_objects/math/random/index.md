@@ -10,6 +10,7 @@ tags:
   - Reference
 browser-compat: javascript.builtins.Math.random
 ---
+
 {{JSRef}}
 
 Функція **`Math.random()`** повертає псевдовипадкове число з рухомою комою в діапазоні від 0 до менше за 1 (включно з 0, але не включно з 1) з приблизно рівномірним розподілом протягом цього діапазону, який потім можна масштабувати до бажаного розміру. Реалізація обирає початкове число (так званий «seed») для алгоритму генерації випадкового числа; це число не може бути обрано чи скинуто користувачем.
@@ -21,7 +22,7 @@ browser-compat: javascript.builtins.Math.random
 ## Синтаксис
 
 ```js
-Math.random()
+Math.random();
 ```
 
 ### Повернене значення
@@ -56,8 +57,8 @@ function getRandomArbitrary(min, max) {
 
 ```js
 function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
+  min = Math.ceil(min);
+  max = Math.floor(max);
   return Math.floor(Math.random() * (max - min) + min); // Включно з мінімальним та невключно з максимальним значенням
 }
 ```
@@ -70,8 +71,8 @@ function getRandomInt(min, max) {
 
 ```js
 function getRandomIntInclusive(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
+  min = Math.ceil(min);
+  max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1) + min); // Включно з мінімальним та максимальним значеннями
 }
 ```

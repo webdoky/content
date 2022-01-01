@@ -12,6 +12,7 @@ tags:
   - splice
 browser-compat: javascript.builtins.Array.splice
 ---
+
 {{JSRef}}
 
 Метод **`splice()`** змінює вміст масиву шляхом видалення чи заміни наявних елементів і/або додавання нових [на місці](https://en.wikipedia.org/wiki/In-place_algorithm). Щоб отримати частину масиву без внесення змін до нього, &mdash; зверніться до {{jsxref("Array.prototype.slice()", "slice()")}}.
@@ -21,10 +22,10 @@ browser-compat: javascript.builtins.Array.splice
 ## Синтаксис
 
 ```js
-splice(start)
-splice(start, deleteCount)
-splice(start, deleteCount, item1)
-splice(start, deleteCount, item1, item2, itemN)
+splice(start);
+splice(start, deleteCount);
+splice(start, deleteCount, item1);
+splice(start, deleteCount, item1, item2, itemN);
 ```
 
 ### Параметри
@@ -65,8 +66,8 @@ splice(start, deleteCount, item1, item2, itemN)
 ### Видалити 0 (нуль) елементів перед індексом 2 та вставити "drum"
 
 ```js
-let myFish = ['angel', 'clown', 'mandarin', 'sturgeon']
-let removed = myFish.splice(2, 0, 'drum')
+let myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];
+let removed = myFish.splice(2, 0, 'drum');
 
 // myFish має ["angel", "clown", "drum", "mandarin", "sturgeon"]
 // removed має [], жодного елементу видалено не було
@@ -75,8 +76,8 @@ let removed = myFish.splice(2, 0, 'drum')
 ### Видалити 0 (нуль) елементів перед індексом 2 та вставити "drum" і "guitar"
 
 ```js
-let myFish = ['angel', 'clown', 'mandarin', 'sturgeon']
-let removed = myFish.splice(2, 0, 'drum', 'guitar')
+let myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];
+let removed = myFish.splice(2, 0, 'drum', 'guitar');
 
 // myFish має ["angel", "clown", "drum", "guitar", "mandarin", "sturgeon"]
 // removed має [], жодного елементу видалено не було
@@ -85,8 +86,8 @@ let removed = myFish.splice(2, 0, 'drum', 'guitar')
 ### Видалити 1 елемент з індексом 3
 
 ```js
-let myFish = ['angel', 'clown', 'drum', 'mandarin', 'sturgeon']
-let removed = myFish.splice(3, 1)
+let myFish = ['angel', 'clown', 'drum', 'mandarin', 'sturgeon'];
+let removed = myFish.splice(3, 1);
 
 // myFish має ["angel", "clown", "drum", "sturgeon"]
 // removed має ["mandarin"]
@@ -95,8 +96,8 @@ let removed = myFish.splice(3, 1)
 ### Видалити 1 елемент з індексом 2 та вставити "trumpet"
 
 ```js
-let myFish = ['angel', 'clown', 'drum', 'sturgeon']
-let removed = myFish.splice(2, 1, 'trumpet')
+let myFish = ['angel', 'clown', 'drum', 'sturgeon'];
+let removed = myFish.splice(2, 1, 'trumpet');
 
 // myFish має ["angel", "clown", "trumpet", "sturgeon"]
 // removed має ["drum"]
@@ -105,8 +106,8 @@ let removed = myFish.splice(2, 1, 'trumpet')
 ### Видалити 2 елементи, починаючи з індексу 0, та вставити "parrot", "anemone" і "blue"
 
 ```js
-let myFish = ['angel', 'clown', 'trumpet', 'sturgeon']
-let removed = myFish.splice(0, 2, 'parrot', 'anemone', 'blue')
+let myFish = ['angel', 'clown', 'trumpet', 'sturgeon'];
+let removed = myFish.splice(0, 2, 'parrot', 'anemone', 'blue');
 
 // myFish має ["parrot", "anemone", "blue", "trumpet", "sturgeon"]
 // removed має ["angel", "clown"]
@@ -115,8 +116,8 @@ let removed = myFish.splice(0, 2, 'parrot', 'anemone', 'blue')
 ### Видалити 2 елементи, починаючи з індексу 2
 
 ```js
-let myFish = ['parrot', 'anemone', 'blue', 'trumpet', 'sturgeon']
-let removed = myFish.splice(2, 2)
+let myFish = ['parrot', 'anemone', 'blue', 'trumpet', 'sturgeon'];
+let removed = myFish.splice(2, 2);
 
 // myFish має ["parrot", "anemone", "sturgeon"]
 // removed має ["blue", "trumpet"]
@@ -125,8 +126,8 @@ let removed = myFish.splice(2, 2)
 ### Видалити 1 елемент з індексом -2
 
 ```js
-let myFish = ['angel', 'clown', 'mandarin', 'sturgeon']
-let removed = myFish.splice(-2, 1)
+let myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];
+let removed = myFish.splice(-2, 1);
 
 // myFish має ["angel", "clown", "sturgeon"]
 // removed має ["mandarin"]
@@ -135,8 +136,8 @@ let removed = myFish.splice(-2, 1)
 ### Видалити всі елементи, починаючи з індексу 2
 
 ```js
-let myFish = ['angel', 'clown', 'mandarin', 'sturgeon']
-let removed = myFish.splice(2)
+let myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];
+let removed = myFish.splice(2);
 
 // myFish має ["angel", "clown"]
 // removed має ["mandarin", "sturgeon"]

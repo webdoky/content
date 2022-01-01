@@ -11,6 +11,7 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.JSON.stringify
 ---
+
 {{JSRef}}
 
 Метод **`JSON.stringify()`** перетворює JavaScript-об'єкт або значення на рядок JSON, додатково замінюючи значення, якщо була вказана необов'язкова функція для заміни, або ж додатково вибираючи лише вказані властивості, якщо було передано масив для заміни.
@@ -20,9 +21,9 @@ browser-compat: javascript.builtins.JSON.stringify
 ## Синтаксис
 
 ```js
-JSON.stringify(value)
-JSON.stringify(value, replacer)
-JSON.stringify(value, replacer, space)
+JSON.stringify(value);
+JSON.stringify(value, replacer);
+JSON.stringify(value, replacer, space);
 ```
 
 ### Параметри
@@ -30,6 +31,7 @@ JSON.stringify(value, replacer, space)
 - `value`
   - : Значення, яке буде перетворено на рядок JSON.
 - `replacer` {{optional_inline}}
+
   - : Функція, яка змінює поведінку процесу перетворення значення на рядок, або ж масив із {{JSxRef("String", "рядків")}} та {{JSxRef("Number", "чисел")}}, які слугують "рекомендаційним списком" для виділення чи фільтрації властивостей об'єкту перед додаванням їх до JSON-рядка. Якщо цей параметр дорівнює {{JSxRef("null")}}, або просто не заданий, в отриманий рядок будуть включені всі властивості об'єкта.
 
 - `space` {{optional_inline}}
@@ -68,14 +70,14 @@ JSON.stringify(value, replacer, space)
 ### Застосування JSON.stringify
 
 ```js
-JSON.stringify({});                    // '{}'
-JSON.stringify(true);                  // 'true'
-JSON.stringify('foo');                 // '"foo"'
-JSON.stringify([1, 'false', false]);   // '[1,"false",false]'
+JSON.stringify({}); // '{}'
+JSON.stringify(true); // 'true'
+JSON.stringify('foo'); // '"foo"'
+JSON.stringify([1, 'false', false]); // '[1,"false",false]'
 JSON.stringify([NaN, null, Infinity]); // '[null,null,null]'
-JSON.stringify({ x: 5 });              // '{"x":5}'
+JSON.stringify({ x: 5 }); // '{"x":5}'
 
-JSON.stringify(new Date(2006, 0, 2, 15, 4, 5))
+JSON.stringify(new Date(2006, 0, 2, 15, 4, 5));
 // '"2006-01-02T15:04:05.000Z"'
 
 JSON.stringify({ x: 5, y: 6 });
@@ -85,27 +87,43 @@ JSON.stringify([new Number(3), new String('false'), new Boolean(false)]);
 
 // Елементи масиву з рядковими ключами не є перелічними і не мають сенсу в JSON
 let a = ['foo', 'bar'];
-a['baz'] = 'quux';      // a: [ 0: 'foo', 1: 'bar', baz: 'quux' ]
+a['baz'] = 'quux'; // a: [ 0: 'foo', 1: 'bar', baz: 'quux' ]
 JSON.stringify(a);
 // '["foo","bar"]'
 
-JSON.stringify({ x: [10, undefined, function(){}, Symbol('')] });
+JSON.stringify({ x: [10, undefined, function () {}, Symbol('')] });
 // '{"x":[10,null,null,null]}'
 
 // Стандартні структури даних
-JSON.stringify([new Set([1]), new Map([[1, 2]]), new WeakSet([{a: 1}]), new WeakMap([[{a: 1}, 2]])]);
+JSON.stringify([
+  new Set([1]),
+  new Map([[1, 2]]),
+  new WeakSet([{ a: 1 }]),
+  new WeakMap([[{ a: 1 }, 2]]),
+]);
 // '[{},{},{},{}]'
 
 // Типізовані масиви
 JSON.stringify([new Int8Array([1]), new Int16Array([1]), new Int32Array([1])]);
 // '[{"0":1},{"0":1},{"0":1}]'
-JSON.stringify([new Uint8Array([1]), new Uint8ClampedArray([1]), new Uint16Array([1]), new Uint32Array([1])]);
+JSON.stringify([
+  new Uint8Array([1]),
+  new Uint8ClampedArray([1]),
+  new Uint16Array([1]),
+  new Uint32Array([1]),
+]);
 // '[{"0":1},{"0":1},{"0":1},{"0":1}]'
 JSON.stringify([new Float32Array([1]), new Float64Array([1])]);
 // '[{"0":1},{"0":1}]'
 
 // toJSON()
-JSON.stringify({ x: 5, y: 6, toJSON(){ return this.x + this.y; } });
+JSON.stringify({
+  x: 5,
+  y: 6,
+  toJSON() {
+    return this.x + this.y;
+  },
+});
 // '11'
 
 // Символи:
@@ -115,7 +133,7 @@ JSON.stringify({ [Symbol('foo')]: 'foo' });
 // '{}'
 JSON.stringify({ [Symbol.for('foo')]: 'foo' }, [Symbol.for('foo')]);
 // '{}'
-JSON.stringify({ [Symbol.for('foo')]: 'foo' }, function(k, v) {
+JSON.stringify({ [Symbol.for('foo')]: 'foo' }, function (k, v) {
   if (typeof k === 'symbol') {
     return 'a symbol';
   }
@@ -123,11 +141,16 @@ JSON.stringify({ [Symbol.for('foo')]: 'foo' }, function(k, v) {
 // undefined
 
 // Неперелічні властивості:
-JSON.stringify( Object.create(null, { x: { value: 'x', enumerable: false }, y: { value: 'y', enumerable: true } }) );
+JSON.stringify(
+  Object.create(null, {
+    x: { value: 'x', enumerable: false },
+    y: { value: 'y', enumerable: true },
+  }),
+);
 // '{"y":"y"}'
 
 // BigInt-значення викидають виняток
-JSON.stringify({x: 2n});
+JSON.stringify({ x: 2n });
 // TypeError: BigInt value can't be serialized in JSON
 ```
 
@@ -160,7 +183,13 @@ function replacer(key, value) {
   return value;
 }
 
-var foo = {foundation: 'Mozilla', model: 'box', week: 45, transport: 'car', month: 7};
+var foo = {
+  foundation: 'Mozilla',
+  model: 'box',
+  week: 45,
+  transport: 'car',
+  month: 7,
+};
 JSON.stringify(foo, replacer);
 // '{"week":45,"month":7}'
 ```
@@ -211,14 +240,12 @@ JSON.stringify({ uno: 1, dos: 2 }, null, '\t');
 
 ```js
 var obj = {
-    data: 'data',
+  data: 'data',
 
-    toJSON (key) {
-        if (key)
-            return `Зараз я — вкладений об'єкт за ключем '${key}'`;
-        else
-            return this;
-    }
+  toJSON(key) {
+    if (key) return `Зараз я — вкладений об'єкт за ключем '${key}'`;
+    else return this;
+  },
 };
 
 JSON.stringify(obj);
@@ -227,7 +254,7 @@ JSON.stringify(obj);
 JSON.stringify({ obj }); // Скорочення імен властивостей (ES2015).
 // '{"obj":"Зараз я — вкладений об'єкт за ключем 'obj'"}'
 
-JSON.stringify([ obj ]);
+JSON.stringify([obj]);
 // '["Зараз я — вкладений об'єкт за ключем '0'"]'
 ```
 
@@ -252,20 +279,20 @@ JSON.stringify(circularReference);
 Таким чином, якщо вимагається сумісність зі старішими JavaScript-рушіями, то стає небезпечним прямо підставляти рядок — результат виконання `JSON.stringify` — в `eval`, чи `new Function` або як частину [JSONP](https://en.wikipedia.org/wiki/JSONP) URL. Для цього можна використати наступний допоміжний код:
 
 ```js
-function jsFriendlyJSONStringify (s) {
-    return JSON.stringify(s).
-        replace(/\u2028/g, '\\u2028').
-        replace(/\u2029/g, '\\u2029');
+function jsFriendlyJSONStringify(s) {
+  return JSON.stringify(s)
+    .replace(/\u2028/g, '\\u2028')
+    .replace(/\u2029/g, '\\u2029');
 }
 
 var s = {
-    a: String.fromCharCode(0x2028),
-    b: String.fromCharCode(0x2029)
+  a: String.fromCharCode(0x2028),
+  b: String.fromCharCode(0x2029),
 };
 try {
-    eval('(' + JSON.stringify(s) + ')');
+  eval('(' + JSON.stringify(s) + ')');
 } catch (e) {
-    console.log(e); // "SyntaxError: unterminated string literal"
+  console.log(e); // "SyntaxError: unterminated string literal"
 }
 
 // Без необхідності ловити виняток
@@ -279,11 +306,11 @@ alert(jsFriendlyJSONStringify(s)); // {"a":"\u2028","b":"\u2029"}
 > **Зауваження:** Властивості об'єктів, які не є масивами, не мають жодних гарантій щодо послідовності їхньої серіалізації. Не слід покладатися на порядок властивостей однакових об'єктів всередині серіалізованої версії.
 
 ```js
-var a = JSON.stringify({ foo: "bar", baz: "quux" })
+var a = JSON.stringify({ foo: 'bar', baz: 'quux' });
 //'{"foo":"bar","baz":"quux"}'
-var b = JSON.stringify({ baz: "quux", foo: "bar" })
+var b = JSON.stringify({ baz: 'quux', foo: 'bar' });
 //'{"baz":"quux","foo":"bar"}'
-console.log(a !== b) // true
+console.log(a !== b); // true
 
 // Деякі мемоізаційні функції використовують JSON.stringify для серіалізації аргументів,
 // що може призвести до промаху в кеші, якщо трапляються однакові об'єкти, як це показано вище
@@ -296,15 +323,15 @@ console.log(a !== b) // true
 ```js
 // Створення прикладу JSON-об'єкту
 var session = {
-  'screens': [],
-  'state': true
+  screens: [],
+  state: true,
 };
-session.screens.push({ 'name': 'screenA', 'width': 450, 'height': 250 });
-session.screens.push({ 'name': 'screenB', 'width': 650, 'height': 350 });
-session.screens.push({ 'name': 'screenC', 'width': 750, 'height': 120 });
-session.screens.push({ 'name': 'screenD', 'width': 250, 'height': 60 });
-session.screens.push({ 'name': 'screenE', 'width': 390, 'height': 120 });
-session.screens.push({ 'name': 'screenF', 'width': 1240, 'height': 650 });
+session.screens.push({ name: 'screenA', width: 450, height: 250 });
+session.screens.push({ name: 'screenB', width: 650, height: 350 });
+session.screens.push({ name: 'screenC', width: 750, height: 120 });
+session.screens.push({ name: 'screenD', width: 250, height: 60 });
+session.screens.push({ name: 'screenE', width: 390, height: 120 });
+session.screens.push({ name: 'screenF', width: 1240, height: 650 });
 
 // Перетворення об'єкту на JSON-рядок із JSON.stringify(),
 // потім збереження його в localStorage за ім'ям `session`
@@ -324,13 +351,13 @@ console.log(restoredSession);
 Рушії, що реалізовують [специфікацію JSON.stringify з правильним формуванням](https://github.com/tc39/proposal-well-formed-stringify), опрацьовують поодинокі сурогати — будь-які кодові одиниці від U+D800 до U+DFFF — із застосуванням керівних послідовностей Unicode, замість вживання їх буквально. До цих оновлень `JSON.stringify` міг повертати поодинокі сурогати, якщо такі сурогати знаходилися в початковому рядку. Такі рядки потім неможливо було коректно перекодувати в UTF-8 чи UTF-16:
 
 ```js
-JSON.stringify("\uD800"); // '"�"'
+JSON.stringify('\uD800'); // '"�"'
 ```
 
 Проте з цим оновленням `JSON.stringify` відбиває поодинокі сурогати за допомогою екранованих послідовностей JSON, які _можна_ коректно перекодувати в рядок UTF-8 чи UTF-16:
 
 ```js
-JSON.stringify("\uD800"); // '"\\ud800"'
+JSON.stringify('\uD800'); // '"\\ud800"'
 ```
 
 Це оновлення має бути зворотно сумісним, поки результат `JSON.stringify` передається до такого API, як `JSON.parse`, що прийматиме будь-який валідний JSON-текст, оскільки вони будуть вважати юнікодні екрановані поодинокі сурогати рівними самим сурогатам. _Лише_ під час прямої інтерпретації результатів виконання `JSON.stringify` слід уважно опрацьовувати два можливі варіанти кодування таких кодових одиниць.

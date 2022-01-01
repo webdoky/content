@@ -9,6 +9,7 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.Math.sign
 ---
+
 {{JSRef}}
 
 Функція **`Math.sign()`** повертає або **додатну**, або **від'ємну** +/- 1 (одиницю), позначаючи знак числа, переданого як аргумент. Якщо число, передане до `Math.sign()`, дорівнює 0, функція поверне +/- 0. Зауважте, що, якщо число додатне, знак `+` **не буде** повернено явно.
@@ -18,7 +19,7 @@ browser-compat: javascript.builtins.Math.sign
 ## Синтаксис
 
 ```js
-Math.sign(x)
+Math.sign(x);
 ```
 
 ### Параметри
@@ -45,14 +46,14 @@ Math.sign(x)
 ### Застосування Math.sign()
 
 ```js
-Math.sign(3);     //  1
-Math.sign(-3);    // -1
-Math.sign('-3');  // -1
-Math.sign(0);     //  0
-Math.sign(-0);    // -0
-Math.sign(NaN);   // NaN
+Math.sign(3); //  1
+Math.sign(-3); // -1
+Math.sign('-3'); // -1
+Math.sign(0); //  0
+Math.sign(-0); // -0
+Math.sign(NaN); // NaN
 Math.sign('foo'); // NaN
-Math.sign();      // NaN
+Math.sign(); // NaN
 ```
 
 ## Специфікації

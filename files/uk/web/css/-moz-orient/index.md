@@ -9,6 +9,7 @@ tags:
   - recipe:css-property
 browser-compat: css.properties.-moz-orient
 ---
+
 {{CSSRef}}{{Non-standard_header}}
 
 Властивість [CSS](/en-US/docs/Web/CSS) **`-moz-orient`** вказує орієнтацію елемента, до котрого застосована.
@@ -41,16 +42,10 @@ browser-compat: css.properties.-moz-orient
 ### HTML
 
 ```html
-<p>
-  Наступний індикатор виконання &mdash;
-  горизонтальний (як усталено):
-</p>
+<p>Наступний індикатор виконання &mdash; горизонтальний (як усталено):</p>
 <progress max="100" value="75"></progress>
 
-<p>
- Наступний індикатор виконання &mdash;
- вертикальний:
-</p>
+<p>Наступний індикатор виконання &mdash; вертикальний:</p>
 <progress class="vert" max="100" value="75"></progress>
 ```
 

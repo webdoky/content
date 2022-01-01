@@ -8,6 +8,7 @@ tags:
   - Reference
 browser-compat: javascript.builtins.Math.abs
 ---
+
 {{JSRef}}
 
 Функція **`Math.abs()`** повертає модуль числа. Це означає, що вона поверне `x`, якщо `x` — додатне число або нуль, та `x` із протилежним знаком, якщо `x` — від'ємне число.
@@ -17,7 +18,7 @@ browser-compat: javascript.builtins.Math.abs
 ## Синтаксис
 
 ```js
-Math.abs(x)
+Math.abs(x);
 ```
 
 ### Параметри
@@ -40,16 +41,16 @@ Math.abs(x)
 Передача в метод таких значень, як: порожній об'єкт, масив з понад одним елементом, нечисловий рядок, чи змінна з {{jsxref("undefined")}} або без значення взагалі — поверне {{jsxref("NaN")}}. Передача в метод значень {{jsxref("null")}}, порожнього рядка чи порожнього масиву поверне 0.
 
 ```js
-Math.abs('-1');     // 1
-Math.abs(-2);       // 2
-Math.abs(null);     // 0
-Math.abs('');       // 0
-Math.abs([]);       // 0
-Math.abs([2]);      // 2
-Math.abs([1,2]);    // NaN
-Math.abs({});       // NaN
+Math.abs('-1'); // 1
+Math.abs(-2); // 2
+Math.abs(null); // 0
+Math.abs(''); // 0
+Math.abs([]); // 0
+Math.abs([2]); // 2
+Math.abs([1, 2]); // NaN
+Math.abs({}); // NaN
 Math.abs('string'); // NaN
-Math.abs();         // NaN
+Math.abs(); // NaN
 ```
 
 ## Специфікації

@@ -11,6 +11,7 @@ tags:
   - timeStamp
 browser-compat: javascript.builtins.Date
 ---
+
 {{JSRef}}
 
 Об'єкти **`Date`** в JavaScript відображають єдиний момент часу в платформонезалежному форматі. Об'єкти типу `Date` містять число, яке відповідає кількості секунд, що минули з 1 січня 1970 року в UTC.
@@ -157,20 +158,28 @@ browser-compat: javascript.builtins.Date
 > **Зауваження:** Категорично не рекомендується розбирати властивості дати за допомогою конструктора `Date` (і `Date.parse`, що еквівалентно) у зв‘язку з відмінностями та неузгодженістю браузерів.
 
 ```js
-let today = new Date()
-let birthday = new Date('December 17, 1995 03:24:00')
-let birthday = new Date('1995-12-17T03:24:00')
-let birthday = new Date(1995, 11, 17)            // індекс місяця починається з 0
-let birthday = new Date(1995, 11, 17, 3, 24, 0)
-let birthday = new Date(628021800000)            // передача мітки часу
+let today = new Date();
+let birthday = new Date('December 17, 1995 03:24:00');
+let birthday = new Date('1995-12-17T03:24:00');
+let birthday = new Date(1995, 11, 17); // індекс місяця починається з 0
+let birthday = new Date(1995, 11, 17, 3, 24, 0);
+let birthday = new Date(628021800000); // передача мітки часу
 ```
 
 ### Отримання дати, місяця, року чи часу
 
 ```js
 const date = new Date();
-const [month, day, year]       = [date.getMonth(), date.getDate(), date.getFullYear()];
-const [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()];
+const [month, day, year] = [
+  date.getMonth(),
+  date.getDate(),
+  date.getFullYear(),
+];
+const [hour, minutes, seconds] = [
+  date.getHours(),
+  date.getMinutes(),
+  date.getSeconds(),
+];
 ```
 
 ### Інтерпретація двоцифрових років
@@ -178,13 +187,15 @@ const [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSe
 Конструктор `new Date()` демонструє непослідовну поведінку під час роботи з двоцифровими значеннями року. Така поведінка застаріла і зазвичай небажана. Власне, коли у виклик `new Date()` передається двоцифрове значення року, замість опрацьовуватися буквально як рік і використовуватися як є, це число інтерпретується як відносне значення. В деяких випадках як зміщення від `1900` року, а в інших — як зміщення відносно `2000`.
 
 ```js
-let date = new Date(98, 1)         // Sun Feb 01 1998 00:00:00 GMT+0000 (GMT)
-let date = new Date(22, 1)         // Wed Feb 01 1922 00:00:00 GMT+0000 (GMT)
-let date = new Date("2/1/22")      // Tue Feb 01 2022 00:00:00 GMT+0000 (GMT)
+let date = new Date(98, 1); // Sun Feb 01 1998 00:00:00 GMT+0000 (GMT)
+let date = new Date(22, 1); // Wed Feb 01 1922 00:00:00 GMT+0000 (GMT)
+let date = new Date('2/1/22'); // Tue Feb 01 2022 00:00:00 GMT+0000 (GMT)
 
 // Застарілий метод; завжди інтерпретує двоцифрове значення року відносно 1900
-date.setYear(98); date.toString()  // Sun Feb 01 1998 00:00:00 GMT+0000 (GMT)
-date.setYear(22); date.toString()  // Wed Feb 01 1922 00:00:00 GMT+0000 (GMT)
+date.setYear(98);
+date.toString(); // Sun Feb 01 1998 00:00:00 GMT+0000 (GMT)
+date.setYear(22);
+date.toString(); // Wed Feb 01 1922 00:00:00 GMT+0000 (GMT)
 ```
 
 Тому, щоб створити й отримати дати між роками `0` і `99`, натомість слід використовувати методи {{jsxref("Date.prototype.setFullYear()", "setFullYear()")}} та {{jsxref("Date.prototype.getFullYear()", "getFullYear()")}}.
@@ -192,8 +203,10 @@ date.setYear(22); date.toString()  // Wed Feb 01 1922 00:00:00 GMT+0000 (GMT)
 ```js
 // Бажаний спосіб; ніколи не сприймає значення як відносні,
 // проте натомість використовує значення як є
-date.setFullYear(98); date.getFullYear()  // 98 (не 1998)
-date.setFullYear(22); date.getFullYear()  // 22 (не 1922 і не 2022)
+date.setFullYear(98);
+date.getFullYear(); // 98 (не 1998)
+date.setFullYear(22);
+date.getFullYear(); // 22 (не 1922 і не 2022)
 ```
 
 ### Обчислення часу, який минув
@@ -204,36 +217,36 @@ date.setFullYear(22); date.getFullYear()  // 22 (не 1922 і не 2022)
 
 ```js
 // Використавши об'єкт дати
-let start = Date.now()
+let start = Date.now();
 
 // Зафіксуємо момент завершення події:
-doSomethingForALongTime()
-let end = Date.now()
-let elapsed = end - start // час, що минув, в мілісекундах
+doSomethingForALongTime();
+let end = Date.now();
+let elapsed = end - start; // час, що минув, в мілісекундах
 ```
 
 ```js
 // Використавши вбудовані методи
-let start = new Date()
+let start = new Date();
 
 // Зафіксуємо момент завершення події:
-doSomethingForALongTime()
-let end = new Date()
-let elapsed = end.getTime() - start.getTime() // час, що минув, в мілісекундах
+doSomethingForALongTime();
+let end = new Date();
+let elapsed = end.getTime() - start.getTime(); // час, що минув, в мілісекундах
 ```
 
 ```js
 // Отак перевіряємо функцію й отримуємо її вивід
 function printElapsedTime(fTest) {
   let nStartTime = Date.now(),
-      vReturn = fTest(),
-      nEndTime = Date.now()
+    vReturn = fTest(),
+    nEndTime = Date.now();
 
-  console.log(`Минуло часу: ${ String(nEndTime - nStartTime) } мілісекунд`)
-  return vReturn
+  console.log(`Минуло часу: ${String(nEndTime - nStartTime)} мілісекунд`);
+  return vReturn;
 }
 
-let yourFunctionReturn = printElapsedTime(yourFunction)
+let yourFunctionReturn = printElapsedTime(yourFunction);
 ```
 
 > **Зауваження:** В браузерах, які мають підтримку {{domxref("Window.performance", "Web Performance API", "", 1)}} — вимірів часу високої точності — метод {{domxref("Performance.now()")}} надасть значно точніші й надійніші виміри часу, аніж {{jsxref("Date.now()")}}.
@@ -241,7 +254,7 @@ let yourFunctionReturn = printElapsedTime(yourFunction)
 ### Отримання числа секунд від початку епохи ECMAScript
 
 ```js
-let seconds = Math.floor(Date.now() / 1000)
+let seconds = Math.floor(Date.now() / 1000);
 ```
 
 В цьому випадку важливо повертати лише ціле значення, тож просто ділення тут не підходить. Також важливо враховувати лише ті секунди, що справді минули (тому в цьому коді застосовано {{jsxref("Math.floor()")}}, а _не_ {{jsxref("Math.round()")}}.)

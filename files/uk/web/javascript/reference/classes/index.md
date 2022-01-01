@@ -11,6 +11,7 @@ tags:
   - JavaScript
 browser-compat: javascript.classes
 ---
+
 {{JsSidebar("Classes")}}
 
 Класи — це зразки, за якими створюються нові об'єкти. Вони інкапсулюють дані й код, який працює з цими даними. Класи в JS побудовані на прототипах, хоча вони містять певні синтаксичні й семантичні особливості, не властиві подібній до класів семантиці ES5.
@@ -86,13 +87,11 @@ console.log(Rectangle.name);
 
 Конструктор може використовувати ключове слово `super`, щоб звернутись до конструктора батьківського класу.
 
-
 ### Блоки статичної ініціалізації
 
 [Блоки статичної ініціалізації в класах](/en-US/docs/Web/JavaScript/Reference/Classes/Class_static_initialization_blocks) дають змогу гнучко ініціалізувати [статичні властивості класу](#static_methods_and_properties), в тому числі виконувати інструкції під час ініціалізації та надавати доступ до приватних областей.
 
 Можна оголошувати декілька статичних блоків і перемежовувати їх з оголошеннями статичних методів та властивостей (всі статичні елементи опрацьовуються в порядку їх оголошення).
-
 
 ### Методи прототипу
 
@@ -126,17 +125,17 @@ console.log(square.area); // 100
 ```js
 class Polygon {
   constructor(...sides) {
-    this.sides = sides;
+    this.sides = sides;
   }
   // Метод
   *getSides() {
-    for(const side of this.sides){
+    for (const side of this.sides) {
       yield side;
-    }
+    }
   }
 }
 
-const pentagon = new Polygon(1,2,3,4,5);
+const pentagon = new Polygon(1, 2, 3, 4, 5);
 
 console.log([...pentagon.getSides()]); // [1,2,3,4,5]
 ```
@@ -152,7 +151,7 @@ class Point {
     this.y = y;
   }
 
-  static displayName = "Point";
+  static displayName = 'Point';
   static distance(a, b) {
     const dx = a.x - b.x;
     const dy = a.y - b.y;
@@ -164,11 +163,11 @@ class Point {
 const p1 = new Point(5, 5);
 const p2 = new Point(10, 10);
 p1.displayName; // undefined
-p1.distance;    // undefined
+p1.distance; // undefined
 p2.displayName; // undefined
-p2.distance;    // undefined
+p2.distance; // undefined
 
-console.log(Point.displayName);      // "Point"
+console.log(Point.displayName); // "Point"
 console.log(Point.distance(p1, p2)); // 7.0710678118654755
 ```
 
@@ -191,7 +190,7 @@ obj.speak(); // об'єкт Animal
 let speak = obj.speak;
 speak(); // undefined
 
-Animal.eat() // клас Animal
+Animal.eat(); // клас Animal
 let eat = Animal.eat;
 eat(); // undefined
 ```
@@ -199,15 +198,15 @@ eat(); // undefined
 Якщо ми перепишемо наведений вище код у традиційному синтаксисі, за допомогою функцій у нестрогому режимі, то звертання до `this` у коді методів будуть автоматично прив'язані до первісного значення `this`, яке усталено дорівнює {{Glossary("Global_object", "глобальному об'єкту")}}. В суворому режимі автоматичне прив'язування не відбувається, а значення `this` залишається таким, яким його було передано до методу.
 
 ```js
-function Animal() { }
+function Animal() {}
 
-Animal.prototype.speak = function() {
+Animal.prototype.speak = function () {
   return this;
-}
+};
 
-Animal.eat = function() {
+Animal.eat = function () {
   return this;
-}
+};
 
 let obj = new Animal();
 let speak = obj.speak;
@@ -310,13 +309,13 @@ d.speak(); // Сірко гавкає.
 Також можна розширювати класи, виконані в традиційному синтаксисі, на основі функцій:
 
 ```js
-function Animal (name) {
+function Animal(name) {
   this.name = name;
 }
 
 Animal.prototype.speak = function () {
   console.log(`${this.name} галасує.`);
-}
+};
 
 class Dog extends Animal {
   speak() {
@@ -336,7 +335,7 @@ d.speak(); // Сірко гавкає.
 const Animal = {
   speak() {
     console.log(`${this.name} галасує.`);
-  }
+  },
 };
 
 class Dog {
@@ -361,14 +360,16 @@ d.speak(); // Сірко галасує.
 ```js
 class MyArray extends Array {
   // Заміщуємо вид так, що він вказує на батьківський конструктор Array
-  static get [Symbol.species]() { return Array; }
+  static get [Symbol.species]() {
+    return Array;
+  }
 }
 
-let a = new MyArray(1,2,3);
-let mapped = a.map(x => x * x);
+let a = new MyArray(1, 2, 3);
+let mapped = a.map((x) => x * x);
 
 console.log(mapped instanceof MyArray); // false
-console.log(mapped instanceof Array);   // true
+console.log(mapped instanceof Array); // true
 ```
 
 ## Звертання до надкласів за допомогою `super`
@@ -406,20 +407,22 @@ l.speak();
 Функція, яка приймає надклас на вхід, і розширяє цей надклас на виході, може використовуватись для реалізації домішок в ECMAScript:
 
 ```js
-let calculatorMixin = Base => class extends Base {
-  calc() { }
-};
+let calculatorMixin = (Base) =>
+  class extends Base {
+    calc() {}
+  };
 
-let randomizerMixin = Base => class extends Base {
-  randomize() { }
-};
+let randomizerMixin = (Base) =>
+  class extends Base {
+    randomize() {}
+  };
 ```
 
 Клас, який використовує ці домішки, можна записати таким чином:
 
 ```js
-class Foo { }
-class Bar extends calculatorMixin(randomizerMixin(Foo)) { }
+class Foo {}
+class Bar extends calculatorMixin(randomizerMixin(Foo)) {}
 ```
 
 ## Повторне виконання опису класу

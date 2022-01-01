@@ -13,6 +13,7 @@ tags:
   - recipe:css-property
 browser-compat: css.properties.-moz-context-properties
 ---
+
 {{CSSRef}}{{Non-standard_header}}
 
 Властивість **`-moz-context-properties`** може використовуватись у привілейованих контекстах у Firefox для передачі вказаних властивостей елементові з дочірнім SVG зображенням.
@@ -72,9 +73,12 @@ browser-compat: css.properties.-moz-context-properties
 Коли це зроблено, SVG зображення може використовувати значення властивостей {{SVGAttr("fill")}} та {{SVGAttr("stroke")}}, наприклад:
 
 ```html
-<img class="img1" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'>
+<img
+  class="img1"
+  src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'>
                        <rect width='100%' height='100%' stroke-width='30px'
-                       fill='context-fill red' stroke='context-stroke' fill-opacity='0.5'/></svg>">
+                       fill='context-fill red' stroke='context-stroke' fill-opacity='0.5'/></svg>"
+/>
 ```
 
 Тут ми встановлюємо атрибут зображення `src` в URI, що містить просте SVG зображення. Елемент `<rect>` всередині приймає значення `fill` та `stroke` від {{SVGAttr("fill")}} та {{SVGAttr("stroke")}}, встановлених на `<img>` елементі, шляхом передачі властивостям `<img>` ключових слів `context-fill`/`context-stroke` у якості їх значень. Поруч вказано резервний колір заповнення (червоний), котрий буде використаний, якщо SVG завантажать окремо у вікні верхнього рівня (де не буде контекстного елементу для отримання контекстних значень із нього). Зверніть увагу, що якщо колір встановлений напряму на SVG, але контекстний колір також вказаний, то контекстний колір заміщає напряму встановлений колір.

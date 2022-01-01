@@ -10,6 +10,7 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.Math.trunc
 ---
+
 {{JSRef}}
 
 Функція **`Math.trunc()`** повертає цілу частину числа шляхом відкидання дробової.
@@ -19,7 +20,7 @@ browser-compat: javascript.builtins.Math.trunc
 ## Синтаксис
 
 ```js
-Math.trunc(x)
+Math.trunc(x);
 ```
 
 ### Параметри
@@ -45,14 +46,14 @@ Math.trunc(x)
 ### Застосування Math.trunc()
 
 ```js
-Math.trunc(13.37);    // 13
-Math.trunc(42.84);    // 42
-Math.trunc(0.123);    //  0
-Math.trunc(-0.123);   // -0
+Math.trunc(13.37); // 13
+Math.trunc(42.84); // 42
+Math.trunc(0.123); //  0
+Math.trunc(-0.123); // -0
 Math.trunc('-1.123'); // -1
-Math.trunc(NaN);      // NaN
-Math.trunc('foo');    // NaN
-Math.trunc();         // NaN
+Math.trunc(NaN); // NaN
+Math.trunc('foo'); // NaN
+Math.trunc(); // NaN
 ```
 
 ## Специфікації

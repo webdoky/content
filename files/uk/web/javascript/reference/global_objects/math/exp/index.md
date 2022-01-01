@@ -8,6 +8,7 @@ tags:
   - Reference
 browser-compat: javascript.builtins.Math.exp
 ---
+
 {{JSRef}}
 
 Функція **`Math.exp()`** повертає `e^x`, де `x` — це аргумент, а `e` — {{jsxref("Math.E", "число Ейлера (також відоме як число Непера)", "", 1)}}, основа натуральних логарифмів.
@@ -17,7 +18,7 @@ browser-compat: javascript.builtins.Math.exp
 ## Синтаксис
 
 ```js
-Math.exp(x)
+Math.exp(x);
 ```
 
 ### Параметри
@@ -39,8 +40,8 @@ Math.exp(x)
 
 ```js
 Math.exp(-1); // 0.36787944117144233
-Math.exp(0);  // 1
-Math.exp(1);  // 2.718281828459045
+Math.exp(0); // 1
+Math.exp(1); // 2.718281828459045
 ```
 
 ## Специфікації

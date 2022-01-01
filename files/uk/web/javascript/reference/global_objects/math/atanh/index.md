@@ -9,6 +9,7 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.Math.atanh
 ---
+
 {{JSRef}}
 
 Функція **`Math.atanh()`** повертає гіперболічний арктангенс числа, а саме:
@@ -50,7 +51,7 @@ unique } \; y \; \text{such that} \; \tanh(y) = x</annotation></semantics></math
 ## Синтаксис
 
 ```js
-Math.atanh(x)
+Math.atanh(x);
 ```
 
 ### Параметри
@@ -71,12 +72,12 @@ Math.atanh(x)
 ### Застосування Math.atanh()
 
 ```js
-Math.atanh(-2);  // NaN
-Math.atanh(-1);  // -Infinity
-Math.atanh(0);   // 0
+Math.atanh(-2); // NaN
+Math.atanh(-1); // -Infinity
+Math.atanh(0); // 0
 Math.atanh(0.5); // 0.5493061443340548
-Math.atanh(1);   // Infinity
-Math.atanh(2);   // NaN
+Math.atanh(1); // Infinity
+Math.atanh(2); // NaN
 ```
 
 Для значень, які більші за 1 чи менші за -1, буде повернено {{jsxref("NaN")}}.
@@ -110,9 +111,11 @@ Math.atanh(2);   // NaN
 </semantics></math>, а отже його можна відтворити за допомогою такої функції:
 
 ```js
-Math.atanh = Math.atanh || function(x) {
-  return Math.log((1+x)/(1-x)) / 2;
-};
+Math.atanh =
+  Math.atanh ||
+  function (x) {
+    return Math.log((1 + x) / (1 - x)) / 2;
+  };
 ```
 
 ## Специфікації

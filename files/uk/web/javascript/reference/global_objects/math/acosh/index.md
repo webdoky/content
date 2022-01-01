@@ -9,6 +9,7 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.Math.acosh
 ---
+
 {{JSRef}}
 
 Функція **`Math.acosh()`** поверне гіперболічний косинус числа, а саме:
@@ -47,7 +48,7 @@ browser-compat: javascript.builtins.Math.acosh
 ## Синтаксис
 
 ```js
-Math.acosh(x)
+Math.acosh(x);
 ```
 
 ### Параметри
@@ -68,11 +69,11 @@ Math.acosh(x)
 ### Застосування Math.acosh()
 
 ```js
-Math.acosh(-1);  // NaN
-Math.acosh(0);   // NaN
+Math.acosh(-1); // NaN
+Math.acosh(0); // NaN
 Math.acosh(0.5); // NaN
-Math.acosh(1);   // 0
-Math.acosh(2);   // 1.3169578969248166
+Math.acosh(1); // 0
+Math.acosh(2); // 1.3169578969248166
 ```
 
 Для значень, менших за 1, `Math.acosh()` поверне {{jsxref("NaN")}}.
@@ -103,9 +104,11 @@ Math.acosh(2);   // 1.3169578969248166
 </semantics></math>, тож ми можемо це відтворити за допомогою наступної функції:
 
 ```js
-Math.acosh = Math.acosh || function(x) {
-  return Math.log(x + Math.sqrt(x * x - 1));
-};
+Math.acosh =
+  Math.acosh ||
+  function (x) {
+    return Math.log(x + Math.sqrt(x * x - 1));
+  };
 ```
 
 ## Специфікації

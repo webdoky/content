@@ -10,6 +10,7 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.Math.log10
 ---
+
 {{JSRef}}
 
 Функція **`Math.log10()`** повертає логарифм числа за основою 10, а саме:
@@ -38,14 +39,14 @@ browser-compat: javascript.builtins.Math.log10
 </msup><mo>=</mo>
 <mi>x</mi>
 </mrow><annotation encoding="TeX">\forall x > 0, \mathtt{\operatorname{Math.log10}(x)} =
-\log_{10}(x) = \text{the unique} \; y \; \text{such that} \; 10^y = x</annotation></semantics></math>
+\log\_{10}(x) = \text{the unique} \; y \; \text{such that} \; 10^y = x</annotation></semantics></math>
 
 {{EmbedInteractiveExample("pages/js/math-log10.html")}}
 
 ## Синтаксис
 
 ```js
-Math.log10(x)
+Math.log10(x);
 ```
 
 ### Параметри
@@ -70,10 +71,10 @@ Math.log10(x)
 ### Застосування Math.log10()
 
 ```js
-Math.log10(2);      // 0.3010299956639812
-Math.log10(1);      // 0
-Math.log10(0);      // -Infinity
-Math.log10(-2);     // NaN
+Math.log10(2); // 0.3010299956639812
+Math.log10(1); // 0
+Math.log10(0); // -Infinity
+Math.log10(-2); // NaN
 Math.log10(100000); // 5
 ```
 
@@ -82,9 +83,11 @@ Math.log10(100000); // 5
 Цей функціонал можна відтворити за допомогою такої функції:
 
 ```js
-Math.log10 = Math.log10 || function(x) {
-  return Math.log(x) * Math.LOG10E;
-};
+Math.log10 =
+  Math.log10 ||
+  function (x) {
+    return Math.log(x) * Math.LOG10E;
+  };
 ```
 
 ## Специфікації

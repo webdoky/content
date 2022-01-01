@@ -8,6 +8,7 @@ tags:
   - Reference
 browser-compat: javascript.builtins.Math.PI
 ---
+
 {{JSRef}}
 
 Властивість **`Math.PI`** позначає співвідношення довжини кола до його діаметру, що наближено дорівнює 3.14159:
@@ -31,7 +32,7 @@ function calculateCircumference(radius) {
   return Math.PI * (radius + radius);
 }
 
-calculateCircumference(1);  // 6.283185307179586
+calculateCircumference(1); // 6.283185307179586
 ```
 
 ## Специфікації

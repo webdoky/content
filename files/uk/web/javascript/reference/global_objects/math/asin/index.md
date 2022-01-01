@@ -8,6 +8,7 @@ tags:
   - Reference
 browser-compat: javascript.builtins.Math.asin
 ---
+
 {{JSRef}}
 
 Функція **`Math.asin()`** поверне арксинус (в радіанах) переданого числа, а саме:
@@ -59,7 +60,7 @@ browser-compat: javascript.builtins.Math.asin
 ## Синтаксис
 
 ```js
-Math.asin(x)
+Math.asin(x);
 ```
 
 ### Параметри
@@ -89,12 +90,12 @@ Math.asin(x)
 ### Застосування Math.asin()
 
 ```js
-Math.asin(-2);  // NaN
-Math.asin(-1);  // -1.5707963267948966 (-pi/2)
-Math.asin(0);   // 0
+Math.asin(-2); // NaN
+Math.asin(-1); // -1.5707963267948966 (-pi/2)
+Math.asin(0); // 0
 Math.asin(0.5); // 0.5235987755982989
-Math.asin(1);   // 1.5707963267948966 (pi/2)
-Math.asin(2);   // NaN
+Math.asin(1); // 1.5707963267948966 (pi/2)
+Math.asin(2); // NaN
 ```
 
 Для значень менших за -1 чи більших за 1 – `Math.asin()` поверне {{jsxref("NaN")}}.

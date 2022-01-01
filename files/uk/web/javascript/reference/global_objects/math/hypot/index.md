@@ -9,6 +9,7 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.Math.hypot
 ---
+
 {{JSRef}}
 
 Функція **`Math.hypot()`** повертає квадратний корінь з суми квадратів її аргументів, а саме:
@@ -70,7 +71,7 @@ Math.hypot(value0, value1, ... , valueN)
 
 ### Повернене значення
 
-Квадратний корінь з суми квадратів переданих аргументів. Якщо хоча б один із аргументів не можна звести до числа, буде повернено {{jsxref("NaN")}}.
+Квадратний корінь з суми квадратів переданих аргументів. Якщо хоча б один з аргументів не можна звести до числа, буде повернено {{jsxref("NaN")}}.
 
 ## Опис
 
@@ -91,14 +92,14 @@ Math.hypot(value0, value1, ... , valueN)
 ### Застосування Math.hypot()
 
 ```js
-Math.hypot(3, 4);          // 5
-Math.hypot(3, 4, 5);       // 7.0710678118654755
-Math.hypot();              // 0
-Math.hypot(NaN);           // NaN
+Math.hypot(3, 4); // 5
+Math.hypot(3, 4, 5); // 7.0710678118654755
+Math.hypot(); // 0
+Math.hypot(NaN); // NaN
 Math.hypot(NaN, Infinity); // Infinity
-Math.hypot(3, 4, 'foo');   // NaN, оскільки +'foo' => NaN
-Math.hypot(3, 4, '5');     // 7.0710678118654755, +'5' => 5
-Math.hypot(-3);            // 3, еквівалентно до Math.abs(-3)
+Math.hypot(3, 4, 'foo'); // NaN, оскільки +'foo' => NaN
+Math.hypot(3, 4, '5'); // 7.0710678118654755, +'5' => 5
+Math.hypot(-3); // 3, еквівалентно до Math.abs(-3)
 ```
 
 ## Поліфіл
@@ -106,37 +107,43 @@ Math.hypot(-3);            // 3, еквівалентно до Math.abs(-3)
 Наївний підхід, який не опрацьовує проблеми переповнення чи зникнення розряду:
 
 ```js
-if (!Math.hypot) Math.hypot = function() {
-  var y = 0, i = arguments.length, containsInfinity = false;
-  while (i--) {
-    var arg = arguments[i];
-    if (arg === Infinity || arg === -Infinity)
-      containsInfinity = true
-    y += arg * arg
-  }
-  return containsInfinity ? Infinity : Math.sqrt(y)
-}
+if (!Math.hypot)
+  Math.hypot = function () {
+    var y = 0,
+      i = arguments.length,
+      containsInfinity = false;
+    while (i--) {
+      var arg = arguments[i];
+      if (arg === Infinity || arg === -Infinity) containsInfinity = true;
+      y += arg * arg;
+    }
+    return containsInfinity ? Infinity : Math.sqrt(y);
+  };
 ```
 
 Поліфіл, який уникає проблем переповнення та зникнення розряду:
 
 ```js
-if (!Math.hypot) Math.hypot = function () {
-  var max = 0;
-  var s = 0;
-  var containsInfinity = false;
-  for (var i = 0; i < arguments.length; ++i) {
-    var arg = Math.abs(Number(arguments[i]));
-    if (arg === Infinity)
-      containsInfinity = true
-    if (arg > max) {
-      s *= (max / arg) * (max / arg);
-      max = arg;
+if (!Math.hypot)
+  Math.hypot = function () {
+    var max = 0;
+    var s = 0;
+    var containsInfinity = false;
+    for (var i = 0; i < arguments.length; ++i) {
+      var arg = Math.abs(Number(arguments[i]));
+      if (arg === Infinity) containsInfinity = true;
+      if (arg > max) {
+        s *= (max / arg) * (max / arg);
+        max = arg;
+      }
+      s += arg === 0 && max === 0 ? 0 : (arg / max) * (arg / max);
     }
-    s += arg === 0 && max === 0 ? 0 : (arg / max) * (arg / max);
-  }
-  return containsInfinity ? Infinity : (max === 1 / 0 ? 1 / 0 : max * Math.sqrt(s));
-};
+    return containsInfinity
+      ? Infinity
+      : max === 1 / 0
+      ? 1 / 0
+      : max * Math.sqrt(s);
+  };
 ```
 
 ## Специфікації

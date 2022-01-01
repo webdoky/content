@@ -8,6 +8,7 @@ tags:
   - Reference
 browser-compat: javascript.builtins.Math.tan
 ---
+
 {{JSRef}}
 
 Функція **`Math.tan()`** повертає тангенс числа.
@@ -17,7 +18,7 @@ browser-compat: javascript.builtins.Math.tan
 ## Синтаксис
 
 ```js
-Math.tan(x)
+Math.tan(x);
 ```
 
 ### Параметри
@@ -47,7 +48,7 @@ Math.tan(1); // 1.5574077246549023
 
 ```js
 function getTanDeg(deg) {
-  var rad = deg * Math.PI/180;
+  var rad = (deg * Math.PI) / 180;
   return Math.tan(rad);
 }
 ```

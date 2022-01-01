@@ -9,6 +9,7 @@ tags:
   - recipe:css-property
 browser-compat: css.properties.-moz-force-broken-image-icon
 ---
+
 {{Non-standard_header}}{{CSSRef}}
 
 Розширена властивість CSS **`-moz-force-broken-image-icon`** може використовуватись, аби змусити показати значок зламаного зображення навіть коли зображення має атрибут `alt`.
@@ -35,7 +36,7 @@ browser-compat: css.properties.-moz-force-broken-image-icon
 ### HTML
 
 ```html
-<img src='/broken/image/link.png' alt='Зламане посилання на зображення'>
+<img src="/broken/image/link.png" alt="Зламане посилання на зображення" />
 ```
 
 ### CSS

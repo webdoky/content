@@ -11,6 +11,7 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.Array.indexOf
 ---
+
 {{JSRef}}
 
 Метод **`indexOf()`** повертає перший індекс, за яким даний елемент можна знайти в масиві, або -1 &mdash; якщо його немає.
@@ -20,8 +21,8 @@ browser-compat: javascript.builtins.Array.indexOf
 ## Синтаксис
 
 ```js
-indexOf(searchElement)
-indexOf(searchElement, fromIndex)
+indexOf(searchElement);
+indexOf(searchElement, fromIndex);
 ```
 
 ### Параметри
@@ -50,9 +51,9 @@ indexOf(searchElement, fromIndex)
 
 ```js
 var array = [2, 9, 9];
-array.indexOf(2);     // 0
-array.indexOf(7);     // -1
-array.indexOf(9, 2);  // 2
+array.indexOf(2); // 0
+array.indexOf(7); // -1
+array.indexOf(9, 2); // 2
 array.indexOf(2, -1); // -1
 array.indexOf(2, -3); // 0
 ```
@@ -75,16 +76,21 @@ console.log(indices);
 ### Визначення, чи знаходиться елемент у масиві, чи ні, та оновлення масиву
 
 ```js
-function updateVegetablesCollection (veggies, veggie) {
-    if (veggies.indexOf(veggie) === -1) {
-        veggies.push(veggie);
-        console.log('Нова овочева колекція: ' + veggies);
-    } else if (veggies.indexOf(veggie) > -1) {
-        console.log(veggie + ' уже є в овочевій колекції.');
-    }
+function updateVegetablesCollection(veggies, veggie) {
+  if (veggies.indexOf(veggie) === -1) {
+    veggies.push(veggie);
+    console.log('Нова овочева колекція: ' + veggies);
+  } else if (veggies.indexOf(veggie) > -1) {
+    console.log(veggie + ' уже є в овочевій колекції.');
+  }
 }
 
-var veggies = ['картопля', 'помідор', 'червоний гострий перець', 'зелений болгарський перець'];
+var veggies = [
+  'картопля',
+  'помідор',
+  'червоний гострий перець',
+  'зелений болгарський перець',
+];
 
 updateVegetablesCollection(veggies, 'шпинат');
 // Нова колекція veggies: картопля,помідор,червоний гострий перець,зелений болгарський перець,шпинат
@@ -102,26 +108,30 @@ updateVegetablesCollection(veggies, 'шпинат');
 // пропускаючи безумовно безрезультатний пошук NaN. Інші частини – це лише косметична лаконічність.
 // Чи це насправді швидше, ще невідомо.
 if (!Array.prototype.indexOf)
-  Array.prototype.indexOf = (function(Object, max, min) {
-    "use strict"
+  Array.prototype.indexOf = (function (Object, max, min) {
+    'use strict';
     return function indexOf(member, fromIndex) {
       if (this === null || this === undefined)
-        throw TypeError("Array.prototype.indexOf called on null or undefined")
+        throw TypeError('Array.prototype.indexOf called on null or undefined');
 
-      var that = Object(this), Len = that.length >>> 0, i = min(fromIndex | 0, Len)
-      if (i < 0) i = max(0, Len + i)
-      else if (i >= Len) return -1
+      var that = Object(this),
+        Len = that.length >>> 0,
+        i = min(fromIndex | 0, Len);
+      if (i < 0) i = max(0, Len + i);
+      else if (i >= Len) return -1;
 
-      if (member === void 0) {        // undefined
-        for (; i !== Len; ++i) if (that[i] === void 0 && i in that) return i
-      } else if (member !== member) { // NaN
-        return -1 // Оскільки NaN !== NaN, він ніколи не буде знайдений. Швидкий шлях.
-      } else                          // все інше
-        for (; i !== Len; ++i) if (that[i] === member) return i
+      if (member === void 0) {
+        // undefined
+        for (; i !== Len; ++i) if (that[i] === void 0 && i in that) return i;
+      } else if (member !== member) {
+        // NaN
+        return -1; // Оскільки NaN !== NaN, він ніколи не буде знайдений. Швидкий шлях.
+      } // все інше
+      else for (; i !== Len; ++i) if (that[i] === member) return i;
 
-      return -1 // якщо значення не знайдено, то повертаємо -1
-    }
-  })(Object, Math.max, Math.min)
+      return -1; // якщо значення не знайдено, то повертаємо -1
+    };
+  })(Object, Math.max, Math.min);
 ```
 
 Однак, якщо вас більше цікавлять усі дрібні технічні деталі, визначені стандартом ECMA, і менше турбують продуктивність або стислість, цей краще документований поліфіл може виявитися кориснішим.
@@ -130,8 +140,8 @@ if (!Array.prototype.indexOf)
 // Етапи розробки ECMA-262, видання 5, 15.4.4.14
 // Довідка: https://es5.github.io/#x15.4.4.14
 if (!Array.prototype.indexOf) {
-  Array.prototype.indexOf = function(searchElement, fromIndex) {
-    "use strict";
+  Array.prototype.indexOf = function (searchElement, fromIndex) {
+    'use strict';
     var k;
 
     // 1. Нехай o буде результатом виклику Object, передаючи
@@ -180,8 +190,7 @@ if (!Array.prototype.indexOf) {
       //        Алгоритму Строгого Порівняння до
       //        searchElement і elementK.
       //  iii.  Якщо те саме вірно, повернути k.
-      if (k in o && o[k] === searchElement)
-        return k;
+      if (k in o && o[k] === searchElement) return k;
     }
     return -1;
   };

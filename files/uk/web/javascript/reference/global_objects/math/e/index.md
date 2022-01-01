@@ -8,6 +8,7 @@ tags:
   - Reference
 browser-compat: javascript.builtins.Math.E
 ---
+
 {{JSRef}}
 
 Властивість **`Math.E`** відображає число Ейлера `e` — основу натуральних логарифмів — яке наближено дорівнює 2.718.

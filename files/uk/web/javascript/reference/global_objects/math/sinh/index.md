@@ -10,6 +10,7 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.Math.sinh
 ---
+
 {{JSRef}}
 
 Функція **`Math.sinh()`** повертає гіперболічний синус числа, що можна виразити через {{jsxref("Math.E", "сталу «e»", "", 1)}}:
@@ -31,7 +32,7 @@ e^{-x}}{2}</annotation></semantics></math>
 ## Синтаксис
 
 ```js
-Math.sinh(x)
+Math.sinh(x);
 ```
 
 ### Параметри
@@ -52,18 +53,22 @@ Math.sinh(x)
 Це можна відтворити за допомогою функції {{jsxref("Math.exp()")}}:
 
 ```js
-Math.sinh = Math.sinh || function(x) {
-  return (Math.exp(x) - Math.exp(-x)) / 2;
-}
+Math.sinh =
+  Math.sinh ||
+  function (x) {
+    return (Math.exp(x) - Math.exp(-x)) / 2;
+  };
 ```
 
 ...або ж зробивши лише один виклик функції {{jsxref("Math.exp()")}}:
 
 ```js
-Math.sinh = Math.sinh || function(x) {
-  var y = Math.exp(x);
-  return (y - 1 / y) / 2;
-}
+Math.sinh =
+  Math.sinh ||
+  function (x) {
+    var y = Math.exp(x);
+    return (y - 1 / y) / 2;
+  };
 ```
 
 ## Приклади

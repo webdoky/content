@@ -9,6 +9,7 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.Math.expm1
 ---
+
 {{JSRef}}
 
 Функція **`Math.expm1()`** повертає значення виразу `e^x - 1`, де `x` — аргумент, а `e` — {{jsxref("Math.E", "стала «e»", "", 1)}}, основа натуральних логарифмів.
@@ -18,7 +19,7 @@ browser-compat: javascript.builtins.Math.expm1
 ## Синтаксис
 
 ```js
-Math.expm1(x)
+Math.expm1(x);
 ```
 
 ### Параметри
@@ -40,8 +41,8 @@ Math.expm1(x)
 
 ```js
 Math.expm1(-1); // -0.6321205588285577
-Math.expm1(0);  // 0
-Math.expm1(1);  // 1.718281828459045
+Math.expm1(0); // 0
+Math.expm1(1); // 1.718281828459045
 ```
 
 ## Специфікації

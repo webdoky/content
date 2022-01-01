@@ -8,6 +8,7 @@ tags:
   - Reference
 browser-compat: javascript.builtins.Math.sin
 ---
+
 {{JSRef}}
 
 Функція **`Math.sin()`** повертає синус числа.
@@ -17,7 +18,7 @@ browser-compat: javascript.builtins.Math.sin
 ## Синтаксис
 
 ```js
-Math.sin(x)
+Math.sin(x);
 ```
 
 ### Параметри
@@ -40,8 +41,8 @@ Math.sin(x)
 ### Застосування Math.sin()
 
 ```js
-Math.sin(0);           // 0
-Math.sin(1);           // 0.8414709848078965
+Math.sin(0); // 0
+Math.sin(1); // 0.8414709848078965
 
 Math.sin(Math.PI / 2); // 1
 ```

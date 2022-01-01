@@ -8,6 +8,7 @@ tags:
   - Reference
 browser-compat: javascript.builtins.Math.LN10
 ---
+
 {{JSRef}}
 
 Властивість **`Math.LN10`** відображає натуральний логарифм 10, що наближено дорівнює 2.302:

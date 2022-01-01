@@ -11,6 +11,7 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.Array.find
 ---
+
 {{JSRef}}
 
 Метод `find()` повертає значення першого елементу в даному масиві, яке задовольняє передану функцію перевірки. Якщо жоден елемент не задовольняє перевіркову функцію, буде повернуто {{jsxref("undefined")}}.
@@ -87,9 +88,9 @@ find(function (element, index, array) { ... }, thisArg)
 
 ```js
 const inventory = [
-  {name: 'apples', quantity: 2},
-  {name: 'bananas', quantity: 0},
-  {name: 'cherries', quantity: 5}
+  { name: 'apples', quantity: 2 },
+  { name: 'bananas', quantity: 0 },
+  { name: 'cherries', quantity: 5 },
 ];
 
 function isCherries(fruit) {
@@ -104,14 +105,14 @@ console.log(inventory.find(isCherries));
 
 ```js
 const inventory = [
-  {name: 'apples', quantity: 2},
-  {name: 'bananas', quantity: 0},
-  {name: 'cherries', quantity: 5}
+  { name: 'apples', quantity: 2 },
+  { name: 'bananas', quantity: 0 },
+  { name: 'cherries', quantity: 5 },
 ];
 
-const result = inventory.find( ({ name }) => name === 'cherries' );
+const result = inventory.find(({ name }) => name === 'cherries');
 
-console.log(result) // { name: 'cherries', quantity: 5 }
+console.log(result); // { name: 'cherries', quantity: 5 }
 ```
 
 ### Знайти просте число в масиві
@@ -137,15 +138,15 @@ console.log([4, 5, 8, 12].find(isPrime)); // 5
 
 ```js
 // Оголосимо масив з відсутніми елементами 2, 3, і 4
-const array = [0,1,,,,5,6];
+const array = [0, 1, , , , 5, 6];
 
 // Покаже всі індекси, а не лише ті, що мають присвоєне значення
-array.find(function(value, index) {
+array.find(function (value, index) {
   console.log('Visited index ', index, ' with value ', value);
 });
 
 // Покаже всі індекси, включно з видаленими
-array.find(function(value, index) {
+array.find(function (value, index) {
   // Видаляємо 5-й елемент під час першої ітерації
   if (index === 0) {
     console.log('Deleting array[5] with value ', array[5]);
