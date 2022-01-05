@@ -12,16 +12,16 @@ browser-compat: javascript.functions.arrow_functions
 ---
 {{jsSidebar("Functions")}}
 
-**Вираз стрілкової функції** — це компактна альтернатива традиційному [виразові функції](/en-US/docs/Web/JavaScript/Reference/Operators/function), яку, проте, можна використовувати не у всіх випадках через певні обмеження.
+**Вираз стрілкової функції** — це компактна альтернатива традиційному [виразові функції](/uk/docs/Web/JavaScript/Reference/Operators/function), яку, проте, можна використовувати не у всіх випадках через певні обмеження.
 
 **Відмінності й обмеження:**
 
-- Не має власної прив'язки до [`this`](/en-US/docs/Web/JavaScript/Reference/Operators/this) та [`super`](/en-US/docs/Web/JavaScript/Reference/Operators/super),
-  і не повинен вживатися як [`метод`](/en-US/docs/Glossary/Method).
-- Не містить ключового слова [`new.target`](/en-US/docs/Web/JavaScript/Reference/Operators/new.target).
-- Не підходить для використання в методах [`call`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call), [`apply`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply) та [`bind`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind), які залежать від встановлення [контексту](/en-US/docs/Glossary/Scope).
-- Не може використовуватись як [конструктор](/en-US/docs/Glossary/Constructor).
-- Не може використовувати ключове слово [`yield`](/en-US/docs/Web/JavaScript/Reference/Operators/yield) всередині тіла функції.
+- Не має власної прив'язки до [`this`](/uk/docs/Web/JavaScript/Reference/Operators/this) та [`super`](/uk/docs/Web/JavaScript/Reference/Operators/super),
+  і не повинен вживатися як [`метод`](/uk/docs/Glossary/Method).
+- Не містить ключового слова [`new.target`](/uk/docs/Web/JavaScript/Reference/Operators/new.target).
+- Не підходить для використання в методах [`call`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/call), [`apply`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/apply) та [`bind`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/bind), які залежать від встановлення [контексту](/uk/docs/Glossary/Scope).
+- Не може використовуватись як [конструктор](/uk/docs/Glossary/Constructor).
+- Не може використовувати ключове слово [`yield`](/uk/docs/Web/JavaScript/Reference/Operators/yield) всередині тіла функції.
 
 {{EmbedInteractiveExample("pages/js/functions-arrow.html")}}
 
@@ -147,19 +147,19 @@ param => {
 params => ({foo: "a"}) // повертає об'єкт {foo: "a"}
 ```
 
-Підтримуються [залишкові параметри](/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters):
+Підтримуються [залишкові параметри](/uk/docs/Web/JavaScript/Reference/Functions/rest_parameters):
 
 ```js
 (a, b, ...r) => expression
 ```
 
-Підтримуються [усталені параметри](/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters):
+Підтримуються [усталені параметри](/uk/docs/Web/JavaScript/Reference/Functions/Default_parameters):
 
 ```js
 (a=400, b=20, c) => expression
 ```
 
-Підтримується [деструктуризація](/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) всередині параметрів:
+Підтримується [деструктуризація](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) всередині параметрів:
 
 ```js
 ([a, b] = [10, 20]) => a + b;  // результатом є 30
@@ -206,9 +206,9 @@ Object.defineProperty(obj, 'b', {
 
 ### Функції `call`, `apply` та `bind`
 
-Методи [`call`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call), [`apply`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply) та [`bind`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind) **не підходять** для стрілкових функцій. Адже вони були розроблені, щоб дозволити виконувати методи всередині різних контекстів, а **стрілкові функції визначають "this" на основі контексту, всередині якого стрілкова функція була оголошена.**
+Методи [`call`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/call), [`apply`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/apply) та [`bind`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/bind) **не підходять** для стрілкових функцій. Адже вони були розроблені, щоб дозволити виконувати методи всередині різних контекстів, а **стрілкові функції визначають "this" на основі контексту, всередині якого стрілкова функція була оголошена.**
 
-Наприклад, [`call`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call), [`apply`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply) та [`bind`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind) працюють так, як від них очікується, з традиційними функціями, оскільки для кожного з методів встановлюється контекст:
+Наприклад, [`call`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/call), [`apply`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/apply) та [`bind`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/bind) працюють так, як від них очікується, з традиційними функціями, оскільки для кожного з методів встановлюється контекст:
 
 ```js
 // ----------------------
@@ -312,7 +312,7 @@ obj.doSomethingLater();
 
 ### Відсутність прив'язки до `arguments`
 
-Стрілкові функції не мають власного [об'єкта `arguments`](/en-US/docs/Web/JavaScript/Reference/Functions/arguments). Тому в наступному прикладі `arguments` посилається на аргументи зовнішнього контексту:
+Стрілкові функції не мають власного [об'єкта `arguments`](/uk/docs/Web/JavaScript/Reference/Functions/arguments). Тому в наступному прикладі `arguments` посилається на аргументи зовнішнього контексту:
 
 ```js
 var arguments = [1, 2, 3];
@@ -328,7 +328,7 @@ function foo(n) {
 foo(3); // 3 + 3 = 6
 ```
 
-В більшості випадків застосування [залишкових параметрів](/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters) є доброю альтернативою використанню об'єкта `arguments`.
+В більшості випадків застосування [залишкових параметрів](/uk/docs/Web/JavaScript/Reference/Functions/rest_parameters) є доброю альтернативою використанню об'єкта `arguments`.
 
 ```js
 function foo(n) {
@@ -359,7 +359,7 @@ console.log(Foo.prototype); // undefined
 
 ### Вживання з ключовим словом `yield`
 
-Ключове слово [`yield`](/en-US/docs/Web/JavaScript/Reference/Operators/yield) не можна використовувати всередині тіла стрілкової функції (окрім як всередині вкладених в неї звичайних функцій). Як наслідок, стрілкові функції не можуть бути генераторами.
+Ключове слово [`yield`](/uk/docs/Web/JavaScript/Reference/Operators/yield) не можна використовувати всередині тіла стрілкової функції (окрім як всередині вкладених в неї звичайних функцій). Як наслідок, стрілкові функції не можуть бути генераторами.
 
 ### Тіло функції
 
@@ -430,7 +430,7 @@ var func = (
 
 ### Порядок розбору
 
-Хоча стрілка в стрілковій функції не є оператором, ці функції мають особливі правила парсингу, які по-іншому взаємодіють з [пріоритетом операторів](/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence) у порівнянні зі звичайними функціями.
+Хоча стрілка в стрілковій функції не є оператором, ці функції мають особливі правила парсингу, які по-іншому взаємодіють з [пріоритетом операторів](/uk/docs/Web/JavaScript/Reference/Operators/Operator_Precedence) у порівнянні зі звичайними функціями.
 
 ```js
 let callback;
