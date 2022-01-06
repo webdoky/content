@@ -110,7 +110,7 @@ var countTrailsMethods = (function(stdlib, foreign, heap) {
         integer = integer | (integer << 4);
         integer = integer | (integer << 2);
         integer = integer | (integer << 1);
-        // 2. Тепер обернемо всі біти, щоб розкрити нижчі з них
+        // 2. Тепер обернемо всі біти, щоб розкрити молодші з них
         return 32 - clz(~integer) |0;
     }
     function ctron(integer) { // обрахунок кінцевих одиниць
