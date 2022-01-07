@@ -101,7 +101,7 @@ tags:
 - {{JSxRef("Atomics")}}
 - {{JSxRef("JSON")}}
 
-### Управління пам'яттю
+### Керування пам'яттю
 
 - {{JSxRef("WeakRef")}}
 - {{JsxRef("FinalizationRegistry")}}
@@ -176,7 +176,6 @@ tags:
 
 - {{jsxref("Statements/do...while", "do...while")}}
 - {{jsxref("Statements/for", "for")}}
-- {{jsxref("Statements/for_each...in", "for each...in")}}
 - {{jsxref("Statements/for...in", "for...in")}}
 - {{jsxref("Statements/for...of", "for...of")}}
 - {{jsxref("Statements/for-await...of", "for await...of")}}
