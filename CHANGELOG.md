@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2021-12-31 - 2022-01-07]
+
+* **Оновлення перекладу:** update(js): Web/JavaScript/Reference/Operators/Conditional_Operator ([edd187d](https://github.com/webdoky/content/commit/edd187dee749c004a938972f0d9eeafdb73313e3))
+
 ## [2021.12.24 - 2021.12.31]
 
 * **Переклад:** translation(CSS): css/css_flexible_box_layout/aligning_items_in_a_flex_container ([776c96a](https://github.com/webdoky/content/commit/776c96a2fd3ec79ea5e958c19cf43eb8a5fa47ee))
