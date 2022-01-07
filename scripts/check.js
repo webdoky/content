@@ -1,4 +1,8 @@
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
+
 import checkFile from './utils/check-file';
+import { executeWithResult } from './utils/execute';
 import {
   startLanguageTool,
   stopLanguageTool,
@@ -6,16 +10,38 @@ import {
 } from './utils/language-tool';
 import checkAll from './check-all';
 
-const CLI_ARGUMENT = 2;
-
-const targetFile = process.argv[CLI_ARGUMENT];
+const { argv } = yargs(hideBin(process.argv));
+const LIST_GIT_UPDATES = 'git diff --name-only';
 
 async function check() {
   let result = true;
+  let targetFiles;
+  if (argv.changedOnly) {
+    const gitUpdates = await executeWithResult(LIST_GIT_UPDATES);
+    const { stdout } = gitUpdates;
+
+    targetFiles = stdout
+      .split('\n')
+      .filter((filePath) => filePath.endsWith('.md'));
+  } else {
+    targetFiles = argv._.length;
+  }
   try {
     await startLanguageTool();
     await waitForLanguageTool();
-    result = await (targetFile ? checkFile(targetFile) : checkAll());
+    if (targetFiles.length > 0) {
+      const tasks = targetFiles.map(async (file) => {
+        const intermediateResult = await checkFile(file);
+        if (result) {
+          // false result remains false regardless of any intermediate results
+          result = intermediateResult;
+        }
+      });
+
+      await Promise.all(tasks);
+    } else {
+      result = await checkAll();
+    }
   } finally {
     await stopLanguageTool();
   }
