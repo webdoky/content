@@ -29,19 +29,19 @@ browser-compat: javascript.builtins.Array.find
 
 ```js
 // Стрілкова функція
-find((element) => { ... } )
-find((element, index) => { ... } )
-find((element, index, array) => { ... } )
+find((element) => { /* ... */ } )
+find((element, index) => { /* ... */ } )
+find((element, index, array) => { /* ... */ } )
 
 // Функція зворотного виклику
 find(callbackFn)
 find(callbackFn, thisArg)
 
 // Функція зворотного виклику, оголошена на місці
-find(function (element) { ... })
-find(function (element, index) { ... })
-find(function (element, index, array) { ... })
-find(function (element, index, array) { ... }, thisArg)
+find(function(element) { /* ... */ })
+find(function(element, index) { /* ... */ })
+find(function(element, index, array){ /* ... */ })
+find(function(element, index, array) { /* ... */ }, thisArg)
 ```
 
 ### Параметри
@@ -79,7 +79,7 @@ find(function (element, index, array) { ... }, thisArg)
 - Якщо наявний, але ще не опрацьований елемент масиву змінюється функцією `callbackFn`, його значення, що потрапить у `callbackFn`, буде таким, яке цей елемент матиме на момент опрацювання функцією `find` його індексу.
 - Елементи, які {{jsxref("Operators/delete", "видалені")}}, все ж таки будуть опрацьовані.
 
-**Обережно:** Одночасні модифікації такого типу, як описано вище, часто приводять до коду, який важко зрозуміти. Загалом заведено уникати такого запису (окрім особливих випадків).
+> **Обережно:** Одночасні модифікації такого типу, як описано вище, часто приводять до коду, який важко зрозуміти. Загалом заведено уникати такого запису (окрім особливих випадків).
 
 ## Приклади
 
@@ -155,6 +155,13 @@ array.find(function(value, index) {
   console.log('Visited index ', index, ' with value ', value);
 });
 // очікуваний вивід:
+// Visited index 0 with value 0
+// Visited index 1 with value 1
+// Visited index 2 with value undefined
+// Visited index 3 with value undefined
+// Visited index 4 with value undefined
+// Visited index 5 with value 5
+// Visited index 6 with value 6
 // Deleting array[5] with value 5
 // Visited index 0 with value 0
 // Visited index 1 with value 1
