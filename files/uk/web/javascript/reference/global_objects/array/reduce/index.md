@@ -15,47 +15,53 @@ browser-compat: javascript.builtins.Array.reduce
 ---
 {{JSRef}}
 
-Метод **`reduce()`** виконує передану користувачем функцію зворотного виклику на кожному з елементів масиву, передаючи в неї повернене значення від обробки попереднього елементу. Кінцевим результатом  обробки всіх елементів масиву функцією `reduce()` є результат обробки останнього елемента.
+Метод **`reduce()`** виконує передану користувачем функцію зворотного виклику на кожному з елементів масиву, підряд, передаючи в неї повернене значення від обробки попереднього елементу.
+Кінцевим результатом  обробки всіх елементів масиву функцією `reduce()` є результат обробки останнього елемента.
 
-Ймовірно, найпростіший для розуміння приклад застосування `reduce()` — це повернення суми всіх елементів масиву.
+Під час першого виконання функції зворотного виклику "результату виконання попереднього кроку" іще не існує. Замість нього може бути використано початкове значення (аргумент `initialValue`), якщо його було передано. Інакше — функція використає нульовий елемент замість нього, і почне виконання з наступного (з індексу 1 замість 0).
 
-Функція `reduce()` проходить по всьому масиву, елемент за елементом, з кожним кроком додаючи значення поточного елементу до результату попереднього кроку (цей результат є поточною сумою всіх попередніх кроків), допоки не дійде до кінця масиву.
-
-Цю механіку проілюстровано в наступному інтерактивному прикладі:
+Ймовірно, найпростіший для розуміння приклад застосування `reduce()` — це повернення суми всіх елементів масиву:
 
 {{EmbedInteractiveExample("pages/js/array-reduce.html")}}
+
+Функція `reduce()` проходить по всьому масиву, елемент за елементом, з кожним кроком додаючи значення поточного елементу до результату попереднього кроку (цей результат є поточною сумою всіх попередніх кроків), допоки не дійде до кінця масиву.
 
 ## Синтаксис
 
 ```js
 // Стрілкова функція
-reduce((previousValue, currentValue) => { ... } )
-reduce((previousValue, currentValue, currentIndex) => { ... } )
-reduce((previousValue, currentValue, currentIndex, array) => { ... } )
-reduce((previousValue, currentValue, currentIndex, array) => { ... }, initialValue)
+reduce((previousValue, currentValue) => { /* ... */ } )
+reduce((previousValue, currentValue, currentIndex) => { /* ... */ } )
+reduce((previousValue, currentValue, currentIndex, array) => { /* ... */ } )
+reduce((previousValue, currentValue, currentIndex, array) => { /* ... */ }, initialValue)
 
 // Функція зворотного виклику
 reduce(callbackFn)
 reduce(callbackFn, initialValue)
 
 // Оголошена на місці функція зворотного виклику
-reduce(function callbackFn(previousValue, currentValue) { ... })
-reduce(function callbackFn(previousValue, currentValue, currentIndex) { ... })
-reduce(function callbackFn(previousValue, currentValue, currentIndex, array){ ... })
-reduce(function callbackFn(previousValue, currentValue, currentIndex, array) { ... }, initialValue)
+reduce(function(previousValue, currentValue) { /* ... */ })
+reduce(function(previousValue, currentValue, currentIndex) { /* ... */ })
+reduce(function(previousValue, currentValue, currentIndex, array) { /* ... */ })
+reduce(function(previousValue, currentValue, currentIndex, array) { /* ... */ }, initialValue)
 ```
 
 ### Параметри
 
 - `callbackFn`
   - : Функція, яка приймає чотири аргументи:
-    - *previousValue* (результат виконання попереднього виклику `callbackFn`)
-    - *currentValue* (значення поточного елемента)
-    - *currentIndex* (індекс поточного елемента) {{optional_inline}}
-    - *array* (масив, на котрому виконується `reduce`) {{optional_inline}}
+    - *previousValue*: результат виконання попереднього виклику `callbackFn`
+      Під час першого виклику дорівнює `initialValue` (якщо вказано), або значенню елемента `array[0]`
+    - *currentValue*: значення поточного елемента
+      Під час першого виклику дорівнює значенню `array[0]`, якщо було вказано параметр `initialValue`, інакше — дорівнює `array[1]`.
+    - *currentIndex*: індекс поточного елемента
+      На перший виклик дорівнює `0`, якщо було передано параметр `initialValue`. Інакше — `1`.
+    - *array*: масив, на котрому виконується `reduce`
 
 - `initialValue` {{optional_inline}}
-  - : Значення, яким ініціалізується *previousValue* під час першого виконання функції зворотного виклику. Якщо `initialValue` задане, це призводить до ініціалізації *currentValue* першим значенням із масиву. Якщо ж `initialValue` *не* задано, *previousValue* ініціалізується першим елементом масиву, а *currentValue* — другим.
+  - : Значення, яким ініціалізується *previousValue* під час першого виконання функції зворотного виклику.
+    Якщо `initialValue` задане, це призводить до ініціалізації *currentValue* першим значенням із масиву.
+    Якщо ж `initialValue` *не* задано, *previousValue* ініціалізується першим елементом масиву, а *currentValue* — другим.
 
 ### Повернене значення
 
@@ -63,7 +69,9 @@ reduce(function callbackFn(previousValue, currentValue, currentIndex, array) { .
 
 ### Винятки
 
-Викидає {{jsxref("TypeError")}}, якщо масив не містить елементів, і не задано параметр `initialValue`.
+- {{jsxref("TypeError")}}
+
+  - : Масив не містить елементів, і не задано параметр `initialValue`.
 
 ## Опис
 
@@ -110,14 +118,20 @@ const getMax = (a, b) => Math.max(a, b);
 [      ].reduce(getMax);     // TypeError
 ```
 
-### Як працює reduce()
+### Як працює reduce(), якщо не вказано початкове значення
 
-Припустимо, трапився наступний випадок застосування `reduce()`:
+Наведений нижче код демонструє, що відбувається, якщо викликати `reduce()` на масиві й не надати функції початкового значення.
 
 ```js
-[0, 1, 2, 3, 4].reduce(function(previousValue, currentValue, currentIndex, array) {
-  return previousValue + currentValue
-})
+const array = [15, 16, 17, 18, 19];
+
+function reducer(previous, current, index, array) {
+  const returns = previous + current;
+  console.log(`previous: ${previous}, current: ${current}, index: ${index}, returns: ${returns}`);
+  return returns;
+}
+
+array.reduce(reducer);
 ```
 
 Функція зворотного виклику виконається чотири рази, з наступними аргументами та поверненими значеннями під час кожного виклику:
@@ -146,54 +160,50 @@ const getMax = (a, b) => Math.max(a, b);
   <tbody>
     <tr>
       <th scope="row">Перший виклик</th>
-      <td><code>0</code></td>
+      <td><code>15</code></td>
+      <td><code>16</code></td>
       <td><code>1</code></td>
-      <td><code>1</code></td>
-      <td><code>[0, 1, 2, 3, 4]</code></td>
-      <td><code>1</code></td>
+      <td><code>[15, 16, 17, 18, 19]</code></td>
+      <td><code>31</code></td>
     </tr>
     <tr>
       <th scope="row">Другий виклик</th>
-      <td><code>1</code></td>
+      <td><code>31</code></td>
+      <td><code>17</code></td>
       <td><code>2</code></td>
-      <td><code>2</code></td>
-      <td><code>[0, 1, 2, 3, 4]</code></td>
-      <td><code>3</code></td>
+      <td><code>[15, 16, 17, 18, 19]</code></td>
+      <td><code>48</code></td>
     </tr>
     <tr>
       <th scope="row">Третій виклик</th>
+      <td><code>48</code></td>
+      <td><code>18</code></td>
       <td><code>3</code></td>
-      <td><code>3</code></td>
-      <td><code>3</code></td>
-      <td><code>[0, 1, 2, 3, 4]</code></td>
-      <td><code>6</code></td>
+      <td><code>[15, 16, 17, 18, 19]</code></td>
+      <td><code>66</code></td>
     </tr>
     <tr>
       <th scope="row">Четвертий виклик</th>
-      <td><code>6</code></td>
+      <td><code>66</code></td>
+      <td><code>19</code></td>
       <td><code>4</code></td>
-      <td><code>4</code></td>
-      <td><code>[0, 1, 2, 3, 4]</code></td>
-      <td><code>10</code></td>
+      <td><code>[15, 16, 17, 18, 19]</code></td>
+      <td><code>85</code></td>
     </tr>
   </tbody>
 </table>
 
-Значення, повернене з `reduce()`, буде таке саме, як результат останнього виконання функції зворотного виклику (`10`).
+Значення, повернене з `reduce()`, буде таке саме, як результат останнього виконання функції зворотного виклику (`85`).
 
-Також замість повної функції можна передати {{jsxref("Functions/Arrow_functions", "стрілкову функцію","",1)}}. Наведений далі код виведе такий самий результат, що і попередня реалізація вище:
+### Як працює reduce() зі вказаним початковим значенням
 
-```js
-[0, 1, 2, 3, 4].reduce( (previousValue, currentValue, currentIndex, array) => previousValue + currentValue )
-```
-
-Якби другим аргументом до `reduce()` було передано *initialValue*, результат мав би наступний вигляд:
+Нижче виконаймо редукцію такого самого масиву, застосувавши такий самий алгоритм, проте передамо число `10` як параметр *initialValue*, другим аргументом до функції `reduce()`:
 
 ```js
-[0, 1, 2, 3, 4].reduce((previousValue, currentValue, currentIndex, array) => {
-    return previousValue + currentValue
-}, 10)
+[15, 16, 17, 18, 19].reduce( (previousValue, currentValue, currentIndex, array) => previousValue + currentValue, 10 )
 ```
+
+Функція зворотного виклику буде виконана п'ять разів, з наступними аргументами та поверненими значеннями під час кожного виклику:
 
 <table class="standard-table">
   <thead>
@@ -220,47 +230,47 @@ const getMax = (a, b) => Math.max(a, b);
     <tr>
       <th scope="row">Перший виклик</th>
       <td><code>10</code></td>
+      <td><code>15</code></td>
       <td><code>0</code></td>
-      <td><code>0</code></td>
-      <td><code>[0, 1, 2, 3, 4]</code></td>
-      <td><code>10</code></td>
+      <td><code>[15, 16, 17, 18, 19]</code></td>
+      <td><code>25</code></td>
     </tr>
     <tr>
       <th scope="row">Другий виклик</th>
-      <td><code>10</code></td>
+      <td><code>25</code></td>
+      <td><code>16</code></td>
       <td><code>1</code></td>
-      <td><code>1</code></td>
-      <td><code>[0, 1, 2, 3, 4]</code></td>
-      <td><code>11</code></td>
+      <td><code>[15, 16, 17, 18, 19]</code></td>
+      <td><code>41</code></td>
     </tr>
     <tr>
       <th scope="row">Третій виклик</th>
-      <td><code>11</code></td>
+      <td><code>41</code></td>
+      <td><code>17</code></td>
       <td><code>2</code></td>
-      <td><code>2</code></td>
-      <td><code>[0, 1, 2, 3, 4]</code></td>
-      <td><code>13</code></td>
+      <td><code>[15, 16, 17, 18, 19]</code></td>
+      <td><code>58</code></td>
     </tr>
     <tr>
       <th scope="row">Четвертий виклик</th>
-      <td><code>13</code></td>
+      <td><code>58</code></td>
+      <td><code>18</code></td>
       <td><code>3</code></td>
-      <td><code>3</code></td>
-      <td><code>[0, 1, 2, 3, 4]</code></td>
-      <td><code>16</code></td>
+      <td><code>[15, 16, 17, 18, 19]</code></td>
+      <td><code>76</code></td>
     </tr>
     <tr>
       <th scope="row">П'ятий виклик</th>
-      <td><code>16</code></td>
+      <td><code>76</code></td>
+      <td><code>19</code></td>
       <td><code>4</code></td>
-      <td><code>4</code></td>
-      <td><code>[0, 1, 2, 3, 4]</code></td>
-      <td><code>20</code></td>
+      <td><code>[15, 16, 17, 18, 19]</code></td>
+      <td><code>95</code></td>
     </tr>
   </tbody>
 </table>
 
-В цьому випадку `reduce()` поверне значення `20`.
+В цьому випадку `reduce()` поверне значення `95`.
 
 ## Приклади
 
