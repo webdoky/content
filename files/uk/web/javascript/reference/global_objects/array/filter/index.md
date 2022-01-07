@@ -21,19 +21,19 @@ browser-compat: javascript.builtins.Array.filter
 
 ```js
 // Стрілкова функція
-filter((element) => { ... } )
-filter((element, index) => { ... } )
-filter((element, index, array) => { ... } )
+filter((element) => { /* ... */ } )
+filter((element, index) => { /* ... */ } )
+filter((element, index, array) => { /* ... */ } )
 
 // Функція зворотного виклику
 filter(callbackFn)
 filter(callbackFn, thisArg)
 
 // Функція зворотного виклику, яка оголошена на місці
-filter(function (element) { ... })
-filter(function (element, index) { ... })
-filter(function (element, index, array) { ... })
-filter(function (element, index, array) { ... }, thisArg)
+filter(function(element) { /* ... */ })
+filter(function(element, index) { /* ... */ })
+filter(function(element, index, array){ /* ... */ })
+filter(function(element, index, array) { /* ... */ }, thisArg)
 ```
 
 ### Параметри
@@ -73,6 +73,8 @@ filter(function (element, index, array) { ... }, thisArg)
 Метод `filter()` не змінює початковий масив, на якому його викликають.
 
 Діапазон елементів, що опрацьовуються функцією `filter()`, задається до першого виклику `callbackFn`. Елементи, які будуть додані до масиву (наприклад, в процесі виконання `callbackFn`) після початку роботи методу `filter()`, не будуть опрацьовані функцією `callbackFn`. Якщо ж наявні елементи будуть видалені в такий самий спосіб, вони також не будуть опрацьовані.
+
+> **Обережно:** Одночасні модифікації такого типу, як описано в попередньому абзаці, часто приводять до коду, який важко зрозуміти. Загалом заведено уникати такого запису (окрім особливих випадків).
 
 ## Поліфіл
 
