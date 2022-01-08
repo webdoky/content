@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [2021-12-31 - 2022-01-07]
 
 * **Оновлення перекладу:** update(js): Web/JavaScript/Reference/Operators/Conditional_Operator ([edd187d](https://github.com/webdoky/content/commit/edd187dee749c004a938972f0d9eeafdb73313e3))
+* **Оновлення перекладу:** update(js): Web/JavaScript/Reference ([487ad29](https://github.com/webdoky/content/commit/487ad2953774e617566c6a4d10c0f5d0f667e0b7))
+* **Оновлення перекладу:** update(js): Web/JavaScript/Reference/Global_Objects/Promise ([11ba398](https://github.com/webdoky/content/commit/11ba398860fd26f55202c79e19a3f8e1491ef959))
+* **Оновлення перекладу:** update(js): Web/JavaScript/Reference/Global_Objects/Date ([0215e4b](https://github.com/webdoky/content/commit/0215e4b5fb891a3201f339bfef0051a6f35d0aa4))
+* **Оновлення перекладу:** update(js): Web/JavaScript/Reference/Global_Objects/Array/splice ([4620c3d](https://github.com/webdoky/content/commit/4620c3d43c2bf633889cc6330dcc2fd41a24aa84))
+* **Оновлення перекладу:** update(js): Web/JavaScript/Reference/Global_Objects/Array/sort ([eb04070](https://github.com/webdoky/content/commit/eb04070b9a4b839a948d93439c68282b605f6502))
+* **Оновлення перекладу:** update(js): Web/JavaScript/Reference/Global_Objects/Array/map ([9cc924d](https://github.com/webdoky/content/commit/9cc924db1898016d9d66e73a0b636412fccb0496))
+* **Оновлення перекладу:** update(js): Web/JavaScript/Reference/Global_Objects/Array/filter ([f5134f1](https://github.com/webdoky/content/commit/f5134f10e0256103ca0d109e087a204c6b78b769))
+* **Оновлення перекладу:** update(js): Web/JavaScript/Reference/Global_Objects/Array/find ([d6d2a1a](https://github.com/webdoky/content/commit/d6d2a1a39bedc03d2cbee5e0c0a61965ede698eb))
+* **Оновлення перекладу:** update(js): Web/JavaScript/Reference/Global_Objects/Array/forEach ([3ed32b1](https://github.com/webdoky/content/commit/3ed32b1515e6da92d492e31ce85d4c9da4e18235))
+* **Переклад:** translation(JS): /Web/JavaScript/Reference/Global_Objects/Math/clz32 (#126) ([ccdead7](https://github.com/webdoky/content/commit/ccdead7215cf56599ba4075828bf774c6e0b5306))
+* **Переклад:** translation(js): /Web/JavaScript/Reference/Functions/Arrow_functions (#155) ([8126d1a](https://github.com/webdoky/content/commit/8126d1a5762454db94d74112dcfee7c7181214dd))
 
 ## [2021.12.24 - 2021.12.31]
 
