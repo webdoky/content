@@ -11,7 +11,7 @@ import {
 import checkAll from './check-all';
 
 const { argv } = yargs(hideBin(process.argv));
-const LIST_GIT_UPDATES = 'git diff --name-only';
+const LIST_GIT_UPDATES = 'git ls-files -m -o --exclude-standard';
 
 async function check() {
   let result = true;
