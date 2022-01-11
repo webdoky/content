@@ -58,7 +58,7 @@ if (!String.fromCodePoint) (function(stringFromCharCode) {
       for (var index=0, len = arguments.length; index !== len; ++index) {
         var codePoint = +arguments[index];
         // коректно опрацьовує всі можливі випадки, в тому числі: `NaN`, `-Infinity`, `+Infinity`
-        // Обгортка `!(...)` необхідна для вірної обробки `NaN`
+        // Обгортка `!(...)` необхідна для правильної обробки `NaN`
         // Умова (codePoint>>>0) === codePoint враховує десяткові та від'ємні числа
         if (!(codePoint < 0x10FFFF && (codePoint>>>0) === codePoint))
           throw RangeError("Invalid code point: " + codePoint);
@@ -118,7 +118,7 @@ String.fromCodePoint(NaN);      // RangeError
 ### Порівняння зі `fromCharCode()`
 
 Метод {{jsxref("String.fromCharCode()")}} не здатний повертати додаткові символи (наприклад, коди в діапазоні від `0x010000` і до `0x10FFFF`) шляхом передачі у функцію їхніх кодів.
-Натомість щоб повернути символ з допоміжної площини, він вимагає передачі сурогатної пари UTF-16 в метод:
+Натомість, щоб повернути символ з допоміжної площини, він вимагає передачі сурогатної пари UTF-16 в метод:
 
 ```js
 String.fromCharCode(0xD83C, 0xDF03); // Code Point U+1F303 "Зоряна
