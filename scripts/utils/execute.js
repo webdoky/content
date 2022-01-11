@@ -15,3 +15,15 @@ export default async function execute(command) {
     throw new Error('Failure');
   }
 }
+
+export async function executeWithResult(command) {
+  return new Promise((resolve, reject) => {
+    childProcess.exec(command, (error, stdout, stderr) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve({ stdout, stderr });
+      }
+    });
+  });
+}

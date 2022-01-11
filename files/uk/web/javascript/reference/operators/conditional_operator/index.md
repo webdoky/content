@@ -16,7 +16,7 @@ browser-compat: javascript.operators.conditional
 ---
 {{jsSidebar("Operators")}}
 
-**Умовний (тернарний) оператор** — це єдиний оператор у JavaScript, який приймає три операнди: умова зі знаком питання (`?`) після неї, далі вираз, який слід виконати, якщо умова {{Glossary("truthy", "істинна")}}, слідом за якою двокрапка (`:`), і нарешті – вираз, який виконається, якщо умова {{Glossary("falsy", "хибна")}}. Цей оператор часто використовується як скорочення для інструкції [`if`](/uk/docs/Web/JavaScript/Reference/Statements/if...else).
+**Умовний (тернарний) оператор** — це єдиний оператор у JavaScript, який приймає три операнди: умова зі знаком питання (`?`) після неї, далі вираз, який слід виконати, якщо умова {{Glossary("truthy", "істинна")}}, слідом за якою двокрапка (`:`), і нарешті – вираз, який виконається, якщо умова {{Glossary("falsy", "хибна")}}. Цей оператор часто використовується як альтернатива інструкції [`if`](/uk/docs/Web/JavaScript/Reference/Statements/if...else).
 
 {{EmbedInteractiveExample("pages/js/expressions-conditionaloperators.html")}}
 

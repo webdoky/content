@@ -21,19 +21,19 @@ browser-compat: javascript.builtins.Array.forEach
 
 ```js
 // Стрілкова функція
-forEach((element) => { ... } )
-forEach((element, index) => { ... } )
-forEach((element, index, array) => { ... } )
+forEach((element) => { /* ... */ } )
+forEach((element, index) => { /* ... */ } )
+forEach((element, index, array) => { /* ... */ } )
 
 // Функція зворотного виклику
 forEach(callbackFn)
 forEach(callbackFn, thisArg)
 
 // Функція зворотного виклику, оголошена на місці
-forEach(function (element) { ... })
-forEach(function (element, index) { ... })
-forEach(function (element, index, array) { ... })
-forEach(function (element, index, array) { ... }, thisArg)
+forEach(function(element) { /* ... */ })
+forEach(function(element, index) { /* ... */ })
+forEach(function(element, index, array){ /* ... */ })
+forEach(function(element, index, array) { /* ... */ }, thisArg)
 ```
 
 ### Параметри
@@ -70,7 +70,7 @@ forEach(function (element, index, array) { ... }, thisArg)
 
 Діапазон елементів, що опрацьовуються функцією `forEach()`, задається до першого виклику `callbackFn`. Елементи, які будуть присвоєні за індексами, що вже перебрані методом, або ж до індексів за межами цього діапазону, не будуть опрацьовані функцією `callbackFn`. Якщо наявні елементи змінюються чи видаляються, то до `callbackFn` буде передано їх фактичне значення на момент, коли функція `forEach()` їх опрацьовує. Ті елементи, які були видалені до того, як їх опрацювала функція, опрацьовані не будуть. Якщо елементи, які уже були опрацьовані, видаляються (наприклад, за допомогою {{jsxref("Array.prototype.shift()", "shift()")}}) під час проходження по масиву, наступні елементи буде пропущено. ([Дивіться цей приклад нижче](#modifying_the_array_during_iteration).)
 
-**Обережно:** Одночасні модифікації такого типу, як описано в попередньому абзаці, часто приводять до коду, який важко зрозуміти. Загалом заведено уникати такого запису (окрім особливих випадків).
+> **Обережно:** Одночасні модифікації такого типу, як описано в попередньому абзаці, часто приводять до коду, який важко зрозуміти. Загалом заведено уникати такого запису (окрім особливих випадків).
 
 Метод `forEach()` виконує функцію `callbackFn` один раз для кожного елементу в масиві, і на відміну від {{jsxref("Array.prototype.map()", "map()")}} чи
 {{jsxref("Array.prototype.reduce()", "reduce()")}} він завжди повертає значення {{jsxref("undefined")}}, і не придатний до послідовних викликів. Зазвичай його використовують для виконання побічних ефектів наприкінці послідовності.
