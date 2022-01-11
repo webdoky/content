@@ -3,6 +3,46 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2021-12-31 - 2022-01-07]
+
+* **Оновлення перекладу:** update(js): Web/JavaScript/Reference/Operators/Conditional_Operator ([edd187d](https://github.com/webdoky/content/commit/edd187dee749c004a938972f0d9eeafdb73313e3))
+* **Оновлення перекладу:** update(js): Web/JavaScript/Reference ([487ad29](https://github.com/webdoky/content/commit/487ad2953774e617566c6a4d10c0f5d0f667e0b7))
+* **Оновлення перекладу:** update(js): Web/JavaScript/Reference/Global_Objects/Promise ([11ba398](https://github.com/webdoky/content/commit/11ba398860fd26f55202c79e19a3f8e1491ef959))
+* **Оновлення перекладу:** update(js): Web/JavaScript/Reference/Global_Objects/Date ([0215e4b](https://github.com/webdoky/content/commit/0215e4b5fb891a3201f339bfef0051a6f35d0aa4))
+* **Оновлення перекладу:** update(js): Web/JavaScript/Reference/Global_Objects/Array/splice ([4620c3d](https://github.com/webdoky/content/commit/4620c3d43c2bf633889cc6330dcc2fd41a24aa84))
+* **Оновлення перекладу:** update(js): Web/JavaScript/Reference/Global_Objects/Array/sort ([eb04070](https://github.com/webdoky/content/commit/eb04070b9a4b839a948d93439c68282b605f6502))
+* **Оновлення перекладу:** update(js): Web/JavaScript/Reference/Global_Objects/Array/map ([9cc924d](https://github.com/webdoky/content/commit/9cc924db1898016d9d66e73a0b636412fccb0496))
+* **Оновлення перекладу:** update(js): Web/JavaScript/Reference/Global_Objects/Array/filter ([f5134f1](https://github.com/webdoky/content/commit/f5134f10e0256103ca0d109e087a204c6b78b769))
+* **Оновлення перекладу:** update(js): Web/JavaScript/Reference/Global_Objects/Array/find ([d6d2a1a](https://github.com/webdoky/content/commit/d6d2a1a39bedc03d2cbee5e0c0a61965ede698eb))
+* **Оновлення перекладу:** update(js): Web/JavaScript/Reference/Global_Objects/Array/forEach ([3ed32b1](https://github.com/webdoky/content/commit/3ed32b1515e6da92d492e31ce85d4c9da4e18235))
+* **Переклад:** translation(JS): /Web/JavaScript/Reference/Global_Objects/Math/clz32 (#126) ([ccdead7](https://github.com/webdoky/content/commit/ccdead7215cf56599ba4075828bf774c6e0b5306))
+* **Переклад:** translation(js): /Web/JavaScript/Reference/Functions/Arrow_functions (#155) ([8126d1a](https://github.com/webdoky/content/commit/8126d1a5762454db94d74112dcfee7c7181214dd))
+
+## [2021.12.24 - 2021.12.31]
+
+* **Переклад:** translation(CSS): css/css_flexible_box_layout/aligning_items_in_a_flex_container ([776c96a](https://github.com/webdoky/content/commit/776c96a2fd3ec79ea5e958c19cf43eb8a5fa47ee))
+* **Переклад:** translation(CSS): height ([e8aa9b1](https://github.com/webdoky/content/commit/e8aa9b1ac8b95a73fb912e1ad8e906eab5b52b21))
+* **Переклад:** translation(CSS): width ([eec4d3e](https://github.com/webdoky/content/commit/eec4d3e38f2175531581d03445134032d8b7627f))
+* **Переклад:** translation(CSS): background-color ([4d9d103](https://github.com/webdoky/content/commit/4d9d103fa2e9b91553abec546980b24c80c6036f))
+* **Переклад:** translation(CSS): css/box-shadow/index.md ([107f657](https://github.com/webdoky/content/commit/107f657e5da5e2e31b897bf10e0fa92d0998bc90))
+* **Переклад:** translation(CSS): web/css/position/index.md ([54d4954](https://github.com/webdoky/content/commit/54d49544ce2143b92dbed1ebdd321ab740bdc653))
+* **Переклад:** translation(JS): Math exp and expm1 ([0b9db08](https://github.com/webdoky/content/commit/0b9db086c7dfacf1e7223542718ec87e5ebab122))
+* **Переклад:** translation(JS): /Web/JavaScript/Reference/Global_Objects/Math/fround ([5d844a8](https://github.com/webdoky/content/commit/5d844a8af8c2257495efab979915693a63cda94d))
+* **Переклад:** translation(JS): Math min and max ([7f6a0a0](https://github.com/webdoky/content/commit/7f6a0a0c9fb4849212ce778f12b8a2c4145c5d7f))
+* **Переклад:** translation(JS): Math sin and sinh ([2c0f561](https://github.com/webdoky/content/commit/2c0f561e3a185625cfa52702e280cb5da4e2f51e))
+* **Переклад:** translation(JS): Math round and trunc ([6b49085](https://github.com/webdoky/content/commit/6b490856b05c28a4394550912c35807064ab4b78))
+* **Переклад:** translation(JS): Math tan and tanh ([ebf3dd3](https://github.com/webdoky/content/commit/ebf3dd3e1ba1f101fbfa85e5418c82db804d42c3))
+* **Переклад:** translation(JS): /Web/JavaScript/Reference/Global_Objects/Math/random ([b1c3bac](https://github.com/webdoky/content/commit/b1c3bac4f2a9bca164f74fbd73da5b612c6e805c))
+* **Переклад:** translation(JS): /Web/JavaScript/Reference/Global_Objects/Math/hypot ([840e314](https://github.com/webdoky/content/commit/840e31452094e122f6e665db79f7eb2e27e3a0bc))
+* **Переклад:** translation(JS): /Web/JavaScript/Reference/Global_Objects/Math/imul ([504cab3](https://github.com/webdoky/content/commit/504cab324a0f55b562701717f8f63d9a0b70f72f))
+* **Переклад:** translation(JS): Math log, log10, log1p and log2 ([564f9ac](https://github.com/webdoky/content/commit/564f9ac6e5eea7226c24d98d948277bfeb938ef7))
+* **Переклад:** translation(JS): Math pow and sign ([e03d3ae](https://github.com/webdoky/content/commit/e03d3ae7d139a20ee5671dc835d127ef711e986d))
+* **Переклад:** translation(JS): Math cos and cosh ([85c7b8f](https://github.com/webdoky/content/commit/85c7b8f49f0bfc9a4b8344e4f081c7148982c1af))
+* **Оновлення перекладу:** Translation(CSS): display. Update ([898d38a](https://github.com/webdoky/content/commit/898d38aeef49cf8e12d51062351b240ac8e5cdd2))
+
+## [2021.12.17 - 2021.12.24]
+
+...
 ## [2021.12.10 - 2021.12.17]
 
 * **Переклад:** translation(JS): Math ceil and floor ([e7fba7d](https://github.com/webdoky/content/commit/e7fba7d11c9dc62ed3c8eb6e235164f84281f40f))
