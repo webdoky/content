@@ -24,7 +24,7 @@ async function check() {
       .split('\n')
       .filter((filePath) => filePath.endsWith('.md'));
   } else {
-    targetFiles = argv._.length;
+    targetFiles = argv._;
   }
   try {
     await startLanguageTool();
