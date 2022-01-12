@@ -11,7 +11,7 @@ browser-compat: css.properties.-moz-orient
 ---
 {{CSSRef}}{{Non-standard_header}}
 
-Властивість [CSS](/en-US/docs/Web/CSS) **`-moz-orient`** вказує орієнтацію елемента, до котрого застосована.
+Властивість [CSS](/uk/docs/Web/CSS) **`-moz-orient`** вказує орієнтацію елемента, до котрого застосована.
 
 ## Синтаксис
 
