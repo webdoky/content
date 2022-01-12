@@ -222,7 +222,7 @@ var myArray = /d(b+)d/g.exec('cdbbdbsbz');
     // /d(b+)d/g.exec('cdbbdbsbz') виводить Array [ 'dbbd', 'bb', index: 1, input: 'cdbbdbsbz' ].
 ```
 
-(Дивіться більше інформації цю різницю в поведінці у частині [Застосування прапорця глобального пошуку з `exec()`](#using_the_global_search_flag_with_exec).)
+(Дивіться більше інформації цю різницю в поведінці у частині [Застосування прапорця глобального пошуку з `exec()`](#zastosuvannia-praportsia-hlobalnoho-poshuku-z-exec).)
 
 Якщо ж потрібно сконструювати регулярний вираз із рядка, ось іще одна альтернатива:
 
@@ -272,7 +272,7 @@ var myArray = myRe.exec('cdbbdbsbz');
       <td><code>lastIndex</code></td>
       <td>Індекс, з якого почнеться пошук наступного збігу.
         (Ця властивість встановлюється лише якщо регулярний вираз використовує опцію «g», описану в частині
-        <a href="#advanced_searching_with_flags">Поглиблений пошук з прапорцями</a>.)
+        <a href="#pohlyblenyi-poshuk-z-optsiiamy">Поглиблений пошук з прапорцями</a>.)
       </td>
       <td><code>5</code></td>
     </tr>
