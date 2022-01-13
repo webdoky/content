@@ -125,7 +125,7 @@ let shallowCopySpread = [...fruits]
 // ["Strawberry", "Mango"]
 ```
 
-Це — поверхнева копія, виконана за допомогою [оператора розгортання](/uk/docs/Web/JavaScript/Reference/Operators/Spread_syntax). Нижче в розділі [Копіювання масиву](#copying_an_array) розібрані інші способи скопіювати масив.
+Це — поверхнева копія, виконана за допомогою [оператора розгортання](/uk/docs/Web/JavaScript/Reference/Operators/Spread_syntax). Нижче в розділі [Копіювання масиву](#kopiiuvannia-masyvu) розібрані інші способи скопіювати масив.
 
 ### Доступ до елементів масиву
 
