@@ -11,18 +11,28 @@ import {
 import checkAll from './check-all';
 
 const { argv } = yargs(hideBin(process.argv));
-const LIST_GIT_UPDATES = 'git ls-files -m -o --exclude-standard';
+const LIST_GIT_UPDATES_NON_STAGED = 'git ls-files -m -o --exclude-standard';
+const LIST_GIT_UPDATES_STAGED = 'git diff --staged --name-only';
 
 async function check() {
   let result = true;
   let targetFiles;
   if (argv.changedOnly) {
-    const gitUpdates = await executeWithResult(LIST_GIT_UPDATES);
-    const { stdout } = gitUpdates;
+    const { stdout: gitStagedUpdates } = await executeWithResult(
+      LIST_GIT_UPDATES_STAGED,
+    );
+    const { stdout: gitNonStagedUpdates } = await executeWithResult(
+      LIST_GIT_UPDATES_NON_STAGED,
+    );
 
-    targetFiles = stdout
-      .split('\n')
-      .filter((filePath) => filePath.endsWith('.md'));
+    targetFiles = Array.from(
+      new Set(
+        gitStagedUpdates
+          .split('\n')
+          .concat(gitNonStagedUpdates.split('\n'))
+          .filter((filePath) => filePath.endsWith('.md')),
+      ), // uniq (yes, a single file may contain both staged and unstaged changes)
+    );
   } else {
     targetFiles = argv._.length;
   }
