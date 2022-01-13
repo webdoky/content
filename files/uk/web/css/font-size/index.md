@@ -218,4 +218,4 @@ span {
 - {{cssxref("font-size-adjust")}}
 - {{cssxref("font-style")}}
 - {{cssxref("font-weight")}}
-- [Засади стилізації тексту та шрифту](/en-US/docs/Learn/CSS/Styling_text/Fundamentals)
+- [Засади стилізації тексту та шрифту](/uk/docs/Learn/CSS/Styling_text/Fundamentals)
