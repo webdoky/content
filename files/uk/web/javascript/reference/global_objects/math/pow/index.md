@@ -80,4 +80,4 @@ Math.pow(-7, 1/3); // NaN
 - {{jsxref("Math.exp()")}}
 - {{jsxref("Math.log()")}}
 - {{jsxref("Math.sqrt()")}}
-- [Оператор піднесення до степеня](/en-US/docs/Web/JavaScript/Reference/Operators/Exponentiation)
+- [Оператор піднесення до степеня](/uk/docs/Web/JavaScript/Reference/Operators/Exponentiation)
