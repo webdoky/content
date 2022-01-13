@@ -25,7 +25,7 @@ browser-compat: javascript.builtins.Map
 - Рівність ключів заснована на алгоритмі [`sameValueZero`](/uk/docs/Web/JavaScript/Equality_comparisons_and_sameness#same-value-zero_equality).
 - Значення {{jsxref("NaN")}} вважається рівним `NaN` (хоча `NaN !== NaN`), а всі інші значення вважаються однаковими згідно з семантикою оператора `===`.
 - В чинній специфікації ECMAScript `-0` та `+0` вважаються рівними, хоча в більш ранніх чернетках це було не так. Зверніться до _"Value equality for -0 and
-  0"_ в таблиці [Сумісності з браузерами](#browser_compatibility) за подробицями.
+  0"_ в таблиці [Сумісності з браузерами](#sumisnist-iz-brauzeramy) за подробицями.
 
 ### Порівняння `Object` та `Map`
 
