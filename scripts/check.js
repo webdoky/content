@@ -34,7 +34,7 @@ async function check() {
       ), // uniq (yes, a single file may contain both staged and unstaged changes)
     );
   } else {
-    targetFiles = argv._.length;
+    targetFiles = argv._;
   }
   try {
     await startLanguageTool();
