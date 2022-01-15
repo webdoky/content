@@ -3,6 +3,33 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2022-01-07 - 2022-01-14]
+
+* **Переклад:** translation(CSS): web/css/media_queries/using_media_queries/index.md (#182) ([3193f7a](https://github.com/webdoky/content/commit/3193f7ae5676b0a2773f1ea1be812e3d74de65ec))
+* **Переклад:** translation(CSS): web/css/box-sizing/index.md (#180) ([7ba1de7](https://github.com/webdoky/content/commit/7ba1de73f3ccb1d6bcc5c5dc710fb268ac35a5d8))
+* **Переклад:** translation(CSS): web/css/font-family/index.md (#179) ([8e76a73](https://github.com/webdoky/content/commit/8e76a73deaa30dffdcfd888287261efe28441634))
+* **Оновлення перекладу:** update(CSS): web/css/css_flexible_box_layout/aligning_items_in_a_flex_container/index.md (#177) ([07d3508](https://github.com/webdoky/content/commit/07d35081e60533b679a7b7c9d76104dc82c20350))
+* **Оновлення перекладу:** update(CSS): web/css/specificity/index.md (#176) ([a7b1c9c](https://github.com/webdoky/content/commit/a7b1c9c114f7340379bcb7943a626ac251dfe49c))
+* **Переклад:** translation(CSS): css/css_flexible_box_layout/basic_concepts_of_flexbox/index.md (#175) ([bc6f5ef](https://github.com/webdoky/content/commit/bc6f5efe861639a9862345e184838b0a1110b591))
+* **Переклад:** translation(js): Web/JavaScript/Reference/Global_Objects/String/charAt (#174) ([c7eef8a](https://github.com/webdoky/content/commit/c7eef8a247435f0b239d1873d0fe557059b30ff7))
+* **Переклад:** translation(js): Web/JavaScript/Reference/Global_Objects/String/blink (#172) ([d3a4892](https://github.com/webdoky/content/commit/d3a4892dfe2ab2e09b54cabe7f9ade721512871a))
+* **Переклад:** translation(js): Web/JavaScript/Reference/Global_Objects/String/at (#170) ([16d2c41](https://github.com/webdoky/content/commit/16d2c41e88fa269b186985126fbb4ed13bfba485))
+* **Переклад:** translation(js): Web/JavaScript/Reference/Global_Objects/String/fromCodePoint ([13887a8](https://github.com/webdoky/content/commit/13887a80ee50e00ce4fab89d211f25c623540350))
+* **Переклад:** translation(js): Web/JavaScript/Reference/Global_Objects/String/fromCharCode ([da02388](https://github.com/webdoky/content/commit/da02388a09e24aea781f32593aed182ee8b01d7c))
+* **Переклад:** translation(js): Web/JavaScript/Reference/Global_Objects/String/anchor ([6ac757a](https://github.com/webdoky/content/commit/6ac757a3fcbd7eea476e44bdab6f69bfb7326f4c))
+* **Переклад:** translation(js): Web/JavaScript/Reference/Global_Objects/String/big ([0924dca](https://github.com/webdoky/content/commit/0924dcad8397c47b9e2d3fe0d6ae8effcadd3485))
+* **Переклад:** translation(js): Web/JavaScript/Reference/Global_Objects/String/bold ([7667040](https://github.com/webdoky/content/commit/7667040e2174a58f7d06ea626968d26abdd3806d))
+* **Оновлення перекладу:** update(js): Web/JavaScript/Reference/Global_Objects/Array (#165) ([97857ae](https://github.com/webdoky/content/commit/97857aedb7dc683c62322990c1388ad47e1ca771))
+* **Оновлення перекладу:** update(js): Web/JavaScript/Reference/Global_Objects/Array/Reduce (#164) ([f0671c1](https://github.com/webdoky/content/commit/f0671c164a476546202a36c36907eb5e90604bfa))
+* **Переклад:** translation(js): Web/JavaScript/Reference/Global_Objects/String/length (#159) ([399714d](https://github.com/webdoky/content/commit/399714dcd000f829ce8d0ce88d462fa07e80ba44))
+* **Переклад:** translation(JS): Web/JavaScript/Reference/Global_Objects/String/String (#157) ([b0e6f59](https://github.com/webdoky/content/commit/b0e6f599d775dfc7a2bf3388ae0eb21995bc179d))
+* **Переклад:** translation(js): Web/JavaScript/Reference/Global_Objects/String/replace (#156) ([5e4945b](https://github.com/webdoky/content/commit/5e4945bd1dbdd09645e7a442a0eb4f0465c7c110))
+* **Переклад:** translation(CSS): css/cursor/index.md (#151) ([669d119](https://github.com/webdoky/content/commit/669d119cc78426a277e1d0b3360ae885f958e1aa))
+* **Переклад:** translation(CSS): justify-content (#154) ([b4cf19e](https://github.com/webdoky/content/commit/b4cf19ef40f4671d0fa1424f127ed485aaf80e3b))
+* **Переклад:** translation(CSS): css/using_css_custom_properties/index.md (#152) ([bebdfe1](https://github.com/webdoky/content/commit/bebdfe117684359b0e8dc30835fa790613726750))
+* **Переклад:** translation(CSS): css/background-image/index.md (#148) ([99cfe6e](https://github.com/webdoky/content/commit/99cfe6e643c71164871160dc2de6995caac6df30))
+* **Переклад:** translation(CSS): web/css/font-size/index.md (#147) ([a3bb8a2](https://github.com/webdoky/content/commit/a3bb8a213c5087f008b0a1b1e91531dfb0fb8794))
+
 ## [2021-12-31 - 2022-01-07]
 
 * **Оновлення перекладу:** update(js): Web/JavaScript/Reference/Operators/Conditional_Operator ([edd187d](https://github.com/webdoky/content/commit/edd187dee749c004a938972f0d9eeafdb73313e3))
