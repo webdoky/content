@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2022-01-14 - 2022-01-21]
+
+...
+
 ## [2022-01-07 - 2022-01-14]
 
 * **Переклад:** translation(CSS): web/css/media_queries/using_media_queries/index.md (#182) ([3193f7a](https://github.com/webdoky/content/commit/3193f7ae5676b0a2773f1ea1be812e3d74de65ec))
