@@ -52,7 +52,7 @@ console.log(worldString.big());       // <big>Привіт, світе!</big>
 console.log(worldString.fontsize(7)); // <font size="7">Привіт, світе!</font>
 ```
 
-За допомогою об'єкта {{domxref("HTMLElement/style", "element.style")}} можна отримати доступ до атрибута `style` елемента, і більш загально ним маніпулювати, як от:
+За допомогою об'єкта {{domxref("HTMLElement/style", "element.style")}} можна отримати доступ до атрибута `style` елемента і більш загально ним маніпулювати, як от:
 
 ```js
 document.getElementById('yourElemId').style.fontSize = '0.7em';
