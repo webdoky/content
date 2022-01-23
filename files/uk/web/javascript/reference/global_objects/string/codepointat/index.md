@@ -59,7 +59,7 @@ codePointAt(pos)
 
 Оскільки звертання за індексом `pos` до елементу, який є молодшим сурогатом UTF-16, повертає _лише_ код молодшого сурогату, краще не звертатися за індексом безпосередньо до рядка UTF-16.
 
-Натомість можна вжити інструкцію [`for...of`](/uk/docs/Web/JavaScript/Guide/Loops_and_iteration#for...of_statement), або метод [`forEach()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) масиву (чи будь-що інше, що перебирає сурогати UTF-16 правильно) для перебирання елементів рядка, викликаючи `codePointAt(0)` для отримання коду кожного елемента.
+Натомість можна вжити інструкцію [`for...of`](/uk/docs/Web/JavaScript/Guide/Loops_and_iteration#for...of_statement) або метод [`forEach()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) масиву (чи будь-що інше, що перебирає сурогати UTF-16 правильно) для перебирання елементів рядка, викликаючи `codePointAt(0)` для отримання коду кожного елемента.
 
 ```js
 for (let codePoint of '\ud83d\udc0e\ud83d\udc71\u2764') {
