@@ -64,7 +64,7 @@ HTML підтримує різноманітні мультимедійні ре
 
 ## SVG та MathML
 
-В HTML документи за допомогою елементів {{SVGElement("svg")}} і {{MathMLElement("math")}} можна вбудовувати [SVG](/uk/docs/Web/SVG) та [MathML](/uk/docs/Web/MathML) вміст.
+Можна вбудовувати [SVG](/uk/docs/Web/SVG) та [MathML](/uk/docs/Web/MathML) вміст в HTML документи за допомогою елементів {{SVGElement("svg")}} і {{MathMLElement("math")}}.
 
 <table class="no-markdown">
   <thead>
