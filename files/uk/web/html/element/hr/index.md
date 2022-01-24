@@ -1,5 +1,5 @@
 ---
-title: '<hr> (горизонтальне правило): Елемент що розділяє через зміну теми'
+title: '<hr> (horizontal rule — горизонтальна лінія): Елемент розділу між темами'
 slug: Web/HTML/Element/hr
 tags:
   - Element
@@ -11,55 +11,55 @@ browser-compat: html.elements.hr
 
 {{HTMLRef}}
 
-Елемент **<hr>** в [HTML](/uk/docs/Web/HTML)  відокремлює параграфи, наприклад коли змінюється сцена в історії, чи коли змінюємо тему всередині секції.
+Елемент **<hr>** в [HTML](/uk/docs/Web/HTML) служить для розділення елементів рівня абзацу: наприклад, коли змінюється сцена в історії, чи тема всередині секції.
 
 {{EmbedInteractiveExample("pages/tabbed/hr.html", "tabbed-shorter")}}
 
-Історично, елемент **<hr>**,  як "горизонтальне правило" презентував горизонтальну лінію, що розділяє зміст. Але ж сьогодні ми говоримо про **<hr>** у семантичному сенсі більш ніж у графічному. Одже, якщо бажаєте просто провести горизонтальну лінію, робить це за допомогою відповідного CSS.
+Історично, елемент **<hr>** зображався як горизонтальна лінія. Позаяк він все ще може мати вигляд горизонтальної лінії у візуальних браузерах, цей елемент тепер має більше семантичний зміст, аніж графічний. Отже, якщо потрібно просто провести горизонтальну лінію, слід робити це за допомогою відповідного CSS.
 
 <table class="properties">
   <tbody>
     <tr>
       <th scope="row">
         <a href="/en-US/docs/Web/Guide/HTML/Content_categories"
-          >Content categories</a
+          >Категорії вмісту</a
         >
       </th>
       <td>
         <a href="/en-US/docs/Web/Guide/HTML/Content_categories#flow_content"
-          >Flow content</a
+          >Основний вміст</a
         >.
       </td>
     </tr>
     <tr>
-      <th scope="row">Permitted content</th>
-      <td>None, it is an {{Glossary("empty element")}}.</td>
+      <th scope="row">Дозволений вміст</th>
+      <td>Ніякого, це {{Glossary("empty element", "порожній елемент")}}.</td>
     </tr>
     <tr>
-      <th scope="row">Tag omission</th>
-      <td>It must have start tag, but must not have an end tag.</td>
+      <th scope="row">Пропуск тегів</th>
+      <td>Повинен мати початковий тег, проте не повинен мати кінцевого тега.</td>
     </tr>
     <tr>
-      <th scope="row">Permitted parents</th>
+      <th scope="row">Дозволені батьківські елементи</th>
       <td>
-        Any element that accepts
-        <a href="/en-US/docs/Web/Guide/HTML/Content_categories#flow_content"
-          >flow content</a
+        Будь-який елемент, який дозволяє містити
+        <a href="/uk/docs/Web/Guide/HTML/Content_categories#flow_content"
+          >основний вміст</a
         >.
       </td>
     </tr>
     <tr>
-      <th scope="row">Implicit ARIA role</th>
+      <th scope="row">Неявна ARIA-роль</th>
       <td>{{ARIARole("separator")}}</td>
     </tr>
     <tr>
-      <th scope="row">Permitted ARIA roles</th>
+      <th scope="row">Дозволені ARIA-ролі</th>
       <td>
-        {{ARIARole("presentation")}} or {{ARIARole("none")}}
+        {{ARIARole("presentation")}} чи {{ARIARole("none")}}
       </td>
     </tr>
     <tr>
-      <th scope="row">DOM interface</th>
+      <th scope="row">DOM-інтерфейс</th>
       <td>{{domxref("HTMLHRElement")}}</td>
     </tr>
   </tbody>
@@ -67,19 +67,18 @@ browser-compat: html.elements.hr
 
 ## Атрибути елементу
 
-This element's attributes include the [global attributes](/en-US/docs/Web/HTML/Global_attributes).
 Атрибути <hr> елементу включають [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
 
 - {{htmlattrdef("align")}} {{deprecated_inline}}
-  - : Вирівнює обрані елементи на сторінці. Значення за замовчання — вирівнювати по лівому боку.
+  - : Вирівнює елемент на сторінці. Усталене значення — вирівнювати по лівому боці.
 - {{htmlattrdef("color")}} {{Non-standard_inline}}
-  - : Визначає колір обраних елементів згідно з шістнадцятковою номенклатурою кольорів.
+  - : Задає колір лінії шляхом вказування словесного позначення кольору, або його шістнадцяткового значення.
 - {{htmlattrdef("noshade")}} {{deprecated_inline}}
-  - : Визначає, що обрані елементи позбавлені тіні.
+  - : Визначає, що лінія буде позбавлена тіні.
 - {{htmlattrdef("size")}} {{deprecated_inline}}
-  - : Встановлює висоту обраних елементів на сторінці у пікселях.
+  - : Встановлює висоту лінії в пікселях.
 - {{htmlattrdef("width")}} {{deprecated_inline}}
-  - : Встановлює довжину  обраних елементів на сторінці у пікселях чи відсотках від сторінки.
+  - : Встановлює довжину лінії на сторінці у пікселях чи відсотках.
 
 ## Приклад
 
@@ -87,19 +86,19 @@ This element's attributes include the [global attributes](/en-US/docs/Web/HTML/G
 
 ```html
 <p>
-  This is the first paragraph of text.
-  This is the first paragraph of text.
-  This is the first paragraph of text.
-  This is the first paragraph of text.
+  Це — перший абзац тексту.
+  Це — перший абзац тексту.
+  Це — перший абзац тексту.
+  Це — перший абзац тексту.
 </p>
 
 <hr>
 
 <p>
-  This is the second paragraph of text.
-  This is the second paragraph of text.
-  This is the second paragraph of text.
-  This is the second paragraph of text.
+  Це — другий абзац тексту.
+  Це — другий абзац тексту.
+  Це — другий абзац тексту.
+  Це — другий абзац тексту.
 </p>
 ```
 
@@ -115,6 +114,6 @@ This element's attributes include the [global attributes](/en-US/docs/Web/HTML/G
 
 {{Compat}}
 
-## Також дивиться
+## Дивіться також
 
 - {{HTMLElement('p')}}
