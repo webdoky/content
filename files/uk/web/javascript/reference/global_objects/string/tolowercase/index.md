@@ -1,0 +1,52 @@
+---
+title: String.prototype.toLowerCase()
+slug: Web/JavaScript/Reference/Global_Objects/String/toLowerCase
+tags:
+  - JavaScript
+  - Method
+  - Prototype
+  - Reference
+  - String
+browser-compat: javascript.builtins.String.toLowerCase
+---
+{{JSRef}}
+
+Метод **`toLowerCase()`** повертає значення рядка, на якому викликається, переведене у нижній регістр.
+
+{{EmbedInteractiveExample("pages/js/string-tolowercase.html","shorter")}}
+
+## Синтаксис
+
+```js
+toLowerCase()
+```
+
+### Повернене значення
+
+Новий рядок, що містить значення рядка, на якому було викликано метод, переведене у нижній регістр.
+
+## Опис
+
+Метод `toLowerCase()` повертає значення рядка, переведене у нижній регістр. Виклик `toLowerCase()` ніяк не впливає на значення початкового рядка `str`.
+
+## Приклади
+
+### Застосування `toLowerCase()`
+
+```js
+console.log('АБЕТКА'.toLowerCase()); // 'абетка'
+```
+
+## Специфікації
+
+{{Specifications}}
+
+## Сумісність із браузерами
+
+{{Compat}}
+
+## Дивіться також
+
+- {{jsxref("String.prototype.toLocaleLowerCase()")}}
+- {{jsxref("String.prototype.toLocaleUpperCase()")}}
+- {{jsxref("String.prototype.toUpperCase()")}}
