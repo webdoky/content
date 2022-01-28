@@ -3,6 +3,29 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2022-01-21 - 2022-01-28]
+
+* **Переклад:** translation(HTML): Element UL (#114) ([3486da4](https://github.com/webdoky/content/commit/3486da4f96e92ba357480551c5952151d3de8386))
+* **Переклад:** translation: Block-level elements (#112) ([8fe422f](https://github.com/webdoky/content/commit/8fe422fc0438ef2fecd815d795e212ca8cf4c8fb))
+* **Переклад:** translation(HTML): web/html/element/hr/index.md (#110) ([18343e7](https://github.com/webdoky/content/commit/18343e7c8817d47886f08505c38dae77332c230b))
+* **Переклад:** translation(HTML): web/html/element/index.md (#195) ([07518a9](https://github.com/webdoky/content/commit/07518a973c2a8437525c4586c202008ddd5af3e1))
+* **Переклад:** translation(HTML): web/html/index.md (#194) ([d965930](https://github.com/webdoky/content/commit/d965930fb45200e60cfc608a3b1ed2584497602e))
+* **Переклад:** translation(js): Web/JavaScript/Reference/Global_Objects/String/link (#207) ([e8ae70e](https://github.com/webdoky/content/commit/e8ae70e42d5b2e46090331300b44cd563ebfdb96))
+* **Переклад:** translation(js): Web/JavaScript/Reference/Global_Objects/String/lastIndexOf (#206) ([a197daa](https://github.com/webdoky/content/commit/a197daa3993857e1e0a6d2e75bcecd5b8ed60015))
+* **Переклад:** translation(js): Web/JavaScript/Reference/Global_Objects/String/indexOf (#204) ([f6ee605](https://github.com/webdoky/content/commit/f6ee605a1aafc91042d0d3d834dd8f64d0b51d66))
+* **Переклад:** translation(js): Web/JavaScript/Reference/Global_Objects/String/includes (#203) ([f56ce79](https://github.com/webdoky/content/commit/f56ce795c6af259700b3e29ecac6f4181d1bbc4e))
+* **Переклад:** translation(js): Web/JavaScript/Reference/Global_Objects/String/fontsize (#202) ([922fbac](https://github.com/webdoky/content/commit/922fbaccf12f747f6f1a301f581b6c7ea932ad9f))
+* **Переклад:** translation(js): Web/JavaScript/Reference/Global_Objects/String/fontcolor (#201) ([17361c0](https://github.com/webdoky/content/commit/17361c089bb545ea7aada45aecbd328e0fe460f2))
+* **Переклад:** translation(js): Web/JavaScript/Reference/Global_Objects/String/endsWith (#199) ([fea0f79](https://github.com/webdoky/content/commit/fea0f79b2f6d9f339b1ad18ad39aeb6d970f015a))
+* **Переклад:** translation(js): Web/JavaScript/Reference/Global_Objects/String/concat (#198) ([b8a622e](https://github.com/webdoky/content/commit/b8a622e1eba8f77ab5899578061dabbe265c6a29))
+* **Переклад:** translation(js): Web/JavaScript/Reference/Global_Objects/String/codePointAt (#197) ([db70ad9](https://github.com/webdoky/content/commit/db70ad95a43c3150d0b7a0b58944e5bbc11fc32f))
+* **Переклад:** translation(js): Web/JavaScript/Reference/Global_Objects/String/charCodeAt (#196) ([e8c1c67](https://github.com/webdoky/content/commit/e8c1c67f459ca5583937fc4af08310e196683556))
+* **Оновлення перекладу:** update(JS): web/javascript/reference/global_objects/array/sort/index.md Стабільше? Стабільне ([63dc99d](https://github.com/webdoky/content/commit/63dc99dca7b5b5d13cfec696c805fc0c8107d725))
+* **Оновлення перекладу:** update(JS): web/javascript/reference/global_objects/array/sort/index.md Remove redundant comma line ([30c2515](https://github.com/webdoky/content/commit/30c2515c717b867ebe73b8b6e6a253c1cfdc8023))
+* **Оновлення перекладу:** update(JS): web/javascript/reference/global_objects/array/sort/index.md ([882e74f](https://github.com/webdoky/content/commit/882e74f4eb10281c5d60d8259db274631334eddc))
+* **Оновлення перекладу:** update(JS): web/javascript/reference/global_objects/date/index.md ([4ab8160](https://github.com/webdoky/content/commit/4ab8160d94b3dbcfc1a684ea5e3ed1f5980203da))
+* **Оновлення перекладу:** update(JS): web/javascript/reference/global_objects/index.md ([56d6ee7](https://github.com/webdoky/content/commit/56d6ee75dedb86de35f822cbd43eaf04faee63eb))
+
 ## [2022-01-14 - 2022-01-21]
 
 * **Переклад:** translation(js): Web/JavaScript/Reference/Global_Objects/String/italics ([71f4eeb](https://github.com/webdoky/content/commit/71f4eeb6e8942397a536514e5e3f0e8c56fc3efc))
