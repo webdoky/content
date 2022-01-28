@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2022-01-21 - 2022-01-28]
+
+* **Переклад:** translation(HTML): Element UL (#114) ([3486da4](https://github.com/webdoky/content/commit/3486da4f96e92ba357480551c5952151d3de8386))
+
 ## [2022-01-14 - 2022-01-21]
 
 * **Переклад:** translation(js): Web/JavaScript/Reference/Global_Objects/String/italics ([71f4eeb](https://github.com/webdoky/content/commit/71f4eeb6e8942397a536514e5e3f0e8c56fc3efc))
