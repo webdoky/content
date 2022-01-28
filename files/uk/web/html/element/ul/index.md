@@ -26,7 +26,7 @@ browser-compat: html.elements.ul
       <td>
         <a href="/uk/docs/Web/Guide/HTML/Content_categories#flow_content"
           >Звичайний вміст</a
-        >, а якщо серед дочірніх елементів <code>&#x3C;ul></code> є хоча б один елемент {{HTMLElement("li")}} &mdash; то й 
+        >, а якщо серед дочірніх елементів <code>&#x3C;ul></code> є хоча б один елемент {{HTMLElement("li")}} &mdash; то й
         <a href="/en-US/docs/Web/Guide/HTML/Content_categories#palpable_content"
           >відчутний вміст</a
         >.
