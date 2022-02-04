@@ -88,7 +88,7 @@ str.matchAll(regexp);
 // TypeError
 ```
 
-Метод `matchAll` всередині створює клон глобального об'єкта `RegExp`, тому, на відміну від {{jsxref("Global_Objects/RegExp/exec", "regexp.exec()")}}, його властивість `lastIndex` не зміниться під час сканування рядка.
+Метод `matchAll` для своїх потреб створює клон глобального об'єкта `RegExp`. Тому, на відміну від використання методу {{jsxref("Global_Objects/RegExp/exec", "regexp.exec()")}}, властивість `lastIndex` об'єкта `RegExp` не змінюється під час сканування рядка.
 
 ```js
 const regexp = new RegExp('[a-c]','g');
