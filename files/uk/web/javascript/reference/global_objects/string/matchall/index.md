@@ -102,7 +102,7 @@ Array.from(str.matchAll(regexp), m => `${regexp.lastIndex} ${m[0]}`);
 
 Іншою привабливою причиною використати `matchAll` є покращений доступ до груп захоплення.
 
-Під час застосування {{jsxref("Global_Objects/String/match", "match()")}} з прапорцем глобального пошуку `/g`, групи захоплення ігноруються:
+Під час застосування {{jsxref("Global_Objects/String/match", "match()")}} з прапорцем глобального пошуку `/g` групи захоплення ігноруються:
 
 ```js
 let regexp = /t(e)(st(\d?))/g;
