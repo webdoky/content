@@ -8,7 +8,7 @@ commits=$(git log --since="${lastFriday}" --until="${nextFriday}" --pretty='form
 
 [ -z "${commits}" ] && commits="..." # show three dots but add a version record anyway
 
-commitsExpanded=$(echo "${commits}" | sed 's/^\(translation\)/* **Переклад:** \1/' | sed 's/^\(fix\)/* **Виправлення:** \1/' | sed 's/^\(update\)/* **Оновлення перекладу:** \1/')
+commitsExpanded=$(echo "${commits}" | sed 's/^\(translation\):\?/* **Переклад:**/' | sed 's/^\(fix\):\?/* **Виправлення:**/' | sed 's/^\(update\):\?/* **Оновлення перекладу:**/')
 commitsEscaped=$(echo "${commitsExpanded}" | sed ':a;N;$!ba;s/\n/\\n/g') # escape newlines or they'll mess up the whole file otherwise
 versionHeader="## [${lastFridayShort} - ${nextFridayShort}]\n\n"
 
