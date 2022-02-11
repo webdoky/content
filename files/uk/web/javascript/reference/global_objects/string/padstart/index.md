@@ -51,7 +51,7 @@ padStart(targetLength, padString)
 ### Перетворення чисел на рядки фіксованої довжини
 
 ```js
-// Версія Javascript: (unsigned)
+// JavaScript-версія виразу: (беззнакового)
 // printf "%0*d" з числом
 function leftFillNum(num, targetLength) {
     return num.toString().padStart(targetLength, 0);
