@@ -27,7 +27,7 @@ toString()
 
 ## Опис
 
-Об'єкт {{jsxref("String")}} заміщує метод `toString()` об'єкта {{jsxref("Object")}}, а не успадковує {{jsxref("Object.prototype.toString()")}}. Для об'єктів {{jsxref("String")}}, метод `toString()` повертає рядковий відповідник об'єкта, і працює так само як і метод {{jsxref("String.prototype.valueOf()")}}.
+Об'єкт {{jsxref("String")}} заміщує метод `toString()` об'єкта {{jsxref("Object")}}, а не успадковує {{jsxref("Object.prototype.toString()")}}. Для об'єктів {{jsxref("String")}} метод `toString()` повертає рядковий відповідник об'єкта, і працює так само як і метод {{jsxref("String.prototype.valueOf()")}}.
 
 ## Приклади
 
