@@ -3,6 +3,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2022-02-04 - 2022-02-11]
+
+* **Переклад:**(js): Web/JavaScript/Reference/Global_Objects/String/toSource (#236) ([62f67a2](https://github.com/webdoky/content/commit/62f67a25d4e5da768efaa23b3b8a21c49b3f0798))
+* **Переклад:**(js): Web/JavaScript/Reference/Global_Objects/String/padStart (#214) ([69febfc](https://github.com/webdoky/content/commit/69febfc38d80d4bf35f2b118f754ef64818d5a27))
+* **Переклад:**(js): Web/JavaScript/Reference/Global_Objects/String/Trim (#240) ([c5a0a48](https://github.com/webdoky/content/commit/c5a0a48060fd5d9e289777444277ce1995c2faae))
+* **Переклад:**(js): Web/JavaScript/Reference/Global_Objects/String/toString (#237) ([998ec42](https://github.com/webdoky/content/commit/998ec4224124a2fb89829b83d4b697cf18dbed17))
+* **Переклад:**(js): Web/JavaScript/Reference/Global_Objects/String/sup (#235) ([5284e36](https://github.com/webdoky/content/commit/5284e36b02dd2d7bdde6a1175f8a383671fcc26c))
+* **Переклад:**(js): Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase (#234) ([04cc776](https://github.com/webdoky/content/commit/04cc776dbbbd80fe3735f2d07caeec647d3f0059))
+* **Переклад:**(js): Web/JavaScript/Reference/Global_Objects/String/toLocaleUpperCase (#233) ([aaf5293](https://github.com/webdoky/content/commit/aaf5293a54b06b37182bdb70511576a57cca03e7))
+* **Переклад:**(js): Web/JavaScript/Reference/Global_Objects/String/substring (#231) ([95517b3](https://github.com/webdoky/content/commit/95517b3905b7eac87164be4677f8468721c28383))
+* **Переклад:**(HTML): web/html/element/input/index.md (#209) ([98b4fea](https://github.com/webdoky/content/commit/98b4feaaf5d2c934a80e0d3852b04198f9b06383))
+* **Оновлення перекладу:**(JS): web/javascript/reference/global_objects/array/filter/index.md ([85e430e](https://github.com/webdoky/content/commit/85e430e00c911cd69299fba6c18af6e31db616a9))
+* **Оновлення перекладу:**(CSS): property value correction for justify-content (#263) ([4c8bfac](https://github.com/webdoky/content/commit/4c8bfac332f2a6faecfa055f51ee23308eccfcce))
+
 ## [2022-01-28 - 2022-02-04]
 
 * **Переклад:**(js): Web/JavaScript/Reference/Global_Objects/String/raw (#230) ([743ef38](https://github.com/webdoky/content/commit/743ef38f498319926b4e13217ba1564a0dc6c031))
