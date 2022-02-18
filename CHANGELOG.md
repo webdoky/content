@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2022-02-11 - 2022-02-18]
+
+* **Оновлення перекладу:**(JS): web/javascript/reference/global_objects/array/sort/index.md ([67bf63d](https://github.com/webdoky/content/commit/67bf63d0babf1ebb7e930670bdec9e1e59dab087))
+* **Оновлення перекладу:**(JS): web/javascript/reference/global_objects/array/splice/index.md ([adf3a2c](https://github.com/webdoky/content/commit/adf3a2ce62358fddcad8e9dbdfb6f04bce9e352b))
+* **Оновлення перекладу:**(JS): web/javascript/reference/global_objects/array/index.md (#264) ([676b05e](https://github.com/webdoky/content/commit/676b05e5d5395eeec880cb5b9501d2a96ae2c33e))
+
 ## [2022-02-04 - 2022-02-11]
 
 * **Переклад(js):** Web/JavaScript/Reference/Global_Objects/String/toSource (#236) ([62f67a2](https://github.com/webdoky/content/commit/62f67a25d4e5da768efaa23b3b8a21c49b3f0798))
