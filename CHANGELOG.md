@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2022-02-11 - 2022-02-18]
+
+...
+
 ## [2022-02-04 - 2022-02-11]
 
 * **Переклад(js):** Web/JavaScript/Reference/Global_Objects/String/toSource (#236) ([62f67a2](https://github.com/webdoky/content/commit/62f67a25d4e5da768efaa23b3b8a21c49b3f0798))
