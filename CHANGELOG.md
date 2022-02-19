@@ -3,29 +3,49 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2022-02-11 - 2022-02-18]
+
+* **Оновлення перекладу:**(JS): web/javascript/reference/global_objects/array/sort/index.md ([67bf63d](https://github.com/webdoky/content/commit/67bf63d0babf1ebb7e930670bdec9e1e59dab087))
+* **Оновлення перекладу:**(JS): web/javascript/reference/global_objects/array/splice/index.md ([adf3a2c](https://github.com/webdoky/content/commit/adf3a2ce62358fddcad8e9dbdfb6f04bce9e352b))
+* **Оновлення перекладу:**(JS): web/javascript/reference/global_objects/array/index.md (#264) ([676b05e](https://github.com/webdoky/content/commit/676b05e5d5395eeec880cb5b9501d2a96ae2c33e))
+
+## [2022-02-04 - 2022-02-11]
+
+* **Переклад(js):** Web/JavaScript/Reference/Global_Objects/String/toSource (#236) ([62f67a2](https://github.com/webdoky/content/commit/62f67a25d4e5da768efaa23b3b8a21c49b3f0798))
+* **Переклад(js):** Web/JavaScript/Reference/Global_Objects/String/padStart (#214) ([69febfc](https://github.com/webdoky/content/commit/69febfc38d80d4bf35f2b118f754ef64818d5a27))
+* **Переклад(js):** Web/JavaScript/Reference/Global_Objects/String/Trim (#240) ([c5a0a48](https://github.com/webdoky/content/commit/c5a0a48060fd5d9e289777444277ce1995c2faae))
+* **Переклад(js):** Web/JavaScript/Reference/Global_Objects/String/toString (#237) ([998ec42](https://github.com/webdoky/content/commit/998ec4224124a2fb89829b83d4b697cf18dbed17))
+* **Переклад(js):** Web/JavaScript/Reference/Global_Objects/String/sup (#235) ([5284e36](https://github.com/webdoky/content/commit/5284e36b02dd2d7bdde6a1175f8a383671fcc26c))
+* **Переклад(js):** Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase (#234) ([04cc776](https://github.com/webdoky/content/commit/04cc776dbbbd80fe3735f2d07caeec647d3f0059))
+* **Переклад(js):** Web/JavaScript/Reference/Global_Objects/String/toLocaleUpperCase (#233) ([aaf5293](https://github.com/webdoky/content/commit/aaf5293a54b06b37182bdb70511576a57cca03e7))
+* **Переклад(js):** Web/JavaScript/Reference/Global_Objects/String/substring (#231) ([95517b3](https://github.com/webdoky/content/commit/95517b3905b7eac87164be4677f8468721c28383))
+* **Переклад(HTML):** web/html/element/input/index.md (#209) ([98b4fea](https://github.com/webdoky/content/commit/98b4feaaf5d2c934a80e0d3852b04198f9b06383))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/filter/index.md ([85e430e](https://github.com/webdoky/content/commit/85e430e00c911cd69299fba6c18af6e31db616a9))
+* **Оновлення перекладу(CSS):** property value correction for justify-content (#263) ([4c8bfac](https://github.com/webdoky/content/commit/4c8bfac332f2a6faecfa055f51ee23308eccfcce))
+
 ## [2022-01-28 - 2022-02-04]
 
-* **Переклад:**(js): Web/JavaScript/Reference/Global_Objects/String/raw (#230) ([743ef38](https://github.com/webdoky/content/commit/743ef38f498319926b4e13217ba1564a0dc6c031))
-* **Переклад:**(js): Web/JavaScript/Reference/Global_Objects/String/trimStart ([bab4ff7](https://github.com/webdoky/content/commit/bab4ff7e72d8bd30ec8bd660432364fec0e666af))
-* **Переклад:**(js): Web/JavaScript/Reference/Global_Objects/String/trimEnd ([02dc00c](https://github.com/webdoky/content/commit/02dc00c7b5684d8073624912882fc55598a3733b))
-* **Переклад:**(js): Web/JavaScript/Reference/Global_Objects/String/valueOf ([5163b6e](https://github.com/webdoky/content/commit/5163b6e788c1f7a9b9ad69156db6006abaa51b6f))
-* **Переклад:**(js): Web/JavaScript/Reference/Global_Objects/String/toLowerCase ([fc1fbf9](https://github.com/webdoky/content/commit/fc1fbf90a7d3d78bba480f3ad22ba75b5efba1dd))
-* **Переклад:**(js): Web/JavaScript/Reference/Global_Objects/String/toUpperCase ([26526f1](https://github.com/webdoky/content/commit/26526f1c2a101811ea136bf3fd7df7ef337b05d2))
-* **Переклад:**(js): Web/JavaScript/Reference/Global_Objects/String/@@iterator ([dc33e90](https://github.com/webdoky/content/commit/dc33e90187d269d73a2d06bad02acd0ba1b44009))
-* **Переклад:**(js): Web/JavaScript/Reference/Global_Objects/String/substr (#225) ([1fd093a](https://github.com/webdoky/content/commit/1fd093ab143debfd3c96e43f13f60528430cea2a))
-* **Переклад:**(js): Web/JavaScript/Reference/Global_Objects/String/sub (#224) ([2b20638](https://github.com/webdoky/content/commit/2b20638a6fd91c28a5744d9a6ec0340f765bc886))
-* **Переклад:**(js): Web/JavaScript/Reference/Global_Objects/String/slice (#222) ([4e532c3](https://github.com/webdoky/content/commit/4e532c312acd712b3a04bbabfc5436601b4ddc1f))
-* **Переклад:**(js): Web/JavaScript/Reference/Global_Objects/String/search (#218) ([64cea7e](https://github.com/webdoky/content/commit/64cea7eadca0377c989f921a530c97e27642cb4a))
-* **Переклад:**(js): Web/JavaScript/Reference/Global_Objects/String/startsWith (#223) ([65226bd](https://github.com/webdoky/content/commit/65226bd0faaac6b49ff6ddd29ceb668a552dec32))
-* **Переклад:**(js): Web/JavaScript/Reference/Global_Objects/String/replaceAll (#217) ([2d0320a](https://github.com/webdoky/content/commit/2d0320a2e41d12055b1671db216dc268e5ba9241))
-* **Переклад:**(js): Web/JavaScript/Reference/Global_Objects/String/repeat (#216) ([d93794a](https://github.com/webdoky/content/commit/d93794ac5f5904617584bedb5adf2bf2843e152a))
-* **Переклад:**(js): Web/JavaScript/Reference/Global_Objects/String/padEnd (#215) ([dcd26ab](https://github.com/webdoky/content/commit/dcd26abc1b1895ad4dada8d2f838df52e50022d7))
-* **Переклад:**(js): Web/JavaScript/Reference/Global_Objects/String/matchAll (#213) ([ef4db8d](https://github.com/webdoky/content/commit/ef4db8dd2d2f2e79e901ae57f7393eb2fa5a2ea2))
-* **Переклад:**(js): Web/JavaScript/Reference/Global_Objects/String/strike ([3060291](https://github.com/webdoky/content/commit/3060291834378cdeb56c71bc2fa94ba18ab196bb))
-* **Переклад:**(js): Web/JavaScript/Reference/Global_Objects/String/small ([4773a48](https://github.com/webdoky/content/commit/4773a4840db63fd10054ee3f3302370820c76f7b))
-* **Переклад:**(js): Web/JavaScript/Reference/Global_Objects/String/match (#212) ([37e12f3](https://github.com/webdoky/content/commit/37e12f3707f6eae5dba098e6ac16067b60b5fa8e))
-* **Переклад:**(JS): Web/JavaScript/Reference/Global_Objects/String/normalize (#211) ([6994298](https://github.com/webdoky/content/commit/699429880499364f4236cb85eb3abb57b9c71a7b))
-* **Переклад:**(js): Web/JavaScript/Reference/Global_Objects/String/localeCompare (#210) ([66a0aa4](https://github.com/webdoky/content/commit/66a0aa4e34c99314b116ed99471ac777fab34f90))
+* **Переклад(js):** Web/JavaScript/Reference/Global_Objects/String/raw (#230) ([743ef38](https://github.com/webdoky/content/commit/743ef38f498319926b4e13217ba1564a0dc6c031))
+* **Переклад(js):** Web/JavaScript/Reference/Global_Objects/String/trimStart ([bab4ff7](https://github.com/webdoky/content/commit/bab4ff7e72d8bd30ec8bd660432364fec0e666af))
+* **Переклад(js):** Web/JavaScript/Reference/Global_Objects/String/trimEnd ([02dc00c](https://github.com/webdoky/content/commit/02dc00c7b5684d8073624912882fc55598a3733b))
+* **Переклад(js):** Web/JavaScript/Reference/Global_Objects/String/valueOf ([5163b6e](https://github.com/webdoky/content/commit/5163b6e788c1f7a9b9ad69156db6006abaa51b6f))
+* **Переклад(js):** Web/JavaScript/Reference/Global_Objects/String/toLowerCase ([fc1fbf9](https://github.com/webdoky/content/commit/fc1fbf90a7d3d78bba480f3ad22ba75b5efba1dd))
+* **Переклад(js):** Web/JavaScript/Reference/Global_Objects/String/toUpperCase ([26526f1](https://github.com/webdoky/content/commit/26526f1c2a101811ea136bf3fd7df7ef337b05d2))
+* **Переклад(js):** Web/JavaScript/Reference/Global_Objects/String/@@iterator ([dc33e90](https://github.com/webdoky/content/commit/dc33e90187d269d73a2d06bad02acd0ba1b44009))
+* **Переклад(js):** Web/JavaScript/Reference/Global_Objects/String/substr (#225) ([1fd093a](https://github.com/webdoky/content/commit/1fd093ab143debfd3c96e43f13f60528430cea2a))
+* **Переклад(js):** Web/JavaScript/Reference/Global_Objects/String/sub (#224) ([2b20638](https://github.com/webdoky/content/commit/2b20638a6fd91c28a5744d9a6ec0340f765bc886))
+* **Переклад(js):** Web/JavaScript/Reference/Global_Objects/String/slice (#222) ([4e532c3](https://github.com/webdoky/content/commit/4e532c312acd712b3a04bbabfc5436601b4ddc1f))
+* **Переклад(js):** Web/JavaScript/Reference/Global_Objects/String/search (#218) ([64cea7e](https://github.com/webdoky/content/commit/64cea7eadca0377c989f921a530c97e27642cb4a))
+* **Переклад(js):** Web/JavaScript/Reference/Global_Objects/String/startsWith (#223) ([65226bd](https://github.com/webdoky/content/commit/65226bd0faaac6b49ff6ddd29ceb668a552dec32))
+* **Переклад(js):** Web/JavaScript/Reference/Global_Objects/String/replaceAll (#217) ([2d0320a](https://github.com/webdoky/content/commit/2d0320a2e41d12055b1671db216dc268e5ba9241))
+* **Переклад(js):** Web/JavaScript/Reference/Global_Objects/String/repeat (#216) ([d93794a](https://github.com/webdoky/content/commit/d93794ac5f5904617584bedb5adf2bf2843e152a))
+* **Переклад(js):** Web/JavaScript/Reference/Global_Objects/String/padEnd (#215) ([dcd26ab](https://github.com/webdoky/content/commit/dcd26abc1b1895ad4dada8d2f838df52e50022d7))
+* **Переклад(js):** Web/JavaScript/Reference/Global_Objects/String/matchAll (#213) ([ef4db8d](https://github.com/webdoky/content/commit/ef4db8dd2d2f2e79e901ae57f7393eb2fa5a2ea2))
+* **Переклад(js):** Web/JavaScript/Reference/Global_Objects/String/strike ([3060291](https://github.com/webdoky/content/commit/3060291834378cdeb56c71bc2fa94ba18ab196bb))
+* **Переклад(js):** Web/JavaScript/Reference/Global_Objects/String/small ([4773a48](https://github.com/webdoky/content/commit/4773a4840db63fd10054ee3f3302370820c76f7b))
+* **Переклад(js):** Web/JavaScript/Reference/Global_Objects/String/match (#212) ([37e12f3](https://github.com/webdoky/content/commit/37e12f3707f6eae5dba098e6ac16067b60b5fa8e))
+* **Переклад(JS):** Web/JavaScript/Reference/Global_Objects/String/normalize (#211) ([6994298](https://github.com/webdoky/content/commit/699429880499364f4236cb85eb3abb57b9c71a7b))
+* **Переклад(js):** Web/JavaScript/Reference/Global_Objects/String/localeCompare (#210) ([66a0aa4](https://github.com/webdoky/content/commit/66a0aa4e34c99314b116ed99471ac777fab34f90))
 
 ## [2022-01-21 - 2022-01-28]
 
