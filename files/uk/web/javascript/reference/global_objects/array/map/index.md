@@ -113,10 +113,8 @@ map(function (element, index, array) {
 Наступний код приймає масив чисел, і створює новий масив, який містить квадратні корені з чисел із першого масиву.
 
 ```js
-let numbers = [1, 4, 9];
-let roots = numbers.map(function (num) {
-  return Math.sqrt(num);
-});
+const numbers = [1, 4, 9];
+const roots = numbers.map((num) => Math.sqrt(num));
 // roots тепер         [1, 2, 3]
 // numbers залишається [1, 4, 9]
 ```
@@ -126,17 +124,13 @@ let roots = numbers.map(function (num) {
 Наступний код приймає масив об'єктів, і створює новий масив, який містить нові об'єкти у зміненому форматі.
 
 ```js
-let kvArray = [
+const kvArray = [
   { key: 1, value: 10 },
   { key: 2, value: 20 },
   { key: 3, value: 30 },
 ];
 
-let reformattedArray = kvArray.map((obj) => {
-  let rObj = {};
-  rObj[obj.key] = obj.value;
-  return rObj;
-});
+const reformattedArray = kvArray.map(({ key, value }) => ({ [key]: value }));
 // reformattedArray тепер [{1: 10}, {2: 20}, {3: 30}],
 
 // kvArray залишається таким:
@@ -150,10 +144,8 @@ let reformattedArray = kvArray.map((obj) => {
 Наступний код показує, як `map` працює з функцією, яка приймає лише один аргумент. Аргументу буде автоматично присвоєно значення кожного з елементів масиву, поки `map` проходить в циклі крізь початковий масив.
 
 ```js
-let numbers = [1, 4, 9];
-let doubles = numbers.map(function (num) {
-  return num * 2;
-});
+const numbers = [1, 4, 9];
+const doubles = numbers.map((num) => num * 2);
 
 // doubles тепер       [2, 8, 18]
 // numbers залишається [1, 4, 9]
@@ -164,11 +156,9 @@ let doubles = numbers.map(function (num) {
 Цей приклад показує, як застосувати функцію `map` на {{jsxref("String")}}, щоб отримати масив байтів, де кожен елемент означає значення символу в кодуванні ASCII:
 
 ```js
-let map = Array.prototype.map;
-let a = map.call('Hello World', function (x) {
-  return x.charCodeAt(0);
-});
-// a тепер має такий вигляд: [72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]
+const map = Array.prototype.map;
+const charCodes = map.call('Hello World', (x) => x.charCodeAt(0));
+// charCodes тепер має такий вигляд: [72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]
 ```
 
 ### Узагальнене застосування `map` із querySelectorAll
@@ -178,10 +168,8 @@ let a = map.call('Hello World', function (x) {
 В цьому випадку ми отримаємо значення всі вибраних на екрані елементів `option`:
 
 ```js
-let elems = document.querySelectorAll('select option:checked');
-let values = Array.prototype.map.call(elems, function (obj) {
-  return obj.value;
-});
+const elems = document.querySelectorAll('select option:checked');
+const values = Array.prototype.map.call(elems, ({ value }) => value);
 ```
 
 Простіший спосіб — застосувати метод {{jsxref("Array.from()")}}.
@@ -223,16 +211,14 @@ let values = Array.prototype.map.call(elems, function (obj) {
 Як розв'язати цю проблему:
 
 ```js
-function returnInt(element) {
-  return parseInt(element, 10);
-}
+const returnInt = (element) => parseInt(element, 10);
 
 ['1', '2', '3'].map(returnInt); // [1, 2, 3]
 // В результаті маємо масив чисел (як і очікувалось)
 
 // Те саме, що і вище, але у лаконічному записі через стрілкову функцію
 ['1', '2', '3']
-  .map((str) => parseInt(str))
+  .map((str) => parseInt(str)) // [1, 2, 3]
 
   [
     // Простіший спосіб і досягнути того ж, і уникнути підводного каменю:
@@ -253,12 +239,11 @@ function returnInt(element) {
 Інакший варіант результату виклику методу `map` із функцією {{jsxref("parseInt")}} як аргументом має такий вигляд:
 
 ```js
-let xs = ['10', '10', '10'];
+const strings = ['10', '10', '10'];
+const numbers = strings.map(parseInt);
 
-xs = xs.map(parseInt);
-
-console.log(xs);
-// 10,NaN,2 в результаті може бути несподіваним, з урахуванням опису вище.
+console.log(numbers);
+// [10, NaN, 2] в результаті може бути несподіваним, з урахуванням опису вище.
 ```
 
 ### Оригінальний масив містить undefined
@@ -266,8 +251,8 @@ console.log(xs);
 Коли не повертається нічого, або {{jsxref("undefined")}}, маємо:
 
 ```js
-let numbers = [1, 2, 3, 4];
-let filteredNumbers = numbers.map(function (num, index) {
+const numbers = [1, 2, 3, 4];
+const filteredNumbers = numbers.map((num, index) => {
   if (index < 3) {
     return num;
   }
