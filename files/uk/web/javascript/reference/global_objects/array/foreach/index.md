@@ -118,14 +118,12 @@ forEach(function (element, index, array) {
 > передачі промісів (чи асинхронних функцій) в аргументах функції `forEach`.
 >
 > ```js
-> let ratings = [5, 4, 5];
+> const ratings = [5, 4, 5];
 > let sum = 0;
 >
-> let sumFunction = async function (a, b) {
->   return a + b;
-> };
+> const sumFunction = async (a, b) => a + b;
 >
-> ratings.forEach(async function (rating) {
+> ratings.forEach(async (rating) => {
 >   sum = await sumFunction(sum, rating);
 > });
 >
@@ -133,76 +131,6 @@ forEach(function (element, index, array) {
 > // Наївно очікуваний вивід: 14
 > // Фактичний вивід: 0
 > ```
-
-## Поліфіл
-
-Метод `forEach()` було додано до стандарту ECMA-262 у його 5-й редакції. Тобто, він може бути доступний не у всіх його реалізаціях. Цю проблему можна обійти шляхом додавання наступного коду на початку скрипту. Фактично це дасть змогу використовувати `forEach()` у реалізаціях ECMA-262, які не підтримують його нативно.
-
-Це той самий алгоритм, який наведено у 5-й редакції ECMA-262, з поправкою на припущення, що {{jsxref("Object")}} і {{jsxref("TypeError")}} мають свої початкові значення, і що `fun.call` зводиться до початкового значення {{jsxref("Function.prototype.call()")}}.
-
-```js
-// Етапи створення ECMA-262, 5 редакція, 15.4.4.18
-// Посилання: https://es5.github.io/#x15.4.4.18
-
-if (!Array.prototype['forEach']) {
-  Array.prototype.forEach = function (callback, thisArg) {
-    if (this == null) {
-      throw new TypeError(
-        'Array.prototype.forEach called on null or undefined',
-      );
-    }
-
-    var T, k;
-    // 1. Нехай O є результатом викликання функції toObject(), що передає
-    // значення |this| як аргумент.
-    var O = Object(this);
-
-    // 2. Нехай lenValue є результатом викликання внутрішнього методу Get()
-    // об'єкту O з аргументом "length".
-    // 3. Нехай len буде значенням toUint32(lenValue).
-    var len = O.length >>> 0;
-
-    // 4. Якщо isCallable(callback) є хибністю, викинемо виняток TypeError.
-    // Дивіться: https://es5.github.com/#x9.11
-    if (typeof callback !== 'function') {
-      throw new TypeError(callback + ' is not a function');
-    }
-
-    // 5. Якщо дано аргумент thisArg, нехай T буде thisArg;
-    // інакше нехай T буде невизначено.
-    if (arguments.length > 1) {
-      T = thisArg;
-    }
-
-    // 6. Нехай k буде 0
-    k = 0;
-
-    // 7. Повторюємо, доки k < len
-    while (k < len) {
-      var kValue;
-
-      // a. Нехай Pk буде ToString(k).
-      //    Таке перетворення відбувається неявно для лівих операндів оператора "in"
-      // b. Нехай kPresent буде результатом викликання внутрішнього
-      //    методу HasProperty об'єкту O з аргументом Pk.
-      //    Допускається суміщати цей крок із c
-      // c. Якщо kPresent є істиною, тоді
-      if (k in O) {
-        // i. Нехай kValue буде результатом викликання внутрішнього методу Get
-        // об'єкта O з аргументом Pk.
-        kValue = O[k];
-
-        // ii. Викличемо внутрішній метод Call функції зворотного виклику
-        // з T як значенням "this", і набором аргументів, що містять kValue, k, and O.
-        callback.call(T, kValue, k, O);
-      }
-      // d. Збільшуємо k на 1.
-      k++;
-    }
-    // 8. Повертаємо undefined
-  };
-}
-```
 
 ## Приклади
 
@@ -212,12 +140,12 @@ if (!Array.prototype['forEach']) {
 const arraySparse = [1, 3, , 7];
 let numCallbackRuns = 0;
 
-arraySparse.forEach(function (element) {
-  console.log(element);
+arraySparse.forEach((element) => {
+  console.log({ element });
   numCallbackRuns++;
 });
 
-console.log('numCallbackRuns: ', numCallbackRuns);
+console.log({ numCallbackRuns });
 
 // 1
 // 3
@@ -238,7 +166,7 @@ for (let i = 0; i < items.length; i++) {
 }
 
 // після
-items.forEach(function (item) {
+items.forEach((item) => {
   copyItems.push(item);
 });
 ```
@@ -255,9 +183,9 @@ items.forEach(function (item) {
 Наступний код друкує рядок для кожного елементу в масиві:
 
 ```js
-function logArrayElements(element, index, array) {
+const logArrayElements = (element, index, array) => {
   console.log('a[' + index + '] = ' + element);
-}
+};
 
 // Зауважте, що порядковий номер 2 пропущено, оскільки в масиві не існує
 // елементу на цій позиції...
@@ -286,10 +214,8 @@ Counter.prototype.add = function (array) {
 
 const obj = new Counter();
 obj.add([2, 5, 9]);
-obj.count;
-// 3
-obj.sum;
-// 16
+console.log(obj.count); // 3
+console.log(obj.sum); // 16
 ```
 
 Оскільки параметр `thisArg` (`this`) було задано в `forEach()`, він передавався до функції `callback` кожного разу, коли вона викликалась. Сама функція зворотного виклику використовує те саме значення `this`.
@@ -306,17 +232,15 @@ obj.sum;
 Існують різні способи створити копію об'єкту. Спосіб, що наведено нижче - це лише один із них, покликаний показати, як працює `Array.prototype.forEach()` шляхом використання метаметодів `Object.*` з ECMAScript 5.
 
 ```js
-function copy(obj) {
+const copy = (obj) => {
   const copy = Object.create(Object.getPrototypeOf(obj));
   const propNames = Object.getOwnPropertyNames(obj);
-
-  propNames.forEach(function (name) {
+  propNames.forEach((name) => {
     const desc = Object.getOwnPropertyDescriptor(obj, name);
     Object.defineProperty(copy, name, desc);
   });
-
   return copy;
-}
+};
 
 const obj1 = { a: 1, b: 2 };
 const obj2 = copy(obj1); // obj2 тепер має точнісінько такий самий вигляд, як obj1
@@ -331,15 +255,15 @@ const obj2 = copy(obj1); // obj2 тепер має точнісінько так
 Метод `forEach()` не робить копію масиву перед перебиранням.
 
 ```js
-let words = ['one', 'two', 'three', 'four'];
-words.forEach(function (word) {
+const words = ['one', 'two', 'three', 'four'];
+words.forEach((word) => {
   console.log(word);
   if (word === 'two') {
     words.shift(); // елемент 'one' видаляється з масиву
   }
 }); // one // two // four
 
-console.log(words); //['two', 'three', 'four']
+console.log(words); // ['two', 'three', 'four']
 ```
 
 ### Сплощення масиву
@@ -347,24 +271,21 @@ console.log(words); //['two', 'three', 'four']
 Приклад нижче наведено лише для навчальних потреб. Для сплощення масивів вбудованими методами можна застосовувати {{jsxref("Array.prototype.flat()")}}.
 
 ```js
-function flatten(arr) {
+const flatten = (arr) => {
   const result = [];
-
-  arr.forEach(function (i) {
+  arr.forEach((i) => {
     if (Array.isArray(i)) {
       result.push(...flatten(i));
     } else {
       result.push(i);
     }
   });
-
   return result;
-}
+};
 
 // Застосування
 const nested = [1, 2, 3, [4, 5, [6, 7], 8, 9]];
-
-flatten(nested); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+console.log(flatten(nested)); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
 ## Специфікації
