@@ -453,6 +453,8 @@ form.addEventListener('submit', (event) => {
   - : Онлайн-інструмент для вивчення, побудови та тестування регулярних виразів.
 - [Regex tester](https://regex101.com/)
   - : Онлайн-інструмент для побудови та зневадження регулярних виразів
+- [Regex interactive tutorial](https://regexlearn.com/)
+  - : Онлайнові інтерактивні підручники, шпаргалка та ігровий майданчик.
 - [Regex visualizer](https://extendsclass.com/regex-tester.html)
   - : Візуальний онлайн-інструмент для тестування регулярних виразів.
 
