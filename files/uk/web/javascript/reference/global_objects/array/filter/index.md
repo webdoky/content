@@ -11,9 +11,10 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.Array.filter
 ---
+
 {{JSRef}}
 
-Метод **`filter()`** **створює новий масив**, що містить всі елементи попереднього, які пройшли перевірку наданою функцією.
+Метод **`filter()`** (фільтрувати) **створює новий масив**, що містить всі елементи попереднього, які пройшли перевірку наданою функцією.
 
 {{EmbedInteractiveExample("pages/js/array-filter.html","shorter")}}
 
@@ -21,19 +22,33 @@ browser-compat: javascript.builtins.Array.filter
 
 ```js
 // Стрілкова функція
-filter((element) => { /* ... */ } )
-filter((element, index) => { /* ... */ } )
-filter((element, index, array) => { /* ... */ } )
+filter((element) => {
+  /* ... */
+});
+filter((element, index) => {
+  /* ... */
+});
+filter((element, index, array) => {
+  /* ... */
+});
 
 // Функція зворотного виклику
-filter(callbackFn)
-filter(callbackFn, thisArg)
+filter(callbackFn);
+filter(callbackFn, thisArg);
 
 // Функція зворотного виклику, яка оголошена на місці
-filter(function(element) { /* ... */ })
-filter(function(element, index) { /* ... */ })
-filter(function(element, index, array){ /* ... */ })
-filter(function(element, index, array) { /* ... */ }, thisArg)
+filter(function (element) {
+  /* ... */
+});
+filter(function (element, index) {
+  /* ... */
+});
+filter(function (element, index, array) {
+  /* ... */
+});
+filter(function (element, index, array) {
+  /* ... */
+}, thisArg);
 ```
 
 ### Параметри
@@ -60,7 +75,7 @@ filter(function(element, index, array) { /* ... */ }, thisArg)
 
 ## Опис
 
-`filter()` викликає передану як аргумент функцію `callbackFn` один раз для кожного елемента масиву, і збирає новий масив з усіх значень, для яких функція `callbackFn` повернула [значення, що зводиться до `true`](/uk/docs/Glossary/Truthy). `callbackFn` викликається лише на тих індексах масиву, які мають присвоєні значення. Відповідно, вона не викликається на видалених значеннях, чи на індексах, які ніколи не мали присвоєних значень. Ті елементи масиву, які не пройшли перевірку функцією `callbackFn`, пропускаються, і не додаються у новий масив.
+`filter()` викликає передану як аргумент функцію `callbackFn` один раз для кожного елемента масиву і збирає новий масив з усіх значень, для яких функція `callbackFn` повернула [значення, що зводиться до `true`](/uk/docs/Glossary/Truthy). `callbackFn` викликається лише на тих індексах масиву, які мають присвоєні значення. Відповідно, вона не викликається на видалених значеннях, чи на індексах, які ніколи не мали присвоєних значень. Ті елементи масиву, які не пройшли перевірку функцією `callbackFn`, пропускаються і не додаються у новий масив.
 
 Функція `callbackFn` викликається з трьома аргументами:
 
@@ -68,49 +83,50 @@ filter(function(element, index, array) { /* ... */ }, thisArg)
 2.  порядковий номер елементу в масиві
 3.  власне об'єкт масиву, над яким виконується фільтрація
 
-Якщо методу `filter` надається параметр `thisArg`, його буде використано як значення `this`. Інакше, `this` матиме значення `undefined`. Однак загалом значення `this`, яке отримає функція `callbackFn`, визначається згідно з [загальними правилами визначення значення `this`, доступного для функції](/uk/docs/Web/JavaScript/Reference/Operators/this).
+Якщо методу `filter` надається параметр `thisArg`, його буде використано як значення `this`. Інакше – `this` матиме значення `undefined`. Однак загалом значення `this`, яке отримає функція `callbackFn`, визначається згідно з [загальними правилами визначення значення `this`, доступного для функції](/uk/docs/Web/JavaScript/Reference/Operators/this).
 
 Метод `filter()` не змінює початковий масив, на якому його викликають.
 
 Діапазон елементів, що опрацьовуються функцією `filter()`, задається до першого виклику `callbackFn`. Елементи, які будуть додані до масиву (наприклад, в процесі виконання `callbackFn`) після початку роботи методу `filter()`, не будуть опрацьовані функцією `callbackFn`. Якщо ж наявні елементи будуть видалені в такий самий спосіб, вони також не будуть опрацьовані.
 
-> **Обережно:** Одночасні модифікації такого типу, як описано в попередньому абзаці, часто приводять до коду, який важко зрозуміти. Загалом заведено уникати такого запису (окрім особливих випадків).
+> **Застереження:** Одночасні модифікації такого типу, як описано в попередньому абзаці, часто приводять до коду, який важко зрозуміти. Загалом заведено уникати такого запису (крім особливих випадків).
 
 ## Поліфіл
 
 Метод `filter()` було додано до стандарту ECMA-262 у його 5-й редакції. Тобто, він може бути наявним не у всіх реалізаціях цього стандарту.
 
-Цю проблему можна обійти шляхом додавання наступного коду на початку скрипту. Фактично це дозволить використовувати `filter()` у реалізаціях ECMA-262, які не підтримують його нативно. Цей алгоритм цілком еквівалентний наведеному в 5-й редакції ECMA-262, за умов, що `fn.call` зводиться до початкового значення {{jsxref("Function.prototype.bind()")}}, і що {{jsxref("Array.prototype.push()")}} містить своє вихідне значення.
+Цю проблему можна обійти шляхом додавання наступного коду на початку скрипту. Фактично це дасть змогу використовувати `filter()` у реалізаціях ECMA-262, які не підтримують його нативно. Цей алгоритм цілком еквівалентний наведеному в 5-й редакції ECMA-262 за умови, що `fn.call` зводиться до початкового значення {{jsxref("Function.prototype.bind()")}} і що {{jsxref("Array.prototype.push()")}} містить своє початкове значення.
 
 ```js
-if (!Array.prototype.filter){
-  Array.prototype.filter = function(func, thisArg) {
+if (!Array.prototype.filter) {
+  Array.prototype.filter = function (func, thisArg) {
     'use strict';
-    if ( ! ((typeof func === 'Function' || typeof func === 'function') && this) )
-        throw new TypeError();
+    if (!((typeof func === 'Function' || typeof func === 'function') && this))
+      throw new TypeError();
 
     var len = this.length >>> 0,
-        res = new Array(len), // заздалегідь створюємо новий масив
-        t = this, c = 0, i = -1;
+      res = new Array(len), // заздалегідь створюємо новий масив
+      t = this,
+      c = 0,
+      i = -1;
 
     var kValue;
-    if (thisArg === undefined){
-      while (++i !== len){
+    if (thisArg === undefined) {
+      while (++i !== len) {
         // перевіряємо, чи масив має якесь значення за даним індексом
-        if (i in this){
+        if (i in this) {
           kValue = t[i]; // на випадок, якщо t міняється всередині функції зворотного виклику
-          if (func(t[i], i, t)){
+          if (func(t[i], i, t)) {
             res[c++] = kValue;
           }
         }
       }
-    }
-    else{
-      while (++i !== len){
+    } else {
+      while (++i !== len) {
         // перевіряємо, чи масив має якесь значення за даним індексом
-        if (i in this){
+        if (i in this) {
           kValue = t[i];
-          if (func.call(thisArg, t[i], i, t)){
+          if (func.call(thisArg, t[i], i, t)) {
             res[c++] = kValue;
           }
         }
@@ -131,10 +147,10 @@ if (!Array.prototype.filter){
 
 ```js
 function isBigEnough(value) {
-  return value >= 10
+  return value >= 10;
 }
 
-let filtered = [12, 5, 8, 130, 44].filter(isBigEnough)
+let filtered = [12, 5, 8, 130, 44].filter(isBigEnough);
 // відфільтрований результат має [12, 130, 44]
 ```
 
@@ -168,29 +184,29 @@ let arr = [
   { id: 0 },
   { id: 3 },
   { id: 12.2 },
-  { },
+  {},
   { id: null },
   { id: NaN },
-  { id: 'undefined' }
-]
+  { id: 'undefined' },
+];
 
-let invalidEntries = 0
+let invalidEntries = 0;
 
 function filterByID(item) {
   if (Number.isFinite(item.id) && item.id !== 0) {
-    return true
+    return true;
   }
-  invalidEntries++
+  invalidEntries++;
   return false;
 }
 
-let arrByID = arr.filter(filterByID)
+let arrByID = arr.filter(filterByID);
 
-console.log('Відфільтрований масив\n', arrByID)
+console.log('Відфільтрований масив\n', arrByID);
 // Відфільтрований масив
 // [{ id: 15 }, { id: -1 }, { id: 3 }, { id: 12.2 }]
 
-console.log('Кількість некоректних значень = ', invalidEntries)
+console.log('Кількість некоректних значень = ', invalidEntries);
 // Кількість некоректних значень = 5
 ```
 
@@ -199,35 +215,37 @@ console.log('Кількість некоректних значень = ', inval
 Наступний приклад за допомогою `filter()` фільтрує вміст масиву за певним критерієм пошуку.
 
 ```js
-let fruits = ['apple', 'banana', 'grapes', 'mango', 'orange']
+let fruits = ['яблуко', 'банан', 'виноград', 'манго', 'апельсин'];
 
 /**
  * Фільтрує елементи масиву за певним критерієм пошуку (запиту)
  */
 function filterItems(arr, query) {
-  return arr.filter(function(el) {
-      return el.toLowerCase().indexOf(query.toLowerCase()) !== -1
-  })
+  return arr.filter(function (el) {
+    return el.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+  });
 }
 
-console.log(filterItems(fruits, 'ap'))  // ['apple', 'grapes']
-console.log(filterItems(fruits, 'an'))  // ['banana', 'mango', 'orange']
+console.log(filterItems(fruits, 'ан')); // ['банан', 'манго']
+console.log(filterItems(fruits, 'ин')); // ['виноград', 'апельсин']
 ```
 
 #### Реалізація ES2015
 
 ```js
-const fruits = ['apple', 'banana', 'grapes', 'mango', 'orange']
+const fruits = ['яблуко', 'банан', 'виноград', 'манго', 'апельсин'];
 
 /**
  * Фільтрує елементи масиву за певним критерієм пошуку (запиту)
  */
 const filterItems = (arr, query) => {
-  return arr.filter(el => el.toLowerCase().indexOf(query.toLowerCase()) !== -1)
-}
+  return arr.filter(
+    (el) => el.toLowerCase().indexOf(query.toLowerCase()) !== -1,
+  );
+};
 
-console.log(filterItems(fruits, 'ap'))  // ['apple', 'grapes']
-console.log(filterItems(fruits, 'an'))  // ['banana', 'mango', 'orange']
+console.log(filterItems(fruits, 'ан')); // ['банан', 'манго']
+console.log(filterItems(fruits, 'ин')); // ['виноград', 'апельсин']
 ```
 
 ### Внесення змін до початкового масиву (зміна, додавання і видалення елементів)
@@ -236,38 +254,38 @@ console.log(filterItems(fruits, 'an'))  // ['banana', 'mango', 'orange']
 
 ```js
 // Змінювання кожного слова
-let words = ['spray', 'limit', 'exuberant', 'destruction','elite', 'present']
+let words = ['спрей', 'межа', 'розкішний', 'згуба', 'еліта', 'дарунок'];
 
-const modifiedWords = words.filter( (word, index, arr) => {
-  arr[index+1] +=' extra'
-  return word.length < 6
-})
+const modifiedWords = words.filter((word, index, arr) => {
+  arr[index + 1] += ' екстра';
+  return word.length < 6;
+});
 
-console.log(modifiedWords)
+console.log(modifiedWords);
 // Зверніть увагу, в масиві є три слова з довжиною до 6 літер, але оскільки всі наступні змінюються, в результаті отримуємо лише одне
-// ["spray"]
+// ["спрей"]
 
 // Додавання нових слів
-words = ['spray', 'limit', 'exuberant', 'destruction','elite', 'present']
-const appendedWords = words.filter( (word, index, arr) => {
-  arr.push('new')
-  return word.length < 6
-})
+let words = ['спрей', 'межа', 'розкішний', 'згуба', 'еліта', 'дарунок'];
+const appendedWords = words.filter((word, index, arr) => {
+  arr.push('новий');
+  return word.length < 6;
+});
 
-console.log(appendedWords)
+console.log(appendedWords);
 // Лише три слова проходять перевірку, хоча масив `words` тепер має значно більше слів, що містять до 6 літер
-// ["spray" ,"limit" ,"elite"]
+// ["спрей", "межа", "згуба", "еліта"]
 
 // Видалення слів
-words = ['spray', 'limit', 'exuberant', 'destruction', 'elite', 'present']
-const deleteWords = words.filter( (word, index, arr) => {
-  arr.pop()
-  return word.length < 6
-})
+let words = ['спрей', 'межа', 'розкішний', 'згуба', 'еліта', 'дарунок'];
+const deleteWords = words.filter((word, index, arr) => {
+  arr.pop();
+  return word.length < 6;
+});
 
-console.log(deleteWords)
-// Слово 'elite' взагалі не потрапляє до масиву з результатами, позаяк воно викидається з `words` до того, як фільтр добереться до нього
-// ["spray" ,"limit"]
+console.log(deleteWords);
+// Слово 'еліта' взагалі не потрапляє до масиву з результатами, позаяк воно викидається з `words` до того, як фільтр добереться до нього
+// ["спрей" ,"межа"]
 ```
 
 ## Специфікації
@@ -280,7 +298,7 @@ console.log(deleteWords)
 
 ## Дивіться також
 
-- Поліфіл методу `Array.prototype.filter` доступний у [`core-js`](https://github.com/zloirock/core-js#ecmascript-array)
+- [Поліфіл методу `Array.prototype.filter` у `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
 - {{jsxref("Array.prototype.forEach()")}}
 - {{jsxref("Array.prototype.every()")}}
 - {{jsxref("Array.prototype.some()")}}
