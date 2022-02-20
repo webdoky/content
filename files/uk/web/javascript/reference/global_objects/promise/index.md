@@ -143,8 +143,9 @@ console.log('запис одразу');
 Щоб краще це проілюструвати, подивімось на те, як вбудований в документ [`<iframe>`](/uk/docs/Web/HTML/Element/iframe) спілкується зі своїм хазяїном. Оскільки всі веб-API мають на увазі поточний установчий об'єкт, наступний код буде працювати в усіх браузерах:
 
 ```html
-<!DOCTYPE html> <iframe></iframe>
-<!-- окрема область тут -->
+<!DOCTYPE html>
+<!-- окрема область в iframe -->
+<iframe></iframe>
 <script>
   // і також окрема область тут
   const bound = frames[0].postMessage.bind(frames[0], 'some data', '*');
@@ -159,8 +160,9 @@ console.log('запис одразу');
 Та сама ідея, але накладена на проміси. Змінимо трохи код вище, і отримаємо таке:
 
 ```html
-<!DOCTYPE html> <iframe></iframe>
-<!-- окрема область тут -->
+<!DOCTYPE html>
+<!-- окрема область в iframe -->
+<iframe></iframe>
 <script>
   // і також окрема область тут
   const bound = frames[0].postMessage.bind(frames[0], 'some data', '*');
