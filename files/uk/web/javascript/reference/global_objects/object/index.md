@@ -1,5 +1,5 @@
 ---
-title: Object
+title: Object (Об'єкт)
 slug: Web/JavaScript/Reference/Global_Objects/Object
 tags:
   - Class
@@ -9,7 +9,7 @@ browser-compat: javascript.builtins.Object
 ---
 {{JSRef}}
 
-Клас **`Object`** позначає один із [типів даних JavaScript](/en-US/docs/Web/JavaScript/Data_structures). Його використовують для зберігання різноманітних асоціативних масивів та складніших сутностей. Об'єкти можна створювати за допомогою конструктора {{jsxref("Object/Object", "Object()")}}, або [синтаксису об'єктного ініціалізатора / літерала](/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer).
+Клас **`Object`** позначає один із [типів даних JavaScript](/uk/docs/Web/JavaScript/Data_structures). Його використовують для зберігання різноманітних асоціативних масивів та складніших сутностей. Об'єкти можна створювати за допомогою конструктора {{jsxref("Object/Object", "Object()")}}, або [синтаксису об'єктного ініціалізатора / літерала](/uk/docs/Web/JavaScript/Reference/Operators/Object_initializer).
 
 ## Опис
 
@@ -25,11 +25,11 @@ browser-compat: javascript.builtins.Object
 
 Під час викликання поза контекстом конструктора, `Object` поводить себе ідентично до `new Object()`.
 
-Дивіться також [синтаксис об'єктного ініціалізатора / літерала](/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer).
+Дивіться також [синтаксис об'єктного ініціалізатора / літерала](/uk/docs/Web/JavaScript/Reference/Operators/Object_initializer).
 
 ### Видалення властивості з об'єкта
 
-Не існує в `Object` такого методу, який би давав змогу видаляти його власні властивості (подібно до {{jsxref("Map.prototype.delete", "Map.prototype.delete()")}}). Для цього необхідно використовувати [оператор видалення (`delete`)](/en-US/docs/Web/JavaScript/Reference/Operators/delete).
+Не існує в `Object` такого методу, який би давав змогу видаляти його власні властивості (подібно до {{jsxref("Map.prototype.delete", "Map.prototype.delete()")}}). Для цього необхідно використовувати [оператор видалення (`delete`)](/uk/docs/Web/JavaScript/Reference/Operators/delete).
 
 ## Конструктор
 
@@ -103,7 +103,7 @@ browser-compat: javascript.builtins.Object
 - {{jsxref("Object.prototype.isPrototypeOf()")}}
   - : Повертає булеве значення, яке вказує на те, що об'єкт, на якому викликався цей метод, присутній у прототипному ланцюжку переданого об'єкта.
 - {{jsxref("Object.prototype.propertyIsEnumerable()")}}
-  - : Повертає булеве значення, яке вказує на те, що було встановлено внутрішній [ECMAScript-атрибут \[\[Enumerable\]\]](/en-US/docs/Web/JavaScript/Data_structures#properties).
+  - : Повертає булеве значення, яке вказує на те, що було встановлено внутрішній [ECMAScript-атрибут \[\[Enumerable\]\]](/uk/docs/Web/JavaScript/Data_structures#properties).
 - {{jsxref("Object.prototype.toLocaleString()")}}
   - : Викликає {{jsxref("Object.toString", "toString()")}}.
 - {{jsxref("Object.prototype.toString()")}}
@@ -147,7 +147,7 @@ let o = new Object(Boolean())
 
 Під час зміни поведінки вже наявних методів `Object.prototype`, слід зважити можливість внесення ізольованого коду перед або після чинної логіки. Наприклад, наведений нижче (нетестований) код за умовою виконає користувацьку логіку до того, як спрацює вбудована логіка (або виконається інше розширення).
 
-На момент виклику функції, аргументи виклику знаходяться у масивоподібній "змінній" [arguments](/en-US/docs/Web/JavaScript/Reference/Functions/arguments). Наприклад, у виклику `myFn(a, b, c)` `arguments` всередині тіла функції `myFn` міститиме 3 елементи відповідно до `(a, b, c)`.
+На момент виклику функції, аргументи виклику знаходяться у масивоподібній "змінній" [arguments](/uk/docs/Web/JavaScript/Reference/Functions/arguments). Наприклад, у виклику `myFn(a, b, c)` `arguments` всередині тіла функції `myFn` міститиме 3 елементи відповідно до `(a, b, c)`.
 
 В разі внесення змін у прототипи за допомогою таких причеп, слід передавати `this` та аргументи (стан виклику) до чинної логіки шляхом виклику `apply()` на функції. Цей патерн можна використовувати на будь-яких прототипах, як от `Node.prototype`, `Function.prototype`, та ін.
 
@@ -169,7 +169,7 @@ Object.prototype.valueOf = function() {
 }
 ```
 
-Оскільки JavaScript не має повного аналога підкласових об'єктів, прототип є корисним обхідним способом створити об'єкт “базового класу” певних функцій, що працюють як об'єкти. Наприклад:
+Оскільки JavaScript не має повного аналога підкласових об'єктів, прототип є корисним обхідним способом створити об'єкт "базового класу" певних функцій, що працюють як об'єкти. Наприклад:
 
 ```js
 var Person = function(name) {
@@ -249,4 +249,4 @@ mime.greet();
 
 ## Дивіться також
 
-- [Ініціалізатор об'єкту](/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer)
+- [Ініціалізатор об'єкту](/uk/docs/Web/JavaScript/Reference/Operators/Object_initializer)
