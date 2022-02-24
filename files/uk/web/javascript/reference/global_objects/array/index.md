@@ -92,7 +92,7 @@ browser-compat: javascript.builtins.Array
 - {{jsxref("Array.prototype.join()")}} ("об‘єднати")
   - : Об‘єднує усі елементи масиву в рядок.
 - {{jsxref("Array.prototype.keys()")}} ("ключі")
-  - : Повертає новий [_ітератор масиву_](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators), що містить кожен індекс у поточному масиві.
+  - : Повертає новий [_ітератор масиву_](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators), що містить кожен індекс поточного масиву.
 - {{jsxref("Array.prototype.lastIndexOf()")}} ("останній індекс")
   - : Повертає останній (якнайбільший) індекс, за яким переданий елемент може бути знайдений у поточному масиві, або `-1`, якщо такого індексу не знайдено.
 - {{jsxref("Array.prototype.map()")}} ("відобразити")
@@ -109,7 +109,7 @@ browser-compat: javascript.builtins.Array
   - : Розвертає порядок елементів масиву _на місці_. (Перший стає останнім, останній – першим.)
 - {{jsxref("Array.prototype.shift()")}} ("зсунути")
   - : Прибирає перший елемент з масиву і повертає його.
-- {{jsxref("Array.prototype.slice()")}} ("вирізати")
+- {{jsxref("Array.prototype.slice()")}} ("вирізати скибку, зріз")
   - : Вирізає секцію з поточного масиву і повертає як новий масив.
 - {{jsxref("Array.prototype.some()")}} ("якийсь")
   - : Повертає `true`, якщо принаймні один елемент поточного масиву задовольняє передану перевіркову функцію.
