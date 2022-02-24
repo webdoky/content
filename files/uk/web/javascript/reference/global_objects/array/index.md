@@ -371,7 +371,7 @@ for (const fruit of fruits) {
 // Вишня
 ```
 
-Утім, `for...of` – лише один з багатьох способів перебору будь-якого масиву; більше способів дивіться [Цикли та перебирання](/uk/docs/Web/JavaScript/Guide/Loops_and_iteration), а також документацію методів [`every()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/every), [`filter()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/filter), [`flatMap()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap), [`map()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/map), [`reduce()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce) і [`reduceRight()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight) – ну і наступний приклад, що використовує метод [`forEach()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach).
+Утім, `for...of` – лише один з багатьох способів перебору будь-якого масиву; більше способів можна знайти у розділі [Цикли та перебирання](/uk/docs/Web/JavaScript/Guide/Loops_and_iteration), а також у документації методів [`every()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/every), [`filter()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/filter), [`flatMap()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap), [`map()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/map), [`reduce()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce) і [`reduceRight()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight) – ну і наступний приклад, що використовує метод [`forEach()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach).
 
 ### Виклик функції над кожним елементом масиву
 
