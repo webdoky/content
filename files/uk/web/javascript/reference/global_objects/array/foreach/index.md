@@ -11,9 +11,10 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.Array.forEach
 ---
+
 {{JSRef}}
 
-Метод **`forEach()`** виконує дану функцію один раз для кожного елементу масиву.
+Метод **`forEach()`** ("для кожного") виконує дану функцію один раз для кожного елементу масиву.
 
 {{EmbedInteractiveExample("pages/js/array-foreach.html")}}
 
@@ -21,19 +22,33 @@ browser-compat: javascript.builtins.Array.forEach
 
 ```js
 // Стрілкова функція
-forEach((element) => { /* ... */ } )
-forEach((element, index) => { /* ... */ } )
-forEach((element, index, array) => { /* ... */ } )
+forEach((element) => {
+  /* ... */
+});
+forEach((element, index) => {
+  /* ... */
+});
+forEach((element, index, array) => {
+  /* ... */
+});
 
 // Функція зворотного виклику
-forEach(callbackFn)
-forEach(callbackFn, thisArg)
+forEach(callbackFn);
+forEach(callbackFn, thisArg);
 
 // Функція зворотного виклику, оголошена на місці
-forEach(function(element) { /* ... */ })
-forEach(function(element, index) { /* ... */ })
-forEach(function(element, index, array){ /* ... */ })
-forEach(function(element, index, array) { /* ... */ }, thisArg)
+forEach(function (element) {
+  /* ... */
+});
+forEach(function (element, index) {
+  /* ... */
+});
+forEach(function (element, index, array) {
+  /* ... */
+});
+forEach(function (element, index, array) {
+  /* ... */
+}, thisArg);
 ```
 
 ### Параметри
@@ -43,7 +58,7 @@ forEach(function(element, index, array) { /* ... */ }, thisArg)
   - : Функція, яку буде викликано на кожному елементі. Приймає від одного до трьох аргументів:
 
     - `element`
-      - : Поточний елемент масиву, який зараз опрацьовується.
+      - : Поточний елемент масиву, який опрацьовується.
     - `index` {{optional_inline}}
       - : Порядковий номер цього елементу в масиві.
     - `array` {{optional_inline}}
@@ -58,7 +73,7 @@ forEach(function(element, index, array) { /* ... */ }, thisArg)
 
 ## Опис
 
-Метод `forEach()` викликає подану функцію `callbackFn` один раз для кожного елементу в масиві, у порядку зростання їх порядкового номера. Функція не викликається для елементів, які було видалено, або які не було ініціалізовано. (для розріджених масивів [дивіться приклад нижче](#nichoho-ne-vidbuvaietsia-na-neinitsializovanykh-znachenniakh-rozridzheni-masyvy).)
+Метод `forEach()` викликає подану функцію `callbackFn` один раз для кожного елементу в масиві, у порядку зростання їх порядкового номера. Функція не викликається для елементів, які було видалено, або які не було ініціалізовано. (Для розріджених масивів [дивіться приклад нижче](#nichoho-ne-vidbuvaietsia-na-neinitsializovanykh-znachenniakh-rozridzheni-masyvy).)
 
 Функція `callbackFn` викликається з трьома аргументами:
 
@@ -66,19 +81,19 @@ forEach(function(element, index, array) { /* ... */ }, thisArg)
 2.  порядковий номер елементу
 3.  масив, на котрому викликано `forEach`
 
-Якщо у `forEach()` задано параметр `thisArg`, його буде використано як значення `this` у функції зворотного виклику. В загальному випадку значення `this`, яке бачитиме функція `callback` визначається згідно з [загальними правилами визначення значення `this`, доступного для функції](/uk/docs/Web/JavaScript/Reference/Operators/this).
+Якщо у `forEach()` задано параметр `thisArg`, його буде використано як значення `this` у функції зворотного виклику. В загальному випадку значення `this`, яке бачитиме функція `callback`, визначається згідно з [загальними правилами визначення значення `this`, доступного для функції](/uk/docs/Web/JavaScript/Reference/Operators/this).
 
 Діапазон елементів, що опрацьовуються функцією `forEach()`, задається до першого виклику `callbackFn`. Елементи, які будуть присвоєні за індексами, що вже перебрані методом, або ж до індексів за межами цього діапазону, не будуть опрацьовані функцією `callbackFn`. Якщо наявні елементи змінюються чи видаляються, то до `callbackFn` буде передано їх фактичне значення на момент, коли функція `forEach()` їх опрацьовує. Ті елементи, які були видалені до того, як їх опрацювала функція, опрацьовані не будуть. Якщо елементи, які уже були опрацьовані, видаляються (наприклад, за допомогою {{jsxref("Array.prototype.shift()", "shift()")}}) під час проходження по масиву, наступні елементи буде пропущено. ([Дивіться цей приклад нижче](#zmina-masyvu-pid-chas-perebyrannia-yoho-elementiv).)
 
-> **Обережно:** Одночасні модифікації такого типу, як описано в попередньому абзаці, часто приводять до коду, який важко зрозуміти. Загалом заведено уникати такого запису (окрім особливих випадків).
+> **Застереження:** Одночасні модифікації такого типу, як описано в попередньому абзаці, часто приводять до коду, який важко зрозуміти. Загалом заведено уникати такого запису (крім особливих випадків).
 
 Метод `forEach()` виконує функцію `callbackFn` один раз для кожного елементу в масиві, і на відміну від {{jsxref("Array.prototype.map()", "map()")}} чи
-{{jsxref("Array.prototype.reduce()", "reduce()")}} він завжди повертає значення {{jsxref("undefined")}}, і не придатний до послідовних викликів. Зазвичай його використовують для виконання побічних ефектів наприкінці послідовності.
+{{jsxref("Array.prototype.reduce()", "reduce()")}} він завжди повертає значення {{jsxref("undefined")}} і не придатний для ланцюгових викликів. Зазвичай його використовують для виконання побічних ефектів наприкінці ланцюжка викликів.
 
-Метод `forEach()` не змінює масив, на якому він викликається. (Хоча,
+Метод `forEach()` не змінює масив, на якому він викликається. (Хоча
 `callbackFn` може це робити)
 
-> **Зауваження:** Не існує способу зупинити або перервати цикл `forEach()` окрім
+> **Примітка:** Не існує способу зупинити або перервати цикл `forEach()` окрім
 > як шляхом викидання винятку. Якщо вам потрібна можливість перервати цикл, метод `forEach()`
 > для цього не підходить.
 >
@@ -93,141 +108,72 @@ forEach(function(element, index, array) { /* ... */ }, thisArg)
 > - {{jsxref("Array.prototype.findIndex()")}}
 >
 > Методи масиву, як от {{jsxref("Array.prototype.every()", "every()")}},
-> {{jsxref("Array.prototype.some()", "some()")}}, {{jsxref("Array.prototype.find()", "find()")}}, і {{jsxref("Array.prototype.findIndex()", "findIndex()")}} перевіряють
+> {{jsxref("Array.prototype.some()", "some()")}}, {{jsxref("Array.prototype.find()", "find()")}} і {{jsxref("Array.prototype.findIndex()", "findIndex()")}}, перевіряють
 > елементи масиву за допомогою предикату, що повертає істинне значення, якщо
 > продовження перебирання масиву є необхідним.
 
-> **Зауваження:** `forEach` приймає синхронну функцію.
+> **Примітка:** `forEach` приймає синхронну функцію.
 >
 > `forEach` не чекає на завершення промісів. Впевніться, що ви розумієте можливі наслідки
 > передачі промісів (чи асинхронних функцій) в аргументах функції `forEach`.
 >
 > ```js
-> let ratings = [5, 4, 5];
+> const ratings = [5, 4, 5];
 > let sum = 0;
 >
-> let sumFunction = async function (a, b)
-> {
->   return a + b
-> }
+> const sumFunction = async (a, b) => a + b;
 >
-> ratings.forEach(async function(rating) {
->   sum = await sumFunction(sum, rating)
-> })
+> ratings.forEach(async (rating) => {
+>   sum = await sumFunction(sum, rating);
+> });
 >
-> console.log(sum)
+> console.log(sum);
 > // Наївно очікуваний вивід: 14
 > // Фактичний вивід: 0
 > ```
-
-## Поліфіл
-
-Метод `forEach()` було додано до стандарту ECMA-262 у його 5-й редакції. Тобто, він може бути доступний не у всіх його реалізаціях. Цю проблему можна обійти шляхом додавання наступного коду на початку скрипту. Фактично це дозволить використовувати `forEach()` у реалізаціях ECMA-262, які не підтримують його нативно.
-
-Це той самий алгоритм, який наведено у 5-й редакції ECMA-262, з поправкою на припущення, що {{jsxref("Object")}} і {{jsxref("TypeError")}} мають свої початкові значення, і що `fun.call` зводиться до початкового значення {{jsxref("Function.prototype.call()")}}.
-
-```js
-// Етапи створення ECMA-262, 5 редакція, 15.4.4.18
-// Посилання: https://es5.github.io/#x15.4.4.18
-
-if (!Array.prototype['forEach']) {
-
-  Array.prototype.forEach = function(callback, thisArg) {
-
-    if (this == null) { throw new TypeError('Array.prototype.forEach called on null or undefined'); }
-
-    var T, k;
-    // 1. Нехай O є результатом викликання функції toObject(), що передає
-    // значення |this| як аргумент.
-    var O = Object(this);
-
-    // 2. Нехай lenValue є результатом викликання внутрішнього методу Get()
-    // об'єкту O з аргументом "length".
-    // 3. Нехай len буде значенням toUint32(lenValue).
-    var len = O.length >>> 0;
-
-    // 4. Якщо isCallable(callback) є хибою, викинемо виняток TypeError.
-    // Дивіться: https://es5.github.com/#x9.11
-    if (typeof callback !== "function") { throw new TypeError(callback + ' is not a function'); }
-
-    // 5. Якщо дано аргумент thisArg, нехай T буде thisArg;
-    // інакше нехай T буде невизначено.
-    if (arguments.length > 1) { T = thisArg; }
-
-    // 6. Нехай k буде 0
-    k = 0;
-
-    // 7. Повторюємо, доки k < len
-    while (k < len) {
-
-      var kValue;
-
-      // a. Нехай Pk буде ToString(k).
-      //    Таке перетворення відбувається неявно для лівих операндів оператора "in"
-      // b. Нехай kPresent буде результатом викликання внутрішнього
-      //    методу HasProperty об'єкту O з аргументом Pk.
-      //    Допускається суміщати цей крок із c
-      // c. Якщо kPresent є істиною, тоді
-      if (k in O) {
-
-        // i. Нехай kValue буде результатом викликання внутрішнього методу Get
-        // об'єкта O з аргументом Pk.
-        kValue = O[k];
-
-        // ii. Викличемо внутрішній метод Call функції зворотного виклику
-        // з T як значенням "this", і набором аргументів, що містять kValue, k, and O.
-        callback.call(T, kValue, k, O);
-      }
-      // d. Збільшуємо k на 1.
-      k++;
-    }
-    // 8. Повертаємо undefined
-  };
-}
-```
 
 ## Приклади
 
 ### Нічого не відбувається на неініціалізованих значеннях (розріджені масиви)
 
 ```js
-const arraySparse = [1,3,,7]
-let numCallbackRuns = 0
+const arraySparse = [1, 3, , 7];
+let numCallbackRuns = 0;
 
-arraySparse.forEach(function(element) {
-  console.log(element)
-  numCallbackRuns++
-})
+arraySparse.forEach((element) => {
+  console.log({ element });
+  numCallbackRuns++;
+});
 
-console.log("numCallbackRuns: ", numCallbackRuns)
+console.log({ numCallbackRuns });
 
 // 1
 // 3
 // 7
 // numCallbackRuns: 3
-// коментар: як можна побачити, пропущене значення між 3 та 7 не викликало функції зворотного виклику
+// коментар: як можна побачити, на пропущеному між 3 та 7 значенні функція зворотного виклику не викликалась
 ```
 
 ### Перетворення циклу for на forEach
 
 ```js
-const items = ['item1', 'item2', 'item3']
-const copyItems = []
+const items = ['item1', 'item2', 'item3'];
+const copyItems = [];
 
 // до
 for (let i = 0; i < items.length; i++) {
-  copyItems.push(items[i])
+  copyItems.push(items[i]);
 }
 
 // після
-items.forEach(function(item){
-  copyItems.push(item)
-})
+items.forEach((item) => {
+  copyItems.push(item);
+});
 ```
 
 ### Друк вмісту масиву
 
-> **Зауваження:** Щоб показати вміст масиву у консолі,
+> **Примітка:** Щоб показати вміст масиву у консолі,
 > можна застосувати метод {{domxref("console/table", "console.table()")}}, який друкує
 > відформатований варіант масиву.
 >
@@ -237,13 +183,13 @@ items.forEach(function(item){
 Наступний код друкує рядок для кожного елементу в масиві:
 
 ```js
-function logArrayElements(element, index, array) {
-  console.log('a[' + index + '] = ' + element)
-}
+const logArrayElements = (element, index, array) => {
+  console.log('a[' + index + '] = ' + element);
+};
 
 // Зауважте, що порядковий номер 2 пропущено, оскільки в масиві не існує
 // елементу на цій позиції...
-[2, 5, , 9].forEach(logArrayElements)
+[2, 5, , 9].forEach(logArrayElements);
 // logs:
 // a[0] = 2
 // a[1] = 5
@@ -256,27 +202,25 @@ function logArrayElements(element, index, array) {
 
 ```js
 function Counter() {
-  this.sum = 0
-  this.count = 0
+  this.sum = 0;
+  this.count = 0;
 }
-Counter.prototype.add = function(array) {
+Counter.prototype.add = function (array) {
   array.forEach(function countEntry(entry) {
-    this.sum += entry
-    ++this.count
-  }, this)
-}
+    this.sum += entry;
+    ++this.count;
+  }, this);
+};
 
-const obj = new Counter()
-obj.add([2, 5, 9])
-obj.count
-// 3
-obj.sum
-// 16
+const obj = new Counter();
+obj.add([2, 5, 9]);
+console.log(obj.count); // 3
+console.log(obj.sum); // 16
 ```
 
-Оскільки параметр `thisArg` (`this`) було задано в `forEach()`, він передавався до функції `callback` кожного разу, коли вона викликалась. Сама функція зворотного виклику використовує її як значення `this`.
+Оскільки параметр `thisArg` (`this`) було задано в `forEach()`, він передавався до функції `callback` кожного разу, коли вона викликалась. Сама функція зворотного виклику використовує те саме значення `this`.
 
-> **Зауваження:** Якщо передачу функції зворотного виклику було використано із застосуванням виразу
+> **Примітка:** Якщо передачу функції зворотного виклику було використано із застосуванням виразу
 > [стрілкової функції](/uk/docs/Web/JavaScript/Reference/Functions/Arrow_functions), то значення параметру `thisArg` можна опустити,
 > оскільки всі стрілкові функції прив'язують значення {{jsxref("Operators/this", "this")}}
 > лексично.
@@ -288,20 +232,18 @@ obj.sum
 Існують різні способи створити копію об'єкту. Спосіб, що наведено нижче - це лише один із них, покликаний показати, як працює `Array.prototype.forEach()` шляхом використання метаметодів `Object.*` з ECMAScript 5.
 
 ```js
-function copy(obj) {
-  const copy = Object.create(Object.getPrototypeOf(obj))
-  const propNames = Object.getOwnPropertyNames(obj)
+const copy = (obj) => {
+  const copy = Object.create(Object.getPrototypeOf(obj));
+  const propNames = Object.getOwnPropertyNames(obj);
+  propNames.forEach((name) => {
+    const desc = Object.getOwnPropertyDescriptor(obj, name);
+    Object.defineProperty(copy, name, desc);
+  });
+  return copy;
+};
 
-  propNames.forEach(function(name) {
-    const desc = Object.getOwnPropertyDescriptor(obj, name)
-    Object.defineProperty(copy, name, desc)
-  })
-
-  return copy
-}
-
-const obj1 = { a: 1, b: 2 }
-const obj2 = copy(obj1) // obj2 тепер виглядає точнісінько як obj1
+const obj1 = { a: 1, b: 2 };
+const obj2 = copy(obj1); // obj2 тепер має точнісінько такий самий вигляд, як obj1
 ```
 
 ### Зміна масиву під час перебирання його елементів
@@ -313,15 +255,15 @@ const obj2 = copy(obj1) // obj2 тепер виглядає точнісіньк
 Метод `forEach()` не робить копію масиву перед перебиранням.
 
 ```js
-let words = ['one', 'two', 'three', 'four']
-words.forEach(function(word) {
-  console.log(word)
+const words = ['one', 'two', 'three', 'four'];
+words.forEach((word) => {
+  console.log(word);
   if (word === 'two') {
-    words.shift() // елемент 'one' видаляється з масиву
+    words.shift(); // елемент 'one' видаляється з масиву
   }
-}) // one // two // four
+}); // one // two // four
 
-console.log(words);  //['two', 'three', 'four']
+console.log(words); // ['two', 'three', 'four']
 ```
 
 ### Сплощення масиву
@@ -329,24 +271,21 @@ console.log(words);  //['two', 'three', 'four']
 Приклад нижче наведено лише для навчальних потреб. Для сплощення масивів вбудованими методами можна застосовувати {{jsxref("Array.prototype.flat()")}}.
 
 ```js
-function flatten(arr) {
-  const result = []
-
-  arr.forEach(function(i) {
+const flatten = (arr) => {
+  const result = [];
+  arr.forEach((i) => {
     if (Array.isArray(i)) {
-      result.push(...flatten(i))
+      result.push(...flatten(i));
     } else {
-      result.push(i)
+      result.push(i);
     }
-  })
-
-  return result
-}
+  });
+  return result;
+};
 
 // Застосування
-const nested = [1, 2, 3, [4, 5, [6, 7], 8, 9]]
-
-flatten(nested) // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+const nested = [1, 2, 3, [4, 5, [6, 7], 8, 9]];
+console.log(flatten(nested)); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
 ## Специфікації
@@ -359,7 +298,7 @@ flatten(nested) // [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 ## Дивіться також
 
-- Поліфіл для `Array.prototype.forEach` присутній у [`core-js`](https://github.com/zloirock/core-js#ecmascript-array)
+- [Поліфіл для `Array.prototype.forEach` у `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
 - {{jsxref("Array.prototype.find()")}}
 - {{jsxref("Array.prototype.findIndex()")}}
 - {{jsxref("Array.prototype.map()")}}
