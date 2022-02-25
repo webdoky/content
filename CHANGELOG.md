@@ -5,7 +5,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [2022-02-18 - 2022-02-25]
 
-* **Оновлення перекладу:**(JS): web/javascript/reference/global_objects/date/index.md ([b41773e](https://github.com/webdoky/content/commit/b41773e1f085f918ed85cce99a9bcb17b6fb9e32))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/date/index.md ([b41773e](https://github.com/webdoky/content/commit/b41773e1f085f918ed85cce99a9bcb17b6fb9e32))
+* **Оновлення перекладу(JS):** web/reference/global_objects/array/slice/index.md ([c4a4af8](https://github.com/webdoky/content/commit/c4a4af8b6f757ddcb5eeea35f10ae3ab64edbeb5))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/index.md (#278) ([36217c8](https://github.com/webdoky/content/commit/36217c8b3075a1a3612615a6a6bc67d622ff0c31))
+* **Оновлення перекладу(JS):** javascript/reference/global_objects/promise/index.md (#271) ([9743fcd](https://github.com/webdoky/content/commit/9743fcd43db4573ed40eb28d3d5ad118f2fda9e3))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/foreach/index.md (#268) ([4e07c36](https://github.com/webdoky/content/commit/4e07c36a632f540a10c679eed6f2f0872d2584ec))
+* **Оновлення перекладу(JS):** web/javascript/guide/regular_expressions/index.md (#274) ([40c17ed](https://github.com/webdoky/content/commit/40c17ed895dfeea7c4d4bd1758e1592f1af1180d))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/find/index.md (#269) ([54e09ac](https://github.com/webdoky/content/commit/54e09ac8ebc84d7ce57a5c17cdc94605e05f963d))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/map/index.md (#267) ([ee4cfa6](https://github.com/webdoky/content/commit/ee4cfa658df8c7b6dd09410315033ccd21199eb9))
 
 ## [2022-02-11 - 2022-02-18]
 
