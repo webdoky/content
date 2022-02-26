@@ -25,7 +25,7 @@ browser-compat: javascript.builtins.Array
 
 - **Масиви JavaScript [нумеруються з нуля (англ.)](https://en.wikipedia.org/wiki/Zero-based_numbering)**: перший елемент масиву знаходиться за індексом `0`, другий – за індексом `1`, і так далі – а останній елемент знаходиться індексом, рівним значенню властивості {{jsxref("Array.length", "length")}} масиву мінус `1`.
 
-- **[Операції копіювання масиву](#kopiiuvannia-masyva) створюють [поверхневі копії](/uk/docs/Glossary/Shallow_copy)**. (Усі стандартні вбудовані операції копіювання _будь-яких_ об‘єктів JavaScript objects створюють поверхневі копії, а не [глибинні копії](/uk/docs/Glossary/Deep_copy)).
+- **[Операції копіювання масиву](#kopiiuvannia-masyvu) створюють [поверхневі копії](/uk/docs/Glossary/Shallow_copy)**. (Усі стандартні вбудовані операції копіювання _будь-яких_ об‘єктів JavaScript objects створюють поверхневі копії, а не [глибинні копії](/uk/docs/Glossary/Deep_copy)).
 
 ## Конструктор
 
