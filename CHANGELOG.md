@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2022-04-22 - 2022-04-29]
+
+...
+
 ## [2022-02-18 - 2022-02-25]
 
 * **Оновлення перекладу(JS):** web/javascript/reference/global_objects/date/index.md ([b41773e](https://github.com/webdoky/content/commit/b41773e1f085f918ed85cce99a9bcb17b6fb9e32))
