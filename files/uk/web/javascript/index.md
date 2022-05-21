@@ -10,7 +10,7 @@ translation_of: Web/JavaScript
 ---
 {{JsSidebar}}
 
-**JavaScript** (**JS**) &mdash; це невибаглива до ресурсів мова програмування з {{Glossary("First-class Function", "функціями першого класу")}}, код якої інтерпретується, або компілюється ["на льоту"](https://uk.wikipedia.org/wiki/JIT-%D0%BA%D0%BE%D0%BC%D0%BF%D1%96%D0%BB%D1%8F%D1%86%D1%96%D1%8F). Хоча JavaScript насамперед відома як скриптова мова для вебсторінок, вона також використовується у [багатьох не браузерних середовищах](https://en.wikipedia.org/wiki/JavaScript#Other_usage), як от: {{Glossary("Node.js")}}, [Apache CouchDB](https://couchdb.apache.org/) та [Adobe Acrobat](https://www.adobe.com/devnet/acrobat/javascript.html). JavaScript — це {{Glossary("Prototype-based programming", "прототипна")}}, однопотокова динамічна мова, що має декілька парадигм та підтримує об'єктноорієнтований, та декларативні (зокрема функційне програмування) стилі. Більше [про JavaScript](/uk/docs/Web/JavaScript/About_JavaScript).
+**JavaScript** (**JS**) &mdash; це невибаглива до ресурсів мова програмування з {{Glossary("First-class Function", "функціями першого класу")}}, код якої інтерпретується, або компілюється ["на льоту"](https://uk.wikipedia.org/wiki/JIT-%D0%BA%D0%BE%D0%BC%D0%BF%D1%96%D0%BB%D1%8F%D1%86%D1%96%D1%8F). Хоча JavaScript насамперед відома як скриптова мова для вебсторінок, вона також використовується у [багатьох не браузерних середовищах](https://en.wikipedia.org/wiki/JavaScript#Other_usage), як от: {{Glossary("Node.js")}}, [Apache CouchDB](https://couchdb.apache.org/) та [Adobe Acrobat](https://opensource.adobe.com/dc-acrobat-sdk-docs/acrobatsdk/). JavaScript — це {{Glossary("Prototype-based programming", "прототипна")}}, однопотокова динамічна мова, що має декілька парадигм та підтримує об'єктноорієнтований, та декларативні (зокрема функційне програмування) стилі. Більше [про JavaScript](/uk/docs/Web/JavaScript/About_JavaScript).
 
 Цей розділ присвячено саме мові JavaScript, і він не стосується тонкощів роботи з вебсторінками, чи іншими середовищами для виконання JavaScript. Конкретну інформацію стосовно {{Glossary("API")}} вебсторінок дивіться у [веб API](/uk/docs/Web/API) та {{Glossary("DOM")}}.
 
@@ -92,8 +92,8 @@ translation_of: Web/JavaScript
 
 Допоміжні інструменти, що полегшують написання і допомагають зневаджувати код на **JavaScript**.
 
-- [Інструменти розробника Firefox](/uk/docs/Tools)
-  - : [Вебконсоль](/uk/docs/Tools/Web_Console), [JavaScript Profiler](/uk/docs/Tools/Performance), [Debugger](/uk/docs/Tools/Debugger), та інші.
+- [Інструменти розробника Firefox (англ.)]([/uk/docs/Tools](https://firefox-source-docs.mozilla.org/devtools-user/index.html))
+  - : [Вебконсоль (англ.)]([/uk/docs/Tools/Web_Console](https://firefox-source-docs.mozilla.org/devtools-user/web_console/index.html)), [Профайлер JavaScript (англ.)](https://firefox-source-docs.mozilla.org/devtools-user/performance/index.html), [Налагоджувач (англ.)](https://firefox-source-docs.mozilla.org/devtools-user/debugger/index.html), та інші.
 - [Оболонка JavaScript](/uk/docs/Web/JavaScript/Shells)
   - : JavaScript-оболонка, що дозволяє швидко перевіряти фрагменти коду на JavaScript.
 - [Learn JavaScript](https://learnjavascript.online/)
