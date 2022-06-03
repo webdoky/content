@@ -131,6 +131,7 @@ tags:
 - {{JSxRef("Global_Objects/Intl/NumberFormat", "Intl.NumberFormat")}}
 - {{JSxRef("Global_Objects/Intl/PluralRules", "Intl.PluralRules")}}
 - {{JSxRef("Global_Objects/Intl/RelativeTimeFormat", "Intl.RelativeTimeFormat")}}
+- {{JSxRef("Global_Objects/Intl/Segmenter", "Intl.Segmenter")}}
 
 ### WebAssembly
 

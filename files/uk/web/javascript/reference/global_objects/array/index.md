@@ -78,12 +78,11 @@ browser-compat: javascript.builtins.Array
 - {{jsxref("Array.prototype.flatMap()")}} ("сплощити та відобразити")
   - : Повертає новий масив, утворений застосуванням переданої функції зворотного виклику до кожного елемента поточного масиву, а тоді – сплощенням результату на один рівень.
 - {{jsxref("Array.prototype.forEach()")}} ("для кожного")
-
   - : Викликає функцію для кожного елемента поточного масиву.
-
-- {{jsxref("Array.prototype.groupBy()")}} ("групувати за")
-
-  - : Групує елементи масиву згідно з результатами перевіркової функції. До груп в результаті можна доступитись як до властивостей об‘єкта.
+- {{jsxref("Array.prototype.groupBy()")}} ("групувати за (критерієм)") {{Experimental_Inline}}
+  - : Групує елементи масиву згідно з рядками, поверненими перевірковою функцією.
+  - {{jsxref("Array.prototype.groupByToMap()")}} ("групувати за (критерієм) в Map") {{Experimental_Inline}}
+  - : Групує елементи масиву в Map згідно зі значеннями, поверненими перевірковою функцією.
 
 - {{jsxref("Array.prototype.includes()")}} ("включає")
   - : Визначає, чи містить поточний масив певне значення, повертаючи `true` чи `false` відповідно.
@@ -309,7 +308,7 @@ const newLength = fruits.unshift('Полуниця');
 console.log(fruits);
 // ["Полуниця", "Банан", "Манго"]
 console.log(newLength);
-// 2
+// 3
 ```
 
 ### Усунення єдиного елемента за індексом
@@ -371,7 +370,7 @@ for (const fruit of fruits) {
 // Вишня
 ```
 
-Утім, `for...of` – лише один з багатьох способів перебору будь-якого масиву; більше способів можна знайти у розділі [Цикли та перебирання](/uk/docs/Web/JavaScript/Guide/Loops_and_iteration), а також у документації методів [`every()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/every), [`filter()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/filter), [`flatMap()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap), [`map()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/map), [`reduce()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce) і [`reduceRight()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight) – ну і наступний приклад, що використовує метод [`forEach()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach).
+Утім, `for...of` – лише один з багатьох способів перебору будь-якого масиву; більше способів можна знайти у розділі [Цикли та перебирання](/uk/docs/Web/JavaScript/Guide/Loops_and_iteration), а також у документації методів [`every()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/every), [`filter()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/filter), [`flatMap()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap), [`map()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/map), [`reduce()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) і [`reduceRight()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight) – ну і наступний приклад, що використовує метод [`forEach()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach).
 
 ### Виклик функції над кожним елементом масиву
 
@@ -449,6 +448,40 @@ console.log(fruits);
 console.log(fruitsAlias);
 // ['Яблуко', 'Банан', 'Полуниця', 'Манго']
 ```
+
+### Групування елементів масиву
+
+Метод {{jsxref("Array.prototype.groupBy()")}} може використовуватись для групування елементів масиву за допомогою перевіркової функції, що повертає рядок, котрий вказує на відповідну групу для поточного елемента.
+
+Нижче – простий інвентарний масив, що включає об‘єкти "їжі", котрі мають поля `name` (ім‘я) та `type` (тип).
+
+```js
+const inventory = [
+  { name: 'холодок', type: 'vegetables' },
+  { name: 'банани',  type: 'fruit' },
+  { name: 'коза', type: 'meat' },
+  { name: 'вишні', type: 'fruit' },
+  { name: 'риба', type: 'meat' }
+];
+```
+
+Для використання `groupBy()` передається функція зворотного виклику, котра викликається із поточним елементом та (необов‘язково) поточним індексом та всім масивом – та повертає рядок, котрий вказує на групу для елемента.
+
+Код нижче використовує стрілкову функцію для повернення значення поля `type` кожного елемента масиву (вона використовує [синтаксис деструктуризації об‘єкта для аргументів функції](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#unpacking_fields_from_objects_passed_as_a_function_parameter) для розпакування значення поля `type` із переданого об‘єкта).
+Результатом є об‘єкт, котрий має властивості, названі відповідно до унікальних рядків, повернених функцією зворотного виклику.
+Кожній властивості присвоєний масив, що містить елементи групи.
+
+```js
+let result = inventory.groupBy( ({ type }) => type );
+console.log(result.vegetables)
+// очікуваний вивід: Array [Object { name: "холодок", type: "vegetables" }]
+```
+
+Зверніть увагу, що повернений об‘єкт посилається на _ті самі_ елементи, що й вихідний масив (не створюються {{glossary("deep copy","глибокі копії")}}).
+Зміна внутрішньої структури цих елементів отримає відображення як на вихідному масиві, так на поверненому об‘єкті.
+
+Якщо не підходить використання рядка як ключа, наприклад, якщо інформація, за якою необхідне групування, асоційована з об‘єктом, котрий може змінюватися, то натомість можна використати метод {{jsxref("Array.prototype.groupByToMap()")}}.
+Він вельми подібний до `groupBy`, але групує елементи масиву в {{jsxref("Map")}}, що може використовувати довільне ({{Glossary("object","об‘єктне")}} чи {{Glossary("primitive","примітивне")}}) значення як ключ.
 
 ## Інші приклади
 
@@ -600,7 +633,7 @@ console.log(fruits.length); // 2
 
 Така поведінка докладніше пояснена на сторінці {{jsxref("Array.length")}}.
 
-#### Створення масиву на основі результату збігу
+### Створення масиву на основі результату збігу
 
 Результат збігу між {{jsxref("RegExp")}} та рядком може створити масив JavaScript, що має властивості та елементи, котрі надають інформацію про збіг. Такий масив повертають методи {{jsxref("RegExp.exec()")}} і {{jsxref("String.match()")}}.
 
