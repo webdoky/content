@@ -46,9 +46,9 @@ tags:
 - {{JSxRef("Global_Objects/decodeURIComponent", "decodeURIComponent()")}}
 - **Застарілі**
 
-  - {{Deprecated_Inline}} {{JSxRef("Global_Objects/escape", "escape()")}}
-  - {{Deprecated_Inline}} {{JSxRef("Global_Objects/unescape", "unescape()")}}
-  - {{Deprecated_Inline}} {{JSxRef("Global_Objects/uneval", "uneval()")}}
+  - {{JSxRef("Global_Objects/escape", "escape()")}} {{Deprecated_Inline}}
+  - {{JSxRef("Global_Objects/unescape", "unescape()")}} {{Deprecated_Inline}}
+  - {{JSxRef("Global_Objects/uneval", "uneval()")}} {{Deprecated_Inline}}
 
 ### Корінні об'єкти
 
@@ -66,7 +66,7 @@ tags:
 - {{JSxRef("Error")}}
 - {{JSxRef("AggregateError")}}
 - {{JSxRef("EvalError")}}
-- {{Non-Standard_Inline}} {{JSxRef("InternalError")}}
+- {{JSxRef("InternalError")}} {{Non-Standard_Inline}}
 - {{JSxRef("RangeError")}}
 - {{JSxRef("ReferenceError")}}
 - {{JSxRef("SyntaxError")}}
