@@ -30,7 +30,7 @@ spec-urls: https://drafts.csswg.org/selectors/#specificity-rules
 
 Універсальний селектор ({{CSSxRef("Universal_selectors", "*")}}), комбінатори ({{CSSxRef("Adjacent_sibling_combinator", "+")}}, {{CSSxRef("Child_combinator", "&gt;")}}, {{CSSxRef("General_sibling_combinator", "~")}}, [" "](/uk/docs/Web/CSS/Descendant_combinator), {{CSSxRef("Column_combinator", "||")}}) та псевдоклас заперечення ({{CSSxRef(":not", ":not()")}}) не впливають на специфічність. (Селектори, оголошені _всередині_ `:not()`, втім, впливають.)
 
-Щоб отримати більше інформації, відвідайте: ["Специфічність" у розділі "Каскадність та успадкування"](/uk/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance#Specificity_2), а також відвідайте: <https://specifishity.com> (англ.).
+Щоб отримати більше інформації, відвідайте: ["Специфічність" у розділі "Каскадність та успадкування"](/uk/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance#spetsyfichnist_2), а також відвідайте: <https://specifishity.com> (англ.).
 
 Вбудовані стилі, напряму додані до елемента (наприклад, `style="font-weight: bold;"`) завжди перезаписують будь-які стилі із зовнішніх листів стилів, і, таким чином, можуть вважатись такими, що мають найвищу специфічність.
 
@@ -337,7 +337,7 @@ h1 {
 
 ## Специфікації
 
-{{Specifications}}                                                         |
+{{Specifications}}
 
 ## Дивіться також
 
