@@ -14,6 +14,7 @@ tags:
   - l10n:priority
   - programming
 ---
+
 {{JsSidebar}}
 
 Ця частина розділу про JavaScript на MDN слугує сховищем фактів про мову JavaScript. Докладніше [про цей довідник](/uk/docs/Web/JavaScript/Reference/About).
@@ -131,6 +132,7 @@ tags:
 - {{JSxRef("Global_Objects/Intl/NumberFormat", "Intl.NumberFormat")}}
 - {{JSxRef("Global_Objects/Intl/PluralRules", "Intl.PluralRules")}}
 - {{JSxRef("Global_Objects/Intl/RelativeTimeFormat", "Intl.RelativeTimeFormat")}}
+- {{JSxRef("Global_Objects/Intl/Segmenter", "Intl.Segmenter")}}
 
 ### WebAssembly
 
@@ -310,16 +312,23 @@ tags:
 
 ## Функції
 
-У цьому розділі задокументовано, як працювати з [функціями у JavaScript](/uk/docs/Web/JavaScript/Reference/Functions) при розробці ваших застосунків.
+[Функції у JavaScript.](/uk/docs/Web/JavaScript/Reference/Functions)
 
-- [`arguments`](/uk/docs/Web/JavaScript/Reference/Functions/arguments)
-- [Стрілкові функції](/uk/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
-- [Усталені параметри](/uk/docs/Web/JavaScript/Reference/Functions/Default_parameters)
-- [Решта параметрів](/uk/docs/Web/JavaScript/Reference/Functions/rest_parameters)
+- {{JSXRef("Functions/Arrow_functions", "Стрілкові функції", "", 1)}}
+- {{JSxRef("Functions/Default_parameters", "Усталені параметри", "", 1)}}
+- {{JSxRef("Functions/rest_parameters", "Решта параметрів", "", 1)}}
+- {{JSxRef("Functions/arguments", "arguments")}}
+- {{JSxRef("Functions/Method_definitions", "Опис методів", "", 1)}}
+- {{JSxRef("Functions/get", "геттер", "", 1)}}
+- {{JSxRef("Functions/set", "сеттер", "", 1)}}
+
+## Класи
+
+[Класи в JavaScript.](/en-US/docs/Web/JavaScript/Reference/Classes)
 
 ## Додаткові довідкові сторінки
 
-- [Лексична граматика](/uk/docs/Web/JavaScript/Reference/Lexical_grammar)
+- {{JSxRef("Lexical_grammar", "Лексична граматика", "", 1)}}
 - [Типи та структури даних](/uk/docs/Web/JavaScript/Data_structures)
-- [Суворий режим](/uk/docs/Web/JavaScript/Reference/Strict_mode)
-- [Застарілий функціонал](/uk/docs/Web/JavaScript/Reference/Deprecated_and_obsolete_features)
+- {{JSxRef("Strict_mode", "Суворий режим", "", 1)}}
+- {{JSxRef("Deprecated_and_obsolete_features", "Нерекомендовані можливості", "", 1)}}

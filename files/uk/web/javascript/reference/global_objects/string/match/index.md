@@ -101,7 +101,7 @@ console.log(matches_array);
 // ['A', 'B', 'C', 'D', 'E', 'a', 'b', 'c', 'd', 'e']
 ```
 
-> **Примітка:** також зверніть увагу на метод {{jsxref("String.prototype.matchAll()")}} та [Розширений пошук з прапорцями](/uk/docs/Web/JavaScript/Guide/Regular_Expressions#pohlyblenyi-poshuk-z-praportsiamy).
+> **Примітка:** також зверніть увагу на метод {{jsxref("String.prototype.matchAll()")}} та [Розширений пошук з прапорцями](/uk/docs/Web/JavaScript/Guide/Regular_Expressions#pohlyblenyi-poshuk-z-poznachkamy).
 
 ### Застосування іменованих груп захоплення
 
