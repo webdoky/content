@@ -49,7 +49,12 @@ for (variable in object) {
 
 ### Перебирання лише власних властивостей об'єкту
 
-В разі, якщо необхідно розглянути лише ті властивості, які приєднані до самого об'єкта, без урахування його прототипів, можна застосувати {{jsxref("Object.getOwnPropertyNames", "getOwnPropertyNames()")}} або виконати перевірку на {{jsxref("Object.prototype.hasOwnProperty", "hasOwnProperty()")}} (також можна вжити {{jsxref("Object.prototype.propertyIsEnumerable", "propertyIsEnumerable()")}}). Як альтернатива, можна доповнити вбудовані прототипи такою перевіркою — якщо достеменно відомо, що це не спричинить конфліктів поза межами цього коду.
+В разі, якщо необхідно розглянути лише ті властивості, які приєднані до самого об'єкта, без урахування його прототипів, можна застосувати один із наступних підходів:
+
+- {{jsxref("Object.getOwnPropertyNames", "Object.getOwnPropertyNames(myObject)")}}
+- {{jsxref("Object.hasOwn", "Object.hasOwn(myObject)")}}
+
+Якщо метод `Object.hasOwn()` недоступний, можна натомість використати {{jsxref("Object.prototype.hasOwnProperty", "hasOwnProperty()")}}, хоча в такому разі краще вжити форму `Object.prototype.hasOwnProperty.call(myObject, prop)` — на випадок, якщо `myObject` перезаписав успадкований метод `hasOwnProperty()`.
 
 ## Для чого взагалі слід використовувати for...in?
 
