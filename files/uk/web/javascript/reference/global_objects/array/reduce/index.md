@@ -102,7 +102,6 @@ reduce(function (previousValue, currentValue, currentIndex, array) {
 
 ### Коли не варто використовувати reduce()
 
-Recursive functions like `reduce()` can be powerful but sometimes difficult to understand,
 especially for less experienced JavaScript developers.
 If code becomes clearer when using other array methods,
 developers must weigh the readability tradeoff against the other benefits
