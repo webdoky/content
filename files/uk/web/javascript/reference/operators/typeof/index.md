@@ -35,7 +35,7 @@ typeof(operand)
 
 | Тип                                                                                              | Результат                               |
 | ------------------------------------------------------------------------------------------------ | --------------------------------------- |
-| [Undefined](/uk/docs/Glossary/Undefined)                                                         | `"undefined"`                           |
+| [Undefined](/uk/docs/Glossary/undefined)                                                         | `"undefined"`                           |
 | [Null](/uk/docs/Glossary/Null)                                                                   | `"object"` (див. [нижче](#typeof_null)) |
 | [Boolean](/uk/docs/Glossary/Boolean)                                                             | `"boolean"`                             |
 | [Number](/uk/docs/Glossary/Number)                                                               | `"number"`                              |
@@ -121,7 +121,7 @@ typeof Math.sin === 'function';
 typeof null === 'object';
 ```
 
-В першій реалізації JavaScript, його значення позначалися як тег типу та власне значення. Тег типу для об'єктів був `0`. `null` позначався як нульовим вказівником (на більшості платформ це `0x00`). Як наслідок, `null` мав тег типу `0`, тому `typeof` повертає значення `"object"`. ([посилання (англ.)](http://www.2ality.com/2013/10/typeof-null.html))
+В першій реалізації JavaScript, його значення позначалися як тег типу та власне значення. Тег типу для об'єктів був `0`. `null` позначався як нульовим вказівником (на більшості платформ це `0x00`). Як наслідок, `null` мав тег типу `0`, тому `typeof` повертає значення `"object"`. ([посилання (англ.)](https://2ality.com/2013/10/typeof-null.html))
 
 Було запропоновано виправлення для ECMAScript (як "opt-in" — можливість, яку можна було ввімкнути), проте [його відхилили](https://web.archive.org/web/20160331031419/http://wiki.ecmascript.org:80/doku.php?id=harmony:typeof_null). Результатом його прийняття була б рівність `typeof null === 'null'`.
 
