@@ -9,6 +9,7 @@ tags:
   - Reference
 browser-compat: javascript.operators
 ---
+
 {{JSSidebar("Operators")}}
 
 Цей розділ документує всі оператори, вирази й ключові слова мови JavaScript.
@@ -21,29 +22,29 @@ browser-compat: javascript.operators
 
 Базові ключові слова та загальні вирази в JavaScript.
 
-- {{JSxRef("Operators/this", "this")}}
+- {{JSxRef("Operators/this", "this")}} (це)
   - : Ключове слово `this` посилається на спеціальну властивість контексту виконання.
-- {{JSxRef("Operators/function", "function")}}
+- {{JSxRef("Operators/function", "function")}} (функція)
   - : Ключове слово `function` оголошує функціональний вираз.
-- {{JSxRef("Operators/class", "class")}}
+- {{JSxRef("Operators/class", "class")}} (клас)
   - : Ключове слово `class` оголошує вираз класу.
 - {{JSxRef("Operators/function*", "function*")}}
   - : Ключове слово `function*` оголошує вираз функції-генератора.
-- {{JSxRef("Operators/yield", "yield")}}
+- {{JSxRef("Operators/yield", "yield")}} (виробити)
   - : Призупинити й відновити виконання функції-генератора.
 - {{JSxRef("Operators/yield*", "yield*")}}
   - : Делегувати виконання іншій функції-генератору чи ітерованому об'єкту.
-- {{JSxRef("Operators/async_function", "async function")}}
+- {{JSxRef("Operators/async_function", "async function")}} (асинхронна функція)
   - : `async function` оголошує вираз асинхронної функції.
-- {{JSxRef("Operators/await", "await")}}
+- {{JSxRef("Operators/await", "await")}} (очікувати на)
   - : Призупинити виконання асинхронної функції й зачекати до виконання чи відхилення промісу.
-- {{JSxRef("Global_Objects/Array", "[]")}}
+- {{JSxRef("Global_Objects/Array", "[]")}} (клямри, квадратні дужки)
   - : Літеральний синтаксис створення чи ініціалізації масиву.
-- {{JSxRef("Operators/Object_initializer", "{}")}}
+- {{JSxRef("Operators/Object_initializer", "{}")}} (фігурні дужки)
   - : Літеральний синтаксис створення чи ініціалізації об'єкту.
 - {{JSxRef("Global_Objects/RegExp", "/ab+c/i")}}
   - : Літеральний синтаксис регулярного виразу.
-- {{JSxRef("Operators/Grouping", "( )")}}
+- {{JSxRef("Operators/Grouping", "( )")}} (дужки)
   - : Оператор групування.
 
 ### Вирази лівої сторони
@@ -52,15 +53,15 @@ browser-compat: javascript.operators
 
 - {{JSxRef("Operators/Property_accessors", "Засоби доступу до властивостей", "", 1)}}
   - : Оператор доступу до членів надає доступ до методу чи властивості об'єкта (`object.property` та `object["property"]`).
-- {{JSxRef("Operators/new", "new")}}
+- {{JSxRef("Operators/new", "new")}} (нове)
   - : Оператор `new` створює новий екземпляр об'єкта за допомогою переданого конструктора.
-- {{JSxRef("Operators/new%2Etarget", "new.target")}}
+- {{JSxRef("Operators/new%2Etarget", "new.target")}} (нове.цільовий)
   - : Всередині конструктора `new.target` посилається на конструктор, який було викликано оператором {{JSxRef("Operators/new", "new")}}.
-- {{JSxRef("Statements/import%2Emeta", "import.meta")}}
+- {{JSxRef("Statements/import%2Emeta", "import.meta")}} (імпорт.метадані)
   - : Об'єкт, що розкриває контекстно-специфічні метадані JavaScript-модуля.
-- {{JSxRef("Operators/super", "super")}}
+- {{JSxRef("Operators/super", "super")}} (вищий)
   - : Ключове слово `super` викликає батьківський конструктор.
-- {{JSxRef("Operators/Spread_syntax", "...obj")}}
+- {{JSxRef("Operators/Spread_syntax", "...obj")}} (три крапки)
   - : Спред-оператор дозволяє розширити вираз у місцях, де очікуються декілька аргументів (виклики функцій) чи декілька елементів (літерали масиву).
 
 ### Збільшення та зменшення на одиницю
@@ -80,49 +81,49 @@ browser-compat: javascript.operators
 
 Унарна операція — це операція з лише одним операндом.
 
-- {{JSxRef("Operators/delete", "delete")}}
+- {{JSxRef("Operators/delete", "delete")}} (видалити)
   - : Оператор `delete` видаляє властивість з об'єкта.
-- {{JSxRef("Operators/void", "void")}}
+- {{JSxRef("Operators/void", "void")}} (відкинути)
   - : Оператор `void` відкидає повернене значення виразу.
-- {{JSxRef("Operators/typeof", "typeof")}}
+- {{JSxRef("Operators/typeof", "typeof")}} (тип ...)
   - : Оператор `typeof` визначає тип переданого об'єкту.
-- {{JSxRef("Operators/Unary_plus", "+")}}
+- {{JSxRef("Operators/Unary_plus", "+")}} (плюс)
   - : Оператор «унарний плюс» перетворює операнд на значення типу Number.
-- {{JSxRef("Operators/Unary_negation", "-")}}
+- {{JSxRef("Operators/Unary_negation", "-")}} (мінус)
   - : Оператор «унарний мінус» перетворює операнд на значення типу Number, а потім робить його від'ємним.
-- {{JSxRef("Operators/Bitwise_NOT", "~")}}
+- {{JSxRef("Operators/Bitwise_NOT", "~")}} (тильда)
   - : Бітовий оператор NOT.
-- {{JSxRef("Operators/Logical_NOT", "!")}}
+- {{JSxRef("Operators/Logical_NOT", "!")}} (знак оклику)
   - : Логічний оператор NOT.
 
 ### Арифметичні оператори
 
 Арифметичні оператори приймають числові значення (як літерали, так і змінні) своїми операндами, і повертають єдине числове значення.
 
-- {{JSxRef("Operators/Addition", "+")}}
+- {{JSxRef("Operators/Addition", "+")}} (плюс)
   - : Оператор додавання.
-- {{JSxRef("Operators/Subtraction", "-")}}
+- {{JSxRef("Operators/Subtraction", "-")}} (мінус)
   - : Оператор віднімання.
-- {{JSxRef("Operators/Division", "/")}}
+- {{JSxRef("Operators/Division", "/")}} (скісна риска)
   - : Оператор ділення.
-- {{JSxRef("Operators/Multiplication", "*")}}
+- {{JSxRef("Operators/Multiplication", "*")}} (зірочка)
   - : Оператор множення.
-- {{JSxRef("Operators/Remainder", "%")}}
+- {{JSxRef("Operators/Remainder", "%")}} (відсоток)
   - : Оператор взяття остачі від ділення.
-- {{JSxRef("Operators/Exponentiation", "**")}}
+- {{JSxRef("Operators/Exponentiation", "**")}} (дві зірочки)
   - : Оператор піднесення до степеня.
 
 ### Оператори відношення
 
 Оператор порівняння порівнює операнди та повертає булеве значення, котре залежить від того, чи виконується умова порівняння.
 
-- {{JSxRef("Operators/in", "in")}}
+- {{JSxRef("Operators/in", "in")}} (у)
   - : Оператор `in` визначає, чи об'єкт містить властивість за переданим іменем.
-- {{JSxRef("Operators/instanceof", "instanceof")}}
+- {{JSxRef("Operators/instanceof", "instanceof")}} (екземпляр ...)
   - : Оператор `instanceof` визначає, чи є об'єкт екземпляром іншого об'єкта (чи присутній конструктор одного об'єкта у прототипному ланцюжку іншого).
-- {{JSxRef("Operators/Less_than", "&lt;")}}
+- {{JSxRef("Operators/Less_than", "&lt;")}} (менше)
   - : Оператор «менше».
-- {{JSxRef("Operators/Greater_than", "&gt;")}}
+- {{JSxRef("Operators/Greater_than", "&gt;")}} (більше)
   - : Оператор «більше».
 - {{JSxRef("Operators/Less_than_or_equal", "&lt;=")}}
   - : Оператор «менше або дорівнює».
@@ -159,11 +160,11 @@ browser-compat: javascript.operators
 
 Бітові оператори вважають свої операнди наборами з 32 бітів (нулів та одиниць), і повертають стандартні для JavaScript числові значення.
 
-- {{JSxRef("Operators/Bitwise_AND", "&amp;")}}
+- {{JSxRef("Operators/Bitwise_AND", "&amp;")}} (амперсанд)
   - : Бітовий AND.
-- {{JSxRef("Operators/Bitwise_OR", "|")}}
+- {{JSxRef("Operators/Bitwise_OR", "|")}} (вертикальна риска)
   - : Бітовий OR.
-- {{JSxRef("Operators/Bitwise_XOR", "^")}}
+- {{JSxRef("Operators/Bitwise_XOR", "^")}} (циркумфлекс)
   - : Бітовий XOR.
 
 ### Бінарні логічні оператори
@@ -191,7 +192,7 @@ browser-compat: javascript.operators
 
 Оператор присвоєння присвоює певне значення лівому операнду на основі значення правого.
 
-- {{JSxRef("Operators/Assignment", "=")}}
+- {{JSxRef("Operators/Assignment", "=")}} (дорівнює)
   - : Оператор присвоєння.
 - {{JSxRef("Operators/Multiplication_assignment", "*=")}}
   - : Присвоєння з множенням.
@@ -230,7 +231,7 @@ browser-compat: javascript.operators
 ### Оператор кома
 
 - {{JSxRef("Operators/Comma_Operator", ",")}}
-  - : Оператор кома дозволяє обчислити декілька виразів як одну інструкцію, і повертає результат останнього виразу.
+  - : Оператор кома дозволяє обчислити декілька виразів як одну інструкцію і повертає результат останнього виразу.
 
 ## Специфікації
 
