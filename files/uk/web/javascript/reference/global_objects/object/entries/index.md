@@ -110,7 +110,7 @@ console.log(map); // Map(2) {"foo" => "bar", "baz" => 42}
 
 ### Перебирання властивостей `Object`
 
-За допомогою [деструктуризації масиву](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#array_destructuring) можна з легкістю перебирати поля об'єкту.
+За допомогою [деструктуризації масиву](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#destrukturyzatsiia-masyvu) можна з легкістю перебирати поля об'єкту.
 
 ```js
 const obj = { foo: 'bar', baz: 42 };
