@@ -38,77 +38,77 @@ browser-compat: javascript.builtins.Object
 
 ## Статичні методи
 
-- {{jsxref("Object.assign","Object.assign()")}}
+- {{jsxref("Object.assign","Object.assign()")}} (присвоїти)
   - : Копіює значення всіх власних перелічуваних властивостей з одного чи більше об'єктів-донорів у цільовий об'єкт.
-- {{jsxref("Object.create","Object.create()")}}
+- {{jsxref("Object.create","Object.create()")}} (створити)
   - : Створює новий об'єкт зі вказаним прототипним об'єктом і властивостями.
-- {{jsxref("Object.defineProperty","Object.defineProperty()")}}
+- {{jsxref("Object.defineProperty","Object.defineProperty()")}} (означити властивість)
   - : Додає до об'єкта названу властивість, описану переданим дескриптором.
-- {{jsxref("Object.defineProperties","Object.defineProperties()")}}
+- {{jsxref("Object.defineProperties","Object.defineProperties()")}} (означити властивості)
   - : Додає до об'єкта названі властивості, описані переданими дескрипторами.
-- {{jsxref("Object.entries","Object.entries()")}}
+- {{jsxref("Object.entries","Object.entries()")}} (записи)
   - : Повертає масив, що містить всі пари `[ключ, значення]` **власних** перелічуваних властивостей (з рядковими ключами) переданого об'єкта.
-- {{jsxref("Object.freeze","Object.freeze()")}}
+- {{jsxref("Object.freeze","Object.freeze()")}} (заморозити)
   - : Заморожує об'єкт. Інший код не може видаляти або змінювати його властивості.
-- {{jsxref("Object.fromEntries","Object.fromEntries()")}}
+- {{jsxref("Object.fromEntries","Object.fromEntries()")}} (із записів)
   - : Створює новий об'єкт на основі переданого ітератора пар `[ключ, значення]`. (Це — обернений метод до {{jsxref("Object.entries")}}).
-- {{jsxref("Object.getOwnPropertyDescriptor","Object.getOwnPropertyDescriptor()")}}
+- {{jsxref("Object.getOwnPropertyDescriptor","Object.getOwnPropertyDescriptor()")}} (взяти дескриптор власної властивості)
   - : Повертає дескриптор вказаної властивості об'єкта.
-- {{jsxref("Object.getOwnPropertyDescriptors","Object.getOwnPropertyDescriptors()")}}
+- {{jsxref("Object.getOwnPropertyDescriptors","Object.getOwnPropertyDescriptors()")}} (взяти дескриптори власних властивостей)
   - : Повертає об'єкт, що містить дескриптори всіх власних властивостей переданого об'єкта.
-- {{jsxref("Object.getOwnPropertyNames","Object.getOwnPropertyNames()")}}
+- {{jsxref("Object.getOwnPropertyNames","Object.getOwnPropertyNames()")}} (взяти імена власних властивостей)
   - : Повертає масив, що містить імена всіх **власних** перелічуваних і неперелічуваних властивостей переданого об'єкта.
-- {{jsxref("Object.getOwnPropertySymbols","Object.getOwnPropertySymbols()")}}
+- {{jsxref("Object.getOwnPropertySymbols","Object.getOwnPropertySymbols()")}} (взяти символи власних властивостей)
   - : Повертає масив усіх символьних властивостей, знайдених безпосередньо у переданому об'єкті.
-- {{jsxref("Object.getPrototypeOf","Object.getPrototypeOf()")}}
+- {{jsxref("Object.getPrototypeOf","Object.getPrototypeOf()")}} (взяти прототип від)
   - : Повертає прототип (внутрішню властивість `[[Prototype]]`) вказаного об'єкта.
-- {{jsxref("Object.is","Object.is()")}}
+- {{jsxref("Object.is","Object.is()")}} (являється)
   - : Порівнює два значення і визначає, чи вони є одним значенням. Прирівнює всі значення `NaN` між собою (що відрізняється і від "порівняння на абстрактну рівність", і від "порівняння на точну рівність").
-- {{jsxref("Object.isExtensible","Object.isExtensible()")}}
+- {{jsxref("Object.isExtensible","Object.isExtensible()")}} (є розширюваним)
   - : Визначає, чи можна розширювати переданий об'єкт.
-- {{jsxref("Object.isFrozen","Object.isFrozen()")}}
+- {{jsxref("Object.isFrozen","Object.isFrozen()")}} (є замороженим)
   - : Визначає, чи переданий об'єкт є замороженим.
-- {{jsxref("Object.isSealed","Object.isSealed()")}}
+- {{jsxref("Object.isSealed","Object.isSealed()")}} (є запечатаним)
   - : Визначає, чи переданий об'єкт було запечатано.
-- {{jsxref("Object.keys","Object.keys()")}}
+- {{jsxref("Object.keys","Object.keys()")}} (ключі)
   - : Повертає масив, що містить імена всіх **власних** перелічуваних рядкових властивостей переданого об'єкта.
-- {{jsxref("Object.preventExtensions","Object.preventExtensions()")}}
+- {{jsxref("Object.preventExtensions","Object.preventExtensions()")}} (перешкодити розширенню)
   - : Перешкоджає розширенню об'єкта.
-- {{jsxref("Object.seal","Object.seal()")}}
+- {{jsxref("Object.seal","Object.seal()")}} (запечатати)
   - : Перешкоджає видаленню властивостей об'єкта іншим кодом.
-- {{jsxref("Object.setPrototypeOf","Object.setPrototypeOf()")}}
+- {{jsxref("Object.setPrototypeOf","Object.setPrototypeOf()")}} (встановити прототип для)
   - : Встановлює прототип об'єкта (його внутрішню властивість `[[Prototype]]`).
-- {{jsxref("Object.values","Object.values()")}}
+- {{jsxref("Object.values","Object.values()")}} (значення)
   - : Повертає масив, що містить значення, які відповідають всім **власним** перелічуваним рядковим властивостям переданого об'єкта.
 
 ## Властивості екземпляру
 
-- {{jsxref("Object.prototype.constructor")}}
+- {{jsxref("Object.prototype.constructor")}} (конструктор)
   - : Вказує на функцію, яка створює прототип об'єкта.
 - {{jsxref("Object/proto","Object.prototype.__proto__")}}
   - : Вказує на об'єкт, який було використано прототипом під час створення екземпляра цього об'єкта.
 
 ## Методи екземпляру
 
-- {{jsxref("Object.prototype.__defineGetter__()")}}
+- {{jsxref("Object.prototype.__defineGetter__()")}} (означити геттер)
   - : Пов'язує функцію з властивістю так, що під час спроби доступитися до властивості вона викликає цю функцію та повертає її результат.
-- {{jsxref("Object.prototype.__defineSetter__()")}}
+- {{jsxref("Object.prototype.__defineSetter__()")}} (означити сеттер)
   - : Пов'язує функцію з властивістю так, що під час спроби встановлення її значення викликається ця функція, яка і змінює властивість.
-- {{jsxref("Object.prototype.__lookupGetter__()")}}
+- {{jsxref("Object.prototype.__lookupGetter__()")}} (шукати геттер)
   - : Повертає функцію, яку було асоційовано зі вказаною властивістю методом {{jsxref("Object.prototype.__defineGetter__()", "__defineGetter__()")}}.
-- {{jsxref("Object.prototype.__lookupSetter__()")}}
+- {{jsxref("Object.prototype.__lookupSetter__()")}} (шукати сеттер)
   - : Повертає функцію, яку було асоційовано зі вказаною властивістю методом {{jsxref("Object.prototype.__defineSetter__()", "__defineSetter__()")}}.
-- {{jsxref("Object.prototype.hasOwnProperty()")}}
+- {{jsxref("Object.prototype.hasOwnProperty()")}} (має власну властивість)
   - : Повертає булеве значення, яке вказує на те, що об'єкт містить вказану властивість прямо в собі, а не успадковує її через прототипний ланцюжок.
-- {{jsxref("Object.prototype.isPrototypeOf()")}}
+- {{jsxref("Object.prototype.isPrototypeOf()")}} (є прототипом для)
   - : Повертає булеве значення, яке вказує на те, що об'єкт, на якому викликався цей метод, присутній у прототипному ланцюжку переданого об'єкта.
-- {{jsxref("Object.prototype.propertyIsEnumerable()")}}
+- {{jsxref("Object.prototype.propertyIsEnumerable()")}} (властивість є перелічуваною)
   - : Повертає булеве значення, яке вказує на те, що було встановлено внутрішній [ECMAScript-атрибут \[\[Enumerable\]\]](/uk/docs/Web/JavaScript/Data_structures#properties).
-- {{jsxref("Object.prototype.toLocaleString()")}}
+- {{jsxref("Object.prototype.toLocaleString()")}} (до локалізованого рядка)
   - : Викликає {{jsxref("Object.toString", "toString()")}}.
-- {{jsxref("Object.prototype.toString()")}}
+- {{jsxref("Object.prototype.toString()")}} (до рядка)
   - : Повертає значення об'єкта, подане у формі рядка.
-- {{jsxref("Object.prototype.valueOf()")}}
+- {{jsxref("Object.prototype.valueOf()")}} (значення від)
   - : Повертає примітивне значення вказаного об'єкта.
 
 ## Приклади
