@@ -14,7 +14,7 @@ browser-compat: javascript.builtins.Object.entries
 
 Метод **`Object.entries()`** повертає власні перелічувані властивості переданого об'єкта як масив пар `[ключ, значення]`. Метод враховує лише ті властивості, які мають рядковий ключ. Це працює так само як і цикл {{jsxref("Statements/for...in", "for...in")}}, за винятком того, що цикл `for...in` також перебирає властивості, які доступні через ланцюжок прототипів.
 
-Порядок елементів у масиві, поверненому з **`Object.entries()`**, є таким самим, як і циклі {{jsxref("Statements/for...in", "for...in")}}. Якщо потрібен якийсь інший порядок, то масив слід спочатку відсортувати, як от `Object.entries(obj).sort((a, b) => b[0].localeCompare(a[0]));`.
+Порядок елементів у масиві, поверненому з `Object.entries()`, є таким самим, як і при циклі {{jsxref("Statements/for...in", "for...in")}}. Якщо потрібен якийсь інший порядок, то масив слід спочатку відсортувати, як от `Object.entries(obj).sort((a, b) => b[0].localeCompare(a[0]));`.
 
 {{EmbedInteractiveExample("pages/js/object-entries.html")}}
 
