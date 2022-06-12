@@ -9,6 +9,7 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.Object.entries
 ---
+
 {{JSRef}}
 
 Метод **`Object.entries()`** повертає власні перелічувані властивості переданого об'єкта як масив пар `[ключ, значення]`. Метод враховує лише ті властивості, які мають рядковий ключ. Це працює так само як і цикл {{jsxref("Statements/for...in", "for...in")}}, за винятком того, що цикл `for...in` також перебирає властивості, які доступні через ланцюжок прототипів.
@@ -20,7 +21,7 @@ browser-compat: javascript.builtins.Object.entries
 ## Синтаксис
 
 ```js
-Object.entries(obj)
+Object.entries(obj);
 ```
 
 ### Параметри
@@ -46,14 +47,13 @@ Object.entries(obj)
 
 ```js
 if (!Object.entries) {
-  Object.entries = function( obj ){
-    var ownProps = Object.keys( obj ),
-        i = ownProps.length,
-        resArray = new Array(i); // заздалегідь розмістимо новий масив
-    while (i--)
-      resArray[i] = [ownProps[i], obj[ownProps[i]]];
+  Object.entries = function (obj) {
+    var ownProps = Object.keys(obj),
+      i = ownProps.length,
+      resArray = new Array(i); // заздалегідь розмістимо новий масив
+    while (i--) resArray[i] = [ownProps[i], obj[ownProps[i]]];
 
-    return resArray;
+    return resArray;
   };
 }
 ```
@@ -75,7 +75,16 @@ const anObj = { 100: 'a', 2: 'b', 7: 'c' };
 console.log(Object.entries(anObj)); // [ ['2', 'b'], ['7', 'c'], ['100', 'a'] ]
 
 // з властивістю getFoo, яка не є перелічуваною
-const myObj = Object.create({}, { getFoo: { value() { return this.foo; } } });
+const myObj = Object.create(
+  {},
+  {
+    getFoo: {
+      value() {
+        return this.foo;
+      },
+    },
+  },
+);
 myObj.foo = 'bar';
 console.log(Object.entries(myObj)); // [ ['foo', 'bar'] ]
 
@@ -127,7 +136,7 @@ Object.entries(obj).forEach(([key, value]) => console.log(`${key}: ${value}`)); 
 
 ## Дивіться також
 
-- Поліфіл для `Object.entries` доступний у [`core-js`](https://github.com/zloirock/core-js#ecmascript-object)
+- [Поліфіл для `Object.entries` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-object)
 - [Перелічуваність і власність властивостей](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties)
 - {{jsxref("Object.keys()")}}
 - {{jsxref("Object.values()")}}
