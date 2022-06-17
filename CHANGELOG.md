@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2022-06-10 - 2022-06-17]
+
+* **Переклад(HTML):** web/html/global_attributes/class/index.md ([bb9c64e](https://github.com/webdoky/content/commit/bb9c64e05157478352725a515d512fc3b70734a8))
+
 ## [2022-06-03 - 2022-06-10]
 
 * **Переклад(JS):** web/html/element/select/index.md (#334) ([f9138b4](https://github.com/webdoky/content/commit/f9138b4a747cdaeb11cd732689f427189846ef7e))
