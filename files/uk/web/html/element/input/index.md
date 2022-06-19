@@ -1016,7 +1016,7 @@ input.custom {
       </td>
     </tr>
     <tr>
-      <td><a href="#maxlength"><code>maxlength</code></a></td>
+      <td><a href="#minlength"><code>minlength</code></a></td>
       <td>{{domxref('validityState.tooShort')}} (закоротке)</td>
       <td>
         Трапляється, коли кількість символів менша за число, дозволене властивістю <code>minlength</code>
