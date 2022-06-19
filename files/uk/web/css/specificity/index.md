@@ -191,7 +191,7 @@ p[style*='purple'] {
 
 Використання `!important` для відкидання специфічності вважається **шкідливою практикою**, його слід уникати. Розуміння та ефективне використання специфічності та каскадності може усунути будь-яку потребу використання позначки `!important`.
 
-Instead of using `!important` to override foreign CSS (from external libraries, like Bootstrap or normalize.css), import the third-party scripts directly into [cascade layers](/uk/docs/Web/CSS/@layer). If you must use `!important` in your CSS, comment your usage so future code maintainers know why the declaration was marked important and know not to override it. But definitely, don't use `!important` when writing plugins or frameworks that other developers will need to incorporate without being able to control.
+Замість використання для відкидання чужого CSS (зі сторонніх бібліотек типу Bootstrap чи normalize.css) позначки `!important` to override foreign CSS імпортуйте сторонні сценарії напряму в [каскадні шари](/uk/docs/Web/CSS/@layer). Якщо ви мусите використати `!important` у своєму CSS, то прокоментуйте таке використання, щоб відповідальні за підтримку коду в майбутньому знали, чому оголошення було позначено як важливе і знали, що його не варто відкидати. Але `!important` однозначно не слід використовувати при написанні втулок чи фреймворків, котрі іншим розробникам треба буде застосовувати без змоги контролювати.
 
 ### Виняток `:where()`
 
