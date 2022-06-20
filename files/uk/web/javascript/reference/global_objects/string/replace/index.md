@@ -111,7 +111,7 @@ console.log(newstr); // То була ніч перед Різдвом...
 
 Це надрукує: `'То була ніч перед Різдвом...'`.
 
-> **Примітка:** Зверніться до [цих настанов](/uk/docs/Web/JavaScript/Guide/Regular_Expressions#pohlyblenyi-poshuk-z-poznachkamy) за повнішими
+> **Примітка:** Зверніться до [цих настанов](/uk/docs/Web/JavaScript/Guide/Regular_Expressions) за повнішими
 > роз'ясненнями щодо регулярних виразів.
 
 ### Застосування з replace() позначок "глобальна заміна" та "знехтувати регістром"
