@@ -134,7 +134,7 @@ position: unset;
 }
 ```
 
-{{EmbedLiveSample('Relative_positioning', '', '200px')}}
+{{EmbedLiveSample('vidnosne-pozytsionuvannia', '', '200px')}}
 
 ### Абсолютне позиціонування
 
@@ -205,7 +205,7 @@ span {
 
 #### Результат
 
-{{EmbedLiveSample('Absolute_positioning', '', '420px')}}
+{{EmbedLiveSample('absoliutne-pozytsionuvannia', '', '420px')}}
 
 ### Фіксоване позиціонування
 
@@ -282,7 +282,7 @@ span {
 
 #### Результат
 
-{{EmbedLiveSample('Fixed_positioning', '', '300px')}}
+{{EmbedLiveSample('fiksovane-pozytsionuvannia', '', '300px')}}
 
 ### Липке позиціонування
 
@@ -375,7 +375,7 @@ dd + dd {
 
 #### Результат
 
-{{EmbedLiveSample('Sticky_positioning', '', '300px')}}
+{{EmbedLiveSample('lypke-pozytsionuvannia', '', '300px')}}
 
 ## Специфікації
 
