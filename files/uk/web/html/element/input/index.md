@@ -843,7 +843,7 @@ input:checked + label {
 }
 ```
 
-{{EmbedLiveSample('Pseudo-classes_example', 500, 80)}}
+{{EmbedLiveSample('pryklad-psevdoklasiv', 500, 80)}}
 
 ### Селектори атрибутів
 
@@ -1132,7 +1132,7 @@ nameInput.addEventListener('invalid', () => {
 
 Приклад візуалізується так:
 
-{{EmbedLiveSample('Custom_validation_error_example')}}
+{{EmbedLiveSample('pryklad-osoblyvoi-pomylky-validatsii')}}
 
 Стисло:
 
