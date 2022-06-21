@@ -107,7 +107,7 @@ div {
 
 #### Результат
 
-{{EmbedLiveSample('Setting_a_pink_outset_border')}}
+{{EmbedLiveSample('vstanovlennia-rozhevykh-zovnishnikh-mezh')}}
 
 ## Специфікації
 
