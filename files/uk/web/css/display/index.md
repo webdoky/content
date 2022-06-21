@@ -380,7 +380,7 @@ updateDisplay();
 
 #### Результат
 
-{{EmbedLiveSample('display_value_comparison','100%', 440)}}
+{{EmbedLiveSample('porivniannia-znachen-display','100%', 440)}}
 
 > **Примітка:** Більше прикладів можна знайти на сторінках кожного окремого типу представлення даних, посилання — вище.
 
