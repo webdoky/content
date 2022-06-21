@@ -56,7 +56,7 @@ p {
 
 #### Результат
 
-{{EmbedLiveSample("Examples")}}
+{{EmbedLiveSample("pryklady")}}
 
 ## Специфікації
 
