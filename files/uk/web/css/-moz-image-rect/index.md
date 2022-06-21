@@ -147,7 +147,7 @@ function rotate() {
 
 ### На що це схоже
 
-{{EmbedLiveSample("Examples","400","400")}}
+{{EmbedLiveSample("pryklady","400","400")}}
 
 ## Специфікації
 
