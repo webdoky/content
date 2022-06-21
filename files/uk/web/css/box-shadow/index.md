@@ -136,7 +136,7 @@ blockquote {
 
 #### Результат
 
-{{EmbedLiveSample('Setting_three_shadows', '300', '300')}}
+{{EmbedLiveSample('try-tini', '300', '300')}}
 
 ### Нуль як значення зсуву та розмиття
 
@@ -162,7 +162,7 @@ p {
 
 #### Результат
 
-{{EmbedLiveSample('Setting_zero_for_offset_and_blur', '300', '300')}}
+{{EmbedLiveSample('nul-yak-znachennia-zsuvu-ta-rozmyttia', '300', '300')}}
 
 ## Специфікації
 
