@@ -66,7 +66,7 @@ browser-compat: css.properties.-moz-orient
 
 ### Результат
 
-{{EmbedLiveSample("Examples","200","360")}}
+{{EmbedLiveSample("pryklady","200","360")}}
 
 ## Специфікації
 
