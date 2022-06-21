@@ -100,7 +100,7 @@ h3 {
 
 #### Результат
 
-{{EmbedLiveSample('Setting_padding_with_pixels', '100%', 300)}}
+{{EmbedLiveSample('vstanovlennia-vnutrishnikh-vidstupiv-u-pikseliakh', '100%', 300)}}
 
 ### Встановлення внутрішніх відступів у пікселях та відсотках
 
