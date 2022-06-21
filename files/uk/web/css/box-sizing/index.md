@@ -116,7 +116,7 @@ div {
 
 #### Результат
 
-{{EmbedLiveSample('Box_sizes_with_content-box_and_border-box', 'auto', 300)}}
+{{EmbedLiveSample('rozmiry-ramok-iz-content-box-ta-border-box', 'auto', 300)}}
 
 ## Специфікації
 
