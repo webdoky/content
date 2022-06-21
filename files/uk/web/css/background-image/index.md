@@ -105,7 +105,7 @@ div {
 
 #### Результат
 
-{{EmbedLiveSample('Layering_background_images')}}
+{{EmbedLiveSample('nasharuvannia-zobrazhen-tla')}}
 
 ## Специфікації
 
