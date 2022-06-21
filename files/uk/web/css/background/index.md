@@ -128,7 +128,7 @@ background: unset;
 
 #### Результат
 
-{{EmbedLiveSample("Setting_backgrounds_with_color_keywords_and_images")}}
+{{EmbedLiveSample("vstanovlennia-foniv-iz-kliuchovymy-slovamy-koloriv-ta-zobrazhen")}}
 
 ## Специфікації
 
