@@ -111,7 +111,7 @@ browser-compat: html.elements.div
 
 Результат має наступний вигляд:
 
-{{EmbedLiveSample("A_simple_example", 650, 60)}}
+{{EmbedLiveSample("prostyi-pryklad", 650, 60)}}
 
 ### Стилізований приклад
 
@@ -139,7 +139,7 @@ browser-compat: html.elements.div
 
 #### Результат
 
-{{EmbedLiveSample("A_styled_example", 650, 120)}}
+{{EmbedLiveSample("stylizovanyi-pryklad", 650, 120)}}
 
 ## Специфікації
 
