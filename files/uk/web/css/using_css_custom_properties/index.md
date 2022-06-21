@@ -101,7 +101,7 @@ element {
 
 ... що призводить до наступного:
 
-{{EmbedLiveSample("First_steps_with_custom_properties",600,180)}}
+{{EmbedLiveSample("pershi-kroky-iz-korystuvatskymy-vlastyvostiamy",600,180)}}
 
 ## Використання псевдокласу :root
 
@@ -263,7 +263,7 @@ p {
 
 #### Результат
 
-{{EmbedLiveSample('Invalid normal properties', 100, 100)}}
+{{EmbedLiveSample('nediisni-zvychaini-vlastyvosti', 100, 100)}}
 
 ### Недійсні користувацькі властивості
 
@@ -298,7 +298,7 @@ p {
 
 ### Результат
 
-{{EmbedLiveSample('Invalid custom properties', 100, 100)}}
+{{EmbedLiveSample('nediisni-zvychaini-vlastyvosti', 100, 100)}}
 
 ## Значення у JavaScript
 
