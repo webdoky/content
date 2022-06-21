@@ -104,7 +104,7 @@ browser-compat: html.elements.hr
 
 ### Результат
 
-{{EmbedLiveSample("Example")}}
+{{EmbedLiveSample("pryklad")}}
 
 ## Специфікації
 
