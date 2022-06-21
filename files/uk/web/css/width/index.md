@@ -88,7 +88,7 @@ p.goldie {
 <p class="goldie">Спільнота Mozilla виробляє чимало чудового ПЗ.</p>
 ```
 
-{{EmbedLiveSample('Default_width', '500px', '64px')}}
+{{EmbedLiveSample('ustalena-shyryna', '500px', '64px')}}
 
 ### Пікселі та еми
 
@@ -113,7 +113,7 @@ p.goldie {
 <div class="em_length">Ширина, вказана у em</div>
 ```
 
-{{EmbedLiveSample('Pixels_and_ems', '500px', '64px')}}
+{{EmbedLiveSample('pikseli-ta-emy', '500px', '64px')}}
 
 ### Відсотки
 
@@ -129,7 +129,7 @@ p.goldie {
 <div class="percent">Ширина у відсотках</div>
 ```
 
-{{EmbedLiveSample('Percentage', '500px', '64px')}}
+{{EmbedLiveSample('vidsotky', '500px', '64px')}}
 
 ### max-content
 
