@@ -115,7 +115,7 @@ browser-compat: html.elements.ul
 
 Результат коду буде таким:
 
-{{EmbedLiveSample("Simple_example", 400, 100)}}
+{{EmbedLiveSample("prostyi-perelik", 400, 100)}}
 
 ### Багаторівневий перелік
 
@@ -145,7 +145,7 @@ browser-compat: html.elements.ul
 
 Результат коду буде таким:
 
-{{EmbedLiveSample("Nesting_a_list", 400, 220)}}
+{{EmbedLiveSample("bahatorivnevyi-perelik", 400, 220)}}
 
 ### Впорядкований перелік, що містить невпорядкований перелік
 
@@ -167,7 +167,7 @@ browser-compat: html.elements.ul
 
 Результат коду буде таким:
 
-{{EmbedLiveSample("Ordered_list_inside_unordered_list", 400, 150)}}
+{{EmbedLiveSample("vporiadkovanyi-perelik-shcho-mistyt-nevporiadkovanyi-perelik", 400, 150)}}
 
 ## Специфікації
 
