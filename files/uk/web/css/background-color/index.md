@@ -119,7 +119,7 @@ background-color: unset;
 
 ### Результат
 
-{{EmbedLiveSample("Examples", 200, 150)}}
+{{EmbedLiveSample("pryklady", 200, 150)}}
 
 ## Специфікації
 
