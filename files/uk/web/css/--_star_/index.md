@@ -75,7 +75,7 @@ browser-compat: css.properties.custom-property
 
 ### Результат
 
-{{EmbedLiveSample('Example', 500, 130)}}
+{{EmbedLiveSample('pryklad', 500, 130)}}
 
 ## Специфікації
 
