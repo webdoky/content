@@ -102,14 +102,6 @@ reduce(function (previousValue, currentValue, currentIndex, array) {
 
 ### Коли не варто використовувати reduce()
 
-Recursive functions like `reduce()` can be powerful but sometimes difficult to understand,
-especially for less experienced JavaScript developers.
-If code becomes clearer when using other array methods,
-developers must weigh the readability tradeoff against the other benefits
-of using `reduce()`.
-In cases where `reduce()` is the best choice, documentation and semantic variable
-naming can help mitigate readability drawbacks.
-
 Рекурсивні функції, такі, як `reduce()`, можуть бути потужними, але іноді складними для розуміння,
 особливо для менш досвідчених розробників на JavaScript.
 Якщо код стає яснішим при використанні інших методів масива,
@@ -389,7 +381,7 @@ let flattened = [
 ### Обрахунок кількості входжень різних значень в об'єкті
 
 ```js
-const names = ['Аліса', 'Богдан', 'Тома', 'Борис', 'Анна'];
+const names = ['Аліса', 'Богдан', 'Тома', 'Борис', 'Аліса'];
 
 let countedNames = names.reduce(function (allNames, name) {
   if (name in allNames) {
@@ -568,7 +560,7 @@ const double = (x) => x + x;
 const triple = (x) => 3 * x;
 const quadruple = (x) => 4 * x;
 
-// Компонування функцій, що дає змогу функціонал конвейєра
+// Компонування функцій, що дає змогу отримати функціонал конвейєра
 const pipe =
   (...functions) =>
   (initialValue) =>
