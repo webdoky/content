@@ -60,7 +60,7 @@ p {
 
 #### Результат
 
-{{EmbedLiveSample("Rounding_a_outline")}}
+{{EmbedLiveSample("zakruhlennia-obrysu")}}
 
 ## Специфікації
 
