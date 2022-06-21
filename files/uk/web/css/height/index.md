@@ -118,7 +118,7 @@ div {
 
 #### Результат
 
-{{EmbedLiveSample('Setting_height_using_pixels_and_percentages', 'auto', 240)}}
+{{EmbedLiveSample('vstanovlennia-vysoty-za-dopomohoiu-pikseliv-ta-vidsotkiv', 'auto', 240)}}
 
 ## Специфікації
 
