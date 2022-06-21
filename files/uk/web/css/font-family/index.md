@@ -210,7 +210,7 @@ font-family: Gill Sans Extrabold, sans-serif;
 <div class="fangsong">Це приклад шрифту імітації Сун.</div>
 ```
 
-{{EmbedLiveSample("Some_common_font_families", 600, 220)}}
+{{EmbedLiveSample("deiaki-zahalnovzhyvani-simeistva-shryftu", 600, 220)}}
 
 ## Специфікації
 
