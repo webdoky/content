@@ -164,7 +164,7 @@ justifyContent.addEventListener('change', function (evt) {
 
 #### Результат
 
-{{EmbedLiveSample("Setting_flex_item_distribution", "100%", 180)}}
+{{EmbedLiveSample("vstanovlennia-rozpodilu-hnuchkykh-elementiv", "100%", 180)}}
 
 ## Специфікації
 
