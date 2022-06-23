@@ -49,6 +49,7 @@ font-family: fangsong; /* імітація Сун */
 /* Глобальні значення */
 font-family: inherit; /* успадковане значення */
 font-family: initial; /* початкове значення */
+font-family: revert-layer; /* відкат значення шару */
 font-family: revert; /* відкат значення */
 font-family: unset; /* невстановлене значення */
 ```
