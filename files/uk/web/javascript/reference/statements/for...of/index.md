@@ -12,8 +12,7 @@ browser-compat: javascript.statements.for_of
 ---
 {{jsSidebar("Statements")}}
 
-**Конструкція `for...of`** створює цикл, який виконує обхід
-[ітерованих обʼєктів](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterable_protocol),
+**Конструкція `for...of`** створює цикл, який виконує обхід [ітерованих обʼєктів](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterable_protocol),
 включаючи: вбудовані {{jsxref("String")}}, {{jsxref("Array")}},
 масивоподібні обʼєкти (наприклад, {{jsxref("Functions/arguments", "arguments")}}
 чи {{domxref("NodeList")}}), {{jsxref("TypedArray")}}, {{jsxref("Map")}},
@@ -28,7 +27,6 @@ for (variable of iterable) {
   statement
 }
 ```
-
 
 - `variable`
   - : На кожній ітерації значення різних властивостей присвоюються змінній `variable`. Ця `variable` може бути оголошеною з використанням `const`, `let`, чи `var`.
@@ -50,8 +48,7 @@ for (const value of iterable) {
 // 30
 ```
 
-Також можна використати {{jsxref("Statements/let", "let")}} замість {{jsxref("Statements/const",
-  "const")}}, якщо всередині блоку виконується переприсвоєння змінної.
+Також можна використати {{jsxref("Statements/let", "let")}} замість {{jsxref("Statements/const", "const")}}, якщо всередині блоку виконується переприсвоєння змінної.
 
 ```js
 const iterable = [10, 20, 30];
@@ -123,7 +120,7 @@ for (const value of iterable) {
 // 3
 ```
 
-### Ітерування по обʼєкту `arguments`
+### Обхід циклу по обʼєкту `arguments`
 
 Щоб дослідити усі параметри, передані до JavaScript функції, можна виконати обхід об‘єкту {{jsxref("Functions/arguments", "arguments")}}:
 
@@ -141,7 +138,7 @@ for (const value of iterable) {
 
 ### Обхід циклу по DOM колекції
 
-Ітерування по DOM колекціям, таким як [`NodeList`](/en-US/docs/Web/API/NodeList): подальший приклад додає клас `read` до параграфів, які є прямими спадкоємцями елементу `article`:
+Ітерування по DOM колекціям, таким як [`NodeList`](/uk/docs/Web/API/NodeList): подальший приклад додає клас `read` до параграфів, які є прямими спадкоємцями елементу `article`:
 
 ```js
 // Примітка: Це буде працювати виключно на тих платформах, які мають реалізацію 
@@ -214,9 +211,9 @@ for (const o of gen) {
 }
 ```
 
-### Ітерування по інших ітеративних обʼєктах
+### Обхід циклу по інших ітерованих об‘єктах
 
-Також можна обходити об‘єкт, який явно реалізовує [ітеративний протокол](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#iterovanyi-obiekt):
+Також можна обходити об‘єкт, який явно реалізовує [ітеративний протокол](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#iterable):
 
 ```js
 const iterable = {
@@ -243,15 +240,13 @@ for (const value of iterable) {
 
 ### Різниця між `for...of` та `for...in`
 
-Обидві конструкції, `for...in` і `for...of`, здатні щось обходити.
-Основна різниця в тому, що саме вони обходять.
+Обидві конструкції, `for...in` і `for...of`, здатні щось обходити. Основна різниця в тому, що саме вони обходять.
 
 {{jsxref("Statements/for...in", "for...in")}} виконує обхід [перелічуваних властивостей](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) обʼєкта.
 
-`for...of` обходить значення, які [ітеративний обʼєкт](/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators#iterables) визначає як такі, котрі слід обходити.
+`for...of` обходить значення, які [ітерований обʼєкт](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators#iterables) визначає як такі, котрі слід обходити.
 
-Наступний приклад показує різницю між циклом `for...of` та циклом
-`for...in` при застосуванні до {{jsxref("Array")}.
+Наступний приклад показує різницю між циклом `for...of` та циклом `for...in` при застосуванні до {{jsxref("Array")}.
 
 ```js
 Object.prototype.objCustom = function() {};
@@ -293,8 +288,7 @@ for (const i in iterable) {
 }
 ```
 
-Цей цикл виведе лише [перелічувані властивості](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) обʼєкта `iterable`. Він не виведе **елементи** масиву: `3`, `5`, `7` чи
-`Агов`, адже вони **не є** перелічуваними властивостями; насправді вони не є властивостями взагалі, а лише **значеннями**. Код виведе масив **індексів**, включаючи `arrCustom` і `objCustom`. Якщо ви не певні, чому саме по цих властивостях відбувається ітерація, то зверніть увагу на більш детальне пояснення у статті {{jsxref("Statements/for...in", "array iteration and for...in", "#Array_iteration_and_for...in")}}.
+Цей цикл виведе лише [перелічувані властивості](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) обʼєкта `iterable`. Він не виведе **елементи** масиву: `3`, `5`, `7` чи `Агов`, адже вони **не є** перелічуваними властивостями; насправді вони не є властивостями взагалі, а лише **значеннями**. Код виведе масив **індексів**, включаючи `arrCustom` і `objCustom`. Якщо ви не певні, чому саме по цих властивостях відбувається ітерація, то зверніть увагу на більш детальне пояснення у статті {{jsxref("Statements/for...in", "array iteration and for...in", "#Array_iteration_and_for...in")}}.
 
 ```js
 for (const i in iterable) {
@@ -312,8 +306,7 @@ for (const i of iterable) {
 }
 ```
 
-Цей цикл ітерує та виводить **значення**, які [ітерований обʼєкт](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators#iterovani-obiekty) визначає такими, що їх слід обходити. **Елементи**
-`3`, `5`, `7` виведено, а **властивості** -- ні.
+Цей цикл ітерує та виводить **значення**, які [ітерований обʼєкт](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators#iterables) визначає такими, що їх слід обходити. **Елементи** `3`, `5`, `7` виведено, а **властивості** -- ні.
 
 ## Специфікації
 
