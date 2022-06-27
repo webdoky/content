@@ -19,7 +19,7 @@ browser-compat: html.elements.input.type_date
 
 Елементи {{HTMLElement("input")}} з атрибутом **`type="date"`** ("тип=дата") створюють поля введення, що дають користувачеві можливість ввести дату: або за допомогою текстового поля, котре перевіряє відповідність введених даних, або особливого інтерфейсу вибору дати.
 
-Значення результату включає рік, місяць та день, але _не_ час. Типи полів введення {{HTMLElement("input/time", "time")}} та {{HTMLElement("input/datetime-local", "datetime-local")}} підтримують введення часу та дати разом з часом, відповідно.
+Значення результату включає рік, місяць та день, але _не_ час. Типи поля введення {{HTMLElement("input/time", "time")}} підтримує введення часу, а {{HTMLElement("input/datetime-local", "datetime-local")}} – дати разом з часом.
 
 {{EmbedInteractiveExample("pages/tabbed/input-date.html", "tabbed-shorter")}}
 
