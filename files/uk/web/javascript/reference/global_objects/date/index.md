@@ -132,7 +132,7 @@ browser-compat: javascript.builtins.Date
   - : Перетворює дату на рядок відповідно до формату ISO 8601 Extended Format.
 - {{jsxref("Date.prototype.toJSON()")}} (до JSON)
   - : Повертає рядок, що відповідає даті в {{jsxref("Date")}}, сформований за допомогою {{jsxref("Date.prototype.toISOString()", "toISOString()")}}. Призначений для використання функцією {{jsxref("JSON.stringify()")}}.
-- {{jsxref("Date.prototype.toGMTString()")}} (до рядка за Ґринвічем)
+- {{jsxref("Date.prototype.toGMTString()")}} (до рядка за Гринвічем)
   - : Повертає рядок, що відповідає даті в {{jsxref("Date")}} відносно часової зони GMT (UTC). Замість цього методу слід застосовувати {{jsxref("Date.prototype.toUTCString()", "toUTCString()")}}.
 - {{jsxref("Date.prototype.toLocaleDateString()")}} (до місцевого рядка дати)
   - : Повертає порцію об'єкта `Date`, що містить дату, як рядок, оформлений з урахуванням локально специфічних деталей на основі системних налаштувань.
@@ -155,15 +155,15 @@ browser-compat: javascript.builtins.Date
 
 Наступні приклади показують декілька способів створити дати в JavaScript:
 
-> **Примітка:** Наполегливо не рекомендовано розбирати властивості дати за допомогою конструктора `Date` (і `Date.parse`, що еквівалентно) у зв‘язку з відмінностями та неузгодженістю браузерів.
+> **Примітка:** Розбираючи властивості дати за допомогою конструктора `Date` (і `Date.parse`, що еквівалентно), завжди слідкуйте, аби вихідні дані відповідали [форматові ISO 8601 (англ.)](https://tc39.es/ecma262/#sec-date-time-string-format) (`YYYY-MM-DDTHH:mm:ss.sssZ`): логіка розбору інших форматів визначається реалізацією, такий розбір може не працювати на всіх браузерах. З пристосуванням до розмаїття форматів може допомогти бібліотека.
 
 ```js
-let today = new Date();
-let birthday = new Date('December 17, 1995 03:24:00');
-let birthday = new Date('1995-12-17T03:24:00');
-let birthday = new Date(1995, 11, 17); // індекс місяця починається з 0
-let birthday = new Date(1995, 11, 17, 3, 24, 0);
-let birthday = new Date(628021800000); // передача мітки часу
+const today = new Date();
+const birthday = new Date('December 17, 1995 03:24:00'); // НЕРЕКОМЕНДОВАНО: може не працювати в усіх середовищах виконання
+const birthday = new Date('1995-12-17T03:24:00'); // Відповідає форматові ISO8601, а тому надійно працюватиме
+const birthday = new Date(1995, 11, 17); // індекс місяця починається з 0
+const birthday = new Date(1995, 11, 17, 3, 24, 0);
+const birthday = new Date(628021800000); // передача мітки часу
 ```
 
 ### Отримання дати, місяця, року чи часу
