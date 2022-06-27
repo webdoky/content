@@ -8,15 +8,16 @@ tags:
   - l10n:priority
 translation_of: Web/JavaScript
 ---
+
 {{JsSidebar}}
 
-**JavaScript** (**JS**) &mdash; це невибаглива до ресурсів мова програмування з {{Glossary("First-class Function", "функціями першого класу")}}, код якої інтерпретується, або компілюється ["на льоту"](https://uk.wikipedia.org/wiki/JIT-%D0%BA%D0%BE%D0%BC%D0%BF%D1%96%D0%BB%D1%8F%D1%86%D1%96%D1%8F). Хоча JavaScript насамперед відома як скриптова мова для вебсторінок, вона також використовується у [багатьох не браузерних середовищах](https://en.wikipedia.org/wiki/JavaScript#Other_usage), як от: {{Glossary("Node.js")}}, [Apache CouchDB](https://couchdb.apache.org/) та [Adobe Acrobat](https://www.adobe.com/devnet/acrobat/javascript.html). JavaScript — це {{Glossary("Prototype-based programming", "прототипна")}}, однопотокова динамічна мова, що має декілька парадигм та підтримує об'єктноорієнтований, та декларативні (зокрема функційне програмування) стилі. Більше [про JavaScript](/uk/docs/Web/JavaScript/About_JavaScript).
+**JavaScript** (**JS**) – це невибаглива до ресурсів мова програмування з {{Glossary("First-class Function", "функціями першого класу")}}, код якої інтерпретується, або компілюється ["на льоту"](https://uk.wikipedia.org/wiki/JIT-%D0%BA%D0%BE%D0%BC%D0%BF%D1%96%D0%BB%D1%8F%D1%86%D1%96%D1%8F). Хоча JavaScript насамперед відома як скриптова мова для вебсторінок, вона також використовується у [багатьох небраузерних середовищах](https://uk.wikipedia.org/wiki/JavaScript#%D0%97%D0%B0%D1%81%D1%82%D0%BE%D1%81%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F), як от: {{Glossary("Node.js")}}, [Apache CouchDB](https://couchdb.apache.org/) та [Adobe Acrobat](https://opensource.adobe.com/dc-acrobat-sdk-docs/acrobatsdk/). JavaScript — це {{Glossary("Prototype-based programming", "прототипна")}}, однопотокова динамічна мова, що має декілька парадигм та підтримує об'єктноорієнтований та декларативні (зокрема функційне програмування) стилі. Більше [про JavaScript](/uk/docs/Web/JavaScript/About_JavaScript).
 
-Цей розділ присвячено саме мові JavaScript, і він не стосується тонкощів роботи з вебсторінками, чи іншими середовищами для виконання JavaScript. Конкретну інформацію стосовно {{Glossary("API")}} вебсторінок дивіться у [веб API](/uk/docs/Web/API) та {{Glossary("DOM")}}.
+Цей розділ присвячено саме мові JavaScript, він не стосується тонкощів роботи з вебсторінками чи іншими середовищами виконання JavaScript. Інформацію стосовно конкретних {{Glossary("API")}} вебсторінок дивіться у [веб API](/uk/docs/Web/API) та {{Glossary("DOM")}}.
 
-Стандартами для JavaScript є [Специфікація мови ECMAScript](https://tc39.es/ecma262/) та [Специфікація API ECMAScript для Інтернаціоналізації](https://tc39.es/ecma402/) (ECMA-402). Ця JavaScript документація заснована на останніх чорнових версіях ECMA-262 та ECMA-402. І у разі, якщо деякі [пропозиції нового ECMAScript функціоналу](https://github.com/tc39/proposals) уже реалізовано у браузерах, документація та приклади у статтях на MDN можуть використовувати деякі з цих нових особливостей.
+Стандартами для JavaScript є [Специфікація мови ECMAScript](https://tc39.es/ecma262/) та [Специфікація API ECMAScript для інтернаціоналізації](https://tc39.es/ecma402/) (ECMA-402). Ця JavaScript документація заснована на останніх чорнових версіях ECMA-262 та ECMA-402. Тож у разі, якщо деякі [пропозиції нового ECMAScript функціоналу](https://github.com/tc39/proposals) уже реалізовано у браузерах, документація та приклади у статтях на MDN можуть використовувати деякі з цих нових особливостей.
 
-Не плутайте JavaScript з [мовою програмування Java](https://uk.wikipedia.org/wiki/Java). Так, обидві мови «Java» та «JavaScript» є товарними знаками чи зареєстрованими торговими марками Oracle у Сполучених Штатах та інших країнах. Проте ці дві мови програмування мають великі розбіжності у синтаксисі, семантиці та галузях застосування.
+Не плутайте JavaScript з [мовою програмування Java](https://uk.wikipedia.org/wiki/Java). Так, обидві мови, «Java» та «JavaScript», є товарними знаками чи зареєстрованими торговими марками Oracle у Сполучених Штатах та інших країнах. Проте ці дві мови програмування мають великі розбіжності у синтаксисі, семантиці та галузях застосування.
 
 > **Callout:** **Хочете стати фронтенд розробником?**
 >
@@ -31,48 +32,48 @@ translation_of: Web/JavaScript
 
 ### Для абсолютних початківців
 
-Зверніться до [тематики "JavaScript" у нашому навчальному розділі](/uk/docs/Learn/JavaScript), якщо ви маєте бажання вчити JavaScript, але не маєте попереднього досвіду роботи з JavaScript чи програмування загалом. Повний список модулів, доступних там, виглядає так:
+Якщо є бажання вчити JavaScript, але немає жодного попереднього досвіду роботи з JavaScript чи програмування загалом — зверніться до [тематики "JavaScript" у нашому навчальному розділі](/uk/docs/Learn/JavaScript). Повний список модулів, доступних там, має такий вигляд:
 
 - [Перші кроки з JavaScript](/uk/docs/Learn/JavaScript/First_steps)
-  - : Відповідає на деякі базові питання, як-от: "що таке JavaScript?", "на що вона схожа?", та "що вона може?"; включно з обговоренням ключових особливостей JavaScript, таких як: змінні, рядки, числа та масиви.
+  - : Відповідає на деякі базові питання, як-от: "що таке JavaScript?", "на що вона схожа?" та "що вона може?"; включно з обговоренням ключових особливостей JavaScript, таких як: змінні, рядки, числа та масиви.
 - [Будівельні блоки JavaScript](/uk/docs/Learn/JavaScript/Building_blocks)
   - : Продовжує пояснення основних фундаментальних концепцій JavaScript, звертаючи увагу на загальновживані блоки коду, як-от: умовні інструкції, цикли, функції та події.
 - [Вступ до об'єктів у JavaScript](/uk/docs/Learn/JavaScript/Objects)
-  - : Важливо розуміти об'єктноорієнтовану природу JavaScript, якщо ви хочете далі пізнавати цю мову програмування, і писати ефективніший код. Щоб допомогти вам у цьому, ми підготували цей модуль.
+  - : Важливо розуміти об'єктноорієнтовану природу JavaScript, якщо ви хочете далі пізнавати цю мову програмування і писати ефективніший код. Щоб допомогти вам у цьому, ми підготували цей модуль.
 - [Асинхронність у JavaScript](/uk/docs/Learn/JavaScript/Asynchronous)
-  - : Описує асинхронність у JavaScript, чому це важливо, і як її можна застосовувати для ефективної обробки операцій, що можуть блокувати виконання програми (наприклад, запит ресурсів від сервера).
+  - : Описує асинхронність у JavaScript, чому вона важлива, і як її можна застосовувати для ефективної обробки операцій, що можуть блокувати виконання програми (наприклад, запит ресурсів від сервера).
 - [Клієнтські веб-API](/uk/docs/Learn/JavaScript/Client-side_web_APIs)
-  - : Досліджує, що собою являють ці інтерфейси, і як використовувати деякі з найбільш поширених веб-API, з якими вам доведеться мати справу при розробці.
+  - : Досліджує, що собою являють ці інтерфейси, і як використовувати деякі з найбільш поширених веб-API, з якими доводиться мати справу при розробці.
 
 ### Настанови з JavaScript
 
 - [Настанови з JavaScript](/uk/docs/Web/JavaScript/Guide)
-  - : Значно деталізованіші настанови з мови JavaScript, корисні для тих, хто вже має досвід програмування на JavaScript, чи іншій мові.
+  - : Значно деталізованіші настанови з мови JavaScript, корисні для тих, хто вже має досвід програмування на JavaScript чи іншій мові.
 
 ### Середній рівень
 
 - [Розуміння клієнтських фреймворків JavaScript](/uk/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks)
-  - : JavaScript фреймворки &mdash; неодмінна частина сучасної клієнтської веброзробки, що забезпечує розробників перевіреними інструментами для побудови масштабованих інтерактивних вебзастосунків. Цей модуль надає деякі фундаментальні знання про те, як влаштовані клієнтські фреймворки, і як вони вписуються в ваш інструментарій, перед тим як розглянути найбільш популярні із них на сьогодні у наступних посібниках.
+  - : JavaScript фреймворки – неодмінна частина сучасної клієнтської веброзробки, що забезпечує розробників перевіреними інструментами для побудови масштабованих інтерактивних вебзастосунків. Цей модуль надає деякі фундаментальні знання про те, як влаштовані клієнтські фреймворки, і як вони вписуються в ваш інструментарій, перед тим як розглянути найбільш популярні із них на сьогодні у наступних посібниках.
 - [Повторний вступ у JavaScript](/uk/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
   - : Загальний огляд, націлений на тих, хто _вважає_, що знає JavaScript.
 - [Структури даних у JavaScript](/uk/docs/Web/JavaScript/Data_structures)
   - : Огляд наявних структур даних у JavaScript.
 - [Порівняння на схожість і однаковість](/uk/docs/Web/JavaScript/Equality_comparisons_and_sameness)
-  - : JavaScript надає три різних способи для порівняння значень: строга рівність через використання `===`, вільна рівність з `==`, та метод {{jsxref("Global_Objects/Object/is", "Object.is()")}}.
+  - : JavaScript надає три різних способи для порівняння значень: строга рівність через використання `===`, вільна рівність з `==` та метод {{jsxref("Global_Objects/Object/is", "Object.is()")}}.
 - [Замикання](/uk/docs/Web/JavaScript/Closures)
-  - : Замикання являє собою сполучення функції та лексичного середовища, всередині якого ця функція була оголошена.
+  - : Замикання — це сполучення функції та лексичного середовища, всередині якого ця функція була оголошена.
 
 ### Поглиблене вивчення
 
 - [Наслідування та ланцюжок прототипів](/uk/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
   - : Роз'яснення прототипного наслідування (яке часто недооцінюють та невірно розуміють).
 - [Суворий режим](/uk/docs/Web/JavaScript/Reference/Strict_mode)
-  - : Суворий режим встановлює неможливість використання змінної до її ініціалізації. Це обмежений варіант ECMAScript 5, який було створено для пришвидшення виконання програми, та спрощення процесу зневадження.
+  - : Суворий режим встановлює неможливість використання змінної до її ініціалізації. Це обмежений варіант ECMAScript 5, який було створено для пришвидшення виконання програми та спрощення процесу зневадження.
 - [Типізовані масиви JavaScript](/uk/docs/Web/JavaScript/Typed_arrays)
   - : Типізовані масиви JavaScript надають інструмент для доступу до необроблених бінарних даних.
 - [Керування пам'яттю](/uk/docs/Web/JavaScript/Memory_Management)
   - : Життєвий цикл пам'яті та збирання сміття у JavaScript.
-- [Модель багатопотоковості, та Цикл подій](/uk/docs/Web/JavaScript/EventLoop)
+- [Модель багатопотоковості та цикл подій](/uk/docs/Web/JavaScript/EventLoop)
   - : JavaScript має модель багатопотоковості, засновану на "циклі подій".
 
 ## Довідник
@@ -82,35 +83,35 @@ translation_of: Web/JavaScript
 - [Стандартні об'єкти](/uk/docs/Web/JavaScript/Reference/Global_Objects)
   - : Докладно про стандартні вбудовані об'єкти: {{jsxref("Array")}}, {{jsxref("Boolean")}}, {{jsxref("Date")}}, {{jsxref("Error")}}, {{jsxref("Function")}}, {{jsxref("JSON")}}, {{jsxref("Math")}}, {{jsxref("Number")}}, {{jsxref("Object")}}, {{jsxref("RegExp")}}, {{jsxref("String")}}, {{jsxref("Map")}}, {{jsxref("Set")}}, {{jsxref("WeakMap")}}, {{jsxref("WeakSet")}}, та інші.
 - [Вирази та оператори](/uk/docs/Web/JavaScript/Reference/Operators)
-  - : Дізнайтеся більше про поведінку операторів мови JavaScript {{jsxref("Operators/instanceof", "instanceof")}}, {{jsxref("Operators/typeof", "typeof")}}, {{jsxref("Operators/new", "new")}}, {{jsxref("Operators/this", "this")}}, [пріоритет операторів](/uk/docs/Web/JavaScript/Reference/Operators/Operator_Precedence), та інші.
+  - : Дізнайтеся більше про поведінку операторів мови JavaScript {{jsxref("Operators/instanceof", "instanceof")}}, {{jsxref("Operators/typeof", "typeof")}}, {{jsxref("Operators/new", "new")}}, {{jsxref("Operators/this", "this")}}, [пріоритет операторів](/uk/docs/Web/JavaScript/Reference/Operators/Operator_Precedence) та інші.
 - [Інструкції та оголошення](/uk/docs/Web/JavaScript/Reference/Statements)
-  - : Дізнайтеся, як працюють {{jsxref("Statements/do...while", "do-while")}}, {{jsxref("Statements/for...in", "for-in")}}, {{jsxref("Statements/for...of", "for-of")}}, {{jsxref("Statements/try...catch", "try-catch")}}, {{jsxref("Statements/let", "let")}}, {{jsxref("Statements/var", "var")}}, {{jsxref("Statements/const", "const")}}, {{jsxref("Statements/if...else", "if-else")}}, {{jsxref("Statements/switch", "switch")}}, та інші інструкції та ключові слова JavaScript.
+  - : Дізнайтеся, як працюють {{jsxref("Statements/do...while", "do-while")}}, {{jsxref("Statements/for...in", "for-in")}}, {{jsxref("Statements/for...of", "for-of")}}, {{jsxref("Statements/try...catch", "try-catch")}}, {{jsxref("Statements/let", "let")}}, {{jsxref("Statements/var", "var")}}, {{jsxref("Statements/const", "const")}}, {{jsxref("Statements/if...else", "if-else")}}, {{jsxref("Statements/switch", "switch")}} та інші інструкції й ключові слова JavaScript.
 - [Функції](/uk/docs/Web/JavaScript/Reference/Functions)
   - : Дізнайтеся, як працювати з функціями у JavaScript для створення ваших застосунків.
 
-## Інструменти та ресурси
+## Інструменти і ресурси
 
-Допоміжні інструменти, що полегшують написання і допомагають зневаджувати код на **JavaScript**.
+Допоміжні інструменти, що допомагають писати та зневаджувати код на **JavaScript**.
 
-- [Інструменти розробника Firefox](/uk/docs/Tools)
-  - : [Вебконсоль](/uk/docs/Tools/Web_Console), [JavaScript Profiler](/uk/docs/Tools/Performance), [Debugger](/uk/docs/Tools/Debugger), та інші.
+- [Інструменти розробника Firefox (англ.)](<[/uk/docs/Tools](https://firefox-source-docs.mozilla.org/devtools-user/index.html)>)
+  - : [Вебконсоль (англ.)](<[/uk/docs/Tools/Web_Console](https://firefox-source-docs.mozilla.org/devtools-user/web_console/index.html)>), [Профайлер JavaScript (англ.)](https://firefox-source-docs.mozilla.org/devtools-user/performance/index.html), [Налагоджувач (англ.)](https://firefox-source-docs.mozilla.org/devtools-user/debugger/index.html) та інші.
 - [Оболонка JavaScript](/uk/docs/Web/JavaScript/Shells)
   - : JavaScript-оболонка, що дозволяє швидко перевіряти фрагменти коду на JavaScript.
 - [Learn JavaScript](https://learnjavascript.online/)
   - : Прекрасний ресурс для веброзробників, що прагнуть навчатися. Вивчайте JavaScript в інтерактивному середовищі, з короткими лекціями та інтерактивними тестами, які дають оцінку в автоматичному режимі. Перші 40 уроків безкоштовні, а повний курс доступний за невелику одноразову плату.
 - [TogetherJS](https://togetherjs.com/)
-  - : Проста взаємодопомога. Після додавання TogetherJS до сайту, його користувачі зможуть допомагати один одному на вебсайті у реальному часі!
+  - : Проста взаємодопомога. Після додавання TogetherJS до сайту його користувачі зможуть допомагати один одному на вебсайті у реальному часі!
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/javascript)
   - : Запитання на Stack Overflow з міткою "JavaScript".
 - [JSFiddle](https://jsfiddle.net/)
-  - : Редагуйте JavaScript, CSS, HTML та одразу переглядайте результати. Залучайте зовнішні ресурси та співпрацюйте зі своєю командою онлайн.
+  - : Редагуйте JavaScript, CSS і HTML – та одразу переглядайте результати. Залучайте зовнішні ресурси та співпрацюйте зі своєю командою онлайн.
 - [Plunker](https://plnkr.co/)
-  - : Plunker &mdash; це онлайн-спільнота для створення, співпраці, та обміну вашими ідеями для веброзробки. Редагуйте ваші JavaScript-, CSS- і HTML-файли, та одразу переглядайте результати та файлову структуру.
+  - : Plunker – це онлайн-спільнота для створення, співпраці та обміну вашими ідеями для веброзробки. Редагуйте ваші JavaScript-, CSS- і HTML-файли – та одразу переглядайте результати й файлову структуру.
 - [JSBin](https://jsbin.com/)
-  - : JS Bin &mdash; це інструмент з відкритим кодом для спільного зневадження для веброзробки.
+  - : JS Bin – це інструмент з відкритим кодом для спільного зневадження для веброзробки.
 - [Codepen](https://codepen.io/)
-  - : Codepen &mdash; це інший інструмент для колаборативної веброзробки, що використовується як майданчик для розміщення коду, і перегляду результатів його роботи в реальному часі.
+  - : Codepen – це інший інструмент для колаборативної веброзробки, що використовується як майданчик для розміщення коду і перегляду результатів його роботи в реальному часі.
 - [StackBlitz](https://stackblitz.com/)
-  - : StackBlitz &mdash; це іще один онлайн-майданчик та інструмент зневадження, який може розміщувати та розгортати повностекові застосунки із використанням React, Angular тощо.
+  - : StackBlitz – це іще один онлайн-майданчик та інструмент зневадження, який може розміщувати та розгортати повностекові застосунки із використанням React, Angular тощо.
 - [RunJS](https://runjs.app/)
-  - : RunJS &mdash; це комп'ютерна версія ігрового майданчика/чернетки для роботи з JavaScript, яка надає можливість виконувати код, із доступом до API браузера та Node.
+  - : RunJS – це комп'ютерна версія ігрового майданчика/чернетки для роботи з JavaScript, яка надає можливість виконувати код, із доступом до API браузера та Node.

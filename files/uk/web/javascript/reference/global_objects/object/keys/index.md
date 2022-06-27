@@ -10,16 +10,17 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.Object.keys
 ---
+
 {{JSRef}}
 
-Метод **`Object.keys()`** повертає масив, що складається з **імен** власних перелічуваних властивостей переданого об'єкта. Порядок цих імен збігається з порядком перебирання цих властивостей звичайним циклом.
+Метод **`Object.keys()`** (ключі) повертає масив, що складається з **імен** власних перелічуваних властивостей переданого об'єкта. Порядок цих імен збігається з порядком перебирання цих властивостей звичайним циклом.
 
 {{EmbedInteractiveExample("pages/js/object-keys.html")}}
 
 ## Синтаксис
 
 ```js
-Object.keys(obj)
+Object.keys(obj);
 ```
 
 ### Параметри
@@ -53,29 +54,34 @@ const anObj = { 100: 'a', 2: 'b', 7: 'c' };
 console.log(Object.keys(anObj)); // console: ['2', '7', '100']
 
 // getFoo — це неперелічувана властивість
-const myObj = Object.create({}, {
-  getFoo: {
-    value: function () { return this.foo; }
-  }
-});
+const myObj = Object.create(
+  {},
+  {
+    getFoo: {
+      value: function () {
+        return this.foo;
+      },
+    },
+  },
+);
 myObj.foo = 1;
 console.log(Object.keys(myObj)); // console: ['foo']
 ```
 
-Якщо потрібні _всі_ властивості, включно з неперелічуваними — зверніть увагу на {{jsxref("Object.getOwnPropertyNames()")}}.
+Якщо потрібні _всі_ властивості, включно з неперелічуваними, — зверніть увагу на {{jsxref("Object.getOwnPropertyNames()")}}.
 
 ### Приведення необ'єктів
 
-В ES5, якщо аргумент цього методу був не об'єктного типу (примітив), це призводило до винятку {{jsxref("TypeError")}}.
+В ES5, якщо аргумент цього методу був необ‘єктного типу (примітив), це призводило до винятку {{jsxref("TypeError")}}.
 
 Від ES2015 і далі – необ'єктні аргументи приводяться до об'єктного типу.
 
 ```js
 // In ES5
-Object.keys('foo');  // TypeError: "foo" is not an object
+Object.keys('foo'); // TypeError: "foo" is not an object
 
 // In ES2015+
-Object.keys('foo');  // ["0", "1", "2"]
+Object.keys('foo'); // ["0", "1", "2"]
 ```
 
 ## Поліфіл
@@ -85,27 +91,32 @@ Object.keys('foo');  // ["0", "1", "2"]
 ```js
 // Із https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
 if (!Object.keys) {
-  Object.keys = (function() {
+  Object.keys = (function () {
     'use strict';
     var hasOwnProperty = Object.prototype.hasOwnProperty,
-        hasDontEnumBug = !({ toString: null }).propertyIsEnumerable('toString'),
-        dontEnums = [
-          'toString',
-          'toLocaleString',
-          'valueOf',
-          'hasOwnProperty',
-          'isPrototypeOf',
-          'propertyIsEnumerable',
-          'constructor'
-        ],
-        dontEnumsLength = dontEnums.length;
+      hasDontEnumBug = !{ toString: null }.propertyIsEnumerable('toString'),
+      dontEnums = [
+        'toString',
+        'toLocaleString',
+        'valueOf',
+        'hasOwnProperty',
+        'isPrototypeOf',
+        'propertyIsEnumerable',
+        'constructor',
+      ],
+      dontEnumsLength = dontEnums.length;
 
-    return function(obj) {
-      if (typeof obj !== 'function' && (typeof obj !== 'object' || obj === null)) {
+    return function (obj) {
+      if (
+        typeof obj !== 'function' &&
+        (typeof obj !== 'object' || obj === null)
+      ) {
         throw new TypeError('Object.keys called on non-object');
       }
 
-      var result = [], prop, i;
+      var result = [],
+        prop,
+        i;
 
       for (prop in obj) {
         if (hasOwnProperty.call(obj, prop)) {
@@ -122,13 +133,13 @@ if (!Object.keys) {
       }
       return result;
     };
-  }());
+  })();
 }
 ```
 
 Майте на увазі: код вище буде також опрацьовувати неперелічувані ключі в IE7 (і, можливо, IE8) при передачі об'єкту з іншого вікна.
 
-Якщо вам потрібен простий браузерний поліфіл, зверніть увагу на [Javascript \- Object.keys Browser Compatibility](https://tokenposts.blogspot.com.au/2012/04/javascript-objectkeys-browser.html).
+Якщо вам потрібен простий браузерний поліфіл, зверніть увагу на [Javascript \- Object.keys Browser Compatibility](https://tokenposts.blogspot.com/2012/04/javascript-objectkeys-browser.html).
 
 ## Специфікації
 
@@ -140,7 +151,7 @@ if (!Object.keys) {
 
 ## Дивіться також
 
-- Поліфіл для `Object.keys` також наявний у [`core-js`](https://github.com/zloirock/core-js#ecmascript-object)
+- [Поліфіл для `Object.keys` у `core-js`](https://github.com/zloirock/core-js#ecmascript-object)
 - [Перелічуваність і власність властивостей](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties)
 - {{jsxref("Object.prototype.propertyIsEnumerable()")}}
 - {{jsxref("Object.create()")}}
