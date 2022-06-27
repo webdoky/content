@@ -146,7 +146,7 @@ console.log(dateControl.valueAsNumber); // виводить 1496275200000, мі�
 </form>
 ```
 
-{{EmbedLiveSample('Basic_uses_of_date', 600, 40)}}
+{{EmbedLiveSample('bazove-vykorystannia-poliv-daty', 600, 40)}}
 
 Цей HTML надсилає введену дату за ключем `bday` на `https://example.com` — в результаті URL стане виду `https://example.com/?bday=1955-06-08`.
 
