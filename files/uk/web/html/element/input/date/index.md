@@ -354,7 +354,7 @@ input:valid + span::after {
 Створюється новий елемент {{htmlelement("input")}} element, потім його `type` встановлюється в `date`, потім негайно відбувається перевірка типу: браузери, що підтримують `date`, повернуть `text`, бо для типу `date` запасним варіантом є тип `text`. Якщо `<input type="date">` не підтримується, то нативний віджет вибору ховається, а натомість показується запасний варіант – ({{htmlelement("select")}}).
 
 ```js
-// визначити змінних
+// визначити змінні
 var nativePicker = document.querySelector('.nativeDatePicker');
 var fallbackPicker = document.querySelector('.fallbackDatePicker');
 var fallbackLabel = document.querySelector('.fallbackLabel');
