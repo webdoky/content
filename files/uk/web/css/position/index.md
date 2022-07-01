@@ -10,6 +10,7 @@ tags:
 browser-compat: css.properties.position
 ---
 
+<!-- Test change -->
 {{CSSRef}}
 
 Властивість [CSS](/uk/docs/Web/CSS) **`position`** (положення) вказує на те, як елемент розміщується в документі. Властивості {{Cssxref("top")}}, {{Cssxref("right")}}, {{Cssxref("bottom")}} та {{Cssxref("left")}} визначають остаточне місцеположення розміщених елементів.
