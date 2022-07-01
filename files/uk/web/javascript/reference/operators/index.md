@@ -57,7 +57,7 @@ browser-compat: javascript.operators
   - : Оператор `new` створює новий екземпляр об'єкта за допомогою переданого конструктора.
 - {{JSxRef("Operators/new%2Etarget", "new.target")}} (нове.цільовий)
   - : Всередині конструктора `new.target` посилається на конструктор, який було викликано оператором {{JSxRef("Operators/new", "new")}}.
-- {{JSxRef("Statements/import%2Emeta", "import.meta")}} (імпорт.метадані)
+- {{JSxRef("Operators/import%2Emeta", "import.meta")}} (імпорт.метадані)
   - : Об'єкт, що розкриває контекстно-специфічні метадані JavaScript-модуля.
 - {{JSxRef("Operators/super", "super")}} (вищий)
   - : Ключове слово `super` викликає батьківський конструктор.
@@ -186,7 +186,7 @@ browser-compat: javascript.operators
 ### Оператор необов'язкової послідовності
 
 - {{JSxRef("Operators/Optional_chaining", "?.")}}
-  - : Оператор необов'язкової послідовності повертає `undefined` замість викликання помилки в разі [нульового](/uk/docs/Glossary/Nullish) ([`null`](/uk/docs/Web/JavaScript/Reference/Global_Objects/null) або [`undefined`](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined)) посилання.
+  - : Оператор необов'язкової послідовності повертає `undefined` замість викликання помилки в разі [нульового](/uk/docs/Glossary/Nullish) ([`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) або [`undefined`](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined)) посилання.
 
 ### Оператори присвоєння
 

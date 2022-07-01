@@ -158,10 +158,10 @@ items.sort(function (a, b) {
 Наступний приклад створює чотири масиви, далі показує вихідний масив, а потім<span class="x x-first x-last"> —</span> відсортовані масиви. Числові масиви сортуються спочатку без функції сортування, а потім із нею.
 
 ```js
-let stringArray = ['Кит синій', 'Горбатий кит', 'Білуга'];
-let numberArray = [40, 1, 5, 200];
-let numericStringArray = ['80', '9', '700'];
-let mixedNumericArray = ['80', '9', '700', 40, 1, 5, 200];
+const stringArray = ['Кит синій', 'Горбатий кит', 'Білуга'];
+const numberArray = [40, 1, 5, 200];
+const numericStringArray = ['80', '9', '700'];
+const mixedNumericArray = ['80', '9', '700', 40, 1, 5, 200];
 
 function compareNumbers(a, b) {
   return a - b;
