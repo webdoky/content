@@ -19,7 +19,7 @@ browser-compat: css.properties.background-color
 
 {{CSSRef}}
 
-Властивість [CSS](/uk/docs/Web/CSS) **`background-color`** встановлює колір тла елемента.
+Властивість [CSS](/uk/docs/Web/CSS) **`background-color`** (колір тла) встановлює колір тла елемента.
 
 {{EmbedInteractiveExample("pages/css/background-color.html")}}
 
@@ -59,6 +59,7 @@ background-color: transparent;
 background-color: inherit;
 background-color: initial;
 background-color: revert;
+background-color: revert-layer;
 background-color: unset;
 ```
 
@@ -73,11 +74,11 @@ background-color: unset;
 
 Важливо пересвідчитись, що співвідношення контрасту між кольором тла та кольором тексту, накладеного на тло, достатньо високе, аби люди зі слабким зором мали змогу прочитати вміст сторінки.
 
-Співвідношення контрасту кольору визначається порівнянням яскравості кольорових значень тексту та тла. Аби відповідати поточним [Настановам із доступності вебконтенту (WCAG)](https://www.w3.org/WAI/intro/wcag), для тексту необхідне співвідношення 4.5:1, і для більшого тексту штибу заголовків – 3:1. Великим вважається текст розміру 18.66 пікселів або більше, якщо [жирним шрифтом](/uk/docs/Web/CSS/font-weight), інакше – 24 пікселів або більше.
+Співвідношення контрасту кольору визначається порівнянням яскравості кольорових значень тексту та тла. Аби відповідати поточним [Настановам із доступності вебконтенту (WCAG) (англ.)](https://www.w3.org/WAI/standards-guidelines/wcag/), для звичайного тексту необхідне співвідношення 4.5:1, а для більшого тексту штибу заголовків – 3:1. Великим вважається текст розміру 18.66 пікселів або більше, якщо [грубим шрифтом](/uk/docs/Web/CSS/font-weight), інакше – 24 пікселів або більше.
 
-- [WebAIM: Перевірка контрасту кольору](https://webaim.org/resources/contrastchecker/)
+- [WebAIM: Перевірка контрасту кольору (англ.)](https://webaim.org/resources/contrastchecker/)
 - [MDN Розуміння WCAG, Пояснення настанов 1.4](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#guideline_1.4_make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
-- [Розуміння критеріїв успіху 1.4.3  | W3C Розуміння WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html)
+- [Розуміння критеріїв успіху 1.4.3  | W3C Розуміння WCAG 2.0 (англ.)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html)
 
 ## Формальне визначення
 
@@ -125,13 +126,13 @@ background-color: unset;
 
 {{Specifications}}
 
-## Сумісність з браузерами
+## Сумісність із браузерами
 
 {{Compat}}
 
 ## Дивіться також
 
-- [Множинні тла](/uk/docs/Web/CSS/CSS_Backgrounds_and_Borders/Using_multiple_backgrounds)
+- [Множинні фони](/uk/docs/Web/CSS/CSS_Backgrounds_and_Borders/Using_multiple_backgrounds)
 - Тип даних {{cssxref("&lt;color&gt;")}}
 - Інші властивості, пов‘язані з кольором: {{cssxref("color")}}, {{cssxref("border-color")}}, {{cssxref("outline-color")}}, {{cssxref("text-decoration-color")}}, {{cssxref("text-emphasis-color")}}, {{cssxref("text-shadow")}}, {{cssxref("caret-color")}} та {{cssxref("column-rule-color")}}
-- [Застосування кольору до елементів HTML за допомогою CSS](/uk/docs/Web/HTML/Applying_color)
+- [Застосування кольору до елементів HTML за допомогою CSS](/uk/docs/Web/CSS/CSS_Colors/Applying_color)
