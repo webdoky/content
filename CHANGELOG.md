@@ -3,6 +3,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2022-06-24 - 2022-07-01]
+
+* **Оновлення перекладу(CSS):** web/css/background-color ([d8de22e](https://github.com/webdoky/content/commit/d8de22e8b09debfc8a5178c175db3aa291c06223))
+* **Оновлення перекладу(CSS):** web/css/width ([d154acd](https://github.com/webdoky/content/commit/d154acdddeac1444ddc96746e9daf54835a39dfc))
+* **Переклад(HTML):** web/html/element/input/date/index.md (#351) ([a66c9b4](https://github.com/webdoky/content/commit/a66c9b4bc594dd4f49521f94abfe5016d4666393))
+* **Оновлення перекладу(JS):** web/javascript/reference/operators/destructuring_assignment ([0bb542e](https://github.com/webdoky/content/commit/0bb542ebc570d7afec7f7655e1efc32cf28b9305))
+* **Оновлення перекладу(JS):** web/javascript/reference/functions/arrow_functions ([fc68b4a](https://github.com/webdoky/content/commit/fc68b4ae9b4052231c433e6139c4f6c2486303a7))
+* **Оновлення перекладу(JS):** web/javascript/reference/operators ([44c5b41](https://github.com/webdoky/content/commit/44c5b419bafbaa3b3442edd3d2d6065f64b0b8fa))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects ([20cdbb6](https://github.com/webdoky/content/commit/20cdbb6829d2508942461a2f1e541ebd42a24972))
+* **Оновлення перекладу(JS):** web/javascript/reference/index.md ([4efe071](https://github.com/webdoky/content/commit/4efe071bd4005251346871d27459d49978bf0d59))
+* **Переклад(JS):** web/javascript/reference/global_objects/array/findindex (#367) ([456b593](https://github.com/webdoky/content/commit/456b593bbb69c2f09968bc468827d325cda89e0d))
+* **Переклад(JS):** web/javascript/reference/global_objects/array/some (#366) ([95c4098](https://github.com/webdoky/content/commit/95c4098d94b1edadf5b6276fe57d4f23f427103f))
+
 ## [2022-06-17 - 2022-06-24]
 
 * **Переклад(JS):** /Web/JavaScript/Reference/Statements/for...of (#399) ([1ddd41d](https://github.com/webdoky/content/commit/1ddd41dc69184a70c88a08b0253b6354d051b91a))
