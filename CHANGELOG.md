@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2022-06-24 - 2022-07-01]
+
+* **Оновлення перекладу(CSS):** web/css/background-color ([d8de22e](https://github.com/webdoky/content/commit/d8de22e8b09debfc8a5178c175db3aa291c06223))
+
 ## [2022-06-17 - 2022-06-24]
 
 * **Переклад(JS):** /Web/JavaScript/Reference/Statements/for...of (#399) ([1ddd41d](https://github.com/webdoky/content/commit/1ddd41dc69184a70c88a08b0253b6354d051b91a))
