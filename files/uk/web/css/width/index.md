@@ -15,7 +15,7 @@ browser-compat: css.properties.width
 
 {{CSSRef}}
 
-Властивість CSS **`width`** встановлює ширину елемента. Як усталено, вона встановлює ширину [області вмісту](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#content_area), однак якщо властивість {{cssxref("box-sizing")}} має значення `border-box`, то вказане значення стає шириною [відмежованої області](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#border_area).
+Властивість CSS **`width`** (ширина) встановлює ширину елемента. Усталено вона встановлює ширину [області вмісту](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#oblast-vmistu), однак якщо властивість {{cssxref("box-sizing")}} має значення `border-box`, то вказане значення стає шириною [відмежованої області](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#vidmezhovana-oblast).
 
 {{EmbedInteractiveExample("pages/css/width.html")}}
 
@@ -41,6 +41,7 @@ width: auto;
 width: inherit;
 width: initial;
 width: revert;
+width: revert-layer;
 width: unset;
 ```
 
@@ -50,21 +51,21 @@ width: unset;
   - : Визначає ширину у вигляді абсолютного значення.
 - {{cssxref("&lt;percentage&gt;")}}
   - : Визначає ширину у вигляді відсотків від ширини контейнерного блока.
-- `auto`
+- `auto` (автоматично)
   - : Браузер обчислить та обере ширину для обраного елемента.
-- `max-content`
+- `max-content` (максимальний вміст)
   - : Внутрішньо бажана ширина.
-- `min-content`
+- `min-content` (мінімальний вміст)
   - : Внутрішньо найменша можлива ширина.
-- `fit-content({{cssxref("&lt;length-percentage&gt;")}})`
+- `fit-content({{cssxref("&lt;length-percentage&gt;")}})` (припасувати вміст)
   - : Використовує формулу fit-content щодо доступного простору, заміненого вказаним аргументом, тобто `min(max-content, max(min-content, <length-percentage>))`.
 
 ## Занепокоєння щодо доступності
 
 Слід пересвідчитись, що елементи, для котрих вказана `width`, не обрізаються і не затуляються іншим вмістом, коли до сторінки застосовується збільшення для укрупнення тексту.
 
-- [MDN Розуміння WCAG, Пояснення Настанов 1.4](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#Guideline_1.4_Make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
-- [Розуміння мірила успіху 1.4.4 | W3C Розуміння WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html)
+- [MDN Розуміння WCAG, Пояснення Настанов 1.4](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#nastanovy-1.4-polehshennia-perehliadu-ta-proslukhovuvannia-dlia-korystuvachiv-vkliuchno-iz-viddilenniam-perednioho-planu-vid-tla)
+- [Розуміння мірила успіху 1.4.4 | W3C Розуміння WCAG 2.0 (англ.)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html)
 
 ## Формальне визначення
 
@@ -88,9 +89,9 @@ p.goldie {
 <p class="goldie">Спільнота Mozilla виробляє чимало чудового ПЗ.</p>
 ```
 
-{{EmbedLiveSample('Default_width', '500px', '64px')}}
+{{EmbedLiveSample('ustalena-shyryna', '500px', '64px')}}
 
-### Пікселі та еми
+### Приклад із пікселями та емами
 
 ```css
 .px_length {
@@ -113,9 +114,9 @@ p.goldie {
 <div class="em_length">Ширина, вказана у em</div>
 ```
 
-{{EmbedLiveSample('Pixels_and_ems', '500px', '64px')}}
+{{EmbedLiveSample('pryklad-iz-pikseliamy-ta-emamy', '500px', '64px')}}
 
-### Відсотки
+### Приклад із відсотками
 
 ```css
 .percent {
@@ -129,9 +130,9 @@ p.goldie {
 <div class="percent">Ширина у відсотках</div>
 ```
 
-{{EmbedLiveSample('Percentage', '500px', '64px')}}
+{{EmbedLiveSample('pryklad-iz-vidsotkamy', '500px', '64px')}}
 
-### max-content
+### Приклад із max-content
 
 ```css
 p.maxgreen {
@@ -147,9 +148,9 @@ p.maxgreen {
 <p class="maxgreen">Спільнота Mozilla виробляє чимало чудового ПЗ.</p>
 ```
 
-{{EmbedLiveSample('max-content', '500px', '64px')}}
+{{EmbedLiveSample('pryklad-iz-max-content', '500px', '64px')}}
 
-### min-content
+### Приклад із min-content
 
 ```css
 p.minblue {
@@ -164,7 +165,7 @@ p.minblue {
 <p class="minblue">Спільнота Mozilla виробляє чимало чудового ПЗ.</p>
 ```
 
-{{EmbedLiveSample('min-content', '500px', '155px')}}
+{{EmbedLiveSample('pryklad-iz-min-content', '500px', '155px')}}
 
 ## Специфікації
 
