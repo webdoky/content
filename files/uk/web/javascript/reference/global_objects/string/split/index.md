@@ -13,7 +13,7 @@ browser-compat: javascript.builtins.String.split
 
 {{JSRef}}
 
-Метод **`split()`** (розщепити) приймає патерн і ділить {{jsxref("String", "рядок")}} на упорядкований список підрядків шляхом пошуку переданого патерну, додання підрядків до масиву і повернення цього масиву.
+Метод **`split()`** (розщепити) приймає патерн і ділить {{jsxref("String", "рядок")}} на впорядкований список підрядків шляхом пошуку переданого патерну, додання підрядків до масиву і повернення цього масиву.
 
 {{EmbedInteractiveExample("pages/js/string-split.html", "taller")}}
 
@@ -28,8 +28,7 @@ split(separator, limit);
 ### Параметри
 
 - `separator` (розділювач) {{optional_inline}}
-  - : The pattern describing where each split should occur. Can be a string or an object with a [`Symbol.split`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/split) method — the typical example being a {{jsxref("Global_Objects/RegExp", "regular expression", "", 1)}}. If undefined, the original target string is returned wrapped in an array.
-  - : Патерн, що вказує, де повинно відбутися кожне розщеплення. Може бути або рядком, або об‘єктом з методом [`Symbol.split`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/split); типовим прикладом такого об‘єкта є {{jsxref("Global_Objects/RegExp", "регулярний вираз", "", 1)}}. Якщо цей параметр `undefined`, то повертається вихідний рядок, обгорнутий в масив.
+  - : Патерн, що вказує, де повинно відбутися кожне розщеплення. Може бути або рядком, або об‘єктом з методом [`Symbol.split`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/split); типовим прикладом такого об‘єкта є {{jsxref("Global_Objects/RegExp", "регулярний вираз", "", 1)}}. Якщо цей параметр `undefined`, то повертається вихідний рядок, обгорнутий в масив.
 - `limit` (обмеження) {{optional_inline}}
   - : Невід'ємне ціле число, котре позначає обмеження кількості підрядків, які буде включено в повернений масив. Якщо цей параметр задано, рядок розділяється в кожному місці, де трапляється вказаний `separator`, проте зупиняється, коли в масиві опиняється вказана в `limit` кількість елементів. Будь-який залишок тексту не буде включено в масив узагалі.
     - Масив може містити менше елементів, ніж вказано в `limit`, якщо функція дійшла до кінця рядка раніше, ніж був вибраний `limit`.
@@ -46,10 +45,10 @@ split(separator, limit);
 Якщо `separator` – порожній рядок (`""`), то `str` перетворюється на масив своїх "символів" UTF-16, котрий не містить порожніх рядків на жодному зі своїх кінців.
 
 > **Примітка:** Таким чином, при передачі рядка як `separator` – `"".split("")` є єдиним способом отримати порожній масив.
-> **Застереження:** Коли як розділювач використовується порожній рядок (`""`), то рядок **не** ділиться на _видимі символи_ ([графемні кластери (англ.)](https://unicode.org/reports/tr29/#Grapheme_Cluster_Boundaries)) чи символи юнікоду (кодові точки), натомість – на кодові одиниці UTF-17. Отже – руйнуються [сурогатні пари (англ.)](https://unicode.org/faq/utf_bom.html#utf16-2). Дивіться ["Як на JavaScript отримати з рядка масив символів?" на StackOverflow](https://stackoverflow.com/questions/4547609/how-to-get-character-array-from-a-string/34717402#34717402).
-> Якщо `separator` є регулярним виразом із групами захоплення, то при кожному збігу `separator` отримані групи захоплення (включно з усіма результатами `undefined`) додаються до результівного масиву. Така поведінка задана методом регулярного виразу [`Symbol.split`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/split)
+> **Застереження:** Коли як розділювач використовується порожній рядок (`""`), то рядок **не** ділиться на _видимі символи_ ([графемні кластери (англ.)](https://unicode.org/reports/tr29/#Grapheme_Cluster_Boundaries)) чи символи юнікоду (кодові точки), натомість – на кодові одиниці UTF-17. Отже – руйнуються [сурогатні пари (англ.)](https://unicode.org/faq/utf_bom.html#utf16-2). Дивіться ["Як на JavaScript отримати з рядка масив символів?" на StackOverflow (англ.)](https://stackoverflow.com/questions/4547609/how-to-get-character-array-from-a-string/34717402#34717402).
+> Якщо `separator` є регулярним виразом із групами захоплення, то при кожному збігу `separator` отримані групи захоплення (включно з усіма результатами `undefined`) додаються до результівного масиву. Така поведінка задана методом регулярного виразу [`Symbol.split`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/split)
 
-Якщо `separator` є об‘єктом з методом [`Symbol.split`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/split), то цей метод викликається із передачею йому цільового рядка та `limit`, а значенням `this` є цей об‘єкт. Повернене значення стає поверненим значенням `split`.
+Якщо `separator` є об‘єктом з методом [`Symbol.split`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/split), то цей метод викликається із передачею йому цільового рядка та `limit`, а значенням `this` є цей об‘єкт. Результат виклику методу стає поверненим значенням `split`.
 
 Будь-яке інше значення перед використанням як роздільник буде приведено до рядка.
 
