@@ -13,7 +13,7 @@ browser-compat: javascript.builtins.Array.join
 {{JSRef}}
 
 Метод **`join()`** (об‘єднати) створює та повертає новий рядок шляхом об’єднання всіх елементів у масиві
-(або [масивоподібного об’єкта](/uk/docs/Web/JavaScript/Guide/Indexed_collections#robota-z-masyvopodibnymy-obiektamy)),
+(або [масивоподібному об’єкті](/uk/docs/Web/JavaScript/Guide/Indexed_collections#robota-z-masyvopodibnymy-obiektamy)),
 розділених комами або вказаним роздільником. Якщо масив містить лише один елемент, то
 цей елемент буде повернено без використання роздільника.
 
