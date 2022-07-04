@@ -145,10 +145,6 @@ tags:
 - {{JSxRef("WebAssembly.LinkError")}}
 - {{JSxRef("WebAssembly.RuntimeError")}}
 
-### Інші
-
-- {{JSxRef("Functions/arguments", "arguments")}}
-
 ## Інструкції
 
 [Інструкції та оголошення JavaScript](/uk/docs/Web/JavaScript/Reference/Statements)
