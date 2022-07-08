@@ -3,6 +3,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2022-07-01 - 2022-07-08]
+
+* **Переклад(JS):** web/javascript/reference/global_objects/array/join (#422) ([10d5c22](https://github.com/webdoky/content/commit/10d5c22f8eb60e7b36ce5aeeaf236cdf8d4297d3))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/split ([017e38b](https://github.com/webdoky/content/commit/017e38bdac3800cea3a4b854822d6bd25beb185c))
+* **Оновлення перекладу(HTML):** web/html/element/input ([1f19290](https://github.com/webdoky/content/commit/1f19290df80a006303a77d62371db4a65000682d))
+* **Оновлення перекладу(JS):** web/reference/global_objects/object/keys ([bfdc53d](https://github.com/webdoky/content/commit/bfdc53de453144f56c1e1113f40bc0791aa229f0))
+* **Оновлення перекладу(CSS):** Web/CSS/font-family/ (#378) ([5a12a0d](https://github.com/webdoky/content/commit/5a12a0dcc192c13552030558520d4666fa9e3b9a))
+* **Оновлення перекладу(HTML):** Web/HTML/Element/ul/ (#372) ([00f3392](https://github.com/webdoky/content/commit/00f3392646fa7e677bdd9af762f74b70486b0c6a))
+* **Оновлення перекладу(CSS):** Web/CSS/font-size/ (#379) ([899fb90](https://github.com/webdoky/content/commit/899fb90e20429710689c0e4b61668167e7853915))
+* **Оновлення перекладу(CSS):** Web/CSS/height/ (#380) ([2409025](https://github.com/webdoky/content/commit/2409025f53e6fe3f47352c8192080dc8b0e00e3f))
+
 ## [2022-06-24 - 2022-07-01]
 
 * **Оновлення перекладу(CSS):** web/css/background-color ([d8de22e](https://github.com/webdoky/content/commit/d8de22e8b09debfc8a5178c175db3aa291c06223))
