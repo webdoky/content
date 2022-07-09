@@ -39,12 +39,14 @@ async function checkLanguageTool() {
 
 export async function checkText(text) {
   debug('checkText(...)');
-  return (
+  const { matches } = (
     await requestLanguageTool({
       language: 'uk-UA',
       text,
     })
-  ).data.matches;
+  ).data;
+  debug(matches);
+  return matches;
 }
 
 export function startLanguageTool() {
