@@ -33,7 +33,7 @@ tags:
 
 ### Властивості-функції
 
-Ці глобальні функції (ті функції, які радше викликаються глобально, аніж як методи об'єкту) — прямо повертають результат тому, хто їх викликав.
+Ці глобальні функції (ті функції, які радше викликаються глобально, аніж як методи об‘єкта) — прямо повертають результат тому, хто їх викликав.
 
 - {{JSxRef("Global_Objects/eval", "eval()")}}
 - {{JSxRef("Global_Objects/isFinite", "isFinite()")}}
@@ -48,7 +48,6 @@ tags:
 
   - {{JSxRef("Global_Objects/escape", "escape()")}} {{Deprecated_Inline}}
   - {{JSxRef("Global_Objects/unescape", "unescape()")}} {{Deprecated_Inline}}
-  - {{JSxRef("Global_Objects/uneval", "uneval()")}} {{Deprecated_Inline}}
 
 ### Корінні об'єкти
 
