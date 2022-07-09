@@ -92,7 +92,7 @@ parseInt('08'); // 8
 
 Іноді корисно мати більш строгу функцію розбору цілих чисел.
 
-Regular expressions can help:
+Тут допоможуть регулярні вирази:
 
 ```js
 function filterInt(value) {
