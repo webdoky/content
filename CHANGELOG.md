@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2022-07-08 - 2022-07-15]
+
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects (#423) ([c72841d](https://github.com/webdoky/content/commit/c72841d933365cccbf00008a5a2bf0d1f0d97ac6))
+* **Переклад(JS):** web/javascript/reference/global_objects/parseint (#370) ([8f598bb](https://github.com/webdoky/content/commit/8f598bb5846de76407b635eba285831a2fd8e368))
+
 ## [2022-07-01 - 2022-07-08]
 
 * **Переклад(JS):** web/javascript/reference/global_objects/array/join (#422) ([10d5c22](https://github.com/webdoky/content/commit/10d5c22f8eb60e7b36ce5aeeaf236cdf8d4297d3))
