@@ -16,7 +16,7 @@ browser-compat: css.properties.height
 
 {{CSSRef}}
 
-Властивість CSS **`height`** вказує висоту елемента. Як усталено, властивість визначає висоту [області вмісту](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#content_area). Втім, якщо властивість {{cssxref("box-sizing")}} має значення `border-box`, то вказане значення стає висотою [відмежованої області](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#border_area).
+Властивість CSS **`height`** (висота) вказує висоту елемента. Усталено властивість визначає висоту [області вмісту](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#oblast-vmistu). Втім, якщо властивість {{cssxref("box-sizing")}} має значення `border-box`, то вказане значення стає висотою [відмежованої області](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#vidmezhovana-oblast).
 
 {{EmbedInteractiveExample("pages/css/height.html")}}
 
@@ -42,6 +42,7 @@ height: auto;
 height: inherit;
 height: initial;
 height: revert;
+height: revert-layer;
 height: unset;
 ```
 
@@ -51,21 +52,25 @@ height: unset;
   - : Визначає висоту у вигляді абсолютного значення.
 - {{cssxref("&lt;percentage&gt;")}}
   - : Визначає висоту у вигляді відсотків від висоти контейнерного блока.
-- `auto`
+- `auto` (автоматично)
   - : Браузер обчислить та обере висоту для обраного елемента.
-- `max-content`
+- `max-content` (максимальний вміст)
   - : Внутрішньо бажана висота.
-- `min-content`
+- `min-content` (мінімальний вміст)
   - : Внутрішньо найменша можлива ширина.
+- `fit-content` (припасувати вміст)
+  - : Рамки використають доступний простір, але ні в якому разі не вийдуть за межі `max-content`
 - `fit-content({{cssxref("&lt;length-percentage&gt;")}})`
-  - : Використовує формулу fit-content щодо доступного простору, заміненого вказаним аргументом, тобто, i.e. `min(max-content, max(min-content, <length-percentage>))`.
+  - : Використовує формулу fit-content щодо доступного простору, заміненого вказаним аргументом, тобто `min(max-content, max(min-content, <length-percentage>))`.
+- {{cssxref("clamp", "clamp()")}}
+  - : Дає змогу вибрати середнє значення з діапазону значень між заданими мінімумом та максимумом.
 
 ## Занепокоєння щодо доступності
 
 Слід пересвідчитись, що елементи, для котрих вказана `height`, не обрізаються і не затуляються іншим вмістом, коли до сторінки застосовується збільшення для укрупнення тексту.
 
-- [MDN Розуміння WCAG, Пояснення Настанов 1.4](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#Guideline_1.4_Make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
-- [Розуміння мірила успіху 1.4.4 | W3C Розуміння WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html)
+- [MDN Розуміння WCAG, Пояснення Настанов 1.4](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#nastanovy-1.4-polehshennia-perehliadu-ta-proslukhovuvannia-dlia-korystuvachiv-vkliuchno-iz-viddilenniam-perednioho-planu-vid-tla)
+- [Розуміння мірила успіху 1.4.4 | W3C Розуміння WCAG 2.0 (англ.)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html)
 
 ## Формальне визначення
 
@@ -118,7 +123,7 @@ div {
 
 #### Результат
 
-{{EmbedLiveSample('Setting_height_using_pixels_and_percentages', 'auto', 240)}}
+{{EmbedLiveSample('vstanovlennia-vysoty-za-dopomohoiu-pikseliv-ta-vidsotkiv', 'auto', 240)}}
 
 ## Специфікації
 
