@@ -127,7 +127,7 @@ for (let item of mySet1.values()) console.log(item)
 for (let [key, value] of mySet1.entries()) console.log(key)
 
 // За допомогою Array.from перетворює об‘єкт Set на об‘єкт Array
-const myArr = Array.from(mySet1) // [1, "some text", {"a": 1, "b": 2}, {"a": 1, "b": 2}]
+const myArr = Array.from(mySet1) // [1, "якийсь текст", {"a": 1, "b": 2}, {"a": 1, "b": 2}]
 
 // наступне також запрацює, якщо запустити в контексті документа HTML
 mySet1.add(document.body)
