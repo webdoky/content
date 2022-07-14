@@ -66,7 +66,7 @@ filter(function (element, index, array) {
     - `array`
       - : Початковий масив, на якому було викликано функцію `filter()`.
 
-- `thisArg`{{optional_inline}}
+- `thisArg` {{optional_inline}}
   - : Значення, що буде підставлено як `this` під час виконання `callbackFn`.
 
 ### Повернене значення
