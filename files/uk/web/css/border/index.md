@@ -4,6 +4,7 @@ slug: Web/CSS/border
 tags:
   - CSS
   - CSS Borders
+  - CSS Property
   - CSS Shorthand property
   - Layout
   - Reference
@@ -43,6 +44,8 @@ border: medium dashed green;
 /* Глобальні значення */
 border: inherit;
 border: initial;
+border: revert;
+border: revert-layer;
 border: unset;
 ```
 
