@@ -18,7 +18,7 @@ browser-compat: css.properties.-moz-outline-radius-bottomleft
 
 ## Синтаксис
 
-Значення `-moz-outline-radius-bottomleft` &mdash; або {{cssxref("length", "&lt;length&gt;")}}, або [відсоткова частка](/uk/docs/Web/CSS/percentage) відповідних розмірів обрамленого блоку. Також може бути використана функція {{cssxref("calc()", "calc()")}}.
+Значення `-moz-outline-radius-bottomleft` &mdash; або {{cssxref("length", "&lt;length&gt;")}}, або [відсоткова частка](/uk/docs/Web/CSS/percentage) відповідних розмірів обрамленого блоку. Також може бути використана функція {{cssxref("calc", "calc()")}}.
 
 ### Значення
 
