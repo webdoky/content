@@ -99,7 +99,7 @@ element {
 </div>
 ```
 
-... що призводить до наступного:
+Це виводить наступний результат:
 
 {{EmbedLiveSample("pershi-kroky-iz-korystuvatskymy-vlastyvostiamy",600,180)}}
 
@@ -171,7 +171,7 @@ element {
 </div>
 ```
 
-... із наступним CSS:
+… із наступним CSS:
 
 ```css
 .two {
