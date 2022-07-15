@@ -431,7 +431,7 @@ if ('Promise' in window) {
 
 #### Результат
 
-{{EmbedLiveSample("Advanced_Example", "500", "200")}}
+{{EmbedLiveSample("pohlyblenyi-pryklad", "500", "200")}}
 
 ### Завантаження зображення за допомогою XHR
 
