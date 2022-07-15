@@ -33,7 +33,7 @@ browser-compat: css.properties.box-sizing
 
   `box-sizing: border-box` – усталений стиль, що браузер застосовує для елементів {{htmlelement("table")}}, {{htmlelement("select")}} та {{htmlelement("button")}}, а також до елементів {{htmlelement("input")}}, чий тип – `{{htmlelement("input/radio", "radio")}}`, `{{htmlelement("input/checkbox", "checkbox")}}`, `{{htmlelement("input/reset", "reset")}}`, `{{htmlelement("input/button", "button")}}`, `{{htmlelement("input/submit", "submit")}}`, `{{htmlelement("input/color", "color")}}` або `{{htmlelement("input/search", "search")}}`.
 
-> **Зверніть увагу:** Часто корисно встановити значення `box-sizing` у `border-box` для розкладки елементів. Це сильно спрощує роботу з розмірами елементів, і в загальному дає змогу уникнути низки вовчих ям, в котрі можна потрапити, розкладаючи вміст. З іншого боку, при використанні `position: relative` або `position: absolute` вживання `box-sizing: content-box` дає змогу вказувати значення позиціонування відносно вмісту, незалежно від варіації розмірів меж чи внутрішніх відступів, що іноді є бажаним.
+> **Зверніть увагу:** Часто корисно встановлювати значення `box-sizing` у `border-box` для викладання елементів. Це сильно спрощує роботу з розмірами елементів, і в загальному дає змогу уникнути низки вовчих ям, в котрі можна потрапити, розкладаючи вміст. З іншого боку, при використанні `position: relative` або `position: absolute` вживання `box-sizing: content-box` дає змогу вказувати значення позиціонування відносно вмісту, незалежно від варіації розмірів меж чи внутрішніх відступів, що іноді є бажаним.
 
 ## Синтаксис
 
@@ -45,6 +45,7 @@ box-sizing: content-box;
 box-sizing: inherit;
 box-sizing: initial;
 box-sizing: revert;
+box-sizing: revert-layer;
 box-sizing: unset;
 ```
 
