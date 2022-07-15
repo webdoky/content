@@ -41,6 +41,7 @@ background-image: linear-gradient(
 background-image: inherit;
 background-image: initial;
 background-image: revert;
+backdrop-filter: revert-layer;
 background-image: unset;
 ```
 
@@ -122,15 +123,15 @@ div {
 - Типи даних, пов‘язані з зображеннями: {{cssxref("&lt;image&gt;")}}, {{cssxref("&lt;gradient&gt;")}}
 - Функції, пов‘язані з зображеннями:
 
-  - {{cssxref("cross-fade()")}}
-  - {{cssxref("element()")}}
-  - {{cssxref("image/image()", "image()")}}
-  - {{cssxref("image/image-set()", "image-set()")}}
-  - {{cssxref("gradient/linear-gradient()", "linear-gradient()")}}
-  - {{cssxref("gradient/radial-gradient()", "radial-gradient()")}}
-  - {{cssxref("gradient/conic-gradient()", "conic-gradient()")}}
-  - {{cssxref("gradient/repeating-linear-gradient()", "repeating-linear-gradient()")}}
-  - {{cssxref("gradient/repeating-radial-gradient()", "repeating-radial-gradient()")}}
-  - {{cssxref("gradient/repeating-conic-gradient()", "repeating-conic-gradient()")}}
-  - {{cssxref("image/paint()", "paint()")}}
-  - {{cssxref("url()", "url()")}}
+  - {{cssxref("cross-fade", "cross-fade()")}}
+  - {{cssxref("element", "element()")}}
+  - {{cssxref("image/image", "image()")}}
+  - {{cssxref("image/image-set", "image-set()")}}
+  - {{cssxref("gradient/linear-gradient", "linear-gradient()")}}
+  - {{cssxref("gradient/radial-gradient", "radial-gradient()")}}
+  - {{cssxref("gradient/conic-gradient", "conic-gradient()")}}
+  - {{cssxref("gradient/repeating-linear-gradient", "repeating-linear-gradient()")}}
+  - {{cssxref("gradient/repeating-radial-gradient", "repeating-radial-gradient()")}}
+  - {{cssxref("gradient/repeating-conic-gradient", "repeating-conic-gradient()")}}
+  - {{cssxref("image/paint", "paint()")}}
+  - {{cssxref("url", "url()")}}
