@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [2022-07-08 - 2022-07-15]
 
+* **Оновлення перекладу(JS):** web/javascript/reference/guide/regular_expressions (#440) ([4af5261](https://github.com/webdoky/content/commit/4af5261ae7dfd4333b8d13af4e058fdd0d7ab26a))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/map (#439) ([d1c1df8](https://github.com/webdoky/content/commit/d1c1df8f9122332105538580129ce385492d8b96))
+* **Оновлення перекладу(JS):** web/javascript/reference/operators/conditional_operator ([573006f](https://github.com/webdoky/content/commit/573006fa92d0597543b2304dfd7c5d5dc00d94e6))
 * **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/sort (#436) ([783ec53](https://github.com/webdoky/content/commit/783ec530ed4d8587c5c2c2bd1f7e628504dbf92f))
 * **Переклад(JS):** web/javascript/reference/global_objects/array/concat (#413) ([356c843](https://github.com/webdoky/content/commit/356c843a1b9de070e31aafc5997ec4fb49d87bfe))
 * **Оновлення перекладу(JS):** web/javascript/reference/global_objects/date (#435) ([dd6b325](https://github.com/webdoky/content/commit/dd6b325c35e3c914fba53b0b85e41d61ce80932d))
