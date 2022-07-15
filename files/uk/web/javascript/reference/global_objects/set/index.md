@@ -114,17 +114,25 @@ console.log(mySet1);
 ```js
 // обійти елементи множини
 // по порядку виводить елементи: 1, "якийсь текст", {"a": 1, "b": 2}, {"a": 1, "b": 2}
-for (let item of mySet1) console.log(item)
+for (const item of mySet1) {
+  console.log(item);
+}
 
 // по порядку виводить елементи: 1, "якийсь текст", {"a": 1, "b": 2}, {"a": 1, "b": 2}
-for (let item of mySet1.keys()) console.log(item)
+for (const item of mySet1.keys()) {
+  console.log(item);
+}
 
 // по порядку виводить елементи: 1, "якийсь текст", {"a": 1, "b": 2}, {"a": 1, "b": 2}
-for (let item of mySet1.values()) console.log(item)
+for (const item of mySet1.values()) {
+  console.log(item);
+}
 
 // по порядку виводить елементи: 1, "якийсь текст", {"a": 1, "b": 2}, {"a": 1, "b": 2}
 // (ключі та значення в цьому випадку однакові)
-for (let [key, value] of mySet1.entries()) console.log(key)
+for (const [key, value] of mySet1.entries()) {
+  console.log(key);
+}
 
 // За допомогою Array.from перетворює об‘єкт Set на об‘єкт Array
 const myArr = Array.from(mySet1) // [1, "якийсь текст", {"a": 1, "b": 2}, {"a": 1, "b": 2}]
@@ -145,9 +153,9 @@ const intersection = new Set([...mySet1].filter(x => mySet2.has(x)))
 const difference = new Set([...mySet1].filter(x => !mySet2.has(x)))
 
 // Обійти записи множини за допомогою forEach()
-mySet2.forEach(function(value) {
-  console.log(value)
-})
+mySet2.forEach((value) => {
+  console.log(value);
+});
 
 // 1
 // 2
@@ -160,7 +168,7 @@ mySet2.forEach(function(value) {
 ```js
 // Чи є надмножиною
 function isSuperset(set, subset) {
-  for (let elem of subset) {
+  for (const elem of subset) {
     if (!set.has(elem)) {
       return false;
     }
@@ -170,8 +178,8 @@ function isSuperset(set, subset) {
 
 // Об‘єднання
 function union(setA, setB) {
-  let _union = new Set(setA);
-  for (let elem of setB) {
+  const _union = new Set(setA);
+  for (const elem of setB) {
     _union.add(elem);
   }
   return _union;
@@ -179,8 +187,8 @@ function union(setA, setB) {
 
 // Перетин
 function intersection(setA, setB) {
-  let _intersection = new Set();
-  for (let elem of setB) {
+  const _intersection = new Set();
+  for (const elem of setB) {
     if (setA.has(elem)) {
       _intersection.add(elem);
     }
@@ -190,8 +198,8 @@ function intersection(setA, setB) {
 
 // Симетрична різниця
 function symmetricDifference(setA, setB) {
-  let _difference = new Set(setA);
-  for (let elem of setB) {
+  const _difference = new Set(setA);
+  for (const elem of setB) {
     if (_difference.has(elem)) {
       _difference.delete(elem);
     } else {
@@ -203,8 +211,8 @@ function symmetricDifference(setA, setB) {
 
 // Різниця
 function difference(setA, setB) {
-  let _difference = new Set(setA);
-  for (let elem of setB) {
+  const _difference = new Set(setA);
+  for (const elem of setB) {
     _difference.delete(elem);
   }
   return _difference;
@@ -225,10 +233,10 @@ difference(setA, setC); // повертає Set {1, 2}
 ### Зв‘язок з об‘єктами Array
 
 ```js
-let myArray = ['значення1', 'значення2', 'значення3'];
+const myArray = ['value1', 'value2', 'value3'];
 
 // Використати звичайний конструктор Set, щоб перетворити масив на множину
-let mySet = new Set(myArray);
+const mySet = new Set(myArray);
 
 mySet.has('значення1'); // повертає true
 
@@ -251,7 +259,7 @@ console.log([...new Set(numbers)]);
 ### Зв‘язок із рядками
 
 ```js
-let text = 'Індія';
+const text = 'Індія';
 
 const mySet = new Set(text); // Set(5) {'І', 'н', 'д', 'і', 'я'}
 mySet.size; // 5
@@ -264,9 +272,7 @@ new Set('firefox'); // Set(6) { "f", "i", "r", "e", "o", "x" }
 ### Використання Set для пересвідчення щодо унікальності всіх значень у списку
 
 ```js
-const array = Array.from(document.querySelectorAll('[id]')).map(function (e) {
-  return e.id;
-});
+const array = Array.from(document.querySelectorAll('[id]')).map((e) => e.id);
 
 const set = new Set(array);
 console.assert(set.size == array.length);
