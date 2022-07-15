@@ -9,18 +9,19 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.Object.entries
 ---
+
 {{JSRef}}
 
 Метод **`Object.entries()`** повертає власні перелічувані властивості переданого об'єкта як масив пар `[ключ, значення]`. Метод враховує лише ті властивості, які мають рядковий ключ. Це працює так само як і цикл {{jsxref("Statements/for...in", "for...in")}}, за винятком того, що цикл `for...in` також перебирає властивості, які доступні через ланцюжок прототипів.
 
-Порядок елементів у масиві, поверненому з **`Object.entries()`**, є таким самим, як і циклі {{jsxref("Statements/for...in", "for...in")}}. Якщо потрібен якийсь інший порядок, то масив слід спочатку відсортувати, як от `Object.entries(obj).sort((a, b) => b[0].localeCompare(a[0]));`.
+Порядок елементів у масиві, поверненому з `Object.entries()`, є таким самим, як і при циклі {{jsxref("Statements/for...in", "for...in")}}. Якщо потрібен якийсь інший порядок, то масив слід спочатку відсортувати, як от `Object.entries(obj).sort((a, b) => b[0].localeCompare(a[0]));`.
 
 {{EmbedInteractiveExample("pages/js/object-entries.html")}}
 
 ## Синтаксис
 
 ```js
-Object.entries(obj)
+Object.entries(obj);
 ```
 
 ### Параметри
@@ -46,14 +47,13 @@ Object.entries(obj)
 
 ```js
 if (!Object.entries) {
-  Object.entries = function( obj ){
-    var ownProps = Object.keys( obj ),
-        i = ownProps.length,
-        resArray = new Array(i); // заздалегідь розмістимо новий масив
-    while (i--)
-      resArray[i] = [ownProps[i], obj[ownProps[i]]];
+  Object.entries = function (obj) {
+    var ownProps = Object.keys(obj),
+      i = ownProps.length,
+      resArray = new Array(i); // заздалегідь розмістимо новий масив
+    while (i--) resArray[i] = [ownProps[i], obj[ownProps[i]]];
 
-    return resArray;
+    return resArray;
   };
 }
 ```
@@ -75,7 +75,16 @@ const anObj = { 100: 'a', 2: 'b', 7: 'c' };
 console.log(Object.entries(anObj)); // [ ['2', 'b'], ['7', 'c'], ['100', 'a'] ]
 
 // з властивістю getFoo, яка не є перелічуваною
-const myObj = Object.create({}, { getFoo: { value() { return this.foo; } } });
+const myObj = Object.create(
+  {},
+  {
+    getFoo: {
+      value() {
+        return this.foo;
+      },
+    },
+  },
+);
 myObj.foo = 'bar';
 console.log(Object.entries(myObj)); // [ ['foo', 'bar'] ]
 
@@ -110,7 +119,7 @@ console.log(map); // Map(2) {"foo" => "bar", "baz" => 42}
 
 ### Перебирання властивостей `Object`
 
-За допомогою [деструктуризації масиву](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#array_destructuring) можна з легкістю перебирати поля об'єкту.
+За допомогою [деструктуризації масиву](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#destrukturyzatsiia-masyvu) можна з легкістю перебирати поля об'єкту.
 
 ```js
 const obj = { foo: 'bar', baz: 42 };
@@ -127,7 +136,7 @@ Object.entries(obj).forEach(([key, value]) => console.log(`${key}: ${value}`)); 
 
 ## Дивіться також
 
-- Поліфіл для `Object.entries` доступний у [`core-js`](https://github.com/zloirock/core-js#ecmascript-object)
+- [Поліфіл для `Object.entries` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-object)
 - [Перелічуваність і власність властивостей](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties)
 - {{jsxref("Object.keys()")}}
 - {{jsxref("Object.values()")}}
