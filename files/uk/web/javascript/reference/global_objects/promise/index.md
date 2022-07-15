@@ -53,7 +53,7 @@ new Promise((resolveOuter) => {
 
 ### Ланцюжки промісів
 
-Методи `{{jsxref("Promise.prototype.then()")}}`, `{{jsxref("Promise.prototype.catch()")}}` і `{{jsxref("Promise.prototype.finally()")}}` використовуються, щоб приєднати якусь наступну дію до промісу, який залагоджується. Оскільки методи `{{JSxRef("Promise.then", "Promise.prototype.then()")}}` and `{{JSxRef("Promise.catch", "Promise.prototype.catch()")}}` повертають проміси, їх виклики можна об‘єднати в ланцюжок.
+Методи `{{jsxref("Promise.prototype.then()")}}`, `{{jsxref("Promise.prototype.catch()")}}` і `{{jsxref("Promise.prototype.finally()")}}` використовуються, щоб приєднати якусь наступну дію до промісу, який залагоджується. Оскільки методи `{{JSxRef("Promise.then", "Promise.prototype.then()")}}` та `{{JSxRef("Promise.catch", "Promise.prototype.catch()")}}` повертають проміси, їх виклики можна об‘єднати в ланцюжок.
 
 Метод `.then()` приймає до двох аргументів; перший — це функція зворотного виклику для сповнення промісу, а другий — відповідно, функція для його відхилення. Кожний `.then()` повертає новостворений об'єкт промісу, який далі може (необов'язково) використовуватися для нарощування ланцюжка викликів, як от:
 
