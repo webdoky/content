@@ -18,7 +18,7 @@ browser-compat: css.properties.-moz-outline-radius-topright
 
 ## Синтаксис
 
-Значення `-moz-outline-radius-topright` &mdash; або {{cssxref("length", "&lt;length&gt;")}}, або [відсоткова частка](/uk/docs/Web/CSS/percentage) відповідних розмірів обрамленого блоку. Також може бути використана функція {{cssxref("calc()", "calc()")}}.
+Значення `-moz-outline-radius-topright` — або [`<length>`](/uk/docs/Web/CSS/length), або [відсоткова частка](/uk/docs/Web/CSS/percentage) відповідних розмірів обрамленого блоку. Також може бути використана функція [`calc()`](/uk/docs/Web/CSS/calc).
 
 ### Значення
 
