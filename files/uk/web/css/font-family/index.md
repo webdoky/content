@@ -49,6 +49,7 @@ font-family: fangsong; /* імітація Сун */
 /* Глобальні значення */
 font-family: inherit; /* успадковане значення */
 font-family: initial; /* початкове значення */
+font-family: revert-layer; /* відкат значення шару */
 font-family: revert; /* відкат значення */
 font-family: unset; /* невстановлене значення */
 ```
@@ -210,7 +211,7 @@ font-family: Gill Sans Extrabold, sans-serif;
 <div class="fangsong">Це приклад шрифту імітації Сун.</div>
 ```
 
-{{EmbedLiveSample("Some_common_font_families", 600, 220)}}
+{{EmbedLiveSample("deiaki-zahalnovzhyvani-simeistva-shryftu", 600, 220)}}
 
 ## Специфікації
 
