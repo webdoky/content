@@ -60,6 +60,7 @@ justify-content: unsafe center;
 justify-content: inherit;
 justify-content: initial;
 justify-content: revert;
+justify-content: revert-layer;
 justify-content: unset;
 ```
 
@@ -168,7 +169,7 @@ justifyContent.addEventListener('change', function (evt) {
 
 ## Специфікації
 
-{{Specifications("css.properties.justify-content.grid_context")}}
+{{Specifications}}
 
 ## Сумісність із браузерами
 
