@@ -45,7 +45,7 @@ browser-compat: html.elements.input.type_radio
     </tr>
     <tr>
       <td><strong>Події</strong></td>
-      <td>{{event("change")}} та {{event("input")}}</td>
+      <td>{{domxref("HTMLElement/change_event", "change")}} та {{domxref("HTMLElement/input_event", "input")}}</td>
     </tr>
     <tr>
       <td><strong>Підтримувані загальні атрибути</strong></td>
