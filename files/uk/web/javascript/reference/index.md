@@ -145,6 +145,10 @@ tags:
 - {{JSxRef("WebAssembly.LinkError")}}
 - {{JSxRef("WebAssembly.RuntimeError")}}
 
+### Інші
+
+- {{JSxRef("Functions/arguments", "arguments")}}
+
 ## Інструкції
 
 [Інструкції та оголошення JavaScript](/uk/docs/Web/JavaScript/Reference/Statements)
@@ -217,7 +221,7 @@ tags:
 - {{JSxRef("Operators/Optional_chaining", "<code>?.</code> (Optional chaining)", "", 1)}}
 - {{JSxRef("Operators/new", "new")}}
 - {{JSxRef("Operators/new%2Etarget", "new.target")}}
-- {{JSxRef("Statements/import%2Emeta", "import.meta")}}
+- {{JSxRef("Operators/import%2Emeta", "import.meta")}}
 - {{JSxRef("Operators/super", "super")}}
 - {{JSxRef("Operators/Spread_syntax", "...obj")}}
 
@@ -306,7 +310,7 @@ tags:
 - {{JSxRef("Operators/Destructuring_assignment", "[a, b] = [1, 2]")}}
 - {{JSxRef("Operators/Destructuring_assignment", "{a, b} = {a:1, b:2}")}}
 
-### Оператор кома
+### Оператор коми
 
 - {{JSxRef("Operators/Comma_Operator", ",")}}
 
