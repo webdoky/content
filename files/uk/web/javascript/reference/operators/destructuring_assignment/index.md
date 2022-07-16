@@ -12,6 +12,7 @@ tags:
   - Operator
 browser-compat: javascript.operators.destructuring
 ---
+
 {{jsSidebar("Operators")}}
 
 Синтаксис **присвоєння з деструктуризацією** — це вираз в JavaScript, який дає змогу розпакувати значення з масивів, або властивості з об'єктів, в окремі змінні.
@@ -21,25 +22,31 @@ browser-compat: javascript.operators.destructuring
 ## Синтаксис
 
 ```js
-let a, b, rest;
-[a, b] = [10, 20];
-console.log(a); // 10
-console.log(b); // 20
-
-[a, b, ...rest] = [10, 20, 30, 40, 50];
-console.log(a); // 10
-console.log(b); // 20
-console.log(rest); // [30, 40, 50]
-
-({ a, b } = { a: 10, b: 20 });
-console.log(a); // 10
-console.log(b); // 20
-
-// Проєкт стадії 4(завершений)
-({a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40});
-console.log(a); // 10
-console.log(b); // 20
-console.log(rest); // {c: 30, d: 40}
+const [a, b] = array;
+const [a, , b] = array;
+const [a = aDefault, b] = array;
+const [a, b, ...rest] = array;
+const [a, , b, ...rest] = array;
+const [a, b, ...{ pop, push }] = array;
+const [a, b, ...[c, d]] = array;
+const { a, b } = obj;
+const { a: a1, b: b1 } = obj;
+const { a: a1 = aDefault, b = bDefault } = obj;
+const { a, b, ...rest } = obj;
+const { a: a1, b: b1, ...rest } = obj;
+let a, b, a1, b1, c, d, rest, pop, push;
+[a, b] = array;
+[a, , b] = array;
+[a = aDefault, b] = array;
+[a, b, ...rest] = array;
+[a, , b, ...rest] = array;
+[a, b, ...{ pop, push }] = array;
+[a, b, ...[c, d]] = array;
+({ a, b } = obj); // дужки обов‘язкові
+({ a: a1, b: b1 } = obj);
+({ a: a1 = aDefault, b = bDefault } = obj);
+({ a, b, ...rest } = obj);
+({ a: a1, b: b1, ...rest } = obj);
 ```
 
 ## Опис
@@ -50,7 +57,7 @@ console.log(rest); // {c: 30, d: 40}
 const x = [1, 2, 3, 4, 5];
 ```
 
-Присвоєння з деструктуризацією використовує подібний синтаксис, але по лівий бік від оператора присвоєння, щоб встановити, які саме значення розпакувати зі змінної-джерела.
+Присвоєння з деструктуризацією використовує подібний синтаксис, але по лівий бік від оператора присвоєння, щоб встановити, які саме значення зі змінної-джерела мають бути розпаковані.
 
 ```js
 const x = [1, 2, 3, 4, 5];
@@ -68,7 +75,7 @@ const [firstElement, secondElement] = list;
 // const secondElement = list[1];
 ```
 
-Ці можливості подібні до функціоналу, що доступний в Perl і Python.
+Ці можливості подібні до функціональності, що доступна в Perl і Python.
 
 ## Приклади
 
@@ -106,17 +113,17 @@ const [red, yellow, green, blue] = foo;
 console.log(red); // "один"
 console.log(yellow); // "два"
 console.log(green); // undefined
-console.log(blue);  //undefined
+console.log(blue); //undefined
 ```
 
 #### Усталені значення
 
-Змінній можна присвоїти усталене значення, на випадок, якщо розпаковане з масиву значення дорівнює `undefined`.
+На випадок, якщо розпаковане з масиву значення дорівнює `undefined`, змінній можна присвоїти усталене значення.
 
 ```js
 let a, b;
 
-[a=5, b=7] = [1];
+[a = 5, b = 7] = [1];
 console.log(a); // 1
 console.log(b); // 7
 ```
@@ -125,7 +132,7 @@ console.log(b); // 7
 
 Значення двох змінних можна поміняти місцями в одному виразі з деструктуризацією.
 
-Без присвоєння з деструктуризацією така заміна вимагатиме тимчасової змінної (або, в деяких низькорівневих мовах, застосування [трюку зі XOR-заміною](https://en.wikipedia.org/wiki/XOR_swap_algorithm)).
+Без присвоєння з деструктуризацією така заміна вимагатиме тимчасової змінної (або, в деяких низькорівневих мовах, застосування [трюку зі XOR-заміною](https://uk.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%BE%D0%B1%D0%BC%D1%96%D0%BD%D1%83_XOR)).
 
 ```js
 let a = 1;
@@ -135,7 +142,7 @@ let b = 3;
 console.log(a); // 3
 console.log(b); // 1
 
-const arr = [1,2,3];
+const arr = [1, 2, 3];
 [arr[2], arr[1]] = [arr[1], arr[2]];
 console.log(arr); // [1,3,2]
 ```
@@ -177,7 +184,7 @@ console.log(c); // 1
 Можна також ігнорувати всі повернені значення:
 
 ```js
-[,,] = f();
+[, ,] = f();
 ```
 
 #### Присвоєння решти масиву змінній
@@ -190,13 +197,45 @@ console.log(a); // 1
 console.log(b); // [2, 3]
 ```
 
-Варто знати, що буде викинуто {{jsxref("SyntaxError")}} в разі, якщо справа від елемента решти буде висяча кома:
+Варто знати, що якщо справа від елемента решти буде висяча кома, то буде викинуто {{jsxref("SyntaxError")}}:
 
 ```js example-bad
 const [a, ...b,] = [1, 2, 3];
 
 // SyntaxError: rest element may not have a trailing comma
 // Завжди розглядайте застосування оператора решти як останнього елемента
+```
+
+#### Використання патерну зв‘язування як решти властивостей
+
+Іще одним патерном зв‘язування об‘єкта може бути решта властивостей при деструктуризації масиву. Це дає змогу водночас розпакувати властивості та індекси масиву.
+
+```js
+const [a, b, ...{ pop, push }] = [1, 2];
+console.log(a, b); // 1 2
+console.log(pop, push); // [Function pop] [Function push]
+```
+
+```js
+const [a, b, ...[c, d]] = [1, 2, 3, 4];
+console.log(a, b, c, d); // 1 2 3 4
+```
+
+Такі патерни зв‘язування можна навіть вкладати один в одного, поки кожна решта властивостей є останньою у своєму списку.
+
+```js
+const [a, b, ...[c, d, ...[e, f]]] = [1, 2, 3, 4, 5, 6];
+console.log(a, b, c, d, e, f); // 1 2 3 4 5 6
+```
+
+З іншого боку, деструктуризація об‘єкта може мати лише ідентифікатор як властивість решти.
+
+```js example-bad
+const { a, ...{ b } } = { a: 1, b: 2 };
+// SyntaxError: `...` must be followed by an identifier in declaration contexts
+let a, b;
+({ a, ...{ b } } = { a: 1, b: 2 });
+// SyntaxError: `...` must be followed by an assignable reference in assignment contexts
 ```
 
 #### Розпакування значень зі збігів з регулярним виразом
@@ -221,17 +260,66 @@ console.log(parseProtocol('https://webdoky.org/uk/docs/Web/JavaScript'));
 // "https"
 ```
 
+#### Використання деструктуризації масиву на будь-якому ітерованому об‘єкті
+
+Деструктуризація масиву звертається до [протоколу ітерування](/uk/docs/Web/JavaScript/Reference/Iteration_protocols) з правого боку присвоєння. Таким чином, будь-який ітерований об‘єкт можна деструктуризувати, а не лише масиви.
+
+```js
+const [a, b] = new Map([
+  [1, 2],
+  [3, 4],
+]);
+console.log(a, b); // [1, 2] [3, 4]
+```
+
+Неітеровані об‘єкти не можна деструктуризувати як масиви.
+
+```js example-bad
+const obj = { 0: 'a', 1: 'b', length: 2 };
+const [a, b] = obj;
+// TypeError: obj is not iterable
+```
+
+Ітеровані об‘єкти ітеруються лише поки не закінчиться список деструктуризації.
+
+```js
+const obj = {
+  *[Symbol.iterator]() {
+    for (const v of [0, 1, 2, 3]) {
+      console.log(v);
+      yield v;
+    }
+  },
+};
+const [a, b] = obj; // Виводить лише 0 і 1
+```
+
+Прив‘язка решти обчислюється негайно, створюючи новий масив, а не використовує старий ітерований об‘єкт.
+
+```js
+const obj = {
+  *[Symbol.iterator]() {
+    for (const v of [0, 1, 2, 3]) {
+      console.log(v);
+      yield v;
+    }
+  },
+};
+const [a, b, ...rest] = obj; // Виводить 0 1 2 3
+console.log(rest); // Виводить масив [2, 3]
+```
+
 ### Деструктуризація об'єктів
 
 #### Звичайне присвоєння
 
 ```js
 const user = {
-    id: 42,
-    isVerified: true
+  id: 42,
+  isVerified: true,
 };
 
-const {id, isVerified} = user;
+const { id, isVerified } = user;
 
 console.log(id); // 42
 console.log(isVerified); // true
@@ -244,24 +332,24 @@ console.log(isVerified); // true
 ```js
 let a, b;
 
-({a, b} = {a: 1, b: 2});
+({ a, b } = { a: 1, b: 2 });
 ```
 
 > **Примітка:** Дужки `( ... )` навколо інструкції присвоєння є обов'язковими під час виконання присвоєння із деструктуризацією окремо від оголошення в об'єктних літералах.
 >
 > Окремий вираз `{a, b} = {a: 1, b: 2}` — це недійсний синтаксис, оскільки `{a, b}` зліва вважатимуться блоком, а не об'єктним літералом.
 >
-> Проте, вираз `({a, b} = {a: 1, b: 2})` є цілком коректним, так само як і `const {a, b} = {a: 1, b: 2}`
+> Проте, вираз `({a, b} = {a: 1, b: 2})` є цілком коректним, так само як і `const {a, b} = {a: 1, b: 2}`.
 >
-> Перед виразом `( ... )` також потрібна крапка з комою, інакше він може бути використаний для виклику функції на попередньому рядку.
+> Якщо ваш стиль оформлення коду не включає крапки з комою в кінці рядка, то перед виразом `( ... )` потрібна крапка з комою, інакше він може бути використаний для виклику функції на попередньому рядку.
 
 #### Присвоєння змінним із новими іменами
 
 Можна розпакувати властивість з об'єкта і присвоїти її змінній під іншим ім'ям, відмінним від назви властивості.
 
 ```js
-const o = {p: 42, q: true};
-const {p: foo, q: bar} = o;
+const o = { p: 42, q: true };
+const { p: foo, q: bar } = o;
 
 console.log(foo); // 42
 console.log(bar); // true
@@ -274,7 +362,7 @@ console.log(bar); // true
 Змінній можна присвоїти усталене значення, на випадок, якщо значення, розпаковане з об'єкта, дорівнює `undefined`.
 
 ```js
-const {a = 10, b = 5} = {a: 3};
+const { a = 10, b = 5 } = { a: 3 };
 
 console.log(a); // 3
 console.log(b); // 5
@@ -288,7 +376,7 @@ console.log(b); // 5
 - Призначити їй усталене значення, на випадок, якщо розпаковане значення дорівнює `undefined`.
 
 ```js
-const {a: aa = 10, b: bb = 5} = {a: 3};
+const { a: aa = 10, b: bb = 5 } = { a: 3 };
 
 console.log(aa); // 3
 console.log(bb); // 5
@@ -306,15 +394,15 @@ const user = {
   displayName: 'скішка',
   fullName: {
     firstName: 'Самійло',
-    lastName: 'Кішка'
-  }
+    lastName: 'Кішка',
+  },
 };
 ```
 
 Далі показано, як розпакувати властивість переданого об'єкта у змінну із таким самим ім'ям. Значення параметра `{id}` вказує, що з об'єкта, переданого до функції, слід розпакувати властивість `id` у змінну зі таким самим ім'ям. Цю змінну далі можна буде використовувати всередині функції.
 
 ```js
-function userId({id}) {
+function userId({ id }) {
   return id;
 }
 
@@ -324,7 +412,7 @@ console.log(userId(user)); // 42
 Можна задати нове ім'я для розпакованої змінної. Нижче розпаковується властивість під назвою `displayName`, і перейменовується у `dname` для використання всередині тіла функції.
 
 ```js
-function userDisplayName({displayName: dname}) {
+function userDisplayName({ displayName: dname }) {
   return dname;
 }
 
@@ -334,11 +422,11 @@ console.log(userDisplayName(user)); // `скішка`
 Також можна розпаковувати вкладені об'єкти. Наведений нижче приклад ілюструє розпаковування властивості `fullname.firstName` у змінну, названу `name`.
 
 ```js
-function whois({displayName, fullName: {firstName: name}}) {
+function whois({ displayName, fullName: { firstName: name } }) {
   return `${displayName} — це ${name}`;
 }
 
-console.log(whois(user));  // "скішка — це Самійло"
+console.log(whois(user)); // "скішка — це Самійло"
 ```
 
 #### Встановлення усталеного значення для параметра функції
@@ -348,14 +436,18 @@ console.log(whois(user));  // "скішка — це Самійло"
 Нижче показано функцію, де усталене значення змінної `size` дорівнює `'великий'`, усталені координати дорівнюють `x: 0, y: 0`, а усталений радіус `radius` — 25.
 
 ```js
-function drawChart({size = 'великий', coords = {x: 0, y: 0}, radius = 25} = {}) {
+function drawChart({
+  size = 'великий',
+  coords = { x: 0, y: 0 },
+  radius = 25,
+} = {}) {
   console.log(size, coords, radius);
   // виконати малювання якогось графіка
 }
 
 drawChart({
-  coords: {x: 18, y: 30},
-  radius: 30
+  coords: { x: 18, y: 30 },
+  radius: 30,
 });
 ```
 
@@ -382,23 +474,23 @@ const metadata = {
       localization_tags: [],
       last_edit: '2014-04-14T08:43:37',
       url: '/de/docs/Tools/Scratchpad',
-      title: 'JavaScript-Umgebung'
-    }
+      title: 'JavaScript-Umgebung',
+    },
   ],
-  url: '/en-US/docs/Tools/Scratchpad'
+  url: '/en-US/docs/Tools/Scratchpad',
 };
 
 let {
   title: englishTitle, // перейменування
   translations: [
     {
-       title: localeTitle, // перейменування
+      title: localeTitle, // перейменування
     },
   ],
 } = metadata;
 
 console.log(englishTitle); // "Scratchpad"
-console.log(localeTitle);  // "JavaScript-Umgebung"
+console.log(localeTitle); // "JavaScript-Umgebung"
 ```
 
 #### `For of` — ітерування із деструктуризацією
@@ -410,23 +502,26 @@ const people = [
     family: {
       mother: 'Яна Коваль',
       father: 'Гаврило Коваль',
-      sister: 'Соломія Коваль'
+      sister: 'Соломія Коваль',
     },
-    age: 35
+    age: 35,
   },
   {
     name: 'Фома Іванченко',
     family: {
       mother: 'Раїса Іванченко',
       father: 'Ярослав Іванченко',
-      brother: 'Валерій Іванченко'
+      brother: 'Валерій Іванченко',
     },
-    age: 25
-  }
+    age: 25,
+  },
 ];
 
-for (const {name: n, family: {father: f}} of people) {
-  console.log('Ім\'я: ' + n + ', Батько: ' + f);
+for (const {
+  name: n,
+  family: { father: f },
+} of people) {
+  console.log("Ім'я: " + n + ', Батько: ' + f);
 }
 
 // "Ім'я: Михайло Коваль, Батько: Гаврило Коваль"
@@ -439,7 +534,7 @@ for (const {name: n, family: {father: f}} of people) {
 
 ```js
 let key = 'z';
-let {[key]: foo} = {z: 'bar'};
+let { [key]: foo } = { z: 'bar' };
 
 console.log(foo); // "bar"
 ```
@@ -449,7 +544,7 @@ console.log(foo); // "bar"
 Проєкт [Решта/розгорнуті властивості для ECMAScript (англ.)](https://github.com/tc39/proposal-object-rest-spread) (стадія 4) додає до деструктуризації синтаксис [решти](/uk/docs/Web/JavaScript/Reference/Functions/rest_parameters). В решту властивостей збирається залишок ключів власних перелічуваних властивостей — тих, які ще не були вказані під час деструктуризації.
 
 ```js
-let {a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40}
+let { a, b, ...rest } = { a: 10, b: 20, c: 30, d: 40 };
 a; // 10
 b; // 20
 rest; // { c: 30, d: 40 }
@@ -472,12 +567,12 @@ console.log(fizzBuzz); // true
 
 ```js
 const props = [
-  { id: 1, name: 'Fizz'},
-  { id: 2, name: 'Buzz'},
-  { id: 3, name: 'FizzBuzz'}
+  { id: 1, name: 'Fizz' },
+  { id: 2, name: 'Buzz' },
+  { id: 3, name: 'FizzBuzz' },
 ];
 
-const [,, { name }] = props;
+const [, , { name }] = props;
 
 console.log(name); // "FizzBuzz"
 ```
@@ -487,9 +582,9 @@ console.log(name); // "FizzBuzz"
 Якщо під час деструктуризації об'єкта властивість в ньому недоступна, пошук продовжиться далі вздовж ланцюжка прототипів.
 
 ```js
-let obj = {self: '123'};
+let obj = { self: '123' };
 obj.__proto__.prot = '456';
-const {self, prot} = obj;
+const { self, prot } = obj;
 // self "123"
 // prot "456" (Доступ до ланцюжка прототипів)
 ```
