@@ -176,6 +176,8 @@ console.log(splits);
 
 Об‘єкт із методом `Symbol.split` може використовуватися як розщеплювач з особливою логікою.
 
+Наступний приклад розщеплює рядок, використовуючи внутрішній стан, що складається з числа, котре щоразу збільшується на одиницю:
+
 ```js
 const splitByNumber = {
   [Symbol.split](str) {
@@ -190,12 +192,81 @@ const splitByNumber = {
       }
       result.push(str.substring(pos, matchPos));
       pos = matchPos + String(num).length;
+      num++;
     }
     return result;
   },
 };
 const myString = 'a1bc2c5d3e4f';
-console.log(myString.split(splitByNumber)); // [ "a", "bc", "c5d", "e", "f" ]
+console.log(myString.split(splitByNumber)); // => [ "a", "bc", "c5d", "e", "f" ]
+```
+
+Наступний приклад використовує внутрішній стан, щоб застосувати певну поведінку та пересвідчитися, що виробляється "дійсний" результат.
+
+```js
+const DELIMITER = ';';
+// Розщепити команди, але усунути будь-які недійсні чи непотрібні значення.
+const splitCommands = {
+  [Symbol.split](str, lim) {
+    const results = [];
+    const state = {
+      on: false,
+      brightness: {
+        current: 2,
+        min: 1,
+        max: 3,
+      },
+    };
+    let pos = 0;
+    let matchPos = str.indexOf(DELIMITER, pos);
+    while (matchPos !== -1) {
+      const subString = str.slice(pos, matchPos).trim();
+      switch (subString) {
+        case 'світло увімкнути':
+          // Якщо стан `on` вже `true` – нічого не робити.
+          if (!state.on) {
+            state.on = true;
+            results.push(subString);
+          }
+          break;
+        case 'світло вимкнути':
+          // Якщо стан `on` вже `false` – нічого не робити.
+          if (state.on) {
+            state.on = false;
+            results.push(subString);
+          }
+          break;
+        case 'яскравість збільшити':
+          // Накласти верхню межу яскравості.
+          if (state.brightness.current < state.brightness.max) {
+            state.brightness.current += 1;
+            results.push(subString);
+          }
+          break;
+        case 'яскравість зменшити':
+          // Накласти нижню межу яскравості.
+          if (state.brightness.current > state.brightness.min) {
+            state.brightness.current -= 1;
+            results.push(subString);
+          }
+          break;
+      }
+      if (results.length === lim) {
+        break;
+      }
+      pos = matchPos + DELIMITER.length;
+      matchPos = str.indexOf(DELIMITER, pos);
+    }
+    // Якщо відбувся ранній вихід у зв‘язку з досягненням межі кількості команд `lim` – решту команд не додавати.
+    if (results.length < lim) {
+      results.push(str.slice(pos).trim());
+    }
+    return results;
+  },
+};
+const commands =
+  'світло увімкнути; яскравість збільшити; яскравість збільшити; яскравість збільшити; світло увімкнути; яскравість зменшити; яскравість зменшити; світло вимкнути';
+console.log(commands.split(splitCommands, 3)); // => ["світло увімкнути", "яскравість збільшити", "яскравість зменшити"]
 ```
 
 ## Специфікації
