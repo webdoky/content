@@ -10,7 +10,7 @@ browser-compat: javascript.builtins.Object
 
 {{JSRef}}
 
-Клас **`Object`** позначає один із [типів даних JavaScript](/uk/docs/Web/JavaScript/Data_structures). Його використовують для зберігання різноманітних асоціативних масивів та складніших сутностей. Об'єкти можна створювати за допомогою конструктора {{jsxref("Object/Object", "Object()")}} та [синтаксису об'єктного ініціалізатора / літерала](/uk/docs/Web/JavaScript/Reference/Operators/Object_initializer).
+Тип **`Object`** позначає один із [типів даних JavaScript](/uk/docs/Web/JavaScript/Data_structures). Його використовують для зберігання різноманітних асоціативних масивів та складніших сутностей. Об'єкти можна створювати за допомогою конструктора {{jsxref("Object/Object", "Object()")}} та [синтаксису об'єктного ініціалізатора / літерала](/uk/docs/Web/JavaScript/Reference/Operators/Object_initializer).
 
 ## Опис
 
@@ -158,7 +158,7 @@ const current = Object.prototype.valueOf;
 // Оскільки властивість "-prop-value" є наскрізною, і не завжди присутня
 // в тому самому прототипному ланцюжку, виникає потреба змінити Object.prototype:
 Object.prototype.valueOf = function () {
-  if (this.hasOwnProperty('-prop-value')) {
+  if (Object.hasOwn(this, '-prop-value')) {
     return this['-prop-value'];
   } else {
     // Це не схоже на наш об'єкт, тому повернімося до усталеної поведінки
