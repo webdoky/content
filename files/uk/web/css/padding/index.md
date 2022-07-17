@@ -48,6 +48,7 @@ padding: 5px 1em 0 2em;
 padding: inherit;
 padding: initial;
 padding: revert;
+position: revert-layer;
 padding: unset;
 ```
 
@@ -63,7 +64,7 @@ padding: unset;
 - {{cssxref("&lt;length&gt;")}} (довжина)
   - : Розмір внутрішнього відступу як фіксоване значення.
 - {{cssxref("&lt;percentage&gt;")}}
-  - : Розмір внутрішнього відступу як відсотки від _ширини_ контейнерного блока.
+  - : Розмір внутрішнього відступу як відсоток від його розміру в рядку (_ширини_ в горизонтальному письмі, означеному у {{cssxref("writing-mode")}}), або від [контейнерного блока](/uk/docs/Web/CSS/Containing_block).
 
 ## Формальне визначення
 
@@ -100,7 +101,7 @@ h3 {
 
 #### Результат
 
-{{EmbedLiveSample('Setting_padding_with_pixels', '100%', 300)}}
+{{EmbedLiveSample('vstanovlennia-vnutrishnikh-vidstupiv-u-pikseliakh', '100%', 300)}}
 
 ### Встановлення внутрішніх відступів у пікселях та відсотках
 

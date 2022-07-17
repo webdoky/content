@@ -35,7 +35,7 @@ class Rectangle {
 
 #### Підіймання
 
-Суттєва різниця між **оголошенням функцій** та **оголошенням класів** полягає в тому, що функції можна викликати в коді до їх оголошення, натомість клас слід спочатку оголосити, а потім вже створювати його екземпляри. Код, подібний до наведеного нижче, викине {{jsxref("ReferenceError")}}:
+Суттєва різниця між **оголошенням функцій** та **оголошенням класів** полягає в тому, що функції можна викликати в коді до їх оголошення, натомість клас слід спочатку оголосити, а потім вже створювати його примірники. Код, подібний до наведеного нижче, викине {{jsxref("ReferenceError")}}:
 
 ```js example-bad
 const p = new Rectangle(); // ReferenceError
@@ -61,7 +61,7 @@ console.log(Rectangle.name);
 // вивід: "Rectangle"
 
 // іменований клас
-let Rectangle = class Rectangle2 {
+Rectangle = class Rectangle2 {
   constructor(height, width) {
     this.height = height;
     this.width = width;
@@ -142,7 +142,7 @@ console.log([...pentagon.getSides()]); // [1,2,3,4,5]
 
 ### Статичні методи і властивості
 
-Ключове слово {{jsxref("Classes/static", "static", "", "true")}} оголошує статичний метод чи властивість класу. Статичні члени (властивості та методи) викликаються без створення екземплярів їхнього класу і **не можуть** викликатись через екземпляр класу. Статичні методи часто використовуються для створення допоміжних функцій для застосунку, а статичні властивості корисні для кешів, фіксованої конфігурації чи будь-яких інших даних, які не потрібно дублювати на кожний примірник.
+Ключове слово {{jsxref("Classes/static", "static", "", "true")}} оголошує статичний метод чи властивість класу. Статичні члени (властивості та методи) викликаються без створення примірників їхнього класу і **не можуть** викликатись через примірник класу. Статичні методи часто використовуються для створення допоміжних функцій для застосунку, а статичні властивості корисні для кешів, фіксованої конфігурації чи будь-яких інших даних, які не потрібно дублювати на кожний примірник.
 
 ```js
 class Point {
@@ -185,13 +185,13 @@ class Animal {
   }
 }
 
-let obj = new Animal();
+const obj = new Animal();
 obj.speak(); // об'єкт Animal
-let speak = obj.speak;
+const speak = obj.speak;
 speak(); // undefined
 
 Animal.eat(); // клас Animal
-let eat = Animal.eat;
+const eat = Animal.eat;
 eat(); // undefined
 ```
 
@@ -208,17 +208,17 @@ Animal.eat = function () {
   return this;
 };
 
-let obj = new Animal();
-let speak = obj.speak;
+const obj = new Animal();
+const speak = obj.speak;
 speak(); // глобальний об'єкт (у нестрогому режимі)
 
-let eat = Animal.eat;
+const eat = Animal.eat;
 eat(); // глобальний об'єкт (у нестрогому режимі)
 ```
 
-### Властивості екземпляру
+### Властивості примірника
 
-Властивості екземпляру повинні задаватись всередині методів класу:
+Властивості примірника повинні задаватись всередині методів класу:
 
 ```js
 class Rectangle {
@@ -302,7 +302,7 @@ class Dog extends Animal {
   }
 }
 
-let d = new Dog('Сірко');
+const d = new Dog('Сірко');
 d.speak(); // Сірко гавкає.
 ```
 
@@ -325,7 +325,7 @@ class Dog extends Animal {
   }
 }
 
-let d = new Dog('Сірко');
+const d = new Dog('Сірко');
 d.speak(); // Сірко гавкає.
 
 // Якщо зустрічаються однакові методи, метод нащадка матиме перевагу над батьківським методом
@@ -349,7 +349,7 @@ class Dog {
 // Без цього рядка під час виклику методу `speak` буде викинуто виняток TypeError
 Object.setPrototypeOf(Dog.prototype, Animal);
 
-let d = new Dog('Сірко');
+const d = new Dog('Сірко');
 d.speak(); // Сірко галасує.
 ```
 
@@ -367,8 +367,8 @@ class MyArray extends Array {
   }
 }
 
-let a = new MyArray(1, 2, 3);
-let mapped = a.map((x) => x * x);
+const a = new MyArray(1, 2, 3);
+const mapped = a.map((x) => x * x);
 
 console.log(mapped instanceof MyArray); // false
 console.log(mapped instanceof Array); // true
@@ -396,7 +396,7 @@ class Lion extends Cat {
   }
 }
 
-let l = new Lion('Пушок');
+const l = new Lion('Пушок');
 l.speak();
 // Пушок галасує.
 // Пушок гарчить.
@@ -409,12 +409,12 @@ l.speak();
 Функція, яка приймає надклас на вхід і розширяє цей надклас на виході, може використовуватись для реалізації домішок в ECMAScript:
 
 ```js
-let calculatorMixin = (Base) =>
+const calculatorMixin = (Base) =>
   class extends Base {
     calc() {}
   };
 
-let randomizerMixin = (Base) =>
+const randomizerMixin = (Base) =>
   class extends Base {
     randomize() {}
   };
