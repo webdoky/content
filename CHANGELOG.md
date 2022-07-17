@@ -3,6 +3,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2022-07-08 - 2022-07-15]
+
+* **Оновлення перекладу(JS):** web/javascript/reference/guide/regular_expressions (#440) ([4af5261](https://github.com/webdoky/content/commit/4af5261ae7dfd4333b8d13af4e058fdd0d7ab26a))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/map (#439) ([d1c1df8](https://github.com/webdoky/content/commit/d1c1df8f9122332105538580129ce385492d8b96))
+* **Оновлення перекладу(JS):** web/javascript/reference/operators/conditional_operator ([573006f](https://github.com/webdoky/content/commit/573006fa92d0597543b2304dfd7c5d5dc00d94e6))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/sort (#436) ([783ec53](https://github.com/webdoky/content/commit/783ec530ed4d8587c5c2c2bd1f7e628504dbf92f))
+* **Переклад(JS):** web/javascript/reference/global_objects/array/concat (#413) ([356c843](https://github.com/webdoky/content/commit/356c843a1b9de070e31aafc5997ec4fb49d87bfe))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/date (#435) ([dd6b325](https://github.com/webdoky/content/commit/dd6b325c35e3c914fba53b0b85e41d61ce80932d))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/map (#434) ([c51aa05](https://github.com/webdoky/content/commit/c51aa057f2d0935b78840594778dfdbf8e2469e8))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/filter (#431) ([d026fac](https://github.com/webdoky/content/commit/d026facbec0390106cb393f50006028c7d67714b))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array (#430) ([128c592](https://github.com/webdoky/content/commit/128c5928eafc172a5f6d1b6db379df0194416a8d))
+* **Оновлення перекладу(JS):** web/javascript (#429) ([b0409c8](https://github.com/webdoky/content/commit/b0409c818fd7af1396ca43f54ff4645258ff6b17))
+* **Переклад(JS):** web/javascript/reference/global_objects/array/push (#424) ([2bfea14](https://github.com/webdoky/content/commit/2bfea145dc2652c5133267d542813b8ba8ebb1c7))
+* **Переклад(HTML):** web/html/element/input/file (#406) ([0fcaed6](https://github.com/webdoky/content/commit/0fcaed6b2ec57977a03d1f4d3d38b47bcad33cc1))
+* **Переклад(HTML):** web/html/element/input/checkbox (#400) ([324d863](https://github.com/webdoky/content/commit/324d863c9f6afbe4b87c24de5705bb329eb67e7d))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects (#423) ([c72841d](https://github.com/webdoky/content/commit/c72841d933365cccbf00008a5a2bf0d1f0d97ac6))
+* **Переклад(JS):** web/javascript/reference/global_objects/parseint (#370) ([8f598bb](https://github.com/webdoky/content/commit/8f598bb5846de76407b635eba285831a2fd8e368))
+
 ## [2022-07-01 - 2022-07-08]
 
 * **Переклад(JS):** web/javascript/reference/global_objects/array/join (#422) ([10d5c22](https://github.com/webdoky/content/commit/10d5c22f8eb60e7b36ce5aeeaf236cdf8d4297d3))
