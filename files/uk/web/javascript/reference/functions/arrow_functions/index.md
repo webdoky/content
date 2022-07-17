@@ -206,8 +206,6 @@ Object.defineProperty(obj, 'b', {
 });
 ```
 
-Because a [class](/uk/docs/Web/JavaScript/Reference/Classes)'s body has a `this` context, arrow functions as [class fields](/uk/docs/Web/JavaScript/Reference/Classes/Public_class_fields) close over the class's `this` context and the `this` inside the arrow function's body will correctly point to the instance (or the class itself, for [static fields](/uk/docs/Web/JavaScript/Reference/Classes/static)). However, because it is a [closure](/uk/docs/Web/JavaScript/Closures), not the function's own binding, the value of `this` will not change based on the execution context.
-
 Через те, що тіло [класу](/uk/docs/Web/JavaScript/Reference/Classes) має контекст `this`, стрілкові функції як [поля класу](/uk/docs/Web/JavaScript/Reference/Classes/Public_class_fields) замикаються на контекст `this` класу, і `this` всередині тіла стрілкової функції коректно вказуватиме на примірник (чи, для [статичних полів](/uk/docs/Web/JavaScript/Reference/Classes/static), на сам клас). Втім, через те, що це [замикання](/uk/docs/Web/JavaScript/Closures), а не власна прив‘язка функції, значення `this` не змінюватиметься залежно від контексту виконання.
 
 ```js
