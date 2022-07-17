@@ -148,19 +148,19 @@ let bob = (a) => a + 100;
 (params) => ({ foo: 'a' }); // повертає об'єкт {foo: "a"}
 ```
 
-Підтримуються [залишкові параметри](/uk/docs/Web/JavaScript/Reference/Functions/rest_parameters):
+Підтримуються [залишкові параметри](/uk/docs/Web/JavaScript/Reference/Functions/rest_parameters), причому в такому випадку обов‘язкові дужки:
 
 ```js
 (a, b, ...r) => expression;
 ```
 
-Підтримуються [усталені параметри](/uk/docs/Web/JavaScript/Reference/Functions/Default_parameters):
+Підтримуються [усталені параметри](/uk/docs/Web/JavaScript/Reference/Functions/Default_parameters), причому в такому випадку обов‘язкові дужки:
 
 ```js
 (a = 400, b = 20, c) => expression;
 ```
 
-Підтримується [деструктуризація](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) всередині параметрів:
+Підтримується [деструктуризація](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) всередині параметрів, причому в такому випадку обов‘язкові дужки:
 
 ```js
 ([a, b] = [10, 20]) => a + b; // результатом є 30
