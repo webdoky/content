@@ -7,6 +7,7 @@ tags:
   - Object
 browser-compat: javascript.builtins.Object
 ---
+
 {{JSRef}}
 
 Клас **`Object`** позначає один із [типів даних JavaScript](/uk/docs/Web/JavaScript/Data_structures). Його використовують для зберігання різноманітних асоціативних масивів та складніших сутностей. Об'єкти можна створювати за допомогою конструктора {{jsxref("Object/Object", "Object()")}} та [синтаксису об'єктного ініціалізатора / літерала](/uk/docs/Web/JavaScript/Reference/Operators/Object_initializer).
@@ -63,7 +64,7 @@ browser-compat: javascript.builtins.Object
 - {{jsxref("Object.getPrototypeOf","Object.getPrototypeOf()")}} (взяти прототип від)
   - : Повертає прототип (внутрішню властивість `[[Prototype]]`) вказаного об'єкта.
 - {{jsxref("Object.is","Object.is()")}} (являється)
-  - : Порівнює два значення і визначає, чи вони є одним значенням. Прирівнює всі значення `NaN` між собою (що відрізняється і від "порівняння на абстрактну рівність", і від "порівняння на точну рівність").
+  - : Порівнює два значення і визначає, чи вони є одним значенням. Прирівнює всі значення `NaN` між собою (що відрізняється і від алгоритму `IsLooselyEqual`, що використовується [`==`](/uk/docs/Web/JavaScript/Reference/Operators/Equality), і від `IsStrictlyEqual`, що використовується [`===`](/uk/docs/Web/JavaScript/Reference/Operators/Strict_equality)).
 - {{jsxref("Object.isExtensible","Object.isExtensible()")}} (є розширюваним)
   - : Визначає, чи можна розширювати переданий об'єкт.
 - {{jsxref("Object.isFrozen","Object.isFrozen()")}} (є замороженим)
@@ -81,14 +82,14 @@ browser-compat: javascript.builtins.Object
 - {{jsxref("Object.values","Object.values()")}} (значення)
   - : Повертає масив, що містить значення, які відповідають всім **власним** перелічуваним рядковим властивостям переданого об'єкта.
 
-## Властивості екземпляру
+## Властивості примірника
 
 - {{jsxref("Object.prototype.constructor")}} (конструктор)
   - : Вказує на функцію, яка створює прототип об'єкта.
 - {{jsxref("Object/proto","Object.prototype.__proto__")}}
   - : Вказує на об'єкт, який було використано як прототип під час створення примірника цього об'єкта.
 
-## Методи екземпляру
+## Методи примірника
 
 - {{jsxref("Object.prototype.__defineGetter__()")}} (означити геттер)
   - : Пов'язує функцію з властивістю так, що під час спроби доступитися до властивості вона викликає цю функцію та повертає її результат.
@@ -118,15 +119,15 @@ browser-compat: javascript.builtins.Object
 В наступному прикладі у змінній `o` зберігається порожній об'єкт `Object`:
 
 ```js
-let o = new Object()
+let o = new Object();
 ```
 
 ```js
-let o = new Object(undefined)
+let o = new Object(undefined);
 ```
 
 ```js
-let o = new Object(null)
+let o = new Object(null);
 ```
 
 ### Застосування `Object` для створення об'єктів типу `Boolean`
@@ -135,12 +136,12 @@ let o = new Object(null)
 
 ```js
 // еквіваленто виразу o = new Boolean(true)
-let o = new Object(true)
+let o = new Object(true);
 ```
 
 ```js
 // еквіваленто виразу o = new Boolean(false)
-let o = new Object(Boolean())
+let o = new Object(Boolean());
 ```
 
 ### Прототипи об'єктів
@@ -156,7 +157,7 @@ const current = Object.prototype.valueOf;
 
 // Оскільки властивість "-prop-value" є наскрізною, і не завжди присутня
 // в тому самому прототипному ланцюжку, виникає потреба змінити Object.prototype:
-Object.prototype.valueOf = function() {
+Object.prototype.valueOf = function () {
   if (this.hasOwnProperty('-prop-value')) {
     return this['-prop-value'];
   } else {
@@ -166,57 +167,58 @@ Object.prototype.valueOf = function() {
     // І хоча "valueOf()" не приймає аргументів, їх можуть приймати якісь інші причепи.
     return current.apply(this, arguments);
   }
-}
+};
 ```
 
 Оскільки JavaScript не має повного аналога підкласових об'єктів, прототип є корисним обхідним способом створити об'єкт "базового класу" певних функцій, що працюють як об'єкти. Наприклад:
 
 ```js
-const Person = function(name) {
+const Person = function (name) {
   this.name = name;
   this.canTalk = true;
 };
 
-Person.prototype.greet = function() {
+Person.prototype.greet = function () {
   if (this.canTalk) {
     console.log('Привіт, я — ' + this.name);
   }
 };
 
-const Employee = function(name, title) {
+const Employee = function (name, title) {
   Person.call(this, name);
   this.title = title;
 };
 
 Employee.prototype = Object.create(Person.prototype);
 Employee.prototype.constructor = Employee; //Якщо явно не встановити Employee значенням конструктора Object.prototype.constructor,
-                                           //він отримає значення prototype.constructor об'єкта Person (предка).
-                                           //Щоб уникнути цього, ми явно встановлюємо в prototype.constructor значення Employee (нащадок).
+//він отримає значення prototype.constructor об'єкта Person (предка).
+//Щоб уникнути цього, ми явно встановлюємо в prototype.constructor значення Employee (нащадок).
 
-Employee.prototype.greet = function() {
+Employee.prototype.greet = function () {
   if (this.canTalk) {
     console.log('Привіт, я — ' + this.name + ', ' + this.title);
   }
 };
 
-const Customer = function(name) {
+const Customer = function (name) {
   Person.call(this, name);
 };
 
 Customer.prototype = Object.create(Person.prototype);
-Customer.prototype.constructor = Customer; //Якщо явно не встановити Customer значенням конструктора Object.prototype.constructor,
-                                           //він отримає значення prototype.constructor об'єкта Person (предка).
-                                           //Щоб уникнути цього, ми явно встановлюємо в prototype.constructor значення Customer (нащадок).
+Customer.prototype.constructor = Customer;
+//Якщо явно не встановити Customer значенням конструктора Object.prototype.constructor,
+//він отримає значення prototype.constructor об'єкта Person (предка).
+//Щоб уникнути цього, ми явно встановлюємо в prototype.constructor значення Customer (нащадок).
 
-const Mime = function(name) {
+const Mime = function (name) {
   Person.call(this, name);
   this.canTalk = false;
 };
 
 Mime.prototype = Object.create(Person.prototype);
 Mime.prototype.constructor = Mime; //Якщо явно не встановити Mime значенням конструктора Object.prototype.constructor,
-                                   //він отримає значення prototype.constructor об'єкта Person (предка).
-                                   //Щоб уникнути цього, ми явно встановлюємо в prototype.constructor значення Mime (нащадок).
+//він отримає значення prototype.constructor об'єкта Person (предка).
+//Щоб уникнути цього, ми явно встановлюємо в prototype.constructor значення Mime (нащадок).
 
 const bob = new Employee('Боб', 'будівельник');
 const joe = new Customer('Джо');
@@ -249,4 +251,4 @@ mime.greet();
 
 ## Дивіться також
 
-- [Ініціалізатор об'єкту](/uk/docs/Web/JavaScript/Reference/Operators/Object_initializer)
+- [Ініціалізатор об‘єкта](/uk/docs/Web/JavaScript/Reference/Operators/Object_initializer)
