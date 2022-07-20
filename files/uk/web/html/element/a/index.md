@@ -22,7 +22,7 @@ browser-compat: html.elements.a
 
 Вміст всередині кожного `<a>` **повинен** відображати спрямування посилання. Якщо присутній атрибут `href`, то натискання клавіші `Enter`, коли фокус знаходиться на елементі `<a>`, активує перехід.
 
-{{EmbedInteractiveExample("pages/tabbed/a.html")}}
+{{EmbedInteractiveExample("pages/tabbed/a.html", "tabbed-shorter")}}
 
 ## Атрибути
 
