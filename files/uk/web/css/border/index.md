@@ -4,6 +4,7 @@ slug: Web/CSS/border
 tags:
   - CSS
   - CSS Borders
+  - CSS Property
   - CSS Shorthand property
   - Layout
   - Reference
@@ -43,6 +44,8 @@ border: medium dashed green;
 /* Глобальні значення */
 border: inherit;
 border: initial;
+border: revert;
+border: revert-layer;
 border: unset;
 ```
 
@@ -107,7 +110,7 @@ div {
 
 #### Результат
 
-{{EmbedLiveSample('Setting_a_pink_outset_border')}}
+{{EmbedLiveSample('vstanovlennia-rozhevykh-zovnishnikh-mezh')}}
 
 ## Специфікації
 
@@ -122,5 +125,6 @@ div {
 - {{Cssxref("border-width")}}
 - {{Cssxref("border-style")}}
 - {{Cssxref("border-color")}}
+- {{Cssxref("outline")}}
 - [Фони та межі](/uk/docs/Web/CSS/CSS_Backgrounds_and_Borders)
 - [Вивчаймо CSS: Фони та межі](/uk/docs/Learn/CSS/Building_blocks/Backgrounds_and_borders)
