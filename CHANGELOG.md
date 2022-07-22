@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [2022-07-15 - 2022-07-22]
 
+* **Переклад(JS):** web/javascript/reference/global_objects/promise/all ([a8ab923](https://github.com/webdoky/content/commit/a8ab923548138eb4d35f5321d8dfc91bc0c49802))
+* **Переклад(JS):** web/javascript/reference/global_objects/date/now ([da56b72](https://github.com/webdoky/content/commit/da56b72fab00e53ea4f69ff64a526bcce76135af))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string ([9d871db](https://github.com/webdoky/content/commit/9d871db4e6d39180a840be067d5f3d3ff9004f81))
+* **Переклад(JS):** web/javascript/reference/statements/switch ([042592e](https://github.com/webdoky/content/commit/042592ede25e7384cecfc31ee03a59ede6709a85))
 * **Переклад(HTML):** web/html/element/a (#428) ([ad23d74](https://github.com/webdoky/content/commit/ad23d742165e591fd786030bf70455b736aeeb7d))
 * **Оновлення перекладу(JS):** web/javascript/reference/statements/for...of ([6371e3a](https://github.com/webdoky/content/commit/6371e3af97e92ca89c9693e751e68dc3378da6b3))
 * **Переклад(JS):** web/javascript/reference/global_objects/json/parse (#462) ([f3c2c8e](https://github.com/webdoky/content/commit/f3c2c8e81eefd03857e0199e44d2932a4769c8d0))
