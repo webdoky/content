@@ -14,6 +14,7 @@ tags:
   - l10n:priority
   - programming
 ---
+
 {{JsSidebar}}
 
 Ця частина розділу про JavaScript на MDN слугує сховищем фактів про мову JavaScript. Докладніше [про цей довідник](/uk/docs/Web/JavaScript/Reference/About).
@@ -144,6 +145,10 @@ tags:
 - {{JSxRef("WebAssembly.LinkError")}}
 - {{JSxRef("WebAssembly.RuntimeError")}}
 
+### Інші
+
+- {{JSxRef("Functions/arguments", "arguments")}}
+
 ## Інструкції
 
 [Інструкції та оголошення JavaScript](/uk/docs/Web/JavaScript/Reference/Statements)
@@ -170,6 +175,7 @@ tags:
 - {{jsxref("Statements/function", "function")}}
 - {{jsxref("Statements/function*", "function*")}}
 - {{jsxref("Statements/async_function", "async function")}}
+- {{jsxref("Statements/async_function*", "async function*")}}
 - {{jsxref("Statements/return", "return")}}
 - {{jsxref("Statements/class", "class")}}
 
@@ -203,6 +209,7 @@ tags:
 - {{JSxRef("Operators/yield", "yield")}}
 - {{JSxRef("Operators/yield*", "yield*")}}
 - {{JSxRef("Operators/async_function", "async function")}}
+- {{JSxRef("Operators/async_function*", "async function*")}}
 - {{JSxRef("Operators/await", "await")}}
 - {{JSxRef("Global_Objects/Array", "[]")}}
 - {{JSxRef("Operators/Object_initializer", "{}")}}
@@ -216,7 +223,7 @@ tags:
 - {{JSxRef("Operators/Optional_chaining", "<code>?.</code> (Optional chaining)", "", 1)}}
 - {{JSxRef("Operators/new", "new")}}
 - {{JSxRef("Operators/new%2Etarget", "new.target")}}
-- {{JSxRef("Statements/import%2Emeta", "import.meta")}}
+- {{JSxRef("Operators/import%2Emeta", "import.meta")}}
 - {{JSxRef("Operators/super", "super")}}
 - {{JSxRef("Operators/Spread_syntax", "...obj")}}
 
@@ -305,22 +312,29 @@ tags:
 - {{JSxRef("Operators/Destructuring_assignment", "[a, b] = [1, 2]")}}
 - {{JSxRef("Operators/Destructuring_assignment", "{a, b} = {a:1, b:2}")}}
 
-### Оператор кома
+### Оператор коми
 
 - {{JSxRef("Operators/Comma_Operator", ",")}}
 
 ## Функції
 
-У цьому розділі задокументовано, як працювати з [функціями у JavaScript](/uk/docs/Web/JavaScript/Reference/Functions) при розробці ваших застосунків.
+[Функції у JavaScript.](/uk/docs/Web/JavaScript/Reference/Functions)
 
-- [`arguments`](/uk/docs/Web/JavaScript/Reference/Functions/arguments)
-- [Стрілкові функції](/uk/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
-- [Усталені параметри](/uk/docs/Web/JavaScript/Reference/Functions/Default_parameters)
-- [Решта параметрів](/uk/docs/Web/JavaScript/Reference/Functions/rest_parameters)
+- {{JSXRef("Functions/Arrow_functions", "Стрілкові функції", "", 1)}}
+- {{JSxRef("Functions/Default_parameters", "Усталені параметри", "", 1)}}
+- {{JSxRef("Functions/rest_parameters", "Решта параметрів", "", 1)}}
+- {{JSxRef("Functions/arguments", "arguments")}}
+- {{JSxRef("Functions/Method_definitions", "Опис методів", "", 1)}}
+- {{JSxRef("Functions/get", "геттер", "", 1)}}
+- {{JSxRef("Functions/set", "сеттер", "", 1)}}
+
+## Класи
+
+[Класи в JavaScript.](/en-US/docs/Web/JavaScript/Reference/Classes)
 
 ## Додаткові довідкові сторінки
 
-- [Лексична граматика](/uk/docs/Web/JavaScript/Reference/Lexical_grammar)
+- {{JSxRef("Lexical_grammar", "Лексична граматика", "", 1)}}
 - [Типи та структури даних](/uk/docs/Web/JavaScript/Data_structures)
-- [Суворий режим](/uk/docs/Web/JavaScript/Reference/Strict_mode)
-- [Застарілий функціонал](/uk/docs/Web/JavaScript/Reference/Deprecated_and_obsolete_features)
+- {{JSxRef("Strict_mode", "Суворий режим", "", 1)}}
+- {{JSxRef("Deprecated_and_obsolete_features", "Нерекомендовані можливості", "", 1)}}

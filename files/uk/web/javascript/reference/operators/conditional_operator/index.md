@@ -14,6 +14,7 @@ tags:
   - ternary
 browser-compat: javascript.operators.conditional
 ---
+
 {{jsSidebar("Operators")}}
 
 **Умовний (тернарний) оператор** — це єдиний оператор у JavaScript, який приймає три операнди: умова зі знаком питання (`?`) після неї, далі вираз, який слід виконати, якщо умова {{Glossary("truthy", "істинна")}}, слідом за якою двокрапка (`:`), і нарешті – вираз, який виконається, якщо умова {{Glossary("falsy", "хибна")}}. Цей оператор часто використовується як альтернатива інструкції [`if`](/uk/docs/Web/JavaScript/Reference/Statements/if...else).
@@ -23,16 +24,17 @@ browser-compat: javascript.operators.conditional
 ## Синтаксис
 
 ```js
+<!-- markdownlint-disable-next-line -->
 condition ? exprIfTrue : exprIfFalse
 ```
 
 ### Параметри
 
-- `condition`
+- `condition` ("умова")
   - : Вираз, значення якого буде використано як умову.
-- `exprIfTrue`
+- `exprIfTrue` ("вираз якщо істина")
   - : Вираз, який буде обчислено, якщо `condition` зводиться до {{Glossary("truthy", "істинного")}} значення (такого, яке еквівалентно `true`).
-- `exprIfFalse`
+- `exprIfFalse` ("вираз якщо хиба")
   - : Вираз, який буде обчислено, якщо значення `condition` є {{Glossary("falsy", "хибним")}} (значенням, еквівалентним `false`).
 
 ## Опис
@@ -44,8 +46,8 @@ condition ? exprIfTrue : exprIfFalse
 ### Простий приклад
 
 ```js
-var age = 26;
-var beverage = (age >= 21) ? "Пиво" : "Сік";
+const age = 26;
+const beverage = age >= 21 ? 'Пиво' : 'Сік';
 console.log(beverage); // "Пиво"
 ```
 
@@ -54,34 +56,42 @@ console.log(beverage); // "Пиво"
 Одне з поширених застосувань умовного виразу — це обробка значення, яке може дорівнювати `null`:
 
 ```js
-let greeting = person => {
-    let name = person ? person.name : `незнайомцю`
-    return `Агов, ${name}`
-}
+const greeting = (person) => {
+  const name = person ? person.name : `незнайомцю`;
+  return `Агов, ${name}`;
+};
 
-console.log(greeting({name: `Аліса`}));  // "Howdy, Alice"
-console.log(greeting(null));             // "Агов, незнайомцю"
+console.log(greeting({ name: `Аліса` })); // "Агов, Аліса"
+console.log(greeting(null)); // "Агов, незнайомцю"
 ```
 
 ### Ланцюжки умовних виразів
 
-Тернарний оператор — правоасоціативний. Це означає, що його можна "об'єднувати в ланцюжки" подібно до ланцюжків `if … else if … else if … else`; так, як це наведено нижче:
+Тернарний оператор — правоасоціативний. Це означає, що його можна "об'єднувати в ланцюжки" подібно до ланцюжків `if … else if … else if … else`, так, як це наведено нижче:
 
 ```js
-function example(…) {
-    return condition1 ? value1
-         : condition2 ? value2
-         : condition3 ? value3
-         : value4;
+function example() {
+  return condition1
+    ? value1
+    : condition2
+    ? value2
+    : condition3
+    ? value3
+    : value4;
 }
 
 // Еквівалентно виразу:
 
-function example(…) {
-    if (condition1) { return value1; }
-    else if (condition2) { return value2; }
-    else if (condition3) { return value3; }
-    else { return value4; }
+function example() {
+  if (condition1) {
+    return value1;
+  } else if (condition2) {
+    return value2;
+  } else if (condition3) {
+    return value3;
+  } else {
+    return value4;
+  }
 }
 ```
 
