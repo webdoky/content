@@ -9,6 +9,7 @@ tags:
   - Reference
   - Regular
   - String
+  - Polyfill
 browser-compat: javascript.builtins.String.replace
 ---
 
