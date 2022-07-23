@@ -192,6 +192,7 @@ function f2c(x) {
 
 ## Дивіться також
 
+- [Поліфіл `String.prototype.replace` у складі `core-js`, з виправленнями й реалізацією сучасної логіки, як то підтримки `Symbol.replace`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
 - {{jsxref("String.prototype.replaceAll", "String.prototype.replaceAll()")}}
 - {{jsxref("String.prototype.match", "String.prototype.match()")}}
 - {{jsxref("RegExp.prototype.exec", "RegExp.prototype.exec()")}}
