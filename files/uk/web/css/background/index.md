@@ -48,6 +48,7 @@ background: no-repeat center/80% url('../img/image.png');
 background: inherit;
 background: initial;
 background: revert;
+background: revert-layer;
 background: unset;
 ```
 
@@ -70,17 +71,17 @@ background: unset;
 ### Значення
 
 - `<attachment>` (прикріплення)
-  - : Дивіться {{cssxref("background-attachment")}}
+  - : Дивіться {{cssxref("background-attachment")}}.
 - `<box>` (рамки)
-  - : Дивіться {{cssxref("background-clip")}} та {{cssxref("background-origin")}}
+  - : Дивіться {{cssxref("background-clip")}} та {{cssxref("background-origin")}}.
 - `<background-color>` (колір тла)
-  - : Дивіться {{cssxref("background-color")}}
+  - : Дивіться {{cssxref("background-color")}}.
 - `<bg-image>` (зображення тла)
-  - : Дивіться {{Cssxref("background-image")}}
+  - : Дивіться {{Cssxref("background-image")}}.
 - `<position>` (положення)
-  - : Дивіться {{cssxref("background-position")}}
+  - : Дивіться {{cssxref("background-position")}}.
 - `<repeat-style>` (стиль повторення)
-  - : Дивіться {{cssxref("background-repeat")}}
+  - : Дивіться {{cssxref("background-repeat")}}.
 - `<bg-size>` (розмір тла)
   - : Дивіться {{cssxref("background-size")}}.
 
@@ -128,7 +129,7 @@ background: unset;
 
 #### Результат
 
-{{EmbedLiveSample("Setting_backgrounds_with_color_keywords_and_images")}}
+{{EmbedLiveSample("vstanovlennia-foniv-iz-kliuchovymy-slovamy-koloriv-ta-zobrazhen")}}
 
 ## Специфікації
 
