@@ -24,7 +24,7 @@ browser-compat: javascript.builtins.Date
 
 В основі своїй дата в JavaScript задається як кількість мілісекунд, що минули від [епохи ECMAScript (англ.)](https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-time-values-and-time-range), що визначена як 1 січня 1970 року за UTC (еквівалентно до [часу Unix](https://uk.wikipedia.org/wiki/%D0%A7%D0%B0%D1%81_Unix)).
 
-> **Примітка:** Важливо мати на увазі, що, хоча значення часу в нутрощах об'єкту дати задане за UTC, базові методи для отримання дати та часу (чи їх складових) працюють в локальних часовій зоні та поясі (тобто використовуються системні значення).
+> **Примітка:** Важливо мати на увазі, що, хоча значення часу в нутрощах об‘єкта дати задане за UTC, базові методи для отримання дати та часу (чи їх складових) працюють в локальних часовій зоні та поясі (тобто використовуються системні значення).
 
 Також варто зауважити, що максимальне значення `Date` збігається із максимальним безпечним значенням цілого (`Number.MAX_SAFE_INTEGER` = 9,007,199,254,740,991). Натомість в ECMA-262 визначено, що стандартний об'єкт дати може задати максимум ±100,000,000 (сто мільйонів) днів відносно 1 січня 1970 UTC (тобто, з 20 квітня 271821 до нашої ери, і по 13 вересня 275760 нашої ери). Це еквівалент ±8,640,000,000,000,000 мілісекунд.
 
@@ -37,7 +37,7 @@ browser-compat: javascript.builtins.Date
 ## Конструктор
 
 - {{jsxref("Date/Date", "Date()")}}
-  - : Коли викликається як функція — повертає поточні дату і час, оформлені у рядок, точнісінько як це робить `new Date().toString()`.
+  - : Коли викликається як функція — повертає поточні дату і час, оформлені у рядок. Всі аргументи ігноруються. Результат такий самий, як від виклику `new Date().toString()`.
 - {{jsxref("Date/Date", "new Date()")}}
   - : Коли викликається як конструктор — повертає новий об'єкт `Date`.
 
@@ -54,100 +54,100 @@ browser-compat: javascript.builtins.Date
 - {{jsxref("Date.UTC()")}}
   - : Приймає ті ж аргументи, що й найдовша форма конструктора (тобто від 2 до 7 аргументів) і повертає кількість мілісекунд від 1 січня 1970 року, 00:00:00 UTC, без врахування високосних секунд.
 
-## Методи екземпляру
+## Методи примірника
 
-- {{jsxref("Date.prototype.getDate()")}}
+- {{jsxref("Date.prototype.getDate()")}} (отримати дату)
   - : Повертає день місяця (`1` – `31`) вказаної дати, відповідно до локального часу.
-- {{jsxref("Date.prototype.getDay()")}}
+- {{jsxref("Date.prototype.getDay()")}} (отримати день)
   - : Повертає день тижня (`0` – `6`) вказаної дати, відповідно до локального часу.
-- {{jsxref("Date.prototype.getFullYear()")}}
+- {{jsxref("Date.prototype.getFullYear()")}} (отримати повний рік)
   - : Повертає рік (4 цифри у випадку 4-цифрових років) вказаної дати, відповідно до локального часу.
-- {{jsxref("Date.prototype.getHours()")}}
+- {{jsxref("Date.prototype.getHours()")}} (отримати години)
   - : Повертає годину (`0` – `23`) вказаної дати, відповідно до локального часу.
-- {{jsxref("Date.prototype.getMilliseconds()")}}
+- {{jsxref("Date.prototype.getMilliseconds()")}} (отримати мілісекунди)
   - : Повертає мілісекунди (`0` – `999`) вказаної дати, відповідно до локального часу.
-- {{jsxref("Date.prototype.getMinutes()")}}
+- {{jsxref("Date.prototype.getMinutes()")}} (отримати хвилини)
   - : Повертає хвилини (`0` – `59`) вказаної дати, відповідно до локального часу.
-- {{jsxref("Date.prototype.getMonth()")}}
+- {{jsxref("Date.prototype.getMonth()")}} (отримати місяць)
   - : Повертає місяць (`0` – `11`) вказаної дати, відповідно до локального часу.
-- {{jsxref("Date.prototype.getSeconds()")}}
+- {{jsxref("Date.prototype.getSeconds()")}} (отримати секунди)
   - : Повертає секунди (`0` – `59`) вказаної дати, відповідно до локального часу.
-- {{jsxref("Date.prototype.getTime()")}}
+- {{jsxref("Date.prototype.getTime()")}} (отримати час)
   - : Повертає числове значення вказаної дати як число мілісекунд, що минули від 1 січня 1970 року 00:00:00 UTC. (Для більш ранньої дати буде повернено від‘ємне значення.)
-- {{jsxref("Date.prototype.getTimezoneOffset()")}}
+- {{jsxref("Date.prototype.getTimezoneOffset()")}} (отримати зміщення часової зони)
   - : Повертає зміщення часової зони у хвилинах для поточної локалі.
-- {{jsxref("Date.prototype.getUTCDate()")}}
+- {{jsxref("Date.prototype.getUTCDate()")}} (отримати дату відповідно до всесвітнього часу)
   - : Повертає день (дату) місяця (`1` – `31`) вказаної дати, відповідно до всесвітнього часу.
-- {{jsxref("Date.prototype.getUTCDay()")}}
+- {{jsxref("Date.prototype.getUTCDay()")}} (отримати день відповідно до всесвітнього часу)
   - : Повертає день тижня (`0` – `6`) вказаної дати, відповідно до всесвітнього часу.
-- {{jsxref("Date.prototype.getUTCFullYear()")}}
+- {{jsxref("Date.prototype.getUTCFullYear()")}} (отримати повний рік відповідно до всесвітнього часу)
   - : Повертає рік (4 цифри у випадку 4-цифрових років) вказаної дати, відповідно до всесвітнього часу.
-- {{jsxref("Date.prototype.getUTCHours()")}}
+- {{jsxref("Date.prototype.getUTCHours()")}} (отримати години відповідно до всесвітнього часу)
   - : Повертає годину (`0` – `23`) вказаної дати, відповідно до всесвітнього часу.
-- {{jsxref("Date.prototype.getUTCMilliseconds()")}}
+- {{jsxref("Date.prototype.getUTCMilliseconds()")}} (отримати мілісекунди відповідно до всесвітнього часу)
   - : Повертає мілісекунди (`0` – `999`) вказаної дати, відповідно до всесвітнього часу.
-- {{jsxref("Date.prototype.getUTCMinutes()")}}
+- {{jsxref("Date.prototype.getUTCMinutes()")}} (отримати хвилини відповідно до всесвітнього часу)
   - : Повертає хвилини (`0` – `59`) вказаної дати, відповідно до всесвітнього часу.
-- {{jsxref("Date.prototype.getUTCMonth()")}}
+- {{jsxref("Date.prototype.getUTCMonth()")}} (отримати місяць відповідно до всесвітнього часу)
   - : Повертає місяць (`0` – `11`) вказаної дати, відповідно до всесвітнього часу.
-- {{jsxref("Date.prototype.getUTCSeconds()")}}
+- {{jsxref("Date.prototype.getUTCSeconds()")}} (отримати секунди відповідно до всесвітнього часу)
   - : Повертає секунди (`0` – `59`) вказаної дати, відповідно до всесвітнього часу.
-- {{jsxref("Date.prototype.getYear()")}}
+- {{jsxref("Date.prototype.getYear()")}} (отримати рік)
   - : Повертає рік (зазвичай 2–3 цифри) вказаної дати, відповідно до локального часу. Замість цієї функції рекомендується застосовувати {{jsxref("Date.prototype.getFullYear()", "getFullYear()")}}.
-- {{jsxref("Date.prototype.setDate()")}}
+- {{jsxref("Date.prototype.setDate()")}} (встановити дату)
   - : Встановлює день місяця для вказаної дати, відповідно до локального часу.
-- {{jsxref("Date.prototype.setFullYear()")}}
+- {{jsxref("Date.prototype.setFullYear()")}} (встановити повний рік)
   - : Задає повний рік (наприклад, 4 цифри для 4-цифрових років) для вказаної дати, відповідно до локального часу.
-- {{jsxref("Date.prototype.setHours()")}}
+- {{jsxref("Date.prototype.setHours()")}} (встановити години)
   - : Встановлює годину для вказаної дати, відповідно до локального часу.
-- {{jsxref("Date.prototype.setMilliseconds()")}}
+- {{jsxref("Date.prototype.setMilliseconds()")}} (встановити мілісекунди)
   - : Встановлює мілісекунди для вказаної дати, відповідно до локального часу.
-- {{jsxref("Date.prototype.setMinutes()")}}
+- {{jsxref("Date.prototype.setMinutes()")}} (встановити хвилини)
   - : Встановлює хвилини для вказаної дати, відповідно до локального часу.
-- {{jsxref("Date.prototype.setMonth()")}}
+- {{jsxref("Date.prototype.setMonth()")}} (встановити місяць)
   - : Встановлює місяць для вказаної дати, відповідно до локального часу.
-- {{jsxref("Date.prototype.setSeconds()")}}
+- {{jsxref("Date.prototype.setSeconds()")}} (встановити секунди)
   - : Встановлює секунди для вказаної дати, відповідно до локального часу.
-- {{jsxref("Date.prototype.setTime()")}}
-  - : Встановлює значення об'єкту {{jsxref("Date")}} відповідно до часу, переданого як число мілісекунд, що сплили з 1 січня 1970 року 00:00:00 UTC. Для задання більш ранніх дат використовуються від‘ємні значення.
-- {{jsxref("Date.prototype.setUTCDate()")}}
+- {{jsxref("Date.prototype.setTime()")}} (встановити час)
+  - : Встановлює значення об‘єкта {{jsxref("Date")}} відповідно до часу, переданого як число мілісекунд, що сплили з 1 січня 1970 року 00:00:00 UTC. Для задання більш ранніх дат використовуються від‘ємні значення.
+- {{jsxref("Date.prototype.setUTCDate()")}} (встановити дату відповідно до всесвітнього часу)
   - : Встановлює день місяця для вказаної дати, відповідно до всесвітнього часу.
-- {{jsxref("Date.prototype.setUTCFullYear()")}}
+- {{jsxref("Date.prototype.setUTCFullYear()")}} (встановити повний рік відповідно до всесвітнього часу)
   - : Встановлює повний рік (наприклад, 4 цифри для 4-цифрових років) для вказаної дати, відповідно до всесвітнього часу.
-- {{jsxref("Date.prototype.setUTCHours()")}}
+- {{jsxref("Date.prototype.setUTCHours()")}} (встановити години відповідно до всесвітнього часу)
   - : Задає годину для вказаної дати, відповідно до всесвітнього часу.
-- {{jsxref("Date.prototype.setUTCMilliseconds()")}}
+- {{jsxref("Date.prototype.setUTCMilliseconds()")}} (встановити мілісекунди відповідно до всесвітнього часу)
   - : Встановлює мілісекунди для вказаної дати, відповідно до всесвітнього часу.
-- {{jsxref("Date.prototype.setUTCMinutes()")}}
+- {{jsxref("Date.prototype.setUTCMinutes()")}} (встановити хвилини відповідно до всесвітнього часу)
   - : Встановлює хвилини для вказаної дати, відповідно до всесвітнього часу.
-- {{jsxref("Date.prototype.setUTCMonth()")}}
+- {{jsxref("Date.prototype.setUTCMonth()")}} (встановити місяць відповідно до всесвітнього часу)
   - : Встановлює місяць для вказаної дати, відповідно до всесвітнього часу.
-- {{jsxref("Date.prototype.setUTCSeconds()")}}
+- {{jsxref("Date.prototype.setUTCSeconds()")}} (встановити секунди відповідно до всесвітнього часу)
   - : Встановлює секунди для вказаної дати, відповідно до всесвітнього часу.
-- {{jsxref("Date.prototype.setYear()")}}
+- {{jsxref("Date.prototype.setYear()")}} (встановити рік відповідно до всесвітнього часу)
   - : Встановлює рік (зазвичай 2–3 цифри) для вказаної дати, відповідно до локального часу. Замість цієї функції рекомендується застосовувати {{jsxref("Date.prototype.setFullYear()", "setFullYear()")}}.
-- {{jsxref("Date.prototype.toDateString()")}}
+- {{jsxref("Date.prototype.toDateString()")}} (до рядка дати)
   - : Повертає частину {{jsxref("Date")}}, яка стосується дати, як зрозумілий людині рядок, як от `'Thu Apr 12 2018'`.
-- {{jsxref("Date.prototype.toISOString()")}}
+- {{jsxref("Date.prototype.toISOString()")}} (до рядка у форматі ISO)
   - : Перетворює дату на рядок відповідно до формату ISO 8601 Extended Format.
-- {{jsxref("Date.prototype.toJSON()")}}
+- {{jsxref("Date.prototype.toJSON()")}} (до JSON)
   - : Повертає рядок, що відповідає даті в {{jsxref("Date")}}, сформований за допомогою {{jsxref("Date.prototype.toISOString()", "toISOString()")}}. Призначений для використання функцією {{jsxref("JSON.stringify()")}}.
-- {{jsxref("Date.prototype.toGMTString()")}}
+- {{jsxref("Date.prototype.toGMTString()")}} (до рядка за Гринвічем)
   - : Повертає рядок, що відповідає даті в {{jsxref("Date")}} відносно часової зони GMT (UTC). Замість цього методу слід застосовувати {{jsxref("Date.prototype.toUTCString()", "toUTCString()")}}.
-- {{jsxref("Date.prototype.toLocaleDateString()")}}
+- {{jsxref("Date.prototype.toLocaleDateString()")}} (до місцевого рядка дати)
   - : Повертає порцію об'єкта `Date`, що містить дату, як рядок, оформлений з урахуванням локально специфічних деталей на основі системних налаштувань.
-- {{jsxref("Date.prototype.toLocaleString()")}}
+- {{jsxref("Date.prototype.toLocaleString()")}} (до місцевого рядка)
   - : Повертає рядок даної дати, оформлений з урахуванням локально специфічних деталей. Заміщує метод {{jsxref("Object.prototype.toLocaleString()")}}.
-- {{jsxref("Date.prototype.toLocaleTimeString()")}}
+- {{jsxref("Date.prototype.toLocaleTimeString()")}} (до місцевого рядка часу)
   - : Повертає порцію об'єкта `Date`, що містить час, як рядок, оформлений з урахуванням локально специфічних деталей на основі системних налаштувань.
-- {{jsxref("Date.prototype.toString()")}}
+- {{jsxref("Date.prototype.toString()")}} (до рядка)
   - : Повертає рядок, який позначає вказаний об'єкт {{jsxref("Date")}}. Заміщує метод {{jsxref("Object.prototype.toString()")}}.
-- {{jsxref("Date.prototype.toTimeString()")}}
+- {{jsxref("Date.prototype.toTimeString()")}} (до рядка часу)
   - : Повертає порцію об'єкта `Date`, що містить час, як зрозумілий людині рядок.
-- {{jsxref("Date.prototype.toUTCString()")}}
+- {{jsxref("Date.prototype.toUTCString()")}} (до рядка відповідно до всесвітнього часу)
   - : Перетворює дату на рядок, використовуючи часову зону UTC за основу.
-- {{jsxref("Date.prototype.valueOf()")}}
-  - : Повертає примітивне значення об'єкту {{jsxref("Date")}}. Заміщує метод {{jsxref("Object.prototype.valueOf()")}}.
+- {{jsxref("Date.prototype.valueOf()")}} (значення)
+  - : Повертає примітивне значення об‘єкта {{jsxref("Date")}}. Заміщує метод {{jsxref("Object.prototype.valueOf()")}}.
 
 ## Приклади
 
@@ -155,15 +155,31 @@ browser-compat: javascript.builtins.Date
 
 Наступні приклади показують декілька способів створити дати в JavaScript:
 
-> **Примітка:** Наполегливо не рекомендовано розбирати властивості дати за допомогою конструктора `Date` (і `Date.parse`, що еквівалентно) у зв‘язку з відмінностями та неузгодженістю браузерів.
+> **Примітка:** Розбираючи властивості дати за допомогою конструктора `Date` (і `Date.parse`, що еквівалентно), завжди слідкуйте, аби вихідні дані відповідали [форматові ISO 8601 (англ.)](https://tc39.es/ecma262/#sec-date-time-string-format) (`YYYY-MM-DDTHH:mm:ss.sssZ`): логіка розбору інших форматів визначається реалізацією, такий розбір може не працювати на всіх браузерах. З пристосуванням до розмаїття форматів може допомогти бібліотека.
 
 ```js
-let today = new Date();
-let birthday = new Date('December 17, 1995 03:24:00');
-let birthday = new Date('1995-12-17T03:24:00');
-let birthday = new Date(1995, 11, 17); // індекс місяця починається з 0
-let birthday = new Date(1995, 11, 17, 3, 24, 0);
-let birthday = new Date(628021800000); // передача мітки часу
+const today = new Date();
+const birthday = new Date('December 17, 1995 03:24:00'); // НЕРЕКОМЕНДОВАНО: може не працювати в усіх середовищах виконання
+const birthday = new Date('1995-12-17T03:24:00'); // Відповідає форматові ISO8601, а тому надійно працюватиме
+const birthday = new Date(1995, 11, 17); // індекс місяця починається з 0
+const birthday = new Date(1995, 11, 17, 3, 24, 0);
+const birthday = new Date(628021800000); // передача мітки часу
+```
+
+### Формати значень, повернених методом toString
+
+```js
+const date = new Date('2020-05-12T23:50:21.817Z');
+date.toString(); // Wed May 13 2020 02:50:21 GMT+0300 (Eastern European Summer Time)
+date.toDateString(); // Wed May 13 2020
+date.toTimeString(); // 02:50:21 GMT+0300 (Eastern European Summer Time)
+date.toISOString(); // 2020-05-12T23:50:21.817Z
+date.toUTCString(); // Tue, 12 May 2020 23:50:21 GMT
+date.toGMTString(); // Tue, 12 May 2020 23:50:21 GMT
+date.toJSON(); // 2020-05-12T23:50:21.817Z
+date.toLocaleString(); // 13/05/2020, 02:50:21
+date.toLocaleDateString(); // 13/05/2020
+date.toLocaleTimeString(); // 02:50:21
 ```
 
 ### Отримання дати, місяця, року чи часу
