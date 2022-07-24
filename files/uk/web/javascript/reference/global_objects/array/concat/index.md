@@ -22,10 +22,10 @@ browser-compat: javascript.builtins.Array.concat
 ## Синтаксис
 
 ```js
-concat()
-concat(value0)
-concat(value0, value1)
-concat(value0, value1, ... , valueN)
+concat();
+concat(value0);
+concat(value0, value1);
+concat(value0, value1, /* … ,*/ valueN);
 ```
 
 ### Параметри
