@@ -60,6 +60,7 @@ justify-content: unsafe center;
 justify-content: inherit;
 justify-content: initial;
 justify-content: revert;
+justify-content: revert-layer;
 justify-content: unset;
 ```
 
@@ -164,11 +165,11 @@ justifyContent.addEventListener('change', function (evt) {
 
 #### Результат
 
-{{EmbedLiveSample("Setting_flex_item_distribution", "100%", 180)}}
+{{EmbedLiveSample("vstanovlennia-rozpodilu-hnuchkykh-elementiv", "100%", 180)}}
 
 ## Специфікації
 
-{{Specifications("css.properties.justify-content.grid_context")}}
+{{Specifications}}
 
 ## Сумісність із браузерами
 
