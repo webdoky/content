@@ -94,7 +94,7 @@ switch (foo) {
 
 ### Лексична область видимості
 
-Пункти `case` і `default` подібні до [позначок](/uk/docs/Web/JavaScript/Reference/Statements/label): вони вказують місця, куди контроль плину виконання може перестрибнути. Проте вони не створюють самі по собі лексичних [областей видимості](/uk/docs/Glossary/Scope) (так само як не виконують автоматично виходу – як показано вище). Наприклад:
+Пункти `case` і `default` подібні до [міток](/uk/docs/Web/JavaScript/Reference/Statements/label): вони вказують місця, куди контроль плину виконання може перестрибнути. Проте вони не створюють самі по собі лексичних [областей видимості](/uk/docs/Glossary/Scope) (так само як не виконують автоматично виходу – як показано вище). Наприклад:
 
 ```js
 const action = 'say_hello';
@@ -252,7 +252,7 @@ switch (foo) {
 
 ### Альтернатива ланцюжкам if...else
 
-Нерідко доводиться робити ряд перевірок [`if...else`](/uk/docs/Web/JavaScript/Reference/Statements/if...else) matches.
+Нерідко доводиться робити ряд перевірок [`if...else`](/uk/docs/Web/JavaScript/Reference/Statements/if...else).
 
 ```js
 if ('fetch' in globalThis) {
