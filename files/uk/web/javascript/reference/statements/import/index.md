@@ -180,7 +180,7 @@ function getJSON(url, callback) {
 }
 
 export function getUsefulContents(url, callback) {
-  getJSON(url, data => callback(JSON.parse(data)));
+  getJSON(url, (data) => callback(JSON.parse(data)));
 }
 ```
 
@@ -190,7 +190,7 @@ export function getUsefulContents(url, callback) {
 import { getUsefulContents } from '/modules/file.js';
 
 getUsefulContents('http://www.example.com',
-    data => { doSomethingUseful(data); });
+    (data) => { doSomethingUseful(data); });
 ```
 
 ## Специфікації
