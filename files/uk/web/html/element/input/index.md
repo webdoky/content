@@ -1121,7 +1121,7 @@ nameInput.addEventListener('input', () => {
 
 nameInput.addEventListener('invalid', () => {
   if (nameInput.value === '') {
-    nameInput.setCustomValidity('Введіть ім'я користувача!');
+    nameInput.setCustomValidity("Введіть ім'я користувача!");
   } else {
     nameInput.setCustomValidity(
       'Імена користувачів можуть містити лише великі та малі літери. Спробуйте ще!',
