@@ -9,6 +9,7 @@ tags:
   - Reference
   - Regular
   - String
+  - Polyfill
 browser-compat: javascript.builtins.String.replace
 ---
 
@@ -129,7 +130,7 @@ console.log(newstr); // апельсини — круглі, апельсини 
 
 ### Обмін слів місцями в рядку
 
-Наступний скрипт міняє слова місцями в рядку. Для отримання тексту заміни скрипт використовує [групи захоплення](/uk/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges) і патерни заміни `$1` та `$2`.
+Наступний скрипт міняє слова місцями в рядку. Для отримання тексту заміни скрипт використовує [групи захоплення](/uk/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Backreferences) і патерни заміни `$1` та `$2`.
 
 ```js
 let re = /(\w+)\s(\w+)/;
@@ -192,6 +193,7 @@ function f2c(x) {
 
 ## Дивіться також
 
+- [Поліфіл `String.prototype.replace` у складі `core-js`, з виправленнями й реалізацією сучасної логіки, як то підтримки `Symbol.replace`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
 - {{jsxref("String.prototype.replaceAll", "String.prototype.replaceAll()")}}
 - {{jsxref("String.prototype.match", "String.prototype.match()")}}
 - {{jsxref("RegExp.prototype.exec", "RegExp.prototype.exec()")}}
