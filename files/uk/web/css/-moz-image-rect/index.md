@@ -18,12 +18,12 @@ browser-compat: css.types.-moz-image-rect
 ## Синтаксис
 
 ```css
--moz-image-rect({{CSSxRef("url()")}}, top, right, bottom, left);
+-moz-image-rect({{CSSxRef("url", "url()")}}, top, right, bottom, left);
 ```
 
 ### Значення
 
-- {{CSSxRef("url()")}}
+- {{CSSxRef("url", "url()")}}
   - : URI зображення, з якої потрібно отримати підзображення.
 - `top`
   - : Верхній край підзображення, заданий як {{CSSxRef("&lt;integer&gt;")}} або {{CSSxRef("&lt;percentage&gt;")}}, у межах вказаного зображення.
@@ -147,7 +147,7 @@ function rotate() {
 
 ### На що це схоже
 
-{{EmbedLiveSample("Examples","400","400")}}
+{{EmbedLiveSample("pryklady","400","400")}}
 
 ## Специфікації
 
