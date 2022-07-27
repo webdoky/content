@@ -38,7 +38,7 @@ function stripMacrosInterpolation(text) {
   debug('stripMacrosInterpolation(...)');
   let modifiedText = text.replace(/{{\s?\w+\s?}}/gi, '');
   modifiedText = modifiedText.replace(
-    /{{\s?(\w+)\((?:["']?[^"',]+["']?,\s*)?(["']?[^"',]+["']?)(?:,\s["']?[^"',]+["']?)*\s?\)}}/gim,
+    /{{\s?(\w+)\((?:["']?[^"',]+["']?,\s*)?(["']?[^"',]+["']?)(?:,\s["']?[^"',]+["']?)*\s?\)\s?}}/gim,
     (_, macrosName, lastParameter) => {
       if (MACROS_TO_STRIP.has(macrosName)) {
         debug(`Macros ${macrosName}: skipping`);
