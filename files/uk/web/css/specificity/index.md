@@ -432,7 +432,7 @@ input[type='password']:required {
 
 {{Specifications}}
 
-## Додаткова інформація
+## Дивіться також
 
 - {{CSS_Key_Concepts}}
 - ["Специфічність" у "Каскаді та успадкуванні"](/uk/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance#spetsyfichnist-2)
