@@ -8,6 +8,13 @@ import debug from './debug';
 import { checkText } from './language-tool';
 import printCorrection from './print-correction';
 
+const MACROS_TO_STRIP = new Set([
+  'EmbedGHLiveSample',
+  'EmbedInteractiveExample',
+  'EmbedLiveSample',
+  'jsSidebar',
+]);
+
 const markdownIt = new MarkdownIt({
   // breaks: true,
 });
@@ -22,19 +29,31 @@ function stripCodeListings(html) {
   );
 }
 
-function stripGlossaryInterpolation(text) {
-  debug('stripGlossaryInterpolation(...)');
+/**
+ *
+ * @param {string} text Text to remove macros
+ * @returns {string}
+ */
+function stripMacrosInterpolation(text) {
+  debug('stripMacrosInterpolation(...)');
   let modifiedText = text.replace(/{{\s?\w+\s?}}/gi, '');
   modifiedText = modifiedText.replace(
-    /{{\s?\w+\(["'][^"']+["'],\s*["']([^"']+)["'](?:,\s*.+)*\)\s*?}}/gim,
-    '"$1"',
+    /{{\s?(\w+)\((?:["']?[^"',]+["']?,\s*)?(["']?[^"',]+["']?)(?:,\s["']?[^"',]+["']?)*\s?\)\s?}}/gim,
+    (_, macrosName, lastParameter) => {
+      if (MACROS_TO_STRIP.has(macrosName)) {
+        debug(`Macros ${macrosName}: skipping`);
+        return '';
+      }
+      debug(`Macros ${macrosName}: staying`);
+      return `"${lastParameter}"`;
+    },
   );
   return modifiedText.replace(/{{\s?\w+\(["']?([^"']+)["']?\)\s?}}/gim, '"$1"');
 }
 
 function convertHtmlToText(html) {
   debug('convertHtmlToText(...)');
-  const result = stripGlossaryInterpolation(
+  const result = stripMacrosInterpolation(
     convert(stripCodeListings(html), {
       ignoreHref: true,
     }),
