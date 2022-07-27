@@ -1,5 +1,5 @@
 ---
-title: Оператор нуль-єднання (??)
+title: Оператор null-злиття (??)
 slug: Web/JavaScript/Reference/Operators/Nullish_coalescing_operator
 tags:
   - JavaScript
@@ -12,11 +12,11 @@ browser-compat: javascript.operators.nullish_coalescing
 
 {{JSSidebar("Operators")}}
 
-**Оператор нуль-єднання (`??`)** – логічний оператор, що повертає свій правий операнд, коли його лівий операнд – {{jsxref("null")}} чи {{jsxref("undefined")}}, інакше – повертає лівий оператор.
+**Оператор null-злиття (`??`)** – логічний оператор, що повертає свій правий операнд, коли його лівий операнд – {{jsxref("null")}} чи {{jsxref("undefined")}}, інакше – повертає лівий оператор.
 
 Це може розглядатися як особливий випадок [логічного оператора АБО (`||`)](/uk/docs/Web/JavaScript/Reference/Operators/Logical_OR), котрий повертає правий операнд, коли лівий операнд є _будь-яким_ значенням {{Glossary("falsy", "хибності")}}, а не лише `null` чи `undefined`. Інакше кажучи, при використанні `||` для надання змінній `foo` певного усталеного значення можна зустріти неочікувану поведінку, якщо певні значення хибності розглядаються як значущі (наприклад, `''` чи `0`). Дивіться більше прикладів нижче.
 
-Оператор нуль-єднання має п'ятий за порядком зростання [пріоритет оператора](/uk/docs/Web/JavaScript/Reference/Operators/Operator_Precedence), зразу перед `||` і зразу після [умовного (тернарного) оператора](/uk/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
+Оператор null-злиття має п'ятий за порядком зростання [пріоритет оператора](/uk/docs/Web/JavaScript/Reference/Operators/Operator_Precedence), зразу перед `||` і зразу після [умовного (тернарного) оператора](/uk/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
 
 {{EmbedInteractiveExample("pages/js/expressions-nullishcoalescingoperator.html")}}
 
@@ -28,7 +28,7 @@ leftExpr ?? rightExpr;
 
 ## Приклади
 
-### Застосування оператора нуль-єднання
+### Застосування оператора null-злиття
 
 В цьому прикладі надаються усталені значення, однак значення, відмінні від `null` чи `undefined`, зберігаються.
 
@@ -69,7 +69,7 @@ console.log(qty); // 42, а не 0
 console.log(message); // "агов!", а не ""
 ```
 
-Оператор нуль-єднання уникає цієї пастки, повертаючи другий операнд, коли перший зводиться або до `null`, або до `undefined` (але не до інших значень хибності):
+Оператор null-злиття уникає цієї пастки, повертаючи другий операнд, коли перший зводиться або до `null`, або до `undefined` (але не до інших значень хибності):
 
 ```js
 let myText = ''; // Порожній рядок (що також є значенням хибності)
@@ -126,7 +126,7 @@ true || undefined ?? "foo"; // породить SyntaxError
 
 ### Взаємини з оператором необов'язкового ланцюжка (`?.`)
 
-Оператор нуль-єднання обробляє `undefined` і `null` як особливі значення, так само як [оператор необов'язкового ланцюжка (`?.`)](/uk/docs/Web/JavaScript/Reference/Operators/Optional_chaining), котрий є корисним для доступу до властивості об'єкта, котрий може виявитись `null` чи `undefined`.
+Оператор null-злиття обробляє `undefined` і `null` як особливі значення, так само як [оператор необов'язкового ланцюжка (`?.`)](/uk/docs/Web/JavaScript/Reference/Operators/Optional_chaining), котрий є корисним для доступу до властивості об'єкта, котрий може виявитись `null` чи `undefined`.
 
 ```js
 let foo = { someFooProp: 'привіт' };
