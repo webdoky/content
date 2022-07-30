@@ -89,7 +89,7 @@ browser-compat: html.elements.input.type_date
 Можна отримати та встановити значення дати за допомогою JavaScript, використовуючи властивості {{domxref("HTMLInputElement")}} `value` та `valueAsNumber`. Наприклад:
 
 ```js
-var dateControl = document.querySelector('input[type="date"]');
+const dateControl = document.querySelector('input[type="date"]');
 dateControl.value = '2017-06-01';
 console.log(dateControl.value); // виводить "2017-06-01"
 console.log(dateControl.valueAsNumber); // виводить 1496275200000, мітку часу JavaScript (у мілісекундах)
@@ -179,14 +179,14 @@ console.log(dateControl.valueAsNumber); // виводить 1496275200000, мі�
 
 При використанні для обмеження доступних дат {{htmlattrxref("min", "input")}} і {{htmlattrxref("max", "input")}} (дивіться [Встановлення максимальної та мінімальної дат](#vstanovlennia-maksymalnoii-ta-minimalnoii-dat)) браузери, що це підтримують, покажуть помилку при спробі подати дату, що знаходиться поза межами. Втім, слід повторно перевірити подані результати, щоб пересвідчитися, що значення лежить в заданих межах, – на випадок, якщо вибір дати не повністю підтримується на пристрої користувача.
 
-Також можна використати атрибут {{htmlattrxref("required", "input")}}, щоб зробити введення дати обов‘язковим: буде показана помилка, якщо спробувати подати пусте поле дати. Це повинно спрацювати в більшості браузерів, навіть якщо вони показують поле дати як текстове.
+Також можна використати атрибут {{htmlattrxref("required", "input")}}, щоб зробити введення дати обов'язковим: буде показана помилка, якщо спробувати подати пусте поле дати. Це повинно спрацювати в більшості браузерів, навіть якщо вони показують поле дати як текстове.
 
-Погляньмо на приклад мінімальної та максимальної дат, де поле також є обов‘язковим:
+Погляньмо на приклад мінімальної та максимальної дат, де поле також є обов'язковим:
 
 ```html
 <form>
   <label>
-    Оберіть бажану дату вечірки (обов‘язково, між 1 та 20 квітня):
+    Оберіть бажану дату вечірки (обов'язково, між 1 та 20 квітня):
     <input
       type="date"
       name="party"
@@ -349,26 +349,26 @@ input:valid + span::after {
 
 ### JavaScript
 
-Інша частина коду, що може бути цікавою – визначення доступності функціоналу: чи підтримує браузер `<input type="date">`.
+Інша частина коду, що може бути цікавою – визначення доступності функціональності: чи підтримує браузер `<input type="date">`.
 
 Створюється новий елемент {{htmlelement("input")}} element, потім його `type` встановлюється в `date`, потім негайно відбувається перевірка типу: браузери, що підтримують `date`, повернуть `text`, бо для типу `date` запасним варіантом є тип `text`. Якщо `<input type="date">` не підтримується, то нативний віджет вибору ховається, а натомість показується запасний варіант – ({{htmlelement("select")}}).
 
 ```js
-// визначити змінні
-var nativePicker = document.querySelector('.nativeDatePicker');
-var fallbackPicker = document.querySelector('.fallbackDatePicker');
-var fallbackLabel = document.querySelector('.fallbackLabel');
+// отримати віджети користувацького інтерфейсу
+const nativePicker = document.querySelector('.nativeDatePicker');
+const fallbackPicker = document.querySelector('.fallbackDatePicker');
+const fallbackLabel = document.querySelector('.fallbackLabel');
 
-var yearSelect = document.querySelector('#year');
-var monthSelect = document.querySelector('#month');
-var daySelect = document.querySelector('#day');
+const yearSelect = document.querySelector('#year');
+const monthSelect = document.querySelector('#month');
+const daySelect = document.querySelector('#day');
 
 // спершу приховати запасний варіант
 fallbackPicker.style.display = 'none';
 fallbackLabel.style.display = 'none';
 
 // перевірити, чи відступає поле дати до запасного текстового варіанту, чи ні
-var test = document.createElement('input');
+const test = document.createElement('input');
 
 try {
   test.type = 'date';
@@ -401,26 +401,23 @@ function populateDays(month) {
 
   // 31 чи 30 днів?
   if (
-    (month === 'January') |
-    (month === 'March') |
-    (month === 'May') |
-    (month === 'July') |
-    (month === 'August') |
-    (month === 'October') |
-    (month === 'December')
+    [
+      'January',
+      'March',
+      'May',
+      'July',
+      'August',
+      'October',
+      'December',
+    ].includes(month)
   ) {
     dayNum = 31;
-  } else if (
-    (month === 'April') |
-    (month === 'June') |
-    (month === 'September') |
-    (month === 'November')
-  ) {
+  } else if (['April', 'June', 'September', 'November'].includes(month)) {
     dayNum = 30;
   } else {
     // Якщо місяць – лютий, то перевірити, чи не є рік високосним
-    var year = yearSelect.value;
-    var isLeap = new Date(year, 1, 29).getMonth() == 1;
+    const year = yearSelect.value;
+    const isLeap = new Date(year, 1, 29).getMonth() === 1;
     dayNum = isLeap ? 29 : 28;
   }
 
@@ -457,12 +454,12 @@ function populateDays(month) {
 
 function populateYears() {
   // отримати поточний рік як число
-  var date = new Date();
-  var year = date.getFullYear();
+  const date = new Date();
+  const year = date.getFullYear();
 
   // Зробити цей рік, а також 100 років перед ним – доступними в меню <select> вибору року
-  for (var i = 0; i <= 100; i++) {
-    var option = document.createElement('option');
+  for (let i = 0; i <= 100; i++) {
+    const option = document.createElement('option');
     option.textContent = year - i;
     yearSelect.appendChild(option);
   }
@@ -470,25 +467,25 @@ function populateYears() {
 
 // коли значення <select> місяця чи року міняються, перезапустити populateDays()
 // на випадок того, що зміна вплинула на число доступних днів
-yearSelect.onchange = function () {
+yearSelect.onchange = () => {
   populateDays(monthSelect.value);
 };
 
-monthSelect.onchange = function () {
+monthSelect.onchange = () => {
   populateDays(monthSelect.value);
 };
 
 //зберігати вибір дня
-var previousDay;
+let previousDay;
 
 // оновити те, який день був установленим раніше
 // дивіться використання в кінці populateDays()
-daySelect.onchange = function () {
+daySelect.onchange = () => {
   previousDay = daySelect.value;
 };
 ```
 
-> **Примітка:** Слід пам‘ятати, що певні роки містять 53 тижні (дивіться [Скільки тижнів у році (англ.)](https://en.wikipedia.org/wiki/ISO_week_date#Weeks_per_year))! Це слід враховувати при промисловій розробці застосунків.
+> **Примітка:** Слід пам'ятати, що певні роки містять 53 тижні (дивіться [Скільки тижнів у році (англ.)](https://en.wikipedia.org/wiki/ISO_week_date#Weeks_per_year))! Це слід враховувати при промисловій розробці застосунків.
 
 ## Специфікації
 
