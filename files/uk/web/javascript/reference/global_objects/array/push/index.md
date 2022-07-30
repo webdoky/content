@@ -7,6 +7,7 @@ tags:
   - Method
   - Prototype
   - Reference
+  - Polyfill
 browser-compat: javascript.builtins.Array.push
 ---
 
@@ -20,15 +21,15 @@ browser-compat: javascript.builtins.Array.push
 ## Синтаксис
 
 ```js
-push(element0)
-push(element0, element1)
-push(element0, element1, /* ... ,*/ elementN)
+push(element0);
+push(element0, element1);
+push(element0, element1, /* … ,*/ elementN);
 ```
 
 ### Параметри
 
 - `elementN` (елемент № N)
-  - : Елемент(и), що потрібно додати у кінець масиву.
+  - : Елемент (або елементи), що потрібно додати у кінець масиву.
 
 ### Повернене значення
 
@@ -37,19 +38,21 @@ push(element0, element1, /* ... ,*/ elementN)
 
 ## Опис
 
-Метод `push` додає значення до масиву.
+Метод `push()` додає значення в кінець масиву.
 
-`push` навмисно є узагальненим. Цей метод можна використовувати з
+{{jsxref("Array.prototype.unshift()")}} має подібну до `push()` логіку, але додає значення в початок масиву.
+
+Метод `push()` – видозмінює масив, на котрому викликаний. Він змінює довжину і зміст `this`. Якщо необхідно, аби значення `this` було тим самим, але був повернений новий масив з елементами, доданими в його кінець, можна натомість використати [`arr.concat([element0, element1, /* ... ,*/ elementN])`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/concat). Зверніть увагу, що елементи загорнуті в додатковий масив: інакше, якщо елемент сам є масивом, він буде розгорнутий, а не доданий як один елемент, у зв'язку з логікою `concat()`.
+
+`Array.prototype.push()` навмисно є узагальненим. Цей метод можна використовувати з
 {{jsxref("Function.call", "call()")}} або {{jsxref("Function.apply", "apply()")}}
 для об’єктів, схожих на масиви. Метод `push` покладається на властивість `length`,
 щоб визначити, звідки почати вставляти задані значення. Якщо властивість `length` не можна перетворити на число,
-використовується індекс 0. Це включає в себе можливість відсутності `length`; у цьому випадку
+використовується індекс 0. Це охоплює можливість відсутності `length`; у цьому випадку
 `length` також буде створено.
 
-Незважаючи на те, що {{jsxref("Global_Objects/String", "рядки", "", 1)}} є нативними об'єктами,
+Попри те, що {{jsxref("Global_Objects/String", "рядки", "", 1)}} є нативними об'єктами,
 подібними до масиву, вони не підходять для застосування цього методу, оскільки рядки є незмінними.
-Те саме стосується нативного
-масивоподібного об’єкта {{jsxref("Functions/arguments", "arguments", "", 1)}}.
 
 ## Приклади
 
@@ -59,11 +62,11 @@ push(element0, element1, /* ... ,*/ elementN)
 додає до нього ще два елементи. Змінна `total` містить нову довжину масиву.
 
 ```js
-let sports = ['soccer', 'baseball']
-let total = sports.push('football', 'swimming')
+let sports = ['футбол', 'бокс'];
+let total = sports.push('теніс', 'баскетбол');
 
-console.log(sports)  // ['soccer', 'baseball', 'football', 'swimming']
-console.log(total)   // 4
+console.log(sports); // ['футбол', 'бокс', 'теніс', 'баскетбол']
+console.log(total); // 4
 ```
 
 ### Об’єднання двох масивів
@@ -72,13 +75,13 @@ console.log(total)   // 4
 використовується {{jsxref("Operators/Spread_syntax", "синтаксис розгортання", "", "1")}}
 
 ```js
-let vegetables = ['parsnip', 'potato']
-let moreVegs = ['celery', 'beetroot']
+let vegetables = ['пастернак', 'картопля'];
+let moreVegs = ['селера', 'буряк'];
 
 // Об’єднання другого масиву в перший
 vegetables.push(...moreVegs);
 
-console.log(vegetables)  // ['parsnip', 'potato', 'celery', 'beetroot']
+console.log(vegetables); // ['пастернак', 'картопля', 'селера', 'буряк']
 ```
 
 Об’єднання двох масивів також можна зробити за допомогою методу {{jsxref("Array.prototype.concat()", "concat()")}}.
@@ -90,30 +93,30 @@ console.log(vegetables)  // ['parsnip', 'potato', 'celery', 'beetroot']
 як показує цей приклад.
 
 Зверніть увагу, масив не створюється для зберігання колекції об’єктів. Натомість колекція
-зберігається на самому об’єкті і використовується `call` на
+зберігається на самому об’єкті, й використовується `call` на
 `Array.prototype.push`, щоб змусити метод подумати, що ми маємо справу з масивом, і це просто працює,
 завдяки тому, що JavaScript дозволяє встановлювати контекст виконання будь-яким способом.
 
 ```js
 let obj = {
-    length: 0,
+  length: 0,
 
-    addElem: function addElem(elem) {
-        // obj.length автоматично збільшується
-        // кожного разу, коли додається елемент.
-        [].push.call(this, elem)
-    }
-}
+  addElem(elem) {
+    // obj.length автоматично збільшується
+    // кожного разу, коли додається елемент.
+    [].push.call(this, elem);
+  },
+};
 
 // Додавання декількох порожніх об’єктів просто для ілюстрації.
-obj.addElem({})
-obj.addElem({})
-console.log(obj.length)
+obj.addElem({});
+obj.addElem({});
+console.log(obj.length);
 // → 2
 ```
 
 Зверніть увагу, хоча `obj` не є масивом, метод `push`
-успішно збільшив властивість `length` у `obj` так само,
+успішно збільшив властивість `length` у `obj` так само
 як якщо це був би реальний масив.
 
 ## Специфікації
@@ -126,6 +129,7 @@ console.log(obj.length)
 
 ## Дивіться також
 
+- [Поліфіл `Array.prototype.push` доступний у складі `core-js`, з виправленнями для цього метода](https://github.com/zloirock/core-js#ecmascript-array)
 - {{jsxref("Array.prototype.pop()")}}
 - {{jsxref("Array.prototype.shift()")}}
 - {{jsxref("Array.prototype.unshift()")}}

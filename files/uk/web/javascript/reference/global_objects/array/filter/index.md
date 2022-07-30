@@ -23,13 +23,13 @@ browser-compat: javascript.builtins.Array.filter
 ```js
 // Стрілкова функція
 filter((element) => {
-  /* ... */
+  /* … */
 });
 filter((element, index) => {
-  /* ... */
+  /* … */
 });
 filter((element, index, array) => {
-  /* ... */
+  /* … */
 });
 
 // Функція зворотного виклику
@@ -38,16 +38,16 @@ filter(callbackFn, thisArg);
 
 // Функція зворотного виклику, яка оголошена на місці
 filter(function (element) {
-  /* ... */
+  /* … */
 });
 filter(function (element, index) {
-  /* ... */
+  /* … */
 });
 filter(function (element, index, array) {
-  /* ... */
+  /* … */
 });
 filter(function (element, index, array) {
-  /* ... */
+  /* … */
 }, thisArg);
 ```
 
