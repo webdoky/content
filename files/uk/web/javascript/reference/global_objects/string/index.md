@@ -345,7 +345,7 @@ let longString =
 
 ### Перетворення рядків
 
-Можна використовувати `String` як більш надійну альтернативу методу {{jsxref("String.prototype.toString()", "toString()")}}, оскільки це працює навіть під час використання зі значеннями {{jsxref("null")}} та {{jsxref("undefined")}}. Наприклад:
+Можна використовувати `String` як більш надійну альтернативу методу {{jsxref("String.prototype.toString()", "toString()")}}, оскільки це працює навіть під час використання зі значеннями [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) та {{jsxref("undefined")}}. Наприклад:
 
 ```js
 const nullVar = null;
