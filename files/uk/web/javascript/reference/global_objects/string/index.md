@@ -305,7 +305,7 @@ let longString =
   - : Обрізає пробільні символи в кінці рядка.
 - {{jsxref("String.prototype.valueOf()")}} (значення (об'єкта))
   - : Повертає примітив — значення вказаного об'єкта. Заміщує метод {{jsxref("Object.prototype.valueOf()")}}.
-- {{jsxref("String.prototype.@@iterator()")}}
+- {{jsxref("String.prototype.@@iterator()", "String.prototype[@@iterator]()")}}
   - : Повертає новий об'єкт-ітератор, який перебирає всі кодові одиниці значення рядка, повертаючи кожну з них як окремий рядок.
 
 ## Методи для обгортання в HTML
