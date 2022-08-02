@@ -45,10 +45,10 @@ function stripMacrosInterpolation(text) {
         return '';
       }
       debug(`Macros ${macrosName}: staying`);
-      return `"${lastParameter}"`;
+      return `${lastParameter}`;
     },
   );
-  return modifiedText.replace(/{{\s?\w+\(["']?([^"']+)["']?\)\s?}}/gim, '"$1"');
+  return modifiedText.replace(/{{\s?\w+\(["']?([^"']+)["']?\)\s?}}/gim, '$1');
 }
 
 function convertHtmlToText(html) {

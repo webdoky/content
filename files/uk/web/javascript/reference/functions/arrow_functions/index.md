@@ -1,5 +1,5 @@
 ---
-title: Arrow function expressions
+title: Вирази стрілкових функцій
 slug: Web/JavaScript/Reference/Functions/Arrow_functions
 tags:
   - ECMAScript 2015
@@ -504,7 +504,7 @@ const arr = [5, 6, 13, 0, 1, 18, 23];
 const sum = arr.reduce((a, b) => a + b);
 // 66
 
-const even = arr.filter((v) => v % 2 == 0);
+const even = arr.filter((v) => v % 2 === 0);
 // [6, 0, 18]
 
 const double = arr.map((v) => v * 2);
