@@ -46,7 +46,7 @@ Object.assign(target, ...sources);
 
 В разі помилки (наприклад, якщо властивість недоступна для запису) викидається {{jsxref("TypeError")}}, а об'єкт `target` залишається модифікованим, якщо якісь властивості були вже додані до виникнення помилки.
 
-> **Примітка:** `Object.assign()` не викидає помилок на таких донорах, як {{jsxref("null")}} чи {{jsxref("undefined")}}.
+> **Примітка:** `Object.assign()` не викидає помилок на таких донорах, як [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) чи {{jsxref("undefined")}}.
 
 ## Приклади
 

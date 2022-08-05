@@ -215,7 +215,7 @@ tags:
 - {{JSxRef("Operators/Object_initializer", "{}")}}
 - {{JSxRef("Global_Objects/RegExp", "/ab+c/i")}}
 - {{JSxRef("Operators/Grouping", "( )")}}
-- {{JSxRef("null")}}
+- [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null)
 
 ### Вирази лівої сторони
 
@@ -330,7 +330,7 @@ tags:
 
 ## Класи
 
-[Класи в JavaScript.](/en-US/docs/Web/JavaScript/Reference/Classes)
+[Класи в JavaScript.](/uk/docs/Web/JavaScript/Reference/Classes)
 
 ## Додаткові довідкові сторінки
 
