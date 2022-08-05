@@ -106,6 +106,8 @@ myPromise
   });
 ```
 
+> **Примітка:** Для швидшого виконання всі синхронні дії краще виконувати в межах одного обробника, інакше виконання всіх обробників у послідовності займе декілька тактів.
+
 Стан, з яким завершується проміс, визначає результат, яким "залагоджується" наступний проміс у послідовності. "Сповнений" стан позначає успішне завершення промісу, а стан "відхилено" — невдачу. Результат, повернутий кожним сповненим промісом у послідовності, передається далі до наступного `.then()`, натомість причина, з якої було відхилено якийсь із промісів, передається тільки до наступного обробника помилки у послідовності.
 
 Проміси в послідовності наче вкладені один в одного, як шари в цибулині, проте вони знімаються, подібно до верхівки стека. Перший проміс у послідовності загорнутий найглибше, проте він же і буде першим, який витягнуть.
@@ -321,37 +323,23 @@ myFirstPromise.then((successMessage) => {
 Цей код може запускатися в середовищі NodeJS. Він буде більш зрозумілим, якщо переглянути помилки, які виникнуть у процесі виконання. Щоб збільшити кількість помилок, змініть значення `threshold`.
 
 ```js
-'use strict';
-
 // Для експерименту з обробкою помилок значення "threshold" приводять до помилок випадковим чином
 const THRESHOLD_A = 8; // можна використати 0, щоб гарантувати помилку
 
 function tetheredGetNumber(resolve, reject) {
-  try {
-    setTimeout(function () {
-      const randomInt = Date.now();
-      const value = randomInt % 10;
-      try {
-        if (value >= THRESHOLD_A) {
-          throw new Error(`Завелике значення: ${value}`);
-        }
-      } catch (msg) {
-        reject(`Помилка в функції зворотного виклику ${msg}`);
-      }
+  setTimeout(() => {
+    const randomInt = Date.now();
+    const value = randomInt % 10;
+    if (value >= THRESHOLD_A) {
+      reject(`Завелике значення: ${value}`);
+    } else {
       resolve(value);
-      return;
-    }, 500);
-    // Щоб поекспериментувати з помилкою при налаштуванні, розкоментуйте наступний 'throw'.
-    // throw new Error("Пилка налаштування");
-  } catch (err) {
-    reject(`Помилка під час налаштування: ${err}`);
-  }
-  return;
+    }
+  }, 500);
 }
-
 function determineParity(value) {
-  const isOdd = value % 2 ? true : false;
-  const parityInfo = { theNumber: value, isOdd: isOdd };
+  const isOdd = value % 2 === 1;
+  const parityInfo = { value, isOdd };
   return parityInfo;
 }
 
@@ -361,19 +349,16 @@ function troubleWithGetNumber(reason) {
 }
 
 function promiseGetWord(parityInfo) {
-  // Функція "tetheredGetWord()" отримує "parityInfo" як змінну замикання.
-  const tetheredGetWord = function (resolve, reject) {
-    const theNumber = parityInfo.theNumber;
+  return new Promise((resolve, reject) => {
+    const { value } = parityInfo;
     const threshold_B = THRESHOLD_A - 1;
-    if (theNumber >= threshold_B) {
-      reject(`Все ж завелике значення: ${theNumber}`);
+    if (value >= threshold_B) {
+      reject(`Все ж завелике значення: ${value}`);
     } else {
       parityInfo.wordEvenOdd = parityInfo.isOdd ? 'odd' : 'even';
       resolve(parityInfo);
     }
-    return;
-  };
-  return new Promise(tetheredGetWord);
+  });
 }
 
 new Promise(tetheredGetNumber)
@@ -428,15 +413,15 @@ function testPromise() {
       thisPromiseCount + ') Конструктор промісу<br>',
     );
     // Це лише приклад того, як може виникнути асинхронність
-    window.setTimeout(function () {
-      // Виконуємо проміс!
+    setTimeout(() => {
+      // Сповнюємо проміс!
       resolve(thisPromiseCount);
     }, Math.random() * 2000 + 1000);
   });
 
   // Оголошуємо через виклик then(), що саме потрібно зробити, коли проміс вирішується,
   // а за допомогою виклику catch() — що робити, якщо проміс відхилено
-  p1.then(function (val) {
+  p1.then((val) => {
     // Виводимо значення, яким сповнився проміс
     log.insertAdjacentHTML('beforeend', val + ') Проміс сповнено<br>');
   }).catch((reason) => {
@@ -450,16 +435,8 @@ function testPromise() {
   );
 }
 
-if ('Promise' in window) {
-  const btn = document.getElementById('make-promise');
-  btn.addEventListener('click', testPromise);
-} else {
-  const log = document.getElementById('log');
-  log.insertAdjacentHTML(
-    'beforeend',
-    'Приклад не працює, оскільки цей браузер не підтримує інтерфейс <code>Promise<code>.',
-  );
-}
+const btn = document.getElementById('make-promise');
+btn.addEventListener('click', testPromise);
 ```
 
 #### Результат
