@@ -23,13 +23,13 @@ browser-compat: javascript.builtins.Array.filter
 ```js
 // Стрілкова функція
 filter((element) => {
-  /* ... */
+  /* … */
 });
 filter((element, index) => {
-  /* ... */
+  /* … */
 });
 filter((element, index, array) => {
-  /* ... */
+  /* … */
 });
 
 // Функція зворотного виклику
@@ -38,16 +38,16 @@ filter(callbackFn, thisArg);
 
 // Функція зворотного виклику, яка оголошена на місці
 filter(function (element) {
-  /* ... */
+  /* … */
 });
 filter(function (element, index) {
-  /* ... */
+  /* … */
 });
 filter(function (element, index, array) {
-  /* ... */
+  /* … */
 });
 filter(function (element, index, array) {
-  /* ... */
+  /* … */
 }, thisArg);
 ```
 
@@ -163,7 +163,7 @@ const array = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 
 function isPrime(num) {
   for (let i = 2; num > i; i++) {
-    if (num % i == 0) {
+    if (num % i === 0) {
       return false;
     }
   }
@@ -222,7 +222,7 @@ let fruits = ['яблуко', 'банан', 'виноград', 'манго', '�
  */
 function filterItems(arr, query) {
   return arr.filter(function (el) {
-    return el.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+    return el.toLowerCase().includes(query.toLowerCase());
   });
 }
 
@@ -239,9 +239,7 @@ const fruits = ['яблуко', 'банан', 'виноград', 'манго', 
  * Фільтрує елементи масиву за певним критерієм пошуку (запиту)
  */
 const filterItems = (arr, query) => {
-  return arr.filter(
-    (el) => el.toLowerCase().indexOf(query.toLowerCase()) !== -1,
-  );
+  return arr.filter((el) => el.toLowerCase().includes(query.toLowerCase()));
 };
 
 console.log(filterItems(fruits, 'ан')); // ['банан', 'манго']
