@@ -8,6 +8,7 @@ tags:
   - Reference
   - Regular Expressions
   - String
+  - Polyfill
 browser-compat: javascript.builtins.String.split
 ---
 
@@ -54,7 +55,7 @@ split(separator, limit);
 
 ## Приклади
 
-### Застосування `split()`
+### Застосування split()
 
 Якщо початковий рядок порожній, і не вказаний жодний розділювач, `split()` поверне масив з одним порожнім рядком замість порожнього масиву. Якщо ж обидва значення — і рядок, і розділювач — це порожні рядки, буде повернено порожній масив.
 
@@ -279,6 +280,7 @@ console.log(commands.split(splitCommands, 3)); // => ["світло увімкн
 
 ## Дивіться також
 
+- [Поліфіл `String.prototype.split` у складі `core-js`, з виправленнями й реалізацією сучасної логіки, як то підтримки `Symbol.split`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
 - {{jsxref("String.prototype.charAt()")}}
 - {{jsxref("String.prototype.indexOf()")}}
 - {{jsxref("String.prototype.lastIndexOf()")}}

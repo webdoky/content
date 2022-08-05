@@ -38,17 +38,17 @@ function stripMacrosInterpolation(text) {
   debug('stripMacrosInterpolation(...)');
   let modifiedText = text.replace(/{{\s?\w+\s?}}/gi, '');
   modifiedText = modifiedText.replace(
-    /{{\s?(\w+)\((?:["']?[^"',]+["']?,\s*)?(["']?[^"',]+["']?)(?:,\s["']?[^"',]+["']?)*\s?\)}}/gim,
+    /{{\s?(\w+)\((?:["']?[^"',]+["']?,\s*)?(["']?[^"',]+["']?)(?:,\s["']?[^"',]+["']?)*\s?\)\s?}}/gim,
     (_, macrosName, lastParameter) => {
       if (MACROS_TO_STRIP.has(macrosName)) {
         debug(`Macros ${macrosName}: skipping`);
         return '';
       }
       debug(`Macros ${macrosName}: staying`);
-      return `"${lastParameter}"`;
+      return `${lastParameter}`;
     },
   );
-  return modifiedText.replace(/{{\s?\w+\(["']?([^"']+)["']?\)\s?}}/gim, '"$1"');
+  return modifiedText.replace(/{{\s?\w+\(["']?([^"']+)["']?\)\s?}}/gim, '$1');
 }
 
 function convertHtmlToText(html) {
