@@ -46,7 +46,7 @@ browser-compat: html.elements.input.type_date
       <td>
         {{htmlattrxref("autocomplete", "input")}},
         {{htmlattrxref("list", "input")}},
-        {{htmlattrxref("readonly", "input")}}, and
+        {{htmlattrxref("readonly", "input")}} і
         {{htmlattrxref("step", "input")}}
       </td>
     </tr>
@@ -74,7 +74,7 @@ browser-compat: html.elements.input.type_date
 
 ## Значення
 
-Рядок, що представляє дату, введену в поле. Має формат згідно з ISO8601, він описаний у {{SectionOnPage("/uk/docs/Web/HTML/Date_and_time_formats", "Форматі дійсного рядка дати")}}.
+Рядок, що представляє дату, введену в поле. Має формат згідно з ISO8601, він описаний у [Форматі рядків дат](/uk/docs/Web/HTML/Date_and_time_formats#riadky-dat).
 
 Можна встановити усталене значення поля введення з датою всередині атрибута {{htmlattrxref("value", "input")}}, ось так:
 

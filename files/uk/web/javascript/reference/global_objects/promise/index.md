@@ -415,12 +415,12 @@ new Promise(tetheredGetNumber)
 let promiseCount = 0;
 
 function testPromise() {
-  let thisPromiseCount = ++promiseCount;
-  let log = document.getElementById('log');
+  const thisPromiseCount = ++promiseCount;
+  const log = document.getElementById('log');
   // початок
   log.insertAdjacentHTML('beforeend', thisPromiseCount + ') Started<br>');
   // Створюємо новий проміс: ми зобов'язуємося надати числовий лічильник цього промісу, що починається з 1 (після очікування протягом 3 секунд)
-  let p1 = new Promise((resolve, reject) => {
+  const p1 = new Promise((resolve, reject) => {
     // Функція, яка працює над виконанням промісу,
     // викликається з можливістю або виконати, або відхилити проміс
     log.insertAdjacentHTML(
@@ -451,12 +451,14 @@ function testPromise() {
 }
 
 if ('Promise' in window) {
-  let btn = document.getElementById('make-promise');
+  const btn = document.getElementById('make-promise');
   btn.addEventListener('click', testPromise);
 } else {
-  log = document.getElementById('log');
-  log.textContent =
-    'Приклад не працює, оскільки цей браузер не підтримує інтерфейс <code>Promise<code>.';
+  const log = document.getElementById('log');
+  log.insertAdjacentHTML(
+    'beforeend',
+    'Приклад не працює, оскільки цей браузер не підтримує інтерфейс <code>Promise<code>.',
+  );
 }
 ```
 
