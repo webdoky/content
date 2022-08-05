@@ -242,8 +242,7 @@ const obj = {
   data: 'data',
 
   toJSON(key) {
-    if (key) return `Зараз я — вкладений об'єкт за ключем '${key}'`;
-    else return this;
+    return key ? `Зараз я — вкладений об'єкт за ключем '${key}'` : this;
   },
 };
 
