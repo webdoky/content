@@ -13,7 +13,7 @@ tags:
 
 {{CSSRef}}
 
-**Медіазапити** корисні тоді, коли хочеться змінити сайт чи застосунок залежно від загального типу пристрою (наприклад, друк чи екран) або певних характеристик і параметрів (наприклад, роздільної здатності екрану чи ширини {{glossary("viewport", "вікна перегляду")}} браузера).
+**Медіазапити** корисні тоді, коли хочеться змінити сайт чи застосунок залежно від загального типу пристрою (наприклад, друк чи екран) або певних характеристик і параметрів (наприклад, роздільної здатності екрана чи ширини {{glossary("viewport", "вікна перегляду")}} браузера).
 
 Медіазапити використовуються для наступних речей:
 
@@ -25,26 +25,26 @@ tags:
 
 ## Синтаксис
 
-Медіазапит складається із необов‘язкового _типу медіа_ і будь-якої кількості виразів _ознак медіа_, що необов‘язково можуть бути поєднані у різний спосіб за допомогою _логічних операторів_.
+Медіазапит складається із необов'язкового _типу медіа_ і будь-якої кількості виразів _ознак медіа_, що необов'язково можуть бути поєднані у різний спосіб за допомогою _логічних операторів_.
 Медіазапити є нечутливими до регістру.
 
-- [Типи медіа](/uk/docs/Web/CSS/@media#media_types) визначають широкі категорії пристроїв, до яких застосовується медіазапит: `all` (усі), `print` (друк), `screen` (екран), `speech` (мовлення).
+- [Типи медіа](/uk/docs/Web/CSS/@media#typy-media) визначають широкі категорії пристроїв, до яких застосовується медіазапит: `all` (усі), `print` (друк), `screen` (екран), `speech` (мовлення).
 
-  Тип є необов‘язковим (усталено вважається рівним `all`), крім випадків використання логічних операторів `not` або `only`.
+  Тип є необов'язковим (усталено вважається рівним `all`), крім випадків використання логічних операторів `not` або `only`.
 
-- [Ознаки медіа](/uk/docs/Web/CSS/@media#media_features) описують певну характеристику {{glossary("user agent", "користувацького агента")}}, пристрою виведення чи середовища:  {{cssxref("@media/any-hover", "any-hover")}}, {{cssxref("@media/any-pointer", "any-pointer")}}, {{cssxref("@media/aspect-ratio", "aspect-ratio")}}, {{cssxref("@media/color", "color")}}, {{cssxref("@media/color-gamut", "color-gamut")}}, {{cssxref("@media/color-index", "color-index")}}, {{cssxref("@media/device-aspect-ratio", "device-aspect-ratio")}} {{deprecated_inline}}, {{cssxref("@media/device-height", "device-height")}} {{deprecated_inline}}, {{cssxref("@media/device-width", "device-width")}} {{deprecated_inline}}, {{cssxref("@media/display-mode", "display-mode")}}, {{cssxref("@media/dynamic-range", "dynamic-range")}}, {{cssxref("@media/forced-colors", "forced-colors")}}, {{cssxref("@media/grid", "grid")}}, {{cssxref("@media/height", "height")}}, {{cssxref("@media/hover", "hover")}}, {{cssxref("@media/inverted-colors", "inverted-colors")}}, {{cssxref("@media/monochrome", "monochrome")}}, {{cssxref("@media/orientation", "orientation")}}, {{cssxref("@media/overflow-block", "overflow-block")}}, {{cssxref("@media/overflow-inline", "overflow-inline")}}, {{cssxref("@media/pointer", "pointer")}}, {{cssxref("@media/prefers-color-scheme", "prefers-color-scheme")}}, {{cssxref("@media/prefers-contrast", "prefers-contrast")}}, {{cssxref("@media/prefers-reduced-motion", "prefers-reduced-motion")}}, {{cssxref("@media/resolution", "resolution")}}, {{cssxref("@media/scripting", "scripting")}}, {{cssxref("@media/update-frequency", "update")}}, {{cssxref("@media/video-dynamic-range", "video-dynamic-range")}}, {{cssxref("@media/width", "width")}}.
+- [Ознаки медіа](/uk/docs/Web/CSS/@media#oznaky-media) описують певну характеристику {{glossary("user agent", "користувацького агента")}}, пристрою виведення чи середовища: {{cssxref("@media/any-hover", "any-hover")}}, {{cssxref("@media/any-pointer", "any-pointer")}}, {{cssxref("@media/aspect-ratio", "aspect-ratio")}}, {{cssxref("@media/color", "color")}}, {{cssxref("@media/color-gamut", "color-gamut")}}, {{cssxref("@media/color-index", "color-index")}}, {{cssxref("@media/device-aspect-ratio", "device-aspect-ratio")}} {{deprecated_inline}}, {{cssxref("@media/device-height", "device-height")}} {{deprecated_inline}}, {{cssxref("@media/device-width", "device-width")}} {{deprecated_inline}}, {{cssxref("@media/display-mode", "display-mode")}}, {{cssxref("@media/dynamic-range", "dynamic-range")}}, {{cssxref("@media/forced-colors", "forced-colors")}}, {{cssxref("@media/grid", "grid")}}, {{cssxref("@media/height", "height")}}, {{cssxref("@media/hover", "hover")}}, {{cssxref("@media/inverted-colors", "inverted-colors")}}, {{cssxref("@media/monochrome", "monochrome")}}, {{cssxref("@media/orientation", "orientation")}}, {{cssxref("@media/overflow-block", "overflow-block")}}, {{cssxref("@media/overflow-inline", "overflow-inline")}}, {{cssxref("@media/pointer", "pointer")}}, {{cssxref("@media/prefers-color-scheme", "prefers-color-scheme")}}, {{cssxref("@media/prefers-contrast", "prefers-contrast")}}, {{cssxref("@media/prefers-reduced-motion", "prefers-reduced-motion")}}, {{cssxref("@media/resolution", "resolution")}}, {{cssxref("@media/scripting", "scripting")}}, {{cssxref("@media/update-frequency", "update")}}, {{cssxref("@media/video-dynamic-range", "video-dynamic-range")}}, {{cssxref("@media/width", "width")}}.
 
   Наприклад, риса {{cssxref("@media/hover", "hover")}} дає змогу запитові перевірити, чи підтримує пристрій наведення курсора.
-  Вирази ознак медіа перевіряють присутність таких ознак або певних значень, і є цілком необов‘язковими.
+  Вирази ознак медіа перевіряють присутність таких ознак або певних значень, і є цілком необов'язковими.
   Кожен вираз ознаки медіа мусить бути оточений дужками.
 
-- [Логічні оператори](/uk/docs/Web/CSS/@media#logical_operators) можуть використовуватись для створення складних медіазапитів: `not` (не), `and` (і) та `only` (лише).
+- [Логічні оператори](/uk/docs/Web/CSS/@media#lohichni-operatory) можуть використовуватись для створення складних медіазапитів: `not` (не), `and` (і) та `only` (лише).
   Також можна поєднувати кілька медіазапитів в одне правило, розділяючи їх комами.
 
 Медіазапит обчислюється в `true`, коли тип медіа (якщо вказаний) відповідає пристроєві, на котрому відбувається перегляд документа _і_ всі вирази ознак медіа обчислюються в `true`.
 Запити, що включають невідомі типи медіа, завжди обчислюються в `false`.
 
-> **Примітка:** Файл стилів із медіазапитом, прикріпленим до його тега {{HTMLElement("link")}}, [будуть стягнені](https://scottjehl.github.io/CSS-Download-Tests/) навіть якщо запит обчислюється у `false`; стягнення відбудеться, але пріоритет такого стягнення буде куди нижчим.
+> **Примітка:** Файл стилів із медіазапитом, прикріпленим до відповідного тега {{HTMLElement("link")}}, [буде стягнений (англ.)](https://scottjehl.github.io/CSS-Download-Tests/) навіть якщо запит обчислюється у `false`; стягнення відбудеться, але пріоритет такого стягнення буде куди нижчим.
 > Попри це, такі стилі не будуть застосовані, якщо (або поки) медіазапит не матиме значення `true`.
 > Про причини такої поведінки можна прочитати в блозі Tomayac: [Чому браузер стягує файли стилів із невідповідними медіазапитами (англ.)](https://medium.com/@tomayac/why-browsers-download-stylesheets-with-non-matching-media-queries-eb61b91b85a2).
 
@@ -55,7 +55,7 @@ tags:
 
 ```css
 @media print {
-  ...;
+  /* … */
 }
 ```
 
@@ -64,22 +64,22 @@ tags:
 
 ```css
 @media screen, print {
-  ...;
+  /* … */
 }
 ```
 
-Перелік медіатипів можна переглянути в розділі [типи медіа](/uk/docs/Web/CSS/@media#media_types).
+Перелік медіатипів можна переглянути в розділі [типи медіа](/uk/docs/Web/CSS/@media#typy-media).
 Оскільки типи медіа описують дуже широкі категорії пристроїв, доступні лише кілька можливих значень; щоб цілитись на більш специфічні атрибути, слід натомість використовувати _ознаки медіа_.
 
 ## Націлення на ознаки медіа
 
 Ознаки медіа описують специфічні характеристики {{glossary("user agent", "користувацьких агентів")}}, пристрою виводу чи середовища.
-Наприклад, можна застосувати певні стилі до широкоекранних моніторів, комп‘ютерів із мишами, або до пристроїв, що використовуються в умовах низького освітлення.
+Наприклад, можна застосувати певні стилі до широкоекранних моніторів, комп'ютерів із мишами, або до пристроїв, що використовуються в умовах низького освітлення.
 Наступний приклад застосовує стилі тоді, коли _основний_ механізм введення користувача (наприклад, миша) може наводити курсор на елементи:
 
 ```css
 @media (hover: hover) {
-  ...;
+  /* … */
 }
 ```
 
@@ -88,7 +88,7 @@ tags:
 
 ```css
 @media (max-width: 12450px) {
-  ...;
+  /* … */
 }
 ```
 
@@ -97,7 +97,7 @@ tags:
 
 ```css
 @media (color) {
-  ...;
+  /* … */
 }
 ```
 
@@ -106,11 +106,11 @@ tags:
 
 ```css
 @media speech and (aspect-ratio: 11/5) {
-  ...;
+  /* … */
 }
 ```
 
-Для отримання більшої кількості прикладів медіазапитів з [ознаками медіа](/uk/docs/Web/CSS/@media#media_features), дивіться довідкові сторінки відповідних ознак.
+Для отримання більшої кількості прикладів медіазапитів з [ознаками медіа](/uk/docs/Web/CSS/@media#oznaky-media), дивіться довідкові сторінки відповідних ознак.
 
 ## Створення складних медіазапитів
 
@@ -122,7 +122,7 @@ tags:
 Оператор `only` не дає старим браузерам застосувати стилі.
 
 > **Примітка:** У більшості випадків використовується тип медіа `all` – коли не вказаний інший.
-> Втім, якщо використовується оператор `not` або `only`, то вказання типу медіа є обов‘язковим.
+> Втім, якщо використовується оператор `not` або `only`, то вказання типу медіа є обов'язковим.
 
 ### Поєднання кількох типів або ознак
 
@@ -131,7 +131,7 @@ tags:
 
 ```css
 @media (min-width: 30em) and (orientation: landscape) {
-  ...;
+  /* … */
 }
 ```
 
@@ -139,7 +139,7 @@ tags:
 
 ```css
 @media screen and (min-width: 30em) and (orientation: landscape) {
-  ...;
+  /* … */
 }
 ```
 
@@ -150,7 +150,7 @@ tags:
 
 ```css
 @media (min-height: 680px), screen and (orientation: portrait) {
-  ...;
+  /* … */
 }
 ```
 
@@ -166,7 +166,7 @@ tags:
 
 ```css
 @media not all and (monochrome) {
-  ...;
+  /* … */
 }
 ```
 
@@ -174,7 +174,7 @@ tags:
 
 ```css
 @media not (all and (monochrome)) {
-  ...;
+  /* … */
 }
 ```
 
@@ -182,7 +182,7 @@ tags:
 
 ```css example-bad
 @media (not all) and (monochrome) {
-  ...;
+  /* … */
 }
 ```
 
@@ -190,7 +190,7 @@ tags:
 
 ```css
 @media not screen and (color), print and (color) {
-  ...;
+  /* … */
 }
 ```
 
@@ -198,7 +198,7 @@ tags:
 
 ```css
 @media (not (screen and (color))), print and (color) {
-  ...;
+  /* … */
 }
 ```
 
@@ -209,7 +209,7 @@ _Це не має ефекту в сучасних браузерах._
 
 ```css
 @media only screen and (color) {
-  ...;
+  /* … */
 }
 ```
 
@@ -222,7 +222,7 @@ _Це не має ефекту в сучасних браузерах._
 
 ```css
 @media (max-width: 30em) {
-  ...;
+  /* … */
 }
 ```
 
@@ -230,7 +230,7 @@ _Це не має ефекту в сучасних браузерах._
 
 ```css
 @media (width <= 30em) {
-  ...;
+  /* … */
 }
 ```
 
@@ -238,7 +238,7 @@ _Це не має ефекту в сучасних браузерах._
 
 ```css
 @media (min-width: 30em) and (max-width: 50em) {
-  ...;
+  /* … */
 }
 ```
 
@@ -246,7 +246,7 @@ _Це не має ефекту в сучасних браузерах._
 
 ```css
 @media (30em <= width <= 50em) {
-  ...;
+  /* … */
 }
 ```
 
@@ -258,7 +258,7 @@ _Це не має ефекту в сучасних браузерах._
 
 ```css
 @media (not(hover)) {
-  ...;
+  /* … */
 }
 ```
 
@@ -269,7 +269,7 @@ _Це не має ефекту в сучасних браузерах._
 
 ```css
 @media (not (color)) or (hover) {
-  ...;
+  /* … */
 }
 ```
 
@@ -279,4 +279,4 @@ _Це не має ефекту в сучасних браузерах._
 - [Програмна перевірка медіазапитів](/uk/docs/Web/CSS/Media_Queries/Testing_media_queries)
 - [Анімації CSS між медіазапитами (англ.)](http://davidwalsh.name/animate-media-queries)
 - [Розширені ознаки медіа від Mozilla](/uk/docs/Web/CSS/Mozilla_Extensions#Media_features)
-- [Розширені ознаки медіа в WebKit](/uk/docs/Web/CSS/WebKit_Extensions#Media_features)
+- [Розширені ознаки медіа в WebKit](/uk/docs/Web/CSS/WebKit_Extensions#oznaky-media)
