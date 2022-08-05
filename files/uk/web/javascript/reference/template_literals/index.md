@@ -179,7 +179,7 @@ console.log(output);
 
 ```js
 function template(strings, ...keys) {
-  return function (...values) {
+  return (...values) => {
     const dict = values[values.length - 1] || {};
     const result = [strings[0]];
     keys.forEach((key, i) => {
