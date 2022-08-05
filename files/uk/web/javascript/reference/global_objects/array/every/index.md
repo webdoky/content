@@ -35,7 +35,7 @@ every((element, index, array) => {
 every(callbackFn);
 every(callbackFn, thisArg);
 
-// Супутня функція зворотного виклику
+// Вбудована функція зворотного виклику
 every(function (element) {
   /* … */
 });
