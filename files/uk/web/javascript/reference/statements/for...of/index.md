@@ -10,13 +10,14 @@ tags:
   - Statement
 browser-compat: javascript.statements.for_of
 ---
+
 {{jsSidebar("Statements")}}
 
-**Конструкція `for...of`** створює цикл, який виконує обхід [ітерованих обʼєктів](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterable_protocol),
+**Конструкція `for...of`** створює цикл, який виконує обхід [ітерованих об'єктів](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterable_protocol),
 включаючи: вбудовані {{jsxref("String")}}, {{jsxref("Array")}},
-масивоподібні обʼєкти (наприклад, {{jsxref("Functions/arguments", "arguments")}}
+масивоподібні об'єкти (наприклад, {{jsxref("Functions/arguments", "arguments")}}
 чи {{domxref("NodeList")}}), {{jsxref("TypedArray")}}, {{jsxref("Map")}},
-{{jsxref("Set")}}, а також ітеровані обʼєкти, які користувач створив сам. Ця конструкція викликає описаний набір інструкцій, які будуть виконані для значення кожної властивості обʼєкту.
+{{jsxref("Set")}}, а також ітеровані об'єкти, які користувач створив сам. Ця конструкція викликає описаний набір інструкцій, які будуть виконані для значення кожної властивості об'єкта.
 
 {{EmbedInteractiveExample("pages/js/statement-forof.html")}}
 
@@ -24,14 +25,14 @@ browser-compat: javascript.statements.for_of
 
 ```js
 for (variable of iterable) {
-  statement
+  statement;
 }
 ```
 
 - `variable`
   - : На кожній ітерації значення різних властивостей присвоюються змінній `variable`. Ця `variable` може бути оголошеною з використанням `const`, `let`, чи `var`.
 - `iterable`
-  - : Обʼєкт, ітеровані властивості якого піддаються обходу.
+  - : Об'єкт, ітеровані властивості якого піддаються обходу.
 
 ## Приклади
 
@@ -48,7 +49,7 @@ for (const value of iterable) {
 // 30
 ```
 
-Також можна використати {{jsxref("Statements/let", "let")}} замість {{jsxref("Statements/const", "const")}}, якщо всередині блоку виконується переприсвоєння змінної.
+Також можна використати {{jsxref("Statements/let", "let")}} замість {{jsxref("Statements/const", "const")}}, якщо всередині блоку виконується повторне присвоєння змінної.
 
 ```js
 const iterable = [10, 20, 30];
@@ -90,7 +91,11 @@ for (const value of iterable) {
 ### Обхід циклу по `Map`
 
 ```js
-const iterable = new Map([['а', 1], ['б', 2], ['в', 3]]);
+const iterable = new Map([
+  ['а', 1],
+  ['б', 2],
+  ['в', 3],
+]);
 
 for (const entry of iterable) {
   console.log(entry);
@@ -120,12 +125,12 @@ for (const value of iterable) {
 // 3
 ```
 
-### Обхід циклу по обʼєкту `arguments`
+### Обхід циклу по об'єкту `arguments`
 
-Щоб дослідити усі параметри, передані до JavaScript функції, можна виконати обхід об‘єкту {{jsxref("Functions/arguments", "arguments")}}:
+Щоб дослідити усі параметри, передані до JavaScript функції, можна виконати обхід об'єкта {{jsxref("Functions/arguments", "arguments")}}:
 
 ```js
-(function() {
+(function () {
   for (const argument of arguments) {
     console.log(argument);
   }
@@ -141,7 +146,7 @@ for (const value of iterable) {
 Ітерування по DOM колекціям, таким як [`NodeList`](/uk/docs/Web/API/NodeList): подальший приклад додає клас `read` до параграфів, які є прямими спадкоємцями елементу `article`:
 
 ```js
-// Примітка: Це буде працювати виключно на тих платформах, які мають реалізацію 
+// Примітка: Це буде працювати виключно на тих платформах, які мають реалізацію
 // NodeList.prototype[Symbol.iterator]
 const articleParagraphs = document.querySelectorAll('article > p');
 
@@ -155,11 +160,11 @@ for (const paragraph of articleParagraphs) {
 У циклах `for...of` операторами `break`, `throw` та `return` може бути спричинено різке переривання ітерації. У таких випадках ітератор буде завершено.
 
 ```js
-function* foo(){
+function* foo() {
   yield 1;
   yield 2;
   yield 3;
-};
+}
 
 for (const o of foo()) {
   console.log(o);
@@ -170,10 +175,11 @@ console.log('готово');
 
 ### Обхід циклу по генераторах
 
-Також можна виконувати обхід [генераторів](/uk/docs/Web/JavaScript/Reference/Statements/function*), тобто функцій, які утворюють ітерований обʼєкт.
+Також можна виконувати обхід [генераторів](/uk/docs/Web/JavaScript/Reference/Statements/function*), тобто функцій, які утворюють ітерований об'єкт.
 
 ```js
-function* fibonacci() { // функція-генератор
+// функція-генератор
+function* fibonacci() {
   let [prev, curr] = [0, 1];
   while (true) {
     [prev, curr] = [curr, prev + curr];
@@ -195,14 +201,14 @@ for (const n of fibonacci()) {
 Генератори не варто використовувати кілька разів, навіть якщо цикл `for...of` закінчився завчасно, наприклад, зустрівши ключове слово {{jsxref("Statements/break", "break")}}. Під час виходу з циклу генератор закривається, подальші спроби обходити його знову не виведуть жодних значень.
 
 ```js example-bad
-const gen = (function *(){
+const gen = (function* () {
   yield 1;
   yield 2;
   yield 3;
 })();
 for (const o of gen) {
   console.log(o);
-  break;  // Завершує ітератор
+  break; // Завершує ітератор
 }
 
 // Цей самий ітератор не має бути використаний повторно, код нижче не має сенсу!
@@ -211,9 +217,9 @@ for (const o of gen) {
 }
 ```
 
-### Обхід циклу по інших ітерованих об‘єктах
+### Обхід циклу по інших ітерованих об'єктах
 
-Також можна обходити об‘єкт, який явно реалізовує [ітеративний протокол](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#iterable):
+Також можна обходити об'єкт, який явно реалізовує [ітеративний протокол](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#iterable):
 
 ```js
 const iterable = {
@@ -225,9 +231,9 @@ const iterable = {
           return { value: this.i++, done: false };
         }
         return { value: undefined, done: true };
-      }
+      },
     };
-  }
+  },
 };
 
 for (const value of iterable) {
@@ -242,15 +248,15 @@ for (const value of iterable) {
 
 Обидві конструкції, `for...in` і `for...of`, здатні щось обходити. Основна різниця в тому, що саме вони обходять.
 
-{{jsxref("Statements/for...in", "for...in")}} виконує обхід [перелічуваних властивостей](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) обʼєкта.
+{{jsxref("Statements/for...in", "for...in")}} виконує обхід [перелічуваних властивостей](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) об'єкта.
 
-`for...of` обходить значення, які [ітерований обʼєкт](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators#iterables) визначає як такі, котрі слід обходити.
+`for...of` обходить значення, які [ітерований об'єкт](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators#iterables) визначає як такі, котрі слід обходити.
 
 Наступний приклад показує різницю між циклом `for...of` та циклом `for...in` при застосуванні до {{jsxref("Array")}.
 
 ```js
-Object.prototype.objCustom = function() {};
-Array.prototype.arrCustom = function() {};
+Object.prototype.objCustom = function () {};
+Array.prototype.arrCustom = function () {};
 
 const iterable = [3, 5, 7];
 iterable.foo = 'Агов';
@@ -260,7 +266,7 @@ for (const i in iterable) {
 }
 
 for (const i in iterable) {
-  if (iterable.hasOwnProperty(i)) {
+  if (Object.hasOwn(iterable, i)) {
     console.log(i); // виведе "0", "1", "2", "foo"
   }
 }
@@ -273,14 +279,14 @@ for (const i of iterable) {
 Розгляньмо код, зазначений вище, крок за кроком.
 
 ```js
-Object.prototype.objCustom = function() {};
-Array.prototype.arrCustom = function() {};
+Object.prototype.objCustom = function () {};
+Array.prototype.arrCustom = function () {};
 
 const iterable = [3, 5, 7];
 iterable.foo = 'Агов';
 ```
 
-Кожен обʼєкт успадковує властивість `objCustom`, а також – кожен обʼєкт, який є {{jsxref("Array")}}, успадковує властивість `arrCustom`, адже ці властивості були додані до {{jsxref("Object", "Object.prototype")}} і {{jsxref("Array", "Array.prototype")}}, відповідно. А обʼєкт `iterable` наслідує властивості `objCustom` і `arrCustom` у зв‘язку з [успадкуванням і ланцюжком прототипів](/uk/docs/Web/JavaScript/Inheritance_and_the_prototype_chain).
+Кожен об'єкт успадковує властивість `objCustom`, а також – кожен об'єкт, який є {{jsxref("Array")}}, успадковує властивість `arrCustom`, адже ці властивості були додані до {{jsxref("Object", "Object.prototype")}} і {{jsxref("Array", "Array.prototype")}}, відповідно. А об'єкт `iterable` наслідує властивості `objCustom` і `arrCustom` у зв'язку з [успадкуванням і ланцюжком прототипів](/uk/docs/Web/JavaScript/Inheritance_and_the_prototype_chain).
 
 ```js
 for (const i in iterable) {
@@ -288,17 +294,17 @@ for (const i in iterable) {
 }
 ```
 
-Цей цикл виведе лише [перелічувані властивості](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) обʼєкта `iterable`. Він не виведе **елементи** масиву: `3`, `5`, `7` чи `Агов`, адже вони **не є** перелічуваними властивостями; насправді вони не є властивостями взагалі, а лише **значеннями**. Код виведе масив **індексів**, включаючи `arrCustom` і `objCustom`. Якщо ви не певні, чому саме по цих властивостях відбувається ітерація, то зверніть увагу на більш детальне пояснення у статті {{jsxref("Statements/for...in", "array iteration and for...in", "#Array_iteration_and_for...in")}}.
+Цей цикл виведе лише [перелічувані властивості](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) об'єкта `iterable`. Він не виведе **елементи** масиву: `3`, `5`, `7` чи `Агов`, адже вони **не є** перелічуваними властивостями; насправді вони не є властивостями взагалі, а лише **значеннями**. Код виведе масив **індексів**, включаючи `arrCustom` і `objCustom`. Якщо ви не певні, чому саме по цих властивостях відбувається ітерація, то зверніть увагу на більш детальне пояснення у статті {{jsxref("Statements/for...in", "array iteration and for...in", "#Array_iteration_and_for...in")}}.
 
 ```js
 for (const i in iterable) {
-  if (iterable.hasOwnProperty(i)) {
+  if (Object.hasOwn(iterable, i)) {
     console.log(i); // виведе 0, 1, 2, "foo"
   }
 }
 ```
 
-Цей цикл подібний до першого, але натомість використовує {{jsxref("Object.prototype.hasOwnProperty()", "hasOwnProperty()")}}, щоб перевірити чи належать перелічувані властивості до власних властивостей обʼєкта, а не успадкованих. Якщо належать, то вивести властивість. Властивості `0`, `1`, `2` та `foo` виведено, адже вони є власними властивостями (**не успадкованими**). Властивості `arrCustom` і `objCustom` не виведено, адже вони **успадковані**.
+Цей цикл подібний до першого, але натомість використовує {{jsxref("Object.hasOwn()", "hasOwn()")}}, щоб перевірити чи належать перелічувані властивості до власних властивостей об'єкта, а не успадкованих. Якщо належать, то вивести властивість. Властивості `0`, `1`, `2` та `foo` виведено, адже вони є власними властивостями (**не успадкованими**). Властивості `arrCustom` і `objCustom` не виведено, адже вони **успадковані**.
 
 ```js
 for (const i of iterable) {
@@ -306,7 +312,7 @@ for (const i of iterable) {
 }
 ```
 
-Цей цикл ітерує та виводить **значення**, які [ітерований обʼєкт](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators#iterables) визначає такими, що їх слід обходити. **Елементи** `3`, `5`, `7` виведено, а **властивості** -- ні.
+Цей цикл ітерує та виводить **значення**, які [ітерований об'єкт](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators#iterables) визначає такими, що їх слід обходити. **Елементи** `3`, `5`, `7` виведено, а **властивості** -- ні.
 
 ## Специфікації
 
@@ -320,4 +326,4 @@ for (const i of iterable) {
 
 - {{jsxref("Array.prototype.forEach()")}}
 - {{jsxref("Map.prototype.forEach()")}}
-- {{jsxref("Object.entries()")}} – Знадобиться при використанні **`for...of`** для обʼєктів.
+- {{jsxref("Object.entries()")}} – Знадобиться при використанні **`for...of`** для об'єктів.

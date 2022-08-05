@@ -9,6 +9,7 @@ tags:
   - Statement
 browser-compat: javascript.statements.async_function
 ---
+
 {{jsSidebar("Statements")}}
 
 Асинхронна функція - це функція, що оголошена з ключовим словом `async`, і всередині якої дозволене вживання ключового слова `await`. Ключові слова `async` та `await` дають змогу записувати асинхронну (засновану на промісах) поведінку в чистішому стилі, уникаючи необхідності явно задавати ланцюжки промісів.
@@ -20,8 +21,14 @@ browser-compat: javascript.statements.async_function
 ## Синтаксис
 
 ```js
-async function name([param[, param[, ...param]]]) {
-   statements
+async function name(param0) {
+  statements;
+}
+async function name(param0, param1) {
+  statements;
+}
+async function name(param0, param1, /* … ,*/ paramN) {
+  statements;
 }
 ```
 
@@ -29,9 +36,9 @@ async function name([param[, param[, ...param]]]) {
 
 - `name`
   - : Назва функції.
-- `param`
+- `param` {{optional_inline}}
   - : Назва аргументу, який передається до функції.
-- `statements`
+- `statements` {{optional_inline}}
   - : Інструкції, що формують тіло функції. Може застосовуватись функціонал `await`.
 
 ### Повернене значення
@@ -50,19 +57,19 @@ async function name([param[, param[, ...param]]]) {
 
 Асинхронні функції завжди повертають проміс. Якщо повернене з асинхронної функції значення не є явним промісом, воно буде неявно обгорнуте в нього.
 
-Наприклад, наступний код:
+Для прикладу, зверніть увагу на наступний код:
 
 ```js
 async function foo() {
-   return 1
+  return 1;
 }
 ```
 
-...є аналогічним такому фрагменту:
+Він є аналогічним до такого фрагмента:
 
 ```js
 function foo() {
-   return Promise.resolve(1)
+  return Promise.resolve(1);
 }
 ```
 
@@ -77,7 +84,7 @@ function foo() {
 > ```js
 > const p = new Promise((res, rej) => {
 >   res(1);
-> })
+> });
 >
 > async function asyncReturn() {
 >   return p;
@@ -93,19 +100,19 @@ function foo() {
 
 Можна сприймати тіло асинхронної функції так, як наче воно поділене на частини виразами `await`. Код верхнього рівня, аж до першого виразу `await` включно (якщо такий є), — виконується синхронно. В такому разі асинхронна функція без виразу `await` вся виконається синхронно. Проте якщо всередині тіла функції є принаймні один вираз `await`, асинхронна функція завжди виконуватиметься асинхронно.
 
-Наприклад, такий вираз:
+Наприклад:
 
 ```js
 async function foo() {
-   await 1
+  await 1;
 }
 ```
 
-...буде еквівалентний такому фрагментові:
+Такий вираз також еквівалентний щодо наступного фрагмента:
 
 ```js
 function foo() {
-   return Promise.resolve(1).then(() => undefined)
+  return Promise.resolve(1).then(() => undefined);
 }
 ```
 
@@ -119,10 +126,14 @@ function foo() {
 
 ```js
 async function foo() {
-   const result1 = await new Promise((resolve) => setTimeout(() => resolve('1')))
-   const result2 = await new Promise((resolve) => setTimeout(() => resolve('2')))
+  const result1 = await new Promise((resolve) =>
+    setTimeout(() => resolve('1')),
+  );
+  const result2 = await new Promise((resolve) =>
+    setTimeout(() => resolve('2')),
+  );
 }
-foo()
+foo();
 ```
 
 Слід зауважити, що ланцюжок промісів будується не одразу. Натомість він конструюється етапами, по ходу успішного повернення керування з асинхронної функції – і передачі його назад до неї. Як наслідок, слід бути обережним з плином обробки помилок під час роботи з одночасними асинхронними операціями.
@@ -131,11 +142,11 @@ foo()
 
 ```js
 async function foo() {
-   const p1 = new Promise((resolve) => setTimeout(() => resolve('1'), 1000))
-   const p2 = new Promise((_,reject) => setTimeout(() => reject('2'), 500))
-   const results = [await p1, await p2] // Так робити не слід! Натомість краще вжити Promise.all чи Promise.allSettled.
+  const p1 = new Promise((resolve) => setTimeout(() => resolve('1'), 1000));
+  const p2 = new Promise((_, reject) => setTimeout(() => reject('2'), 500));
+  const results = [await p1, await p2]; // Так робити не слід! Натомість краще вжити Promise.all чи Promise.allSettled.
 }
-foo().catch(() => {}) // Спроба проковтнути всі помилки...
+foo().catch(() => {}); // Спроба проковтнути всі помилки...
 ```
 
 ## Приклади
@@ -144,74 +155,76 @@ foo().catch(() => {}) // Спроба проковтнути всі помилк
 
 ```js
 function resolveAfter2Seconds() {
-  console.log("початок повільного промісу")
-  return new Promise(resolve => {
-    setTimeout(function() {
-      resolve("повільно")
-      console.log("повільний проміс виконано")
-    }, 2000)
-  })
+  console.log('початок повільного промісу');
+  return new Promise((resolve) => {
+    setTimeout(function () {
+      resolve('повільно');
+      console.log('повільний проміс виконано');
+    }, 2000);
+  });
 }
 
 function resolveAfter1Second() {
-  console.log("початок швидкого промісу")
-  return new Promise(resolve => {
-    setTimeout(function() {
-      resolve("шкидко")
-      console.log("швидкий проміс виконано")
-    }, 1000)
-  })
+  console.log('початок швидкого промісу');
+  return new Promise((resolve) => {
+    setTimeout(function () {
+      resolve('шкидко');
+      console.log('швидкий проміс виконано');
+    }, 1000);
+  });
 }
 
 async function sequentialStart() {
-  console.log('==ПОСЛІДОВНИЙ ПОЧАТОК==')
+  console.log('==ПОСЛІДОВНИЙ ПОЧАТОК==');
 
   // 1. Виконання підходить до цього місця майже миттєво
-  const slow = await resolveAfter2Seconds()
-  console.log(slow) // 2. цей рядок виконується через 2 секунди після 1.
+  const slow = await resolveAfter2Seconds();
+  console.log(slow); // 2. цей рядок виконується через 2 секунди після 1.
 
-  const fast = await resolveAfter1Second()
-  console.log(fast) // 3. цей рядок виконується через 3 секунди після 1.
+  const fast = await resolveAfter1Second();
+  console.log(fast); // 3. цей рядок виконується через 3 секунди після 1.
 }
 
 async function concurrentStart() {
   console.log('==ОДНОЧАСНИЙ ПОЧАТОК із "await"==');
-  const slow = resolveAfter2Seconds() // негайно запускає таймер
-  const fast = resolveAfter1Second() // негайно запускає таймер
+  const slow = resolveAfter2Seconds(); // негайно запускає таймер
+  const fast = resolveAfter1Second(); // негайно запускає таймер
 
   // 1. Виконання підходить до цього місця майже миттєво
-  console.log(await slow) // 2. цей рядок виконується через 2 секунди після 1.
-  console.log(await fast) // 3. цей рядок виконується через 2 секунди після 1., негайно за 2., оскільки швидкий проміс уже виконано
+  console.log(await slow); // 2. цей рядок виконується через 2 секунди після 1.
+  console.log(await fast); // 3. цей рядок виконується через 2 секунди після 1., негайно за 2., оскільки швидкий проміс уже виконано
 }
 
 function concurrentPromise() {
-  console.log('==ОДНОЧАСНИЙ ПОЧАТОК із "Promise.all"==')
-  return Promise.all([resolveAfter2Seconds(), resolveAfter1Second()]).then((messages) => {
-    console.log(messages[0]) // повільно
-    console.log(messages[1]) // швидко
-  })
+  console.log('==ОДНОЧАСНИЙ ПОЧАТОК із "Promise.all"==');
+  return Promise.all([resolveAfter2Seconds(), resolveAfter1Second()]).then(
+    (messages) => {
+      console.log(messages[0]); // повільно
+      console.log(messages[1]); // швидко
+    },
+  );
 }
 
 async function parallel() {
-  console.log('==ПАРАЛЕЛЬНЕ виконання з "await Promise.all"==')
+  console.log('==ПАРАЛЕЛЬНЕ виконання з "await Promise.all"==');
 
   // Запускає 2 "завдання" паралельно, і очікує на завершення обох
   await Promise.all([
-      (async()=>console.log(await resolveAfter2Seconds()))(),
-      (async()=>console.log(await resolveAfter1Second()))()
-  ])
+    (async () => console.log(await resolveAfter2Seconds()))(),
+    (async () => console.log(await resolveAfter1Second()))(),
+  ]);
 }
 
-sequentialStart() // через 2 секунди друкує "повільно", потім іще за 1 секунду — "швидко"
+sequentialStart(); // через 2 секунди друкує "повільно", потім іще за 1 секунду — "швидко"
 
 // очікує на завершення коду вище
-setTimeout(concurrentStart, 4000) // через 2 секунди друкує "повільно", і потім "швидко"
+setTimeout(concurrentStart, 4000); // через 2 секунди друкує "повільно", і потім "швидко"
 
 // знову очікує
-setTimeout(concurrentPromise, 7000) // так само, як і concurrentStart
+setTimeout(concurrentPromise, 7000); // так само, як і concurrentStart
 
 // і знову очікує
-setTimeout(parallel, 10000) // справді паралельно: через 1 секунду друкує "швидко", а потім іще за одну секунду — "повільно"
+setTimeout(parallel, 10000); // справді паралельно: через 1 секунду друкує "швидко", а потім іще за одну секунду — "повільно"
 ```
 
 #### Вираз await і паралелізм
@@ -235,12 +248,12 @@ API, який повертає {{jsxref("Promise", "проміс")}}, буде �
 ```js
 function getProcessedData(url) {
   return downloadData(url) // повертає проміс
-    .catch(e => {
-      return downloadFallbackData(url)  // повертає проміс
+    .catch((e) => {
+      return downloadFallbackData(url); // повертає проміс
     })
-    .then(v => {
-      return processDataInWorker(v)  // повертає проміс
-    })
+    .then((v) => {
+      return processDataInWorker(v); // повертає проміс
+    });
 }
 ```
 
@@ -248,13 +261,13 @@ function getProcessedData(url) {
 
 ```js
 async function getProcessedData(url) {
-  let v
+  let v;
   try {
-    v = await downloadData(url)
-  } catch(e) {
-    v = await downloadFallbackData(url)
+    v = await downloadData(url);
+  } catch (e) {
+    v = await downloadFallbackData(url);
   }
-  return processDataInWorker(v)
+  return processDataInWorker(v);
 }
 ```
 
@@ -262,10 +275,10 @@ async function getProcessedData(url) {
 
 ```js
 async function getProcessedData(url) {
-  const v = await downloadData(url).catch(e => {
-    return downloadFallbackData(url)
-  })
-  return processDataInWorker(v)
+  const v = await downloadData(url).catch((e) => {
+    return downloadFallbackData(url);
+  });
+  return processDataInWorker(v);
 }
 ```
 

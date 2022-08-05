@@ -175,6 +175,7 @@ tags:
 - {{jsxref("Statements/function", "function")}}
 - {{jsxref("Statements/function*", "function*")}}
 - {{jsxref("Statements/async_function", "async function")}}
+- {{jsxref("Statements/async_function*", "async function*")}}
 - {{jsxref("Statements/return", "return")}}
 - {{jsxref("Statements/class", "class")}}
 
@@ -208,12 +209,13 @@ tags:
 - {{JSxRef("Operators/yield", "yield")}}
 - {{JSxRef("Operators/yield*", "yield*")}}
 - {{JSxRef("Operators/async_function", "async function")}}
+- {{JSxRef("Operators/async_function*", "async function*")}}
 - {{JSxRef("Operators/await", "await")}}
 - {{JSxRef("Global_Objects/Array", "[]")}}
 - {{JSxRef("Operators/Object_initializer", "{}")}}
 - {{JSxRef("Global_Objects/RegExp", "/ab+c/i")}}
 - {{JSxRef("Operators/Grouping", "( )")}}
-- {{JSxRef("null")}}
+- [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null)
 
 ### Вирази лівої сторони
 
@@ -328,7 +330,7 @@ tags:
 
 ## Класи
 
-[Класи в JavaScript.](/en-US/docs/Web/JavaScript/Reference/Classes)
+[Класи в JavaScript.](/uk/docs/Web/JavaScript/Reference/Classes)
 
 ## Додаткові довідкові сторінки
 
