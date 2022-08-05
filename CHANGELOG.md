@@ -36,7 +36,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 * **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/includes ([b0382ab](https://github.com/webdoky/content/commit/b0382ab48e4922a14dfb60c8f84b43f3ba2b36a9))
 * **Оновлення перекладу(JS):** web/javascript/reference/global_objects/promise (#532) ([8f4d726](https://github.com/webdoky/content/commit/8f4d726bf854df1685df8e4add330e62b57e9051))
 * **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string (#515) ([42da28c](https://github.com/webdoky/content/commit/42da28c8bc5917052dc56c8802748e06065d1b9c))
-* **Виправлення:** duplicated quotes in checked text (#525) ([f0a0825](https://github.com/webdoky/content/commit/f0a08257f228153f09fc9c7ad2592953697c8e01))
 * **Оновлення перекладу(CSS):** web/css/media_queries/using_media_queries ([81f7363](https://github.com/webdoky/content/commit/81f736369038af552de6b9b69982f25db6d6ac2c))
 * **Оновлення перекладу(CSS):** web/css/css_flexible_box_layout/basic_concepts_of_flexbox ([024c8ae](https://github.com/webdoky/content/commit/024c8aea23a44897bf67a1009aef0ad2e63b93b4))
 * **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/match (#522) ([e009686](https://github.com/webdoky/content/commit/e0096862c90f9d2364572008996b99e5a6fa33a3))
