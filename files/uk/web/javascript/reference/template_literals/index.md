@@ -105,7 +105,7 @@ console.log(`П'ятнадцять — це ${a + b}, а
 // не 20."
 ```
 
-Зверніть увагу, що між двома синтаксисами присутня певна відмінність. Додавання приведе вираз до _примітива_, що перш за все приведе до виклику [`valueOf()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf); з іншого боку, шаблонний літерал проведе вираз до _рядка_, що приведе до виклику перш за все [`toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/toString). Якщо вираз має метод [`@@toPrimitive`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive), то зчеплення рядків викличе його з підказкою `"default"`, натомість шаблонні літерали використають `"string"`. Це важливо для об‘єктів, що мають різні рядкове й примітивне представлення, як то [Temporal (англ.)](https://github.com/tc39/proposal-temporal), чи метод `valueOf()` викидає виняток.
+Зверніть увагу, що між двома синтаксисами присутня певна відмінність. Додавання приведе вираз до _примітива_, що перш за все призведе до виклику [`valueOf()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf); з іншого боку, шаблонний літерал проведе вираз до _рядка_, що призведе до виклику перш за все [`toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/toString). Якщо вираз має метод [`@@toPrimitive`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive), то зчеплення рядків викличе його з підказкою `"default"`, натомість шаблонні літерали використають `"string"`. Це важливо для об‘єктів, що мають різні рядкове й примітивне представлення, як то [Temporal (англ.)](https://github.com/tc39/proposal-temporal), чий метод `valueOf()` викидає виняток.
 
 ```js
 const t = Temporal.Now.instant();
