@@ -66,7 +66,7 @@ includes(searchElement, fromIndex);
 У випадку, якщо `fromIndex` більший або дорівнює довжині масиву – буде повернуто значення `false`. В такому разі пошук виконуватись не буде.
 
 ```js
-let arr = ['a', 'b', 'c'];
+const arr = ['a', 'b', 'c'];
 
 arr.includes('c', 3); // false
 arr.includes('c', 100); // false
@@ -81,7 +81,7 @@ arr.includes('c', 100); // false
 // fromIndex дорівнює -100
 // обчислений індекс дорівнює 3 + (-100) = -97
 
-let arr = ['a', 'b', 'c'];
+const arr = ['a', 'b', 'c'];
 
 arr.includes('a', -100); // true
 arr.includes('b', -100); // true
