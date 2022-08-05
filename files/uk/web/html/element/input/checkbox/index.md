@@ -301,7 +301,7 @@ otherCheckbox.addEventListener('change', () => {
 });
 ```
 
-{{EmbedLiveSample('javascript', '100%', 300)}}
+{{EmbedLiveSample('pryklady', '100%', 300)}}
 
 ## Специфікації
 
