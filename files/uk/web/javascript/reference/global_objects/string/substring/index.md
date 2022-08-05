@@ -9,6 +9,7 @@ tags:
   - String
 browser-compat: javascript.builtins.String.substring
 ---
+
 {{JSRef}}
 
 Метод **`substring()`** повертає частину рядка `string` між вказаними індексами початку та кінця, або до кінця рядка — якщо кінцевий індекс не вказано.
@@ -18,8 +19,8 @@ browser-compat: javascript.builtins.String.substring
 ## Синтаксис
 
 ```js
-substring(indexStart)
-substring(indexStart, indexEnd)
+substring(indexStart);
+substring(indexStart, indexEnd);
 ```
 
 ### Параметри
@@ -52,23 +53,23 @@ substring(indexStart, indexEnd)
 Наступний приклад використовує метод `substring()` для показування символів з рядка `'Mozilla'`:
 
 ```js
-let anyString = 'Mozilla'
+const anyString = 'Mozilla';
 
 // Показує 'M'
-console.log(anyString.substring(0, 1))
-console.log(anyString.substring(1, 0))
+console.log(anyString.substring(0, 1));
+console.log(anyString.substring(1, 0));
 
 // Показує 'Mozill'
-console.log(anyString.substring(0, 6))
+console.log(anyString.substring(0, 6));
 
 // Показує 'lla'
-console.log(anyString.substring(4))
-console.log(anyString.substring(4, 7))
-console.log(anyString.substring(7, 4))
+console.log(anyString.substring(4));
+console.log(anyString.substring(4, 7));
+console.log(anyString.substring(7, 4));
 
 // Показує 'Mozilla'
-console.log(anyString.substring(0, 7))
-console.log(anyString.substring(0, 10))
+console.log(anyString.substring(0, 7));
+console.log(anyString.substring(0, 10));
 ```
 
 ### Застосування методу substring() з властивістю довжини
@@ -77,28 +78,30 @@ console.log(anyString.substring(0, 10))
 
 ```js
 // Показує 'illa' — останні 4 символи
-let anyString = 'Mozilla'
-let anyString4 = anyString.substring(anyString.length - 4)
-console.log(anyString4)
+const anyString = 'Mozilla';
+const anyString4 = anyString.substring(anyString.length - 4);
+console.log(anyString4);
 
 // Показує 'zilla' — останні 5 символів
-let anyString = 'Mozilla'
-let anyString5 = anyString.substring(anyString.length - 5)
-console.log(anyString5)
+const anyString = 'Mozilla';
+const anyString5 = anyString.substring(anyString.length - 5);
+console.log(anyString5);
 ```
 
 ### Різниця між методами substring() та substr()
 
-Є невелика різниця між методами `substring()` та {{jsxref("String.substr", "substr()")}}, тож слід бути уважними і не плутати їх.
+Є невеликі відмінності між методами `substring()` та {{jsxref("String.substr", "substr()")}}, тож слід бути уважними і не плутати їх.
 
-Аргументи методу `substring()` позначають початковий та кінцевий індекси, тоді як аргументи `substr()` означають індекс початку та кількість символів, які слід включити у поверненому рядку.
+- Двома параметрами `substr()` є `start` (початок) і `length` (довжина), натомість в `substring()` це `start` (початок) і `end` (кінець).
+- В `substr()` індекс `start` рахуватиметься з кінця рядка, якщо він від'ємний, натомість в `substring()` від'ємний `start` буде зведений до `0`.
+- Від'ємні довжини в `substr()` еквівалентні нулю, натомість `substring()` переставить індекси місцями, якщо `end` менший за `start`.
 
-На додаток, `substr()` вважається **застарілим функціоналом ECMAScript**, і може бути видаленим в майбутніх версіях, тому краще уникати його використання, якщо це можливо.
+На додаток, `substr()` вважається _успадкованим функціоналом ECMAScript_, тому краще уникати його використання, якщо це можливо.
 
 ```js
-let text = 'Mozilla'
-console.log(text.substring(2,5))  // => "zil"
-console.log(text.substr(2,3))     // => "zil"
+const text = 'Mozilla';
+console.log(text.substring(2, 5)); // => "zil"
+console.log(text.substr(2, 3)); // => "zil"
 ```
 
 ### Різниця між методами substring() та slice()
@@ -108,23 +111,23 @@ console.log(text.substr(2,3))     // => "zil"
 Метод `substring()` міняє місцями два аргументи, якщо `indexStart` більший за `indexEnd`, тобто все одно повертає рядок. Метод {{jsxref("String.slice", "slice()")}} в цьому випадку повертає порожній рядок.
 
 ```js
-let text = 'Mozilla'
-console.log(text.substring(5, 2))  // => "zil"
-console.log(text.slice(5, 2))      // => ""
+const text = 'Mozilla';
+console.log(text.substring(5, 2)); // => "zil"
+console.log(text.slice(5, 2)); // => ""
 ```
 
 Якщо один чи навіть обидва аргументи від'ємні, або дорівнюють `NaN`, метод `substring()` сприймає їх так, як наче вони дорівнюють `0`.
 
 ```js
-console.log(text.substring(-5, 2))  // => "Mo"
-console.log(text.substring(-5, -2)) // => ""
+console.log(text.substring(-5, 2)); // => "Mo"
+console.log(text.substring(-5, -2)); // => ""
 ```
 
 Метод `slice()` також сприймає `NaN` в аргументі за `0`, проте отримавши негативні значення він рахує індекс у зворотному напрямі від кінця рядка.
 
 ```js
-console.log(text.slice(-5, 2))   // => ""
-console.log(text.slice(-5, -2))  // => "zil"
+console.log(text.slice(-5, 2)); // => ""
+console.log(text.slice(-5, -2)); // => "zil"
 ```
 
 Більше прикладів роботи цього методу з від'ємними числами можна знайти на сторінці {{jsxref("String.slice", "slice()")}}.
@@ -138,13 +141,16 @@ console.log(text.slice(-5, -2))  // => "zil"
 function replaceString(oldS, newS, fullS) {
   for (let i = 0; i < fullS.length; ++i) {
     if (fullS.substring(i, i + oldS.length) == oldS) {
-      fullS = fullS.substring(0, i) + newS + fullS.substring(i + oldS.length, fullS.length)
+      fullS =
+        fullS.substring(0, i) +
+        newS +
+        fullS.substring(i + oldS.length, fullS.length);
     }
   }
-  return fullS
+  return fullS;
 }
 
-replaceString('Світ', 'Веб', 'Прекрасний Новий Світ')
+replaceString('Світ', 'Веб', 'Прекрасний Новий Світ');
 ```
 
 Зауважте, що цей код може спричинити нескінченний цикл, якщо `oldS` — це сам по собі підрядок `newS` — наприклад, якщо спробувати там замінити '`Світ`' рядком '`ІншийСвіт`'.
@@ -153,7 +159,7 @@ replaceString('Світ', 'Веб', 'Прекрасний Новий Світ')
 
 ```js
 function replaceString(oldS, newS, fullS) {
-  return fullS.split(oldS).join(newS)
+  return fullS.split(oldS).join(newS);
 }
 ```
 
