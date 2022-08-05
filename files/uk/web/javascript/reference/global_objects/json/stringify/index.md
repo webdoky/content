@@ -57,7 +57,7 @@ JSON.stringify(value, replacer, space);
 
 - Якщо значення має метод [`toJSON()`](#povedinka-tojson), то він відповідатиме за те, які саме дані буде серіалізовано.
 - Об'єкти {{JSxRef("Boolean")}}, {{JSxRef("Number")}} та {{JSxRef("String")}} під час серіалізації зводяться до власних примітивних значень, згідно з традиційною семантикою таких перетворень.
-- {{JSxRef("undefined")}}, {{JSxRef("Function", "функції")}} та {{JSxRef("Symbol", "символи")}} не є валідними значеннями JSON. Якщо якесь із цих значень трапляється під час перетворення, то воно або опускається (в об'єктах), або ж замінюється на [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) (якщо трапляється в масиві). `JSON.stringify()` може повернути `undefined`, якщо передати в нього їхні "чисті" значення, як от `JSON.stringify(function() {})` або `JSON.stringify(undefined)`.
+- {{JSxRef("undefined")}}, {{JSxRef("Function", "функції")}} та {{JSxRef("Symbol", "символи")}} не є валідними значеннями JSON. Якщо якесь із цих значень трапляється під час перетворення, то воно або опускається (в об'єктах), або ж замінюється на [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) (якщо трапляється в масиві). `JSON.stringify()` може повернути `undefined`, якщо передати в нього їхні "чисті" значення, як от `JSON.stringify(() => {})` або `JSON.stringify(undefined)`.
 - Всі властивості об'єкта, які мають за ключі {{JSxRef("Symbol", "символи")}}, будуть повністю проігноровані, навіть у разі передачі функції `replacer`.
 - Екземпляри {{JSxRef("Date")}} реалізовують функцію `toJSON()` шляхом повертання рядка (так само як це робить `date.toISOString()`). Таким чином, вони будуть сприйматися як рядки.
 - Числа {{JSxRef("Infinity")}} і {{JSxRef("NaN")}}, так само як і значення [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null), — вважаються `null`.
@@ -242,8 +242,7 @@ const obj = {
   data: 'data',
 
   toJSON(key) {
-    if (key) return `Зараз я — вкладений об'єкт за ключем '${key}'`;
-    else return this;
+    return key ? `Зараз я — вкладений об'єкт за ключем '${key}'` : this;
   },
 };
 
