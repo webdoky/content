@@ -23,13 +23,13 @@ browser-compat: javascript.builtins.Array.some
 ```js
 // Стрілкова функція
 some((element) => {
-  /* ... */
+  /* … */
 });
 some((element, index) => {
-  /* ... */
+  /* … */
 });
 some((element, index, array) => {
-  /* ... */
+  /* … */
 });
 
 // Функція зворотного виклику
@@ -38,16 +38,16 @@ some(callbackFn, thisArg);
 
 // Вбудована функція зворотного виклику
 some(function (element) {
-  /* ... */
+  /* … */
 });
 some(function (element, index) {
-  /* ... */
+  /* … */
 });
 some(function (element, index, array) {
-  /* ... */
+  /* … */
 });
 some(function (element, index, array) {
-  /* ... */
+  /* … */
 }, thisArg);
 ```
 

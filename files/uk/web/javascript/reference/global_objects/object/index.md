@@ -20,7 +20,7 @@ browser-compat: javascript.builtins.Object
 
 Конструктор `Object` створює об'єктну обгортку над переданим значенням.
 
-- Якщо передане значення дорівнює {{jsxref("null")}} чи {{jsxref("undefined")}}, буде повернено порожній об'єкт.
+- Якщо передане значення дорівнює [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) чи {{jsxref("undefined")}}, буде повернено порожній об'єкт.
 - Якщо передане значення уже є об'єктом, буде повернено це значення.
 - В інших випадках – він поверне об'єкт, тип якого відповідає переданому значенню.
 
@@ -251,4 +251,4 @@ mime.greet();
 
 ## Дивіться також
 
-- [Ініціалізатор об‘єкта](/uk/docs/Web/JavaScript/Reference/Operators/Object_initializer)
+- [Ініціалізатор об'єкта](/uk/docs/Web/JavaScript/Reference/Operators/Object_initializer)
