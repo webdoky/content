@@ -139,7 +139,8 @@ forEach(function (element, index, array) {
 ### Нічого не відбувається на неініціалізованих значеннях (розріджені масиви)
 
 ```js
-const arraySparse = [1, 3, , 7];
+<!-- markdownlint-disable-next-line -->
+const arraySparse = [1, 3, /* пропуск */, 7];
 let numCallbackRuns = 0;
 
 arraySparse.forEach((element) => {
@@ -203,16 +204,19 @@ const logArrayElements = (element, index, array) => {
 Наступний (надуманий) приклад оновлює властивості об'єкта, з урахуванням поданих елементів масиву:
 
 ```js
-function Counter() {
-  this.sum = 0;
-  this.count = 0;
+class Counter {
+  constructor() {
+    this.sum = 0;
+    this.count = 0;
+  }
+  add(array) {
+    // Лише вирази функцій матимуть власне зв'язування this
+    array.forEach(function countEntry(entry) {
+      this.sum += entry;
+      ++this.count;
+    }, this);
+  }
 }
-Counter.prototype.add = function (array) {
-  array.forEach(function countEntry(entry) {
-    this.sum += entry;
-    ++this.count;
-  }, this);
-};
 
 const obj = new Counter();
 obj.add([2, 5, 9]);
