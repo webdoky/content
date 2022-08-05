@@ -381,7 +381,7 @@ for (const fruit of fruits) {
 
 ```js
 const fruits = ['Яблуко', 'Манго', 'Вишня'];
-fruits.forEach(function (item, index, array) {
+fruits.forEach((item, index, array) => {
   console.log(item, index);
 });
 // Яблуко 0
