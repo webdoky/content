@@ -26,13 +26,13 @@ browser-compat: javascript.builtins.Array.findIndex
 ```js
 // Стрілкова функція
 findIndex((element) => {
-  /* ... */
+  /* … */
 });
 findIndex((element, index) => {
-  /* ... */
+  /* … */
 });
 findIndex((element, index, array) => {
-  /* ... */
+  /* … */
 });
 
 // Функція зворотного виклику
@@ -41,16 +41,16 @@ findIndex(callbackFn, thisArg);
 
 // Вбудована функція зворотного виклику
 findIndex(function (element) {
-  /* ... */
+  /* … */
 });
 findIndex(function (element, index) {
-  /* ... */
+  /* … */
 });
 findIndex(function (element, index, array) {
-  /* ... */
+  /* … */
 });
 findIndex(function (element, index, array) {
-  /* ... */
+  /* … */
 }, thisArg);
 ```
 
