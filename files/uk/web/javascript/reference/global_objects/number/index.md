@@ -47,7 +47,7 @@ Number(undefined); // NaN
 - [`Number()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number/Number)
   - : Створює нове значення `Number`.
 
-Коли `Number` викликається як конструктор (із `new`), це породжує об‘єкт {{jsxref("Number")}}, котрий **не** є примітивом. Наприклад, `typeof new Number(42) === "object"`, і `new Number(42) !== 42` (проте `new Number(42) == 42`).
+Коли `Number` викликається як конструктор (із `new`), це породжує об'єкт {{jsxref("Number")}}, котрий **не** є примітивом. Наприклад, `typeof new Number(42) === "object"`, і `new Number(42) !== 42` (проте `new Number(42) == 42`).
 
 > **Застереження:** Навряд вам доведеться часто застосовувати `Number` як конструктор.
 
@@ -66,22 +66,22 @@ Number(undefined); // NaN
 - {{jsxref("Number.NaN")}}
   - : Особливе значення "**N**ot **a** **N**umber" ("не число").
 - {{jsxref("Number.NEGATIVE_INFINITY")}}
-  - : Особливе значення, що представляє від‘ємну нескінченність. Повертається при переповненні.
+  - : Особливе значення, що представляє від'ємну нескінченність. Повертається при переповненні.
 - {{jsxref("Number.POSITIVE_INFINITY")}}
   - : Особливе значення, що представляє нескінченність. Повертається при переповненні.
 - {{jsxref("Number", "Number.prototype")}}
-  - : Дає змогу додавати до об‘єкта `Number` нові властивості.
+  - : Дає змогу додавати до об'єкта `Number` нові властивості.
 
 ## Статичні методи
 
 - {{jsxref("Number.isNaN()")}}
-  - : З‘ясовує, чи є передане значення `NaN`.
+  - : З'ясовує, чи є передане значення `NaN`.
 - {{jsxref("Number.isFinite()")}}
-  - : З‘ясовує, чи є передане значення скінченним числом.
+  - : З'ясовує, чи є передане значення скінченним числом.
 - {{jsxref("Number.isInteger()")}}
-  - : З‘ясовує, чи є передане значення цілим числом.
+  - : З'ясовує, чи є передане значення цілим числом.
 - {{jsxref("Number.isSafeInteger()")}}
-  - : З‘ясовує, чи є передане значення безпечним числом (числом в діапазоні від -(2<sup>53</sup> - 1) до 2<sup>53</sup> - 1).
+  - : З'ясовує, чи є передане значення безпечним числом (числом в діапазоні від -(2<sup>53</sup> - 1) до 2<sup>53</sup> - 1).
 - {{jsxref("Number.parseFloat()", "Number.parseFloat(<var>string</var>)")}}
   - : Те саме, що й глобальна функція {{jsxref("parseFloat", "parseFloat()")}}.
 - {{jsxref("Number.parseInt()", "Number.parseInt(<var>string</var>, [<var>radix</var>])")}}
@@ -98,15 +98,15 @@ Number(undefined); // NaN
 - {{jsxref("Number.prototype.toPrecision()", "Number.prototype.toPrecision(<var>precision</var>)")}}
   - : Повертає рядок, що представляє число до певної точності, в записі з фіксованою комою чи експоненціальному.
 - {{jsxref("Number.prototype.toString()", "Number.prototype.toString([<var>radix</var>])")}}
-  - : Повертає рядок, що представляє вказаний об‘єкт в указаній _основі числення_. Заміщає метод {{jsxref("Object.prototype.toString()")}}.
+  - : Повертає рядок, що представляє вказаний об'єкт в указаній _основі числення_. Заміщає метод {{jsxref("Object.prototype.toString()")}}.
 - {{jsxref("Number.prototype.valueOf()")}}
-  - : Повертає примітивне значення вказаного об‘єкта. Заміщає метод {{jsxref("Object.prototype.valueOf()")}}.
+  - : Повертає примітивне значення вказаного об'єкта. Заміщає метод {{jsxref("Object.prototype.valueOf()")}}.
 
 ## Приклади
 
-### Застосування об‘єкта Number для присвоєння числовим змінним значень
+### Застосування об'єкта Number для присвоєння числовим змінним значень
 
-Наступний приклад використовує властивості об‘єкта `Number` для присвоєння значень декільком числовим змінним:
+Наступний приклад використовує властивості об'єкта `Number` для присвоєння значень декільком числовим змінним:
 
 ```js
 const biggestNum = Number.MAX_VALUE;
@@ -118,7 +118,7 @@ const notANum = Number.NaN;
 
 ### Діапазон цілих чисел для Number
 
-Наступний приклад демонструє мінімальне й максимальне значення цілих чисел, що можуть бути представлені об‘єктом `Number`. (Більше деталей описано в стандарті ECMAScript, розділ _[6.1.6 Тип Number (англ.)](https://tc39.es/ecma262/#sec-ecmascript-language-types-number-type)._)
+Наступний приклад демонструє мінімальне й максимальне значення цілих чисел, що можуть бути представлені об'єктом `Number`. (Більше деталей описано в стандарті ECMAScript, розділ _[6.1.6 Тип Number (англ.)](https://tc39.es/ecma262/#sec-ecmascript-language-types-number-type)._)
 
 ```js
 const biggestInt = Number.MAX_SAFE_INTEGER; //  (2**53 - 1) =>  9007199254740991
@@ -131,9 +131,9 @@ const smallestInt = Number.MIN_SAFE_INTEGER; // -(2**53 - 1) => -900719925474099
 
 Більші числа можуть бути представлені за допомогою типу {{jsxref("BigInt")}}.
 
-### Використання Number для перетворення об‘єкта Date
+### Використання Number для перетворення об'єкта Date
 
-Наступний приклад перетворює об‘єкт {{jsxref("Date")}} на числове значення, застосовуючи `Number` як функцію:
+Наступний приклад перетворює об'єкт {{jsxref("Date")}} на числове значення, застосовуючи `Number` як функцію:
 
 ```js
 let d = new Date('December 17, 1995 03:24:00');
@@ -173,5 +173,5 @@ Number('-Infinity'); // -Infinity
 - [Поліфіл сучасної логіки `Number` (з підтримкою двійкових та вісімкових літералів) у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-number)
 - {{jsxref("NaN")}}
 - [Арифметичні оператори](/uk/docs/Web/JavaScript/Reference/Operators#aryfmetychni-operatory)
-- Глобальний об‘єкт {{jsxref("Math")}}
+- Глобальний об'єкт {{jsxref("Math")}}
 - Цілі числа з довільною точністю: {{jsxref("BigInt")}}
