@@ -475,7 +475,7 @@ const inventory = [
 Кожній властивості присвоєний масив, що містить елементи групи.
 
 ```js
-let result = inventory.group(({ type }) => type);
+const result = inventory.group(({ type }) => type);
 console.log(result.vegetables);
 // очікуваний вивід: Array [Object { name: "холодок", type: "vegetables" }]
 ```
