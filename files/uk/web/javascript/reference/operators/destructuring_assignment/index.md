@@ -503,7 +503,7 @@ const metadata = {
   url: '/uk/docs/Tools/Scratchpad',
 };
 
-let {
+const {
   title: englishTitle, // перейменування
   translations: [
     {
