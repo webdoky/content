@@ -1,0 +1,177 @@
+---
+title: Number
+slug: Web/JavaScript/Reference/Global_Objects/Number
+tags:
+  - Class
+  - JavaScript
+  - Number
+  - Reference
+  - Polyfill
+browser-compat: javascript.builtins.Number
+---
+
+{{JSRef}}**`Number`** (число) – [об'єкт-обгортка примітива](/uk/docs/Glossary/Primitive#obiekty-obhortky-prymityviv-u-javascript), що застосовується для представлення й роботи з числами, як то `37` чи `-9.25`.
+
+Конструктор `Number` містить константи й методи для роботи з числами. Значення інших типів можуть бути перетворені на числа за допомогою функції `Number()`.
+
+Тип JavaScript `Number` є значенням [64-бітного двійкового формату подвійної точності (IEEE 754)](https://uk.wikipedia.org/wiki/%D0%A7%D0%B8%D1%81%D0%BB%D0%BE_%D0%B7_%D1%80%D1%83%D1%85%D0%BE%D0%BC%D0%BE%D1%8E_%D0%BA%D0%BE%D0%BC%D0%BE%D1%8E), подібно до `double` в Java чи C#. Це означає, що він може представляти дробові значення, але є певні обмеження щодо того, що він може зберігати. `Number` зберігає лише близько 17 знаків після коми; арифметика є предметом [округлення (англ.)](https://en.wikipedia.org/wiki/Floating-point_arithmetic#Representable_numbers,_conversion_and_rounding). Найбільше значення, котре може зберігати `Number` – близько 1.8E308. Більші значення замінюються особливою константою `Number` – {{jsxref("Infinity")}}.
+
+Числовий літерал, як то `37`, в коді JavaScript є значенням з рухомою комою, а не цілим. Немає загальновживаного окремого типу цілих чисел. (JavaScript тепер має тип {{jsxref("BigInt")}}, але він був розроблений не для заміни Number в повсякденному використанні. `37` – це все ж `Number`, а не BigInt.)
+
+`Number` може бути також вираженим в літеральних формах, як то `0b101`, `0o13`, `0x0A`. Дізнайтесь більше про числову [лексичну граматику тут](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#chyslovi-literaly).
+
+## Опис
+
+Бувши застосованим як функція, `Number(value)` перетворює рядок чи інше значення на Number. Якщо значення не може бути перетворено, буде повернено {{jsxref("NaN")}}.
+
+### Літеральний синтаксис
+
+```js
+123; // сто двадцять три
+123.0; // те саме
+123 === 123.0; // true
+```
+
+### Синтаксис функції
+
+```js
+Number('123'); // повертає число 123
+Number('123') === 123; // true
+
+Number('єдиноріг'); // NaN
+Number(undefined); // NaN
+```
+
+## Конструктор
+
+- [`Number()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number/Number)
+  - : Створює нове значення `Number`.
+
+Коли `Number` викликається як конструктор (із `new`), це породжує об‘єкт {{jsxref("Number")}}, котрий **не** є примітивом. Наприклад, `typeof new Number(42) === "object"`, і `new Number(42) !== 42` (проте `new Number(42) == 42`).
+
+> **Застереження:** Навряд вам доведеться часто застосовувати `Number` як конструктор.
+
+## Статичні властивості
+
+- {{jsxref("Number.EPSILON")}}
+  - : Найменший інтервал між числами, котрі можна представити.
+- {{jsxref("Number.MAX_SAFE_INTEGER")}}
+  - : Найбільше безпечне в JavaScript ціле число (2<sup>53</sup> - 1).
+- {{jsxref("Number.MAX_VALUE")}}
+  - : Найбільше додатне число, котре можна представити.
+- {{jsxref("Number.MIN_SAFE_INTEGER")}}
+  - : Найменше безпечне в JavaScript ціле число (-(2<sup>53</sup> - 1)).
+- {{jsxref("Number.MIN_VALUE")}}
+  - : Найменше додатне число, котре можна представити, а отже – найближче до нуля додатне число (котре все ж не є нулем).
+- {{jsxref("Number.NaN")}}
+  - : Особливе значення "**N**ot **a** **N**umber" ("не число").
+- {{jsxref("Number.NEGATIVE_INFINITY")}}
+  - : Особливе значення, що представляє від‘ємну нескінченність. Повертається при переповненні.
+- {{jsxref("Number.POSITIVE_INFINITY")}}
+  - : Особливе значення, що представляє нескінченність. Повертається при переповненні.
+- {{jsxref("Number", "Number.prototype")}}
+  - : Дає змогу додавати до об‘єкта `Number` нові властивості.
+
+## Статичні методи
+
+- {{jsxref("Number.isNaN()")}}
+  - : З‘ясовує, чи є передане значення `NaN`.
+- {{jsxref("Number.isFinite()")}}
+  - : З‘ясовує, чи є передане значення скінченним числом.
+- {{jsxref("Number.isInteger()")}}
+  - : З‘ясовує, чи є передане значення цілим числом.
+- {{jsxref("Number.isSafeInteger()")}}
+  - : З‘ясовує, чи є передане значення безпечним числом (числом в діапазоні від -(2<sup>53</sup> - 1) до 2<sup>53</sup> - 1).
+- {{jsxref("Number.parseFloat()", "Number.parseFloat(<var>string</var>)")}}
+  - : Те саме, що й глобальна функція {{jsxref("parseFloat", "parseFloat()")}}.
+- {{jsxref("Number.parseInt()", "Number.parseInt(<var>string</var>, [<var>radix</var>])")}}
+  - : Те саме, що й глобальна функція {{jsxref("parseInt", "parseInt()")}}.
+
+## Методи примірника
+
+- {{jsxref("Number.prototype.toExponential()" ,"Number.prototype.toExponential(<var>fractionDigits</var>)")}}
+  - : Повертає рядок, що представляє число в експоненціальному записі.
+- {{jsxref("Number.prototype.toFixed()", "Number.prototype.toFixed(<var>digits</var>)")}}
+  - : Повертає рядок, що представляє число в записі з фіксованою комою.
+- {{jsxref("Number.prototype.toLocaleString()", "Number.prototype.toLocaleString([<var>locales</var> [, <var>options</var>]])")}}
+  - : Повертає рядок представлення числа, що є чутливим до мови. Заміщає метод {{jsxref("Object.prototype.toLocaleString()")}}.
+- {{jsxref("Number.prototype.toPrecision()", "Number.prototype.toPrecision(<var>precision</var>)")}}
+  - : Повертає рядок, що представляє число до певної точності, в записі з фіксованою комою чи експоненціальному.
+- {{jsxref("Number.prototype.toString()", "Number.prototype.toString([<var>radix</var>])")}}
+  - : Повертає рядок, що представляє вказаний об‘єкт в указаній _основі числення_. Заміщає метод {{jsxref("Object.prototype.toString()")}}.
+- {{jsxref("Number.prototype.valueOf()")}}
+  - : Повертає примітивне значення вказаного об‘єкта. Заміщає метод {{jsxref("Object.prototype.valueOf()")}}.
+
+## Приклади
+
+### Застосування об‘єкта Number для присвоєння числовим змінним значень
+
+Наступний приклад використовує властивості об‘єкта `Number` для присвоєння значень декільком числовим змінним:
+
+```js
+const biggestNum = Number.MAX_VALUE;
+const smallestNum = Number.MIN_VALUE;
+const infiniteNum = Number.POSITIVE_INFINITY;
+const negInfiniteNum = Number.NEGATIVE_INFINITY;
+const notANum = Number.NaN;
+```
+
+### Діапазон цілих чисел для Number
+
+Наступний приклад демонструє мінімальне й максимальне значення цілих чисел, що можуть бути представлені об‘єктом `Number`. (Більше деталей описано в стандарті ECMAScript, розділ _[6.1.6 Тип Number (англ.)](https://tc39.es/ecma262/#sec-ecmascript-language-types-number-type)._)
+
+```js
+const biggestInt = Number.MAX_SAFE_INTEGER; //  (2**53 - 1) =>  9007199254740991
+const smallestInt = Number.MIN_SAFE_INTEGER; // -(2**53 - 1) => -9007199254740991
+```
+
+При розборі даних, що були серіалізовані в JSON, від цілочислових значень, що випадають із цього діапазону, можна очікувати псування, коли розбирач JSON приводитиме їх до типу `Number`.
+
+Це можливо обійти шляхом застосування {{jsxref("String")}}.
+
+Більші числа можуть бути представлені за допомогою типу {{jsxref("BigInt")}}.
+
+### Використання Number для перетворення об‘єкта Date
+
+Наступний приклад перетворює об‘єкт {{jsxref("Date")}} на числове значення, застосовуючи `Number` як функцію:
+
+```js
+let d = new Date('December 17, 1995 03:24:00');
+console.log(Number(d));
+```
+
+Це виводить `819199440000`.
+
+### Перетворення числових рядків і null на числа
+
+```js
+Number('123'); // 123
+Number('123') === 123; // true
+Number('12.3'); // 12.3
+Number('12.00'); // 12
+Number('123e-1'); // 12.3
+Number(''); // 0
+Number(null); // 0
+Number('0x11'); // 17
+Number('0b11'); // 3
+Number('0o11'); // 9
+Number('foo'); // NaN
+Number('100a'); // NaN
+Number('-Infinity'); // -Infinity
+```
+
+## Специфікації
+
+{{Specifications}}
+
+## Сумісність із браузерами
+
+{{Compat}}
+
+## Дивіться також
+
+- [Поліфіл сучасної логіки `Number` (з підтримкою двійкових та вісімкових літералів) у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-number)
+- {{jsxref("NaN")}}
+- [Арифметичні оператори](/uk/docs/Web/JavaScript/Reference/Operators#aryfmetychni-operatory)
+- Глобальний об‘єкт {{jsxref("Math")}}
+- Цілі числа з довільною точністю: {{jsxref("BigInt")}}
