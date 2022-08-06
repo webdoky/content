@@ -366,7 +366,9 @@ function foo(n) {
 foo(3); // 3 + 3 = 6
 ```
 
-В більшості випадків застосування [залишкових параметрів](/uk/docs/Web/JavaScript/Reference/Functions/rest_parameters) є доброю альтернативою використанню об'єкта `arguments`.
+> **Примітка:** В [суворому режимі](/en-US/docs/Web/JavaScript/Reference/Strict_mode#sproshchennia-eval-i-arguments) не можна оголошувати змінну з назвою `arguments`, тож код вище призвів би до синтаксичної помилки. Це робить область видимості `arguments` куди простішою для осмислення.
+
+В більшості випадків застосування [решти параметрів](/uk/docs/Web/JavaScript/Reference/Functions/rest_parameters) є доброю альтернативою використанню об'єкта `arguments`.
 
 ```js
 function foo(n) {
@@ -419,7 +421,7 @@ const func2 = (x, y) => {
 
 Слід мати на увазі, що повернення об'єктних літералів в скороченому записі тіла функції `(params) => {object:literal}` не працюватиме так, як очікується.
 
-```js
+```js example-bad
 const func = () => { foo: 1 };
 // Виклик func() поверне undefined!
 
@@ -442,7 +444,7 @@ const func = () => ({ foo: 1 });
 
 Стрілкова функція не може містити розрив рядка між параметрами і її стрілкою.
 
-```js
+```js example-bad
 const func = (a, b, c)
   => 1;
 // SyntaxError: Unexpected token '=>'
@@ -468,15 +470,17 @@ const func4 = (a, b, c) => 1;
 
 Хоча стрілка в стрілковій функції не є оператором, ці функції мають особливі правила парсингу, які по-іншому взаємодіють з [пріоритетом операторів](/uk/docs/Web/JavaScript/Reference/Operators/Operator_Precedence) у порівнянні зі звичайними функціями.
 
-```js
+```js example-bad
 let callback;
-
-callback = callback || function() {}; // добре
 
 callback = callback || () => {};
 // SyntaxError: invalid arrow-function arguments
+```
 
-callback = callback || (() => {});    // добре
+Через те, що `=>` має нижчий за більшість операторів пріоритет, для того, аби уникати розбору `callback || ()` як списку аргументів стрілкової функції, необхідні дужки.
+
+```js example-good
+callback = callback || (() => {}); // добре
 ```
 
 ## Приклади
