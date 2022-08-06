@@ -20,7 +20,7 @@ browser-compat: javascript.builtins.Object
 
 Конструктор `Object` створює об'єктну обгортку над переданим значенням.
 
-- Якщо передане значення дорівнює {{jsxref("null")}} чи {{jsxref("undefined")}}, буде повернено порожній об'єкт.
+- Якщо передане значення дорівнює [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) чи {{jsxref("undefined")}}, буде повернено порожній об'єкт.
 - Якщо передане значення уже є об'єктом, буде повернено це значення.
 - В інших випадках – він поверне об'єкт, тип якого відповідає переданому значенню.
 
@@ -114,41 +114,33 @@ browser-compat: javascript.builtins.Object
 
 ## Приклади
 
-### Застосування `Object` з типами `undefined` і `null`
+### Конструювання порожніх об'єктів
 
 В наступному прикладі у змінній `o` зберігається порожній об'єкт `Object`:
 
 ```js
-let o = new Object();
+const o1 = new Object();
+const o2 = new Object(undefined);
+const o3 = new Object(null);
 ```
 
-```js
-let o = new Object(undefined);
-```
-
-```js
-let o = new Object(null);
-```
-
-### Застосування `Object` для створення об'єктів типу `Boolean`
+### Застосування `Object` для створення булевих об'єктів
 
 В наступному прикладі у змінній `o` зберігається {{jsxref("Boolean", "булевий")}} об'єкт:
 
 ```js
-// еквіваленто виразу o = new Boolean(true)
-let o = new Object(true);
+// еквіваленто виразу const o = new Boolean(true)
+const o = new Object(true);
 ```
 
 ```js
-// еквіваленто виразу o = new Boolean(false)
-let o = new Object(Boolean());
+// еквіваленто виразу const o = new Boolean(false)
+const o = new Object(Boolean());
 ```
 
 ### Прототипи об'єктів
 
 Під час зміни поведінки вже наявних методів `Object.prototype` слід зважити можливість внесення ізольованого коду перед або після чинної логіки. Наприклад, наведений нижче (нетестований) код за умовою виконає користувацьку логіку до того, як спрацює вбудована логіка (або виконається інше розширення).
-
-На момент виклику функції аргументи виклику знаходяться у масивоподібній "змінній" [arguments](/uk/docs/Web/JavaScript/Reference/Functions/arguments). Наприклад, у виклику `myFn(a, b, c)` `arguments` всередині тіла функції `myFn` міститиме 3 елементи відповідно до `(a, b, c)`.
 
 В разі внесення змін у прототипи за допомогою таких причеп – слід передавати `this` та аргументи (стан виклику) до чинної логіки шляхом виклику `apply()` на функції. Цей патерн можна використовувати на будь-яких прототипах, як от `Node.prototype`, `Function.prototype`, та ін.
 
@@ -170,76 +162,9 @@ Object.prototype.valueOf = function () {
 };
 ```
 
-Оскільки JavaScript не має повного аналога підкласових об'єктів, прототип є корисним обхідним способом створити об'єкт "базового класу" певних функцій, що працюють як об'єкти. Наприклад:
+> **Застереження:** Змінювати властивість `prototype` будь-якого вбудованого конструктора вважається недоброю практикою і є ризиком щодо сумісності.
 
-```js
-const Person = function (name) {
-  this.name = name;
-  this.canTalk = true;
-};
-
-Person.prototype.greet = function () {
-  if (this.canTalk) {
-    console.log('Привіт, я — ' + this.name);
-  }
-};
-
-const Employee = function (name, title) {
-  Person.call(this, name);
-  this.title = title;
-};
-
-Employee.prototype = Object.create(Person.prototype);
-Employee.prototype.constructor = Employee; //Якщо явно не встановити Employee значенням конструктора Object.prototype.constructor,
-//він отримає значення prototype.constructor об'єкта Person (предка).
-//Щоб уникнути цього, ми явно встановлюємо в prototype.constructor значення Employee (нащадок).
-
-Employee.prototype.greet = function () {
-  if (this.canTalk) {
-    console.log('Привіт, я — ' + this.name + ', ' + this.title);
-  }
-};
-
-const Customer = function (name) {
-  Person.call(this, name);
-};
-
-Customer.prototype = Object.create(Person.prototype);
-Customer.prototype.constructor = Customer;
-//Якщо явно не встановити Customer значенням конструктора Object.prototype.constructor,
-//він отримає значення prototype.constructor об'єкта Person (предка).
-//Щоб уникнути цього, ми явно встановлюємо в prototype.constructor значення Customer (нащадок).
-
-const Mime = function (name) {
-  Person.call(this, name);
-  this.canTalk = false;
-};
-
-Mime.prototype = Object.create(Person.prototype);
-Mime.prototype.constructor = Mime; //Якщо явно не встановити Mime значенням конструктора Object.prototype.constructor,
-//він отримає значення prototype.constructor об'єкта Person (предка).
-//Щоб уникнути цього, ми явно встановлюємо в prototype.constructor значення Mime (нащадок).
-
-const bob = new Employee('Боб', 'будівельник');
-const joe = new Customer('Джо');
-const rg = new Employee('Ред Грін', 'різнороб');
-const mike = new Customer('Майк');
-const mime = new Mime('Мім');
-
-bob.greet();
-// Привіт, я — Боб, будівельник
-
-joe.greet();
-// Привіт, я — Джо
-
-rg.greet();
-// Привіт, я — Ред Грін, різнороб
-
-mike.greet();
-// Привіт, я — Майк
-
-mime.greet();
-```
+Більше про прототипи можна прочитати в [Успадкуванні й ланцюжку прототипів](/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain).
 
 ## Специфікації
 
@@ -251,4 +176,4 @@ mime.greet();
 
 ## Дивіться також
 
-- [Ініціалізатор об‘єкта](/uk/docs/Web/JavaScript/Reference/Operators/Object_initializer)
+- [Ініціалізатор об'єкта](/uk/docs/Web/JavaScript/Reference/Operators/Object_initializer)
