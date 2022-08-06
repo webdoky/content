@@ -94,7 +94,7 @@ function replacer(match, p1, p2, p3, offset, string) {
   // p1 містить нецифрові символи, p2 — цифри, а p3 — все, окрім літер
   return [p1, p2, p3].join(' - ');
 }
-let newString = 'abc12345#$*%'.replace(/([^\d]*)(\d*)([^\w]*)/, replacer);
+const newString = 'abc12345#$*%'.replace(/([^\d]*)(\d*)([^\w]*)/, replacer);
 console.log(newString); // abc - 12345 - #$*%
 ```
 
@@ -105,8 +105,8 @@ console.log(newString); // abc - 12345 - #$*%
 В наступному прикладі регулярний вираз оголошується всередині `replace()` і містить прапорець ігнорування регістру літер.
 
 ```js
-let str = 'То була ніч перед Йолем...';
-let newstr = str.replace(/йолем/i, 'Різдвом');
+const str = 'То була ніч перед Йолем...';
+const newstr = str.replace(/йолем/i, 'Різдвом');
 console.log(newstr); // То була ніч перед Різдвом...
 ```
 
@@ -120,9 +120,9 @@ console.log(newstr); // То була ніч перед Різдвом...
 Глобальна заміна може виконуватись лише із застосуванням регулярного виразу. В наступному прикладі регулярний вираз містить [позначки "глобальний пошук" та "знехтувати регістром"](/uk/docs/Web/JavaScript/Guide/Regular_Expressions/#pohlyblenyi-poshuk-z-poznachkamy), що дає функції `replace()` змогу замінити всі входження `'яблука'` на рядок з `'апельсини'`.
 
 ```js
-let re = /яблука/gi;
-let str = 'Яблука — круглі, яблука — такі соковиті...';
-let newstr = str.replace(re, 'апельсини');
+const re = /яблука/gi;
+const str = 'Яблука — круглі, яблука — такі соковиті...';
+const newstr = str.replace(re, 'апельсини');
 console.log(newstr); // апельсини — круглі, апельсини — такі соковиті...
 ```
 
@@ -133,9 +133,9 @@ console.log(newstr); // апельсини — круглі, апельсини 
 Наступний скрипт міняє слова місцями в рядку. Для отримання тексту заміни скрипт використовує [групи захоплення](/uk/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Backreferences) і патерни заміни `$1` та `$2`.
 
 ```js
-let re = /(\w+)\s(\w+)/;
-let str = 'Іван Сірко';
-let newstr = str.replace(re, '$2, $1');
+const re = /(\w+)\s(\w+)/;
+const str = 'Іван Сірко';
+const newstr = str.replace(re, '$2, $1');
 console.log(newstr); // Сірко, Іван
 ```
 
@@ -177,8 +177,8 @@ function f2c(x) {
   function convert(str, p1, offset, s) {
     return ((p1 - 32) * 5) / 9 + 'C';
   }
-  let s = String(x);
-  let test = /(-?\d+(?:\.\d*)?)F\b/g;
+  const s = String(x);
+  const test = /(-?\d+(?:\.\d*)?)F\b/g;
   return s.replace(test, convert);
 }
 ```
