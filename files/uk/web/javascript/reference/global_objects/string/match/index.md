@@ -146,9 +146,10 @@ str.match({
 
 ```js
 const str1 =
-    'NaN means not a number. Infinity contains -Infinity and +Infinity in JavaScript.',
-  str2 = 'My grandfather is 65 years old and My grandmother is 63 years old.',
-  str3 = 'The contract was declared null and void.';
+  'NaN means not a number. Infinity contains -Infinity and +Infinity in JavaScript.';
+const str2 =
+  'My grandfather is 65 years old and My grandmother is 63 years old.';
+const str3 = 'The contract was declared null and void.';
 str1.match('number'); // "number" — це рядок. Повертає ["number"]
 str1.match(NaN); // NaN має тип "число". Повертає ["NaN"]
 str1.match(Infinity); // тип Infinity — число. Повертає ["Infinity"]
