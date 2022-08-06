@@ -85,7 +85,7 @@ JSON.stringify([new Number(3), new String('false'), new Boolean(false)]);
 // '[3,"false",false]'
 
 // Елементи масиву з рядковими ключами не є перелічними і не мають сенсу в JSON
-let a = ['foo', 'bar'];
+const a = ['foo', 'bar'];
 a['baz'] = 'quux'; // a: [ 0: 'foo', 1: 'bar', baz: 'quux' ]
 JSON.stringify(a);
 // '["foo","bar"]'
