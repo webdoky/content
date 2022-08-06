@@ -434,8 +434,24 @@ input[type='password']:required {
 
 ## Дивіться також
 
-- {{CSS_Key_Concepts}}
 - ["Специфічність" у "Каскаді та успадкуванні"](/uk/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance#spetsyfichnist-2)
 - [SpeciFISHity (англ.)](https://specifishity.com)
 - [Калькулятор специфічності (англ.)](https://specificity.keegan.st/): інтерактивний вебсайт для перевірки та усвідомлення ваших власних правил CSS
 - [Вправа _ID-CLASS-TYPE_ (англ.)](https://estelle.github.io/CSS/selectors/exercises/specificity.html) – вікторина зі специфічності
+- Ключові концепції CSS:
+  - [Синтаксис CSS](/uk/docs/Web/CSS/Syntax)
+  - [Директиви](/uk/docs/Web/CSS/At-rule)
+  - [Коментарі](/uk/docs/Web/CSS/Comments)
+  - [Успадкування](/uk/docs/Web/CSS/inheritance)
+  - [Рамкова модель](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+  - [Режими компонування](/uk/docs/Web/CSS/Layout_mode)
+  - [Моделі візуального форматування](/uk/docs/Web/CSS/Visual_formatting_model)
+  - [Перекриття берегів](/uk/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
+  - Значення
+    - [Початкові значення](/uk/docs/Web/CSS/initial_value)
+    - [Обчислені значення](/uk/docs/Web/CSS/computed_value)
+    - [Застосовані значення](/uk/docs/Web/CSS/used_value)
+    - [Актуальні значення](/uk/docs/Web/CSS/actual_value)
+  - [Синтаксис визначення значень](/uk/docs/Web/CSS/Value_definition_syntax)
+  - [Властивості-скорочення](/uk/docs/Web/CSS/Shorthand_properties)
+  - [Заміщені елементи](/uk/docs/Web/CSS/Replaced_element)
