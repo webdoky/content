@@ -3,6 +3,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2022-08-05 - 2022-08-12]
+
+* **Оновлення перекладу(JS):** web/javascript/reference/operators/nullish_coalescing_operator ([7bef439](https://github.com/webdoky/content/commit/7bef439829a51ae5ef0830d1251c2dd8c7f007a5))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/push ([c3befbb](https://github.com/webdoky/content/commit/c3befbb8fbc3e4a49b2c6ef33ebb5cfd5435b7bd))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/object/assign ([3aeb75a](https://github.com/webdoky/content/commit/3aeb75a564888787969d13d565587835b103dd2a))
+* **Оновлення перекладу(JS):** web/javascript/reference/operators/spread_syntax ([299e5c5](https://github.com/webdoky/content/commit/299e5c5b775d0c2586b9dff69208e4993f048cbf))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/split ([186933a](https://github.com/webdoky/content/commit/186933afc3ab658dbb398e4a699adaed01dc4392))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/slice ([1ec795e](https://github.com/webdoky/content/commit/1ec795e9dec49162585131cfb6c6ca9c359a4ee2))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/slice ([f07030e](https://github.com/webdoky/content/commit/f07030e0e4772b1e0c3bac614b42f6617944ab53))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/splice ([aff53fe](https://github.com/webdoky/content/commit/aff53febefc459ff9488a48e417ae44c57929d63))
+* **Оновлення перекладу(CSS):** web/css/specificity ([43007c4](https://github.com/webdoky/content/commit/43007c41d9aebfa2bd17fea09fefd9a9500f5147))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/math (#557) ([ce4fa23](https://github.com/webdoky/content/commit/ce4fa23aeb04d11780f07f428082fa85e74dcfff))
+
 ## [2022-07-29 - 2022-08-05]
 
 * **Оновлення перекладу(HTML):** web/html/element/input/file (#551) ([3a0705d](https://github.com/webdoky/content/commit/3a0705d9bae76a2adacc4be7dae57029911a24c4))
