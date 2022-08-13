@@ -321,6 +321,14 @@ SVG залишається рекомендованим форматом для 
 - [MDN Розуміння WCAG, пояснення Настанов 1.1](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#nastanovy-1.1-nadannia-netekstovomu-vmistu-tekstovykh-alternatyv)
 - [Розуміння критерію успіху 1.1.1 | W3C Розуміння WCAG 2.0 (англ.)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/text-equiv-all.html)
 
+### Впізнання SVG як зображення
+
+У зв'язку з [вадою VoiceOver](https://bugs.webkit.org/show_bug.cgi?id=216364) VoiceOver не оголошував коректно SVG зображення. Слід додавати [`role="img"`](/uk/docs/Web/Accessibility/ARIA/Roles/img_role) до всіх елементів `<img>` з SVG файлами, щоб пересвідчитися, що допоміжні технології коректно оголошують SVG як вміст-зображення.
+
+```html
+<img src="webdoky.svg" alt="Логотип WebDoky" role="img" />
+```
+
 ### Атрибут title
 
 Атрибут {{htmlattrxref("title")}} не є прийнятною заміною атрибута `alt`. Крім того, слід уникати дублювання значення атрибута `alt` в атрибуті `title`, оголошеному на тому самому зображенні. Це призвело б до того, що певні читачі з екрана оголосили б опис двічі, спантеличуючи користувачів.
