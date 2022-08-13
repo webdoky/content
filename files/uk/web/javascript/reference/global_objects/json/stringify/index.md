@@ -132,7 +132,7 @@ JSON.stringify({ [Symbol('foo')]: 'foo' });
 // '{}'
 JSON.stringify({ [Symbol.for('foo')]: 'foo' }, [Symbol.for('foo')]);
 // '{}'
-JSON.stringify({ [Symbol.for('foo')]: 'foo' }, function (k, v) {
+JSON.stringify({ [Symbol.for('foo')]: 'foo' }, (k, v) => {
   if (typeof k === 'symbol') {
     return 'a symbol';
   }
@@ -249,7 +249,7 @@ const obj = {
 JSON.stringify(obj);
 // '{"data":"data"}'
 
-JSON.stringify({ obj }); // Скорочення імен властивостей (ES2015).
+JSON.stringify({ obj });
 // '{"obj":"Зараз я — вкладений об'єкт за ключем 'obj'"}'
 
 JSON.stringify([obj]);
@@ -288,13 +288,13 @@ const s = {
   b: String.fromCharCode(0x2029),
 };
 try {
-  eval('(' + JSON.stringify(s) + ')');
+  eval(`(${JSON.stringify(s)})`);
 } catch (e) {
   console.log(e); // "SyntaxError: unterminated string literal"
 }
 
 // Без необхідності ловити виняток
-eval('(' + jsFriendlyJSONStringify(s) + ')');
+eval(`(${jsFriendlyJSONStringify(s)})`);
 
 // console.log у Firefox знімає екранування з символів Unicode
 // під час друкування в консоль, тож застосуємо alert
