@@ -381,7 +381,7 @@ for (const fruit of fruits) {
 
 ```js
 const fruits = ['Яблуко', 'Манго', 'Вишня'];
-fruits.forEach(function (item, index, array) {
+fruits.forEach((item, index, array) => {
   console.log(item, index);
 });
 // Яблуко 0
@@ -566,7 +566,7 @@ console.table(values);
 
 Елементи масиву є властивостями об'єкта, так само як `toString` є властивістю (для точності, втім, слід нагадати, що `toString()` є методом). Не зважаючи на це, спроба отримати елемент масиву у наступний спосіб призведе до синтаксичної помилки, бо таке ім'я властивості не є дійсним:
 
-```js
+```js example-bad
 console.log(arr.0); // синтаксична помилка
 ```
 

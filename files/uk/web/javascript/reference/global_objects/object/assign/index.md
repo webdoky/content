@@ -46,7 +46,7 @@ Object.assign(target, ...sources);
 
 В разі помилки (наприклад, якщо властивість недоступна для запису) викидається {{jsxref("TypeError")}}, а об'єкт `target` залишається модифікованим, якщо якісь властивості були вже додані до виникнення помилки.
 
-> **Примітка:** `Object.assign()` не викидає помилок на таких донорах, як {{jsxref("null")}} чи {{jsxref("undefined")}}.
+> **Примітка:** `Object.assign()` не викидає помилок на таких донорах, як [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) чи {{jsxref("undefined")}}.
 
 ## Приклади
 
@@ -68,8 +68,8 @@ console.log(copy); // { a: 1 }
 function test() {
   'use strict';
 
-  let obj1 = { a: 0, b: { c: 0 } };
-  let obj2 = Object.assign({}, obj1);
+  const obj1 = { a: 0, b: { c: 0 } };
+  const obj2 = Object.assign({}, obj1);
   console.log(JSON.stringify(obj2)); // { "a": 0, "b": { "c": 0}}
 
   obj1.a = 1;
@@ -86,7 +86,7 @@ function test() {
 
   // Глибоке клонування
   obj1 = { a: 0, b: { c: 0 } };
-  let obj3 = JSON.parse(JSON.stringify(obj1));
+  const obj3 = JSON.parse(JSON.stringify(obj1));
   obj1.a = 4;
   obj1.b.c = 4;
   console.log(JSON.stringify(obj3)); // { "a": 0, "b": { "c": 0}}
@@ -203,14 +203,14 @@ console.log(copy);
 // Ось фінкція присвоєння, яка капіює дескриптори цілком
 function completeAssign(target, ...sources) {
   sources.forEach((source) => {
-    let descriptors = Object.keys(source).reduce((descriptors, key) => {
+    const descriptors = Object.keys(source).reduce((descriptors, key) => {
       descriptors[key] = Object.getOwnPropertyDescriptor(source, key);
       return descriptors;
     }, {});
 
     // Як усталено, Object.assign копіює також перелічувані символи
     Object.getOwnPropertySymbols(source).forEach((sym) => {
-      let descriptor = Object.getOwnPropertyDescriptor(source, sym);
+      const descriptor = Object.getOwnPropertyDescriptor(source, sym);
       if (descriptor.enumerable) {
         descriptors[sym] = descriptor;
       }

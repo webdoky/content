@@ -38,7 +38,7 @@ slice(start, end);
 
 - `end` (кінець) {{optional_inline}}
 
-  - : Індекс першого елемента, котрий буде виключений із поверненого масива. `slice` витягає елементи до, але не включаючи `end`. Наприклад, `slice(1,4)` витягне елементи з другого по четвертий (елементи з позицій 1, 2, та 3).
+  - : Індекс першого елемента, котрий буде виключений із поверненого масиву. `slice` витягає елементи до, але не включаючи `end`. Наприклад, `slice(1,4)` витягне елементи з другого по четвертий (елементи з позицій 1, 2, та 3).
 
     Допускається застосовувати від'ємний індекс для позначення положення елемента з кінця послідовності. Наприклад, `slice(2,-1)` витягне елементи, починаючи з третього і закінчуючи другим від кінця масиву.
 
@@ -54,7 +54,7 @@ slice(start, end);
 
 Метод `slice` не змінює початковий масив. Він повертає поверхневу копію елементів початкового масиву. Елементи початкового масиву копіюються до масиву з результатами таким чином:
 
-- Для об'єктів `slice` копіює посилання на об'єкти у новий масив. Новий масив міститиме ті самі об‘єкти, що містяться у початковому масиві. Якщо об'єкт змінюється, такі зміни будуть відбиті як на початковому, так і на новому масиві.
+- Для об'єктів `slice` копіює посилання на об'єкти у новий масив. Новий масив міститиме ті самі об'єкти, що містяться у початковому масиві. Якщо об'єкт змінюється, такі зміни будуть відбиті як на початковому, так і на новому масиві.
 - Для рядків, чисел і булевого типу (не об'єктів {{jsxref("String")}}, {{jsxref("Number")}} чи {{jsxref("Boolean")}}) `slice` скопіює значення у новий масив. Зміни у рядках, числах, чи булевих значеннях одного масиву ніяк не зачеплять інший.
 
 Якщо до будь-якого з масивів додати новий елемент, інший масив залишиться без змін.
@@ -64,8 +64,8 @@ slice(start, end);
 ### Повернення частини наявного масиву
 
 ```js
-let fruits = ['Банан', 'Апельсин', 'Лимон', 'Яблуко', 'Манго'];
-let citrus = fruits.slice(1, 3);
+const fruits = ['Банан', 'Апельсин', 'Лимон', 'Яблуко', 'Манго'];
+const citrus = fruits.slice(1, 3);
 
 // fruits містить ['Банан', 'Апельсин', 'Лимон', 'Яблуко', 'Манго']
 // citrus містить ['Апельсин','Лимон']
@@ -77,35 +77,38 @@ let citrus = fruits.slice(1, 3);
 
 ```js
 // За допомогою slice() створити newCar з myCar.
-let myHonda = {
+const myHonda = {
   color: 'червоний',
   wheels: 4,
   engine: { cylinders: 4, size: 2.2 },
 };
-let myCar = [myHonda, 2, 'чудовий стан', 'придбана у 1997'];
-let newCar = myCar.slice(0, 2);
+const myCar = [myHonda, 2, 'чудовий стан', 'придбана у 1997'];
+const newCar = myCar.slice(0, 2);
 
 // Показати значення myCar, newCar, і колір myHonda,
 // на який посилаються обидва масиви.
-console.log('myCar = ' + JSON.stringify(myCar));
-console.log('newCar = ' + JSON.stringify(newCar));
-console.log('myCar[0].color = ' + myCar[0].color);
-console.log('newCar[0].color = ' + newCar[0].color);
+console.log('myCar = ', myCar);
+console.log('newCar = ', newCar);
+console.log('myCar[0].color = ', myCar[0].color);
+console.log('newCar[0].color = ', newCar[0].color);
 
 // Змінити колір myHonda.
 myHonda.color = 'бузковий';
-console.log('Новий колір моєї Honda – ' + myHonda.color);
+console.log('Новий колір моєї Honda – ', myHonda.color);
 
 // Показати колір myHonda, на який посилаються обидва масиви.
-console.log('myCar[0].color = ' + myCar[0].color);
-console.log('newCar[0].color = ' + newCar[0].color);
+console.log('myCar[0].color = ', myCar[0].color);
+console.log('newCar[0].color = ', newCar[0].color);
 ```
 
 Скрипт надрукує такий текст:
 
-```js
-myCar = [{color: 'червоний', wheels: 4, engine: {cylinders: 4, size: 2.2}}, 2,
-         'чудовий стан', 'придбана у 1997']
+```
+myCar = [
+  {color: 'червоний', wheels: 4, engine: {cylinders: 4, size: 2.2 } },
+  2,
+  'чудовий стан','придбана у 1997'
+]
 newCar = [{color: 'червоний', wheels: 4, engine: {cylinders: 4, size: 2.2}}, 2]
 myCar[0].color = червоний
 newCar[0].color = червоний
@@ -114,7 +117,7 @@ myCar[0].color = бузковий
 newCar[0].color = бузковий
 ```
 
-### Масивоподібні об‘єкти
+### Масивоподібні об'єкти
 
 За допомогою методу `slice` можна також перетворити масивоподібний об'єкт чи колекцію на новий масив. Потрібно лише {{jsxref("Function.prototype.bind", "прив'язати")}} цей метод до об'єкта. Зокрема, об'єкт {{jsxref("Functions/arguments", "arguments")}} в функції є прикладом такого «масивоподібного об'єкту».
 
@@ -123,7 +126,7 @@ function list() {
   return Array.prototype.slice.call(arguments);
 }
 
-let list1 = list(1, 2, 3); // [1, 2, 3]
+const list1 = list(1, 2, 3); // [1, 2, 3]
 ```
 
 Для прив'язування можна також застосувати метод {{jsxref("Function.prototype.call", "call()")}} об'єкту {{jsxref("Function")}}, таким чином скоротивши запис до `[].slice.call(arguments)` замість `Array.prototype.slice.call`.
@@ -131,14 +134,14 @@ let list1 = list(1, 2, 3); // [1, 2, 3]
 Зрештою, це можна іще спростити, використавши {{jsxref("Function.prototype.bind", "bind")}}.
 
 ```js
-let unboundSlice = Array.prototype.slice;
-let slice = Function.prototype.call.bind(unboundSlice);
+const unboundSlice = Array.prototype.slice;
+const slice = Function.prototype.call.bind(unboundSlice);
 
 function list() {
   return slice(arguments);
 }
 
-let list1 = list(1, 2, 3); // [1, 2, 3]
+const list1 = list(1, 2, 3); // [1, 2, 3]
 ```
 
 ## Специфікації
