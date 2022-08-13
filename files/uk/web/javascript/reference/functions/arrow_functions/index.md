@@ -65,16 +65,15 @@ function (a, b){
 // Стрілкова функція
 (a, b) => a + b + 100;
 
-// Традиційна анонімна функція (без аргументів)
 const a = 4;
 const b = 2;
+
+// Традиційна анонімна функція (без аргументів)
 (function (){
   return a + b + 100;
 })
 
 // Стрілкова функція (без аргументів)
-const a = 4;
-const b = 2;
 () => a + b + 100;
 ```
 
@@ -103,7 +102,7 @@ function bob(a) {
 }
 
 // Стрілкова функція
-const bob = (a) => a + 100;
+const bob2 = (a) => a + 100;
 ```
 
 ## Синтаксис
@@ -265,17 +264,17 @@ const add = function (a, b, c) {
 };
 
 // call
-const result = add.call(obj, 1, 2, 3); // встановлює "obj" як контекст виконання функції
-console.log(result); // результат — 106
+const resultCall = add.call(obj, 1, 2, 3); // встановлює "obj" як контекст виконання функції
+console.log(resultCall); // результат — 106
 
 // apply
 const arr = [1, 2, 3];
-const result = add.apply(obj, arr); // встановлює "obj" як контекст виконання функції
-console.log(result); // результат — 106
+const resultApply = add.apply(obj, arr); // встановлює "obj" як контекст виконання функції
+console.log(resultApply); // результат — 106
 
 // bind
-var result = add.bind(obj); // встановлює "obj" як контекст виконання функції
-console.log(result(1, 2, 3)); // результат — 106
+var resultBind = add.bind(obj); // встановлює "obj" як контекст виконання функції
+console.log(resultBind(1, 2, 3)); // результат — 106
 ```
 
 Якщо створити `add` як стрілкову функцію, то оскільки вона створена в контексті об'єкта `window` (глобальному контексті), вона вважатиме, що `this` і є `window`.
