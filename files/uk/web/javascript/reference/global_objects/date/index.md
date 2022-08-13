@@ -160,10 +160,10 @@ browser-compat: javascript.builtins.Date
 ```js
 const today = new Date();
 const birthday = new Date('December 17, 1995 03:24:00'); // НЕРЕКОМЕНДОВАНО: може не працювати в усіх середовищах виконання
-const birthday = new Date('1995-12-17T03:24:00'); // Відповідає форматові ISO8601, а тому надійно працюватиме
-const birthday = new Date(1995, 11, 17); // індекс місяця починається з 0
-const birthday = new Date(1995, 11, 17, 3, 24, 0);
-const birthday = new Date(628021800000); // передача мітки часу
+const birthday2 = new Date('1995-12-17T03:24:00'); // Відповідає форматові ISO8601, а тому надійно працюватиме
+const birthday3 = new Date(1995, 11, 17); // індекс місяця починається з 0
+const birthday4 = new Date(1995, 11, 17, 3, 24, 0);
+const birthday5 = new Date(628021800000); // передача мітки часу
 ```
 
 ### Формати значень, повернених методом toString
@@ -253,9 +253,9 @@ const elapsed = end.getTime() - start.getTime(); // час, що минув, у 
 
 ```js
 // Отак перевіряємо функцію й отримуємо її вивід
-function printElapsedTime(fTest) {
+function printElapsedTime(testFn) {
   const startTime = Date.now();
-  const result = fTest();
+  const result = testFn();
   const endTime = Date.now();
 
   console.log(`Минуло часу: ${String(endTime - startTime)} мілісекунд`);
