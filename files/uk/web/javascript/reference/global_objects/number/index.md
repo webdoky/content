@@ -136,7 +136,7 @@ const smallestInt = Number.MIN_SAFE_INTEGER; // -(2**53 - 1) => -900719925474099
 Наступний приклад перетворює об'єкт {{jsxref("Date")}} на числове значення, застосовуючи `Number` як функцію:
 
 ```js
-let d = new Date('December 17, 1995 03:24:00');
+const d = new Date('December 17, 1995 03:24:00');
 console.log(Number(d));
 ```
 
