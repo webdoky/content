@@ -97,9 +97,9 @@ console.log(found);
 ```js
 const str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 const regexp = /[A-E]/gi;
-const matches_array = str.match(regexp);
+const matches = str.match(regexp);
 
-console.log(matches_array);
+console.log(matches);
 // ['A', 'B', 'C', 'D', 'E', 'a', 'b', 'c', 'd', 'e']
 ```
 
@@ -107,7 +107,7 @@ console.log(matches_array);
 
 ### Застосування іменованих груп захоплення
 
-У браузерах, які підтримують іменовані групи захоплення, наступний код витягне значення "`fox`" чи "`cat`" у групу, яка називається "`animal`":
+У браузерах, які підтримують іменовані групи захоплення, наступний код витягне значення `"fox"` чи `"cat"` у групу, яка називається "`animal`":
 
 ```js
 const paragraph = 'The quick brown fox jumps over the lazy dog. It barked.';
