@@ -52,7 +52,7 @@ typeof(operand);
 > екзотичних об'єктів, непридатних для викликання.
 >
 > Єдиним браузером, про який відомо, що йому вдалося цим скористатися, був старий
-> Internet Explorer (див. [нижче](#ie-specific_notes)).
+> Internet Explorer (див. [нижче](#prymitky-shchodo-ie)).
 
 ## Приклади
 
@@ -197,7 +197,7 @@ typeof document.all === 'undefined';
 
 Оператор `typeof` дуже корисний, проте він не настільки універсальний, наскільки це може бути потрібно. Наприклад, `typeof []` дорівнює `'object'`, так само як `typeof new Date()`, `typeof /abc/` тощо.
 
-Для більшої конкретики при перевірці типів, нижче представлена самописна функція `type(value)`, котра здебільшого імітує логіку `typeof`, але для непримітивних значень (наприклад, об‘єктів та функцій) повертає більш гранульоване ім‘я типу, коли це можливо.
+Для більшої конкретики при перевірці типів, нижче представлена самописна функція `type(value)`, котра здебільшого імітує логіку `typeof`, але для непримітивних значень (наприклад, об'єктів та функцій) повертає більш гранульоване ім'я типу, коли це можливо.
 
 ```js
 function type(value) {
@@ -213,14 +213,14 @@ function type(value) {
   ) {
     return 'class';
   }
-  // Symbol.toStringTag часто вказує "ім‘я для виведення" класу об‘єкта
+  // Symbol.toStringTag часто вказує "ім'я для виведення" класу об'єкта
   if (
     Symbol.toStringTag in value &&
     typeof value[Symbol.toStringTag] === 'string'
   ) {
     return value[Symbol.toStringTag];
   }
-  // Ім‘я конструктора; наприклад: `Array`, `GeneratorFunction`,
+  // Ім'я конструктора; наприклад: `Array`, `GeneratorFunction`,
   // `Number`, `String`, `Boolean` чи `MyCustomObject`
   if (
     typeof value.constructor.name === 'string' &&

@@ -163,12 +163,12 @@ console.log([4, 5, 8, 12].find(isPrime)); // 5
 const array = [0, 1, , , , 5, 6];
 
 // Покаже всі індекси, а не лише ті, що мають присвоєне значення
-array.find(function (value, index) {
+array.find((value, index) => {
   console.log('Відвідано індекс ', index, ' зі значенням ', value);
 });
 
 // Покаже всі індекси, включно з видаленими
-array.find(function (value, index) {
+array.find((value, index) => {
   // Видаляємо 5-й елемент під час першої ітерації
   if (index === 0) {
     console.log('Видалення array[5] зі значенням ', array[5]);

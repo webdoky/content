@@ -157,7 +157,7 @@ foo().catch(() => {}); // Спроба проковтнути всі помил�
 function resolveAfter2Seconds() {
   console.log('початок повільного промісу');
   return new Promise((resolve) => {
-    setTimeout(function () {
+    setTimeout(() => {
       resolve('повільно');
       console.log('повільний проміс виконано');
     }, 2000);
@@ -167,7 +167,7 @@ function resolveAfter2Seconds() {
 function resolveAfter1Second() {
   console.log('початок швидкого промісу');
   return new Promise((resolve) => {
-    setTimeout(function () {
+    setTimeout(() => {
       resolve('шкидко');
       console.log('швидкий проміс виконано');
     }, 1000);
@@ -248,12 +248,8 @@ API, який повертає {{jsxref("Promise", "проміс")}}, буде �
 ```js
 function getProcessedData(url) {
   return downloadData(url) // повертає проміс
-    .catch((e) => {
-      return downloadFallbackData(url); // повертає проміс
-    })
-    .then((v) => {
-      return processDataInWorker(v); // повертає проміс
-    });
+    .catch((e) => downloadFallbackData(url)) // повертає проміс
+    .then((v) => processDataInWorker(v)); // повертає проміс
 }
 ```
 
@@ -275,9 +271,7 @@ async function getProcessedData(url) {
 
 ```js
 async function getProcessedData(url) {
-  const v = await downloadData(url).catch((e) => {
-    return downloadFallbackData(url);
-  });
+  const v = await downloadData(url).catch((e) => downloadFallbackData(url));
   return processDataInWorker(v);
 }
 ```
