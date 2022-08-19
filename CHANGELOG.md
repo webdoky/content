@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2022-08-12 - 2022-08-19]
+
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array (#566) ([64b9cf4](https://github.com/webdoky/content/commit/64b9cf4205bee8c4e8be9807e7e529e9507dca2d))
+
 ## [2022-08-05 - 2022-08-12]
 
 * **Оновлення перекладу(JS):** web/javascript/reference/operators/nullish_coalescing_operator ([7bef439](https://github.com/webdoky/content/commit/7bef439829a51ae5ef0830d1251c2dd8c7f007a5))
