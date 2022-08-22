@@ -150,7 +150,7 @@ function isBigEnough(value) {
   return value >= 10;
 }
 
-let filtered = [12, 5, 8, 130, 44].filter(isBigEnough);
+const filtered = [12, 5, 8, 130, 44].filter(isBigEnough);
 // відфільтрований результат має [12, 130, 44]
 ```
 
@@ -163,7 +163,7 @@ const array = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 
 function isPrime(num) {
   for (let i = 2; num > i; i++) {
-    if (num % i == 0) {
+    if (num % i === 0) {
       return false;
     }
   }
@@ -178,7 +178,7 @@ console.log(array.filter(isPrime)); // [2, 3, 5, 7, 11, 13]
 Наступний приклад за допомогою `filter()` створює відфільтрований набір елементів, що містять ненульовий числовий `id`, записаних об'єктною нотацією.
 
 ```js
-let arr = [
+const arr = [
   { id: 15 },
   { id: -1 },
   { id: 0 },
@@ -200,7 +200,7 @@ function filterByID(item) {
   return false;
 }
 
-let arrByID = arr.filter(filterByID);
+const arrByID = arr.filter(filterByID);
 
 console.log('Відфільтрований масив\n', arrByID);
 // Відфільтрований масив
@@ -215,34 +215,14 @@ console.log('Кількість некоректних значень = ', inval
 Наступний приклад за допомогою `filter()` фільтрує вміст масиву за певним критерієм пошуку.
 
 ```js
-let fruits = ['яблуко', 'банан', 'виноград', 'манго', 'апельсин'];
-
-/**
- * Фільтрує елементи масиву за певним критерієм пошуку (запиту)
- */
-function filterItems(arr, query) {
-  return arr.filter(function (el) {
-    return el.toLowerCase().indexOf(query.toLowerCase()) !== -1;
-  });
-}
-
-console.log(filterItems(fruits, 'ан')); // ['банан', 'манго']
-console.log(filterItems(fruits, 'ин')); // ['виноград', 'апельсин']
-```
-
-#### Реалізація ES2015
-
-```js
 const fruits = ['яблуко', 'банан', 'виноград', 'манго', 'апельсин'];
 
 /**
  * Фільтрує елементи масиву за певним критерієм пошуку (запиту)
  */
-const filterItems = (arr, query) => {
-  return arr.filter(
-    (el) => el.toLowerCase().indexOf(query.toLowerCase()) !== -1,
-  );
-};
+function filterItems(arr, query) {
+  return arr.filter((el) => el.toLowerCase().includes(query.toLowerCase()));
+}
 
 console.log(filterItems(fruits, 'ан')); // ['банан', 'манго']
 console.log(filterItems(fruits, 'ин')); // ['виноград', 'апельсин']

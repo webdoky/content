@@ -104,7 +104,7 @@ function compareNumbers(a, b) {
 }
 ```
 
-Метод `sort` можна зручно використовувати з {{jsxref("Operators/function", "виразами функцій", "", 1)}}:
+Метод `sort` можна зручно використовувати з [виразами функцій](/uk/docs/Web/JavaScript/Reference/Operators/function) і [стрілковими функціями](/uk/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
 
 ```js
 const numbers = [4, 2, 5, 1, 3];
@@ -112,17 +112,13 @@ numbers.sort(function (a, b) {
   return a - b;
 });
 console.log(numbers);
-
 // [1, 2, 3, 4, 5]
-```
 
-ES2015 дає змогу користуватись {{jsxref("Functions/Arrow_functions", "виразами стрілкової функції", "", 1)}} зі ще коротшим синтаксисом.
+// АБО
 
-```js
-const numbers = [4, 2, 5, 1, 3];
-numbers.sort((a, b) => a - b);
-console.log(numbers);
-
+const numbers2 = [4, 2, 5, 1, 3];
+numbers2.sort((a, b) => a - b);
+console.log(numbers2);
 // [1, 2, 3, 4, 5]
 ```
 
@@ -139,12 +135,10 @@ const items = [
 ];
 
 // сортувати за властивістю value
-items.sort(function (a, b) {
-  return a.value - b.value;
-});
+items.sort((a, b) => a.value - b.value);
 
 // сортувати за властивістю name
-items.sort(function (a, b) {
+items.sort((a, b) => {
   const nameA = a.name.toUpperCase(); // ігноруємо малі та великі літери
   const nameB = b.name.toUpperCase(); // ігноруємо малі та великі літери
   if (nameA < nameB) {
@@ -197,9 +191,7 @@ mixedNumericArray.sort(compareNumbers); // [1, 5, '9', 40, '80', 200, '700']
 
 ```js
 const items = ['réservé', 'premier', 'communiqué', 'café', 'adieu', 'éclair'];
-items.sort(function (a, b) {
-  return a.localeCompare(b);
-});
+items.sort((a, b) => a.localeCompare(b));
 
 // items містить ['adieu', 'café', 'communiqué', 'éclair', 'premier', 'réservé']
 ```
