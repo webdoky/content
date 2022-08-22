@@ -49,8 +49,6 @@ match(regexp);
 - Якщо потрібен лише перший знайдений збіг, можна натомість застосувати {{jsxref("RegExp.prototype.exec()")}}.
 - Якщо необхідно отримати захоплені групи та встановлено прапорець глобального пошуку, слід натомість використовувати {{jsxref("RegExp.prototype.exec()")}} чи {{jsxref("String.prototype.matchAll()")}}.
 
-For more information about the semantics of `match()` when a regex is passed, see [`RegExp.prototype[@@match]()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@match).
-
 Для отримання подробиць семантики `match()`, коли в нього передається регулярний вираз, дивіться [`RegExp.prototype[@@match]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@match).
 
 ## Приклади
