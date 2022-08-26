@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2022-08-19 - 2022-08-26]
+
+* **Оновлення перекладу(JS):** web/javascript/reference/operators/destructuring_assignment (#576) ([9ed4097](https://github.com/webdoky/content/commit/9ed40976edc6c7de7b7fdf909a537ea5350bff3e))
+* **Оновлення перекладу(JS):** web/javascript/reference/functions/arrow_functions (#574) ([6a58640](https://github.com/webdoky/content/commit/6a5864074aa2d23d783c08367d595f8018b67b7f))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/date (#569) ([3bb4b4e](https://github.com/webdoky/content/commit/3bb4b4e462edc74c0bbca8cf2e756bdff02176ae))
+
 ## [2022-08-12 - 2022-08-19]
 
 * **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array (#566) ([64b9cf4](https://github.com/webdoky/content/commit/64b9cf4205bee8c4e8be9807e7e529e9507dca2d))
