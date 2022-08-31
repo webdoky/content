@@ -44,8 +44,6 @@ replace(pattern, replacement);
 
 Рядковий патерн замінюється лише раз. Аби виконати глобальний пошук із заміною, слід застосувати регулярний вираз із позначкою `g` або використати натомість [`replaceAll()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll).
 
-If `pattern` is an object with a [`Symbol.replace`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/replace) method (including `RegExp` objects), that method is called with the target string and `replacement` as arguments. Its return value becomes the return value of `replace()`. In this case the behavior of `replace()` is entirely encoded by the `@@replace` method — for example, any mention of "capturing groups" in the description below is actually functionality provided by [`RegExp.prototype[@@replace]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@replace).
-
 Якщо `pattern` є об'єктом із методом [`Symbol.replace`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/replace) (в т.ч. об'єктом `RegExp`), то такий метод викликається з цільовим рядком і `replacement` як аргументами. ого повернене значення стає поверненим значенням `replace()`. У такому випадку поведінка `replace()` цілком захована у методі `@@replace`: наприклад, будь-які згадки "груп захоплення" в описі нижче насправді є функціональністю, наданою [`RegExp.prototype[@@replace]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@replace).
 
 Якщо `pattern` є порожнім рядком, то заміна вставляється в початок вихідного рядка.
