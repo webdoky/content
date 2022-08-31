@@ -62,8 +62,8 @@ push(element0, element1, /* … ,*/ elementN);
 додає до нього ще два елементи. Змінна `total` містить нову довжину масиву.
 
 ```js
-let sports = ['футбол', 'бокс'];
-let total = sports.push('теніс', 'баскетбол');
+const sports = ['футбол', 'бокс'];
+const total = sports.push('теніс', 'баскетбол');
 
 console.log(sports); // ['футбол', 'бокс', 'теніс', 'баскетбол']
 console.log(total); // 4
@@ -75,8 +75,8 @@ console.log(total); // 4
 використовується {{jsxref("Operators/Spread_syntax", "синтаксис розгортання", "", "1")}}
 
 ```js
-let vegetables = ['пастернак', 'картопля'];
-let moreVegs = ['селера', 'буряк'];
+const vegetables = ['пастернак', 'картопля'];
+const moreVegs = ['селера', 'буряк'];
 
 // Об’єднання другого масиву в перший
 vegetables.push(...moreVegs);
@@ -98,7 +98,7 @@ console.log(vegetables); // ['пастернак', 'картопля', 'селе
 завдяки тому, що JavaScript дозволяє встановлювати контекст виконання будь-яким способом.
 
 ```js
-let obj = {
+const obj = {
   length: 0,
 
   addElem(elem) {
