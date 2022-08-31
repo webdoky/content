@@ -79,7 +79,7 @@ border-radius: unset;
   <tbody>
     <tr>
       <td><em>радіус</em></td>
-      <td><img alt="all-corner.png" src="all-corner.png" /></td>
+      <td><img alt="Блакитний прямокутник зі світло-сірою межею. Всі 4 кути закруглені." src="all-corner.png" /></td>
       <td>
         {{cssxref("&lt;length&gt;")}} чи {{cssxref("&lt;percentage&gt;")}}, що позначає радіус для використання в кожному куті межі. Використовується лише в синтаксисі одного значення.
       </td>
@@ -87,7 +87,7 @@ border-radius: unset;
     <tr>
       <td><em>згори-зліва-і-знизу-справа</em></td>
       <td>
-        <img alt="top-left-bottom-right.png" src="top-left-bottom-right.png" />
+        <img alt="Блакитний прямокутник зі світло-сірою межею. 2 кути, згори зліва й внизу справа, закруглені." src="top-left-bottom-right.png" />
       </td>
       <td>
         {{cssxref("&lt;length&gt;")}} чи {{cssxref("&lt;percentage&gt;")}}, що позначає радіус для використання у верхньому лівому й нижньому правому кутах рамок елемента. Використовується лише в синтаксисі двох значень.
@@ -96,7 +96,7 @@ border-radius: unset;
     <tr>
       <td><em>згори-справа-і-знизу-зліва</em></td>
       <td>
-        <img alt="top-right-bottom-left.png" src="top-right-bottom-left.png" />
+        <img alt="Блакитний прямокутник зі світло-сірою межею. 2 кути, згори справа і внизу зліва, закруглені." src="top-right-bottom-left.png" />
       </td>
       <td>
         {{cssxref("&lt;length&gt;")}} чи {{cssxref("&lt;percentage&gt;")}}, що позначає радіус для використання у верхньому правому й нижньому лівому кутах рамок елемента. Використовується лише в синтаксисах двох і трьох значень.
@@ -104,28 +104,28 @@ border-radius: unset;
     </tr>
     <tr>
       <td><em>згори-зліва</em></td>
-      <td><img alt="top-left.png" src="top-left.png" /></td>
+      <td><img alt="Блакитний прямокутник зі світло-сірою межею. Кут згори зліва закруглений." src="top-left.png" /></td>
       <td>
         {{cssxref("&lt;length&gt;")}} чи {{cssxref("&lt;percentage&gt;")}}, що позначає радіус для використання у верхньому лівому куті рамок елемента. Використовується лише в синтаксисах трьох та чотирьох значень.
       </td>
     </tr>
     <tr>
       <td><em>згори-справа</em></td>
-      <td><img alt="top-right.png" src="top-right.png" /></td>
+      <td><img alt="Блакитний прямокутник зі світло-сірою межею. Кут згори справа закруглений." src="top-right.png" /></td>
       <td>
         {{cssxref("&lt;length&gt;")}} чи {{cssxref("&lt;percentage&gt;")}}, що позначає радіус для використання у верхньому правому куті рамок елемента. Використовується лише в синтаксисі чотирьох значень.
       </td>
     </tr>
     <tr>
       <td><em>знизу-справа</em></td>
-      <td><img alt="bottom-right.png" src="bottom-right.png" /></td>
+      <td><img alt="Блакитний прямокутник зі світло-сірою межею. Кут внизу справа закруглений." src="bottom-right.png" /></td>
       <td>
         {{cssxref("&lt;length&gt;")}} чи {{cssxref("&lt;percentage&gt;")}}, що позначає радіус для використання у нижньому правому куті рамок елемента. Використовується лише в синтаксисах трьох і чотирьох значень.
       </td>
     </tr>
     <tr>
       <td><em>знизу-зліва</em></td>
-      <td><img alt="bottom-left.png" src="bottom-left.png" /></td>
+      <td><img alt="Блакитний прямокутник зі світло-сірою межею. Кут знизу зліва закруглений." src="bottom-left.png" /></td>
       <td>
         {{cssxref("&lt;length&gt;")}} чи {{cssxref("&lt;percentage&gt;")}}, що позначає радіус для використання у нижньому лівому куті рамок елемента. Використовується лише в синтаксисі чотирьох значень.
       </td>
