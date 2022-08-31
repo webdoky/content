@@ -146,14 +146,14 @@ const fruits = ['Яблуко', 'Банан'];
 console.log(fruits.length);
 // 2
 
-// Масив 'fruits' створений за допомогою конструктора Array()
+// Масив 'fruits2' створений за допомогою конструктора Array()
 const fruits2 = new Array('Яблуко', 'Банан');
-console.log(fruits.length);
+console.log(fruits2.length);
 // 2
 
-// Масив 'fruits' створений за допомогою String.prototype.split().
+// Масив 'fruits3' створений за допомогою String.prototype.split().
 const fruits3 = 'Яблуко, Банан'.split(', ');
-console.log(fruits.length);
+console.log(fruits3.length);
 // 2
 ```
 
