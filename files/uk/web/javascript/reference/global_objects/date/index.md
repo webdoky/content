@@ -92,7 +92,7 @@ browser-compat: javascript.builtins.Date
   - : Повертає місяць (`0` – `11`) вказаної дати, відповідно до всесвітнього часу.
 - {{jsxref("Date.prototype.getUTCSeconds()")}} (отримати секунди відповідно до всесвітнього часу)
   - : Повертає секунди (`0` – `59`) вказаної дати, відповідно до всесвітнього часу.
-- {{jsxref("Date.prototype.getYear()")}} (отримати рік)
+- {{jsxref("Date.prototype.getYear()")}} (отримати рік) {{Deprecated_Inline}}
   - : Повертає рік (зазвичай 2–3 цифри) вказаної дати, відповідно до локального часу. Замість цієї функції рекомендується застосовувати {{jsxref("Date.prototype.getFullYear()", "getFullYear()")}}.
 - {{jsxref("Date.prototype.setDate()")}} (встановити дату)
   - : Встановлює день місяця для вказаної дати, відповідно до локального часу.
@@ -124,7 +124,7 @@ browser-compat: javascript.builtins.Date
   - : Встановлює місяць для вказаної дати, відповідно до всесвітнього часу.
 - {{jsxref("Date.prototype.setUTCSeconds()")}} (встановити секунди відповідно до всесвітнього часу)
   - : Встановлює секунди для вказаної дати, відповідно до всесвітнього часу.
-- {{jsxref("Date.prototype.setYear()")}} (встановити рік відповідно до всесвітнього часу)
+- {{jsxref("Date.prototype.setYear()")}} (встановити рік відповідно до всесвітнього часу) {{Deprecated_Inline}}
   - : Встановлює рік (зазвичай 2–3 цифри) для вказаної дати, відповідно до локального часу. Замість цієї функції рекомендується застосовувати {{jsxref("Date.prototype.setFullYear()", "setFullYear()")}}.
 - {{jsxref("Date.prototype.toDateString()")}} (до рядка дати)
   - : Повертає частину {{jsxref("Date")}}, яка стосується дати, як зрозумілий людині рядок, як от `'Thu Apr 12 2018'`.
@@ -132,7 +132,7 @@ browser-compat: javascript.builtins.Date
   - : Перетворює дату на рядок відповідно до формату ISO 8601 Extended Format.
 - {{jsxref("Date.prototype.toJSON()")}} (до JSON)
   - : Повертає рядок, що відповідає даті в {{jsxref("Date")}}, сформований за допомогою {{jsxref("Date.prototype.toISOString()", "toISOString()")}}. Призначений для використання функцією {{jsxref("JSON.stringify()")}}.
-- {{jsxref("Date.prototype.toGMTString()")}} (до рядка за Гринвічем)
+- {{jsxref("Date.prototype.toGMTString()")}} (до рядка за Гринвічем) {{Deprecated_Inline}}
   - : Повертає рядок, що відповідає даті в {{jsxref("Date")}} відносно часової зони GMT (UTC). Замість цього методу слід застосовувати {{jsxref("Date.prototype.toUTCString()", "toUTCString()")}}.
 - {{jsxref("Date.prototype.toLocaleDateString()")}} (до місцевого рядка дати)
   - : Повертає порцію об'єкта `Date`, що містить дату, як рядок, оформлений з урахуванням локально специфічних деталей на основі системних налаштувань.
