@@ -158,10 +158,10 @@ const getMax = (a, b) => Math.max(a, b);
 ```js
 const array = [15, 16, 17, 18, 19];
 
-function reducer(previous, current, index) {
-  const returns = previous + current;
+function reducer(previousValue, currentValue, index) {
+  const returns = previousValue + currentValue;
   console.log(
-    `previous: ${previous}, current: ${current}, index: ${index}, returns: ${returns}`,
+    `previousValue: ${previousValue}, currentValue: ${currentValue}, index: ${index}, returns: ${returns}`,
   );
   return returns;
 }
@@ -169,66 +169,16 @@ function reducer(previous, current, index) {
 array.reduce(reducer);
 ```
 
-Функція зворотного виклику виконається чотири рази, з наступними аргументами та поверненими значеннями під час кожного виклику:
+Функція зворотного виклику закликається чотири рази, з наступними аргументами та поверненими значеннями під час кожного виклику:
 
-<table class="standard-table">
-  <thead>
-    <tr>
-      <th scope="col">
-        Ітерація <code><var>callback</var></code>
-      </th>
-      <th scope="col">
-        <code><var>previousValue</var></code>
-      </th>
-      <th scope="col">
-        <code><var>currentValue</var></code>
-      </th>
-      <th scope="col">
-        <code><var>currentIndex</var></code>
-      </th>
-      <th scope="col">
-        <code><var>array</var></code>
-      </th>
-      <th scope="col">Повернене значення</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">Перший виклик</th>
-      <td><code>15</code></td>
-      <td><code>16</code></td>
-      <td><code>1</code></td>
-      <td><code>[15, 16, 17, 18, 19]</code></td>
-      <td><code>31</code></td>
-    </tr>
-    <tr>
-      <th scope="row">Другий виклик</th>
-      <td><code>31</code></td>
-      <td><code>17</code></td>
-      <td><code>2</code></td>
-      <td><code>[15, 16, 17, 18, 19]</code></td>
-      <td><code>48</code></td>
-    </tr>
-    <tr>
-      <th scope="row">Третій виклик</th>
-      <td><code>48</code></td>
-      <td><code>18</code></td>
-      <td><code>3</code></td>
-      <td><code>[15, 16, 17, 18, 19]</code></td>
-      <td><code>66</code></td>
-    </tr>
-    <tr>
-      <th scope="row">Четвертий виклик</th>
-      <td><code>66</code></td>
-      <td><code>19</code></td>
-      <td><code>4</code></td>
-      <td><code>[15, 16, 17, 18, 19]</code></td>
-      <td><code>85</code></td>
-    </tr>
-  </tbody>
-</table>
+|                  | `previousValue` | `currentValue` | `index` | Повернене значення |
+| ---------------- | --------------- | -------------- | ------- | ------------------ |
+| Перший виклик    | `15`            | `16`           | `1`     | `31`               |
+| Другий виклик    | `31`            | `17`           | `2`     | `48`               |
+| Третій виклик    | `48`            | `18`           | `3`     | `66`               |
+| Четвертий виклик | `66`            | `19`           | `4`     | `85`               |
 
-Значення, повернене з `reduce()`, буде таке саме, як результат останнього виконання функції зворотного виклику (`85`).
+Параметр `array` ніколи не змінюється протягом процесу – він завжди `[15, 16, 17, 18, 19]`. Значення, повернене `reduce()`, буде значенням, поверненим останнім закликом функції зворотного виклику (`85`).
 
 ### Як працює reduce() зі вказаним початковим значенням
 
@@ -241,72 +191,15 @@ array.reduce(reducer);
 );
 ```
 
-Функція зворотного виклику буде виконана п'ять разів, з наступними аргументами та поверненими значеннями під час кожного виклику:
+Функція зворотного виклику буде закликана п'ять разів, з наступними аргументами та поверненими значеннями під час кожного виклику:
 
-<table class="standard-table">
-  <thead>
-    <tr>
-      <th scope="col">
-        Ітерація <code><var>callback</var></code>
-      </th>
-      <th scope="col">
-        <code><var>previousValue</var></code>
-      </th>
-      <th scope="col">
-        <code><var>currentValue</var></code>
-      </th>
-      <th scope="col">
-        <code><var>currentIndex</var></code>
-      </th>
-      <th scope="col">
-        <code><var>array</var></code>
-      </th>
-      <th scope="col">Повернене значення</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">Перший виклик</th>
-      <td><code>10</code></td>
-      <td><code>15</code></td>
-      <td><code>0</code></td>
-      <td><code>[15, 16, 17, 18, 19]</code></td>
-      <td><code>25</code></td>
-    </tr>
-    <tr>
-      <th scope="row">Другий виклик</th>
-      <td><code>25</code></td>
-      <td><code>16</code></td>
-      <td><code>1</code></td>
-      <td><code>[15, 16, 17, 18, 19]</code></td>
-      <td><code>41</code></td>
-    </tr>
-    <tr>
-      <th scope="row">Третій виклик</th>
-      <td><code>41</code></td>
-      <td><code>17</code></td>
-      <td><code>2</code></td>
-      <td><code>[15, 16, 17, 18, 19]</code></td>
-      <td><code>58</code></td>
-    </tr>
-    <tr>
-      <th scope="row">Четвертий виклик</th>
-      <td><code>58</code></td>
-      <td><code>18</code></td>
-      <td><code>3</code></td>
-      <td><code>[15, 16, 17, 18, 19]</code></td>
-      <td><code>76</code></td>
-    </tr>
-    <tr>
-      <th scope="row">П'ятий виклик</th>
-      <td><code>76</code></td>
-      <td><code>19</code></td>
-      <td><code>4</code></td>
-      <td><code>[15, 16, 17, 18, 19]</code></td>
-      <td><code>95</code></td>
-    </tr>
-  </tbody>
-</table>
+|                  | `previousValue` | `currentValue` | `index` | Повернене значення |
+| ---------------- | --------------- | -------------- | ------- | ------------------ |
+| Перший виклик    | `10`            | `15`           | `0`     | `25`               |
+| Другий виклик    | `25`            | `16`           | `1`     | `41`               |
+| Третій виклик    | `41`            | `17`           | `2`     | `58`               |
+| Четвертий виклик | `58`            | `18`           | `3`     | `76`               |
+| П'ятий виклик    | `76`            | `19`           | `4`     | `95`               |
 
 В цьому випадку `reduce()` поверне значення `95`.
 
@@ -383,7 +276,7 @@ const groupedPeople = groupBy(people, 'age');
 // }
 ```
 
-### Зчеплення масивів, що знаходяться всередині масиву об'єктів, за допомогою spread-оператора та initialValue
+### Зчеплення масивів, що знаходяться всередині масиву об'єктів, за допомогою синтаксису розгортання та initialValue
 
 ```js
 // friends - масив об'єктів,
