@@ -23,7 +23,7 @@ browser-compat: javascript.builtins.Array
 
 - **Масиви JavaScript не є асоціативними ми**, а отже – [елементи масиву не можуть бути отримані з використанням рядків замість індексів](#prymitky), натомість слід використовувати цілі числа як індекси.
 
-- **Масиви JavaScript [нумеруються з нуля (англ.)](https://en.wikipedia.org/wiki/Zero-based_numbering)**: перший елемент масиву знаходиться за індексом `0`, другий – за індексом `1`, і так далі – а останній елемент знаходиться індексом, рівним значенню властивості {{jsxref("Array.length", "length")}} масиву мінус `1`.
+- **Масиви JavaScript [нумеруються з нуля (англ.)](https://en.wikipedia.org/wiki/Zero-based_numbering)**: перший елемент масиву знаходиться за індексом `0`, другий – за індексом `1`, і так далі – а останній елемент знаходиться індексом, рівним значенню властивості {{jsxref("Array/length", "length")}} масиву мінус `1`.
 
 - **[Операції копіювання масиву](#kopiiuvannia-masyvu) створюють [поверхневі копії](/uk/docs/Glossary/Shallow_copy)**. (Усі стандартні вбудовані операції копіювання _будь-яких_ об'єктів JavaScript objects створюють поверхневі копії, а не [глибинні копії](/uk/docs/Glossary/Deep_copy)).
 
@@ -595,11 +595,11 @@ console.log(years['2'] != years['02']);
 
 ### Взаємозв'язок між довжиною та числовими властивостями
 
-Властивість масиву JavaScript {{jsxref("Array.length", "length")}} та числові властивості є пов'язаними.
+Властивість масиву JavaScript {{jsxref("Array/length", "length")}} та числові властивості є пов'язаними.
 
-Декілька вбудованих методів масиву (наприклад, {{jsxref("Array.join", "join()")}}, {{jsxref("Array.slice", "slice()")}}, {{jsxref("Array.indexOf", "indexOf()")}} тощо) враховують значення властивості масиву {{jsxref("Array.length", "length")}}, коли спрацьовують.
+Декілька вбудованих методів масиву (наприклад, {{jsxref("Array/join", "join()")}}, {{jsxref("Array/slice", "slice()")}}, {{jsxref("Array/indexOf", "indexOf()")}} тощо) враховують значення властивості масиву {{jsxref("Array/length", "length")}}, коли спрацьовують.
 
-Інші методи (наприклад, {{jsxref("Array.push", "push()")}}, {{jsxref("Array.splice", "splice()")}} тощо) на додачу оновлюють властивість масиву {{jsxref("Array.length", "length")}}.
+Інші методи (наприклад, {{jsxref("Array/push", "push()")}}, {{jsxref("Array/splice", "splice()")}} тощо) на додачу оновлюють властивість масиву {{jsxref("Array/length", "length")}}.
 
 ```js
 const fruits = [];
@@ -607,7 +607,7 @@ fruits.push('банан', 'яблуко', 'персик');
 console.log(fruits.length); // 3
 ```
 
-При встановленні властивості масиву JavaScript, за умови що значення є дійсним індексом масиву і що індекс лежить за поточними межами масиву, рушій оновить властивість {{jsxref("Array.length", "length")}} масиву відповідним чином:
+При встановленні властивості масиву JavaScript, за умови що значення є дійсним індексом масиву і що індекс лежить за поточними межами масиву, рушій оновить властивість {{jsxref("Array/length", "length")}} масиву відповідним чином:
 
 ```js
 fruits[5] = 'манго';
@@ -616,7 +616,7 @@ console.log(Object.keys(fruits)); // ['0', '1', '2', '5']
 console.log(fruits.length); // 6
 ```
 
-Збільшення {{jsxref("Array.length", "length")}}.
+Збільшення {{jsxref("Array/length", "length")}}.
 
 ```js
 fruits.length = 10;
@@ -626,7 +626,7 @@ console.log(fruits.length); // 10
 console.log(fruits[8]); // undefined
 ```
 
-Зменшення властивості {{jsxref("Array.length", "length")}}, утім, видаляє елементи.
+Зменшення властивості {{jsxref("Array/length", "length")}}, утім, видаляє елементи.
 
 ```js
 fruits.length = 2;
@@ -634,7 +634,7 @@ console.log(Object.keys(fruits)); // ['0', '1']
 console.log(fruits.length); // 2
 ```
 
-Така поведінка докладніше пояснена на сторінці {{jsxref("Array.length")}}.
+Така поведінка докладніше пояснена на сторінці {{jsxref("Array/length")}}.
 
 ### Створення масиву на основі результату збігу
 
