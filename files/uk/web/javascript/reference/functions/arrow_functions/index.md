@@ -307,7 +307,7 @@ const bound = add.bind(obj);
 console.log(bound(1, 2, 3)); // результат — 2026
 ```
 
-Можливо, найбільшу користь стрілкові функції приносять під час використання їх з методами {{domxref("setTimeout()")}} й {{domxref("EventTarget/addEventListener()", "EventTarget.addEventListener()")}}, що часто потребує певного замикання, методу `call`, `apply` чи `bind`, щоб пересвідчитись, що функція виконується в правильному контексті.
+Можливо, найбільшу користь стрілкові функції приносять під час використання їх з методами {{domxref("setTimeout()")}} й {{domxref("EventTarget/addEventListener()", "EventTarget.prototype.addEventListener()")}}, що часто потребує певного замикання, методу `call`, `apply` чи `bind`, щоб пересвідчитись, що функція виконується в правильному контексті.
 
 #### Приклад з традиційною функцією
 
