@@ -16,7 +16,7 @@ browser-compat: javascript.builtins.String
 
 ## Опис
 
-Рядки корисні для зберігання тих даних, які можна представити в текстовій формі. Деякі з найуживаніших операцій з рядками включають: визначення їхньої {{jsxref("String.length",
+Рядки корисні для зберігання тих даних, які можна представити в текстовій формі. Деякі з найуживаніших операцій з рядками включають: визначення їхньої {{jsxref("String/length",
   "довжини")}}, збирання і з'єднання їх докупи за допомогою
 [операторів + та += для роботи з рядками](/uk/docs/Web/JavaScript/Guide/Expressions_and_Operators#string_operators), перевірку наявності чи знаходження позиції підрядка за допомогою
 методу {{jsxref("String.prototype.indexOf()", "indexOf()")}}, або ж витягання певних підрядків за допомогою методу {{jsxref("String.prototype.substring()", "substring()")}}.
@@ -123,6 +123,27 @@ console.log(eval(s2)); // повертає рядок "2 + 2"
 console.log(eval(s2.valueOf())); // повертає число 4
 ```
 
+### Зведення до рядка
+
+Чимало вбудованих операцій, що очікують на рядки, спершу зводять свої аргументи до типу рядка (здебільшого саме через це об'єкти `String` поводяться подібно до рядкових примітивів). [Операція (англ.)](https://tc39.es/ecma262/#sec-tostring) може бути описана наступним чином:
+
+- Рядки повертаються як є.
+- [`undefined`](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined) перетворюється на `"undefined"`.
+- [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) перетворюється на `"null"`.
+- `true` перетворюється на `"true"`; `false` перетворюється на `"false"`.
+- Числа перетворюється за тим само алгоритмом, що використовується в [`toString(10)`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number/toString).
+- Значення [BigInt](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt) перетворюються за тим само алгоритмом, що використовується в [`toString(10)`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/toString).
+- [Символи](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol) викидають {{jsxref("TypeError")}}.
+- Об'єкти спершу перетворюються на примітиви шляхом виклику їх методів [`[@@toPrimitive]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive) (зі `"string"` як підказкою), `toString()` чи `valueOf()` – у такому порядку. Після цього результівний примітив перетворюється на рядок.
+
+Є декілька способів досягнути в JavaScript майже такого самого ефекту.
+
+- [Шаблонний літерал](/uk/docs/Web/JavaScript/Reference/Template_literals): `` `${x}` `` виконує точно такі ж самі кроки приведення, як описані вище, для вбудованого виразу.
+- Функція [`String()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/String): `String(x)` застосовує для перетворення `x` такий само алгоритм, окрім того, що [символи](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol) не викидають {{jsxref("TypeError")}}, а повертають `"Symbol(description)"`, де `description` – [опис](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/description) відповідного символу.
+- Застосування [оператора `+`](/uk/docs/Web/JavaScript/Reference/Operators/Addition): `"" + x` зводить свій операнд до _примітива_, а не _рядка_, і для певних об'єктів має геть інакшу логіку, ніж звичайне приведення до рядка. Дивіться його [сторінку довідки](/uk/docs/Web/JavaScript/Reference/Operators/Addition) для отримання подробиць.
+
+Залежно від конкретної ситуації може мати зміст використання `` `${x}` `` (аби зімітувати вбудовану логіку) чи `String(x)` (для обробки символів без викидання помилок), однак не слід застосовувати `"" + x`.
+
 ### Керівні послідовності
 
 Спеціальні символи можна кодувати за допомогою спеціальних керівних послідовностей:
@@ -201,11 +222,9 @@ let longString =
 
 ## Статичні методи
 
-- {{jsxref("String.fromCharCode()", "String.fromCharCode(<var>num1</var> [, ...[,
-    <var>numN</var>]])")}} (із коду символу)
+- {{jsxref("String.fromCharCode()")}} (із коду символу)
   - : Повертає рядок, створений з переданої послідовності юнікодних значень.
-- {{jsxref("String.fromCodePoint()", "String.fromCodePoint(<var>num1</var> [, ...[,
-    <var>numN</var>)")}} (із кодової одиниці)
+- {{jsxref("String.fromCodePoint()")}} (із кодової точки)
   - : Повертає рядок, створений з переданої послідовності кодів.
 - {{jsxref("String.raw()")}} (необроблений)
   - : Повертає новий рядок, створений з необробленого рядка, переданого аргументом.
@@ -217,72 +236,53 @@ let longString =
 
 ## Методи екземпляра
 
-- {{jsxref("String.prototype.at()", "String.prototype.at(<var>index</var>)")}} (на (позиції))
+- {{jsxref("String.prototype.at()")}} (на (позиції))
   - : Повертає символ (рівно одну кодову одиницю UTF-16) за вказаним індексом `index`. Приймає також від'ємні числа, які позначають позицію з кінця рядка.
-- {{jsxref("String.prototype.charAt()", "String.prototype.charAt(<var>index</var>)")}} (символ на (позиції))
+- {{jsxref("String.prototype.charAt()")}} (символ на (позиції))
   - : Повертає символ (рівно одну кодову одиницю UTF-16) за вказаним індексом `index`.
-- {{jsxref("String.prototype.charCodeAt()", "String.prototype.charCodeAt(<var>index</var>)")}} (код символу на (позиції))
+- {{jsxref("String.prototype.charCodeAt()")}}(код символу на (позиції))
   - : Повертає число, яке є значенням кодової одиниці UTF-16 за вказаним індексом `index`.
-- {{jsxref("String.prototype.codePointAt()", "String.prototype.codePointAt(<var>pos</var>)")}} (кодова одиниця на (позиції))
-  - : Повертає додатне ціле число — значення кодової одиниці в кодуванні UTF-16, яка знаходиться за вказаною позицією `pos`.
-- {{jsxref("String.prototype.concat()", "String.prototype.concat(<var>str </var>[,
-    ...<var>strN </var>])")}} (з'єднати)
+- {{jsxref("String.prototype.codePointAt()")}} (кодова точка на (позиції))
+  - : Повертає невід'ємне ціле число — значення кодової одиниці в кодуванні UTF-16, яка знаходиться за вказаною позицією `pos`.
+- {{jsxref("String.prototype.concat()")}} (з'єднати)
   - : Об'єднує передані дві (або більше) стрічки тексту, і повертає результат — новий рядок.
-- {{jsxref("String.prototype.includes()",
-    "String.prototype.includes(<var>searchString</var> [, <var>position</var>])")}} (включає)
+- {{jsxref("String.prototype.includes()")}} (включає)
   - : Визначає, чи рядок, на якому викликається цей метод, містить переданий підрядок `searchString`.
-- {{jsxref("String.prototype.endsWith()",
-    "String.prototype.endsWith(<var>searchString</var> [, <var>length</var>])")}} (закінчується на)
+- {{jsxref("String.prototype.endsWith()")}} (закінчується на)
   - : Визначає, чи рядок завершується символами вказаними в `searchString`.
-- {{jsxref("String.prototype.indexOf()",
-    "String.prototype.indexOf(<var>searchValue</var> [, <var>fromIndex</var>])")}} (індекс (підрядка))
+- {{jsxref("String.prototype.indexOf()")}} (індекс (підрядка))
   - : Шукає значення `searchValue` всередині об'єкта {{jsxref("String")}}, на якому викликається метод. Повертає індекс першого знайденого підрядка, або `-1`, якщо такого підрядка не було знайдено.
-- {{jsxref("String.prototype.lastIndexOf()", (останній індекс (підрядка))
-    "String.prototype.lastIndexOf(<var>searchValue</var> [, <var>fromIndex</var>])")}}
+- {{jsxref("String.prototype.lastIndexOf()")}} (останній індекс (підрядка))
   - : Шукає значення `searchValue` всередині об'єкта {{jsxref("String")}}, на якому викликається метод. Повертає індекс останнього знайденого підрядка, або `-1`, якщо такого підрядка не було знайдено.
-- {{jsxref("String.prototype.localeCompare()",
-    "String.prototype.localeCompare(<var>compareString</var> [, <var>locales</var> [,
-    <var>options</var>]])")}} (порівняти згідно з локаллю)
+- {{jsxref("String.prototype.localeCompare()")}} (порівняти згідно з локаллю)
   - : Повертає число, яке вказує, чи переданий рядок `compareString` під час сортування повинен стояти перед, після, або є еквівалентним до початкового рядка.
-- {{jsxref("String.prototype.match()", "String.prototype.match(<var>regexp</var>)")}} (зіставити)
+- {{jsxref("String.prototype.match()")}} (зіставити)
   - : Використовується для зіставлення рядка із регулярним виразом `regexp`.
-- {{jsxref("String.prototype.matchAll()",
-    "String.prototype.matchAll(<var>regexp</var>)")}} (зіставити повністю)
+- {{jsxref("String.prototype.matchAll()")}} (зіставити повністю)
   - : Повертає ітератор, що містить усі збіги з переданим регулярним виразом `regexp`.
-- {{jsxref("String.prototype.normalize()",
-    "String.prototype.normalize([<var>form</var>])")}} (нормалізувати)
+- {{jsxref("String.prototype.normalize()")}} (нормалізувати)
   - : Повертає нормалізовану юнікодну форму рядка, на якому викликається метод.
-- {{jsxref("String.prototype.padEnd()",
-    "String.prototype.padEnd(<var>targetLength</var> [, <var>padString</var>])")}} (заповнити кінець)
+- {{jsxref("String.prototype.padEnd()")}} (заповнити кінець)
   - : Заповнює даний рядок вмістом `padString` з кінця, і повертає новий рядок довжиною `targetLength`.
-- {{jsxref("String.prototype.padStart()",
-    "String.prototype.padStart(<var>targetLength</var> [, <var>padString</var>])")}} (заповнити початок)
+- {{jsxref("String.prototype.padStart()")}} (заповнити початок)
   - : Заповнює даний рядок вмістом `padString` з початку, і повертає новий рядок довжиною `targetLength`.
-- {{jsxref("String.prototype.repeat()", "String.prototype.repeat(<var>count</var>)")}} (повторювати)
+- {{jsxref("String.prototype.repeat()")}} (повторювати)
   - : Повертає рядок, що містить вміст початкового рядка, повторений `count` разів.
-- {{jsxref("String.prototype.replace()",
-    "String.prototype.replace(<var>searchFor</var>, <var>replaceWith</var>)")}} (замінити)
+- {{jsxref("String.prototype.replace()")}} (замінити)
   - : Використовується для заміни підрядка, що збігається з `searchFor`, вмістом `replaceWith`. Аргумент `searchFor` може бути як рядком, так і регулярним виразом, а `replaceWith` може бути або рядком, або функцією.
-- {{jsxref("String.prototype.replaceAll()",
-    "String.prototype.replaceAll(<var>searchFor</var>, <var>replaceWith</var>)")}} (замінити усі (входження))
+- {{jsxref("String.prototype.replaceAll()")}} (замінити усі (входження))
   - : Використовується для заміни всіх підрядків, що збігаються з `searchFor`, вмістом `replaceWith`. Аргумент `searchFor` може бути як рядком, так і регулярним виразом, а `replaceWith` може бути або рядком, або функцією.
-- {{jsxref("String.prototype.search()",
-    "String.prototype.search(<var>regexp</var>)")}} (шукати)
+- {{jsxref("String.prototype.search()")}} (шукати)
   - : Шукає збіги з регулярним виразом `regexp` у рядку, на якому було викликано метод.
-- {{jsxref("String.prototype.slice()", "String.prototype.slice(<var>beginIndex</var>[,
-    <var>endIndex</var>])")}} (вирізати скибку, зріз)
+- {{jsxref("String.prototype.slice()")}} (вирізати скибку, зріз)
   - : Видобуває частину рядка і повертає її як новий рядок.
-- {{jsxref("String.prototype.split()", "String.prototype.split([<var>sep</var> [,
-    <var>limit</var>] ])")}} (розділити на частини)
+- {{jsxref("String.prototype.split()")}} (розділити на частини)
   - : Повертає масив рядків, отриманих розділенням початкового рядка в усіх точках входження підрядка `sep`.
-- {{jsxref("String.prototype.startsWith()",
-    "String.prototype.startsWith(<var>searchString</var> [, <var>length</var>])")}} (починається (підрядком))
+- {{jsxref("String.prototype.startsWith()")}} (починається (підрядком))
   - : Визначає, чи рядок, на якому було викликано метод, починається послідовністю символів `searchString`.
-- {{jsxref("String.prototype.substring()",
-    "String.prototype.substring(<var>indexStart</var> [, <var>indexEnd</var>])")}} (підрядок)
+- {{jsxref("String.prototype.substring()")}} (підрядок)
   - : Повертає новий рядок, що містить символи початкового рядка, взятих починаючи з вказаного індексу (або з-поміж індексів, якщо було вказано обидва).
-- {{jsxref("String.prototype.toLocaleLowerCase()",
-    "String.prototype.toLocaleLowerCase([<var>locale</var>, ...<var>locales</var>])")}} (до нижнього регістру згідно з локаллю)
+- {{jsxref("String.prototype.toLocaleLowerCase()")}} (до нижнього регістру згідно з локаллю)
 
   - : Повертає символи з початкового рядка, переведені в нижній регістр з урахуванням поточної активної локалі.
 
