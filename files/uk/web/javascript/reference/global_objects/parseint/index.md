@@ -205,5 +205,5 @@ parseInt(undefined, 36); // 86464843759093: Рядок "undefined" – це 8646
 - {{jsxref("Number.parseFloat()")}}
 - {{jsxref("Number.parseInt()")}}
 - {{jsxref("Global_Objects/isNaN", "isNaN()")}}
-- {{jsxref("Number.toString()")}}
-- {{jsxref("Object.valueOf")}}
+- {{jsxref("Number.prototype.toString()")}}
+- {{jsxref("Object.prototype.valueOf()")}}
