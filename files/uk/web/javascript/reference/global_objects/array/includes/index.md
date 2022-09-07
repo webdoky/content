@@ -46,9 +46,9 @@ includes(searchElement, fromIndex);
 
 Булеве значення, яке дорівнює `true`, якщо значення `searchElement` було знайдено всередині масиву (або частини масиву, визначеної індексом `fromIndex`, якщо такий було задано).
 
-Всі значення нуля вважаються рівними, незалежно від знаку. Таким чином, `-0` вважається еквівалентним як `0`, так і `+0`, проте `false` _не_ вважається рівним `0`.
+Всі нульові значення вважаються рівними, незалежно від знаку. Таким чином, `-0` вважається еквівалентним як `0`, так і `+0`, проте `false` _не_ вважається рівним `0`. [`NaN`](/uk/docs/Web/JavaScript/Reference/Global_Objects/NaN) можна коректно шукати.
 
-> **Зауваження:** Технічно, `includes()` використовує [`sameValueZero`](/uk/docs/Web/JavaScript/Equality_comparisons_and_sameness#same-value-zero_equality) алгоритм для визначення, чи було знайдено шуканий елемент.
+> **Примітка:** Технічно, `includes()` використовує [`sameValueZero`](/uk/docs/Web/JavaScript/Equality_comparisons_and_sameness#same-value-zero_equality) алгоритм для визначення, чи було знайдено шуканий елемент.
 
 ## Приклади
 
