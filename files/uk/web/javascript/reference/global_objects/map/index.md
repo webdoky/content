@@ -25,10 +25,7 @@ browser-compat: javascript.builtins.Map
 
 ### Рівність ключів
 
-- Рівність ключів заснована на алгоритмі [`sameValueZero`](/uk/docs/Web/JavaScript/Equality_comparisons_and_sameness#same-value-zero_equality).
-- Значення {{jsxref("NaN")}} вважається рівним `NaN` (хоча `NaN !== NaN`), а всі інші значення вважаються однаковими згідно з семантикою оператора `===`.
-- В чинній специфікації ECMAScript `-0` та `+0` вважаються рівними, хоча в більш ранніх чернетках це було не так. Зверніться до _"Value equality for -0 and
-  0"_ в таблиці [Сумісності з браузерами](#sumisnist-iz-brauzeramy) за подробицями.
+Рівність значень заснована на алгоритмі [`sameValueZero`](/uk/docs/Web/JavaScript/Equality_comparisons_and_sameness#same-value-zero_equality). (Раніше використовувався алгоритм [SameValue](/uk/docs/Web/JavaScript/Equality_comparisons_and_sameness#same-value_equality_using_object.is), котрий розглядав `0` і `-0` як різні значення. Перевірте [сумісність із браузерами](#sumisnist-iz-brauzeramy).) Це означає, що значення {{jsxref("NaN")}} вважається рівним іншому значенню `NaN` (попри те, що `NaN !== NaN`), а всі решта значень перевіряються на рівність згідно з семантикою оператора `===`.
 
 ### Порівняння `Object` та `Map`
 
@@ -240,18 +237,15 @@ console.log(contacts.size); // 1
 
 - {{jsxref("Map.prototype.clear()")}}
   - : Видаляє всі пари ключ-значення з об'єкта `Map`.
-- {{jsxref("Map.delete", "Map.prototype.delete(<var>key</var>)")}}
+- {{jsxref("Map.prototype.delete()")}}
   - : Повертає `true`, якщо вказаний елемент знаходився всередині `Map` і був успішно видалений, або ж `false`, якщо вказаний елемент не існує. Після цього `Map.prototype.has(key)` повертатиме `false`.
-- {{jsxref("Map.get", "Map.prototype.get(<var>key</var>)")}}
+- {{jsxref("Map.prototype.get()")}}
   - : Повертає значення, пов'язане з `key`, або ж `undefined`, якщо такого значення немає.
-- {{jsxref("Map.has", "Map.prototype.has(<var>key</var>)")}}
+- {{jsxref("Map.prototype.has()")}}
   - : Повертає булеве значення, яке відображає наявність чи відсутність якогось значення, пов'язаного з ключем `key` в об'єкті `Map`.
-- {{jsxref("Map.set", "Map.prototype.set(<var>key</var>, <var>value</var>)")}}
+- {{jsxref("Map.prototype.set()")}}
   - : Призначає значення `value` за ключем `key` в об'єкті `Map`. Повертає об'єкт `Map`.
-
-### Методи для перебирання
-
-- {{jsxref("Map.@@iterator", "Map.prototype[@@iterator]()")}}
+- {{jsxref("Map/@@iterator", "Map.prototype[@@iterator]()")}}
   - : Повертає новий об'єкт Iterator, що містить **масив `[key, value]`** на кожний елемент об'єкта `Map`, у порядку їх вставки.
 - {{jsxref("Map.prototype.keys()")}}
   - : Повертає новий об'єкт Iterator, що містить **ключі** кожного елементу об'єкта `Map`, в порядку їх вставки.
@@ -259,8 +253,7 @@ console.log(contacts.size); // 1
   - : Повертає новий об'єкт Iterator, який містить **значення** кожного елементу об'єкта `Map`, в порядку їх вставки.
 - {{jsxref("Map.prototype.entries()")}}
   - : Повертає новий об'єкт Iterator, який містить **масив `[key, value]`** на кожний елемент об'єкта `Map`, у порядку їх вставки.
-- {{jsxref("Map.forEach", "Map.prototype.forEach(<var>callbackFn</var>[,
-    <var>thisArg</var>])")}}
+- {{jsxref("Map.prototype.forEach()")}}
   - : Викликає функцію `callbackFn` один раз для кожної пари ключ-значення, наявної в об'єкті `Map`, в порядку вставки. Якщо в метод `forEach` передано параметр `thisArg`, його буде використано як значення `this` для кожної функції зворотного виклику.
 
 ## Приклади
@@ -308,9 +301,9 @@ myMap.get(otherNaN);
 // "не число"
 ```
 
-### Перебирання об'єктів `Map` за допомогою `for..of`
+### Перебирання об'єктів `Map` за допомогою `for...of`
 
-Об'єкти `Map` можна перебирати за допомогою циклу `for..of`:
+Об'єкти `Map` можна перебирати за допомогою циклу `for...of`:
 
 ```js
 const myMap = new Map();
