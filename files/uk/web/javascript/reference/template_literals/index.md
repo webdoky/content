@@ -105,13 +105,7 @@ console.log(`П'ятнадцять — це ${a + b}, а
 // не 20."
 ```
 
-Зверніть увагу, що між двома синтаксисами присутня певна відмінність. Додавання приведе вираз до _примітива_, що перш за все призведе до виклику [`valueOf()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf); з іншого боку, шаблонний літерал проведе вираз до _рядка_, що призведе до виклику перш за все [`toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/toString). Якщо вираз має метод [`@@toPrimitive`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive), то зчеплення рядків викличе його з підказкою `"default"`, натомість шаблонні літерали використають `"string"`. Це важливо для об'єктів, що мають різні рядкове й примітивне представлення, як то [Temporal (англ.)](https://github.com/tc39/proposal-temporal), чий метод `valueOf()` викидає виняток.
-
-```js
-const t = Temporal.Now.instant();
-'' + t; // Викидає TypeError
-`${t}`; // '2022-07-31T04:48:56.113918308Z'
-```
+Зверніть увагу, що між двома синтаксисами присутня певна відмінність. Шаблонні літерали [напряму зводять свої вирази до рядків](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka), натомість додавання спершу зводить свої операнди до примітивів. Для отримання подробиць дивіться довідкову сторінку [оператора `+`](/uk/docs/Web/JavaScript/Reference/Operators/Addition).
 
 ### Вкладення шаблонів
 
