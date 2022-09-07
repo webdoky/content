@@ -65,16 +65,15 @@ function (a, b){
 // Стрілкова функція
 (a, b) => a + b + 100;
 
-// Традиційна анонімна функція (без аргументів)
 const a = 4;
 const b = 2;
+
+// Традиційна анонімна функція (без аргументів)
 (function (){
   return a + b + 100;
 })
 
 // Стрілкова функція (без аргументів)
-const a = 4;
-const b = 2;
 () => a + b + 100;
 ```
 
@@ -103,7 +102,7 @@ function bob(a) {
 }
 
 // Стрілкова функція
-const bob = (a) => a + 100;
+const bob2 = (a) => a + 100;
 ```
 
 ## Синтаксис
@@ -265,17 +264,17 @@ const add = function (a, b, c) {
 };
 
 // call
-const result = add.call(obj, 1, 2, 3); // встановлює "obj" як контекст виконання функції
-console.log(result); // результат — 106
+const resultCall = add.call(obj, 1, 2, 3); // встановлює "obj" як контекст виконання функції
+console.log(resultCall); // результат — 106
 
 // apply
 const arr = [1, 2, 3];
-const result = add.apply(obj, arr); // встановлює "obj" як контекст виконання функції
-console.log(result); // результат — 106
+const resultApply = add.apply(obj, arr); // встановлює "obj" як контекст виконання функції
+console.log(resultApply); // результат — 106
 
 // bind
-var result = add.bind(obj); // встановлює "obj" як контекст виконання функції
-console.log(result(1, 2, 3)); // результат — 106
+var resultBind = add.bind(obj); // встановлює "obj" як контекст виконання функції
+console.log(resultBind(1, 2, 3)); // результат — 106
 ```
 
 Якщо створити `add` як стрілкову функцію, то оскільки вона створена в контексті об'єкта `window` (глобальному контексті), вона вважатиме, що `this` і є `window`.
@@ -366,7 +365,9 @@ function foo(n) {
 foo(3); // 3 + 3 = 6
 ```
 
-В більшості випадків застосування [залишкових параметрів](/uk/docs/Web/JavaScript/Reference/Functions/rest_parameters) є доброю альтернативою використанню об'єкта `arguments`.
+> **Примітка:** В [суворому режимі](/uk/docs/Web/JavaScript/Reference/Strict_mode#sproshchennia-eval-i-arguments) не можна оголошувати змінну з назвою `arguments`, тож код вище призвів би до синтаксичної помилки. Це робить область видимості `arguments` куди простішою для осмислення.
+
+В більшості випадків застосування [решти параметрів](/uk/docs/Web/JavaScript/Reference/Functions/rest_parameters) є доброю альтернативою використанню об'єкта `arguments`.
 
 ```js
 function foo(n) {
@@ -419,7 +420,7 @@ const func2 = (x, y) => {
 
 Слід мати на увазі, що повернення об'єктних літералів в скороченому записі тіла функції `(params) => {object:literal}` не працюватиме так, як очікується.
 
-```js
+```js example-bad
 const func = () => { foo: 1 };
 // Виклик func() поверне undefined!
 
@@ -442,7 +443,7 @@ const func = () => ({ foo: 1 });
 
 Стрілкова функція не може містити розрив рядка між параметрами і її стрілкою.
 
-```js
+```js example-bad
 const func = (a, b, c)
   => 1;
 // SyntaxError: Unexpected token '=>'
@@ -468,15 +469,17 @@ const func4 = (a, b, c) => 1;
 
 Хоча стрілка в стрілковій функції не є оператором, ці функції мають особливі правила парсингу, які по-іншому взаємодіють з [пріоритетом операторів](/uk/docs/Web/JavaScript/Reference/Operators/Operator_Precedence) у порівнянні зі звичайними функціями.
 
-```js
+```js example-bad
 let callback;
-
-callback = callback || function() {}; // добре
 
 callback = callback || () => {};
 // SyntaxError: invalid arrow-function arguments
+```
 
-callback = callback || (() => {});    // добре
+Через те, що `=>` має нижчий за більшість операторів пріоритет, для того, аби уникати розбору `callback || ()` як списку аргументів стрілкової функції, необхідні дужки.
+
+```js example-good
+callback = callback || (() => {}); // добре
 ```
 
 ## Приклади
