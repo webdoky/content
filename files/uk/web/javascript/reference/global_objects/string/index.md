@@ -318,31 +318,31 @@ let longString =
 >
 > Вони мають обмежене застосування, оскільки надають лише підмножину наявних HTML-тегів та атрибутів.
 
-- {{jsxref("String.prototype.anchor()")}} (якір) {{Deprecated_Inline}} {{Deprecated_Inline}}
+- {{jsxref("String.prototype.anchor()")}} (якір) {{Deprecated_Inline}}
   - : {{htmlattrxref("name", "a", "&lt;a name=\"name\"&gt;")}} (ціль для гіперпосилань)
-- {{jsxref("String.prototype.big()")}} (великий) {{Deprecated_Inline}} {{Deprecated_Inline}}
+- {{jsxref("String.prototype.big()")}} (великий) {{Deprecated_Inline}}
   - : {{HTMLElement("big")}}
-- {{jsxref("String.prototype.blink()")}} (блимання) {{Deprecated_Inline}} {{Deprecated_Inline}}
+- {{jsxref("String.prototype.blink()")}} (блимання) {{Deprecated_Inline}}
   - : {{HTMLElement("blink")}}
-- {{jsxref("String.prototype.bold()")}} (грубий) {{Deprecated_Inline}} {{Deprecated_Inline}}
+- {{jsxref("String.prototype.bold()")}} (грубий) {{Deprecated_Inline}}
   - : {{HTMLElement("b")}}
-- {{jsxref("String.prototype.fixed()")}} (фіксований) {{Deprecated_Inline}} {{Deprecated_Inline}}
+- {{jsxref("String.prototype.fixed()")}} (фіксований) {{Deprecated_Inline}}
   - : {{HTMLElement("tt")}}
-- {{jsxref("String.prototype.fontcolor()")}} (колір шрифту) {{Deprecated_Inline}} {{Deprecated_Inline}}
+- {{jsxref("String.prototype.fontcolor()")}} (колір шрифту) {{Deprecated_Inline}}
   - : {{htmlattrxref("color", "font", "&lt;font color=\"color\"&gt;")}}
-- {{jsxref("String.prototype.fontsize()")}} (розмір шрифту) {{Deprecated_Inline}} {{Deprecated_Inline}}
+- {{jsxref("String.prototype.fontsize()")}} (розмір шрифту) {{Deprecated_Inline}}
   - : {{htmlattrxref("size", "font", "&lt;font size=\"size\"&gt;")}}
-- {{jsxref("String.prototype.italics()")}} (курсив) {{Deprecated_Inline}} {{Deprecated_Inline}}
+- {{jsxref("String.prototype.italics()")}} (курсив) {{Deprecated_Inline}}
   - : {{HTMLElement("i")}}
-- {{jsxref("String.prototype.link()")}} (посилання) {{Deprecated_Inline}} {{Deprecated_Inline}}
+- {{jsxref("String.prototype.link()")}} (посилання) {{Deprecated_Inline}}
   - : {{htmlattrxref("href", "a", "&lt;a href=\"url\"&gt;")}} (посилання на URL)
-- {{jsxref("String.prototype.small()")}} (дрібний) {{Deprecated_Inline}} {{Deprecated_Inline}}
+- {{jsxref("String.prototype.small()")}} (дрібний) {{Deprecated_Inline}}
   - : {{HTMLElement("small")}}
-- {{jsxref("String.prototype.strike()")}} (викреслений) {{Deprecated_Inline}} {{Deprecated_Inline}}
+- {{jsxref("String.prototype.strike()")}} (викреслений) {{Deprecated_Inline}}
   - : {{HTMLElement("strike")}}
-- {{jsxref("String.prototype.sub()")}} (підрядковий) {{Deprecated_Inline}} {{Deprecated_Inline}}
+- {{jsxref("String.prototype.sub()")}} (підрядковий) {{Deprecated_Inline}}
   - : {{HTMLElement("sub")}}
-- {{jsxref("String.prototype.sup()")}} (надрядковий) {{Deprecated_Inline}} {{Deprecated_Inline}}
+- {{jsxref("String.prototype.sup()")}} (надрядковий) {{Deprecated_Inline}}
   - : {{HTMLElement("sup")}}
 
 ## Приклади
