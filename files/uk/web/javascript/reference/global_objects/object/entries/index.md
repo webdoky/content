@@ -84,9 +84,9 @@ Object.entries(obj).forEach(([key, value]) => {
 });
 ```
 
-### Перетворення `Object` на `Map`
+### Перетворення Object на Map
 
-Конструктор {{jsxref("Map", "new Map()")}} приймає ітерований об'єкт `entries`. За допомогою `Object.entries` можна легко перетворювати {{jsxref("Object")}} на {{jsxref("Map")}}:
+Конструктор {{jsxref("Map/Map", "Map()")}} приймає ітерований об'єкт `entries`. За допомогою `Object.entries` можна легко перетворювати {{jsxref("Object")}} на {{jsxref("Map")}}:
 
 ```js
 const obj = { foo: 'bar', baz: 42 };
@@ -94,7 +94,7 @@ const map = new Map(Object.entries(obj));
 console.log(map); // Map(2) {"foo" => "bar", "baz" => 42}
 ```
 
-### Перебирання властивостей `Object`
+### Перебирання властивостей Object
 
 За допомогою [деструктуризації масиву](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#destrukturyzatsiia-masyvu) можна з легкістю перебирати поля об'єкта.
 
