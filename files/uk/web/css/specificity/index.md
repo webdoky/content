@@ -177,7 +177,7 @@ a:not(#fakeId#fakeId#fakeID) {
 
 ```css
 p[style*='purple'] {
-  color: rebeccapurple;
+  color: rebeccapurple !important;
 }
 ```
 
@@ -374,7 +374,7 @@ h1 {
 ```
 
 ```html
-<html>
+<html lang="uk">
   <body id="parent">
     <h1>Ось вам заголовок!</h1>
   </body>

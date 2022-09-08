@@ -3,6 +3,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2022-08-26 - 2022-09-02]
+
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array (#589) ([a19e55d](https://github.com/webdoky/content/commit/a19e55d1e38a3d0266980d37e0b48c3c673a9428))
+* **Оновлення перекладу(HTML):** web/html ([5973958](https://github.com/webdoky/content/commit/59739583c9f40b1a190945ac2af193f430cdd689))
+* **Оновлення перекладу(CSS):** web/css/specificity (#587) ([ad40288](https://github.com/webdoky/content/commit/ad40288db8b0f0de54fd27f6e2403b4cc30637af))
+* **Оновлення перекладу(JS):** web/javascript ([18cc601](https://github.com/webdoky/content/commit/18cc601d4ad94d8f7cb4d0791d60183bb704cd90))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/match (#579) ([e2b9d28](https://github.com/webdoky/content/commit/e2b9d28cd75d497350b5c063692a26ceb33a61ee))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/json/stringify (#571) ([a5217d4](https://github.com/webdoky/content/commit/a5217d46820c1865d4efc5e669a2d3ab05be8ed9))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string (#570) ([57e6234](https://github.com/webdoky/content/commit/57e6234f49be388d8db361e3d83ebbe4cd4e703f))
+
+## [2022-08-19 - 2022-08-26]
+
+* **Оновлення перекладу(JS):** web/javascript/reference/operators/destructuring_assignment (#576) ([9ed4097](https://github.com/webdoky/content/commit/9ed40976edc6c7de7b7fdf909a537ea5350bff3e))
+* **Оновлення перекладу(JS):** web/javascript/reference/functions/arrow_functions (#574) ([6a58640](https://github.com/webdoky/content/commit/6a5864074aa2d23d783c08367d595f8018b67b7f))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/date (#569) ([3bb4b4e](https://github.com/webdoky/content/commit/3bb4b4e462edc74c0bbca8cf2e756bdff02176ae))
+
 ## [2022-08-12 - 2022-08-19]
 
 * **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array (#566) ([64b9cf4](https://github.com/webdoky/content/commit/64b9cf4205bee8c4e8be9807e7e529e9507dca2d))
