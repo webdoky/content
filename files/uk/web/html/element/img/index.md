@@ -52,7 +52,7 @@ browser-compat: html.elements.img
 - [AVIF (формат файлів зображень AV1)](/uk/docs/Web/Media/Formats/Image_types#zobrazhennia-avif) — У зв'язку з високою ефективністю є добрим вибором і для простих, і для анімованих зображень.
 - [GIF (формат обміну графікою)](/uk/docs/Web/Media/Formats/Image_types#gif-format-obminu-hrafikoiu) — Добрий вибір для _простих_ зображень та анімацій.
 - [JPEG (зображення Об'єднаної експертної групи з фотографій)](/uk/docs/Web/Media/Formats/Image_types#jpeg-zobrazhennia-obiednanoi-ekspertnoi-hrupy-z-fotohrafii) — Добрий вибір для стиснення зі втратами нерухомих зображень (наразі найпопулярніший).
-- [PNG (переносна мережева графіка)](/uk/docs/Web/Media/Formats/Image_types#png-perenosna-merezheva-hrafika) — Добрий вибір для стиснення зі втратами нерухомих зображень (дещо краща якість, ніж в JPEG).
+- [PNG (переносна мережева графіка)](/uk/docs/Web/Media/Formats/Image_types#png-perenosna-merezheva-hrafika) — Добрий вибір для стиснення без втрат нерухомих зображень (дещо краща якість, ніж в JPEG).
 - [SVG (масштабована векторна графіка)](/uk/docs/Web/Media/Formats/Image_types#svg-masshtabovana-vektorna-hrafika) — Векторний формат зображень. Його слід використовувати для зображень, що повинні бути точно відтворені в різних розмірах.
 - [WebP (формат вебзображень)](/uk/docs/Web/Media/Formats/Image_types#zobrazhennia-webp) — Чудовий варіант як для простих, так і анімованих зображень
 
