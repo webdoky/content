@@ -3,6 +3,39 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2022-08-26 - 2022-09-02]
+
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array (#589) ([a19e55d](https://github.com/webdoky/content/commit/a19e55d1e38a3d0266980d37e0b48c3c673a9428))
+* **Оновлення перекладу(HTML):** web/html ([5973958](https://github.com/webdoky/content/commit/59739583c9f40b1a190945ac2af193f430cdd689))
+* **Оновлення перекладу(CSS):** web/css/specificity (#587) ([ad40288](https://github.com/webdoky/content/commit/ad40288db8b0f0de54fd27f6e2403b4cc30637af))
+* **Оновлення перекладу(JS):** web/javascript ([18cc601](https://github.com/webdoky/content/commit/18cc601d4ad94d8f7cb4d0791d60183bb704cd90))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/match (#579) ([e2b9d28](https://github.com/webdoky/content/commit/e2b9d28cd75d497350b5c063692a26ceb33a61ee))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/json/stringify (#571) ([a5217d4](https://github.com/webdoky/content/commit/a5217d46820c1865d4efc5e669a2d3ab05be8ed9))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string (#570) ([57e6234](https://github.com/webdoky/content/commit/57e6234f49be388d8db361e3d83ebbe4cd4e703f))
+
+## [2022-08-19 - 2022-08-26]
+
+* **Оновлення перекладу(JS):** web/javascript/reference/operators/destructuring_assignment (#576) ([9ed4097](https://github.com/webdoky/content/commit/9ed40976edc6c7de7b7fdf909a537ea5350bff3e))
+* **Оновлення перекладу(JS):** web/javascript/reference/functions/arrow_functions (#574) ([6a58640](https://github.com/webdoky/content/commit/6a5864074aa2d23d783c08367d595f8018b67b7f))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/date (#569) ([3bb4b4e](https://github.com/webdoky/content/commit/3bb4b4e462edc74c0bbca8cf2e756bdff02176ae))
+
+## [2022-08-12 - 2022-08-19]
+
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array (#566) ([64b9cf4](https://github.com/webdoky/content/commit/64b9cf4205bee8c4e8be9807e7e529e9507dca2d))
+
+## [2022-08-05 - 2022-08-12]
+
+* **Оновлення перекладу(JS):** web/javascript/reference/operators/nullish_coalescing_operator ([7bef439](https://github.com/webdoky/content/commit/7bef439829a51ae5ef0830d1251c2dd8c7f007a5))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/push ([c3befbb](https://github.com/webdoky/content/commit/c3befbb8fbc3e4a49b2c6ef33ebb5cfd5435b7bd))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/object/assign ([3aeb75a](https://github.com/webdoky/content/commit/3aeb75a564888787969d13d565587835b103dd2a))
+* **Оновлення перекладу(JS):** web/javascript/reference/operators/spread_syntax ([299e5c5](https://github.com/webdoky/content/commit/299e5c5b775d0c2586b9dff69208e4993f048cbf))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/split ([186933a](https://github.com/webdoky/content/commit/186933afc3ab658dbb398e4a699adaed01dc4392))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/slice ([1ec795e](https://github.com/webdoky/content/commit/1ec795e9dec49162585131cfb6c6ca9c359a4ee2))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/slice ([f07030e](https://github.com/webdoky/content/commit/f07030e0e4772b1e0c3bac614b42f6617944ab53))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/splice ([aff53fe](https://github.com/webdoky/content/commit/aff53febefc459ff9488a48e417ae44c57929d63))
+* **Оновлення перекладу(CSS):** web/css/specificity ([43007c4](https://github.com/webdoky/content/commit/43007c41d9aebfa2bd17fea09fefd9a9500f5147))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/math (#557) ([ce4fa23](https://github.com/webdoky/content/commit/ce4fa23aeb04d11780f07f428082fa85e74dcfff))
+
 ## [2022-07-29 - 2022-08-05]
 
 * **Оновлення перекладу(HTML):** web/html/element/input/file (#551) ([3a0705d](https://github.com/webdoky/content/commit/3a0705d9bae76a2adacc4be7dae57029911a24c4))
