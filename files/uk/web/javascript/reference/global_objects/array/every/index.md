@@ -137,7 +137,7 @@ console.log(isSubset([1, 2, 3, 4, 5, 6, 7], [5, 8, 7])); // false
 // ---------------
 let arr = [1, 2, 3, 4];
 arr.every((elem, index, arr) => {
-  arr[index + 1] -= 1;
+  arr[index + 1]--;
   console.log(`[${arr}][${index}] -> ${elem}`);
   return elem < 2;
 });
