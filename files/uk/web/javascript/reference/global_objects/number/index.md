@@ -10,7 +10,9 @@ tags:
 browser-compat: javascript.builtins.Number
 ---
 
-{{JSRef}}**`Number`** (число) – [об'єкт-обгортка примітива](/uk/docs/Glossary/Primitive#obiekty-obhortky-prymityviv-u-javascript), що застосовується для представлення й роботи з числами, як то `37` чи `-9.25`.
+{{JSRef}}
+
+**`Number`** (число) – [об'єкт-обгортка примітива](/uk/docs/Glossary/Primitive#obiekty-obhortky-prymityviv-u-javascript), що застосовується для представлення й роботи з числами, як то `37` чи `-9.25`.
 
 Конструктор `Number` містить константи й методи для роботи з числами. Значення інших типів можуть бути перетворені на числа за допомогою функції `Number()`.
 
@@ -82,22 +84,22 @@ Number(undefined); // NaN
   - : З'ясовує, чи є передане значення цілим числом.
 - {{jsxref("Number.isSafeInteger()")}}
   - : З'ясовує, чи є передане значення безпечним числом (числом в діапазоні від -(2<sup>53</sup> - 1) до 2<sup>53</sup> - 1).
-- {{jsxref("Number.parseFloat()", "Number.parseFloat(<var>string</var>)")}}
+- {{jsxref("Number.parseFloat()")}}
   - : Те саме, що й глобальна функція {{jsxref("parseFloat", "parseFloat()")}}.
-- {{jsxref("Number.parseInt()", "Number.parseInt(<var>string</var>, [<var>radix</var>])")}}
+- {{jsxref("Number.parseInt()")}}
   - : Те саме, що й глобальна функція {{jsxref("parseInt", "parseInt()")}}.
 
 ## Методи примірника
 
-- {{jsxref("Number.prototype.toExponential()" ,"Number.prototype.toExponential(<var>fractionDigits</var>)")}}
+- {{jsxref("Number.prototype.toExponential()")}}
   - : Повертає рядок, що представляє число в експоненціальному записі.
-- {{jsxref("Number.prototype.toFixed()", "Number.prototype.toFixed(<var>digits</var>)")}}
+- {{jsxref("Number.prototype.toFixed()")}}
   - : Повертає рядок, що представляє число в записі з фіксованою комою.
-- {{jsxref("Number.prototype.toLocaleString()", "Number.prototype.toLocaleString([<var>locales</var> [, <var>options</var>]])")}}
+- {{jsxref("Number.prototype.toLocaleString()")}}
   - : Повертає рядок представлення числа, що є чутливим до мови. Заміщає метод {{jsxref("Object.prototype.toLocaleString()")}}.
-- {{jsxref("Number.prototype.toPrecision()", "Number.prototype.toPrecision(<var>precision</var>)")}}
+- {{jsxref("Number.prototype.toPrecision()")}}
   - : Повертає рядок, що представляє число до певної точності, в записі з фіксованою комою чи експоненціальному.
-- {{jsxref("Number.prototype.toString()", "Number.prototype.toString([<var>radix</var>])")}}
+- {{jsxref("Number.prototype.toString()")}}
   - : Повертає рядок, що представляє вказаний об'єкт в указаній _основі числення_. Заміщає метод {{jsxref("Object.prototype.toString()")}}.
 - {{jsxref("Number.prototype.valueOf()")}}
   - : Повертає примітивне значення вказаного об'єкта. Заміщає метод {{jsxref("Object.prototype.valueOf()")}}.
