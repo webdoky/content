@@ -155,7 +155,7 @@ browser-compat: html.elements.select
 </select>
 ```
 
-{{EmbedLiveSample("Basic_select", "", "100")}}
+{{EmbedLiveSample("prostyi-select", "", "100")}}
 
 ### Поглиблений приклад select з використанням багатьох можливостей
 
@@ -179,7 +179,7 @@ browser-compat: html.elements.select
 </label>
 ```
 
-{{EmbedLiveSample("Advanced_select_with_multiple_features", "", "100")}}
+{{EmbedLiveSample("pohlyblenyi-pryklad-select-z-vykorystanniam-bahatokh-mozhlyvostei", "", "100")}}
 
 Ви побачите, що
 
