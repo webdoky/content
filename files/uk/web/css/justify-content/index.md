@@ -12,7 +12,7 @@ browser-compat: css.properties.justify-content
 
 {{CSSRef}}
 
-Властивість [CSS](/uk/docs/Web/CSS) **`justify-content`** (вирівняти вміст) визначає те, як браузер розподіляє простір між та навколо елементами вмісту за {{Glossary("Main Axis", "головною віссю")}} flex-контейнера, а також рядковою віссю сіткового контейнера.
+Властивість [CSS](/uk/docs/Web/CSS) **`justify-content`** визначає те, як браузер розподіляє простір між та навколо елементами вмісту за {{Glossary("Main Axis", "головною віссю")}} flex-контейнера, а також рядковою віссю сіткового контейнера.
 
 Інтерактивний приклад нижче показує деякі значення за допомогою сіткової розкладки.
 
@@ -157,8 +157,8 @@ justify-content: unset;
 ```
 
 ```js hidden
-const justifyContent = document.getElementById('justifyContent');
-justifyContent.addEventListener('change', (evt) => {
+var justifyContent = document.getElementById('justifyContent');
+justifyContent.addEventListener('change', function (evt) {
   document.getElementById('container').style.justifyContent = evt.target.value;
 });
 ```
