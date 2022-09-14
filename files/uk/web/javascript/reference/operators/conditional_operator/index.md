@@ -23,8 +23,7 @@ browser-compat: javascript.operators.conditional
 
 ## Синтаксис
 
-```js
-<!-- markdownlint-disable-next-line -->
+```js-nolint
 condition ? exprIfTrue : exprIfFalse
 ```
 
