@@ -21,9 +21,9 @@ browser-compat: javascript.builtins.Array.includes
 
 ## Синтаксис
 
-```js
-includes(searchElement);
-includes(searchElement, fromIndex);
+```js-nolint
+includes(searchElement)
+includes(searchElement, fromIndex)
 ```
 
 ### Параметри
