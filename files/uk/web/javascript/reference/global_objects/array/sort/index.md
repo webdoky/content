@@ -22,22 +22,18 @@ browser-compat: javascript.builtins.Array.sort
 
 ## Синтаксис
 
-```js
+```js-nolint
 // Без функції порівняння
-sort();
+sort()
 
 // Стрілкова функція
-sort((a, b) => {
-  /* … */
-});
+sort((a, b) => { /* … */ } )
 
 // Функція порівняння
-sort(compareFn);
+sort(compareFn)
 
 // Функція порівняння, оголошена на місці
-sort(function compareFn(a, b) {
-  /* … */
-});
+sort(function compareFn(a, b) { /* … */ })
 ```
 
 ### Параметри
