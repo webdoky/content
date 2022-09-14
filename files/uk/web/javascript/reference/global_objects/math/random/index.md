@@ -21,8 +21,8 @@ browser-compat: javascript.builtins.Math.random
 
 ## Синтаксис
 
-```js
-Math.random();
+```js-nolint
+Math.random()
 ```
 
 ### Повернене значення
