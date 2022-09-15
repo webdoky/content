@@ -26,10 +26,10 @@ browser-compat: javascript.operators.optional_chaining
 
 ## Синтаксис
 
-```js
-obj.val?.prop;
-obj.val?.[expr];
-obj.func?.(args);
+```js-nolint
+obj.val?.prop
+obj.val?.[expr]
+obj.func?.(args)
 ```
 
 ## Опис
