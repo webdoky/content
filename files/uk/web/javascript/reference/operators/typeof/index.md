@@ -12,18 +12,14 @@ browser-compat: javascript.operators.typeof
 
 {{JSSidebar("Operators")}}
 
-Оператор **`typeof`** ("тип ...") повертає рядок, який вказує на тип операнда, без його обчислення.
+Оператор **`typeof`** ("тип ...") повертає рядок, який вказує на тип значення операнда.
 
 {{EmbedInteractiveExample("pages/js/expressions-typeof.html")}}
 
 ## Синтаксис
 
-Оператор `typeof`, за яким слідує його операнд:
-
-```js
-typeof operand;
-<!-- markdownlint-disable-next-line -->
-typeof(operand);
+```js-nolint
+typeof operand
 ```
 
 ### Параметри
@@ -35,24 +31,19 @@ typeof(operand);
 
 Таблиця нижче наводить всі можливі повернені значення `typeof`. Більше інформації про типи та примітиви можна знайти на сторінці, присвяченій [структурам даних JavaScript](/uk/docs/Web/JavaScript/Data_structures).
 
-| Тип                                                                                                                                                                    | Результат                               |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- |
-| [Undefined](/uk/docs/Glossary/undefined)                                                                                                                               | `"undefined"`                           |
-| [Null](/uk/docs/Glossary/Null)                                                                                                                                         | `"object"` (див. [нижче](#typeof_null)) |
-| [Boolean](/uk/docs/Glossary/Boolean)                                                                                                                                   | `"boolean"`                             |
-| [Number](/uk/docs/Glossary/Number)                                                                                                                                     | `"number"`                              |
-| [BigInt](/uk/docs/Glossary/BigInt)                                                                                                                                     | `"bigint"`                              |
-| [String](/uk/docs/Glossary/String)                                                                                                                                     | `"string"`                              |
-| [Symbol](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol)                                                                                                      | `"symbol"`                              |
-| Об'єкт [Function](/uk/docs/Glossary/Function) (реалізовує [[Call]] у термінах ECMA-262; [класи](/uk/docs/Web/JavaScript/Reference/Statements/class) також є функціями) | `"function"`                            |
-| Будь-який інший об'єкт                                                                                                                                                 | `"object"`                              |
+| Тип                                                                                                                                                                    | Результат                            |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
+| [Undefined](/uk/docs/Glossary/undefined)                                                                                                                               | `"undefined"`                        |
+| [Null](/uk/docs/Glossary/Null)                                                                                                                                         | `"object"` ([причина](#typeof_null)) |
+| [Boolean](/uk/docs/Glossary/Boolean)                                                                                                                                   | `"boolean"`                          |
+| [Number](/uk/docs/Glossary/Number)                                                                                                                                     | `"number"`                           |
+| [BigInt](/uk/docs/Glossary/BigInt)                                                                                                                                     | `"bigint"`                           |
+| [String](/uk/docs/Glossary/String)                                                                                                                                     | `"string"`                           |
+| [Symbol](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol)                                                                                                      | `"symbol"`                           |
+| Об'єкт [Function](/uk/docs/Glossary/Function) (реалізовує [[Call]] у термінах ECMA-262; [класи](/uk/docs/Web/JavaScript/Reference/Statements/class) також є функціями) | `"function"`                         |
+| Будь-який інший об'єкт                                                                                                                                                 | `"object"`                           |
 
-> **Примітка:** ECMAScript 2019 та старіші вільні реалізації `typeof`
-> повертають будь-які визначені реалізацією рядкові значення для нестандартних
-> екзотичних об'єктів, непридатних для викликання.
->
-> Єдиним браузером, про який відомо, що йому вдалося цим скористатися, був старий
-> Internet Explorer (див. [нижче](#prymitky-shchodo-ie)).
+Цей список значень є вичерпним. Повідомляють, що рушії, котрі не відповідають специфікації, виробляють (чи історично виробляли) інакші значення, ніж перелічені вище. Старий Internet Explorer був єдиним браузером, про котрий відомо, що він [реалізовував додаткові повернені значення](https://github.com/tc39/ecma262/issues/1440#issuecomment-461963872), до того, як специфікація прибрала логіку повернення `typeof` визначених реалізацією рядків для невикличних нестандартних екзотичних об'єктів.
 
 ## Приклади
 
@@ -130,17 +121,18 @@ typeof null === 'object';
 
 ### Застосування оператора new
 
+Усі функції-конструктори, викликані з [`new`](/uk/docs/Web/JavaScript/Reference/Operators/new), повернуть непримітиви (`"object"` чи `"function"`). Більшість повертає об'єкти, крім вагомого винятку в особі [`Function`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function), що повертає функцію.
+
 ```js
-// Всі функції-конструктори, за винятком конструктора Function, завжди матимуть тип 'object'
 const str = new String('String');
 const num = new Number(100);
 
-typeof str; // Поверне 'object'
-typeof num; // Поверне 'object'
+typeof str; // 'object'
+typeof num; // 'object'
 
 const func = new Function();
 
-typeof func; // Поверне 'function'
+typeof func; // 'function'
 ```
 
 ### Потреба в дужках в синтаксисі
@@ -155,24 +147,17 @@ typeof someData + ' Wisen'; // 'number Wisen'
 typeof (someData + ' Wisen'); // 'string'
 ```
 
-### Регулярні вирази
+### Взаємодія з неоголошеними й неініціалізованими змінними
 
-Регулярні вирази, які можна було викликати, були нестандартним доповненням у деяких браузерах.
+Загалом `typeof` гарантовано поверне рядок, для будь-якого наданого операнда. Навіть з неоголошеними ідентифікаторами `typeof` поверне `"undefined"`, а не викине помилку.
 
 ```js
-typeof /s/ === 'function'; // Chrome 1-12 — не відповідає ECMAScript 5.1
-typeof /s/ === 'object'; // Firefox 5+  — згідно ECMAScript 5.1
+typeof undeclaredVariable; // "undefined"
 ```
 
-### Помилки
+Проте застосування `typeof` на лексичних оголошеннях ({{JSxRef("Statements/let", "let")}} {{JSxRef("Statements/const", "const")}} і [`class`](/uk/docs/Web/JavaScript/Reference/Statements/class)), в одному блоці перед рядком оголошення, викине {{JSxRef("ReferenceError")}}. Змінні блокової видимості перебувають у _[темпоральній мертвій зоні](/uk/docs/Web/JavaScript/Reference/Statements/let#temporalna-mertva-zona-tmz)_ від початку блока до обробки ініціалізації, протягом чого така змінна викине помилку, якщо спробувати до неї звернутися.
 
-Загалом гарантується, що `typeof` завжди повертатиме рядок, для будь-якого операнда, який йому буде передано. Навіть для неоголошених ідентифікаторів `typeof` поверне `'undefined'`, а не викине помилку.
-
-Проте застосування `typeof` на лексичних оголошеннях ({{JSxRef("Statements/let", "let")}} {{JSxRef("Statements/const", "const")}} і [`class`](/uk/docs/Web/JavaScript/Reference/Statements/class)), в одному блоці перед рядком оголошення, викине {{JSxRef("ReferenceError")}}. Змінні блокової видимості перебувають у _[темпоральній мертвій зоні](/en-US/docs/Web/JavaScript/Reference/Statements/let#temporalna-mertva-zona-tmz)_ від початку блока до обробки ініціалізації, протягом чого така змінна викине помилку, якщо спробувати до неї звернутися.
-
-```js
-typeof undeclaredVariable === 'undefined';
-
+```js example-bad
 typeof newLetVariable; // ReferenceError
 typeof newConstVariable; // ReferenceError
 typeof newClass; // ReferenceError
@@ -182,7 +167,7 @@ const newConstVariable = 'hello';
 class newClass {}
 ```
 
-### Винятки
+### Виняткова поведінка document.all
 
 Всі актуальні браузери дають змогу доступитися до нестандартного об'єкта системного об'єкта [`document.all`](/uk/docs/Web/API/Document/all)
 з типом `undefined`.
@@ -191,11 +176,13 @@ class newClass {}
 typeof document.all === 'undefined';
 ```
 
-Хоча специфікація дає змогу мати користувацькі теги типу для нестандартних екзотичних об'єктів, вона вимагає, щоб ці теги відрізнялися від раніше заданих. Випадок з `document.all`, що має тип `'undefined'`, класифіковано у вебстандартах як "навмисне порушення" первісного стандарту ECMA JavaScript.
+Although `document.all` is also [falsy](/uk/docs/Glossary/Falsy) and [loosely equal](/uk/docs/Web/JavaScript/Reference/Operators/Equality) to `undefined`, it is not [`undefined`](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined). The case of `document.all` having type `"undefined"` is classified in the web standards as a "willful violation" of the original ECMAScript standard for web compatibility.
+
+Попри те, що `document.all` також є [хибним значенням](/uk/docs/Glossary/Falsy) і [приблизно дорівнює](/uk/docs/Web/JavaScript/Reference/Operators/Equality) `undefined`, він не є [`undefined`](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined). Ситуація з тим, що `document.all` має тип `"undefined"`, класифікована у вебстандартах як "навмисне порушення" оригінального стандарту ECMAScript заради сумісності.
 
 ### Власний метод, що отримує більш конкретний тип
 
-Оператор `typeof` дуже корисний, проте він не настільки універсальний, наскільки це може бути потрібно. Наприклад, `typeof []` дорівнює `'object'`, так само як `typeof new Date()`, `typeof /abc/` тощо.
+Оператор `typeof` дуже корисний, проте він не настільки універсальний, наскільки це може бути потрібно. Наприклад, `typeof []` дорівнює `'object'`, так само як `typeof new Date()`, `typeof /abc/` тощо.
 
 Для більшої конкретики при перевірці типів, нижче представлена самописна функція `type(value)`, котра здебільшого імітує логіку `typeof`, але для непримітивних значень (наприклад, об'єктів та функцій) повертає більш гранульоване ім'я типу, коли це можливо.
 
@@ -234,7 +221,7 @@ function type(value) {
 }
 ```
 
-Для перевірки недійсних змінних, які в іншому випадку викинули б {{JSxRef("ReferenceError")}}, слід застосовувати `typeof nonExistentVar === 'undefined'`.
+Для перевірки недійсних змінних, які в іншому випадку викинули б {{JSxRef("ReferenceError")}}, слід застосовувати `typeof nonExistentVar === 'undefined'`, адже таку поведінку неможливо імітувати за допомогою самописного коду.
 
 ## Специфікації
 
@@ -243,21 +230,6 @@ function type(value) {
 ## Сумісність із браузерами
 
 {{Compat}}
-
-### Примітки стосовно IE
-
-Велика кількість системних об'єктів у середовищі IE 6, 7, та 8 — об'єкти, а не функції. Наприклад:
-
-```js
-typeof alert === 'object';
-```
-
-Деякі нестандартні властивості IE повертають інші значення ([tc39/ecma262#1440 (коментар - англ.)](https://github.com/tc39/ecma262/issues/1440#issuecomment-461963872)):
-
-```js
-typeof window.external.AddSearchProvider === 'unknown';
-typeof window.external.IsSearchProviderInstalled === 'unknown';
-```
 
 ## Дивіться також
 
