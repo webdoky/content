@@ -17,13 +17,13 @@ browser-compat: javascript.statements.try_catch
 
 ## Синтаксис
 
-```js
+```js-nolint
 try {
-  tryStatements;
+  tryStatements
 } catch (exceptionVar) {
-  catchStatements;
+  catchStatements
 } finally {
-  finallyStatements;
+  finallyStatements
 }
 ```
 
