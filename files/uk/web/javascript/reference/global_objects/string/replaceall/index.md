@@ -20,8 +20,8 @@ browser-compat: javascript.builtins.String.replaceAll
 
 ## Синтаксис
 
-```js
-replaceAll(pattern, replacement);
+```js-nolint
+replaceAll(pattern, replacement)
 ```
 
 ### Параметри
