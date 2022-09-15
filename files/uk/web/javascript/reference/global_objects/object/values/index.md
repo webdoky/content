@@ -18,8 +18,8 @@ browser-compat: javascript.builtins.Object.values
 
 ## Синтаксис
 
-```js
-Object.values(obj);
+```js-nolint
+Object.values(obj)
 ```
 
 ### Параметри
