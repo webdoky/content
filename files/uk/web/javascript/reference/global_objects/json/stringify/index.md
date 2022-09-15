@@ -20,10 +20,10 @@ browser-compat: javascript.builtins.JSON.stringify
 
 ## Синтаксис
 
-```js
-JSON.stringify(value);
-JSON.stringify(value, replacer);
-JSON.stringify(value, replacer, space);
+```js-nolint
+JSON.stringify(value)
+JSON.stringify(value, replacer)
+JSON.stringify(value, replacer, space)
 ```
 
 ### Параметри

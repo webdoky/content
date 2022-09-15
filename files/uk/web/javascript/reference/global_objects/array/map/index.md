@@ -20,35 +20,21 @@ browser-compat: javascript.builtins.Array.map
 
 ## Синтаксис
 
-```js
+```js-nolint
 // Стрілкова функція
-map((element) => {
-  /* … */
-});
-map((element, index) => {
-  /* … */
-});
-map((element, index, array) => {
-  /* … */
-});
+map((element) => { /* … */ })
+map((element, index) => { /* … */ })
+map((element, index, array) => { /* … */ })
 
 // Функція зворотного виклику
-map(callbackFn);
-map(callbackFn, thisArg);
+map(callbackFn)
+map(callbackFn, thisArg)
 
 // Функція зворотного виклику, оголошена на місці
-map(function (element) {
-  /* … */
-});
-map(function (element, index) {
-  /* … */
-});
-map(function (element, index, array) {
-  /* … */
-});
-map(function (element, index, array) {
-  /* … */
-}, thisArg);
+map(function(element) { /* … */ })
+map(function(element, index) { /* … */ })
+map(function(element, index, array){ /* … */ })
+map(function(element, index, array) { /* … */ }, thisArg)
 ```
 
 ### Параметри

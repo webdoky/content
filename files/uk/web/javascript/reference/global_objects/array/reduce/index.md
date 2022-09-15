@@ -29,52 +29,28 @@ browser-compat: javascript.builtins.Array.reduce
 
 ## Синтаксис
 
-```js
+```js-nolint
 // Стрілкова функція
-reduce((previousValue, currentValue) => {
-  /* … */
-});
-reduce((previousValue, currentValue, currentIndex) => {
-  /* … */
-});
-reduce((previousValue, currentValue, currentIndex, array) => {
-  /* … */
-});
+reduce((previousValue, currentValue) => { /* … */ } )
+reduce((previousValue, currentValue, currentIndex) => { /* … */ } )
+reduce((previousValue, currentValue, currentIndex, array) => { /* … */ } )
 
-reduce((previousValue, currentValue) => {
-  /* … */
-}, initialValue);
-reduce((previousValue, currentValue, currentIndex) => {
-  /* … */
-}, initialValue);
-reduce((previousValue, currentValue, currentIndex, array) => {
-  /* … */
-}, initialValue);
+reduce((previousValue, currentValue) => { /* … */ } , initialValue)
+reduce((previousValue, currentValue, currentIndex) => { /* … */ } , initialValue)
+reduce((previousValue, currentValue, currentIndex, array) => { /* … */ }, initialValue)
 
 // Функція зворотного виклику
-reduce(callbackFn);
-reduce(callbackFn, initialValue);
+reduce(callbackFn)
+reduce(callbackFn, initialValue)
 
 // Оголошена на місці функція зворотного виклику
-reduce(function (previousValue, currentValue) {
-  /* … */
-});
-reduce(function (previousValue, currentValue, currentIndex) {
-  /* … */
-});
-reduce(function (previousValue, currentValue, currentIndex, array) {
-  /* … */
-});
+reduce(function(previousValue, currentValue) { /* … */ })
+reduce(function(previousValue, currentValue, currentIndex) { /* … */ })
+reduce(function(previousValue, currentValue, currentIndex, array) { /* … */ })
 
-reduce(function (previousValue, currentValue) {
-  /* … */
-}, initialValue);
-reduce(function (previousValue, currentValue, currentIndex) {
-  /* … */
-}, initialValue);
-reduce(function (previousValue, currentValue, currentIndex, array) {
-  /* … */
-}, initialValue);
+reduce(function(previousValue, currentValue) { /* … */ }, initialValue)
+reduce(function(previousValue, currentValue, currentIndex) { /* … */ }, initialValue)
+reduce(function(previousValue, currentValue, currentIndex, array) { /* … */ }, initialValue)
 ```
 
 ### Параметри
@@ -111,6 +87,8 @@ reduce(function (previousValue, currentValue, currentIndex, array) {
 Метод `reduce()` приймає два аргументи: функцію зворотного виклику та необов'язкове початкове значення. Якщо вказане початкове значення, то `reduce()` по черзі викликає на кожному елементі масиву функцію зворотного виклику – "редуктор". Якщо початкове значення не вказане, то `reduce` викликає функцію зворотного виклику на кожному елементі масиву, крім першого.
 
 `reduce()` повертає значення, повернене функцією зворотного виклику на фінальній ітерації масиву.
+
+`reduce()` є центральною концепцією [функційного програмування](https://uk.wikipedia.org/wiki/%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D1%96%D0%B9%D0%BD%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F), в котрій неможливо змінювати будь-яке значення, тож для збору всіх значень до масиву треба повертати на кожній ітерації нове значення акумулятора. Така домовленість поширюється на `reduce()` JavaScript: слід використовувати [розгортання](/uk/docs/Web/JavaScript/Reference/Operators/Spread_syntax) чи якусь іншу методику копіювання, де це можливо, і створювати як нове значення акумулятора нові масиви й об'єкти, а не видозмінювати старий акумулятор. При потребі змінити акумулятор замість його копіювання слід не забути повернути в функції зворотного виклику видозмінений об'єкт, інакше наступна ітерація отримає `undefined`.
 
 ### Коли не варто використовувати reduce()
 
@@ -237,11 +215,11 @@ const flattened = [
 const names = ['Аліса', 'Богдан', 'Тома', 'Борис', 'Аліса'];
 
 const countedNames = names.reduce((allNames, name) => {
-  allNames[name] ??= 0;
-  allNames[name]++;
-  // Не забувайте повернути об'єкт, інакше наступна ітерація
-  // отримає undefined
-  return allNames;
+  const currCount = allNames[name] ?? 0;
+  return {
+    ...allNames,
+    [name]: currCount + 1,
+  };
 }, {});
 // countedNames містить:
 // { 'Аліса': 2, 'Богдан': 1, 'Тома': 1, 'Борис': 1 }
@@ -259,9 +237,8 @@ const people = [
 function groupBy(objectArray, property) {
   return objectArray.reduce((acc, obj) => {
     const key = obj[property];
-    acc[key] ??= [];
-    acc[key].push(obj);
-    return acc;
+    const curGroup = acc[key] ?? [];
+    return { ...acc, [key]: [...curGroup, obj] };
   }, {});
 }
 
@@ -321,8 +298,8 @@ const allbooks = friends.reduce(
 const myArray = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
 const myArrayWithNoDuplicates = myArray.reduce(
   (previousValue, currentValue) => {
-    if (previousValue.indexOf(currentValue) === -1) {
-      previousValue.push(currentValue);
+    if (!previousValue.includes(currentValue)) {
+      return [...previousValue, currentValue];
     }
     return previousValue;
   },
@@ -341,7 +318,7 @@ const numbers = [-5, 6, 2, 0];
 const doubledPositiveNumbers = numbers.reduce((previousValue, currentValue) => {
   if (currentValue > 0) {
     const doubled = currentValue * 2;
-    previousValue.push(doubled);
+    return [...previousValue, doubled];
   }
   return previousValue;
 }, []);

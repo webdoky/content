@@ -146,16 +146,16 @@ browser-compat: html.elements.input.type_radio
 Потім додається трохи [JavaScript](/uk/docs/Web/JavaScript), щоб встановити слухач події {{domxref("HTMLFormElement/submit_event", "submit")}}, котра спрацьовує, коли користувач натискає кнопку "Надіслати":
 
 ```js
-var form = document.querySelector('form');
-var log = document.querySelector('#log');
+const form = document.querySelector('form');
+const log = document.querySelector('#log');
 
 form.addEventListener(
   'submit',
-  function (event) {
-    var data = new FormData(form);
-    var output = '';
+  (event) => {
+    const data = new FormData(form);
+    let output = '';
     for (const entry of data) {
-      output = output + entry[0] + '=' + entry[1] + '\r';
+      output = `${output}${entry[0]}=${entry[1]}\r`;
     }
     log.innerText = output;
     event.preventDefault();
@@ -282,8 +282,6 @@ label {
 }
 
 input {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
 
   border-radius: 50%;

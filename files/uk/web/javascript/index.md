@@ -4,8 +4,8 @@ slug: Web/JavaScript
 tags:
   - JavaScript
   - Landing
-  - Вчити
-  - l10n:priority
+  - Learn
+  - 'l10n:priority'
 translation_of: Web/JavaScript
 ---
 
@@ -54,8 +54,8 @@ translation_of: Web/JavaScript
 
 - [Розуміння клієнтських фреймворків JavaScript](/uk/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks)
   - : JavaScript фреймворки – неодмінна частина сучасної клієнтської веброзробки, що забезпечує розробників перевіреними інструментами для побудови масштабованих інтерактивних вебзастосунків. Цей модуль надає деякі фундаментальні знання про те, як влаштовані клієнтські фреймворки, і як вони вписуються в ваш інструментарій, перед тим як розглянути найбільш популярні із них на сьогодні у наступних посібниках.
-- [Повторний вступ у JavaScript](/uk/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
-  - : Загальний огляд, націлений на тих, хто _вважає_, що знає JavaScript.
+- [Огляд мови JavaScript](/uk/docs/Web/JavaScript/Language_overview)
+  - : Огляд базових мови та семантики JavaScript для тих, хто прийшов з інших мов програмування і хоче різко набрати темп вивчення.
 - [Структури даних у JavaScript](/uk/docs/Web/JavaScript/Data_structures)
   - : Огляд наявних структур даних у JavaScript.
 - [Порівняння на схожість і однаковість](/uk/docs/Web/JavaScript/Equality_comparisons_and_sameness)
@@ -95,7 +95,7 @@ translation_of: Web/JavaScript
 
 - [Інструменти розробника Firefox (англ.)](<[/uk/docs/Tools](https://firefox-source-docs.mozilla.org/devtools-user/index.html)>)
   - : [Вебконсоль (англ.)](<[/uk/docs/Tools/Web_Console](https://firefox-source-docs.mozilla.org/devtools-user/web_console/index.html)>), [Профайлер JavaScript (англ.)](https://firefox-source-docs.mozilla.org/devtools-user/performance/index.html), [Налагоджувач (англ.)](https://firefox-source-docs.mozilla.org/devtools-user/debugger/index.html) та інші.
-- [Оболонка JavaScript](/uk/docs/Web/JavaScript/Shells)
+- [Оболонка JavaScript](/uk/docs/Web/JavaScript/JavaScript_technologies_overview#obolonky)
   - : JavaScript-оболонка, що дозволяє швидко перевіряти фрагменти коду на JavaScript.
 - [Learn JavaScript](https://learnjavascript.online/)
   - : Прекрасний ресурс для веброзробників, що прагнуть навчатися. Вивчайте JavaScript в інтерактивному середовищі, з короткими лекціями та інтерактивними тестами, які дають оцінку в автоматичному режимі. Перші 40 уроків безкоштовні, а повний курс доступний за невелику одноразову плату.
