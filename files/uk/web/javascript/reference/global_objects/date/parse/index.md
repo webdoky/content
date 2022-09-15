@@ -19,8 +19,8 @@ browser-compat: javascript.builtins.Date.parse
 
 ## Синтаксис
 
-```js
-Date.parse(dateString);
+```js-nolint
+Date.parse(dateString)
 ```
 
 ### Параметри
