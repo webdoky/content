@@ -149,10 +149,10 @@ typeof func; // Поверне 'function'
 
 ```js
 // За допомогою дужок можна визначати тип даних цілих виразів.
-const iData = 99;
+const someData = 99;
 
-typeof iData + ' Wisen'; // 'number Wisen'
-typeof (iData + ' Wisen'); // 'string'
+typeof someData + ' Wisen'; // 'number Wisen'
+typeof (someData + ' Wisen'); // 'string'
 ```
 
 ### Регулярні вирази
@@ -166,9 +166,9 @@ typeof /s/ === 'object'; // Firefox 5+  — згідно ECMAScript 5.1
 
 ### Помилки
 
-До ECMAScript 2015 гарантувалося, що `typeof` завжди повертатиме рядок для будь-якого операнда, який йому буде передано. Навіть для неоголошених ідентифікаторів `typeof` поверне `'undefined'`. Неможливо було спричинити помилку за допомогою `typeof`.
+Загалом гарантується, що `typeof` завжди повертатиме рядок, для будь-якого операнда, який йому буде передано. Навіть для неоголошених ідентифікаторів `typeof` поверне `'undefined'`, а не викине помилку.
 
-Проте, з появою {{JSxRef("Statements/let", "let")}} та {{JSxRef("Statements/const", "const")}} з блоковою областю видимості, застосування `typeof` на змінній `let` чи `const` (або при застосуванні `typeof` на `class`) в блоці до їхнього оголошення викине {{JSxRef("ReferenceError")}}. Змінні з блоковою областю видимості знаходяться у "[мертвій часовій зоні](/uk/docs/Web/JavaScript/Reference/Statements/let#temporal_dead_zone_tdz)" від початку блоку і до обробки ініціалізації, в межах якої будь-яка спроба доступитися до змінної викине помилку.
+Проте застосування `typeof` на лексичних оголошеннях ({{JSxRef("Statements/let", "let")}} {{JSxRef("Statements/const", "const")}} і [`class`](/uk/docs/Web/JavaScript/Reference/Statements/class)), в одному блоці перед рядком оголошення, викине {{JSxRef("ReferenceError")}}. Змінні блокової видимості перебувають у _[темпоральній мертвій зоні](/en-US/docs/Web/JavaScript/Reference/Statements/let#temporalna-mertva-zona-tmz)_ від початку блока до обробки ініціалізації, протягом чого така змінна викине помилку, якщо спробувати до неї звернутися.
 
 ```js
 typeof undeclaredVariable === 'undefined';
@@ -201,36 +201,36 @@ typeof document.all === 'undefined';
 
 ```js
 function type(value) {
-  if (typeof value !== 'object' && typeof value !== 'function') {
-    return typeof value;
-  }
   if (value === null) {
     return 'null';
   }
+  const baseType = typeof value;
+  // Примітивні типи
+  if (!['object', 'function'].includes(baseType)) {
+    return baseType;
+  }
+  // Symbol.toStringTag нерідко вказує на "показне ім'я"
+  // класу об'єкта. Він використовується в Object.prototype.toString().
+  const tag = value[Symbol.toStringTag];
+  if (typeof tag === 'string') {
+    return tag;
+  }
+  // Якщо це функція, чий вихідний код починається з ключового слова "class"
   if (
-    Object.getPrototypeOf(value) === Function.prototype &&
-    /^class/.test(String(value))
+    baseType === 'function' &&
+    Function.prototype.toString.call(value).startsWith('class')
   ) {
     return 'class';
   }
-  // Symbol.toStringTag часто вказує "ім'я для виведення" класу об'єкта
-  if (
-    Symbol.toStringTag in value &&
-    typeof value[Symbol.toStringTag] === 'string'
-  ) {
-    return value[Symbol.toStringTag];
+  // Ім'я конструктора; наприклад, `Array`, `GeneratorFunction`,
+  // `Number`, `String`, `Boolean` чи `MyCustomClass`
+  const className = value.constructor.name;
+  if (typeof className === 'string' && className !== '') {
+    return className;
   }
-  // Ім'я конструктора; наприклад: `Array`, `GeneratorFunction`,
-  // `Number`, `String`, `Boolean` чи `MyCustomObject`
-  if (
-    typeof value.constructor.name === 'string' &&
-    value.constructor.name !== ''
-  ) {
-    return value.constructor.name;
-  }
-  // В цій точці немає надійного способа отримати тип значення,
-  // тож використовується базова реалізація.
-  return typeof value;
+  // Тут вже немає надійного способа отримати тип значення,
+  // тож застосовується базова реалізація.
+  return baseType;
 }
 ```
 
