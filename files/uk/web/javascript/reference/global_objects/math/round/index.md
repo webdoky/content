@@ -18,8 +18,8 @@ browser-compat: javascript.builtins.Math.round
 
 ## Синтаксис
 
-```js
-Math.round(x);
+```js-nolint
+Math.round(x)
 ```
 
 ### Параметри
