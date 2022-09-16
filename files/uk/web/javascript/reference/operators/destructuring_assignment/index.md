@@ -159,6 +159,7 @@ const { b = console.log('hey') } = { b: 2 };
 ```js
 const { a, ...others } = { a: 1, b: 2, c: 3 };
 console.log(others); // { b: 2, c: 3 }
+
 const [first, ...others2] = [1, 2, 3];
 console.log(others2); // [2, 3]
 ```
@@ -498,8 +499,8 @@ const metadata = {
   translations: [
     {
       locale: 'de',
-      localization_tags: [],
-      last_edit: '2014-04-14T08:43:37',
+      localizationTags: [],
+      lastEdit: '2014-04-14T08:43:37',
       url: '/de/docs/Tools/Scratchpad',
       title: 'JavaScript-Umgebung',
     },
@@ -548,7 +549,7 @@ for (const {
   name: n,
   family: { father: f },
 } of people) {
-  console.log("Ім'я: " + n + ', Батько: ' + f);
+  console.log(`Ім'я: ${n}, Батько: ${f}`);
 }
 
 // "Ім'я: Михайло Коваль, Батько: Гаврило Коваль"
