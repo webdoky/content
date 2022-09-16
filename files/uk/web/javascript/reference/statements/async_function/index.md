@@ -20,15 +20,15 @@ browser-compat: javascript.statements.async_function
 
 ## Синтаксис
 
-```js
+```js-nolint
 async function name(param0) {
-  statements;
+  statements
 }
 async function name(param0, param1) {
-  statements;
+  statements
 }
 async function name(param0, param1, /* … ,*/ paramN) {
-  statements;
+  statements
 }
 ```
 
