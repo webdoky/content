@@ -64,7 +64,7 @@ const re = new RegExp('\\w+');
 
 1. `x` мусить бути об'єктом (не примітивом).
 2. Якщо [`x[Symbol.match]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/match) – не `undefined`, то треба перевірити цю властивість на [істинність](/uk/docs/Glossary/Truthy).
-3. Інакше, якщо `x[Symbol.match]` – `undefined`, перевірити, чи було `x` створено за допомогою конструктора `RegExp`. (Цей крок повинен траплятися рідко, адже якщо `x` є об'єктом `RegExp`, у котрий не втручалися, то мусить мати властивість `Symbol.match`.)
+3. Інакше, якщо `x[Symbol.match]` – `undefined`, перевірити, чи було `x` створено за допомогою конструктора `RegExp`. (Цей крок повинен траплятися рідко, адже якщо `x` є об'єктом `RegExp`, у котрий не втручалися, то він мусить мати властивість `Symbol.match`.)
 
 Слід звернути увагу, що в більшості випадків відбудеться перевірка `Symbol.match`, а тобто:
 
@@ -77,7 +77,7 @@ const re = new RegExp('\\w+');
 - [`String.prototype.matchAll()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll) і [`replaceAll()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll) перевіряють, чи має регулярний вираз позначку [глобальності](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/global), якщо перший аргумент є регулярним виразом, до виклику його метода [`@@matchAll`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/matchAll) чи [`@@replace`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/replace).
 - Конструктор [`RegExp()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/RegExp) безпосередньо повертає аргумент `pattern` лише в тому випадку, коли `pattern` є регулярним виразом (серед інших умов). Якщо `pattern` є регулярним виразом, то також будуть перевірені властивості `pattern`: `source` і `flags`, замість зведення `pattern` до рядка.
 
-Наприклад, [`String.prototype.endsWith()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith) зводить усе своє введення до рядків, але викидає, якщо аргумент є регулярним виразом, адже цей метод розроблений лише для зіставлення рядків, а використання регулярного виразу – ймовірно, помилка розробника.
+Наприклад, [`String.prototype.endsWith()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith) зводить усе своє введення до рядків, але викидає виняток, якщо аргумент є регулярним виразом, адже цей метод розроблений лише для зіставлення рядків, а використання регулярного виразу – ймовірно, помилка розробника.
 
 ```js
 'foobar'.endsWith({ toString: () => 'bar' }); // true
