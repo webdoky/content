@@ -23,35 +23,21 @@ browser-compat: javascript.builtins.Array.findIndex
 
 ## Синтаксис
 
-```js
+```js-nolint
 // Стрілкова функція
-findIndex((element) => {
-  /* … */
-});
-findIndex((element, index) => {
-  /* … */
-});
-findIndex((element, index, array) => {
-  /* … */
-});
+findIndex((element) => { /* … */ } )
+findIndex((element, index) => { /* … */ } )
+findIndex((element, index, array) => { /* … */ } )
 
 // Функція зворотного виклику
-findIndex(callbackFn);
-findIndex(callbackFn, thisArg);
+findIndex(callbackFn)
+findIndex(callbackFn, thisArg)
 
 // Вбудована функція зворотного виклику
-findIndex(function (element) {
-  /* … */
-});
-findIndex(function (element, index) {
-  /* … */
-});
-findIndex(function (element, index, array) {
-  /* … */
-});
-findIndex(function (element, index, array) {
-  /* … */
-}, thisArg);
+findIndex(function(element) { /* … */ })
+findIndex(function(element, index) { /* … */ })
+findIndex(function(element, index, array){ /* … */ })
+findIndex(function(element, index, array) { /* … */ }, thisArg)
 ```
 
 ### Параметри
