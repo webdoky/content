@@ -40,8 +40,6 @@ for (variable of iterable) statement;
 
 Якщо з циклу `for...of` відбувається ранній вихід (наприклад, якщо зустрілася інструкція `break` чи була викинута помилка), то викликається метод [`return()`](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#protokol-iteratora), щоб виконати прибирання.
 
-The `variable` part of `for...of` accepts anything that can come before the `=` operator. You can use {{jsxref("Statements/const", "const")}} to declare the variable as long as it's not reassigned within the loop body (it can change between iterations, because those are two separate variables). Otherwise, you can use {{jsxref("Statements/let", "let")}}.
-
 Частина `for...of` `variable` приймає що завгодно, що може стояти перед оператором `=`. Для оголошення змінної можна використовувати {{jsxref("Statements/const", "const")}}, якщо їй в тілі циклу не присвоюється нове значення (значення може змінюватися між ітераціями, адже це будуть окремі змінні). Інакше – можна застосувати {{jsxref("Statements/let", "let")}}.
 
 ```js
@@ -340,8 +338,6 @@ for (const i of iterable) {
 ```
 
 Об'єкт `iterable` успадковує властивості `objCustom` та `arrCustom`, адже має у своєму [ланцюжку прототипів](/uk/docs/Web/JavaScript/Inheritance_and_the_prototype_chain) і `Object.prototype`, і `Array.prototype`.
-
-The `for...in` loop logs only [enumerable properties](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) of the `iterable` object. It doesn't log array _elements_ `3`, `5`, `7` or `"hello"` because those are not _properties_ — they are _values_. It logs array _indexes_ as well as `arrCustom` and `objCustom`, which are actual properties. If you're not sure why these properties are iterated over, there's a more thorough explanation of how [array iteration and `for...in`](/uk/docs/Web/JavaScript/Reference/Statements/for...in#array_iteration_and_for...in) work.
 
 Цикл `for...in` виводить лише [перелічувані властивості](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) об'єкта `iterable`. Він не виводить _елементи_ масиву, `3`, `5`, `7` чи `"агов"`, бо вони не є _властивостями_: вони є _значеннями_. Він виводить _індекси_ масиву, так само як `arrCustom` і `objCustom`, що є справжніми властивостями. Якщо немає певності в тому, чому ітеруються саме ці властивості — є більш поглиблене роз'яснення, як працюють [ітерування масиву та цикл `for...in`](/uk/docs/Web/JavaScript/Reference/Statements/for...in#iteruvannia-masyvu-i-tsykl-forin).
 
