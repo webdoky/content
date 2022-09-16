@@ -44,7 +44,7 @@ browser-compat: html.elements.div
         >.<br />Або (в HTML за {{glossary("WHATWG")}}): якщо предок – елемент
         {{HTMLElement("dl")}}: один чи більше елементів
         {{HTMLElement("dt")}}, після чого – один чи більше елементів
-        {{HTMLElement("dd")}}, необов‘язково помежованих елементами
+        {{HTMLElement("dd")}}, необов'язково помежованих елементами
         {{HTMLElement("script")}} і
         {{HTMLElement("template")}}.
       </td>
