@@ -218,7 +218,7 @@ for (const value of iterable) {
 // 3
 ```
 
-_Ітеровані ітератори_ (ітератори з методом `[@@iterator]()`, що повертає `this`) є доволі поширеним підходом, щоб зробити ітератори застосовними в синтаксичних конструкціях, що очікують ітерованих, як то `for...of`.
+_Ітеровані ітератори_ (ітератори з методом `[@@iterator]()`, що повертає `this`) є доволі поширеним підходом, щоб зробити ітератори застосовними в синтаксичних конструкціях, що очікують на ітеровані об'єкти, як то `for...of`.
 
 ```js
 let i = 1;
@@ -343,11 +343,11 @@ for (const i of iterable) {
 
 The `for...in` loop logs only [enumerable properties](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) of the `iterable` object. It doesn't log array _elements_ `3`, `5`, `7` or `"hello"` because those are not _properties_ — they are _values_. It logs array _indexes_ as well as `arrCustom` and `objCustom`, which are actual properties. If you're not sure why these properties are iterated over, there's a more thorough explanation of how [array iteration and `for...in`](/uk/docs/Web/JavaScript/Reference/Statements/for...in#array_iteration_and_for...in) work.
 
-Цикл `for...in` виводить лише [перелічувані властивості](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) об'єкта `iterable`. Він не виводить _елементи_ масиву, `3`, `5`, `7` чи `"агов"`, бо вони не є _властивостями_: вони є _значеннями_. Він виводить _індекси_ масиву, так само як `arrCustom` і `objCustom`, що є справжніми властивостями.
+Цикл `for...in` виводить лише [перелічувані властивості](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) об'єкта `iterable`. Він не виводить _елементи_ масиву, `3`, `5`, `7` чи `"агов"`, бо вони не є _властивостями_: вони є _значеннями_. Він виводить _індекси_ масиву, так само як `arrCustom` і `objCustom`, що є справжніми властивостями. Якщо немає певності в тому, чому ітеруються саме ці властивості — є більш поглиблене роз'яснення, як працюють [ітерування масиву та цикл `for...in`](/uk/docs/Web/JavaScript/Reference/Statements/for...in#iteruvannia-masyvu-i-tsykl-forin).
 
 Другий цикл – подібний до першого, але він використовує {{jsxref("Object.hasOwn()")}}, аби перевіряти, чи є знайдена перелічувана властивість власною властивістю об'єкта, тобто не успадкованою. Якщо це так, то властивість виводиться. Властивості `0`, `1`, `2` і `foo` – виводяться, тому що є власними. Властивості `arrCustom` і `objCustom` не виводяться, бо є успадкованими.
 
-Цикл `for...of` ітерує й виводить _значення_, котрі `iterable`, як масив (а масиви є [ітерованими](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/@@iterator)), визначає для ітерування. Демонструються _елементи_ об'єкта – `3`, `5`, `7`, але жодна з _властивостей_ об'єкта.
+Цикл `for...of` ітерує й виводить _значення_, котрі об'єкт `iterable`, як масив (а масиви є [ітерованими](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/@@iterator)), визначає для ітерування. Демонструються _елементи_ об'єкта – `3`, `5`, `7`, але жодна з _властивостей_ об'єкта.
 
 ## Специфікації
 
