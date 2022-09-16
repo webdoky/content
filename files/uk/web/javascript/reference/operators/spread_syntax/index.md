@@ -20,7 +20,7 @@ browser-compat: javascript.operators.spread
 
 ## Синтаксис
 
-```js
+```js-nolint
 myFunction(a, ...iterableObj, b)
 [1, ...iterableObj, '4', "п'ять", 6]
 { ...obj, key: 'значення' }
