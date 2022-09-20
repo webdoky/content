@@ -176,8 +176,6 @@ class newClass {}
 typeof document.all === 'undefined';
 ```
 
-Although `document.all` is also [falsy](/uk/docs/Glossary/Falsy) and [loosely equal](/uk/docs/Web/JavaScript/Reference/Operators/Equality) to `undefined`, it is not [`undefined`](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined). The case of `document.all` having type `"undefined"` is classified in the web standards as a "willful violation" of the original ECMAScript standard for web compatibility.
-
 Попри те, що `document.all` також є [хибним значенням](/uk/docs/Glossary/Falsy) і [приблизно дорівнює](/uk/docs/Web/JavaScript/Reference/Operators/Equality) `undefined`, він не є [`undefined`](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined). Ситуація з тим, що `document.all` має тип `"undefined"`, класифікована у вебстандартах як "навмисне порушення" оригінального стандарту ECMAScript заради сумісності.
 
 ### Власний метод, що отримує більш конкретний тип
