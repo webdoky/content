@@ -44,17 +44,17 @@ shift()
 Код нижче демонструє масив `myFish` до і після усунення його першого елемента. Крім того, він демонструє усунутий елемент:
 
 ```js
-const myFish = ['янгол', 'клоун', 'мандаринка', 'осетер'];
+const myFish = ["янгол", "клоун", "мандаринка", "осетер"];
 
-console.log('myFish до:', JSON.stringify(myFish));
+console.log("myFish до:", JSON.stringify(myFish));
 // myFish до: ['янгол', 'клоун', 'мандаринка', 'осетер'];
 
 const shifted = myFish.shift();
 
-console.log('myFish після:', myFish);
+console.log("myFish після:", myFish);
 // myFish after: ['клоун', 'мандаринка', 'осетер'];
 
-console.log('Усунуто такий елемент:', shifted);
+console.log("Усунуто такий елемент:", shifted);
 // Усунуто такий елемент: янгол
 ```
 
@@ -63,9 +63,9 @@ console.log('Усунуто такий елемент:', shifted);
 Метод shift() нерідко застосовують всередині умови циклу while. В наступному прикладі кожна ітерація прибирає з масиву наступний елемент, поки він не стане порожнім:
 
 ```js
-const names = ['Артем', 'Олександр', 'Максим', 'Богдан', 'Назар'];
+const names = ["Артем", "Олександр", "Максим", "Богдан", "Назар"];
 
-while (typeof (i = names.shift()) !== 'undefined') {
+while (typeof (i = names.shift()) !== "undefined") {
   console.log(i);
 }
 // Артем, Олександр, Максим, Богдан, Назар
