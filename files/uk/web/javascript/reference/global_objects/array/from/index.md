@@ -70,14 +70,14 @@ Array.from(arrayLike, function mapFn(element, index) { /* … */ }, thisArg)
 ### Array на основі String
 
 ```js
-Array.from('foo');
+Array.from("foo");
 // [ "f", "o", "o" ]
 ```
 
 ### Array на основі Set
 
 ```js
-const set = new Set(['foo', 'bar', 'baz', 'foo']);
+const set = new Set(["foo", "bar", "baz", "foo"]);
 Array.from(set);
 // [ "foo", "bar", "baz" ]
 ```
@@ -94,8 +94,8 @@ Array.from(map);
 // [[1, 2], [2, 4], [4, 8]]
 
 const mapper = new Map([
-  ['1', 'a'],
-  ['2', 'b'],
+  ["1", "a"],
+  ["2", "b"],
 ]);
 Array.from(mapper.values());
 // ['a', 'b'];
@@ -108,9 +108,9 @@ Array.from(mapper.keys());
 
 ```js
 // Створити масив, заснований на властивості елементів DOM
-const images = document.querySelectorAll('img');
+const images = document.querySelectorAll("img");
 const sources = Array.from(images, (image) => image.src);
-const insecureSources = sources.filter((link) => link.startsWith('http://'));
+const insecureSources = sources.filter((link) => link.startsWith("http://"));
 ```
 
 ### Array на основі масивоподібного об'єкта (arguments)
@@ -156,8 +156,8 @@ range(1, 10, 2);
 // [1, 3, 5, 7, 9]
 
 // Породити за допомогою Array.from алфавіт, користуючись тим, що він має послідовний порядок
-range('A'.charCodeAt(0), 'Z'.charCodeAt(0), 1).map((x) =>
-  String.fromCharCode(x),
+range("A".charCodeAt(0), "Z".charCodeAt(0), 1).map((x) =>
+  String.fromCharCode(x)
 );
 // ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 ```
