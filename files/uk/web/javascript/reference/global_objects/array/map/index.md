@@ -142,7 +142,7 @@ const doubles = numbers.map((num) => num * 2);
 
 ```js
 const map = Array.prototype.map;
-const charCodes = map.call('Hello World', (x) => x.charCodeAt(0));
+const charCodes = map.call("Hello World", (x) => x.charCodeAt(0));
 // charCodes тепер має такий вигляд: [72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]
 ```
 
@@ -153,7 +153,7 @@ const charCodes = map.call('Hello World', (x) => x.charCodeAt(0));
 В цьому випадку будуть отримані значення всіх на екрані вибраних елементів `option`:
 
 ```js
-const elems = document.querySelectorAll('select option:checked');
+const elems = document.querySelectorAll("select option:checked");
 const values = Array.prototype.map.call(elems, ({ value }) => value);
 ```
 
@@ -168,7 +168,7 @@ const values = Array.prototype.map.call(elems, ({ value }) => value);
 Припустимо, у нас є:
 
 ```js
-['1', '2', '3'].map(parseInt);
+["1", "2", "3"].map(parseInt);
 ```
 
 Хоч можна було б очікувати чогось подібного до `[1, 2, 3]`, фактичним результатом є `[1, NaN, NaN]`.
@@ -187,9 +187,9 @@ const values = Array.prototype.map.call(elems, ({ value }) => value);
 
 ```js
 // parseInt(string, radix) -> map(parseInt(value, index))
-/*  перша ітерація (index – 0): */ parseInt('1', 0); // 1
-/*  друга ітерація (index – 1): */ parseInt('2', 1); // NaN
-/*  третя ітерація (index – 2): */ parseInt('3', 2); // NaN
+/*  перша ітерація (index – 0): */ parseInt("1", 0); // 1
+/*  друга ітерація (index – 1): */ parseInt("2", 1); // NaN
+/*  третя ітерація (index – 2): */ parseInt("3", 2); // NaN
 ```
 
 Як розв'язати цю проблему:
@@ -197,33 +197,33 @@ const values = Array.prototype.map.call(elems, ({ value }) => value);
 ```js
 const returnInt = (element) => parseInt(element, 10);
 
-['1', '2', '3'].map(returnInt); // [1, 2, 3]
+["1", "2", "3"].map(returnInt); // [1, 2, 3]
 // В результаті маємо масив чисел (як і очікувалось)
 
 // Те саме, що і вище, але у лаконічному записі через стрілкову функцію
-['1', '2', '3']
+["1", "2", "3"]
   .map((str) => parseInt(str)) // [1, 2, 3]
 
   [
     // Простіший спосіб і досягнути того ж, і уникнути підводного каменю:
-    ('1', '2', '3')
+    ("1", "2", "3")
   ].map(Number) // [1, 2, 3]
 
   [
     // Але, на відміну від parseInt(), Number() також поверне і число з рухомою крапкою, і (розібраний) експоненціальний запис:
-    ('1.1', '2.2e2', '3e300')
+    ("1.1", "2.2e2", "3e300")
   ].map(Number) // [1.1, 220, 3e+300]
 
   [
     // Для порівняння, якби ми застосували parseInt() на попередньому масиві:
-    ('1.1', '2.2e2', '3e300')
+    ("1.1", "2.2e2", "3e300")
   ].map((str) => parseInt(str)); // [1, 2, 3]
 ```
 
 Інакший варіант результату виклику методу `map` із функцією {{jsxref("parseInt")}} як аргументом має такий вигляд:
 
 ```js
-const strings = ['10', '10', '10'];
+const strings = ["10", "10", "10"];
 const numbers = strings.map(parseInt);
 
 console.log(numbers);

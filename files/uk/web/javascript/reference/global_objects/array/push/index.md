@@ -19,10 +19,10 @@ browser-compat: javascript.builtins.Array.push
 
 ## Синтаксис
 
-```js
-push(element0);
-push(element0, element1);
-push(element0, element1, /* … ,*/ elementN);
+```js-nolint
+push(element0)
+push(element0, element1)
+push(element0, element1, /* … ,*/ elementN)
 ```
 
 ### Параметри

@@ -20,8 +20,8 @@ browser-compat: javascript.builtins.String.match
 
 ## Синтаксис
 
-```js
-match(regexp);
+```js-nolint
+match(regexp)
 ```
 
 ### Параметри

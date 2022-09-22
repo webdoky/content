@@ -18,9 +18,9 @@ browser-compat: javascript.builtins.String.substring
 
 ## Синтаксис
 
-```js
-substring(indexStart);
-substring(indexStart, indexEnd);
+```js-nolint
+substring(indexStart)
+substring(indexStart, indexEnd)
 ```
 
 ### Параметри
@@ -86,7 +86,7 @@ console.log(text.substring(text.length - 5)); // друкує "zilla"
 
 ### Різниця між методами substring() та substr()
 
-Є невеликі відмінності між методами `substring()` та {{jsxref("String/substr", "substr()")}}, тож слід бути уважними і не плутати їх.
+Є невеликі відмінності між методами `substring()` та {{jsxref("String/substr", "substr()")}}, тож слід бути уважними й не плутати їх.
 
 - Двома параметрами `substr()` є `start` (початок) і `length` (довжина), натомість в `substring()` це `start` (початок) і `end` (кінець).
 - В `substr()` індекс `start` рахуватиметься з кінця рядка, якщо він від'ємний, натомість в `substring()` від'ємний `start` буде зведений до `0`.
