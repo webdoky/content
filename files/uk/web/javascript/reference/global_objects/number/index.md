@@ -31,10 +31,10 @@ browser-compat: javascript.builtins.Number
 Бувши застосованим як функція, `Number(value)` перетворює рядок чи інше значення на Number. Якщо значення не може бути перетворено, буде повернено {{jsxref("NaN")}}.
 
 ```js
-Number('123'); // повертає число 123
-Number('123') === 123; // true
+Number("123"); // повертає число 123
+Number("123") === 123; // true
 
-Number('єдиноріг'); // NaN
+Number("єдиноріг"); // NaN
 Number(undefined); // NaN
 ```
 
@@ -152,7 +152,7 @@ const smallestInt = Number.MIN_SAFE_INTEGER; // -(2**53 - 1) => -900719925474099
 Наступний приклад перетворює об'єкт {{jsxref("Date")}} на числове значення, застосовуючи `Number` як функцію:
 
 ```js
-const d = new Date('December 17, 1995 03:24:00');
+const d = new Date("December 17, 1995 03:24:00");
 console.log(Number(d));
 ```
 
@@ -161,19 +161,19 @@ console.log(Number(d));
 ### Перетворення числових рядків і null на числа
 
 ```js
-Number('123'); // 123
-Number('123') === 123; // true
-Number('12.3'); // 12.3
-Number('12.00'); // 12
-Number('123e-1'); // 12.3
-Number(''); // 0
+Number("123"); // 123
+Number("123") === 123; // true
+Number("12.3"); // 12.3
+Number("12.00"); // 12
+Number("123e-1"); // 12.3
+Number(""); // 0
 Number(null); // 0
-Number('0x11'); // 17
-Number('0b11'); // 3
-Number('0o11'); // 9
-Number('foo'); // NaN
-Number('100a'); // NaN
-Number('-Infinity'); // -Infinity
+Number("0x11"); // 17
+Number("0b11"); // 3
+Number("0o11"); // 9
+Number("foo"); // NaN
+Number("100a"); // NaN
+Number("-Infinity"); // -Infinity
 ```
 
 ## Специфікації
