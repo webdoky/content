@@ -159,8 +159,8 @@ browser-compat: javascript.builtins.Date
 
 ```js
 const today = new Date();
-const birthday = new Date('December 17, 1995 03:24:00'); // НЕРЕКОМЕНДОВАНО: може не працювати в усіх середовищах виконання
-const birthday2 = new Date('1995-12-17T03:24:00'); // Відповідає форматові ISO8601, а тому надійно працюватиме
+const birthday = new Date("December 17, 1995 03:24:00"); // НЕРЕКОМЕНДОВАНО: може не працювати в усіх середовищах виконання
+const birthday2 = new Date("1995-12-17T03:24:00"); // Відповідає форматові ISO8601, а тому надійно працюватиме
 const birthday3 = new Date(1995, 11, 17); // індекс місяця починається з 0
 const birthday4 = new Date(1995, 11, 17, 3, 24, 0);
 const birthday5 = new Date(628021800000); // передача мітки часу
@@ -169,7 +169,7 @@ const birthday5 = new Date(628021800000); // передача мітки час�
 ### Формати значень, повернених методом toString
 
 ```js
-const date = new Date('2020-05-12T23:50:21.817Z');
+const date = new Date("2020-05-12T23:50:21.817Z");
 date.toString(); // Wed May 13 2020 02:50:21 GMT+0300 (Eastern European Summer Time)
 date.toDateString(); // Wed May 13 2020
 date.toTimeString(); // 02:50:21 GMT+0300 (Eastern European Summer Time)
@@ -205,7 +205,7 @@ const [hour, minutes, seconds] = [
 ```js
 let date = new Date(98, 1); // Sun Feb 01 1998 00:00:00 GMT+0000 (GMT)
 date = new Date(22, 1); // Wed Feb 01 1922 00:00:00 GMT+0000 (GMT)
-date = new Date('2/1/22'); // Tue Feb 01 2022 00:00:00 GMT+0000 (GMT)
+date = new Date("2/1/22"); // Tue Feb 01 2022 00:00:00 GMT+0000 (GMT)
 
 // Застарілий метод; завжди інтерпретує двоцифрове значення року відносно 1900
 date.setYear(98);

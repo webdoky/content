@@ -84,8 +84,7 @@ browser-compat: html.elements.input.type_file
 <input
   type="file"
   id="docpicker"
-  accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-/>
+  accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
 ```
 
 ### capture
@@ -198,8 +197,7 @@ This produces the following output:
       type="file"
       id="profile_pic"
       name="profile_pic"
-      accept=".jpg, .jpeg, .png"
-    />
+      accept=".jpg, .jpeg, .png" />
   </div>
   <div>
     <button>Надіслати</button>
@@ -230,8 +228,8 @@ div {
 1. Не можна встановити значення файлового поля зі сценарію, – код типу того, що нижче, не подіє:
 
    ```js
-   const input = document.querySelector('input[type=file]');
-   input.value = 'foo';
+   const input = document.querySelector("input[type=file]");
+   input.value = "foo";
    ```
 
 2. Коли за допомогою `<input type="file">` обирається файл, реальний шлях до такого файлу з очевидних міркувань безпеки не показується в атрибуті `value`. Натомість його ім'я показується із `C:\fakepath\` на початку. Цей виверт має певні історичні підстави, але він підтримується у всіх сучасних браузерах і фактично є [визначеним специфікацією (англ.)](https://html.spec.whatwg.org/multipage/forms.html#fakepath-srsly).
@@ -255,8 +253,7 @@ div {
       id="image_uploads"
       name="image_uploads"
       accept=".jpg, .jpeg, .png"
-      multiple
-    />
+      multiple />
   </div>
   <div class="preview">
     <p>Наразі жодні файли не вибрані для завантаження</p>
@@ -334,8 +331,8 @@ form button:active {
 У перших рядках сценарію отримуються посилання на саме поле форми, а також елемент {{htmlelement("div")}} із класом `.preview`. Далі – приховується елемент {{htmlelement("input")}}: це необхідно, тому що файлові поля мають тенденцію до потворності, складності в оформленні та неодноманітності в дизайні між різними браузерами. Елемент `input` можна активувати, клацнувши його {{htmlelement("label")}}, тож краще візуально приховати `input` і оформити `label` як кнопку, щоб користувач знав, що для завантаження файлів взаємодіяти треба із `label`.
 
 ```js
-const input = document.querySelector('input');
-const preview = document.querySelector('.preview');
+const input = document.querySelector("input");
+const preview = document.querySelector(".preview");
 
 input.style.opacity = 0;
 ```
@@ -345,7 +342,7 @@ input.style.opacity = 0;
 Далі – до поля додається [слухач подій](/uk/docs/Web/API/EventTarget/addEventListener), щоб відстежувати зміни його значення (у цьому випадку це відповідає вибору файлів). Слухач подій викликає самописну функцію `updateImageDisplay()`.
 
 ```js
-input.addEventListener('change', updateImageDisplay);
+input.addEventListener("change", updateImageDisplay);
 ```
 
 Кожного виклику функції `updateImageDisplay()`:
@@ -370,21 +367,21 @@ function updateImageDisplay() {
 
   const curFiles = input.files;
   if (curFiles.length === 0) {
-    const para = document.createElement('p');
-    para.textContent = 'Наразі жодні файли не вибрані для завантаження';
+    const para = document.createElement("p");
+    para.textContent = "Наразі жодні файли не вибрані для завантаження";
     preview.appendChild(para);
   } else {
-    const list = document.createElement('ol');
+    const list = document.createElement("ol");
     preview.appendChild(list);
 
     for (const file of curFiles) {
-      const listItem = document.createElement('li');
-      const para = document.createElement('p');
+      const listItem = document.createElement("li");
+      const para = document.createElement("p");
       if (validFileType(file)) {
         para.textContent = `Ім'я файлу – ${
           file.name
         }, розмір файлу – ${returnFileSize(file.size)}.`;
-        const image = document.createElement('img');
+        const image = document.createElement("img");
         image.src = URL.createObjectURL(file);
 
         listItem.appendChild(image);
@@ -405,16 +402,16 @@ function updateImageDisplay() {
 ```js
 // https://webdoky.org/uk/docs/Web/Media/Formats/Image_types
 const fileTypes = [
-  'image/apng',
-  'image/bmp',
-  'image/gif',
-  'image/jpeg',
-  'image/pjpeg',
-  'image/png',
-  'image/svg+xml',
-  'image/tiff',
-  'image/webp',
-  'image/x-icon',
+  "image/apng",
+  "image/bmp",
+  "image/gif",
+  "image/jpeg",
+  "image/pjpeg",
+  "image/png",
+  "image/svg+xml",
+  "image/tiff",
+  "image/webp",
+  "image/x-icon",
 ];
 
 function validFileType(file) {
