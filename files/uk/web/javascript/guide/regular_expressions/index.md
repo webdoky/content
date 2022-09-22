@@ -32,7 +32,7 @@ tags:
 - Або ж викликавши конструктор об'єкта {{jsxref("RegExp")}}, як показано:
 
   ```js
-  const re = new RegExp('ab+c');
+  const re = new RegExp("ab+c");
   ```
 
   Використання конструктора забезпечує компіляцію регулярного виразу під час виконання програми.
@@ -176,7 +176,7 @@ tags:
 
 ```js
 function escapeRegExp(string) {
-  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& означає цілий рядок, який збігся з патерном
+  return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); // $& означає цілий рядок, який збігся з патерном
 }
 ```
 
@@ -211,13 +211,13 @@ _Чому це не вбудовано всередину JavaScript?_ Існу�
 
 ```js
 const myRe = /d(b+)d/g;
-const myArray = myRe.exec('cdbbdbsbz');
+const myArray = myRe.exec("cdbbdbsbz");
 ```
 
 А в цьому сценарії — альтернативний варіант створення масиву `myArray`, на випадок якщо вам не потрібен доступ до властивостей самого регулярного виразу:
 
 ```js
-const myArray = /d(b+)d/g.exec('cdbbdbsbz');
+const myArray = /d(b+)d/g.exec("cdbbdbsbz");
 // так само, як і з "cdbbdbsbz".match(/d(b+)d/g); однак,
 // "cdbbdbsbz".match(/d(b+)d/g) виводить [ "dbbd" ]
 // /d(b+)d/g.exec('cdbbdbsbz') виводить [ 'dbbd', 'bb', index: 1, input: 'cdbbdbsbz' ]
@@ -228,8 +228,8 @@ const myArray = /d(b+)d/g.exec('cdbbdbsbz');
 Якщо ж потрібно сконструювати регулярний вираз із рядка, ось іще одна альтернатива:
 
 ```js
-const myRe = new RegExp('d(b+)d', 'g');
-const myArray = myRe.exec('cdbbdbsbz');
+const myRe = new RegExp("d(b+)d", "g");
+const myArray = myRe.exec("cdbbdbsbz");
 ```
 
 В цих сценаріях пошук збігів успішно завершується, повертає масив результатів і оновлює властивості, наведені в таблиці нижче:
@@ -292,8 +292,8 @@ const myArray = myRe.exec('cdbbdbsbz');
 
 ```js
 const myRe = /d(b+)d/g;
-const myArray = myRe.exec('cdbbdbsbz');
-console.log('Поле lastIndex має значення ' + myRe.lastIndex);
+const myArray = myRe.exec("cdbbdbsbz");
+console.log("Поле lastIndex має значення " + myRe.lastIndex);
 
 // "Поле lastIndex має значення 5"
 ```
@@ -301,8 +301,8 @@ console.log('Поле lastIndex має значення ' + myRe.lastIndex);
 Однак, якщо натомість у нас є такий сценарій:
 
 ```js
-const myArray = /d(b+)d/g.exec('cdbbdbsbz');
-console.log('Поле lastIndex має значення ' + /d(b+)d/g.lastIndex);
+const myArray = /d(b+)d/g.exec("cdbbdbsbz");
+console.log("Поле lastIndex має значення " + /d(b+)d/g.lastIndex);
 
 // "Поле lastIndex має значення 0"
 ```
@@ -332,7 +332,7 @@ const re = /pattern/flags;
 або
 
 ```js
-const re = new RegExp('pattern', 'flags');
+const re = new RegExp("pattern", "flags");
 ```
 
 Зауважте, що ці опції — це невідокремна частина регулярного виразу. Їх неможливо додати чи прибрати потім.
@@ -341,7 +341,7 @@ const re = new RegExp('pattern', 'flags');
 
 ```js
 const re = /\w+\s/g;
-const str = 'fee fi fo fum';
+const str = "fee fi fo fum";
 const myArray = str.match(re);
 console.log(myArray);
 
@@ -357,7 +357,7 @@ const re = /\w+\s/g;
 ...на такий:
 
 ```js
-const re = new RegExp('\\w+\\s', 'g');
+const re = new RegExp("\\w+\\s", "g");
 ```
 
 ...і отримати такий самий результат.
@@ -369,7 +369,7 @@ const re = new RegExp('\\w+\\s', 'g');
 Метод {{jsxref("RegExp.prototype.exec()")}} із позначкою `g` ітеративно поверне кожен збіг та його позицію.
 
 ```js
-const str = 'fee fi fo fum';
+const str = "fee fi fo fum";
 const re = /\w+\s/g;
 console.log(re.exec(str)); // ["fee ", index: 0, input: "fee fi fo fum"]
 console.log(re.exec(str)); // ["fi ", index: 4, input: "fee fi fo fum"]
@@ -443,9 +443,9 @@ console.log(str.match(re)); // ["fee ", "fi ", "fo "]
 #### JavaScript
 
 ```js
-const form = document.querySelector('#form');
-const input = document.querySelector('#phone');
-const output = document.querySelector('#output');
+const form = document.querySelector("#form");
+const input = document.querySelector("#phone");
+const output = document.querySelector("#output");
 
 const re = /^(?:\d{3}|\(\d{3}\))([-/.])\d{3}\1\d{4}$/;
 
@@ -455,7 +455,7 @@ function testInfo(phoneInput) {
     ? `Дякую, ваш номер телефону – ${ok[0]}`
     : `${phoneInput.value} не є телефонним номером із кодом населеного пункту!`;
 }
-form.addEventListener('submit', (event) => {
+form.addEventListener("submit", (event) => {
   event.preventDefault();
   testInfo(input);
 });
