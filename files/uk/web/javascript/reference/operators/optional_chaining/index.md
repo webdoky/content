@@ -13,16 +13,9 @@ browser-compat: javascript.operators.optional_chaining
 
 {{JSSidebar("Operators")}}
 
-Оператор **необов'язкового ланцюжка** (**`?.`**) дає змогу зчитувати значення властивості, розташованої в глибині ланцюжка пов'язаних об'єктів, без потреби перевіряти дійсність кожного посилання в ланцюжку.
+Оператор **необов'язкового ланцюжка** (**`?.`**) звертається до властивості об'єкта або викликає функцію. Якщо об'єкт – {{jsxref("undefined")}} або [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null), то замість викидання помилки – повертається {{jsxref("undefined")}}.
 
-Оператор `?.` подібний до оператора ланцюжка `.`, окрім того, що замість спричинення помилки, коли посилання є [порожнім](/uk/docs/Glossary/Nullish) (рівним [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) чи {{JSxRef("undefined")}}), вираз закорочується з поверненим значенням `undefined`. Бувши застосованим для виклику функції, він повертає `undefined`, якщо така функція не існує.
-
-Результатом є коротші й простіші вирази при доступі до вкладених властивостей, коли існує ймовірність, що посилання може бути порожнім. Також це може бути корисним при дослідженні вмісту об'єкта, коли немає гарантій щодо того, які властивості є обов'язковими.
-
-Необов'язковий ланцюжок не може застосовуватися до неоголошеного кореневого об'єкта, але може – до кореневого об'єкта, що є `undefined`.
-
-{{EmbedInteractiveExample("pages/js/expressions-optionalchainingoperator.html",
-  "taller")}}
+{{EmbedInteractiveExample("pages/js/expressions-optionalchainingoperator.html", "taller")}}
 
 ## Синтаксис
 
@@ -34,7 +27,9 @@ obj.func?.(args)
 
 ## Опис
 
-Оператор необов'язкового ланцюжка пропонує спосіб спрощення доступу до значень в пов'язаних об'єктах, коли можливо, що певне посилання чи певна функція може бути `undefined` чи `null`.
+Оператор `?.` – подібний до оператора ланцюжка `.`, окрім того, що замість спричинення помилки, коли посилання є [порожнім](/uk/docs/Glossary/Nullish) ([`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) чи {{JSxRef("undefined")}}), то вираз закорочується з поверненим значенням `undefined`. Бувши застосованим до виклику функції, оператор повертає `undefined`, якщо дана функція не існує.
+
+Це призводить до коротших і простіших виразів при звертанні до ланцюжків властивостей, коли існує ймовірність того, що якесь посилання відсутнє. Також це може бути корисним при дослідженні вмісту об'єкта, коли немає гарантій того, які властивості в ньому є обов'язковими.
 
 Припустімо, об'єкт `obj` має вкладену структуру. Без необов'язкового ланцюжка звертання до глибоко вкладеної підвластивості вимагає валідації проміжних посилань:
 
@@ -43,6 +38,8 @@ const nestedProp = obj.first && obj.first.second;
 ```
 
 Значення `obj.first` перевірено на нерівність `null` (і `undefined`) перед звертанням до значення `obj.first.second`. Такий код запобігає помилці, що трапилась би, якби відбулось звертання напряму до `obj.first.second`, без перевірки `obj.first`.
+
+Це ідіоматичний патерн у JavaScript, але такий запис стає громіздким, коли ланцюжок – довгий, і це не є безпечним підходом. Наприклад, якщо `obj.first` – {{glossary("Falsy", "хибне")}} значення, що не є `null` чи `undefined`, наприклад, `0`, то це все одно призведе до закорочення і змусить `nestedProp` стати `0`, що може не бути бажаним результатом.
 
 Проте з оператором необов'язкового ланцюжка (`?.`) немає потреби явно перевіряти й закорочувати на основі стану `obj.first` перед спробою звернутися до `obj.first.second`:
 
@@ -60,6 +57,12 @@ const nestedProp =
   temp === null || temp === undefined ? undefined : temp.second;
 ```
 
+Необов'язковий ланцюжок не може бути застосований до неоголошеного кореневого об'єкта, але може бути застосований до кореневого об'єкта, чиє значення – `undefined`.
+
+```js example-bad
+undeclaredVar?.prop; // ReferenceError: undeclaredVar is not defined
+```
+
 ### Необов'язковий ланцюжок для виклику функцій
 
 Необов'язковий ланцюжок можна використовувати при спробі викликати метод, що може не існувати. Це може бути корисним, наприклад, при використанні API, метод якого може бути недоступним, або через вік реалізації, або через функціональність, що недоступна на пристрої користувача
@@ -70,23 +73,28 @@ const nestedProp =
 const result = someInterface.customMethod?.();
 ```
 
-> **Примітка:** Якщо властивість з таким іменем є, але вона не є функцією, то `?.` все одно призведе до винесення винятку {{JSxRef("TypeError")}} (`someInterface.customMethod is not a function`).
+Проте якщо властивість з таким іменем є, але вона не є функцією, то `?.` все одно призведе до винесення винятку {{JSxRef("TypeError")}} (`someInterface.customMethod is not a function`).
 
-> **Примітка:** Якщо сам `someInterface` є `null` чи `undefined`, все ж буде винесений виняток {{JSxRef("TypeError")}} (`someInterface is null`). Якщо очікується, що сам `someInterface` може бути `null` чи `undefined`, слід використовувати `?.` також на іншій позиції: `someInterface?.customMethod?.()`
+> **Примітка:** Якщо сам `someInterface` є `null` чи `undefined`, все ж буде винесений виняток {{JSxRef("TypeError")}} (`someInterface is null`). Якщо очікується, що сам `someInterface` може бути `null` чи `undefined`, слід використовувати `?.` також на іншій позиції: `someInterface?.customMethod?.()`.
+
+`eval?.()` – найстисліший спосіб ввійти у режим _непрямого обчислення_. Більше подробиць – на довідковій сторінці [`eval()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/eval#opys).
 
 ### Необов'язковий ланцюжок з виразами
 
-Також оператор необов'язкового ланцюжка можна використовувати при отриманні властивостей за допомогою виразів і [доступу до властивостей через квадратні дужки](/uk/docs/Web/JavaScript/Reference/Operators/Property_Accessors#zapys-kvadratnykh-duzhok):
+Також оператор необов'язкового ланцюжка можна використовувати вкупі з [записом квадратних дужок](/uk/docs/Web/JavaScript/Reference/Operators/Property_Accessors#zapys-kvadratnykh-duzhok), котрий дає змогу передати як ім'я властивості – вираз:
 
 ```js
-const nestedProp = obj?.['prop' + 'Name'];
+const nestedProp = obj?.["prop" + "Name"];
 ```
 
-Це особливо корисно для масивів:
+Це особливо корисно для масивів, адже до індексів масивів можна звертатися лише з квадратними дужками.
 
 ```js
-const arr = ['а', 'б', 'в', 'г'];
-const arrayItem = arr?.[42];
+function printMagicIndex(arr) {
+  console.log(arr?.[42]);
+}
+printMagicIndex([0, 1, 2, 3, 4, 5]); // undefined
+printMagicIndex(); // undefined; якби не ?., тут викинуло б помилку
 ```
 
 ### Необов'язковий ланцюжок недійсний на лівому боці присвоєння
@@ -95,7 +103,7 @@ const arrayItem = arr?.[42];
 
 ```js example-bad
 const object = {};
-object?.property = 1; // Uncaught SyntaxError: Invalid left-hand side in assignment
+object?.property = 1; // SyntaxError: Invalid left-hand side in assignment
 ```
 
 ### Закорочення
@@ -134,7 +142,7 @@ const prop =
 ```js
 const potentiallyNullObj = null;
 const prop = (potentiallyNullObj?.a).b;
-// Uncaught TypeError: Cannot read properties of undefined (reading 'b')
+// TypeError: Cannot read properties of undefined (reading 'b')
 ```
 
 Це еквівалентно щодо:
@@ -145,7 +153,7 @@ const temp = potentiallyNullObj?.a;
 const prop = temp.b;
 ```
 
-…окрім того, що змінна `temp` не створюється.
+Окрім того, що змінна `temp` не створюється.
 
 ## Приклади
 
@@ -155,9 +163,9 @@ const prop = temp.b;
 
 ```js
 const myMap = new Map();
-myMap.set('foo', { name: 'baz', desc: 'inga' });
+myMap.set("foo", { name: "baz", desc: "inga" });
 
-const nameBar = myMap.get('bar')?.name;
+const nameBar = myMap.get("bar")?.name;
 ```
 
 ### Виклик необов'язкових функцій зворотного виклику чи обробників подій
@@ -168,7 +176,7 @@ const nameBar = myMap.get('bar')?.name;
 // Код, написаний без застосування необов'язкового ланцюжка
 function doSomething(onContent, onError) {
   try {
-    // ... якісь операції з даними
+    // Якісь операції з даними
   } catch (err) {
     if (onError) {
       // Перевірка того, що onError справді існує
@@ -182,9 +190,9 @@ function doSomething(onContent, onError) {
 // Використання необов'язкового ланцюжка з викликами функцій
 function doSomething(onContent, onError) {
   try {
-    // ... якісь операції з даними
+    // Якісь операції з даними
   } catch (err) {
-    onError?.(err.message); // жодного винятку, якщо onError – undefined
+    onError?.(err.message); // Жодного винятку, якщо onError – undefined
   }
 }
 ```
@@ -195,30 +203,35 @@ function doSomething(onContent, onError) {
 
 ```js
 const customer = {
-  name: 'Карл',
+  name: "Карл",
   details: {
     age: 82,
-    location: 'Райські води', // точна адреса – невідома
+    location: "Райські води", // Точна адреса – невідома
   },
 };
 const customerCity = customer.details?.address?.city;
 
-// … це також працюватиме з викликом функції з необов'язковим ланцюжком
-const customerName = customer.name?.getName?.(); // метод не існує, customerName – undefined
+// Це також працюватиме з викликом функції з необов'язковим ланцюжком
+const customerName = customer.name?.getName?.(); // Метод не існує, customerName – undefined
 ```
 
 ### Поєднання з оператором null-злиття
 
-{{JSxRef("Operators/Nullish_Coalescing_Operator", "Оператор null-злиття",
-  '', 1)}} може використовуватися після необов'язкового ланцюжка, аби надати усталене значення, коли нічого не знайдено:
+[Оператор null-злиття](/uk/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator) може використовуватися після необов'язкового ланцюжка, аби надати усталене значення, коли нічого не знайдено:
 
 ```js
-const customer = {
-  name: 'Карл',
+function printCustomerCity(customer) {
+  const customerCity = customer?.city ?? "Невідоме місто";
+  console.log(customerCity);
+}
+printCustomerCity({
+  name: "Натан",
+  city: "Львів",
+}); // "Львів"
+printCustomerCity({
+  name: "Карл",
   details: { age: 82 },
-};
-const customerCity = customer?.city ?? 'Невідоме місто';
-console.log(customerCity); // Невідоме місто
+}); // "Невідоме місто"
 ```
 
 ## Специфікації
@@ -231,5 +244,4 @@ console.log(customerCity); // Невідоме місто
 
 ## Дивіться також
 
-- {{JSxRef("Operators/Nullish_Coalescing_Operator", "Оператор null-злиття",
-    '', 1)}}
+- [Оператор null-злиття](/uk/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator)
