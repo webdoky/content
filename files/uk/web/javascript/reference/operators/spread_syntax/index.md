@@ -39,7 +39,7 @@ myFunction(a, ...iterableObj, b)
 Лише [ітеровані](/uk/docs/Web/JavaScript/Reference/Iteration_protocols) об'єкти, як то {{jsxref("Array")}}, можуть бути розгорнуті в масив та параметри функції. Чимало об'єктів не є ітерованими, включно з усіма [простими об'єктами](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object), що не мають метода [`Symbol.iterator`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/iterator):
 
 ```js example-bad
-const obj = { key1: 'value1' };
+const obj = { key1: "value1" };
 const array = [...obj]; // TypeError: obj is not iterable
 ```
 
@@ -98,8 +98,8 @@ const d = new Date(...dateFields);
 Аби створити новий масив без синтаксису розгортання, використавши вже наявний масив для його часткового наповнення, вже недостатньо просто літерала масиву. Натомість доведеться застосувати імперативний код в комбінації з {{jsxref("Array.prototype.push", "push()")}}, {{jsxref("Array.prototype.splice", "splice()")}}, {{jsxref("Array.prototype.concat", "concat()")}} тощо. Синтаксис розгортання дає змогу зробити це значно ефективніше:
 
 ```js
-const parts = ['плечі', 'коліна'];
-const lyrics = ['голова', ...parts, 'й', 'пальці'];
+const parts = ["плечі", "коліна"];
+const lyrics = ["голова", ...parts, "й", "пальці"];
 //  [ "голова", "плечі", "коліна", "й", "пальці" ]
 ```
 
@@ -181,8 +181,8 @@ arr1 = [...arr2, ...arr1];
 Поверхневе клонування (без врахування прототипа) чи злиття об'єктів є можливим із застосуванням стислішого синтаксису, ніж {{jsxref("Object.assign()")}}.
 
 ```js
-const obj1 = { foo: 'bar', x: 42 };
-const obj2 = { foo: 'baz', y: 13 };
+const obj1 = { foo: "bar", x: 42 };
+const obj2 = { foo: "baz", y: 13 };
 
 const clonedObj = { ...obj1 };
 // Об'єкт { foo: "bar", x: 42 }
@@ -194,7 +194,7 @@ const mergedObj = { ...obj1, ...obj2 };
 Зауважте, що {{jsxref("Object.assign()")}} може застосовуватись для модифікації об'єкта, а от синтаксис розгортання — ні.
 
 ```js
-const obj1 = { foo: 'bar', x: 42 };
+const obj1 = { foo: "bar", x: 42 };
 Object.assign(obj1, { x: 1337 });
 console.log(obj1); // Object { foo: "bar", x: 1337 }
 ```
@@ -208,7 +208,7 @@ const objectAssign = Object.assign(
       console.log(val);
     },
   },
-  { foo: 1 },
+  { foo: 1 }
 );
 // Друкує "1"; objectAssign.foo досі містить первинний сеттер
 
@@ -224,8 +224,8 @@ const spread = {
 Неможливо в нативному коді повторно реалізувати функцію {{jsxref("Object.assign()")}} за допомогою одного розгортання:
 
 ```js
-const obj1 = { foo: 'bar', x: 42 };
-const obj2 = { foo: 'baz', y: 13 };
+const obj1 = { foo: "bar", x: 42 };
+const obj2 = { foo: "baz", y: 13 };
 const merge = (...objects) => ({ ...objects });
 
 const mergedObj1 = merge(obj1, obj2);
@@ -238,8 +238,8 @@ const mergedObj2 = merge({}, obj1, obj2);
 У наведеному вище прикладі синтаксис розгортання працює не так, як можна було очікувати: він розгортає _масив_ аргументів у об'єктний літерал, через параметр решти. Нижче – інша реалізація функції `merge` із застосуванням синтаксису розгортання, поведінка якої аналогічна до {{jsxref("Object.assign()")}}, за винятком того, що вона не змушує спрацьовувати сеттери й не модифікує жодного об'єкта:
 
 ```js
-const obj1 = { foo: 'bar', x: 42 };
-const obj2 = { foo: 'baz', y: 13 };
+const obj1 = { foo: "bar", x: 42 };
+const obj2 = { foo: "baz", y: 13 };
 const merge = (...objects) =>
   objects.reduce((acc, cur) => ({ ...acc, ...cur }));
 
