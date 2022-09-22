@@ -147,7 +147,7 @@ param => expression;
 Щоб повернути об'єкт, літеральний вираз потребує дужок:
 
 ```js
-(params) => ({ foo: 'a' }); // повертає об'єкт { foo: "a" }
+(params) => ({ foo: "a" }); // повертає об'єкт { foo: "a" }
 ```
 
 Підтримуються [залишкові параметри](/uk/docs/Web/JavaScript/Reference/Functions/rest_parameters), причому в такому випадку обов'язкові дужки:
@@ -176,7 +176,7 @@ param => expression;
 Як було зауважено раніше, вирази стрілкових функцій найкраще підходять для функцій, які не є методами. Погляньмо, що трапиться, якщо все ж таки використати таку функцію як метод:
 
 ```js
-'use strict';
+"use strict";
 
 const obj = {
   // не створює нового контексту
@@ -194,13 +194,13 @@ obj.c(); // друкує 10, Object { /* … */ }
 Стрілкові функції не мають свого власного `this`. Ось іще один приклад, цього разу із застосуванням {{jsxref("Object.defineProperty()")}}:
 
 ```js
-'use strict';
+"use strict";
 
 const obj = {
   a: 10,
 };
 
-Object.defineProperty(obj, 'b', {
+Object.defineProperty(obj, "b", {
   get: () => {
     console.log(this.a, typeof this.a, this); // undefined 'undefined' Window { /* … */ } (або глобальний об'єкт)
     return this.a + 10; // звертається до глобального об'єкту 'Window', а отже – 'this.a' поверне 'undefined'
@@ -490,7 +490,7 @@ callback = callback || (() => {}); // добре
 // Порожня стрілкова функція повертає undefined
 const empty = () => {};
 
-(() => 'foobar')();
+(() => "foobar")();
 // Повертає "foobar"
 // (це називається Вираз одразу викликаної функції)
 
@@ -524,10 +524,10 @@ promise
 
 // Безпараметрові стрілкові функції, які простіше розібрати візуально
 setTimeout(() => {
-  console.log('Я відбудусь раніше');
+  console.log("Я відбудусь раніше");
   setTimeout(() => {
     // Глибший код
-    console.log('Я відбудусь пізніше');
+    console.log("Я відбудусь пізніше");
   }, 1);
 }, 1);
 ```
