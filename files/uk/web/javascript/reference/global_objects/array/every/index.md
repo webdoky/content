@@ -19,35 +19,21 @@ browser-compat: javascript.builtins.Array.every
 
 ## Синтаксис
 
-```js
+```js-nolint
 // Стрілкова функція
-every((element) => {
-  /* … */
-});
-every((element, index) => {
-  /* … */
-});
-every((element, index, array) => {
-  /* … */
-});
+every((element) => { /* … */ } )
+every((element, index) => { /* … */ } )
+every((element, index, array) => { /* … */ } )
 
 // Функція зворотного виклику
-every(callbackFn);
-every(callbackFn, thisArg);
+every(callbackFn)
+every(callbackFn, thisArg)
 
 // Вбудована функція зворотного виклику
-every(function (element) {
-  /* … */
-});
-every(function (element, index) {
-  /* … */
-});
-every(function (element, index, array) {
-  /* … */
-});
-every(function (element, index, array) {
-  /* … */
-}, thisArg);
+every(function(element) { /* … */ })
+every(function(element, index) { /* … */ })
+every(function(element, index, array){ /* … */ })
+every(function(element, index, array) { /* … */ }, thisArg)
 ```
 
 ### Параметри

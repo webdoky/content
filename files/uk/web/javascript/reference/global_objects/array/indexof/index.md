@@ -20,9 +20,9 @@ browser-compat: javascript.builtins.Array.indexOf
 
 ## Синтаксис
 
-```js
-indexOf(searchElement);
-indexOf(searchElement, fromIndex);
+```js-nolint
+indexOf(searchElement)
+indexOf(searchElement, fromIndex)
 ```
 
 ### Параметри
