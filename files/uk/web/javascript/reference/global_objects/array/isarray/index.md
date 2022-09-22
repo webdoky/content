@@ -13,14 +13,7 @@ browser-compat: javascript.builtins.Array.isArray
 
 {{JSRef}}
 
-Метод **`Array.isArray()`** (чи є масивом) з'ясовує, чи є передане значення примірником {{jsxref("Array")}}.
-
-```js
-Array.isArray([1, 2, 3]); // true
-Array.isArray({ foo: 123 }); // false
-Array.isArray('паляниця'); // false
-Array.isArray(undefined); // false
-```
+Статичний метод **`Array.isArray()`** ("чи є масивом") з'ясовує, чи є передане значення примірником {{jsxref("Array")}}.
 
 ## Синтаксис
 
@@ -35,25 +28,26 @@ Array.isArray(value)
 
 ### Повернене значення
 
-`true`, якщо значення – то {{jsxref("Array")}}, інакше – `false`.
+`true`, якщо значення – то {{jsxref("Array")}}, інакше – `false`. Якщо `value` – примірник {{jsxref("TypedArray")}}, то поверненим значенням обов'язково буде `false`.
 
 ## Опис
 
-Якщо значення є примірником {{jsxref("Array")}}, то повертається`true`, інакше – `false`.
+`Array.isArray()` перевіряє, чи є передане значення примірником {{jsxref("Array")}}. Він не перевіряє ланцюжок прототипів значення, а також не покладається на конструктор `Array`, до котрого прикріплений. Він повертає `true` для будь-якого значення, що було створене за допомогою синтаксису літерала масиву чи конструктора `Array`. Завдяки цьому можна безпечно застосовувати `Array.isArray()` до міжцаринних об'єктів, для котрих ідентичність конструктора `Array` відрізняється, а отже – [`instanceof Array`](/uk/docs/Web/JavaScript/Reference/Operators/instanceof) не матиме успіху.
 
 Більше подробиць у статті ["З'ясування з досконалою точністю того, чи є певний об'єкт JavaScript масивом" (англ.)](https://web.mit.edu/jwalden/www/isArray.html).
-При передачі примірника {{jsxref("TypedArray")}} завжди повертається `false`.
+
+Крім того, `Array.isArray()` відкидає об'єкти, котрі мають у своєму ланцюжку прототипів `Array.prototype`, але насправді не є масивами, – `instanceof Array` їх би прийняв.
 
 ## Приклади
 
-### Застосування Array.isArray
+### Застосування Array.isArray()
 
 ```js
 // усі виклики нижче повертають true
 Array.isArray([]);
 Array.isArray([1]);
 Array.isArray(new Array());
-Array.isArray(new Array('a', 'b', 'c', 'd'));
+Array.isArray(new Array("а", "б", "в", "г"));
 Array.isArray(new Array(3));
 // Невеличкий відомий факт: Array.prototype сам є масивом
 Array.isArray(Array.prototype);
@@ -64,19 +58,21 @@ Array.isArray({});
 Array.isArray(null);
 Array.isArray(undefined);
 Array.isArray(17);
-Array.isArray('Array');
+Array.isArray("Array");
 Array.isArray(true);
 Array.isArray(false);
 Array.isArray(new Uint8Array(32));
+// Це не масив, адже цей об'єкт не був створений за допомогою
+// синтаксиса літерала масиву чи конструктора Array
 Array.isArray({ __proto__: Array.prototype });
 ```
 
-### `instanceof` проти `isArray`
+### instanceof проти Array.isArray()
 
-При перевірці на належність примірника `Array` слід віддавати перевагу `Array.isArray` замість `instanceof`, тому що `Array.isArray` працює без огляду на `iframe`.
+При перевірці на належність примірника `Array` слід віддавати перевагу `Array.isArray()` замість `instanceof`, тому що `Array.isArray()` коректно працює з об'єктами з різних царин.
 
 ```js
-const iframe = document.createElement('iframe');
+const iframe = document.createElement("iframe");
 document.body.appendChild(iframe);
 xArray = window.frames[window.frames.length - 1].Array;
 const arr = new xArray(1, 2, 3); // [1,2,3]
