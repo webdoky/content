@@ -20,9 +20,9 @@ browser-compat: javascript.builtins.Array.indexOf
 
 ## Синтаксис
 
-```js
-indexOf(searchElement);
-indexOf(searchElement, fromIndex);
+```js-nolint
+indexOf(searchElement)
+indexOf(searchElement, fromIndex)
 ```
 
 ### Параметри
@@ -79,9 +79,9 @@ console.log(indices);
 function updateVegetablesCollection(veggies, veggie) {
   if (veggies.indexOf(veggie) === -1) {
     veggies.push(veggie);
-    console.log('Нова овочева колекція: ' + veggies);
+    console.log(`Нова овочева колекція: ${veggies}`);
   } else {
-    console.log(veggie + ' уже є в овочевій колекції.');
+    console.log(`${veggie} уже є в овочевій колекції.`);
   }
 }
 

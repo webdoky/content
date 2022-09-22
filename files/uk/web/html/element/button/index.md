@@ -1,5 +1,5 @@
 ---
-title: '<button>: Елемент кнопки'
+title: "<button>: Елемент кнопки"
 slug: Web/HTML/Element/button
 tags:
   - Element

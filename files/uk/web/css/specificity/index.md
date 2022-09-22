@@ -44,7 +44,7 @@ spec-urls: https://drafts.csswg.org/selectors/#specificity-rules
 Вага специфічності випливає із селектора збігу. Візьмімо наступний селектор CSS із трьома селекторами, розділеними комою, як приклад:
 
 ```css
-[type='password'],
+[type="password"],
 input:focus,
 :root #myApp input:required {
   color: blue;
@@ -53,7 +53,7 @@ input:focus,
 
 Селектор `[type="password"]` – нагорі списку селекторів, він має вагу `0-1-0`, застосовує оголошення `color: blue` до всіх полів типу `password`.
 
-Всі поля введення, незалежно від типу, отримуючи фокус, відповідають другому селекторові в списку, `input:focus`, що має вагу специфічності `0-1-1`; ця вага складена псевдокласом `:focus` (0-1-0) та типом `input` (0-1-1). Якщо поле введення пароля має фокус, то відповідатиме `input:focus`, і вага специфічності оголошення стилю `color: blue` буде `0-1-1`. Коли таке поле пароля не має фокусу, то вага специфічності залишається `0-1-0`.
+Всі поля введення, незалежно від типу, отримуючи фокус, відповідають другому селекторові в списку, `input:focus`, що має вагу специфічності `0-1-1`; ця вага складена псевдокласом `:focus` (0-1-0) та типом `input` (0-0-1). Якщо поле введення пароля має фокус, то відповідатиме `input:focus`, і вага специфічності оголошення стилю `color: blue` буде `0-1-1`. Коли таке поле пароля не має фокусу, то вага специфічності залишається `0-1-0`.
 
 Специфічність обов'язкового поля введення, вкладеного в елемент з атрибутом `id="myApp"`, дорівнюватиме `1-2-1`, на основі одного ідентифікатора, двох псевдокласів та одного типу елемента.
 
@@ -73,7 +73,7 @@ input:focus                   /* 0-1-1 */
 #myElement {
   color: green; /* 1-0-0  - ПЕРЕМАГАЄ!! */
 }
-.bodyClass .sectionClass .parentClass [id='myElement'] {
+.bodyClass .sectionClass .parentClass [id="myElement"] {
   color: yellow; /* 0-4-0 */
 }
 ```
@@ -86,7 +86,7 @@ input:focus                   /* 0-1-1 */
 #myElement {
   color: yellow; /* 1-0-0  */
 }
-#myApp [id='myElement'] {
+#myApp [id="myElement"] {
   color: green; /* 1-1-0  - ПЕРЕМАГАЄ!! */
 }
 ```
@@ -172,12 +172,12 @@ a:not(#fakeId#fakeId#fakeID) {
 Чимало фреймворків та бібліотек JavaScript додає вбудовані стилі. Використання `!important` із вельми вузькоспрямованим селектором, наприклад, селектором атрибута за допомогою вбудованого стилю, є одним зі способів відкинути такі вбудовані стилі.
 
 ```html
-<p style="color: purple"></p>
+<p style="color: purple">…</p>
 ```
 
 ```css
-p[style*='purple'] {
-  color: rebeccapurple;
+p[style*="purple"] {
+  color: rebeccapurple !important;
 }
 ```
 
@@ -233,7 +233,7 @@ footer a {
 #myContent h1 {
   color: green; /* 1-0-1 */
 }
-[id='myContent'] h1 {
+[id="myContent"] h1 {
   color: yellow; /* 0-1-1 */
 }
 :where(#myContent) h1 {
@@ -331,11 +331,11 @@ footer a {
 2. Щоразу при потребі відкинути важливе оголошення – оголошувати відкидання всередині іменованого шару. Оголошувати в такому шарі лишень важливі правила.
 
 ```css
-[id='myElement'] p {
+[id="myElement"] p {
   /* тут звичайні стилі */
 }
 @layer importantOverrides {
-  [id='myElement'] p {
+  [id="myElement"] p {
     /* тут важливий стиль */
   }
 }
@@ -374,7 +374,7 @@ h1 {
 ```
 
 ```html
-<html>
+<html lang="uk">
   <body id="parent">
     <h1>Ось вам заголовок!</h1>
   </body>
@@ -391,7 +391,7 @@ h1 {
 #myElement input.myClass {
   color: red;
 } /* 1-1-1 */
-input[type='password']:required {
+input[type="password"]:required {
   color: blue;
 } /* 0-2-1 */
 html body main input {
@@ -406,10 +406,10 @@ html body main input {
 Якщо перетворити селектор ідентифікатора у коді прикладу вище на селектор атрибута, то перші два селектори матимуть однакову специфічність, як показано нижче:
 
 ```css
-[id='myElement'] input.myClass {
+[id="myElement"] input.myClass {
   color: red;
 } /* 0-2-1 */
-input[type='password']:required {
+input[type="password"]:required {
   color: blue;
 } /* 0-2-1 */
 ```
@@ -434,8 +434,24 @@ input[type='password']:required {
 
 ## Дивіться також
 
-- {{CSS_Key_Concepts}}
 - ["Специфічність" у "Каскаді та успадкуванні"](/uk/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance#spetsyfichnist-2)
 - [SpeciFISHity (англ.)](https://specifishity.com)
 - [Калькулятор специфічності (англ.)](https://specificity.keegan.st/): інтерактивний вебсайт для перевірки та усвідомлення ваших власних правил CSS
 - [Вправа _ID-CLASS-TYPE_ (англ.)](https://estelle.github.io/CSS/selectors/exercises/specificity.html) – вікторина зі специфічності
+- Ключові концепції CSS:
+  - [Синтаксис CSS](/uk/docs/Web/CSS/Syntax)
+  - [Директиви](/uk/docs/Web/CSS/At-rule)
+  - [Коментарі](/uk/docs/Web/CSS/Comments)
+  - [Успадкування](/uk/docs/Web/CSS/inheritance)
+  - [Рамкова модель](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+  - [Режими компонування](/uk/docs/Web/CSS/Layout_mode)
+  - [Моделі візуального форматування](/uk/docs/Web/CSS/Visual_formatting_model)
+  - [Перекриття берегів](/uk/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
+  - Значення
+    - [Початкові значення](/uk/docs/Web/CSS/initial_value)
+    - [Обчислені значення](/uk/docs/Web/CSS/computed_value)
+    - [Застосовані значення](/uk/docs/Web/CSS/used_value)
+    - [Актуальні значення](/uk/docs/Web/CSS/actual_value)
+  - [Синтаксис визначення значень](/uk/docs/Web/CSS/Value_definition_syntax)
+  - [Властивості-скорочення](/uk/docs/Web/CSS/Shorthand_properties)
+  - [Заміщені елементи](/uk/docs/Web/CSS/Replaced_element)

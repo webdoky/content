@@ -23,7 +23,7 @@ browser-compat: javascript.builtins.Array
 
 - **Масиви JavaScript не є асоціативними ми**, а отже – [елементи масиву не можуть бути отримані з використанням рядків замість індексів](#prymitky), натомість слід використовувати цілі числа як індекси.
 
-- **Масиви JavaScript [нумеруються з нуля (англ.)](https://en.wikipedia.org/wiki/Zero-based_numbering)**: перший елемент масиву знаходиться за індексом `0`, другий – за індексом `1`, і так далі – а останній елемент знаходиться індексом, рівним значенню властивості {{jsxref("Array.length", "length")}} масиву мінус `1`.
+- **Масиви JavaScript [нумеруються з нуля (англ.)](https://en.wikipedia.org/wiki/Zero-based_numbering)**: перший елемент масиву знаходиться за індексом `0`, другий – за індексом `1`, і так далі – а останній елемент знаходиться індексом, рівним значенню властивості {{jsxref("Array/length", "length")}} масиву мінус `1`.
 
 - **[Операції копіювання масиву](#kopiiuvannia-masyvu) створюють [поверхневі копії](/uk/docs/Glossary/Shallow_copy)**. (Усі стандартні вбудовані операції копіювання _будь-яких_ об'єктів JavaScript objects створюють поверхневі копії, а не [глибинні копії](/uk/docs/Glossary/Deep_copy)).
 
@@ -146,14 +146,14 @@ const fruits = ['Яблуко', 'Банан'];
 console.log(fruits.length);
 // 2
 
-// Масив 'fruits' створений за допомогою конструктора Array()
-const fruits = new Array('Яблуко', 'Банан');
-console.log(fruits.length);
+// Масив 'fruits2' створений за допомогою конструктора Array()
+const fruits2 = new Array('Яблуко', 'Банан');
+console.log(fruits2.length);
 // 2
 
-// Масив 'fruits' створений за допомогою String.prototype.split().
-const fruits = 'Яблуко, Банан'.split(', ');
-console.log(fruits.length);
+// Масив 'fruits3' створений за допомогою String.prototype.split().
+const fruits3 = 'Яблуко, Банан'.split(', ');
+console.log(fruits3.length);
 // 2
 ```
 
@@ -192,7 +192,7 @@ fruits[99]; // undefined
 
 ### Пошук індексу елемента в масиві
 
-Цей приклад використовує метод [`indexOf()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf) для пошуку позиції (індексу) рядка "`Банан`" у масиві `fruits`.
+Цей приклад використовує метод [`indexOf()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf) для пошуку позиції (індексу) рядка `"Банан"` у масиві `fruits`.
 
 ```js
 const fruits = ['Яблуко', 'Банан'];
@@ -202,7 +202,7 @@ console.log(fruits.indexOf('Банан'));
 
 ### Перевірка присутності певного елемента в масиві
 
-Цей приклад показує два способи перевірки того, чи містить масив `fruits` значення "`Банан`" і "`Вишня`": спершу за допомогою [`includes()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/includes), а тоді – із методом [`indexOf()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf), щоб перевірити, чи не рівний повернений індекс `-1`.
+Цей приклад показує два способи перевірки того, чи містить масив `fruits` значення `"Банан"` і `"Вишня"`: спершу за допомогою [`includes()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/includes), а тоді – із методом [`indexOf()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf), щоб перевірити, чи не рівний повернений індекс `-1`.
 
 ```js
 const fruits = ['Яблуко', 'Банан'];
@@ -316,7 +316,7 @@ console.log(newLength);
 
 ### Усунення єдиного елемента за індексом
 
-Цей приклад використовує метод [`splice()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) для усунення рядка "`Банан`" із масиву `fruits` – шляхом вказання індексу-позиції значення "`Банан`".
+Цей приклад використовує метод [`splice()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) для усунення рядка `"Банан"` із масиву `fruits` – шляхом вказання індексу-позиції значення `"Банан"`.
 
 ```js
 const fruits = ['Полуниця', 'Банан', 'Манго'];
@@ -331,7 +331,7 @@ console.log(removedItems);
 
 ### Усунення кількох елементів за індексом
 
-Цей приклад використовує метод [`splice()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) для усунення рядків "`Банан`" і "`Полуниця`" з масиву `fruits` – шляхом вказання індексу-позиції "`Банан`"а, поруч із кількістю елементів до видалення.
+Цей приклад використовує метод [`splice()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) для усунення рядків `"Банан"` і `"Полуниця"` з масиву `fruits` – шляхом вказання індексу-позиції значення `"Банан"`, поруч із кількістю елементів до видалення.
 
 ```js
 const fruits = ['Яблуко', 'Банан', 'Полуниця', 'Манго'];
@@ -421,11 +421,11 @@ const fruitsCopy = [...fruits];
 // ["Полуниця", "Манго"]
 
 // Створення копії за допомогою метода from().
-const fruitsCopy = Array.from(fruits);
+const fruitsCopy2 = Array.from(fruits);
 // ["Полуниця", "Манго"]
 
 // Створення копії за допомогою метода slice().
-const fruitsCopy = fruits.slice();
+const fruitsCopy3 = fruits.slice();
 // ["Полуниця", "Манго"]
 ```
 
@@ -475,7 +475,7 @@ const inventory = [
 Кожній властивості присвоєний масив, що містить елементи групи.
 
 ```js
-let result = inventory.group(({ type }) => type);
+const result = inventory.group(({ type }) => type);
 console.log(result.vegetables);
 // очікуваний вивід: Array [Object { name: "холодок", type: "vegetables" }]
 ```
@@ -504,7 +504,7 @@ const board = [
   ['r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'],
 ];
 
-console.log(board.join('\n') + '\n\n');
+console.log(`${board.join('\n')}\n\n`);
 
 // Хід королівського пішака на 2 вперед
 board[4][4] = board[6][4];
@@ -595,11 +595,11 @@ console.log(years['2'] != years['02']);
 
 ### Взаємозв'язок між довжиною та числовими властивостями
 
-Властивість масиву JavaScript {{jsxref("Array.length", "length")}} та числові властивості є пов'язаними.
+Властивість масиву JavaScript {{jsxref("Array/length", "length")}} та числові властивості є пов'язаними.
 
-Декілька вбудованих методів масиву (наприклад, {{jsxref("Array.join", "join()")}}, {{jsxref("Array.slice", "slice()")}}, {{jsxref("Array.indexOf", "indexOf()")}} тощо) враховують значення властивості масиву {{jsxref("Array.length", "length")}}, коли спрацьовують.
+Декілька вбудованих методів масиву (наприклад, {{jsxref("Array/join", "join()")}}, {{jsxref("Array/slice", "slice()")}}, {{jsxref("Array/indexOf", "indexOf()")}} тощо) враховують значення властивості масиву {{jsxref("Array/length", "length")}}, коли спрацьовують.
 
-Інші методи (наприклад, {{jsxref("Array.push", "push()")}}, {{jsxref("Array.splice", "splice()")}} тощо) на додачу оновлюють властивість масиву {{jsxref("Array.length", "length")}}.
+Інші методи (наприклад, {{jsxref("Array/push", "push()")}}, {{jsxref("Array/splice", "splice()")}} тощо) на додачу оновлюють властивість масиву {{jsxref("Array/length", "length")}}.
 
 ```js
 const fruits = [];
@@ -607,7 +607,7 @@ fruits.push('банан', 'яблуко', 'персик');
 console.log(fruits.length); // 3
 ```
 
-При встановленні властивості масиву JavaScript, за умови що значення є дійсним індексом масиву і що індекс лежить за поточними межами масиву, рушій оновить властивість {{jsxref("Array.length", "length")}} масиву відповідним чином:
+При встановленні властивості масиву JavaScript, за умови що значення є дійсним індексом масиву і що індекс лежить за поточними межами масиву, рушій оновить властивість {{jsxref("Array/length", "length")}} масиву відповідним чином:
 
 ```js
 fruits[5] = 'манго';
@@ -616,7 +616,7 @@ console.log(Object.keys(fruits)); // ['0', '1', '2', '5']
 console.log(fruits.length); // 6
 ```
 
-Збільшення {{jsxref("Array.length", "length")}}.
+Збільшення {{jsxref("Array/length", "length")}}.
 
 ```js
 fruits.length = 10;
@@ -626,7 +626,7 @@ console.log(fruits.length); // 10
 console.log(fruits[8]); // undefined
 ```
 
-Зменшення властивості {{jsxref("Array.length", "length")}}, утім, видаляє елементи.
+Зменшення властивості {{jsxref("Array/length", "length")}}, утім, видаляє елементи.
 
 ```js
 fruits.length = 2;
@@ -634,13 +634,13 @@ console.log(Object.keys(fruits)); // ['0', '1']
 console.log(fruits.length); // 2
 ```
 
-Така поведінка докладніше пояснена на сторінці {{jsxref("Array.length")}}.
+Така поведінка докладніше пояснена на сторінці {{jsxref("Array/length")}}.
 
 ### Створення масиву на основі результату збігу
 
-Результат збігу між {{jsxref("RegExp")}} та рядком може створити масив JavaScript, що має властивості та елементи, котрі надають інформацію про збіг. Такий масив повертають методи {{jsxref("RegExp.exec()")}} і {{jsxref("String.match()")}}.
+Результат збігу між {{jsxref("RegExp")}} та рядком може створити масив JavaScript, що має властивості та елементи, котрі надають інформацію про збіг. Такий масив повертають методи {{jsxref("RegExp.prototype.exec()")}} і {{jsxref("String.prototype.match()")}}.
 
-Дивіться роз'яснення цих властивостей та елементів у наступному прикладі та таблиці нижче:
+Наприклад:
 
 ```js
 // Збіг з однією d, після якої одна чи більше літера b, після якої одна d
@@ -648,48 +648,13 @@ console.log(fruits.length); // 2
 // Зневажати регістр
 
 const myRe = /d(b+)(d)/i;
-const myArray = myRe.exec('cdbBdbsbz');
+const execResult = myRe.exec('cdbBdbsbz');
+console.log(execResult.input); // 'cdbBdbsbz'
+console.log(execResult.index); // 1
+console.log(execResult); // Array(3) [ "dbBd", "bB", "d" ]
 ```
 
-Властивості та елементи, повернені зі збігу, наступні:
-
-<table class="fullwidth-table standard-table">
-  <thead>
-    <tr>
-      <th class="header" scope="col">Властивість чи елемент</th>
-      <th class="header" scope="col">Опис</th>
-      <th class="header" scope="col">Приклад</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>input</code><br />{{ReadOnlyInline}}</td>
-      <td>
-        Початковий рядок, у якому відбувався пошук збігу з регулярним виразом.
-      </td>
-      <td><code>"cdbBdbsbz"</code></td>
-    </tr>
-    <tr>
-      <td><code>index</code><br />{{ReadOnlyInline}}</td>
-      <td>Індекс (починаючи з нуля) збігу в рядку.</td>
-      <td><code>1</code></td>
-    </tr>
-    <tr>
-      <td><code>[0]</code><br />{{ReadOnlyInline}}</td>
-      <td>Останні символи, з якими відбувся збіг.</td>
-      <td><code>"dbBd"</code></td>
-    </tr>
-    <tr>
-      <td><code>[1], …[n]</code><br />{{ReadOnlyInline}}</td>
-      <td>
-        Елементи, що відповідають збігам виділених дужками збігів підрядків (якщо такі є) регулярного виразу. Число можливих підрядків не обмежено.
-      </td>
-      <td>
-        <code>[1]: "bB"<br />[2]: "d"</code>
-      </td>
-    </tr>
-  </tbody>
-</table>
+Для отримання детальнішої інформації про результат зіставлення – дивіться сторінки {{jsxref("RegExp.prototype.exec()")}} і {{jsxref("String.prototype.match()")}}.
 
 ## Специфікації
 

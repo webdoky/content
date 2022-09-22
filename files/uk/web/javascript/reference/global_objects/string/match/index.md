@@ -14,14 +14,14 @@ browser-compat: javascript.builtins.String.match
 
 {{JSRef}}
 
-Метод **`match()`** отримує результат зіставлення _рядка_ з [регулярним виразом](/uk/docs/Web/JavaScript/Guide/Regular_Expressions).
+Метод **`match()`** отримує результат зіставлення рядка з [регулярним виразом](/uk/docs/Web/JavaScript/Guide/Regular_Expressions).
 
 {{EmbedInteractiveExample("pages/js/string-match.html", "shorter")}}
 
 ## Синтаксис
 
-```js
-match(regexp);
+```js-nolint
+match(regexp)
 ```
 
 ### Параметри
@@ -36,37 +36,26 @@ match(regexp);
 
 ### Повернене значення
 
-{{jsxref("Array", "Масив")}}, вміст якого залежить від наявності чи відсутності глобального прапорця (`g`), або [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null), якщо жодного збігу знайдено не було. Якщо регулярний вираз не містить позначки `g`, то `str.match()` поверне такий само результат, як {{jsxref("RegExp.prototype.exec()", "RegExp.exec()")}}.
+{{jsxref("Array", "Масив")}}, вміст якого залежить від наявності чи відсутності глобального прапорця (`g`), або [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null), якщо жодного збігу знайдено не було.
 
-- Якщо вжито прапорець `g`, буде повернено всі збіги з цілим регулярним виразом, окрім збігів зі групами захоплення.
-- Якщо прапорець `g` встановлено не було, повернеться лише перший повний збіг та всі пов'язані захоплені групи. В цьому випадку повернений елемент також міститиме додаткові властивості, як описано нижче.
-
-#### Додаткові властивості
-
-Як пояснено вище, деякі результати містять додаткові властивості, які наведено нижче:
-
-- `groups`
-  - : Об'єкт з іменованими групами захоплення, де ключі — це імена груп, а значення — значення відповідної групи, або {{jsxref("undefined")}}, якщо жодної іменованої групи оголошено не було. Більше інформації можна знайти в розділі [Групи захоплення](/uk/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Backreferences).
-- `index`
-  - : Індекс місця, в якому було знайдено збіг.
-- `input`
-  - : Копія рядка, в якому виконувався пошук.
+- Якщо вжито прапорець `g`, буде повернено всі збіги з цілим регулярним виразом, а збіги з групами захоплення включені не будуть.
+- Якщо прапорець `g` встановлено не було, повернеться лише перший повний збіг та всі пов'язані захоплені групи. В цьому випадку `match()` поверне такий само результат, як {{jsxref("RegExp.prototype.exec()")}} (масив з певними додатковими властивостями).
 
 ## Опис
 
-Реалізація `String.prototype.match` сама по собі є вельми простою: вона просто викликає метод аргументу `Symbol.match` з рядком як першим параметром. Фактична реалізація надходить із [`RegExp.prototype[@@match]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@match).
+Реалізація `String.prototype.match` сама по собі є вельми простою: вона просто викликає метод аргументу `Symbol.match` з рядком як першим параметром. Фактична реалізація надходить із [`RegExp.prototype[@@match]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@match).
 
-### Інші методи
+- Якщо потрібно визначити, чи рядок збігається з регулярним виразом {{jsxref("RegExp")}}, можна використати {{jsxref("RegExp.prototype.test()")}}.
+- Якщо потрібен лише перший знайдений збіг, можна натомість застосувати {{jsxref("RegExp.prototype.exec()")}}.
+- Якщо необхідно отримати захоплені групи та встановлено прапорець глобального пошуку, слід натомість використовувати {{jsxref("RegExp.prototype.exec()")}} чи {{jsxref("String.prototype.matchAll()")}}.
 
-- Якщо потрібно визначити, чи рядок збігається з регулярним виразом {{jsxref("RegExp")}}, можна використати {{jsxref("RegExp.prototype.test()", "RegExp.test()")}}.
-- Якщо потрібен лише перший знайдений збіг, можна натомість застосувати {{jsxref("RegExp.prototype.exec()", "RegExp.exec()")}}.
-- Якщо необхідно отримати захоплені групи та встановлено прапорець глобального пошуку, слід натомість використовувати {{jsxref("RegExp.prototype.exec()", "RegExp.exec()")}} чи {{jsxref("String.prototype.matchAll()")}}.
+Для отримання подробиць семантики `match()`, коли в нього передається регулярний вираз, дивіться [`RegExp.prototype[@@match]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@match).
 
 ## Приклади
 
 ### Застосування match()
 
-В наступному прикладі метод `match()` використовується для пошуку слова '`Chapter`', за яким слідує 1 чи більше цифр, за якими слідують 0 або більше груп із точки та цифри.
+В наступному прикладі метод `match()` використовується для пошуку слова `"Chapter"`, за яким слідує одна чи більше цифр, за якими слідують нуль або більше груп із точки та цифри.
 
 Регулярний вираз містить прапорець `i`, тож різниця в регістрі літер ігнорується.
 
@@ -97,9 +86,9 @@ console.log(found);
 ```js
 const str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 const regexp = /[A-E]/gi;
-const matches_array = str.match(regexp);
+const matches = str.match(regexp);
 
-console.log(matches_array);
+console.log(matches);
 // ['A', 'B', 'C', 'D', 'E', 'a', 'b', 'c', 'd', 'e']
 ```
 
@@ -107,7 +96,7 @@ console.log(matches_array);
 
 ### Застосування іменованих груп захоплення
 
-У браузерах, які підтримують іменовані групи захоплення, наступний код витягне значення "`fox`" чи "`cat`" у групу, яка називається "`animal`":
+У браузерах, які підтримують іменовані групи захоплення, наступний код витягне значення `"fox"` чи `"cat"` у групу, яка називається "`animal`":
 
 ```js
 const paragraph = 'The quick brown fox jumps over the lazy dog. It barked.';
@@ -142,13 +131,12 @@ str.match({
 
 Якщо в параметр `regexp` передається рядок або число, це значення неявно перетворюється на {{jsxref("RegExp")}} шляхом викликання `new RegExp(regexp)`.
 
-Якщо значення було додатним числом зі знаком `+`, `RegExp()` проігнорує знак.
-
 ```js
 const str1 =
-    'NaN means not a number. Infinity contains -Infinity and +Infinity in JavaScript.',
-  str2 = 'My grandfather is 65 years old and My grandmother is 63 years old.',
-  str3 = 'The contract was declared null and void.';
+  'NaN means not a number. Infinity contains -Infinity and +Infinity in JavaScript.';
+const str2 =
+  'My grandfather is 65 years old and My grandmother is 63 years old.';
+const str3 = 'The contract was declared null and void.';
 str1.match('number'); // "number" — це рядок. Повертає ["number"]
 str1.match(NaN); // NaN має тип "число". Повертає ["NaN"]
 str1.match(Infinity); // тип Infinity — число. Повертає ["Infinity"]
@@ -157,6 +145,18 @@ str1.match(-Infinity); // повертає ["-Infinity"]
 str2.match(65); // повертає ["65"]
 str2.match(+65); // число зі знаком "+". Повертає ["65"]
 str3.match(null); // повертає ["null"]
+```
+
+Це може дати неочікувані результати, якщо особливі символи не були як слід екрановані.
+
+```js
+console.log('123'.match('1.3')); // [ "123" ]
+```
+
+Є збіг, тому що `.` в регулярному виразі дає збіг з усіма символами. Щоб змусити `.` давати збіг лише з символом крапки, треба екранувати введення.
+
+```js
+console.log('123'.match('1\\.3')); // null
 ```
 
 ## Специфікації

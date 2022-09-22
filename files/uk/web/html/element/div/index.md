@@ -1,5 +1,5 @@
 ---
-title: '<div>: елемент поділу вмісту'
+title: "<div>: елемент поділу вмісту"
 slug: Web/HTML/Element/div
 tags:
   - Content Division
@@ -44,7 +44,7 @@ browser-compat: html.elements.div
         >.<br />Або (в HTML за {{glossary("WHATWG")}}): якщо предок – елемент
         {{HTMLElement("dl")}}: один чи більше елементів
         {{HTMLElement("dt")}}, після чого – один чи більше елементів
-        {{HTMLElement("dd")}}, необов‘язково помежованих елементами
+        {{HTMLElement("dd")}}, необов'язково помежованих елементами
         {{HTMLElement("script")}} і
         {{HTMLElement("template")}}.
       </td>
@@ -111,7 +111,7 @@ browser-compat: html.elements.div
 
 Результат має наступний вигляд:
 
-{{EmbedLiveSample("A_simple_example", 650, 60)}}
+{{EmbedLiveSample("prostyi-pryklad", 650, 60)}}
 
 ### Стилізований приклад
 
@@ -139,7 +139,7 @@ browser-compat: html.elements.div
 
 #### Результат
 
-{{EmbedLiveSample("A_styled_example", 650, 120)}}
+{{EmbedLiveSample("stylizovanyi-pryklad", 650, 120)}}
 
 ## Специфікації
 

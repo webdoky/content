@@ -19,8 +19,8 @@ browser-compat: javascript.builtins.Object.assign
 
 ## Синтаксис
 
-```js
-Object.assign(target, ...sources);
+```js-nolint
+Object.assign(target, ...sources)
 ```
 
 ### Параметри
@@ -65,34 +65,24 @@ console.log(copy); // { a: 1 }
 Якщо значення в донорі містить посилання на об'єкт, він скопіює лише це посилання.
 
 ```js
-function test() {
-  'use strict';
-
-  let obj1 = { a: 0, b: { c: 0 } };
-  let obj2 = Object.assign({}, obj1);
-  console.log(JSON.stringify(obj2)); // { "a": 0, "b": { "c": 0}}
-
-  obj1.a = 1;
-  console.log(JSON.stringify(obj1)); // { "a": 1, "b": { "c": 0}}
-  console.log(JSON.stringify(obj2)); // { "a": 0, "b": { "c": 0}}
-
-  obj2.a = 2;
-  console.log(JSON.stringify(obj1)); // { "a": 1, "b": { "c": 0}}
-  console.log(JSON.stringify(obj2)); // { "a": 2, "b": { "c": 0}}
-
-  obj2.b.c = 3;
-  console.log(JSON.stringify(obj1)); // { "a": 1, "b": { "c": 3}}
-  console.log(JSON.stringify(obj2)); // { "a": 2, "b": { "c": 3}}
-
-  // Глибоке клонування
-  obj1 = { a: 0, b: { c: 0 } };
-  let obj3 = JSON.parse(JSON.stringify(obj1));
-  obj1.a = 4;
-  obj1.b.c = 4;
-  console.log(JSON.stringify(obj3)); // { "a": 0, "b": { "c": 0}}
-}
-
-test();
+const obj1 = { a: 0, b: { c: 0 } };
+const obj2 = Object.assign({}, obj1);
+console.log(obj2); // { a: 0, b: { c: 0 } }
+obj1.a = 1;
+console.log(obj1); // { a: 1, b: { c: 0 } }
+console.log(obj2); // { a: 0, b: { c: 0 } }
+obj2.a = 2;
+console.log(obj1); // { a: 1, b: { c: 0 } }
+console.log(obj2); // { a: 2, b: { c: 0 } }
+obj2.b.c = 3;
+console.log(obj1); // { a: 1, b: { c: 3 } }
+console.log(obj2); // { a: 2, b: { c: 3 } }
+// Глибоке клонування
+const obj3 = { a: 0, b: { c: 0 } };
+const obj4 = JSON.parse(JSON.stringify(obj3));
+obj3.a = 4;
+obj3.b.c = 4;
+console.log(obj4); // { a: 0, b: { c: 0 } }
 ```
 
 ### Злиття об'єктів
@@ -203,14 +193,14 @@ console.log(copy);
 // Ось фінкція присвоєння, яка капіює дескриптори цілком
 function completeAssign(target, ...sources) {
   sources.forEach((source) => {
-    let descriptors = Object.keys(source).reduce((descriptors, key) => {
+    const descriptors = Object.keys(source).reduce((descriptors, key) => {
       descriptors[key] = Object.getOwnPropertyDescriptor(source, key);
       return descriptors;
     }, {});
 
     // Як усталено, Object.assign копіює також перелічувані символи
     Object.getOwnPropertySymbols(source).forEach((sym) => {
-      let descriptor = Object.getOwnPropertyDescriptor(source, sym);
+      const descriptor = Object.getOwnPropertyDescriptor(source, sym);
       if (descriptor.enumerable) {
         descriptors[sym] = descriptor;
       }

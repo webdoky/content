@@ -22,8 +22,8 @@ browser-compat: javascript.operators.nullish_coalescing
 
 ## Синтаксис
 
-```js
-leftExpr ?? rightExpr;
+```js-nolint
+leftExpr ?? rightExpr
 ```
 
 ## Приклади
@@ -54,17 +54,17 @@ console.log(valC); // 42
 let foo;
 
 //  foo ніколи не було присвоєне будь-яке значення, тож в ній досі undefined
-let someDummyText = foo || 'Привіт!';
+const someDummyText = foo || 'Привіт!';
 ```
 
 Проте у зв'язку з тим, що `||` – булів логічний оператор, його лівий операнд зводиться до булевого значення, і будь-яке значення _хибності_ (`0`, `''`, `NaN`, `null`, `undefined`) не повертається. Така логіка може призвести до неочікуваних наслідків, якщо `0`, `''` чи `NaN` вважаються дійсними значеннями.
 
 ```js
-let count = 0;
-let text = '';
+const count = 0;
+const text = '';
 
-let qty = count || 42;
-let message = text || 'агов!';
+const qty = count || 42;
+const message = text || 'агов!';
 console.log(qty); // 42, а не 0
 console.log(message); // "агов!", а не ""
 ```
@@ -72,12 +72,12 @@ console.log(message); // "агов!", а не ""
 Оператор null-злиття уникає цієї пастки, повертаючи другий операнд, коли перший зводиться або до `null`, або до `undefined` (але не до інших значень хибності):
 
 ```js
-let myText = ''; // Порожній рядок (що також є значенням хибності)
+const myText = ''; // Порожній рядок (що також є значенням хибності)
 
-let notFalsyText = myText || 'Привіт, світе';
+const notFalsyText = myText || 'Привіт, світе';
 console.log(notFalsyText); // Привіт, світе
 
-let preservingFalsy = myText ?? 'Привіт, сусіди';
+const preservingFalsy = myText ?? 'Привіт, сусіди';
 console.log(preservingFalsy); // '' (оскільки myText не є ані undefined, ані null)
 ```
 
@@ -129,7 +129,7 @@ true || undefined ?? "foo"; // породить SyntaxError
 Оператор null-злиття обробляє `undefined` і `null` як особливі значення, так само як [оператор необов'язкового ланцюжка (`?.`)](/uk/docs/Web/JavaScript/Reference/Operators/Optional_chaining), котрий є корисним для доступу до властивості об'єкта, котрий може виявитись `null` чи `undefined`.
 
 ```js
-let foo = { someFooProp: 'привіт' };
+const foo = { someFooProp: 'привіт' };
 
 console.log(foo.someFooProp?.toUpperCase() ?? 'недоступно'); // "ПРИВІТ"
 console.log(foo.someBarProp?.toUpperCase() ?? 'недоступно'); // "недоступно"

@@ -24,7 +24,7 @@ browser-compat: javascript.builtins.Date
 
 В основі своїй дата в JavaScript задається як кількість мілісекунд, що минули від [епохи ECMAScript (англ.)](https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-time-values-and-time-range), що визначена як 1 січня 1970 року за UTC (еквівалентно до [часу Unix](https://uk.wikipedia.org/wiki/%D0%A7%D0%B0%D1%81_Unix)).
 
-> **Примітка:** Важливо мати на увазі, що, хоча значення часу в нутрощах об‘єкта дати задане за UTC, базові методи для отримання дати та часу (чи їх складових) працюють в локальних часовій зоні та поясі (тобто використовуються системні значення).
+> **Примітка:** Важливо мати на увазі, що, хоча значення часу в нутрощах об'єкта дати задане за UTC, базові методи для отримання дати та часу (чи їх складових) працюють в локальних часовій зоні та поясі (тобто використовуються системні значення).
 
 Також варто зауважити, що максимальне значення `Date` збігається із максимальним безпечним значенням цілого (`Number.MAX_SAFE_INTEGER` = 9,007,199,254,740,991). Натомість в ECMA-262 визначено, що стандартний об'єкт дати може задати максимум ±100,000,000 (сто мільйонів) днів відносно 1 січня 1970 UTC (тобто, з 20 квітня 271821 до нашої ери, і по 13 вересня 275760 нашої ери). Це еквівалент ±8,640,000,000,000,000 мілісекунд.
 
@@ -32,7 +32,7 @@ browser-compat: javascript.builtins.Date
 
 Існує кілька різних способів отримання дати в різних форматах, як і перетворення між часовими зонами. Особливо корисні ті функції, які повертають результат у форматі Всесвітнього координованого часу (UTC) — загального формату часу, визначеного у світовому стандарті часу (цей час також історично відомий як _Середній час за Гринвічем (GMT)_, оскільки UTC лежить вздовж меридіану, який включає Лондон – і розташований неподалік Гринвіч – у Великобританії). Пристрій користувача надає локальний час.
 
-На додачу до методів для читання і зміни окремих складових локальних дати й часу (наприклад, {{jsxref("Date.getDay", "getDay()")}} і {{jsxref("Date.setHours", "setHours()")}}), існують також версії тих самих методів, що читають та маніпулюють датою в UTC (наприклад, {{jsxref("Date.getUTCDay()", "getUTCDay()")}} і {{jsxref("Date.setUTCHours", "setUTCHours()")}}).
+На додачу до методів для читання і зміни окремих складових локальних дати й часу (наприклад, {{jsxref("Date/getDay", "getDay()")}} і {{jsxref("Date/setHours", "setHours()")}}), існують також версії тих самих методів, що читають та маніпулюють датою в UTC (наприклад, {{jsxref("Date/getUTCDay()", "getUTCDay()")}} і {{jsxref("Date/setUTCHours", "setUTCHours()")}}).
 
 ## Конструктор
 
@@ -49,7 +49,7 @@ browser-compat: javascript.builtins.Date
 
   - : Розбирає рядок з датою і повертає відповідну кількість мілісекунд від 1 січня 1970 року 00:00:00 UTC, без врахування високосних секунд.
 
-    > **Примітка:** Наполегливо не рекомендовано розбирати рядки з датами за допомогою `Date.parse` у зв‘язку з відмінностями та неузгодженістю браузерів.
+    > **Примітка:** Наполегливо не рекомендовано розбирати рядки з датами за допомогою `Date.parse` у зв'язку з відмінностями та неузгодженістю браузерів.
 
 - {{jsxref("Date.UTC()")}}
   - : Приймає ті ж аргументи, що й найдовша форма конструктора (тобто від 2 до 7 аргументів) і повертає кількість мілісекунд від 1 січня 1970 року, 00:00:00 UTC, без врахування високосних секунд.
@@ -73,7 +73,7 @@ browser-compat: javascript.builtins.Date
 - {{jsxref("Date.prototype.getSeconds()")}} (отримати секунди)
   - : Повертає секунди (`0` – `59`) вказаної дати, відповідно до локального часу.
 - {{jsxref("Date.prototype.getTime()")}} (отримати час)
-  - : Повертає числове значення вказаної дати як число мілісекунд, що минули від 1 січня 1970 року 00:00:00 UTC. (Для більш ранньої дати буде повернено від‘ємне значення.)
+  - : Повертає числове значення вказаної дати як число мілісекунд, що минули від 1 січня 1970 року 00:00:00 UTC. (Для більш ранньої дати буде повернено від'ємне значення.)
 - {{jsxref("Date.prototype.getTimezoneOffset()")}} (отримати зміщення часової зони)
   - : Повертає зміщення часової зони у хвилинах для поточної локалі.
 - {{jsxref("Date.prototype.getUTCDate()")}} (отримати дату відповідно до всесвітнього часу)
@@ -92,7 +92,7 @@ browser-compat: javascript.builtins.Date
   - : Повертає місяць (`0` – `11`) вказаної дати, відповідно до всесвітнього часу.
 - {{jsxref("Date.prototype.getUTCSeconds()")}} (отримати секунди відповідно до всесвітнього часу)
   - : Повертає секунди (`0` – `59`) вказаної дати, відповідно до всесвітнього часу.
-- {{jsxref("Date.prototype.getYear()")}} (отримати рік)
+- {{jsxref("Date.prototype.getYear()")}} (отримати рік) {{Deprecated_Inline}}
   - : Повертає рік (зазвичай 2–3 цифри) вказаної дати, відповідно до локального часу. Замість цієї функції рекомендується застосовувати {{jsxref("Date.prototype.getFullYear()", "getFullYear()")}}.
 - {{jsxref("Date.prototype.setDate()")}} (встановити дату)
   - : Встановлює день місяця для вказаної дати, відповідно до локального часу.
@@ -109,7 +109,7 @@ browser-compat: javascript.builtins.Date
 - {{jsxref("Date.prototype.setSeconds()")}} (встановити секунди)
   - : Встановлює секунди для вказаної дати, відповідно до локального часу.
 - {{jsxref("Date.prototype.setTime()")}} (встановити час)
-  - : Встановлює значення об‘єкта {{jsxref("Date")}} відповідно до часу, переданого як число мілісекунд, що сплили з 1 січня 1970 року 00:00:00 UTC. Для задання більш ранніх дат використовуються від‘ємні значення.
+  - : Встановлює значення об'єкта {{jsxref("Date")}} відповідно до часу, переданого як число мілісекунд, що сплили з 1 січня 1970 року 00:00:00 UTC. Для задання більш ранніх дат використовуються від'ємні значення.
 - {{jsxref("Date.prototype.setUTCDate()")}} (встановити дату відповідно до всесвітнього часу)
   - : Встановлює день місяця для вказаної дати, відповідно до всесвітнього часу.
 - {{jsxref("Date.prototype.setUTCFullYear()")}} (встановити повний рік відповідно до всесвітнього часу)
@@ -124,7 +124,7 @@ browser-compat: javascript.builtins.Date
   - : Встановлює місяць для вказаної дати, відповідно до всесвітнього часу.
 - {{jsxref("Date.prototype.setUTCSeconds()")}} (встановити секунди відповідно до всесвітнього часу)
   - : Встановлює секунди для вказаної дати, відповідно до всесвітнього часу.
-- {{jsxref("Date.prototype.setYear()")}} (встановити рік відповідно до всесвітнього часу)
+- {{jsxref("Date.prototype.setYear()")}} (встановити рік відповідно до всесвітнього часу) {{Deprecated_Inline}}
   - : Встановлює рік (зазвичай 2–3 цифри) для вказаної дати, відповідно до локального часу. Замість цієї функції рекомендується застосовувати {{jsxref("Date.prototype.setFullYear()", "setFullYear()")}}.
 - {{jsxref("Date.prototype.toDateString()")}} (до рядка дати)
   - : Повертає частину {{jsxref("Date")}}, яка стосується дати, як зрозумілий людині рядок, як от `'Thu Apr 12 2018'`.
@@ -132,7 +132,7 @@ browser-compat: javascript.builtins.Date
   - : Перетворює дату на рядок відповідно до формату ISO 8601 Extended Format.
 - {{jsxref("Date.prototype.toJSON()")}} (до JSON)
   - : Повертає рядок, що відповідає даті в {{jsxref("Date")}}, сформований за допомогою {{jsxref("Date.prototype.toISOString()", "toISOString()")}}. Призначений для використання функцією {{jsxref("JSON.stringify()")}}.
-- {{jsxref("Date.prototype.toGMTString()")}} (до рядка за Гринвічем)
+- {{jsxref("Date.prototype.toGMTString()")}} (до рядка за Гринвічем) {{Deprecated_Inline}}
   - : Повертає рядок, що відповідає даті в {{jsxref("Date")}} відносно часової зони GMT (UTC). Замість цього методу слід застосовувати {{jsxref("Date.prototype.toUTCString()", "toUTCString()")}}.
 - {{jsxref("Date.prototype.toLocaleDateString()")}} (до місцевого рядка дати)
   - : Повертає порцію об'єкта `Date`, що містить дату, як рядок, оформлений з урахуванням локально специфічних деталей на основі системних налаштувань.
@@ -147,7 +147,7 @@ browser-compat: javascript.builtins.Date
 - {{jsxref("Date.prototype.toUTCString()")}} (до рядка відповідно до всесвітнього часу)
   - : Перетворює дату на рядок, використовуючи часову зону UTC за основу.
 - {{jsxref("Date.prototype.valueOf()")}} (значення)
-  - : Повертає примітивне значення об‘єкта {{jsxref("Date")}}. Заміщує метод {{jsxref("Object.prototype.valueOf()")}}.
+  - : Повертає примітивне значення об'єкта {{jsxref("Date")}}. Заміщує метод {{jsxref("Object.prototype.valueOf()")}}.
 
 ## Приклади
 
@@ -159,17 +159,17 @@ browser-compat: javascript.builtins.Date
 
 ```js
 const today = new Date();
-const birthday = new Date('December 17, 1995 03:24:00'); // НЕРЕКОМЕНДОВАНО: може не працювати в усіх середовищах виконання
-const birthday = new Date('1995-12-17T03:24:00'); // Відповідає форматові ISO8601, а тому надійно працюватиме
-const birthday = new Date(1995, 11, 17); // індекс місяця починається з 0
-const birthday = new Date(1995, 11, 17, 3, 24, 0);
-const birthday = new Date(628021800000); // передача мітки часу
+const birthday = new Date("December 17, 1995 03:24:00"); // НЕРЕКОМЕНДОВАНО: може не працювати в усіх середовищах виконання
+const birthday2 = new Date("1995-12-17T03:24:00"); // Відповідає форматові ISO8601, а тому надійно працюватиме
+const birthday3 = new Date(1995, 11, 17); // індекс місяця починається з 0
+const birthday4 = new Date(1995, 11, 17, 3, 24, 0);
+const birthday5 = new Date(628021800000); // передача мітки часу
 ```
 
 ### Формати значень, повернених методом toString
 
 ```js
-const date = new Date('2020-05-12T23:50:21.817Z');
+const date = new Date("2020-05-12T23:50:21.817Z");
 date.toString(); // Wed May 13 2020 02:50:21 GMT+0300 (Eastern European Summer Time)
 date.toDateString(); // Wed May 13 2020
 date.toTimeString(); // 02:50:21 GMT+0300 (Eastern European Summer Time)
@@ -204,8 +204,8 @@ const [hour, minutes, seconds] = [
 
 ```js
 let date = new Date(98, 1); // Sun Feb 01 1998 00:00:00 GMT+0000 (GMT)
-let date = new Date(22, 1); // Wed Feb 01 1922 00:00:00 GMT+0000 (GMT)
-let date = new Date('2/1/22'); // Tue Feb 01 2022 00:00:00 GMT+0000 (GMT)
+date = new Date(22, 1); // Wed Feb 01 1922 00:00:00 GMT+0000 (GMT)
+date = new Date("2/1/22"); // Tue Feb 01 2022 00:00:00 GMT+0000 (GMT)
 
 // Застарілий метод; завжди інтерпретує двоцифрове значення року відносно 1900
 date.setYear(98);
@@ -233,36 +233,36 @@ date.getFullYear(); // 22 (не 1922 і не 2022)
 
 ```js
 // Використавши об'єкт дати
-let start = Date.now();
+const start = Date.now();
 
 // Зафіксуємо момент завершення події:
 doSomethingForALongTime();
-let end = Date.now();
-let elapsed = end - start; // час, що минув, у мілісекундах
+const end = Date.now();
+const elapsed = end - start; // час, що минув, у мілісекундах
 ```
 
 ```js
 // Використавши вбудовані методи
-let start = new Date();
+const start = new Date();
 
 // Зафіксуємо момент завершення події:
 doSomethingForALongTime();
-let end = new Date();
-let elapsed = end.getTime() - start.getTime(); // час, що минув, у мілісекундах
+const end = new Date();
+const elapsed = end.getTime() - start.getTime(); // час, що минув, у мілісекундах
 ```
 
 ```js
 // Отак перевіряємо функцію й отримуємо її вивід
-function printElapsedTime(fTest) {
-  let nStartTime = Date.now(),
-    vReturn = fTest(),
-    nEndTime = Date.now();
+function printElapsedTime(testFn) {
+  const startTime = Date.now();
+  const result = testFn();
+  const endTime = Date.now();
 
-  console.log(`Минуло часу: ${String(nEndTime - nStartTime)} мілісекунд`);
-  return vReturn;
+  console.log(`Минуло часу: ${String(endTime - startTime)} мілісекунд`);
+  return result;
 }
 
-let yourFunctionReturn = printElapsedTime(yourFunction);
+const yourFunctionReturn = printElapsedTime(yourFunction);
 ```
 
 > **Примітка:** В браузерах, які мають підтримку {{domxref("performance_property", "Web Performance API", "", 1)}} — вимірів часу високої точності — метод {{domxref("Performance.now()")}} надасть значно точніші й надійніші виміри часу, аніж {{jsxref("Date.now()")}}.
@@ -270,7 +270,7 @@ let yourFunctionReturn = printElapsedTime(yourFunction);
 ### Отримання числа секунд від початку епохи ECMAScript
 
 ```js
-let seconds = Math.floor(Date.now() / 1000);
+const seconds = Math.floor(Date.now() / 1000);
 ```
 
 В цьому випадку важливо повертати лише ціле значення, тож просто ділення тут не підходить. Також важливо враховувати лише ті секунди, що справді минули (тому в цьому коді застосовано {{jsxref("Math.floor()")}}, а _не_ {{jsxref("Math.round()")}}.)

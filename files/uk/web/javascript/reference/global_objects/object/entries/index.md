@@ -14,14 +14,14 @@ browser-compat: javascript.builtins.Object.entries
 
 Метод **`Object.entries()`** (записи) повертає власні перелічувані властивості переданого об'єкта як масив пар `[ключ, значення]`. Метод враховує лише ті властивості, які мають рядковий ключ. Це працює так само як і цикл {{jsxref("Statements/for...in", "for...in")}}, за винятком того, що цикл `for...in` також перебирає властивості, які доступні через ланцюжок прототипів.
 
-Порядок елементів у масиві, поверненому з `Object.entries()`, є таким самим, як і при циклі {{jsxref("Statements/for...in", "for...in")}}. Якщо потрібен якийсь інший порядок, то масив слід спочатку відсортувати, як от `Object.entries(obj).sort((a, b) => b[0].localeCompare(a[0]));`.
+Порядок елементів у масиві, поверненому з `Object.entries()`, є таким самим, як і при циклі {{jsxref("Statements/for...in", "for...in")}}. Якщо потрібен якийсь інший порядок, то масив слід спочатку відсортувати, як от `Object.entries(obj).sort((a, b) => a[0].localeCompare(b[0]));`.
 
 {{EmbedInteractiveExample("pages/js/object-entries.html")}}
 
 ## Синтаксис
 
-```js
-Object.entries(obj);
+```js-nolint
+Object.entries(obj)
 ```
 
 ### Параметри
@@ -35,7 +35,7 @@ Object.entries(obj);
 
 ## Опис
 
-Метод `Object.entries()` повертає масив, елементи якого є масивами пар `[ключ, значення]`, що відповідають перелічуваним властивостям з рядковими ключами, знайденим безпосередньо на об'єкті. Порядок властивостей такий самий, як і під час перебору властивостей об‘єкта в циклі.
+Метод `Object.entries()` повертає масив, елементи якого є масивами пар `[ключ, значення]`, що відповідають перелічуваним властивостям з рядковими ключами, знайденим безпосередньо на об'єкті. Порядок властивостей такий самий, як і під час перебору властивостей об'єкта в циклі.
 
 ## Приклади
 
@@ -72,7 +72,7 @@ console.log(Object.entries('foo')); // [ ['0', 'f'], ['1', 'o'], ['2', 'o'] ]
 // окрім рядків (див. приклад вище), оскільки примітиви не мають власних властивостей
 console.log(Object.entries(100)); // [ ]
 
-// елегантно перебираємо пари ключ-значення властивостей об‘єкта
+// елегантно перебираємо пари ключ-значення властивостей об'єкта
 const obj = { a: 5, b: 7, c: 9 };
 for (const [key, value] of Object.entries(obj)) {
   console.log(`${key} ${value}`); // "a 5", "b 7", "c 9"
@@ -84,9 +84,9 @@ Object.entries(obj).forEach(([key, value]) => {
 });
 ```
 
-### Перетворення `Object` на `Map`
+### Перетворення Object на Map
 
-Конструктор {{jsxref("Map", "new Map()")}} приймає ітерований об'єкт `entries`. За допомогою `Object.entries` можна легко перетворювати {{jsxref("Object")}} на {{jsxref("Map")}}:
+Конструктор {{jsxref("Map/Map", "Map()")}} приймає ітерований об'єкт `entries`. За допомогою `Object.entries` можна легко перетворювати {{jsxref("Object")}} на {{jsxref("Map")}}:
 
 ```js
 const obj = { foo: 'bar', baz: 42 };
@@ -94,9 +94,9 @@ const map = new Map(Object.entries(obj));
 console.log(map); // Map(2) {"foo" => "bar", "baz" => 42}
 ```
 
-### Перебирання властивостей `Object`
+### Перебирання властивостей Object
 
-За допомогою [деструктуризації масиву](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#destrukturyzatsiia-masyvu) можна з легкістю перебирати поля об‘єкта.
+За допомогою [деструктуризації масиву](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#destrukturyzatsiia-masyvu) можна з легкістю перебирати поля об'єкта.
 
 ```js
 const obj = { foo: 'bar', baz: 42 };
