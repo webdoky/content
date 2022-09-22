@@ -20,7 +20,7 @@ tags:
 
 ```js
 function init() {
-  var name = 'ВебДоки'; // name – локальна змінна, створена init
+  var name = "ВебДоки"; // name – локальна змінна, створена init
   function displayName() {
     // displayName() – внутрішня функція, замикання
     console.log(name); // застосування змінної, оголошеної в батьківській функції
@@ -70,7 +70,7 @@ console.log(x); // ReferenceError: x is not defined
 
 ```js
 function makeFunc() {
-  const name = 'ВебДоки';
+  const name = "ВебДоки";
   function displayName() {
     console.log(name);
   }
@@ -153,9 +153,9 @@ const size16 = makeSizer(16);
 Наразі `size12`, `size14` і `size16` – функції, що змінюють розмір тексту тіла документа на 12, 14 і 16 пікселів відповідно. Їх можна прикріпити до кнопок (в цьому випадку – гіперпосилань), як показано в прикладі коду нижче.
 
 ```js
-document.getElementById('size-12').onclick = size12;
-document.getElementById('size-14').onclick = size14;
-document.getElementById('size-16').onclick = size16;
+document.getElementById("size-12").onclick = size12;
+document.getElementById("size-14").onclick = size14;
+document.getElementById("size-16").onclick = size16;
 ```
 
 ```html
@@ -333,7 +333,7 @@ export const setX = (val) => {
 Тут модуль експортує пару функцій: гетер і сетер, котра замикається над змінною модульної області `x`. Навіть коли до `x` не можна напряму звернутися з інших модулів, її значення можна отримати й змінити за допомогою функцій.
 
 ```js
-import { getX, setX } from './myModule.js';
+import { getX, setX } from "./myModule.js";
 
 console.log(getX()); // 5
 setX(6);
@@ -352,14 +352,14 @@ export const setX = (val) => {
 
 ```js
 // closureCreator.js
-import { x } from './myModule.js';
+import { x } from "./myModule.js";
 
 export const getX = () => x; // Замкнутися над імпортованим мінливим зв'язуванням
 ```
 
 ```js
-import { getX } from './closureCreator.js';
-import { setX } from './myModule.js';
+import { getX } from "./closureCreator.js";
+import { setX } from "./myModule.js";
 
 console.log(getX()); // 1
 setX(2);
@@ -379,14 +379,14 @@ console.log(getX()); // 2
 
 ```js
 function showHelp(help) {
-  document.getElementById('help').textContent = help;
+  document.getElementById("help").textContent = help;
 }
 
 function setupHelp() {
   var helpText = [
-    { id: 'email', help: 'Ваша адреса електронної пошти' },
-    { id: 'name', help: "Ваше повне ім'я" },
-    { id: 'age', help: 'Ваш вік (мусить перевищувати 16)' },
+    { id: "email", help: "Ваша адреса електронної пошти" },
+    { id: "name", help: "Ваше повне ім'я" },
+    { id: "age", help: "Ваш вік (мусить перевищувати 16)" },
   ];
 
   for (var i = 0; i < helpText.length; i++) {
@@ -413,7 +413,7 @@ setupHelp();
 
 ```js
 function showHelp(help) {
-  document.getElementById('help').textContent = help;
+  document.getElementById("help").textContent = help;
 }
 
 function makeHelpCallback(help) {
@@ -424,9 +424,9 @@ function makeHelpCallback(help) {
 
 function setupHelp() {
   var helpText = [
-    { id: 'email', help: 'Ваша адреса електронної пошти' },
-    { id: 'name', help: "Ваше повне ім'я" },
-    { id: 'age', help: 'Ваш вік (мусить перевищувати 16)' },
+    { id: "email", help: "Ваша адреса електронної пошти" },
+    { id: "name", help: "Ваше повне ім'я" },
+    { id: "age", help: "Ваш вік (мусить перевищувати 16)" },
   ];
 
   for (var i = 0; i < helpText.length; i++) {
@@ -446,14 +446,14 @@ setupHelp();
 
 ```js
 function showHelp(help) {
-  document.getElementById('help').textContent = help;
+  document.getElementById("help").textContent = help;
 }
 
 function setupHelp() {
   var helpText = [
-    { id: 'email', help: 'Ваша адреса електронної пошти' },
-    { id: 'name', help: "Ваше повне ім'я" },
-    { id: 'age', help: 'Ваш вік (мусить перевищувати 16)' },
+    { id: "email", help: "Ваша адреса електронної пошти" },
+    { id: "name", help: "Ваше повне ім'я" },
+    { id: "age", help: "Ваш вік (мусить перевищувати 16)" },
   ];
 
   for (var i = 0; i < helpText.length; i++) {
@@ -473,14 +473,14 @@ setupHelp();
 
 ```js
 function showHelp(help) {
-  document.getElementById('help').textContent = help;
+  document.getElementById("help").textContent = help;
 }
 
 function setupHelp() {
   const helpText = [
-    { id: 'email', help: 'Ваша адреса електронної пошти' },
-    { id: 'name', help: "Ваше повне ім'я" },
-    { id: 'age', help: 'Ваш вік (мусить перевищувати 16)' },
+    { id: "email", help: "Ваша адреса електронної пошти" },
+    { id: "name", help: "Ваше повне ім'я" },
+    { id: "age", help: "Ваш вік (мусить перевищувати 16)" },
   ];
 
   for (let i = 0; i < helpText.length; i++) {
@@ -500,14 +500,14 @@ setupHelp();
 
 ```js
 function showHelp(help) {
-  document.getElementById('help').textContent = help;
+  document.getElementById("help").textContent = help;
 }
 
 function setupHelp() {
   var helpText = [
-    { id: 'email', help: 'Ваша адреса електронної пошти' },
-    { id: 'name', help: "Ваше повне ім'я" },
-    { id: 'age', help: 'Ваш вік (мусить перевищувати 16)' },
+    { id: "email", help: "Ваша адреса електронної пошти" },
+    { id: "name", help: "Ваше повне ім'я" },
+    { id: "age", help: "Ваш вік (мусить перевищувати 16)" },
   ];
 
   helpText.forEach(function (text) {
