@@ -11,7 +11,7 @@ tags:
   - Landing page
   - Reference
   - es
-  - 'l10n:priority'
+  - "l10n:priority"
   - programming
 ---
 
@@ -133,17 +133,6 @@ tags:
 - {{JSxRef("Global_Objects/Intl/PluralRules", "Intl.PluralRules")}}
 - {{JSxRef("Global_Objects/Intl/RelativeTimeFormat", "Intl.RelativeTimeFormat")}}
 - {{JSxRef("Global_Objects/Intl/Segmenter", "Intl.Segmenter")}}
-
-### WebAssembly
-
-- {{JSxRef("WebAssembly")}}
-- {{JSxRef("WebAssembly.Module")}}
-- {{JSxRef("WebAssembly.Instance")}}
-- {{JSxRef("WebAssembly.Memory")}}
-- {{JSxRef("WebAssembly.Table")}}
-- {{JSxRef("WebAssembly.CompileError")}}
-- {{JSxRef("WebAssembly.LinkError")}}
-- {{JSxRef("WebAssembly.RuntimeError")}}
 
 ### Інші
 
