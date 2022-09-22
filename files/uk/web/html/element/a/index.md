@@ -1,5 +1,5 @@
 ---
-title: '<a>: Якірний елемент'
+title: "<a>: Якірний елемент"
 slug: Web/HTML/Element/a
 tags:
   - Content
@@ -20,7 +20,7 @@ browser-compat: html.elements.a
 
 Елемент [HTML](/uk/docs/Web/HTML) **`<a>`** (він же _якірний_ елемент) з [атрибутом `href`](#attr-href) створює гіперпосилання до вебсторінок, файлів, адрес електронної пошти, місць на тій самій сторінці чи будь-чого іще, на що може посилатися URL.
 
-Вміст всередині кожного `<a>` **повинен** відображати спрямування посилання. Якщо присутній атрибут `href`, то натискання клавіші `Enter`, коли фокус знаходиться на елементі `<a>`, активує перехід.
+Вміст всередині кожного `<a>` _повинен_ відображати спрямування посилання. Якщо присутній атрибут `href`, то натискання клавіші `Enter`, коли фокус знаходиться на елементі `<a>`, активує перехід.
 
 {{EmbedInteractiveExample("pages/tabbed/a.html", "tabbed-shorter")}}
 
@@ -324,9 +324,9 @@ a {
 ##### JavaScript
 
 ```js
-var canvas = document.querySelector('canvas'),
-  c = canvas.getContext('2d');
-c.fillStyle = 'hotpink';
+const canvas = document.querySelector("canvas");
+const c = canvas.getContext("2d");
+c.fillStyle = "hotpink";
 
 function draw(x, y) {
   if (isDrawing) {
@@ -337,17 +337,17 @@ function draw(x, y) {
   }
 }
 
-canvas.addEventListener('mousemove', (event) =>
-  draw(event.offsetX, event.offsetY),
+canvas.addEventListener("mousemove", (event) =>
+  draw(event.offsetX, event.offsetY)
 );
-canvas.addEventListener('mousedown', () => (isDrawing = true));
-canvas.addEventListener('mouseup', () => (isDrawing = false));
+canvas.addEventListener("mousedown", () => (isDrawing = true));
+canvas.addEventListener("mouseup", () => (isDrawing = false));
 
 document
-  .querySelector('a')
+  .querySelector("a")
   .addEventListener(
-    'click',
-    (event) => (event.target.href = canvas.toDataURL()),
+    "click",
+    (event) => (event.target.href = canvas.toDataURL())
   );
 ```
 

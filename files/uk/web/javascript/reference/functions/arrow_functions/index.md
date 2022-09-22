@@ -65,16 +65,15 @@ function (a, b){
 // Стрілкова функція
 (a, b) => a + b + 100;
 
-// Традиційна анонімна функція (без аргументів)
 const a = 4;
 const b = 2;
+
+// Традиційна анонімна функція (без аргументів)
 (function (){
   return a + b + 100;
 })
 
 // Стрілкова функція (без аргументів)
-const a = 4;
-const b = 2;
 () => a + b + 100;
 ```
 
@@ -103,7 +102,7 @@ function bob(a) {
 }
 
 // Стрілкова функція
-const bob = (a) => a + 100;
+const bob2 = (a) => a + 100;
 ```
 
 ## Синтаксис
@@ -148,7 +147,7 @@ param => expression;
 Щоб повернути об'єкт, літеральний вираз потребує дужок:
 
 ```js
-(params) => ({ foo: 'a' }); // повертає об'єкт { foo: "a" }
+(params) => ({ foo: "a" }); // повертає об'єкт { foo: "a" }
 ```
 
 Підтримуються [залишкові параметри](/uk/docs/Web/JavaScript/Reference/Functions/rest_parameters), причому в такому випадку обов'язкові дужки:
@@ -177,7 +176,7 @@ param => expression;
 Як було зауважено раніше, вирази стрілкових функцій найкраще підходять для функцій, які не є методами. Погляньмо, що трапиться, якщо все ж таки використати таку функцію як метод:
 
 ```js
-'use strict';
+"use strict";
 
 const obj = {
   // не створює нового контексту
@@ -195,13 +194,13 @@ obj.c(); // друкує 10, Object { /* … */ }
 Стрілкові функції не мають свого власного `this`. Ось іще один приклад, цього разу із застосуванням {{jsxref("Object.defineProperty()")}}:
 
 ```js
-'use strict';
+"use strict";
 
 const obj = {
   a: 10,
 };
 
-Object.defineProperty(obj, 'b', {
+Object.defineProperty(obj, "b", {
   get: () => {
     console.log(this.a, typeof this.a, this); // undefined 'undefined' Window { /* … */ } (або глобальний об'єкт)
     return this.a + 10; // звертається до глобального об'єкту 'Window', а отже – 'this.a' поверне 'undefined'
@@ -265,17 +264,17 @@ const add = function (a, b, c) {
 };
 
 // call
-const result = add.call(obj, 1, 2, 3); // встановлює "obj" як контекст виконання функції
-console.log(result); // результат — 106
+const resultCall = add.call(obj, 1, 2, 3); // встановлює "obj" як контекст виконання функції
+console.log(resultCall); // результат — 106
 
 // apply
 const arr = [1, 2, 3];
-const result = add.apply(obj, arr); // встановлює "obj" як контекст виконання функції
-console.log(result); // результат — 106
+const resultApply = add.apply(obj, arr); // встановлює "obj" як контекст виконання функції
+console.log(resultApply); // результат — 106
 
 // bind
-var result = add.bind(obj); // встановлює "obj" як контекст виконання функції
-console.log(result(1, 2, 3)); // результат — 106
+var resultBind = add.bind(obj); // встановлює "obj" як контекст виконання функції
+console.log(resultBind(1, 2, 3)); // результат — 106
 ```
 
 Якщо створити `add` як стрілкову функцію, то оскільки вона створена в контексті об'єкта `window` (глобальному контексті), вона вважатиме, що `this` і є `window`.
@@ -308,7 +307,7 @@ const bound = add.bind(obj);
 console.log(bound(1, 2, 3)); // результат — 2026
 ```
 
-Можливо, найбільшу користь стрілкові функції приносять під час використання їх з методами {{domxref("setTimeout()")}} й {{domxref("EventTarget/addEventListener()", "EventTarget.addEventListener()")}}, що часто потребує певного замикання, методу `call`, `apply` чи `bind`, щоб пересвідчитись, що функція виконується в правильному контексті.
+Можливо, найбільшу користь стрілкові функції приносять під час використання їх з методами {{domxref("setTimeout()")}} й {{domxref("EventTarget/addEventListener()", "EventTarget.prototype.addEventListener()")}}, що часто потребує певного замикання, методу `call`, `apply` чи `bind`, щоб пересвідчитись, що функція виконується в правильному контексті.
 
 #### Приклад з традиційною функцією
 
@@ -366,7 +365,9 @@ function foo(n) {
 foo(3); // 3 + 3 = 6
 ```
 
-В більшості випадків застосування [залишкових параметрів](/uk/docs/Web/JavaScript/Reference/Functions/rest_parameters) є доброю альтернативою використанню об'єкта `arguments`.
+> **Примітка:** В [суворому режимі](/uk/docs/Web/JavaScript/Reference/Strict_mode#sproshchennia-eval-i-arguments) не можна оголошувати змінну з назвою `arguments`, тож код вище призвів би до синтаксичної помилки. Це робить область видимості `arguments` куди простішою для осмислення.
+
+В більшості випадків застосування [решти параметрів](/uk/docs/Web/JavaScript/Reference/Functions/rest_parameters) є доброю альтернативою використанню об'єкта `arguments`.
 
 ```js
 function foo(n) {
@@ -419,7 +420,7 @@ const func2 = (x, y) => {
 
 Слід мати на увазі, що повернення об'єктних літералів в скороченому записі тіла функції `(params) => {object:literal}` не працюватиме так, як очікується.
 
-```js
+```js example-bad
 const func = () => { foo: 1 };
 // Виклик func() поверне undefined!
 
@@ -442,7 +443,7 @@ const func = () => ({ foo: 1 });
 
 Стрілкова функція не може містити розрив рядка між параметрами і її стрілкою.
 
-```js
+```js example-bad
 const func = (a, b, c)
   => 1;
 // SyntaxError: Unexpected token '=>'
@@ -468,15 +469,17 @@ const func4 = (a, b, c) => 1;
 
 Хоча стрілка в стрілковій функції не є оператором, ці функції мають особливі правила парсингу, які по-іншому взаємодіють з [пріоритетом операторів](/uk/docs/Web/JavaScript/Reference/Operators/Operator_Precedence) у порівнянні зі звичайними функціями.
 
-```js
+```js example-bad
 let callback;
-
-callback = callback || function() {}; // добре
 
 callback = callback || () => {};
 // SyntaxError: invalid arrow-function arguments
+```
 
-callback = callback || (() => {});    // добре
+Через те, що `=>` має нижчий за більшість операторів пріоритет, для того, аби уникати розбору `callback || ()` як списку аргументів стрілкової функції, необхідні дужки.
+
+```js example-good
+callback = callback || (() => {}); // добре
 ```
 
 ## Приклади
@@ -487,7 +490,7 @@ callback = callback || (() => {});    // добре
 // Порожня стрілкова функція повертає undefined
 const empty = () => {};
 
-(() => 'foobar')();
+(() => "foobar")();
 // Повертає "foobar"
 // (це називається Вираз одразу викликаної функції)
 
@@ -521,10 +524,10 @@ promise
 
 // Безпараметрові стрілкові функції, які простіше розібрати візуально
 setTimeout(() => {
-  console.log('Я відбудусь раніше');
+  console.log("Я відбудусь раніше");
   setTimeout(() => {
     // Глибший код
-    console.log('Я відбудусь пізніше');
+    console.log("Я відбудусь пізніше");
   }, 1);
 }, 1);
 ```

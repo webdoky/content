@@ -19,21 +19,26 @@ browser-compat: javascript.builtins.String.includes
 
 ## Синтаксис
 
-```js
-includes(searchString);
-includes(searchString, position);
+```js-nolint
+includes(searchString)
+includes(searchString, position)
 ```
 
 ### Параметри
 
 - `searchString`
-  - : Рядок, який необхідно знайти всередині початкового рядка `str`.
+  - : Рядок, який необхідно знайти всередині початкового рядка `str`. Не може бути регулярним виразом.
 - `position` {{optional_inline}}
   - : Номер позиції всередині рядка, з якої розпочнеться пошук шуканого рядка `searchString`. (Усталено дорівнює `0`.)
 
 ### Повернене значення
 
 Повертає **`true`**, якщо шуканий рядок було знайдено будь-де всередині початкового рядка, і **`false`**, якщо рядок знайдено не було.
+
+### Винятки
+
+- {{jsxref("TypeError")}}
+  - : Якщо `searchString` [є регулярним виразом](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp#osoblyva-obrobka-rehuliarnykh-vyraziv).
 
 ## Опис
 

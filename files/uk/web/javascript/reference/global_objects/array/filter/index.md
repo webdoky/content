@@ -20,35 +20,21 @@ browser-compat: javascript.builtins.Array.filter
 
 ## Синтаксис
 
-```js
+```js-nolint
 // Стрілкова функція
-filter((element) => {
-  /* … */
-});
-filter((element, index) => {
-  /* … */
-});
-filter((element, index, array) => {
-  /* … */
-});
+filter((element) => { /* … */ } )
+filter((element, index) => { /* … */ } )
+filter((element, index, array) => { /* … */ } )
 
 // Функція зворотного виклику
-filter(callbackFn);
-filter(callbackFn, thisArg);
+filter(callbackFn)
+filter(callbackFn, thisArg)
 
 // Функція зворотного виклику, яка оголошена на місці
-filter(function (element) {
-  /* … */
-});
-filter(function (element, index) {
-  /* … */
-});
-filter(function (element, index, array) {
-  /* … */
-});
-filter(function (element, index, array) {
-  /* … */
-}, thisArg);
+filter(function(element) { /* … */ })
+filter(function(element, index) { /* … */ })
+filter(function(element, index, array){ /* … */ })
+filter(function(element, index, array) { /* … */ }, thisArg)
 ```
 
 ### Параметри

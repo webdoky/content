@@ -20,15 +20,15 @@ browser-compat: javascript.statements.async_function
 
 ## Синтаксис
 
-```js
+```js-nolint
 async function name(param0) {
-  statements;
+  statements
 }
 async function name(param0, param1) {
-  statements;
+  statements
 }
 async function name(param0, param1, /* … ,*/ paramN) {
-  statements;
+  statements
 }
 ```
 
@@ -291,4 +291,4 @@ async function getProcessedData(url) {
 - {{jsxref("Operators/async_function", "Вираз асинхронної функції", "", 1)}}
 - Об'єкт {{jsxref("AsyncFunction")}}
 - {{jsxref("Operators/await", "await")}}
-- [Декорування асинхронних функцій у Javascript (англ.)](https://innolitics.com/10x/javascript-decorators-for-promise-returning-functions/) на _innolitics.com_
+- [Декорування асинхронних функцій у JavaScript (англ.)](https://innolitics.com/10x/javascript-decorators-for-promise-returning-functions/) на _innolitics.com_
