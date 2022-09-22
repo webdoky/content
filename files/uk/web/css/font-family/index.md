@@ -12,7 +12,7 @@ browser-compat: css.properties.font-family
 
 {{CSSRef}}
 
-Властивість CSS **`font-family`** встановлює для обраного елемента список за пріоритетом з одного або кількох сімейств шрифту та (або) загальних імен сімейств.
+Властивість CSS **`font-family`** (сімейство шрифту) встановлює для обраного елемента список за пріоритетом з одного або кількох сімейств шрифту та (або) загальних імен сімейств.
 
 {{EmbedInteractiveExample("pages/css/font-family.html")}}
 
@@ -22,14 +22,14 @@ browser-compat: css.properties.font-family
 
 Слід завжди включати принаймні одне загальне ім'я сімейства у список `font-family`, оскільки немає гарантій, що будь-який вказаний шрифт виявиться доступним. Загальне ім'я сімейства слугуватиме запасним шрифтом, якщо це знадобиться.
 
-Властивість `font-family` вказує список шрифтів у порядку спадання пріоритету. Вибір шрифту _не буде_ зупинятися на першому шрифті в списку, що присутній в системі користувача. Натомість можна сказати, що вибір шрифту виконується _посимвольно_, тож якщо доступний шрифт не має гліфа для потрібного символу, алгоритм добору перебирає наступні шрифти. Коли шрифт доступний лише для певних [стилів](/en-US/docs/Web/CSS/font-style), [варіантів](/en-US/docs/Web/CSS/font-variant) або [розмірів](/en-US/docs/Web/CSS/font-size), то відповідні властивості CSS можуть впливати на вибір сімейства шрифту.
+Властивість `font-family` вказує список шрифтів у порядку спадання пріоритету. Вибір шрифту _не буде_ зупинятися на першому шрифті в списку, що присутній в системі користувача. Натомість можна сказати, що вибір шрифту виконується _посимвольно_, тож якщо доступний шрифт не має гліфа для потрібного символу, алгоритм добору перебирає наступні шрифти. Коли шрифт доступний лише для певних [стилів](/uk/docs/Web/CSS/font-style), [варіантів](/uk/docs/Web/CSS/font-variant) або [розмірів](/uk/docs/Web/CSS/font-size), то відповідні властивості CSS можуть впливати на вибір сімейства шрифту.
 
 ## Синтаксис
 
 ```css
 /* Ім'я сімейства шрифту та загальне ім'я сімейства */
-font-family: 'Gill Sans Extrabold', sans-serif;
-font-family: 'Goudy Bookletter 1911', sans-serif;
+font-family: "Gill Sans Extrabold", sans-serif;
+font-family: "Goudy Bookletter 1911", sans-serif;
 
 /* Виключно загальне ім'я сімейства */
 font-family: serif; /* із засічками */
@@ -59,7 +59,7 @@ font-family: unset; /* невстановлене значення */
 Приклад нижче перелічує два сімейства шрифту, перше із `<family-name>`, а друге із `<generic-name>`:
 
 ```css
-font-family: 'Gill Sans Extrabold', sans-serif;
+font-family: "Gill Sans Extrabold", sans-serif;
 ```
 
 ### Значення
@@ -126,7 +126,7 @@ font-family: 'Gill Sans Extrabold', sans-serif;
 Наприклад, наступні оголошення є дійсними:
 
 ```css example-good
-font-family: 'Goudy Bookletter 1911', sans-serif;
+font-family: "Goudy Bookletter 1911", sans-serif;
 ```
 
 Наступні ж оголошення є **недійсними**:
@@ -134,7 +134,7 @@ font-family: 'Goudy Bookletter 1911', sans-serif;
 ```css example-bad
 font-family: Goudy Bookletter 1911, sans-serif;
 font-family: Red/Black, sans-serif;
-font-family: 'Lucida' Grande, sans-serif;
+font-family: "Lucida" Grande, sans-serif;
 font-family: Ahem!, sans-serif;
 font-family: test @foo, sans-serif;
 font-family: #POUND, sans-serif;
@@ -161,7 +161,7 @@ font-family: Gill Sans Extrabold, sans-serif;
 
 ```css
 .serif {
-  font-family: Times, 'Times New Roman', Georgia, serif;
+  font-family: Times, "Times New Roman", Georgia, serif;
 }
 
 .sansserif {
@@ -169,7 +169,7 @@ font-family: Gill Sans Extrabold, sans-serif;
 }
 
 .monospace {
-  font-family: 'Lucida Console', Courier, monospace;
+  font-family: "Lucida Console", Courier, monospace;
 }
 
 .cursive {
@@ -225,4 +225,4 @@ font-family: Gill Sans Extrabold, sans-serif;
 
 - {{cssxref("font-style")}}
 - {{cssxref("font-weight")}}
-- [Принципи стилізації тексту та шрифту](/en-US/docs/Learn/CSS/Styling_text/Fundamentals)
+- [Принципи стилізації тексту та шрифту](/uk/docs/Learn/CSS/Styling_text/Fundamentals)
