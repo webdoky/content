@@ -78,7 +78,7 @@ background-color: unset;
 
 - [WebAIM: Перевірка контрасту кольору (англ.)](https://webaim.org/resources/contrastchecker/)
 - [MDN Розуміння WCAG, Пояснення настанов 1.4](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#guideline_1.4_make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
-- [Розуміння критеріїв успіху 1.4.3  | W3C Розуміння WCAG 2.0 (англ.)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html)
+- [Розуміння критеріїв успіху 1.4.3 | W3C Розуміння WCAG 2.0 (англ.)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html)
 
 ## Формальне визначення
 
@@ -134,5 +134,5 @@ background-color: unset;
 
 - [Множинні фони](/uk/docs/Web/CSS/CSS_Backgrounds_and_Borders/Using_multiple_backgrounds)
 - Тип даних {{cssxref("&lt;color&gt;")}}
-- Інші властивості, пов‘язані з кольором: {{cssxref("color")}}, {{cssxref("border-color")}}, {{cssxref("outline-color")}}, {{cssxref("text-decoration-color")}}, {{cssxref("text-emphasis-color")}}, {{cssxref("text-shadow")}}, {{cssxref("caret-color")}} та {{cssxref("column-rule-color")}}
+- Інші властивості, пов'язані з кольором: {{cssxref("color")}}, {{cssxref("border-color")}}, {{cssxref("outline-color")}}, {{cssxref("text-decoration-color")}}, {{cssxref("text-emphasis-color")}}, {{cssxref("text-shadow")}}, {{cssxref("caret-color")}} та {{cssxref("column-rule-color")}}
 - [Застосування кольору до елементів HTML за допомогою CSS](/uk/docs/Web/CSS/CSS_Colors/Applying_color)

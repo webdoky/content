@@ -7,7 +7,6 @@ tags:
   - HTML Video
   - HTML Video Player
   - HTML embedded content
-  - HTML5
   - Media
   - Movie Playback
   - Movies
@@ -49,9 +48,9 @@ browser-compat: html.elements.video
   - : Булів атрибут, котрий, якщо його значення – `true`, вказує, що елемент повинен автоматично ввімкнути режим картинки-в-картинці, коли користувач перемикається туди й назад між поточним документом та іншим документом чи застосунком.
 - {{htmlattrdef("controls")}}
   - : Якщо присутній цей атрибут, то браузер запропонує користувачеві контрольні засоби для керування відтворенням відео, в тому числі гучністю, перемоткою та паузою-відновленням відтворення.
-- {{htmlattrdef("controlslist")}} {{experimental_inline}}
+- {{htmlattrdef("controlslist")}} {{experimental_inline}}{{non-standard_inline}}
 
-  - : Атрибут [`controlslist` (англ.)](https://wicg.github.io/controls-list/html-output/multipage/embedded-content.html#attr-media-controlslist), бувши вказаним, допомагає браузеру обрати, які контрольні елементи показати на мультимедійному елементі, коли браузер показує власний набір контрольних елементів (наприклад, коли вказаний атрибут `controls`).
+  - : Атрибут [`controlslist` (англ.)](https://wicg.github.io/controls-list/explainer.html), бувши вказаним, допомагає браузеру обрати, які контрольні елементи показати на елементі `video`, коли браузер показує власний набір контрольних елементів (тобто коли вказаний атрибут `controls`).
 
     Дозволені значення: `nodownload`, `nofullscreen` і `noremoteplayback`.
 
@@ -274,7 +273,7 @@ browser-compat: html.elements.video
   <source src="myVideo.webm" type="video/webm" />
   <source src="myVideo.mp4" type="video/mp4" />
   <p>
-    Ваш браузер не підтримує відео HTML5. Ось натомість
+    Ваш браузер не підтримує відео HTML. Ось натомість
     <a href="myVideo.mp4">посилання на відео</a>.
   </p>
 </video>
@@ -287,7 +286,7 @@ browser-compat: html.elements.video
 - Якщо не вказати атрибута `controls`, то відео не включатиме усталених контрольних елементів браузера; можна створити власні контрольні елементи за допомогою JavaScript й API {{domxref("HTMLMediaElement")}}. Дивіться [Створення кросбраузерного програвача відео](/uk/docs/Web/Guide/Audio_and_video_delivery/cross_browser_video_player) для отримання подробиць.
 - Щоб дати змогу контролювати відео (та аудіо) вміст з високою точністю, `HTMLMediaElement` викидає багато різних [подій](/uk/docs/Web/API/HTMLMediaElement#podii). На додачу до надання контрольованості, ці події дають змогу контролювати прогрес як стягнення, так і відтворення мультимедійного об'єкта, а також стан та позицію відтворення.
 - Для прилаштування позиціонування відео всередині рамок елемента можна використовувати властивість {{cssxref("object-position")}}, а для контролю того, як розмір відео припасовується для вміщення в рамки – {{cssxref("object-fit")}}.
-- Для демонстрації разом з відео субтитрів можна використати трохи JavaScript разом з елементом {{htmlelement("track")}} і форматом [WebVTT](/uk/docs/Web/API/WebVTT_API). Дивіться [Додавання до відео HTML5 підписів та субтитрів](/uk/docs/Web/Guide/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video) для отримання додаткової інформації.
+- Для демонстрації разом з відео субтитрів можна використати трохи JavaScript разом з елементом {{htmlelement("track")}} і форматом [WebVTT](/uk/docs/Web/API/WebVTT_API). Дивіться [Додавання до відео HTML підписів та субтитрів](/uk/docs/Web/Guide/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video) для отримання додаткової інформації.
 - За допомогою елемента `<video>` можна відтворювати аудіо. Це може бути корисним, якщо, наприклад, треба відтворювати аудіо вкупі з розшифровкою [WebVTT](/uk/docs/Web/API/WebVTT_API), оскільки елемент {{HTMLElement("audio")}} не дозволяє субтитрів WebVTT.
 - Щоб перевірити запасний вміст у браузерах, що підтримують елемент, можна замінити `<video>` вигаданим елементом, наприклад, `<notavideo>`.
 
@@ -313,13 +312,13 @@ browser-compat: html.elements.video
 Наприклад, для відстеження додавання чи вилучення з елемента `<video>` доріжок аудіо можна використати код типу наступного:
 
 ```js
-var elem = document.querySelector('video');
+const elem = document.querySelector('video');
 
-elem.audioTracks.onaddtrack = function (event) {
+elem.audioTracks.onaddtrack = (event) => {
   trackEditor.addTrack(event.track);
 };
 
-elem.audioTracks.onremovetrack = function (event) {
+elem.audioTracks.onremovetrack = (event) => {
   trackEditor.removeTrack(event.track);
 };
 ```
@@ -407,7 +406,12 @@ AddType video/webm .webm
     type="video/mp4"
   />
 
-  Ваш браузер не підтримує тега HTML5 video.
+  Вибачте, Ваш браузер не підтримує вбудованих відео, але не переймайтесь: Ви
+  можете
+  <a href="https://archive.org/download/ElephantsDream/ed_1024_512kb.mp4"
+    >стягнути файл MP4</a
+  >
+  і переглянути його в своєму улюбленому програвачі відео!
 </video>
 ```
 
@@ -415,13 +419,13 @@ AddType video/webm .webm
 
 {{EmbedLiveSample('dekilka-dzherel', '', '400')}}
 
-Спершу виконується спроба відтворити [WebM](/uk/docs/Web/Media/Formats/Containers#webm). Якщо це не вдається, наступна спроба – [MP4](/uk/docs/Web/Media/Formats/Containers#mpeg-4_mp4). Врешті решт, робиться спроба відтворити [Ogg](/uk/docs/Web/Media/Formats/Containers#ogg). Запасне повідомлення виводиться, якщо елемент video не підтримується, але не тоді, коли всі джерела не спрацьовують.
+Спершу виконується спроба відтворити [Ogg](/uk/docs/Web/Media/Formats/Containers#ogg). Якщо це не вдається, наступна спроба – AVI. Врешті решт, робиться спроба відтворити [MP4](/uk/docs/Web/Media/Formats/Containers#mpeg-4_mp4). Запасне повідомлення виводиться, якщо елемент video не підтримується, але не тоді, коли всі джерела не спрацьовують.
 
 Певні типи мультимедійних файлів дають змогу надати більш конкретну інформацію за допомогою параметра [`codecs`](/uk/docs/Web/Media/Formats/codecs_parameter) як частини рядка типу файлу. Відносно простий приклад – `video/webm; codecs="vp8, vorbis"`; він вказує, що файл – це відео [WebM](/uk/docs/Web/Media/Formats/Containers#webm) з використанням [VP8](/uk/docs/Web/Media/Formats/Video_codecs#vp8) для самого відео й [Vorbis](/uk/docs/Web/Media/Formats/Audio_codecs#vorbis) для аудіо.
 
 ## Занепокоєння щодо доступності
 
-Відео повинні надавати як субтитри, так і розшифровки, що точно описують їх вміст (дивіться [Додавання до відео HTML5 підписів та субтитрів](/uk/docs/Web/Guide/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video) для додаткової інформації про те, як це реалізувати). Субтитри дозволяють людям, котрі страждають від втрати слуху, розуміти вміст аудіо відео по ходу відтворення відео, а розшифровки дозволяють людям, котрим потрібен додатковий час, сприйняти аудіо вміст в темпі й форматі, котрий є для них зручним.
+Відео повинні надавати як субтитри, так і розшифровки, що точно описують їх вміст (дивіться [Додавання до відео HTML підписів та субтитрів](/uk/docs/Web/Guide/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video) для додаткової інформації про те, як це реалізувати). Субтитри дозволяють людям, котрі страждають від втрати слуху, розуміти вміст аудіо відео по ходу відтворення відео, а розшифровки дозволяють людям, котрим потрібен додатковий час, сприйняти аудіо вміст в темпі й форматі, котрий є для них зручним.
 
 Варто зауважити, що хоч можна додати субтитри до суто звукового мультимедіа, це можливо лише при відтворенні аудіо в елементі {{HTMLElement("video")}}, оскільки область відео елемента використовується для показу субтитрів. Це один з особливих сценаріїв, за яких корисно відтворювати аудіо в елементі video.
 
@@ -536,6 +540,6 @@ AddType video/webm .webm
 
 - Позиціонування та розмір картинки всередині її рамок: {{cssxref("object-position")}} і {{cssxref("object-fit")}}
 - {{htmlelement("audio")}}
-- [Використання аудіо й відео HTML5](/uk/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content)
+- [Використання аудіо й відео HTML](/uk/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content)
 - [Взаємодія з відео за допомогою полотна](/uk/docs/Web/API/Canvas_API/Manipulating_video_using_canvas)
 - [Налаштування серверів для мультимедійних даних Ogg](/uk/docs/Web/HTTP/Configuring_servers_for_Ogg_media)

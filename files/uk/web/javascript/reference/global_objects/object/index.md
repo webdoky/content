@@ -150,8 +150,8 @@ const current = Object.prototype.valueOf;
 // Оскільки властивість "-prop-value" є наскрізною, і не завжди присутня
 // в тому самому прототипному ланцюжку, виникає потреба змінити Object.prototype:
 Object.prototype.valueOf = function (...args) {
-  if (Object.hasOwn(this, '-prop-value')) {
-    return this['-prop-value'];
+  if (Object.hasOwn(this, "-prop-value")) {
+    return this["-prop-value"];
   } else {
     // Це не схоже на наш об'єкт, тому повернімося до усталеної поведінки
     // шляхом відтворення діючої поведінки, наскільки це можливо.

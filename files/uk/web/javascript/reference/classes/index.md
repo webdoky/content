@@ -151,7 +151,7 @@ class Point {
     this.y = y;
   }
 
-  static displayName = 'Point';
+  static displayName = "Point";
   static distance(a, b) {
     const dx = a.x - b.x;
     const dy = a.y - b.y;
@@ -302,7 +302,7 @@ class Dog extends Animal {
   }
 }
 
-const d = new Dog('Сірко');
+const d = new Dog("Сірко");
 d.speak(); // Сірко гавкає.
 ```
 
@@ -325,7 +325,7 @@ class Dog extends Animal {
   }
 }
 
-const d = new Dog('Сірко');
+const d = new Dog("Сірко");
 d.speak(); // Сірко гавкає.
 
 // Якщо зустрічаються однакові методи, метод нащадка матиме перевагу над батьківським методом
@@ -349,7 +349,7 @@ class Dog {
 // Без цього рядка під час виклику методу `speak` буде викинуто виняток TypeError
 Object.setPrototypeOf(Dog.prototype, Animal);
 
-const d = new Dog('Сірко');
+const d = new Dog("Сірко");
 d.speak(); // Сірко галасує.
 ```
 
@@ -396,7 +396,7 @@ class Lion extends Cat {
   }
 }
 
-const l = new Lion('Пушок');
+const l = new Lion("Пушок");
 l.speak();
 // Пушок галасує.
 // Пушок гарчить.

@@ -20,35 +20,21 @@ browser-compat: javascript.builtins.Array.forEach
 
 ## Синтаксис
 
-```js
+```js-nolint
 // Стрілкова функція
-forEach((element) => {
-  /* … */
-});
-forEach((element, index) => {
-  /* … */
-});
-forEach((element, index, array) => {
-  /* … */
-});
+forEach((element) => { /* … */ })
+forEach((element, index) => { /* … */ })
+forEach((element, index, array) => { /* … */ })
 
 // Функція зворотного виклику
-forEach(callbackFn);
-forEach(callbackFn, thisArg);
+forEach(callbackFn)
+forEach(callbackFn, thisArg)
 
 // Функція зворотного виклику, оголошена на місці
-forEach(function (element) {
-  /* … */
-});
-forEach(function (element, index) {
-  /* … */
-});
-forEach(function (element, index, array) {
-  /* … */
-});
-forEach(function (element, index, array) {
-  /* … */
-}, thisArg);
+forEach(function(element) { /* … */ })
+forEach(function(element, index) { /* … */ })
+forEach(function(element, index, array){ /* … */ })
+forEach(function(element, index, array) { /* … */ }, thisArg)
 ```
 
 ### Параметри
@@ -150,12 +136,13 @@ arraySparse.forEach((element) => {
 
 console.log({ numCallbackRuns });
 
-// 1
-// 3
-// 7
-// numCallbackRuns: 3
-// коментар: як можна побачити, на пропущеному між 3 та 7 значенні функція зворотного виклику не викликалась
+// { element: 1 }
+// { element: 3 }
+// { element: 7 }
+// { numCallbackRuns: 3 }
 ```
+
+Як можна побачити, на пропущеному між 3 та 7 значенні функція зворотного виклику не викликалась
 
 ### Перетворення циклу for на forEach
 
@@ -186,7 +173,7 @@ items.forEach((item) => {
 Наступний код друкує рядок для кожного елементу в масиві:
 
 ```js
-const logArrayElements = (element, index, array) => {
+const logArrayElements = (element, index /*, array */) => {
   console.log(`a[${index}] = ${element}`);
 };
 
@@ -279,11 +266,11 @@ console.log(words); // ['two', 'three', 'four']
 ```js
 const flatten = (arr) => {
   const result = [];
-  arr.forEach((i) => {
-    if (Array.isArray(i)) {
-      result.push(...flatten(i));
+  arr.forEach((item) => {
+    if (Array.isArray(item)) {
+      result.push(...flatten(item));
     } else {
-      result.push(i);
+      result.push(item);
     }
   });
   return result;

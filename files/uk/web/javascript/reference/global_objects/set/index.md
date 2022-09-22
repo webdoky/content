@@ -25,9 +25,7 @@ browser-compat: javascript.builtins.Set
 
 ### Рівність значень
 
-У зв'язку з тим, що кожне значення в `Set` має бути унікальним, буде перевірятися рівність значень. В ранішій версії специфікації ECMAScript така перевірка не була заснована на такому самому алгоритмі, який використовує оператор `===`. А саме: для об'єктів `Set` значення `+0` (котре є строго рівним `-0`) та `-0` були різними. Втім, це змінилось у специфікації ECMAScript 2015 року. Дивіться _"Рівність ключів для -0 й 0"_ у таблиці [сумісність із браузерами](#sumisnist-iz-brauzeramy) для отримання подробиць.
-
-{{jsxref("NaN")}} і {{jsxref("undefined")}} також можуть зберігатися в `Set`. Усі значення `NaN` прирівнюються між собою (отже, `NaN` вважається тим самим, що й `NaN`, не зважаючи на те, що `NaN !== NaN`).
+Рівність значень заснована на алгоритмі [SameValueZero](/uk/docs/Web/JavaScript/Equality_comparisons_and_sameness#same-value-zero_equality). (Раніше використовувався алгоритм [SameValue](/uk/docs/Web/JavaScript/Equality_comparisons_and_sameness#same-value_equality_using_object.is), котрий розглядав `0` і `-0` як різні значення. Перевірте [сумісність із браузерами](#sumisnist-iz-brauzeramy).) Це означає, що значення {{jsxref("NaN")}} вважається рівним іншому значенню `NaN` (попри те, що `NaN !== NaN`), а всі решта значень перевіряються на рівність згідно з семантикою оператора `===`.
 
 ### Швидкодія
 
@@ -50,13 +48,13 @@ browser-compat: javascript.builtins.Set
 
 ## Методи примірника
 
-- {{jsxref("Set.add", "Set.prototype.add(<var>value</var>)")}} (додати)
+- {{jsxref("Set.prototype.add()")}} (додати)
   - : Додає новий елемент зі вказаним значенням до об'єкта `Set`, якщо елемента з таким само значенням іще в `Set` немає.
 - {{jsxref("Set.prototype.clear()")}} (очистити)
   - : Усуває з об'єкта `Set` всі значення.
-- {{jsxref("Set.delete", "Set.prototype.delete(<var>value</var>)")}} (видалити)
+- {{jsxref("Set.prototype.delete()")}} (видалити)
   - : Усуває елемент, пов'язаний із `value`, та повертає булеве значення, що вказує, чи був елемент успішно усунутий. Після цього `Set.prototype.has(value)` поверне `false`.
-- {{jsxref("Set.has", "Set.prototype.has(<var>value</var>)")}} (має)
+- {{jsxref("Set.prototype.has()")}} (має)
   - : Повертає булеве значення, що вказує, чи є елемент із даним значенням в об'єкті `Set`.
 
 ### Методи ітерації
@@ -65,7 +63,7 @@ browser-compat: javascript.builtins.Set
   - : Повертає новий об'єкт-ітератор, що видає **значення** для кожного елемента в об'єкті `Set`, у порядку їх додання.
 - {{jsxref("Set.prototype.values()")}} (значення)
   - : Повертає новий об'єкт-ітератор, що видає **значення** для кожного елемента в об'єкті `Set`, у порядку їх додання.
-- {{jsxref("Set.prototype.values", " Set.prototype.keys()")}} (ключі)
+- {{jsxref("Set.prototype.keys()")}} (ключі)
   - : Псевдонім для {{jsxref("Set.prototype.values()")}}.
 - {{jsxref("Set.prototype.entries()")}} (записи)
 
@@ -73,7 +71,7 @@ browser-compat: javascript.builtins.Set
 
     Це подібно до об'єкта {{jsxref("Map")}}, якби _ключ_ кожного запису був би водночас власним _значенням_.
 
-- {{jsxref("Set.forEach", "Set.prototype.forEach(<var>callbackFn</var>[, <var>thisArg</var>])")}} (для кожного)
+- {{jsxref("Set.prototype.forEach()")}} (для кожного)
   - : Один раз викликає `callbackFn` для кожного значення, присутнього в об'єкті `Set`, у порядку їх додання. Якщо наданий параметр `thisArg`, то він використовуватиметься при кожному виклику `callbackFn` як значення `this`.
 
 ## Приклади
@@ -139,22 +137,22 @@ for (const [key, value] of mySet1.entries()) {
 }
 
 // За допомогою Array.from перетворює об'єкт Set на об'єкт Array
-const myArr = Array.from(mySet1) // [1, "якийсь текст", {"a": 1, "b": 2}, {"a": 1, "b": 2}, 5]
+const myArr = Array.from(mySet1); // [1, "якийсь текст", {"a": 1, "b": 2}, {"a": 1, "b": 2}, 5]
 
 // наступне також запрацює, якщо запустити в контексті документа HTML
-mySet1.add(document.body)
-mySet1.has(document.querySelector('body')) // true
+mySet1.add(document.body);
+mySet1.has(document.querySelector('body')); // true
 
 // перетворення між Set та Array
-const mySet2 = new Set([1, 2, 3, 4])
-mySet2.size                    // 4
-[...mySet2]                    // [1, 2, 3, 4]
+const mySet2 = new Set([1, 2, 3, 4]);
+console.log(mySet2.size); // 4
+console.log([...mySet2]); // [1, 2, 3, 4]
 
 // перетин можна імітувати за допомогою
-const intersection = new Set([...mySet1].filter(x => mySet2.has(x)))
+const intersection = new Set([...mySet1].filter((x) => mySet2.has(x)));
 
 // різницю можна імітувати за допомогою
-const difference = new Set([...mySet1].filter(x => !mySet2.has(x)))
+const difference = new Set([...mySet1].filter((x) => !mySet2.has(x)));
 
 // Обійти записи множини за допомогою forEach()
 mySet2.forEach((value) => {
@@ -244,7 +242,7 @@ const mySet = new Set(myArray);
 
 mySet.has('значення1'); // повертає true
 
-// Використати оператор розгортання, щоб перетворити множину на масив
+// Використати синтаксис розгортання, щоб перетворити множину на масив
 console.log([...mySet]); // Покаже точно такий самий масив, як myArray
 ```
 
@@ -279,7 +277,7 @@ new Set('firefox'); // Set(6) { "f", "i", "r", "e", "o", "x" }
 const array = Array.from(document.querySelectorAll('[id]')).map((e) => e.id);
 
 const set = new Set(array);
-console.assert(set.size == array.length);
+console.assert(set.size === array.length);
 ```
 
 ## Специфікації

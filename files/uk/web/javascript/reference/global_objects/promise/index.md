@@ -42,7 +42,7 @@ new Promise((resolveOuter) => {
   resolveOuter(
     new Promise((resolveInner) => {
       setTimeout(resolveInner, 1000);
-    }),
+    })
   );
 });
 ```
@@ -60,7 +60,7 @@ new Promise((resolveOuter) => {
 ```js
 const myPromise = new Promise((resolve, reject) => {
   setTimeout(() => {
-    resolve('foo');
+    resolve("foo");
   }, 300);
 });
 
@@ -87,16 +87,16 @@ myPromise
 ```js
 myPromise
   .then((value) => {
-    return value + ' іще ланка';
+    return value + " іще ланка";
   })
   .then((value) => {
-    return value + ' і знову ланка';
+    return value + " і знову ланка";
   })
   .then((value) => {
-    return value + ' і знову';
+    return value + " і знову";
   })
   .then((value) => {
-    return value + ' і знову';
+    return value + " і знову";
   })
   .then((value) => {
     console.log(value);
@@ -138,9 +138,9 @@ const promiseA = new Promise((resolutionFunc, rejectionFunc) => {
 });
 // В цей момент "promiseA" уже залагоджено.
 promiseA.then((val) =>
-  console.log('асинхронний запис із таким значенням:', val),
+  console.log("асинхронний запис із таким значенням:", val)
 );
-console.log('запис одразу');
+console.log("запис одразу");
 
 // виводить результати в такому порядку:
 // запис одразу
@@ -181,7 +181,7 @@ Promise.resolve(aThenable); // Проміс сповнюється значен�
 <iframe></iframe>
 <script>
   // і також окрема область тут
-  const bound = frames[0].postMessage.bind(frames[0], 'some data', '*');
+  const bound = frames[0].postMessage.bind(frames[0], "some data", "*");
   // bound містить вбудовану функцію, тобто тут немає
   // користувацького коду на стеку, тож яку область ми використаємо?
   setTimeout(bound);
@@ -198,7 +198,7 @@ Promise.resolve(aThenable); // Проміс сповнюється значен�
 <iframe></iframe>
 <script>
   // і також окрема область тут
-  const bound = frames[0].postMessage.bind(frames[0], 'some data', '*');
+  const bound = frames[0].postMessage.bind(frames[0], "some data", "*");
   // bound містить вбудовану функцію, тобто тут немає
   // користувацького коду на стеку, тож яку область ми використаємо?
   Promise.resolve(undefined).then(bound);
@@ -214,7 +214,7 @@ Promise.resolve(aThenable); // Проміс сповнюється значен�
 <!DOCTYPE html>
 <iframe src="x.html"></iframe>
 <script>
-  const bound = frames[0].postMessage.bind(frames[0], 'some data', '*');
+  const bound = frames[0].postMessage.bind(frames[0], "some data", "*");
   Promise.resolve(undefined).then(bound);
 </script>
 ```
@@ -224,13 +224,13 @@ Promise.resolve(aThenable); // Проміс сповнюється значен�
 <!DOCTYPE html>
 <script>
   window.addEventListener(
-    'message',
+    "message",
     (event) => {
-      document.querySelector('#text').textContent = 'hello';
+      document.querySelector("#text").textContent = "hello";
       // Цей код спрацює лише у браузерах, які відстежують поточний установчий об'єкт
       console.log(event);
     },
-    false,
+    false
   );
 </script>
 ```
@@ -301,7 +301,7 @@ const myFirstPromise = new Promise((resolve, reject) => {
   // В цьому прикладі використаємо setTimeout(...) для симуляції асинхронного коду.
   // На практиці тут буде щось схоже на XHR чи API HTML.
   setTimeout(() => {
-    resolve('Успіх!'); // Ура! Все пройшло добре!
+    resolve("Успіх!"); // Ура! Все пройшло добре!
   }, 250);
 });
 
@@ -343,7 +343,7 @@ function determineParity(value) {
 }
 
 function troubleWithGetNumber(reason) {
-  const err = new Error('Проблема з отриманням числа', { cause: reason });
+  const err = new Error("Проблема з отриманням числа", { cause: reason });
   console.error(err);
   throw err;
 }
@@ -354,7 +354,7 @@ function promiseGetWord(parityInfo) {
     if (value >= THRESHOLD_A - 1) {
       reject(`Все ж завелике значення: ${value}`);
     } else {
-      parityInfo.wordEvenOdd = isOdd ? 'odd' : 'even';
+      parityInfo.wordEvenOdd = isOdd ? "odd" : "even";
       resolve(parityInfo);
     }
   });
@@ -369,12 +369,12 @@ new Promise(tetheredGetNumber)
   })
   .catch((reason) => {
     if (reason.cause) {
-      console.error('Маємо помилку, оброблену раніше');
+      console.error("Маємо помилку, оброблену раніше");
     } else {
       console.error(`Проблема з promiseGetWord(): ${reason}`);
     }
   })
-  .finally((info) => console.log('Все зроблено'));
+  .finally((info) => console.log("Все зроблено"));
 ```
 
 ### Поглиблений приклад
@@ -395,22 +395,22 @@ new Promise(tetheredGetNumber)
 #### JavaScript
 
 ```js
-'use strict';
+"use strict";
 let promiseCount = 0;
 
 function testPromise() {
   const thisPromiseCount = ++promiseCount;
-  const log = document.getElementById('log');
+  const log = document.getElementById("log");
   // початок
-  log.insertAdjacentHTML('beforeend', `${thisPromiseCount}) Почалося<br>`);
+  log.insertAdjacentHTML("beforeend", `${thisPromiseCount}) Почалося<br>`);
   // Створюємо новий проміс: ми зобов'язуємося надати числовий лічильник цього промісу,
   // що починається з 1 (після очікування протягом 3 секунд)
   const p1 = new Promise((resolve, reject) => {
     // Функція, яка працює над виконанням промісу, викликається з можливістю
     // або вирішити, або відхилити проміс
     log.insertAdjacentHTML(
-      'beforeend',
-      `${thisPromiseCount}) Конструктор промісу<br>`,
+      "beforeend",
+      `${thisPromiseCount}) Конструктор промісу<br>`
     );
     // Це лише приклад того, як може виникнути асинхронність
     setTimeout(() => {
@@ -423,20 +423,20 @@ function testPromise() {
   // а за допомогою виклику catch() — що робити, якщо проміс відхилено
   p1.then((val) => {
     // Виводимо значення, яким сповнився проміс
-    log.insertAdjacentHTML('beforeend', `${val}) Проміс сповнено<br>`);
+    log.insertAdjacentHTML("beforeend", `${val}) Проміс сповнено<br>`);
   }).catch((reason) => {
     // Виводимо причину відхилення промісу
     console.log(`Тут оброблено відхилений проміс (${reason}).`);
   });
   // кінець
   log.insertAdjacentHTML(
-    'beforeend',
-    `${thisPromiseCount}) Проміс виконано<br>`,
+    "beforeend",
+    `${thisPromiseCount}) Проміс виконано<br>`
   );
 }
 
-const btn = document.getElementById('make-promise');
-btn.addEventListener('click', testPromise);
+const btn = document.getElementById("make-promise");
+btn.addEventListener("click", testPromise);
 ```
 
 #### Результат

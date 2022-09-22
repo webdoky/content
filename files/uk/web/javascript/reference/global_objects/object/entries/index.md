@@ -20,8 +20,8 @@ browser-compat: javascript.builtins.Object.entries
 
 ## Синтаксис
 
-```js
-Object.entries(obj);
+```js-nolint
+Object.entries(obj)
 ```
 
 ### Параметри
