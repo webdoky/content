@@ -1,37 +1,37 @@
-import yargs from 'yargs';
-import { hideBin } from 'yargs/helpers';
+import yargs from "yargs";
+import { hideBin } from "yargs/helpers";
 
-import checkFile from './utils/check-file';
-import { executeWithResult } from './utils/execute';
+import checkFile from "./utils/check-file";
+import { executeWithResult } from "./utils/execute";
 import {
   startLanguageTool,
   stopLanguageTool,
   waitForLanguageTool,
-} from './utils/language-tool';
-import checkAll from './check-all';
+} from "./utils/language-tool";
+import checkAll from "./check-all";
 
 const { argv } = yargs(hideBin(process.argv));
-const LIST_GIT_UPDATES_NON_STAGED = 'git ls-files -m -o --exclude-standard';
-const LIST_GIT_UPDATES_STAGED = 'git diff --staged --name-only';
+const LIST_GIT_UPDATES_NON_STAGED = "git ls-files -m -o --exclude-standard";
+const LIST_GIT_UPDATES_STAGED = "git diff --staged --name-only";
 
 async function check() {
   let result = true;
   let targetFiles;
   if (argv.changedOnly) {
     const { stdout: gitStagedUpdates } = await executeWithResult(
-      LIST_GIT_UPDATES_STAGED,
+      LIST_GIT_UPDATES_STAGED
     );
     const { stdout: gitNonStagedUpdates } = await executeWithResult(
-      LIST_GIT_UPDATES_NON_STAGED,
+      LIST_GIT_UPDATES_NON_STAGED
     );
 
     targetFiles = Array.from(
       new Set(
         gitStagedUpdates
-          .split('\n')
-          .concat(gitNonStagedUpdates.split('\n'))
-          .filter((filePath) => filePath.endsWith('.md')),
-      ), // uniq (yes, a single file may contain both staged and unstaged changes)
+          .split("\n")
+          .concat(gitNonStagedUpdates.split("\n"))
+          .filter((filePath) => filePath.endsWith(".md"))
+      ) // uniq (yes, a single file may contain both staged and unstaged changes)
     );
   } else {
     targetFiles = argv._;

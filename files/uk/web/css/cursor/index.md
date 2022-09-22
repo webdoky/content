@@ -20,7 +20,7 @@ browser-compat: css.properties.cursor
 Властивість [CSS](/uk/docs/Web/CSS) **`cursor`** (покажчик) встановлює курсор миші, котрий повинен бути показаний, коли вказівник миші розташований над елементом.
 
 Встановлення курсора повинне повідомити користувачів про дії, котрі можна виконати за допомогою миші в поточному положенні, включаючи: вибір тексту, активацію помічника або контекстних меню, копіювання вмісту, зміну розміру таблиць, і так далі.
-Можна вказати або _тип_ курсора за допомогою ключового слова, або завантажити певний значок (з необов‘язковими зображеннями запасного варіанту, а також з обов‘язковим ключовим словом як з остаточним запасним варіантом).
+Можна вказати або _тип_ курсора за допомогою ключового слова, або завантажити певний значок (з необов'язковими зображеннями запасного варіанту, а також з обов'язковим ключовим словом як з остаточним запасним варіантом).
 
 {{EmbedInteractiveExample("pages/css/cursor.html")}}
 
@@ -52,7 +52,7 @@ cursor: revert-layer;
 cursor: unset;
 ```
 
-Властивість `cursor` встановлюється довільною кількістю значень `<url>` (нуль чи більше), розділених комами, з обов‘язковим ключовим словом у кінці.
+Властивість `cursor` встановлюється довільною кількістю значень `<url>` (нуль чи більше), розділених комами, з обов'язковим ключовим словом у кінці.
 Кожен `<url>` повинен вказувати на файл зображення.
 Браузер намагатиметься завантажити перше вказане зображення, переходячи до наступного у випадку невдачі, і переходить до використання ключового слова, якщо жодне з зображень не вдалось завантажити (або якщо жодне не було вказано).
 
@@ -66,7 +66,7 @@ cursor: unset;
     Запасний варіант з одного або більше ключових слів _мусить_ бути присутнім в кінці списку запасних варіантів.
 - `<x>` `<y>` {{optional_inline}}
 
-  - : Необов‘язкові x та y координати вказують гарячу точку курсора; точну позицію всередині курсора, на котру відбувається вказування.
+  - : Необов'язкові x та y координати вказують гарячу точку курсора; точну позицію всередині курсора, на котру відбувається вказування.
 
     Числа – в одиницях пікселів зображення.
     Вони відносні щодо лівого верхнього кута зображення, що відповідає "`0` `0`", і є затисненими в межах зображення курсора.
@@ -76,8 +76,8 @@ cursor: unset;
 
   - : Ключове слово _мусить_ бути вказаним, позначаючи, який тип курсора використати, або запасний варіант курсора для використання, якщо всі вказані значки не вдалось завантажити.
 
-    Доступні ключові слова вказані у таблиці нижче.
-    Можна навести мишу на ряди таблиці, щоб побачити дію різних ключових слів курсора на браузер.
+    Доступні ключові слова вказані у таблиці нижче. Для всіх, крім `none` – відсутності курсора, додано зображення, котре демонструє, як раніше зображався курсор.
+    Можна навести мишу на ряди таблиці, щоб побачити дію різних ключових слів курсора на браузер нині.
 
     <table class="standard-table">
       <thead>
@@ -99,7 +99,7 @@ cursor: unset;
         </tr>
         <tr style="cursor: default">
           <td><code>default</code></td>
-          <td><img src="default.gif" /></td>
+          <td><img src="default.gif" alt="груба стрілка вгору вліво" /></td>
           <td>Залежний від платформи усталений курсор. Зазвичай – стрілка.</td>
         </tr>
         <tr style="cursor: none">
@@ -110,31 +110,31 @@ cursor: unset;
         <tr style="cursor: context-menu">
           <th rowspan="5" scope="row" style="cursor: auto">Посилання та статус</th>
           <td><code>context-menu</code></td>
-          <td><img alt="context-menu.png" src="context-menu.png" /></td>
+          <td><img alt="груба стрілка вгору вліво, що трохи перекриває піктограму меню" src="context-menu.png" /></td>
           <td>Доступне контекстне меню.</td>
         </tr>
         <tr style="cursor: help">
           <td><code>help</code></td>
-          <td><img src="help.gif" /></td>
+          <td><img src="help.gif" alt="груба стрілка вгору вліво, поруч з якою – знак питання" /></td>
           <td>Доступна допоміжна інформація.</td>
         </tr>
         <tr style="cursor: pointer">
           <td><code>pointer</code></td>
-          <td><img src="pointer.gif" /></td>
+          <td><img src="pointer.gif" alt="права рука зі вказівним пальцем, напрямленим вгору" /></td>
           <td>
             Курсор – вказівник, що показує посилання. Зазвичай зображення руки, що вказує пальцем.
           </td>
         </tr>
         <tr style="cursor: progress">
           <td><code>progress</code></td>
-          <td><img src="progress.gif" /></td>
+          <td><img src="progress.gif" alt="груба стрілка й пісковий годинник" /></td>
           <td>
             Програма зайнята у фоні, але користувач може надалі взаємодіяти з інтерфейсом (на відміну від <code>wait</code>).
           </td>
         </tr>
         <tr style="cursor: wait">
           <td><code>wait</code></td>
-          <td><img src="wait.gif" /></td>
+          <td><img src="wait.gif" alt="пісковий годинник" /></td>
           <td>
             Програма зайнята, і користувач не може взаємодіяти з інтерфейсом (на відміну від <code>progress</code>).
             Іноді – зображення піскового або кишенькового годинника.
@@ -143,22 +143,22 @@ cursor: unset;
         <tr style="cursor: cell">
           <th rowspan="4" scope="row" style="cursor: auto">Вибір</th>
           <td><code>cell</code></td>
-          <td><img src="cell.gif" /></td>
+          <td><img src="cell.gif" alt="грубий знак плюса" /></td>
           <td>Комірка таблиці або набір комірок, що можна вибрати.</td>
         </tr>
         <tr style="cursor: crosshair">
           <td><code>crosshair</code></td>
-          <td><img src="crosshair.gif" /></td>
+          <td><img src="crosshair.gif" alt="знак плюса з двох тонких ліній" /></td>
           <td>Хрестовий курсор. Часто використовується для показу вибору на растровому зображенні.</td>
         </tr>
         <tr style="cursor: text">
           <td><code>text</code></td>
-          <td><img class="default" src="text.gif" /></td>
+          <td><img class="default" src="text.gif" alt="вертикальний двотавр" /></td>
           <td>Текст може бути виділеним. Зазвичай має форму двотавра.</td>
         </tr>
         <tr style="cursor: vertical-text">
           <td><code>vertical-text</code></td>
-          <td><img alt="vertical-text.gif" src="vertical-text.gif" /></td>
+          <td><img alt="горизонтальний двотавр" src="vertical-text.gif" /></td>
           <td>
             Вертикальний текст може бути виділеним. Зазвичай має форму горизонтального двотавра.
           </td>
@@ -166,24 +166,24 @@ cursor: unset;
         <tr style="cursor: alias">
           <th rowspan="7" scope="row" style="cursor: auto">Drag &#x26; drop</th>
           <td><code>alias</code></td>
-          <td><img src="alias.gif" /></td>
+          <td><img src="alias.gif" alt="груба стрілка вгору вліво, що частково перекриває меншу піктограму теки з вигнутою стрілкою вгору вправо" /></td>
           <td>Буде створений псевдонім чи ярлик.</td>
         </tr>
         <tr style="cursor: copy">
           <td><code>copy</code></td>
-          <td><img class="default" src="copy.gif" /></td>
+          <td><img class="default" src="copy.gif" alt="груба стрілка вгору вліво, що частково перекриває меншу піктограму теки зі знаком плюса" /></td>
           <td>Дещо буде скопійовано.</td>
         </tr>
         <tr style="cursor: move">
           <td><code>move</code></td>
-          <td><img src="move.gif" /></td>
+          <td><img src="move.gif" alt="знак плюса з двох тонких ліній. Чотири їх кінці – невеликі стрілки назовні" /></td>
           <td>Дещо буде переміщено.</td>
         </tr>
         <tr style="cursor: no-drop">
           <td><code>no-drop</code></td>
           <td>
             <img
-              alt="no-drop.gif"
+              alt="піктограма вказівника і піктограма заборони"
               class="lwrap"
               src="no-drop.gif"
               style="float: left"
@@ -195,17 +195,17 @@ cursor: unset;
         </tr>
         <tr style="cursor: not-allowed">
           <td><code>not-allowed</code></td>
-          <td><img alt="not-allowed.gif" src="not-allowed.gif" /></td>
+          <td><img alt="Піктограма заборони, тобто кружечок з лінією по діагоналі" src="not-allowed.gif" /></td>
           <td>Дія не може бути виконана.</td>
         </tr>
         <tr style="cursor: grab">
           <td><code>grab</code></td>
-          <td><img class="default" src="grab.gif" /></td>
+          <td><img class="default" src="grab.gif" alt="повністю розтиснена долоня" /></td>
           <td>Дещо може бути схоплено (перетягнуто чи переміщено).</td>
         </tr>
         <tr style="cursor: grabbing">
           <td><code>grabbing</code></td>
-          <td><img class="default" src="grabbing.gif" /></td>
+          <td><img class="default" src="grabbing.gif" alt="піктограма затисненої долоні, зворотний бік" /></td>
           <td>Щось схоплено (перетягується чи переміщується).</td>
         </tr>
         <tr style="cursor: all-scroll">
@@ -213,7 +213,7 @@ cursor: unset;
             Зміна розміру та прокручування
           </th>
           <td><code>all-scroll</code></td>
-          <td><img alt="all-scroll.gif" src="all-scroll.gif" /></td>
+          <td><img alt="піктограма крапки середнього розміру з чотирма трикутниками навколо." src="all-scroll.gif" /></td>
           <td>
             Дещо може бути прокручено у будь-якому напрямку (панорамовано).<br />{{bug("275174")}}:
             На Windows <code>all-scroll</code> еквівалентно <code>move</code>.
@@ -221,7 +221,7 @@ cursor: unset;
         </tr>
         <tr style="cursor: col-resize">
           <td><code>col-resize</code></td>
-          <td><img alt="col-resize.gif" src="col-resize.gif" /></td>
+          <td><img alt="col-resize.gif" src="col-resize.gif" alt="дві тонкі паралельні вертикальні лінії з невеликими стрілками вліво і вправо" /></td>
           <td>
             Елемент чи колонка може змінити розмір по горизонталі.
             Часто зображується у вигляді стрілок, напрямлених наліво та направо із вертикальною смугою між ними.
@@ -229,7 +229,7 @@ cursor: unset;
         </tr>
         <tr style="cursor: row-resize">
           <td><code>row-resize</code></td>
-          <td><img alt="row-resize.gif" src="row-resize.gif" /></td>
+          <td><img src="row-resize.gif" alt="Дві тонкі паралельні горизонтальні лінії з невеликим стрілками вгору та вниз" /></td>
           <td>
             Елемент чи ряд може змінити розмір по вертикалі.
             Часто зображається у вигляді стрілок, напрямлених вгору та вниз із горизонтальною смугою між ними.
@@ -239,7 +239,7 @@ cursor: unset;
           <td><code>n-resize</code></td>
           <td>
             <img
-              alt="Приклад курсора зміни розміру угору"
+              alt="тонка довга стрілка вгору"
               src="n-resize.gif"
               style="border-style: solid; border-width: 0px"
             />
@@ -253,7 +253,7 @@ cursor: unset;
           <td><code>e-resize</code></td>
           <td>
             <img
-              alt="Приклад курсора зміни розміру вправо"
+              alt="тонка довга стрілка вправо"
               src="e-resize.gif"
             />
           </td>
@@ -262,7 +262,7 @@ cursor: unset;
           <td><code>s-resize</code></td>
           <td>
             <img
-              alt="Приклад курсора зміни розміру вниз"
+              alt="тонка довга стрілка вниз"
               src="s-resize.gif"
             />
           </td>
@@ -271,7 +271,7 @@ cursor: unset;
           <td><code>w-resize</code></td>
           <td>
             <img
-              alt="Приклад курсора зміни розміру вліво"
+              alt="тонка довга стрілка вліво"
               src="w-resize.gif"
             />
           </td>
@@ -280,7 +280,7 @@ cursor: unset;
           <td><code>ne-resize</code></td>
           <td>
             <img
-              alt="Приклад курсора зміни розміру в напрямку до правого верхнього кута"
+              alt="тонка довга стрілка вгору вправо"
               src="ne-resize.gif"
             />
           </td>
@@ -289,7 +289,7 @@ cursor: unset;
           <td><code>nw-resize</code></td>
           <td>
             <img
-              alt="Приклад курсора зміни розміру в напрямку до лівого верхнього кута"
+              alt="тонка довга стрілка вгору вліво"
               src="nw-resize.gif"
             />
           </td>
@@ -298,7 +298,7 @@ cursor: unset;
           <td><code>se-resize</code></td>
           <td>
             <img
-              alt="Приклад курсора зміни розміру в напрямку до правого нижнього кута"
+              alt="тонка довга стрілка вниз управо"
               src="se-resize.gif"
             />
           </td>
@@ -307,50 +307,50 @@ cursor: unset;
           <td><code>sw-resize</code></td>
           <td>
             <img
-              alt="Приклад курсора зміни розміру в напрямку до лівого нижнього кута"
+              alt="тонка довга стрілка вниз уліво"
               src="sw-resize.gif"
             />
           </td>
         </tr>
         <tr style="cursor: ew-resize">
           <td><code>ew-resize</code></td>
-          <td><img alt="3-resize.gif" class="default" src="3-resize.gif" /></td>
+          <td><img alt="тонка довга стрілка вліво-вправо" class="default" src="3-resize.gif" /></td>
           <td rowspan="4" style="cursor: auto">Двонапрямлений курсор зміни розміру.</td>
         </tr>
         <tr style="cursor: ns-resize">
           <td><code>ns-resize</code></td>
-          <td><img alt="6-resize.gif" class="default" src="6-resize.gif" /></td>
+          <td><img alt="тонка довга стрілка вгору-вниз" class="default" src="6-resize.gif" /></td>
         </tr>
         <tr style="cursor: nesw-resize">
           <td><code>nesw-resize</code></td>
-          <td><img alt="1-resize.gif" class="default" src="1-resize.gif" /></td>
+          <td><img alt="тонка довга стрілка вгору вправо та вниз уліво" class="default" src="1-resize.gif" /></td>
         </tr>
         <tr style="cursor: nwse-resize">
           <td><code>nwse-resize</code></td>
-          <td><img alt="4-resize.gif" class="default" src="4-resize.gif" /></td>
+          <td><img alt="тонка довга стрілка вгору вліво та вниз управо" class="default" src="4-resize.gif" /></td>
         </tr>
         <tr style="cursor: zoom-in">
           <th rowspan="2" scope="row" style="cursor: auto">Масштабування</th>
           <td><code>zoom-in</code></td>
-          <td><img alt="zoom-in.gif" class="default" src="zoom-in.gif" /></td>
+          <td><img alt="збільшувальне скло зі знаком плюса" class="default" src="zoom-in.gif" /></td>
           <td rowspan="2" style="cursor: auto">
             <p>Дещо масштабується в бік збільшення або зменшення.</p>
           </td>
         </tr>
         <tr style="cursor: zoom-out">
           <td><code>zoom-out</code></td>
-          <td><img alt="zoom-out.gif" class="default" src="zoom-out.gif" /></td>
+          <td><img alt="збільшувальне скло зі знаком мінуса" class="default" src="zoom-out.gif" /></td>
         </tr>
       </tbody>
     </table>
 
-## Формальний синтаксис
-
-{{csssyntax}}
-
 ## Формальне визначення
 
 {{cssinfo}}
+
+## Формальний синтаксис
+
+{{csssyntax}}
 
 ## Зауваження щодо використання
 
@@ -386,7 +386,7 @@ cursor: unset;
 
 /* Запасний варіант у вигляді ключового слова обов‘язковий при використанні URL */
 .baz {
-  cursor: url('hyper.cur'), auto;
+  cursor: url("hyper.cur"), auto;
 }
 ```
 

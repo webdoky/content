@@ -20,35 +20,21 @@ browser-compat: javascript.builtins.Array.some
 
 ## Синтаксис
 
-```js
+```js-nolint
 // Стрілкова функція
-some((element) => {
-  /* … */
-});
-some((element, index) => {
-  /* … */
-});
-some((element, index, array) => {
-  /* … */
-});
+some((element) => { /* … */ } )
+some((element, index) => { /* … */ } )
+some((element, index, array) => { /* … */ } )
 
 // Функція зворотного виклику
-some(callbackFn);
-some(callbackFn, thisArg);
+some(callbackFn)
+some(callbackFn, thisArg)
 
 // Вбудована функція зворотного виклику
-some(function (element) {
-  /* … */
-});
-some(function (element, index) {
-  /* … */
-});
-some(function (element, index, array) {
-  /* … */
-});
-some(function (element, index, array) {
-  /* … */
-}, thisArg);
+some(function(element) { /* … */ })
+some(function(element, index) { /* … */ })
+some(function(element, index, array){ /* … */ })
+some(function(element, index, array) { /* … */ }, thisArg)
 ```
 
 ### Параметри
