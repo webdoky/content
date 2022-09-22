@@ -1,5 +1,5 @@
 ---
-title: '<script>: Елемент сценарію'
+title: "<script>: Елемент сценарію"
 slug: Web/HTML/Element/script
 tags:
   - Element
@@ -182,7 +182,7 @@ browser-compat: html.elements.script
 
 ```html
 <script>
-  alert('Привіт, світе!');
+  alert("Привіт, світе!");
 </script>
 ```
 
@@ -211,8 +211,8 @@ browser-compat: html.elements.script
 
 <!-- Статичне -->
 <script>
-  const userInfo = JSON.parse(document.getElementById('data').text);
-  console.log('Інформація про користувача: %o', userInfo);
+  const userInfo = JSON.parse(document.getElementById("data").text);
+  console.log("Інформація про користувача: %o", userInfo);
 </script>
 ```
 
