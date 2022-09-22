@@ -19,8 +19,9 @@ browser-compat: javascript.statements.for_of
 
 ## Синтаксис
 
-```js
-for (variable of iterable) statement;
+```js-nolint
+for (variable of iterable)
+  statement;
 ```
 
 - `variable`
