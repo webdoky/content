@@ -1,5 +1,5 @@
 ---
-title: '<select>: Елемент вибору HTML'
+title: "<select>: Елемент вибору HTML"
 slug: Web/HTML/Element/select
 tags:
   - Element
@@ -228,7 +228,7 @@ browser-compat: html.elements.select
 
 ```css
 body {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .select:focus {
@@ -240,7 +240,7 @@ html body form fieldset#custom div.select[data-multiple] div.header {
 }
 
 html body form fieldset#custom div.select div.header {
-  content: '↓';
+  content: "↓";
   display: inline-flex;
   align-items: center;
   padding: 0;
@@ -248,7 +248,7 @@ html body form fieldset#custom div.select div.header {
 }
 
 html body form fieldset#custom div.select div.header::after {
-  content: '↓';
+  content: "↓";
   align-self: stretch;
   display: flex;
   align-content: center;
@@ -398,36 +398,36 @@ html body form fieldset#custom div.select div.header span {
 #### JavaScript
 
 ```js
-const selects = custom.querySelectorAll('select');
+const selects = custom.querySelectorAll("select");
 for (const select of selects) {
-  const div = document.createElement('div');
-  const header = document.createElement('div');
-  const datalist = document.createElement('datalist');
-  const optgroups = select.querySelectorAll('optgroup');
-  const span = document.createElement('span');
+  const div = document.createElement("div");
+  const header = document.createElement("div");
+  const datalist = document.createElement("datalist");
+  const optgroups = select.querySelectorAll("optgroup");
+  const span = document.createElement("span");
   const options = select.options;
   const parent = select.parentElement;
-  const multiple = select.hasAttribute('multiple');
+  const multiple = select.hasAttribute("multiple");
   function onclick(e) {
-    const disabled = this.hasAttribute('data-disabled');
+    const disabled = this.hasAttribute("data-disabled");
     select.value = this.dataset.value;
     span.innerText = this.dataset.label;
     if (disabled) return;
     if (multiple) {
       if (e.shiftKey) {
-        const checked = this.hasAttribute('data-checked');
+        const checked = this.hasAttribute("data-checked");
         if (checked) {
-          this.removeAttribute('data-checked');
+          this.removeAttribute("data-checked");
         } else {
-          this.setAttribute('data-checked', '');
+          this.setAttribute("data-checked", "");
         }
       } else {
-        const options = div.querySelectorAll('.option');
+        const options = div.querySelectorAll(".option");
         for (let i = 0; i < options.length; i++) {
           const option = options[i];
-          option.removeAttribute('data-checked');
+          option.removeAttribute("data-checked");
         }
-        this.setAttribute('data-checked', '');
+        this.setAttribute("data-checked", "");
       }
     }
   }
@@ -440,8 +440,8 @@ for (const select of selects) {
     }
   }
 
-  div.classList.add('select');
-  header.classList.add('header');
+  div.classList.add("select");
+  header.classList.add("header");
   div.tabIndex = 1;
   select.tabIndex = -1;
   span.innerText = select.label;
@@ -451,14 +451,14 @@ for (const select of selects) {
     div.dataset[attribute.name] = attribute.value;
   }
   for (let i = 0; i < options.length; i++) {
-    const option = document.createElement('div');
-    const label = document.createElement('div');
+    const option = document.createElement("div");
+    const label = document.createElement("div");
     const o = options[i];
     for (const attribute of o.attributes) {
       option.dataset[attribute.name] = attribute.value;
     }
-    option.classList.add('option');
-    label.classList.add('label');
+    option.classList.add("option");
+    label.classList.add("label");
     label.innerText = o.label;
     option.dataset.value = o.value;
     option.dataset.label = o.label;
@@ -470,25 +470,25 @@ for (const select of selects) {
   }
   div.appendChild(header);
   for (const o of optgroups) {
-    const optgroup = document.createElement('div');
-    const label = document.createElement('div');
-    const options = o.querySelectorAll('option');
+    const optgroup = document.createElement("div");
+    const label = document.createElement("div");
+    const options = o.querySelectorAll("option");
 
     Object.assign(optgroup, o);
-    optgroup.classList.add('optgroup');
-    label.classList.add('label');
+    optgroup.classList.add("optgroup");
+    label.classList.add("label");
     label.innerText = o.label;
     optgroup.appendChild(label);
     div.appendChild(optgroup);
     for (const o of options) {
-      const option = document.createElement('div');
-      const label = document.createElement('div');
+      const option = document.createElement("div");
+      const label = document.createElement("div");
 
       for (const attribute of o.attributes) {
         option.dataset[attribute.name] = attribute.value;
       }
-      option.classList.add('option');
-      label.classList.add('label');
+      option.classList.add("option");
+      label.classList.add("label");
       label.innerText = o.label;
       option.tabIndex = i + 1;
       option.dataset.value = o.value;
@@ -512,12 +512,12 @@ for (const select of selects) {
 
   div.onclick = (e) => {
     if (!multiple) {
-      const open = this.hasAttribute('data-open');
+      const open = this.hasAttribute("data-open");
       e.stopPropagation();
       if (open) {
-        div.removeAttribute('data-open');
+        div.removeAttribute("data-open");
       } else {
-        div.setAttribute('data-open', '');
+        div.setAttribute("data-open", "");
       }
     }
   };
@@ -529,9 +529,9 @@ for (const select of selects) {
     }
   };
 
-  document.addEventListener('click', (e) => {
-    if (div.hasAttribute('data-open')) {
-      div.removeAttribute('data-open');
+  document.addEventListener("click", (e) => {
+    if (div.hasAttribute("data-open")) {
+      div.removeAttribute("data-open");
     }
   });
 
@@ -539,7 +539,7 @@ for (const select of selects) {
     ...Array.from(options).map((e) => {
       span.innerText = e.label;
       return div.offsetWidth;
-    }),
+    })
   );
 
   console.log(width);
