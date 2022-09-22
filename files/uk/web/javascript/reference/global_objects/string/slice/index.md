@@ -18,9 +18,9 @@ browser-compat: javascript.builtins.String.slice
 
 ## Синтаксис
 
-```js
-slice(indexStart);
-slice(indexStart, indexEnd);
+```js-nolint
+slice(indexStart)
+slice(indexStart, indexEnd)
 ```
 
 ### Параметри
@@ -45,7 +45,7 @@ slice(indexStart, indexEnd);
 - Якщо `indexStart` опущено, невизначений або не може бути перетворений на число (за допомогою {{jsxref('Number', 'Number(indexStart)')}}), то він вважається еквівалентним `0`.
 - Якщо `indexEnd` опущено, невизначений або не може бути перетворений на число (за допомогою {{jsxref('Number', 'Number(indexEnd)')}}), або якщо `indexEnd >= str.length`, то `slice()` вибирає символи до самого кінця рядка.
 - Якщо `indexEnd < 0`, то індекс рахується від кінця рядка. Більш формально висловлюючись, в цьому випадку підрядок закінчується на `max(indexEnd + str.length, 0)`.
-- Якщо після нормалізації від‘ємних значень `indexEnd <= indexStart` (наприклад, `indexEnd` вказує на символ, що стоїть перед `indexStart`), то повертається порожній рядок.
+- Якщо після нормалізації від'ємних значень `indexEnd <= indexStart` (наприклад, `indexEnd` вказує на символ, що стоїть перед `indexStart`), то повертається порожній рядок.
 
 ## Приклади
 
