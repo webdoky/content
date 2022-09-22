@@ -208,14 +208,14 @@ a:focus {
 За допомогою JavaScript можна реалізувати ефект руху м'яча до певного положення:
 
 ```js
-const f = document.getElementById('foo');
+const f = document.getElementById("foo");
 document.addEventListener(
-  'click',
+  "click",
   (ev) => {
     f.style.transform = `translateY(${ev.clientY - 25}px)`;
     f.style.transform += `translateX(${ev.clientX - 25}px)`;
   },
-  false,
+  false
 );
 ```
 
@@ -248,14 +248,14 @@ document.addEventListener(
 Як зазвичай, для стеження за цією подією можна використати метод {{domxref("EventTarget.addEventListener", "addEventListener()")}}:
 
 ```js
-el.addEventListener('transitionend', updateTransition, true);
+el.addEventListener("transitionend", updateTransition, true);
 ```
 
 Початок переходу відстежується за допомогою {{domxref("HTMLElement/transitionrun_event", "transitionrun")}} (спрацьовує до усіх затримок) і {{domxref("HTMLElement/transitionstart_event", "transitionstart")}} (спрацьовує після усіх затримок), в аналогічний спосіб:
 
 ```js
-el.addEventListener('transitionrun', signalStart, true);
-el.addEventListener('transitionstart', signalStart, true);
+el.addEventListener("transitionrun", signalStart, true);
+el.addEventListener("transitionstart", signalStart, true);
 ```
 
 > **Примітка:** Подія `transitionend` не спрацьовує, якщо перехід переривається до свого завершення через те, що елемент став {{cssxref("display")}}`: none`, чи те, що анімована властивість змінила своє значення.
