@@ -32,7 +32,37 @@ tags:
 
   Тип є необов'язковим (усталено вважається рівним `all`), крім випадків використання логічних операторів `not` або `only`.
 
-- [Ознаки медіа](/uk/docs/Web/CSS/@media#oznaky-media) описують певну характеристику {{glossary("user agent", "користувацького агента")}}, пристрою виведення чи середовища: {{cssxref("@media/any-hover", "any-hover")}}, {{cssxref("@media/any-pointer", "any-pointer")}}, {{cssxref("@media/aspect-ratio", "aspect-ratio")}}, {{cssxref("@media/color", "color")}}, {{cssxref("@media/color-gamut", "color-gamut")}}, {{cssxref("@media/color-index", "color-index")}}, {{cssxref("@media/device-aspect-ratio", "device-aspect-ratio")}} {{deprecated_inline}}, {{cssxref("@media/device-height", "device-height")}} {{deprecated_inline}}, {{cssxref("@media/device-width", "device-width")}} {{deprecated_inline}}, {{cssxref("@media/display-mode", "display-mode")}}, {{cssxref("@media/dynamic-range", "dynamic-range")}}, {{cssxref("@media/forced-colors", "forced-colors")}}, {{cssxref("@media/grid", "grid")}}, {{cssxref("@media/height", "height")}}, {{cssxref("@media/hover", "hover")}}, {{cssxref("@media/inverted-colors", "inverted-colors")}}, {{cssxref("@media/monochrome", "monochrome")}}, {{cssxref("@media/orientation", "orientation")}}, {{cssxref("@media/overflow-block", "overflow-block")}}, {{cssxref("@media/overflow-inline", "overflow-inline")}}, {{cssxref("@media/pointer", "pointer")}}, {{cssxref("@media/prefers-color-scheme", "prefers-color-scheme")}}, {{cssxref("@media/prefers-contrast", "prefers-contrast")}}, {{cssxref("@media/prefers-reduced-motion", "prefers-reduced-motion")}}, {{cssxref("@media/resolution", "resolution")}}, {{cssxref("@media/scripting", "scripting")}}, {{cssxref("@media/update-frequency", "update")}}, {{cssxref("@media/video-dynamic-range", "video-dynamic-range")}}, {{cssxref("@media/width", "width")}}.
+- [Ознаки медіа](/uk/docs/Web/CSS/@media#oznaky-media) описують певну характеристику {{glossary("user agent", "користувацького агента")}}, пристрою виведення чи середовища:
+
+  - {{cssxref("@media/any-hover", "any-hover")}}
+  - {{cssxref("@media/any-pointer", "any-pointer")}}
+  - {{cssxref("@media/aspect-ratio", "aspect-ratio")}}
+  - {{cssxref("@media/color", "color")}}
+  - {{cssxref("@media/color-gamut", "color-gamut")}}
+  - {{cssxref("@media/color-index", "color-index")}}
+  - {{cssxref("@media/device-aspect-ratio", "device-aspect-ratio")}} {{deprecated_inline}}
+  - {{cssxref("@media/device-height", "device-height")}} {{deprecated_inline}}
+  - {{cssxref("@media/device-width", "device-width")}} {{deprecated_inline}}
+  - {{cssxref("@media/display-mode", "display-mode")}}
+  - {{cssxref("@media/dynamic-range", "dynamic-range")}}
+  - {{cssxref("@media/forced-colors", "forced-colors")}}
+  - {{cssxref("@media/grid", "grid")}}
+  - {{cssxref("@media/height", "height")}}
+  - {{cssxref("@media/hover", "hover")}}
+  - {{cssxref("@media/inverted-colors", "inverted-colors")}}
+  - {{cssxref("@media/monochrome", "monochrome")}}
+  - {{cssxref("@media/orientation", "orientation")}}
+  - {{cssxref("@media/overflow-block", "overflow-block")}}
+  - {{cssxref("@media/overflow-inline", "overflow-inline")}}
+  - {{cssxref("@media/pointer", "pointer")}}
+  - {{cssxref("@media/prefers-color-scheme", "prefers-color-scheme")}}
+  - {{cssxref("@media/prefers-contrast", "prefers-contrast")}}
+  - {{cssxref("@media/prefers-reduced-motion", "prefers-reduced-motion")}}
+  - {{cssxref("@media/resolution", "resolution")}}
+  - {{cssxref("@media/scripting", "scripting")}}
+  - {{cssxref("@media/update-frequency", "update")}}
+  - {{cssxref("@media/video-dynamic-range", "video-dynamic-range")}}
+  - {{cssxref("@media/width", "width")}}.
 
   Наприклад, риса {{cssxref("@media/hover", "hover")}} дає змогу запитові перевірити, чи підтримує пристрій наведення курсора.
   Вирази ознак медіа перевіряють присутність таких ознак або певних значень, і є цілком необов'язковими.
@@ -84,10 +114,10 @@ tags:
 ```
 
 Чимало ознак медіа є _діапазонними_, тобто можуть мати префікс "min-" чи "max-", щоб вказати обмеження найменшого та найбільшого можливих значень.
-Наприклад, наступний CSS застосує стилі лише якщо ширина {{glossary("viewport", "вікна перегляду")}} браузера рівна або менша як 12450 пікселів:
+Наприклад, наступний CSS застосує стилі лише якщо ширина {{glossary("viewport", "вікна перегляду")}} браузера рівна або менша як 1250 пікселів:
 
 ```css
-@media (max-width: 12450px) {
+@media (max-width: 1250px) {
   /* … */
 }
 ```
