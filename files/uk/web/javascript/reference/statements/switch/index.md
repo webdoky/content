@@ -18,7 +18,7 @@ browser-compat: javascript.statements.switch
 
 ## Синтаксис
 
-```js
+```js-nolint
 switch (expression) {
   case value1:
     // Інструкції, які слід виконати, коли

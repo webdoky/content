@@ -139,7 +139,7 @@ const array = [15, 16, 17, 18, 19];
 function reducer(previousValue, currentValue, index) {
   const returns = previousValue + currentValue;
   console.log(
-    `previousValue: ${previousValue}, currentValue: ${currentValue}, index: ${index}, returns: ${returns}`,
+    `previousValue: ${previousValue}, currentValue: ${currentValue}, index: ${index}, returns: ${returns}`
   );
   return returns;
 }
@@ -165,7 +165,7 @@ array.reduce(reducer);
 ```js
 [15, 16, 17, 18, 19].reduce(
   (previousValue, currentValue) => previousValue + currentValue,
-  10,
+  10
 );
 ```
 
@@ -189,7 +189,7 @@ array.reduce(reducer);
 const objects = [{ x: 1 }, { x: 2 }, { x: 3 }];
 const sum = objects.reduce(
   (previousValue, currentValue) => previousValue + currentValue.x,
-  0,
+  0
 );
 
 console.log(sum); // виведе 6
@@ -204,7 +204,7 @@ const flattened = [
   [4, 5],
 ].reduce(
   (previousValue, currentValue) => previousValue.concat(currentValue),
-  [],
+  []
 );
 // сплощений результат: [0, 1, 2, 3, 4, 5]
 ```
@@ -212,7 +212,7 @@ const flattened = [
 ### Обрахунок кількості входжень різних значень в об'єкті
 
 ```js
-const names = ['Аліса', 'Богдан', 'Тома', 'Борис', 'Аліса'];
+const names = ["Аліса", "Богдан", "Тома", "Борис", "Аліса"];
 
 const countedNames = names.reduce((allNames, name) => {
   const currCount = allNames[name] ?? 0;
@@ -229,9 +229,9 @@ const countedNames = names.reduce((allNames, name) => {
 
 ```js
 const people = [
-  { name: 'Аліса', age: 21 },
-  { name: 'Максим', age: 20 },
-  { name: 'Яна', age: 20 },
+  { name: "Аліса", age: 21 },
+  { name: "Максим", age: 20 },
+  { name: "Яна", age: 20 },
 ];
 
 function groupBy(objectArray, property) {
@@ -242,7 +242,7 @@ function groupBy(objectArray, property) {
   }, {});
 }
 
-const groupedPeople = groupBy(people, 'age');
+const groupedPeople = groupBy(people, "age");
 // groupedPeople містить:
 // {
 //   20: [
@@ -260,18 +260,18 @@ const groupedPeople = groupBy(people, 'age');
 // у кожного з котрих поле "books" — це перелік улюблених книжок
 const friends = [
   {
-    name: 'Анна',
-    books: ['Біблія', 'Енеїда'],
+    name: "Анна",
+    books: ["Біблія", "Енеїда"],
     age: 21,
   },
   {
-    name: 'Богдан',
-    books: ['Чорна рада', 'Тіні забутих предків'],
+    name: "Богдан",
+    books: ["Чорна рада", "Тіні забутих предків"],
     age: 26,
   },
   {
-    name: 'Аліса',
-    books: ['Залишенець. Чорний ворон', 'Ворошиловград'],
+    name: "Аліса",
+    books: ["Залишенець. Чорний ворон", "Ворошиловград"],
     age: 18,
   },
 ];
@@ -280,7 +280,7 @@ const friends = [
 // додатковий список, що знаходиться всередині initialValue
 const allbooks = friends.reduce(
   (previousValue, currentValue) => [...previousValue, ...currentValue.books],
-  ['Alphabet'],
+  ["Alphabet"]
 );
 
 // allbooks = [
@@ -295,7 +295,7 @@ const allbooks = friends.reduce(
 > **Примітка:** Такого ж самого ефекту можна досягти за допомогою {{jsxref("Set")}} і {{jsxref("Array.from()")}}, з кращою швидкодією, ось так: `const arrayWithNoDuplicates = Array.from(new Set(myArray))`.
 
 ```js
-const myArray = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+const myArray = ["a", "b", "a", "b", "c", "e", "e", "c", "d", "d", "d", "d"];
 const myArrayWithNoDuplicates = myArray.reduce(
   (previousValue, currentValue) => {
     if (!previousValue.includes(currentValue)) {
@@ -303,7 +303,7 @@ const myArrayWithNoDuplicates = myArray.reduce(
     }
     return previousValue;
   },
-  [],
+  []
 );
 console.log(myArrayWithNoDuplicates);
 ```
@@ -340,7 +340,7 @@ console.log(doubledPositiveNumbers); // [12, 4]
 function runPromiseInSequence(arr, input) {
   return arr.reduce(
     (promiseChain, currentFunction) => promiseChain.then(currentFunction),
-    Promise.resolve(input),
+    Promise.resolve(input)
   );
 }
 

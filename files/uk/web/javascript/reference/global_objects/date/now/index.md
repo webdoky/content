@@ -10,6 +10,7 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.Date.now
 ---
+
 {{JSRef}}
 
 Статичний метод **`Date.now()`** (зараз) повертає число мілісекунд, що сплили з моменту 1 січня 1970 року, 00:00:00 за UTC (Всесвітнім координованим часом).
@@ -18,7 +19,7 @@ browser-compat: javascript.builtins.Date.now
 
 ## Синтаксис
 
-```js
+```js-nolint
 Date.now()
 ```
 
@@ -34,7 +35,7 @@ Date.now()
 
 ```js
 // зменшена точність часу (2мс) у Firefox 60
-Date.now()
+Date.now();
 // 1519211809934
 // 1519211810362
 // 1519211811670

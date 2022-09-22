@@ -17,9 +17,9 @@ browser-compat: javascript.builtins.parseInt
 
 ## Синтаксис
 
-```js
-parseInt(string);
-parseInt(string, radix);
+```js-nolint
+parseInt(string)
+parseInt(string, radix)
 ```
 
 ### Параметри

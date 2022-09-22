@@ -17,8 +17,8 @@ browser-compat: javascript.builtins.Promise.all
 
 ## Синтаксис
 
-```js
-Promise.all(iterable);
+```js-nolint
+Promise.all(iterable)
 ```
 
 ### Параметри

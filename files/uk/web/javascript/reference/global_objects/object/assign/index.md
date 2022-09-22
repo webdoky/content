@@ -19,8 +19,8 @@ browser-compat: javascript.builtins.Object.assign
 
 ## Синтаксис
 
-```js
-Object.assign(target, ...sources);
+```js-nolint
+Object.assign(target, ...sources)
 ```
 
 ### Параметри

@@ -1,5 +1,5 @@
 ---
-title: '<input>: Елемент введення (форм)'
+title: "<input>: Елемент введення (форм)"
 slug: Web/HTML/Element/input
 tags:
   - Data entry
@@ -382,7 +382,7 @@ browser-compat: html.elements.input
   - : Введений специфікацією "Захоплення медіа в HTML" і дійсний лише для типу поля введення `file`. Атрибут `capture` встановлює, який саме пристрій запису звуку та зображення повинен бути використаний для захоплення нового файлу для контрольного елемента завантаження `file`. Дивіться тип поля введення {{HTMLElement("input/file", "file")}}.
 - `checked`
 
-  - : Чинний для типів `radio` та `checkbox`. `checked` – це булів атрибут. Бувши встановленим із типом `radio`, він вказує, що радіокнопка є обраною серед групи однойменних радіокнопок. Бувши встановленим із типом `checkbox`, він вказує, що такий прапорець усталено встановлений (при завантаженні сторінки). Він _не_ вказує, чи є наразі такий прапорець встановленим: якщо стан прапорця змінюється, то цей атрибут не отримує змін. (Оновлюється лише [IDL атрибут `checked` `HTMLInputElement`’а](/uk/docs/Web/API/HTMLInputElement).)
+  - : Чинний для типів `radio` та `checkbox`. `checked` – це булів атрибут. Бувши встановленим із типом `radio`, він вказує, що радіокнопка є обраною серед групи однойменних радіокнопок. Бувши встановленим із типом `checkbox`, він вказує, що такий прапорець усталено встановлений (при завантаженні сторінки). Він _не_ вказує, чи є наразі такий прапорець встановленим: якщо стан прапорця змінюється, то цей атрибут не отримує змін. (Оновлюється лише [IDL атрибут `checked` `HTMLInputElement`'а](/uk/docs/Web/API/HTMLInputElement).)
 
     > **Примітка:** На відміну від інших контрольних елементів, значення прапорців та радіокнопок включаються при подачі форми у її дані лише тоді, коли вони `checked` (обрані). Якщо це так, то подаються імена та значення обраних контрольних елементів.
     >
@@ -501,10 +501,10 @@ browser-compat: html.elements.input
     Коли елемент введення отримує атрибут `name`, це ім'я стає властивістю об'єкта {{domxref("HTMLFormElement.elements")}} форми-власника елемента. Якщо існує поле введення, в котрого атрибут `name` має значення `guest`, і іще одне з `name` – `hat-size`, можна використати наступний код:
 
     ```js
-    let form = document.querySelector('form');
+    let form = document.querySelector("form");
 
     let guestName = form.elements.guest;
-    let hatSize = form.elements['hat-size'];
+    let hatSize = form.elements["hat-size"];
     ```
 
     При виконанні такого коду `guestName` дорівнюватиме {{domxref("HTMLInputElement")}} за полем `guest`, а `hatSize` – об'єктові за полем `hat-size`.
@@ -851,7 +851,7 @@ input:checked + label {
 
 ```css
 /* відповідає полю введення пароля */
-input[type='password'] {
+input[type="password"] {
 }
 
 /* відповідає контрольному елементові, чиї дійсні значення обмежені діапазоном*/
@@ -899,7 +899,7 @@ input[pattern] {
 ```css
 input.custom {
   caret-color: red;
-  font: 16px 'Helvetica', 'Arial', 'sans-serif';
+  font: 16px "Helvetica", "Arial", "sans-serif";
 }
 ```
 
@@ -1080,13 +1080,13 @@ input.custom {
 function validate(input) {
   let validityState_object = input.validity;
   if (validityState_object.valueMissing) {
-    input.setCustomValidity('Необхідне значення');
+    input.setCustomValidity("Необхідне значення");
   } else if (validityState_object.rangeUnderflow) {
-    input.setCustomValidity('Введене значення замале');
+    input.setCustomValidity("Введене значення замале");
   } else if (validityState_object.rangeOverflow) {
-    input.setCustomValidity('Введене значення завелике');
+    input.setCustomValidity("Введене значення завелике");
   } else {
-    input.setCustomValidity('');
+    input.setCustomValidity("");
   }
 }
 ```
@@ -1112,19 +1112,19 @@ function validate(input) {
 При потребі натомість показати власні повідомлення помилок можна використати JavaScript отак:
 
 ```js
-const nameInput = document.querySelector('input');
+const nameInput = document.querySelector("input");
 
-nameInput.addEventListener('input', () => {
-  nameInput.setCustomValidity('');
+nameInput.addEventListener("input", () => {
+  nameInput.setCustomValidity("");
   nameInput.checkValidity();
 });
 
-nameInput.addEventListener('invalid', () => {
-  if (nameInput.value === '') {
+nameInput.addEventListener("invalid", () => {
+  if (nameInput.value === "") {
     nameInput.setCustomValidity("Введіть ім'я користувача!");
   } else {
     nameInput.setCustomValidity(
-      'Імена користувачів можуть містити лише великі та малі літери. Спробуйте ще!',
+      "Імена користувачів можуть містити лише великі та малі літери. Спробуйте ще!"
     );
   }
 });

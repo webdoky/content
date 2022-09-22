@@ -1,5 +1,5 @@
-import countdown from './countdown';
-import sleep from './sleep';
+import countdown from "./countdown";
+import sleep from "./sleep";
 
 const CHECK_PAUSE = 200;
 function forever(f, pauseMs) {
