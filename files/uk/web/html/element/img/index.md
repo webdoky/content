@@ -1,5 +1,5 @@
 ---
-title: '<img>: Елемент вбудовування зображень'
+title: "<img>: Елемент вбудовування зображень"
 slug: Web/HTML/Element/img
 tags:
   - Content
@@ -283,8 +283,7 @@ SVG залишається рекомендованим форматом для 
   src="clock-demo-200px.png"
   alt="Годинник"
   srcset="clock-demo-200px.png 200w, clock-demo-400px.png 400w"
-  sizes="(max-width: 600px) 200px, 50vw"
-/>
+  sizes="(max-width: 600px) 200px, 50vw" />
 ```
 
 {{EmbedLiveSample("vykorystannia-atrybutiv-srcset-i-sizes", "100%", 350)}}
@@ -323,7 +322,7 @@ SVG залишається рекомендованим форматом для 
 
 ### Впізнання SVG як зображення
 
-У зв'язку з [вадою VoiceOver](https://bugs.webkit.org/show_bug.cgi?id=216364) VoiceOver не оголошував коректно SVG зображення. Слід додавати [`role="img"`](/uk/docs/Web/Accessibility/ARIA/Roles/img_role) до всіх елементів `<img>` з SVG файлами, щоб пересвідчитися, що допоміжні технології коректно оголошують SVG як вміст-зображення.
+У зв'язку з [вадою VoiceOver](https://bugs.webkit.org/show_bug.cgi?id=216364) VoiceOver не оголошував коректно зображення SVG як зображення. Слід додавати [`role="img"`](/uk/docs/Web/Accessibility/ARIA/Roles/img_role) до всіх елементів `<img>` з SVG файлами, щоб пересвідчитися, що допоміжні технології коректно оголошують SVG як вміст-зображення.
 
 ```html
 <img src="webdoky.svg" alt="Логотип WebDoky" role="img" />
