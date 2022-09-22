@@ -9,6 +9,7 @@ tags:
   - Reference
 browser-compat: javascript.builtins.JSON.parse
 ---
+
 {{JSRef}}
 
 Метод **`JSON.parse()`** (розібрати) розбирає рядок у форматі JSON, конструюючи значення чи об'єкт JavaScript, описаний рядком. Можна передати функцію як необов'язковий параметр **reviver** для виконання трансформацій над результівним об'єктом перед його поверненням.
@@ -17,7 +18,7 @@ browser-compat: javascript.builtins.JSON.parse
 
 ## Синтаксис
 
-```js
+```js-nolint
 JSON.parse(text)
 JSON.parse(text, reviver)
 ```
@@ -42,11 +43,11 @@ JSON.parse(text, reviver)
 ### Застосування JSON.parse()
 
 ```js
-JSON.parse('{}');              // {}
-JSON.parse('true');            // true
-JSON.parse('"foo"');           // "foo"
+JSON.parse('{}'); // {}
+JSON.parse('true'); // true
+JSON.parse('"foo"'); // "foo"
 JSON.parse('[1, 5, "false"]'); // [1, 5, "false"]
-JSON.parse('null');            // null
+JSON.parse('null'); // null
 ```
 
 ### Застосування параметра `reviver`
@@ -56,17 +57,19 @@ JSON.parse('null');            // null
 Якщо `reviver` перетворює лише певні значення, і пропускає інші — варто пересвідчитися, що він їх повертає як є. Інакше їх буде видалено з результівного об'єкта.
 
 ```js
-JSON.parse('{"p": 5}', (key, value) =>
-  typeof value === 'number'
-    ? value * 2 // повертає значення * 2 для чисел
-    : value     // повертає все інше незмінним
+JSON.parse(
+  '{"p": 5}',
+  (key, value) =>
+    typeof value === 'number'
+      ? value * 2 // повертає значення * 2 для чисел
+      : value, // повертає все інше незмінним
 );
 
 // { p: 10 }
 
 JSON.parse('{"1": 1, "2": 2, "3": {"4": 4, "5": {"6": 6}}}', (key, value) => {
   console.log(key); // друкує назву поточної властивості, остання дорівнює "".
-  return value;     // повертає значення властивості незмінним.
+  return value; // повертає значення властивості незмінним.
 });
 
 // 1

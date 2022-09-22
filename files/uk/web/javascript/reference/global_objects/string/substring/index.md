@@ -18,9 +18,9 @@ browser-compat: javascript.builtins.String.substring
 
 ## Синтаксис
 
-```js
-substring(indexStart);
-substring(indexStart, indexEnd);
+```js-nolint
+substring(indexStart)
+substring(indexStart, indexEnd)
 ```
 
 ### Параметри
@@ -74,23 +74,19 @@ console.log(anyString.substring(0, 10));
 
 ### Застосування методу substring() з властивістю довжини
 
-Наступний приклад застосовує метод `substring()` з властивістю {{jsxref("String.length", "length")}} для вибирання останніх символів певного рядка. Ймовірно запам'ятати цей метод буде простіше аніж попередні приклади, оскільки тут не потрібно знати початковий та кінцевий індекси.
+Наступний приклад застосовує метод `substring()` з властивістю {{jsxref("String/length", "length")}} для вибирання останніх символів певного рядка. Ймовірно запам'ятати цей метод буде простіше аніж попередні приклади, оскільки тут не потрібно знати початковий та кінцевий індекси.
 
 ```js
-// Показує 'illa' — останні 4 символи
-const anyString = 'Mozilla';
-const anyString4 = anyString.substring(anyString.length - 4);
-console.log(anyString4);
-
-// Показує 'zilla' — останні 5 символів
-const anyString = 'Mozilla';
-const anyString5 = anyString.substring(anyString.length - 5);
-console.log(anyString5);
+const text = 'Mozilla';
+// Бере 4 останні символи рядка
+console.log(text.substring(text.length - 4)); // друкує "illa"
+// Бере 5 останніх символів рядка
+console.log(text.substring(text.length - 5)); // друкує "zilla"
 ```
 
 ### Різниця між методами substring() та substr()
 
-Є невеликі відмінності між методами `substring()` та {{jsxref("String.substr", "substr()")}}, тож слід бути уважними і не плутати їх.
+Є невеликі відмінності між методами `substring()` та {{jsxref("String/substr", "substr()")}}, тож слід бути уважними й не плутати їх.
 
 - Двома параметрами `substr()` є `start` (початок) і `length` (довжина), натомість в `substring()` це `start` (початок) і `end` (кінець).
 - В `substr()` індекс `start` рахуватиметься з кінця рядка, якщо він від'ємний, натомість в `substring()` від'ємний `start` буде зведений до `0`.
@@ -106,9 +102,9 @@ console.log(text.substr(2, 3)); // => "zil"
 
 ### Різниця між методами substring() та slice()
 
-Методи `substring()` та {{jsxref("String.slice", "slice()")}} — майже ідентичні, проте між ними двома є кілька тонких відмінностей, здебільшого у способах роботи з від'ємними аргументами.
+Методи `substring()` та {{jsxref("String/slice", "slice()")}} — майже ідентичні, проте між ними двома є кілька тонких відмінностей, здебільшого у способах роботи з від'ємними аргументами.
 
-Метод `substring()` міняє місцями два аргументи, якщо `indexStart` більший за `indexEnd`, тобто все одно повертає рядок. Метод {{jsxref("String.slice", "slice()")}} в цьому випадку повертає порожній рядок.
+Метод `substring()` міняє місцями два аргументи, якщо `indexStart` більший за `indexEnd`, тобто все одно повертає рядок. Метод {{jsxref("String/slice", "slice()")}} в цьому випадку повертає порожній рядок.
 
 ```js
 const text = 'Mozilla';
@@ -130,7 +126,7 @@ console.log(text.slice(-5, 2)); // => ""
 console.log(text.slice(-5, -2)); // => "zil"
 ```
 
-Більше прикладів роботи цього методу з від'ємними числами можна знайти на сторінці {{jsxref("String.slice", "slice()")}}.
+Більше прикладів роботи цього методу з від'ємними числами можна знайти на сторінці {{jsxref("String/slice", "slice()")}}.
 
 ### Заміна підрядка всередині рядка
 
@@ -140,7 +136,7 @@ console.log(text.slice(-5, -2)); // => "zil"
 // Заміняє рядок oldS рядком newS у цілому рядку fullS
 function replaceString(oldS, newS, fullS) {
   for (let i = 0; i < fullS.length; ++i) {
-    if (fullS.substring(i, i + oldS.length) == oldS) {
+    if (fullS.substring(i, i + oldS.length) === oldS) {
       fullS =
         fullS.substring(0, i) +
         newS +

@@ -21,11 +21,11 @@ browser-compat: javascript.builtins.Array.splice
 
 ## Синтаксис
 
-```js
-splice(start);
-splice(start, deleteCount);
-splice(start, deleteCount, item1);
-splice(start, deleteCount, item1, item2, itemN);
+```js-nolint
+splice(start)
+splice(start, deleteCount)
+splice(start, deleteCount, item1)
+splice(start, deleteCount, item1, item2, itemN)
 ```
 
 ### Параметри
