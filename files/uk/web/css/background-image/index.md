@@ -35,7 +35,7 @@ background-image: linear-gradient(
     to bottom,
     rgba(255, 255, 0, 0.5),
     rgba(0, 0, 255, 0.5)
-  ), url('catfront.png');
+  ), url("catfront.png");
 
 /* Глобальні значення */
 background-image: inherit;
@@ -95,11 +95,11 @@ p {
 }
 
 div {
-  background-image: url('mdn_logo_only_color.png');
+  background-image: url("mdn_logo_only_color.png");
 }
 
 .catsandstars {
-  background-image: url('startransparent.gif'), url('catfront.png');
+  background-image: url("startransparent.gif"), url("catfront.png");
   background-color: transparent;
 }
 ```
