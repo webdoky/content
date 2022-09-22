@@ -86,7 +86,7 @@ for (const value of iterable) {
 Рядки є [ітерованими за кодовими точками Unicode](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/@@iterator).
 
 ```js
-const iterable = 'boo';
+const iterable = "boo";
 
 for (const value of iterable) {
   console.log(value);
@@ -112,9 +112,9 @@ for (const value of iterable) {
 
 ```js
 const iterable = new Map([
-  ['а', 1],
-  ['б', 2],
-  ['в', 3],
+  ["а", 1],
+  ["б", 2],
+  ["в", 3],
 ]);
 
 for (const entry of iterable) {
@@ -166,9 +166,9 @@ foo(1, 2, 3);
 Наступний приклад додає клас `read` до абзаців, що є безпосередніми нащадками елемента [`<article>`](/uk/docs/Web/HTML/Element/article), шляхом ітерування колекції DOM [`NodeList`](/uk/docs/Web/API/NodeList).
 
 ```js
-const articleParagraphs = document.querySelectorAll('article > p');
+const articleParagraphs = document.querySelectorAll("article > p");
 for (const paragraph of articleParagraphs) {
-  paragraph.classList.add('read');
+  paragraph.classList.add("read");
 }
 ```
 
@@ -268,7 +268,7 @@ for (const value of iterator) {
   if (value === 1) {
     break;
   }
-  console.log('Цей рядок не буде виведений в консоль.');
+  console.log("Цей рядок не буде виведений в консоль.");
 }
 // 1
 // Іще один цикл, що використовує той самий ітератор,
@@ -300,7 +300,7 @@ for (const value of generator) {
   if (value === 1) {
     break;
   }
-  console.log('Цей рядок не буде виведений в консоль.');
+  console.log("Цей рядок не буде виведений в консоль.");
 }
 // 1
 // Генератор вичерпався.
@@ -323,7 +323,7 @@ for (const value of generator) {
 Object.prototype.objCustom = function () {};
 Array.prototype.arrCustom = function () {};
 const iterable = [3, 5, 7];
-iterable.foo = 'агов';
+iterable.foo = "агов";
 for (const i in iterable) {
   console.log(i); // виведе "0", "1", "2", "foo", "arrCustom", "objCustom"
 }
