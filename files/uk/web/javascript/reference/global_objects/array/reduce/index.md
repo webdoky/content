@@ -29,52 +29,28 @@ browser-compat: javascript.builtins.Array.reduce
 
 ## Синтаксис
 
-```js
+```js-nolint
 // Стрілкова функція
-reduce((previousValue, currentValue) => {
-  /* … */
-});
-reduce((previousValue, currentValue, currentIndex) => {
-  /* … */
-});
-reduce((previousValue, currentValue, currentIndex, array) => {
-  /* … */
-});
+reduce((previousValue, currentValue) => { /* … */ } )
+reduce((previousValue, currentValue, currentIndex) => { /* … */ } )
+reduce((previousValue, currentValue, currentIndex, array) => { /* … */ } )
 
-reduce((previousValue, currentValue) => {
-  /* … */
-}, initialValue);
-reduce((previousValue, currentValue, currentIndex) => {
-  /* … */
-}, initialValue);
-reduce((previousValue, currentValue, currentIndex, array) => {
-  /* … */
-}, initialValue);
+reduce((previousValue, currentValue) => { /* … */ } , initialValue)
+reduce((previousValue, currentValue, currentIndex) => { /* … */ } , initialValue)
+reduce((previousValue, currentValue, currentIndex, array) => { /* … */ }, initialValue)
 
 // Функція зворотного виклику
-reduce(callbackFn);
-reduce(callbackFn, initialValue);
+reduce(callbackFn)
+reduce(callbackFn, initialValue)
 
 // Оголошена на місці функція зворотного виклику
-reduce(function (previousValue, currentValue) {
-  /* … */
-});
-reduce(function (previousValue, currentValue, currentIndex) {
-  /* … */
-});
-reduce(function (previousValue, currentValue, currentIndex, array) {
-  /* … */
-});
+reduce(function(previousValue, currentValue) { /* … */ })
+reduce(function(previousValue, currentValue, currentIndex) { /* … */ })
+reduce(function(previousValue, currentValue, currentIndex, array) { /* … */ })
 
-reduce(function (previousValue, currentValue) {
-  /* … */
-}, initialValue);
-reduce(function (previousValue, currentValue, currentIndex) {
-  /* … */
-}, initialValue);
-reduce(function (previousValue, currentValue, currentIndex, array) {
-  /* … */
-}, initialValue);
+reduce(function(previousValue, currentValue) { /* … */ }, initialValue)
+reduce(function(previousValue, currentValue, currentIndex) { /* … */ }, initialValue)
+reduce(function(previousValue, currentValue, currentIndex, array) { /* … */ }, initialValue)
 ```
 
 ### Параметри
@@ -111,6 +87,8 @@ reduce(function (previousValue, currentValue, currentIndex, array) {
 Метод `reduce()` приймає два аргументи: функцію зворотного виклику та необов'язкове початкове значення. Якщо вказане початкове значення, то `reduce()` по черзі викликає на кожному елементі масиву функцію зворотного виклику – "редуктор". Якщо початкове значення не вказане, то `reduce` викликає функцію зворотного виклику на кожному елементі масиву, крім першого.
 
 `reduce()` повертає значення, повернене функцією зворотного виклику на фінальній ітерації масиву.
+
+`reduce()` є центральною концепцією [функційного програмування](https://uk.wikipedia.org/wiki/%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D1%96%D0%B9%D0%BD%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F), в котрій неможливо змінювати будь-яке значення, тож для збору всіх значень до масиву треба повертати на кожній ітерації нове значення акумулятора. Така домовленість поширюється на `reduce()` JavaScript: слід використовувати [розгортання](/uk/docs/Web/JavaScript/Reference/Operators/Spread_syntax) чи якусь іншу методику копіювання, де це можливо, і створювати як нове значення акумулятора нові масиви й об'єкти, а не видозмінювати старий акумулятор. При потребі змінити акумулятор замість його копіювання слід не забути повернути в функції зворотного виклику видозмінений об'єкт, інакше наступна ітерація отримає `undefined`.
 
 ### Коли не варто використовувати reduce()
 
@@ -158,10 +136,10 @@ const getMax = (a, b) => Math.max(a, b);
 ```js
 const array = [15, 16, 17, 18, 19];
 
-function reducer(previous, current, index) {
-  const returns = previous + current;
+function reducer(previousValue, currentValue, index) {
+  const returns = previousValue + currentValue;
   console.log(
-    `previous: ${previous}, current: ${current}, index: ${index}, returns: ${returns}`,
+    `previousValue: ${previousValue}, currentValue: ${currentValue}, index: ${index}, returns: ${returns}`
   );
   return returns;
 }
@@ -169,66 +147,16 @@ function reducer(previous, current, index) {
 array.reduce(reducer);
 ```
 
-Функція зворотного виклику виконається чотири рази, з наступними аргументами та поверненими значеннями під час кожного виклику:
+Функція зворотного виклику закликається чотири рази, з наступними аргументами та поверненими значеннями під час кожного виклику:
 
-<table class="standard-table">
-  <thead>
-    <tr>
-      <th scope="col">
-        Ітерація <code><var>callback</var></code>
-      </th>
-      <th scope="col">
-        <code><var>previousValue</var></code>
-      </th>
-      <th scope="col">
-        <code><var>currentValue</var></code>
-      </th>
-      <th scope="col">
-        <code><var>currentIndex</var></code>
-      </th>
-      <th scope="col">
-        <code><var>array</var></code>
-      </th>
-      <th scope="col">Повернене значення</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">Перший виклик</th>
-      <td><code>15</code></td>
-      <td><code>16</code></td>
-      <td><code>1</code></td>
-      <td><code>[15, 16, 17, 18, 19]</code></td>
-      <td><code>31</code></td>
-    </tr>
-    <tr>
-      <th scope="row">Другий виклик</th>
-      <td><code>31</code></td>
-      <td><code>17</code></td>
-      <td><code>2</code></td>
-      <td><code>[15, 16, 17, 18, 19]</code></td>
-      <td><code>48</code></td>
-    </tr>
-    <tr>
-      <th scope="row">Третій виклик</th>
-      <td><code>48</code></td>
-      <td><code>18</code></td>
-      <td><code>3</code></td>
-      <td><code>[15, 16, 17, 18, 19]</code></td>
-      <td><code>66</code></td>
-    </tr>
-    <tr>
-      <th scope="row">Четвертий виклик</th>
-      <td><code>66</code></td>
-      <td><code>19</code></td>
-      <td><code>4</code></td>
-      <td><code>[15, 16, 17, 18, 19]</code></td>
-      <td><code>85</code></td>
-    </tr>
-  </tbody>
-</table>
+|                  | `previousValue` | `currentValue` | `index` | Повернене значення |
+| ---------------- | --------------- | -------------- | ------- | ------------------ |
+| Перший виклик    | `15`            | `16`           | `1`     | `31`               |
+| Другий виклик    | `31`            | `17`           | `2`     | `48`               |
+| Третій виклик    | `48`            | `18`           | `3`     | `66`               |
+| Четвертий виклик | `66`            | `19`           | `4`     | `85`               |
 
-Значення, повернене з `reduce()`, буде таке саме, як результат останнього виконання функції зворотного виклику (`85`).
+Параметр `array` ніколи не змінюється протягом процесу – він завжди `[15, 16, 17, 18, 19]`. Значення, повернене `reduce()`, буде значенням, поверненим останнім закликом функції зворотного виклику (`85`).
 
 ### Як працює reduce() зі вказаним початковим значенням
 
@@ -237,76 +165,19 @@ array.reduce(reducer);
 ```js
 [15, 16, 17, 18, 19].reduce(
   (previousValue, currentValue) => previousValue + currentValue,
-  10,
+  10
 );
 ```
 
-Функція зворотного виклику буде виконана п'ять разів, з наступними аргументами та поверненими значеннями під час кожного виклику:
+Функція зворотного виклику буде закликана п'ять разів, з наступними аргументами та поверненими значеннями під час кожного виклику:
 
-<table class="standard-table">
-  <thead>
-    <tr>
-      <th scope="col">
-        Ітерація <code><var>callback</var></code>
-      </th>
-      <th scope="col">
-        <code><var>previousValue</var></code>
-      </th>
-      <th scope="col">
-        <code><var>currentValue</var></code>
-      </th>
-      <th scope="col">
-        <code><var>currentIndex</var></code>
-      </th>
-      <th scope="col">
-        <code><var>array</var></code>
-      </th>
-      <th scope="col">Повернене значення</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">Перший виклик</th>
-      <td><code>10</code></td>
-      <td><code>15</code></td>
-      <td><code>0</code></td>
-      <td><code>[15, 16, 17, 18, 19]</code></td>
-      <td><code>25</code></td>
-    </tr>
-    <tr>
-      <th scope="row">Другий виклик</th>
-      <td><code>25</code></td>
-      <td><code>16</code></td>
-      <td><code>1</code></td>
-      <td><code>[15, 16, 17, 18, 19]</code></td>
-      <td><code>41</code></td>
-    </tr>
-    <tr>
-      <th scope="row">Третій виклик</th>
-      <td><code>41</code></td>
-      <td><code>17</code></td>
-      <td><code>2</code></td>
-      <td><code>[15, 16, 17, 18, 19]</code></td>
-      <td><code>58</code></td>
-    </tr>
-    <tr>
-      <th scope="row">Четвертий виклик</th>
-      <td><code>58</code></td>
-      <td><code>18</code></td>
-      <td><code>3</code></td>
-      <td><code>[15, 16, 17, 18, 19]</code></td>
-      <td><code>76</code></td>
-    </tr>
-    <tr>
-      <th scope="row">П'ятий виклик</th>
-      <td><code>76</code></td>
-      <td><code>19</code></td>
-      <td><code>4</code></td>
-      <td><code>[15, 16, 17, 18, 19]</code></td>
-      <td><code>95</code></td>
-    </tr>
-  </tbody>
-</table>
+|                  | `previousValue` | `currentValue` | `index` | Повернене значення |
+| ---------------- | --------------- | -------------- | ------- | ------------------ |
+| Перший виклик    | `10`            | `15`           | `0`     | `25`               |
+| Другий виклик    | `25`            | `16`           | `1`     | `41`               |
+| Третій виклик    | `41`            | `17`           | `2`     | `58`               |
+| Четвертий виклик | `58`            | `18`           | `3`     | `76`               |
+| П'ятий виклик    | `76`            | `19`           | `4`     | `95`               |
 
 В цьому випадку `reduce()` поверне значення `95`.
 
@@ -318,7 +189,7 @@ array.reduce(reducer);
 const objects = [{ x: 1 }, { x: 2 }, { x: 3 }];
 const sum = objects.reduce(
   (previousValue, currentValue) => previousValue + currentValue.x,
-  0,
+  0
 );
 
 console.log(sum); // виведе 6
@@ -333,7 +204,7 @@ const flattened = [
   [4, 5],
 ].reduce(
   (previousValue, currentValue) => previousValue.concat(currentValue),
-  [],
+  []
 );
 // сплощений результат: [0, 1, 2, 3, 4, 5]
 ```
@@ -341,14 +212,14 @@ const flattened = [
 ### Обрахунок кількості входжень різних значень в об'єкті
 
 ```js
-const names = ['Аліса', 'Богдан', 'Тома', 'Борис', 'Аліса'];
+const names = ["Аліса", "Богдан", "Тома", "Борис", "Аліса"];
 
 const countedNames = names.reduce((allNames, name) => {
-  allNames[name] ??= 0;
-  allNames[name]++;
-  // Не забувайте повернути об‘єкт, інакше наступна ітерація
-  // отримає undefined
-  return allNames;
+  const currCount = allNames[name] ?? 0;
+  return {
+    ...allNames,
+    [name]: currCount + 1,
+  };
 }, {});
 // countedNames містить:
 // { 'Аліса': 2, 'Богдан': 1, 'Тома': 1, 'Борис': 1 }
@@ -358,21 +229,20 @@ const countedNames = names.reduce((allNames, name) => {
 
 ```js
 const people = [
-  { name: 'Аліса', age: 21 },
-  { name: 'Максим', age: 20 },
-  { name: 'Яна', age: 20 },
+  { name: "Аліса", age: 21 },
+  { name: "Максим", age: 20 },
+  { name: "Яна", age: 20 },
 ];
 
 function groupBy(objectArray, property) {
   return objectArray.reduce((acc, obj) => {
     const key = obj[property];
-    acc[key] ??= [];
-    acc[key].push(obj);
-    return acc;
+    const curGroup = acc[key] ?? [];
+    return { ...acc, [key]: [...curGroup, obj] };
   }, {});
 }
 
-const groupedPeople = groupBy(people, 'age');
+const groupedPeople = groupBy(people, "age");
 // groupedPeople містить:
 // {
 //   20: [
@@ -383,25 +253,25 @@ const groupedPeople = groupBy(people, 'age');
 // }
 ```
 
-### Зчеплення масивів, що знаходяться всередині масиву об'єктів, за допомогою spread-оператора та initialValue
+### Зчеплення масивів, що знаходяться всередині масиву об'єктів, за допомогою синтаксису розгортання та initialValue
 
 ```js
 // friends - масив об'єктів,
 // у кожного з котрих поле "books" — це перелік улюблених книжок
 const friends = [
   {
-    name: 'Анна',
-    books: ['Біблія', 'Енеїда'],
+    name: "Анна",
+    books: ["Біблія", "Енеїда"],
     age: 21,
   },
   {
-    name: 'Богдан',
-    books: ['Чорна рада', 'Тіні забутих предків'],
+    name: "Богдан",
+    books: ["Чорна рада", "Тіні забутих предків"],
     age: 26,
   },
   {
-    name: 'Аліса',
-    books: ['Залишенець. Чорний ворон', 'Ворошиловград'],
+    name: "Аліса",
+    books: ["Залишенець. Чорний ворон", "Ворошиловград"],
     age: 18,
   },
 ];
@@ -410,7 +280,7 @@ const friends = [
 // додатковий список, що знаходиться всередині initialValue
 const allbooks = friends.reduce(
   (previousValue, currentValue) => [...previousValue, ...currentValue.books],
-  ['Alphabet'],
+  ["Alphabet"]
 );
 
 // allbooks = [
@@ -425,22 +295,22 @@ const allbooks = friends.reduce(
 > **Примітка:** Такого ж самого ефекту можна досягти за допомогою {{jsxref("Set")}} і {{jsxref("Array.from()")}}, з кращою швидкодією, ось так: `const arrayWithNoDuplicates = Array.from(new Set(myArray))`.
 
 ```js
-const myArray = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+const myArray = ["a", "b", "a", "b", "c", "e", "e", "c", "d", "d", "d", "d"];
 const myArrayWithNoDuplicates = myArray.reduce(
   (previousValue, currentValue) => {
-    if (previousValue.indexOf(currentValue) === -1) {
-      previousValue.push(currentValue);
+    if (!previousValue.includes(currentValue)) {
+      return [...previousValue, currentValue];
     }
     return previousValue;
   },
-  [],
+  []
 );
 console.log(myArrayWithNoDuplicates);
 ```
 
 ### Заміна .filter().map() на .reduce()
 
-Застосування {{jsxref("Array.map()")}} після {{jsxref("Array.filter()")}} змушує програму перебирати масив двічі; втім, аналогічного результату можна досягти, перебираючи масив лише один раз із {{jsxref("Array.reduce()")}}, таким чином зробивши це більш ефективно. (Якщо вам до вподоби цикли `for`, можна відфільтрувати та перебрати масив за один раз із {{jsxref("Array.forEach()")}}.)
+Застосування {{jsxref("Array/map", "map()")}} після {{jsxref("Array/filter", "filter()")}} змушує програму перебирати масив двічі; втім, аналогічного результату можна досягти, перебираючи масив лише один раз із {{jsxref("Array/reduce", "reduce()")}}, таким чином зробивши це більш ефективно. (Якщо вам до вподоби цикли `for`, можна відфільтрувати та перебрати масив за один раз із {{jsxref("Array/forEach", "forEach()")}}.)
 
 ```js
 const numbers = [-5, 6, 2, 0];
@@ -448,7 +318,7 @@ const numbers = [-5, 6, 2, 0];
 const doubledPositiveNumbers = numbers.reduce((previousValue, currentValue) => {
   if (currentValue > 0) {
     const doubled = currentValue * 2;
-    previousValue.push(doubled);
+    return [...previousValue, doubled];
   }
   return previousValue;
 }, []);
@@ -470,7 +340,7 @@ console.log(doubledPositiveNumbers); // [12, 4]
 function runPromiseInSequence(arr, input) {
   return arr.reduce(
     (promiseChain, currentFunction) => promiseChain.then(currentFunction),
-    Promise.resolve(input),
+    Promise.resolve(input)
   );
 }
 

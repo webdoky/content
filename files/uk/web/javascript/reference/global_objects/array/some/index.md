@@ -20,35 +20,21 @@ browser-compat: javascript.builtins.Array.some
 
 ## Синтаксис
 
-```js
+```js-nolint
 // Стрілкова функція
-some((element) => {
-  /* … */
-});
-some((element, index) => {
-  /* … */
-});
-some((element, index, array) => {
-  /* … */
-});
+some((element) => { /* … */ } )
+some((element, index) => { /* … */ } )
+some((element, index, array) => { /* … */ } )
 
 // Функція зворотного виклику
-some(callbackFn);
-some(callbackFn, thisArg);
+some(callbackFn)
+some(callbackFn, thisArg)
 
 // Вбудована функція зворотного виклику
-some(function (element) {
-  /* … */
-});
-some(function (element, index) {
-  /* … */
-});
-some(function (element, index, array) {
-  /* … */
-});
-some(function (element, index, array) {
-  /* … */
-}, thisArg);
+some(function(element) { /* … */ })
+some(function(element, index) { /* … */ })
+some(function(element, index, array){ /* … */ })
+some(function(element, index, array) { /* … */ }, thisArg)
 ```
 
 ### Параметри
@@ -77,7 +63,7 @@ some(function (element, index, array) {
 
 Метод `some()` один раз викликає `callbackFn` для кожного елемента, присутнього в масиві, поки не знайде такий, для якого `callbackFn` поверне _істинне_ значення (таке, що стає істинністю при перетворенні на булеве значення). Якщо такий елемент знайдено, то `some()` негайно повертає `true`. Інакше – `some()` повертає `false`. `callbackFn` викликається лише для індексів масиву, котрим присвоєно значення. Вона не викликається для індексів, що були видалені або котрим ніколи не присвоювали значення.
 
-`callbackFn` викликається з трьома аргументами: значенням елемента, індексом масиву та об‘єктом `Array`, за котрим відбувається обхід.
+`callbackFn` викликається з трьома аргументами: значенням елемента, індексом масиву та об'єктом `Array`, за котрим відбувається обхід.
 
 Якщо методу `some()` наданий параметр `thisArg`, то він буде використовуватись як значення `this` функції зворотного виклику. Інакше – як `this` використовуватиметься значення {{jsxref("undefined")}}. Значення `this`, котре врешті решт стає доступним в `callbackFn`, визначається згідно зі [звичними правилами визначення значення `this`, отримуваного функцією](/uk/docs/Web/JavaScript/Reference/Operators/this).
 
@@ -122,9 +108,7 @@ function isBiggerThan10(element, index, array) {
 const fruits = ['яблуко', 'банан', 'манго', 'гуава'];
 
 function checkAvailability(arr, val) {
-  return arr.some(function (arrVal) {
-    return val === arrVal;
-  });
+  return arr.some((arrVal) => val === arrVal);
 }
 
 checkAvailability(fruits, 'кела'); // false
@@ -150,15 +134,11 @@ checkAvailability(fruits, 'банан'); // true
 const TRUTHY_VALUES = [true, 'true', 1];
 
 function getBoolean(value) {
-  'use strict';
-
   if (typeof value === 'string') {
     value = value.toLowerCase().trim();
   }
 
-  return TRUTHY_VALUES.some(function (t) {
-    return t === value;
-  });
+  return TRUTHY_VALUES.some((t) => t === value);
 }
 
 getBoolean(false); // false

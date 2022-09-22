@@ -19,39 +19,25 @@ browser-compat: javascript.builtins.Array.findIndex
 
 {{EmbedInteractiveExample("pages/js/array-findindex.html","shorter")}}
 
-Дивіться також метод {{jsxref("Array.find", "find()")}}, котрий повертає перший елемент, що задовольняє перевіркову функцію (а не його індекс).
+Дивіться також метод {{jsxref("Array/find", "find()")}}, котрий повертає перший елемент, що задовольняє перевіркову функцію (а не його індекс).
 
 ## Синтаксис
 
-```js
+```js-nolint
 // Стрілкова функція
-findIndex((element) => {
-  /* … */
-});
-findIndex((element, index) => {
-  /* … */
-});
-findIndex((element, index, array) => {
-  /* … */
-});
+findIndex((element) => { /* … */ } )
+findIndex((element, index) => { /* … */ } )
+findIndex((element, index, array) => { /* … */ } )
 
 // Функція зворотного виклику
-findIndex(callbackFn);
-findIndex(callbackFn, thisArg);
+findIndex(callbackFn)
+findIndex(callbackFn, thisArg)
 
 // Вбудована функція зворотного виклику
-findIndex(function (element) {
-  /* … */
-});
-findIndex(function (element, index) {
-  /* … */
-});
-findIndex(function (element, index, array) {
-  /* … */
-});
-findIndex(function (element, index, array) {
-  /* … */
-}, thisArg);
+findIndex(function(element) { /* … */ })
+findIndex(function(element, index) { /* … */ })
+findIndex(function(element, index, array){ /* … */ })
+findIndex(function(element, index, array) { /* … */ }, thisArg)
 ```
 
 ### Параметри
@@ -86,7 +72,7 @@ findIndex(function (element, index, array) {
 Якщо такий елемент знайдено, то `findIndex()` негайно поверне його індекс.
 Якщо `callbackFn` ніколи не повертає істинне значення (або якщо довжина масиву – `0`), то `findIndex()` поверне `-1`.
 
-> **Примітка:** На відміну від інших методів масиву, наприклад, {{jsxref("Array.some()")}}, `callbackFn` запускається навіть для індексів, котрим не присвоєні значення.
+> **Примітка:** На відміну від інших методів масиву, наприклад, {{jsxref("Array/some", "some()")}}, `callbackFn` запускається навіть для індексів, котрим не присвоєні значення.
 
 `callbackFn` викликається з трьома аргументами:
 

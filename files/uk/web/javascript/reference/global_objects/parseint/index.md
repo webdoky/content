@@ -17,9 +17,9 @@ browser-compat: javascript.builtins.parseInt
 
 ## Синтаксис
 
-```js
-parseInt(string);
-parseInt(string, radix);
+```js-nolint
+parseInt(string)
+parseInt(string, radix)
 ```
 
 ### Параметри
@@ -68,24 +68,15 @@ parseInt(string, radix);
 
 Щоб перетворити число на його рядковий літерал у певній системі числення, слід використовувати `thatNumber.toString(radix)`.
 
-> **Застереження:** `parseInt` перетворює {{jsxref("BigInt")}} на {{jsxref("Number")}} із втратою точності. Так відбувається через те, що нецифрові значення в кінці, включно з "`n`", відкидаються.
+> **Застереження:** `parseInt` перетворює {{jsxref("BigInt")}} на {{jsxref("Number")}} із втратою точності. Так відбувається через те, що нецифрові символи в кінці, включно з суфіксом "`n`", відкидаються.
 
 ### Вісімкові інтерпретації без основи числення
 
-Будь ласка, зверніть увагу, що на 2021 рік наступна інформація не стосується нещодавніх реалізацій.
-
-Хоч це не рекомендував стандарт ECMAScript 3, чимало реалізацій ECMAScript 3 інтерпретували цифровий рядок, що починався з `0`, як вісімковий. Наступний код міг би видати вісімковий результат, а міг і десятковий
+На противагу числовим літералам (і певним застарілим реалізаціям), `parseInt()` _не_ обробляє рядки, що починаються з символу `0`, як вісімковий запис.
 
 ```js
 parseInt('0e0'); // 0
-parseInt('08'); // 0, тому що '8' не є вісімковою цифрою.
-```
-
-Специфікація функції `parseInt` стандарту ECMAScript 5 більше не дозволяє реалізацій, що вважають рядки, котрі починаються з символу `0`, вісімковими значеннями. Чимало реалізацій на 2021 рік вже прийняли таку поведінку.
-
-```js
-parseInt('0e0'); // 0
-parseInt('08'); // 8
+parseInt('011'); // 11
 ```
 
 ### Більш строга функція розбору
@@ -96,11 +87,7 @@ parseInt('08'); // 8
 
 ```js
 function filterInt(value) {
-  if (/^[-+]?(\d+|Infinity)$/.test(value)) {
-    return Number(value);
-  } else {
-    return NaN;
-  }
+  return /^[-+]?(\d+|Infinity)$/.test(value) ? Number(value) : NaN;
 }
 
 console.log(filterInt('421')); // 421
@@ -195,27 +182,6 @@ parseInt('123_456');
 // 123
 ```
 
-Основа числення приводиться до `Number`:
-
-```js
-const obj = {
-  valueOf() {
-    return 8;
-  },
-};
-parseInt('11', obj); // 9
-
-obj.valueOf = function () {
-  return 1;
-};
-parseInt('11', obj); // NaN
-
-obj.valueOf = function () {
-  return Infinity;
-};
-parseInt('11', obj); // 11
-```
-
 ### Використання parseInt() на нерядкових значеннях
 
 `parseInt()` може дати цікаві результати при комбінації нерядкових значень та великої основи числення, наприклад, `36` (що робить усі літерно-цифрові символи чинними цифрами).
@@ -239,5 +205,5 @@ parseInt(undefined, 36); // 86464843759093: Рядок "undefined" – це 8646
 - {{jsxref("Number.parseFloat()")}}
 - {{jsxref("Number.parseInt()")}}
 - {{jsxref("Global_Objects/isNaN", "isNaN()")}}
-- {{jsxref("Number.toString()")}}
-- {{jsxref("Object.valueOf")}}
+- {{jsxref("Number.prototype.toString()")}}
+- {{jsxref("Object.prototype.valueOf()")}}

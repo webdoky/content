@@ -21,7 +21,7 @@ browser-compat: javascript.operators.destructuring
 
 ## Синтаксис
 
-```js
+```js-nolint
 const [a, b] = array;
 const [a, , b] = array;
 const [a = aDefault, b] = array;
@@ -29,11 +29,14 @@ const [a, b, ...rest] = array;
 const [a, , b, ...rest] = array;
 const [a, b, ...{ pop, push }] = array;
 const [a, b, ...[c, d]] = array;
+
 const { a, b } = obj;
 const { a: a1, b: b1 } = obj;
 const { a: a1 = aDefault, b = bDefault } = obj;
 const { a, b, ...rest } = obj;
 const { a: a1, b: b1, ...rest } = obj;
+const { [key]: a } = obj;
+
 let a, b, a1, b1, c, d, rest, pop, push;
 [a, b] = array;
 [a, , b] = array;
@@ -42,6 +45,7 @@ let a, b, a1, b1, c, d, rest, pop, push;
 [a, , b, ...rest] = array;
 [a, b, ...{ pop, push }] = array;
 [a, b, ...[c, d]] = array;
+
 ({ a, b } = obj); // дужки обов'язкові
 ({ a: a1, b: b1 } = obj);
 ({ a: a1 = aDefault, b = bDefault } = obj);
@@ -155,7 +159,8 @@ const { b = console.log('hey') } = { b: 2 };
 ```js
 const { a, ...others } = { a: 1, b: 2, c: 3 };
 console.log(others); // { b: 2, c: 3 }
-const [a, ...others2] = [1, 2, 3];
+
+const [first, ...others2] = [1, 2, 3];
 console.log(others2); // [2, 3]
 ```
 
@@ -302,7 +307,7 @@ let a, b;
 
 ```js
 function parseProtocol(url) {
-  const parsedURL = /^(\w+)\:\/\/([^\/]+)\/(.*)$/.exec(url);
+  const parsedURL = /^(\w+):\/\/([^/]+)\/(.*)$/.exec(url);
   if (!parsedURL) {
     return false;
   }
@@ -494,8 +499,8 @@ const metadata = {
   translations: [
     {
       locale: 'de',
-      localization_tags: [],
-      last_edit: '2014-04-14T08:43:37',
+      localizationTags: [],
+      lastEdit: '2014-04-14T08:43:37',
       url: '/de/docs/Tools/Scratchpad',
       title: 'JavaScript-Umgebung',
     },
@@ -503,7 +508,7 @@ const metadata = {
   url: '/uk/docs/Tools/Scratchpad',
 };
 
-let {
+const {
   title: englishTitle, // перейменування
   translations: [
     {
@@ -544,7 +549,7 @@ for (const {
   name: n,
   family: { father: f },
 } of people) {
-  console.log("Ім'я: " + n + ', Батько: ' + f);
+  console.log(`Ім'я: ${n}, Батько: ${f}`);
 }
 
 // "Ім'я: Михайло Коваль, Батько: Гаврило Коваль"

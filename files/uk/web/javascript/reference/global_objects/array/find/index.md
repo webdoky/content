@@ -18,43 +18,29 @@ browser-compat: javascript.builtins.Array.find
 
 {{EmbedInteractiveExample("pages/js/array-find.html","shorter")}}
 
-- Якщо потрібен **індекс** знайденого елементу в масиві, використовуйте {{jsxref("Array.findIndex", "findIndex()")}}.
-- Якщо потрібно знайти **індекс вже наявного значення**, застосуйте {{jsxref("Array.prototype.indexOf()")}}. (Вона схожа до {{jsxref("Array.findIndex", "findIndex()")}}, проте перевіряє кожний елемент на рівність зі значенням замість використання перевіркової функції.)
+- Якщо потрібен **індекс** знайденого елементу в масиві, використовуйте {{jsxref("Array/findIndex", "findIndex()")}}.
+- Якщо потрібно знайти **індекс вже наявного значення**, застосуйте {{jsxref("Array.prototype/indexOf()")}}. (Вона схожа до {{jsxref("Array/findIndex", "findIndex()")}}, проте перевіряє кожний елемент на рівність зі значенням замість використання перевіркової функції.)
 - Якщо потрібно визначити, чи якесь значення **наявне** в масиві, використайте
-  {{jsxref("Array.prototype.includes()")}}. Знову ж таки, цей метод перевіряє кожний елемент на рівність із переданим значенням замість застосування перевіркової функції.
-- Якщо ж потрібно взнати, чи хоч якийсь елемент задовольняє передану перевіркову функцію, слід застосувати {{jsxref("Array.prototype.some()")}}.
+  {{jsxref("Array/includes", "includes()")}}. Знову ж таки, цей метод перевіряє кожний елемент на рівність із переданим значенням замість застосування перевіркової функції.
+- Якщо ж потрібно взнати, чи хоч якийсь елемент задовольняє передану перевіркову функцію, слід застосувати {{jsxref("Array/some", "some()")}}.
 
 ## Синтаксис
 
-```js
+```js-nolint
 // Стрілкова функція
-find((element) => {
-  /* … */
-});
-find((element, index) => {
-  /* … */
-});
-find((element, index, array) => {
-  /* … */
-});
+find((element) => { /* … */ } )
+find((element, index) => { /* … */ } )
+find((element, index, array) => { /* … */ } )
 
 // Функція зворотного виклику
-find(callbackFn);
-find(callbackFn, thisArg);
+find(callbackFn)
+find(callbackFn, thisArg)
 
 // Функція зворотного виклику, оголошена на місці
-find(function (element) {
-  /* … */
-});
-find(function (element, index) {
-  /* … */
-});
-find(function (element, index, array) {
-  /* … */
-});
-find(function (element, index, array) {
-  /* … */
-}, thisArg);
+find(function(element) { /* … */ })
+find(function(element, index) { /* … */ })
+find(function(element, index, array){ /* … */ })
+find(function(element, index, array) { /* … */ }, thisArg)
 ```
 
 ### Параметри
@@ -163,12 +149,12 @@ console.log([4, 5, 8, 12].find(isPrime)); // 5
 const array = [0, 1, , , , 5, 6];
 
 // Покаже всі індекси, а не лише ті, що мають присвоєне значення
-array.find(function (value, index) {
+array.find((value, index) => {
   console.log('Відвідано індекс ', index, ' зі значенням ', value);
 });
 
 // Покаже всі індекси, включно з видаленими
-array.find(function (value, index) {
+array.find((value, index) => {
   // Видаляємо 5-й елемент під час першої ітерації
   if (index === 0) {
     console.log('Видалення array[5] зі значенням ', array[5]);

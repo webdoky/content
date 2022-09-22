@@ -18,7 +18,7 @@ browser-compat: javascript.builtins.Object
 
 Зміни у прототипному об'єкті `Object` видимі **всім** об'єктам через ланцюжок прототипів, окрім тих випадків, коли змінені властивості й методи заміщені далі в прототипному ланцюжку. Це надає надзвичайно потужний, хоча й потенційно небезпечний, механізм для заміщення чи розширення поведінки об'єктів.
 
-Конструктор `Object` створює об'єктну обгортку над переданим значенням.
+Поведінка конструктора `Object` залежить від типу переданого значення.
 
 - Якщо передане значення дорівнює [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) чи {{jsxref("undefined")}}, буде повернено порожній об'єкт.
 - Якщо передане значення уже є об'єктом, буде повернено це значення.
@@ -35,7 +35,7 @@ browser-compat: javascript.builtins.Object
 ## Конструктор
 
 - {{jsxref("Object/Object", "Object()")}}
-  - : Створює новий об'єкт типу `Object`. Є обгорткою для переданого значення.
+  - : Перетворює передане значення на об'єкт.
 
 ## Статичні методи
 
@@ -86,27 +86,27 @@ browser-compat: javascript.builtins.Object
 
 - {{jsxref("Object.prototype.constructor")}} (конструктор)
   - : Вказує на функцію, яка створює прототип об'єкта.
-- {{jsxref("Object/proto","Object.prototype.__proto__")}}
+- [`Object.prototype.__proto__`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/proto) {{Deprecated_Inline}}
   - : Вказує на об'єкт, який було використано як прототип під час створення примірника цього об'єкта.
 
 ## Методи примірника
 
-- {{jsxref("Object.prototype.__defineGetter__()")}} (означити геттер)
+- [`Object.prototype.__defineGetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineGetter__) (означити геттер)
   - : Пов'язує функцію з властивістю так, що під час спроби доступитися до властивості вона викликає цю функцію та повертає її результат.
-- {{jsxref("Object.prototype.__defineSetter__()")}} (означити сеттер)
+- [`Object.prototype.__defineSetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__) (означити сеттер)
   - : Пов'язує функцію з властивістю так, що під час спроби встановлення її значення викликається ця функція, яка і змінює властивість.
-- {{jsxref("Object.prototype.__lookupGetter__()")}} (шукати геттер)
-  - : Повертає функцію, яку було асоційовано зі вказаною властивістю методом {{jsxref("Object.prototype.__defineGetter__()", "__defineGetter__()")}}.
-- {{jsxref("Object.prototype.__lookupSetter__()")}} (шукати сеттер)
-  - : Повертає функцію, яку було асоційовано зі вказаною властивістю методом {{jsxref("Object.prototype.__defineSetter__()", "__defineSetter__()")}}.
+- [`Object.prototype.__lookupGetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupGetter__) (шукати геттер)
+  - : Повертає функцію, яку було асоційовано зі вказаною властивістю методом [`Object.prototype.__defineGetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineGetter__).
+- [`Object.prototype.__lookupSetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupSetter__) (шукати сеттер)
+  - : Повертає функцію, яку було асоційовано зі вказаною властивістю методом [`Object.prototype.__defineSetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__).
 - {{jsxref("Object.prototype.hasOwnProperty()")}} (має власну властивість)
   - : Повертає булеве значення, яке вказує на те, що об'єкт містить вказану властивість прямо в собі, а не успадковує її через прототипний ланцюжок.
 - {{jsxref("Object.prototype.isPrototypeOf()")}} (є прототипом для)
   - : Повертає булеве значення, яке вказує на те, що об'єкт, на якому викликався цей метод, присутній у прототипному ланцюжку переданого об'єкта.
 - {{jsxref("Object.prototype.propertyIsEnumerable()")}} (властивість є перелічуваною)
-  - : Повертає булеве значення, яке вказує на те, що було встановлено внутрішній [ECMAScript-атрибут \[\[Enumerable\]\]](/uk/docs/Web/JavaScript/Data_structures#properties).
+  - : Повертає булеве значення, яке вказує на те, що було встановлено внутрішній [ECMAScript-атрибут \[\[Enumerable\]\]](/uk/docs/Web/JavaScript/Data_structures#vlastyvosti).
 - {{jsxref("Object.prototype.toLocaleString()")}} (до локалізованого рядка)
-  - : Викликає {{jsxref("Object.toString", "toString()")}}.
+  - : Викликає {{jsxref("Object/toString", "toString()")}}.
 - {{jsxref("Object.prototype.toString()")}} (до рядка)
   - : Повертає значення об'єкта, подане у формі рядка.
 - {{jsxref("Object.prototype.valueOf()")}} (значення від)
@@ -114,41 +114,33 @@ browser-compat: javascript.builtins.Object
 
 ## Приклади
 
-### Застосування `Object` з типами `undefined` і `null`
+### Конструювання порожніх об'єктів
 
 В наступному прикладі у змінній `o` зберігається порожній об'єкт `Object`:
 
 ```js
-let o = new Object();
+const o1 = new Object();
+const o2 = new Object(undefined);
+const o3 = new Object(null);
 ```
 
-```js
-let o = new Object(undefined);
-```
-
-```js
-let o = new Object(null);
-```
-
-### Застосування `Object` для створення об'єктів типу `Boolean`
+### Застосування `Object` для створення булевих об'єктів
 
 В наступному прикладі у змінній `o` зберігається {{jsxref("Boolean", "булевий")}} об'єкт:
 
 ```js
-// еквіваленто виразу o = new Boolean(true)
-let o = new Object(true);
+// еквіваленто виразу const o = new Boolean(true)
+const o = new Object(true);
 ```
 
 ```js
-// еквіваленто виразу o = new Boolean(false)
-let o = new Object(Boolean());
+// еквіваленто виразу const o = new Boolean(false)
+const o = new Object(Boolean());
 ```
 
 ### Прототипи об'єктів
 
 Під час зміни поведінки вже наявних методів `Object.prototype` слід зважити можливість внесення ізольованого коду перед або після чинної логіки. Наприклад, наведений нижче (нетестований) код за умовою виконає користувацьку логіку до того, як спрацює вбудована логіка (або виконається інше розширення).
-
-На момент виклику функції аргументи виклику знаходяться у масивоподібній "змінній" [arguments](/uk/docs/Web/JavaScript/Reference/Functions/arguments). Наприклад, у виклику `myFn(a, b, c)` `arguments` всередині тіла функції `myFn` міститиме 3 елементи відповідно до `(a, b, c)`.
 
 В разі внесення змін у прототипи за допомогою таких причеп – слід передавати `this` та аргументи (стан виклику) до чинної логіки шляхом виклику `apply()` на функції. Цей патерн можна використовувати на будь-яких прототипах, як от `Node.prototype`, `Function.prototype`, та ін.
 
@@ -157,89 +149,22 @@ const current = Object.prototype.valueOf;
 
 // Оскільки властивість "-prop-value" є наскрізною, і не завжди присутня
 // в тому самому прототипному ланцюжку, виникає потреба змінити Object.prototype:
-Object.prototype.valueOf = function () {
-  if (Object.hasOwn(this, '-prop-value')) {
-    return this['-prop-value'];
+Object.prototype.valueOf = function (...args) {
+  if (Object.hasOwn(this, "-prop-value")) {
+    return this["-prop-value"];
   } else {
     // Це не схоже на наш об'єкт, тому повернімося до усталеної поведінки
     // шляхом відтворення діючої поведінки, наскільки це можливо.
     // Функція "apply" поводить себе подібно до "super" у деяких інших мовах.
     // І хоча "valueOf()" не приймає аргументів, їх можуть приймати якісь інші причепи.
-    return current.apply(this, arguments);
+    return current.apply(this, args);
   }
 };
 ```
 
-Оскільки JavaScript не має повного аналога підкласових об'єктів, прототип є корисним обхідним способом створити об'єкт "базового класу" певних функцій, що працюють як об'єкти. Наприклад:
+> **Застереження:** Змінювати властивість `prototype` будь-якого вбудованого конструктора вважається недоброю практикою і є ризиком щодо сумісності.
 
-```js
-const Person = function (name) {
-  this.name = name;
-  this.canTalk = true;
-};
-
-Person.prototype.greet = function () {
-  if (this.canTalk) {
-    console.log('Привіт, я — ' + this.name);
-  }
-};
-
-const Employee = function (name, title) {
-  Person.call(this, name);
-  this.title = title;
-};
-
-Employee.prototype = Object.create(Person.prototype);
-Employee.prototype.constructor = Employee; //Якщо явно не встановити Employee значенням конструктора Object.prototype.constructor,
-//він отримає значення prototype.constructor об'єкта Person (предка).
-//Щоб уникнути цього, ми явно встановлюємо в prototype.constructor значення Employee (нащадок).
-
-Employee.prototype.greet = function () {
-  if (this.canTalk) {
-    console.log('Привіт, я — ' + this.name + ', ' + this.title);
-  }
-};
-
-const Customer = function (name) {
-  Person.call(this, name);
-};
-
-Customer.prototype = Object.create(Person.prototype);
-Customer.prototype.constructor = Customer;
-//Якщо явно не встановити Customer значенням конструктора Object.prototype.constructor,
-//він отримає значення prototype.constructor об'єкта Person (предка).
-//Щоб уникнути цього, ми явно встановлюємо в prototype.constructor значення Customer (нащадок).
-
-const Mime = function (name) {
-  Person.call(this, name);
-  this.canTalk = false;
-};
-
-Mime.prototype = Object.create(Person.prototype);
-Mime.prototype.constructor = Mime; //Якщо явно не встановити Mime значенням конструктора Object.prototype.constructor,
-//він отримає значення prototype.constructor об'єкта Person (предка).
-//Щоб уникнути цього, ми явно встановлюємо в prototype.constructor значення Mime (нащадок).
-
-const bob = new Employee('Боб', 'будівельник');
-const joe = new Customer('Джо');
-const rg = new Employee('Ред Грін', 'різнороб');
-const mike = new Customer('Майк');
-const mime = new Mime('Мім');
-
-bob.greet();
-// Привіт, я — Боб, будівельник
-
-joe.greet();
-// Привіт, я — Джо
-
-rg.greet();
-// Привіт, я — Ред Грін, різнороб
-
-mike.greet();
-// Привіт, я — Майк
-
-mime.greet();
-```
+Більше про прототипи можна прочитати в [Успадкуванні й ланцюжку прототипів](/uk/docs/Web/JavaScript/Inheritance_and_the_prototype_chain).
 
 ## Специфікації
 
