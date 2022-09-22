@@ -20,10 +20,10 @@ browser-compat: javascript.builtins.String.split
 
 ## Синтаксис
 
-```js
-split();
-split(separator);
-split(separator, limit);
+```js-nolint
+split()
+split(separator)
+split(separator, limit)
 ```
 
 ### Параметри

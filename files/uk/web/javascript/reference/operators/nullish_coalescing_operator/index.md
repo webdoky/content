@@ -22,8 +22,8 @@ browser-compat: javascript.operators.nullish_coalescing
 
 ## Синтаксис
 
-```js
-leftExpr ?? rightExpr;
+```js-nolint
+leftExpr ?? rightExpr
 ```
 
 ## Приклади
