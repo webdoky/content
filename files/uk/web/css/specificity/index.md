@@ -44,7 +44,7 @@ spec-urls: https://drafts.csswg.org/selectors/#specificity-rules
 Вага специфічності випливає із селектора збігу. Візьмімо наступний селектор CSS із трьома селекторами, розділеними комою, як приклад:
 
 ```css
-[type='password'],
+[type="password"],
 input:focus,
 :root #myApp input:required {
   color: blue;
@@ -53,7 +53,7 @@ input:focus,
 
 Селектор `[type="password"]` – нагорі списку селекторів, він має вагу `0-1-0`, застосовує оголошення `color: blue` до всіх полів типу `password`.
 
-Всі поля введення, незалежно від типу, отримуючи фокус, відповідають другому селекторові в списку, `input:focus`, що має вагу специфічності `0-1-1`; ця вага складена псевдокласом `:focus` (0-1-0) та типом `input` (0-1-1). Якщо поле введення пароля має фокус, то відповідатиме `input:focus`, і вага специфічності оголошення стилю `color: blue` буде `0-1-1`. Коли таке поле пароля не має фокусу, то вага специфічності залишається `0-1-0`.
+Всі поля введення, незалежно від типу, отримуючи фокус, відповідають другому селекторові в списку, `input:focus`, що має вагу специфічності `0-1-1`; ця вага складена псевдокласом `:focus` (0-1-0) та типом `input` (0-0-1). Якщо поле введення пароля має фокус, то відповідатиме `input:focus`, і вага специфічності оголошення стилю `color: blue` буде `0-1-1`. Коли таке поле пароля не має фокусу, то вага специфічності залишається `0-1-0`.
 
 Специфічність обов'язкового поля введення, вкладеного в елемент з атрибутом `id="myApp"`, дорівнюватиме `1-2-1`, на основі одного ідентифікатора, двох псевдокласів та одного типу елемента.
 
@@ -73,7 +73,7 @@ input:focus                   /* 0-1-1 */
 #myElement {
   color: green; /* 1-0-0  - ПЕРЕМАГАЄ!! */
 }
-.bodyClass .sectionClass .parentClass [id='myElement'] {
+.bodyClass .sectionClass .parentClass [id="myElement"] {
   color: yellow; /* 0-4-0 */
 }
 ```
@@ -86,7 +86,7 @@ input:focus                   /* 0-1-1 */
 #myElement {
   color: yellow; /* 1-0-0  */
 }
-#myApp [id='myElement'] {
+#myApp [id="myElement"] {
   color: green; /* 1-1-0  - ПЕРЕМАГАЄ!! */
 }
 ```
@@ -176,7 +176,7 @@ a:not(#fakeId#fakeId#fakeID) {
 ```
 
 ```css
-p[style*='purple'] {
+p[style*="purple"] {
   color: rebeccapurple !important;
 }
 ```
@@ -233,7 +233,7 @@ footer a {
 #myContent h1 {
   color: green; /* 1-0-1 */
 }
-[id='myContent'] h1 {
+[id="myContent"] h1 {
   color: yellow; /* 0-1-1 */
 }
 :where(#myContent) h1 {
@@ -331,11 +331,11 @@ footer a {
 2. Щоразу при потребі відкинути важливе оголошення – оголошувати відкидання всередині іменованого шару. Оголошувати в такому шарі лишень важливі правила.
 
 ```css
-[id='myElement'] p {
+[id="myElement"] p {
   /* тут звичайні стилі */
 }
 @layer importantOverrides {
-  [id='myElement'] p {
+  [id="myElement"] p {
     /* тут важливий стиль */
   }
 }
@@ -391,7 +391,7 @@ h1 {
 #myElement input.myClass {
   color: red;
 } /* 1-1-1 */
-input[type='password']:required {
+input[type="password"]:required {
   color: blue;
 } /* 0-2-1 */
 html body main input {
@@ -406,10 +406,10 @@ html body main input {
 Якщо перетворити селектор ідентифікатора у коді прикладу вище на селектор атрибута, то перші два селектори матимуть однакову специфічність, як показано нижче:
 
 ```css
-[id='myElement'] input.myClass {
+[id="myElement"] input.myClass {
   color: red;
 } /* 0-2-1 */
-input[type='password']:required {
+input[type="password"]:required {
   color: blue;
 } /* 0-2-1 */
 ```
