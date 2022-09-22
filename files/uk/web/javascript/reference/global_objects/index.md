@@ -16,7 +16,7 @@ tags:
 
 Сам **глобальний об'єкт** доступний із використанням оператора {{JSxRef("Operators/this", "this")}} у глобальній області видимості. Насправді глобальна область видимості **складається з** властивостей цього глобального об'єкта, включно з успадкованими полями, якщо такі є.
 
-Інші об'єкти у глобальній області видимості є або [створеними користувацьким скриптом](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#creating_new_objects), або ж надані керівним застосунком. Ті керівні об‘єкти, що доступні в контексті браузера, задокументовано у [довіднику з API](/uk/docs/Web/API).
+Інші об'єкти у глобальній області видимості є або [створеними користувацьким скриптом](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#stvorennia-novykh-obiektiv), або ж надані керівним застосунком. Ті керівні об'єкти, котрі доступні в контексті браузера, задокументовані у [довіднику з API](/uk/docs/Web/API).
 
 Більше інформації про відмінності між [DOM](/uk/docs/Web/API/Document_Object_Model) і ядром [JavaScript](/uk/docs/Web/JavaScript) можна знайти в [технологічному огляді JavaScript](/uk/docs/Web/JavaScript/JavaScript_technologies_overview).
 
@@ -33,7 +33,7 @@ tags:
 
 ### Властивості-функції
 
-Ці глобальні функції (ті функції, які радше викликаються глобально, аніж як методи об'єкту) — прямо повертають результат тому, хто їх викликав.
+Ці глобальні функції (ті функції, які радше викликаються глобально, аніж як методи об'єкта) — прямо повертають результат тому, хто їх викликав.
 
 - {{JSxRef("Global_Objects/eval", "eval()")}}
 - {{JSxRef("Global_Objects/isFinite", "isFinite()")}}
@@ -48,7 +48,6 @@ tags:
 
   - {{JSxRef("Global_Objects/escape", "escape()")}} {{Deprecated_Inline}}
   - {{JSxRef("Global_Objects/unescape", "unescape()")}} {{Deprecated_Inline}}
-  - {{JSxRef("Global_Objects/uneval", "uneval()")}} {{Deprecated_Inline}}
 
 ### Корінні об'єкти
 
@@ -125,7 +124,7 @@ tags:
 - {{JSxRef("DataView")}}
 - {{JSxRef("JSON")}}
 
-### Об‘єкти абстракцій контролю
+### Об'єкти абстракцій контролю
 
 Абстракції контролю допомагають структурувати код, особливо якщо він асинхронний (зокрема без використання глибоко вкладених функцій зворотного виклику).
 
@@ -164,7 +163,3 @@ tags:
 - {{JSxRef("WebAssembly.CompileError")}}
 - {{JSxRef("WebAssembly.LinkError")}}
 - {{JSxRef("WebAssembly.RuntimeError")}}
-
-### Інші
-
-- {{JSxRef("Functions/arguments", "arguments")}}

@@ -4,6 +4,7 @@ slug: Web/CSS/border
 tags:
   - CSS
   - CSS Borders
+  - CSS Property
   - CSS Shorthand property
   - Layout
   - Reference
@@ -43,12 +44,14 @@ border: medium dashed green;
 /* Глобальні значення */
 border: inherit;
 border: initial;
+border: revert;
+border: revert-layer;
 border: unset;
 ```
 
 Властивість `border` може бути вказана за допомогою одного, двох чи трьох значень, перелічених нижче. Порядок значень не важливий.
 
-> **Зауваження:** Межі будуть невидимими, якщо не вказаний їх стиль. Так виходить, тому що усталений стиль – `none`.
+> **Примітка:** Межі будуть невидимими, якщо не вказаний їх стиль. Так виходить, тому що усталений стиль – `none`.
 
 ### Значення
 
@@ -70,7 +73,7 @@ border: unset;
 Межі та [обриси](/uk/docs/Web/CSS/outline) – дуже схожі. А проте, обриси відрізняються від меж наступним чином:
 
 - Обриси ніколи не займають простір, оскільки вони наносяться зовні вмісту елемента.
-- Згідно зі специфікацією, обриси не обов‘язково мають прямокутну форму, хоч зазвичай мають саме таку.
+- Згідно зі специфікацією, обриси не обов'язково мають прямокутну форму, хоч зазвичай мають саме таку.
 
 ## Формальне визначення
 
@@ -107,7 +110,7 @@ div {
 
 #### Результат
 
-{{EmbedLiveSample('Setting_a_pink_outset_border')}}
+{{EmbedLiveSample('vstanovlennia-rozhevykh-zovnishnikh-mezh')}}
 
 ## Специфікації
 
@@ -122,5 +125,6 @@ div {
 - {{Cssxref("border-width")}}
 - {{Cssxref("border-style")}}
 - {{Cssxref("border-color")}}
+- {{Cssxref("outline")}}
 - [Фони та межі](/uk/docs/Web/CSS/CSS_Backgrounds_and_Borders)
 - [Вивчаймо CSS: Фони та межі](/uk/docs/Learn/CSS/Building_blocks/Backgrounds_and_borders)

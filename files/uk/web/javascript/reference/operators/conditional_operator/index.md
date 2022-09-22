@@ -23,18 +23,17 @@ browser-compat: javascript.operators.conditional
 
 ## Синтаксис
 
-```js
-<!-- markdownlint-disable-next-line -->
+```js-nolint
 condition ? exprIfTrue : exprIfFalse
 ```
 
 ### Параметри
 
-- `condition`
+- `condition` ("умова")
   - : Вираз, значення якого буде використано як умову.
-- `exprIfTrue`
+- `exprIfTrue` ("вираз якщо істина")
   - : Вираз, який буде обчислено, якщо `condition` зводиться до {{Glossary("truthy", "істинного")}} значення (такого, яке еквівалентно `true`).
-- `exprIfFalse`
+- `exprIfFalse` ("вираз якщо хиба")
   - : Вираз, який буде обчислено, якщо значення `condition` є {{Glossary("falsy", "хибним")}} (значенням, еквівалентним `false`).
 
 ## Опис
@@ -46,8 +45,8 @@ condition ? exprIfTrue : exprIfFalse
 ### Простий приклад
 
 ```js
-var age = 26;
-var beverage = age >= 21 ? 'Пиво' : 'Сік';
+const age = 26;
+const beverage = age >= 21 ? 'Пиво' : 'Сік';
 console.log(beverage); // "Пиво"
 ```
 
@@ -56,8 +55,8 @@ console.log(beverage); // "Пиво"
 Одне з поширених застосувань умовного виразу — це обробка значення, яке може дорівнювати `null`:
 
 ```js
-let greeting = (person) => {
-  let name = person ? person.name : `незнайомцю`;
+const greeting = (person) => {
+  const name = person ? person.name : `незнайомцю`;
   return `Агов, ${name}`;
 };
 
@@ -67,23 +66,33 @@ console.log(greeting(null)); // "Агов, незнайомцю"
 
 ### Ланцюжки умовних виразів
 
-Тернарний оператор — правоасоціативний. Це означає, що його можна "об'єднувати в ланцюжки" подібно до ланцюжків `if … else if … else if … else`; так, як це наведено нижче:
+Тернарний оператор — правоасоціативний. Це означає, що його можна "об'єднувати в ланцюжки" подібно до ланцюжків `if … else if … else if … else`, так, як це наведено нижче:
 
 ```js
-function example(…) {
-    return condition1 ? value1
-         : condition2 ? value2
-         : condition3 ? value3
-         : value4;
+function example() {
+  return condition1
+    ? value1
+    : condition2
+    ? value2
+    : condition3
+    ? value3
+    : value4;
 }
+```
 
-// Еквівалентно виразу:
+Такий запис еквівалентний ланцюжкові [`if...else`](/uk/docs/Web/JavaScript/Reference/Statements/if...else) нижче.
 
-function example(…) {
-    if (condition1) { return value1; }
-    else if (condition2) { return value2; }
-    else if (condition3) { return value3; }
-    else { return value4; }
+```js
+function example() {
+  if (condition1) {
+    return value1;
+  } else if (condition2) {
+    return value2;
+  } else if (condition3) {
+    return value3;
+  } else {
+    return value4;
+  }
 }
 ```
 

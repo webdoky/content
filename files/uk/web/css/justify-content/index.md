@@ -12,7 +12,7 @@ browser-compat: css.properties.justify-content
 
 {{CSSRef}}
 
-Властивість [CSS](/uk/docs/Web/CSS) **`justify-content`** визначає те, як браузер розподіляє простір між та навколо елементами вмісту за {{Glossary("Main Axis", "головною віссю")}} flex-контейнера, а також рядковою віссю сіткового контейнера.
+Властивість [CSS](/uk/docs/Web/CSS) **`justify-content`** (вирівняти вміст) визначає те, як браузер розподіляє простір між та навколо елементами вмісту за {{Glossary("Main Axis", "головною віссю")}} flex-контейнера, а також рядковою віссю сіткового контейнера.
 
 Інтерактивний приклад нижче показує деякі значення за допомогою сіткової розкладки.
 
@@ -60,6 +60,7 @@ justify-content: unsafe center;
 justify-content: inherit;
 justify-content: initial;
 justify-content: revert;
+justify-content: revert-layer;
 justify-content: unset;
 ```
 
@@ -156,19 +157,19 @@ justify-content: unset;
 ```
 
 ```js hidden
-var justifyContent = document.getElementById('justifyContent');
-justifyContent.addEventListener('change', function (evt) {
+const justifyContent = document.getElementById('justifyContent');
+justifyContent.addEventListener('change', (evt) => {
   document.getElementById('container').style.justifyContent = evt.target.value;
 });
 ```
 
 #### Результат
 
-{{EmbedLiveSample("Setting_flex_item_distribution", "100%", 180)}}
+{{EmbedLiveSample("vstanovlennia-rozpodilu-hnuchkykh-elementiv", "100%", 180)}}
 
 ## Специфікації
 
-{{Specifications("css.properties.justify-content.grid_context")}}
+{{Specifications}}
 
 ## Сумісність із браузерами
 

@@ -38,10 +38,12 @@ browser-compat: javascript.operators
   - : `async function` оголошує вираз асинхронної функції.
 - {{JSxRef("Operators/await", "await")}} (очікувати на)
   - : Призупинити виконання асинхронної функції й зачекати до виконання чи відхилення промісу.
+- {{JSxRef("Operators/async_function*", "async function*")}}
+  - : Ключові слова `async function*` оголошують вираз асинхронної функції-генератора.
 - {{JSxRef("Global_Objects/Array", "[]")}} (клямри, квадратні дужки)
   - : Літеральний синтаксис створення чи ініціалізації масиву.
 - {{JSxRef("Operators/Object_initializer", "{}")}} (фігурні дужки)
-  - : Літеральний синтаксис створення чи ініціалізації об'єкту.
+  - : Літеральний синтаксис створення чи ініціалізації об'єкта.
 - {{JSxRef("Global_Objects/RegExp", "/ab+c/i")}}
   - : Літеральний синтаксис регулярного виразу.
 - {{JSxRef("Operators/Grouping", "( )")}} (дужки)
@@ -57,7 +59,7 @@ browser-compat: javascript.operators
   - : Оператор `new` створює новий екземпляр об'єкта за допомогою переданого конструктора.
 - {{JSxRef("Operators/new%2Etarget", "new.target")}} (нове.цільовий)
   - : Всередині конструктора `new.target` посилається на конструктор, який було викликано оператором {{JSxRef("Operators/new", "new")}}.
-- {{JSxRef("Statements/import%2Emeta", "import.meta")}} (імпорт.метадані)
+- {{JSxRef("Operators/import%2Emeta", "import.meta")}} (імпорт.метадані)
   - : Об'єкт, що розкриває контекстно-специфічні метадані JavaScript-модуля.
 - {{JSxRef("Operators/super", "super")}} (вищий)
   - : Ключове слово `super` викликає батьківський конструктор.
@@ -86,7 +88,7 @@ browser-compat: javascript.operators
 - {{JSxRef("Operators/void", "void")}} (відкинути)
   - : Оператор `void` відкидає повернене значення виразу.
 - {{JSxRef("Operators/typeof", "typeof")}} (тип ...)
-  - : Оператор `typeof` визначає тип переданого об'єкту.
+  - : Оператор `typeof` визначає тип переданого об'єкта.
 - {{JSxRef("Operators/Unary_plus", "+")}} (плюс)
   - : Оператор «унарний плюс» перетворює операнд на значення типу Number.
 - {{JSxRef("Operators/Unary_negation", "-")}} (мінус)
@@ -147,7 +149,7 @@ browser-compat: javascript.operators
 
 ### Оператори побітового зсуву
 
-Операції зміщення всіх бітів операнду.
+Операції зміщення всіх бітів операнда.
 
 - {{JSxRef("Operators/Left_shift", "&lt;&lt;")}}
   - : Оператор побітового зсуву вліво.
@@ -186,7 +188,7 @@ browser-compat: javascript.operators
 ### Оператор необов'язкової послідовності
 
 - {{JSxRef("Operators/Optional_chaining", "?.")}}
-  - : Оператор необов'язкової послідовності повертає `undefined` замість викликання помилки в разі [нульового](/uk/docs/Glossary/Nullish) ([`null`](/uk/docs/Web/JavaScript/Reference/Global_Objects/null) або [`undefined`](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined)) посилання.
+  - : Оператор необов'язкової послідовності повертає `undefined` замість викликання помилки в разі [нульового](/uk/docs/Glossary/Nullish) ([`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) або [`undefined`](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined)) посилання.
 
 ### Оператори присвоєння
 
@@ -224,9 +226,8 @@ browser-compat: javascript.operators
   - : Присвоєння з логічним OR.
 - {{JSxRef("Operators/Logical_nullish_assignment", "??=")}}
   - : Логічне нульове присвоєння.
-- {{JSxRef("Operators/Destructuring_assignment", "[a, b] = [1, 2]")}}
-  {{JSxRef("Operators/Destructuring_assignment", "{a, b} = {a:1, b:2}")}}
-  - : Присвоєння з деструктуризацією дозволяє призначити властивості масиву чи об'єкту змінним, з використанням синтаксису, який виглядає подібно до літералів масивів та об'єктів.
+- [`[a, b] = arr`, `{ a, b } = obj`](/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+  - : Присвоєння з деструктуризацією дає змогу призначити властивості масиву чи об'єкта змінним, з використанням синтаксису, який має подібний до літералів масивів та об'єктів вигляд.
 
 ### Оператор кома
 

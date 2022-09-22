@@ -10,15 +10,16 @@ tags:
   - Polyfill
 browser-compat: javascript.builtins.Object.assign
 ---
+
 {{JSRef}}
 
-Метод **`Object.assign()`** (присвоїти) копіює всі {{jsxref("Object/propertyIsEnumerable", "перелічувані", "", 1)}} {{jsxref("Object/hasOwnProperty", "власні властивості", "", 1)}} від одного чи більше _донорських об'єктів_ до _цільового об'єкта_. Він повертає модифікований цільовий об'єкт.
+Метод **`Object.assign()`** (присвоїти) копіює всі {{jsxref("Object/propertyIsEnumerable", "перелічувані", "", 1)}} {{jsxref("Object/hasOwn", "власні властивості", "", 1)}} від одного чи більше _донорських об'єктів_ до _цільового об'єкта_. Він повертає модифікований цільовий об'єкт.
 
 {{EmbedInteractiveExample("pages/js/object-assign.html")}}
 
 ## Синтаксис
 
-```js
+```js-nolint
 Object.assign(target, ...sources)
 ```
 
@@ -45,7 +46,7 @@ Object.assign(target, ...sources)
 
 В разі помилки (наприклад, якщо властивість недоступна для запису) викидається {{jsxref("TypeError")}}, а об'єкт `target` залишається модифікованим, якщо якісь властивості були вже додані до виникнення помилки.
 
-> **Примітка:** `Object.assign()` не викидає помилок на таких донорах, як {{jsxref("null")}} чи {{jsxref("undefined")}}.
+> **Примітка:** `Object.assign()` не викидає помилок на таких донорах, як [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) чи {{jsxref("undefined")}}.
 
 ## Приклади
 
@@ -64,34 +65,24 @@ console.log(copy); // { a: 1 }
 Якщо значення в донорі містить посилання на об'єкт, він скопіює лише це посилання.
 
 ```js
-function test() {
-  'use strict';
-
-  let obj1 = { a: 0 , b: { c: 0}};
-  let obj2 = Object.assign({}, obj1);
-  console.log(JSON.stringify(obj2)); // { "a": 0, "b": { "c": 0}}
-
-  obj1.a = 1;
-  console.log(JSON.stringify(obj1)); // { "a": 1, "b": { "c": 0}}
-  console.log(JSON.stringify(obj2)); // { "a": 0, "b": { "c": 0}}
-
-  obj2.a = 2;
-  console.log(JSON.stringify(obj1)); // { "a": 1, "b": { "c": 0}}
-  console.log(JSON.stringify(obj2)); // { "a": 2, "b": { "c": 0}}
-
-  obj2.b.c = 3;
-  console.log(JSON.stringify(obj1)); // { "a": 1, "b": { "c": 3}}
-  console.log(JSON.stringify(obj2)); // { "a": 2, "b": { "c": 3}}
-
-  // Глибоке клонування
-  obj1 = { a: 0 , b: { c: 0}};
-  let obj3 = JSON.parse(JSON.stringify(obj1));
-  obj1.a = 4;
-  obj1.b.c = 4;
-  console.log(JSON.stringify(obj3)); // { "a": 0, "b": { "c": 0}}
-}
-
-test();
+const obj1 = { a: 0, b: { c: 0 } };
+const obj2 = Object.assign({}, obj1);
+console.log(obj2); // { a: 0, b: { c: 0 } }
+obj1.a = 1;
+console.log(obj1); // { a: 1, b: { c: 0 } }
+console.log(obj2); // { a: 0, b: { c: 0 } }
+obj2.a = 2;
+console.log(obj1); // { a: 1, b: { c: 0 } }
+console.log(obj2); // { a: 2, b: { c: 0 } }
+obj2.b.c = 3;
+console.log(obj1); // { a: 1, b: { c: 3 } }
+console.log(obj2); // { a: 2, b: { c: 3 } }
+// Глибоке клонування
+const obj3 = { a: 0, b: { c: 0 } };
+const obj4 = JSON.parse(JSON.stringify(obj3));
+obj3.a = 4;
+obj3.b.c = 4;
+console.log(obj4); // { a: 0, b: { c: 0 } }
 ```
 
 ### Злиття об'єктів
@@ -103,7 +94,7 @@ const o3 = { c: 3 };
 
 const obj = Object.assign(o1, o2, o3);
 console.log(obj); // { a: 1, b: 2, c: 3 }
-console.log(o1);  // { a: 1, b: 2, c: 3 }, цільовий об'єкт також змінився.
+console.log(o1); // { a: 1, b: 2, c: 3 }, цільовий об'єкт також змінився.
 ```
 
 ### Злиття об'єктів з однаковими властивостями
@@ -133,15 +124,19 @@ Object.getOwnPropertySymbols(obj); // [Symbol(foo)]
 ### Неможливо скопіювати властивості в прототипному ланцюжку чи неперелічувані властивості
 
 ```js
-const obj = Object.create({ foo: 1 }, { // foo знаходиться в прототипному ланцюжку obj
-  bar: {
-    value: 2  // bar не є перелічуваною властивістю
+const obj = Object.create(
+  // foo знаходиться в прототипному ланцюжку obj
+  { foo: 1 },
+  {
+    bar: {
+      value: 2, // bar не є перелічуваною властивістю
+    },
+    baz: {
+      value: 3,
+      enumerable: true, // baz є власною перелічуваною властивістю.
+    },
   },
-  baz: {
-    value: 3,
-    enumerable: true  // baz є власною перелічуваною властивістю.
-  }
-});
+);
 
 const copy = Object.assign({}, obj);
 console.log(copy); // { baz: 3 }
@@ -166,18 +161,18 @@ console.log(obj); // { "0": "a", "1": "b", "2": "c" }
 ```js
 const target = Object.defineProperty({}, 'foo', {
   value: 1,
-  writable: false
+  writable: false,
 }); // target.foo — це властивість лише для читання
 
 Object.assign(target, { bar: 2 }, { foo2: 3, foo: 3, foo3: 3 }, { baz: 4 });
 // TypeError: "foo" is read-only
 // Виняток викинуто під час присвоєння значення target.foo
 
-console.log(target.bar);  // 2, властивості першого донора успішно скопійовано.
+console.log(target.bar); // 2, властивості першого донора успішно скопійовано.
 console.log(target.foo2); // 3, перша властивість другого донора скопійована успішно.
-console.log(target.foo);  // 1, тут викинуто виняток.
+console.log(target.foo); // 1, тут викинуто виняток.
 console.log(target.foo3); // undefined, робота методу "assign" завершилася, foo3 скопійовано не буде.
-console.log(target.baz);  // undefined, третій донор також копіюватися не буде.
+console.log(target.baz); // undefined, третій донор також копіюватися не буде.
 ```
 
 ### Копіювання методів доступу
@@ -187,7 +182,7 @@ const obj = {
   foo: 1,
   get bar() {
     return 2;
-  }
+  },
 };
 
 let copy = Object.assign({}, obj);
@@ -197,15 +192,15 @@ console.log(copy);
 
 // Ось фінкція присвоєння, яка капіює дескриптори цілком
 function completeAssign(target, ...sources) {
-  sources.forEach(source => {
-    let descriptors = Object.keys(source).reduce((descriptors, key) => {
+  sources.forEach((source) => {
+    const descriptors = Object.keys(source).reduce((descriptors, key) => {
       descriptors[key] = Object.getOwnPropertyDescriptor(source, key);
       return descriptors;
     }, {});
 
     // Як усталено, Object.assign копіює також перелічувані символи
-    Object.getOwnPropertySymbols(source).forEach(sym => {
-      let descriptor = Object.getOwnPropertyDescriptor(source, sym);
+    Object.getOwnPropertySymbols(source).forEach((sym) => {
+      const descriptor = Object.getOwnPropertyDescriptor(source, sym);
       if (descriptor.enumerable) {
         descriptors[sym] = descriptor;
       }

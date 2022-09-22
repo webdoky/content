@@ -1,5 +1,5 @@
 ---
-title: Arrow function expressions
+title: Вирази стрілкових функцій
 slug: Web/JavaScript/Reference/Functions/Arrow_functions
 tags:
   - ECMAScript 2015
@@ -10,18 +10,19 @@ tags:
   - Reference
 browser-compat: javascript.functions.arrow_functions
 ---
+
 {{jsSidebar("Functions")}}
 
-**Вираз стрілкової функції** — це компактна альтернатива традиційному [виразові функції](/uk/docs/Web/JavaScript/Reference/Operators/function), яку, проте, можна використовувати не у всіх випадках через певні обмеження.
+**Вираз стрілкової функції** — це компактна альтернатива традиційному [виразові функції](/uk/docs/Web/JavaScript/Reference/Operators/function), яку, проте, через певні обмеження можна використовувати не у всіх випадках.
 
-**Відмінності й обмеження:**
+Існують відмінності між _стрілковими функціями_ й _традиційними функціями_, а також певні обмеження:
 
-- Не має власної прив'язки до [`this`](/uk/docs/Web/JavaScript/Reference/Operators/this) та [`super`](/uk/docs/Web/JavaScript/Reference/Operators/super),
-  і не повинен вживатися як [`метод`](/uk/docs/Glossary/Method).
-- Не містить ключового слова [`new.target`](/uk/docs/Web/JavaScript/Reference/Operators/new.target).
-- Не підходить для використання в методах [`call`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/call), [`apply`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/apply) та [`bind`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/bind), які залежать від встановлення [контексту](/uk/docs/Glossary/Scope).
-- Не може використовуватись як [конструктор](/uk/docs/Glossary/Constructor).
-- Не може використовувати ключове слово [`yield`](/uk/docs/Web/JavaScript/Reference/Operators/yield) всередині тіла функції.
+- Стрілкові функції не мають власної прив'язки до [`this`](/uk/docs/Web/JavaScript/Reference/Operators/this), [`arguments`](/uk/docs/Web/JavaScript/Reference/Functions/arguments) та [`super`](/uk/docs/Web/JavaScript/Reference/Operators/super),
+  і не повинні вживатися як [методи](/uk/docs/Glossary/Method).
+- Стрілкові функції не мають доступу до ключового слова [`new.target`](/uk/docs/Web/JavaScript/Reference/Operators/new.target).
+- Стрілкові функції не підходять для виклику методів [`call`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/call), [`apply`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/apply) та [`bind`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/bind), які залежать від встановлення [контексту](/uk/docs/Glossary/Scope).
+- Стрілкові функції не можуть використовуватись як [конструктори](/uk/docs/Glossary/Constructor).
+- Стрілкові функції не можуть використовувати всередині свого тіла [`yield`](/uk/docs/Web/JavaScript/Reference/Operators/yield).
 
 {{EmbedInteractiveExample("pages/js/functions-arrow.html")}}
 
@@ -51,7 +52,7 @@ function (a){
 a => a + 100;
 ```
 
-Фігурні `{}` та круглі `()` дужки, а також слово "return" — обов'язкові в деяких випадках.
+Фігурні `{}` та круглі `()` дужки, а також слово "return" — в деяких випадках обов'язкові.
 
 Для прикладу, якщо є **декілька аргументів** чи **аргументів немає** взагалі, то дужки навколо аргументів доведеться повернути на місце:
 
@@ -64,31 +65,30 @@ function (a, b){
 // Стрілкова функція
 (a, b) => a + b + 100;
 
+const a = 4;
+const b = 2;
+
 // Традиційна анонімна функція (без аргументів)
-let a = 4;
-let b = 2;
-function (){
+(function (){
   return a + b + 100;
-}
+})
 
 // Стрілкова функція (без аргументів)
-let a = 4;
-let b = 2;
 () => a + b + 100;
 ```
 
-Аналогічно, якщо в тілі функції потрібно **більше рядків** логіки, доведеться повернути на місце дужки **й також ключове слово "return"** (стрілкові функції не вгадують якимось магічним чином, що саме потрібно повернути, або коли):
+Аналогічно, якщо в тілі функції потрібно **більше рядків** логіки, доведеться повернути на місце дужки, **А ТАКОЖ "return"** (стрілкові функції не вгадують якимось магічним чином, що саме потрібно повернути, або коли):
 
 ```js
 // Традиційна анонімна функція
 function (a, b){
-  let chuck = 42;
+  const chuck = 42;
   return a + b + chuck;
 }
 
 // Стрілкова функція
 (a, b) => {
-  let chuck = 42;
+  const chuck = 42;
   return a + b + chuck;
 }
 ```
@@ -97,12 +97,12 @@ function (a, b){
 
 ```js
 // Традиційна функція
-function bob (a){
+function bob(a) {
   return a + 100;
 }
 
 // Стрілкова функція
-let bob = a => a + 100;
+const bob2 = (a) => a + 100;
 ```
 
 ## Синтаксис
@@ -112,31 +112,34 @@ let bob = a => a + 100;
 Єдиний аргумент. З простим виразом явний `return` не потрібен:
 
 ```js
-param => expression
+<!-- markdownlint-disable-next-line -->
+param => expression;
+(param) => expression;
 ```
 
 Наявність декількох параметрів вимагає дужок. З простим виразом явний `return` не потрібен:
 
 ```js
-(param1, paramN) => expression
+(param1, paramN) => expression;
 ```
 
 Наявність декількох рядків інструкцій потребує дужок навколо тіла функції та явного `return`:
 
 ```js
-param => {
-  let a = 1;
+// Дужки необов'язкові, коли параметр лише один
+(param) => {
+  const a = 1;
   return a + param;
-}
+};
 ```
 
 Наявність декількох параметрів вимагає дужок, а декілька рядків інструкцій потребують дужок навколо тіла функції та явного `return`:
 
 ```js
 (param1, paramN) => {
-   let a = 1;
-   return a + param1 + paramN;
-}
+  const a = 1;
+  return a + param1 + paramN;
+};
 ```
 
 ### Поглиблений синтаксис
@@ -144,25 +147,25 @@ param => {
 Щоб повернути об'єкт, літеральний вираз потребує дужок:
 
 ```js
-params => ({foo: "a"}) // повертає об'єкт {foo: "a"}
+(params) => ({ foo: 'a' }); // повертає об'єкт { foo: "a" }
 ```
 
-Підтримуються [залишкові параметри](/uk/docs/Web/JavaScript/Reference/Functions/rest_parameters):
+Підтримуються [залишкові параметри](/uk/docs/Web/JavaScript/Reference/Functions/rest_parameters), причому в такому випадку обов'язкові дужки:
 
 ```js
-(a, b, ...r) => expression
+(a, b, ...r) => expression;
 ```
 
-Підтримуються [усталені параметри](/uk/docs/Web/JavaScript/Reference/Functions/Default_parameters):
+Підтримуються [усталені параметри](/uk/docs/Web/JavaScript/Reference/Functions/Default_parameters), причому в такому випадку обов'язкові дужки:
 
 ```js
-(a=400, b=20, c) => expression
+(a = 400, b = 20, c) => expression;
 ```
 
-Підтримується [деструктуризація](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) всередині параметрів:
+Підтримується [деструктурування](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) всередині параметрів, причому в такому випадку обов'язкові дужки:
 
 ```js
-([a, b] = [10, 20]) => a + b;  // результатом є 30
+([a, b] = [10, 20]) => a + b; // результатом є 30
 ({ a, b } = { a: 10, b: 20 }) => a + b; // результатом є 30
 ```
 
@@ -170,21 +173,22 @@ params => ({foo: "a"}) // повертає об'єкт {foo: "a"}
 
 ### Застосування стрілкових функцій як методів
 
-Як було вказано раніше, вирази стрілкових функцій найкраще підходять для функцій, які не є методами. Погляньмо, що трапиться, якщо все ж таки використати таку функцію як метод:
+Як було зауважено раніше, вирази стрілкових функцій найкраще підходять для функцій, які не є методами. Погляньмо, що трапиться, якщо все ж таки використати таку функцію як метод:
 
 ```js
 'use strict';
 
-var obj = { // не створює нового контексту
+const obj = {
+  // не створює нового контексту
   i: 10,
   b: () => console.log(this.i, this),
-  c: function() {
+  c() {
     console.log(this.i, this);
-  }
-}
+  },
+};
 
-obj.b(); // друкує undefined, Window {...} (або глобальний об'єкт)
-obj.c(); // друкує 10, Object {...}
+obj.b(); // друкує undefined, Window { /* … */ } (або глобальний об'єкт)
+obj.c(); // друкує 10, Object { /* … */ }
 ```
 
 Стрілкові функції не мають свого власного `this`. Ось іще один приклад, цього разу із застосуванням {{jsxref("Object.defineProperty()")}}:
@@ -192,17 +196,49 @@ obj.c(); // друкує 10, Object {...}
 ```js
 'use strict';
 
-var obj = {
-  a: 10
+const obj = {
+  a: 10,
 };
 
 Object.defineProperty(obj, 'b', {
   get: () => {
-    console.log(this.a, typeof this.a, this); // undefined 'undefined' Window {...} (або глобальний об'єкт)
+    console.log(this.a, typeof this.a, this); // undefined 'undefined' Window { /* … */ } (або глобальний об'єкт)
     return this.a + 10; // звертається до глобального об'єкту 'Window', а отже – 'this.a' поверне 'undefined'
-  }
+  },
 });
 ```
+
+Через те, що тіло [класу](/uk/docs/Web/JavaScript/Reference/Classes) має контекст `this`, стрілкові функції як [поля класу](/uk/docs/Web/JavaScript/Reference/Classes/Public_class_fields) замикаються на контекст `this` класу, і `this` всередині тіла стрілкової функції коректно вказуватиме на примірник (чи, для [статичних полів](/uk/docs/Web/JavaScript/Reference/Classes/static), на сам клас). Втім, через те, що це [замикання](/uk/docs/Web/JavaScript/Closures), а не власна прив'язка функції, значення `this` не змінюватиметься залежно від контексту виконання.
+
+```js
+class C {
+  a = 1;
+  autoBoundMethod = () => {
+    console.log(this.a);
+  };
+}
+const c = new C();
+c.autoBoundMethod(); // 1
+const { autoBoundMethod } = c;
+autoBoundMethod(); // 1
+// Якби це був звичайний метод, мало б бути undefined
+```
+
+Властивості зі стрілковими функціями часто звуть "автоматично прив'язаними методами", бо еквівалентом зі звичайними методами є:
+
+```js
+class C {
+  a = 1;
+  constructor() {
+    this.method = this.method.bind(this);
+  }
+  method() {
+    console.log(this.a);
+  }
+}
+```
+
+> **Примітка:** Поля класу визначаються на _примірнику_, не на прототипі, тож кожне створення примірника створить нову функцію та виділить нове замикання, потенційно призводячи до більшого використання пам'яті, ніж звичайний, неприв'язаний метод.
 
 ### Функції `call`, `apply` та `bind`
 
@@ -215,30 +251,30 @@ Object.defineProperty(obj, 'b', {
 // Традиційний приклад
 // ----------------------
 // Приклад простого об'єкту зі своїм власним "this".
-var obj = {
-    num: 100
-}
+const obj = {
+  num: 100,
+};
 
 // Встановлення "num" на об'єкті window, щоб проілюструвати, що це значення НЕ використовується.
 window.num = 2020; // йой!
 
 // Проста традиційна функція, яка оперує "this"
-var add = function (a, b, c) {
+const add = function (a, b, c) {
   return this.num + a + b + c;
-}
+};
 
 // call
-var result = add.call(obj, 1, 2, 3) // встановлює "obj" як контекст виконання функції
-console.log(result) // результат — 106
+const resultCall = add.call(obj, 1, 2, 3); // встановлює "obj" як контекст виконання функції
+console.log(resultCall); // результат — 106
 
 // apply
-const arr = [1, 2, 3]
-var result = add.apply(obj, arr) // встановлює "obj" як контекст виконання функції
-console.log(result) // результат — 106
+const arr = [1, 2, 3];
+const resultApply = add.apply(obj, arr); // встановлює "obj" як контекст виконання функції
+console.log(resultApply); // результат — 106
 
 // bind
-var result = add.bind(obj) // встановлює "obj" як контекст виконання функції
-console.log(result(1, 2, 3)) // результат — 106
+var resultBind = add.bind(obj); // встановлює "obj" як контекст виконання функції
+console.log(resultBind(1, 2, 3)); // результат — 106
 ```
 
 Якщо створити `add` як стрілкову функцію, то оскільки вона створена в контексті об'єкта `window` (глобальному контексті), вона вважатиме, що `this` і є `window`.
@@ -249,103 +285,106 @@ console.log(result(1, 2, 3)) // результат — 106
 // ----------------------
 
 // Приклад простого об'єкту зі своїм власним "this".
-var obj = {
-    num: 100
-}
+const obj = {
+  num: 100,
+};
 
 // Встановлення "num" на об'єкті window, щоб проілюструвати, як це значення підхоплюється під час виконання.
 window.num = 2020; // йой!
 
 // Стрілкова функція
-var add = (a, b, c) => this.num + a + b + c;
+const add = (a, b, c) => this.num + a + b + c;
 
 // call
-console.log(add.call(obj, 1, 2, 3)) // результат — 2026
+console.log(add.call(obj, 1, 2, 3)); // результат — 2026
 
 // apply
-const arr = [1, 2, 3]
-console.log(add.apply(obj, arr)) // результат — 2026
+const arr = [1, 2, 3];
+console.log(add.apply(obj, arr)); // результат — 2026
 
 // bind
-const bound = add.bind(obj)
-console.log(bound(1, 2, 3)) // результат — 2026
+const bound = add.bind(obj);
+console.log(bound(1, 2, 3)); // результат — 2026
 ```
 
-Можливо, найбільшу користь стрілкові функції приносять під час використання їх з методами рівня DOM (`setTimeout`, `setInterval`, `addEventListener`), що часто потребує певного замикання, методу `call`, `apply` чи `bind`, щоб пересвідчитись, що функція виконується в правильному контексті.
+Можливо, найбільшу користь стрілкові функції приносять під час використання їх з методами {{domxref("setTimeout()")}} й {{domxref("EventTarget/addEventListener()", "EventTarget.prototype.addEventListener()")}}, що часто потребує певного замикання, методу `call`, `apply` чи `bind`, щоб пересвідчитись, що функція виконується в правильному контексті.
 
-**Традиційний приклад:**
+#### Приклад з традиційною функцією
 
 ```js
-var obj = {
-    count : 10,
-    doSomethingLater : function (){
-        setTimeout(function(){ // Функція виконується в контексті об'єкта window
-            this.count++;
-            console.log(this.count);
-        }, 300);
-    }
-}
+const obj = {
+  count: 10,
+  doSomethingLater() {
+    setTimeout(function () {
+      // Функція виконується в контексті об'єкта window
+      this.count++;
+      console.log(this.count);
+    }, 300);
+  },
+};
 
 obj.doSomethingLater(); // консоль друкує "NaN", оскільки властивість "count" знаходиться не у контексті об'єкта window.
 ```
 
-**Приклад зі стрілковою функцією:**
+#### Приклад зі стрілковою функцією
 
 ```js
-var obj = {
-    count : 10,
-    doSomethingLater : function(){
-        // Традиційна функція прив'язує "this" до контексту об'єкта "obj".
-        setTimeout( () => {
-            // Оскільки стрілкова функція не має власної прив'язки, і
-            // setTimeout (як виклик функції) не створює такої прив'язки
-            // сам, то всередині буде використано контекст "obj" з
-            // традиційної функції.
-            this.count++;
-            console.log(this.count);
-        }, 300);
-    }
-}
+const obj = {
+  count: 10,
+  doSomethingLater() {
+    // Традиційна функція прив'язує "this" до контексту об'єкта "obj".
+    setTimeout(() => {
+      // Оскільки стрілкова функція не має власної прив'язки, і
+      // setTimeout (як виклик функції) не створює такої прив'язки
+      // сам, то всередині буде використано контекст "obj" з
+      // традиційної функції.
+      this.count++;
+      console.log(this.count);
+    }, 300);
+  },
+};
 
 obj.doSomethingLater();
 ```
 
-### Відсутність прив'язки до `arguments`
+### Відсутність прив'язки `arguments`
 
 Стрілкові функції не мають власного [об'єкта `arguments`](/uk/docs/Web/JavaScript/Reference/Functions/arguments). Тому в наступному прикладі `arguments` посилається на аргументи зовнішнього контексту:
 
 ```js
-var arguments = [1, 2, 3];
-var arr = () => arguments[0];
+const arguments = [1, 2, 3];
+const arr = () => arguments[0];
 
 arr(); // 1
 
 function foo(n) {
-  var f = () => arguments[0] + n; // неявна прив'язка до аргументів функції foo. arguments[0] дорівнює n
+  const f = () => arguments[0] + n; // неявна прив'язка до аргументів функції foo. arguments[0] дорівнює n
   return f();
 }
 
 foo(3); // 3 + 3 = 6
 ```
 
-В більшості випадків застосування [залишкових параметрів](/uk/docs/Web/JavaScript/Reference/Functions/rest_parameters) є доброю альтернативою використанню об'єкта `arguments`.
+> **Примітка:** В [суворому режимі](/uk/docs/Web/JavaScript/Reference/Strict_mode#sproshchennia-eval-i-arguments) не можна оголошувати змінну з назвою `arguments`, тож код вище призвів би до синтаксичної помилки. Це робить область видимості `arguments` куди простішою для осмислення.
+
+В більшості випадків застосування [решти параметрів](/uk/docs/Web/JavaScript/Reference/Functions/rest_parameters) є доброю альтернативою використанню об'єкта `arguments`.
 
 ```js
 function foo(n) {
-  var f = (...args) => args[0] + n;
+  const f = (...args) => args[0] + n;
   return f(10);
 }
 
 foo(1); // 11
 ```
 
-### Використання з оператором `new`
+### Використання з оператором new
 
-Стрілкові функції не можна використовувати як конструктор, тому вживання їх з оператором `new` викине помилку.
+Стрілкові функції не можна використовувати як конструктор, вживання їх з оператором `new` викине помилку.
 
 ```js
-var Foo = () => {};
-var foo = new Foo(); // TypeError: Foo is not a constructor
+const Foo = () => {};
+const foo = new Foo(); // TypeError: Foo is not a constructor
 ```
 
 ### Використання властивості `prototype`
@@ -353,11 +392,11 @@ var foo = new Foo(); // TypeError: Foo is not a constructor
 Стрілкові функції не мають властивості `prototype`.
 
 ```js
-var Foo = () => {};
+const Foo = () => {};
 console.log(Foo.prototype); // undefined
 ```
 
-### Вживання з ключовим словом `yield`
+### Вживання з ключовим словом yield
 
 Ключове слово [`yield`](/uk/docs/Web/JavaScript/Reference/Operators/yield) не можна використовувати всередині тіла стрілкової функції (окрім як всередині вкладених в неї звичайних функцій). Як наслідок, стрілкові функції не можуть бути генераторами.
 
@@ -368,23 +407,28 @@ console.log(Foo.prototype); // undefined
 В скороченому тілі вказується лише вираз, який стає неявним поверненим значенням. В блоці тіла функції необхідно вказати інструкцію `return` явно.
 
 ```js
-var func = x => x * x;
+const func = (x) => x * x;
 // скорочений запис тіла, неявне повернення значення
 
-var func = (x, y) => { return x + y; };
+const func2 = (x, y) => {
+  return x + y;
+};
 // всередині блокового тіла необхідно вказувати "return" явно
 ```
 
 ### Повернення об'єктних літералів
 
-Слід мати на увазі, що повернення об'єктних літералів в скороченому записі тіла функції `params => {object:literal}` не працюватиме так, як очікується.
+Слід мати на увазі, що повернення об'єктних літералів в скороченому записі тіла функції `(params) => {object:literal}` не працюватиме так, як очікується.
 
-```js
-var func = () => { foo: 1 };
+```js example-bad
+const func = () => { foo: 1 };
 // Виклик func() поверне undefined!
 
-var func = () => { foo: function() {} };
+const func2 = () => { foo: function() {} };
 // SyntaxError: function statement requires a name
+
+const func3 = () => { foo() {} };
+// SyntaxError: Unexpected token '{'
 ```
 
 Так відбувається через те, що код всередині фігурних дужок ({}) читається як набір інструкцій (тобто `foo` вважається міткою, а не ключем значення в об'єктному літералі).
@@ -392,38 +436,31 @@ var func = () => { foo: function() {} };
 Необхідно обгортати об'єктний літерал в круглі дужки:
 
 ```js
-var func = () => ({ foo: 1 });
+const func = () => ({ foo: 1 });
 ```
 
 ### Розриви рядка
 
 Стрілкова функція не може містити розрив рядка між параметрами і її стрілкою.
 
-```js
-var func = (a, b, c)
+```js example-bad
+const func = (a, b, c)
   => 1;
-// SyntaxError: expected expression, got '=>'
+// SyntaxError: Unexpected token '=>'
 ```
 
-Однак, це можна обійти шляхом додавання розриву рядка після стрілки, або вживання круглих і фігурних дужок так, як показано нижче. Це дасть можливість зберегти код гарним і легким. Можна також переривати рядок між аргументами функції.
+Однак це можна обійти шляхом додавання розриву рядка після стрілки, або вживання круглих і фігурних дужок так, як показано нижче. Це дасть можливість зберегти код гарним і легким. Можна також переривати рядок між аргументами функції.
 
 ```js
-var func = (a, b, c) =>
-  1;
+const func = (a, b, c) => 1;
 
-var func = (a, b, c) => (
-  1
-);
+const func2 = (a, b, c) => 1;
 
-var func = (a, b, c) => {
-  return 1
+const func3 = (a, b, c) => {
+  return 1;
 };
 
-var func = (
-  a,
-  b,
-  c
-) => 1;
+const func4 = (a, b, c) => 1;
 
 // помилки SyntaxError не буде
 ```
@@ -432,15 +469,17 @@ var func = (
 
 Хоча стрілка в стрілковій функції не є оператором, ці функції мають особливі правила парсингу, які по-іншому взаємодіють з [пріоритетом операторів](/uk/docs/Web/JavaScript/Reference/Operators/Operator_Precedence) у порівнянні зі звичайними функціями.
 
-```js
+```js example-bad
 let callback;
-
-callback = callback || function() {}; // добре
 
 callback = callback || () => {};
 // SyntaxError: invalid arrow-function arguments
+```
 
-callback = callback || (() => {});    // добре
+Через те, що `=>` має нижчий за більшість операторів пріоритет, для того, аби уникати розбору `callback || ()` як списку аргументів стрілкової функції, необхідні дужки.
+
+```js example-good
+callback = callback || (() => {}); // добре
 ```
 
 ## Приклади
@@ -449,42 +488,44 @@ callback = callback || (() => {});    // добре
 
 ```js
 // Порожня стрілкова функція повертає undefined
-let empty = () => {};
+const empty = () => {};
 
 (() => 'foobar')();
 // Повертає "foobar"
 // (це називається Вираз одразу викликаної функції)
 
-var simple = a => a > 15 ? 15 : a;
+const simple = (a) => (a > 15 ? 15 : a);
 simple(16); // 15
 simple(10); // 10
 
-let max = (a, b) => a > b ? a : b;
+const max = (a, b) => (a > b ? a : b);
 
-// Проста фільтрація, перебирання масиву, тощо...
+// Прості фільтрування, відображення масиву тощо.
 
-var arr = [5, 6, 13, 0, 1, 18, 23];
+const arr = [5, 6, 13, 0, 1, 18, 23];
 
-var sum = arr.reduce((a, b) => a + b);
+const sum = arr.reduce((a, b) => a + b);
 // 66
 
-var even = arr.filter(v => v % 2 == 0);
+const even = arr.filter((v) => v % 2 === 0);
 // [6, 0, 18]
 
-var double = arr.map(v => v * 2);
+const double = arr.map((v) => v * 2);
 // [10, 12, 26, 0, 2, 36, 46]
 
 // Більш лаконічні ланцюги промісів
-promise.then(a => {
-  // ...
-}).then(b => {
-  // ...
-});
+promise
+  .then((a) => {
+    // …
+  })
+  .then((b) => {
+    // …
+  });
 
 // Безпараметрові стрілкові функції, які простіше розібрати візуально
-setTimeout( () => {
+setTimeout(() => {
   console.log('Я відбудусь раніше');
-  setTimeout( () => {
+  setTimeout(() => {
     // Глибший код
     console.log('Я відбудусь пізніше');
   }, 1);
@@ -501,4 +542,4 @@ setTimeout( () => {
 
 ## Дивіться також
 
-- ["ES6 In Depth: Arrow functions" на hacks.mozilla.org](https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/)
+- ["Поглиблено про ES6: Стрілкові функції" на hacks.mozilla.org (англ.)](https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/)

@@ -4,18 +4,18 @@ slug: Web/JavaScript
 tags:
   - JavaScript
   - Landing
-  - Вчити
-  - l10n:priority
+  - Learn
+  - 'l10n:priority'
 translation_of: Web/JavaScript
 ---
 
 {{JsSidebar}}
 
-**JavaScript** (**JS**) – це невибаглива до ресурсів мова програмування з {{Glossary("First-class Function", "функціями першого класу")}}, код якої інтерпретується, або компілюється ["на льоту"](https://uk.wikipedia.org/wiki/JIT-%D0%BA%D0%BE%D0%BC%D0%BF%D1%96%D0%BB%D1%8F%D1%86%D1%96%D1%8F). Хоча JavaScript насамперед відома як скриптова мова для вебсторінок, вона також використовується у [багатьох небраузерних середовищах](https://uk.wikipedia.org/wiki/JavaScript#%D0%97%D0%B0%D1%81%D1%82%D0%BE%D1%81%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F), як от: {{Glossary("Node.js")}}, [Apache CouchDB](https://couchdb.apache.org/) та [Adobe Acrobat](https://opensource.adobe.com/dc-acrobat-sdk-docs/acrobatsdk/). JavaScript — це {{Glossary("Prototype-based programming", "прототипна")}}, однопотокова динамічна мова, що має декілька парадигм та підтримує об'єктноорієнтований та декларативні (зокрема функційне програмування) стилі. Більше [про JavaScript](/uk/docs/Web/JavaScript/About_JavaScript).
+**JavaScript** (**JS**) – це невибаглива до ресурсів мова програмування з {{Glossary("First-class Function", "функціями першого класу")}}, код якої інтерпретується, або компілюється ["на льоту"](https://uk.wikipedia.org/wiki/JIT-%D0%BA%D0%BE%D0%BC%D0%BF%D1%96%D0%BB%D1%8F%D1%86%D1%96%D1%8F). Хоча JavaScript насамперед відома як скриптова мова для вебсторінок, вона також використовується у [багатьох небраузерних середовищах](https://uk.wikipedia.org/wiki/JavaScript#%D0%97%D0%B0%D1%81%D1%82%D0%BE%D1%81%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F), як от: {{Glossary("Node.js")}}, [Apache CouchDB](https://couchdb.apache.org/) та [Adobe Acrobat](https://opensource.adobe.com/dc-acrobat-sdk-docs/acrobatsdk/). JavaScript — це [прототипна](/uk/docs/Glossary/Prototype-based_programming), [однопотокова](/uk/docs/Glossary/Thread) [динамічна](/uk/docs/Glossary/Dynamic_typing) мова, що має декілька парадигм та підтримує об'єктноорієнтований та декларативні (зокрема функційне програмування) стилі. Більше [про JavaScript](/uk/docs/Web/JavaScript/About_JavaScript).
 
 Цей розділ присвячено саме мові JavaScript, він не стосується тонкощів роботи з вебсторінками чи іншими середовищами виконання JavaScript. Інформацію стосовно конкретних {{Glossary("API")}} вебсторінок дивіться у [веб API](/uk/docs/Web/API) та {{Glossary("DOM")}}.
 
-Стандартами для JavaScript є [Специфікація мови ECMAScript](https://tc39.es/ecma262/) та [Специфікація API ECMAScript для інтернаціоналізації](https://tc39.es/ecma402/) (ECMA-402). Ця JavaScript документація заснована на останніх чорнових версіях ECMA-262 та ECMA-402. Тож у разі, якщо деякі [пропозиції нового ECMAScript функціоналу](https://github.com/tc39/proposals) уже реалізовано у браузерах, документація та приклади у статтях на MDN можуть використовувати деякі з цих нових особливостей.
+Стандартами для JavaScript є [Специфікація мови ECMAScript (англ.)](https://tc39.es/ecma262/) та [Специфікація API ECMAScript для інтернаціоналізації (англ.)](https://tc39.es/ecma402/) (ECMA-402). Щойно один браузер реалізовує певну функціональність, ми намагаємося її задокументувати. Це означає, що якщо певні [пропозиції нової функціональності ECMAScript](https://github.com/tc39/proposals) уже реалізовані у браузерах, то документація та приклади у статтях на MDN можуть використовувати деякі з цих нових особливостей. У більшості випадків таке трапляється між [стадіями (англ.)](https://tc39.es/process-document/) 3 та 4, а крім того – зазвичай до офіційного оприлюднення специфікації.
 
 Не плутайте JavaScript з [мовою програмування Java](https://uk.wikipedia.org/wiki/Java). Так, обидві мови, «Java» та «JavaScript», є товарними знаками чи зареєстрованими торговими марками Oracle у Сполучених Штатах та інших країнах. Проте ці дві мови програмування мають великі розбіжності у синтаксисі, семантиці та галузях застосування.
 
@@ -54,8 +54,8 @@ translation_of: Web/JavaScript
 
 - [Розуміння клієнтських фреймворків JavaScript](/uk/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks)
   - : JavaScript фреймворки – неодмінна частина сучасної клієнтської веброзробки, що забезпечує розробників перевіреними інструментами для побудови масштабованих інтерактивних вебзастосунків. Цей модуль надає деякі фундаментальні знання про те, як влаштовані клієнтські фреймворки, і як вони вписуються в ваш інструментарій, перед тим як розглянути найбільш популярні із них на сьогодні у наступних посібниках.
-- [Повторний вступ у JavaScript](/uk/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
-  - : Загальний огляд, націлений на тих, хто _вважає_, що знає JavaScript.
+- [Огляд мови JavaScript](/uk/docs/Web/JavaScript/Language_overview)
+  - : Огляд базових мови та семантики JavaScript для тих, хто прийшов з інших мов програмування і хоче різко набрати темп вивчення.
 - [Структури даних у JavaScript](/uk/docs/Web/JavaScript/Data_structures)
   - : Огляд наявних структур даних у JavaScript.
 - [Порівняння на схожість і однаковість](/uk/docs/Web/JavaScript/Equality_comparisons_and_sameness)
@@ -68,7 +68,7 @@ translation_of: Web/JavaScript
 - [Наслідування та ланцюжок прототипів](/uk/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
   - : Роз'яснення прототипного наслідування (яке часто недооцінюють та невірно розуміють).
 - [Суворий режим](/uk/docs/Web/JavaScript/Reference/Strict_mode)
-  - : Суворий режим встановлює неможливість використання змінної до її ініціалізації. Це обмежений варіант ECMAScript 5, який було створено для пришвидшення виконання програми та спрощення процесу зневадження.
+  - : Суворий режим встановлює неможливість використання змінної до її ініціалізації. Це обмежений варіант мови, який було створено для пришвидшення виконання програми та спрощення процесу зневадження.
 - [Типізовані масиви JavaScript](/uk/docs/Web/JavaScript/Typed_arrays)
   - : Типізовані масиви JavaScript надають інструмент для доступу до необроблених бінарних даних.
 - [Керування пам'яттю](/uk/docs/Web/JavaScript/Memory_Management)
@@ -95,7 +95,7 @@ translation_of: Web/JavaScript
 
 - [Інструменти розробника Firefox (англ.)](<[/uk/docs/Tools](https://firefox-source-docs.mozilla.org/devtools-user/index.html)>)
   - : [Вебконсоль (англ.)](<[/uk/docs/Tools/Web_Console](https://firefox-source-docs.mozilla.org/devtools-user/web_console/index.html)>), [Профайлер JavaScript (англ.)](https://firefox-source-docs.mozilla.org/devtools-user/performance/index.html), [Налагоджувач (англ.)](https://firefox-source-docs.mozilla.org/devtools-user/debugger/index.html) та інші.
-- [Оболонка JavaScript](/uk/docs/Web/JavaScript/Shells)
+- [Оболонка JavaScript](/uk/docs/Web/JavaScript/JavaScript_technologies_overview#obolonky)
   - : JavaScript-оболонка, що дозволяє швидко перевіряти фрагменти коду на JavaScript.
 - [Learn JavaScript](https://learnjavascript.online/)
   - : Прекрасний ресурс для веброзробників, що прагнуть навчатися. Вивчайте JavaScript в інтерактивному середовищі, з короткими лекціями та інтерактивними тестами, які дають оцінку в автоматичному режимі. Перші 40 уроків безкоштовні, а повний курс доступний за невелику одноразову плату.
