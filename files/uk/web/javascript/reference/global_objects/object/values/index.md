@@ -40,16 +40,16 @@ Object.values(obj)
 ### Застосування Object.values
 
 ```js
-const obj = { foo: 'bar', baz: 42 };
+const obj = { foo: "bar", baz: 42 };
 console.log(Object.values(obj)); // ['bar', 42]
 
 // Масивоподібний об'єкт
-const arrayLikeObj1 = { 0: 'a', 1: 'b', 2: 'c' };
+const arrayLikeObj1 = { 0: "a", 1: "b", 2: "c" };
 console.log(Object.values(arrayLikeObj1)); // ['a', 'b', 'c']
 
 // Масивоподібний об'єкт з випадковим порядком ключів
 // При використанні числових ключів значення повертаються згідно з числовим порядком ключів
-const arrayLikeObj2 = { 100: 'a', 2: 'b', 7: 'c' };
+const arrayLikeObj2 = { 100: "a", 2: "b", 7: "c" };
 console.log(Object.values(arrayLikeObj2)); // ['b', 'c', 'a']
 
 // getFoo – властивість, що не є перелічуваною
@@ -61,13 +61,13 @@ const myObj = Object.create(
         return this.foo;
       },
     },
-  },
+  }
 );
-myObj.foo = 'bar';
+myObj.foo = "bar";
 console.log(Object.values(myObj)); // ['bar']
 
 // необ'єктний аргумент приводиться до об'єкта
-console.log(Object.values('foo')); // ['f', 'o', 'o']
+console.log(Object.values("foo")); // ['f', 'o', 'o']
 ```
 
 ## Специфікації
