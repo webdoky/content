@@ -28,6 +28,7 @@ browser-compat: css.properties.height
 /* Значення <length> */
 height: 120px;
 height: 10em;
+height: 100vh;
 
 /* Значення <percentage> */
 height: 75%;

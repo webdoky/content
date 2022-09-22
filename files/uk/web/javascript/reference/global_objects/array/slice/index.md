@@ -18,10 +18,10 @@ browser-compat: javascript.builtins.Array.slice
 
 ## Синтаксис
 
-```js
-slice();
-slice(start);
-slice(start, end);
+```js-nolint
+slice()
+slice(start)
+slice(start, end)
 ```
 
 ### Параметри

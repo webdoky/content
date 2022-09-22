@@ -19,35 +19,21 @@ browser-compat: javascript.builtins.Array.every
 
 ## Синтаксис
 
-```js
+```js-nolint
 // Стрілкова функція
-every((element) => {
-  /* … */
-});
-every((element, index) => {
-  /* … */
-});
-every((element, index, array) => {
-  /* … */
-});
+every((element) => { /* … */ } )
+every((element, index) => { /* … */ } )
+every((element, index, array) => { /* … */ } )
 
 // Функція зворотного виклику
-every(callbackFn);
-every(callbackFn, thisArg);
+every(callbackFn)
+every(callbackFn, thisArg)
 
 // Вбудована функція зворотного виклику
-every(function (element) {
-  /* … */
-});
-every(function (element, index) {
-  /* … */
-});
-every(function (element, index, array) {
-  /* … */
-});
-every(function (element, index, array) {
-  /* … */
-}, thisArg);
+every(function(element) { /* … */ })
+every(function(element, index) { /* … */ })
+every(function(element, index, array){ /* … */ })
+every(function(element, index, array) { /* … */ }, thisArg)
 ```
 
 ### Параметри
@@ -137,7 +123,7 @@ console.log(isSubset([1, 2, 3, 4, 5, 6, 7], [5, 8, 7])); // false
 // ---------------
 let arr = [1, 2, 3, 4];
 arr.every((elem, index, arr) => {
-  arr[index + 1] -= 1;
+  arr[index + 1]--;
   console.log(`[${arr}][${index}] -> ${elem}`);
   return elem < 2;
 });

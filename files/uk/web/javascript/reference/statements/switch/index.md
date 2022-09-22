@@ -18,7 +18,7 @@ browser-compat: javascript.statements.switch
 
 ## Синтаксис
 
-```js
+```js-nolint
 switch (expression) {
   case value1:
     // Інструкції, які слід виконати, коли
@@ -96,7 +96,7 @@ switch (foo) {
 
 Пункти `case` і `default` подібні до [міток](/uk/docs/Web/JavaScript/Reference/Statements/label): вони вказують місця, куди контроль плину виконання може перестрибнути. Проте вони не створюють самі по собі лексичних [областей видимості](/uk/docs/Glossary/Scope) (так само як не виконують автоматично виходу – як показано вище). Наприклад:
 
-```js
+```js example-bad
 const action = 'say_hello';
 switch (action) {
   case 'say_hello':
@@ -163,7 +163,7 @@ switch (expr) {
     console.log('Манго та папайя — по $2.79 за кіло.');
     break;
   default:
-    console.log('Вибачте, у нас закінчились ' + expr + '.');
+    console.log(`Вибачте, у нас закінчились ${expr}.`);
 }
 
 console.log('Чи є щось іще, що ми могли б вам запропонувати?');

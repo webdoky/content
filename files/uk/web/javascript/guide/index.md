@@ -4,7 +4,7 @@ slug: Web/JavaScript/Guide
 tags:
   - Guide
   - JavaScript
-  - l10n:priority
+  - 'l10n:priority'
 ---
 
 {{jsSidebar("Посібник з JavaScript")}}
@@ -53,8 +53,8 @@ tags:
 - [`do...while`](/uk/docs/Web/JavaScript/Guide/Loops_and_iteration#instruktsiia-do...while)
 - [`continue`](/uk/docs/Web/JavaScript/Guide/Loops_and_iteration#instruktsiia-continue)
 - [`break`](/uk/docs/Web/JavaScript/Guide/Loops_and_iteration#instruktsiia-break)
-- [`for..in`](/uk/docs/Web/JavaScript/Guide/Loops_and_iteration#instruktsiia-for...in)
-- [`for..of`](/uk/docs/Web/JavaScript/Guide/Loops_and_iteration#instruktsiia-for...of)
+- [`for...in`](/uk/docs/Web/JavaScript/Guide/Loops_and_iteration#instruktsiia-for...in)
+- [`for...of`](/uk/docs/Web/JavaScript/Guide/Loops_and_iteration#instruktsiia-for...of)
 
 ## Функції
 
@@ -118,13 +118,13 @@ tags:
 - [Об'єкти та властивості](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#obiekty-ta-vlastyvosti)
 - [Створення об'єктів](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#stvorennia-novykh-obiektiv)
 - [Визначення методів](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#vyznachennia-metodiv)
-- [Геттер і сеттер](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#vyznachennoa-hetteriv-i-setteriv)
+- [Гетер і сетер](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#vyznachennoa-heteriv-i-seteriv)
 
 ## Застосування класів
 
-Огляд: [Застосування класів](/uk/docs/Web/JavaScript/Using_Classes)
+Огляд: [Застосування класів](/uk/docs/Web/JavaScript/Guide/Using_Classes)
 
-- [Оголошення класу](/uk/docs/Web/JavaScript/Using_Classes#oholoshennia-klasu)
+- [Оголошення класу](/uk/docs/Web/JavaScript/Guide/Using_Classes#oholoshennia-klasu)
 - [Різноманітні особливості класів](/uk/docs/Web/JavaScript/Guide/Using_Classes#konstruktor)
 - [Розширення й успадкування](/uk/docs/Web/JavaScript/Guide/Using_Classes#extends-y-uspadkuvannia)
 - [Чому саме класи?](/uk/docs/Web/JavaScript/Guide/Using_Classes#chomu-same-klasy)
@@ -144,7 +144,7 @@ tags:
 Огляд: [Ітератори та генератори](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators)
 
 - [Ітератори](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators#iteratory)
-- [Ітеровані об‘єкти](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators#iterovani-obiekty)
+- [Ітеровані об'єкти](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators#iterovani-obiekty)
 - [Генератори](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators#heneratory)
 
 ## Метапрограмування
