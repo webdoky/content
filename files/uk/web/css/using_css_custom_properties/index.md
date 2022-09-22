@@ -306,13 +306,13 @@ p {
 
 ```js
 // отримати змінну із вбудованого стилю
-element.style.getPropertyValue('--my-var');
+element.style.getPropertyValue("--my-var");
 
 // отримати змінну звідки завгодно
-getComputedStyle(element).getPropertyValue('--my-var');
+getComputedStyle(element).getPropertyValue("--my-var");
 
 // встановити змінну на вбудованому стилі
-element.style.setProperty('--my-var', jsVar + 4);
+element.style.setProperty("--my-var", jsVar + 4);
 ```
 
 ## Дивіться також
