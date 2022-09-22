@@ -1,5 +1,5 @@
 ---
-title: 'SVG: масштабована векторна графіка'
+title: "SVG: масштабована векторна графіка"
 slug: Web/SVG
 tags:
   - 2D Graphics
@@ -13,7 +13,7 @@ tags:
   - Scalable Images
   - Vector Graphics
   - Web
-  - 'l10n:priority'
+  - "l10n:priority"
 ---
 
 {{SVGRef}}
