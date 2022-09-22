@@ -1,5 +1,5 @@
 ---
-title: '<div>: елемент поділу вмісту'
+title: "<div>: елемент поділу вмісту"
 slug: Web/HTML/Element/div
 tags:
   - Content Division
