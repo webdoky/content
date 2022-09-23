@@ -146,8 +146,8 @@
         {
           "name": "relative-link",
           "message": "Internal links should start with '/'",
-          "search": "(en-US/docs",
-          "replace": "(/en-US/docs",
+          "search": "(uk/docs",
+          "replace": "(/uk/docs",
           "skipCode": true
         },
         {
@@ -156,6 +156,13 @@
           "searchPattern": "/  +$/gm",
           "replace": "",
           "skipCode": false
+        },
+        {
+          "name": "no-en-us-link",
+          "message": "Internal links should lead to '/uk'",
+          "search": "(/en-US/docs",
+          "replace": "(/uk/docs",
+          "skipCode": true
         }
       ]
     }
