@@ -97,7 +97,7 @@ Number(undefined); // NaN
 - {{jsxref("Number.isInteger()")}}
   - : З'ясовує, чи є передане значення цілим числом.
 - {{jsxref("Number.isSafeInteger()")}}
-  - : З'ясовує, чи є передане значення безпечним числом (числом в діапазоні від -(2<sup>53</sup> - 1) до 2<sup>53</sup> - 1).
+  - : З'ясовує, чи є передане значення безпечним цілим (числом в діапазоні від -(2<sup>53</sup> - 1) до 2<sup>53</sup> - 1).
 - {{jsxref("Number.parseFloat()")}}
   - : Те саме, що й глобальна функція {{jsxref("parseFloat", "parseFloat()")}}.
 - {{jsxref("Number.parseInt()")}}
