@@ -26,35 +26,21 @@ browser-compat: javascript.builtins.Array.find
 
 ## Синтаксис
 
-```js
+```js-nolint
 // Стрілкова функція
-find((element) => {
-  /* … */
-});
-find((element, index) => {
-  /* … */
-});
-find((element, index, array) => {
-  /* … */
-});
+find((element) => { /* … */ } )
+find((element, index) => { /* … */ } )
+find((element, index, array) => { /* … */ } )
 
 // Функція зворотного виклику
-find(callbackFn);
-find(callbackFn, thisArg);
+find(callbackFn)
+find(callbackFn, thisArg)
 
 // Функція зворотного виклику, оголошена на місці
-find(function (element) {
-  /* … */
-});
-find(function (element, index) {
-  /* … */
-});
-find(function (element, index, array) {
-  /* … */
-});
-find(function (element, index, array) {
-  /* … */
-}, thisArg);
+find(function(element) { /* … */ })
+find(function(element, index) { /* … */ })
+find(function(element, index, array){ /* … */ })
+find(function(element, index, array) { /* … */ }, thisArg)
 ```
 
 ### Параметри

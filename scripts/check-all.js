@@ -1,12 +1,13 @@
-import glob from 'glob';
+import glob from "glob";
+import every from "lodash/every";
 
-import checkFile from './utils/check-file';
-import debug from './utils/debug';
-import sequentialAsyncMap from './utils/sequential-async-map';
+import checkFile from "./utils/check-file";
+import debug from "./utils/debug";
+import sequentialAsyncMap from "./utils/sequential-async-map";
 
 async function getAllFiles() {
   return new Promise((resolve, reject) => {
-    glob('files/uk/**/*.@(html|md)', { nodir: true }, (error, filePaths) => {
+    glob("files/uk/**/*.@(html|md)", { nodir: true }, (error, filePaths) => {
       debug(filePaths);
       if (error) {
         reject(error);
@@ -18,7 +19,6 @@ async function getAllFiles() {
 }
 
 export default async function checkAll() {
-  return (await sequentialAsyncMap(await getAllFiles(), checkFile)).every(
-    (value) => value,
-  );
+  const checkResults = await sequentialAsyncMap(await getAllFiles(), checkFile);
+  return every(checkResults);
 }
