@@ -128,7 +128,7 @@ browser-compat: javascript.builtins.Array
 - {{jsxref("Array.prototype.values()")}} ("значення")
   - : Повертає новий об'єкт [_ітератора масиву_](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators), що містить значення за кожним індексом масиву.
 - [`Array.prototype[@@iterator]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/@@iterator) ("ітератор")
-  - : Усталено повертає функцію [`values()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/values).
+  - : Усталено є псевдонімом функції [`values()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/values).
 
 ## Приклади
 
@@ -142,17 +142,17 @@ browser-compat: javascript.builtins.Array
 
 ```js
 // Масив 'fruits' створений за допомогою запису літерела масиву
-const fruits = ['Яблуко', 'Банан'];
+const fruits = ["Яблуко", "Банан"];
 console.log(fruits.length);
 // 2
 
 // Масив 'fruits2' створений за допомогою конструктора Array()
-const fruits2 = new Array('Яблуко', 'Банан');
+const fruits2 = new Array("Яблуко", "Банан");
 console.log(fruits2.length);
 // 2
 
 // Масив 'fruits3' створений за допомогою String.prototype.split().
-const fruits3 = 'Яблуко, Банан'.split(', ');
+const fruits3 = "Яблуко, Банан".split(", ");
 console.log(fruits3.length);
 // 2
 ```
@@ -162,8 +162,8 @@ console.log(fruits3.length);
 Цей приклад використовує метод [`join()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/join) для створення рядка з масиву `fruits`.
 
 ```js
-const fruits = ['Яблуко', 'Банан'];
-const fruitsString = fruits.join(', ');
+const fruits = ["Яблуко", "Банан"];
+const fruitsString = fruits.join(", ");
 console.log(fruitsString);
 // "Яблуко, Банан"
 ```
@@ -173,7 +173,7 @@ console.log(fruitsString);
 Цей приклад показує, як отримати елементи масиву `fruits` шляхом вказання числа, що є індексом їх позиції в масиві.
 
 ```js
-const fruits = ['Яблуко', 'Банан'];
+const fruits = ["Яблуко", "Банан"];
 
 // Індекс першого елемента масиву – завжди 0.
 fruits[0]; // Яблуко
@@ -195,8 +195,8 @@ fruits[99]; // undefined
 Цей приклад використовує метод [`indexOf()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf) для пошуку позиції (індексу) рядка `"Банан"` у масиві `fruits`.
 
 ```js
-const fruits = ['Яблуко', 'Банан'];
-console.log(fruits.indexOf('Банан'));
+const fruits = ["Яблуко", "Банан"];
+console.log(fruits.indexOf("Банан"));
 // 1
 ```
 
@@ -205,14 +205,14 @@ console.log(fruits.indexOf('Банан'));
 Цей приклад показує два способи перевірки того, чи містить масив `fruits` значення `"Банан"` і `"Вишня"`: спершу за допомогою [`includes()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/includes), а тоді – із методом [`indexOf()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf), щоб перевірити, чи не рівний повернений індекс `-1`.
 
 ```js
-const fruits = ['Яблуко', 'Банан'];
+const fruits = ["Яблуко", "Банан"];
 
-fruits.includes('Банан'); // true
-fruits.includes('Вишня'); // false
+fruits.includes("Банан"); // true
+fruits.includes("Вишня"); // false
 
 // Якщо indexOf() не повертає -1, то масив містить переданий елемент.
-fruits.indexOf('Банан') !== -1; // true
-fruits.indexOf('Вишня') !== -1; // false
+fruits.indexOf("Банан") !== -1; // true
+fruits.indexOf("Вишня") !== -1; // false
 ```
 
 ### Додання елемента в кінець масиву
@@ -220,8 +220,8 @@ fruits.indexOf('Вишня') !== -1; // false
 Цей приклад використовує метод [`push()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/push), щоб докласти новий рядок у масив `fruits`.
 
 ```js
-const fruits = ['Яблуко', 'Банан'];
-const newLength = fruits.push('Апельсин');
+const fruits = ["Яблуко", "Банан"];
+const newLength = fruits.push("Апельсин");
 console.log(fruits);
 // ["Яблуко", "Банан", "Апельсин"]
 console.log(newLength);
@@ -233,7 +233,7 @@ console.log(newLength);
 Цей приклад використовує метод [`pop()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/pop) для усунення останнього елемента з масиву `fruits`.
 
 ```js
-const fruits = ['Яблуко', 'Банан', 'Апельсин'];
+const fruits = ["Яблуко", "Банан", "Апельсин"];
 const removedItem = fruits.pop();
 console.log(fruits);
 // ["Яблуко", "Банан"]
@@ -248,7 +248,7 @@ console.log(removedItem);
 Цей приклад використовує метод [`splice()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) для усунення останній 3 елементів з масиву `fruits`.
 
 ```js
-const fruits = ['Яблуко', 'Банан', 'Полуниця', 'Манго', 'Вишня'];
+const fruits = ["Яблуко", "Банан", "Полуниця", "Манго", "Вишня"];
 const start = -3;
 const removedItems = fruits.splice(start);
 console.log(fruits);
@@ -262,7 +262,7 @@ console.log(removedItems);
 Цей приклад використовує метод [`splice()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) для урізання масиву `fruits` до його перших 2 елементів.
 
 ```js
-const fruits = ['Яблуко', 'Банан', 'Полуниця', 'Манго', 'Вишня'];
+const fruits = ["Яблуко", "Банан", "Полуниця", "Манго", "Вишня"];
 const start = 2;
 const removedItems = fruits.splice(start);
 console.log(fruits);
@@ -276,7 +276,7 @@ console.log(removedItems);
 Цей приклад використовує метод [`shift()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/shift) для усунення першого елемента з масиву `fruits`.
 
 ```js
-const fruits = ['Яблуко', 'Банан'];
+const fruits = ["Яблуко", "Банан"];
 const removedItem = fruits.shift();
 console.log(fruits);
 // ["Банан"]
@@ -291,7 +291,7 @@ console.log(removedItem);
 Цей приклад використовує метод [`splice()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) для усунення перших 3 елементів з масиву `fruits`.
 
 ```js
-const fruits = ['Яблуко', 'Полуниця', 'Вишня', 'Банан', 'Манго'];
+const fruits = ["Яблуко", "Полуниця", "Вишня", "Банан", "Манго"];
 const start = 0;
 const deleteCount = 3;
 const removedItems = fruits.splice(start, deleteCount);
@@ -306,8 +306,8 @@ console.log(removedItems);
 Цей приклад використовує метод [`unshift()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift), щоб додати (за індексом `0`) новий елемент у масив `fruits` – роблячи його новим першим елементом цього масиву.
 
 ```js
-const fruits = ['Банан', 'Манго'];
-const newLength = fruits.unshift('Полуниця');
+const fruits = ["Банан", "Манго"];
+const newLength = fruits.unshift("Полуниця");
 console.log(fruits);
 // ["Полуниця", "Банан", "Манго"]
 console.log(newLength);
@@ -319,8 +319,8 @@ console.log(newLength);
 Цей приклад використовує метод [`splice()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) для усунення рядка `"Банан"` із масиву `fruits` – шляхом вказання індексу-позиції значення `"Банан"`.
 
 ```js
-const fruits = ['Полуниця', 'Банан', 'Манго'];
-const start = fruits.indexOf('Банан');
+const fruits = ["Полуниця", "Банан", "Манго"];
+const start = fruits.indexOf("Банан");
 const deleteCount = 1;
 const removedItems = fruits.splice(start, deleteCount);
 console.log(fruits);
@@ -334,7 +334,7 @@ console.log(removedItems);
 Цей приклад використовує метод [`splice()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) для усунення рядків `"Банан"` і `"Полуниця"` з масиву `fruits` – шляхом вказання індексу-позиції значення `"Банан"`, поруч із кількістю елементів до видалення.
 
 ```js
-const fruits = ['Яблуко', 'Банан', 'Полуниця', 'Манго'];
+const fruits = ["Яблуко", "Банан", "Полуниця", "Манго"];
 const start = 1;
 const deleteCount = 2;
 const removedItems = fruits.splice(start, deleteCount);
@@ -349,10 +349,10 @@ console.log(removedItems);
 Цей приклад використовує метод [`splice()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) для заміни останніх 2 елементів масиву `fruits` новими елементами.
 
 ```js
-const fruits = ['Яблуко', 'Банан', 'Полуниця'];
+const fruits = ["Яблуко", "Банан", "Полуниця"];
 const start = -2;
 const deleteCount = 2;
-const removedItems = fruits.splice(start, deleteCount, 'Манго', 'Вишня');
+const removedItems = fruits.splice(start, deleteCount, "Манго", "Вишня");
 console.log(fruits);
 // ["Яблуко", "Манго", "Вишня"]
 console.log(removedItems);
@@ -364,7 +364,7 @@ console.log(removedItems);
 Цей приклад використовує цикл [`for...of`](/uk/docs/Web/JavaScript/Reference/Statements/for...of) для перебору масиву `fruits`, виводячи кожний елемент у консоль.
 
 ```js
-const fruits = ['Яблуко', 'Манго', 'Вишня'];
+const fruits = ["Яблуко", "Манго", "Вишня"];
 for (const fruit of fruits) {
   console.log(fruit);
 }
@@ -380,7 +380,7 @@ for (const fruit of fruits) {
 Цей приклад використовує метод [`forEach()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach), щоб викликати функцію над кожним елементом масиву `fruits`; функція призводить до виведення у консоль кожного елемента поруч зі своїм індексом.
 
 ```js
-const fruits = ['Яблуко', 'Манго', 'Вишня'];
+const fruits = ["Яблуко", "Манго", "Вишня"];
 fruits.forEach((item, index, array) => {
   console.log(item, index);
 });
@@ -394,8 +394,8 @@ fruits.forEach((item, index, array) => {
 Цей приклад використовує метод [`concat()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/concat) для злиття масиву `fruits` із масивом `moreFruits`, щоб утворити новий масив `combinedFruits`. Зверніть увагу, що `fruits` і `moreFruits` залишаються незмінними.
 
 ```js
-const fruits = ['Яблуко', 'Банан', 'Полуниця'];
-const moreFruits = ['Манго', 'Вишня'];
+const fruits = ["Яблуко", "Банан", "Полуниця"];
+const moreFruits = ["Манго", "Вишня"];
 const combinedFruits = fruits.concat(moreFruits);
 console.log(combinedFruits);
 // ["Яблуко", "Банан", "Полуниця", "Манго", "Вишня"]
@@ -414,7 +414,7 @@ console.log(moreFruits);
 Цей приклад показує три способи створення нового масиву на основі наявного масиву `fruits`: спершу за допомогою [синтаксису розгортання](/uk/docs/Web/JavaScript/Reference/Operators/Spread_syntax), далі за допомогою метода [`from()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/from), а тоді – за допомогою метода [`slice()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/slice).
 
 ```js
-const fruits = ['Полуниця', 'Манго'];
+const fruits = ["Полуниця", "Манго"];
 
 // Створення копії за допомогою синтаксису розгортання.
 const fruitsCopy = [...fruits];
@@ -440,12 +440,12 @@ const fruitsDeepCopy = JSON.parse(JSON.stringify(fruits));
 Врешті решт, важливо розуміти, що присвоєння наявного масиву новій змінній не створює копій ані масиву, ані його елементів. Натомість нова змінна є лишень посиланням чи псевдонімом початкового масиву; тобто початкове ім'я масиву та нове ім'я змінної є лише двома іменами одного й того ж об'єкта (і, таким чином, завжди будуть вважатись [строго рівними](/uk/docs/Web/JavaScript/Equality_comparisons_and_sameness#stroha-rivnist-za-dopomohoiu-)). Отже, якщо внести будь-які зміни або у значення початкового масиву, або у значення нової змінної, то зміняться обидва:
 
 ```js
-const fruits = ['Полуниця', 'Манго'];
+const fruits = ["Полуниця", "Манго"];
 const fruitsAlias = fruits;
 // 'fruits' і 'fruitsAlias' – один і той же об'єкт, строго рівні.
 fruits === fruitsAlias; // true
 // Будь-які зміни масиву 'fruits' також змінять 'fruitsAlias'.
-fruits.unshift('Яблуко', 'Банан');
+fruits.unshift("Яблуко", "Банан");
 console.log(fruits);
 // ['Яблуко', 'Банан', 'Полуниця', 'Манго']
 console.log(fruitsAlias);
@@ -460,11 +460,11 @@ console.log(fruitsAlias);
 
 ```js
 const inventory = [
-  { name: 'холодок', type: 'vegetables' },
-  { name: 'банани', type: 'fruit' },
-  { name: 'коза', type: 'meat' },
-  { name: 'вишні', type: 'fruit' },
-  { name: 'риба', type: 'meat' },
+  { name: "холодок", type: "vegetables" },
+  { name: "банани", type: "fruit" },
+  { name: "коза", type: "meat" },
+  { name: "вишні", type: "fruit" },
+  { name: "риба", type: "meat" },
 ];
 ```
 
@@ -494,22 +494,22 @@ console.log(result.vegetables);
 
 ```js
 const board = [
-  ['R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'],
-  ['P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'],
-  [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-  [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-  [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-  [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-  ['p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'],
-  ['r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'],
+  ["R", "N", "B", "Q", "K", "B", "N", "R"],
+  ["P", "P", "P", "P", "P", "P", "P", "P"],
+  [" ", " ", " ", " ", " ", " ", " ", " "],
+  [" ", " ", " ", " ", " ", " ", " ", " "],
+  [" ", " ", " ", " ", " ", " ", " ", " "],
+  [" ", " ", " ", " ", " ", " ", " ", " "],
+  ["p", "p", "p", "p", "p", "p", "p", "p"],
+  ["r", "n", "b", "q", "k", "b", "n", "r"],
 ];
 
-console.log(`${board.join('\n')}\n\n`);
+console.log(`${board.join("\n")}\n\n`);
 
 // Хід королівського пішака на 2 вперед
 board[4][4] = board[6][4];
-board[6][4] = ' ';
-console.log(board.join('\n'));
+board[6][4] = " ";
+console.log(board.join("\n"));
 ```
 
 Ось – вивід:
@@ -590,7 +590,7 @@ renderer['3d'].setTexture(model, 'character.png');  // працює як слі�
 `2` у `years[2]` приводиться до рядка рушієм JavaScript через неявне перетворення `toString`. Як наслідок – `'2'` і `'02'` посилались би на дві різні комірки об'єкта `years`, і наступний приклад міг би дати `true`:
 
 ```js
-console.log(years['2'] != years['02']);
+console.log(years["2"] != years["02"]);
 ```
 
 ### Взаємозв'язок між довжиною та числовими властивостями
@@ -603,14 +603,14 @@ console.log(years['2'] != years['02']);
 
 ```js
 const fruits = [];
-fruits.push('банан', 'яблуко', 'персик');
+fruits.push("банан", "яблуко", "персик");
 console.log(fruits.length); // 3
 ```
 
 При встановленні властивості масиву JavaScript, за умови що значення є дійсним індексом масиву і що індекс лежить за поточними межами масиву, рушій оновить властивість {{jsxref("Array/length", "length")}} масиву відповідним чином:
 
 ```js
-fruits[5] = 'манго';
+fruits[5] = "манго";
 console.log(fruits[5]); // 'манго'
 console.log(Object.keys(fruits)); // ['0', '1', '2', '5']
 console.log(fruits.length); // 6
@@ -648,7 +648,7 @@ console.log(fruits.length); // 2
 // Зневажати регістр
 
 const myRe = /d(b+)(d)/i;
-const execResult = myRe.exec('cdbBdbsbz');
+const execResult = myRe.exec("cdbBdbsbz");
 console.log(execResult.input); // 'cdbBdbsbz'
 console.log(execResult.index); // 1
 console.log(execResult); // Array(3) [ "dbBd", "bB", "d" ]
