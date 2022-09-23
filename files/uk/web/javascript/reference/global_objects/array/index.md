@@ -128,7 +128,7 @@ browser-compat: javascript.builtins.Array
 - {{jsxref("Array.prototype.values()")}} ("значення")
   - : Повертає новий об'єкт [_ітератора масиву_](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators), що містить значення за кожним індексом масиву.
 - [`Array.prototype[@@iterator]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/@@iterator) ("ітератор")
-  - : Усталено повертає функцію [`values()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/values).
+  - : Усталено є псевдонімом функції [`values()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/values).
 
 ## Приклади
 
