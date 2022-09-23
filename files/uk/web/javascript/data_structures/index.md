@@ -22,8 +22,6 @@ foo = "bar"; // тепер foo – рядок
 foo = true; // тепер foo – булеве значення
 ```
 
-JavaScript is also a [weakly typed](https://en.wikipedia.org/wiki/Strong_and_weak_typing) language, which means it allows implicit type conversion when an operation involves mismatched types, instead of throwing type errors.
-
 Крім того, JavaScript – це [слабко типізована (англ.)](https://en.wikipedia.org/wiki/Strong_and_weak_typing) мова, тобто вона дозволяє неявне приведення типів, коли операція залучає типи, що не збігаються, замість викидання помилок типів.
 
 ```js
