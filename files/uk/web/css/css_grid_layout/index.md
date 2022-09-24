@@ -20,7 +20,7 @@ spec-urls: https://drafts.csswg.org/css-grid/
 
 ## Базовий приклад
 
-Приклад нижче демонструє сітку триколонкової доріжки, в котрій нові ряди створюються щонайменше зі 100 пікселями, а щонайбільше - з auto. Елементи розташовані на сітці за допомогою рядного розташування.
+Приклад нижче демонструє сітку триколонкової доріжки, в котрій нові ряди створюються щонайменше зі 100 пікселями, а щонайбільше - з auto. Елементи розташовані на сітці за допомогою розташування на основі ліній.
 
 ```css hidden
 * {
@@ -132,8 +132,8 @@ spec-urls: https://drafts.csswg.org/css-grid/
 - [Базові концепції сіткового компонування](/uk/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout)
 - [Взаємини сіткового компонування з іншими методиками компонування](/uk/docs/Web/CSS/CSS_Grid_Layout/Relationship_of_Grid_Layout)
 - [Шаблонні простори сітки](/uk/docs/Web/CSS/CSS_Grid_Layout/Grid_Template_Areas)
-- [Сіткове компонування з розташуванням на основі строїв](/uk/docs/Web/CSS/CSS_Grid_Layout/Line-based_Placement_with_CSS_Grid)
-- [Сіткове компонування з іменованими строями сітки](/uk/docs/Web/CSS/CSS_Grid_Layout/Layout_using_Named_Grid_Lines)
+- [Сіткове компонування з розташуванням на основі ліній](/uk/docs/Web/CSS/CSS_Grid_Layout/Line-based_Placement_with_CSS_Grid)
+- [Сіткове компонування з іменованими сітковими лініями](/uk/docs/Web/CSS/CSS_Grid_Layout/Layout_using_Named_Grid_Lines)
 - [Автоматичне розташування при сітковому компонуванні](/uk/docs/Web/CSS/CSS_Grid_Layout/Auto-placement_in_CSS_Grid_Layout)
 - [Рамкове шикування при сітковому компонуванні](/uk/docs/Web/CSS/CSS_Grid_Layout/Box_Alignment_in_CSS_Grid_Layout)
 - [Сітки, логічні значення та напрям письма](/uk/docs/Web/CSS/CSS_Grid_Layout/CSS_Grid_Logical_Values_and_Writing_Modes)
