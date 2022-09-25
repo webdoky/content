@@ -52,8 +52,6 @@ includes(searchElement, fromIndex)
 
 > **Примітка:** Технічно, `includes()` використовує [`sameValueZero`](/uk/docs/Web/JavaScript/Equality_comparisons_and_sameness#same-value-zero_equality) алгоритм для визначення, чи було знайдено шуканий елемент.
 
-When used on [sparse arrays](/uk/docs/Web/JavaScript/Guide/Indexed_collections#sparse_arrays), the `includes()` method iterates empty slots as if they have the value `undefined`.
-
 Бувши використаним на [розріджених масивах](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy), метод `includes()` ітерує порожні комірки так, ніби вони містять значення `undefined`.
 
 ## Приклади
