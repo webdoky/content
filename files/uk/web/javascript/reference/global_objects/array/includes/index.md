@@ -46,11 +46,19 @@ includes(searchElement, fromIndex)
 
 Булеве значення, яке дорівнює `true`, якщо значення `searchElement` було знайдено всередині масиву (або частини масиву, визначеної індексом `fromIndex`, якщо такий було задано).
 
+## Опис
+
 Всі нульові значення вважаються рівними, незалежно від знаку. Таким чином, `-0` вважається еквівалентним як `0`, так і `+0`, проте `false` _не_ вважається рівним `0`. [`NaN`](/uk/docs/Web/JavaScript/Reference/Global_Objects/NaN) можна коректно шукати.
 
 > **Примітка:** Технічно, `includes()` використовує [`sameValueZero`](/uk/docs/Web/JavaScript/Equality_comparisons_and_sameness#same-value-zero_equality) алгоритм для визначення, чи було знайдено шуканий елемент.
 
+When used on [sparse arrays](/uk/docs/Web/JavaScript/Guide/Indexed_collections#sparse_arrays), the `includes()` method iterates empty slots as if they have the value `undefined`.
+
+Бувши використаним на [розріджених масивах](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy), метод `includes()` ітерує порожні комірки так, ніби вони містять значення `undefined`.
+
 ## Приклади
+
+### Використання includes()
 
 ```js
 [1, 2, 3].includes(2); // true
@@ -58,7 +66,7 @@ includes(searchElement, fromIndex)
 [1, 2, 3].includes(3, 3); // false
 [1, 2, 3].includes(3, -1); // true
 [1, 2, NaN].includes(NaN); // true
-['1', '2', '3'].includes(3); // false
+["1", "2", "3"].includes(3); // false
 ```
 
 ### Якщо `fromIndex` дорівнює довжині масиву, або більший за неї
@@ -66,10 +74,10 @@ includes(searchElement, fromIndex)
 У випадку, якщо `fromIndex` більший або дорівнює довжині масиву – буде повернуто значення `false`. В такому разі пошук виконуватись не буде.
 
 ```js
-const arr = ['a', 'b', 'c'];
+const arr = ["a", "b", "c"];
 
-arr.includes('c', 3); // false
-arr.includes('c', 100); // false
+arr.includes("c", 3); // false
+arr.includes("c", 100); // false
 ```
 
 ### Якщо обчислений індекс менший за 0
@@ -81,25 +89,33 @@ arr.includes('c', 100); // false
 // fromIndex дорівнює -100
 // обчислений індекс дорівнює 3 + (-100) = -97
 
-const arr = ['a', 'b', 'c'];
+const arr = ["a", "b", "c"];
 
-arr.includes('a', -100); // true
-arr.includes('b', -100); // true
-arr.includes('c', -100); // true
-arr.includes('a', -2); // false
+arr.includes("a", -100); // true
+arr.includes("b", -100); // true
+arr.includes("c", -100); // true
+arr.includes("a", -2); // false
 ```
 
-### Застосування includes() як загального методу
+### Використання includes() на розріджених масивах
 
-Метод `includes()` умисно зроблений загальним. Він не вимагає від значення `this` бути об'єктом `Array`, тож його можна застосувати й до інших типів об'єктів (зокрема – масивоподібних об'єктів).
+Можна шукати в розрідженому масиві `undefined` – і отримати `true`.
+
+```js
+console.log([1, , 3].includes(undefined)); // true
+```
+
+### Застосування includes() як узагальненого методу
+
+Метод `includes()` умисно зроблений узагальненим. Він не вимагає від значення `this` бути об'єктом `Array`, тож його можна застосувати й до інших типів об'єктів (зокрема – масивоподібних об'єктів).
 
 Наступний приклад ілюструє виклик методу `includes()` на об'єкті [arguments](/uk/docs/Web/JavaScript/Reference/Functions/arguments) функції.
 
 ```js
 (function () {
-  console.log(Array.prototype.includes.call(arguments, 'a')); // true
-  console.log(Array.prototype.includes.call(arguments, 'd')); // false
-})('a', 'b', 'c');
+  console.log(Array.prototype.includes.call(arguments, "a")); // true
+  console.log(Array.prototype.includes.call(arguments, "d")); // false
+})("a", "b", "c");
 ```
 
 ## Специфікації
