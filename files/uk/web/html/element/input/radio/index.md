@@ -90,20 +90,22 @@ browser-compat: html.elements.input.type_radio
 
 ```html
 <form>
-  <p>Будь ласка, оберіть бажаний спосіб зв'язку:</p>
-  <div>
-    <input type="radio" id="contactChoice1" name="contact" value="email" />
-    <label for="contactChoice1">Електронна пошта</label>
+  <fieldset>
+    <legend>Будь ласка, оберіть бажаний спосіб зв'язку:</legend>
+    <div>
+      <input type="radio" id="contactChoice1" name="contact" value="email" />
+      <label for="contactChoice1">Електронна пошта</label>
 
-    <input type="radio" id="contactChoice2" name="contact" value="phone" />
-    <label for="contactChoice2">Телефон</label>
+      <input type="radio" id="contactChoice2" name="contact" value="phone" />
+      <label for="contactChoice2">Телефон</label>
 
-    <input type="radio" id="contactChoice3" name="contact" value="mail" />
-    <label for="contactChoice3">Пошта</label>
-  </div>
-  <div>
-    <button type="submit">Надіслати</button>
-  </div>
+      <input type="radio" id="contactChoice3" name="contact" value="mail" />
+      <label for="contactChoice3">Пошта</label>
+    </div>
+    <div>
+      <button type="submit">Надіслати</button>
+    </div>
+  </fieldset>
 </form>
 ```
 
@@ -127,18 +129,20 @@ browser-compat: html.elements.input.type_radio
 
 ```html
 <form>
-  <p>Будь ласка, оберіть бажаний спосіб зв'язку:</p>
-  <div>
-    <input type="radio" id="contactChoice1" name="contact" value="email" />
-    <label for="contactChoice1">Електронна пошта</label>
-    <input type="radio" id="contactChoice2" name="contact" value="phone" />
-    <label for="contactChoice2">Телефон</label>
-    <input type="radio" id="contactChoice3" name="contact" value="mail" />
-    <label for="contactChoice3">Пошта</label>
-  </div>
-  <div>
-    <button type="submit">Надіслати</button>
-  </div>
+  <fieldset>
+    <legend>Будь ласка, оберіть бажаний спосіб зв'язку:</legend>
+    <div>
+      <input type="radio" id="contactChoice1" name="contact" value="email" />
+      <label for="contactChoice1">Електронна пошта</label>
+      <input type="radio" id="contactChoice2" name="contact" value="phone" />
+      <label for="contactChoice2">Телефон</label>
+      <input type="radio" id="contactChoice3" name="contact" value="mail" />
+      <label for="contactChoice3">Пошта</label>
+    </div>
+    <div>
+      <button type="submit">Надіслати</button>
+    </div>
+  </fieldset>
 </form>
 <pre id="log"></pre>
 ```
@@ -146,21 +150,21 @@ browser-compat: html.elements.input.type_radio
 Потім додається трохи [JavaScript](/uk/docs/Web/JavaScript), щоб встановити слухач події {{domxref("HTMLFormElement/submit_event", "submit")}}, котра спрацьовує, коли користувач натискає кнопку "Надіслати":
 
 ```js
-const form = document.querySelector('form');
-const log = document.querySelector('#log');
+const form = document.querySelector("form");
+const log = document.querySelector("#log");
 
 form.addEventListener(
-  'submit',
+  "submit",
   (event) => {
     const data = new FormData(form);
-    let output = '';
+    let output = "";
     for (const entry of data) {
       output = `${output}${entry[0]}=${entry[1]}\r`;
     }
     log.innerText = output;
     event.preventDefault();
   },
-  false,
+  false
 );
 ```
 
@@ -179,7 +183,11 @@ form.addEventListener(
     На відміну від інших браузерів, Firefox усталено [зберігає динамічний стан позначеності (англ.)](https://stackoverflow.com/questions/5985839/bug-with-firefox-disabled-attribute-of-input-not-resetting-when-refreshing) поля `<input>` між завантаженнями сторінки. Використовуйте атрибут {{htmlattrxref("autocomplete","input")}}, щоб контролювати цю функціональність.
 
 - {{htmlattrdef("value")}}
+
   - : Атрибут `value` поділяють всі поля {{HTMLElement("input")}}; втім, для полів типу `radio` він має особливе призначення: коли подається форма, то лише ті радіокнопки, що є позначеними, подаються на сервер, і їх надіслане значення – значення атрибута `value`. Якщо ж атрибут `value` не вказаний, то його значення усталено вважається рівним `on`. Це показано в розділі [Значення](#znachennia) вище.
+
+- {{htmlattrdef("required")}}
+  - : Атрибут `required` поділяє більшість типів {{HTMLElement("input")}}. Якщо будь-яка з радіокнопок однієї групи має атрибут `required`, то одна з радіокнопок такої групи мусить бути позначеною, проте це не обов'язково повинна бути саме та, що має атрибут.
 
 ## Використання радіополів
 
@@ -191,26 +199,27 @@ form.addEventListener(
 
 ```html
 <form>
-  <p>Будь ласка, оберіть бажаний спосіб зв'язку:</p>
-  <div>
-    <input
-      type="radio"
-      id="contactChoice1"
-      name="contact"
-      value="email"
-      checked
-    />
-    <label for="contactChoice1">Електронна пошта</label>
+  <fieldset>
+    <legend>Будь ласка, оберіть бажаний спосіб зв'язку:</legend>
+    <div>
+      <input
+        type="radio"
+        id="contactChoice1"
+        name="contact"
+        value="email"
+        checked />
+      <label for="contactChoice1">Електронна пошта</label>
 
-    <input type="radio" id="contactChoice2" name="contact" value="phone" />
-    <label for="contactChoice2">Телефон</label>
+      <input type="radio" id="contactChoice2" name="contact" value="phone" />
+      <label for="contactChoice2">Телефон</label>
 
-    <input type="radio" id="contactChoice3" name="contact" value="mail" />
-    <label for="contactChoice3">Пошта</label>
-  </div>
-  <div>
-    <button type="submit">Надіслати</button>
-  </div>
+      <input type="radio" id="contactChoice3" name="contact" value="mail" />
+      <label for="contactChoice3">Пошта</label>
+    </div>
+    <div>
+      <button type="submit">Надіслати</button>
+    </div>
+  </fieldset>
 </form>
 ```
 
@@ -244,8 +253,7 @@ form.addEventListener(
         id="contactChoice1"
         name="contact"
         value="email"
-        checked
-      />
+        checked />
       <label for="contactChoice1">Електронна пошта</label>
 
       <input type="radio" id="contactChoice2" name="contact" value="phone" />
@@ -261,9 +269,7 @@ form.addEventListener(
 </form>
 ```
 
-Тут небагато нового, крім додання елементів {{htmlelement("fieldset")}} і {{htmlelement("legend")}}, котрі допомагають файно і в семантичний спосіб згрупувати функціональність.
-
-Залучений CSS – дещо більш істотний:
+Залучений у цьому прикладі CSS – дещо більш істотний:
 
 ```css
 html {
