@@ -86,6 +86,8 @@ reduce(function(previousValue, currentValue, currentIndex, array) { /* … */ },
 
 Метод `reduce()` приймає два аргументи: функцію зворотного виклику та необов'язкове початкове значення. Якщо вказане початкове значення, то `reduce()` по черзі викликає на кожному елементі масиву функцію зворотного виклику – "редуктор". Якщо початкове значення не вказане, то `reduce` викликає функцію зворотного виклику на кожному елементі масиву, крім першого.
 
+`callbackFn` закликається лише для тих індексів масиву, що мають присвоєні значення. Вона не закликається для порожніх комірок у [розріджених масивах](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy).
+
 `reduce()` повертає значення, повернене функцією зворотного виклику на фінальній ітерації масиву.
 
 `reduce()` є центральною концепцією [функційного програмування](https://uk.wikipedia.org/wiki/%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D1%96%D0%B9%D0%BD%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F), в котрій неможливо змінювати будь-яке значення, тож для збору всіх значень до масиву треба повертати на кожній ітерації нове значення акумулятора. Така домовленість поширюється на `reduce()` JavaScript: слід використовувати [розгортання](/uk/docs/Web/JavaScript/Reference/Operators/Spread_syntax) чи якусь іншу методику копіювання, де це можливо, і створювати як нове значення акумулятора нові масиви й об'єкти, а не видозмінювати старий акумулятор. При потребі змінити акумулятор замість його копіювання слід не забути повернути в функції зворотного виклику видозмінений об'єкт, інакше наступна ітерація отримає `undefined`.
@@ -139,7 +141,7 @@ const array = [15, 16, 17, 18, 19];
 function reducer(previousValue, currentValue, index) {
   const returns = previousValue + currentValue;
   console.log(
-    `previousValue: ${previousValue}, currentValue: ${currentValue}, index: ${index}, returns: ${returns}`,
+    `previousValue: ${previousValue}, currentValue: ${currentValue}, index: ${index}, returns: ${returns}`
   );
   return returns;
 }
@@ -165,7 +167,7 @@ array.reduce(reducer);
 ```js
 [15, 16, 17, 18, 19].reduce(
   (previousValue, currentValue) => previousValue + currentValue,
-  10,
+  10
 );
 ```
 
@@ -189,7 +191,7 @@ array.reduce(reducer);
 const objects = [{ x: 1 }, { x: 2 }, { x: 3 }];
 const sum = objects.reduce(
   (previousValue, currentValue) => previousValue + currentValue.x,
-  0,
+  0
 );
 
 console.log(sum); // виведе 6
@@ -204,7 +206,7 @@ const flattened = [
   [4, 5],
 ].reduce(
   (previousValue, currentValue) => previousValue.concat(currentValue),
-  [],
+  []
 );
 // сплощений результат: [0, 1, 2, 3, 4, 5]
 ```
@@ -212,7 +214,7 @@ const flattened = [
 ### Обрахунок кількості входжень різних значень в об'єкті
 
 ```js
-const names = ['Аліса', 'Богдан', 'Тома', 'Борис', 'Аліса'];
+const names = ["Аліса", "Богдан", "Тома", "Борис", "Аліса"];
 
 const countedNames = names.reduce((allNames, name) => {
   const currCount = allNames[name] ?? 0;
@@ -229,9 +231,9 @@ const countedNames = names.reduce((allNames, name) => {
 
 ```js
 const people = [
-  { name: 'Аліса', age: 21 },
-  { name: 'Максим', age: 20 },
-  { name: 'Яна', age: 20 },
+  { name: "Аліса", age: 21 },
+  { name: "Максим", age: 20 },
+  { name: "Яна", age: 20 },
 ];
 
 function groupBy(objectArray, property) {
@@ -242,7 +244,7 @@ function groupBy(objectArray, property) {
   }, {});
 }
 
-const groupedPeople = groupBy(people, 'age');
+const groupedPeople = groupBy(people, "age");
 // groupedPeople містить:
 // {
 //   20: [
@@ -260,18 +262,18 @@ const groupedPeople = groupBy(people, 'age');
 // у кожного з котрих поле "books" — це перелік улюблених книжок
 const friends = [
   {
-    name: 'Анна',
-    books: ['Біблія', 'Енеїда'],
+    name: "Анна",
+    books: ["Біблія", "Енеїда"],
     age: 21,
   },
   {
-    name: 'Богдан',
-    books: ['Чорна рада', 'Тіні забутих предків'],
+    name: "Богдан",
+    books: ["Чорна рада", "Тіні забутих предків"],
     age: 26,
   },
   {
-    name: 'Аліса',
-    books: ['Залишенець. Чорний ворон', 'Ворошиловград'],
+    name: "Аліса",
+    books: ["Залишенець. Чорний ворон", "Ворошиловград"],
     age: 18,
   },
 ];
@@ -280,7 +282,7 @@ const friends = [
 // додатковий список, що знаходиться всередині initialValue
 const allbooks = friends.reduce(
   (previousValue, currentValue) => [...previousValue, ...currentValue.books],
-  ['Alphabet'],
+  ["Alphabet"]
 );
 
 // allbooks = [
@@ -295,7 +297,7 @@ const allbooks = friends.reduce(
 > **Примітка:** Такого ж самого ефекту можна досягти за допомогою {{jsxref("Set")}} і {{jsxref("Array.from()")}}, з кращою швидкодією, ось так: `const arrayWithNoDuplicates = Array.from(new Set(myArray))`.
 
 ```js
-const myArray = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd'];
+const myArray = ["a", "b", "a", "b", "c", "e", "e", "c", "d", "d", "d", "d"];
 const myArrayWithNoDuplicates = myArray.reduce(
   (previousValue, currentValue) => {
     if (!previousValue.includes(currentValue)) {
@@ -303,7 +305,7 @@ const myArrayWithNoDuplicates = myArray.reduce(
     }
     return previousValue;
   },
-  [],
+  []
 );
 console.log(myArrayWithNoDuplicates);
 ```
@@ -340,7 +342,7 @@ console.log(doubledPositiveNumbers); // [12, 4]
 function runPromiseInSequence(arr, input) {
   return arr.reduce(
     (promiseChain, currentFunction) => promiseChain.then(currentFunction),
-    Promise.resolve(input),
+    Promise.resolve(input)
   );
 }
 
@@ -401,6 +403,15 @@ multiply16(16); // 256
 multiply24(10); // 240
 ```
 
+### Використання reduce() з розрідженими масивами
+
+`reduce()` пропускає пропущені в розріджених масивах елементи, але не пропускає значення `undefined`.
+
+```js
+console.log([1, 2, , 4].reduce((a, b) => a + b)); // 7
+console.log([1, 2, undefined, 4].reduce((a, b) => a + b)); // NaN
+```
+
 ## Специфікації
 
 {{Specifications}}
@@ -411,5 +422,5 @@ multiply24(10); // 240
 
 ## Дивіться також
 
-- [Поліфіл для `Array.prototype.reduce` в складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
+- [Поліфіл для `Array.prototype.reduce` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
 - {{jsxref("Array.prototype.reduceRight()")}}
