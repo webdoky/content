@@ -1,13 +1,14 @@
 ---
 title: object-fit
 slug: Web/CSS/object-fit
+page-type: css-property
 tags:
   - CSS
   - CSS Images
   - CSS Property
   - Layout
   - Reference
-  - css layout
+  - CSS layout
   - object-fit
   - recipe:css-property
   - size
@@ -96,8 +97,7 @@ object-fit: unset;
   <img
     class="scale-down narrow"
     src="mdn_logo_only_color.png"
-    alt="Логотип MDN"
-  />
+    alt="Логотип MDN" />
 </section>
 ```
 
