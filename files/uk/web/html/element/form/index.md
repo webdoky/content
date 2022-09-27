@@ -194,8 +194,9 @@ browser-compat: html.elements.form
 <!-- Форма з fieldset, legend і label -->
 <form method="post">
   <fieldset>
-    <legend>Назва</legend>
-    <label><input type="radio" name="radio" /> Обери мене</label>
+    <legend>Погоджуєтеся з положеннями?</legend>
+    <label><input type="radio" name="radio" value="yes" /> Так</label>
+    <label><input type="radio" name="radio" value="no" /> Ні</label>
   </fieldset>
 </form>
 ```
