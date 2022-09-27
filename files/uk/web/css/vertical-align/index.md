@@ -155,7 +155,7 @@ img.middle {
 
 {{EmbedLiveSample("bazovyi-pryklad")}}
 
-### Вертикальне шикування в стройових рамках
+### Вертикальне шикування в рядкових рамках
 
 #### HTML
 
@@ -200,7 +200,7 @@ p {
 
 #### Результат
 
-{{EmbedLiveSample("vertykalne-shykuvannia-v-stroiovykh-ramkakh", '100%', 160, "", "")}}
+{{EmbedLiveSample("vertykalne-shykuvannia-v-riadkovykh-ramkakh", '100%', 160, "", "")}}
 
 ### Вертикальне шикування у комірці таблиці
 
