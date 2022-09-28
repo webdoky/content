@@ -19,6 +19,7 @@
     "check": "node --experimental-specifier-resolution=node scripts/check.js",
     "check-diff": "node --experimental-specifier-resolution=node scripts/check.js --changedOnly",
     "check:debug": "DEBUG=true yarn run check",
+    "gotobranch": "./scripts/gotobranch.sh",
     "postinstall": "docker build . -t lt-custom",
     "rebuild": "docker build . --no-cache -t lt-custom",
     "fix": "eslint . --fix",
