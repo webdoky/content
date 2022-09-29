@@ -1,6 +1,7 @@
 ---
 title: Специфічність
 slug: Web/CSS/Specificity
+page-type: guide
 tags:
   - CSS
   - Example
