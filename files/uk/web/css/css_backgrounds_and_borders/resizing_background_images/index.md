@@ -1,6 +1,7 @@
 ---
 title: Зміни розмірів зображень тла за допомогою background-size
 slug: Web/CSS/CSS_Backgrounds_and_Borders/Resizing_background_images
+page-type: guide
 tags:
   - CSS
   - CSS Background
