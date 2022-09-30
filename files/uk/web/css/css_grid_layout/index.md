@@ -1,6 +1,7 @@
 ---
 title: Сіткове компонування CSS
 slug: Web/CSS/CSS_Grid_Layout
+page-type: css-module
 tags:
   - CSS
   - Grid Layout
