@@ -19,4 +19,8 @@ if [[ -n $(git branch --list $TARGET_BRANCH_NAME) ]]; then
     git branch -D $TARGET_BRANCH_NAME
 fi
 
+git checkout master
+
+git pull
+
 git checkout -b $TARGET_BRANCH_NAME
