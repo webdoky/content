@@ -161,7 +161,7 @@ div em {
 }
 ```
 
-#### Result
+#### Результат
 
 {{EmbedLiveSample('rozhornutyi-pryklad', 550, 550)}}
 
