@@ -1,6 +1,7 @@
 ---
 title: Застосування анімацій CSS
 slug: Web/CSS/CSS_Animations/Using_CSS_animations
+page-type: guide
 tags:
   - Advanced
   - CSS
@@ -319,12 +320,12 @@ p {
 Застосуймо код JavaScript для слухання всіх трьох можливих подій анімації. Код нижче налаштовує слухачі коду; він викликається, коли документ завантажився, щоб усе приготувати.
 
 ```js
-const element = document.getElementById('watchme');
-element.addEventListener('animationstart', listener, false);
-element.addEventListener('animationend', listener, false);
-element.addEventListener('animationiteration', listener, false);
+const element = document.getElementById("watchme");
+element.addEventListener("animationstart", listener, false);
+element.addEventListener("animationend", listener, false);
+element.addEventListener("animationiteration", listener, false);
 
-element.className = 'slidein';
+element.className = "slidein";
 ```
 
 Це вельми стандартний код; подробиці про те, як він працює, можна знайти в документації {{domxref("eventTarget.addEventListener()")}}. Останнє, що робить цей код – присвоєння `class` елемента, що анімується, значення "slidein"; це робиться, щоб почати анімацію.
@@ -337,19 +338,19 @@ element.className = 'slidein';
 
 ```js
 function listener(event) {
-  const l = document.createElement('li');
+  const l = document.createElement("li");
   switch (event.type) {
-    case 'animationstart':
+    case "animationstart":
       l.textContent = `Почалося: час, що минув – ${event.elapsedTime}`;
       break;
-    case 'animationend':
+    case "animationend":
       l.textContent = `Скінчилося: час, що минув – ${event.elapsedTime}`;
       break;
-    case 'animationiteration':
+    case "animationiteration":
       l.textContent = `Новий цикл почався після ${event.elapsedTime}`;
       break;
   }
-  document.getElementById('output').appendChild(l);
+  document.getElementById("output").appendChild(l);
 }
 ```
 
