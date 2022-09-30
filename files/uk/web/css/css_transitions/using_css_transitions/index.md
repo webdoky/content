@@ -1,6 +1,7 @@
 ---
 title: Застосування переходів CSS
 slug: Web/CSS/CSS_Transitions/Using_CSS_transitions
+page-type: guide
 tags:
   - Advanced
   - CSS
