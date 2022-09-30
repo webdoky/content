@@ -1,6 +1,7 @@
 ---
 title: Довідник CSS
 slug: Web/CSS/Reference
+page-type: landing-page
 tags:
   - CSS
   - Guide
