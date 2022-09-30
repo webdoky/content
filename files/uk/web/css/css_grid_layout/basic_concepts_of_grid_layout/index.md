@@ -1,6 +1,7 @@
 ---
 title: Базові концепції сіткового компонування
 slug: Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout
+page-type: guide
 tags:
   - CSS
   - CSS Grids
