@@ -1,6 +1,7 @@
 ---
 title: font-size
 slug: Web/CSS/font-size
+page-type: css-property
 tags:
   - CSS
   - CSS Fonts
@@ -12,7 +13,7 @@ browser-compat: css.properties.font-size
 
 {{CSSRef}}
 
-Властивість [CSS](/uk/docs/Web/CSS) **`font-size`** (розмір-шрифту) встановлює розмір шрифту. Зміна розміру шрифту також змінює розміри одиниць вимірювання {{cssxref("&lt;length&gt;")}}, залежних від розміру шрифту, наприклад, `em`, `ex`, і так далі.
+Властивість [CSS](/uk/docs/Web/CSS) **`font-size`** (розмір шрифту) встановлює розмір шрифту. Зміна розміру шрифту також змінює розміри одиниць вимірювання {{cssxref("&lt;length&gt;")}}, залежних від розміру шрифту, наприклад, `em`, `ex`, і так далі.
 
 {{EmbedInteractiveExample("pages/css/font-size.html")}}
 

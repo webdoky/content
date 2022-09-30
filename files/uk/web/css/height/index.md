@@ -1,6 +1,7 @@
 ---
 title: height
 slug: Web/CSS/height
+page-type: css-property
 tags:
   - CSS
   - CSS Property
@@ -28,6 +29,7 @@ browser-compat: css.properties.height
 /* Значення <length> */
 height: 120px;
 height: 10em;
+height: 100vh;
 
 /* Значення <percentage> */
 height: 75%;

@@ -1,5 +1,5 @@
 ---
-title: '<a>: Якірний елемент'
+title: "<a>: Якірний елемент"
 slug: Web/HTML/Element/a
 tags:
   - Content
@@ -324,9 +324,9 @@ a {
 ##### JavaScript
 
 ```js
-const canvas = document.querySelector('canvas');
-const c = canvas.getContext('2d');
-c.fillStyle = 'hotpink';
+const canvas = document.querySelector("canvas");
+const c = canvas.getContext("2d");
+c.fillStyle = "hotpink";
 
 function draw(x, y) {
   if (isDrawing) {
@@ -337,17 +337,17 @@ function draw(x, y) {
   }
 }
 
-canvas.addEventListener('mousemove', (event) =>
-  draw(event.offsetX, event.offsetY),
+canvas.addEventListener("mousemove", (event) =>
+  draw(event.offsetX, event.offsetY)
 );
-canvas.addEventListener('mousedown', () => (isDrawing = true));
-canvas.addEventListener('mouseup', () => (isDrawing = false));
+canvas.addEventListener("mousedown", () => (isDrawing = true));
+canvas.addEventListener("mouseup", () => (isDrawing = false));
 
 document
-  .querySelector('a')
+  .querySelector("a")
   .addEventListener(
-    'click',
-    (event) => (event.target.href = canvas.toDataURL()),
+    "click",
+    (event) => (event.target.href = canvas.toDataURL())
   );
 ```
 

@@ -1,5 +1,5 @@
 ---
-title: '<input>: Елемент введення (форм)'
+title: "<input>: Елемент введення (форм)"
 slug: Web/HTML/Element/input
 tags:
   - Data entry
@@ -49,7 +49,7 @@ browser-compat: html.elements.input
       <td id="examplebutton">
         <pre class="brush: html hidden">
 &#x3C;input type="button" name="button" value="Кнопка" /></pre>
-        {{EmbedLiveSample("examplebutton",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("examplebutton",200,55)}}
       </td>
     </tr>
     <tr>
@@ -58,7 +58,7 @@ browser-compat: html.elements.input
       <td id="examplecheckbox">
         <pre class="brush: html hidden">
 &#x3C;input type="checkbox" name="checkbox"/></pre>
-        {{EmbedLiveSample("examplecheckbox",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("examplecheckbox",200,55)}}
       </td>
     </tr>
     <tr>
@@ -69,7 +69,7 @@ browser-compat: html.elements.input
       <td id="examplecolor">
         <pre class="brush: html hidden">
 &#x3C;input type="color" name="color"/></pre>
-        {{EmbedLiveSample("examplecolor",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("examplecolor",200,55)}}
       </td>
     </tr>
     <tr>
@@ -81,7 +81,7 @@ browser-compat: html.elements.input
       <td id="exampledate">
         <pre class="brush: html hidden">
 &#x3C;input type="date" name="date"/></pre>
-        {{EmbedLiveSample("exampledate",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("exampledate",200,55)}}
       </td>
     </tr>
     <tr>
@@ -94,7 +94,7 @@ browser-compat: html.elements.input
       <td id="exampledtl">
         <pre class="brush: html hidden">
 &#x3C;input type="datetime-local" name="datetime-local"/></pre>
-        {{EmbedLiveSample("exampledtl",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("exampledtl",200,55)}}
       </td>
     </tr>
     <tr>
@@ -106,7 +106,7 @@ browser-compat: html.elements.input
       <td id="exampleemail">
         <pre class="brush: html hidden">
 &#x3C;input type="email" name="email"/></pre>
-        {{EmbedLiveSample("exampleemail",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("exampleemail",200,55)}}
       </td>
     </tr>
     <tr>
@@ -118,7 +118,7 @@ browser-compat: html.elements.input
       <td id="examplefile">
         <pre class="brush: html hidden">
 &#x3C;input type="file" accept="image/*, text/*" name="file"/></pre>
-        {{EmbedLiveSample("examplefile",'100%',55,"","", "nobutton")}}
+        {{EmbedLiveSample("examplefile",'100%',55)}}
       </td>
     </tr>
     <tr>
@@ -129,7 +129,7 @@ browser-compat: html.elements.input
       <td id="examplehidden">
         <pre class="brush: html hidden">
 &#x3C;input id="userId" name="userId" type="hidden" value="abc123"></pre>
-        {{EmbedLiveSample("examplehidden",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("examplehidden",200,55)}}
       </td>
     </tr>
     <tr>
@@ -142,7 +142,7 @@ browser-compat: html.elements.input
       <td id="exampleimage">
         <pre class="brush: html hidden">
 &#x3C;input type="image" name="image" src="" alt="image input"/></pre>
-        {{EmbedLiveSample("exampleimage",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("exampleimage",200,55)}}
       </td>
     </tr>
     <tr>
@@ -151,7 +151,7 @@ browser-compat: html.elements.input
       <td id="examplemonth">
         <pre class="brush: html hidden">
 &#x3C;input type="month" name="month"/></pre>
-        {{EmbedLiveSample("examplemonth",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("examplemonth",200,55)}}
       </td>
     </tr>
     <tr>
@@ -162,7 +162,7 @@ browser-compat: html.elements.input
       <td id="examplenumber">
         <pre class="brush: html hidden">
 &#x3C;input type="number" name="number"/></pre>
-        {{EmbedLiveSample("examplenumber",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("examplenumber",200,55)}}
       </td>
     </tr>
     <tr>
@@ -174,7 +174,7 @@ browser-compat: html.elements.input
       <td id="examplepassword">
         <pre class="brush: html hidden">
 &#x3C;input type="password" name="password"/></pre>
-        {{EmbedLiveSample("examplepassword",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("examplepassword",200,55)}}
       </td>
     </tr>
     <tr>
@@ -185,7 +185,7 @@ browser-compat: html.elements.input
       <td id="exampleradio">
         <pre class="brush: html hidden">
 &#x3C;input type="radio" name="radio"/></pre>
-        {{EmbedLiveSample("exampleradio",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("exampleradio",200,55)}}
       </td>
     </tr>
     <tr>
@@ -198,7 +198,7 @@ browser-compat: html.elements.input
       <td id="examplerange">
         <pre class="brush: html hidden">
 &#x3C;input type="range" name="range" min="0" max="25"/></pre>
-        {{EmbedLiveSample("examplerange",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("examplerange",200,55)}}
       </td>
     </tr>
     <tr>
@@ -209,7 +209,7 @@ browser-compat: html.elements.input
       <td id="examplereset">
         <pre class="brush: html hidden">
 &#x3C;input type="reset" name="reset"/></pre>
-        {{EmbedLiveSample("examplereset",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("examplereset",200,55)}}
       </td>
     </tr>
     <tr>
@@ -220,7 +220,7 @@ browser-compat: html.elements.input
       <td id="examplesearch">
         <pre class="brush: html hidden">
 &#x3C;input type="search" name="search"/></pre>
-        {{EmbedLiveSample("examplesearch",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("examplesearch",200,55)}}
       </td>
     </tr>
     <tr>
@@ -229,7 +229,7 @@ browser-compat: html.elements.input
       <td id="examplesubmit">
         <pre class="brush: html hidden">
 &#x3C;input type="submit" name="submit"/></pre>
-        {{EmbedLiveSample("examplesubmit",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("examplesubmit",200,55)}}
       </td>
     </tr>
     <tr>
@@ -240,7 +240,7 @@ browser-compat: html.elements.input
       <td id="exampletel">
         <pre class="brush: html hidden">
 &#x3C;input type="tel" name="tel"/></pre>
-        {{EmbedLiveSample("exampletel",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("exampletel",200,55)}}
       </td>
     </tr>
     <tr>
@@ -251,7 +251,7 @@ browser-compat: html.elements.input
       <td id="exampletext">
         <pre class="brush: html hidden">
 &#x3C;input type="text" name="text"/></pre>
-        {{EmbedLiveSample("exampletext",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("exampletext",200,55)}}
       </td>
     </tr>
     <tr>
@@ -260,7 +260,7 @@ browser-compat: html.elements.input
       <td id="exampletime">
         <pre class="brush: html hidden">
 &#x3C;input type="time" name="time"/></pre>
-        {{EmbedLiveSample("exampletime",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("exampletime",200,55)}}
       </td>
     </tr>
     <tr>
@@ -271,7 +271,7 @@ browser-compat: html.elements.input
       <td id="exampleurl">
         <pre class="brush: html hidden">
 &#x3C;input type="url" name="url"/></pre>
-        {{EmbedLiveSample("exampleurl",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("exampleurl",200,55)}}
       </td>
     </tr>
     <tr>
@@ -282,21 +282,21 @@ browser-compat: html.elements.input
       <td id="exampleweek">
         <pre class="brush: html hidden">
 &#x3C;input type="week" name="week"/></pre>
-        {{EmbedLiveSample("exampleweek",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("exampleweek",200,55)}}
       </td>
     </tr>
     <tr>
       <th colspan="3">Невживані значення</th>
     </tr>
     <tr>
-      <td>{{HTMLElement("input/datetime", "datetime")}}</td>
+      <td>`datetime`</td>
       <td>
         {{deprecated_inline}} Контрольний елемент для введення дати та часу (години, хвилини, секунди та частки секунди) на основі Всесвітнього координованого часу.
       </td>
       <td id="exampledatetime">
         <pre class="brush: html hidden">
 &#x3C;input type="datetime" name="datetime"/></pre>
-        {{EmbedLiveSample("exampledatetime",200,75,"","", "nobutton")}}
+        {{EmbedLiveSample("exampledatetime",200,75)}}
       </td>
     </tr>
   </tbody>
@@ -382,7 +382,7 @@ browser-compat: html.elements.input
   - : Введений специфікацією "Захоплення медіа в HTML" і дійсний лише для типу поля введення `file`. Атрибут `capture` встановлює, який саме пристрій запису звуку та зображення повинен бути використаний для захоплення нового файлу для контрольного елемента завантаження `file`. Дивіться тип поля введення {{HTMLElement("input/file", "file")}}.
 - `checked`
 
-  - : Чинний для типів `radio` та `checkbox`. `checked` – це булів атрибут. Бувши встановленим із типом `radio`, він вказує, що радіокнопка є обраною серед групи однойменних радіокнопок. Бувши встановленим із типом `checkbox`, він вказує, що такий прапорець усталено встановлений (при завантаженні сторінки). Він _не_ вказує, чи є наразі такий прапорець встановленим: якщо стан прапорця змінюється, то цей атрибут не отримує змін. (Оновлюється лише [IDL атрибут `checked` `HTMLInputElement`’а](/uk/docs/Web/API/HTMLInputElement).)
+  - : Чинний для типів `radio` та `checkbox`. `checked` – це булів атрибут. Бувши встановленим із типом `radio`, він вказує, що радіокнопка є обраною серед групи однойменних радіокнопок. Бувши встановленим із типом `checkbox`, він вказує, що такий прапорець усталено встановлений (при завантаженні сторінки). Він _не_ вказує, чи є наразі такий прапорець встановленим: якщо стан прапорця змінюється, то цей атрибут не отримує змін. (Оновлюється лише [IDL атрибут `checked` `HTMLInputElement`'а](/uk/docs/Web/API/HTMLInputElement).)
 
     > **Примітка:** На відміну від інших контрольних елементів, значення прапорців та радіокнопок включаються при подачі форми у її дані лише тоді, коли вони `checked` (обрані). Якщо це так, то подаються імена та значення обраних контрольних елементів.
     >
@@ -501,10 +501,10 @@ browser-compat: html.elements.input
     Коли елемент введення отримує атрибут `name`, це ім'я стає властивістю об'єкта {{domxref("HTMLFormElement.elements")}} форми-власника елемента. Якщо існує поле введення, в котрого атрибут `name` має значення `guest`, і іще одне з `name` – `hat-size`, можна використати наступний код:
 
     ```js
-    let form = document.querySelector('form');
+    let form = document.querySelector("form");
 
     let guestName = form.elements.guest;
-    let hatSize = form.elements['hat-size'];
+    let hatSize = form.elements["hat-size"];
     ```
 
     При виконанні такого коду `guestName` дорівнюватиме {{domxref("HTMLInputElement")}} за полем `guest`, а `hatSize` – об'єктові за полем `hat-size`.
@@ -851,7 +851,7 @@ input:checked + label {
 
 ```css
 /* відповідає полю введення пароля */
-input[type='password'] {
+input[type="password"] {
 }
 
 /* відповідає контрольному елементові, чиї дійсні значення обмежені діапазоном*/
@@ -899,7 +899,7 @@ input[pattern] {
 ```css
 input.custom {
   caret-color: red;
-  font: 16px 'Helvetica', 'Arial', 'sans-serif';
+  font: 16px "Helvetica", "Arial", "sans-serif";
 }
 ```
 
@@ -1080,13 +1080,13 @@ input.custom {
 function validate(input) {
   let validityState_object = input.validity;
   if (validityState_object.valueMissing) {
-    input.setCustomValidity('Необхідне значення');
+    input.setCustomValidity("Необхідне значення");
   } else if (validityState_object.rangeUnderflow) {
-    input.setCustomValidity('Введене значення замале');
+    input.setCustomValidity("Введене значення замале");
   } else if (validityState_object.rangeOverflow) {
-    input.setCustomValidity('Введене значення завелике');
+    input.setCustomValidity("Введене значення завелике");
   } else {
-    input.setCustomValidity('');
+    input.setCustomValidity("");
   }
 }
 ```
@@ -1112,19 +1112,19 @@ function validate(input) {
 При потребі натомість показати власні повідомлення помилок можна використати JavaScript отак:
 
 ```js
-const nameInput = document.querySelector('input');
+const nameInput = document.querySelector("input");
 
-nameInput.addEventListener('input', () => {
-  nameInput.setCustomValidity('');
+nameInput.addEventListener("input", () => {
+  nameInput.setCustomValidity("");
   nameInput.checkValidity();
 });
 
-nameInput.addEventListener('invalid', () => {
-  if (nameInput.value === '') {
+nameInput.addEventListener("invalid", () => {
+  if (nameInput.value === "") {
     nameInput.setCustomValidity("Введіть ім'я користувача!");
   } else {
     nameInput.setCustomValidity(
-      'Імена користувачів можуть містити лише великі та малі літери. Спробуйте ще!',
+      "Імена користувачів можуть містити лише великі та малі літери. Спробуйте ще!"
     );
   }
 });

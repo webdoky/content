@@ -76,7 +76,7 @@ JSON.stringify(value, replacer, space)
 
   - Обробляються лише [власні перелічувані властивості](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties). А отже, {{JSxRef("Map")}}, {{JSxRef("Set")}} тощо – стануть `"{}"`. Можна застосувати параметр [`replacer`](#parametr-replacer), аби серіалізувати їх у щось більш корисне.
 
-    Властивості обробляються за таким само алгоритмом, як у [`Object.keys()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/keys), що має чітко визначений порядок і є стабільним для різних реалізацій. Наприклад, `JSON.stringify` для одного об'єкта завжди поверне однаковий рядок, а `JSON.parse(JSON.stringify(obj))` поверне об'єкт з таким само порядком ключів, як у вихідного об’єкта (виходячи з припущення, що об'єкт є цілком JSON-серіалізовним).
+    Властивості обробляються за таким само алгоритмом, як у [`Object.keys()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/keys), що має чітко визначений порядок і є стабільним для різних реалізацій. Наприклад, `JSON.stringify` для одного об'єкта завжди поверне однаковий рядок, а `JSON.parse(JSON.stringify(obj))` поверне об'єкт з таким само порядком ключів, як у вихідного об'єкта (виходячи з припущення, що об'єкт є цілком JSON-серіалізовним).
 
 ### Параметр replacer
 
@@ -88,16 +88,16 @@ JSON.stringify(value, replacer, space)
 
 Функція `replacer` також викликається для вихідного об'єкта, і при такому виклику `key` є порожнім рядком (`""`). Потім вона викликається для кожної властивості об'єкта чи масиву, котрий приводиться до рядка. Індекси масиву надаються в `key` у рядковій формі. Значення поточної властивості при перетворенні на рядок замінюється значенням, поверненим функцією `replacer`. А отже:
 
-- Якщо повернути {{JSxRef("Number")}}, {{JSxRef("String")}}, {{JSxRef("Boolean")}} чи [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null), то як значення властивості буде використовуватись рядкова версія такого значення.
+- Якщо повернути число, рядок, булеве значення чи `null`, то таке значення серіалізується безпосередньо і використовується як значення властивості. (Крім того, повернення BigInt призведе до викидання помилки.)
 - Якщо повернути {{JSxRef("Function")}}, {{JSxRef("Symbol")}} чи {{JSxRef("undefined")}}, то властивість не буде включена у вивід.
 - Якщо повернути будь-який інший об'єкт, то такий об'єкт буде рекурсивно перетворений на рядок, викликаючи функцію `replacer` на кожній своїй властивості.
 
 > **Примітка:** При розборі JSON, згенерованого з використанням функцій `replacer`, з високою імовірністю буде потрібен параметр [`reviver`](/uk/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse#zastosuvannia-parametra-reviver) (відновлювач) для виконання зворотних перетворень.
 > Зазвичай індекс елементів масиву не зсувається (навіть тоді, коли елемент є недійсним значенням, як то функція, замість цього він стає `null`, а не упускається). Застосування функції `replacer` дозволяє контролювати порядок елементів масиву, повертаючи інакший масив.
 
-### Аргумент space
+### Параметр space
 
-Аргумент `space` може використовуватися для контролю відступів у рядку результату.
+Параметр `space` може використовуватися для контролю відступів у рядку результату.
 
 - Якщо цей аргумент є числом, то наступні рівні вкладеності матимуть відступ, збільшений на таку кількість символів пробілу.
 - Якщо цей аргумент є рядком, то наступні рівні матимуть відступ, збільшений на такий рядок.
@@ -111,8 +111,8 @@ JSON.stringify(value, replacer, space)
 ```js
 JSON.stringify({}); // '{}'
 JSON.stringify(true); // 'true'
-JSON.stringify('foo'); // '"foo"'
-JSON.stringify([1, 'false', false]); // '[1,"false",false]'
+JSON.stringify("foo"); // '"foo"'
+JSON.stringify([1, "false", false]); // '[1,"false",false]'
 JSON.stringify([NaN, null, Infinity]); // '[null,null,null]'
 JSON.stringify({ x: 5 }); // '{"x":5}'
 
@@ -121,16 +121,16 @@ JSON.stringify(new Date(2006, 0, 2, 15, 4, 5));
 
 JSON.stringify({ x: 5, y: 6 });
 // '{"x":5,"y":6}'
-JSON.stringify([new Number(3), new String('false'), new Boolean(false)]);
+JSON.stringify([new Number(3), new String("false"), new Boolean(false)]);
 // '[3,"false",false]'
 
 // Елементи масиву з рядковими ключами не є перелічними і не мають сенсу в JSON
-const a = ['foo', 'bar'];
-a['baz'] = 'quux'; // a: [ 0: 'foo', 1: 'bar', baz: 'quux' ]
+const a = ["foo", "bar"];
+a["baz"] = "quux"; // a: [ 0: 'foo', 1: 'bar', baz: 'quux' ]
 JSON.stringify(a);
 // '["foo","bar"]'
 
-JSON.stringify({ x: [10, undefined, function () {}, Symbol('')] });
+JSON.stringify({ x: [10, undefined, function () {}, Symbol("")] });
 // '{"x":[10,null,null,null]}'
 
 // Стандартні структури даних
@@ -166,15 +166,15 @@ JSON.stringify({
 // '11'
 
 // Символи:
-JSON.stringify({ x: undefined, y: Object, z: Symbol('') });
+JSON.stringify({ x: undefined, y: Object, z: Symbol("") });
 // '{}'
-JSON.stringify({ [Symbol('foo')]: 'foo' });
+JSON.stringify({ [Symbol("foo")]: "foo" });
 // '{}'
-JSON.stringify({ [Symbol.for('foo')]: 'foo' }, [Symbol.for('foo')]);
+JSON.stringify({ [Symbol.for("foo")]: "foo" }, [Symbol.for("foo")]);
 // '{}'
-JSON.stringify({ [Symbol.for('foo')]: 'foo' }, (k, v) => {
-  if (typeof k === 'symbol') {
-    return 'a symbol';
+JSON.stringify({ [Symbol.for("foo")]: "foo" }, (k, v) => {
+  if (typeof k === "symbol") {
+    return "символ";
   }
 });
 // undefined
@@ -182,9 +182,9 @@ JSON.stringify({ [Symbol.for('foo')]: 'foo' }, (k, v) => {
 // Неперелічувані властивості:
 JSON.stringify(
   Object.create(null, {
-    x: { value: 'x', enumerable: false },
-    y: { value: 'y', enumerable: true },
-  }),
+    x: { value: "x", enumerable: false },
+    y: { value: "y", enumerable: true },
+  })
 );
 // '{"y":"y"}'
 
@@ -198,17 +198,17 @@ JSON.stringify({ x: 2n });
 ```js
 function replacer(key, value) {
   // Вибракування властивостей
-  if (typeof value === 'string') {
+  if (typeof value === "string") {
     return undefined;
   }
   return value;
 }
 
 const foo = {
-  foundation: 'Mozilla',
-  model: 'box',
+  foundation: "ВебДоки",
+  model: "box",
   week: 45,
-  transport: 'car',
+  transport: "car",
   month: 7,
 };
 JSON.stringify(foo, replacer);
@@ -225,7 +225,7 @@ function makeReplacer() {
       isInitial = false;
       return value;
     }
-    if (key === '') {
+    if (key === "") {
       // Упустити всі властивості з іменем "" (крім вихідного об'єкта)
       return undefined;
     }
@@ -233,20 +233,20 @@ function makeReplacer() {
   };
 }
 const replacer = makeReplacer();
-console.log(JSON.stringify({ '': 1, b: 2 }, replacer)); // "{"b":2}"
+console.log(JSON.stringify({ "": 1, b: 2 }, replacer)); // "{"b":2}"
 ```
 
 ### Використання масиву як замінювача
 
 ```js
 const foo = {
-  foundation: 'Mozilla',
-  model: 'box',
+  foundation: "ВебДоки",
+  model: "box",
   week: 45,
-  transport: 'car',
+  transport: "car",
   month: 7,
 };
-JSON.stringify(foo, ['week', 'month']);
+JSON.stringify(foo, ["week", "month"]);
 // '{"week":45,"month":7}', залишаємо лише властивості "week" та "month"
 ```
 
@@ -255,7 +255,7 @@ JSON.stringify(foo, ['week', 'month']);
 Зробити відступ виводу на один пробіл:
 
 ```js
-JSON.stringify({ a: 2 }, null, ' ');
+JSON.stringify({ a: 2 }, null, " ");
 // '{
 //  "a": 2
 // }'
@@ -266,7 +266,7 @@ JSON.stringify({ a: 2 }, null, ' ');
 <!-- markdownlint-disable MD010 -->
 
 ```js
-console.log(JSON.stringify({ uno: 1, dos: 2 }, null, '\t'));
+console.log(JSON.stringify({ uno: 1, dos: 2 }, null, "\t"));
 /*
 {
 	"uno": 1,
@@ -283,7 +283,7 @@ console.log(JSON.stringify({ uno: 1, dos: 2 }, null, '\t'));
 
 ```js
 const obj = {
-  data: 'data',
+  data: "data",
 
   toJSON(key) {
     return key ? `Зараз я — вкладений об'єкт за ключем '${key}'` : this;
@@ -326,20 +326,20 @@ const session = {
   screens: [],
   state: true,
 };
-session.screens.push({ name: 'screenA', width: 450, height: 250 });
-session.screens.push({ name: 'screenB', width: 650, height: 350 });
-session.screens.push({ name: 'screenC', width: 750, height: 120 });
-session.screens.push({ name: 'screenD', width: 250, height: 60 });
-session.screens.push({ name: 'screenE', width: 390, height: 120 });
-session.screens.push({ name: 'screenF', width: 1240, height: 650 });
+session.screens.push({ name: "screenA", width: 450, height: 250 });
+session.screens.push({ name: "screenB", width: 650, height: 350 });
+session.screens.push({ name: "screenC", width: 750, height: 120 });
+session.screens.push({ name: "screenD", width: 250, height: 60 });
+session.screens.push({ name: "screenE", width: 390, height: 120 });
+session.screens.push({ name: "screenF", width: 1240, height: 650 });
 
 // Перетворення об'єкта на JSON-рядок із JSON.stringify(),
 // потім збереження його в localStorage за ім'ям `session`
-localStorage.setItem('session', JSON.stringify(session));
+localStorage.setItem("session", JSON.stringify(session));
 
 // Приклад того, як перетворити рядок, створений за допомогою
 // JSON.stringify() і записаний в localStorage, назад на JSON-об'єкт
-const restoredSession = JSON.parse(localStorage.getItem('session'));
+const restoredSession = JSON.parse(localStorage.getItem("session"));
 
 // Тепер змінна restoredSession містить об'єкт, який був раніше
 // записаний в localStorage
@@ -351,13 +351,13 @@ console.log(restoredSession);
 Рушії, що реалізовують [специфікацію JSON.stringify з правильним формуванням (англ.)](https://github.com/tc39/proposal-well-formed-stringify), опрацьовують поодинокі сурогати (будь-які кодові одиниці від U+D800 до U+DFFF) із застосуванням керівних послідовностей Unicode, замість вживання їх буквально (повернення поодиноких сурогатів). До цих оновлень `JSON.stringify` міг повертати поодинокі сурогати, якщо такі сурогати знаходилися в початковому рядку. Такі рядки потім неможливо було коректно перекодувати в UTF-8 чи UTF-16:
 
 ```js
-JSON.stringify('\uD800'); // '"�"'
+JSON.stringify("\uD800"); // '"�"'
 ```
 
 Проте з цим оновленням `JSON.stringify` відбиває поодинокі сурогати за допомогою екранованих послідовностей JSON, які _можна_ коректно перекодувати в рядок UTF-8 чи UTF-16:
 
 ```js
-JSON.stringify('\uD800'); // '"\\ud800"'
+JSON.stringify("\uD800"); // '"\\ud800"'
 ```
 
 Це оновлення має бути зворотно сумісним, поки результат `JSON.stringify` передається до такого API, як `JSON.parse`, що прийматиме будь-який валідний JSON-текст, оскільки вони будуть вважати юнікодні екрановані поодинокі сурогати рівними самим сурогатам. _Лише_ під час прямої інтерпретації результатів виконання `JSON.stringify` слід уважно опрацьовувати два можливі варіанти кодування таких кодових одиниць.

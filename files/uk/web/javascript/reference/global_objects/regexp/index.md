@@ -31,9 +31,9 @@ browser-compat: javascript.builtins.RegExp
 ```js
 const re = /ab+c/i; // літеральний запис
 // АБО
-const re = new RegExp('ab+c', 'i'); // конструктор з рядковим патерном як першим аргументом
+const re = new RegExp("ab+c", "i"); // конструктор з рядковим патерном як першим аргументом
 // АБО
-const re = new RegExp(/ab+c/, 'i'); // конструктор з літералом регулярного виразу першим аргументом
+const re = new RegExp(/ab+c/, "i"); // конструктор з літералом регулярного виразу першим аргументом
 ```
 
 До використання регулярних виразів вони повинні бути скомпільовані. Цей процес дає змогу виконувати пошук збігів ефективніше. Більше про цей процес – у [документації дотнет (англ.)](https://docs.microsoft.com/dotnet/standard/base-types/compilation-and-reuse-in-regular-expressions).
@@ -53,7 +53,7 @@ const re = new RegExp(/ab+c/, 'i'); // конструктор з літерал�
 ```js
 const re = /\w+/;
 // АБО
-const re = new RegExp('\\w+');
+const re = new RegExp("\\w+");
 ```
 
 ### Особлива обробка регулярних виразів
@@ -80,8 +80,8 @@ const re = new RegExp('\\w+');
 Наприклад, [`String.prototype.endsWith()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith) зводить усе своє введення до рядків, але викидає виняток, якщо аргумент є регулярним виразом, адже цей метод розроблений лише для зіставлення рядків, а використання регулярного виразу – ймовірно, помилка розробника.
 
 ```js
-'foobar'.endsWith({ toString: () => 'bar' }); // true
-'foobar'.endsWith(/bar/); // TypeError: First argument to String.prototype.endsWith must not be a regular expression
+"foobar".endsWith({ toString: () => "bar" }); // true
+"foobar".endsWith(/bar/); // TypeError: First argument to String.prototype.endsWith must not be a regular expression
 ```
 
 Перевірку можна обійти, присвоївши `@@match` [хибне](/uk/docs/Glossary/Falsy) значення, котре не є `undefined`. Це означає, що такий регулярний вираз не можна використати для `String.prototype.match()` (адже без `@@match`, `match()` створюватиме новий об'єкт `RegExp` з двома рисками на кінцях, доданими методом [`re.toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/toString)), але такий регулярний вираз можна використати для буквально будь-чого іншого.
@@ -89,9 +89,9 @@ const re = new RegExp('\\w+');
 ```js
 const re = /bar/g;
 re[Symbol.match] = false;
-'/bar/g'.endsWith(re); // true
-re.exec('bar'); // [ 'bar', index: 0, input: 'bar', groups: undefined ]
-'bar & bar'.replace(re, 'foo'); // 'foo & foo'
+"/bar/g".endsWith(re); // true
+re.exec("bar"); // [ 'bar', index: 0, input: 'bar', groups: undefined ]
+"bar & bar".replace(re, "foo"); // 'foo & foo'
 ```
 
 ### Властивості RegExp у стилі Perl
@@ -107,6 +107,18 @@ re.exec('bar'); // [ 'bar', index: 0, input: 'bar', groups: undefined ]
 
 - {{jsxref("RegExp.@@species", "get RegExp[@@species]")}}
   - : Функція-конструктор, що використовується для створення похідних об'єктів.
+- {{JSxRef("RegExp.n", "RegExp.$1-$9")}}
+  - : Нерекомендовані статичні властивості лише для зчитування, що містять збіги підрядків у дужках.
+- {{JSxRef("RegExp.input", "RegExp.input ($_)")}} {{Non-standard_Inline}}
+  - : Статична властивість лише для зчитування, що містить останній рядок, щодо якого відбувся успішний збіг.
+- {{JSxRef("RegExp.lastMatch", "RegExp.lastMatch ($&)")}} {{Non-standard_Inline}}
+  - : Статична властивість лише для зчитування, що містить останні символи, з котрими трапився збіг.
+- {{JSxRef("RegExp.lastParen", "RegExp.lastParen ($+)")}} {{Non-standard_Inline}}
+  - : Статична властивість, що містить останній збіг підрядку в дужках.
+- {{JSxRef("RegExp.leftContext", "RegExp.leftContext ($`)")}} {{Non-standard_Inline}}
+  - : Статична властивість лише для зчитування, що містить підрядок, котрий передував останньому збігові.
+- {{JSxRef("RegExp.rightContext", "RegExp.rightContext ($')")}} {{Non-standard_Inline}}
+  - : Статична властивість лише для зчитування, що містить підрядок, котрий стояв після останнього збігу.
 
 ## Властивості примірника
 
@@ -162,8 +174,8 @@ re.exec('bar'); // [ 'bar', index: 0, input: 'bar', groups: undefined ]
 
 ```js
 const re = /(\w+)\s(\w+)/;
-const str = 'John Smith';
-const newstr = str.replace(re, '$2, $1');
+const str = "John Smith";
+const newstr = str.replace(re, "$2, $1");
 console.log(newstr);
 ```
 
@@ -174,7 +186,7 @@ console.log(newstr);
 Усталене закінчення рядка залежить від платформи (Unix, Windows тощо). Розбиття рядків, запропоноване в цьому прикладі, працює на всіх платформах.
 
 ```js
-const text = 'Певний текст\nІ ще трохи\r\nІще\rАж ось кінець';
+const text = "Певний текст\nІ ще трохи\r\nІще\rАж ось кінець";
 const lines = text.split(/\r\n|\r|\n/);
 console.log(lines); // Виводить ['Певний текст', 'І ще трохи', 'Іще', 'Аж ось кінець']
 ```
@@ -184,7 +196,7 @@ console.log(lines); // Виводить ['Певний текст', 'І ще т�
 ### Застосування регулярного виразу на багатьох рядках
 
 ```js
-const s = 'Please yes\nmake my day!';
+const s = "Please yes\nmake my day!";
 
 s.match(/yes.*day/);
 // Повертає null
@@ -198,7 +210,7 @@ s.match(/yes[^]*day/);
 Позначка {{JSxRef("Global_Objects/RegExp/sticky", "липкості")}} вказує на те, що регулярний вираз виконує в цільовому рядку липкий пошук збігу, намагаючись почати пошук від {{jsxref("RegExp.prototype.lastIndex")}}.
 
 ```js
-const str = '#foo#';
+const str = "#foo#";
 const regex = /foo/y;
 
 regex.lastIndex = 1;
@@ -215,8 +227,8 @@ regex.lastIndex; // 0 (скинуто після невдачі пошуку)
 ```js
 const re = /\d/y;
 let r;
-while ((r = re.exec('123 456'))) {
-  console.log(r, 'AND re.lastIndex', re.lastIndex);
+while ((r = re.exec("123 456"))) {
+  console.log(r, "AND re.lastIndex", re.lastIndex);
 }
 
 // [ '1', index: 0, input: '123 456', groups: undefined ] AND re.lastIndex 1
@@ -236,7 +248,7 @@ while ((r = re.exec('123 456'))) {
 Цей приклад демонструє, як можна відділити від слова символи Unicode.
 
 ```js
-const text = 'Зразок text українською мовою';
+const text = "Зразок text українською мовою";
 const regex = /[\u0400-\u04FF]+/g;
 
 const match = regex.exec(text);
@@ -255,7 +267,7 @@ console.log(regex.lastIndex); // виводить '23'
 ### Видобування імені піддомену з URL
 
 ```js
-const url = 'http://xxx.domain.com';
+const url = "http://xxx.domain.com";
 console.log(/^https?:\/\/(.+?)\./.exec(url)[1]); // виводить 'xxx'
 ```
 
@@ -264,10 +276,10 @@ console.log(/^https?:\/\/(.+?)\./.exec(url)[1]); // виводить 'xxx'
 ### Будування регулярного виразу на основі динамічного введення
 
 ```js
-const breakfasts = ['bacon', 'eggs', 'oatmeal', 'toast', 'cereal'];
-const order = 'Let me get some bacon and eggs, please';
+const breakfasts = ["bacon", "eggs", "oatmeal", "toast", "cereal"];
+const order = "Let me get some bacon and eggs, please";
 
-order.match(new RegExp(`\\b(${breakfasts.join('|')})\\b`, 'g'));
+order.match(new RegExp(`\\b(${breakfasts.join("|")})\\b`, "g"));
 // Повертає ['bacon', 'eggs']
 ```
 
@@ -285,13 +297,13 @@ order.match(new RegExp(`\\b(${breakfasts.join('|')})\\b`, 'g'));
 
 ```js
 // Firefox 33 чи старший
-'x'.replace(/x(.)?/g, (m, group) => {
+"x".replace(/x(.)?/g, (m, group) => {
   console.log(`група: ${JSON.stringify(group)}`);
 });
 // група: ""
 
 // Firefox 34 чи новіший
-'x'.replace(/x(.)?/g, (m, group) => {
+"x".replace(/x(.)?/g, (m, group) => {
   console.log(`група: ${group}`);
 });
 // група: undefined

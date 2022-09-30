@@ -1,6 +1,7 @@
 ---
 title: display
 slug: Web/CSS/display
+page-type: css-property
 tags:
   - CSS
   - CSS Display
@@ -145,7 +146,7 @@ display: unset;
     - `ruby-text` {{Experimental_Inline}}
       - : Такі елементи поводяться неначе елементи HTML {{HTMLElement("rt")}}.
     - `ruby-base-container` {{Experimental_Inline}}
-      - : Такі елементи поводяться неначе елементи HTML {{HTMLElement("rbc")}}, які утворені як анонімні рамки.
+      - : Такі елементи утворюються як анонімні рамки.
     - `ruby-text-container` {{Experimental_Inline}}
       - : Такі елементи поводяться неначе елементи HTML {{HTMLElement("rtc")}}.
 
@@ -363,8 +364,8 @@ div {
 #### JavaScript
 
 ```js
-const articles = document.querySelectorAll('.container');
-const select = document.querySelector('select');
+const articles = document.querySelectorAll(".container");
+const select = document.querySelector("select");
 
 function updateDisplay() {
   articles.forEach((article) => {
@@ -372,7 +373,7 @@ function updateDisplay() {
   });
 }
 
-select.addEventListener('change', updateDisplay);
+select.addEventListener("change", updateDisplay);
 
 updateDisplay();
 ```
