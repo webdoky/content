@@ -12,7 +12,7 @@ browser-compat: css.properties.flex
 
 {{CSSRef}}
 
-[Властивість-скорочення](/uk/docs/Web/CSS/Shorthand_properties) [CSS](/uk/docs/Web/CSS) **`flex`** (гнучкий шнур) задає те, як гнучкий _елемент_ зростатиме чи скорочуватиметься для заповнення доступного в гнучкому контейнері простору.
+[Властивість-скорочення](/uk/docs/Web/CSS/Shorthand_properties) [CSS](/uk/docs/Web/CSS) **`flex`** (гнутися) задає те, як гнучкий _елемент_ зростатиме чи скорочуватиметься для заповнення доступного в гнучкому контейнері простору.
 
 {{EmbedInteractiveExample("pages/css/flex.html")}}
 
