@@ -164,7 +164,7 @@ browser-compat: html.elements.form
     - `_parent`: Завантажувати в батьківський щодо поточного контекст перегляду. Якщо батьківського немає, то діє так само як `_self`.
     - `_top`: Завантажувати в контекст перегляду найвищого рівня (тобто контекст перегляду, що є предком поточного і не має предка). Якщо батьківського контексту немає, то діє так само як `_self`.
 
-    Це значення може бути відкинуто атрибутом {{htmlattrxref("formtarget", "button")}} на елементі {{HTMLElement("button")}}, [`<input type="submit">`](/uk/docs/Web/HTML/Element/input/submit) чи [`<input type="image">`](/uk/docs/Web/HTML/Element/input/image) element.
+    Це значення може бути відкинуто атрибутом {{htmlattrxref("formtarget", "button")}} на елементі {{HTMLElement("button")}}, [`<input type="submit">`](/uk/docs/Web/HTML/Element/input/submit) чи [`<input type="image">`](/uk/docs/Web/HTML/Element/input/image).
 
     > **Примітка:** Встановлення на елементах `<form>` `target="_blank"` неявно задає таку само логіку `rel`, як встановлення [`rel="noopener"`](/uk/docs/Web/HTML/Link_types/noopener), тобто відсутність заповнення `window.opener`.
 
