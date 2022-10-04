@@ -1,6 +1,7 @@
 англ
 Гідде
 Кайшу
+каше
 не-ASCII
 не-HTML
 не-JavaScript

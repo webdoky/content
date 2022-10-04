@@ -1,6 +1,7 @@
 ---
 title: background
 slug: Web/CSS/background
+page-type: css-shorthand-property
 tags:
   - CSS
   - CSS Background
@@ -36,13 +37,13 @@ browser-compat: css.properties.background
 background: green;
 
 /* За допомогою <bg-image> (значення зображення тла) та <repeat-style> (значення стилю повторення) */
-background: url('test.jpg') repeat-y;
+background: url("test.jpg") repeat-y;
 
 /* За допомогою <box> (значення рамок) та <background-color> (значення кольору тла) */
 background: border-box red;
 
 /* Одне зображення, відцентроване та масштабоване */
-background: no-repeat center/80% url('../img/image.png');
+background: no-repeat center/80% url("../img/image.png");
 
 /* Глобальні значення */
 background: inherit;
@@ -123,7 +124,7 @@ background: unset;
 }
 
 .topbanner {
-  background: url('starsolid.gif') #99f repeat-y fixed;
+  background: url("starsolid.gif") #99f repeat-y fixed;
 }
 ```
 

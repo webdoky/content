@@ -1,6 +1,7 @@
 ---
 title: Шикування елементів у гнучкому контейнері
 slug: Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container
+page-type: guide
 tags:
   - Align
   - CSS
