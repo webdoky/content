@@ -1173,7 +1173,7 @@ Firefox використовує наступну евристику для ви
     </tr>
     <tr>
       <th scope="row">Дозволений вміст</th>
-      <td>Жодного, це {{Glossary("empty element", "пустий елемент")}}.</td>
+      <td>Жодного, це {{Glossary("void element", "пустий елемент")}}.</td>
     </tr>
     <tr>
       <th scope="row">Упущення тега</th>
