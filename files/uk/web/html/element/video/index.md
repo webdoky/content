@@ -1,5 +1,5 @@
 ---
-title: '<video>: Елемент вбудованого відео'
+title: "<video>: Елемент вбудованого відео"
 slug: Web/HTML/Element/video
 tags:
   - Element
@@ -58,7 +58,7 @@ browser-compat: html.elements.video
 
 - {{htmlattrdef("crossorigin")}}
 
-  - : Цей атрибут вказує, чи треба використовувати для отримання відповідного відео CORS. [Ресурси, що дозволяють CORS](/uk/docs/Web/HTML/CORS_enabled_image), можуть бути перевикористані в елементі {{HTMLElement("canvas")}}, не бувши _ославленими_. Дозволеними значеннями є:
+  - : Цей [перелічуваний](/uk/docs/Glossary/Enumerated) атрибут вказує, чи треба використовувати для отримання відповідного відео CORS. [Ресурси, що дозволяють CORS](/uk/docs/Web/HTML/CORS_enabled_image), можуть бути перевикористані в елементі {{HTMLElement("canvas")}}, не бувши _ославленими_. Дозволеними значеннями є:
 
     - `anonymous`
       - : Надсилає запит на інше походження без авторизації. Інакше кажучи, надсилає заголовок HTTP `Origin:` без реп'яшка, сертифіката X.509 чи виконання базової автентифікації HTTP. Якщо сервер не надає походженню сайту даних авторизації (не встановлюючи заголовок HTTP `Access-Control-Allow-Origin:`), то зображення буде _ославлене_, а його використання – обмежено.
@@ -312,7 +312,7 @@ browser-compat: html.elements.video
 Наприклад, для відстеження додавання чи вилучення з елемента `<video>` доріжок аудіо можна використати код типу наступного:
 
 ```js
-const elem = document.querySelector('video');
+const elem = document.querySelector("video");
 
 elem.audioTracks.onaddtrack = (event) => {
   trackEditor.addTrack(event.track);
@@ -363,8 +363,7 @@ AddType video/webm .webm
   controls
   src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
   poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217"
-  width="620"
->
+  width="620">
   Вибачте, ваш браузер не підтримує вбудовані відео, але не турбуйтесь, ви
   можете
   <a href="https://archive.org/details/BigBuckBunny_124">його стягнути</a> і
@@ -391,20 +390,16 @@ AddType video/webm .webm
 <video
   width="620"
   controls
-  poster="https://upload.wikimedia.org/wikipedia/commons/e/e8/Elephants_Dream_s5_both.jpg"
->
+  poster="https://upload.wikimedia.org/wikipedia/commons/e/e8/Elephants_Dream_s5_both.jpg">
   <source
     src="https://archive.org/download/ElephantsDream/ed_hd.ogv"
-    type="video/ogg"
-  />
+    type="video/ogg" />
   <source
     src="https://archive.org/download/ElephantsDream/ed_hd.avi"
-    type="video/avi"
-  />
+    type="video/avi" />
   <source
     src="https://archive.org/download/ElephantsDream/ed_1024_512kb.mp4"
-    type="video/mp4"
-  />
+    type="video/mp4" />
 
   Вибачте, Ваш браузер не підтримує вбудованих відео, але не переймайтесь: Ви
   можете
