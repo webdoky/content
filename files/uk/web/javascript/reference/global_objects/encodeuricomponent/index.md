@@ -62,7 +62,7 @@ console.log(encodeURIComponent(set4)); // ABC%20abc%20123 (пробіл коду
 Зверніть увагу, що буде викинуто {{jsxref("URIError")}}, якщо трапиться спроба закодувати сурогат, котрий не є частиною пари вищий-нижчий, наприклад,
 
 ```js
-// пара вищий-нижчий OK
+// пара вищий-нижчий — OK
 console.log(encodeURIComponent("\uD800\uDFFF"));
 
 // самотній вищий сурогат викидає "URIError: malformed URI sequence"
