@@ -138,8 +138,6 @@ parseInt("123_456"); // 123
 
 ### Використання parseInt() на нерядкових значеннях
 
-`parseInt()` can have interesting results when working on non-strings combined with a high radix; for example, `36` (which makes all alphanumeric characters valid numeric digits).
-
 `parseInt()` може давати цікаві результати, коли опрацьовує нерядкові значення у поєднанні з високим значенням основи числення; наприклад, `36` (що робить усі абетково-цифрові символи дійсними цифрами).
 
 ```js
