@@ -52,19 +52,16 @@ slice(start, end)
 
 ## Опис
 
-Метод `slice` не змінює початковий масив. Він повертає поверхневу копію елементів початкового масиву. Елементи початкового масиву копіюються до масиву з результатами таким чином:
+Метод `slice()` є [копіювальним методом](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#kopiiuvalni-ta-zminiuvalni-metody). Він не змінює `this`, а повертає [поверхневу копію](/uk/docs/Glossary/Shallow_copy), котра містить частину тих самих елементів, що є у вихідному масиві.
 
-- Для об'єктів `slice` копіює посилання на об'єкти у новий масив. Новий масив міститиме ті самі об'єкти, що містяться у початковому масиві. Якщо об'єкт змінюється, такі зміни будуть відбиті як на початковому, так і на новому масиві.
-- Для рядків, чисел і булевого типу (не об'єктів {{jsxref("String")}}, {{jsxref("Number")}} чи {{jsxref("Boolean")}}) `slice` скопіює значення у новий масив. Зміни у рядках, числах, чи булевих значеннях одного масиву ніяк не зачеплять інший.
-
-Якщо до будь-якого з масивів додати новий елемент, інший масив залишиться без змін.
+Метод `slice()` зберігає порожні комірки. Якщо вирізана частка є [розрідженою](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy), то повернений масив буде розрідженим також.
 
 ## Приклади
 
 ### Повернення частини наявного масиву
 
 ```js
-const fruits = ['Банан', 'Апельсин', 'Лимон', 'Яблуко', 'Манго'];
+const fruits = ["Банан", "Апельсин", "Лимон", "Яблуко", "Манго"];
 const citrus = fruits.slice(1, 3);
 
 // fruits містить ['Банан', 'Апельсин', 'Лимон', 'Яблуко', 'Манго']
@@ -78,27 +75,27 @@ const citrus = fruits.slice(1, 3);
 ```js
 // За допомогою slice() створити newCar з myCar.
 const myHonda = {
-  color: 'червоний',
+  color: "червоний",
   wheels: 4,
   engine: { cylinders: 4, size: 2.2 },
 };
-const myCar = [myHonda, 2, 'чудовий стан', 'придбана у 1997'];
+const myCar = [myHonda, 2, "чудовий стан", "придбана у 1997"];
 const newCar = myCar.slice(0, 2);
 
 // Показати значення myCar, newCar, і колір myHonda,
 // на який посилаються обидва масиви.
-console.log('myCar = ', myCar);
-console.log('newCar = ', newCar);
-console.log('myCar[0].color = ', myCar[0].color);
-console.log('newCar[0].color = ', newCar[0].color);
+console.log("myCar = ", myCar);
+console.log("newCar = ", newCar);
+console.log("myCar[0].color = ", myCar[0].color);
+console.log("newCar[0].color = ", newCar[0].color);
 
 // Змінити колір myHonda.
-myHonda.color = 'бузковий';
-console.log('Новий колір моєї Honda – ', myHonda.color);
+myHonda.color = "бузковий";
+console.log("Новий колір моєї Honda – ", myHonda.color);
 
 // Показати колір myHonda, на який посилаються обидва масиви.
-console.log('myCar[0].color = ', myCar[0].color);
-console.log('newCar[0].color = ', newCar[0].color);
+console.log("myCar[0].color = ", myCar[0].color);
+console.log("newCar[0].color = ", newCar[0].color);
 ```
 
 Скрипт надрукує такий текст:
@@ -142,6 +139,14 @@ function list() {
 }
 
 const list1 = list(1, 2, 3); // [1, 2, 3]
+```
+
+### Використання slice() на розріджених масивах
+
+Масив, повернений зі `slice()`, може бути розрідженим, якщо розрідженим є вихідний масив.
+
+```js
+console.log([1, 2, , 4, 5].slice(1, 4)); // [2, порожньо, 4]
 ```
 
 ## Специфікації

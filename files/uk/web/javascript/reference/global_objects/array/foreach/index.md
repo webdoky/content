@@ -61,7 +61,9 @@ forEach(function(element, index, array) { /* … */ }, thisArg)
 
 ## Опис
 
-Метод `forEach()` викликає подану функцію `callbackFn` один раз для кожного елементу в масиві, у порядку зростання їх порядкового номера. Функція не викликається для елементів, які було видалено, або які не було ініціалізовано. (Для розріджених масивів [дивіться приклад нижче](#nichoho-ne-vidbuvaietsia-na-neinitsializovanykh-znachenniakh-rozridzheni-masyvy).)
+Метод `forEach()` викликає подану функцію `callbackFn` один раз для кожного елементу в масиві, у порядку зростання їх порядкового номера.
+
+`callbackFn` закликається лише для тих індексів масиву, що мають присвоєні значення. Вона не закликається для порожніх комірок у [розріджених масивах](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy).
 
 Функція `callbackFn` викликається з трьома аргументами:
 
@@ -122,7 +124,7 @@ forEach(function(element, index, array) { /* … */ }, thisArg)
 
 ## Приклади
 
-### Нічого не відбувається на неініціалізованих значеннях (розріджені масиви)
+### Використання forEach() на розріджених масивах
 
 ```js
 <!-- markdownlint-disable-next-line -->
@@ -142,12 +144,12 @@ console.log({ numCallbackRuns });
 // { numCallbackRuns: 3 }
 ```
 
-Як можна побачити, на пропущеному між 3 та 7 значенні функція зворотного виклику не викликалась
+Функція зворотного виклику не закликається для пропущеного значення за індексом 2.
 
 ### Перетворення циклу for на forEach
 
 ```js
-const items = ['item1', 'item2', 'item3'];
+const items = ["item1", "item2", "item3"];
 const copyItems = [];
 
 // до
@@ -248,10 +250,10 @@ const obj2 = copy(obj1); // obj2 тепер має точнісінько так
 Метод `forEach()` не робить копію масиву перед перебиранням.
 
 ```js
-const words = ['one', 'two', 'three', 'four'];
+const words = ["one", "two", "three", "four"];
 words.forEach((word) => {
   console.log(word);
-  if (word === 'two') {
+  if (word === "two") {
     words.shift(); // елемент 'one' видаляється з масиву
   }
 }); // one // two // four

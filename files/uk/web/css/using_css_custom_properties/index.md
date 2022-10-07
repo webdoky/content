@@ -1,6 +1,7 @@
 ---
 title: Використання користувацьких властивостей (змінних) CSS
 slug: Web/CSS/Using_CSS_custom_properties
+page-type: guide
 tags:
   - CSS
   - CSS Variables

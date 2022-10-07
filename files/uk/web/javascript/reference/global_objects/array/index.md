@@ -23,7 +23,7 @@ browser-compat: javascript.builtins.Array
 
 - **Масиви JavaScript не є асоціативними ми**, а отже – [елементи масиву не можуть бути отримані з використанням рядків замість індексів](#prymitky), натомість слід використовувати цілі числа як індекси.
 
-- **Масиви JavaScript [нумеруються з нуля (англ.)](https://en.wikipedia.org/wiki/Zero-based_numbering)**: перший елемент масиву знаходиться за індексом `0`, другий – за індексом `1`, і так далі – а останній елемент знаходиться індексом, рівним значенню властивості {{jsxref("Array/length", "length")}} масиву мінус `1`.
+- **Масиви JavaScript [нумеруються з нуля (англ.)](https://en.wikipedia.org/wiki/Zero-based_numbering)**: перший елемент масиву знаходиться за індексом `0`, другий – за індексом `1`, і так далі – а останній елемент знаходиться за індексом, рівним значенню властивості {{jsxref("Array/length", "length")}} масиву мінус `1`.
 
 - **[Операції копіювання масиву](#kopiiuvannia-masyvu) створюють [поверхневі копії](/uk/docs/Glossary/Shallow_copy)**. (Усі стандартні вбудовані операції копіювання _будь-яких_ об'єктів JavaScript objects створюють поверхневі копії, а не [глибинні копії](/uk/docs/Glossary/Deep_copy)).
 
@@ -257,7 +257,7 @@ console.log(removedItems);
 // ["Полуниця", "Манго", "Вишня"]
 ```
 
-### Урізання масиву до його перших _N_ елементів
+### Урізання масиву до його перших N елементів
 
 Цей приклад використовує метод [`splice()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) для урізання масиву `fruits` до його перших 2 елементів.
 
@@ -560,6 +560,26 @@ console.table(values);
 9  512  162
 ```
 
+### Створення масиву на основі результату збігу
+
+Результат збігу між {{jsxref("RegExp")}} та рядком може створити масив JavaScript, що має властивості та елементи, котрі надають інформацію про збіг. Такий масив повертають методи {{jsxref("RegExp.prototype.exec()")}} і {{jsxref("String.prototype.match()")}}.
+
+Наприклад:
+
+```js
+// Збіг з однією d, після якої одна чи більше літера b, після якої одна d
+// Запам'ятати b, з якими був збіг, та d опісля
+// Зневажати регістр
+
+const myRe = /d(b+)(d)/i;
+const execResult = myRe.exec("cdbBdbsbz");
+console.log(execResult.input); // 'cdbBdbsbz'
+console.log(execResult.index); // 1
+console.log(execResult); // Array(3) [ "dbBd", "bB", "d" ]
+```
+
+Більше інформації про результат збігу – на сторінках {{jsxref("RegExp.prototype.exec()")}} і {{jsxref("String.prototype.match()")}}.
+
 ## Примітки
 
 Об'єкти `Array` не можуть використовувати рядки як індекси елементів (як це буває в [асоціативному масиві](https://uk.wikipedia.org/wiki/%D0%90%D1%81%D0%BE%D1%86%D1%96%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D0%B8%D0%B9_%D0%BC%D0%B0%D1%81%D0%B8%D0%B2)), а мусять використовувати цілі числа. Встановлення чи отримання значень за допомогою [запису квадратних дужок](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#obiekty-ta-vlastyvosti) (чи [запису крапки](/uk/docs/Web/JavaScript/Reference/Operators/Property_Accessors)) не встановить і не отримає елемента самого списку елементів масиву, але встановить чи отримає змінну, пов'язану з [колекцією властивостей об'єкта](/uk/docs/Web/JavaScript/Data_structures#vlastyvosti) масиву. Властивості об'єкта-масиву та список елементів масиву окремі одне від одного, і [операції перебору та зміни](/uk/docs/Web/JavaScript/Guide/Indexed_collections#metody-masyva) не можуть застосовуватись до таких іменованих властивостей.
@@ -636,25 +656,88 @@ console.log(fruits.length); // 2
 
 Така поведінка докладніше пояснена на сторінці {{jsxref("Array/length")}}.
 
-### Створення масиву на основі результату збігу
+### Методи масиву й порожні комірки
 
-Результат збігу між {{jsxref("RegExp")}} та рядком може створити масив JavaScript, що має властивості та елементи, котрі надають інформацію про збіг. Такий масив повертають методи {{jsxref("RegExp.prototype.exec()")}} і {{jsxref("String.prototype.match()")}}.
+Порожні комірки в [розріджених масивах](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy) поводяться в методах масиву непостійно. Загалом, старші методи пропускають порожні комірки, а новіші – обробляють їх як `undefined`.
 
-Наприклад:
+Серед методів, що ітерують багато елементів, наступні – виконують перевірку [`in`](/uk/docs/Web/JavaScript/Reference/Operators/in) перед звертанням до індексу і не зводять порожні комірки до `undefined`:
+
+- {{jsxref("Array/concat", "concat()")}}
+- {{jsxref("Array/copyWithin", "copyWithin()")}}
+- {{jsxref("Array/every", "every()")}}
+- {{jsxref("Array/filter", "filter()")}}
+- {{jsxref("Array/flat", "flat()")}}
+- {{jsxref("Array/flatMap", "flatMap()")}}
+- {{jsxref("Array/forEach", "forEach()")}}
+- {{jsxref("Array/indexOf", "indexOf()")}}
+- {{jsxref("Array/lastIndexOf", "lastIndexOf()")}}
+- {{jsxref("Array/map", "map()")}}
+- {{jsxref("Array/reduce", "reduce()")}}
+- {{jsxref("Array/reduceRight", "reduceRight()")}}
+- {{jsxref("Array/reverse", "reverse()")}}
+- {{jsxref("Array/slice", "slice()")}}
+- {{jsxref("Array/some", "some()")}}
+- {{jsxref("Array/sort", "sort()")}}
+- {{jsxref("Array/splice", "splice()")}}
+
+Щодо того, як саме вони обробляють порожні комірки, дивіться сторінки окремих методів.
+
+Ці методи обробляють порожні комірки так, ніби в них `undefined`:
+
+- {{jsxref("Array/entries", "entries()")}}
+- {{jsxref("Array/fill", "fill()")}}
+- {{jsxref("Array/find", "find()")}}
+- {{jsxref("Array/findIndex", "findIndex()")}}
+- {{jsxref("Array/findLast", "findLast()")}}
+- {{jsxref("Array/findLastIndex", "findLastIndex()")}}
+- {{jsxref("Array/group", "group()")}}
+- {{jsxref("Array/groupToMap", "groupToMap()")}}
+- {{jsxref("Array/includes", "includes()")}}
+- {{jsxref("Array/join", "join()")}}
+- {{jsxref("Array/keys", "keys()")}}
+- {{jsxref("Array/toLocaleString", "toLocaleString()")}}
+- {{jsxref("Array/values", "values()")}}
+
+### Копіювальні та змінювальні методи
+
+Частина методів не змінює наявний масив, на котрому викликали метод, а повертає новий масив. Це робиться шляхом виклику спершу [`this.constructor[Symbol.species]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/@@species), аби з'ясувати, який конструктор використовувати для нового масиву. Новостворений масив після цього заповнюється елементами. Копіювання завжди відбувається [_поверхнево_](/uk/docs/Glossary/Shallow_copy): метод ніколи не копіює нічого поза початково створеним масивом. Елементи вихідного масиву (чи масивів) копіюються в новий масив так:
+
+- Об'єкти: посилання об'єкта копіюється в новий масив. І вихідний, і новий масиви посилаються на один об'єкт. Тобто якщо змінити цей об'єкт, то зміни будуть помітні і в новому, і у вихідному масиві.
+- Примітивні типи, як то рядки, числа й булеві значення (не об'єкти {{jsxref("Global_Objects/String", "String")}}, {{jsxref("Global_Objects/Number", "Number")}} і {{jsxref("Global_Objects/Boolean", "Boolean")}}): їхні значення копіюються в новий масив.
+
+Решта методів змінює масив, на котрому викликано метод, у випадку чого їхнє повернене значення відрізняється залежно від методу: іноді це посилання на той самий масив, іноді довжина нового масиву.
+
+Наступні методи утворюють нові масиви за допомогою `@@species`:
+
+- {{jsxref("Array/concat", "concat()")}}
+- {{jsxref("Array/filter", "filter()")}}
+- {{jsxref("Array/flat", "flat()")}}
+- {{jsxref("Array/flatMap", "flatMap()")}}
+- {{jsxref("Array/map", "map()")}}
+- {{jsxref("Array/slice", "slice()")}}
+- {{jsxref("Array/splice", "splice()")}} (для утворення поверненого масиву усунутих елементів)
+
+Зверніть увагу, що {{jsxref("Array/group", "group()")}} і {{jsxref("Array/groupToMap", "groupToMap()")}} не застосовують `@@species` для створення нових масивів кожного запису групи, а завжди використовують простий конструктор `Array`. Задумано так, що вони не є копіювальними методами.
+
+Наступні методи змінюють вихідний масив:
+
+- {{jsxref("Array/copyWithin", "copyWithin()")}}
+- {{jsxref("Array/fill", "fill()")}}
+- {{jsxref("Array/pop", "pop()")}}
+- {{jsxref("Array/push", "push()")}}
+- {{jsxref("Array/reverse", "reverse()")}}
+- {{jsxref("Array/shift", "shift()")}}
+- {{jsxref("Array/sort", "sort()")}}
+- {{jsxref("Array/splice", "splice()")}}
+- {{jsxref("Array/unshift", "unshift()")}}
+
+### Узагальнені методи масиву
+
+Методи масиву завжди є узагальненими: вони не звертаються до жодних внутрішніх даних об'єкта масиву. Вони звертаються лише до елементів масиву – через властивість `length` та елементи з індексами. Це означає, що вони також можуть бути викликані на масивоподібних об'єктах.
 
 ```js
-// Збіг з однією d, після якої одна чи більше літера b, після якої одна d
-// Запам'ятати b, з якими був збіг, та d опісля
-// Зневажати регістр
-
-const myRe = /d(b+)(d)/i;
-const execResult = myRe.exec("cdbBdbsbz");
-console.log(execResult.input); // 'cdbBdbsbz'
-console.log(execResult.index); // 1
-console.log(execResult); // Array(3) [ "dbBd", "bB", "d" ]
+Array.prototype.join.call({ 0: "a", 1: "b", length: 2 }, "+"); // 'a+b'
 ```
-
-Для отримання детальнішої інформації про результат зіставлення – дивіться сторінки {{jsxref("RegExp.prototype.exec()")}} і {{jsxref("String.prototype.match()")}}.
 
 ## Специфікації
 

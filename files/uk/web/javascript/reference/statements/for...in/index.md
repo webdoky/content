@@ -92,7 +92,7 @@ for (const prop in obj) {
 const triangle = { a: 1, b: 2, c: 3 };
 
 function ColoredTriangle() {
-  this.color = 'red';
+  this.color = "red";
 }
 
 ColoredTriangle.prototype = triangle;
