@@ -1,6 +1,7 @@
 ---
 title: background-image
 slug: Web/CSS/background-image
+page-type: css-property
 tags:
   - CSS
   - CSS Background
@@ -12,7 +13,7 @@ browser-compat: css.properties.background-image
 
 {{CSSRef}}
 
-Властивість [CSS](/uk/docs/Web/CSS) **`background-image`** встановлює одне або більше зображень тла елемента.
+Властивість [CSS](/uk/docs/Web/CSS) **`background-image`** (зображення тла) встановлює одне або більше зображень тла елемента.
 
 {{EmbedInteractiveExample("pages/css/background-image.html")}}
 
@@ -22,7 +23,7 @@ browser-compat: css.properties.background-image
 
 Якщо певне зображення не може бути нанесено (наприклад, коли файл, вказаний через URI, не може бути завантажений), браузери обробляють таку ситуацію так, ніби вказано значення `none`.
 
-> **Зверніть увагу:** Навіть якщо зображення непрозорі, і колір тла не повинен з‘явитися за звичайних умов, веброзробники мусять завжди вказувати {{cssxref("background-color")}}. Якщо зображення не можуть бути завантажені, – наприклад, коли мережа недоступна, – колір тла буде використаний як запасний варіант.
+> **Примітка:** Навіть якщо зображення непрозорі, і колір тла не повинен з'явитися за звичайних умов, веброзробники мусять завжди вказувати {{cssxref("background-color")}}. Якщо зображення не можуть бути завантажені, – наприклад, коли мережа недоступна, – колір тла буде використаний як запасний варіант.
 
 ## Синтаксис
 
@@ -35,13 +36,13 @@ background-image: linear-gradient(
     to bottom,
     rgba(255, 255, 0, 0.5),
     rgba(0, 0, 255, 0.5)
-  ), url('catfront.png');
+  ), url("catfront.png");
 
 /* Глобальні значення */
 background-image: inherit;
 background-image: initial;
 background-image: revert;
-backdrop-filter: revert-layer;
+background-image: revert-layer;
 background-image: unset;
 ```
 
@@ -95,11 +96,11 @@ p {
 }
 
 div {
-  background-image: url('mdn_logo_only_color.png');
+  background-image: url("mdn_logo_only_color.png");
 }
 
 .catsandstars {
-  background-image: url('startransparent.gif'), url('catfront.png');
+  background-image: url("startransparent.gif"), url("catfront.png");
   background-color: transparent;
 }
 ```
@@ -120,8 +121,8 @@ div {
 
 - [Імплементація спрайтових зображень на CSS](/uk/docs/Web/CSS/CSS_Images/Implementing_image_sprites_in_CSS)
 - {{HTMLElement("img")}}
-- Типи даних, пов‘язані з зображеннями: {{cssxref("&lt;image&gt;")}}, {{cssxref("&lt;gradient&gt;")}}
-- Функції, пов‘язані з зображеннями:
+- Типи даних, пов'язані з зображеннями: {{cssxref("&lt;image&gt;")}}, {{cssxref("&lt;gradient&gt;")}}
+- Функції, пов'язані з зображеннями:
 
   - {{cssxref("cross-fade", "cross-fade()")}}
   - {{cssxref("element", "element()")}}

@@ -9,6 +9,7 @@ tags:
   - Reference
   - array.concat
   - concat
+  - Polyfill
 browser-compat: javascript.builtins.Array.concat
 ---
 
@@ -20,11 +21,11 @@ browser-compat: javascript.builtins.Array.concat
 
 ## Синтаксис
 
-```js
+```js-nolint
 concat()
 concat(value0)
 concat(value0, value1)
-concat(value0, value1, ... , valueN)
+concat(value0, value1, /* … ,*/ valueN)
 ```
 
 ### Параметри
@@ -38,15 +39,11 @@ concat(value0, value1, ... , valueN)
 
 ## Опис
 
-Метод `concat` створює новий масив. Цей масив спершу наповнюється елементами об‘єкта, на котрому `concat` викликали. Далі значення кожного аргументу причіплюється до масиву: для звичайних об‘єктів чи примітивів – сам аргумент стає елементом результівного масиву, а для масивів чи масивоподібних об‘єктів зі властивістю [`Symbol.isConcatSpreadable`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/isConcatSpreadable), що має значення істинності, кожен елемент аргументу буде окремо доданий до результівного масиву. Метод `concat` не виконує рекурсії на вкладених масивах аргументів.
+Метод `concat` створює новий масив. Цей масив спершу наповнюється елементами об'єкта, на котрому `concat` викликали. Далі значення кожного аргументу причіплюється до масиву: для звичайних об'єктів чи примітивів – сам аргумент стає елементом результівного масиву, а для масивів чи масивоподібних об'єктів зі властивістю [`Symbol.isConcatSpreadable`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/isConcatSpreadable), що має значення істинності, кожен елемент аргументу буде окремо доданий до результівного масиву. Метод `concat` не виконує рекурсії на вкладених масивах аргументів.
 
-Метод `concat` не міняє ані `this`, ані жодного з масивів, переданих як аргументи, а натомість повертає [поверхневу копію](/uk/docs/Glossary/Shallow_copy), що містить копії тих самих елементів, що були у вихідних масивах. Елементи вихідних масивів копіюються в новий масив наступним чином:
+Метод `concat()` є [копіювальним методом](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#kopiiuvalni-ta-zminiuvalni-metody). Він не змінює ані `this`, ані жодного з масивів, переданих як аргументи, а натомість повертає [поверхневу копію](/uk/docs/Glossary/Shallow_copy), що містить ті самі елементи, що були у вихідних масивах.
 
-- Посилання на об‘єкти (а не сам об‘єкт): `concat` копіює в новий масив посилання на об‘єкти. Як вихідний, так і новий масиви посилаються на одні об‘єкти. А отже – при змінах відповідного об‘єкта зміни будуть помітні як в новому, так у вихідному масиві. Це так само діє для масивів, які є елементами аргументів.
-- Типи даних типу рядків, чисел та булевих значень (але не об‘єкти {{jsxref("Global_Objects/String", "String")}}, {{jsxref("Global_Objects/Number", "Number")}} і {{jsxref("Global_Objects/Boolean", "Boolean")}}):
-  `concat` копіює значення рядків та чисел у новий масив.
-
-> **Примітка:** Зчеплення масиву (масивів) та (або) значення (значень) залишить оригінальні значення без змін. Понад те, будь-яка операція з новим масивом (окрім операцій на елементах, котрі є посиланнями на об‘єкти) не матиме ефекту на вихідних масивах, і навпаки.
+Метод `concat()` зберігає порожні комірки, якщо будь-який із вихідних масивів є [розрідженим](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy).
 
 ## Приклади
 
@@ -55,7 +52,7 @@ concat(value0, value1, ... , valueN)
 Наступний код зчіплює два масиви:
 
 ```js
-const letters = ['a', 'b', 'c'];
+const letters = ["a", "b", "c"];
 const numbers = [1, 2, 3];
 
 const alphaNumeric = letters.concat(numbers);
@@ -83,7 +80,7 @@ console.log(numbers);
 Наступний код зчіплює три значення в масив:
 
 ```js
-const letters = ['a', 'b', 'c'];
+const letters = ["a", "b", "c"];
 
 const alphaNumeric = letters.concat(1, [2, 3]);
 
@@ -111,15 +108,24 @@ console.log(numbers);
 // дає [[1, 4], 2, [3]]
 ```
 
-### Зчеплення масивоподібних об‘єктів за допомогою Symbol.isConcatSpreadable
+### Зчеплення масивоподібних об'єктів за допомогою Symbol.isConcatSpreadable
 
-`concat` усталено не розглядає всі масивоподібні об‘єкти як масиви: він це робить лише якщо властивість `Symbol.isConcatSpreadable` має значення істинності (наприклад, `true`.)
+`concat` усталено не розглядає всі масивоподібні об'єкти як масиви: він це робить лише якщо властивість `Symbol.isConcatSpreadable` має значення істинності (наприклад, `true`.)
 
 ```js
 const obj1 = { 0: 1, 1: 2, 2: 3, length: 3 };
 const obj2 = { 0: 1, 1: 2, 2: 3, length: 3, [Symbol.isConcatSpreadable]: true };
 console.log([0].concat(obj1, obj2));
 // [ 0, { '0': 1, '1': 2, '2': 3, length: 3 }, 1, 2, 3 ]
+```
+
+### Використання concat() на розріджених масивах
+
+Якщо будь-який з вихідних масивів є розрідженим, то результівний масив також буде розрідженим:
+
+```js
+console.log([1, , 3].concat([4, 5])); // [1, порожньо, 3, 4, 5]
+console.log([1, 2].concat([3, , 5])); // [1, 2, 3, порожньо, 6]
 ```
 
 ## Специфікації
@@ -132,8 +138,9 @@ console.log([0].concat(obj1, obj2));
 
 ## Дивіться також
 
-- {{jsxref("Array.push", "push")}} / {{jsxref("Array.pop", "pop")}} — щоб додати чи прибрати елементи в кінці масиву
-- {{jsxref("Array.unshift", "unshift")}} / {{jsxref("Array.shift", "shift")}} — щоб додати чи прибрати елементи на початку масиву
-- {{jsxref("Array.splice", "splice")}} — щоб додати чи прибрати елементи у вказаному місці масиву
+- [Поліфіл для `Array.prototype.concat` доступний в складі `core-js`, разом з виправленнями й реалізацією сучасної логіки типу підтримки `Symbol.isConcatSpreadable`](https://github.com/zloirock/core-js#ecmascript-array)
+- {{jsxref("Array/push", "push()")}} / {{jsxref("Array/pop", "pop()")} — щоб додати чи прибрати елементи в кінці масиву
+- {{jsxref("Array/unshift", "unshift()")}} / {{jsxref("Array/shift", "shift()")}} — щоб додати чи прибрати елементи на початку масиву
+- {{jsxref("Array/splice", "splice()")}} — щоб додати чи прибрати елементи у вказаному місці масиву
 - {{jsxref("String.prototype.concat()")}}
 - {{jsxref("Symbol.isConcatSpreadable")}} — щоб контролювати сплощення.

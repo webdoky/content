@@ -11,7 +11,7 @@ tags:
   - Landing page
   - Reference
   - es
-  - l10n:priority
+  - "l10n:priority"
   - programming
 ---
 
@@ -134,17 +134,6 @@ tags:
 - {{JSxRef("Global_Objects/Intl/RelativeTimeFormat", "Intl.RelativeTimeFormat")}}
 - {{JSxRef("Global_Objects/Intl/Segmenter", "Intl.Segmenter")}}
 
-### WebAssembly
-
-- {{JSxRef("WebAssembly")}}
-- {{JSxRef("WebAssembly.Module")}}
-- {{JSxRef("WebAssembly.Instance")}}
-- {{JSxRef("WebAssembly.Memory")}}
-- {{JSxRef("WebAssembly.Table")}}
-- {{JSxRef("WebAssembly.CompileError")}}
-- {{JSxRef("WebAssembly.LinkError")}}
-- {{JSxRef("WebAssembly.RuntimeError")}}
-
 ### Інші
 
 - {{JSxRef("Functions/arguments", "arguments")}}
@@ -155,8 +144,8 @@ tags:
 
 ### Керування потоком виконання
 
-- {{jsxref("Statements/block", "Block", "", 1)}}
-- {{jsxref("Statements/Empty", "Empty statement", "", 1)}}
+- {{jsxref("Statements/block", "Блок", "", 1)}}
+- {{jsxref("Statements/Empty", "Порожня інструкція", "", 1)}}
 - {{jsxref("Statements/break", "break")}}
 - {{jsxref("Statements/continue", "continue")}}
 - {{jsxref("Statements/if...else", "if...else")}}
@@ -215,12 +204,12 @@ tags:
 - {{JSxRef("Operators/Object_initializer", "{}")}}
 - {{JSxRef("Global_Objects/RegExp", "/ab+c/i")}}
 - {{JSxRef("Operators/Grouping", "( )")}}
-- {{JSxRef("null")}}
+- [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null)
 
 ### Вирази лівої сторони
 
-- {{JSxRef("Operators/Property_accessors", "Property accessors", "", 1)}}
-- {{JSxRef("Operators/Optional_chaining", "<code>?.</code> (Optional chaining)", "", 1)}}
+- {{JSxRef("Operators/Property_accessors", "Доступ до властивостей", "", 1)}}
+- [`?.` (Необов'язкове зв'язування)](/uk/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
 - {{JSxRef("Operators/new", "new")}}
 - {{JSxRef("Operators/new%2Etarget", "new.target")}}
 - {{JSxRef("Operators/import%2Emeta", "import.meta")}}
@@ -309,8 +298,8 @@ tags:
 - {{JSxRef("Operators/Logical_AND_assignment", "&amp;&amp;=")}}
 - {{JSxRef("Operators/Logical_OR_assignment", "||=")}}
 - {{JSxRef("Operators/Logical_nullish_assignment", "??=")}}
-- {{JSxRef("Operators/Destructuring_assignment", "[a, b] = [1, 2]")}}
-- {{JSxRef("Operators/Destructuring_assignment", "{a, b} = {a:1, b:2}")}}
+- {{JSxRef("Operators/Destructuring_assignment", "[a, b] = arr")}}
+- {{JSxRef("Operators/Destructuring_assignment", "{ a, b } = obj")}}
 
 ### Оператор коми
 
@@ -330,7 +319,7 @@ tags:
 
 ## Класи
 
-[Класи в JavaScript.](/en-US/docs/Web/JavaScript/Reference/Classes)
+[Класи в JavaScript.](/uk/docs/Web/JavaScript/Reference/Classes)
 
 ## Додаткові довідкові сторінки
 

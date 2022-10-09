@@ -17,7 +17,7 @@ browser-compat: html.elements.input.type_file
 
 {{HTMLRef("Input_types")}}
 
-Елементи {{HTMLElement("input")}} із атрибутом **`type="file"`** дають користувачеві змогу обрати один чи більше файлів з його пристрою. Бувши обраними, файли можуть бути завантажені на сервер за допомогою [подання форми](/uk/docs/Learn/Forms), або ж використані за допомогою коду на JavaScript та [файлового API](/uk/docs/Web/API/File_API/Using_files_from_web_applications).
+Елементи {{HTMLElement("input")}} з атрибутом **`type="file"`** дають користувачеві змогу обрати один чи більше файлів з його пристрою. Бувши обраними, файли можуть бути завантажені на сервер за допомогою [подання форми](/uk/docs/Learn/Forms), або ж використані за допомогою коду на JavaScript та [файлового API](/uk/docs/Web/API/File_API/Using_files_from_web_applications).
 
 {{EmbedInteractiveExample("pages/tabbed/input-file.html", "tabbed-shorter")}}
 
@@ -66,13 +66,9 @@ browser-compat: html.elements.input.type_file
 
 ## Значення
 
-Атрибут файлового поля {{htmlattrxref("value", "input")}} містить рядок, що представляє шлях до обраного файлу (або файлів). Якщо користувач обрав декілька файлів, то `value` представляє перший файл з обраних. Решта файлів можуть бути встановлені за допомогою властивості поля `HTMLInputElement.files`.
+Атрибут файлового поля {{htmlattrxref("value", "input")}} містить рядок, що представляє шлях до обраного файлу (або файлів). Поки жоден файл не обраний, значенням є порожній рядок (`""`). Коли користувач обирає декілька файлів, то `value` представляє перший файл з обраних. Решта файлів можуть бути встановлені за допомогою [властивості поля `HTMLInputElement.files`](/uk/docs/Web/API/File_API/Using_files_from_web_applications#otrymannia-informatsii-pro-obrani-faily).
 
-> **Примітка:**
->
-> 1. Якщо вибрані декілька файлів, то рядок представляє перший із них. JavaScript може доступитися до решти [за допомогою властивості `files` поля введення](/uk/docs/Web/API/File_API/Using_files_from_web_applications#otrymannia-informatsiii-pro-vybrani-faily).
-> 2. Якщо жоден файл іще не був вибраний, цей рядок – `""` (порожній).
-> 3. Рядок [отримує префікс `C:\fakepath\` (англ.)](https://html.spec.whatwg.org/multipage/input.html#fakepath-srsly), щоб не дати зловмисним програмам дізнатися про файлову структуру пристрою користувача.
+> **Примітка:** Значенням [завжди є ім'я файлу, перед котрим додано `C:\fakepath\` (англ.)](https://html.spec.whatwg.org/multipage/input.html#fakepath-srsly), що не є справжнім шляхом до файлу. Так зроблено, щоб не дати зловмисним програмам дізнатися про файлову структуру пристрою користувача.
 
 ## Додаткові атрибути
 
@@ -88,8 +84,7 @@ browser-compat: html.elements.input.type_file
 <input
   type="file"
   id="docpicker"
-  accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-/>
+  accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
 ```
 
 ### capture
@@ -162,16 +157,16 @@ This produces the following output:
 
 ### Отримання інформації про вибрані файли
 
-Вибрані файли повертає властивість елемента `HTMLInputElement.files`, причому повертає у вигляді об‘єкта {{domxref("FileList")}}, що зберігає список об‘єктів {{domxref("File")}} objects. `FileList` поводиться подібно до масиву, тож для отримання числа вибраних файлів можна перевірити властивість `length`.
+Вибрані файли повертає властивість елемента `HTMLInputElement.files`, причому повертає у вигляді об'єкта {{domxref("FileList")}}, що зберігає список об'єктів {{domxref("File")}} objects. `FileList` поводиться подібно до масиву, тож для отримання числа вибраних файлів можна перевірити властивість `length`.
 
-Кожний об‘єкт `File` містить наступну інформацію:
+Кожний об'єкт `File` містить наступну інформацію:
 
-- `name` (ім‘я)
-  - : Ім‘я файлу.
+- `name` (ім'я)
+  - : Ім'я файлу.
 - `lastModified` (востаннє змінений)
   - : Число, що вказує дату й час, коли файл востаннє був змінений, у вигляді мілісекунд, що минули від початку епохи UNIX (опівночі 1 січня 1970 року).
 - `lastModifiedDate` (дата останніх змін) {{deprecated_inline}}
-  - : Об‘єкт {{jsxref("Date")}}, що представляє дату й час, коли файл востаннє був змінений. _Ця властивість є нерекомендованою. Замість неї слід використовувати `lastModified`._
+  - : Об'єкт {{jsxref("Date")}}, що представляє дату й час, коли файл востаннє був змінений. _Ця властивість є нерекомендованою. Замість неї слід використовувати `lastModified`._
 - `size` (розмір)
   - : Розмір файлу в байтах.
 - `type` (тип)
@@ -202,8 +197,7 @@ This produces the following output:
       type="file"
       id="profile_pic"
       name="profile_pic"
-      accept=".jpg, .jpeg, .png"
-    />
+      accept=".jpg, .jpeg, .png" />
   </div>
   <div>
     <button>Надіслати</button>
@@ -227,18 +221,18 @@ div {
 
 Атрибут `accept` не перевіряє типи вибраних файлів; цей атрибут підказує браузерам, як підвести користувачів до вибору відповідних типів файлів. Усе ж можливо (в більшості випадків) вимкнути при виборі файлу це обмеження і вибрати будь-який бажаний файл, із некоректним типом.
 
-У зв‘язку з цим слід пересвідчитися, що атрибут `accept` доповнений відповідною валідацією на боці сервера.
+У зв'язку з цим слід пересвідчитися, що атрибут `accept` доповнений відповідною валідацією на боці сервера.
 
 ### Примітки
 
 1. Не можна встановити значення файлового поля зі сценарію, – код типу того, що нижче, не подіє:
 
    ```js
-   const input = document.querySelector('input[type=file]');
-   input.value = 'foo';
+   const input = document.querySelector("input[type=file]");
+   input.value = "foo";
    ```
 
-2. Коли за допомогою `<input type="file">` обирається файл, реальний шлях до такого файлу з очевидних міркувань безпеки не показується в атрибуті `value`. Натомість його ім‘я показується із `C:\fakepath\` на початку. Цей виверт має певні історичні підстави, але він підтримується у всіх сучасних браузерах і фактично є [визначеним специфікацією (англ.)](https://html.spec.whatwg.org/multipage/forms.html#fakepath-srsly).
+2. Коли за допомогою `<input type="file">` обирається файл, реальний шлях до такого файлу з очевидних міркувань безпеки не показується в атрибуті `value`. Натомість його ім'я показується із `C:\fakepath\` на початку. Цей виверт має певні історичні підстави, але він підтримується у всіх сучасних браузерах і фактично є [визначеним специфікацією (англ.)](https://html.spec.whatwg.org/multipage/forms.html#fakepath-srsly).
 
 ## Приклади
 
@@ -259,8 +253,7 @@ div {
       id="image_uploads"
       name="image_uploads"
       accept=".jpg, .jpeg, .png"
-      multiple
-    />
+      multiple />
   </div>
   <div class="preview">
     <p>Наразі жодні файли не вибрані для завантаження</p>
@@ -338,8 +331,8 @@ form button:active {
 У перших рядках сценарію отримуються посилання на саме поле форми, а також елемент {{htmlelement("div")}} із класом `.preview`. Далі – приховується елемент {{htmlelement("input")}}: це необхідно, тому що файлові поля мають тенденцію до потворності, складності в оформленні та неодноманітності в дизайні між різними браузерами. Елемент `input` можна активувати, клацнувши його {{htmlelement("label")}}, тож краще візуально приховати `input` і оформити `label` як кнопку, щоб користувач знав, що для завантаження файлів взаємодіяти треба із `label`.
 
 ```js
-const input = document.querySelector('input');
-const preview = document.querySelector('.preview');
+const input = document.querySelector("input");
+const preview = document.querySelector(".preview");
 
 input.style.opacity = 0;
 ```
@@ -349,19 +342,19 @@ input.style.opacity = 0;
 Далі – до поля додається [слухач подій](/uk/docs/Web/API/EventTarget/addEventListener), щоб відстежувати зміни його значення (у цьому випадку це відповідає вибору файлів). Слухач подій викликає самописну функцію `updateImageDisplay()`.
 
 ```js
-input.addEventListener('change', updateImageDisplay);
+input.addEventListener("change", updateImageDisplay);
 ```
 
 Кожного виклику функції `updateImageDisplay()`:
 
 - Для очищення попереднього вмісту `<div>` із попереднім виглядом використовується цикл {{jsxref("Statements/while", "while")}}.
-- Витягується об‘єкт {{domxref("FileList")}}, що містить інформацію про всі вибрані файли, та зберігається у змінній, названій `curFiles`.
+- Витягується об'єкт {{domxref("FileList")}}, що містить інформацію про всі вибрані файли, та зберігається у змінній, названій `curFiles`.
 - За допомогою порівняння `curFiles.length` із 0 виконується перевірка, чи не було вибрано 0 (нуль) файлів. Якщо є рівність, то в `<div>` попереднього вигляду виводиться повідомлення про те, що жодні файли не були вибрані.
 - Якщо файли _були_ вибрані, то відбувається обхід кожного з них, – із виводом інформації про них у `<div>` попереднього вигляду. Слід зауважити, що:
 - Для перевірки, чи належить файл до коректного типу (наприклад, типів зображень, зазначених в атрибуті `accept`), використовується самописна функція `validFileType()`.
 - Якщо він справді належить до коректного типу, то:
 
-  - Його ім‘я та розмір (отримані з `file.name` і `file.size`) виводяться в елемент списку всередині попереднього `<div>`. Самописна функція `returnFileSize()` повертає приємно відформатовану версію розміру, в байтах, кілобайтах, мегабайтах (усталено браузер звітує про розмір в абсолютних байтах).
+  - Його ім'я та розмір (отримані з `file.name` і `file.size`) виводяться в елемент списку всередині попереднього `<div>`. Самописна функція `returnFileSize()` повертає приємно відформатовану версію розміру, в байтах, кілобайтах, мегабайтах (усталено браузер звітує про розмір в абсолютних байтах).
   - Шляхом виклику {{domxref("URL.createObjectURL", "URL.createObjectURL(curFiles[i])")}}генерується ескіз зображення. Потім – за допомогою створення нового {{htmlelement("img")}} і присвоєння його атрибутові {{htmlattrxref("src", "img")}} ескізу – зображення вставляється в елемент списку.
 
 - Якщо тип файлу є недійсним, то всередині елемента списку виводиться повідомлення, що сповіщає користувача про необхідність вибрати файл іншого типу.
@@ -374,27 +367,27 @@ function updateImageDisplay() {
 
   const curFiles = input.files;
   if (curFiles.length === 0) {
-    const para = document.createElement('p');
-    para.textContent = 'Наразі жодні файли не вибрані для завантаження';
+    const para = document.createElement("p");
+    para.textContent = "Наразі жодні файли не вибрані для завантаження";
     preview.appendChild(para);
   } else {
-    const list = document.createElement('ol');
+    const list = document.createElement("ol");
     preview.appendChild(list);
 
     for (const file of curFiles) {
-      const listItem = document.createElement('li');
-      const para = document.createElement('p');
+      const listItem = document.createElement("li");
+      const para = document.createElement("p");
       if (validFileType(file)) {
-        para.textContent = `Ім‘я файлу – ${
+        para.textContent = `Ім'я файлу – ${
           file.name
         }, розмір файлу – ${returnFileSize(file.size)}.`;
-        const image = document.createElement('img');
+        const image = document.createElement("img");
         image.src = URL.createObjectURL(file);
 
         listItem.appendChild(image);
         listItem.appendChild(para);
       } else {
-        para.textContent = `Ім‘я файлу – ${file.name}: недійсний тип файлу. Оновіть свій вибір.`;
+        para.textContent = `Ім'я файлу – ${file.name}: недійсний тип файлу. Оновіть свій вибір.`;
         listItem.appendChild(para);
       }
 
@@ -404,21 +397,21 @@ function updateImageDisplay() {
 }
 ```
 
-Самописна функція `validFileType()` приймає як параметр об‘єкт {{domxref("File")}}, а потім використовує {{jsxref("Array.prototype.includes()")}}, щоб перевірити, чи відповідає будь-яке з `fileTypes` значення властивості файлу `type`. Якщо відповідність знайдена, то функція повертає `true`. Якщо не знайдена – `false`.
+Самописна функція `validFileType()` приймає як параметр об'єкт {{domxref("File")}}, а потім використовує {{jsxref("Array.prototype.includes()")}}, щоб перевірити, чи відповідає будь-яке з `fileTypes` значення властивості файлу `type`. Якщо відповідність знайдена, то функція повертає `true`. Якщо не знайдена – `false`.
 
 ```js
 // https://webdoky.org/uk/docs/Web/Media/Formats/Image_types
 const fileTypes = [
-  'image/apng',
-  'image/bmp',
-  'image/gif',
-  'image/jpeg',
-  'image/pjpeg',
-  'image/png',
-  'image/svg+xml',
-  'image/tiff',
-  'image/webp',
-  'image/x-icon',
+  "image/apng",
+  "image/bmp",
+  "image/gif",
+  "image/jpeg",
+  "image/pjpeg",
+  "image/png",
+  "image/svg+xml",
+  "image/tiff",
+  "image/webp",
+  "image/x-icon",
 ];
 
 function validFileType(file) {
@@ -431,11 +424,11 @@ function validFileType(file) {
 ```js
 function returnFileSize(number) {
   if (number < 1024) {
-    return number + 'bytes';
+    return `${number} bytes`;
   } else if (number >= 1024 && number < 1048576) {
-    return (number / 1024).toFixed(1) + 'KB';
+    return `${(number / 1024).toFixed(1)} KB`;
   } else if (number >= 1048576) {
-    return (number / 1048576).toFixed(1) + 'MB';
+    return `${(number / 1048576).toFixed(1)} MB`;
   }
 }
 ```

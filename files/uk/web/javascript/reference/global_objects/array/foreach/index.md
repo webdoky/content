@@ -20,35 +20,21 @@ browser-compat: javascript.builtins.Array.forEach
 
 ## Синтаксис
 
-```js
+```js-nolint
 // Стрілкова функція
-forEach((element) => {
-  /* ... */
-});
-forEach((element, index) => {
-  /* ... */
-});
-forEach((element, index, array) => {
-  /* ... */
-});
+forEach((element) => { /* … */ })
+forEach((element, index) => { /* … */ })
+forEach((element, index, array) => { /* … */ })
 
 // Функція зворотного виклику
-forEach(callbackFn);
-forEach(callbackFn, thisArg);
+forEach(callbackFn)
+forEach(callbackFn, thisArg)
 
 // Функція зворотного виклику, оголошена на місці
-forEach(function (element) {
-  /* ... */
-});
-forEach(function (element, index) {
-  /* ... */
-});
-forEach(function (element, index, array) {
-  /* ... */
-});
-forEach(function (element, index, array) {
-  /* ... */
-}, thisArg);
+forEach(function(element) { /* … */ })
+forEach(function(element, index) { /* … */ })
+forEach(function(element, index, array){ /* … */ })
+forEach(function(element, index, array) { /* … */ }, thisArg)
 ```
 
 ### Параметри
@@ -75,13 +61,15 @@ forEach(function (element, index, array) {
 
 ## Опис
 
-Метод `forEach()` викликає подану функцію `callbackFn` один раз для кожного елементу в масиві, у порядку зростання їх порядкового номера. Функція не викликається для елементів, які було видалено, або які не було ініціалізовано. (Для розріджених масивів [дивіться приклад нижче](#nichoho-ne-vidbuvaietsia-na-neinitsializovanykh-znachenniakh-rozridzheni-masyvy).)
+Метод `forEach()` викликає подану функцію `callbackFn` один раз для кожного елементу в масиві, у порядку зростання їх порядкового номера.
+
+`callbackFn` закликається лише для тих індексів масиву, що мають присвоєні значення. Вона не закликається для порожніх комірок у [розріджених масивах](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy).
 
 Функція `callbackFn` викликається з трьома аргументами:
 
-1.  значення елементу
-2.  порядковий номер елементу
-3.  масив, на котрому викликано `forEach`
+1. значення елементу
+2. порядковий номер елементу
+3. масив, на котрому викликано `forEach`
 
 Якщо у `forEach()` задано параметр `thisArg`, його буде використано як значення `this` у функції зворотного виклику. В загальному випадку значення `this`, яке бачитиме функція `callback`, визначається згідно з [загальними правилами визначення значення `this`, доступного для функції](/uk/docs/Web/JavaScript/Reference/Operators/this).
 
@@ -136,10 +124,11 @@ forEach(function (element, index, array) {
 
 ## Приклади
 
-### Нічого не відбувається на неініціалізованих значеннях (розріджені масиви)
+### Використання forEach() на розріджених масивах
 
 ```js
-const arraySparse = [1, 3, , 7];
+<!-- markdownlint-disable-next-line -->
+const arraySparse = [1, 3, /* пропуск */, 7];
 let numCallbackRuns = 0;
 
 arraySparse.forEach((element) => {
@@ -149,17 +138,18 @@ arraySparse.forEach((element) => {
 
 console.log({ numCallbackRuns });
 
-// 1
-// 3
-// 7
-// numCallbackRuns: 3
-// коментар: як можна побачити, на пропущеному між 3 та 7 значенні функція зворотного виклику не викликалась
+// { element: 1 }
+// { element: 3 }
+// { element: 7 }
+// { numCallbackRuns: 3 }
 ```
+
+Функція зворотного виклику не закликається для пропущеного значення за індексом 2.
 
 ### Перетворення циклу for на forEach
 
 ```js
-const items = ['item1', 'item2', 'item3'];
+const items = ["item1", "item2", "item3"];
 const copyItems = [];
 
 // до
@@ -185,12 +175,12 @@ items.forEach((item) => {
 Наступний код друкує рядок для кожного елементу в масиві:
 
 ```js
-const logArrayElements = (element, index, array) => {
-  console.log('a[' + index + '] = ' + element);
+const logArrayElements = (element, index /*, array */) => {
+  console.log(`a[${index}] = ${element}`);
 };
 
 // Зауважте, що порядковий номер 2 пропущено, оскільки в масиві не існує
-// елементу на цій позиції...
+// елементу на цій позиції.
 [2, 5, , 9].forEach(logArrayElements);
 // logs:
 // a[0] = 2
@@ -200,19 +190,22 @@ const logArrayElements = (element, index, array) => {
 
 ### Застосування thisArg
 
-Наступний (надуманий) приклад оновлює властивості об'єкту, з урахуванням поданих елементів масиву:
+Наступний (надуманий) приклад оновлює властивості об'єкта, з урахуванням поданих елементів масиву:
 
 ```js
-function Counter() {
-  this.sum = 0;
-  this.count = 0;
+class Counter {
+  constructor() {
+    this.sum = 0;
+    this.count = 0;
+  }
+  add(array) {
+    // Лише вирази функцій матимуть власне зв'язування this
+    array.forEach(function countEntry(entry) {
+      this.sum += entry;
+      ++this.count;
+    }, this);
+  }
 }
-Counter.prototype.add = function (array) {
-  array.forEach(function countEntry(entry) {
-    this.sum += entry;
-    ++this.count;
-  }, this);
-};
 
 const obj = new Counter();
 obj.add([2, 5, 9]);
@@ -223,15 +216,15 @@ console.log(obj.sum); // 16
 Оскільки параметр `thisArg` (`this`) було задано в `forEach()`, він передавався до функції `callback` кожного разу, коли вона викликалась. Сама функція зворотного виклику використовує те саме значення `this`.
 
 > **Примітка:** Якщо передачу функції зворотного виклику було використано із застосуванням виразу
-> [стрілкової функції](/uk/docs/Web/JavaScript/Reference/Functions/Arrow_functions), то значення параметру `thisArg` можна опустити,
+> [стрілкової функції](/uk/docs/Web/JavaScript/Reference/Functions/Arrow_functions), то значення параметра `thisArg` можна опустити,
 > оскільки всі стрілкові функції прив'язують значення {{jsxref("Operators/this", "this")}}
 > лексично.
 
-### Функція копіювання об'єкту
+### Функція копіювання об'єкта
 
-Наступний код створює копію поданого об'єкту.
+Наступний код створює копію поданого об'єкта.
 
-Існують різні способи створити копію об'єкту. Спосіб, що наведено нижче - це лише один із них, покликаний показати, як працює `Array.prototype.forEach()` шляхом використання метаметодів `Object.*` з ECMAScript 5.
+Існують різні способи створити копію об'єкта. Спосіб, що наведено нижче - це лише один із них, покликаний показати, як працює `Array.prototype.forEach()` шляхом використання службових функцій `Object.*`.
 
 ```js
 const copy = (obj) => {
@@ -257,10 +250,10 @@ const obj2 = copy(obj1); // obj2 тепер має точнісінько так
 Метод `forEach()` не робить копію масиву перед перебиранням.
 
 ```js
-const words = ['one', 'two', 'three', 'four'];
+const words = ["one", "two", "three", "four"];
 words.forEach((word) => {
   console.log(word);
-  if (word === 'two') {
+  if (word === "two") {
     words.shift(); // елемент 'one' видаляється з масиву
   }
 }); // one // two // four
@@ -275,11 +268,11 @@ console.log(words); // ['two', 'three', 'four']
 ```js
 const flatten = (arr) => {
   const result = [];
-  arr.forEach((i) => {
-    if (Array.isArray(i)) {
-      result.push(...flatten(i));
+  arr.forEach((item) => {
+    if (Array.isArray(item)) {
+      result.push(...flatten(item));
     } else {
-      result.push(i);
+      result.push(item);
     }
   });
   return result;

@@ -1,5 +1,5 @@
 ---
-title: '<input>: Елемент введення (форм)'
+title: "<input>: Елемент введення (форм)"
 slug: Web/HTML/Element/input
 tags:
   - Data entry
@@ -49,7 +49,7 @@ browser-compat: html.elements.input
       <td id="examplebutton">
         <pre class="brush: html hidden">
 &#x3C;input type="button" name="button" value="Кнопка" /></pre>
-        {{EmbedLiveSample("examplebutton",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("examplebutton",200,55)}}
       </td>
     </tr>
     <tr>
@@ -58,7 +58,7 @@ browser-compat: html.elements.input
       <td id="examplecheckbox">
         <pre class="brush: html hidden">
 &#x3C;input type="checkbox" name="checkbox"/></pre>
-        {{EmbedLiveSample("examplecheckbox",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("examplecheckbox",200,55)}}
       </td>
     </tr>
     <tr>
@@ -69,7 +69,7 @@ browser-compat: html.elements.input
       <td id="examplecolor">
         <pre class="brush: html hidden">
 &#x3C;input type="color" name="color"/></pre>
-        {{EmbedLiveSample("examplecolor",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("examplecolor",200,55)}}
       </td>
     </tr>
     <tr>
@@ -81,7 +81,7 @@ browser-compat: html.elements.input
       <td id="exampledate">
         <pre class="brush: html hidden">
 &#x3C;input type="date" name="date"/></pre>
-        {{EmbedLiveSample("exampledate",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("exampledate",200,55)}}
       </td>
     </tr>
     <tr>
@@ -94,7 +94,7 @@ browser-compat: html.elements.input
       <td id="exampledtl">
         <pre class="brush: html hidden">
 &#x3C;input type="datetime-local" name="datetime-local"/></pre>
-        {{EmbedLiveSample("exampledtl",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("exampledtl",200,55)}}
       </td>
     </tr>
     <tr>
@@ -106,7 +106,7 @@ browser-compat: html.elements.input
       <td id="exampleemail">
         <pre class="brush: html hidden">
 &#x3C;input type="email" name="email"/></pre>
-        {{EmbedLiveSample("exampleemail",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("exampleemail",200,55)}}
       </td>
     </tr>
     <tr>
@@ -118,7 +118,7 @@ browser-compat: html.elements.input
       <td id="examplefile">
         <pre class="brush: html hidden">
 &#x3C;input type="file" accept="image/*, text/*" name="file"/></pre>
-        {{EmbedLiveSample("examplefile",'100%',55,"","", "nobutton")}}
+        {{EmbedLiveSample("examplefile",'100%',55)}}
       </td>
     </tr>
     <tr>
@@ -129,7 +129,7 @@ browser-compat: html.elements.input
       <td id="examplehidden">
         <pre class="brush: html hidden">
 &#x3C;input id="userId" name="userId" type="hidden" value="abc123"></pre>
-        {{EmbedLiveSample("examplehidden",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("examplehidden",200,55)}}
       </td>
     </tr>
     <tr>
@@ -142,7 +142,7 @@ browser-compat: html.elements.input
       <td id="exampleimage">
         <pre class="brush: html hidden">
 &#x3C;input type="image" name="image" src="" alt="image input"/></pre>
-        {{EmbedLiveSample("exampleimage",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("exampleimage",200,55)}}
       </td>
     </tr>
     <tr>
@@ -151,7 +151,7 @@ browser-compat: html.elements.input
       <td id="examplemonth">
         <pre class="brush: html hidden">
 &#x3C;input type="month" name="month"/></pre>
-        {{EmbedLiveSample("examplemonth",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("examplemonth",200,55)}}
       </td>
     </tr>
     <tr>
@@ -162,7 +162,7 @@ browser-compat: html.elements.input
       <td id="examplenumber">
         <pre class="brush: html hidden">
 &#x3C;input type="number" name="number"/></pre>
-        {{EmbedLiveSample("examplenumber",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("examplenumber",200,55)}}
       </td>
     </tr>
     <tr>
@@ -174,7 +174,7 @@ browser-compat: html.elements.input
       <td id="examplepassword">
         <pre class="brush: html hidden">
 &#x3C;input type="password" name="password"/></pre>
-        {{EmbedLiveSample("examplepassword",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("examplepassword",200,55)}}
       </td>
     </tr>
     <tr>
@@ -185,7 +185,7 @@ browser-compat: html.elements.input
       <td id="exampleradio">
         <pre class="brush: html hidden">
 &#x3C;input type="radio" name="radio"/></pre>
-        {{EmbedLiveSample("exampleradio",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("exampleradio",200,55)}}
       </td>
     </tr>
     <tr>
@@ -193,12 +193,12 @@ browser-compat: html.elements.input
       <td>
         Контрольний елемент для введення числа, чиє точне значення неважливе.
         Показує віджет діапазону, що усталено показує значення посередині.
-        Використовується у зв‘язці з атрибутами <a href="#attr-min"><code>min</code></a> та <a href="#attr-max"><code>max</code></a> для визначення діапазону прийнятних значень.
+        Використовується у зв'язці з атрибутами <a href="#attr-min"><code>min</code></a> та <a href="#attr-max"><code>max</code></a> для визначення діапазону прийнятних значень.
       </td>
       <td id="examplerange">
         <pre class="brush: html hidden">
 &#x3C;input type="range" name="range" min="0" max="25"/></pre>
-        {{EmbedLiveSample("examplerange",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("examplerange",200,55)}}
       </td>
     </tr>
     <tr>
@@ -209,7 +209,7 @@ browser-compat: html.elements.input
       <td id="examplereset">
         <pre class="brush: html hidden">
 &#x3C;input type="reset" name="reset"/></pre>
-        {{EmbedLiveSample("examplereset",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("examplereset",200,55)}}
       </td>
     </tr>
     <tr>
@@ -220,7 +220,7 @@ browser-compat: html.elements.input
       <td id="examplesearch">
         <pre class="brush: html hidden">
 &#x3C;input type="search" name="search"/></pre>
-        {{EmbedLiveSample("examplesearch",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("examplesearch",200,55)}}
       </td>
     </tr>
     <tr>
@@ -229,7 +229,7 @@ browser-compat: html.elements.input
       <td id="examplesubmit">
         <pre class="brush: html hidden">
 &#x3C;input type="submit" name="submit"/></pre>
-        {{EmbedLiveSample("examplesubmit",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("examplesubmit",200,55)}}
       </td>
     </tr>
     <tr>
@@ -240,7 +240,7 @@ browser-compat: html.elements.input
       <td id="exampletel">
         <pre class="brush: html hidden">
 &#x3C;input type="tel" name="tel"/></pre>
-        {{EmbedLiveSample("exampletel",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("exampletel",200,55)}}
       </td>
     </tr>
     <tr>
@@ -251,7 +251,7 @@ browser-compat: html.elements.input
       <td id="exampletext">
         <pre class="brush: html hidden">
 &#x3C;input type="text" name="text"/></pre>
-        {{EmbedLiveSample("exampletext",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("exampletext",200,55)}}
       </td>
     </tr>
     <tr>
@@ -260,7 +260,7 @@ browser-compat: html.elements.input
       <td id="exampletime">
         <pre class="brush: html hidden">
 &#x3C;input type="time" name="time"/></pre>
-        {{EmbedLiveSample("exampletime",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("exampletime",200,55)}}
       </td>
     </tr>
     <tr>
@@ -271,7 +271,7 @@ browser-compat: html.elements.input
       <td id="exampleurl">
         <pre class="brush: html hidden">
 &#x3C;input type="url" name="url"/></pre>
-        {{EmbedLiveSample("exampleurl",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("exampleurl",200,55)}}
       </td>
     </tr>
     <tr>
@@ -282,21 +282,21 @@ browser-compat: html.elements.input
       <td id="exampleweek">
         <pre class="brush: html hidden">
 &#x3C;input type="week" name="week"/></pre>
-        {{EmbedLiveSample("exampleweek",200,55,"","", "nobutton")}}
+        {{EmbedLiveSample("exampleweek",200,55)}}
       </td>
     </tr>
     <tr>
       <th colspan="3">Невживані значення</th>
     </tr>
     <tr>
-      <td>{{HTMLElement("input/datetime", "datetime")}}</td>
+      <td>`datetime`</td>
       <td>
         {{deprecated_inline}} Контрольний елемент для введення дати та часу (години, хвилини, секунди та частки секунди) на основі Всесвітнього координованого часу.
       </td>
       <td id="exampledatetime">
         <pre class="brush: html hidden">
 &#x3C;input type="datetime" name="datetime"/></pre>
-        {{EmbedLiveSample("exampledatetime",200,75,"","", "nobutton")}}
+        {{EmbedLiveSample("exampledatetime",200,75)}}
       </td>
     </tr>
   </tbody>
@@ -306,43 +306,43 @@ browser-compat: html.elements.input
 
 Елемент `<input>` є таким потужним завдяки своїм атрибутам, причому атрибут [`type`](#type-typ), описаний у прикладах вище, – найважливіший. Оскільки кожний елемент `<input>`, незалежно від типу, заснований на інтерфейсі {{domxref("HTMLInputElement")}}, усі такі елементи технічно мають однаковий набір атрибутів. Попри те, насправді більшість атрибутів діють лише для певної підмножини типів полів введення. На додачу, спосіб, у який певні атрибути впливають на поле введення, залежить від типу елемента, впливаючи на різні типи полів введення у різний спосіб.
 
-Цей розділ містить таблицю з переліком усіх атрибутів зі стислим їх описом. Нижче цієї таблиці розміщений список, що описує кожний атрибут більш докладно, в тому числі вказуючи, з якими типами полів введення пов‘язаний кожний атрибут. Ті з них, що діють для більшості або всіх типів полів введення, описані докладно нижче. Атрибути, що є ексклюзивними для певних типів полів введення, а також ті, що діють для всіх полів введення, але мають особливу поведінку на певному типі полів введення – документовані на сторінках відповідних типів.
+Цей розділ містить таблицю з переліком усіх атрибутів зі стислим їх описом. Нижче цієї таблиці розміщений список, що описує кожний атрибут більш докладно, в тому числі вказуючи, з якими типами полів введення пов'язаний кожний атрибут. Ті з них, що діють для більшості або всіх типів полів введення, описані докладно нижче. Атрибути, що є ексклюзивними для певних типів полів введення, а також ті, що діють для всіх полів введення, але мають особливу поведінку на певному типі полів введення – документовані на сторінках відповідних типів.
 
-Атрибути елемента `<input` включають [глобальні атрибути HTML](/uk/docs/Web/HTML/Global_attributes), а також:
+Атрибути елемента `<input>` включають [глобальні атрибути HTML](/uk/docs/Web/HTML/Global_attributes), а також:
 
-| Атрибути                            | Тип чи типи                                                         | Опис                                                                                                               |
-| ----------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| [`accept`](#accept-pryimannia)                 | `file`                                                              | Вказівка щодо очікуваного типу файлу при виборі файлів до завантаження                                             |
-| [`alt`](#alt-alternatyva)                       | `image`                                                             | Атрибут `alt` для типу зображення. Необхідний для доступності                                                      |
-| [`autocomplete`](#autocomplete)     | усі, крім `checkbox`, `radio` та кнопок                             | Вказівка для функціональності автоматичного заповнення форм                                                        |
-| [`capture`](#capture-zakhoplennia)               | `file`                                                              | Спосіб захоплення медіа для контрольних елементів завантаження файлів                                              |
-| [`checked`](#checked)               | `checkbox`, `radio`                                                 | Вказує, чи є контрольний елемент обраним                                                                           |
-| [`dirname`](#dirname-imia-napriamu)               | `search`, `text`                                                    | Ім‘я поля форми для надсилання напряму письма при поданні форми                                                    |
-| [`disabled`](#disabled-vymknene)             | усі                                                                 | Вказує, чи є контрольний елемент вимкненим                                                                         |
-| [`form`](#form-forma)                     | усі                                                                 | Асоціює контрольний елемент з елементом форми                                                                      |
-| [`formaction`](#formaction-diia-formy)         | `image`, `submit`                                                   | URL для подання форми                                                                                              |
+| Атрибути                                                 | Тип чи типи                                                         | Опис                                                                                                               |
+| -------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| [`accept`](#accept-pryimannia)                           | `file`                                                              | Вказівка щодо очікуваного типу файлу при виборі файлів до завантаження                                             |
+| [`alt`](#alt-alternatyva)                                | `image`                                                             | Атрибут `alt` для типу зображення. Необхідний для доступності                                                      |
+| [`autocomplete`](#autocomplete)                          | усі, крім `checkbox`, `radio` та кнопок                             | Вказівка для функціональності автоматичного заповнення форм                                                        |
+| [`capture`](#capture-zakhoplennia)                       | `file`                                                              | Спосіб захоплення медіа для контрольних елементів завантаження файлів                                              |
+| [`checked`](#checked)                                    | `checkbox`, `radio`                                                 | Вказує, чи є контрольний елемент обраним                                                                           |
+| [`dirname`](#dirname-imia-napriamu)                      | `search`, `text`                                                    | Ім'я поля форми для надсилання напряму письма при поданні форми                                                    |
+| [`disabled`](#disabled-vymknene)                         | усі                                                                 | Вказує, чи є контрольний елемент вимкненим                                                                         |
+| [`form`](#form-forma)                                    | усі                                                                 | Асоціює контрольний елемент з елементом форми                                                                      |
+| [`formaction`](#formaction-diia-formy)                   | `image`, `submit`                                                   | URL для подання форми                                                                                              |
 | [`formenctype`](#formenctype-typ-koduvannia-formy)       | `image`, `submit`                                                   | Тип кодування даних для подання форми                                                                              |
-| [`formmethod`](#formmethod-metod-formy)         | `image`, `submit`                                                   | Метод HTTP для подання форми                                                                                       |
+| [`formmethod`](#formmethod-metod-formy)                  | `image`, `submit`                                                   | Метод HTTP для подання форми                                                                                       |
 | [`formnovalidate`](#formnovalidate-nevaliduvannia-formy) | `image`, `submit`                                                   | Вказівка обходити валідацію контрольного елемента при поданні форми                                                |
-| [`formtarget`](#formtarget-tsil-formy)         | `image`, `submit`                                                   | Контекст перегляду для подання форми                                                                               |
-| [`height`](#height-vysota)                 | `image`                                                             | Те саме, що атрибут height для {{htmlelement('img')}}; вертикальний розмір                                         |
-| [`list`](#list-spysok)                     | усі, крім `hidden`, `password`, `checkbox`, `radio` та кнопок       | Значення атрибута `id` елемента {{htmlelement('datalist')}} із варіантами автозаповнення                           |
-| [`max`](#max-maksymum)                       | `date`, `month`, `week`, `time`, `datetime-local`, `range`          | Найбільше прийнятне значення                                                                                       |
-| [`maxlength`](#maxlength-maksymalna-dovzhyna)           | `text`, `search`, `url`, `tel`, `email`, `password`                 | Найбільша прийнятна довжина (кількість символів) <code>value</code>                                                |
-| [`min`](#min-minimum)                       | `date`, `month`, `week`, `time`, `datetime-local`, `range`          | Найменше прийнятне значення                                                                                        |
-| [`minlength`](#minlength-minimalna-dovzhyna)           | `text`, `search`, `url`, `tel`, `email`, `password`                 | Найменша прийнятна довжина (кількість символів) <code>value</code>                                                 |
-| [`multiple`](#multiple-kilka)             | `email`, `file`                                                     | Булеве значення. Вказівка приймати кілька значень                                                                  |
-| [`name`](#name-imia)                     | усі                                                                 | Ім‘я контрольного елемента. Подається разом із формою як частина пари ім‘я-значення.                               |
-| [`pattern`](#pattern-skhema)               | `text`, `search`, `url`, `tel`, `email`, `password`                 | Схема, котрій мусить відповідати значення <code>value</code>, щоб бути дійсним                                     |
-| [`placeholder`](#placeholder-zapovniuvach)       | `text`, `search`, `url`, `tel`, `email`, `password`, `number`       | Текст, що з‘являється у контрольному елементі, коли в ньому немає жодного значення                                 |
+| [`formtarget`](#formtarget-tsil-formy)                   | `image`, `submit`                                                   | Контекст перегляду для подання форми                                                                               |
+| [`height`](#height-vysota)                               | `image`                                                             | Те саме, що атрибут height для {{htmlelement('img')}}; вертикальний розмір                                         |
+| [`list`](#list-spysok)                                   | усі, крім `hidden`, `password`, `checkbox`, `radio` та кнопок       | Значення атрибута `id` елемента {{htmlelement('datalist')}} із варіантами автозаповнення                           |
+| [`max`](#max-maksymum)                                   | `date`, `month`, `week`, `time`, `datetime-local`, `range`          | Найбільше прийнятне значення                                                                                       |
+| [`maxlength`](#maxlength-maksymalna-dovzhyna)            | `text`, `search`, `url`, `tel`, `email`, `password`                 | Найбільша прийнятна довжина (кількість символів) <code>value</code>                                                |
+| [`min`](#min-minimum)                                    | `date`, `month`, `week`, `time`, `datetime-local`, `range`          | Найменше прийнятне значення                                                                                        |
+| [`minlength`](#minlength-minimalna-dovzhyna)             | `text`, `search`, `url`, `tel`, `email`, `password`                 | Найменша прийнятна довжина (кількість символів) <code>value</code>                                                 |
+| [`multiple`](#multiple-kilka)                            | `email`, `file`                                                     | Булеве значення. Вказівка приймати кілька значень                                                                  |
+| [`name`](#name-imia)                                     | усі                                                                 | Ім'я контрольного елемента. Подається разом із формою як частина пари ім'я-значення.                               |
+| [`pattern`](#pattern-skhema)                             | `text`, `search`, `url`, `tel`, `email`, `password`                 | Схема, котрій мусить відповідати значення <code>value</code>, щоб бути дійсним                                     |
+| [`placeholder`](#placeholder-zapovniuvach)               | `text`, `search`, `url`, `tel`, `email`, `password`, `number`       | Текст, що з'являється у контрольному елементі, коли в ньому немає жодного значення                                 |
 | [`readonly`](#readonly-lyshe-dlia-chytannia)             | усі, крім `hidden`, `range`, `color`, `checkbox`, `radio` та кнопок | Булеве значення. Вказівка заборонити зміну значення                                                                |
-| [`required`](#required-oboviazkovyi)             | усі, крім `hidden`, `range`, `color` та кнопок                      | Булеве значення. Значення повинно бути вказане, або прапорець мусить бути поставлений, щоб форму можна було подати |
-| [`size`](#size-rozmir)                     | `text`, `search`, `url`, `tel`, `email`, `password`                 | Розмір контрольного елемента                                                                                       |
-| [`src`](#src-dzherelo)                       | `image`                                                             | Те саме, що атрибут <code>src</code> елемента {{htmlelement('img')}}; адреса ресурсу зображення                    |
-| [`step`](#step-krok)                     | `date`, `month`, `week`, `time`, `datetime-local`, `range`          | Крок квантування дійсних значень.                                                                                  |
-| [`type`](#type-typ)                     | усі                                                                 | Тип контрольного елемента                                                                                          |
-| [`value`](#value-znachennia)                   | усі                                                                 | Початкове значення контрольного елемента.                                                                          |
-| [`width`](#width-shyryna)                   | `image`                                                             | Те саме, що атрибут <code>width</code> елемента {{htmlelement('img')}}                                             |
+| [`required`](#required-oboviazkovyi)                     | усі, крім `hidden`, `range`, `color` та кнопок                      | Булеве значення. Значення повинно бути вказане, або прапорець мусить бути поставлений, щоб форму можна було подати |
+| [`size`](#size-rozmir)                                   | `text`, `search`, `url`, `tel`, `email`, `password`                 | Розмір контрольного елемента                                                                                       |
+| [`src`](#src-dzherelo)                                   | `image`                                                             | Те саме, що атрибут <code>src</code> елемента {{htmlelement('img')}}; адреса ресурсу зображення                    |
+| [`step`](#step-krok)                                     | `date`, `month`, `week`, `time`, `datetime-local`, `range`          | Крок квантування дійсних значень.                                                                                  |
+| [`type`](#type-typ)                                      | усі                                                                 | Тип контрольного елемента                                                                                          |
+| [`value`](#value-znachennia)                             | усі                                                                 | Початкове значення контрольного елемента.                                                                          |
+| [`width`](#width-shyryna)                                | `image`                                                             | Те саме, що атрибут <code>width</code> елемента {{htmlelement('img')}}                                             |
 
 Кілька додаткових нестандартних атрибутів перелічені після описів стандартних атрибутів.
 
@@ -376,21 +376,21 @@ browser-compat: html.elements.input
 
     > **Зауваження:** Автоматичне фокусування на контрольному елементі може спантеличити людей із порушенням зору, що користуються технологією читання з екрана, а також людей з розумовими порушеннями. Коли встановлено `autofocus`, читачі з екрана "телепортують" свого користувача до контрольного елемента без попередження.
 
-    Ретельно обміркуйте можливі проблеми доступності при застосуванні атрибута `autofocus`. Автоматичне фокусування на контрольному елементі може змусити сторінку прокрутитись при завантаженні. На деяких сенсорних пристроях фокус може також змусити з‘явитись динамічну клавіатуру. Хоч читач з екрана оголосить підпис контрольного елемента, що отримує фокус, читач з екрана не оголосить нічого вище такої бирки, а зрячий користувач із малим пристроєм аналогічним чином упустить контекст, створений вмістом вище.
+    Ретельно обміркуйте можливі проблеми доступності при застосуванні атрибута `autofocus`. Автоматичне фокусування на контрольному елементі може змусити сторінку прокрутитись при завантаженні. На деяких сенсорних пристроях фокус може також змусити з'явитись динамічну клавіатуру. Хоч читач з екрана оголосить підпис контрольного елемента, що отримує фокус, читач з екрана не оголосить нічого вище такої бирки, а зрячий користувач із малим пристроєм аналогічним чином упустить контекст, створений вмістом вище.
 
 - `capture` (захоплення)
   - : Введений специфікацією "Захоплення медіа в HTML" і дійсний лише для типу поля введення `file`. Атрибут `capture` встановлює, який саме пристрій запису звуку та зображення повинен бути використаний для захоплення нового файлу для контрольного елемента завантаження `file`. Дивіться тип поля введення {{HTMLElement("input/file", "file")}}.
 - `checked`
 
-  - : Чинний для типів `radio` та `checkbox`. `checked` – це булів атрибут. Бувши встановленим із типом `radio`, він вказує, що радіокнопка є обраною серед групи однойменних радіокнопок. Бувши встановленим із типом `checkbox`, він вказує, що такий прапорець усталено встановлений (при завантаженні сторінки). Він _не_ вказує, чи є наразі такий прапорець встановленим: якщо стан прапорця змінюється, то цей атрибут не отримує змін. (Оновлюється лише [IDL атрибут `checked` `HTMLInputElement`’а](/uk/docs/Web/API/HTMLInputElement).)
+  - : Чинний для типів `radio` та `checkbox`. `checked` – це булів атрибут. Бувши встановленим із типом `radio`, він вказує, що радіокнопка є обраною серед групи однойменних радіокнопок. Бувши встановленим із типом `checkbox`, він вказує, що такий прапорець усталено встановлений (при завантаженні сторінки). Він _не_ вказує, чи є наразі такий прапорець встановленим: якщо стан прапорця змінюється, то цей атрибут не отримує змін. (Оновлюється лише [IDL атрибут `checked` `HTMLInputElement`'а](/uk/docs/Web/API/HTMLInputElement).)
 
     > **Примітка:** На відміну від інших контрольних елементів, значення прапорців та радіокнопок включаються при подачі форми у її дані лише тоді, коли вони `checked` (обрані). Якщо це так, то подаються імена та значення обраних контрольних елементів.
     >
-    > Наприклад, якщо прапорець, чий `name` має значення `fruit`, а `value` – `cherry`, і такий прапорець є обраним, то подані дані форми включатимуть `fruit=cherry`. Якщо прапорець неактивний, то він не з‘явиться у даних форми взагалі. Усталене значення `value` для прапорців та радіокнопок – `on`.
+    > Наприклад, якщо прапорець, чий `name` має значення `fruit`, а `value` – `cherry`, і такий прапорець є обраним, то подані дані форми включатимуть `fruit=cherry`. Якщо прапорець неактивний, то він не з'явиться у даних форми взагалі. Усталене значення `value` для прапорців та радіокнопок – `on`.
 
-- `dirname` (ім‘я напряму)
+- `dirname` (ім'я напряму)
 
-  - : Чинний лише для типів полів введення `text` та `search`. Атрибут `dirname` вмикає подання напрямленості введеного тексту. Коли присутній такий атрибут, від контрольного елемента будуть подані дві пари ім‘я-значення: перша – [`name`](#name-imia) та [`value`](#value-znachennia), а друга – значення атрибута `dirname` як ім‘я і `ltr` або `rtl` як значення, встановлене браузером.
+  - : Чинний лише для типів полів введення `text` та `search`. Атрибут `dirname` вмикає подання напрямленості введеного тексту. Коли присутній такий атрибут, від контрольного елемента будуть подані дві пари ім'я-значення: перша – [`name`](#name-imia) та [`value`](#value-znachennia), а друга – значення атрибута `dirname` як ім'я і `ltr` або `rtl` як значення, встановлене браузером.
 
     ```html
     <form action="page.html" method="post">
@@ -479,16 +479,16 @@ browser-compat: html.elements.input
 
   - : Булів атрибут `multiple`, бувши встановленим, вказує на те, що користувач може ввести кілька електронних адрес, розділених комами, у віджет електронної адреси, або обрати більш ніж один файл у поле введення `file`. Дивіться типи полів введення {{HTMLElement("input/email", "email")}} та {{HTMLElement("input/file", "file")}}.
 
-- `name` (ім‘я)
+- `name` (ім'я)
 
-  - : Рядок, що вказує ім‘я контрольного елемента. Це ім‘я подається разом зі значенням елемента при поданні форми.
+  - : Рядок, що вказує ім'я контрольного елемента. Це ім'я подається разом зі значенням елемента при поданні форми.
 
-    Слід розглядати `name` як обов‘язковий атрибут (хоч технічно він таким не є). Якщо не вказано `name`, або якщо значення `name` – пусте, то значення поля введення не подається з формою! (Також не надсилаються вимкнені контрольні елементи, необрані радіокнопки, зняті прапорці та кнопки скидання значень.)
+    Слід розглядати `name` як обов'язковий атрибут (хоч технічно він таким не є). Якщо не вказано `name`, або якщо значення `name` – пусте, то значення поля введення не подається з формою! (Також не надсилаються вимкнені контрольні елементи, необрані радіокнопки, зняті прапорці та кнопки скидання значень.)
 
     Існують два особливі випадки:
 
     1. `_charset_` : Якщо використовувати такий рядок як значення імені елемента `<input>` типу {{HTMLElement("input/hidden", "hidden")}}, то значення поля введення `value` автоматично встановлюється {{Glossary("user agent", "користувацьким агентом")}} у кодування символів, що застосовується при поданні форми.
-    2. `isindex`: З історичних причин ім‘я [`isindex` (англ.)](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fe-name) заборонено.
+    2. `isindex`: З історичних причин ім'я [`isindex` (англ.)](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fe-name) заборонено.
 
     Атрибут [`name`](#name-imia) створює особливу поведінку на радіокнопках.
 
@@ -498,16 +498,16 @@ browser-compat: html.elements.input
 
     Щойно одна з радіокнопок групи отримує фокус, клавіші стрілок можуть використовуватись для навігації по однойменних радіокнопках, навіть якщо радіокнопки не згруповані докупи в коді HTML.
 
-    Коли елемент введення отримує атрибут `name`, це ім‘я стає властивістю об‘єкта {{domxref("HTMLFormElement.elements")}} форми-власника елемента. Якщо існує поле введення, в котрого атрибут `name` має значення `guest`, і іще одне з `name` – `hat-size`, можна використати наступний код:
+    Коли елемент введення отримує атрибут `name`, це ім'я стає властивістю об'єкта {{domxref("HTMLFormElement.elements")}} форми-власника елемента. Якщо існує поле введення, в котрого атрибут `name` має значення `guest`, і іще одне з `name` – `hat-size`, можна використати наступний код:
 
     ```js
-    let form = document.querySelector('form');
+    let form = document.querySelector("form");
 
     let guestName = form.elements.guest;
-    let hatSize = form.elements['hat-size'];
+    let hatSize = form.elements["hat-size"];
     ```
 
-    При виконанні такого коду `guestName` дорівнюватиме {{domxref("HTMLInputElement")}} за полем `guest`, а `hatSize` – об‘єктові за полем `hat-size`.
+    При виконанні такого коду `guestName` дорівнюватиме {{domxref("HTMLInputElement")}} за полем `guest`, а `hatSize` – об'єктові за полем `hat-size`.
 
     > **Зауваження:** Уникайте використання значень для атрибута `name`, що збігаються з назвами вбудованих властивостей форми, оскільки такі значення замістять присутню властивість або метод таким посиланням на відповідне поле введення.
 
@@ -523,7 +523,7 @@ browser-compat: html.elements.input
 
 - `placeholder` (заповнювач)
 
-  - : Дійсний для полів типів `text`, `search`, `url`, `tel`, `email`, `password` і `number` атрибут `placeholder` – рядок, що дає стислу пораду користувачеві щодо того, яка інформація очікується у полі. Це повинно бути слово або короткий вислів, що дає пораду радше щодо очікуваного типу даних, а не пояснення чи спонуку. Текст _не мусить_ містити символів повернення каретки або нового рядка. Таким чином, наприклад, якщо поле повинно отримати ім‘я користувача, а його підпис - "Ім‘я", годящим заповнювачем був би рядок "наприклад, Мустафа".
+  - : Дійсний для полів типів `text`, `search`, `url`, `tel`, `email`, `password` і `number` атрибут `placeholder` – рядок, що дає стислу пораду користувачеві щодо того, яка інформація очікується у полі. Це повинно бути слово або короткий вислів, що дає пораду радше щодо очікуваного типу даних, а не пояснення чи спонуку. Текст _не мусить_ містити символів повернення каретки або нового рядка. Таким чином, наприклад, якщо поле повинно отримати ім'я користувача, а його підпис - "Ім'я", годящим заповнювачем був би рядок "наприклад, Мустафа".
 
     > **Примітка:** Атрибут `placeholder` не є так семантично корисним, як інші способи пояснення форми, і може спричинити неочікувані технічні проблеми зі вмістом. Дивіться [Підписи](#pidpysy) для докладнішої інформації.
 
@@ -533,7 +533,7 @@ browser-compat: html.elements.input
 
     Дивіться [атрибут HTML: `readonly`](/uk/docs/Web/HTML/Attributes/readonly) для докладнішої інформації
 
-- `required` (обов‘язковий)
+- `required` (обов'язковий)
 
   - : `required` – булів атрибут, котрий, якщо присутній, вказує, що користувач мусить вказати значення поля введення до того, як форма-власник може бути подана. Атрибут `required` підтримується полями введення `text`, `search`, `url`, `tel`, `email`, `date`, `month`, `week`, `time`, `datetime-local`, `number`, `password`, `checkbox`, `radio` та `file`.
 
@@ -541,7 +541,7 @@ browser-compat: html.elements.input
 
 - `size` (розмір)
 
-  - : Чинний для полів типів `input` `email`, `password`, `tel`, `url` і `text` атрибут `size` вказує розмір зображуваного поля введення. По суті робить те саме, що й властивість CSS [`width`](/uk/docs/CSS/width), але з кількома особливостями. Дієва одиниця значення залежить від типу поля введення. Для `password` і `text` це число символів (тобто одиниця `em`) з усталеним значенням `20`, а для інших типів це пікселі (одиниці `px`). Властивість CSS `width` має перевагу над атрибутом `size`.
+  - : Чинний для полів типів `input` `email`, `password`, `tel`, `url` і `text` атрибут `size` вказує розмір зображуваного поля введення. По суті робить те саме, що й властивість CSS [`width`](/uk/docs/Web/CSS/width), але з кількома особливостями. Дієва одиниця значення залежить від типу поля введення. Для `password` і `text` це число символів (тобто одиниця `em`) з усталеним значенням `20`, а для інших типів це пікселі (одиниці `px`). Властивість CSS `width` має перевагу над атрибутом `size`.
 
 - `src` (джерело)
 
@@ -572,7 +572,7 @@ browser-compat: html.elements.input
 
 - `title` (заголовок)
 
-  - : Глобальний атрибут, чинний для всіх елементів, включно з полями введення всіх типів, що містить текст, котрий представляє дорадчу інформацію, пов‘язану з елементом, на котрому встановлений. Така інформація зазвичай, але не обов‘язково, виводиться користувачеві у вигляді підказки. Заголовок НЕ повинен використовуватись як основний засіб пояснення призначення контрольного елемента. Натомість слід вживати елемент {{htmlelement('label')}} з атрибутом `for`, чиє значення рівне значенню атрибута [`id`](#id-identyfikator) контрольного елемента. Дивіться [Підписи](#pidpysy) нижче.
+  - : Глобальний атрибут, чинний для всіх елементів, включно з полями введення всіх типів, що містить текст, котрий представляє дорадчу інформацію, пов'язану з елементом, на котрому встановлений. Така інформація зазвичай, але не обов'язково, виводиться користувачеві у вигляді підказки. Заголовок НЕ повинен використовуватись як основний засіб пояснення призначення контрольного елемента. Натомість слід вживати елемент {{htmlelement('label')}} з атрибутом `for`, чиє значення рівне значенню атрибута [`id`](#id-identyfikator) контрольного елемента. Дивіться [Підписи](#pidpysy) нижче.
 
 - `type` (тип)
 
@@ -582,7 +582,7 @@ browser-compat: html.elements.input
 
 - `value` (значення)
 
-  - : Значення контрольного елемента. Коли вказаний у HTML, цей атрибут встановлює початкове значення, і відтоді воно може бути змінене або отримане за допомогою властивості `value` відповідного об‘єкта {{domxref("HTMLInputElement")}}. Атрибут `value` завжди є необов‘язковим, втім, повинен розглядатись як необхідний для `checkbox`, `radio` та `hidden`.
+  - : Значення контрольного елемента. Коли вказаний у HTML, цей атрибут встановлює початкове значення, і відтоді воно може бути змінене або отримане за допомогою властивості `value` відповідного об'єкта {{domxref("HTMLInputElement")}}. Атрибут `value` завжди є необов'язковим, втім, повинен розглядатись як необхідний для `checkbox`, `radio` та `hidden`.
 
 - `width` (ширина)
 
@@ -655,7 +655,7 @@ browser-compat: html.elements.input
 
 - `incremental` {{non-standard_inline}} (інкрементальний)
 
-  - : Булів атрибут `incremental` – це розширення WebKit і Blink (тож підтримується Safari, Opera, Chrome тощо), котрий, якщо присутній, вказує {{Glossary("user agent", "користувацькому агентові")}} обробляти введення як пошук в реальному часі. Поки користувач редагує значення поля, користувацький агент надсилає об‘єктові {{domxref("HTMLInputElement")}}, що представляє поле пошуку, події {{domxref("HTMLInputElement/search_event", "search")}}. Це дає змогу кодові оновлювати результати пошуку в реальному часі, поки користувач редагує пошук.
+  - : Булів атрибут `incremental` – це розширення WebKit і Blink (тож підтримується Safari, Opera, Chrome тощо), котрий, якщо присутній, вказує {{Glossary("user agent", "користувацькому агентові")}} обробляти введення як пошук в реальному часі. Поки користувач редагує значення поля, користувацький агент надсилає об'єктові {{domxref("HTMLInputElement")}}, що представляє поле пошуку, події {{domxref("HTMLInputElement/search_event", "search")}}. Це дає змогу кодові оновлювати результати пошуку в реальному часі, поки користувач редагує пошук.
 
     Якщо атрибут `incremental` не вказаний, то подія {{domxref("HTMLInputElement/search_event", "search")}} надсилається лише якщо користувач явно запускає пошук (наприклад, натиснувши клавішу <kbd>Enter</kbd> чи <kbd>Return</kbd> при редагуванні поля).
 
@@ -669,7 +669,7 @@ browser-compat: html.elements.input
 
   - : Атрибут `results`, підтримуваний лише Safari, – це числове значення, що дає змогу замістити найбільшу кількість записів, що показуються в нативному спадному меню попередніх запитів пошуку в елементі {{HTMLElement("input")}}.
 
-    Значення мусить бути невід‘ємним десятковим числом. Якщо значення немає, або якщо воно недійсне, то використовується усталене в браузері найбільше число записів.
+    Значення мусить бути невід'ємним десятковим числом. Якщо значення немає, або якщо воно недійсне, то використовується усталене в браузері найбільше число записів.
 
 - `webkitdirectory` {{non-standard_inline}} (директорія (Webkit))
 
@@ -746,7 +746,7 @@ browser-compat: html.elements.input
     <tr>
       <td>{{Cssxref(":default")}} (усталений)</td>
       <td>
-        Елементи форми, що є усталеними у групі пов‘язаних елементів.
+        Елементи форми, що є усталеними у групі пов'язаних елементів.
         Відповідає типам полів введення {{HTMLElement("input/checkbox", "checkbox")}}
         та {{HTMLElement("input/radio", "radio")}}, що уже були обрані на момент завантаження сторінки чи візуалізації.
       </td>
@@ -797,11 +797,11 @@ browser-compat: html.elements.input
       </td>
     </tr>
     <tr>
-      <td>{{Cssxref(":required")}} (обов‘язковий)</td>
+      <td>{{Cssxref(":required")}} (обов'язковий)</td>
       <td>
         Елемент <code>&#x3C;input></code>, {{HTMLElement("select")}} або {{HTMLElement("textarea")}}, що має атрибут <a href="#required"><code>required</code></a>.
-        Відповідає лише тим елементам, що можуть бути обов‘язковими.
-        Атрибут, встановлений на елемент, що не може бути обов‘язковим, не спричинить збігу за цим псевдокласом.
+        Відповідає лише тим елементам, що можуть бути обов'язковими.
+        Атрибут, встановлений на елемент, що не може бути обов'язковим, не спричинить збігу за цим псевдокласом.
       </td>
     </tr>
     <tr>
@@ -809,7 +809,7 @@ browser-compat: html.elements.input
       <td>
         Елементи <code>&#x3C;input></code>, {{HTMLElement("select")}}, or
         {{HTMLElement("textarea")}}, що НЕ мають атрибута <a href="#required"><code>required</code></a>.
-        Не відповідає елементам, що не можуть бути обов‘язковими.
+        Не відповідає елементам, що не можуть бути обов'язковими.
       </td>
     </tr>
     <tr>
@@ -821,7 +821,7 @@ browser-compat: html.elements.input
     <tr>
       <td>{{Cssxref(":user-invalid")}} (недійсне від користувача)</td>
       <td>
-        Подібний до <code>:invalid</code>, але активується при втраті фокусу. Збігається з невалідними полями введення, але лише після взаємодії з ними користувача. Наприклад, коли користувач сфокусування на такому контрольному елементі, а потім залишив його, або спробував подати форму з невалідним контрольним елементом.
+        Подібний до <code>:invalid</code>, але активується при втраті фокуса. Збігається з невалідними полями введення, але лише після взаємодії з ними користувача. Наприклад, коли користувач передав фокус такому контрольному елементові, а потім залишив його, або спробував подати форму з невалідним контрольним елементом.
       </td>
     </tr>
   </tbody>
@@ -851,7 +851,7 @@ input:checked + label {
 
 ```css
 /* відповідає полю введення пароля */
-input[type='password'] {
+input[type="password"] {
 }
 
 /* відповідає контрольному елементові, чиї дійсні значення обмежені діапазоном*/
@@ -899,7 +899,7 @@ input[pattern] {
 ```css
 input.custom {
   caret-color: red;
-  font: 16px 'Helvetica', 'Arial', 'sans-serif';
+  font: 16px "Helvetica", "Arial", "sans-serif";
 }
 ```
 
@@ -909,7 +909,7 @@ input.custom {
 
 ### object-position і object-fit
 
-У певних випадках (зазвичай за участі нетекстових полів введення та спеціалізованих інтерфейсів) елемент `<input>` є [заміщеним елементом](/uk/docs/Web/CSS/Replaced_element). Коли він є таким, то положення та розмір елемента всередині своїх рамок може бути підігнано за допомогою властивостей CSS {{cssxref("object-position")}} (положення об‘єкта) і {{cssxref("object-fit")}} (припасування об‘єкта).
+У певних випадках (зазвичай за участі нетекстових полів введення та спеціалізованих інтерфейсів) елемент `<input>` є [заміщеним елементом](/uk/docs/Web/CSS/Replaced_element). Коли він є таким, то положення та розмір елемента всередині своїх рамок може бути підігнано за допомогою властивостей CSS {{cssxref("object-position")}} (положення об'єкта) і {{cssxref("object-fit")}} (припасування об'єкта).
 
 ### Стилізація
 
@@ -931,35 +931,35 @@ input.custom {
 
 #### Сполучені підписи
 
-Семантичне парування елементів `<input>` і `<label>` корисне для технологій типу читачів з екрана. Бувши спарованими за допомогою атрибута [`for`](/uk/docs/Web/HTML/Element/label#for) елемента `<label>`, підпис та поле введення пов‘язані так, що читачі з екрана можуть точніше описати користувачам поля введення.
+Семантичне парування елементів `<input>` і `<label>` корисне для технологій типу читачів з екрана. Бувши спарованими за допомогою атрибута [`for`](/uk/docs/Web/HTML/Element/label#for) елемента `<label>`, підпис та поле введення пов'язані так, що читачі з екрана можуть точніше описати користувачам поля введення.
 
 Недостатньо просто додати текст поруч з елементом `<input>`. Натомість зручність та доступність вимагають включення, явно чи неявно, {{HTMLElement("label")}}:
 
 ```html
 <!-- низька доступність -->
-<p>Введіть своє ім‘я: <input id="name" type="text" size="30" /></p>
+<p>Введіть своє ім'я: <input id="name" type="text" size="30" /></p>
 
 <!-- неявний підпис -->
 <p>
-  <label>Введіть своє ім‘я: <input id="name" type="text" size="30" /></label>
+  <label>Введіть своє ім'я: <input id="name" type="text" size="30" /></label>
 </p>
 
 <!-- явний підпис -->
 <p>
-  <label for="name">Введіть своє ім‘я: </label
+  <label for="name">Введіть своє ім'я: </label
   ><input id="name" type="text" size="30" />
 </p>
 ```
 
-Перший приклад має низьку доступність: немає зв‘язку між підказкою та елементом `<input>`.
+Перший приклад має низьку доступність: немає зв'язку між підказкою та елементом `<input>`.
 
-На додачу до доступного імені, підпис надає більшу зону "попадання" для миші та користувачів сенсорних екранів для кліку чи дотику. При паруванні `<label>` із `<input>` клік на будь-якому з цих двох елементів спричинить передачу фокусу до елементу `<input>`. При використанні простого тексту для "підписування" поля введення – цього не відбудеться. Присутність зони підказки для активації поля введення допомагає людям із порушеннями контролю руху.
+На додачу до доступного імені, підпис надає більшу зону "попадання" для миші та користувачів сенсорних екранів для кліку чи дотику. При паруванні `<label>` із `<input>` клік на будь-якому з цих двох елементів спричинить передачу фокуса до елементу `<input>`. При використанні простого тексту для "підписування" поля введення – цього не відбудеться. Присутність зони підказки для активації поля введення допомагає людям із порушеннями контролю руху.
 
 Веброзробникам важливо ніколи не припускати, що користувач знає те саме, що й розробник. Розмаїття люду, що використовує Всесвітнє павутиння, практично гарантує, що хтось із відвідувачів вебсайту матиме відмінності у процесі мислення або обставини, що змусить їх тлумачити форми геть не так, як розробник, не маючи перед очима чітких та правильно показаних підписів.
 
 #### Заповнювачі шкодять доступності
 
-Атрибут [`placeholder`](#placeholder) дає змогу вказати текст, що з‘являється всередині області вмісту елемента `<input>`, коли немає значення. Заповнювач ніколи не повинен бути необхідним для розуміння форми. Це не підпис, і заповнювач не повинен використовуватись як його заміна, бо він нею не є. Заповнювач використовується для надання підказки щодо того, на що повинно бути схоже введене значення, а не як пояснення чи вказівка.
+Атрибут [`placeholder`](#placeholder) дає змогу вказати текст, що з'являється всередині області вмісту елемента `<input>`, коли немає значення. Заповнювач ніколи не повинен бути необхідним для розуміння форми. Це не підпис, і заповнювач не повинен використовуватись як його заміна, бо він нею не є. Заповнювач використовується для надання підказки щодо того, на що повинно бути схоже введене значення, а не як пояснення чи вказівка.
 
 Заповнювач не просто шкодить доступності для читачів з екрана. Щойно користувач вводить якийсь текст у контрольний елемент, або якщо контрольний елемент уже має значення, заповнювач зникає. Іще – браузери з функціоналом автоматичного перекладу сторінки можуть пропускати атрибути при перекладі, а отже – `placeholder` може не бути перекладеним.
 
@@ -983,7 +983,7 @@ input.custom {
 
 <table class="no-markdown">
   <caption>
-    Об‘єктні помилки валідності залежать від атрибутів {{htmlelement('input')}}
+    Об'єктні помилки валідності залежать від атрибутів {{htmlelement('input')}}
     та їх значень:
   </caption>
   <thead>
@@ -1058,7 +1058,7 @@ input.custom {
 
 Можна встановлювати межі того, які значення приймаються, і браузери, що це підтримують, будуть природно валідувати такі значення форми й повідомляти користувача про помилку при поданні форми.
 
-На додачу до помилок, описаних у таблиці вище, інтерфейс `validityState` містить булеві властивості, що доступні лише для зчитування: `badInput` (невдале введення), `valid` (дійсний) і `customError` (особлива помилка). Об‘єкт валідності включає:
+На додачу до помилок, описаних у таблиці вище, інтерфейс `validityState` містить булеві властивості, що доступні лише для зчитування: `badInput` (невдале введення), `valid` (дійсний) і `customError` (особлива помилка). Об'єкт валідності включає:
 
 - {{domxref('validityState.valueMissing')}} (значення відсутнє)
 - {{domxref('validityState.typeMismatch')}} (невідповідність типу)
@@ -1080,13 +1080,13 @@ input.custom {
 function validate(input) {
   let validityState_object = input.validity;
   if (validityState_object.valueMissing) {
-    input.setCustomValidity('Необхідне значення');
+    input.setCustomValidity("Необхідне значення");
   } else if (validityState_object.rangeUnderflow) {
-    input.setCustomValidity('Введене значення замале');
+    input.setCustomValidity("Введене значення замале");
   } else if (validityState_object.rangeOverflow) {
-    input.setCustomValidity('Введене значення завелике');
+    input.setCustomValidity("Введене значення завелике");
   } else {
-    input.setCustomValidity('');
+    input.setCustomValidity("");
   }
 }
 ```
@@ -1100,7 +1100,7 @@ function validate(input) {
 ```html
 <form>
   <label for="name"
-    >Введіть ім‘я користувача (з великих та малих літер):
+    >Введіть ім'я користувача (з великих та малих літер):
   </label>
   <input type="text" name="name" id="name" required pattern="[A-Za-z]+" />
   <button>Подати</button>
@@ -1112,19 +1112,19 @@ function validate(input) {
 При потребі натомість показати власні повідомлення помилок можна використати JavaScript отак:
 
 ```js
-const nameInput = document.querySelector('input');
+const nameInput = document.querySelector("input");
 
-nameInput.addEventListener('input', () => {
-  nameInput.setCustomValidity('');
+nameInput.addEventListener("input", () => {
+  nameInput.setCustomValidity("");
   nameInput.checkValidity();
 });
 
-nameInput.addEventListener('invalid', () => {
-  if (nameInput.value === '') {
-    nameInput.setCustomValidity('Введіть ім‘я користувача!');
+nameInput.addEventListener("invalid", () => {
+  if (nameInput.value === "") {
+    nameInput.setCustomValidity("Введіть ім'я користувача!");
   } else {
     nameInput.setCustomValidity(
-      'Імена користувачів можуть містити лише великі та малі літери. Спробуйте ще!',
+      "Імена користувачів можуть містити лише великі та малі літери. Спробуйте ще!"
     );
   }
 });
@@ -1137,9 +1137,9 @@ nameInput.addEventListener('invalid', () => {
 Стисло:
 
 - Перевірка стану валідності елемента введення виконується щоразу, коли його значення змінюється, шляхом виклику метода `checkValidity()` в обробнику події на `input`.
-- Якщо значення – недійсне, то виринає подія `invalid` і запускається функція, що є обробником події `invalid`. Всередині цієї функції за допомогою блоку `if()` приймається рішення, чому значення недійсне: бо порожнє, чи через невідповідність патерну, і – встановлюється власне повідомлення помилки валідації.
+- Якщо значення – недійсне, то виринає подія `invalid` і запускається функція, що є обробником події `invalid`. Всередині цієї функції за допомогою блоку `if ()` приймається рішення, чому значення недійсне: бо порожнє, чи через невідповідність патерну, і – встановлюється власне повідомлення помилки валідації.
 - Як наслідок: якщо значення поля введення є недійсним, коли натискається кнопка подання – показується одне з особливих повідомлень помилки.
-- Якщо значення дійсне, то воно буде подано, як очікується. Щоб це відбулось, особлива валідація мусить бути скасована шляхом виклику `setCustomValidity()` із пустим рядком. Це робиться щоразу, коли виринає подія `input`. Якщо цього не робити, і раніше була встановлена особлива валідація, то поле введення реєструватиметься як невалідне, навіть якщо при поданні воно містить дійсне значення.
+- Якщо значення дійсне, то воно буде подано, як очікується. Щоб це відбулось, особлива валідація мусить бути скасована шляхом заклику `setCustomValidity()` із пустим рядком. Це робиться щоразу, коли виринає подія `input`. Якщо цього не робити, і раніше була встановлена особлива валідація, то поле введення реєструватиметься як невалідне, навіть якщо при поданні воно містить дійсне значення.
 
 > **Примітка:** Слід завжди валідувати обмеження введення як на клієнтському, так і на серверному боці. Валідація обмежень не усуває потреби валідації на _серверному боці_. Недійсні значення можуть все ж бути надіслані давнішими браузерами чи недоброзичливцями.
 
@@ -1166,14 +1166,14 @@ Firefox використовує наступну евристику для ви
         >
       </th>
       <td>
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#flow_content">Потоковий вміст</a>, перелічуваний, подаваний, скиданий, пов‘язаний з формою елемент,
+        <a href="/uk/docs/Web/Guide/HTML/Content_categories#flow_content">Потоковий вміст</a>, перелічуваний, подаваний, скиданий, пов'язаний з формою елемент,
         <a href="/uk/docs/Web/Guide/HTML/Content_categories#phrasing_content">оповідальний вміст</a>. Якщо <a href="#type-typ"><code>type</code></a> – не
         <code>hidden</code>, то – підписуваний елемент, дотиковий вміст.
       </td>
     </tr>
     <tr>
       <th scope="row">Дозволений вміст</th>
-      <td>Жодного, це {{Glossary("empty element", "пустий елемент")}}.</td>
+      <td>Жодного, це {{Glossary("void element", "пустий елемент")}}.</td>
     </tr>
     <tr>
       <th scope="row">Упущення тега</th>

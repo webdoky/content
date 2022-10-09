@@ -18,43 +18,29 @@ browser-compat: javascript.builtins.Array.find
 
 {{EmbedInteractiveExample("pages/js/array-find.html","shorter")}}
 
-- Якщо потрібен **індекс** знайденого елементу в масиві, використовуйте {{jsxref("Array.findIndex", "findIndex()")}}.
-- Якщо потрібно знайти **індекс вже наявного значення**, застосуйте {{jsxref("Array.prototype.indexOf()")}}. (Вона схожа до {{jsxref("Array.findIndex", "findIndex()")}}, проте перевіряє кожний елемент на рівність зі значенням замість використання перевіркової функції.)
+- Якщо потрібен **індекс** знайденого елементу в масиві, використовуйте {{jsxref("Array/findIndex", "findIndex()")}}.
+- Якщо потрібно знайти **індекс вже наявного значення**, застосуйте {{jsxref("Array.prototype/indexOf()")}}. (Вона схожа до {{jsxref("Array/findIndex", "findIndex()")}}, проте перевіряє кожний елемент на рівність зі значенням замість використання перевіркової функції.)
 - Якщо потрібно визначити, чи якесь значення **наявне** в масиві, використайте
-  {{jsxref("Array.prototype.includes()")}}. Знову ж таки, цей метод перевіряє кожний елемент на рівність із переданим значенням замість застосування перевіркової функції.
-- Якщо ж потрібно взнати, чи хоч якийсь елемент задовольняє передану перевіркову функцію, слід застосувати {{jsxref("Array.prototype.some()")}}.
+  {{jsxref("Array/includes", "includes()")}}. Знову ж таки, цей метод перевіряє кожний елемент на рівність із переданим значенням замість застосування перевіркової функції.
+- Якщо ж потрібно взнати, чи хоч якийсь елемент задовольняє передану перевіркову функцію, слід застосувати {{jsxref("Array/some", "some()")}}.
 
 ## Синтаксис
 
-```js
+```js-nolint
 // Стрілкова функція
-find((element) => {
-  /* ... */
-});
-find((element, index) => {
-  /* ... */
-});
-find((element, index, array) => {
-  /* ... */
-});
+find((element) => { /* … */ } )
+find((element, index) => { /* … */ } )
+find((element, index, array) => { /* … */ } )
 
 // Функція зворотного виклику
-find(callbackFn);
-find(callbackFn, thisArg);
+find(callbackFn)
+find(callbackFn, thisArg)
 
 // Функція зворотного виклику, оголошена на місці
-find(function (element) {
-  /* ... */
-});
-find(function (element, index) {
-  /* ... */
-});
-find(function (element, index, array) {
-  /* ... */
-});
-find(function (element, index, array) {
-  /* ... */
-}, thisArg);
+find(function(element) { /* … */ })
+find(function(element, index) { /* … */ })
+find(function(element, index, array){ /* … */ })
+find(function(element, index, array) { /* … */ }, thisArg)
 ```
 
 ### Параметри
@@ -87,8 +73,7 @@ find(function (element, index, array) {
 Метод `find` виконує функцію `callbackFn` один раз для кожного індексу в масиві, аж поки `callbackFn` не поверне [істинне](/uk/docs/Glossary/Truthy) значення.
 В цьому випадку `find` одразу повертає значення цього елементу. Інакше `find` поверне {{jsxref("undefined")}}.
 
-`callbackFn` викликається для _кожного_ індексу в масиві, а не лише для тих, які мають присвоєне значення.
-Це означає, що такий підхід може бути менш ефективним на розріджених масивах, у порівнянні з методами, які обробляють лише наявні значення.
+`callbackFn` закликається для _кожного_ індексу в масиві, а не лише для тих, які мають присвоєне значення. Порожні комірки у [розріджених масивах](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy) поводяться так само як `undefined`.
 
 Якщо параметр `thisArg` було передано до функції `find`, його буде використано як значення `this` всередині кожного виклику `callbackFn`.
 Якщо ж його передано не було, замість нього буде використано {{jsxref("undefined")}}.
@@ -110,13 +95,13 @@ find(function (element, index, array) {
 
 ```js
 const inventory = [
-  { name: 'яблука', quantity: 2 },
-  { name: 'банани', quantity: 0 },
-  { name: 'вишні', quantity: 5 },
+  { name: "яблука", quantity: 2 },
+  { name: "банани", quantity: 0 },
+  { name: "вишні", quantity: 5 },
 ];
 
 function isCherries(fruit) {
-  return fruit.name === 'вишні';
+  return fruit.name === "вишні";
 }
 
 console.log(inventory.find(isCherries));
@@ -127,12 +112,12 @@ console.log(inventory.find(isCherries));
 
 ```js
 const inventory = [
-  { name: 'яблука', quantity: 2 },
-  { name: 'банани', quantity: 0 },
-  { name: 'вишні', quantity: 5 },
+  { name: "яблука", quantity: 2 },
+  { name: "банани", quantity: 0 },
+  { name: "вишні", quantity: 5 },
 ];
 
-const result = inventory.find(({ name }) => name === 'вишні');
+const result = inventory.find(({ name }) => name === "вишні");
 
 console.log(result); // { name: 'вишні', quantity: 5 }
 ```
@@ -156,28 +141,18 @@ console.log([4, 6, 8, 12].find(isPrime)); // undefined, тобто не знай
 console.log([4, 5, 8, 12].find(isPrime)); // 5
 ```
 
-Наступний приклад показує, що відсутні й видалені елементи _насправді_ опрацьовуються, і що до функції зворотного виклику потрапляє саме їх значення, на момент, коли вони опрацьовуються:
+### Використання find() на розріджених масивах
+
+Порожні комірки в розріджених масивах _відвідуються_, вони обробляються так само як `undefined`.
 
 ```js
 // Оголосимо масив з відсутніми елементами 2, 3, і 4
 const array = [0, 1, , , , 5, 6];
 
 // Покаже всі індекси, а не лише ті, що мають присвоєне значення
-array.find(function (value, index) {
-  console.log('Відвідано індекс ', index, ' зі значенням ', value);
+array.find((value, index) => {
+  console.log("Відвідано індекс ", index, " зі значенням ", value);
 });
-
-// Покаже всі індекси, включно з видаленими
-array.find(function (value, index) {
-  // Видаляємо 5-й елемент під час першої ітерації
-  if (index === 0) {
-    console.log('Видалення array[5] зі значенням ', array[5]);
-    delete array[5];
-  }
-  // 5-й елемент все ж опрацьовується, хоча ми його видалили
-  console.log('Відвідано індекс ', index, ' зі значенням ', value);
-});
-// очікуваний вивід:
 // Відвідано індекс 0 зі значенням 0
 // Відвідано індекс 1 зі значенням 1
 // Відвідано індекс 2 зі значенням undefined
@@ -185,6 +160,17 @@ array.find(function (value, index) {
 // Відвідано індекс 4 зі значенням undefined
 // Відвідано індекс 5 зі значенням 5
 // Відвідано індекс 6 зі значенням 6
+
+// Покаже всі індекси, включно з видаленими
+array.find((value, index) => {
+  // Видаляємо 5-й елемент під час першої ітерації
+  if (index === 0) {
+    console.log("Видалення array[5] зі значенням ", array[5]);
+    delete array[5];
+  }
+  // 5-й елемент все ж опрацьовується, хоча ми його видалили
+  console.log("Відвідано індекс ", index, " зі значенням ", value);
+});
 // Видалення array[5] зі значенням 5
 // Відвідано індекс 0 зі значенням 0
 // Відвідано індекс 1 зі значенням 1
@@ -205,7 +191,7 @@ array.find(function (value, index) {
 
 ## Дивіться також
 
-- [Поліфіл до `Array.prototype.find` у `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
+- [Поліфіл до `Array.prototype.find` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
 - {{jsxref("Array.prototype.findIndex()")}} – знайти елемент і повернути його індекс
 - {{jsxref("Array.prototype.includes()")}} – перевірити, чи значення присутнє в масиві
 - {{jsxref("Array.prototype.filter()")}} – отримати підхожі елементи

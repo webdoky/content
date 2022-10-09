@@ -1,5 +1,5 @@
 ---
-title: '<select>: Елемент вибору HTML'
+title: "<select>: Елемент вибору HTML"
 slug: Web/HTML/Element/select
 tags:
   - Element
@@ -17,7 +17,7 @@ browser-compat: html.elements.select
 
 {{EmbedInteractiveExample("pages/tabbed/select.html", "tabbed-standard")}}
 
-Приклад вище показує типове використання `<select>`. Елемент отримує атрибут `id`, котрий дає змогу пов‘язати його з елементом {{htmlelement("label")}} для потреб доступності, а також атрибут `name`, котрий представляє ім‘я відповідної порції даних при поданні форми на сервер. Кожен варіант меню описується елементом {{htmlelement("option")}}, дочірнім щодо `<select>`.
+Приклад вище показує типове використання `<select>`. Елемент отримує атрибут `id`, котрий дає змогу пов'язати його з елементом {{htmlelement("label")}} для потреб доступності, а також атрибут `name`, котрий представляє ім'я відповідної порції даних при поданні форми на сервер. Кожен варіант меню описується елементом {{htmlelement("option")}}, дочірнім щодо `<select>`.
 
 Кожен елемент `<option>` повинен мати атрибут {{htmlattrxref("value", "option")}}, що містить значення, котре буде подано на сервер, якщо відповідний варіант – обраний. Якщо атрибута `value` немає, то усталеним значенням є текст всередині елемента. Щоб елемент `option` був обраним при першому завантаженні сторінки, слід вказати атрибут {{htmlattrxref("selected", "option")}} елемента `<option>`.
 
@@ -39,27 +39,27 @@ browser-compat: html.elements.select
   - : Цей булів атрибут показує, що користувач не може взаємодіяти з контрольним елементом. Якщо цей атрибут не вказаний, то контрольний елемент успадковує це налаштування від контейнерного елемента, наприклад, {{htmlelement("fieldset")}}; якщо немає контейнерного елемента з атрибутом `disabled`, то контрольний елемент є увімкненим.
 - {{htmlattrdef("form")}} (форма)
 
-  - : Елемент {{HTMLElement("form")}}, з котрим елемент `<select>` пов‘язаний (його _форма-власник_). Значення цього атрибута мусить відповідати значенню атрибута {{htmlattrxref("id")}} елемента `<form>` в тому самому документі. (Якщо цей атрибут не вказаний, то `<select>` пов‘язується з елементом `<form>`, котрий є його предком, якщо такий предок є.)
+  - : Елемент {{HTMLElement("form")}}, з котрим елемент `<select>` пов'язаний (його _форма-власник_). Значення цього атрибута мусить відповідати значенню атрибута {{htmlattrxref("id")}} елемента `<form>` в тому самому документі. (Якщо цей атрибут не вказаний, то `<select>` пов'язується з елементом `<form>`, котрий є його предком, якщо такий предок є.)
 
-    Цей атрибут дає змогу пов‘язати елементи `<select>` із `<form>`'ами будь-де в документі, не поміщаючи їх у відповідний `<form>`. Також така поведінка змушує нехтувати батьківським елементом `<form>`.
+    Цей атрибут дає змогу пов'язати елементи `<select>` із `<form>`'ами будь-де в документі, не поміщаючи їх у відповідний `<form>`. Також така поведінка змушує нехтувати батьківським елементом `<form>`.
 
 - {{htmlattrdef("multiple")}} (декілька)
   - : Цей булів атрибут показує, що зі списку можуть бути обрані кілька варіантів. Якщо він не вказаний, то лише один варіант може бути обраним водночас. Коли вказаний `multiple`, більшість браузерів замість однорядкового спадного списку показують віконце списку з прокруткою.
-- {{htmlattrdef("name")}} (ім‘я)
-  - : Цей атрибут використовується, щоб вказати ім‘я контрольного елемента.
-- {{htmlattrdef("required")}} (обов‘язковий)
+- {{htmlattrdef("name")}} (ім'я)
+  - : Цей атрибут використовується, щоб вказати ім'я контрольного елемента.
+- {{htmlattrdef("required")}} (обов'язковий)
   - : Булів атрибут, що показує, що повинен бути обраний варіант із непустим значенням-рядком.
 - {{htmlattrdef("size")}} (розмір)
 
-  - : Якщо контрольний елемент поданий у вигляді віконця списку з прокруткою (наприклад, коли вказано `multiple`), цей атрибут представляє кількість рядів списку, контрі повинні бути видимі водночас. Браузери не зобов‘язані показувати елемент вибору як віконце списку з прокруткою. Усталене значення – `0`.
+  - : Якщо контрольний елемент поданий у вигляді віконця списку з прокруткою (наприклад, коли вказано `multiple`), цей атрибут представляє кількість рядів списку, контрі повинні бути видимі водночас. Браузери не зобов'язані показувати елемент вибору як віконце списку з прокруткою. Усталене значення – `0`.
 
-    > **Примітка:** Згідно зі специфікацією HTML5, усталеним значенням `size` має бути `1`; втім, на практиці виявилось, що це ламає певні вебсайти, і що жоден інший браузер так не робить, тому Mozilla вирішила продовжити повертати в Firefox `0` на постійній основі.
+    > **Примітка:** Згідно зі специфікацією HTML, усталеним значенням `size` має бути `1`; втім, на практиці виявилось, що це ламає певні вебсайти, і що жоден інший браузер так не робить, тому Mozilla вирішила продовжити повертати в Firefox `0` на постійній основі.
 
 ## Примітки щодо використання
 
 ### Вибір декількох варіантів
 
-На настільних комп‘ютерах доступна низка способів обрати декілька варіантів у елементі `<select>` з атрибутом `multiple`:
+На настільних комп'ютерах доступна низка способів обрати декілька варіантів у елементі `<select>` з атрибутом `multiple`:
 
 Користувачі миші можуть утримувати клавішу <kbd>Ctrl</kbd>, <kbd>Command</kbd> чи <kbd>Shift</kbd> (залежно від того, що має зміст для вашої операційної системи), а потім клацнути декілька варіантів, щоб обрати їх або скасувати вибір.
 
@@ -155,7 +155,7 @@ browser-compat: html.elements.select
 </select>
 ```
 
-{{EmbedLiveSample("Basic_select", "", "100")}}
+{{EmbedLiveSample("prostyi-select", "", "100")}}
 
 ### Поглиблений приклад select з використанням багатьох можливостей
 
@@ -168,7 +168,7 @@ browser-compat: html.elements.select
     <optgroup label="Чотирилапі">
       <option value="dog">Пес</option>
       <option value="cat">Кіт</option>
-      <option value="hamster" disabled>Хом‘як</option>
+      <option value="hamster" disabled>Хом'як</option>
     </optgroup>
     <optgroup label="Птахи">
       <option value="parrot">Папуга</option>
@@ -179,14 +179,14 @@ browser-compat: html.elements.select
 </label>
 ```
 
-{{EmbedLiveSample("Advanced_select_with_multiple_features", "", "100")}}
+{{EmbedLiveSample("pohlyblenyi-pryklad-select-z-vykorystanniam-bahatokh-mozhlyvostei", "", "100")}}
 
 Ви побачите, що
 
 - Можна обрати декілька варіантів, адже додано атрибут `multiple`.
 - Атрибут `size` приводить до того, що водночас видно лише 4 пункти; щоб побачити усі варіанти, можна використати прокручування.
 - Ми додали елементи {{htmlelement("optgroup")}}, щоб поділити варіанти на різні групи. Це суто візуальне групування, чиє відображення в цілому складається із назви групи грубим шрифтом та відступу на варіантах.
-- Варіант "Хом‘як" має атрибут `disabled`, а тому не може бути обраний узагалі.
+- Варіант "Хом'як" має атрибут `disabled`, а тому не може бути обраний узагалі.
 
 ### Власне оформлення select
 
@@ -228,7 +228,7 @@ browser-compat: html.elements.select
 
 ```css
 body {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .select:focus {
@@ -240,19 +240,22 @@ html body form fieldset#custom div.select[data-multiple] div.header {
 }
 
 html body form fieldset#custom div.select div.header {
-  content: '↓';
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
+  content: "↓";
+  display: flex;
+  flex: 1;
   align-items: center;
   padding: 0;
   position: relative;
+  width: auto;
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: inherit;
+  border-color: inherit;
+  border-radius: inherit;
 }
 
 html body form fieldset#custom div.select div.header::after {
-  content: '↓';
+  content: "↓";
   align-self: stretch;
   display: flex;
   align-content: center;
@@ -262,13 +265,11 @@ html body form fieldset#custom div.select div.header::after {
   padding: 0.5em;
 }
 
-html body form fieldset#custom div.select div.header:hover:after {
+html body form fieldset#custom div.select div.header:hover::after {
   background-color: blue;
 }
 
 .select .header select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   font-family: inherit;
   font-size: inherit;
@@ -299,10 +300,7 @@ html body form fieldset#custom div.select {
   display: inline-block;
 }
 
-html body form fieldset#custom div.select:focus {
-  border-color: blue;
-}
-
+html body form fieldset#custom div.select:focus,
 html body form fieldset#custom div.select:hover {
   border-color: blue;
 }
@@ -317,8 +315,6 @@ html body form fieldset#custom div.select[data-open] datalist {
 }
 
 html body form fieldset#custom div.select datalist {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   position: absolute;
   border-style: solid;
@@ -341,16 +337,8 @@ html body form fieldset#custom div.select datalist div.option {
   border-width: 0;
 }
 
-html body form fieldset#custom div.select datalist div.option:hover {
-  background-color: blue;
-  color: white;
-}
-
-html body form fieldset#custom div.select datalist div.option:focus {
-  background-color: blue;
-  color: white;
-}
-
+html body form fieldset#custom div.select datalist div.option:hover,
+html body form fieldset#custom div.select datalist div.option:focus,
 html body form fieldset#custom div.select datalist div.option:checked {
   background-color: blue;
   color: white;
@@ -386,17 +374,6 @@ html body form fieldset#custom div.select div.optgroup div.option div.label {
   padding: 0.25em;
 }
 
-html body form fieldset#custom div.select div.header {
-  flex: 1;
-  display: flex;
-  width: auto;
-  box-sizing: border-box;
-  border-width: 1px;
-  border-style: inherit;
-  border-color: inherit;
-  border-radius: inherit;
-}
-
 html body form fieldset#custom div.select div.header span {
   flex: 1;
   padding: 0.5em;
@@ -406,62 +383,67 @@ html body form fieldset#custom div.select div.header span {
 #### JavaScript
 
 ```js
-const selects = custom.querySelectorAll('select');
+const selects = custom.querySelectorAll("select");
 for (const select of selects) {
-  const div = document.createElement('div');
-  const header = document.createElement('div');
-  const datalist = document.createElement('datalist');
-  const optgroups = select.querySelectorAll('optgroup');
-  const span = document.createElement('span');
+  const div = document.createElement("div");
+  const header = document.createElement("div");
+  const datalist = document.createElement("datalist");
+  const optgroups = select.querySelectorAll("optgroup");
+  const span = document.createElement("span");
   const options = select.options;
   const parent = select.parentElement;
-  const multiple = select.hasAttribute('multiple');
-  const onclick = function (e) {
-    const disabled = this.hasAttribute('data-disabled');
+  const multiple = select.hasAttribute("multiple");
+  function onclick(e) {
+    const disabled = this.hasAttribute("data-disabled");
     select.value = this.dataset.value;
     span.innerText = this.dataset.label;
     if (disabled) return;
     if (multiple) {
       if (e.shiftKey) {
-        const checked = this.hasAttribute('data-checked');
+        const checked = this.hasAttribute("data-checked");
         if (checked) {
-          this.removeAttribute('data-checked');
+          this.removeAttribute("data-checked");
         } else {
-          this.setAttribute('data-checked', '');
+          this.setAttribute("data-checked", "");
         }
       } else {
-        const options = div.querySelectorAll('.option');
-        for (i = 0; i < options.length; i++) {
+        const options = div.querySelectorAll(".option");
+        for (let i = 0; i < options.length; i++) {
           const option = options[i];
-          option.removeAttribute('data-checked');
+          option.removeAttribute("data-checked");
         }
-        this.setAttribute('data-checked', '');
+        this.setAttribute("data-checked", "");
       }
     }
-  };
-  const onkeyup = function (e) {
+  }
+
+  function onkeyup(e) {
     e.preventDefault();
     e.stopPropagation();
     if (e.keyCode === 13) {
       this.click();
     }
-  };
-  div.classList.add('select');
-  header.classList.add('header');
+  }
+
+  div.classList.add("select");
+  header.classList.add("header");
   div.tabIndex = 1;
   select.tabIndex = -1;
   span.innerText = select.label;
   header.appendChild(span);
-  for (attribute of select.attributes)
+
+  for (const attribute of select.attributes) {
     div.dataset[attribute.name] = attribute.value;
-  for (i = 0; i < options.length; i++) {
-    const option = document.createElement('div');
-    const label = document.createElement('div');
+  }
+  for (let i = 0; i < options.length; i++) {
+    const option = document.createElement("div");
+    const label = document.createElement("div");
     const o = options[i];
-    for (attribute of o.attributes)
+    for (const attribute of o.attributes) {
       option.dataset[attribute.name] = attribute.value;
-    option.classList.add('option');
-    label.classList.add('label');
+    }
+    option.classList.add("option");
+    label.classList.add("label");
     label.innerText = o.label;
     option.dataset.value = o.value;
     option.dataset.label = o.label;
@@ -472,23 +454,26 @@ for (const select of selects) {
     datalist.appendChild(option);
   }
   div.appendChild(header);
-  for (o of optgroups) {
-    const optgroup = document.createElement('div');
-    const label = document.createElement('div');
-    const options = o.querySelectorAll('option');
+  for (const o of optgroups) {
+    const optgroup = document.createElement("div");
+    const label = document.createElement("div");
+    const options = o.querySelectorAll("option");
+
     Object.assign(optgroup, o);
-    optgroup.classList.add('optgroup');
-    label.classList.add('label');
+    optgroup.classList.add("optgroup");
+    label.classList.add("label");
     label.innerText = o.label;
     optgroup.appendChild(label);
     div.appendChild(optgroup);
-    for (o of options) {
-      const option = document.createElement('div');
-      const label = document.createElement('div');
-      for (attribute of o.attributes)
+    for (const o of options) {
+      const option = document.createElement("div");
+      const label = document.createElement("div");
+
+      for (const attribute of o.attributes) {
         option.dataset[attribute.name] = attribute.value;
-      option.classList.add('option');
-      label.classList.add('label');
+      }
+      option.classList.add("option");
+      label.classList.add("label");
       label.innerText = o.label;
       option.tabIndex = i + 1;
       option.dataset.value = o.value;
@@ -500,44 +485,52 @@ for (const select of selects) {
       optgroup.appendChild(option);
     }
   }
-  div.onclick = function (e) {
+
+  div.onclick = (e) => {
     e.preventDefault();
   };
+
   parent.insertBefore(div, select);
   header.appendChild(select);
   div.appendChild(datalist);
-  datalist.style.top = header.offsetTop + header.offsetHeight + 'px';
-  div.onclick = function (e) {
-    if (multiple) {
-    } else {
-      const open = this.hasAttribute('data-open');
+  datalist.style.top = `${header.offsetTop + header.offsetHeight}px`;
+
+  div.onclick = (e) => {
+    if (!multiple) {
+      const open = this.hasAttribute("data-open");
       e.stopPropagation();
       if (open) {
-        this.removeAttribute('data-open');
+        div.removeAttribute("data-open");
       } else {
-        this.setAttribute('data-open', '');
+        div.setAttribute("data-open", "");
       }
     }
   };
-  div.onkeyup = function (event) {
+
+  div.onkeyup = (event) => {
     event.preventDefault();
     if (event.keyCode === 13) {
-      this.click();
+      div.click();
     }
   };
-  document.addEventListener('click', function (e) {
-    if (div.hasAttribute('data-open')) div.removeAttribute('data-open');
+
+  document.addEventListener("click", (e) => {
+    if (div.hasAttribute("data-open")) {
+      div.removeAttribute("data-open");
+    }
   });
+
   const width = Math.max(
-    ...Array.from(options).map(function (e) {
+    ...Array.from(options).map((e) => {
       span.innerText = e.label;
       return div.offsetWidth;
-    }),
+    })
   );
+
   console.log(width);
-  div.style.width = width + 'px';
+  div.style.width = `${width}px`;
 }
-document.forms[0].onsubmit = function (e) {
+document.forms[0].onsubmit = (e) => {
   const data = new FormData(this);
   e.preventDefault();
   submit.innerText = JSON.stringify([...data.entries()]);

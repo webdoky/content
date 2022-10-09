@@ -69,8 +69,7 @@ browser-compat: html.elements.input.type_checkbox
       type="checkbox"
       id="subscribeNews"
       name="subscribe"
-      value="newsletter"
-    />
+      value="newsletter" />
     <label for="subscribeNews">Оформити підписку?</label>
   </div>
   <div>
@@ -101,11 +100,11 @@ browser-compat: html.elements.input.type_checkbox
 
 ## Використання полів для галочки
 
-Найбазовіше використання полів для галочки показано вище. Тепер час поглянути на решту необхідних функціоналу та технік, пов‘язаних із галочками.
+Найбазовіше використання полів для галочки показано вище. Тепер час поглянути на решту необхідних функціоналу та технік, пов'язаних із галочками.
 
 ### Обробка декількох полів для галочки
 
-Приклад, представлений вище, містив лише одне поле; в реальних ситуаціях ймовірніше зустріти декілька полів для галочки. Якщо вони цілком непов‘язані, то можна просто обробляти їх окремо, як показано вище. Утім, якщо вони всі пов‘язані між собою, то все не так просто.
+Приклад, представлений вище, містив лише одне поле; в реальних ситуаціях ймовірніше зустріти декілька полів для галочки. Якщо вони цілком непов'язані, то можна просто обробляти їх окремо, як показано вище. Утім, якщо вони всі пов'язані між собою, то все не так просто.
 
 Наприклад, у наступній демонстрації є декілька полів для галочки, щоб дати користувачеві змогу обрати свої інтереси (дивіться повну версію в розділі [Приклади](#pryklady)).
 
@@ -123,7 +122,7 @@ browser-compat: html.elements.input.type_checkbox
 </fieldset>
 ```
 
-{{EmbedLiveSample('Handling_multiple_checkboxes', 600, 100)}}
+{{EmbedLiveSample('obrobka-dekilkokh-poliv-dlia-halochky', 600, 100)}}
 
 В цьому прикладі, як бачите, кожне поле для галочки отримало однакове значення атрибута `name`. Якщо обидві поля мають галочку при поданні форми, то рядок пар ключ-значення, поданий на сервер, буде схожим на отакий: `interest=coding&interest=music`. Коли цей рядок отримає сервер, треба буде розібрати його не як асоціативний масив, щоб були враховані усі значення за ключем `interest`, а не тільки останнє. Для прикладу – одна з технік, що використовується на Python: [Обробка декількох полів для галочки з однією серверною змінною (англ.)](https://stackoverflow.com/questions/18745456/handle-multiple-checkboxes-with-a-single-serverside-variable).
 
@@ -145,17 +144,17 @@ browser-compat: html.elements.input.type_checkbox
 </fieldset>
 ```
 
-{{EmbedLiveSample('Checking_boxes_by_default', 600, 100)}}
+{{EmbedLiveSample('ustalena-halochka-v-poliakh', 600, 100)}}
 
 ### Забезпечення полям для галочки більших зон реагування
 
-У прикладах вище можна помітити, що поле для галочки можна перемкнути, натиснувши на пов‘язаний з ним елемент {{htmlelement("label")}}, як і на саме поле. Це справді корисна особливість підписів форм HTML, що полегшує клацання бажаного варіанту, особливо на пристроях з малими екранами, типу смартфонів.
+У прикладах вище можна помітити, що поле для галочки можна перемкнути, натиснувши на пов'язаний з ним елемент {{htmlelement("label")}}, як і на саме поле. Це справді корисна особливість підписів форм HTML, що полегшує клацання бажаного варіанту, особливо на пристроях з малими екранами, типу смартфонів.
 
 Крім доступності, це іще одна добра причина як слід оформлювати елементи `<label>` у своїх формах.
 
 ### Поля для галочок з невизначеним станом
 
-На додачу до присутності й відсутності галочки, є третій стан, в котрому може бути таке поле: **невизначений**. Це стан, в котрому неможливо з‘ясувати, є елемент позначеним чи ні. Він встановлюється за допомогою властивості `indeterminate` об‘єкта {{domxref("HTMLInputElement")}} об‘єкта, через JavaScript (за допомогою атрибута HTML встановити не можна):
+На додачу до присутності й відсутності галочки, є третій стан, в котрому може бути таке поле: **невизначений**. Це стан, в котрому неможливо з'ясувати, є елемент позначеним чи ні. Він встановлюється за допомогою властивості `indeterminate` об'єкта {{domxref("HTMLInputElement")}} об'єкта, через JavaScript (за допомогою атрибута HTML встановити не можна):
 
 ```js
 inputInstance.indeterminate = true;
@@ -174,15 +173,15 @@ inputInstance.indeterminate = true;
 Тож у цьому випадку стан `indeterminate` використовується для демонстрації того, що збір інгредієнтів почався, але рецепт ще не зібраний.
 
 ```js
-const overall = document.querySelector('#enchantment');
-const ingredients = document.querySelectorAll('ul input');
+const overall = document.querySelector("#enchantment");
+const ingredients = document.querySelectorAll("ul input");
 
-overall.addEventListener('click', (e) => {
+overall.addEventListener("click", (e) => {
   e.preventDefault();
 });
 
 for (const ingredient of ingredients) {
-  ingredient.addEventListener('click', updateDisplay);
+  ingredient.addEventListener("click", updateDisplay);
 }
 
 function updateDisplay() {
@@ -287,21 +286,21 @@ legend {
 ### JavaScript
 
 ```js
-const otherCheckbox = document.querySelector('#other');
-const otherText = document.querySelector('#otherValue');
-otherText.style.visibility = 'hidden';
+const otherCheckbox = document.querySelector("#other");
+const otherText = document.querySelector("#otherValue");
+otherText.style.visibility = "hidden";
 
-otherCheckbox.addEventListener('change', () => {
+otherCheckbox.addEventListener("change", () => {
   if (otherCheckbox.checked) {
-    otherText.style.visibility = 'visible';
-    otherText.value = '';
+    otherText.style.visibility = "visible";
+    otherText.value = "";
   } else {
-    otherText.style.visibility = 'hidden';
+    otherText.style.visibility = "hidden";
   }
 });
 ```
 
-{{EmbedLiveSample('Examples', '100%', 300)}}
+{{EmbedLiveSample('pryklady', '100%', 300)}}
 
 ## Специфікації
 

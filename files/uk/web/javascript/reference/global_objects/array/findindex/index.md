@@ -19,39 +19,25 @@ browser-compat: javascript.builtins.Array.findIndex
 
 {{EmbedInteractiveExample("pages/js/array-findindex.html","shorter")}}
 
-Дивіться також метод {{jsxref("Array.find", "find()")}}, котрий повертає перший елемент, що задовольняє перевіркову функцію (а не його індекс).
+Дивіться також метод {{jsxref("Array/find", "find()")}}, котрий повертає перший елемент, що задовольняє перевіркову функцію (а не його індекс).
 
 ## Синтаксис
 
-```js
+```js-nolint
 // Стрілкова функція
-findIndex((element) => {
-  /* ... */
-});
-findIndex((element, index) => {
-  /* ... */
-});
-findIndex((element, index, array) => {
-  /* ... */
-});
+findIndex((element) => { /* … */ } )
+findIndex((element, index) => { /* … */ } )
+findIndex((element, index, array) => { /* … */ } )
 
 // Функція зворотного виклику
-findIndex(callbackFn);
-findIndex(callbackFn, thisArg);
+findIndex(callbackFn)
+findIndex(callbackFn, thisArg)
 
 // Вбудована функція зворотного виклику
-findIndex(function (element) {
-  /* ... */
-});
-findIndex(function (element, index) {
-  /* ... */
-});
-findIndex(function (element, index, array) {
-  /* ... */
-});
-findIndex(function (element, index, array) {
-  /* ... */
-}, thisArg);
+findIndex(function(element) { /* … */ })
+findIndex(function(element, index) { /* … */ })
+findIndex(function(element, index, array){ /* … */ })
+findIndex(function(element, index, array) { /* … */ }, thisArg)
 ```
 
 ### Параметри
@@ -86,7 +72,7 @@ findIndex(function (element, index, array) {
 Якщо такий елемент знайдено, то `findIndex()` негайно поверне його індекс.
 Якщо `callbackFn` ніколи не повертає істинне значення (або якщо довжина масиву – `0`), то `findIndex()` поверне `-1`.
 
-> **Примітка:** На відміну від інших методів масиву, наприклад, {{jsxref("Array.some()")}}, `callbackFn` запускається навіть для індексів, котрим не присвоєні значення.
+`callbackFn` закликається для _кожного_ індексу в масиві, а не лише тих, що мають присвоєні значення. Порожні комірки в [розріджених масивах](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy) поводяться так само як `undefined`.
 
 `callbackFn` викликається з трьома аргументами:
 
@@ -128,17 +114,12 @@ console.log([4, 6, 8, 9, 12].findIndex(isPrime)); // -1, не знайдено
 console.log([4, 6, 7, 9, 12].findIndex(isPrime)); // 2 (array[2] – це 7)
 ```
 
-### Пошук індексу за допомогою стрілкової функції
+### Використання findIndex() на розріджених масивах
 
-Наступний приклад шукає індекс фрукта за допомогою стрілкової функції:
+Можна шукати в розрідженому масиві `undefined` – і отримати індекс порожньої комірки.
 
 ```js
-const fruits = ['яблуко', 'банан', 'канталуп', 'лохина', 'грейпфрут'];
-
-const index = fruits.findIndex((fruit) => fruit === 'лохина');
-
-console.log(index); // 3
-console.log(fruits[index]); // лохина
+console.log([1, , 3].findIndex((x) => x === undefined)); // 1
 ```
 
 ## Специфікації

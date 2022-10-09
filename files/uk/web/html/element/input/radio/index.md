@@ -23,7 +23,7 @@ browser-compat: html.elements.input.type_radio
 
 {{HTMLRef("Input_types")}}
 
-Елементи {{htmlelement("input")}} типу **`radio`** зазвичай використовуються у **радіогрупах** – колекціях радіокнопок, що описують набір пов‘язаних варіантів.
+Елементи {{htmlelement("input")}} типу **`radio`** зазвичай використовуються у **радіогрупах** – колекціях радіокнопок, що описують набір пов'язаних варіантів.
 
 Лише одна радіокнопка з даної групи може бути водночас вибраною. Радіокнопки зазвичай зображаються як маленькі кружечки, котрі є зафарбованими чи підсвіченими, коли вибрані.
 
@@ -84,30 +84,32 @@ browser-compat: html.elements.input.type_radio
 
 На сторінці можна мати стільки радіогруп, скільки заманеться, але за умови, що кожна з них має власне унікальне значення `name`.
 
-Наприклад, якщо формі потрібно запитати користувача щодо бажаного способу зв‘язку, можна створити три радіокнопки, кожна з яких матиме властивість `name` зі значенням `contact`, але значення однієї з них буде `email`, другої – `phone`, а третьої – `mail`. Користувач ніколи не побачить значень `value` чи `name` (якщо ви самотужки не додасте коду, що їх покаже).
+Наприклад, якщо формі потрібно запитати користувача щодо бажаного способу зв'язку, можна створити три радіокнопки, кожна з яких матиме властивість `name` зі значенням `contact`, але значення однієї з них буде `email`, другої – `phone`, а третьої – `mail`. Користувач ніколи не побачить значень `value` чи `name` (якщо ви самотужки не додасте коду, що їх покаже).
 
 У підсумку HTML матиме наступний вигляд:
 
 ```html
 <form>
-  <p>Будь ласка, оберіть бажаний спосіб зв‘язку:</p>
-  <div>
-    <input type="radio" id="contactChoice1" name="contact" value="email" />
-    <label for="contactChoice1">Електронна пошта</label>
+  <fieldset>
+    <legend>Будь ласка, оберіть бажаний спосіб зв'язку:</legend>
+    <div>
+      <input type="radio" id="contactChoice1" name="contact" value="email" />
+      <label for="contactChoice1">Електронна пошта</label>
 
-    <input type="radio" id="contactChoice2" name="contact" value="phone" />
-    <label for="contactChoice2">Телефон</label>
+      <input type="radio" id="contactChoice2" name="contact" value="phone" />
+      <label for="contactChoice2">Телефон</label>
 
-    <input type="radio" id="contactChoice3" name="contact" value="mail" />
-    <label for="contactChoice3">Пошта</label>
-  </div>
-  <div>
-    <button type="submit">Надіслати</button>
-  </div>
+      <input type="radio" id="contactChoice3" name="contact" value="mail" />
+      <label for="contactChoice3">Пошта</label>
+    </div>
+    <div>
+      <button type="submit">Надіслати</button>
+    </div>
+  </fieldset>
 </form>
 ```
 
-Тут три радіокнопки, кожна з яких має атрибут `name` зі значенням `contact`, але всі вони – з унікальними значеннями `value`, що однозначно вказують на певну радіокнопку групи. Також вони мають унікальні {{domxref("Element.id", "id")}}, що їх використовує атрибут {{htmlattrxref("for", "label")}} елемента {{HTMLElement("label")}}, аби пов‘язати позначки з радіокнопками.
+Тут три радіокнопки, кожна з яких має атрибут `name` зі значенням `contact`, але всі вони – з унікальними значеннями `value`, що однозначно вказують на певну радіокнопку групи. Також вони мають унікальні {{domxref("Element.id", "id")}}, що їх використовує атрибут {{htmlattrxref("for", "label")}} елемента {{HTMLElement("label")}}, аби пов'язати позначки з радіокнопками.
 
 Можна спробувати приклад нижче:
 
@@ -127,18 +129,20 @@ browser-compat: html.elements.input.type_radio
 
 ```html
 <form>
-  <p>Будь ласка, оберіть бажаний спосіб зв‘язку:</p>
-  <div>
-    <input type="radio" id="contactChoice1" name="contact" value="email" />
-    <label for="contactChoice1">Електронна пошта</label>
-    <input type="radio" id="contactChoice2" name="contact" value="phone" />
-    <label for="contactChoice2">Телефон</label>
-    <input type="radio" id="contactChoice3" name="contact" value="mail" />
-    <label for="contactChoice3">Пошта</label>
-  </div>
-  <div>
-    <button type="submit">Надіслати</button>
-  </div>
+  <fieldset>
+    <legend>Будь ласка, оберіть бажаний спосіб зв'язку:</legend>
+    <div>
+      <input type="radio" id="contactChoice1" name="contact" value="email" />
+      <label for="contactChoice1">Електронна пошта</label>
+      <input type="radio" id="contactChoice2" name="contact" value="phone" />
+      <label for="contactChoice2">Телефон</label>
+      <input type="radio" id="contactChoice3" name="contact" value="mail" />
+      <label for="contactChoice3">Пошта</label>
+    </div>
+    <div>
+      <button type="submit">Надіслати</button>
+    </div>
+  </fieldset>
 </form>
 <pre id="log"></pre>
 ```
@@ -146,21 +150,21 @@ browser-compat: html.elements.input.type_radio
 Потім додається трохи [JavaScript](/uk/docs/Web/JavaScript), щоб встановити слухач події {{domxref("HTMLFormElement/submit_event", "submit")}}, котра спрацьовує, коли користувач натискає кнопку "Надіслати":
 
 ```js
-var form = document.querySelector('form');
-var log = document.querySelector('#log');
+const form = document.querySelector("form");
+const log = document.querySelector("#log");
 
 form.addEventListener(
-  'submit',
-  function (event) {
-    var data = new FormData(form);
-    var output = '';
+  "submit",
+  (event) => {
+    const data = new FormData(form);
+    let output = "";
     for (const entry of data) {
-      output = output + entry[0] + '=' + entry[1] + '\r';
+      output = `${output}${entry[0]}=${entry[1]}\r`;
     }
     log.innerText = output;
     event.preventDefault();
   },
-  false,
+  false
 );
 ```
 
@@ -179,11 +183,15 @@ form.addEventListener(
     На відміну від інших браузерів, Firefox усталено [зберігає динамічний стан позначеності (англ.)](https://stackoverflow.com/questions/5985839/bug-with-firefox-disabled-attribute-of-input-not-resetting-when-refreshing) поля `<input>` між завантаженнями сторінки. Використовуйте атрибут {{htmlattrxref("autocomplete","input")}}, щоб контролювати цю функціональність.
 
 - {{htmlattrdef("value")}}
+
   - : Атрибут `value` поділяють всі поля {{HTMLElement("input")}}; втім, для полів типу `radio` він має особливе призначення: коли подається форма, то лише ті радіокнопки, що є позначеними, подаються на сервер, і їх надіслане значення – значення атрибута `value`. Якщо ж атрибут `value` не вказаний, то його значення усталено вважається рівним `on`. Це показано в розділі [Значення](#znachennia) вище.
+
+- {{htmlattrdef("required")}}
+  - : Атрибут `required` поділяє більшість типів {{HTMLElement("input")}}. Якщо будь-яка з радіокнопок однієї групи має атрибут `required`, то одна з радіокнопок такої групи мусить бути позначеною, проте це не обов'язково повинна бути саме та, що має атрибут.
 
 ## Використання радіополів
 
-Фундаментальні основи радіокнопок розкриті вище. Тепер – погляд на інші поширені пов‘язані з радіокнопками особливості та техніки, що можуть знадобитися.
+Фундаментальні основи радіокнопок розкриті вище. Тепер – погляд на інші поширені пов'язані з радіокнопками особливості та техніки, що можуть знадобитися.
 
 ### Усталений вибір радіокнопки
 
@@ -191,61 +199,15 @@ form.addEventListener(
 
 ```html
 <form>
-  <p>Будь ласка, оберіть бажаний спосіб зв‘язку:</p>
-  <div>
-    <input
-      type="radio"
-      id="contactChoice1"
-      name="contact"
-      value="email"
-      checked
-    />
-    <label for="contactChoice1">Електронна пошта</label>
-
-    <input type="radio" id="contactChoice2" name="contact" value="phone" />
-    <label for="contactChoice2">Телефон</label>
-
-    <input type="radio" id="contactChoice3" name="contact" value="mail" />
-    <label for="contactChoice3">Пошта</label>
-  </div>
-  <div>
-    <button type="submit">Надіслати</button>
-  </div>
-</form>
-```
-
-{{EmbedLiveSample('ustalenyi-vybir-radioknopky', 600, 130)}}
-
-В такому випадку перша радіокнопка є усталено вибраною.
-
-> **Примітка:** Якщо додати атрибут `checked` до більш ніж однієї радіокнопки, то наступні зневажатимуть попередні; отже, вибраною буде остання з `checked` радіокнопок. Так відбувається через те, що лише одна радіокнопка в групі може бути водночас вибраною, і користувацький агент автоматично скасовуватиме попередній вибір щоразу, коли нова радіокнопка отримуватиме позначку.
-
-### Забезпечення радіокнопкам більшої зони активації
-
-У прикладах вище можна помітити, що радіокнопка може бути вибрана шляхом клацання пов‘язаного з нею елемента {{htmlelement("label")}}, а не тільки самої радіокнопки. Ця справді корисна особливість підписів форм HTML спрощує користувачам вибір бажаних варіантів, особливо на пристроях з малими екранами, наприклад, смартфонах.
-
-Крім доступності, це іще одна добра причина як слід задавати своїм формам елементи `<label>`.
-
-## Валідація
-
-Радіокнопки не беруть участі у валідації обмежень; вони не мають жодних реальних значень, щоб накладати на них обмеження.
-
-## Оформлення радіополів
-
-Наступний приклад показує трохи більш закінчену версію прикладу, що використовується в цій статті, із певним додатковим оформленням та кращою семантикою, заданою шляхом використання спеціалізованих елементів. HTML має наступний вигляд:
-
-```html
-<form>
   <fieldset>
-    <legend>Будь ласка, оберіть бажаний спосіб зв‘язку:</legend>
+    <legend>Будь ласка, оберіть бажаний спосіб зв'язку:</legend>
     <div>
       <input
         type="radio"
         id="contactChoice1"
         name="contact"
         value="email"
-        checked
-      />
+        checked />
       <label for="contactChoice1">Електронна пошта</label>
 
       <input type="radio" id="contactChoice2" name="contact" value="phone" />
@@ -261,9 +223,53 @@ form.addEventListener(
 </form>
 ```
 
-Тут небагато нового, крім додання елементів {{htmlelement("fieldset")}} і {{htmlelement("legend")}}, котрі допомагають файно і в семантичний спосіб згрупувати функціональність.
+{{EmbedLiveSample('ustalenyi-vybir-radioknopky', 600, 130)}}
 
-Залучений CSS – дещо більш істотний:
+В такому випадку перша радіокнопка є усталено вибраною.
+
+> **Примітка:** Якщо додати атрибут `checked` до більш ніж однієї радіокнопки, то наступні зневажатимуть попередні; отже, вибраною буде остання з `checked` радіокнопок. Так відбувається через те, що лише одна радіокнопка в групі може бути водночас вибраною, і користувацький агент автоматично скасовуватиме попередній вибір щоразу, коли нова радіокнопка отримуватиме позначку.
+
+### Забезпечення радіокнопкам більшої зони активації
+
+У прикладах вище можна помітити, що радіокнопка може бути вибрана шляхом клацання пов'язаного з нею елемента {{htmlelement("label")}}, а не тільки самої радіокнопки. Ця справді корисна особливість підписів форм HTML спрощує користувачам вибір бажаних варіантів, особливо на пристроях з малими екранами, наприклад, смартфонах.
+
+Крім доступності, це іще одна добра причина як слід задавати своїм формам елементи `<label>`.
+
+## Валідація
+
+Радіокнопки не беруть участі у валідації обмежень; вони не мають жодних реальних значень, щоб накладати на них обмеження.
+
+## Оформлення радіополів
+
+Наступний приклад показує трохи більш закінчену версію прикладу, що використовується в цій статті, із певним додатковим оформленням та кращою семантикою, заданою шляхом використання спеціалізованих елементів. HTML має наступний вигляд:
+
+```html
+<form>
+  <fieldset>
+    <legend>Будь ласка, оберіть бажаний спосіб зв'язку:</legend>
+    <div>
+      <input
+        type="radio"
+        id="contactChoice1"
+        name="contact"
+        value="email"
+        checked />
+      <label for="contactChoice1">Електронна пошта</label>
+
+      <input type="radio" id="contactChoice2" name="contact" value="phone" />
+      <label for="contactChoice2">Телефон</label>
+
+      <input type="radio" id="contactChoice3" name="contact" value="mail" />
+      <label for="contactChoice3">Пошта</label>
+    </div>
+    <div>
+      <button type="submit">Надіслати</button>
+    </div>
+  </fieldset>
+</form>
+```
+
+Залучений у цьому прикладі CSS – дещо більш істотний:
 
 ```css
 html {
@@ -282,8 +288,6 @@ label {
 }
 
 input {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
 
   border-radius: 50%;

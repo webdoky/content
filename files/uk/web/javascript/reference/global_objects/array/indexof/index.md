@@ -20,9 +20,9 @@ browser-compat: javascript.builtins.Array.indexOf
 
 ## Синтаксис
 
-```js
-indexOf(searchElement);
-indexOf(searchElement, fromIndex);
+```js-nolint
+indexOf(searchElement)
+indexOf(searchElement, fromIndex)
 ```
 
 ### Параметри
@@ -30,7 +30,7 @@ indexOf(searchElement, fromIndex);
 - `searchElement` (елемент пошуку)
   - : Шуканий у масиві елемент.
 - `fromIndex` (від індексу) {{optional_inline}}
-  - : Індекс, з якого потрібно почати пошук. Якщо індекс більший або дорівнює довжині масиву, повертається -1: це означає, що пошук у масиві виконуватись не буде. Якщо надане значення індексу є від’ємним числом, то воно приймається як зміщення від кінця масиву. Примітка: якщо наданий індекс є від’ємним, то пошук у масиві все одно виконується від початку до кінця. Якщо наданий індекс дорівнює 0 – пошук буде здійснюватися в усьому масиві. Усталено: 0 (перевіряється весь масив).
+  - : Індекс, з якого потрібно почати пошук. Якщо індекс більший або дорівнює довжині масиву, повертається -1: це означає, що пошук у масиві виконуватись не буде. Якщо надане значення індексу є від'ємним числом, то воно приймається як зміщення від кінця масиву. Примітка: якщо наданий індекс є від'ємним, то пошук у масиві все одно виконується від початку до кінця. Якщо наданий індекс дорівнює 0 – пошук буде здійснюватися в усьому масиві. Усталено: 0 (перевіряється весь масив).
 
 ### Повернене значення
 
@@ -42,6 +42,8 @@ indexOf(searchElement, fromIndex);
 
 > **Примітка:** Для методу String див.
 > {{jsxref("String.prototype.indexOf()")}}.
+
+Метод `indexOf()` пропускає порожні комірки в [розріджених масивах](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy).
 
 ## Приклади
 
@@ -62,10 +64,10 @@ array.indexOf(2, -3); // 0
 
 ```js
 const indices = [];
-const array = ['a', 'b', 'a', 'c', 'a', 'd'];
-const element = 'a';
+const array = ["a", "b", "a", "c", "a", "d"];
+const element = "a";
 const idx = array.indexOf(element);
-while (idx != -1) {
+while (idx !== -1) {
   indices.push(idx);
   idx = array.indexOf(element, idx + 1);
 }
@@ -79,23 +81,31 @@ console.log(indices);
 function updateVegetablesCollection(veggies, veggie) {
   if (veggies.indexOf(veggie) === -1) {
     veggies.push(veggie);
-    console.log('Нова овочева колекція: ' + veggies);
+    console.log(`Нова овочева колекція: ${veggies}`);
   } else {
-    console.log(veggie + ' уже є в овочевій колекції.');
+    console.log(`${veggie} уже є в овочевій колекції.`);
   }
 }
 
 const veggies = [
-  'картопля',
-  'помідор',
-  'червоний гострий перець',
-  'зелений болгарський перець',
+  "картопля",
+  "помідор",
+  "червоний гострий перець",
+  "зелений болгарський перець",
 ];
 
-updateVegetablesCollection(veggies, 'шпинат');
+updateVegetablesCollection(veggies, "шпинат");
 // Нова колекція veggies: картопля,помідор,червоний гострий перець,зелений болгарський перець,шпинат
-updateVegetablesCollection(veggies, 'шпинат');
+updateVegetablesCollection(veggies, "шпинат");
 // шпинат уже є в овочевій колекції.
+```
+
+### Використання indexOf() на розріджених масивах
+
+Не можна використовувати `indexOf` для пошуку порожніх комірок в розріджених масивах.
+
+```js
+console.log([1, , 3].indexOf(undefined)); // -1
 ```
 
 ## Специфікації

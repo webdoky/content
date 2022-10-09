@@ -226,9 +226,8 @@ browser-compat: javascript.operators
   - : Присвоєння з логічним OR.
 - {{JSxRef("Operators/Logical_nullish_assignment", "??=")}}
   - : Логічне нульове присвоєння.
-- {{JSxRef("Operators/Destructuring_assignment", "[a, b] = [1, 2]")}}
-  {{JSxRef("Operators/Destructuring_assignment", "{a, b} = {a:1, b:2}")}}
-  - : Присвоєння з деструктуризацією дозволяє призначити властивості масиву чи об'єкта змінним, з використанням синтаксису, який виглядає подібно до літералів масивів та об'єктів.
+- [`[a, b] = arr`, `{ a, b } = obj`](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+  - : Присвоєння з деструктуризацією дає змогу призначити властивості масиву чи об'єкта змінним, з використанням синтаксису, який має подібний до літералів масивів та об'єктів вигляд.
 
 ### Оператор кома
 

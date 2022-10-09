@@ -23,8 +23,7 @@ browser-compat: javascript.operators.conditional
 
 ## Синтаксис
 
-```js
-<!-- markdownlint-disable-next-line -->
+```js-nolint
 condition ? exprIfTrue : exprIfFalse
 ```
 
@@ -79,9 +78,11 @@ function example() {
     ? value3
     : value4;
 }
+```
 
-// Еквівалентно виразу:
+Такий запис еквівалентний ланцюжкові [`if...else`](/uk/docs/Web/JavaScript/Reference/Statements/if...else) нижче.
 
+```js
 function example() {
   if (condition1) {
     return value1;
