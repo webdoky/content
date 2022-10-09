@@ -102,6 +102,8 @@ function compareNumbers(a, b) {
 }
 ```
 
+Метод `reverse()` є [узагальненим](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#uzahalneni-metody-masyvu). Він лишень очікує, що значення `this` матиме властивість `length`, а також властивості з цілочисловими ключами.
+
 ## Приклади
 
 ### Створення, показування і сортування масиву
@@ -307,6 +309,21 @@ arr.sort(compareFn);
 ```js
 console.log(["a", "c", , "b"].sort()); // ['a', 'b', 'c', порожньо]
 console.log([, undefined, "a", "b"].sort()); // ["a", "b", undefined, порожньо]
+```
+
+### Виклик sort() на об'єктах-немасивах
+
+Метод `sort()` зчитує з `this` властивість `length`. Потім він збирає всі наявні цілочислові властивості в діапазоні від `0` до `length - 1`, сортує їх і записує назад. Якщо в діапазоні є пропущені властивості, то відповідні властивості в кінці послідовності [видаляються](/uk/docs/Web/JavaScript/Reference/Operators/delete), як ніби відсутні властивості сортувалися в кінець.
+
+```js
+const arrayLike = {
+  length: 3,
+  unrelated: "foo",
+  0: 5,
+  2: 4,
+};
+console.log(Array.prototype.sort.call(arrayLike));
+// { '0': 4, '1': 5, length: 3, unrelated: 'foo' }
 ```
 
 ## Специфікації
