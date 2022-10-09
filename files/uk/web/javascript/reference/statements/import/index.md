@@ -16,7 +16,7 @@ browser-compat: javascript.statements.import
 
 Оголошення статичного імпорту **`import`** застосовуються для імпорту незмінних живих прив'язок, які, своєю чергою, [експортуються](/uk/docs/Web/JavaScript/Reference/Statements/export) іншим модулем. Імпортовані прив'язки називаються _живими_, оскільки вони оновлюються модулем, який їх експортує, проте вони не можуть бути модифіковані модулем, що їх імпортує.
 
-Для того, аби отримати змогу вжити оголошення `import` у файлі з вихідним кодом, цей файл інтерпретовано як [модуль](/uk/docs/Web/JavaScript/Guide/Modules) середовищем виконання. В HTML цього можна досягти шляхом додавання `type="module"` до тега {{HTMLElement("script")}}. Модулі автоматично інтерпретуються в [суворому режимі](/en-US/docs/Web/JavaScript/Reference/Strict_mode).
+Для того, аби отримати змогу вжити оголошення `import` у файлі з вихідним кодом, цей файл інтерпретовано як [модуль](/uk/docs/Web/JavaScript/Guide/Modules) середовищем виконання. В HTML цього можна досягти шляхом додавання `type="module"` до тега {{HTMLElement("script")}}. Модулі автоматично інтерпретуються в [суворому режимі](/uk/docs/Web/JavaScript/Reference/Strict_mode).
 
 Також існує подібний до функції динамічний [`import()`](/uk/docs/Web/JavaScript/Reference/Operators/import), який не вимагає наявності атрибута `type="module"` на скриптах.
 
@@ -141,7 +141,7 @@ import * as myModule from '/modules/my-module.js';
 myModule.doAllTheAmazingThings();
 ```
 
-Значення `myModule` — це [запечатаний](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isSealed) об'єкт, чиїм прототипом є `null`. Всі його ключі є [перелічуваними](/en-US/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) в лексикографічному порядку (тобто в послідовності, згідно з якою працює [`Array.prototype.sort()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#description)), причому усталений експорт буде доступний за ключем `default`.
+Значення `myModule` — це [запечатаний](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/isSealed) об'єкт, чиїм прототипом є `null`. Всі його ключі є [перелічуваними](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) в лексикографічному порядку (тобто в послідовності, згідно з якою працює [`Array.prototype.sort()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#description)), причому усталений експорт буде доступний за ключем `default`.
 
 > **Примітка:** JavaScript не підтримує довільні імпорти, як от `import * from "module-name"`, через високу ймовірність конфліктів імен.
 
@@ -153,7 +153,7 @@ myModule.doAllTheAmazingThings();
 import '/modules/my-module.js';
 ```
 
-Такий підхід часто використовується для [поліфілів](/en-US/docs/Glossary/Polyfill), які модифікують глобальні змінні.
+Такий підхід часто використовується для [поліфілів](/uk/docs/Glossary/Polyfill), які модифікують глобальні змінні.
 
 ## Приклади
 
