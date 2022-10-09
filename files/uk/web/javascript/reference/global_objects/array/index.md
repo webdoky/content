@@ -736,7 +736,41 @@ console.log(fruits.length); // 2
 Методи масиву завжди є узагальненими: вони не звертаються до жодних внутрішніх даних об'єкта масиву. Вони звертаються лише до елементів масиву – через властивість `length` та елементи з індексами. Це означає, що вони також можуть бути викликані на масивоподібних об'єктах.
 
 ```js
-Array.prototype.join.call({ 0: "a", 1: "b", length: 2 }, "+"); // 'a+b'
+const arrayLike = {
+  0: "a",
+  1: "b",
+  length: 2,
+};
+console.log(Array.prototype.join.call(arrayLike, "+")); // 'a+b'
+```
+
+#### Нормалізація властивості length
+
+Властивість `length` [перетворюється на число](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#zvedennia-do-chysla), обрізається до цілого, а потім затискається до діапазону між 0 і 2<sup>53</sup> - 1. `NaN` стає `0`, тож навіть тоді, коли `length` немає або в ній `undefined`, це працює так, ніби довжина `0`.
+
+```js
+Array.prototype.flat.call({}); // []
+```
+
+Частина методів масиву змінює властивість `length` об'єкта масиву. Вони завжди присвоюють значення після нормалізації, тому `length` завжди стає цілим числом.
+
+```js
+const a = { length: 0.7 };
+Array.prototype.push.call(a);
+console.log(a.length); // 0
+```
+
+#### Масивоподібні об'єкти
+
+Термін [_масивоподібний об'єкт_](/uk/docs/Web/JavaScript/Guide/Indexed_collections#robota-z-masyvopodibnymy-obiektamy) стосується будь-якого об'єкта, що не викидає помилки при процесі перетворення `length`, описаному вище. На практиці очікується, що такий об'єкт має властивість `length`, а також індексовані елементи в діапазоні від `0` до `length - 1`. (Якщо він має не всі індекси, то це функційно буде рівносильно [розрідженому масивові](#metody-masyvu-y-porozhni-komirky).)
+
+Масивоподібними є чимало об'єктів DOM – наприклад, [`NodeList`](/uk/docs/Web/API/NodeList) і [`HTMLCollection`](/uk/docs/Web/API/HTMLCollection). Об'єкт [`arguments`](/uk/docs/Web/JavaScript/Reference/Functions/arguments) так само є масивоподібним. На них можна викликати методи масиву, навіть якщо вони самі цих методів не мають.
+
+```js
+function f() {
+  console.log(Array.prototype.join.call(arguments, "+"));
+}
+f("a", "b"); // 'a+b'
 ```
 
 ## Специфікації
