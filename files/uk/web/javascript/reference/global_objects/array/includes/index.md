@@ -54,6 +54,8 @@ includes(searchElement, fromIndex)
 
 Бувши використаним на [розріджених масивах](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy), метод `includes()` ітерує порожні комірки так, ніби вони містять значення `undefined`.
 
+Метод `includes()` є [узагальненим](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#uzahalneni-metody-masyvu). Він лишень очікує, що значення `this` матиме властивість `length`, а також властивості з цілочисловими ключами.
+
 ## Приклади
 
 ### Використання includes()
@@ -103,17 +105,21 @@ arr.includes("a", -2); // false
 console.log([1, , 3].includes(undefined)); // true
 ```
 
-### Застосування includes() як узагальненого методу
+### Виклик includes() на об'єктах-немасивах
 
-Метод `includes()` умисно зроблений узагальненим. Він не вимагає від значення `this` бути об'єктом `Array`, тож його можна застосувати й до інших типів об'єктів (зокрема – масивоподібних об'єктів).
-
-Наступний приклад ілюструє виклик методу `includes()` на об'єкті [arguments](/uk/docs/Web/JavaScript/Reference/Functions/arguments) функції.
+Метод `includes()` зчитує з `this` властивість `length`, а потім звертається до кожної цілочислової властивості.
 
 ```js
-(function () {
-  console.log(Array.prototype.includes.call(arguments, "a")); // true
-  console.log(Array.prototype.includes.call(arguments, "d")); // false
-})("a", "b", "c");
+const arrayLike = {
+  length: 3,
+  0: 2,
+  1: 3,
+  2: 4,
+};
+console.log(Array.prototype.includes.call(arrayLike, 2));
+// true
+console.log(Array.prototype.includes.call(arrayLike, 1));
+// false
 ```
 
 ## Специфікації
