@@ -127,6 +127,8 @@ if (!Array.prototype.filter) {
 }
 ```
 
+Метод `filter()` є [узагальненим](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#uzahalneni-metody-masyvu). Він лишень очікує, що значення `this` має властивість `length`, а також властивості з цілочисловими ключами.
+
 ## Приклади
 
 ### Відфільтровування малих значень
@@ -214,6 +216,29 @@ function filterItems(arr, query) {
 
 console.log(filterItems(fruits, "ан")); // ['банан', 'манго']
 console.log(filterItems(fruits, "ин")); // ['виноград', 'апельсин']
+```
+
+### Використання filter() на розріджених масивах
+
+`filter()` пропустить порожні комірки.
+
+```js
+console.log([1, , undefined].filter((x) => x === undefined)); // [undefined]
+console.log([1, , undefined].filter((x) => x !== 2)); // [1, undefined]
+```
+
+### Виклик filter() на масивоподібних об'єктах
+
+Метод `filter()` зчитує з `this` властивість `length`, а потім звертається до кожного цілочислового індексу.
+
+```js
+const arrayLike = {
+  length: 3,
+  0: "a",
+  1: "b",
+  2: "c",
+};
+console.log(Array.prototype.filter.call(arrayLike, (x) => x <= "b")); // [ 'a', 'b' ]
 ```
 
 ### Внесення змін до початкового масиву (зміна, додавання і видалення елементів)
