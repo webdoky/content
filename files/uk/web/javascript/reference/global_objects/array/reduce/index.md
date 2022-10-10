@@ -129,6 +129,8 @@ const getMax = (a, b) => Math.max(a, b);
 [].reduce(getMax); // TypeError
 ```
 
+Метод `reduce()` є [узагальненим](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#uzahalneni-metody-masyvu). Він лишень очікує, що значення `this` матиме властивість `length`, а також властивості з цілочисловими ключами.
+
 ## Приклади
 
 ### Як працює reduce(), якщо не вказано початкове значення
@@ -410,6 +412,21 @@ multiply24(10); // 240
 ```js
 console.log([1, 2, , 4].reduce((a, b) => a + b)); // 7
 console.log([1, 2, undefined, 4].reduce((a, b) => a + b)); // NaN
+```
+
+### Виклик reduce() на об'єктах-немасивах
+
+Метод `reduce()` зчитує з `this` властивість `length`, а потім звертається до кожної цілочислової властивості.
+
+```js
+const arrayLike = {
+  length: 3,
+  0: 2,
+  1: 3,
+  2: 4,
+};
+console.log(Array.prototype.reduce.call(arrayLike, (x, y) => x + y));
+// 9
 ```
 
 ## Специфікації
