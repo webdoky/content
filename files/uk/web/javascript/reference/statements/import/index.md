@@ -16,7 +16,7 @@ browser-compat: javascript.statements.import
 
 Оголошення статичного імпорту **`import`** застосовуються для імпорту незмінних живих прив'язок, які, своєю чергою, [експортуються](/uk/docs/Web/JavaScript/Reference/Statements/export) іншим модулем. Імпортовані прив'язки називаються _живими_, оскільки вони оновлюються модулем, який їх експортує, проте вони не можуть бути модифіковані модулем, що їх імпортує.
 
-Для того, аби отримати змогу вжити оголошення `import` у файлі з вихідним кодом, цей файл інтерпретовано як [модуль](/uk/docs/Web/JavaScript/Guide/Modules) середовищем виконання. В HTML цього можна досягти шляхом додавання `type="module"` до тега {{HTMLElement("script")}}. Модулі автоматично інтерпретуються в [суворому режимі](/uk/docs/Web/JavaScript/Reference/Strict_mode).
+Для того, аби отримати змогу вжити оголошення `import` у файлі з вихідним кодом, цей файл повинен бути інтерпретований середовищем виконання як [модуль](/uk/docs/Web/JavaScript/Guide/Modules). В HTML цього можна досягти шляхом додавання `type="module"` до тега {{HTMLElement("script")}}. Модулі автоматично інтерпретуються в [суворому режимі](/uk/docs/Web/JavaScript/Reference/Strict_mode).
 
 Також існує подібний до функції динамічний [`import()`](/uk/docs/Web/JavaScript/Reference/Operators/import), який не вимагає наявності атрибута `type="module"` на скриптах.
 
@@ -51,20 +51,20 @@ import "module-name";
 
 Оголошення `import` можуть знаходитися лише всередині модулів, і лише на найвищому рівні (тобто не всередині блоків, функцій тощо). Якщо оголошення `import` зустрічається у немодульному контексті (як от у скриптових файлах, `eval`, `new Function`, які після розбору мають оформитися у "скрипт" чи "функцію") — викидається помилка `SyntaxError`. Аби завантажити модуль у немодульному контексті — слід використовувати [динамічний імпорт](/uk/docs/Web/JavaScript/Reference/Operators/import).
 
-Оголошення `import` сконструйовані таким чином, щоб бути синтаксично жорсткими (зокрема: допускаються лише літеральні рядкові вказівники, і лише на верхньому рівні — адже всі прив'язки є ідентифікаторами). Це дає можливість статично аналізувати модулі та синхронно їх компонувати, іще до їхнього виконання. Це — ключова особливість, необхідна аби зробити модулі асинхронними за природою, що дає змогу працювати функціональності штибу [`await` верхнього рівня](/uk/docs/Web/JavaScript/Guide/Modules#top_level_await).
+Оголошення `import` сконструйовані таким чином, щоб бути синтаксично жорсткими (зокрема: допускаються лише літеральні рядкові вказівники, і лише на верхньому рівні — адже всі прив'язки є ідентифікаторами). Це дає можливість статично аналізувати модулі та синхронно їх компонувати, іще до їхнього виконання. Це — ключова особливість, необхідна аби зробити модулі асинхронними за природою, що дає змогу працювати функціональності штибу [`await` верхнього рівня](/uk/docs/Web/JavaScript/Guide/Modules#await-verkhnioho-rivnia).
 
 Існує чотири форми оголошень `import`:
 
-+- [Іменований імпорт](#named_import): `import { export1, export2 } from "module-name";`
-+- [Усталений імпорт](#default_import): `import defaultExport from "module-name";`
-+- [Імпорт простору імен](#namespace_import): `import * as name from "module-name";`
-+- [Імпорт заради побічних ефектів](#import_a_module_for_its_side_effects_only): `import "module-name";`
++- [Іменований імпорт](#imenovanyi-import): `import { export1, export2 } from "module-name";`
++- [Усталений імпорт](#ustalenyi-import): `import defaultExport from "module-name";`
++- [Імпорт простору імен](#import-prostoru-imen): `import * as name from "module-name";`
++- [Імпорт заради побічних ефектів](#importuvannia-modulia-lyshe-zarady-yoho-pobichnykh-efektiv): `import "module-name";`
 
 Нижче наведено приклади для пояснення синтаксису.
 
 ### Іменований імпорт
 
-Нехай дано певне значення під назвою `myExport`, експортоване з модуля `my-module` або явно за допомогою інструкції {{JSxRef("Statements/export", "export")}}, або неявно (як `export * from 'another.js'`). Такий код вставить значення `myExport` у поточну область.
+Нехай дано певне значення під назвою `myExport`, експортоване з модуля `my-module` або явно за допомогою інструкції {{JSxRef("Statements/export", "export")}}, або неявно (як `export * from 'another.js'`). Такий код додасть значення `myExport` у поточну область.
 
 ```js
 import { myExport } from '/modules/my-module.js';
@@ -76,7 +76,7 @@ import { myExport } from '/modules/my-module.js';
 import { foo, bar } from '/modules/my-module.js';
 ```
 
-Можна перейменувати експорт під час імпортування його значення. Наприклад, цей код вставляє значення `shortName` у поточну область видимості.
+Можна перейменувати експорт під час імпортування його значення. Наприклад, цей код додає значення `shortName` у поточну область видимості.
 
 ```js
 import {
@@ -100,7 +100,7 @@ import { "a-b" as a } from "/modules/my-module.js";
 
 ### Усталений імпорт
 
-Усталений експорт слід імпортувати за допомогою відповідного синтаксису усталеного імпорту. Найпростіший варіант безпосередньо імпортує усталене значення:
+Усталений експорт слід імпортувати за допомогою відповідного йому синтаксису усталеного імпорту. Найпростіший варіант безпосередньо імпортує усталене значення:
 
 ```js
 import myDefault from '/modules/my-module.js';
@@ -141,7 +141,7 @@ import * as myModule from '/modules/my-module.js';
 myModule.doAllTheAmazingThings();
 ```
 
-Значення `myModule` — це [запечатаний](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/isSealed) об'єкт, чиїм прототипом є `null`. Всі його ключі є [перелічуваними](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) в лексикографічному порядку (тобто в послідовності, згідно з якою працює [`Array.prototype.sort()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#description)), причому усталений експорт буде доступний за ключем `default`.
+Значення `myModule` — це [запечатаний](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/isSealed) об'єкт, чиїм прототипом є `null`. Всі його ключі є [перелічуваними](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) в лексикографічному порядку (тобто в послідовності, згідно з якою працює [`Array.prototype.sort()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#opys)), причому усталений експорт буде доступний за ключем `default`.
 
 > **Примітка:** JavaScript не підтримує довільні імпорти, як от `import * from "module-name"`, через високу ймовірність конфліктів імен.
 
