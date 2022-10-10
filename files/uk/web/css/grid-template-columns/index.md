@@ -140,7 +140,7 @@ grid-template-columns: unset;
 }
 ```
 
-#### Result
+#### Результат
 
 {{EmbedLiveSample("zadannia-rozmiriv-kolonok-sitky", "100%", "20px")}}
 
