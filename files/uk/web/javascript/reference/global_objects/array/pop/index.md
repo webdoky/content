@@ -34,7 +34,7 @@ pop()
 
 Метод `pop()` є змінювальним методом. Він змінює довжину та вміст `this`. Якщо треба, аби значення `this` було тим самим, але повертався новий масив без останнього елемента, можна натомість використати [`arr.slice(0, -1)`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/slice).
 
-`Array.prototype.pop()` свідомо зроблений узагальненим; цей метод можна викликати на об'єктах, що нагадують масиви. Об'єкти, котрі не мають властивості `length`, що вказує на останнє значення серед послідовних числових властивостей, що починаються від нуля, можуть не давати жодних змістовних результатів.
+Метод `pop()` є [узагальненим](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#uzahalneni-metody-masyvu). Він лишень очікує, що значення `this` матиме властивість `length`, а також цілочислові властивості. Попри те, що рядки також є масивоподібними значеннями, цей метод не підходить для застосування до них, адже рядки є незмінними.
 
 ## Приклади
 
@@ -52,22 +52,25 @@ console.log(myFish); // ['янгол', 'клоун', 'мандаринка' ]
 console.log(popped); // 'осетер'
 ```
 
-### Використання apply() чи call () на масивоподібних об'єктах
+### Виклик pop() на об'єктах-немасивах
 
-Наступний код створює масивоподібний об'єкт `myFish`, що містить чотири елементи та параметр довжини, а потім прибирає останній елемент і зменшує параметр довжини на одиницю.
+Метод `pop()` зчитує з `this` властивість `length`. Якщо [нормалізована довжина](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#normalizatsiia-vlastyvosti-length) – 0, то `length` наново присвоюється `0` (хоч до цього в цій властивості могло бути від'ємне значення або `undefined`). Інакше – повертається та [видаляється](/uk/docs/Web/JavaScript/Reference/Operators/delete) значення властивості `length - 1`.
 
 ```js
-const myFish = {
-  0: "янгол",
-  1: "клоун",
-  2: "мандаринка",
-  3: "осетер",
-  length: 4,
+const arrayLike = {
+  length: 3,
+  unrelated: "foo",
+  2: 4,
 };
-
-const popped = Array.prototype.pop.call(myFish); // такий само синтаксис і з apply()
-console.log(myFish); // { 0: 'янгол', 1: 'клоун', 2: 'мандаринка', length: 3 }
-console.log(popped); // 'осетер'
+console.log(Array.prototype.pop.call(arrayLike));
+// 4
+console.log(arrayLike);
+// { length: 2, unrelated: 'foo' }
+const plainObj = {};
+// Властивості length немає, отже, довжина – 0
+Array.prototype.pop.call(plainObj);
+console.log(plainObj);
+// { length: 0 }
 ```
 
 ### Використання об'єкта в масивоподібний спосіб
