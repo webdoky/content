@@ -35,7 +35,7 @@ shift()
 
 Метод `shift()` – метод, що змінює масив: змінює довжину й вміст `this`. Коли треба не внести зміни до `this`, а повернути новий масив без першого елемента, можна натомість застосувати [`arr.slice(1)`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/slice).
 
-`Array.prototype.shift()` навмисно зроблений узагальненим; цей метод може бути викликаний на об'єктах, що лише нагадують масиви. Об'єкти, котрі не містять властивості `length`, котра відбиває останній елемент серед послідовних числових властивостей, починаючи від нуля, можуть не давати жодної змістовної поведінки.
+Метод `shift()` є [узагальненим](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#uzahalneni-metody-masyvu). Він лишень очікує, що значення `this` матиме властивість `length`, а також цілочислові властивості. Попри те, що рядки також є масивоподібними значеннями, цей метод не підходить для застосування до них, адже рядки є незмінними.
 
 ## Приклади
 
@@ -69,6 +69,27 @@ while (typeof (i = names.shift()) !== "undefined") {
   console.log(i);
 }
 // Артем, Олександр, Максим, Богдан, Назар
+```
+
+### Виклик shift() на об'єктах-немасивах
+
+Метод `shift()` зчитує з `this` властивість `length`. Якщо [нормалізована довжина](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#normalizatsiia-vlastyvosti-length) – 0, то `length` наново присвоюється `0` (хоч до цього в цій властивості могло бути від'ємне значення або `undefined`). Інакше – повертається значення властивості `0`, а решта властивостей зсовується вліво на один крок.
+
+```js
+const arrayLike = {
+  length: 3,
+  unrelated: "foo",
+  2: 4,
+};
+console.log(Array.prototype.shift.call(arrayLike));
+// undefined, адже це порожня комірка
+console.log(arrayLike);
+// { '1': 4, length: 2, unrelated: 'foo' }
+const plainObj = {};
+// Властивості length немає, тому довжина – 0
+Array.prototype.shift.call(plainObj);
+console.log(plainObj);
+// { length: 0 }
 ```
 
 ## Специфікації
