@@ -76,6 +76,8 @@ every(function(element, index, array) { /* … */ }, thisArg)
 
 `every` діє як квантор "для всіх" з математики. А саме – для порожнього масиву він повертає `true`. (Є [беззмістовною істиною (англ.)](https://en.wikipedia.org/wiki/Vacuous_truth) те, що всі елементи [порожньої множини](https://uk.wikipedia.org/wiki/%D0%9F%D0%BE%D1%80%D0%BE%D0%B6%D0%BD%D1%8F_%D0%BC%D0%BD%D0%BE%D0%B6%D0%B8%D0%BD%D0%B0#%D0%92%D0%BB%D0%B0%D1%81%D1%82%D0%B8%D0%B2%D0%BE%D1%81%D1%82%D1%96) відповідають будь-якій умові.)
 
+Метод `every()` є [узагальненим](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#uzahalneni-metody-masyvu). Він лишень очікує, що значення `this` матиме властивість `length`, а також властивості з цілочисловими ключами.
+
 ## Приклади
 
 ### Перевірка розміру всіх елементів масиву
@@ -164,6 +166,22 @@ arr.every((elem, index, arr) => {
 //
 // 1 ітерація: [1,2,3][0] -> 1
 // 2 ітерація: [1,2][1] -> 2
+```
+
+### Виклик every() на об'єктах-немасивах
+
+Метод `every()` зчитує з `this` властивість `length`, а потім звертається до кожної цілочислової властивості, поки не буде досягнено кінця або `callbackFn` не поверне `false`.
+
+```js
+const arrayLike = {
+  length: 3,
+  0: "a",
+  1: "b",
+  2: "c",
+};
+console.log(
+  Array.prototype.every.call(arrayLike, (x) => typeof x === "string")
+); // true
 ```
 
 ## Специфікації
