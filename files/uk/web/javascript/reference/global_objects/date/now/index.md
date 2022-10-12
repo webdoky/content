@@ -25,7 +25,7 @@ Date.now()
 
 ### Повернене значення
 
-{{jsxref("Number", "Число")}}, котре позначає число мілісекунд, що сплило від початку епохи UNIX.
+Число, котре позначає число мілісекунд, яке сплило від початку [епохи ECMAScript](/uk/docs/Web/JavaScript/Reference/Global_Objects/Date#epokha-ecmascript-i-mitky-chasu).
 
 ## Приклади
 
