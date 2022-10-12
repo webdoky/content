@@ -746,7 +746,7 @@ console.log(Array.prototype.join.call(arrayLike, "+")); // 'a+b'
 
 #### Нормалізація властивості length
 
-Властивість `length` [перетворюється на число](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#zvedennia-do-chysla), обрізається до цілого, а потім затискається до діапазону між 0 і 2<sup>53</sup> - 1. `NaN` стає `0`, тож навіть тоді, коли `length` немає або в ній `undefined`, це працює так, ніби довжина `0`.
+Властивість `length` [перетворюється на число](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#zvedennia-do-chysla), обрізається до цілого, а потім затискається до діапазону між 0 і 2<sup>53</sup> - 1. `NaN` стає `0`, тож навіть тоді, коли `length` немає або в ній `undefined`, це працює так, ніби довжина дорівнює `0`.
 
 ```js
 Array.prototype.flat.call({}); // []
