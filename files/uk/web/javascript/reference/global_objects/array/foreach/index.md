@@ -83,6 +83,8 @@ forEach(function(element, index, array) { /* … */ }, thisArg)
 Метод `forEach()` не змінює масив, на якому він викликається. (Хоча
 `callbackFn` може це робити)
 
+Метод `forEach()` є [узагальненим](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#uzahalneni-metody-masyvu). Він лишень очікує, що значення `this` матиме властивість `length`, а також властивості з цілочисловими ключами.
+
 > **Примітка:** Не існує способу зупинити або перервати цикл `forEach()` окрім
 > як шляхом викидання винятку. Якщо вам потрібна можливість перервати цикл, метод `forEach()`
 > для цього не підходить.
@@ -281,6 +283,23 @@ const flatten = (arr) => {
 // Застосування
 const nested = [1, 2, 3, [4, 5, [6, 7], 8, 9]];
 console.log(flatten(nested)); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+### Виклик forEach() на об'єктах-немасивах
+
+Метод `forEach()` зчитує з `this` властивість `length`, а потім звертається до кожної цілочислової властивості.
+
+```js
+const arrayLike = {
+  length: 3,
+  0: 2,
+  1: 3,
+  2: 4,
+};
+Array.prototype.forEach.call(arrayLike, (x) => console.log(x));
+// 2
+// 3
+// 4
 ```
 
 ## Специфікації
