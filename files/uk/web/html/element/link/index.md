@@ -400,7 +400,7 @@ browser-compat: html.elements.link
     </tr>
     <tr>
       <th>Дозволений уміст</th>
-      <td>Жодного, це {{Glossary("void element", "порожній елемент")}}.</td>
+      <td>Жодного; це {{Glossary("void element", "пустий елемент")}}.</td>
     </tr>
     <tr>
       <th>Упускання тега</th>
