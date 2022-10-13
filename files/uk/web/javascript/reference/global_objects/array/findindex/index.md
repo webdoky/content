@@ -91,6 +91,8 @@ findIndex(function(element, index, array) { /* … */ }, thisArg)
 
 > **Застереження:** Паралельні зміни такого роду, як описано в попередньому абзаці, часто призводять до важкого в розумінні коду, загалом їх слід уникати (окрім особливих випадків).
 
+Метод `findIndex()` є [узагальненим](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#uzahalneni-metody-masyvu). Він лишень очікує, що значення `this` матиме властивість `length`, а також властивості з цілочисловими ключами.
+
 ## Приклади
 
 ### Пошук в масиві індексу простого числа
@@ -120,6 +122,22 @@ console.log([4, 6, 7, 9, 12].findIndex(isPrime)); // 2 (array[2] – це 7)
 
 ```js
 console.log([1, , 3].findIndex((x) => x === undefined)); // 1
+```
+
+### Виклик findIndex() на об'єктах-немасивах
+
+Метод `findIndex()` зчитує з `this` властивість `length`, а потім звертається до кожної цілочислової властивості.
+
+```js
+const arrayLike = {
+  length: 3,
+  0: 2,
+  1: 7.3,
+  2: 4,
+};
+console.log(
+  Array.prototype.findIndex.call(arrayLike, (x) => !Number.isInteger(x))
+); // 1
 ```
 
 ## Специфікації

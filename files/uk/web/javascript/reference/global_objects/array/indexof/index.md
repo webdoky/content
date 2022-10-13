@@ -45,6 +45,8 @@ indexOf(searchElement, fromIndex)
 
 Метод `indexOf()` пропускає порожні комірки в [розріджених масивах](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy).
 
+Метод `indexOf()` є [узагальненим](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#uzahalneni-metody-masyvu). Він лишень очікує, що значення `this` матиме властивість `length`, а також властивості з цілочисловими ключами.
+
 ## Приклади
 
 ### Використання indexOf()
@@ -106,6 +108,23 @@ updateVegetablesCollection(veggies, "шпинат");
 
 ```js
 console.log([1, , 3].indexOf(undefined)); // -1
+```
+
+### Виклик indexOf() на об'єктах-немасивах
+
+Метод `indexOf()` зчитує з `this` властивість `length`, а потім звертається до кожної цілочислової властивості.
+
+```js
+const arrayLike = {
+  length: 3,
+  0: 2,
+  1: 3,
+  2: 4,
+};
+console.log(Array.prototype.indexOf.call(arrayLike, 2));
+// 0
+console.log(Array.prototype.indexOf.call(arrayLike, 5));
+// -1
 ```
 
 ## Специфікації
