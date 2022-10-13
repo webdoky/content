@@ -64,6 +64,8 @@ splice(start, deleteCount, item1, item2, itemN)
 
 Якщо видалена частка є [розрідженою](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy), то повернений `splice()` масив також буде розрідженим, і відповідні індекси будуть порожніми комірками.
 
+Метод `splice()` є [узагальненим](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#uzahalneni-metody-masyvu). Він лишень очікує, що значення `this` матиме властивість `length`, а також властивості з цілочисловими ключами. Попри те, що рядки також є масивоподібними, цей метод не підходить для застосування до них, адже рядки є незмінними значеннями.
+
 ## Приклади
 
 ### Видалити 0 (нуль) елементів перед індексом 2 та вставити "drum"
@@ -154,6 +156,23 @@ const removed = myFish.splice(2);
 const arr = [1, , 3, 4, , 6];
 console.log(arr.splice(1, 2)); // [порожньо, 3]
 console.log(arr); // [1, 4, порожньо, 6]
+```
+
+### Виклик splice() на об'єктах-немасивах
+
+Метод `splice()` зчитує з `this` властивість `length`. Потім, за потреби, оновлює цілочислові властивості та властивість `length`.
+
+```js
+const arrayLike = {
+  length: 3,
+  unrelated: "foo",
+  0: 5,
+  2: 4,
+};
+console.log(Array.prototype.splice.call(arrayLike, 0, 1, 2, 3));
+// [ 5 ]
+console.log(arrayLike);
+// { '0': 2, '1': 3, '3': 4, length: 4, unrelated: 'foo' }
 ```
 
 ## Специфікації

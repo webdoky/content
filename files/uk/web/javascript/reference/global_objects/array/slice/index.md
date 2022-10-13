@@ -56,6 +56,8 @@ slice(start, end)
 
 Метод `slice()` зберігає порожні комірки. Якщо вирізана частка є [розрідженою](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy), то повернений масив буде розрідженим також.
 
+Метод `slice()` є [узагальненим](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#uzahalneni-metody-masyvu). Він лишень очікує, що значення `this` матиме властивість `length`, а також властивості з цілочисловими ключами.
+
 ## Приклади
 
 ### Повернення частини наявного масиву
@@ -114,25 +116,28 @@ myCar[0].color = бузковий
 newCar[0].color = бузковий
 ```
 
-### Масивоподібні об'єкти
+### Виклик slice() на об'єктах-немасивах
 
-За допомогою методу `slice` можна також перетворити масивоподібний об'єкт чи колекцію на новий масив. Потрібно лише {{jsxref("Function.prototype.bind", "прив'язати")}} цей метод до об'єкта. Зокрема, об'єкт {{jsxref("Functions/arguments", "arguments")}} в функції є прикладом такого «масивоподібного об'єкту».
+Метод `slice()` зчитує з `this` властивість `length`. Потім він зчитує цілочислові властивості від `start` до `end` і визначає їх на новоствореному масиві.
 
 ```js
-function list() {
-  return Array.prototype.slice.call(arguments);
-}
-
-const list1 = list(1, 2, 3); // [1, 2, 3]
+const arrayLike = {
+  length: 3,
+  0: 2,
+  1: 3,
+  2: 4,
+};
+console.log(Array.prototype.slice.call(arrayLike, 1, 3));
+// [ 3, 4 ]
 ```
 
-Для прив'язування можна також застосувати метод {{jsxref("Function.prototype.call", "call()")}} об'єкту {{jsxref("Function")}}, таким чином скоротивши запис до `[].slice.call(arguments)` замість `Array.prototype.slice.call`.
+### Використання slice() для перетворення масивоподібних об'єктів на масиви
 
-Зрештою, це можна іще спростити, використавши {{jsxref("Function.prototype.bind", "bind")}}.
+Метод `slice()` нерідко використовується вкупі з {{jsxref("Function.prototype.bind", "bind()")}} і {{jsxref("Function.prototype.call", "call()")}} для створення допоміжного методу, що перетворює масивоподібний об'єкт на масив.
 
 ```js
-const unboundSlice = Array.prototype.slice;
-const slice = Function.prototype.call.bind(unboundSlice);
+// slice() викликається з `this`, переданим як перший аргумент
+const slice = Function.prototype.call.bind(Array.prototype.slice);
 
 function list() {
   return slice(arguments);
