@@ -80,7 +80,7 @@ browser-compat: html.elements.br
     </tr>
     <tr>
       <th scope="row">Дозволений вміст</th>
-      <td>Жодного, це {{Glossary("void element", "порожній елемент")}}.</td>
+      <td>Жодного; це {{Glossary("void element", "пустий елемент")}}.</td>
     </tr>
     <tr>
       <th scope="row">Упускання тега</th>

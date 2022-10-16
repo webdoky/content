@@ -262,7 +262,7 @@ console.log(regex.lastIndex); // виводить '23'
 // і так далі
 ```
 
-Можливість [екранування властивостей Unicode](/uk/docs/Web/JavaScript/Guide/Regular_Expressions/Unicode_Property_Escapes) запроваджує рішення, дозволяючи прості інструкції, як то `\p{scx=Cyrl}`.
+Можливість [екранування властивостей Unicode](/uk/docs/Web/JavaScript/Guide/Regular_Expressions/Unicode_Property_Escapes) пропонує простіший спосіб цілитися на конкретні діапазони Unicode, дозволяючи інструкції штибу `\p{scx=Cyrl}` (для збігу з будь-якою кириличною літерою) чи `\p{L}/u` (для збігу з літерою з будь-якої мови).
 
 ### Видобування імені піддомену з URL
 

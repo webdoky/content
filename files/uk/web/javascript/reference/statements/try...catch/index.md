@@ -38,7 +38,7 @@ try {
 
 ## Опис
 
-Інструкція `try` завжди починається з блока `try`. Далі має бути або блок `catch`, або блок `finally`, або вони обидва. Відтак – три варіанти інструкції `try`:
+Інструкція `try` завжди починається з блока `try`. Далі має бути блок `catch` або блок `finally`. Крім того, може бути і блок `catch`, і блок `finally`. Відтак – три варіанти інструкції `try`:
 
 - `try...catch`
 - `try...finally`
@@ -65,7 +65,7 @@ catch (e) console.log(e);
 
 ```js
 try {
-  throw 'myException'; // породжує виняток
+  throw "myException"; // породжує виняток
 } catch (e) {
   // інструкції для обробки будь-яких винятків
   logMyErrors(e); // передати об'єкт винятку обробнику помилок
@@ -171,12 +171,12 @@ doIt(); // повертає 2
 ```js
 try {
   try {
-    throw new Error('йой');
+    throw new Error("йой");
   } finally {
-    console.log('finally');
+    console.log("finally");
   }
 } catch (ex) {
-  console.error('зовнішній', ex.message);
+  console.error("зовнішній", ex.message);
 }
 
 // Вивід:
@@ -189,14 +189,14 @@ try {
 ```js
 try {
   try {
-    throw new Error('йой');
+    throw new Error("йой");
   } catch (ex) {
-    console.error('внутрішній', ex.message);
+    console.error("внутрішній", ex.message);
   } finally {
-    console.log('finally');
+    console.log("finally");
   }
 } catch (ex) {
-  console.error('зовнішній', ex.message);
+  console.error("зовнішній", ex.message);
 }
 
 // Вивід:
@@ -209,15 +209,15 @@ try {
 ```js
 try {
   try {
-    throw new Error('йой');
+    throw new Error("йой");
   } catch (ex) {
-    console.error('внутрішній', ex.message);
+    console.error("внутрішній", ex.message);
     throw ex;
   } finally {
-    console.log('finally');
+    console.log("finally");
   }
 } catch (ex) {
-  console.error('зовнішній', ex.message);
+  console.error("зовнішній", ex.message);
 }
 
 // Вивід:
@@ -236,16 +236,16 @@ try {
 (() => {
   try {
     try {
-      throw new Error('йой');
+      throw new Error("йой");
     } catch (ex) {
-      console.error('внутрішній', ex.message);
+      console.error("внутрішній", ex.message);
       throw ex;
     } finally {
-      console.log('finally');
+      console.log("finally");
       return;
     }
   } catch (ex) {
-    console.error('зовнішній', ex.message);
+    console.error("зовнішній", ex.message);
   }
 })();
 
