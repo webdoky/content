@@ -148,7 +148,7 @@ console.log(eval(s2.valueOf())); // повертає число 4
 - Числа перетворюються за тим само алгоритмом, що використовується в [`toString(10)`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number/toString).
 - Значення [BigInt](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt) перетворюються за тим само алгоритмом, що використовується в [`toString(10)`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/toString).
 - [Символи](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol) викидають {{jsxref("TypeError")}}.
-- Об'єкти спершу перетворюються на примітиви шляхом виклику їх методів [`[@@toPrimitive]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive) (зі `"string"` як підказкою), `toString()` чи `valueOf()` – у такому порядку пріоритету. Після цього результівний примітив перетворюється на рядок.
+- Об'єкти спершу [перетворюються на примітиви](/uk/docs/Web/JavaScript/Data_structures#zvedennia-do-prymityva) шляхом виклику їх методів [`[@@toPrimitive]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive) (зі `"string"` як підказкою), `toString()` чи `valueOf()` – у такому порядку пріоритету. Після цього результівний примітив перетворюється на рядок.
 
 Є декілька способів досягнути в JavaScript майже такого самого ефекту.
 
