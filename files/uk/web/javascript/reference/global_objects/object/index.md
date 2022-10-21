@@ -18,19 +18,29 @@ browser-compat: javascript.builtins.Object
 
 Зміни у прототипному об'єкті `Object` видимі **всім** об'єктам через ланцюжок прототипів, окрім тих випадків, коли змінені властивості й методи заміщені далі в прототипному ланцюжку. Це надає надзвичайно потужний, хоча й потенційно небезпечний, механізм для заміщення чи розширення поведінки об'єктів.
 
-Поведінка конструктора `Object` залежить від типу переданого значення.
-
-- Якщо передане значення дорівнює [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) чи {{jsxref("undefined")}}, буде повернено порожній об'єкт.
-- Якщо передане значення уже є об'єктом, буде повернено це значення.
-- В інших випадках – він поверне об'єкт, тип якого відповідає переданому значенню.
-
-Під час викликання поза контекстом конструктора `Object` поводить себе ідентично до `new Object()`.
-
-Дивіться також [синтаксис об'єктного ініціалізатора / літерала](/uk/docs/Web/JavaScript/Reference/Operators/Object_initializer).
-
 ### Видалення властивості з об'єкта
 
 Не існує в `Object` такого методу, який би давав змогу видаляти його власні властивості (подібно до {{jsxref("Map.prototype.delete", "Map.prototype.delete()")}}). Для цього необхідно використовувати [оператор видалення (`delete`)](/uk/docs/Web/JavaScript/Reference/Operators/delete).
+
+### Зведення до об'єкта
+
+Чимало вбудованих операцій, котрі очікують отримати об'єкти, спершу зводять свої аргументи до об'єктів. [Ця операція](https://tc39.es/ecma262/#sec-toobject) може бути підсумована так:
+
+- Об'єкти повертаються як є.
+- [`undefined`](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined) і [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) викидають {{jsxref("TypeError")}}.
+- Примітиви {{jsxref("Number")}}, {{jsxref("String")}}, {{jsxref("Boolean")}}, {{jsxref("Symbol")}}, {{jsxref("BigInt")}} загортаються у відповідні собі об'єктні обгортки.
+
+Найкращий спосіб досягнути в JavaScript такого самого ефекту – конструктор [`Object()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/Object). `Object(x)` перетворює `x` на об'єкт, а для `undefined` та `null` це повертає простий об'єкт, а не викидає {{jsxref("TypeError")}}.
+
+Серед місць, що використовують зведення до об'єкта:
+
+- Параметр циклу [`for...in`](/uk/docs/Web/JavaScript/Reference/Statements/for...in) `object`.
+- Значення `this` методів {{jsxref("Array")}}.
+- Параметри методів `Object`, як то {{jsxref("Object.keys()")}}.
+- Автоматичне запаковування, коли відбувається звертання до властивості на примітивному значенні, адже примітиви не мають властивостей.
+- Значення [`this`](/uk/docs/Web/JavaScript/Reference/Operators/this) при виклику несуворої функції. Примітиви запаковуються, а `null` і `undefined` замінюються [глобальним об'єктом](/uk/docs/Glossary/Global_object).
+
+На відміну від [перетворення на примітив](/uk/docs/Web/JavaScript/Data_structures#zvedennia-do-prymityva), зведення до об'єкта не можна жодним чином перехопити, адже воно не викличе жодного самописного коду, як то методів `toString` чи `valueOf`.
 
 ## Конструктор
 
@@ -91,13 +101,13 @@ browser-compat: javascript.builtins.Object
 
 ## Методи примірника
 
-- [`Object.prototype.__defineGetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineGetter__) (означити геттер)
+- [`Object.prototype.__defineGetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineGetter__) (означити гетер)
   - : Пов'язує функцію з властивістю так, що під час спроби доступитися до властивості вона викликає цю функцію та повертає її результат.
-- [`Object.prototype.__defineSetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__) (означити сеттер)
+- [`Object.prototype.__defineSetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__) (означити сетер)
   - : Пов'язує функцію з властивістю так, що під час спроби встановлення її значення викликається ця функція, яка і змінює властивість.
-- [`Object.prototype.__lookupGetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupGetter__) (шукати геттер)
+- [`Object.prototype.__lookupGetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupGetter__) (шукати гетер)
   - : Повертає функцію, яку було асоційовано зі вказаною властивістю методом [`Object.prototype.__defineGetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineGetter__).
-- [`Object.prototype.__lookupSetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupSetter__) (шукати сеттер)
+- [`Object.prototype.__lookupSetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupSetter__) (шукати сетер)
   - : Повертає функцію, яку було асоційовано зі вказаною властивістю методом [`Object.prototype.__defineSetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__).
 - {{jsxref("Object.prototype.hasOwnProperty()")}} (має власну властивість)
   - : Повертає булеве значення, яке вказує на те, що об'єкт містить вказану властивість прямо в собі, а не успадковує її через прототипний ланцюжок.
