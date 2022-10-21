@@ -173,7 +173,7 @@ p {
 
 ## Дивіться також
 
-- Тип даних {{cssxref("&lt;color&gt;")}}
-- Інші властивості, пов'язані з кольором: {{cssxref("color")}}, {{cssxref("background-color")}}, {{cssxref("border-color")}}, {{cssxref("outline-color")}}, {{cssxref("text-decoration-color")}}, {{cssxref("text-emphasis-color")}}, {{cssxref("caret-color")}} та {{cssxref("column-rule-color")}}
+- Тип даних {{cssxref("&lt;color&gt;")}} (для задання кольору тіні)
 - {{cssxref("text-shadow")}}
+- {{cssxref("filter-function/drop-shadow", "drop-shadow()")}}
 - [Застосування кольору до елементів HTML за допомогою CSS](/uk/docs/Web/CSS/CSS_Colors/Applying_color)
