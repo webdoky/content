@@ -3,6 +3,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2022-10-14 - 2022-10-21]
+
+* **Оновлення перекладу(CSS):** web/css/specificity ([f793057](https://github.com/webdoky/content/commit/f79305758c96e216a6bb223fd22145fdd8b8e95a))
+* **Переклад(CSS):** web/css/css_grid_layout/basic_concepts_of_grid_layout (#775) ([ecaf530](https://github.com/webdoky/content/commit/ecaf53015e8a2d9a9fc3e1821dece1d60f5a3433))
+* **Переклад(CSS):** web/css/css_grid_layout (#717) ([9222b05](https://github.com/webdoky/content/commit/9222b05818d8ee4f9bd26b4a875f01794379d1b9))
+* **Переклад(CSS):** web/css/grid-template-columns (#711) ([71140af](https://github.com/webdoky/content/commit/71140afb32e19082822cd3870bb993db2ebcbd28))
+* **Переклад(Glossary):** glossary ([4e6e76a](https://github.com/webdoky/content/commit/4e6e76aed2705c4308db53ff02b0f12f3f2140a7))
+* **Оновлення перекладу(HTML):** web/html/element/link ([0090f60](https://github.com/webdoky/content/commit/0090f60af4a730a2c57ae6dac356ee4f3e34d9df))
+* **Оновлення перекладу(HTML):** web/html/element/br ([f84f76d](https://github.com/webdoky/content/commit/f84f76d9feaa85db7fd8bc703a352ffa8157c9f1))
+* **Оновлення перекладу(HTML):** web/html/element/a ([7cf559b](https://github.com/webdoky/content/commit/7cf559bba232476ca10eb2d624f34262c57d95aa))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/flat ([8f69810](https://github.com/webdoky/content/commit/8f698108c8c3d6225e809ba3d7db119c7e32c81b))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/pop ([8e07852](https://github.com/webdoky/content/commit/8e078524ca96221cc49037c401fa7358a7b1bf71))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/shift ([0b349cf](https://github.com/webdoky/content/commit/0b349cf5eb9925b7cdcbd7dbed2338c890ac7b31))
+
 ## [2022-10-07 - 2022-10-14]
 
 * **Оновлення перекладу(JS):** web/javascript/reference/statements/try...catch ([488e98b](https://github.com/webdoky/content/commit/488e98b4edb621485b2945fe9a20f9fb43bc750f))
