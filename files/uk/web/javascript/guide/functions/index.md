@@ -104,7 +104,7 @@ console.log(factorial(3));
 
 ```js
 function map(f, a) {
-  const result = [];
+  const result = new Array(a.length);
   for (let i = 0; i < a.length; i++) {
     result[i] = f(a[i]);
   }
@@ -116,7 +116,7 @@ function map(f, a) {
 
 ```js
 function map(f, a) {
-  const result = [];
+  const result = new Array(a.length);
   for (let i = 0; i < a.length; i++) {
     result[i] = f(a[i]);
   }
