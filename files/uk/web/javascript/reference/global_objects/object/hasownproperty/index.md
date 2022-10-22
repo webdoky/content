@@ -16,7 +16,7 @@ browser-compat: javascript.builtins.Object.hasOwnProperty
 
 {{EmbedInteractiveExample("pages/js/object-prototype-hasownproperty.html")}}
 
-> **Примітка:** {{jsxref("Object.hasOwn()")}} є рекомендованою альтернативою `hasOwnProperty()` в тих браузерах, у котрих підтримується..
+> **Примітка:** {{jsxref("Object.hasOwn()")}} є рекомендованою альтернативою `hasOwnProperty()` в тих браузерах, у котрих підтримується.
 
 ## Синтаксис
 
@@ -149,7 +149,7 @@ foo.prop = "існує";
 foo.hasOwnProperty("prop"); // Uncaught TypeError: foo.hasOwnProperty is not a function
 ```
 
-Розв'язання в цьому випадку такі самі, як в попередньому розділі: віддання переваги {{jsxref("Object.hasOwn()")}}, або ж використання `hasOwnProperty()` зовнішнього об'єкта.
+Способи розв'язання цієї проблеми – такі самі, як в попередньому розділі: віддання переваги {{jsxref("Object.hasOwn()")}}, або ж використання `hasOwnProperty()` зовнішнього об'єкта.
 
 ## Специфікації
 
