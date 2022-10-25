@@ -638,7 +638,7 @@ browser-compat: html.elements.input
         <a href="#webkitdirectory"><code>webkitdirectory</code></a>
       </td>
       <td>
-        Булеве значення, що вказує, чи слід дозволяти користувачеві обрати каталог (або каталоги, якщо також присутній атрибут <a href="#multiple"><code>multiple</code></a>)
+        Булеве значення, що вказує, чи слід дозволяти користувачеві обрати каталог (або каталоги, якщо також присутній атрибут <a href="#multiple-kilka"><code>multiple</code></a>)
       </td>
     </tr>
   </tbody>
@@ -775,16 +775,16 @@ browser-compat: html.elements.input
       <td>{{Cssxref(":invalid")}} (недійсне)</td>
       <td>
         Контрольні елементи форми, що мають валідацію обмежень і наразі мають недійсне значення. Збігається з контрольними елементами, чиє значення не відповідає обмеженням, встановленим атрибутами, наприклад,
-        <a href="#required"><code>required</code></a>,
-        <a href="#pattern"><code>pattern</code></a>,
-        <a href="#step"><code>step</code></a> і <a href="#max-maksymum"><code>max</code></a>.
+        <a href="#required-oboviazkovyi"><code>required</code></a>,
+        <a href="#pattern-patern"><code>pattern</code></a>,
+        <a href="#step-krok"><code>step</code></a> і <a href="#max-maksymum"><code>max</code></a>.
       </td>
     </tr>
     <tr>
       <td>{{Cssxref(":in-range")}} (в межах діапазону)</td>
       <td>
         Непусте поле введення, чиє поточне значення знаходиться в діапазоні,
-        встановленому атрибутами <a href="#min-minimum"><code>min</code></a> і <a href="#max-maksymum"><code>max</code></a>, і з кроком, встановленим атрибутом <a href="#step"><code>step</code></a>.
+        встановленому атрибутами <a href="#min-minimum"><code>min</code></a> і <a href="#max-maksymum"><code>max</code></a>, і з кроком, встановленим атрибутом <a href="#step-krok"><code>step</code></a>.
       </td>
     </tr>
     <tr>
@@ -793,13 +793,13 @@ browser-compat: html.elements.input
         Непусте поле введення, чиє поточне значення знаходиться ПОЗА межами,
         встановленими атрибутами <a href="#min-minimum"><code>min</code></a>
         і <a href="#max-maksymum"><code>max</code></a>, або
-        не відповідає обмеженню, накладеному <a href="#step"><code>step</code></a>.
+        не відповідає обмеженню, накладеному <a href="#step-krok"><code>step</code></a>.
       </td>
     </tr>
     <tr>
       <td>{{Cssxref(":required")}} (обов'язковий)</td>
       <td>
-        Елемент <code>&#x3C;input></code>, {{HTMLElement("select")}} або {{HTMLElement("textarea")}}, що має атрибут <a href="#required"><code>required</code></a>.
+        Елемент <code>&#x3C;input></code>, {{HTMLElement("select")}} або {{HTMLElement("textarea")}}, що має атрибут <a href="#required-oboviazkovyi"><code>required</code></a>.
         Відповідає лише тим елементам, що можуть бути обов'язковими.
         Атрибут, встановлений на елемент, що не може бути обов'язковим, не спричинить збігу за цим псевдокласом.
       </td>
@@ -808,7 +808,7 @@ browser-compat: html.elements.input
       <td>{{Cssxref(":optional")}} (вибірковий)</td>
       <td>
         Елементи <code>&#x3C;input></code>, {{HTMLElement("select")}}, or
-        {{HTMLElement("textarea")}}, що НЕ мають атрибута <a href="#required"><code>required</code></a>.
+        {{HTMLElement("textarea")}}, що НЕ мають атрибута <a href="#required-oboviazkovyi"><code>required</code></a>.
         Не відповідає елементам, що не можуть бути обов'язковими.
       </td>
     </tr>
@@ -931,7 +931,7 @@ input.custom {
 
 #### Сполучені підписи
 
-Семантичне парування елементів `<input>` і `<label>` корисне для технологій типу читачів з екрана. Бувши спарованими за допомогою атрибута [`for`](/uk/docs/Web/HTML/Element/label#for) елемента `<label>`, підпис та поле введення пов'язані так, що читачі з екрана можуть точніше описати користувачам поля введення.
+Семантичне парування елементів `<input>` і `<label>` корисне для технологій типу читачів з екрана. Бувши спарованими за допомогою атрибута [`for`](/uk/docs/Web/HTML/Element/label#attr-for) елемента `<label>`, підпис та поле введення пов'язані так, що читачі з екрана можуть точніше описати користувачам поля введення.
 
 Недостатньо просто додати текст поруч з елементом `<input>`. Натомість зручність та доступність вимагають включення, явно чи неявно, {{HTMLElement("label")}}:
 
@@ -1002,7 +1002,7 @@ input.custom {
       </td>
     </tr>
     <tr>
-      <td><a href="#maxlength"><code>maxlength</code></a></td>
+      <td><a href="#maxlength-maksymalna-dovzhyna"><code>maxlength</code></a></td>
       <td>{{domxref('validityState.tooLong')}} (задовге)</td>
       <td>
         Трапляється, коли кількість символів більша за число, дозволене властивістю <code>maxlength</code>
@@ -1016,28 +1016,28 @@ input.custom {
       </td>
     </tr>
     <tr>
-      <td><a href="#minlength"><code>minlength</code></a></td>
+      <td><a href="#minlength-minimalna-dovzhyna"><code>minlength</code></a></td>
       <td>{{domxref('validityState.tooShort')}} (закоротке)</td>
       <td>
         Трапляється, коли кількість символів менша за число, дозволене властивістю <code>minlength</code>
       </td>
     </tr>
     <tr>
-      <td><a href="#pattern"><code>pattern</code></a></td>
+      <td><a href="#pattern-patern"><code>pattern</code></a></td>
       <td>{{domxref('validityState.patternMismatch')}} (невідповідність патерну)</td>
       <td>
         Трапляється, коли присутній атрибут `pattern` з дійсним регулярним виразом, а значення <code>value</code> цьому виразові не відповідає.
       </td>
     </tr>
     <tr>
-      <td><a href="#required"><code>required</code></a></td>
+      <td><a href="#required-oboviazkovyi"><code>required</code></a></td>
       <td>{{domxref('validityState.valueMissing')}} (немає значення)</td>
       <td>
         Трапляється, коли присутній атрибут <code>required</code>, але значення – <code>null</code>, або коли радіокнопка чи прапорець не позначені.
       </td>
     </tr>
     <tr>
-      <td><a href="#step"><code>step</code></a></td>
+      <td><a href="#step-krok"><code>step</code></a></td>
       <td>{{domxref('validityState.stepMismatch')}} (невідповідність квантування)</td>
       <td>
         Значення не відповідає кроку зростання. Такий рядок усталено рівний <code>1</code>, тож при<code> type="number"</code> дійсні значення – лише цілі числа,
