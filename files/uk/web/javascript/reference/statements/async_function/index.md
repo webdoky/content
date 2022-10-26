@@ -127,10 +127,10 @@ function foo() {
 ```js
 async function foo() {
   const result1 = await new Promise((resolve) =>
-    setTimeout(() => resolve('1')),
+    setTimeout(() => resolve("1"))
   );
   const result2 = await new Promise((resolve) =>
-    setTimeout(() => resolve('2')),
+    setTimeout(() => resolve("2"))
   );
 }
 foo();
@@ -142,12 +142,14 @@ foo();
 
 ```js
 async function foo() {
-  const p1 = new Promise((resolve) => setTimeout(() => resolve('1'), 1000));
-  const p2 = new Promise((_, reject) => setTimeout(() => reject('2'), 500));
+  const p1 = new Promise((resolve) => setTimeout(() => resolve("1"), 1000));
+  const p2 = new Promise((_, reject) => setTimeout(() => reject("2"), 500));
   const results = [await p1, await p2]; // Так робити не слід! Натомість краще вжити Promise.all чи Promise.allSettled.
 }
 foo().catch(() => {}); // Спроба проковтнути всі помилки...
 ```
+
+Оголошення `async function` [піднімаються](/uk/docs/Glossary/Hoisting) нагору своєї області видимості й можуть викликатися на всьому її протязі.
 
 ## Приклади
 
@@ -155,27 +157,27 @@ foo().catch(() => {}); // Спроба проковтнути всі помил�
 
 ```js
 function resolveAfter2Seconds() {
-  console.log('початок повільного промісу');
+  console.log("початок повільного промісу");
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve('повільно');
-      console.log('повільний проміс виконано');
+      resolve("повільно");
+      console.log("повільний проміс виконано");
     }, 2000);
   });
 }
 
 function resolveAfter1Second() {
-  console.log('початок швидкого промісу');
+  console.log("початок швидкого промісу");
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve('шкидко');
-      console.log('швидкий проміс виконано');
+      resolve("шкидко");
+      console.log("швидкий проміс виконано");
     }, 1000);
   });
 }
 
 async function sequentialStart() {
-  console.log('==ПОСЛІДОВНИЙ ПОЧАТОК==');
+  console.log("==ПОСЛІДОВНИЙ ПОЧАТОК==");
 
   // 1. Виконання підходить до цього місця майже миттєво
   const slow = await resolveAfter2Seconds();
@@ -201,7 +203,7 @@ function concurrentPromise() {
     (messages) => {
       console.log(messages[0]); // повільно
       console.log(messages[1]); // швидко
-    },
+    }
   );
 }
 
