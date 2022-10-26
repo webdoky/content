@@ -45,6 +45,8 @@ concat(value0, value1, /* … ,*/ valueN)
 
 Метод `concat()` зберігає порожні комірки, якщо будь-який із вихідних масивів є [розрідженим](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy).
 
+Метод `concat()` є [узагальненим](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#uzahalneni-metody-masyvu). Значення `this` обробляється так само, як решта аргументів (окрім того, що воно спершу перетворюється на об'єкт), а отже – прості об'єкти будуть просто поставлені в початок результівного масиву, а масивоподібні об'єкти з істинною властивістю `@@isConcatSpreadable` будуть розгорнуті в результівний масив.
+
 ## Приклади
 
 ### Зчеплення двох масивів
@@ -125,7 +127,18 @@ console.log([0].concat(obj1, obj2));
 
 ```js
 console.log([1, , 3].concat([4, 5])); // [1, порожньо, 3, 4, 5]
-console.log([1, 2].concat([3, , 5])); // [1, 2, 3, порожньо, 6]
+console.log([1, 2].concat([3, , 5])); // [1, 2, 3, порожньо, 5]
+```
+
+### Виклик concat() на об'єктах-немасивах
+
+Якщо значення `this` не є масивом, то воно спершу перетворюється на об'єкт, а тоді обробляється так само, як аргументи `concat()`. В цьому випадку повернене значення завжди є новим звичайним масивом.
+
+```js
+console.log(Array.prototype.concat.call({}, 1, 2, 3)); // [{}, 1, 2, 3]
+console.log(Array.prototype.concat.call(1, 2, 3)); // [ [Number: 1], 2, 3 ]
+const arrayLike = { [Symbol.isConcatSpreadable]: true, length: 2, 0: 1, 1: 2 };
+console.log(Array.prototype.concat.call(arrayLike, 3, 4)); // [1, 2, 3, 4]
 ```
 
 ## Специфікації

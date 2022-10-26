@@ -42,6 +42,8 @@ join(separator)
 
 Бувши використаним на [розріджених масивах](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy), метод `join()` ітерує порожні комірки так, ніби вони містять значення `undefined`.
 
+Метод `join()` є [узагальненим](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#uzahalneni-metody-masyvu). Він лишень очікує, що значення `this` матиме властивість `length`, а також властивості з цілочисловими ключами.
+
 ## Приклади
 
 ### Об'єднання масиву чотирма різними способами
@@ -56,19 +58,6 @@ a.join(" + "); // 'Вітер + Вода + Вогонь'
 a.join(""); // 'ВітерВодаВогонь'
 ```
 
-### Об'єднання масивоподібного об'єкта
-
-Наступний приклад об'єднує масивоподібний об'єкт ([`arguments`](/uk/docs/Web/JavaScript/Reference/Functions/arguments)), викликаючи {{jsxref("Function.prototype.call")}} на `Array.prototype.join`.
-
-```js
-function f(a, b, c) {
-  const s = Array.prototype.join.call(arguments);
-  console.log(s); // '1,a,true'
-}
-f(1, "a", true);
-//очікуваний результат: "1,a,true"
-```
-
 ### Використання join() на розріджених масивах
 
 `join()` обробляє порожні комірки так само як `undefined`, і додає додатковий роздільник:
@@ -76,6 +65,23 @@ f(1, "a", true);
 ```js
 console.log([1, , 3].join()); // '1,,3'
 console.log([1, undefined, 3].join()); // '1,,3'
+```
+
+### Виклик join() на об'єктах-немасивах
+
+Метод `join()` зчитує з `this` властивість `length`, а потім звертається до кожної цілочислової властивості.
+
+```js
+const arrayLike = {
+  length: 3,
+  0: 2,
+  1: 3,
+  2: 4,
+};
+console.log(Array.prototype.join.call(arrayLike));
+// 2,3,4
+console.log(Array.prototype.join.call(arrayLike, "."));
+// 2.3.4
 ```
 
 ## Специфікації
