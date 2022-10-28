@@ -42,7 +42,7 @@ replaceAll(pattern, replacement)
 ### Винятки
 
 - {{jsxref("TypeError")}}
-  - : Викидається, якщо `pattern` [є регулярним виразом](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp#osoblyva-povedinka-rehuliarnykh-vyraziv), котрий не має позначки глобальності (`g`), тобто його властивість [`flags`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/flags) не містить `"g"`.
+  - : Викидається, якщо `pattern` [є регулярним виразом](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp#osoblyva-obrobka-rehuliarnykh-vyraziv), котрий не має позначки глобальності (`g`), тобто його властивість [`flags`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/flags) не містить `"g"`.
 
 ## Опис
 
