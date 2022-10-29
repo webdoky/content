@@ -18,7 +18,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 * **Оновлення перекладу(CSS):** web/css/margin ([3a64fa0](https://github.com/webdoky/content/commit/3a64fa0fd79558b8303eed27d371160827d4b24b))
 * **Оновлення перекладу(CSS):** web/css/css_transitions/using_css_transitions ([eb492e0](https://github.com/webdoky/content/commit/eb492e0672ea40aec7c07e9dd4b280d4090eb74a))
 * **Оновлення перекладу(CSS):** web/css/padding ([603fc30](https://github.com/webdoky/content/commit/603fc30c9725dab479125362d7ad7efc218f2634))
-* **Виправлення:** fix script (#912) ([8834567](https://github.com/webdoky/content/commit/8834567f4cd3aa695d7ccb11d900c7a00ec56f28))
 * **Оновлення перекладу(JS):** web/javascript/reference/global_objects/number ([a537262](https://github.com/webdoky/content/commit/a537262f1fbb445f60ed72f4f78160717191a5bc))
 * **Оновлення перекладу(JS):** web/javascript/reference/statements/import ([5fe50e8](https://github.com/webdoky/content/commit/5fe50e823e7bcbdb992243dc0defb7394ca7e680))
 * **Оновлення перекладу(HTML):** web/html/element/button ([72559e9](https://github.com/webdoky/content/commit/72559e966a714c4218d774fa162c2dc853df7319))
