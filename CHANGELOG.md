@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2022-10-28 - 2022-11-04]
+
+...
+
 ## [2022-10-21 - 2022-10-28]
 
 * **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/push (#874) ([acd22a7](https://github.com/webdoky/content/commit/acd22a7ec14bbd3bcb2470a9b3bbb3972e7b3f30))
