@@ -477,7 +477,7 @@ const inventory = [
 ```js
 const result = inventory.group(({ type }) => type);
 console.log(result.vegetables);
-// очікуваний вивід: Array [Object { name: "холодок", type: "vegetables" }]
+// [{ name: "холодок", type: "vegetables" }]
 ```
 
 Зверніть увагу, що повернений об'єкт посилається на _ті самі_ елементи, що й вихідний масив (не створюються {{glossary("deep copy","глибокі копії")}}).
@@ -575,7 +575,7 @@ const myRe = /d(b+)(d)/i;
 const execResult = myRe.exec("cdbBdbsbz");
 console.log(execResult.input); // 'cdbBdbsbz'
 console.log(execResult.index); // 1
-console.log(execResult); // Array(3) [ "dbBd", "bB", "d" ]
+console.log(execResult); // [ "dbBd", "bB", "d" ]
 ```
 
 Більше інформації про результат збігу – на сторінках {{jsxref("RegExp.prototype.exec()")}} і {{jsxref("String.prototype.match()")}}.
