@@ -177,7 +177,7 @@ browser-compat: javascript.operators
   - : Логічний AND.
 - {{JSxRef("Operators/Logical_OR", "||")}}
   - : Логічне OR.
-- {{JSxRef("Operators/Nullish_coalescing_operator", "??")}}
+- {{JSxRef("Operators/Nullish_coalescing", "??")}}
   - : Оператор нульового злиття.
 
 ### Умовний (тернарний) оператор
@@ -224,8 +224,8 @@ browser-compat: javascript.operators
   - : Присвоєння з логічним AND.
 - {{JSxRef("Operators/Logical_OR_assignment", "||=")}}
   - : Присвоєння з логічним OR.
-- {{JSxRef("Operators/Logical_nullish_assignment", "??=")}}
-  - : Логічне нульове присвоєння.
+- {{JSxRef("Operators/Nullish_coalescing_assignment", "??=")}}
+  - : Присвоєння з нульовим злиттям.
 - [`[a, b] = arr`, `{ a, b } = obj`](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
   - : Присвоєння з деструктуризацією дає змогу призначити властивості масиву чи об'єкта змінним, з використанням синтаксису, який має подібний до літералів масивів та об'єктів вигляд.
 
