@@ -104,12 +104,14 @@ const kvArray = [
 ];
 
 const reformattedArray = kvArray.map(({ key, value }) => ({ [key]: value }));
-// reformattedArray тепер [{1: 10}, {2: 20}, {3: 30}],
 
-// kvArray залишається таким:
-// [{key: 1, value: 10},
-//  {key: 2, value: 20},
-//  {key: 3, value: 30}]
+console.log(reformattedArray); // [{ 1: 10 }, { 2: 20 }, { 3: 30 }]
+console.log(kvArray);
+// [
+//   { key: 1, value: 10 },
+//   { key: 2, value: 20 },
+//   { key: 3, value: 30 }
+// ]
 ```
 
 ### Перебирання масиву чисел із застосуванням функції з аргументом
@@ -120,8 +122,8 @@ const reformattedArray = kvArray.map(({ key, value }) => ({ [key]: value }));
 const numbers = [1, 4, 9];
 const doubles = numbers.map((num) => num * 2);
 
-// doubles тепер       [2, 8, 18]
-// numbers залишається [1, 4, 9]
+console.log(doubles); // [2, 8, 18]
+console.log(numbers); // [1, 4, 9]
 ```
 
 ### Виклик map() на об'єктах-немасивах
