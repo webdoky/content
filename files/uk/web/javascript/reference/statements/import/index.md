@@ -140,7 +140,7 @@ import * as myModule from "/modules/my-module.js";
 myModule.doAllTheAmazingThings();
 ```
 
-Значення `myModule` — це [запечатаний](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/isSealed) об'єкт, чиїм прототипом є `null`. Всі його ключі є [перелічуваними](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) в лексикографічному порядку (тобто в послідовності, згідно з якою працює [`Array.prototype.sort()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#opys)), причому усталений експорт буде доступний за ключем `default`.
+Значення `myModule` — це [запечатаний](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/isSealed) об'єкт, [чиїм прототипом є `null`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#obiekty-z-prototypom-null). Всі його ключі є [перелічуваними](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) в лексикографічному порядку (тобто в послідовності, згідно з якою працює [`Array.prototype.sort()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#opys)), причому усталений експорт буде доступний за ключем `default`.
 
 > **Примітка:** JavaScript не підтримує довільні імпорти, як от `import * from "module-name"`, через високу ймовірність конфліктів імен.
 
