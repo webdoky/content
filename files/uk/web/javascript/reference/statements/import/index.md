@@ -52,7 +52,7 @@ import "module-name";
 
 Оголошення `import` можуть знаходитися лише всередині модулів, і лише на найвищому рівні (тобто не всередині блоків, функцій тощо). Якщо оголошення `import` зустрічається у немодульному контексті (як от у скриптових файлах, `eval`, `new Function`, які після розбору мають оформитися у "скрипт" чи "функцію") — викидається помилка `SyntaxError`. Аби завантажити модуль у немодульному контексті — слід використовувати [динамічний імпорт](/uk/docs/Web/JavaScript/Reference/Operators/import).
 
-Оголошення `import` сконструйовані таким чином, щоб бути синтаксично жорсткими (зокрема: допускаються лише літеральні рядкові вказівники, і лише на верхньому рівні — адже всі прив'язки є ідентифікаторами). Це дає можливість статично аналізувати модулі та синхронно їх компонувати, іще до їхнього виконання. Це — ключова особливість, необхідна аби зробити модулі асинхронними за природою, що дає змогу працювати функціональності штибу [`await` верхнього рівня](/uk/docs/Web/JavaScript/Guide/Modules#await-verkhnioho-rivnia).
+Оголошення `import` сконструйовані таким чином, щоб бути синтаксично жорсткими (зокрема: допускаються лише літеральні рядкові вказівники, і лише на верхньому рівні — адже всі прив'язки є ідентифікаторами). Це дає можливість статично аналізувати модулі та синхронно їх компонувати, іще до їхнього виконання. Це — ключова особливість, необхідна аби зробити модулі асинхронними за природою, що дає змогу працювати функціональності штибу [`await` верхнього рівня](/uk/docs/Web/JavaScript/Guide/Modules#await-verkhnoho-rivnia).
 
 Існує чотири форми оголошень `import`:
 
@@ -140,7 +140,7 @@ import * as myModule from "/modules/my-module.js";
 myModule.doAllTheAmazingThings();
 ```
 
-Значення `myModule` — це [запечатаний](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/isSealed) об'єкт, чиїм прототипом є `null`. Всі його ключі є [перелічуваними](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) в лексикографічному порядку (тобто в послідовності, згідно з якою працює [`Array.prototype.sort()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#opys)), причому усталений експорт буде доступний за ключем `default`.
+Значення `myModule` — це [запечатаний](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/isSealed) об'єкт, [чиїм прототипом є `null`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#obiekty-z-prototypom-null). Всі його ключі є [перелічуваними](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) в лексикографічному порядку (тобто в послідовності, згідно з якою працює [`Array.prototype.sort()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#opys)), причому усталений експорт буде доступний за ключем `default`.
 
 > **Примітка:** JavaScript не підтримує довільні імпорти, як от `import * from "module-name"`, через високу ймовірність конфліктів імен.
 
@@ -165,7 +165,7 @@ import "/modules/my-module.js";
 /**
  * Повертає список простих чисел, що менші за передане `max`.
  */
-function getPrimes(max) {
+export function getPrimes(max) {
   const isPrime = Array.from({ length: max }, () => true);
   isPrime[0] = isPrime[1] = false;
   isPrime[2] = true;
