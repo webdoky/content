@@ -15,7 +15,7 @@ tags:
 browser-compat: html.elements.input.type_file
 ---
 
-{{HTMLRef("Input_types")}}
+{{HTMLSidebar}}
 
 Елементи {{HTMLElement("input")}} з атрибутом **`type="file"`** дають користувачеві змогу обрати один чи більше файлів з його пристрою. Бувши обраними, файли можуть бути завантажені на сервер за допомогою [подання форми](/uk/docs/Learn/Forms), або ж використані за допомогою коду на JavaScript та [файлового API](/uk/docs/Web/API/File_API/Using_files_from_web_applications).
 
@@ -24,7 +24,7 @@ browser-compat: html.elements.input.type_file
 <table class="properties">
   <tbody>
     <tr>
-      <td><strong><a href="#value">Значення</a></strong></td>
+      <td><strong><a href="#znachennia">Значення</a></strong></td>
       <td>
         Рядок, що представляє шлях до вибраного файлу.
       </td>
