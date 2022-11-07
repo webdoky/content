@@ -32,7 +32,7 @@ slice(start, end)
 
     Допускається застосовувати від'ємний індекс для позначення позиції з кінця послідовності. Наприклад, `slice(-2)` витягує останні два елементи з масиву.
 
-    Якщо `start` не заданий, `slice` почне з позиції `0`.
+    Якщо `start` пропущений чи має значення `undefined`, `slice` почне з позиції `0`.
 
     Якщо `start` більший за довжину послідовності, буде повернуто порожній масив.
 
@@ -84,20 +84,17 @@ const myHonda = {
 const myCar = [myHonda, 2, "чудовий стан", "придбана у 1997"];
 const newCar = myCar.slice(0, 2);
 
-// Показати значення myCar, newCar, і колір myHonda,
-// на який посилаються обидва масиви.
-console.log("myCar = ", myCar);
-console.log("newCar = ", newCar);
-console.log("myCar[0].color = ", myCar[0].color);
-console.log("newCar[0].color = ", newCar[0].color);
+console.log("myCar =", myCar);
+console.log("newCar =", newCar);
+console.log("myCar[0].color =", myCar[0].color);
+console.log("newCar[0].color =", newCar[0].color);
 
 // Змінити колір myHonda.
 myHonda.color = "бузковий";
-console.log("Новий колір моєї Honda – ", myHonda.color);
+console.log("Новий колір моєї Honda –", myHonda.color);
 
-// Показати колір myHonda, на який посилаються обидва масиви.
-console.log("myCar[0].color = ", myCar[0].color);
-console.log("newCar[0].color = ", newCar[0].color);
+console.log("myCar[0].color =", myCar[0].color);
+console.log("newCar[0].color =", newCar[0].color);
 ```
 
 Скрипт надрукує такий текст:
@@ -108,7 +105,7 @@ myCar = [
   2,
   'чудовий стан','придбана у 1997'
 ]
-newCar = [{color: 'червоний', wheels: 4, engine: {cylinders: 4, size: 2.2}}, 2]
+newCar = [ { color: 'червоний', wheels: 4, engine: { cylinders: 4, size: 2.2 } }, 2 ]
 myCar[0].color = червоний
 newCar[0].color = червоний
 Новий колір моєї Honda – бузковий
