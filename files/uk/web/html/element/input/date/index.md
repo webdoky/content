@@ -15,7 +15,7 @@ tags:
 browser-compat: html.elements.input.type_date
 ---
 
-{{HTMLRef}}
+{{HTMLSidebar}}
 
 Елементи {{HTMLElement("input")}} з атрибутом **`type="date"`** ("тип=дата") створюють поля введення, що дають користувачеві можливість ввести дату: або за допомогою текстового поля, котре перевіряє відповідність введених даних, або особливого інтерфейсу вибору дати.
 
@@ -90,7 +90,7 @@ browser-compat: html.elements.input.type_date
 
 ```js
 const dateControl = document.querySelector('input[type="date"]');
-dateControl.value = '2017-06-01';
+dateControl.value = "2017-06-01";
 console.log(dateControl.value); // виводить "2017-06-01"
 console.log(dateControl.valueAsNumber); // виводить 1496275200000, мітку часу JavaScript (у мілісекундах)
 ```
@@ -192,8 +192,7 @@ console.log(dateControl.valueAsNumber); // виводить 1496275200000, мі�
       name="party"
       min="2017-04-01"
       max="2017-04-20"
-      required
-    />
+      required />
     <span class="validity"></span>
   </label>
 
@@ -220,11 +219,11 @@ span::after {
 }
 
 input:invalid + span::after {
-  content: '✖';
+  content: "✖";
 }
 
 input:valid + span::after {
-  content: '✓';
+  content: "✓";
 }
 ```
 
@@ -234,7 +233,7 @@ input:valid + span::after {
 
 Браузери, що не підтримують такий тип поля, ввічливо відступають до текстового поля, але це створює проблему сталості користувацького інтерфейсу (представлені контрольні елементи відрізняються) та обробки даних.
 
-Друга проблема – більш серйозна; при підтримці поля дати значення нормалізується до формату `yyyy-mm-dd`. Однак із текстовим полем браузер не має уявлення, в якому форматі дата повинна бути, і є чимало різних форматів, у котрих люди записують дати. Наприклад:
+Друга проблема – більш серйозна; при підтримці поля дати значення нормалізується до формату `yyyy-mm-dd`. Однак із текстовим полем браузер не має уявлення, в якому форматі дата повинна бути, і є чимало форматів, у котрих люди записують дати. Наприклад:
 
 - `ddmmyyyy`
 - `dd/mm/yyyy`
@@ -273,11 +272,11 @@ span::after {
 }
 
 input:invalid + span::after {
-  content: '✖';
+  content: "✖";
 }
 
 input:valid + span::after {
-  content: '✓';
+  content: "✓";
 }
 ```
 
@@ -339,11 +338,11 @@ span {
 }
 
 input:invalid + span::after {
-  content: '✖';
+  content: "✖";
 }
 
 input:valid + span::after {
-  content: '✓';
+  content: "✓";
 }
 ```
 
@@ -355,33 +354,33 @@ input:valid + span::after {
 
 ```js
 // отримати віджети користувацького інтерфейсу
-const nativePicker = document.querySelector('.nativeDatePicker');
-const fallbackPicker = document.querySelector('.fallbackDatePicker');
-const fallbackLabel = document.querySelector('.fallbackLabel');
+const nativePicker = document.querySelector(".nativeDatePicker");
+const fallbackPicker = document.querySelector(".fallbackDatePicker");
+const fallbackLabel = document.querySelector(".fallbackLabel");
 
-const yearSelect = document.querySelector('#year');
-const monthSelect = document.querySelector('#month');
-const daySelect = document.querySelector('#day');
+const yearSelect = document.querySelector("#year");
+const monthSelect = document.querySelector("#month");
+const daySelect = document.querySelector("#day");
 
 // спершу приховати запасний варіант
-fallbackPicker.style.display = 'none';
-fallbackLabel.style.display = 'none';
+fallbackPicker.style.display = "none";
+fallbackLabel.style.display = "none";
 
 // перевірити, чи відступає поле дати до запасного текстового варіанту, чи ні
-const test = document.createElement('input');
+const test = document.createElement("input");
 
 try {
-  test.type = 'date';
+  test.type = "date";
 } catch (e) {
   console.log(e.message);
 }
 
 // якщо відступає, то виконати код всередині блока if () {}
-if (test.type === 'text') {
+if (test.type === "text") {
   // приховати нативний віджет вибору та показати запасний варіант
-  nativePicker.style.display = 'none';
-  fallbackPicker.style.display = 'block';
-  fallbackLabel.style.display = 'block';
+  nativePicker.style.display = "none";
+  fallbackPicker.style.display = "block";
+  fallbackLabel.style.display = "block";
 
   // динамічно заповнити дні та роки
   // (місяці завжди одні, тому – вписані в код)
@@ -402,17 +401,17 @@ function populateDays(month) {
   // 31 чи 30 днів?
   if (
     [
-      'January',
-      'March',
-      'May',
-      'July',
-      'August',
-      'October',
-      'December',
+      "January",
+      "March",
+      "May",
+      "July",
+      "August",
+      "October",
+      "December",
     ].includes(month)
   ) {
     dayNum = 31;
-  } else if (['April', 'June', 'September', 'November'].includes(month)) {
+  } else if (["April", "June", "September", "November"].includes(month)) {
     dayNum = 30;
   } else {
     // Якщо місяць – лютий, то перевірити, чи не є рік високосним
@@ -423,7 +422,7 @@ function populateDays(month) {
 
   // вставити коректне число нових елементів <option> в <select> дня
   for (i = 1; i <= dayNum; i++) {
-    var option = document.createElement('option');
+    var option = document.createElement("option");
     option.textContent = i;
     daySelect.appendChild(option);
   }
@@ -438,15 +437,15 @@ function populateDays(month) {
     // обрали місяць, в котрому менше днів (наприклад, лютий),
     // ця частина коду пересвідчується, що найпізніший доступний день
     // є обраним, замість показувати пустий daySelect
-    if (daySelect.value === '') {
+    if (daySelect.value === "") {
       daySelect.value = previousDay - 1;
     }
 
-    if (daySelect.value === '') {
+    if (daySelect.value === "") {
       daySelect.value = previousDay - 2;
     }
 
-    if (daySelect.value === '') {
+    if (daySelect.value === "") {
       daySelect.value = previousDay - 3;
     }
   }
@@ -459,7 +458,7 @@ function populateYears() {
 
   // Зробити цей рік, а також 100 років перед ним – доступними в меню <select> вибору року
   for (let i = 0; i <= 100; i++) {
-    const option = document.createElement('option');
+    const option = document.createElement("option");
     option.textContent = year - i;
     yearSelect.appendChild(option);
   }
