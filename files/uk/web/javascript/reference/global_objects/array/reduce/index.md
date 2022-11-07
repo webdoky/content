@@ -196,7 +196,7 @@ const sum = objects.reduce(
   0
 );
 
-console.log(sum); // виведе 6
+console.log(sum); // 6
 ```
 
 ### Сплощення масиву з масивами
@@ -247,7 +247,7 @@ function groupBy(objectArray, property) {
 }
 
 const groupedPeople = groupBy(people, "age");
-// groupedPeople містить:
+console.log(groupedPeople);
 // {
 //   20: [
 //     { name: 'Максим', age: 20 },
@@ -287,7 +287,8 @@ const allbooks = friends.reduce(
   ["Alphabet"]
 );
 
-// allbooks = [
+console.log(allbooks);
+// [
 //   'Абетка', 'Біблія', 'Енеїда', 'Чорна рада',
 //   'Тіні забутих предків', 'Залишенець. Чорний ворон',
 //   'Ворошиловград'
