@@ -112,10 +112,10 @@ const strPrim2 = String(1); // Приведено до рядкового при
 const strPrim3 = String(true); // Приведено до рядкового примітива "true"
 const strObj = new String(strPrim); // String із new повертає обгортковий об'єкт рядка
 
-console.log(typeof strPrim); // Друкує "string"
-console.log(typeof strPrim2); // Друкує "string"
-console.log(typeof strPrim3); // Друкує "string"
-console.log(typeof strObj); // Друкує "object"
+console.log(typeof strPrim); // "string"
+console.log(typeof strPrim2); // "string"
+console.log(typeof strPrim3); // "string"
+console.log(typeof strObj); // "object"
 ```
 
 > **Застереження:** Слід утримуватися від використання `String` як конструктора.
