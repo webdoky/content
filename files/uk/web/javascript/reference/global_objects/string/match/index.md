@@ -14,7 +14,7 @@ browser-compat: javascript.builtins.String.match
 
 {{JSRef}}
 
-Метод **`match()`** отримує результат зіставлення рядка з [регулярним виразом](/uk/docs/Web/JavaScript/Guide/Regular_Expressions).
+Метод **`match()`** (парувати, шукати збіг) отримує результат зіставлення рядка з [регулярним виразом](/uk/docs/Web/JavaScript/Guide/Regular_Expressions).
 
 {{EmbedInteractiveExample("pages/js/string-match.html", "shorter")}}
 
@@ -60,31 +60,29 @@ match(regexp)
 Регулярний вираз містить прапорець `i`, тож різниця в регістрі літер ігнорується.
 
 ```js
-const str = 'За детальнішою інформацією зверніться до Розділу 3.4.5.1';
+const str = "За детальнішою інформацією зверніться до Розділу 3.4.5.1";
 const re = /зверніться до (розділу \d+(\.\d)*)/i;
 const found = str.match(re);
 
 console.log(found);
-
-// друкує [ "зверніться до Розділу 3.4.5.1",
-//          "Розділу 3.4.5.1",
-//          ".1",
-//          index: 27,
-//          input: 'За детальнішою інформацією зверніться до Розділу 3.4.5.1' ]
-
-// 'зверніться до Розділу 3.4.5.1' — це повний збіг.
-// 'Розділу 3.4.5.1' було витягнуто групою '(розділу \d+(\.\d)*)'.
-// '.1' — це останнє значення, що було захоплено групою '(\.\d)'.
-// Властивість 'index' (містить число 27) — це індекс (починається з нуля) місця, з якого починається збіг у рядку.
-// Властивість 'input'  містить початковий рядок, в якому виконувався пошук збігів.
+// [
+//   'зверніться до Розділу 3.4.5.1',
+//   'Розділу 3.4.5.1',
+//   '.1',
+//   index: 27,
+//   input: 'За детальнішою інформацією зверніться до Розділу 3.4.5.1',
+//   groups: undefined
+// ]
 ```
+
+У результаті пошуку збігу вище `'зверніться до Розділу 3.4.5.1'` – це ввесь збіг. `'Розділу 3.4.5.1'` було захоплено `(розділу \d+(\.\d)*)`. `'.1'` було останнім значенням, захопленим `(\.\d)`. Властивість `index` (`27`) – індекс від нуля, за яким знайдено ввесь збіг. Властивість `input` – вихідний рядок, що розбирався.
 
 ### Застосування прапорців глобального пошуку та ігнорування регістру з методом match()
 
 Наступний приклад ілюструє застосування прапорців глобального пошуку та ігнорування регістру з методом `match()`. В результаті повертаються всі літери від `A` до `E`, та від `a` до `e`, кожна як окремий елемент масиву.
 
 ```js
-const str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+const str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 const regexp = /[A-E]/gi;
 const matches = str.match(regexp);
 
@@ -99,7 +97,7 @@ console.log(matches);
 У браузерах, які підтримують іменовані групи захоплення, наступний код витягне значення `"fox"` чи `"cat"` у групу, яка називається "`animal`":
 
 ```js
-const paragraph = 'The quick brown fox jumps over the lazy dog. It barked.';
+const paragraph = "The quick brown fox jumps over the lazy dog. It barked.";
 
 const capturingRegex = /(?<animal>fox|cat) jumps over/;
 const found = paragraph.match(capturingRegex);
@@ -109,7 +107,7 @@ console.log(found.groups); // {animal: "fox"}
 ### Застосування методу match() без параметрів
 
 ```js
-const str = 'Ніщо не вийде з нічого.';
+const str = "Ніщо не вийде з нічого.";
 
 str.match(); // повертає [""]
 ```
@@ -119,10 +117,10 @@ str.match(); // повертає [""]
 Якщо об'єкт має метод `Symbol.match`, то він може використовуватися як особливий відповідник. Повернене `Symbol.match` значення стає поверненим значенням `match()`.
 
 ```js
-const str = 'Хм, це цікаво.';
+const str = "Хм, це цікаво.";
 str.match({
   [Symbol.match](str) {
-    return ['Так, це цікаво.'];
+    return ["Так, це цікаво."];
   },
 }); // повертає ["Так, це цікаво."]
 ```
@@ -133,11 +131,11 @@ str.match({
 
 ```js
 const str1 =
-  'NaN means not a number. Infinity contains -Infinity and +Infinity in JavaScript.';
+  "NaN means not a number. Infinity contains -Infinity and +Infinity in JavaScript.";
 const str2 =
-  'My grandfather is 65 years old and My grandmother is 63 years old.';
-const str3 = 'The contract was declared null and void.';
-str1.match('number'); // "number" — це рядок. Повертає ["number"]
+  "My grandfather is 65 years old and My grandmother is 63 years old.";
+const str3 = "The contract was declared null and void.";
+str1.match("number"); // "number" — це рядок. Повертає ["number"]
 str1.match(NaN); // NaN має тип "число". Повертає ["NaN"]
 str1.match(Infinity); // тип Infinity — число. Повертає ["Infinity"]
 str1.match(+Infinity); // повертає ["Infinity"]
@@ -150,13 +148,13 @@ str3.match(null); // повертає ["null"]
 Це може дати неочікувані результати, якщо особливі символи не були як слід екрановані.
 
 ```js
-console.log('123'.match('1.3')); // [ "123" ]
+console.log("123".match("1.3")); // [ "123" ]
 ```
 
 Є збіг, тому що `.` в регулярному виразі дає збіг з усіма символами. Щоб змусити `.` давати збіг лише з символом крапки, треба екранувати введення.
 
 ```js
-console.log('123'.match('1\\.3')); // null
+console.log("123".match("1\\.3")); // null
 ```
 
 ## Специфікації
