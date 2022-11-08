@@ -22,7 +22,7 @@ tags:
 browser-compat: html.elements.img
 ---
 
-{{HTMLRef}}
+{{HTMLSidebar}}
 
 Елемент [HTML](/uk/docs/Web/HTML) **`<img>`** вбудовує в документ зображення.
 
