@@ -85,9 +85,9 @@ switch (foo) {
     console.log(2);
     break;
   default:
-    console.log('default');
+    console.log("default");
 }
-// Виводить "0" і "1"
+// Виводить 0 і 1
 ```
 
 Замість `break` можна використовувати інші інструкції контролю плину виконання, наприклад, інструкцію [`return`](/uk/docs/Web/JavaScript/Reference/Statements/return).
@@ -97,18 +97,18 @@ switch (foo) {
 Пункти `case` і `default` подібні до [міток](/uk/docs/Web/JavaScript/Reference/Statements/label): вони вказують місця, куди контроль плину виконання може перестрибнути. Проте вони не створюють самі по собі лексичних [областей видимості](/uk/docs/Glossary/Scope) (так само як не виконують автоматично виходу – як показано вище). Наприклад:
 
 ```js example-bad
-const action = 'say_hello';
+const action = "say_hello";
 switch (action) {
-  case 'say_hello':
-    const message = 'привіт';
+  case "say_hello":
+    const message = "привіт";
     console.log(message);
     break;
-  case 'say_hi':
-    const message = 'гей';
+  case "say_hi":
+    const message = "гей";
     console.log(message);
     break;
   default:
-    console.log('Отримано порожню дію.');
+    console.log("Отримано порожню дію.");
 }
 ```
 
@@ -117,21 +117,21 @@ switch (action) {
 Щоб це виправити, коли потрібно використати оголошення `let` чи `const` всередині пункту `case`, слід загорнути пункт у блок.
 
 ```js
-const action = 'say_hello';
+const action = "say_hello";
 switch (action) {
   // додані фігурні дужки
-  case 'say_hello': {
-    const message = 'привіт';
+  case "say_hello": {
+    const message = "привіт";
     console.log(message);
     break;
   } // додані фігурні дужки
-  case 'say_hi': {
-    const message = 'гей';
+  case "say_hi": {
+    const message = "гей";
     console.log(message);
     break;
   } // додані фігурні дужки
   default: {
-    console.log('Отримано порожню дію.');
+    console.log("Отримано порожню дію.");
   } // додані фігурні дужки
 }
 ```
@@ -146,27 +146,27 @@ switch (action) {
 
 ```js
 switch (expr) {
-  case 'Помаранчі':
-    console.log('Помаранчі — по $0.59 за кіло.');
+  case "Помаранчі":
+    console.log("Помаранчі — по $0.59 за кіло.");
     break;
-  case 'Яблука':
-    console.log('Яблука — по $0.32 за кіло.');
+  case "Яблука":
+    console.log("Яблука — по $0.32 за кіло.");
     break;
-  case 'Банани':
-    console.log('Банани — по $0.48 за кіло.');
+  case "Банани":
+    console.log("Банани — по $0.48 за кіло.");
     break;
-  case 'Вишні':
-    console.log('Вишні — по $3.00 за кіло.');
+  case "Вишні":
+    console.log("Вишні — по $3.00 за кіло.");
     break;
-  case 'Манго':
-  case 'Папайя':
-    console.log('Манго та папайя — по $2.79 за кіло.');
+  case "Манго":
+  case "Папайя":
+    console.log("Манго та папайя — по $2.79 за кіло.");
     break;
   default:
     console.log(`Вибачте, у нас закінчились ${expr}.`);
 }
 
-console.log('Чи є щось іще, що ми могли б вам запропонувати?');
+console.log("Чи є щось іще, що ми могли б вам запропонувати?");
 ```
 
 ### Розташування усталеного пункту між двома пунктами випадків
@@ -180,10 +180,10 @@ switch (foo) {
     console.log(2);
     break; // програма зустрічає оцей `break`, тож виконання не буде продовжуватись всередину 'default:'
   default:
-    console.log('default');
+    console.log("default");
   // провалювання
   case 1:
-    console.log('1');
+    console.log("1");
 }
 ```
 
@@ -196,17 +196,17 @@ switch (foo) {
 Нижче – приклад послідовної інструкції `case` з однією операцією, де чотири різні значення працюють цілком однаково.
 
 ```js
-const Animal = 'Жираф';
+const Animal = "Жираф";
 switch (Animal) {
-  case 'Корова':
-  case 'Жираф':
-  case 'Собака':
-  case 'Кнур':
-    console.log('Ця тварина не вимерла.');
+  case "Корова":
+  case "Жираф":
+  case "Собака":
+  case "Кнур":
+    console.log("Ця тварина не вимерла.");
     break;
-  case 'Динозавр':
+  case "Динозавр":
   default:
-    console.log('Ця тварина вимерла.');
+    console.log("Ця тварина вимерла.");
 }
 ```
 
@@ -214,27 +214,27 @@ switch (Animal) {
 
 ```js
 const foo = 1;
-let output = 'Вивід: ';
+let output = "Вивід: ";
 switch (foo) {
   case 0:
-    output += 'Отже, ';
+    output += "Отже, ";
   case 1:
-    output += 'Як ';
-    output += 'Звучить ';
+    output += "Як ";
+    output += "Звучить ";
   case 2:
-    output += 'Твоє ';
+    output += "Твоє ";
   case 3:
     output += "Ім'я";
   case 4:
-    output += '?';
+    output += "?";
     console.log(output);
     break;
   case 5:
-    output += '!';
+    output += "!";
     console.log(output);
     break;
   default:
-    console.log('Будь ласка, оберіть число від 0 до 5!');
+    console.log("Будь ласка, оберіть число від 0 до 5!");
 }
 ```
 
@@ -255,9 +255,9 @@ switch (foo) {
 Нерідко доводиться робити ряд перевірок [`if...else`](/uk/docs/Web/JavaScript/Reference/Statements/if...else).
 
 ```js
-if ('fetch' in globalThis) {
+if ("fetch" in globalThis) {
   // Отримання ресурсу за допомогою fetch
-} else if ('XMLHttpRequest' in globalThis) {
+} else if ("XMLHttpRequest" in globalThis) {
   // Отримання ресурсу за допомогою XMLHttpRequest
 } else {
   // Отримання ресурсу за допомогою певної самописної логіки AJAX
@@ -268,10 +268,10 @@ if ('fetch' in globalThis) {
 
 ```js
 switch (true) {
-  case 'fetch' in globalThis:
+  case "fetch" in globalThis:
     // Отримання ресурсу за допомогою fetch
     break;
-  case 'XMLHttpRequest' in globalThis:
+  case "XMLHttpRequest" in globalThis:
     // Отримання ресурсу за допомогою XMLHttpRequest
     break;
   default:
@@ -285,15 +285,15 @@ switch (true) {
 ```js
 switch (true) {
   case isSquare(shape):
-    console.log('Ця фігура є квадратом.');
+    console.log("Ця фігура є квадратом.");
   // Провалювання, оскільки квадрат також є прямокутником!
   case isRectangle(shape):
-    console.log('Ця фігура є прямокутником.');
+    console.log("Ця фігура є прямокутником.");
   case isQuadrilateral(shape):
-    console.log('Ця фігура є чотирикутником.');
+    console.log("Ця фігура є чотирикутником.");
     break;
   case isCircle(shape):
-    console.log('Ця фігура є колом.');
+    console.log("Ця фігура є колом.");
     break;
 }
 ```
