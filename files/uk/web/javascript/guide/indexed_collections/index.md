@@ -155,13 +155,13 @@ const cats = ["Пилок", "Хмаринка", "Сушинка"];
 console.log(cats.length); // 3
 
 cats.length = 2;
-console.log(cats); // друкує "Пилок, Хмаринка": Сушинка прибрана
+console.log(cats); // [ 'Пилок', 'Хмаринка' ]: Сушинка прибрана
 
 cats.length = 0;
-console.log(cats); // друкує []; масив котів – порожній
+console.log(cats); // []; масив котів – порожній
 
 cats.length = 3;
-console.log(cats); // друкує [ <3 порожні елементи> ]
+console.log(cats); // [ <3 порожні елементи> ]
 ```
 
 ### Ітерування масивів
@@ -206,6 +206,7 @@ const sparseArray = ["перший", "другий", , "четвертий"];
 sparseArray.forEach((element) => {
   console.log(element);
 });
+// Друкує:
 // перший
 // другий
 // четвертий
@@ -219,6 +220,7 @@ const nonsparseArray = ["перший", "другий", undefined, "четвер
 nonsparseArray.forEach((element) => {
   console.log(element);
 });
+// Друкує:
 // перший
 // другий
 // undefined
@@ -327,21 +329,16 @@ myArray.sort();
 // сортує масив так, що myArray = ["Fire", "Rain", "Wind"]
 ```
 
-Крім цього, `sort()` також може прийняти функцію зворотного виклику для визначення того, як порівнюються елементи масиву.
-
-Метод `sort` та інші методи нижче, що приймають функцію зворотного виклику, відомі як _ітеративні методи_, тому що вони ітерують у певний спосіб увесь масив. Кожен з них приймає необов'язковий другий аргумент, що зветься `thisObject`. Коли він є, `thisObject` стає значенням ключового слова `this` всередині тіла функції зворотного виклику. Коли його немає, як і в решті випадків, коли функція закликається поза явним контекстом об'єкта, `this` вказує на глобальний об'єкт ([`window`](/uk/docs/Web/API/Window)), коли функція зворотного виклику – стрілкова функція, або має значення `undefined`, коли функція зворотного виклику – звичайна функція.
-
-Функція зворотного виклику викликається з двома аргументами, котрі є елементами масиву.
-
-Функція нижче порівнює два значення та повертає одне з трьох значень:
-
-Наприклад, наступний код відсортує за останньою літерою рядка:
+Крім цього, `sort()` також може прийняти функцію зворотного виклику для визначення того, як порівнюються елементи масиву. Функція зворотного виклику викликається з двома аргументами, котрі є елементами масиву. Ця функція порівнює отримані два значення й повертає додатне число, від'ємне число або нуль, таким чином вказуючи на порядок цих значень. Наприклад, наступний код відсортує за останньою літерою рядка:
 
 ```js
 const sortFn = (a, b) => {
-  if (a[a.length - 1] < b[b.length - 1]) return -1;
-  if (a[a.length - 1] > b[b.length - 1]) return 1;
-  if (a[a.length - 1] === b[b.length - 1]) return 0;
+  if (a[a.length - 1] < b[b.length - 1]) {
+    return -1; // Від'ємне число => a < b, a стоїть до b
+  } else if (a[a.length - 1] > b[b.length - 1]) {
+    return 1; // Додатне число => a > b, а стоїть після b
+  }
+  return 0; // Нуль => a = b, a і b зберігають свій початковий порядок
 };
 myArray.sort(sortFn);
 // сортує масив так, що myArray = ["Wind","Fire","Rain"]
@@ -355,11 +352,11 @@ myArray.sort(sortFn);
 
 ```js
 const a = ["a", "b", "a", "b", "a"];
-console.log(a.indexOf("b")); // друкує 1
+console.log(a.indexOf("b")); // 1
 
 // Тепер спробуймо знову, починаючи з місця після попереднього збігу
-console.log(a.indexOf("b", 2)); // друкує 3
-console.log(a.indexOf("z")); // друкує -1, тому що 'z' не знайдено
+console.log(a.indexOf("b", 2)); // 3
+console.log(a.indexOf("z")); // -1, тому що 'z' не знайдено
 ```
 
 Метод [`lastIndexOf()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf) працює як `indexOf`, але починає з кінця й шукаю задом наперед.
@@ -380,8 +377,15 @@ const a = ["a", "b", "c"];
 a.forEach((element) => {
   console.log(element);
 });
-// друкує кожний елемент по черзі
+// Друкує:
+// a
+// b
+// c
 ```
+
+Метод `forEach` та інші методи нижче, що приймає функцію зворотного виклику, відомі як _ітеративні методи_, тому що вони у певний спосіб ітерують ввесь масив. Кожний з них приймає необов'язковий другий аргумент, що зветься `thisArg`. Коли він є, то `thisArg` стає значенням ключового слова `this` всередині функції зворотного виклику. Коли його немає, то, як і в інших випадках, коли функція викликана поза явним контекстом об'єкта, `this` вказує на глобальний об'єкт ([`window`](/uk/docs/Web/API/Window), [`globalThis`](/uk/docs/Web/JavaScript/Reference/Global_Objects/globalThis) тощо), коли функція [несувора](/uk/docs/Web/JavaScript/Reference/Strict_mode), або має значення `undefined`, коли функція сувора.
+
+> **Примітка:** Метод `sort()`, описаний вище, не є ітеративним методом, тому що його функція зворотного виклику використовується лише для порівняння і може не бути викликана у певному відомому на основі порядку елементів порядку. Також `sort()` не приймає параметр `thisArg`.
 
 Метод [`map()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/map) повертає новий масив повернених з виклику `callback` на кожному елементі масиву значень.
 
@@ -516,11 +520,13 @@ delete e[2]; // [ 1, 2, <1 порожній елемент>, 4, 5 ]
 const arr = [1, 2, , , 5]; // Створення розрідженого масиву
 
 // Звертання за індексом
-console.log(arr[2]); // Друкує "undefined"
+console.log(arr[2]); // undefined
 
 // For...of
-for (const i of arr) console.log(i);
-// Друкує "1 2 undefined undefined 5"
+for (const i of arr) {
+  console.log(i);
+}
+// Друкує: 1 2 undefined undefined 5
 
 // Розгортання
 const another = [...arr]; // "another" – [ 1, 2, undefined, undefined, 5 ]
@@ -530,13 +536,16 @@ const another = [...arr]; // "another" – [ 1, 2, undefined, undefined, 5 ]
 
 ```js
 const mapped = arr.map((i) => i + 1); // [ 2, 3, <2 порожні елементи>, 6 ]
-arr.forEach((i) => console.log(i)); // Друкує "1 2 5"
+arr.forEach((i) => console.log(i)); // 1 2 5
 const filtered = arr.filter(() => true); // [ 1, 2, 5 ]
 const hasFalsy = arr.some((k) => !k); // false
 
 // Перелічення властивостей
 const keys = Object.keys(arr); // [ '0', '1', '4' ]
-for (const key in arr) console.log(key); // Друкує "0 1 4"
+for (const key in arr) {
+  console.log(key);
+}
+// Друкує: '0' '1' '4'
 // Розгортання в об'єкт використовує перелічення властивостей, а не ітератор масиву
 const objectSpread = { ...arr }; // { '0': 1, '1': 2, '4': 5 }
 ```
@@ -575,7 +584,7 @@ for (let i = 0; i < 4; i++) {
 ```js
 const arr = [1, 2, 3];
 arr.property = "значення";
-console.log(arr.property); // Друкує "значення"
+console.log(arr.property); // "значення"
 ```
 
 Наприклад, коли масив є результатом пошуку збігу між регулярним виразом та рядком, масив повертає властивості та елементи, що містять інформацію про збіг. Масив є поверненим значенням [`RegExp.prototype.exec()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec), [`String.prototype.match()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/match) і [`String.prototype.split()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/split). Інформацію про використання масивів з регулярними виразами дивіться на сторінці [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_Expressions).
