@@ -33,17 +33,15 @@ undefined
 > **Примітка:** Хоч `undefined` можливо використати як {{Glossary("identifier", "ідентифікатор")}} (ім'я змінної) у будь-якій області видимості, крім глобальної (адже `undefined` не є [зарезервованим словом](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#zarezervovani-slova)), та це дуже погана ідея, що зробить код складним у підтримці та зневадженні.
 >
 > ```js example-bad
-> //  НЕ РОБІТЬ ТАК
+> // НЕ РОБІТЬ ТАК
 >
-> //  друкує "foo string"
 > (() => {
 >   const undefined = "foo";
->   console.log(undefined, typeof undefined);
+>   console.log(undefined, typeof undefined); // foo string
 > })();
 >
-> //  друкує "foo string"
 > ((undefined) => {
->   console.log(undefined, typeof undefined);
+>   console.log(undefined, typeof undefined); // foo string
 > })("foo");
 > ```
 
@@ -80,13 +78,13 @@ if (typeof x === "undefined") {
 Одна з причин використати {{jsxref("Operators/typeof", "typeof")}} – те, що він не викидає помилку, коли змінна не оголошена.
 
 ```js
-//  x тут не оголошена
+// x тут не оголошена
+// обчислюється в true без помилок
 if (typeof x === "undefined") {
-  //  обчислюється в true без помилок
-  //  ці інструкції виконуються
+  // ці інструкції виконуються
 }
 
-//  викидає ReferenceError
+// Викидає ReferenceError
 if (x === undefined) {
 }
 ```
@@ -97,7 +95,7 @@ if (x === undefined) {
 
 ```js
 if ("x" in window) {
-  //  ці інструкції виконуються лише якщо x визначено глобально
+  // Ці інструкції виконуються лише якщо x визначено глобально
 }
 ```
 
@@ -108,12 +106,12 @@ if ("x" in window) {
 ```js
 let x;
 if (x === void 0) {
-  //  ці інструкції виконуються
+  // ці інструкції виконуються
 }
 
-//  y тут не оголошено
+// y тут не оголошено
 if (y === void 0) {
-  //  викидає Uncaught ReferenceError: y is not defined
+  // викидає Uncaught ReferenceError: y is not defined
 }
 ```
 
