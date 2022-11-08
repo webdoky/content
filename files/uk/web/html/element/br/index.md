@@ -10,7 +10,7 @@ tags:
 browser-compat: html.elements.br
 ---
 
-{{HTMLRef}}
+{{HTMLSidebar}}
 
 Елемент [HTML](/uk/docs/Web/HTML) **`<br>`** (розрив) утворює розрив строю рядка тексту (повернення каретки). Це корисно для написання вірша чи адреси, коли поділ на окремі рядки – важливий.
 
@@ -65,15 +65,15 @@ browser-compat: html.elements.br
   <tbody>
     <tr>
       <th scope="row">
-        <a href="/en-US/docs/Web/Guide/HTML/Content_categories"
+        <a href="/uk/docs/Web/Guide/HTML/Content_categories"
           >Категорії вмісту</a
         >
       </th>
       <td>
-        <a href="/en-US/docs/Web/Guide/HTML/Content_categories#flow_content"
+        <a href="/uk/docs/Web/Guide/HTML/Content_categories#flow_content"
           >Потоковий вміст</a
         >,
-        <a href="/en-US/docs/Web/Guide/HTML/Content_categories#phrasing_content"
+        <a href="/uk/docs/Web/Guide/HTML/Content_categories#phrasing_content"
           >оповідальний вміст</a
         >.
       </td>
@@ -92,7 +92,7 @@ browser-compat: html.elements.br
       <th scope="row">Дозволені батьківські елементи</th>
       <td>
         Всі елементи, що приймають
-        <a href="/en-US/docs/Web/Guide/HTML/Content_categories#opovidalnyi-vmist"
+        <a href="/uk/docs/Web/Guide/HTML/Content_categories#opovidalnyi-vmist"
           >оповідальний вміст</a
         >.
       </td>
