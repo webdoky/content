@@ -326,16 +326,19 @@ Array.prototype.arrCustom = function () {};
 const iterable = [3, 5, 7];
 iterable.foo = "агов";
 for (const i in iterable) {
-  console.log(i); // виведе "0", "1", "2", "foo", "arrCustom", "objCustom"
+  console.log(i);
 }
+// "0", "1", "2", "foo", "arrCustom", "objCustom"
 for (const i in iterable) {
   if (Object.hasOwn(iterable, i)) {
-    console.log(i); // виведе "0", "1", "2", "foo"
+    console.log(i);
   }
 }
+// "0" "1" "2" "foo"
 for (const i of iterable) {
-  console.log(i); // виведе 3, 5, 7
+  console.log(i);
 }
+// 3 5 7
 ```
 
 Об'єкт `iterable` успадковує властивості `objCustom` та `arrCustom`, адже має у своєму [ланцюжку прототипів](/uk/docs/Web/JavaScript/Inheritance_and_the_prototype_chain) і `Object.prototype`, і `Array.prototype`.
