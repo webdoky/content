@@ -11,7 +11,7 @@ tags:
 browser-compat: html.elements.select
 ---
 
-{{HTMLRef}}
+{{HTMLSidebar}}
 
 Елемент [HTML](/uk/docs/Web/HTML) **`<select>`** (вибір) представляє контрольний елемент, що надає меню з варіантів вибору.
 

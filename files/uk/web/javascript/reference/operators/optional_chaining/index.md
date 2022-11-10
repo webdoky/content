@@ -217,7 +217,7 @@ const customerName = customer.name?.getName?.(); // Метод не існує, 
 
 ### Поєднання з оператором null-злиття
 
-[Оператор null-злиття](/uk/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator) може використовуватися після необов'язкового ланцюжка, аби надати усталене значення, коли нічого не знайдено:
+[Оператор null-злиття](/uk/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing) може використовуватися після необов'язкового ланцюжка, аби надати усталене значення, коли нічого не знайдено:
 
 ```js
 function printCustomerCity(customer) {
@@ -244,4 +244,4 @@ printCustomerCity({
 
 ## Дивіться також
 
-- [Оператор null-злиття](/uk/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator)
+- [Оператор null-злиття](/uk/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing)

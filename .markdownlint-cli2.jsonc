@@ -165,6 +165,20 @@
           "search": "(/en-US/docs",
           "replace": "(/uk/docs",
           "skipCode": true
+        },
+        {
+          "name": "no-macros-space-before",
+          "message": "There shouldn't be any space after {{ for macros",
+          "search": "{{ ",
+          "replace": "{{",
+          "skipCode": true
+        },
+        {
+          "name": "no-macros-space-after",
+          "message": "There shouldn't be any space before }} for macros",
+          "search": " }}",
+          "replace": "}}",
+          "skipCode": true
         }
       ]
     }

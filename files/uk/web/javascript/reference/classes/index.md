@@ -57,8 +57,7 @@ let Rectangle = class {
     this.width = width;
   }
 };
-console.log(Rectangle.name);
-// вивід: "Rectangle"
+console.log(Rectangle.name); // "Rectangle"
 
 // іменований клас
 Rectangle = class Rectangle2 {
@@ -67,8 +66,7 @@ Rectangle = class Rectangle2 {
     this.width = width;
   }
 };
-console.log(Rectangle.name);
-// вивід: "Rectangle2"
+console.log(Rectangle.name); // "Rectangle2"
 ```
 
 > **Примітка:** Класові **вирази** повинні бути оголошені до того, як їх можна буде використовувати (вони підпорядковуються таким самим правилам підняття, які описано в розділі [Оголошення класів](#oholoshennia-klasiv)).

@@ -274,7 +274,7 @@ tags:
 
 - {{JSxRef("Operators/Logical_AND", "&amp;&amp;")}}
 - {{JSxRef("Operators/Logical_OR", "||")}}
-- {{JSxRef("Operators/Nullish_coalescing_operator", "??")}}
+- {{JSxRef("Operators/Nullish_coalescing", "??")}}
 
 ### Умовний (тернарний) оператор
 
@@ -297,7 +297,7 @@ tags:
 - {{JSxRef("Operators/Bitwise_OR_assignment", "|=")}}
 - {{JSxRef("Operators/Logical_AND_assignment", "&amp;&amp;=")}}
 - {{JSxRef("Operators/Logical_OR_assignment", "||=")}}
-- {{JSxRef("Operators/Logical_nullish_assignment", "??=")}}
+- {{JSxRef("Operators/Nullish_coalescing_assignment", "??=")}}
 - {{JSxRef("Operators/Destructuring_assignment", "[a, b] = arr")}}
 - {{JSxRef("Operators/Destructuring_assignment", "{ a, b } = obj")}}
 
@@ -314,8 +314,8 @@ tags:
 - {{JSxRef("Functions/rest_parameters", "Решта параметрів", "", 1)}}
 - {{JSxRef("Functions/arguments", "arguments")}}
 - {{JSxRef("Functions/Method_definitions", "Опис методів", "", 1)}}
-- {{JSxRef("Functions/get", "геттер", "", 1)}}
-- {{JSxRef("Functions/set", "сеттер", "", 1)}}
+- {{JSxRef("Functions/get", "гетер", "", 1)}}
+- {{JSxRef("Functions/set", "сетер", "", 1)}}
 
 ## Класи
 
