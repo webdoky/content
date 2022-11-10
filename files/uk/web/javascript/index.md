@@ -5,7 +5,7 @@ tags:
   - JavaScript
   - Landing
   - Learn
-  - 'l10n:priority'
+  - "l10n:priority"
 translation_of: Web/JavaScript
 ---
 
@@ -54,7 +54,7 @@ translation_of: Web/JavaScript
 
 - [Розуміння клієнтських фреймворків JavaScript](/uk/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks)
   - : JavaScript фреймворки – неодмінна частина сучасної клієнтської веброзробки, що забезпечує розробників перевіреними інструментами для побудови масштабованих інтерактивних вебзастосунків. Цей модуль надає деякі фундаментальні знання про те, як влаштовані клієнтські фреймворки, і як вони вписуються в ваш інструментарій, перед тим як розглянути найбільш популярні із них на сьогодні у наступних посібниках.
-- [Огляд мови JavaScript](/uk/docs/Web/JavaScript/Language_overview)
+- [Огляд мови JavaScript](/uk/docs/Web/JavaScript/Language_Overview)
   - : Огляд базових мови та семантики JavaScript для тих, хто прийшов з інших мов програмування і хоче різко набрати темп вивчення.
 - [Структури даних у JavaScript](/uk/docs/Web/JavaScript/Data_structures)
   - : Огляд наявних структур даних у JavaScript.
