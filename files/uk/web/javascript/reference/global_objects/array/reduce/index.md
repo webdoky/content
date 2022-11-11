@@ -17,7 +17,7 @@ browser-compat: javascript.builtins.Array.reduce
 {{JSRef}}
 
 Метод **`reduce()`** (редукувати, згорнути) виконує передану користувачем функцію зворотного виклику на кожному з елементів масиву, підряд, передаючи в неї повернене значення від обробки попереднього елементу.
-Кінцевим результатом обробки всіх елементів масиву функцією `reduce()` є результат обробки останнього елемента.
+Кінцевим результатом обробки всіх елементів масиву функцією `reduce()` стає єдине фінальне значення.
 
 Під час першого виконання функції зворотного виклику "результату виконання попереднього кроку" іще не існує. Замість нього може бути використано початкове значення (аргумент `initialValue`), якщо його було передано. Інакше — функція використає замість нього елемент за індексом 0, і почне виконання з наступного (з індексу 1 замість 0).
 
@@ -25,52 +25,55 @@ browser-compat: javascript.builtins.Array.reduce
 
 {{EmbedInteractiveExample("pages/js/array-reduce.html")}}
 
-Функція `reduce()` проходить по всьому масиву, елемент за елементом, з кожним кроком додаючи значення поточного елементу до результату попереднього кроку (цей результат є поточною сумою всіх попередніх кроків), допоки не дійде до кінця масиву.
+Редуктор проходить по всьому масиву, елемент за елементом, з кожним кроком додаючи значення поточного елементу до результату попереднього кроку (цей результат є поточною сумою всіх попередніх кроків), поки елементи не закінчаться.
 
 ## Синтаксис
 
 ```js-nolint
 // Стрілкова функція
-reduce((previousValue, currentValue) => { /* … */ } )
-reduce((previousValue, currentValue, currentIndex) => { /* … */ } )
-reduce((previousValue, currentValue, currentIndex, array) => { /* … */ } )
+reduce((accumulator, currentValue) => { /* … */ } )
+reduce((accumulator, currentValue, currentIndex) => { /* … */ } )
+reduce((accumulator, currentValue, currentIndex, array) => { /* … */ } )
 
-reduce((previousValue, currentValue) => { /* … */ } , initialValue)
-reduce((previousValue, currentValue, currentIndex) => { /* … */ } , initialValue)
-reduce((previousValue, currentValue, currentIndex, array) => { /* … */ }, initialValue)
+reduce((accumulator, currentValue) => { /* … */ } , initialValue)
+reduce((accumulator, currentValue, currentIndex) => { /* … */ } , initialValue)
+reduce((accumulator, currentValue, currentIndex, array) => { /* … */ }, initialValue)
 
 // Функція зворотного виклику
 reduce(callbackFn)
 reduce(callbackFn, initialValue)
 
 // Оголошена на місці функція зворотного виклику
-reduce(function(previousValue, currentValue) { /* … */ })
-reduce(function(previousValue, currentValue, currentIndex) { /* … */ })
-reduce(function(previousValue, currentValue, currentIndex, array) { /* … */ })
+reduce(function(accumulator, currentValue) { /* … */ })
+reduce(function(accumulator, currentValue, currentIndex) { /* … */ })
+reduce(function(accumulator, currentValue, currentIndex, array) { /* … */ })
 
-reduce(function(previousValue, currentValue) { /* … */ }, initialValue)
-reduce(function(previousValue, currentValue, currentIndex) { /* … */ }, initialValue)
-reduce(function(previousValue, currentValue, currentIndex, array) { /* … */ }, initialValue)
+reduce(function(accumulator, currentValue) { /* … */ }, initialValue)
+reduce(function(accumulator, currentValue, currentIndex) { /* … */ }, initialValue)
+reduce(function(accumulator, currentValue, currentIndex, array) { /* … */ }, initialValue)
 ```
 
 ### Параметри
 
 - `callbackFn`
 
-  - : Функція-"редуктор", що викликається із наступними аргументами:
-    - _previousValue_
+  - : Функція для виконання на кожному елементі масиву. Її повернене значення стає значенням параметра `accumulator` при наступному заклику `callbackFn`. При останньому заклику повернене значення стане поверненим значенням `reduce()`.
+
+    Ця функція викликається з наступними аргументами:
+
+    - _accumulator_
       - : Результат виконання попереднього виклику `callbackFn`. Під час першого виклику, якщо заданий аргумент `initialValue`, то приймає його значення, інакше – `array[0]`.
     - _currentValue_:
       - : Значення поточного елемента. Під час першого виклику, якщо заданий аргумент `initialValue`, то приймає значення `array[0]`, інакше – `array[1]`.
     - _currentIndex_:
       - : Індекс поточного елемента. Під час першого виклику, якщо заданий аргумент `initialValue`, то приймає значення `0`, інакше – `1`.
     - _array_:
-      - : Масив, що обробляється.
+      - : Масив, на якому було викликано `reduce()`.
 
 - `initialValue` {{optional_inline}}
-  - : Значення, яким ініціалізується `previousValue` під час першого виконання функції зворотного виклику.
+  - : Значення, яким ініціалізується `accumulator` під час першого виконання функції зворотного виклику.
     Якщо `initialValue` задане, це призводить до ініціалізації `currentValue` першим значенням із масиву.
-    Якщо ж `initialValue` _не_ задано, то `previousValue` ініціалізується першим елементом масиву, а `currentValue` — другим.
+    Якщо ж `initialValue` _не_ задано, то `accumulator` ініціалізується першим елементом масиву, а `currentValue` — другим.
 
 ### Повернене значення
 
@@ -84,25 +87,27 @@ reduce(function(previousValue, currentValue, currentIndex, array) { /* … */ },
 
 ## Опис
 
-Метод `reduce()` приймає два аргументи: функцію зворотного виклику та необов'язкове початкове значення. Якщо вказане початкове значення, то `reduce()` по черзі викликає на кожному елементі масиву функцію зворотного виклику – "редуктор". Якщо початкове значення не вказане, то `reduce` викликає функцію зворотного виклику на кожному елементі масиву, крім першого.
+Метод `reduce()` є [ітеративним методом](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#iteratyvni-metody). Він запускає функцію зворотного виклику – "редуктор" на всіх елементах масиву, в порядку зростання індексів, та підсумовує їх до єдиного значення. Повернене значення `callbackFn` щоразу передається в `callbackFn` при наступному заклику як `accumulator`. Кінцеве значення `accumulator` (те, котре повернено з `callbackFn` при завершальній ітерації масиву) стає поверненим значенням `reduce()`.
 
 `callbackFn` закликається лише для тих індексів масиву, що мають присвоєні значення. Вона не закликається для порожніх комірок у [розріджених масивах](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy).
 
-`reduce()` повертає значення, повернене функцією зворотного виклику на фінальній ітерації масиву.
+На відміну від інших [ітеративних методів](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#iteratyvni-metody), `reduce()` не приймає аргументу `thisArg`. `callbackFn` завжди отримує `this` зі значенням `undefined`, котре замінюється на `globalThis`, якщо `callbackFn` є несуворою функцією.
 
 `reduce()` є центральною концепцією [функційного програмування](https://uk.wikipedia.org/wiki/%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D1%96%D0%B9%D0%BD%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F), в котрій неможливо змінювати будь-яке значення, тож для збору всіх значень до масиву треба повертати на кожній ітерації нове значення акумулятора. Така домовленість поширюється на `reduce()` JavaScript: слід використовувати [розгортання](/uk/docs/Web/JavaScript/Reference/Operators/Spread_syntax) чи якусь іншу методику копіювання, де це можливо, і створювати як нове значення акумулятора нові масиви й об'єкти, а не видозмінювати старий акумулятор. При потребі змінити акумулятор замість його копіювання слід не забути повернути в функції зворотного виклику видозмінений об'єкт, інакше наступна ітерація отримає `undefined`.
+
+`reduce()` не видозмінює масиву, на котрому його викликали, але функція, передана як `callbackFn`, може це робити. Проте слід звернути увагу, що довжина масиву запам'ятовується _до_ першого заклику `callbackFn`. Таким чином:
+
+- `callbackFn` не оброблятиме жодних елементів, доданих поза початковою довжиною масиву, відколи почався виклик `reduce()`.
+- Зміни за вже обробленими індексами не призводять до повторного заклику на них `callbackFn`.
+- Якщо наявний, іще не оброблений елемент масиву вже був змінений `callbackFn`, то його значення, передане в `callbackFn`, буде значенням на ту мить, коли такий елемент обробляється. [Видалені](/uk/docs/Web/JavaScript/Reference/Operators/delete) елементи – не обробляються.
+
+> **Застереження:** Внесення паралельних змін такого роду, як описано вище, часто веде до важкозрозумілого коду, і загалом цього слід уникати (окрім особливих випадків)
+
+Метод `reduce()` є [узагальненим](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#uzahalneni-metody-masyvu). Він лишень очікує, що значення `this` матиме властивість `length`, а також властивості з цілочисловими ключами.
 
 ### Коли не варто використовувати reduce()
 
 Рекурсивні функції, такі, як `reduce()`, можуть бути потужними, але іноді складними для розуміння, особливо для менш досвідчених розробників на JavaScript. Якщо код стає яснішим при використанні інших методів масиву, розробники мусять зважити прочитність супроти інших переваг використання `reduce()`. У тих випадках, коли `reduce()` є найкращим варіантом, документування та семантичне іменування змінних можуть допомогти пом'якшити недоліки прочитності.
-
-### Поведінка під час мутацій масиву
-
-Метод `reduce()` сам по собі не змінює масиву, на котрому використовується. Проте код всередині функції зворотного виклику може це робити. Можливі сценарії мутацій масиву та того, як при таких мутаціях поводитиметься `reduce()`, наступні:
-
-- Якщо елементи додаються в кінець масиву _після_ того, як `reduce()` почав ітерацію масивом, то функція зворотного виклику не оброблятиме додані елементи.
-- Якщо наявні елементи масиву змінюються, то значення, передані до функції зворотного виклику, будуть значеннями, актуальними на ту мить, коли на масиві викликався reduce().
-- Елементи масиву, що були видалені _після_ початку виклику `reduce()` _і_ до своєї передачі до функції зворотного виклику, не будуть оброблені `reduce()`.
 
 ### Крайові випадки
 
@@ -129,8 +134,6 @@ const getMax = (a, b) => Math.max(a, b);
 [].reduce(getMax); // TypeError
 ```
 
-Метод `reduce()` є [узагальненим](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#uzahalneni-metody-masyvu). Він лишень очікує, що значення `this` матиме властивість `length`, а також властивості з цілочисловими ключами.
-
 ## Приклади
 
 ### Як працює reduce(), якщо не вказано початкове значення
@@ -140,10 +143,10 @@ const getMax = (a, b) => Math.max(a, b);
 ```js
 const array = [15, 16, 17, 18, 19];
 
-function reducer(previousValue, currentValue, index) {
-  const returns = previousValue + currentValue;
+function reducer(accumulator, currentValue, index) {
+  const returns = accumulator + currentValue;
   console.log(
-    `previousValue: ${previousValue}, currentValue: ${currentValue}, index: ${index}, returns: ${returns}`
+    `accumulator: ${accumulator}, currentValue: ${currentValue}, index: ${index}, returns: ${returns}`
   );
   return returns;
 }
@@ -153,12 +156,12 @@ array.reduce(reducer);
 
 Функція зворотного виклику закликається чотири рази, з наступними аргументами та поверненими значеннями під час кожного виклику:
 
-|                  | `previousValue` | `currentValue` | `index` | Повернене значення |
-| ---------------- | --------------- | -------------- | ------- | ------------------ |
-| Перший виклик    | `15`            | `16`           | `1`     | `31`               |
-| Другий виклик    | `31`            | `17`           | `2`     | `48`               |
-| Третій виклик    | `48`            | `18`           | `3`     | `66`               |
-| Четвертий виклик | `66`            | `19`           | `4`     | `85`               |
+|                  | `accumulator` | `currentValue` | `index` | Повернене значення |
+| ---------------- | ------------- | -------------- | ------- | ------------------ |
+| Перший виклик    | `15`          | `16`           | `1`     | `31`               |
+| Другий виклик    | `31`          | `17`           | `2`     | `48`               |
+| Третій виклик    | `48`          | `18`           | `3`     | `66`               |
+| Четвертий виклик | `66`          | `19`           | `4`     | `85`               |
 
 Параметр `array` ніколи не змінюється протягом процесу – він завжди `[15, 16, 17, 18, 19]`. Значення, повернене `reduce()`, буде значенням, поверненим останнім закликом функції зворотного виклику (`85`).
 
@@ -168,20 +171,20 @@ array.reduce(reducer);
 
 ```js
 [15, 16, 17, 18, 19].reduce(
-  (previousValue, currentValue) => previousValue + currentValue,
+  (accumulator, currentValue) => accumulator + currentValue,
   10
 );
 ```
 
 Функція зворотного виклику буде закликана п'ять разів, з наступними аргументами та поверненими значеннями під час кожного виклику:
 
-|                  | `previousValue` | `currentValue` | `index` | Повернене значення |
-| ---------------- | --------------- | -------------- | ------- | ------------------ |
-| Перший виклик    | `10`            | `15`           | `0`     | `25`               |
-| Другий виклик    | `25`            | `16`           | `1`     | `41`               |
-| Третій виклик    | `41`            | `17`           | `2`     | `58`               |
-| Четвертий виклик | `58`            | `18`           | `3`     | `76`               |
-| П'ятий виклик    | `76`            | `19`           | `4`     | `95`               |
+|                  | `accumulator` | `currentValue` | `index` | Повернене значення |
+| ---------------- | ------------- | -------------- | ------- | ------------------ |
+| Перший виклик    | `10`          | `15`           | `0`     | `25`               |
+| Другий виклик    | `25`          | `16`           | `1`     | `41`               |
+| Третій виклик    | `41`          | `17`           | `2`     | `58`               |
+| Четвертий виклик | `58`          | `18`           | `3`     | `76`               |
+| П'ятий виклик    | `76`          | `19`           | `4`     | `95`               |
 
 В цьому випадку `reduce()` поверне значення `95`.
 
@@ -192,7 +195,7 @@ array.reduce(reducer);
 ```js
 const objects = [{ x: 1 }, { x: 2 }, { x: 3 }];
 const sum = objects.reduce(
-  (previousValue, currentValue) => previousValue + currentValue.x,
+  (accumulator, currentValue) => accumulator + currentValue.x,
   0
 );
 
@@ -206,10 +209,7 @@ const flattened = [
   [0, 1],
   [2, 3],
   [4, 5],
-].reduce(
-  (previousValue, currentValue) => previousValue.concat(currentValue),
-  []
-);
+].reduce((accumulator, currentValue) => accumulator.concat(currentValue), []);
 // сплощений результат: [0, 1, 2, 3, 4, 5]
 ```
 
@@ -283,8 +283,8 @@ const friends = [
 // allbooks - список, що міститиме всі книги друзів +
 // додатковий список, що знаходиться всередині initialValue
 const allbooks = friends.reduce(
-  (previousValue, currentValue) => [...previousValue, ...currentValue.books],
-  ["Alphabet"]
+  (accumulator, currentValue) => [...accumulator, ...currentValue.books],
+  ["Абетка"]
 );
 
 console.log(allbooks);
@@ -301,15 +301,12 @@ console.log(allbooks);
 
 ```js
 const myArray = ["a", "b", "a", "b", "c", "e", "e", "c", "d", "d", "d", "d"];
-const myArrayWithNoDuplicates = myArray.reduce(
-  (previousValue, currentValue) => {
-    if (!previousValue.includes(currentValue)) {
-      return [...previousValue, currentValue];
-    }
-    return previousValue;
-  },
-  []
-);
+const myArrayWithNoDuplicates = myArray.reduce((accumulator, currentValue) => {
+  if (!accumulator.includes(currentValue)) {
+    return [...accumulator, currentValue];
+  }
+  return accumulator;
+}, []);
 console.log(myArrayWithNoDuplicates);
 ```
 
@@ -320,12 +317,12 @@ console.log(myArrayWithNoDuplicates);
 ```js
 const numbers = [-5, 6, 2, 0];
 
-const doubledPositiveNumbers = numbers.reduce((previousValue, currentValue) => {
+const doubledPositiveNumbers = numbers.reduce((accumulator, currentValue) => {
   if (currentValue > 0) {
     const doubled = currentValue * 2;
-    return [...previousValue, doubled];
+    return [...accumulator, doubled];
   }
-  return previousValue;
+  return accumulator;
 }, []);
 
 console.log(doubledPositiveNumbers); // [12, 4]
