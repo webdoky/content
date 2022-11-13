@@ -205,6 +205,20 @@
           "searchPattern": "/- :(\\w)/g",
           "replace": "- : $1",
           "skipCode": true
+        },
+        {
+          "name": "fqdn-moz-links",
+          "message": "Don't use developer.mozilla.org for links",
+          "search": "](https://developer.mozilla.org/",
+          "replace": "](/",
+          "skipCode": true
+        },
+        {
+          "name": "fqdn-wd-links",
+          "message": "Don't use webdoky.org for links",
+          "search": "](https://webdoky.org.org/",
+          "replace": "](/",
+          "skipCode": true
         }
       ]
     }
