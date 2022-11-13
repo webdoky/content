@@ -44,8 +44,6 @@ console.log(years["2"] !== years["02"]);
 
 Лише `years['2']` є справжнім індексом масиву. `years['02'] – звичайна рядкова властивість, котру не враховуватиме ітерація масиву.
 
-### Relationship between length and numerical properties
-
 ### Взаємини між length і числовими властивостями
 
 Існує взаємозв'язок між властивістю масиву JavaScript {{jsxref("Array/length", "length")}} та його числовими властивостями.
