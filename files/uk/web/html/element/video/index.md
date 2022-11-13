@@ -173,6 +173,15 @@ browser-compat: html.elements.video
     </tr>
     <tr>
       <td>
+        {{domxref("HTMLMediaElement.error_event", 'error')}}
+      </td>
+      <td>
+        Помилка сталася під час отримання медіаданих, або ж тип
+        ресурсу не є підтримуваним форматом медіа.
+      </td>
+    </tr>
+    <tr>
+      <td>
         {{domxref("HTMLMediaElement.loadeddata_event", 'loadeddata')}}
       </td>
       <td>Завантаження першого кадра мультимедійного об'єкта було завершене.</td>
