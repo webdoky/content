@@ -123,8 +123,8 @@ console.log(fruits.length); // 2
 - {{jsxref("Array/findIndex", "findIndex()")}}
 - {{jsxref("Array/findLast", "findLast()")}}
 - {{jsxref("Array/findLastIndex", "findLastIndex()")}}
-- {{jsxref("Array/group", "group()")}}
-- {{jsxref("Array/groupToMap", "groupToMap()")}}
+- {{jsxref("Array/group", "group()")}} {{Experimental_Inline}}
+- {{jsxref("Array/groupToMap", "groupToMap()")}} {{Experimental_Inline}}
 - {{jsxref("Array/includes", "includes()")}}
 - {{jsxref("Array/join", "join()")}}
 - {{jsxref("Array/keys", "keys()")}}
@@ -226,7 +226,7 @@ console.log(Array.prototype.join.call(arrayLike, "+")); // 'a+b'
 
 #### Нормалізація властивості length
 
-Властивість `length` [перетворюється на число](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#zvedennia-do-chysla), обрізається до цілого, а потім примушується до діапазону між 0 і 2<sup>53</sup> - 1. `NaN` стає `0`, тож навіть тоді, коли `length` немає або в ній `undefined`, це працює так, ніби довжина дорівнює `0`.
+Властивість `length` [перетворюється на ціле число](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#peretvorennia-na-tsile), обрізається до цілого, а потім примушується до діапазону між 0 і 2<sup>53</sup> - 1. `NaN` стає `0`, тож навіть тоді, коли `length` немає або в ній `undefined`, це працює так, ніби довжина дорівнює `0`.
 
 ```js
 Array.prototype.flat.call({}); // []
