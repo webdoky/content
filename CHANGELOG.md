@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2022-11-11 - 2022-11-18]
+
+...
+
 ## [2022-11-04 - 2022-11-11]
 
 * **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/filter ([3534584](https://github.com/webdoky/content/commit/3534584d4e27d5e8803f13e03efa4e0a3249d75b))
