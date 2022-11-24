@@ -41,7 +41,7 @@ browser-compat: css.types.percentage
 </div>
 ```
 
-HTML вище виведе:
+Наведений вище HTML виведе:
 
 {{EmbedLiveSample('shyryna-i-livyi-zovnishnii-vidstup', '600', 140)}}
 
@@ -55,7 +55,7 @@ HTML вище виведе:
 </div>
 ```
 
-HTML вище виведе:
+Наведений вище HTML виведе:
 
 {{EmbedLiveSample('font-size', 'auto', 160)}}
 
