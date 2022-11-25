@@ -5,6 +5,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [2022-11-18 - 2022-11-25]
 
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/split ([05b6edb](https://github.com/webdoky/content/commit/05b6edbdb4f9e534831ac09589d1b17525a28abf))
 * **Оновлення перекладу(JS):** web/javascript/reference/global_objects/promise (#923) ([b746730](https://github.com/webdoky/content/commit/b746730b6cbbcdcf158d4085e84d19e7174360d9))
 * **Оновлення перекладу(JS):** web/javascript/reference/statements/async_function (#920) ([68e119c](https://github.com/webdoky/content/commit/68e119cf44d2d35f4b82512d9aed565c071239c2))
 * **Оновлення перекладу(JS):** web/javascript/reference/operators/destructuring_assignment (#918) ([3aae77f](https://github.com/webdoky/content/commit/3aae77f874d5aed0409daab31ed0f7b242294ce7))
