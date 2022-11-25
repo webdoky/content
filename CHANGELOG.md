@@ -3,6 +3,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2022-11-18 - 2022-11-25]
+
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/promise (#923) ([b746730](https://github.com/webdoky/content/commit/b746730b6cbbcdcf158d4085e84d19e7174360d9))
+* **Оновлення перекладу(JS):** web/javascript/reference/statements/async_function (#920) ([68e119c](https://github.com/webdoky/content/commit/68e119cf44d2d35f4b82512d9aed565c071239c2))
+* **Оновлення перекладу(JS):** web/javascript/reference/operators/destructuring_assignment (#918) ([3aae77f](https://github.com/webdoky/content/commit/3aae77f874d5aed0409daab31ed0f7b242294ce7))
+* **Оновлення перекладу(JS):** web/javascript/reference/classes ([23fa17c](https://github.com/webdoky/content/commit/23fa17ce5d6973f548ebc5abfc5e3ceb4e896e70))
+* **Оновлення перекладу(HTML):** web/html/element/input (#993) ([a5a5f73](https://github.com/webdoky/content/commit/a5a5f738701b00f901698faaef454ff4ce6a2869))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/replaceall (#921) ([7081836](https://github.com/webdoky/content/commit/70818367ea20d81c80ee88d26189ab1e3ec71d5a))
+* **Переклад(CSS):** web/css/percentage (#915) ([56dee24](https://github.com/webdoky/content/commit/56dee247417a1a3206d43ee5540810faeb5ea9e5))
+* **Переклад(CSS):** web/css/value_definition_syntax (#913) ([3c3c287](https://github.com/webdoky/content/commit/3c3c28756dd6300340d6b76ca36c067922be32af))
+* **Оновлення перекладу(CSS):** web/css/display ([2a23aba](https://github.com/webdoky/content/commit/2a23aba4d57b2697afdff67a1e400b46a8876368))
+
 ## [2022-11-11 - 2022-11-18]
 
 ...
