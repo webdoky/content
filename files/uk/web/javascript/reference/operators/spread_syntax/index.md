@@ -30,9 +30,9 @@ myFunction(a, ...iterableObj, b)
 
 Синтаксис розгортання може використовуватися тоді, коли всі елементи об'єкта чи масиву треба включити в новий масив чи об'єкт, або коли їх треба один за одним застосувати в списку аргументів при виклику функції. Є три різні місця, що приймають синтаксис розгортання:
 
-- Список [аргументів функції](#rozhortannia-u-vyklykakh-funktsii) (`myFunction(a, ...iterableObj, b)`)
-- [Літерали масивів](#operator-rozhortannia-v-literalakh-masyviv) (`[1, ...iterableObj, '4', "п'ять", 6]`)
-- [Літерали об'єктів](#rozhortannia-v-obiektnykh-literalakh) (`{ ...obj, key: 'value' }`)
+- Список [аргументів функції](#rozghortannia-u-vyklykakh-funktsii) (`myFunction(a, ...iterableObj, b)`)
+- [Літерали масивів](#rozghortannia-v-literalakh-masyviv) (`[1, ...iterableObj, '4', "п'ять", 6]`)
+- [Літерали об'єктів](#rozghortannia-v-obiektnykh-literalakh) (`{ ...obj, key: 'value' }`)
 
 Хоч синтаксис має однаковий вигляд, ці місця мають дещо різну семантику.
 
