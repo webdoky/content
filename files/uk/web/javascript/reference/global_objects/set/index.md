@@ -43,6 +43,8 @@ browser-compat: javascript.builtins.Set
 
 ## Властивості примірника
 
+- `Set.prototype[@@toStringTag]`
+  - : Початкове значення властивості [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"Set"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}.
 - {{jsxref("Set.prototype.size")}} (розмір)
   - : Повертає кількість значень, присутніх в об'єкті `Set`.
 
