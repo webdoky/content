@@ -267,7 +267,7 @@ Neither `{}` nor `[]` has a `[@@toPrimitive]()` method. Both `{}` and `[]` inher
 
 - [Зведення до примітива](#zvedennia-do-prymityva): `[@@toPrimitive]("default")` → `valueOf()` → `toString()`
 - [Зведення до числового](#zvedennia-do-chyslovoho), [зведення до числа](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#zvedennia-do-chysla), [зведення до BigInt](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt#zvedennia-do-bigint): `[@@toPrimitive]("number")` → `valueOf()` → `toString()`
-- [Зведення до рядка](#zvedennia-do-riadka): `[@@toPrimitive]("string")` → `toString()` → `valueOf()`
+- [Зведення до рядка](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka): `[@@toPrimitive]("string")` → `toString()` → `valueOf()`
 
 У всіх випадках властивість `[@@toPrimitive]()`, якщо є, мусить бути викличною та повертати примітив, натомість `valueOf` і `toString` ігноруватимуться, якщо не є викличними або повертають об'єкт. У кінці процесу, якщо він успішний, результат гарантовано є примітивом. Після цього результівний примітив підлягає подальшому зведенню, залежно від контексту.
 
