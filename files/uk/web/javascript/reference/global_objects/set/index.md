@@ -19,7 +19,7 @@ browser-compat: javascript.builtins.Set
 
 ## Опис
 
-Об'єкти `Set` є колекціями значень. Конкретне значення в `Set` **може зустрітись лише раз**; воно є неповторним у межах колекції `Set`. Обхід елементів `Set` відбувається в порядку додання. _Порядок додання_ відповідає порядкові, в якому кожен елемент був успішно вставлений у множину методом [`add()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Set/add) (тобто коли до виклику `add()` у множині не було ідентичного елемента).
+Об'єкти `Set` є колекціями значень. Конкретне значення в `Set` **може зустрітись лише раз**; воно є неповторним у межах колекції `Set`. Ітерування елементів `Set` відбувається в порядку додання. _Порядок додання_ відповідає порядкові, в якому кожен елемент був успішно вставлений у множину методом [`add()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Set/add) (тобто коли до виклику `add()` у множині не було ідентичного елемента).
 
 Специфікація вимагає, щоб множини були реалізовані "так, щоб в середньому час доступу був сублінійним відносно числа елементів колекції". Таким чином, внутрішньо вони можуть бути представлені як геш-таблиця (з доступом O(1)), як дерево пошуку (з доступом O(log(N))) або будь-яка інша структура даних, поки складність доступу краща за O(N).
 
@@ -43,6 +43,8 @@ browser-compat: javascript.builtins.Set
 
 ## Властивості примірника
 
+- `Set.prototype[@@toStringTag]`
+  - : Початкове значення властивості [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"Set"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}.
 - {{jsxref("Set.prototype.size")}} (розмір)
   - : Повертає кількість значень, присутніх в об'єкті `Set`.
 
@@ -81,10 +83,10 @@ browser-compat: javascript.builtins.Set
 ```js
 const mySet1 = new Set();
 
-mySet1.add(1); // Set [ 1 ]
-mySet1.add(5); // Set [ 1, 5 ]
-mySet1.add(5); // Set [ 1, 5 ]
-mySet1.add('якийсь текст'); // Set [ 1, 5, 'якийсь текст' ]
+mySet1.add(1); // Set(1) { 1 }
+mySet1.add(5); // Set(2) { 1, 5 }
+mySet1.add(5); // Set(2) { 1, 5 }
+mySet1.add("якийсь текст"); // Set(3) { 1, 5, 'якийсь текст' }
 const o = { a: 1, b: 2 };
 mySet1.add(o);
 
@@ -94,7 +96,7 @@ mySet1.has(1); // true
 mySet1.has(3); // false, оскільки 3 не додавали до множини
 mySet1.has(5); // true
 mySet1.has(Math.sqrt(25)); // true
-mySet1.has('Якийсь Текст'.toLowerCase()); // true
+mySet1.has("Якийсь Текст".toLowerCase()); // true
 mySet1.has(o); // true
 
 mySet1.size; // 5
@@ -104,44 +106,43 @@ mySet1.has(5); // false, 5 була усунута
 
 mySet1.size; // 4, оскільки одне значення щойно було усунуто
 
-mySet1.add(5); // Set [1, 'some text', {...}, {...}, 5] - попередньо доданий елемент буде доданий як новий елемент, він не збереже позиції, що мав до видалення
+mySet1.add(5); // Set(5) { 1, 'якийсь текст', {...}, {...}, 5 } - видалений раніше елемент буде доданий заново; він не збереже позиції, що мав до видалення
 
-console.log(mySet1);
-// виводить у Firefox Set(5) [ 1, "якийсь текст", {…}, {…}, 5 ]
-// виводить у Chrome Set(5) { 1, "якийсь текст", {…}, {…}, 5 }
+console.log(mySet1); // Set(5) { 1, "якийсь текст", {…}, {…}, 5 }
 ```
 
-### Обхід множин
+### Ітерування множин
+
+Ітерування множин обходить елементи в порядку їх додавання.
 
 ```js
-// обійти елементи множини
-// по порядку додання виводить елементи: 1, "якийсь текст", {"a": 1, "b": 2}, {"a": 1, "b": 2}
 for (const item of mySet1) {
   console.log(item);
 }
+// 1, "якийсь текст", { "a": 1, "b": 2 }, { "a": 1, "b": 2 }, 5
 
-// по порядку додання виводить елементи: 1, "якийсь текст", {"a": 1, "b": 2}, {"a": 1, "b": 2}
 for (const item of mySet1.keys()) {
   console.log(item);
 }
+// 1, "якийсь текст", { "a": 1, "b": 2 }, { "a": 1, "b": 2 }, 5
 
-// по порядку додання виводить елементи: 1, "якийсь текст", {"a": 1, "b": 2}, {"a": 1, "b": 2}
 for (const item of mySet1.values()) {
   console.log(item);
 }
+// 1, "якийсь текст", { "a": 1, "b": 2 }, { "a": 1, "b": 2 }, 5
 
-// по порядку додання виводить елементи: 1, "якийсь текст", {"a": 1, "b": 2}, {"a": 1, "b": 2}
-// (ключі та значення в цьому випадку однакові)
+// тут ключі збігаються зі значеннями
 for (const [key, value] of mySet1.entries()) {
   console.log(key);
 }
+// 1, "якийсь текст", { "a": 1, "b": 2 }, { "a": 1, "b": 2 }, 5
 
 // За допомогою Array.from перетворює об'єкт Set на об'єкт Array
 const myArr = Array.from(mySet1); // [1, "якийсь текст", {"a": 1, "b": 2}, {"a": 1, "b": 2}, 5]
 
 // наступне також запрацює, якщо запустити в контексті документа HTML
 mySet1.add(document.body);
-mySet1.has(document.querySelector('body')); // true
+mySet1.has(document.querySelector("body")); // true
 
 // перетворення між Set та Array
 const mySet2 = new Set([1, 2, 3, 4]);
@@ -158,7 +159,6 @@ const difference = new Set([...mySet1].filter((x) => !mySet2.has(x)));
 mySet2.forEach((value) => {
   console.log(value);
 });
-
 // 1
 // 2
 // 3
@@ -235,12 +235,12 @@ difference(setA, setC); // повертає Set {1, 2}
 ### Зв'язок з об'єктами Array
 
 ```js
-const myArray = ['value1', 'value2', 'value3'];
+const myArray = ["value1", "value2", "value3"];
 
 // Використати звичайний конструктор Set, щоб перетворити масив на множину
 const mySet = new Set(myArray);
 
-mySet.has('значення1'); // повертає true
+mySet.has("значення1"); // повертає true
 
 // Використати синтаксис розгортання, щоб перетворити множину на масив
 console.log([...mySet]); // Покаже точно такий самий масив, як myArray
@@ -261,20 +261,20 @@ console.log([...new Set(numbers)]);
 ### Зв'язок із рядками
 
 ```js
-const text = 'Індія';
+const text = "Індія";
 
 const mySet = new Set(text); // Set(5) {'І', 'н', 'д', 'і', 'я'}
 mySet.size; // 5
 
 //чутливість до регістру та усунення дублікатів
-new Set('Firefox'); // Set(7) { "F", "i", "r", "e", "f", "o", "x" }
-new Set('firefox'); // Set(6) { "f", "i", "r", "e", "o", "x" }
+new Set("Firefox"); // Set(7) { "F", "i", "r", "e", "f", "o", "x" }
+new Set("firefox"); // Set(6) { "f", "i", "r", "e", "o", "x" }
 ```
 
 ### Використання Set для пересвідчення щодо унікальності всіх значень у списку
 
 ```js
-const array = Array.from(document.querySelectorAll('[id]')).map((e) => e.id);
+const array = Array.from(document.querySelectorAll("[id]")).map((e) => e.id);
 
 const set = new Set(array);
 console.assert(set.size === array.length);
