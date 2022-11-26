@@ -13,7 +13,7 @@ browser-compat: javascript.statements.for_of
 
 {{jsSidebar("Statements")}}
 
-**Інструкція `for...of`** виконує цикл, що обробляє послідовність значень, отриманих з [ітерованого об'єкта](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#protokol-iteruvannia). До ітерованих об'єктів належать екземпляри вбудованих типів, як то {{jsxref("Array")}}, {{jsxref("String")}}, {{jsxref("TypedArray")}}, {{jsxref("Map")}}, {{jsxref("Set")}}, {{domxref("NodeList")}} (та інших колекцій DOM), а також об'єкт {{jsxref("Functions/arguments", "arguments")}}, породжені [генераторними функціями](/uk/docs/Web/JavaScript/Reference/Statements/function*) [генератори](/uk/docs/Web/JavaScript/Reference/Global_Objects/Generator) й визначені користувачем ітеровані об'єкти.
+Інструкція **`for...of`** виконує цикл, що обробляє послідовність значень, отриманих з [ітерованого об'єкта](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#protokol-iteruvannia). До ітерованих об'єктів належать екземпляри вбудованих типів, як то {{jsxref("Array")}}, {{jsxref("String")}}, {{jsxref("TypedArray")}}, {{jsxref("Map")}}, {{jsxref("Set")}}, {{domxref("NodeList")}} (та інших колекцій DOM), а також об'єкт {{jsxref("Functions/arguments", "arguments")}}, породжені [генераторними функціями](/uk/docs/Web/JavaScript/Reference/Statements/function*) [генератори](/uk/docs/Web/JavaScript/Reference/Global_Objects/Generator) й визначені користувачем ітеровані об'єкти.
 
 {{EmbedInteractiveExample("pages/js/statement-forof.html")}}
 
