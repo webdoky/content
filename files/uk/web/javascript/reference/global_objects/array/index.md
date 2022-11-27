@@ -22,7 +22,7 @@ browser-compat: javascript.builtins.Array
 - **Масиви JavaScript можуть змінювати розмір** і **можуть містить суміш різних [типів даних](/uk/docs/Web/JavaScript/Data_structures)**. (Коли ці характеристики є небажаними, слід натомість використовувати [типізовані масиви](/uk/docs/Web/JavaScript/Typed_arrays).)
 - **Масиви JavaScript не є асоціативними**, а отже – елементи масиву не можуть бути отримані з використанням рядків замість індексів, індекси масиву – лише цілі числа.
 - **Масиви JavaScript [нумеруються від нуля (англ.)](https://en.wikipedia.org/wiki/Zero-based_numbering)**: перший елемент масиву знаходиться за індексом `0`, другий – за індексом `1`, і так далі; останній же елемент знаходиться за індексом, рівним значенню властивості масиву {{jsxref("Array/length", "length")}} мінус `1`.
-- **[Операції копіювання масиву](#kopiiuvannia-masyvu) створюють [поверхневі копії](/uk/docs/Glossary/Shallow_copy)**. (Усі стандартні вбудовані операції копіювання _будь-яких_ об'єктів JavaScript створюють поверхневі копії, а не [глибинні копії](/uk/docs/Glossary/Deep_copy)).
+- **[Операції копіювання масиву](#kopiiuvannia-masyvu) створюють [поверхневі копії](/uk/docs/Glossary/Shallow_copy)**. (Усі стандартні вбудовані операції копіювання _будь-яких_ об'єктів JavaScript створюють поверхневі, а не [глибинні копії](/uk/docs/Glossary/Deep_copy)).
 
 ### Індекси масиву
 
@@ -36,7 +36,7 @@ console.log(arr.0); // синтаксична помилка
 
 Синтаксис JavaScript вимагає, аби до властивостей, що починаються з цифри, зверталися за допомогою [запису квадратних дужок](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#obiekty-ta-vlastyvosti), а не [запису крапки](/uk/docs/Web/JavaScript/Reference/Operators/Property_Accessors). Крім цього, можна брати в лапки індекси масивів (наприклад, `years['2']` замість `years[2]`), хоч зазвичай для цього немає потреби.
 
-`2` в записі `years[2]` зводиться до рядка рушієм JavaScript шляхом неявного перетворення `toString`. Як наслідок, `'2'` і `'02'` вказують на дві різні комірки в об'єкті `years`, і в наступному прикладі може бути `true`:
+`2` в записі `years[2]` зводиться до рядка рушієм JavaScript шляхом неявного перетворення `toString`. Як наслідок, `'2'` і `'02'` вказують на дві різні комірки в об'єкті `years`, і результатом роботи наступного прикладу може бути `true`:
 
 ```js
 console.log(years["2"] !== years["02"]);
@@ -67,7 +67,7 @@ console.log(Object.keys(fruits)); // ['0', '1', '2', '5']
 console.log(fruits.length); // 6
 ```
 
-Increasing the {{jsxref("Array/length", "length")}}.
+Збільшення властивості {{jsxref("Array/length", "length")}}.
 
 ```js
 fruits.length = 10;
@@ -164,7 +164,7 @@ console.log(fruits.length); // 2
 
 ### Ітеративні методи
 
-Чимало методів масиву приймає як аргумент функцію зворотного виклику. Вона викликається послідовно й щонайбільше раз для кожного елемента масиву, і її повернене значення використовується для визначення поверненого методом значення. Вони поділяють однакову сигнатуру:
+Чимало методів масиву приймає як аргумент функцію зворотного виклику. Вона викликається послідовно й щонайбільше раз для кожного елемента масиву, і її повернене значення використовується для визначення поверненого методом значення. Вони поділяють одну сигнатуру:
 
 ```js-nolint
 method(callbackFn, thisArg)
@@ -177,13 +177,13 @@ method(callbackFn, thisArg)
 - `index`
   - : Індекс поточного елемента, що обробляється масивом.
 - `array`
-  - : Масив, на якому було викликано `groupToMap()`.
+  - : Масив, на якому було викликано метод.
 
 Те, що має повернути `callbackFn`, залежить від викликаного метода масиву.
 
-Аргумент `thisArg` (чиє усталене значення – `undefined`) використовуватиметься як значення `this` при виклику `callbackFn`. Значення `this`, отримане `callbackFn`, визначається згідно зі [звичними правилами](/uk/docs/Web/JavaScript/Reference/Operators/this): якщо `callbackFn` є [несуворою](/uk/docs/Web/JavaScript/Reference/Strict_mode#bez-zaminy-this) функцією, то примітивні значення `this` загортаються в об'єкти, а `undefined` і `null` – замінюються [`globalThis`](/uk/docs/Web/JavaScript/Reference/Global_Objects/globalThis). Аргумент `thisArg` є беззмістовним для будь-якої `callbackFn`, визначеною у вигляді [стрілкової функції](/uk/docs/Web/JavaScript/Reference/Functions/Arrow_functions), адже такі функції не мають власного зв'язування `this`.
+Аргумент `thisArg` (чиє усталене значення – `undefined`) використовуватиметься як значення `this` при виклику `callbackFn`. Значення `this`, отримане функцією `callbackFn`, визначається згідно зі [звичними правилами](/uk/docs/Web/JavaScript/Reference/Operators/this): якщо `callbackFn` є [несуворою](/uk/docs/Web/JavaScript/Reference/Strict_mode#bez-zaminy-this) функцією, то примітивні значення `this` загортаються в об'єкти, а `undefined` і `null` – замінюються на [`globalThis`](/uk/docs/Web/JavaScript/Reference/Global_Objects/globalThis). Аргумент `thisArg` є беззмістовним для будь-якої `callbackFn`, визначеною у вигляді [стрілкової функції](/uk/docs/Web/JavaScript/Reference/Functions/Arrow_functions), адже такі функції не мають власного зв'язування `this`.
 
-Усі ітеративні методи є [копіювальними](#kopiiuvalni-ta-zminiuvalni-metody) та [узагальненими](#uzahalneni-metody-masyvu), хоч вони поводяться інакше з [порожніми комірками](#metody-masyvu-y-porozhni-komirky).
+Усі ітеративні методи є [копіювальними](#kopiiuvalni-ta-zminiuvalni-metody) та [узагальненими](#uzahalneni-metody-masyvu), хоч вони по-різному поводяться з [порожніми комірками](#metody-masyvu-y-porozhni-komirky).
 
 Наступні методи - ітеративні:
 
@@ -200,7 +200,7 @@ method(callbackFn, thisArg)
 - {{jsxref("Array/map", "map()")}}
 - {{jsxref("Array/some", "some()")}}
 
-А саме – {{jsxref("Array/every", "every()")}}, {{jsxref("Array/find", "find()")}}, {{jsxref("Array/findIndex", "findIndex()")}}, {{jsxref("Array/findLast", "findLast()")}}, {{jsxref("Array/findLastIndex", "findLastIndex()")}} і {{jsxref("Array/some", "some()")}} не завжди закликають `callbackFn` на кожному елементі: вони зупиняють ітерацію, щойно повернене значення визначено.
+А саме – {{jsxref("Array/every", "every()")}}, {{jsxref("Array/find", "find()")}}, {{jsxref("Array/findIndex", "findIndex()")}}, {{jsxref("Array/findLast", "findLast()")}}, {{jsxref("Array/findLastIndex", "findLastIndex()")}} і {{jsxref("Array/some", "some()")}} не завжди закликають `callbackFn` на кожному елементі: вони зупиняють ітерування, щойно повернене значення визначено.
 
 Є два інші методи, що приймають функцію зворотного виклику й запускають її щонайбільше раз для кожного елементу в масиві, але мають дещо інакші сигнатури, ніж типові ітеративні методи (до прикладу, вони не приймають `thisArg`):
 
@@ -224,7 +224,7 @@ console.log(Array.prototype.join.call(arrayLike, "+")); // 'a+b'
 
 #### Нормалізація властивості length
 
-Властивість `length` [перетворюється на ціле число](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#peretvorennia-na-tsile), обрізається до цілого, а потім примушується до діапазону між 0 і 2<sup>53</sup> - 1. `NaN` стає `0`, тож навіть тоді, коли `length` немає або в ній `undefined`, це працює так, ніби довжина дорівнює `0`.
+Властивість `length` [перетворюється на ціле число](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#peretvorennia-na-tsile), а потім обрізається до діапазону між 0 і 2<sup>53</sup> - 1. `NaN` стає `0`, тож навіть тоді, коли `length` немає або в ній `undefined`, це працює так, ніби довжина дорівнює `0`.
 
 ```js
 Array.prototype.flat.call({}); // []
