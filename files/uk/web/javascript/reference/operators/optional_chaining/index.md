@@ -77,7 +77,7 @@ const result = someInterface.customMethod?.();
 
 > **Примітка:** Якщо сам `someInterface` є `null` чи `undefined`, все ж буде винесений виняток {{JSxRef("TypeError")}} (`someInterface is null`). Якщо очікується, що сам `someInterface` може бути `null` чи `undefined`, слід використовувати `?.` також на іншій позиції: `someInterface?.customMethod?.()`.
 
-`eval?.()` – найстисліший спосіб ввійти у режим _непрямого обчислення_. Більше подробиць – на довідковій сторінці [`eval()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/eval#opys).
+`eval?.()` – найстисліший спосіб ввійти у режим [_непрямого обчислення_](/uk/docs/Web/JavaScript/Reference/Global_Objects/eval#priame-ta-nepriame-obchyslennia).
 
 ### Необов'язковий ланцюжок з виразами
 
