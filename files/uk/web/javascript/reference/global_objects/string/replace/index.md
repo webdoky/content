@@ -49,7 +49,7 @@ replace(pattern, replacement)
 Якщо `pattern` є порожнім рядком, то заміна вставляється в початок вихідного рядка.
 
 ```js
-'xxx'.replace('', '_'); // "_xxx"
+"xxx".replace("", "_"); // "_xxx"
 ```
 
 Регулярний вираз із позначкою `g` є єдиним випадком, коли `replace()` виконує заміну більш ніж раз. Для отримання докладнішої інформації про те, як властивості регулярних виразів (особливо позначка [липкості](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/sticky)) взаємодіють з `replace()` дивіться [`RegExp.prototype[@@replace]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@replace).
@@ -70,9 +70,14 @@ replace(pattern, replacement)
 `$n` і `$<Name>` доступні лише тоді, коли аргумент `pattern` є об'єктом {{jsxref("RegExp")}}. Якщо `pattern` є рядком, або ж якщо відповідна група захоплення не присутня в регулярному виразі, то патерн буде вставлений як є. Якщо група присутня, але не дала збігу (тому, що є частиною диз'юнкції), то вона буде вставлена як порожній рядок.
 
 ```js
-'foo'.replace(/(f)/, '$2'); // "$2oo"; регулярний вираз не має другої групи
-'foo'.replace('f', '$1'); // "$1oo"; патерн є рядком, тож він не має жодних груп
-'foo'.replace(/(f)|(g)/, '$2'); // "oo"; друга група існує, але вона не дала жодного збігу
+"foo".replace(/(f)/, "$2");
+// "$2oo"; регулярний вираз не має другої групи
+
+"foo".replace("f", "$1");
+// "$1oo"; патерн є рядком, тож він не має жодних груп
+
+"foo".replace(/(f)|(g)/, "$2");
+// "oo"; друга група існує, але вона не дала жодного збігу
 ```
 
 ### Передача функції як заміни
@@ -109,9 +114,9 @@ function replacer(match, p1, p2, /* …, */ pN, offset, string, groups) {
 ```js
 function replacer(match, p1, p2, p3, offset, string) {
   // p1 містить нецифрові символи, p2 — цифри, а p3 — все, окрім літер
-  return [p1, p2, p3].join(' - ');
+  return [p1, p2, p3].join(" - ");
 }
-const newString = 'abc12345#$*%'.replace(/([^\d]*)(\d*)([^\w]*)/, replacer);
+const newString = "abc12345#$*%".replace(/([^\d]*)(\d*)([^\w]*)/, replacer);
 console.log(newString); // abc - 12345 - #$*%
 ```
 
@@ -124,8 +129,8 @@ console.log(newString); // abc - 12345 - #$*%
 В наступному прикладі регулярний вираз оголошується всередині `replace()` і містить прапорець ігнорування регістру літер.
 
 ```js
-const str = 'То була ніч перед Йолем...';
-const newstr = str.replace(/йолем/i, 'Різдвом');
+const str = "То була ніч перед Йолем...";
+const newstr = str.replace(/йолем/i, "Різдвом");
 console.log(newstr); // То була ніч перед Різдвом...
 ```
 
@@ -139,8 +144,8 @@ console.log(newstr); // То була ніч перед Різдвом...
 
 ```js
 const re = /яблука/gi;
-const str = 'Яблука — круглі, яблука — такі соковиті...';
-const newstr = str.replace(re, 'апельсини');
+const str = "Яблука — круглі, яблука — такі соковиті...";
+const newstr = str.replace(re, "апельсини");
 console.log(newstr); // апельсини — круглі, апельсини — такі соковиті...
 ```
 
@@ -152,8 +157,8 @@ console.log(newstr); // апельсини — круглі, апельсини 
 
 ```js
 const re = /(\w+)\s(\w+)/;
-const str = 'Іван Сірко';
-const newstr = str.replace(re, '$2, $1');
+const str = "Іван Сірко";
+const newstr = str.replace(re, "$2, $1");
 console.log(newstr); // Сірко, Іван
 ```
 
@@ -168,7 +173,7 @@ console.log(newstr); // Сірко, Іван
 ```js
 function styleHyphenFormat(propertyName) {
   function upperToHyphenLower(match, offset, string) {
-    return (offset > 0 ? '-' : '') + match.toLowerCase();
+    return (offset > 0 ? "-" : "") + match.toLowerCase();
   }
   return propertyName.replace(/[A-Z]/g, upperToHyphenLower);
 }
@@ -179,7 +184,8 @@ function styleHyphenFormat(propertyName) {
 Оскільки в цьому випадку потрібно додатково змінити _знайдений збіг_ перед остаточною заміною, то слід вжити функцію. Це змушує програму спершу знайти збіг, тобто до виконання методу {{jsxref("String.prototype.toLowerCase()", "toLowerCase()")}}. Якщо спробувати зробити заміну без функції, то метод {{jsxref("String.prototype.toLowerCase()", "toLowerCase()")}} не матиме ефекту.
 
 ```js example-bad
-const newString = propertyName.replace(/[A-Z]/g, '-' + '$&'.toLowerCase()); // так не працює
+// так не працює
+const newString = propertyName.replace(/[A-Z]/g, "-" + "$&".toLowerCase());
 ```
 
 Так відбувається через те, що `'$&'.toLowerCase()` спочатку виконується як операція над рядком (повертаючи в результаті той самий рядок `'$&'`), до того, як спеціальне значення цих символів буде використано.
@@ -203,12 +209,11 @@ function f2c(x) {
 
 ### Створення узагальненого замінювача
 
-Припустімо, що необхідно створити замінювача, що додає дані про відступ до кожного рядка, котрий дав збіг. У зв'язку з тим, що функція-замінювач отримує параметр `offset`, це буде тривіальним, якщо регулярний вираз статично відомий.
+Припустімо, що необхідно створити замінювач, що додає дані про відступ до кожного рядка, котрий дав збіг. У зв'язку з тим, що функція-замінювач отримує параметр `offset`, це буде тривіальним, якщо регулярний вираз статично відомий.
 
 ```js
-console.log(
-  'abcd'.replace(/(bc)/, (match, p1, offset) => `${match} (${offset}) `),
-); // "abc (1) d"
+"abcd".replace(/(bc)/, (match, p1, offset) => `${match} (${offset}) `);
+// "abc (1) d"
 ```
 
 Проте такий замінювач буде важко узагальнити, якщо він повинен працювати з будь-яким патерном регулярного виразу. Замінювач є _варіативним_: число аргументів, котре він отримує, залежить від числа присутніх груп захоплення. Можна застосувати [решту параметрів](/uk/docs/Web/JavaScript/Reference/Functions/rest_parameters), але вона так само захопить у масив `offset`, `string` тощо. Факт того, що `groups` може бути або не бути переданим, залежно від ідентичності регулярного виразу, також ускладнює узагальнене з'ясування того, котрий з аргументів відповідає параметрові `offset`.
@@ -218,8 +223,8 @@ function addOffset(match, ...args) {
   const offset = args.at(-2);
   return `${match} (${offset}) `;
 }
-console.log('abcd'.replace(/(bc)/, addOffset)); // "abc (1) d"
-console.log('abcd'.replace(/(?<group>bc)/, addOffset)); // "abc (abcd) d"
+console.log("abcd".replace(/(bc)/, addOffset)); // "abc (1) d"
+console.log("abcd".replace(/(?<group>bc)/, addOffset)); // "abc (abcd) d"
 ```
 
 Приклад `addOffset` вище не спрацює, коли регулярний вираз містить іменовану групу, тому що в такому випадку `args.at(-2)` буде `string`, а не `offset`.
@@ -228,12 +233,12 @@ console.log('abcd'.replace(/(?<group>bc)/, addOffset)); // "abc (abcd) d"
 
 ```js
 function addOffset(match, ...args) {
-  const hasNamedGroups = typeof args.at(-1) === 'object';
+  const hasNamedGroups = typeof args.at(-1) === "object";
   const offset = hasNamedGroups ? args.at(-3) : args.at(-2);
   return `${match} (${offset}) `;
 }
-console.log('abcd'.replace(/(bc)/, addOffset)); // "abc (1) d"
-console.log('abcd'.replace(/(?<group>bc)/, addOffset)); // "abc (1) d"
+console.log("abcd".replace(/(bc)/, addOffset)); // "abc (1) d"
+console.log("abcd".replace(/(?<group>bc)/, addOffset)); // "abc (1) d"
 ```
 
 ## Специфікації

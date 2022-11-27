@@ -29,18 +29,12 @@ includes(searchElement, fromIndex)
 ### Параметри
 
 - `searchElement`
-
   - : Значення для пошуку.
-
-    > **Примітка:** `includes()` _враховує регістр_ під час порівняння рядків та окремих символів.
-
 - `fromIndex` {{optional_inline}}
-
-  - : Позиція в масиві, з якої почнеться пошук значення `searchElement`.
-
-    Якщо значення `fromIndex` додатне, перший елемент для порівняння береться з позиції `fromIndex`. Якщо ж значення `fromIndex` від'ємне — пошук почнеться з позиції `arr.length + fromIndex` (йдеться про [модуль](<https://uk.wikipedia.org/wiki/%D0%9C%D0%BE%D0%B4%D1%83%D0%BB%D1%8C_(%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0)>) аргументу `fromIndex` — кількості елементів з кінця масиву до позиції, з якої почнеться пошук).
-
-    Усталено має значення `0`.
+  - : Індекс від нуля, з якого почнеться пошук, [перетворений на ціле число](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#peretvorennia-na-tsile).
+    - Від'ємний індекс рахується від кінця масиву: якщо `fromIndex < 0`, то використовується `fromIndex + array.length`. Проте в такому випадку пошук все одно відбувається від початку до кінця масиву.
+    - Якщо `fromIndex < -array.length`, або якщо `fromIndex` опущено, то використовується `0`, що призводить до пошуку в усьому масиві.
+    - Якщо `fromIndex >= array.length`, то пошук не відбувається, і повертається `false`.
 
 ### Повернене значення
 
@@ -48,9 +42,7 @@ includes(searchElement, fromIndex)
 
 ## Опис
 
-Всі нульові значення вважаються рівними, незалежно від знаку. Таким чином, `-0` вважається еквівалентним як `0`, так і `+0`, проте `false` _не_ вважається рівним `0`. [`NaN`](/uk/docs/Web/JavaScript/Reference/Global_Objects/NaN) можна коректно шукати.
-
-> **Примітка:** Технічно, `includes()` використовує [`sameValueZero`](/uk/docs/Web/JavaScript/Equality_comparisons_and_sameness#same-value-zero_equality) алгоритм для визначення, чи було знайдено шуканий елемент.
+Метод `includes()` порівнює `searchElement` з елементами масиву за допомогою алгоритму [SameValueZero](/uk/docs/Web/JavaScript/Reference/Operators/Strict_equality). Усі нульові значення вважаються рівними, незалежно від свого знаку. (Тобто `-0` рівносильно `0`), але `false` _не_ вважається тотожним `0`. Може бути виконаний коректний пошук [`NaN`](/uk/docs/Web/JavaScript/Reference/Global_Objects/NaN).
 
 Бувши використаним на [розріджених масивах](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy), метод `includes()` ітерує порожні комірки так, ніби вони містять значення `undefined`.
 

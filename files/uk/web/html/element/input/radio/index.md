@@ -21,7 +21,7 @@ tags:
 browser-compat: html.elements.input.type_radio
 ---
 
-{{HTMLRef("Input_types")}}
+{{HTMLSidebar}}
 
 Елементи {{htmlelement("input")}} типу **`radio`** зазвичай використовуються у **радіогрупах** – колекціях радіокнопок, що описують набір пов'язаних варіантів.
 
