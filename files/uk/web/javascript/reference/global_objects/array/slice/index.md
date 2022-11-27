@@ -35,7 +35,7 @@ slice(start, end)
 
 - `end` (кінець) {{optional_inline}}
 
-  - : Індекс (починаючи з нуля), з якого припиниться вибирання елементів з масиву, [перетворений на ціле число](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#peretvorennia-na-tsile). `slice()` вибирає елементи до, але не включаючи `end`.
+  - : Індекс (починаючи з нуля), на якому припиниться вибирання елементів з масиву, [перетворений на ціле число](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#peretvorennia-na-tsile). `slice()` вибирає елементи до, але не включаючи `end`.
     - Від'ємний індекс рахується з кінця масиву: якщо `end < 0`, використовується `end + array.length`.
     - Якщо `end < -array.length`, використовується `0`.
     - Якщо `end >= array.length` або `end` опущено, використовується `array.length`, унаслідок чого вибираються всі елементи аж до кінця масиву.
