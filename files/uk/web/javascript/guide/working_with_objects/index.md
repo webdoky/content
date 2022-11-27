@@ -187,7 +187,7 @@ const myCar = {
 };
 ```
 
-Подібно до змінних JavaScript, імена властивостей - чутливі до регістру. Вони можуть бути лише рядками чи Symbol: усі ключі [перетворюються на рядки](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka), окрім Symbol. [Індекси масивів](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#indeksy-masyviv) фактично є властивостями з рядковими ключами, що містять цілі числа.
+Подібно до змінних JavaScript, імена властивостей - чутливі до регістру. Вони можуть бути лише рядками чи примірниками Symbol: усі ключі [перетворюються на рядки](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka), окрім Symbol. [Індекси масивів](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#indeksy-masyviv) фактично є властивостями з рядковими ключами, що містять цілі числа.
 
 ### Звертання до властивостей
 
