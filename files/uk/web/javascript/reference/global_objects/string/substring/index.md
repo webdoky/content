@@ -12,7 +12,7 @@ browser-compat: javascript.builtins.String.substring
 
 {{JSRef}}
 
-Метод **`substring()`** повертає частину рядка `string` між вказаними індексами початку та кінця, або до кінця рядка — якщо кінцевий індекс не вказано.
+Метод **`substring()`** повертає частину рядка `string` від початкового (включно) і до кінцевого індексу (не включно), або до кінця рядка, якщо кінцевий індекс не задано.
 
 {{EmbedInteractiveExample("pages/js/string-substring.html")}}
 
