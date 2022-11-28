@@ -53,7 +53,6 @@ forEach(function(element, index, array) { /* … */ }, thisArg)
       - : Власне масив, на якому було викликано `forEach()`.
 
 - `thisArg` {{optional_inline}}
-  - : A value to use as `this` when executing `callbackFn`. See [iterative methods](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#iterative_methods).
   - : Значення для використання за `this` при виконанні `callbackFn`. Докладніше про це в [ітеративних методах](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#iteratyvni-metody).
 
 ### Результат
@@ -68,7 +67,7 @@ forEach(function(element, index, array) { /* … */ }, thisArg)
 
 `forEach()` не видозмінює масиву, на котрому його викликали, але функція, передана як `callbackFn`, може це робити. Проте слід звернути увагу, що довжина масиву запам'ятовується _до_ першого заклику `callbackFn`. Таким чином:
 
-- `callbackFn` не оброблятиме жодних елементів, доданих поза початковою довжиною масиву, відколи почався виклик `filter()`.
+- `callbackFn` не оброблятиме жодних елементів, доданих поза початковою довжиною масиву, відколи почався виклик `forEach()`.
 - Зміни за вже обробленими індексами не призводять до повторного заклику на них `callbackFn`.
 - Якщо наявний, іще не оброблений елемент масиву вже був змінений `callbackFn`, то його значення, передане в `callbackFn`, буде значенням на ту мить, коли такий елемент обробляється. [Видалені](/uk/docs/Web/JavaScript/Reference/Operators/delete) елементи – не обробляються.
 
