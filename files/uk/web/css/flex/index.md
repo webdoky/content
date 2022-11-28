@@ -63,9 +63,9 @@ flex: unset;
 
 - **Синтаксис одного значення:** значення мусить бути одним з таких варіантів:
 
-  - `<number>`: В такому випадку тлумачиться як `flex: <number> 1 0`; значення {{cssxref("flex-shrink")}} вважається `1`, а значення {{cssxref("flex-basis")}} вважається `0`.
-  - `<width>`: В такому випадку тлумачиться як `flex: 1 1 <width>`; значення {{cssxref("flex-grow")}} вважається `1`, а значення {{cssxref("flex-shrink")}} вважається `1`.
-  - одне з ключових слів: `none`, `auto` чи `initial`.
+  - дійсне для {{cssxref("&lt;flex-grow&gt;")}} значення: тоді скорочення розгортається як `flex: <flex-grow> 1 0`.
+  - дійсне для {{cssxref("&lt;flex-basis&gt;")}} значення: тоді скорочення розгортається як `flex: 1 1 <flex-basis>`.
+  - ключове слово `none`, або одне з глобальних ключових слів.
 
 - **Синтаксис двох значень:**
 
@@ -75,14 +75,14 @@ flex: unset;
 
   - Друге значення мусить бути одним з таких варіантів:
 
-    - {{cssxref("&lt;number&gt;")}}: тоді воно тлумачиться як `<flex-shrink>`.
-    - дійсним для {{cssxref("width")}} значенням: тоді воно тлумачиться як `<flex-basis>`.
+    - дійсне для {{cssxref("flex-shrink")}} значення: тоді скорочення розгортається як `flex: <flex-grow> <flex-shrink> 0`.
+    - дійсне для {{cssxref("flex-basis")}} значення: тоді скорочення розгортається як `flex: <flex-grow> 1 <flex-basis>`.
 
 - **Синтаксис трьох значень:** значення мусять бути в наступному порядку:
 
-  1. {{cssxref("&lt;number&gt;")}} для `<flex-grow>`.
-  2. {{cssxref("&lt;number&gt;")}} для `<flex-shrink>`.
-  3. дійсне для {{cssxref("width")}} значення для `<flex-basis>`.
+  1. дійсне для {{cssxref("flex-grow")}} значення.
+  2. дійсне для {{cssxref("flex-shrink")}} значення.
+  3. дійсне для {{cssxref("flex-basis")}} значення.
 
 ### Значення
 
@@ -229,10 +229,10 @@ flex: unset;
 ```
 
 ```js hidden
-const flex = document.getElementById('flex');
-const raw = document.getElementById('raw');
-flex.addEventListener('click', () => {
-  raw.style.display = raw.style.display === 'none' ? 'block' : 'none';
+const flex = document.getElementById("flex");
+const raw = document.getElementById("raw");
+flex.addEventListener("click", () => {
+  raw.style.display = raw.style.display === "none" ? "block" : "none";
 });
 ```
 
