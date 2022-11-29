@@ -26,10 +26,10 @@ tags:
 
 Ці глобальні властивості повертають просте значення. Вони не мають власних властивостей чи методів.
 
+- {{JSxRef("globalThis")}}
 - {{JSxRef("Infinity")}}
 - {{JSxRef("NaN")}}
 - {{JSxRef("undefined")}}
-- {{JSxRef("globalThis")}}
 
 ### Властивості-функції
 
@@ -40,18 +40,16 @@ tags:
 - {{JSxRef("Global_Objects/isNaN", "isNaN()")}}
 - {{JSxRef("Global_Objects/parseFloat", "parseFloat()")}}
 - {{JSxRef("Global_Objects/parseInt", "parseInt()")}}
-- {{JSxRef("Global_Objects/encodeURI", "encodeURI()")}}
-- {{JSxRef("Global_Objects/encodeURIComponent", "encodeURIComponent()")}}
 - {{JSxRef("Global_Objects/decodeURI", "decodeURI()")}}
 - {{JSxRef("Global_Objects/decodeURIComponent", "decodeURIComponent()")}}
-- **Застарілі**
-
-  - {{JSxRef("Global_Objects/escape", "escape()")}} {{Deprecated_Inline}}
-  - {{JSxRef("Global_Objects/unescape", "unescape()")}} {{Deprecated_Inline}}
+- {{JSxRef("Global_Objects/encodeURI", "encodeURI()")}}
+- {{JSxRef("Global_Objects/encodeURIComponent", "encodeURIComponent()")}}
+- {{JSxRef("Global_Objects/escape", "escape()")}} {{Deprecated_Inline}}
+- {{JSxRef("Global_Objects/unescape", "unescape()")}} {{Deprecated_Inline}}
 
 ### Корінні об'єкти
 
-Це корінні, основні об'єкти, на яких засновуються всі інші об'єкти, а саме: загальні об'єкти, булеві значення, функції та символи.
+Ці об'єкти представляють корінні конструкції мови.
 
 - {{JSxRef("Object")}}
 - {{JSxRef("Function")}}
@@ -65,12 +63,12 @@ tags:
 - {{JSxRef("Error")}}
 - {{JSxRef("AggregateError")}}
 - {{JSxRef("EvalError")}}
-- {{JSxRef("InternalError")}} {{Non-Standard_Inline}}
 - {{JSxRef("RangeError")}}
 - {{JSxRef("ReferenceError")}}
 - {{JSxRef("SyntaxError")}}
 - {{JSxRef("TypeError")}}
 - {{JSxRef("URIError")}}
+- {{JSxRef("InternalError")}} {{Non-Standard_Inline}}
 
 ### Числа та дати
 
@@ -100,10 +98,10 @@ tags:
 - {{JSxRef("Uint16Array")}}
 - {{JSxRef("Int32Array")}}
 - {{JSxRef("Uint32Array")}}
-- {{JSxRef("Float32Array")}}
-- {{JSxRef("Float64Array")}}
 - {{JSxRef("BigInt64Array")}}
 - {{JSxRef("BigUint64Array")}}
+- {{JSxRef("Float32Array")}}
+- {{JSxRef("Float64Array")}}
 
 ### Колекції з ключами
 
@@ -120,20 +118,27 @@ tags:
 
 - {{JSxRef("ArrayBuffer")}}
 - {{JSxRef("SharedArrayBuffer")}}
-- {{JSxRef("Atomics")}}
 - {{JSxRef("DataView")}}
+- {{JSxRef("Atomics")}}
 - {{JSxRef("JSON")}}
+
+### Керування пам'яттю
+
+Ці об'єкти взаємодіють з механізмом збирання сміття.
+
+- {{JSxRef("WeakRef")}}
+- {{JSxRef("FinalizationRegistry")}}
 
 ### Об'єкти абстракцій контролю
 
 Абстракції контролю допомагають структурувати код, особливо якщо він асинхронний (зокрема без використання глибоко вкладених функцій зворотного виклику).
 
 - {{JSxRef("Promise")}}
-- {{JSxRef("Generator")}}
 - {{JSxRef("GeneratorFunction")}}
+- {{JSxRef("AsyncGeneratorFunction")}}
+- {{JSxRef("Generator")}}
+- {{JSxRef("AsyncGenerator")}}
 - {{JSxRef("AsyncFunction")}}
-- {{JSxRef("Global_Objects/AsyncGenerator", "AsyncGenerator")}}
-- {{JSxRef("Global_Objects/AsyncGeneratorFunction", "AsyncGeneratorFunction")}}
 
 ### Рефлексія
 
@@ -147,8 +152,10 @@ tags:
 - {{JSxRef("Intl")}}
 - {{JSxRef("Global_Objects/Intl/Collator", "Intl.Collator")}}
 - {{JSxRef("Global_Objects/Intl/DateTimeFormat", "Intl.DateTimeFormat")}}
+- {{JSxRef("Global_Objects/Intl/DisplayNames", "Intl.DisplayNames")}}
 - {{JSxRef("Global_Objects/Intl/ListFormat", "Intl.ListFormat")}}
+- {{JSxRef("Global_Objects/Intl/Locale", "Intl.Locale")}}
 - {{JSxRef("Global_Objects/Intl/NumberFormat", "Intl.NumberFormat")}}
 - {{JSxRef("Global_Objects/Intl/PluralRules", "Intl.PluralRules")}}
 - {{JSxRef("Global_Objects/Intl/RelativeTimeFormat", "Intl.RelativeTimeFormat")}}
-- {{JSxRef("Global_Objects/Intl/Locale", "Intl.Locale")}}
+- {{JSxRef("Global_Objects/Intl/Segmenter", "Intl.Segmenter")}}
