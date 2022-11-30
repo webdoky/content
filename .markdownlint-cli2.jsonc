@@ -219,6 +219,13 @@
           "search": "](https://webdoky.org.org/",
           "replace": "](/",
           "skipCode": true
+        },
+        {
+          "name": "no-en-us-lt-link",
+          "message": "Internal links should lead to '/uk'",
+          "search": "(</en-US/docs",
+          "replace": "(</uk/docs",
+          "skipCode": true
         }
       ]
     }
