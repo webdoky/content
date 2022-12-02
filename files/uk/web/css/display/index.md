@@ -18,6 +18,8 @@ browser-compat: css.properties.display
 
 Формально кажучи, властивість **`display`** встановлює для елемента внутрішній та зовнішній _типи відображення_. Зовнішній тип визначає участь елемента у [потоковому компонуванні](/uk/docs/Web/CSS/CSS_Flow_Layout); внутрішній тип визначає компонування нащадків. Деякі значення `display` повністю описані у власних специфікаціях; до прикладу, деталі того, що відбувається при встановленні `display: flex` визначено у специфікації Гнучкої блокової моделі CSS.
 
+{{EmbedInteractiveExample("pages/css/display.html")}}
+
 ## Синтаксис
 
 Властивість CSS `display` вказується за допомогою ключових слів.
@@ -232,15 +234,13 @@ display: unset;
 
 ### display: flex
 
-- [Засади flex-блоку](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)
-- [Шикування елементів у flex-контейнері](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container)
-- [Контроль за пропорціями flex-елементів за основною віссю](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Controlling_Ratios_of_Flex_Items_Along_the_Main_Ax)
-- [Кросбраузерні flex-блокові домішки](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Backwards_Compatibility_of_Flexbox)
-- [Опанування перенесення flex-елементів](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Mastering_Wrapping_of_Flex_Items)
-- [Порядок flex-елементів](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Ordering_Flex_Items)
-- [Взаємини flex-блоку та інших способів компонування](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Relationship_of_Flexbox_to_Other_Layout_Methods)
-- [Зворотна сумісність flex-блоку](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Backwards_Compatibility_of_Flexbox)
-- [Типові випадки використання flex-блоку](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Typical_Use_Cases_of_Flexbox)
+- [Засади Flexbox](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)
+- [Шикування елементів у гнучкому контейнері](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container)
+- [Контроль за пропорціями гнучких елементів за основною віссю](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Controlling_Ratios_of_Flex_Items_Along_the_Main_Ax)
+- [Опанування перенесення гнучких елементів](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Mastering_Wrapping_of_Flex_Items)
+- [Порядок гнучких елементів](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Ordering_Flex_Items)
+- [Взаємини Flexbox та інших способів компонування](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Relationship_of_Flexbox_to_Other_Layout_Methods)
+- [Типові випадки використання Flexbox](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Typical_Use_Cases_of_Flexbox)
 
 ### display: grid
 
@@ -296,7 +296,7 @@ display: unset;
 
 Ми включили {{cssxref("padding")}} та {{cssxref("background-color")}} на контейнерах та їх нащадках, щоб було легше бачити ефект значень `display`.
 
-> **Зверніть увагу:** Ми не включали жодного двослівного синтаксису, оскільки його підтримка досі доволі обмежена.
+> **Примітка:** Ми не включали жодного двослівного синтаксису, оскільки його підтримка досі доволі обмежена.
 
 #### HTML
 

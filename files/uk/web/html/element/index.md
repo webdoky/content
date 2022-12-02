@@ -7,10 +7,10 @@ tags:
   - HTML
   - Reference
   - Web
-  - 'l10n:priority'
+  - "l10n:priority"
 ---
 
-{{HTMLSidebar("Elements")}}
+{{HTMLSidebar("HTML_Elements")}}
 
 Ця сторінка перелічує всі {{Glossary("Element","елементи")}} {{Glossary("HTML")}}, котрі можна створити за допомогою {{Glossary("Tag", "тегів")}}.
 

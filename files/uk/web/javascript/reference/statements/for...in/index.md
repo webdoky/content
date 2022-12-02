@@ -10,7 +10,7 @@ browser-compat: javascript.statements.for_in
 
 {{jsSidebar("Statements")}}
 
-**Інструкція `for...in`** ("для кожного ... у") перебирає всі [перелічувані рядкові властивості](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) об'єкта (ігноруючи ті, ключами яких є [символи](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol)), в тому числі успадковані перелічувані властивості.
+Інструкція **`for...in`** ("для кожного ... у") ітерує всі [перелічувані рядкові властивості](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) об'єкта (ігноруючи ті, ключами яких є [символи](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol)), в тому числі успадковані перелічувані властивості.
 
 {{EmbedInteractiveExample("pages/js/statement-forin.html")}}
 
@@ -78,7 +78,7 @@ for (const prop in obj) {
   console.log(`obj.${prop} = ${obj[prop]}`);
 }
 
-// Вивід:
+// Друкує:
 // "obj.a = 1"
 // "obj.b = 2"
 // "obj.c = 3"
@@ -105,7 +105,7 @@ for (const prop in obj) {
   }
 }
 
-// Вивід:
+// Друкує:
 // "obj.color = red"
 ```
 

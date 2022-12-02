@@ -46,7 +46,7 @@ condition ? exprIfTrue : exprIfFalse
 
 ```js
 const age = 26;
-const beverage = age >= 21 ? 'Пиво' : 'Сік';
+const beverage = age >= 21 ? "Пиво" : "Сік";
 console.log(beverage); // "Пиво"
 ```
 
@@ -107,7 +107,7 @@ function example() {
 ## Дивіться також
 
 - [Інструкція "if"](/uk/docs/Web/JavaScript/Reference/Statements/if...else)
-- [Оператор нульового злиття](/uk/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator)
+- [Оператор нульового злиття](/uk/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing)
 - [Необов'язкові послідовності](/uk/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
 - [Приймання рішень в коді — умовні вирази](/uk/docs/Learn/JavaScript/Building_blocks/conditionals)
 - [Вирази та оператори](/uk/docs/Web/JavaScript/Guide/Expressions_and_Operators)

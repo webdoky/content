@@ -57,8 +57,7 @@ let Rectangle = class {
     this.width = width;
   }
 };
-console.log(Rectangle.name);
-// вивід: "Rectangle"
+console.log(Rectangle.name); // "Rectangle"
 
 // іменований клас
 Rectangle = class Rectangle2 {
@@ -67,8 +66,7 @@ Rectangle = class Rectangle2 {
     this.width = width;
   }
 };
-console.log(Rectangle.name);
-// вивід: "Rectangle2"
+console.log(Rectangle.name); // "Rectangle2"
 ```
 
 > **Примітка:** Класові **вирази** повинні бути оголошені до того, як їх можна буде використовувати (вони підпорядковуються таким самим правилам підняття, які описано в розділі [Оголошення класів](#oholoshennia-klasiv)).
@@ -89,7 +87,7 @@ console.log(Rectangle.name);
 
 ### Блоки статичної ініціалізації
 
-[Блоки статичної ініціалізації в класах](/uk/docs/Web/JavaScript/Reference/Classes/Class_static_initialization_blocks) дають змогу гнучко ініціалізувати [статичні властивості класу](#statychni-metody-i-vlastyvosti), в тому числі виконувати інструкції під час ініціалізації та надавати доступ до приватних областей.
+[Блоки статичної ініціалізації](/uk/docs/Web/JavaScript/Reference/Classes/Static_initialization_blocks) дають змогу гнучко ініціалізувати [статичні властивості](#statychni-metody-i-vlastyvosti), в тому числі виконувати інструкції під час ініціалізації та надавати доступ до приватних областей.
 
 Можна оголошувати декілька статичних блоків і перемежовувати їх з оголошеннями статичних методів та властивостей (всі статичні елементи опрацьовуються в порядку їх оголошення).
 

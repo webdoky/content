@@ -14,7 +14,7 @@ tags:
 browser-compat: html.elements.input.type_number
 ---
 
-{{HTMLRef("Input_types")}}
+{{HTMLSidebar}}
 
 Елементи {{HTMLElement("input")}} типу **`number`** (число) застосовуються для надання користувачам змоги вводити числа. Вони включають вбудовану валідацію для відхилення нечислового введення.
 
@@ -27,7 +27,7 @@ browser-compat: html.elements.input.type_number
 <table class="properties">
   <tbody>
     <tr>
-      <td><strong><a href="#value">Значення</a></strong></td>
+      <td><strong><a href="#znachennia">Значення</a></strong></td>
       <td>{{jsxref("Number")}}, що представляє число, або порожнє</td>
     </tr>
     <tr>
@@ -99,7 +99,7 @@ browser-compat: html.elements.input.type_number
 
 Атрибут `placeholder` (заповнювач) – рядок, що надає стислу підказку користувачеві щодо того, якого роду інформація очікується в полі. Це повинно бути слово чи коротка фраза, що демонструє очікуваний тип даних, а не пояснювальне повідомлення. Текст _не повинен_ містити повернень каретки чи символів нового рядка.
 
-Якщо вміст контрольного елемента має одну напрямленість ({{Glossary("LTR")}} чи {{Glossary("RTL")}}), але треба вивести заповнювач з протилежною напрямленістю, можна використати форматувальні символи двонапрямленого алгоритму Юнікоду, аби відкинути напрямленість заповнювача; дивіться [Як використовувати контрольні засоби Юнікоду для двонапрямленого тексту (англ.)](https://www.w3.org/International/questions/qa-bidi-unicode-controls) для отримання докладнішої інформації.
+Якщо вміст контрольного елемента має одну напрямленість ({{Glossary("LTR")}} чи {{Glossary("RTL")}}), але треба вивести заповнювач з протилежною напрямленістю, можна використати форматувальні символи двонапрямленого алгоритму Unicode, аби відкинути напрямленість заповнювача; дивіться [Як використовувати контрольні засоби Unicode для двонапрямленого тексту (англ.)](https://www.w3.org/International/questions/qa-bidi-unicode-controls) для отримання докладнішої інформації.
 
 > **Примітка:** За можливості слід уникати використання атрибута `placeholder`. Він не настільки семантично корисний, як інші способи пояснити форму, і може призвести до неочікуваних технічних проблем зі вмістом. Дивіться {{SectionOnPage("/uk/docs/Web/HTML/Element/input", "Підписи й заповнювачі")}} для отримання докладнішої інформації.
 
@@ -211,8 +211,7 @@ browser-compat: html.elements.input.type_number
   step="10"
   min="0"
   max="100"
-  id="number"
-/>
+  id="number" />
 ```
 
 Далі додамо трохи CSS, аби звузити ширину елемента за допомогою. селектора `id` – `#number`:
@@ -270,8 +269,7 @@ browser-compat: html.elements.input.type_number
       step="10"
       min="0"
       max="100"
-      required
-    />
+      required />
     <span class="validity"></span>
   </div>
   <div>
@@ -292,12 +290,12 @@ div {
 }
 
 input:invalid + span::after {
-  content: '✖';
+  content: "✖";
   padding-left: 5px;
 }
 
 input:valid + span::after {
-  content: '✓';
+  content: "✓";
   padding-left: 5px;
 }
 ```
@@ -339,8 +337,7 @@ HTML має наступний вигляд:
       step="0.01"
       min="0"
       placeholder="напр. 1.78"
-      required
-    />
+      required />
     <span class="validity"></span>
   </div>
   <div class="feetInputGroup" style="display: none;">
@@ -356,8 +353,7 @@ HTML має наступний вигляд:
     <input
       type="button"
       class="meters"
-      value="Введіть зріст у футах і дюймах"
-    />
+      value="Введіть зріст у футах і дюймах" />
   </div>
   <div>
     <input type="submit" value="Подати форму" />
@@ -377,7 +373,7 @@ div {
   position: relative;
 }
 
-input[type='number'] {
+input[type="number"] {
   width: 100px;
 }
 
@@ -387,13 +383,13 @@ input + span {
 
 input:invalid + span::after {
   position: absolute;
-  content: '✖';
+  content: "✖";
   padding-left: 5px;
 }
 
 input:valid + span::after {
   position: absolute;
-  content: '✓';
+  content: "✓";
   padding-left: 5px;
 }
 ```
@@ -401,39 +397,39 @@ input:valid + span::after {
 І врешті – JavaScript:
 
 ```js
-const metersInputGroup = document.querySelector('.metersInputGroup');
-const feetInputGroup = document.querySelector('.feetInputGroup');
-const metersInput = document.querySelector('#meters');
-const feetInput = document.querySelector('#feet');
-const inchesInput = document.querySelector('#inches');
+const metersInputGroup = document.querySelector(".metersInputGroup");
+const feetInputGroup = document.querySelector(".feetInputGroup");
+const metersInput = document.querySelector("#meters");
+const feetInput = document.querySelector("#feet");
+const inchesInput = document.querySelector("#inches");
 const switchBtn = document.querySelector('input[type="button"]');
 
-switchBtn.addEventListener('click', () => {
-  if (switchBtn.getAttribute('class') === 'meters') {
-    switchBtn.setAttribute('class', 'feet');
-    switchBtn.value = 'Введіть зріст у метрах';
+switchBtn.addEventListener("click", () => {
+  if (switchBtn.getAttribute("class") === "meters") {
+    switchBtn.setAttribute("class", "feet");
+    switchBtn.value = "Введіть зріст у метрах";
 
-    metersInputGroup.style.display = 'none';
-    feetInputGroup.style.display = 'block';
+    metersInputGroup.style.display = "none";
+    feetInputGroup.style.display = "block";
 
-    feetInput.setAttribute('required', '');
-    inchesInput.setAttribute('required', '');
-    metersInput.removeAttribute('required');
+    feetInput.setAttribute("required", "");
+    inchesInput.setAttribute("required", "");
+    metersInput.removeAttribute("required");
 
-    metersInput.value = '';
+    metersInput.value = "";
   } else {
-    switchBtn.setAttribute('class', 'meters');
-    switchBtn.value = 'Введіть зріст у футах і дюймах';
+    switchBtn.setAttribute("class", "meters");
+    switchBtn.value = "Введіть зріст у футах і дюймах";
 
-    metersInputGroup.style.display = 'block';
-    feetInputGroup.style.display = 'none';
+    metersInputGroup.style.display = "block";
+    feetInputGroup.style.display = "none";
 
-    feetInput.removeAttribute('required');
-    inchesInput.removeAttribute('required');
-    metersInput.setAttribute('required', '');
+    feetInput.removeAttribute("required");
+    inchesInput.removeAttribute("required");
+    metersInput.setAttribute("required", "");
 
-    feetInput.value = '';
-    inchesInput.value = '';
+    feetInput.value = "";
+    inchesInput.value = "";
   }
 });
 ```

@@ -13,7 +13,7 @@ tags:
 browser-compat: html.elements.form
 ---
 
-{{HTMLRef}}
+{{HTMLSidebar}}
 
 Елемент [HTML](/uk/docs/Web/HTML) **`<form>`** (форма) представляє розділ документа, що містить інтерактивні контрольні елементи для подання інформації.
 
@@ -148,7 +148,7 @@ browser-compat: html.elements.form
     Єдині дозволені методи (значення) (чутливі до регістру):
 
     - `post`: [Метод POST (англ.)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.5); дані форми надсилаються як [тіло запиту](/uk/docs/Web/API/Request/body).
-    - `get`: [Метод GET (англ.)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.3); дані форми додаються до URL `action` після роздільника `?`. Слід застосовувати, коли форма [не має побічних ефектів](/uk/docs/Glossary/Idempotent).
+    - `get` (усталене значення): [Метод GET (англ.)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.3); дані форми додаються до URL `action` після роздільника `?`. Слід застосовувати, коли форма [не має побічних ефектів](/uk/docs/Glossary/Idempotent).
     - `dialog`: Коли форма знаходиться всередині {{HTMLElement("dialog")}}, при поданні закриває діалог і викидає подію подання, не подаючи дані й не очищаючи форму.
 
     Це значення відкидається атрибутами {{htmlattrxref("formmethod", "button")}} на елементах {{HTMLElement("button")}}, [`<input type="submit">`](/uk/docs/Web/HTML/Element/input/submit) чи [`<input type="image">`](/uk/docs/Web/HTML/Element/input/image).
@@ -201,7 +201,7 @@ browser-compat: html.elements.form
 </form>
 ```
 
-{{ EmbedLiveSample('pryklady', '100%', 110) }}
+{{EmbedLiveSample('pryklady', '100%', 110)}}
 
 ## Специфікації
 

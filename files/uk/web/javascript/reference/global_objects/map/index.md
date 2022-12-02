@@ -115,7 +115,7 @@ browser-compat: javascript.builtins.Map
       </td>
       <td>
         <p>
-          <code>Object</code> не реалізовує <a
+          <code>Object</code> не реалізовує <a
             href="/uk/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterable_protocol"
             >протокол ітерації</a
           >, тому поля об'єктів типово не можна перебирати напряму JavaScript-інструкцією
@@ -130,7 +130,7 @@ browser-compat: javascript.builtins.Map
               Об'єкт може реалізовувати протокол ітерації, а ще можна отримати ітероване значення для об'єкта за допомогою <a
                 href="/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/keys"
                 ><code>Object.keys</code></a
-              > чи <a
+              > чи <a
                 href="/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/entries"
                 ><code>Object.entries</code></a
               >.
@@ -190,8 +190,8 @@ browser-compat: javascript.builtins.Map
 
 ```js example-bad
 const wrongMap = new Map();
-wrongMap['bla'] = 'blaa';
-wrongMap['bla2'] = 'blaaa2';
+wrongMap["bla"] = "blaa";
+wrongMap["bla2"] = "blaaa2";
 
 console.log(wrongMap); // Map { bla: 'blaa', bla2: 'blaaa2' }
 ```
@@ -199,8 +199,8 @@ console.log(wrongMap); // Map { bla: 'blaa', bla2: 'blaaa2' }
 Однак цей спосіб присвоєння властивості ніяк не взаємодіє зі структурою даних `Map`. Він лише використовує особливість звичайного об'єкта. Значення 'bla' не збереглося всередині `Map` для запитів. Інші операції на даних зазнають невдачі:
 
 ```js example-bad
-wrongMap.has('bla'); // false
-wrongMap.delete('bla'); // false
+wrongMap.has("bla"); // false
+wrongMap.delete("bla"); // false
 console.log(wrongMap); // Map { bla: 'blaa', bla2: 'blaaa2' }
 ```
 
@@ -208,13 +208,13 @@ console.log(wrongMap); // Map { bla: 'blaa', bla2: 'blaaa2' }
 
 ```js example-good
 const contacts = new Map();
-contacts.set('Яся', { phone: '213-555-1234', address: '123 N 1st Ave' });
-contacts.has('Яся'); // true
-contacts.get('Галина'); // undefined
-contacts.set('Галина', { phone: '617-555-4321', address: '321 S 2nd St' });
-contacts.get('Яся'); // {phone: "213-555-1234", address: "123 N 1st Ave"}
-contacts.delete('Роман'); // false
-contacts.delete('Яся'); // true
+contacts.set("Яся", { phone: "213-555-1234", address: "123 N 1st Ave" });
+contacts.has("Яся"); // true
+contacts.get("Галина"); // undefined
+contacts.set("Галина", { phone: "617-555-4321", address: "321 S 2nd St" });
+contacts.get("Яся"); // {phone: "213-555-1234", address: "123 N 1st Ave"}
+contacts.delete("Роман"); // false
+contacts.delete("Яся"); // true
 console.log(contacts.size); // 1
 ```
 
@@ -230,6 +230,8 @@ console.log(contacts.size); // 1
 
 ## Властивості примірника
 
+- `Map.prototype[@@toStringTag]`
+  - : Початкове значення властивості [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"Map"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}.
 - {{jsxref("Map.prototype.size")}}
   - : Повертає кількість пар ключ-значення об'єкта `Map`.
 
@@ -263,14 +265,14 @@ console.log(contacts.size); // 1
 ```js
 const myMap = new Map();
 
-const keyString = 'рядок';
+const keyString = "рядок";
 const keyObj = {};
 const keyFunc = function () {};
 
 // встановлення значень
-myMap.set(keyString, 'значення, асоційоване з рядком');
+myMap.set(keyString, "значення, асоційоване з рядком");
 myMap.set(keyObj, "значення, асоційоване з об'єктом");
-myMap.set(keyFunc, 'значення, асоційоване з функцією');
+myMap.set(keyFunc, "значення, асоційоване з функцією");
 
 console.log(myMap.size); // 3
 
@@ -279,7 +281,7 @@ console.log(myMap.get(keyString)); // "значення, асоційоване 
 console.log(myMap.get(keyObj)); // "значення, асоційоване з об\'єктом"
 console.log(myMap.get(keyFunc)); // "значення, асоційоване з функцією"
 
-console.log(myMap.get('рядок')); // "значення, асоційоване з рядком"
+console.log(myMap.get("рядок")); // "значення, асоційоване з рядком"
 // оскільки keyString === 'a string'
 console.log(myMap.get({})); // undefined, оскільки keyObj !== {}
 console.log(myMap.get(function () {})); // undefined, оскільки keyFunc !== function () {}
@@ -291,12 +293,12 @@ console.log(myMap.get(function () {})); // undefined, оскільки keyFunc !
 
 ```js
 const myMap = new Map();
-myMap.set(NaN, 'не число');
+myMap.set(NaN, "не число");
 
 myMap.get(NaN);
 // "не число"
 
-const otherNaN = Number('foo');
+const otherNaN = Number("foo");
 myMap.get(otherNaN);
 // "не число"
 ```
@@ -307,8 +309,8 @@ myMap.get(otherNaN);
 
 ```js
 const myMap = new Map();
-myMap.set(0, 'нуль');
-myMap.set(1, 'один');
+myMap.set(0, "нуль");
+myMap.set(1, "один");
 
 for (const [key, value] of myMap) {
   console.log(`${key} = ${value}`);
@@ -351,14 +353,14 @@ myMap.forEach((value, key) => {
 
 ```js
 const kvArray = [
-  ['key1', 'value1'],
-  ['key2', 'value2'],
+  ["key1", "value1"],
+  ["key2", "value2"],
 ];
 
 // Використаємо звичайний конструктор Map, щоб перетворити двовимірний масив комбінацій ключ-значення на `Map`
 const myMap = new Map(kvArray);
 
-console.log(myMap.get('key1')); // повертає "value1"
+console.log(myMap.get("key1")); // повертає "value1"
 
 // Використаємо Array.from(), щоб перетворити об'єкт `Map` у двовимірний масив пар ключ-значення
 console.log(Array.from(myMap)); // Покаже точнісінько такий самий масив, як kvArray
@@ -375,7 +377,7 @@ console.log(Array.from(myMap.keys())); // ["key1", "key2"]
 Так само як і масиви, об'єкти `Map` можна клонувати:
 
 ```js
-const original = new Map([[1, 'one']]);
+const original = new Map([[1, "one"]]);
 
 const clone = new Map(original);
 
@@ -389,14 +391,14 @@ console.log(original === clone); // false (корисно для поверхн�
 
 ```js
 const first = new Map([
-  [1, 'one'],
-  [2, 'two'],
-  [3, 'three'],
+  [1, "one"],
+  [2, "two"],
+  [3, "three"],
 ]);
 
 const second = new Map([
-  [1, 'uno'],
-  [2, 'dos'],
+  [1, "uno"],
+  [2, "dos"],
 ]);
 
 // Зливаємо докупи два об'єкти `Map`. У разі конфлікту ключів наступний перезапише попередній.
@@ -412,18 +414,18 @@ console.log(merged.get(3)); // three
 
 ```js
 const first = new Map([
-  [1, 'one'],
-  [2, 'two'],
-  [3, 'three'],
+  [1, "one"],
+  [2, "two"],
+  [3, "three"],
 ]);
 
 const second = new Map([
-  [1, 'uno'],
-  [2, 'dos'],
+  [1, "uno"],
+  [2, "dos"],
 ]);
 
 // Зливаємо докупи об'єкти `Map` з масивом. У разі конфлікту ключів наступний перезапише попередній.
-const merged = new Map([...first, ...second, [1, 'eins']]);
+const merged = new Map([...first, ...second, [1, "eins"]]);
 
 console.log(merged.get(1)); // eins
 console.log(merged.get(2)); // dos

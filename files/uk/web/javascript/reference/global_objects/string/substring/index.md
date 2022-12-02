@@ -12,7 +12,7 @@ browser-compat: javascript.builtins.String.substring
 
 {{JSRef}}
 
-Метод **`substring()`** повертає частину рядка `string` між вказаними індексами початку та кінця, або до кінця рядка — якщо кінцевий індекс не вказано.
+Метод **`substring()`** повертає частину рядка `string` від початкового (включно) і до кінцевого індексу (не включно), або до кінця рядка, якщо кінцевий індекс не задано.
 
 {{EmbedInteractiveExample("pages/js/string-substring.html")}}
 
@@ -53,23 +53,16 @@ substring(indexStart, indexEnd)
 Наступний приклад використовує метод `substring()` для показування символів з рядка `'Mozilla'`:
 
 ```js
-const anyString = 'Mozilla';
+const anyString = "Mozilla";
 
-// Показує 'M'
-console.log(anyString.substring(0, 1));
-console.log(anyString.substring(1, 0));
-
-// Показує 'Mozill'
-console.log(anyString.substring(0, 6));
-
-// Показує 'lla'
-console.log(anyString.substring(4));
-console.log(anyString.substring(4, 7));
-console.log(anyString.substring(7, 4));
-
-// Показує 'Mozilla'
-console.log(anyString.substring(0, 7));
-console.log(anyString.substring(0, 10));
+console.log(anyString.substring(0, 1)); // 'M'
+console.log(anyString.substring(1, 0)); // 'M'
+console.log(anyString.substring(0, 6)); // 'Mozill'
+console.log(anyString.substring(4)); // 'lla'
+console.log(anyString.substring(4, 7)); // 'lla'
+console.log(anyString.substring(7, 4)); // 'lla'
+console.log(anyString.substring(0, 7)); // 'Mozilla'
+console.log(anyString.substring(0, 10)); // 'Mozilla'
 ```
 
 ### Застосування методу substring() з властивістю довжини
@@ -77,7 +70,7 @@ console.log(anyString.substring(0, 10));
 Наступний приклад застосовує метод `substring()` з властивістю {{jsxref("String/length", "length")}} для вибирання останніх символів певного рядка. Ймовірно запам'ятати цей метод буде простіше аніж попередні приклади, оскільки тут не потрібно знати початковий та кінцевий індекси.
 
 ```js
-const text = 'Mozilla';
+const text = "Mozilla";
 // Бере 4 останні символи рядка
 console.log(text.substring(text.length - 4)); // друкує "illa"
 // Бере 5 останніх символів рядка
@@ -95,9 +88,9 @@ console.log(text.substring(text.length - 5)); // друкує "zilla"
 На додаток, `substr()` вважається _успадкованим функціоналом ECMAScript_, тому краще уникати його використання, якщо це можливо.
 
 ```js
-const text = 'Mozilla';
-console.log(text.substring(2, 5)); // => "zil"
-console.log(text.substr(2, 3)); // => "zil"
+const text = "Mozilla";
+console.log(text.substring(2, 5)); // "zil"
+console.log(text.substr(2, 3)); // "zil"
 ```
 
 ### Різниця між методами substring() та slice()
@@ -107,23 +100,23 @@ console.log(text.substr(2, 3)); // => "zil"
 Метод `substring()` міняє місцями два аргументи, якщо `indexStart` більший за `indexEnd`, тобто все одно повертає рядок. Метод {{jsxref("String/slice", "slice()")}} в цьому випадку повертає порожній рядок.
 
 ```js
-const text = 'Mozilla';
-console.log(text.substring(5, 2)); // => "zil"
-console.log(text.slice(5, 2)); // => ""
+const text = "Mozilla";
+console.log(text.substring(5, 2)); // "zil"
+console.log(text.slice(5, 2)); // ""
 ```
 
 Якщо один чи навіть обидва аргументи від'ємні, або дорівнюють `NaN`, метод `substring()` сприймає їх так, як наче вони дорівнюють `0`.
 
 ```js
-console.log(text.substring(-5, 2)); // => "Mo"
-console.log(text.substring(-5, -2)); // => ""
+console.log(text.substring(-5, 2)); // "Mo"
+console.log(text.substring(-5, -2)); // ""
 ```
 
 Метод `slice()` також сприймає `NaN` в аргументі за `0`, проте отримавши негативні значення він рахує індекс у зворотному напрямі від кінця рядка.
 
 ```js
-console.log(text.slice(-5, 2)); // => ""
-console.log(text.slice(-5, -2)); // => "zil"
+console.log(text.slice(-5, 2)); // ""
+console.log(text.slice(-5, -2)); // "zil"
 ```
 
 Більше прикладів роботи цього методу з від'ємними числами можна знайти на сторінці {{jsxref("String/slice", "slice()")}}.
@@ -146,7 +139,7 @@ function replaceString(oldS, newS, fullS) {
   return fullS;
 }
 
-replaceString('Світ', 'Веб', 'Прекрасний Новий Світ');
+replaceString("Світ", "Веб", "Прекрасний Новий Світ");
 ```
 
 Зауважте, що цей код може спричинити нескінченний цикл, якщо `oldS` — це сам по собі підрядок `newS` — наприклад, якщо спробувати там замінити '`Світ`' рядком '`ІншийСвіт`'.

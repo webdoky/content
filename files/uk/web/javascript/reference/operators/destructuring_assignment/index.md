@@ -147,7 +147,7 @@ const { c = 2 } = { c: null }; // c – null
 Усталене значення може бути будь-яким виразом. Цей вираз буде обчислений лише коли треба.
 
 ```js
-const { b = console.log('hey') } = { b: 2 };
+const { b = console.log("hey") } = { b: 2 };
 // Нічого не виводить, бо `b` – визначена, і немає потреби
 // обчислювати усталене значення.
 ```
@@ -167,7 +167,7 @@ console.log(others2); // [2, 3]
 Решта властивостей мусить бути останньою в патерні й не мати коми в кінці.
 
 ```js example-bad
-const [a, ...b,] = [1, 2, 3];
+const [a, ...b] = [1, 2, 3];
 // SyntaxError: rest element may not have a trailing comma
 // Завжди розглядайте використання оператор решти в кінці
 ```
@@ -189,7 +189,7 @@ const [a, ...b,] = [1, 2, 3];
 #### Просте присвоєння змінних
 
 ```js
-const foo = ['один', 'два', 'три'];
+const foo = ["один", "два", "три"];
 
 const [red, yellow, green] = foo;
 console.log(red); // "один"
@@ -202,7 +202,7 @@ console.log(green); // "три"
 Якщо під час деструктурування масиву довжиною _N_, вказаного в правій частині виразу присвоєння, кількість змінних в лівій частині більша за _N_, то лише першим _N_ змінним буде присвоєно значення. Значення решти змінних залишиться невизначеним.
 
 ```js
-const foo = ['один', 'два'];
+const foo = ["один", "два"];
 
 const [red, yellow, green, blue] = foo;
 console.log(red); // "один"
@@ -319,7 +319,7 @@ function parseProtocol(url) {
   return protocol;
 }
 
-console.log(parseProtocol('https://webdoky.org/uk/docs/Web/JavaScript'));
+console.log(parseProtocol("https://webdoky.org/uk/docs/Web/JavaScript"));
 // "https"
 ```
 
@@ -338,7 +338,7 @@ console.log(a, b); // [1, 2] [3, 4]
 Неітеровані об'єкти не можна деструктурувати як масиви.
 
 ```js example-bad
-const obj = { 0: 'a', 1: 'b', length: 2 };
+const obj = { 0: "a", 1: "b", length: 2 };
 const [a, b] = obj;
 // TypeError: obj is not iterable
 ```
@@ -369,7 +369,7 @@ const obj = {
   },
 };
 const [a, b, ...rest] = obj; // Виводить 0 1 2 3
-console.log(rest); // Виводить масив [2, 3]
+console.log(rest); // [2, 3] (масив)
 ```
 
 ### Деструктурування об'єктів
@@ -425,10 +425,10 @@ console.log(bb); // 5
 ```js
 const user = {
   id: 42,
-  displayName: 'скішка',
+  displayName: "скішка",
   fullName: {
-    firstName: 'Самійло',
-    lastName: 'Кішка',
+    firstName: "Самійло",
+    lastName: "Кішка",
   },
 };
 ```
@@ -471,7 +471,7 @@ console.log(whois(user)); // "скішка — це Самійло"
 
 ```js
 function drawChart({
-  size = 'великий',
+  size = "великий",
   coords = { x: 0, y: 0 },
   radius = 25,
 } = {}) {
@@ -495,17 +495,17 @@ drawChart({
 
 ```js
 const metadata = {
-  title: 'Scratchpad',
+  title: "Scratchpad",
   translations: [
     {
-      locale: 'de',
+      locale: "de",
       localizationTags: [],
-      lastEdit: '2014-04-14T08:43:37',
-      url: '/de/docs/Tools/Scratchpad',
-      title: 'JavaScript-Umgebung',
+      lastEdit: "2014-04-14T08:43:37",
+      url: "/de/docs/Tools/Scratchpad",
+      title: "JavaScript-Umgebung",
     },
   ],
-  url: '/uk/docs/Tools/Scratchpad',
+  url: "/uk/docs/Tools/Scratchpad",
 };
 
 const {
@@ -526,20 +526,20 @@ console.log(localeTitle); // "JavaScript-Umgebung"
 ```js
 const people = [
   {
-    name: 'Михайло Коваль',
+    name: "Михайло Коваль",
     family: {
-      mother: 'Яна Коваль',
-      father: 'Гаврило Коваль',
-      sister: 'Соломія Коваль',
+      mother: "Яна Коваль",
+      father: "Гаврило Коваль",
+      sister: "Соломія Коваль",
     },
     age: 35,
   },
   {
-    name: 'Фома Іванченко',
+    name: "Фома Іванченко",
     family: {
-      mother: 'Раїса Іванченко',
-      father: 'Ярослав Іванченко',
-      brother: 'Валерій Іванченко',
+      mother: "Раїса Іванченко",
+      father: "Ярослав Іванченко",
+      brother: "Валерій Іванченко",
     },
     age: 25,
   },
@@ -561,8 +561,8 @@ for (const {
 Деструктурування дає змогу використовувати обчислені імена властивостей, подібні до таких в [об'єктних літералах](/uk/docs/Web/JavaScript/Reference/Operators/Object_initializer#computed_property_names).
 
 ```js
-const key = 'z';
-const { [key]: foo } = { z: 'bar' };
+const key = "z";
+const { [key]: foo } = { z: "bar" };
 
 console.log(foo); // "bar"
 ```
@@ -572,10 +572,32 @@ console.log(foo); // "bar"
 Деструктуризацію можна використовувати із такими іменами властивостей, які не є дійсними {{glossary("Identifier", "ідентифікаторами")}} в JavaScript, шляхом вказання такої альтернативи, яка є дійсним ідентифікатором.
 
 ```js
-const foo = { 'fizz-buzz': true };
-const { 'fizz-buzz': fizzBuzz } = foo;
+const foo = { "fizz-buzz": true };
+const { "fizz-buzz": fizzBuzz } = foo;
 
 console.log(fizzBuzz); // true
+```
+
+### Деструктурування примітивних значень
+
+Деструктурування об'єктів майже рівносильне щодо [звертання до властивостей](/uk/docs/Web/JavaScript/Reference/Operators/Property_Accessors). Це означає, що якщо спробувати деструктурувати примітивне значення, то значення загорнеться у відповідний об'єкт-обгортку, і властивість буде отримана з цього об'єкта-обгортки.
+
+```js
+const { a, toFixed } = 1;
+console.log(a, toFixed); // undefined ƒ toFixed() { [native code] }
+```
+
+Так само як зі звертанням до властивостей, деструктурування `null` і `undefined` викидає {{jsxref("TypeError")}}.
+
+```js example-bad
+const { a } = undefined; // TypeError: Cannot destructure property 'a' of 'undefined' as it is undefined.
+const { a } = null; // TypeError: Cannot destructure property 'b' of 'null' as it is null.
+```
+
+Це відбудеться навіть якщо патерн – порожній.
+
+```js example-bad
+const {} = null; // TypeError: Cannot destructure 'null' as it is null.
 ```
 
 #### Одночасне деструктурування об'єкта і масиву
@@ -584,9 +606,9 @@ console.log(fizzBuzz); // true
 
 ```js
 const props = [
-  { id: 1, name: 'Fizz' },
-  { id: 2, name: 'Buzz' },
-  { id: 3, name: 'FizzBuzz' },
+  { id: 1, name: "Fizz" },
+  { id: 2, name: "Buzz" },
+  { id: 3, name: "FizzBuzz" },
 ];
 
 const [, , { name }] = props;
@@ -600,9 +622,9 @@ console.log(name); // "FizzBuzz"
 
 ```js
 const obj = {
-  self: '123',
+  self: "123",
   __proto__: {
-    prot: '456',
+    prot: "456",
   },
 };
 const { self, prot } = obj;
