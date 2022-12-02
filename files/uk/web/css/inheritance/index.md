@@ -103,7 +103,7 @@ em {
 
 - Значення CSS для контролю успадкування: [`inherit`](/uk/docs/Web/CSS/inherit), [`initial`](/uk/docs/Web/CSS/initial), [`revert`](/uk/docs/Web/CSS/revert), [`revert-layer`](/uk/docs/Web/CSS/revert-layer), and [`unset`](/uk/docs/Web/CSS/unset)
 - [Знайомство з каскадністю CSS](/uk/docs/Web/CSS/Cascade)
-- [Каскадність та успадкування](/uk/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance)
+- [Каскадність, специфічність та успадкування](/uk/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance)
 - Ключові концепції CSS:
   - [Синтаксис CSS](/uk/docs/Web/CSS/Syntax)
   - [Директиви](/uk/docs/Web/CSS/At-rule)
