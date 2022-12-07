@@ -26,6 +26,7 @@ browser-compat: javascript.operators
   - : Ключове слово `this` посилається на спеціальну властивість контексту виконання.
 - [Літерали](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#literaly)
   - : Базові літерали `null`, булевих значень, чисел та рядків.
+- {{JSxRef("Global_Objects/Array", "[]")}}
   - : Array initializer/literal syntax.
 - {{JSxRef("Operators/Object_initializer", "{}")}}
   - : Синтаксис об'єктних ініціалізаторів – літералів.
@@ -51,7 +52,7 @@ browser-compat: javascript.operators
 Лівосторонні значення є пунктом призначення для присвоєння.
 
 - {{JSxRef("Operators/Property_accessors", "Засоби доступу до властивостей", "", 1)}}
-  - : Оператори деталей надають доступ до властивостей чи методів об'єкта (`object.property` і `object["property"]`)
+  - : Оператори роботи з членами надають доступ до властивостей чи методів об'єкта (`object.property` і `object["property"]`)
 - {{JSxRef("Operators/Optional_chaining", "?.")}}
   - : Оператор необов'язкового зв'язування повертає `undefined` замість спричинення помилки, коли посилання є [порожнім](/uk/docs/Glossary/Nullish) (дорівнює [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) або [`undefined`](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined)).
 - {{JSxRef("Operators/new", "new")}} (нове)
