@@ -20,7 +20,7 @@ tags:
 browser-compat: html.elements.video
 ---
 
-{{HTMLRef}}
+{{HTMLSidebar}}
 
 Елемент [HTML](/uk/docs/Web/HTML) **`<video>`** вставляє в документ мультимедійний програвач, що підтримує відтворення відео. Також `<video>` можна використовувати для аудіо, однак елемент {{HTMLElement("audio")}} може запропонувати більш відповідний для цього користувацький досвід.
 
@@ -170,6 +170,15 @@ browser-compat: html.elements.video
         {{domxref("HTMLMediaElement.ended_event", 'ended')}}
       </td>
       <td>Відтворення зупинилося, бо був досягнутий кінець мультимедійного об'єкта.</td>
+    </tr>
+    <tr>
+      <td>
+        {{domxref("HTMLMediaElement.error_event", 'error')}}
+      </td>
+      <td>
+        Помилка сталася під час отримання медіаданих, або ж тип
+        ресурсу не є підтримуваним форматом медіа.
+      </td>
     </tr>
     <tr>
       <td>

@@ -11,7 +11,7 @@ tags:
 browser-compat: html.elements.button
 ---
 
-{{HTMLRef}}
+{{HTMLSidebar}}
 
 Елемент [HTML](/uk/docs/Web/HTML) **`<button>`** (кнопка) – інтерактивний елемент, що активується користувачем за допомогою миші, клавіатури, пальця, голосової команди чи іншої допоміжної технології. Бувши активованою, кнопка виконує програмовану дію, наприклад, подання [форми](/uk/docs/Learn/Forms) чи відкриття діалогу.
 
@@ -93,8 +93,8 @@ browser-compat: html.elements.button
     <tr>
       <th scope="row">Дозволені ролі ARIA</th>
       <td>
-        {{ARIARole("checkbox")}}, {{ARIARole("link")}},
-        {{ARIARole("menuitem")}},
+        {{ARIARole("checkbox")}}, {{ARIARole("combobox")}},
+        {{ARIARole("link")}}, {{ARIARole("menuitem")}},
         {{ARIARole("menuitemcheckbox")}},
         {{ARIARole("menuitemradio")}}, {{ARIARole("option")}},
         {{ARIARole("radio")}}, {{ARIARole("switch")}},
@@ -191,7 +191,7 @@ browser-compat: html.elements.button
 <button name="button">Натисніть мене</button>
 ```
 
-{{ EmbedLiveSample('pryklad', 200, 64) }}
+{{EmbedLiveSample('pryklad', 200, 64)}}
 
 ## Занепокоєння щодо доступності
 
@@ -256,77 +256,7 @@ Firefox додасть кнопці, що має фокус, дрібний пу
 
 ### Клацання й фокус
 
-Те, чи передасть клацання {{HTMLElement("button", "кнопки")}} цій кнопці фокус, залежить від браузера й операційної системи. Результати для {{HTMLElement("input")}} з `type="button"` і `type="submit"` – такі самі.
-
-<table>
-  <caption>
-    Чи передасть клацання {{HTMLElement("button", "кнопки")}} цій кнопці фокус?
-  </caption>
-  <thead>
-    <tr>
-      <th>Настільні браузери</th>
-      <th>Windows 8.1</th>
-      <th>OS X 10.X</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Firefox</th>
-      <td>✅ Так - Firefox 30.0</td>
-      <td>❌ Ні (навіть із <code>tabindex</code>) Firefox 63</td>
-    </tr>
-    <tr>
-      <th>Chrome</th>
-      <td>✅ Так - Chrome 35</td>
-      <td>✅ Так - Chrome 65</td>
-    </tr>
-    <tr>
-      <th>Safari</th>
-      <td>Н/З</td>
-      <td>
-        ❌ Ні (навіть із <code>tabindex</code>) Safari 12 (<a
-          href="https://bugs.webkit.org/show_bug.cgi?id=22261"
-          >вада 22261</a
-        >)
-      </td>
-    </tr>
-    <tr>
-      <th>Internet Explorer</th>
-      <td>✅ Так - Internet Explorer 11</td>
-      <td>Н/З</td>
-    </tr>
-    <tr>
-      <th>Presto</th>
-      <td>✅ Так - Opera 12</td>
-      <td>✅ Так - Opera 12</td>
-    </tr>
-  </tbody>
-</table>
-
-<table>
-  <caption>
-    Чи передає тикання {{HTMLElement("button", "кнопки")}} цій кнопці фокус?
-  </caption>
-  <thead>
-    <tr>
-      <th>Мобільні браузери</th>
-      <th>iOS 7.1.2</th>
-      <th>Android 4.4.4</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Safari Mobile</th>
-      <td>❌ Ні (навіть із <code>tabindex</code>)</td>
-      <td>Н/З</td>
-    </tr>
-    <tr>
-      <th>Chrome 35</th>
-      <td>❌ Ні (навіть із <code>tabindex</code>)</td>
-      <td>✅ Так</td>
-    </tr>
-  </tbody>
-</table>
+Те, чи передасть клацання кнопки {{HTMLElement("button")}} або {{HTMLElement("input")}} цій кнопці фокус, залежить від браузера й операційної системи. Більшість браузерів – це робить, але [Safari – ні, і це не помилка](https://bugs.webkit.org/show_bug.cgi?id=22261).
 
 ## Специфікації
 

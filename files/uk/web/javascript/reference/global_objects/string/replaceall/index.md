@@ -42,7 +42,7 @@ replaceAll(pattern, replacement)
 ### Винятки
 
 - {{jsxref("TypeError")}}
-  - : Викидається, якщо `pattern` [є регулярним виразом](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp#osoblyva-povedinka-rehuliarnykh-vyraziv), котрий не має позначки глобальності (`g`), тобто його властивість [`flags`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/flags) не містить `"g"`.
+  - : Викидається, якщо `pattern` [є регулярним виразом](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp#osoblyva-obrobka-rehuliarnykh-vyraziv), котрий не має позначки глобальності (`g`), тобто його властивість [`flags`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/flags) не містить `"g"`.
 
 ## Опис
 
@@ -52,15 +52,15 @@ replaceAll(pattern, replacement)
 
 ```js
 function unsafeRedactName(text, name) {
-  return text.replace(new RegExp(name, 'g'), '[ВИДАЛЕНО]');
+  return text.replace(new RegExp(name, "g"), "[ВИДАЛЕНО]");
 }
 function safeRedactName(text, name) {
-  return text.replaceAll(name, '[ВИДАЛЕНО]');
+  return text.replaceAll(name, "[ВИДАЛЕНО]");
 }
 const report =
   "Хакер на ім'я ха.*ер використав спеціальні символи в своєму імені для зламу сервера.";
-console.log(unsafeRedactName(report, 'ха.*ер')); // "Хакер на ім'я [ВИДАЛЕНО]а."
-console.log(safeRedactName(report, 'ха.*ер')); // "Хакер на ім'я [ВИДАЛЕНО] використав спеціальні символи в своєму імені для зламу сервера."
+console.log(unsafeRedactName(report, "ха.*ер")); // "Хакер на ім'я [ВИДАЛЕНО]а."
+console.log(safeRedactName(report, "ха.*ер")); // "Хакер на ім'я [ВИДАЛЕНО] використав спеціальні символи в своєму імені для зламу сервера."
 ```
 
 Якщо `pattern` є об'єктом з методом [`Symbol.replace`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/replace) (в т.ч. об'єктом `RegExp`), то такий метод викликається з цільовим рядком та `replacement` як аргументами. Повернене значення стає поверненим значенням `replaceAll()`. У такому випадку логіка `replaceAll()` повністю закодована у методі `@@replace`, а отже – матиме такий само результат, як `replace()` (окрім додаткової валідації введення – перевірки того, що регулярний вираз є глобальним).
@@ -68,7 +68,7 @@ console.log(safeRedactName(report, 'ха.*ер')); // "Хакер на ім'я [
 Якщо `pattern` є порожнім рядком, то заміна буде вставлена між кожними двома кодовими одиницями UTF-16, подібно до поведінки [`split()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/split).
 
 ```js
-'xxx'.replaceAll('', '_'); // "_x_x_x_"
+"xxx".replaceAll("", "_"); // "_x_x_x_"
 ```
 
 Для отримання подробиць про те, як властивості регулярних виразів (особливо позначку [липкості](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/sticky)) взаємодіють із `replaceAll()` – дивіться [`RegExp.prototype[@@replace]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@replace).
@@ -78,7 +78,7 @@ console.log(safeRedactName(report, 'ха.*ер')); // "Хакер на ім'я [
 ### Застосування методу replaceAll()
 
 ```js
-'aabbcc'.replaceAll('b', '.');
+"aabbcc".replaceAll("b", ".");
 // 'aa..cc'
 ```
 
@@ -87,7 +87,7 @@ console.log(safeRedactName(report, 'ха.*ер')); // "Хакер на ім'я [
 Якщо шукане значення вказано як регулярний вираз, то такий вираз повинен бути глобальним. Наступний підхід не спрацює:
 
 ```js example-bad
-'aabbcc'.replaceAll(/b/, '.');
+"aabbcc".replaceAll(/b/, ".");
 // TypeError: replaceAll must be called with a global RegExp
 ```
 

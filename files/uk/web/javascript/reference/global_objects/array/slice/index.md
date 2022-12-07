@@ -28,23 +28,18 @@ slice(start, end)
 
 - `start` (початок) {{optional_inline}}
 
-  - : Індекс (починаючи з нуля), за яким почнеться вибирання елементів з масиву.
-
-    Допускається застосовувати від'ємний індекс для позначення позиції з кінця послідовності. Наприклад, `slice(-2)` витягує останні два елементи з масиву.
-
-    Якщо `start` не заданий, `slice` почне з позиції `0`.
-
-    Якщо `start` більший за довжину послідовності, буде повернуто порожній масив.
+  - : Індекс (починаючи з нуля), за яким почнеться вибирання елементів з масиву, [перетворений на ціле число](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#peretvorennia-na-tsile).
+    - Від'ємний індекс рахується з кінця масиву: якщо `start < 0`, використовується `start + array.length`.
+    - Якщо `start < -array.length` або `start` опущено, використовується `0`.
+    - Якщо `start >= array.length`, то нічого не вибирається.
 
 - `end` (кінець) {{optional_inline}}
 
-  - : Індекс першого елемента, котрий буде виключений із поверненого масиву. `slice` витягає елементи до, але не включаючи `end`. Наприклад, `slice(1,4)` витягне елементи з другого по четвертий (елементи з позицій 1, 2, та 3).
-
-    Допускається застосовувати від'ємний індекс для позначення положення елемента з кінця послідовності. Наприклад, `slice(2,-1)` витягне елементи, починаючи з третього і закінчуючи другим від кінця масиву.
-
-    Якщо `end` опущено, `slice` витягне всі елементи до кінця послідовності (`arr.length`).
-
-    Якщо `end` більший за довжину послідовності, `slice` витягне всі елементи до кінця набору (`arr.length`).
+  - : Індекс (починаючи з нуля), на якому припиниться вибирання елементів з масиву, [перетворений на ціле число](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#peretvorennia-na-tsile). `slice()` вибирає елементи до, але не включаючи `end`.
+    - Від'ємний індекс рахується з кінця масиву: якщо `end < 0`, використовується `end + array.length`.
+    - Якщо `end < -array.length`, використовується `0`.
+    - Якщо `end >= array.length` або `end` опущено, використовується `array.length`, унаслідок чого вибираються всі елементи аж до кінця масиву.
+    - Якщо `end` розташований перед або на `start` після нормалізації, то нічого не вибирається.
 
 ### Результат
 
@@ -84,20 +79,17 @@ const myHonda = {
 const myCar = [myHonda, 2, "чудовий стан", "придбана у 1997"];
 const newCar = myCar.slice(0, 2);
 
-// Показати значення myCar, newCar, і колір myHonda,
-// на який посилаються обидва масиви.
-console.log("myCar = ", myCar);
-console.log("newCar = ", newCar);
-console.log("myCar[0].color = ", myCar[0].color);
-console.log("newCar[0].color = ", newCar[0].color);
+console.log("myCar =", myCar);
+console.log("newCar =", newCar);
+console.log("myCar[0].color =", myCar[0].color);
+console.log("newCar[0].color =", newCar[0].color);
 
 // Змінити колір myHonda.
 myHonda.color = "бузковий";
-console.log("Новий колір моєї Honda – ", myHonda.color);
+console.log("Новий колір моєї Honda –", myHonda.color);
 
-// Показати колір myHonda, на який посилаються обидва масиви.
-console.log("myCar[0].color = ", myCar[0].color);
-console.log("newCar[0].color = ", newCar[0].color);
+console.log("myCar[0].color =", myCar[0].color);
+console.log("newCar[0].color =", newCar[0].color);
 ```
 
 Скрипт надрукує такий текст:
@@ -108,7 +100,7 @@ myCar = [
   2,
   'чудовий стан','придбана у 1997'
 ]
-newCar = [{color: 'червоний', wheels: 4, engine: {cylinders: 4, size: 2.2}}, 2]
+newCar = [ { color: 'червоний', wheels: 4, engine: { cylinders: 4, size: 2.2 } }, 2 ]
 myCar[0].color = червоний
 newCar[0].color = червоний
 Новий колір моєї Honda – бузковий

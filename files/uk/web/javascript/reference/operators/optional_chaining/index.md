@@ -13,7 +13,7 @@ browser-compat: javascript.operators.optional_chaining
 
 {{JSSidebar("Operators")}}
 
-Оператор **необов'язкового ланцюжка** (**`?.`**) звертається до властивості об'єкта або викликає функцію. Якщо об'єкт – {{jsxref("undefined")}} або [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null), то замість викидання помилки – повертається {{jsxref("undefined")}}.
+**Оператор необов'язкового ланцюжка (`?.`)** звертається до властивості об'єкта або викликає функцію. Якщо об'єкт – {{jsxref("undefined")}} або [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null), то замість викидання помилки – повертається {{jsxref("undefined")}}.
 
 {{EmbedInteractiveExample("pages/js/expressions-optionalchainingoperator.html", "taller")}}
 
@@ -77,7 +77,7 @@ const result = someInterface.customMethod?.();
 
 > **Примітка:** Якщо сам `someInterface` є `null` чи `undefined`, все ж буде винесений виняток {{JSxRef("TypeError")}} (`someInterface is null`). Якщо очікується, що сам `someInterface` може бути `null` чи `undefined`, слід використовувати `?.` також на іншій позиції: `someInterface?.customMethod?.()`.
 
-`eval?.()` – найстисліший спосіб ввійти у режим _непрямого обчислення_. Більше подробиць – на довідковій сторінці [`eval()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/eval#opys).
+`eval?.()` – найстисліший спосіб ввійти у режим [_непрямого обчислення_](/uk/docs/Web/JavaScript/Reference/Global_Objects/eval#priame-ta-nepriame-obchyslennia).
 
 ### Необов'язковий ланцюжок з виразами
 
@@ -217,7 +217,7 @@ const customerName = customer.name?.getName?.(); // Метод не існує, 
 
 ### Поєднання з оператором null-злиття
 
-[Оператор null-злиття](/uk/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator) може використовуватися після необов'язкового ланцюжка, аби надати усталене значення, коли нічого не знайдено:
+[Оператор null-злиття](/uk/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing) може використовуватися після необов'язкового ланцюжка, аби надати усталене значення, коли нічого не знайдено:
 
 ```js
 function printCustomerCity(customer) {
@@ -244,4 +244,4 @@ printCustomerCity({
 
 ## Дивіться також
 
-- [Оператор null-злиття](/uk/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator)
+- [Оператор null-злиття](/uk/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing)

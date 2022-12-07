@@ -13,7 +13,7 @@ browser-compat: javascript.statements.for_of
 
 {{jsSidebar("Statements")}}
 
-**Інструкція `for...of`** виконує цикл, що обробляє послідовність значень, отриманих з [ітерованого об'єкта](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#protokol-iteruvannia). До ітерованих об'єктів належать екземпляри вбудованих типів, як то {{jsxref("Array")}}, {{jsxref("String")}}, {{jsxref("TypedArray")}}, {{jsxref("Map")}}, {{jsxref("Set")}}, {{domxref("NodeList")}} (та інших колекцій DOM), а також об'єкт {{jsxref("Functions/arguments", "arguments")}}, породжені [генераторними функціями](/uk/docs/Web/JavaScript/Reference/Statements/function*) [генератори](/uk/docs/Web/JavaScript/Reference/Global_Objects/Generator) й визначені користувачем ітеровані об'єкти.
+Інструкція **`for...of`** виконує цикл, що обробляє послідовність значень, отриманих з [ітерованого об'єкта](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#protokol-iteruvannia). До ітерованих об'єктів належать екземпляри вбудованих типів, як то {{jsxref("Array")}}, {{jsxref("String")}}, {{jsxref("TypedArray")}}, {{jsxref("Map")}}, {{jsxref("Set")}}, {{domxref("NodeList")}} (та інших колекцій DOM), а також об'єкт {{jsxref("Functions/arguments", "arguments")}}, породжені [генераторними функціями](/uk/docs/Web/JavaScript/Reference/Statements/function*) [генератори](/uk/docs/Web/JavaScript/Reference/Global_Objects/Generator) й визначені користувачем ітеровані об'єкти.
 
 {{EmbedInteractiveExample("pages/js/statement-forof.html")}}
 
@@ -326,16 +326,19 @@ Array.prototype.arrCustom = function () {};
 const iterable = [3, 5, 7];
 iterable.foo = "агов";
 for (const i in iterable) {
-  console.log(i); // виведе "0", "1", "2", "foo", "arrCustom", "objCustom"
+  console.log(i);
 }
+// "0", "1", "2", "foo", "arrCustom", "objCustom"
 for (const i in iterable) {
   if (Object.hasOwn(iterable, i)) {
-    console.log(i); // виведе "0", "1", "2", "foo"
+    console.log(i);
   }
 }
+// "0" "1" "2" "foo"
 for (const i of iterable) {
-  console.log(i); // виведе 3, 5, 7
+  console.log(i);
 }
+// 3 5 7
 ```
 
 Об'єкт `iterable` успадковує властивості `objCustom` та `arrCustom`, адже має у своєму [ланцюжку прототипів](/uk/docs/Web/JavaScript/Inheritance_and_the_prototype_chain) і `Object.prototype`, і `Array.prototype`.
