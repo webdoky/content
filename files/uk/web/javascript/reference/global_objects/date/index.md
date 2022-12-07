@@ -132,8 +132,6 @@ browser-compat: javascript.builtins.Date
   - : Перетворює дату на рядок відповідно до формату ISO 8601 Extended Format.
 - {{jsxref("Date.prototype.toJSON()")}} (до JSON)
   - : Повертає рядок, що відповідає даті в {{jsxref("Date")}}, сформований за допомогою {{jsxref("Date.prototype.toISOString()", "toISOString()")}}. Призначений для використання функцією {{jsxref("JSON.stringify()")}}.
-- {{jsxref("Date.prototype.toGMTString()")}} (до рядка за Гринвічем) {{Deprecated_Inline}}
-  - : Повертає рядок, що відповідає даті в {{jsxref("Date")}} відносно часової зони GMT (UTC). Замість цього методу слід застосовувати {{jsxref("Date.prototype.toUTCString()", "toUTCString()")}}.
 - {{jsxref("Date.prototype.toLocaleDateString()")}} (до місцевого рядка дати)
   - : Повертає порцію об'єкта `Date`, що містить дату, як рядок, оформлений з урахуванням локально специфічних деталей на основі системних налаштувань.
 - {{jsxref("Date.prototype.toLocaleString()")}} (до місцевого рядка)
@@ -175,7 +173,6 @@ date.toDateString(); // Wed May 13 2020
 date.toTimeString(); // 02:50:21 GMT+0300 (Eastern European Summer Time)
 date.toISOString(); // 2020-05-12T23:50:21.817Z
 date.toUTCString(); // Tue, 12 May 2020 23:50:21 GMT
-date.toGMTString(); // Tue, 12 May 2020 23:50:21 GMT
 date.toJSON(); // 2020-05-12T23:50:21.817Z
 date.toLocaleString(); // 13/05/2020, 02:50:21
 date.toLocaleDateString(); // 13/05/2020
