@@ -8,6 +8,7 @@ tags:
   - Reference
 browser-compat: javascript.builtins.Math.floor
 ---
+
 {{JSRef}}
 
 Функція **`Math.floor()`** повертає найбільше ціле число, що менше або дорівнює значенню аргументу.
@@ -16,7 +17,7 @@ browser-compat: javascript.builtins.Math.floor
 
 ## Синтаксис
 
-```js
+```js-nolint
 Math.floor(x)
 ```
 
@@ -27,83 +28,90 @@ Math.floor(x)
 
 ### Повернене значення
 
-Число, яке відповідає найбільшому цілому числу, яке менше або дорівнює переданому.
+Найбільше ціле число, менше або рівне `x`. Те саме значення, що й [`-Math.ceil(-x)`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil).
 
 ## Опис
 
 Оскільки `floor()` — це статичний метод об'єкта `Math`, його потрібно завжди використовувати через `Math.floor()`. Не слід звертатись до нього як до методу власноруч створеного екземпляра `Math` (`Math` не є конструктором).
-
-> **Зауваження:** `Math.floor(null)` повертає 0, а не
-> {{jsxref("NaN")}}.
 
 ## Приклади
 
 ### Застосування Math.floor()
 
 ```js
-Math.floor( 45.95); //  45
-Math.floor( 45.05); //  45
-Math.floor(  4   ); //   4
-Math.floor(-45.05); // -46
+Math.floor(-Infinity); // -Infinity
 Math.floor(-45.95); // -46
+Math.floor(-45.05); // -46
+Math.floor(-0); // -0
+Math.floor(0); // 0
+Math.floor(4); // 4
+Math.floor(45.05); // 45
+Math.floor(45.95); // 45
+Math.floor(Infinity); // Infinity
 ```
 
 ### Десяткове коригування
 
+У цьому прикладі реалізується метод, названий `decimalAdjust()`, котрий є покращеним варіантом `Math.floor()`, {{jsxref("Math.ceil()")}} і {{jsxref("Math.round()")}}. Усі три функції `Math` завжди приводять введення до цілих знаків, тож `decimalAdjust` приймає параметр `exp`, котрий задає число цифр зліва від десяткового розділювача, до яких слід округляти число. Наприклад, `-1` означає, що треба залишити одну цифру після коми (як у "× 10<sup>-1</sup>"). На додачу він дає змогу обрати спосіб приведення – `round` (округлення), `floor` (до меншого) чи `ceil` (до більшого) – за допомогою параметра `type`.
+
+Приведення виконується шляхом множення числа на степінь 10, а потім – округлення результату до найближчого цілого, і ділення на степінь 10. Для кращого збереження точності використовується метод Number [`toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number/toString), котрий представляє великі й малі числа у вигляді наукового запису (наприклад, `6.02e23`).
+
 ```js
 /**
- * Десяткове коригування числа.
+ * Округляє число до відповідної кількості цифр перед комою.
  *
- * @param {String}  type  Тип коригування.
- * @param {Number}  value Число.
- * @param {Integer} exp   Експонента (десятковий логарифм числа — основи коригування).
- * @returns {Number} Скориговане значення.
+ * @param {"round" | "floor" | "ceil"} type Тип округлення.
+ * @param {number} value Число.
+ * @param {number} exp Експонента (десятковий логарифм основи округлення).
+ * @returns {number} Приведене значення.
  */
 function decimalAdjust(type, value, exp) {
-  // Якщо експонента не задана, або нуль...
-  if (typeof exp === 'undefined' || +exp === 0) {
+  type = String(type);
+  if (!["round", "floor", "ceil"].includes(type)) {
+    throw new TypeError(
+      "The type of decimal adjustment must be one of 'round', 'floor', or 'ceil'."
+    );
+  }
+  exp = Number(exp);
+  value = Number(value);
+  if (exp % 1 !== 0 || Number.isNaN(value)) {
+    return NaN;
+  } else if (exp === 0) {
     return Math[type](value);
   }
-  value = +value;
-  exp = +exp;
-  // Якщо значення змінної value не є числом, або експонента не є цілим числом...
-  if (isNaN(value) || !(typeof exp === 'number' && exp % 1 === 0)) {
-    return NaN;
-  }
-  // Зміщуємо розряди
-  value = value.toString().split('e');
-  value = Math[type](+(value[0] + 'e' + (value[1] ? (+value[1] - exp) : -exp)));
-  // Повертаємо їх назад
-  value = value.toString().split('e');
-  return +(value[0] + 'e' + (value[1] ? (+value[1] + exp) : exp));
+  const [magnitude, exponent = 0] = value.toString().split("e");
+  const adjustedValue = Math[type](`${magnitude}e${exponent - exp}`);
+  // Зсунути назад
+  const [newMagnitude, newExponent = 0] = adjustedValue.toString().split("e");
+  return Number(`${newMagnitude}e${+newExponent + exp}`);
 }
 
 // Звичайне десяткове округлення
-const round10 = (value, exp) => decimalAdjust('round', value, exp);
+const round10 = (value, exp) => decimalAdjust("round", value, exp);
 // Десяткове округлення до меншого
-const floor10 = (value, exp) => decimalAdjust('floor', value, exp);
+const floor10 = (value, exp) => decimalAdjust("floor", value, exp);
 // Десяткове округлення до більшого
-const ceil10 = (value, exp) => decimalAdjust('ceil', value, exp);
+const ceil10 = (value, exp) => decimalAdjust("ceil", value, exp);
 
 // Звичайне округлення
-round10(55.55, -1);   // 55.6
-round10(55.549, -1);  // 55.5
-round10(55, 1);       // 60
-round10(54.9, 1);     // 50
-round10(-55.55, -1);  // -55.5
+round10(55.55, -1); // 55.6
+round10(55.549, -1); // 55.5
+round10(55, 1); // 60
+round10(54.9, 1); // 50
+round10(-55.55, -1); // -55.5
 round10(-55.551, -1); // -55.6
-round10(-55, 1);      // -50
-round10(-55.1, 1);    // -60
+round10(-55, 1); // -50
+round10(-55.1, 1); // -60
 // Округлення до меншого
-floor10(55.59, -1);   // 55.5
-floor10(59, 1);       // 50
-floor10(-55.51, -1);  // -55.6
-floor10(-51, 1);      // -60
+floor10(55.59, -1); // 55.5
+floor10(59, 1); // 50
+floor10(-55.51, -1); // -55.6
+floor10(-51, 1); // -60
 // Округлення до більшого
-ceil10(55.51, -1);    // 55.6
-ceil10(51, 1);        // 60
-ceil10(-55.59, -1);   // -55.5
-ceil10(-59, 1);       // -50
+ceil10(55.51, -1); // 55.6
+ceil10(51, 1); // 60
+ceil10(-55.59, -1); // -55.5
+ceil10(-59, 1); // -50
 ```
 
 ## Специфікації
