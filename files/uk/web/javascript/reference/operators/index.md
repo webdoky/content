@@ -20,32 +20,30 @@ browser-compat: javascript.operators
 
 ### Первинні вирази
 
-Базові ключові слова та загальні вирази в JavaScript.
+Базові ключові слова та загальні вирази в JavaScript. Ці вирази мають вищий пріоритет (вищий за пріоритет [операторів](/uk/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)).
 
 - {{JSxRef("Operators/this", "this")}} (це)
   - : Ключове слово `this` посилається на спеціальну властивість контексту виконання.
+- [Літерали](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#literaly)
+  - : Базові літерали `null`, булевих значень, чисел та рядків.
+- {{JSxRef("Global_Objects/Array", "[]")}}
+  - : Синтаксис ініціалізаторів, чи літералів, масивів.
+- {{JSxRef("Operators/Object_initializer", "{}")}}
+  - : Синтаксис об'єктних ініціалізаторів – літералів.
 - {{JSxRef("Operators/function", "function")}} (функція)
   - : Ключове слово `function` оголошує функціональний вираз.
 - {{JSxRef("Operators/class", "class")}} (клас)
   - : Ключове слово `class` оголошує вираз класу.
 - {{JSxRef("Operators/function*", "function*")}}
   - : Ключове слово `function*` оголошує вираз функції-генератора.
-- {{JSxRef("Operators/yield", "yield")}} (виробити)
-  - : Призупинити й відновити виконання функції-генератора.
-- {{JSxRef("Operators/yield*", "yield*")}}
-  - : Делегувати виконання іншій функції-генератору чи ітерованому об'єкту.
 - {{JSxRef("Operators/async_function", "async function")}} (асинхронна функція)
   - : `async function` оголошує вираз асинхронної функції.
-- {{JSxRef("Operators/await", "await")}} (очікувати на)
-  - : Призупинити виконання асинхронної функції й зачекати до виконання чи відхилення промісу.
 - {{JSxRef("Operators/async_function*", "async function*")}}
   - : Ключові слова `async function*` оголошують вираз асинхронної функції-генератора.
-- {{JSxRef("Global_Objects/Array", "[]")}} (клямри, квадратні дужки)
-  - : Літеральний синтаксис створення чи ініціалізації масиву.
-- {{JSxRef("Operators/Object_initializer", "{}")}} (фігурні дужки)
-  - : Літеральний синтаксис створення чи ініціалізації об'єкта.
 - {{JSxRef("Global_Objects/RegExp", "/ab+c/i")}}
   - : Літеральний синтаксис регулярного виразу.
+- {{JSxRef("Template_literals", "`string`")}}
+  - : Синтаксис шаблонних літералів.
 - {{JSxRef("Operators/Grouping", "( )")}} (дужки)
   - : Оператор групування.
 
@@ -54,7 +52,9 @@ browser-compat: javascript.operators
 Лівосторонні значення є пунктом призначення для присвоєння.
 
 - {{JSxRef("Operators/Property_accessors", "Засоби доступу до властивостей", "", 1)}}
-  - : Оператор доступу до членів надає доступ до методу чи властивості об'єкта (`object.property` та `object["property"]`).
+  - : Оператори роботи з членами надають доступ до властивостей чи методів об'єкта (`object.property` і `object["property"]`)
+- {{JSxRef("Operators/Optional_chaining", "?.")}}
+  - : Оператор необов'язкового зв'язування повертає `undefined` замість спричинення помилки, коли посилання є [порожнім](/uk/docs/Glossary/Nullish) (дорівнює [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) або [`undefined`](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined)).
 - {{JSxRef("Operators/new", "new")}} (нове)
   - : Оператор `new` створює новий екземпляр об'єкта за допомогою переданого конструктора.
 - {{JSxRef("Operators/new%2Etarget", "new.target")}} (нове.цільовий)
@@ -62,9 +62,9 @@ browser-compat: javascript.operators
 - {{JSxRef("Operators/import%2Emeta", "import.meta")}} (імпорт.метадані)
   - : Об'єкт, що розкриває контекстно-специфічні метадані JavaScript-модуля.
 - {{JSxRef("Operators/super", "super")}} (вищий)
-  - : Ключове слово `super` викликає батьківський конструктор.
-- {{JSxRef("Operators/Spread_syntax", "...obj")}} (три крапки)
-  - : Спред-оператор дозволяє розширити вираз у місцях, де очікуються декілька аргументів (виклики функцій) чи декілька елементів (літерали масиву).
+  - : Ключове слово `super` викликає батьківський конструктор або дає змогу звертатися до властивостей батьківського об'єкта.
+- {{JSxRef("Operators/import", "import()")}}
+  - : Синтаксис `import()` дає змогу асинхронно та динамічно завантажувати модуль в середовищі, котре може не бути модульним.
 
 ### Збільшення та зменшення на одиницю
 
@@ -86,7 +86,7 @@ browser-compat: javascript.operators
 - {{JSxRef("Operators/delete", "delete")}} (видалити)
   - : Оператор `delete` видаляє властивість з об'єкта.
 - {{JSxRef("Operators/void", "void")}} (відкинути)
-  - : Оператор `void` відкидає повернене значення виразу.
+  - : Оператор `void` обчислює вираз та відкидає повернене ним значення.
 - {{JSxRef("Operators/typeof", "typeof")}} (тип ...)
   - : Оператор `typeof` визначає тип переданого об'єкта.
 - {{JSxRef("Operators/Unary_plus", "+")}} (плюс)
@@ -97,32 +97,30 @@ browser-compat: javascript.operators
   - : Бітовий оператор NOT.
 - {{JSxRef("Operators/Logical_NOT", "!")}} (знак оклику)
   - : Логічний оператор NOT.
+- {{JSxRef("Operators/await", "await")}}
+  - : Призупиняє та відновлює виконання асинхронної функції та очікує на сповнення чи відхилення промісу.
 
 ### Арифметичні оператори
 
 Арифметичні оператори приймають числові значення (як літерали, так і змінні) своїми операндами, і повертають єдине числове значення.
 
-- {{JSxRef("Operators/Addition", "+")}} (плюс)
-  - : Оператор додавання.
-- {{JSxRef("Operators/Subtraction", "-")}} (мінус)
-  - : Оператор віднімання.
-- {{JSxRef("Operators/Division", "/")}} (скісна риска)
-  - : Оператор ділення.
+- {{JSxRef("Operators/Exponentiation", "**")}}
+  - : Оператор піднесення до степеня.
 - {{JSxRef("Operators/Multiplication", "*")}} (зірочка)
   - : Оператор множення.
+- {{JSxRef("Operators/Division", "/")}}
+  - : Оператор ділення.
 - {{JSxRef("Operators/Remainder", "%")}} (відсоток)
   - : Оператор взяття остачі від ділення.
-- {{JSxRef("Operators/Exponentiation", "**")}} (дві зірочки)
-  - : Оператор піднесення до степеня.
+- {{JSxRef("Operators/Addition", "+")}} (Plus)
+  - : Оператор додавання.
+- {{JSxRef("Operators/Subtraction", "-")}}
+  - : Оператор віднімання.
 
 ### Оператори відношення
 
 Оператор порівняння порівнює операнди та повертає булеве значення, котре залежить від того, чи виконується умова порівняння.
 
-- {{JSxRef("Operators/in", "in")}} (у)
-  - : Оператор `in` визначає, чи об'єкт містить властивість за переданим іменем.
-- {{JSxRef("Operators/instanceof", "instanceof")}} (екземпляр ...)
-  - : Оператор `instanceof` визначає, чи є об'єкт екземпляром іншого об'єкта (чи присутній конструктор одного об'єкта у прототипному ланцюжку іншого).
 - {{JSxRef("Operators/Less_than", "&lt;")}} (менше)
   - : Оператор «менше».
 - {{JSxRef("Operators/Greater_than", "&gt;")}} (більше)
@@ -131,8 +129,12 @@ browser-compat: javascript.operators
   - : Оператор «менше або дорівнює».
 - {{JSxRef("Operators/Greater_than_or_equal", "&gt;=")}}
   - : Оператор «більше або дорівнює».
+- {{JSxRef("Operators/instanceof", "instanceof")}}
+  - : Оператор `instanceof` встановлює, чи є об'єкт примірником іншого об'єкта.
+- {{JSxRef("Operators/in", "in")}}
+  - : Оператор `in` встановлює, чи має об'єкт дану властивість.
 
-> **Зауваження:** `=>` — це не оператор, а позначення для [стрілкових функцій](/uk/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
+> **Примітка:** `=>` — це не оператор, а позначення для [стрілкових функцій](/uk/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
 
 ### Оператори рівності
 
@@ -171,7 +173,7 @@ browser-compat: javascript.operators
 
 ### Бінарні логічні оператори
 
-Логічні оператори типово використовуються з булевими (логічними) значеннями, і в таких випадках повертають булеве значення.
+Логічні оператори реалізовують булеві (логічні) значення й мають логіку [закорочення](/uk/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#short-circuiting).
 
 - {{JSxRef("Operators/Logical_AND", "&amp;&amp;")}}
   - : Логічний AND.
@@ -185,11 +187,6 @@ browser-compat: javascript.operators
 - {{JSxRef("Operators/Conditional_Operator", "(condition ? ifTrue : ifFalse)")}}
   - : Умовний оператор повертає одне з двох значень залежно від логічного значення умови.
 
-### Оператор необов'язкової послідовності
-
-- {{JSxRef("Operators/Optional_chaining", "?.")}}
-  - : Оператор необов'язкової послідовності повертає `undefined` замість викликання помилки в разі [нульового](/uk/docs/Glossary/Nullish) ([`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) або [`undefined`](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined)) посилання.
-
 ### Оператори присвоєння
 
 Оператор присвоєння присвоює певне значення лівому операнду на основі значення правого.
@@ -198,8 +195,6 @@ browser-compat: javascript.operators
   - : Оператор присвоєння.
 - {{JSxRef("Operators/Multiplication_assignment", "*=")}}
   - : Присвоєння з множенням.
-- {{JSxRef("Operators/Exponentiation_assignment", "**=")}}
-  - : Присвоєння з піднесенням до степеня.
 - {{JSxRef("Operators/Division_assignment", "/=")}}
   - : Присвоєння з діленням.
 - {{JSxRef("Operators/Remainder_assignment", "%=")}}
@@ -220,6 +215,8 @@ browser-compat: javascript.operators
   - : Присвоєння з бітовим XOR.
 - {{JSxRef("Operators/Bitwise_OR_assignment", "|=")}}
   - : Присвоєння з бітовим OR.
+- {{JSxRef("Operators/Exponentiation_assignment", "**=")}}
+  - : Присвоєння з піднесенням до степеня.
 - {{JSxRef("Operators/Logical_AND_assignment", "&amp;&amp;=")}}
   - : Присвоєння з логічним AND.
 - {{JSxRef("Operators/Logical_OR_assignment", "||=")}}
@@ -229,7 +226,19 @@ browser-compat: javascript.operators
 - [`[a, b] = arr`, `{ a, b } = obj`](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
   - : Присвоєння з деструктуризацією дає змогу призначити властивості масиву чи об'єкта змінним, з використанням синтаксису, який має подібний до літералів масивів та об'єктів вигляд.
 
-### Оператор кома
+### Оператори видачі
+
+- {{JSxRef("Operators/yield", "yield")}}
+  - : Призупиняє й відновлює виконання генераторної функції.
+- {{JSxRef("Operators/yield*", "yield*")}}
+  - : Делегує видачу іншій генераторній функції або ітерованому об'єктові.
+
+### Синтаксис розгортання
+
+- {{JSxRef("Operators/Spread_syntax", "...obj")}}
+  - : Синтаксис розгортання дає змогу розпустити ітерований об'єкт, як то масив чи рядок, у місцях, де очікуються нуль або більше аргументів (у випадку викликів функцій) чи елементів (у випадку літералів масивів). У об'єктному літералі синтаксис розгортання перелічує властивості об'єкта й додає пари ключ-значення до об'єкта, що створюється.
+
+### Оператор коми
 
 - {{JSxRef("Operators/Comma_Operator", ",")}}
   - : Оператор кома дозволяє обчислити декілька виразів як одну інструкцію і повертає результат останнього виразу.
