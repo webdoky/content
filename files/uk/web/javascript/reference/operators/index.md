@@ -27,7 +27,7 @@ browser-compat: javascript.operators
 - [Літерали](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#literaly)
   - : Базові літерали `null`, булевих значень, чисел та рядків.
 - {{JSxRef("Global_Objects/Array", "[]")}}
-  - : Array initializer/literal syntax.
+  - : Синтаксис ініціалізаторів, чи літералів, масивів.
 - {{JSxRef("Operators/Object_initializer", "{}")}}
   - : Синтаксис об'єктних ініціалізаторів – літералів.
 - {{JSxRef("Operators/function", "function")}} (функція)
