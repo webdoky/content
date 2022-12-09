@@ -72,8 +72,8 @@ reduce(function(accumulator, currentValue, currentIndex, array) { /* … */ }, i
 
 - `initialValue` {{optional_inline}}
   - : Значення, яким ініціалізується `accumulator` під час першого виконання функції зворотного виклику.
-    Якщо `initialValue` задане, це призводить до ініціалізації `currentValue` першим значенням із масиву.
-    Якщо ж `initialValue` _не_ задано, то `accumulator` ініціалізується першим елементом масиву, а `currentValue` — другим.
+    Якщо `initialValue` задане, то `callbackFn` почне виконання з першим значенням масиву як `currentValue`.
+    Якщо `initialValue` _не_ задане, то `accumulator` ініціалізується першим значенням масиву, і `callbackFn` починає виконання з другого значення масиву як `currentValue`. В такому випадку, якщо масив – порожній (тобто немає першого значення, аби повернути його як `accumulator`), викидається помилка.
 
 ### Повернене значення
 
