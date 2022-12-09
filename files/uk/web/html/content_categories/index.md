@@ -1,6 +1,6 @@
 ---
 title: Категорії вмісту
-slug: Web/Guide/HTML/Content_categories
+slug: Web/HTML/Content_categories 
 tags:
   - Advanced
   - Guide
