@@ -28,7 +28,7 @@ toLocaleDateString(locales, options)
 
 ### Параметри
 
-Аргументи `locales` та `options` підлаштовують поведінку функції, і дають застосункам змогу ту мову, чиї правила форматування слід застосувати.
+Аргументи `locales` та `options` підлаштовують поведінку функції, і дають застосункам змогу задати ту мову, чиї правила форматування слід застосувати.
 
 В тих реалізаціях, які підтримують [API `Intl.DateTimeFormat`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat), ці параметри чітко відповідають параметрам конструктора [`Intl.DateTimeFormat()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat). Від реалізацій, що не мають підтримки `Intl.DateTimeFormat`, вимагається ігнорувати обидва параметри, що робить вжиту локаль та форму поверненого рядка цілковито залежною від реалізацій.
 
@@ -74,7 +74,7 @@ console.log(date.toLocaleDateString());
 ### Перевірка підтримки аргументів locales та options
 
 Аргументи `locales` та `options` підтримуються поки не у всіх браузерах.
-Для перевірки, чи якась реалізація їх підтримує, можна скористатися існуванням вимоги відхиляти недійсні позначення мови із викиданням винятку {{jsxref("RangeError")}}:
+Для перевірки, чи якась реалізація їх підтримує, можна скористатися перевіркою виконання вимоги відхиляти недійсні позначення мови із викиданням винятку {{jsxref("RangeError")}}:
 
 ```js
 function toLocaleDateStringSupportsLocales() {
@@ -123,8 +123,8 @@ console.log(date.toLocaleDateString("ar-EG"));
 console.log(date.toLocaleDateString("ja-JP-u-ca-japanese"));
 // "24/12/20"
 
-// в разі запиту мови, яка може не підтримуватись, наприклад — Балійської,
-// варто додати запасну мову, в цьому випадку — Індонезійську
+// в разі запиту мови, яка може не підтримуватись, наприклад — балійської,
+// варто додати запасну мову, в цьому випадку — індонезійську
 console.log(date.toLocaleDateString(["ban", "id"]));
 // "20/12/2012"
 ```
@@ -146,7 +146,7 @@ const options = {
 console.log(date.toLocaleDateString("de-DE", options));
 // "Donnerstag, 20. Dezember 2012"
 
-// якийсь застосунок може вирішити вжити часовий пояс UTC, і показати це
+// якийсь застосунок може вирішити вжити часовий пояс UTC, і явно показати це
 options.timeZone = "UTC";
 options.timeZoneName = "short";
 console.log(date.toLocaleDateString("en-US", options));
