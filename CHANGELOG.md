@@ -5,6 +5,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [2022-12-02 - 2022-12-09]
 
+* **Оновлення перекладу(HTML):** Web/HTML/Content_categories (#1062) ([769ec11](https://github.com/webdoky/content/commit/769ec112150c5a4d86e20bdd5b9967dbd1af71bc))
 * **Оновлення перекладу(JS):** web/javascript/reference/operators (#1027) ([d233416](https://github.com/webdoky/content/commit/d23341626dc2d719c5e592d80c116308a6f8d002))
 * **Оновлення перекладу(JS):** web/javascript/guide/loops_and_iteration ([6d5092a](https://github.com/webdoky/content/commit/6d5092a0042865c49b7d55bd181a2cf33fe7fd35))
 * **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/length ([7bde722](https://github.com/webdoky/content/commit/7bde7220c549e55dc710622f8f486a0cc523e98c))
