@@ -1,6 +1,7 @@
 ---
 title: "SVG: масштабована векторна графіка"
 slug: Web/SVG
+page-type: svg-element
 tags:
   - 2D Graphics
   - Graphics
