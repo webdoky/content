@@ -11,7 +11,7 @@ browser-compat: javascript.builtins.encodeURIComponent
 
 {{jsSidebar("Objects")}}
 
-Функція **`encodeURIComponent()`** (закодувати компонент URI) кодує {{glossary("URI")}} шляхом заміни кожного входження певних символів однією, двома, трьома або чотирма послідовностями екранування, що представляють кодування символу в {{glossary("UTF-8")}} (чотири послідовності будуть лише для символів, що складаються з двох "сурогатних" символів).
+Функція **`encodeURIComponent()`** (закодувати компонент URI) кодує {{glossary("URI")}} шляхом заміни кожного входження певних символів однією, двома, трьома або чотирма послідовностями екранування, що представляють кодування символу в {{glossary("UTF-8")}} (чотири послідовності будуть лише для символів, що складаються з двох сурогатних символів). Порівняно з {{jsxref("encodeURI()")}}, ця функція кодує більше символів, включно з тими, котрі є частиною синтаксису URI.
 
 {{EmbedInteractiveExample("pages/js/globalprops-encodeuricomponent.html","shorter")}}
 
@@ -24,70 +24,30 @@ encodeURIComponent(uriComponent)
 ### Параметри
 
 - `uriComponent`
-  - : Рядок, число, булеве значення, null, undefined або будь-який об'єкт. Перед кодуванням `uriComponent` перетворюється на рядок.
+  - : Рядок для кодування як компонента URI (шляху, рядка запиту, фрагмента тощо). Інші значення – [перетворюються на рядки](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka).
 
 ### Повернене значення
 
-Новий рядок, що представляє _uriComponent_, закодований як компонент URI.
+Новий рядок, що представляє `uriComponent`, закодований як компонент URI.
+
+### Винятки
+
+- {{jsxref("URIError")}}
+  - : Викидається, коли `uriComponent` містить [самотній сурогат](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#symvoly-utf-16-kodovi-tochky-unicode-ta-hrafemni-klastery).
 
 ## Опис
 
-`encodeURIComponent()` екранує всі символи, **окрім**:
+`encodeURIComponent()` – це функція, що є властивістю глобального об'єкта.
 
-```plain
-Не екрануються:
+`encodeURIComponent()` використовує такий же алгоритм кодування, як описаний для {{jsxref("encodeURI()")}}. Він екранує усі символи, **окрім**:
 
-    A-Z a-z 0-9 - _ . ! ~ * ' ( )
+```
+A–Z a–z 0–9 - _ . ! ~ * ' ( )
 ```
 
-`encodeURIComponent()` відрізняється від {{jsxref("encodeURI", "encodeURI()")}} у наступний спосіб:
-
-```js
-const set1 = ";,/?:@&=+$"; // Зарезервовані символи
-const set2 = "-_.!~*'()"; // Неекрановані символи
-const set3 = "#"; // Знак номера
-const set4 = "ABC abc 123"; // Абетково-цифрові символи та пробіл
-
-console.log(encodeURI(set1)); // ;,/?:@&=+$
-console.log(encodeURI(set2)); // -_.!~*'()
-console.log(encodeURI(set3)); // #
-console.log(encodeURI(set4)); // ABC%20abc%20123 (пробіл кодується як %20)
-
-console.log(encodeURIComponent(set1)); // %3B%2C%2F%3F%3A%40%26%3D%2B%24
-console.log(encodeURIComponent(set2)); // -_.!~*'()
-console.log(encodeURIComponent(set3)); // %23
-console.log(encodeURIComponent(set4)); // ABC%20abc%20123 (пробіл кодується як %20)
-```
-
-Зверніть увагу, що буде викинуто {{jsxref("URIError")}}, якщо трапиться спроба закодувати сурогат, котрий не є частиною пари вищий-нижчий, наприклад,
-
-```js
-// пара вищий-нижчий — OK
-console.log(encodeURIComponent("\uD800\uDFFF"));
-
-// самотній вищий сурогат викидає "URIError: malformed URI sequence"
-console.log(encodeURIComponent("\uD800"));
-
-// самотній нижчий сурогат викидає "URIError: malformed URI sequence"
-console.log(encodeURIComponent("\uDFFF"));
-```
-
-Слід використовувати `encodeURIComponent()` на введених користувачем полях, котрі надсилаються на сервер з {{HTTPMethod("POST")}}. Таким чином закодуються символи `&`, котрі можуть випадково з'явитися під час введення даних з певними сутностями HTML чи іншими символами, що вимагають кодування й розкодування.
-
-Наприклад, якщо користувач напише `Jack & Jill`, то такий текст може бути закодований як `Jack &amp; Jill`. Без `encodeURIComponent()` амперсанд може бути розтлумачений сервером як початок нового поля й поставити під загрозу цілісність даних.
+Порівняно з {{jsxref("encodeURI()")}}, `encodeURIComponent()` екранує більшу множину символів. `encodeURIComponent()` слід застосовувати на введених користувачем полях форм, що надсилаються на сервер за допомогою {{HTTPMethod("POST")}}: вона екранує символи `&`, що можуть ненавмисно бути додані при введенні даних для певних сутностей HTML, та інші символи, що вимагають кодування й розкодування. Наприклад, якщо користувач напише `Jack & Jill`, то без `encodeURIComponent()` амперсанд може бути розтлумачений сервером як початок нового поля й поставити під загрозу цілісність даних.
 
 Для [`application/x-www-form-urlencoded` (англ.)](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#application/x-www-form-urlencoded-encoding-algorithm) пробіли треба замінювати `+`, тож одним з варіантів – після перетворення `encodeURIComponent()` провести додаткову заміну `%20` на `+`.
-
-Для більшої суворості щодо відповідності {{rfc("3986")}} (котрий резервує !, ', (, ) і \*), навіть попри те, що ці символи не мають формалізованого використання в поділі URI, можна безпечно використовувати таке:
-
-```js
-function fixedEncodeURIComponent(str) {
-  return encodeURIComponent(str).replace(
-    /[!'()*]/g,
-    (c) => `%${c.charCodeAt(0).toString(16).toUpperCase()}`
-  );
-}
-```
 
 ## Приклади
 
@@ -102,23 +62,9 @@ const header = `Content-Disposition: attachment; filename*=UTF-8''${encodeRFC598
 )}`;
 
 console.log(header);
-// виводить "Content-Disposition: attachment; filename*=UTF-8''my%20file%282%29.txt"
+// "Content-Disposition: attachment; filename*=UTF-8''my%20file%282%29.txt"
 
 function encodeRFC5987ValueChars(str) {
-  return (
-    encodeURIComponent(str)
-      // Зверніть увагу, що коли RFC3986 резервує "!", то RFC5987 – ні,
-      // тому цей символ немає потреби екранувати
-      .replace(/['()]/g, escape) // отже, %27 %28 %29
-      .replace(/\*/g, "%2A")
-      // Наступне не обов'язково для процентного кодування згідно з RFC5987,
-      // тож можна дозволити трохи кращу прочитність по той бік дроту: |`^
-      .replace(/%(?:7C|60|5E)/g, unescape)
-  );
-}
-
-// ось альтернатива для функції вище
-function encodeRFC5987ValueChars2(str) {
   return (
     encodeURIComponent(str)
       // Зверніть увагу, що коли RFC3986 резервує "!", то RFC5987 – ні,
@@ -134,6 +80,19 @@ function encodeRFC5987ValueChars2(str) {
 }
 ```
 
+### Кодування для RFC3986
+
+Новіший стандарт [RFC3986](https://datatracker.ietf.org/doc/html/rfc3986) резервує !, ', (, ) і \*, навіть попри те, що ці символи не мають формалізованого використання як обмежувачі в URI. Наступна функція кодує рядок у сумісному з RFC3986 форматі компонента URL. Також вона кодує [ і ], котрі є частиною синтаксису URI {{glossary("IPv6")}}. Сумісна з RFC3986 реалізація `encodeURI` їх екранувати не повинна, що продемонстровано в [прикладі `encodeURI()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/encodeURI#koduvannia-dlia-rfc3986).
+
+```js
+function encodeRFC3986URIComponent(str) {
+  return encodeURIComponent(str).replace(
+    /[!'()*]/g,
+    (c) => `%${c.charCodeAt(0).toString(16).toUpperCase()}`
+  );
+}
+```
+
 ## Специфікації
 
 {{Specifications}}
@@ -144,6 +103,6 @@ function encodeRFC5987ValueChars2(str) {
 
 ## Дивіться також
 
-- {{jsxref("decodeURI")}}
-- {{jsxref("encodeURI")}}
-- {{jsxref("decodeURIComponent")}}
+- {{jsxref("decodeURI()")}}
+- {{jsxref("encodeURI()")}}
+- {{jsxref("decodeURIComponent()")}}
