@@ -287,7 +287,7 @@ console.log(stringified);
 // {"number":1,"big":"18014398509481982"}
 ```
 
-Коли є дані JSON, котрі містять значення, про котрі відомо, що там будуть великі цілі числа, то для їх обробки можна використати параметр `JSON.parse` [`reviver`](/uk/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse#zastosuvannia-parametra-reviver):
+Коли є дані JSON, котрі містять значення, про котрі відомо, що там будуть великі цілі числа, то для їх обробки можна використати параметр [`reviver`](/uk/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse#zastosuvannia-parametra-reviver) методу `JSON.parse`:
 
 ```js
 const reviver = (key, value) => (key === "big" ? BigInt(value) : value);
