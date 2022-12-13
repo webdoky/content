@@ -100,7 +100,7 @@ const expected = 4n / 2n;
 // 2n
 
 const truncated = 5n / 2n;
-// 2n, not 2.5n
+// 2n, а не 2.5n
 ```
 
 ### Порівняння
