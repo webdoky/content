@@ -21,77 +21,6 @@ browser-compat: html.elements.form
 
 Можна застосувати [псевдокласи](/uk/docs/Web/CSS/Pseudo-classes) CSS{{cssxref(':valid')}} й {{cssxref(':invalid')}} для оформлення елемента `<form>` на основі того, чи мають {{domxref("HTMLFormElement.elements", "елементи")}} всередині форми дійсні значення.
 
-<table class="properties">
-  <tbody>
-    <tr>
-      <th scope="row">
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories"
-          >Категорії вмісту</a
-        >
-      </th>
-      <td>
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#potokovyi-vmist"
-          >Потоковий вміст</a
-        >,
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#dotykovyi-vmist"
-          >дотиковий вміст</a
-        >
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволений вміст</th>
-      <td>
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#potokovyi-vmist"
-          >Потоковий вміст</a
-        >, але жодних елементів <code>&#x3C;form></code>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Упускання тега</th>
-      <td>{{no_tag_omission}}</td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені батьківські елементи</th>
-      <td>
-        Всі елементи, що приймають
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#potokovyi-vmist"
-          >потоковий вміст</a
-        >
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Неявна роль ARIA</th>
-      <td>
-        <code
-          ><a href="/uk/docs/Web/Accessibility/ARIA/Roles/form_role"
-            >form</a
-          ></code
-        >, якщо форма має
-        <a href="https://www.w3.org/TR/accname-1.1/#dfn-accessible-name"
-          >доступне ім'я</a
-        >, інакше –
-        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"
-          >відповідної ролі немає</a
-        >
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені ролі ARIA</th>
-      <td>
-        <code
-          ><a href="/uk/docs/Web/Accessibility/ARIA/Roles/search_role"
-            >search</a
-          ></code
-        >, {{ARIARole("none")}} або {{ARIARole("presentation")}}
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Інтерфейс DOM</th>
-      <td>{{domxref("HTMLFormElement")}}</td>
-    </tr>
-  </tbody>
-</table>
-
 ## Атрибути
 
 Цей елемент включає [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
@@ -202,6 +131,79 @@ browser-compat: html.elements.form
 ```
 
 {{EmbedLiveSample('pryklady', '100%', 110)}}
+
+## Технічний підсумок
+
+<table class="properties">
+  <tbody>
+    <tr>
+      <th scope="row">
+        <a href="/uk/docs/Web/Guide/HTML/Content_categories"
+          >Категорії вмісту</a
+        >
+      </th>
+      <td>
+        <a href="/uk/docs/Web/Guide/HTML/Content_categories#potokovyi-vmist"
+          >Потоковий вміст</a
+        >,
+        <a href="/uk/docs/Web/Guide/HTML/Content_categories#vidchutnyi-vmist"
+          >відчутний вміст</a
+        >
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволений вміст</th>
+      <td>
+        <a href="/uk/docs/Web/Guide/HTML/Content_categories#potokovyi-vmist"
+          >Потоковий вміст</a
+        >, але жодних елементів <code>&#x3C;form></code>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Упускання тега</th>
+      <td>{{no_tag_omission}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені батьківські елементи</th>
+      <td>
+        Всі елементи, що приймають
+        <a href="/uk/docs/Web/Guide/HTML/Content_categories#potokovyi-vmist"
+          >потоковий вміст</a
+        >
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Неявна роль ARIA</th>
+      <td>
+        <code
+          ><a href="/uk/docs/Web/Accessibility/ARIA/Roles/form_role"
+            >form</a
+          ></code
+        >, якщо форма має
+        <a href="https://www.w3.org/TR/accname-1.1/#dfn-accessible-name"
+          >доступне ім'я</a
+        >, інакше –
+        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"
+          >відповідної ролі немає</a
+        >
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені ролі ARIA</th>
+      <td>
+        <code
+          ><a href="/uk/docs/Web/Accessibility/ARIA/Roles/search_role"
+            >search</a
+          ></code
+        >, {{ARIARole("none")}} або {{ARIARole("presentation")}}
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Інтерфейс DOM</th>
+      <td>{{domxref("HTMLFormElement")}}</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Специфікації
 
