@@ -38,7 +38,7 @@ delete object[property]
 
 ### Повернене значення
 
-Завжди `true`, окрім випадків, коли властивість є [власною](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwn) та [неналаштовуваною](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty#atrybut-configurable) – тоді, якщо виконання відбувається не в суворому режимі, буде повернено `false`.
+Завжди `true`, окрім випадків, коли властивість є [власною](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwn) та [неналаштовною](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty#atrybut-configurable) – тоді, якщо виконання відбувається не в суворому режимі, буде повернено `false`.
 
 ### Винятки
 
