@@ -115,7 +115,7 @@ delete EmployeeDetails; // повертає true
 delete empCount; // повертає false
 
 // Крім цього, delete не діє на вбудовані статичні властивості,
-// котрі є неналаштовуваними.
+// котрі є неналаштовними.
 delete Math.PI; // повертає false
 
 function f() {
