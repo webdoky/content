@@ -589,11 +589,11 @@ arr.property = "значення";
 console.log(arr.property); // "значення"
 ```
 
-Наприклад, коли масив є результатом пошуку збігу між регулярним виразом та рядком, масив повертає властивості та елементи, що містять інформацію про збіг. Масив є поверненим значенням [`RegExp.prototype.exec()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec), [`String.prototype.match()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/match) і [`String.prototype.split()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/split). Інформацію про використання масивів з регулярними виразами дивіться на сторінці [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_Expressions).
+Наприклад, коли масив є результатом пошуку збігу між регулярним виразом та рядком, масив повертає властивості та елементи, що містять інформацію про збіг. Масив є поверненим значенням методів [`RegExp.prototype.exec()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec), [`String.prototype.match()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/match) і [`String.prototype.split()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/split). Інформацію про використання масивів з регулярними виразами дивіться на сторінці [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_Expressions).
 
 ## Робота з масивоподібними об'єктами
 
-Частина об'єктів JavaScript, як то [`NodeList`](/uk/docs/Web/API/NodeList), повернений [`document.getElementsByTagName()`](/uk/docs/Web/API/Document/getElementsByTagName), чи об'єкт {{jsxref("Functions/arguments","arguments")}}, доступний в межах тіла функції, нібито мають вигляд та поведінку, подібну до масивів, але не поділяють всіх їхніх методів. Об'єкт `arguments` має атрибут {{jsxref("Global_Objects/Function/length","length")}}, але не реалізовує методів масиву, як то [`forEach()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach).
+Частина об'єктів JavaScript, як то [`NodeList`](/uk/docs/Web/API/NodeList), повернений методом [`document.getElementsByTagName()`](/uk/docs/Web/API/Document/getElementsByTagName), чи об'єкт {{jsxref("Functions/arguments","arguments")}}, доступний в межах тіла функції, — нібито мають вигляд та поведінку, подібну до масивів, але не поділяють всіх їхніх методів. Об'єкт `arguments` має атрибут {{jsxref("Global_Objects/Function/length","length")}}, але не реалізовує методів масиву, як то [`forEach()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach).
 
 Методи масивів не можуть бути безпосередньо викликані на масивоподібних об'єктах
 
