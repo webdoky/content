@@ -2,4 +2,7 @@
 # URLs must be tab-separated
 #
 # FROM-URL	TO-URL
+/uk/docs/background-position_Keyword_Order	/uk/docs/Web/CSS/background-position
+/uk/docs/CSS/background-position	/uk/docs/Web/CSS/background-position
+/uk/docs/CSS:background-position	/uk/docs/Web/CSS/background-position
 /uk/docs/Web/Guide/HTML/Content_categories	/uk/docs/Web/HTML/Content_categories
