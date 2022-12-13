@@ -2,4 +2,7 @@
 # URLs must be tab-separated
 #
 # FROM-URL	TO-URL
+/uk/docs/CSS/calc	/uk/docs/Web/CSS/calc
+/uk/docs/Web/CSS/-moz-calc	/uk/docs/Web/CSS/calc
+/uk/docs/Web/CSS/calc()	/uk/docs/Web/CSS/calc
 /uk/docs/Web/Guide/HTML/Content_categories	/uk/docs/Web/HTML/Content_categories
