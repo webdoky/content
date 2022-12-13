@@ -2,6 +2,6 @@
 # URLs must be tab-separated
 #
 # FROM-URL	TO-URL
-/uk/docs/Web/Guide/HTML/Content_categories	/uk/docs/Web/HTML/Content_categories
 /uk/docs/HTML/Element/iframe	/uk/docs/Web/HTML/Element/iframe
 /uk/docs/HTML/Element/iframe-redirect-1	/uk/docs/Web/HTML/Element/iframe
+/uk/docs/Web/Guide/HTML/Content_categories	/uk/docs/Web/HTML/Content_categories
