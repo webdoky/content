@@ -75,7 +75,7 @@ const maxPlusOne = previousMaxSafe + 1n;
 // 9007199254740992n
 
 const theFuture = previousMaxSafe + 2n;
-// 9007199254740993n, this works now!
+// 9007199254740993n, це тепер працює!
 
 const multi = previousMaxSafe * 2n;
 // 18014398509481982n
