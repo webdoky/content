@@ -199,7 +199,7 @@ Object.defineProperty(Employee, "name", { configurable: false });
 console.log(delete Employee.name); // повертає false
 ```
 
-{{jsxref("Statements/var","var")}} створює неналаштовувані властивості, котрі не можна видалити оператором `delete`:
+{{jsxref("Statements/var","var")}} створює неналаштовні властивості, котрі не можна видалити оператором `delete`:
 
 ```js
 // Оскільки "nameOther" додано за допомогою
