@@ -110,7 +110,7 @@ delete EmployeeDetails.salary; // повертає true
 // EmployeeDetails – властивість глобальної області видимості.
 delete EmployeeDetails; // повертає true
 
-// Натомість empCount – не налаштовувана властивість,
+// Натомість empCount – не налаштовна властивість,
 // адже при її створенні використано var.
 delete empCount; // повертає false
 
