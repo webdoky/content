@@ -43,7 +43,7 @@ delete object[property]
 ### Винятки
 
 - {{jsxref("TypeError")}}
-  - : Викидається в [суворому режимі](/uk/docs/Web/JavaScript/Reference/Strict_mode), якщо властивість є власною та неналаштовуваною.
+  - : Викидається в [суворому режимі](/uk/docs/Web/JavaScript/Reference/Strict_mode), якщо властивість є власною та неналаштовною.
 - {{jsxref("ReferenceError")}}
   - : Викидається, якщо `object` – це [`super`](/uk/docs/Web/JavaScript/Reference/Operators/super).
 
