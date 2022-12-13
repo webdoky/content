@@ -224,7 +224,7 @@ Boolean(12n);
 ## Статичні методи
 
 - [`BigInt.asIntN()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/asIntN)
-  - : Примушує значення BigInt до знакового цілого числа, і повертає таке значення.
+  - : Обрізає значення BigInt до знакового цілого числа, і повертає його.
 - [`BigInt.asUintN()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/asUintN)
   - : Примушує значення BigInt до беззнакового цілого числа, і повертає таке значення.
 
