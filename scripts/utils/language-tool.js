@@ -5,12 +5,10 @@ import disabledRules from "./disabled-rules";
 import execute from "./execute";
 import withRetryUntilTimeout from "./retry-until-timeout";
 
-const START_COMMAND = "docker run -d -p 8010:8010 lt-custom";
-const STOP_COMMAND =
-  process.platform === "win32"
-    ? 'FOR /f "tokens=*" %i IN (\'docker ps -a -q --filter ancestor=lt-custom --format="{{.ID}}"\') DO docker stop %i'
-    : 'docker stop $(docker ps -a -q --filter ancestor=lt-custom --format="{{.ID}}")';
-const TIMEOUT = 8000;
+const START_COMMAND =
+  "docker run --name ltc -d -p 8010:8010 lt-custom || docker start ltc";
+const STOP_COMMAND = "docker stop ltc";
+const TIMEOUT = 20_000;
 
 function requestLanguageTool(data) {
   const parameters = new URLSearchParams();

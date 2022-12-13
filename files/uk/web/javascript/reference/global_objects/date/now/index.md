@@ -13,7 +13,7 @@ browser-compat: javascript.builtins.Date.now
 
 {{JSRef}}
 
-Статичний метод **`Date.now()`** (зараз) повертає число мілісекунд, що сплили з моменту 1 січня 1970 року, 00:00:00 за UTC (Всесвітнім координованим часом).
+Статичний метод **`Date.now()`** (зараз) повертає число мілісекунд, що сплили від початку [епохи](/uk/docs/Web/JavaScript/Reference/Global_Objects/Date#epokha-ecmascript-i-mitky-chasu), котрий визначений як північ на початку 1 січня 1970 року за Всесвітнім координованим часом.
 
 {{EmbedInteractiveExample("pages/js/date-now.html")}}
 
@@ -25,7 +25,7 @@ Date.now()
 
 ### Повернене значення
 
-Число, котре позначає число мілісекунд, яке сплило від початку [епохи ECMAScript](/uk/docs/Web/JavaScript/Reference/Global_Objects/Date#epokha-ecmascript-i-mitky-chasu).
+Число, котре позначає число мілісекунд, яке сплило від початку [епохи](/uk/docs/Web/JavaScript/Reference/Global_Objects/Date#epokha-ecmascript-i-mitky-chasu), котрий визначено як північ на початку 1 січня 1970 року за Всесвітнім координованим часом.
 
 ## Приклади
 

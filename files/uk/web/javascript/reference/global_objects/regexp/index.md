@@ -96,7 +96,7 @@ re.exec("bar"); // [ 'bar', index: 0, input: 'bar', groups: undefined ]
 
 ### Властивості RegExp у стилі Perl
 
-Слід звернути увагу, що декілька властивостей {{JSxRef("RegExp")}} мають і довгу, і коротку (в стилі Perl) назву. Обидва імені завжди вказують на одне й те саме значення. (Perl – мова програмування, на основі якої JavaScript створив свої регулярні вирази.) Дивіться також [нерекомендовані властивості `RegExp`](/uk/docs/Web/JavaScript/Reference/Deprecated_and_obsolete_features#vlastyvosti-regexp).
+Слід звернути увагу, що декілька властивостей {{JSxRef("RegExp")}} мають і довгу, і коротку (в стилі Perl) назву. Обидва імені завжди вказують на одне й те саме значення. (Perl – мова програмування, на основі якої JavaScript створив свої регулярні вирази.) Дивіться також [нерекомендовані властивості `RegExp`](/uk/docs/Web/JavaScript/Reference/Deprecated_and_obsolete_features#regexp).
 
 ## Конструктор
 
@@ -107,17 +107,17 @@ re.exec("bar"); // [ 'bar', index: 0, input: 'bar', groups: undefined ]
 
 - {{jsxref("RegExp.@@species", "get RegExp[@@species]")}}
   - : Функція-конструктор, що використовується для створення похідних об'єктів.
-- {{JSxRef("RegExp.n", "RegExp.$1-$9")}}
-  - : Нерекомендовані статичні властивості лише для зчитування, що містять збіги підрядків у дужках.
-- {{JSxRef("RegExp.input", "RegExp.input ($_)")}} {{Non-standard_Inline}}
+- {{JSxRef("RegExp.n", "RegExp.$1, …, RegExp.$9")}} {{deprecated_inline}}
+  - : Статичні властивості лише для зчитування, що містять збіги підрядків у дужках.
+- {{JSxRef("RegExp.input", "RegExp.input ($_)")}} {{deprecated_inline}}
   - : Статична властивість лише для зчитування, що містить останній рядок, щодо якого відбувся успішний збіг.
-- {{JSxRef("RegExp.lastMatch", "RegExp.lastMatch ($&)")}} {{Non-standard_Inline}}
-  - : Статична властивість лише для зчитування, що містить останні символи, з котрими трапився збіг.
-- {{JSxRef("RegExp.lastParen", "RegExp.lastParen ($+)")}} {{Non-standard_Inline}}
-  - : Статична властивість, що містить останній збіг підрядку в дужках.
-- {{JSxRef("RegExp.leftContext", "RegExp.leftContext ($`)")}} {{Non-standard_Inline}}
+- {{JSxRef("RegExp.lastMatch", "RegExp.lastMatch ($&)")}} {{deprecated_inline}}
+  - : Статична властивість лише для зчитування, що містить останній підрядок, з яким трапився збіг.
+- {{JSxRef("RegExp.lastParen", "RegExp.lastParen ($+)")}} {{deprecated_inline}}
+  - : Статична властивість лише для зчитування, що містить останній збіг підрядку в дужках.
+- {{JSxRef("RegExp.leftContext", "RegExp.leftContext ($`)")}} {{deprecated_inline}}
   - : Статична властивість лише для зчитування, що містить підрядок, котрий передував останньому збігові.
-- {{JSxRef("RegExp.rightContext", "RegExp.rightContext ($')")}} {{Non-standard_Inline}}
+- {{JSxRef("RegExp.rightContext", "RegExp.rightContext ($')")}} {{deprecated_inline}}
   - : Статична властивість лише для зчитування, що містить підрядок, котрий стояв після останнього збігу.
 
 ## Властивості примірника
@@ -174,12 +174,12 @@ re.exec("bar"); // [ 'bar', index: 0, input: 'bar', groups: undefined ]
 
 ```js
 const re = /(\w+)\s(\w+)/;
-const str = "John Smith";
+const str = "Maria Cruz";
 const newstr = str.replace(re, "$2, $1");
 console.log(newstr);
 ```
 
-Виведе `"Smith, John"`.
+Виведе `"Cruz, Maria"`.
 
 ### Застосування регулярного виразу для розбиття рядків з різними символами нового рядка
 
@@ -188,7 +188,7 @@ console.log(newstr);
 ```js
 const text = "Певний текст\nІ ще трохи\r\nІще\rАж ось кінець";
 const lines = text.split(/\r\n|\r|\n/);
-console.log(lines); // Виводить ['Певний текст', 'І ще трохи', 'Іще', 'Аж ось кінець']
+console.log(lines); // ['Певний текст', 'І ще трохи', 'Іще', 'Аж ось кінець']
 ```
 
 Зверніть увагу, що порядок патернів у регулярному виразі має значення.
@@ -234,7 +234,7 @@ while ((r = re.exec("123 456"))) {
 // [ '1', index: 0, input: '123 456', groups: undefined ] AND re.lastIndex 1
 // [ '2', index: 1, input: '123 456', groups: undefined ] AND re.lastIndex 2
 // [ '3', index: 2, input: '123 456', groups: undefined ] AND re.lastIndex 3
-//   ... і – більше жодних збігів.
+//   … і – більше жодних збігів.
 ```
 
 З позначкою глобальності `g` був би збіг з усіма 6 цифрами, а не лише 3.
@@ -252,12 +252,12 @@ const text = "Зразок text українською мовою";
 const regex = /[\u0400-\u04FF]+/g;
 
 const match = regex.exec(text);
-console.log(match[0]); // виводить 'Зразок'
-console.log(regex.lastIndex); // виводить '6'
+console.log(match[0]); // 'Зразок'
+console.log(regex.lastIndex); // 6
 
 const match2 = regex.exec(text);
-console.log(match2[0]); // виводить 'українською' [а не 'text']
-console.log(regex.lastIndex); // виводить '23'
+console.log(match2[0]); // 'українською' (а не 'text')
+console.log(regex.lastIndex); // 23
 
 // і так далі
 ```
@@ -268,7 +268,7 @@ console.log(regex.lastIndex); // виводить '23'
 
 ```js
 const url = "http://xxx.domain.com";
-console.log(/^https?:\/\/(.+?)\./.exec(url)[1]); // виводить 'xxx'
+console.log(/^https?:\/\/(.+?)\./.exec(url)[1]); // 'xxx'
 ```
 
 > **Примітка:** Замість використання для розбору URL регулярних виразів зазвичай краще застосовувати вбудований розбирач URL, використовуючи [URL API](/uk/docs/Web/API/URL_API).

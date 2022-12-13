@@ -21,7 +21,7 @@
     "check:debug": "DEBUG=true yarn run check",
     "gotobranch": "./scripts/gotobranch.sh",
     "postinstall": "docker build . -t lt-custom",
-    "rebuild": "docker build . --no-cache -t lt-custom",
+    "rebuild": "yarn postinstall --no-cache && (docker rm ltc || true)",
     "fix": "eslint . --fix",
     "lint": "eslint ."
   },
