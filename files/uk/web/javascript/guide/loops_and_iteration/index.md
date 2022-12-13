@@ -366,12 +366,25 @@ const arr = [3, 5, 7];
 arr.foo = "привіт";
 
 for (const i in arr) {
-  console.log(i); // виводить "0", "1", "2", "foo"
+  console.log(i);
 }
+// "0" "1" "2" "foo"
 
 for (const i of arr) {
-  console.log(i); // виводить 3, 5, 7
+  console.log(i);
 }
+// Виводить: 3 5 7
+```
+
+Інструкції `for...of` і `for...in` також можуть використовуватися вкупі з [деструктуруванням](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment). Наприклад, водночас можна обробляти в циклі і ключі, і значення об'єкта, використовуючи {{jsxref("Object.entries()")}}.
+
+```js
+const obj = { foo: 1, bar: 2 };
+for (const [key, val] of Object.entries(obj)) {
+  console.log(key, val);
+}
+// "foo" 1
+// "bar" 2
 ```
 
 {{PreviousNext("Web/JavaScript/Guide/Control_flow_and_error_handling",
