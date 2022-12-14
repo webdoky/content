@@ -25,53 +25,6 @@ browser-compat: html.elements.input.type_date
 
 Користувацький інтерфейс введення в цілому відрізняється між браузерами; зверніться до [Сумісності з браузерами](#sumisnist-iz-brauzeramy) по детальнішу інформацію. В непідтримуваних браузерах контрольний елемент зводиться до [`<input type="text">`](/uk/docs/Web/HTML/Element/input/text).
 
-<table class="properties">
-  <tbody>
-    <tr>
-      <td><strong><a href="#znachennia">Значення</a></strong></td>
-      <td>
-        Рядок, що представляє дату в форматі YYYY-MM-DD,
-        або є пустим
-      </td>
-    </tr>
-    <tr>
-      <td><strong>Події</strong></td>
-      <td>
-        {{domxref("HTMLElement/change_event", "change")}} та
-        {{domxref("HTMLElement/input_event", "input")}}
-      </td>
-    </tr>
-    <tr>
-      <td><strong>Підтримувані загальні атрибути</strong></td>
-      <td>
-        {{htmlattrxref("autocomplete", "input")}},
-        {{htmlattrxref("list", "input")}},
-        {{htmlattrxref("readonly", "input")}} і
-        {{htmlattrxref("step", "input")}}
-      </td>
-    </tr>
-    <tr>
-      <td><strong>Атрибути IDL</strong></td>
-      <td>
-        <code>list</code>, <code>value</code>, <code>valueAsDate</code>,
-        <code>valueAsNumber</code>.
-      </td>
-    </tr>
-    <tr>
-      <td><strong>Інтерфейс DOM</strong></td>
-      <td><p>{{domxref("HTMLInputElement")}}</p></td>
-    </tr>
-    <tr>
-      <td><strong>Методи</strong></td>
-      <td>
-        {{domxref("HTMLInputElement.select", "select()")}},
-        {{domxref("HTMLInputElement.stepDown", "stepDown()")}},
-        {{domxref("HTMLInputElement.stepUp", "stepUp()")}}
-      </td>
-    </tr>
-  </tbody>
-</table>
-
 ## Значення
 
 Рядок, що представляє дату, введену в поле. Має формат згідно з ISO8601, він описаний у [Форматі рядків дат](/uk/docs/Web/HTML/Date_and_time_formats#riadky-dat).
@@ -485,6 +438,55 @@ daySelect.onchange = () => {
 ```
 
 > **Примітка:** Слід пам'ятати, що певні роки містять 53 тижні (дивіться [Скільки тижнів у році (англ.)](https://en.wikipedia.org/wiki/ISO_week_date#Weeks_per_year))! Це слід враховувати при промисловій розробці застосунків.
+
+## Технічний підсумок
+
+<table class="properties">
+  <tbody>
+    <tr>
+      <td><strong><a href="#znachennia">Значення</a></strong></td>
+      <td>
+        Рядок, що представляє дату в форматі YYYY-MM-DD,
+        або є порожнім
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Події</strong></td>
+      <td>
+        {{domxref("HTMLElement/change_event", "change")}} та
+        {{domxref("HTMLElement/input_event", "input")}}
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Підтримувані загальні атрибути</strong></td>
+      <td>
+        {{htmlattrxref("autocomplete", "input")}},
+        {{htmlattrxref("list", "input")}},
+        {{htmlattrxref("readonly", "input")}} і
+        {{htmlattrxref("step", "input")}}
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Атрибути IDL</strong></td>
+      <td>
+        <code>list</code>, <code>value</code>, <code>valueAsDate</code>,
+        <code>valueAsNumber</code>.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Інтерфейс DOM</strong></td>
+      <td><p>{{domxref("HTMLInputElement")}}</p></td>
+    </tr>
+    <tr>
+      <td><strong>Методи</strong></td>
+      <td>
+        {{domxref("HTMLInputElement.select", "select()")}},
+        {{domxref("HTMLInputElement.stepDown", "stepDown()")}},
+        {{domxref("HTMLInputElement.stepUp", "stepUp()")}}
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## Специфікації
 
