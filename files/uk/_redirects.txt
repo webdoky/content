@@ -6,3 +6,4 @@
 /uk/docs/CSS/background-position	/uk/docs/Web/CSS/background-position
 /uk/docs/CSS:background-position	/uk/docs/Web/CSS/background-position
 /uk/docs/Web/Guide/HTML/Content_categories	/uk/docs/Web/HTML/Content_categories
+/uk/docs/Web/HTML/Element/Input/<input_type=_checkbox_>	/uk/docs/Web/HTML/Element/Input/checkbox

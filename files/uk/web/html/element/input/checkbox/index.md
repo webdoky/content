@@ -21,43 +21,6 @@ browser-compat: html.elements.input.type_checkbox
 
 > **Примітка:** [Радіокнопки](/uk/docs/Web/HTML/Element/input/radio) схожі на поля позначок, але мають важливу відмінність: радіокнопки групуються так, щоб лише одна радіокнопка була водночас обрана, натомість поля для галочки дають змогу включати й виключати окремі означення. Коли існують декілька контрольних елементів, радіокнопки дозволяють лише одній з них бути ввімкненою, а поля для галочки дозволяють вибір декількох значень.
 
-<table class="properties">
-  <tbody>
-    <tr>
-      <td><strong><a href="#znachennia">Значення</a></strong></td>
-      <td>
-        Рядок, що представляє значення поля для галочки.
-      </td>
-    </tr>
-    <tr>
-      <td><strong>Події</strong></td>
-      <td>{{domxref("HTMLElement/change_event", "change")}} та {{domxref("HTMLElement/input_event", "input")}}</td>
-    </tr>
-    <tr>
-      <td><strong>Підтримувані загальні атрибути</strong></td>
-      <td><code>checked</code></td>
-    </tr>
-    <tr>
-      <td><strong>Атрибути IDL</strong></td>
-      <td>
-        <code><a href="#attr-checked">checked</a></code>,
-        <code><a href="#attr-indeterminate">indeterminate</a></code> і
-        <code><a href="#attr-value">value</a></code>
-      </td>
-    </tr>
-    <tr>
-      <td><strong>Інтерфейс DOM</strong></td>
-      <td><p>{{domxref("HTMLInputElement")}}</p></td>
-    </tr>
-    <tr>
-      <td><strong>Методи</strong></td>
-      <td>
-        {{domxref("HTMLInputElement.select", "select()")}}
-      </td>
-    </tr>
-  </tbody>
-</table>
-
 ## Значення
 
 Рядкове представлення значення поля галочки. Воно не показується на боці клієнта, але на сервері саме це значення буде передано разом із даними, поданими за `name` поля для галочки. Погляньмо на наступний приклад:
@@ -301,6 +264,45 @@ otherCheckbox.addEventListener("change", () => {
 ```
 
 {{EmbedLiveSample('pryklady', '100%', 300)}}
+
+## Технічний підсумок
+
+<table class="properties">
+  <tbody>
+    <tr>
+      <td><strong><a href="#znachennia">Значення</a></strong></td>
+      <td>
+        Рядок, що представляє значення поля для галочки.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Події</strong></td>
+      <td>{{domxref("HTMLElement/change_event", "change")}} та {{domxref("HTMLElement/input_event", "input")}}</td>
+    </tr>
+    <tr>
+      <td><strong>Підтримувані загальні атрибути</strong></td>
+      <td><code>checked</code></td>
+    </tr>
+    <tr>
+      <td><strong>Атрибути IDL</strong></td>
+      <td>
+        <code><a href="#attr-checked">checked</a></code>,
+        <code><a href="#attr-indeterminate">indeterminate</a></code> і
+        <code><a href="#attr-value">value</a></code>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Інтерфейс DOM</strong></td>
+      <td><p>{{domxref("HTMLInputElement")}}</p></td>
+    </tr>
+    <tr>
+      <td><strong>Методи</strong></td>
+      <td>
+        {{domxref("HTMLInputElement.select", "select()")}}
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## Специфікації
 
