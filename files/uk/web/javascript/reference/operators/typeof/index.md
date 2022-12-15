@@ -35,7 +35,7 @@ typeof operand
 | Тип                                                                                                                                                                    | Результат                            |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
 | [Undefined](/uk/docs/Glossary/undefined)                                                                                                                               | `"undefined"`                        |
-| [Null](/uk/docs/Glossary/Null)                                                                                                                                         | `"object"` ([причина](#typeof_null)) |
+| [Null](/uk/docs/Glossary/Null)                                                                                                                                         | `"object"` ([причина](#typeof-null)) |
 | [Boolean](/uk/docs/Glossary/Boolean)                                                                                                                                   | `"boolean"`                          |
 | [Number](/uk/docs/Glossary/Number)                                                                                                                                     | `"number"`                           |
 | [BigInt](/uk/docs/Glossary/BigInt)                                                                                                                                     | `"bigint"`                           |
