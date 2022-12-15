@@ -1,6 +1,7 @@
 ---
 title: String.prototype.split()
 slug: Web/JavaScript/Reference/Global_Objects/String/split
+page-type: javascript-instance-method
 tags:
   - JavaScript
   - Method
@@ -46,7 +47,7 @@ split(separator, limit)
 Якщо `separator` – порожній рядок (`""`), то `str` перетворюється на масив своїх "символів" UTF-16, котрий не містить порожніх рядків на жодному зі своїх кінців.
 
 > **Примітка:** Таким чином, при передачі рядка як `separator` – `"".split("")` є єдиним способом отримати порожній масив.
-> **Застереження:** Коли як розділювач використовується порожній рядок (`""`), то рядок **не** ділиться на _видимі символи_ ([графемні кластери (англ.)](https://unicode.org/reports/tr29/#Grapheme_Cluster_Boundaries)) чи символи юнікоду (кодові точки), натомість – на кодові одиниці UTF-17. Отже – руйнуються [сурогатні пари (англ.)](https://unicode.org/faq/utf_bom.html#utf16-2). Дивіться ["Як на JavaScript отримати з рядка масив символів?" на StackOverflow (англ.)](https://stackoverflow.com/questions/4547609/how-to-get-character-array-from-a-string/34717402#34717402).
+> **Застереження:** Коли як розділювач використовується порожній рядок (`""`), то рядок **не** ділиться на _видимі символи_ ([графемні кластери (англ.)](https://unicode.org/reports/tr29/#Grapheme_Cluster_Boundaries)) чи символи Unicode (кодові точки), натомість – на кодові одиниці UTF-16. Отже – руйнуються [сурогатні пари (англ.)](https://unicode.org/faq/utf_bom.html#utf16-2). Дивіться ["Як на JavaScript отримати з рядка масив символів?" на StackOverflow (англ.)](https://stackoverflow.com/questions/4547609/how-to-get-character-array-from-a-string/34717402#34717402).
 
 Якщо `separator` є регулярним виразом, що дає збіг з порожніми рядками, то те, чи розбивається збіг на кодові одиниці UTF-16, чи на кодові точки Unicode, залежить від присутності на регулярному виразові позначки [`u`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/unicode).
 
