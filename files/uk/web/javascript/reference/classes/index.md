@@ -1,6 +1,7 @@
 ---
 title: Класи
 slug: Web/JavaScript/Reference/Classes
+page-type: guide
 tags:
   - Classes
   - Constructors
