@@ -1,6 +1,7 @@
 ---
 title: typeof
 slug: Web/JavaScript/Reference/Operators/typeof
+page-type: javascript-operator
 tags:
   - JavaScript
   - Language feature
@@ -112,7 +113,7 @@ typeof Math.sin === 'function';
 
 ```js
 // Ця рівність зберігається з часів створення JavaScript
-typeof null === 'object';
+typeof null === "object";
 ```
 
 В першій реалізації JavaScript, його значення позначалися як тег типу та власне значення. Тег типу для об'єктів був `0`. `null` позначався як нульовим вказівником (на більшості платформ це `0x00`). Як наслідок, `null` мав тег типу `0`, тому `typeof` повертає значення `"object"`. ([посилання (англ.)](https://2ality.com/2013/10/typeof-null.html))
@@ -124,7 +125,7 @@ typeof null === 'object';
 Усі функції-конструктори, викликані з [`new`](/uk/docs/Web/JavaScript/Reference/Operators/new), повернуть непримітиви (`"object"` чи `"function"`). Більшість повертає об'єкти, крім вагомого винятку в особі [`Function`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function), що повертає функцію.
 
 ```js
-const str = new String('String');
+const str = new String("String");
 const num = new Number(100);
 
 typeof str; // 'object'
@@ -143,8 +144,8 @@ typeof func; // 'function'
 // За допомогою дужок можна визначати тип даних цілих виразів.
 const someData = 99;
 
-typeof someData + ' Wisen'; // 'number Wisen'
-typeof (someData + ' Wisen'); // 'string'
+typeof someData + " Wisen"; // 'number Wisen'
+typeof (someData + " Wisen"); // 'string'
 ```
 
 ### Взаємодія з неоголошеними й неініціалізованими змінними
@@ -163,7 +164,7 @@ typeof newConstVariable; // ReferenceError
 typeof newClass; // ReferenceError
 
 let newLetVariable;
-const newConstVariable = 'hello';
+const newConstVariable = "hello";
 class newClass {}
 ```
 
@@ -173,7 +174,7 @@ class newClass {}
 з типом `undefined`.
 
 ```js
-typeof document.all === 'undefined';
+typeof document.all === "undefined";
 ```
 
 Попри те, що `document.all` також є [хибним значенням](/uk/docs/Glossary/Falsy) і [приблизно дорівнює](/uk/docs/Web/JavaScript/Reference/Operators/Equality) `undefined`, він не є [`undefined`](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined). Ситуація з тим, що `document.all` має тип `"undefined"`, класифікована у вебстандартах як "навмисне порушення" оригінального стандарту ECMAScript заради сумісності.
@@ -187,30 +188,30 @@ typeof document.all === 'undefined';
 ```js
 function type(value) {
   if (value === null) {
-    return 'null';
+    return "null";
   }
   const baseType = typeof value;
   // Примітивні типи
-  if (!['object', 'function'].includes(baseType)) {
+  if (!["object", "function"].includes(baseType)) {
     return baseType;
   }
   // Symbol.toStringTag нерідко вказує на "показне ім'я"
   // класу об'єкта. Він використовується в Object.prototype.toString().
   const tag = value[Symbol.toStringTag];
-  if (typeof tag === 'string') {
+  if (typeof tag === "string") {
     return tag;
   }
   // Якщо це функція, чий вихідний код починається з ключового слова "class"
   if (
-    baseType === 'function' &&
-    Function.prototype.toString.call(value).startsWith('class')
+    baseType === "function" &&
+    Function.prototype.toString.call(value).startsWith("class")
   ) {
-    return 'class';
+    return "class";
   }
   // Ім'я конструктора; наприклад, `Array`, `GeneratorFunction`,
   // `Number`, `String`, `Boolean` чи `MyCustomClass`
   const className = value.constructor.name;
-  if (typeof className === 'string' && className !== '') {
+  if (typeof className === "string" && className !== "") {
     return className;
   }
   // Тут вже немає надійного способа отримати тип значення,
