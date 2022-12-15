@@ -258,5 +258,5 @@ const mergedObj1 = merge(obj1, obj2);
 ## Дивіться також
 
 - [Решта параметрів](/uk/docs/Web/JavaScript/Reference/Functions/rest_parameters)
-- [Решта властивостей](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#rest_property)
+- [Решта властивостей](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#reshta-vlastyvostei)
 - {{jsxref("Function.prototype.apply()")}}
