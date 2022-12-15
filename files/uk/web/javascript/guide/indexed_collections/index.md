@@ -1,6 +1,7 @@
 ---
 title: Індексовані колекції
 slug: Web/JavaScript/Guide/Indexed_collections
+page-type: guide
 tags:
   - Guide
   - JavaScript
