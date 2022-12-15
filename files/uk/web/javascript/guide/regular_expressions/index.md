@@ -1,6 +1,7 @@
 ---
 title: Регулярні вирази
 slug: Web/JavaScript/Guide/Regular_Expressions
+page-type: guide
 tags:
   - Guide
   - Intermediate
@@ -65,7 +66,7 @@ tags:
 - [Квантори](/uk/docs/Web/JavaScript/Guide/Regular_Expressions/Quantifiers)
   - : Вказують кількість символів чи виразів для збігу.
 - [Екранування юнікодних полів](/uk/docs/Web/JavaScript/Guide/Regular_Expressions/Unicode_Property_Escapes)
-  - : Розрізнення, засноване на властивостях символів юнікоду. Наприклад, літери верхнього та нижнього регістру, математичні та розділові знаки.
+  - : Розрізнення, засноване на властивостях символів Unicode. Наприклад, літери верхнього та нижнього регістру, математичні та розділові знаки.
 
 Нижче наведено єдину таблицю всіх спеціальних символів, які можна використовувати в регулярних виразах:
 
@@ -463,7 +464,7 @@ form.addEventListener("submit", (event) => {
 
 #### Результат
 
-{{ EmbedLiveSample('zastosuvannia-spetsialnykh-symvoliv-dlia-perevirky-vvodu') }}
+{{EmbedLiveSample('zastosuvannia-spetsialnykh-symvoliv-dlia-perevirky-vvodu')}}
 
 ## Інструменти
 
