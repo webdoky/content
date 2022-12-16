@@ -27,67 +27,15 @@ browser-compat: html.elements.iframe
 
 > **Застереження:** Через те, що кожен навігаційний контекст є повноцінним середовищем документа, кожен `<iframe>` на сторінці потребує додаткових пам'яті та інших обчислювальних ресурсів. Хоч теоретично можна використовувати скільки завгодно `<iframe>`, слід слідкувати за проблемами швидкодії.
 
-<table class="properties">
-  <tbody>
-    <tr>
-      <th scope="row">
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories"
-          >Категорії вмісту</a
-        >
-      </th>
-      <td>
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#flow_content"
-          >Потоковий вміст</a
-        >,
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#phrasing_content"
-          >оповідальний вміст</a
-        >, вбудований вміст, інтерактивний вміст, дотиковий вміст.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволений вміст</th>
-      <td>Жодного.</td>
-    </tr>
-    <tr>
-      <th scope="row">Упускання тегу</th>
-      <td>{{no_tag_omission}}</td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені батьківські елементи</th>
-      <td>Будь-який елемент, що приймає вбудований вміст.</td>
-    </tr>
-    <tr>
-      <th scope="row">Неявна роль ARIA</th>
-      <td>
-        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"
-          >Немає відповідної ролі</a
-        >
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені ролі ARIA</th>
-      <td>
-        {{ARIARole("application")}}, {{ARIARole("document")}},
-        {{ARIARole("img")}}, {{ARIARole("none")}},
-        {{ARIARole("presentation")}}
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Інтерфейс DOM</th>
-      <td>{{domxref("HTMLIFrameElement")}}</td>
-    </tr>
-  </tbody>
-</table>
-
 ## Атрибути
 
 Цей елемент приймає [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
 
 - {{htmlattrdef("allow")}}
 
-  - : Вказує [політику можливостей](/uk/docs/Web/HTTP/Feature_Policy) для `<iframe>`. Політика визначає, які можливості доступні `<iframe>`, залежно від походження запиту (наприклад, доступ до мікрофона, камери, батареї, API вебпоширення тощо).
+  - : Задає [політику дозволів](/uk/docs/Web/HTTP/Permissions_Policy) для `<iframe>`. Політика визначає те, які можливості доступні `<iframe>` (наприклад, доступ до мікрофона, камери, батареї, поширення в Інтернеті тощо), залежно від походження запиту.
 
-    Для докладнішої інформації й прикладів дивіться: [Застосування політики можливостей](/uk/docs/Web/HTTP/Feature_Policy/Using_Feature_Policy) > [Атрибут iframe allow](/uk/docs/Web/HTTP/Feature_Policy/Using_Feature_Policy#atrybut-iframe-allow).
+    > **Примітка:** Політика дозволів, задана атрибутом `allow`, реалізовує додаткові обмеження, поверх політики, заданої в заголовку {{httpheader("Permissions-Policy")}}. Перша не замінює другу.
 
 - {{htmlattrdef("allowfullscreen")}}
 
@@ -227,7 +175,7 @@ browser-compat: html.elements.iframe
 
 #### Результат
 
-{{ EmbedLiveSample('prostyi-iframe', 640,400)}}
+{{EmbedLiveSample('prostyi-iframe', 640,400)}}
 
 ## Занепокоєння щодо доступності
 
@@ -240,6 +188,60 @@ browser-compat: html.elements.iframe
 ```
 
 Без цього `title` їм доведеться перейти до `<iframe>`, щоб з'ясувати, який вміст вбудовано. Така зміна контексту може спантеличувати й забирати час, особливо для сторінок з багатьма `<iframe>` чи коли вбудований інтерактивний вміст, як то відео чи аудіо.
+
+## Технічний підсумок
+
+<table class="properties">
+  <tbody>
+    <tr>
+      <th scope="row">
+        <a href="/uk/docs/Web/Guide/HTML/Content_categories"
+          >Категорії вмісту</a
+        >
+      </th>
+      <td>
+        <a href="/uk/docs/Web/Guide/HTML/Content_categories#potokovyi-vmist"
+          >Потоковий вміст</a
+        >,
+        <a href="/uk/docs/Web/Guide/HTML/Content_categories#opovidalnyi-vmist"
+          >оповідальний вміст</a
+        >, вбудований вміст, інтерактивний вміст, відчутний вміст.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволений вміст</th>
+      <td>Жодного.</td>
+    </tr>
+    <tr>
+      <th scope="row">Упускання тегу</th>
+      <td>{{no_tag_omission}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені батьківські елементи</th>
+      <td>Будь-який елемент, що приймає вбудований вміст.</td>
+    </tr>
+    <tr>
+      <th scope="row">Неявна роль ARIA</th>
+      <td>
+        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"
+          >Немає відповідної ролі</a
+        >
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені ролі ARIA</th>
+      <td>
+        {{ARIARole("application")}}, {{ARIARole("document")}},
+        {{ARIARole("img")}}, {{ARIARole("none")}},
+        {{ARIARole("presentation")}}
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Інтерфейс DOM</th>
+      <td>{{domxref("HTMLIFrameElement")}}</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Специфікації
 
