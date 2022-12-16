@@ -1,6 +1,7 @@
 ---
 title: Вирази та оператори
 slug: Web/JavaScript/Reference/Operators
+page-type: landing-page
 tags:
   - JavaScript
   - Landing page

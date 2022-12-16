@@ -1,6 +1,7 @@
 ---
 title: JSON.stringify()
 slug: Web/JavaScript/Reference/Global_Objects/JSON/stringify
+page-type: javascript-static-method
 tags:
   - JSON
   - JavaScript
@@ -372,5 +373,5 @@ JSON.stringify("\uD800"); // '"\\ud800"'
 
 ## Дивіться також
 
-- [Поліфіл сучасної поведінки `JSON.stringify` (символи і як слід сформований юнікод) у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-json)
+- [Поліфіл сучасної поведінки `JSON.stringify` (символи і як слід сформований Unicode) у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-json)
 - {{JSxRef("JSON.parse()")}}
