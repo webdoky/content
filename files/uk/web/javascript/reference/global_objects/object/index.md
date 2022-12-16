@@ -1,6 +1,7 @@
 ---
 title: Object (Об'єкт)
 slug: Web/JavaScript/Reference/Global_Objects/Object
+page-type: javascript-class
 tags:
   - Class
   - JavaScript

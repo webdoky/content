@@ -30,7 +30,7 @@ browser-compat: html.elements.a
 
 - {{HTMLAttrDef("download")}}
 
-  - : Змушує браузер обробляти заданий URL як завантаження. Може використовуватись як без, так і зі значенням:
+  - : Змушує браузер обробляти заданий URL як завантаження. Може використовуватись як без, так і зі значенням `filename`:
 
     - Якщо значення немає, то браузер запропонує ім'я файлу та розширення, згенеровані з різних джерел:
 
@@ -38,7 +38,7 @@ browser-compat: html.elements.a
       - Останнього сегмента [шляху](/uk/docs/Web/API/URL/pathname) URL
       - {{Glossary("MIME_type", "Типу медіаданих")}} (із заголовка {{HTTPHeader("Content-Type")}}, початку [URL `data:`](/uk/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) чи {{domxref("Blob.type")}} в [URL `blob:`](/uk/docs/Web/API/URL/createObjectURL))
 
-    - Якщо значення задане, то воно буде запропоновано як назва файлу. Символи `/` і `\` перетворюються на підкреслення (`_`). Файлові системи можуть забороняти інші символи в іменах файлів, тож браузери підлаштовуватимуть запропоноване ім'я, якщо це необхідно.
+    - `filename`: якщо значення задане, то воно буде запропоновано як назва файлу. Символи `/` і `\` перетворюються на підкреслення (`_`). Файлові системи можуть забороняти інші символи в іменах файлів, тож браузери підлаштовуватимуть запропоноване ім'я, якщо це необхідно.
 
     > **Примітка:**
     >
@@ -115,103 +115,6 @@ browser-compat: html.elements.a
   - : Форма регіону гіперпосилання на бітовій карті.
 
     > **Примітка:** Використовуйте натомість для бітових карт елемент {{HTMLElement("area")}}.
-
-## Властивості
-
-<table class="properties">
-  <tbody>
-    <tr>
-      <th scope="row">
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories"
-          >Категорії вмісту</a
-        >
-      </th>
-      <td>
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#flow_content"
-          >Потоковий вміст</a
-        >,
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#phrasing_content"
-          >оповідальний вміст</a
-        >,
-        <a
-          href="/uk/docs/Web/Guide/HTML/Content_categories#interactive_content"
-          >інтерактивний вміст</a
-        >, дотиковий вміст.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволений вміст</th>
-      <td>
-        <a
-          href="/uk/docs/Web/Guide/HTML/Content_categories#model-prozoroho-vmistu"
-          >Прозорий</a
-        >, але жодний нащадок не може бути
-        <a
-          href="/uk/docs/Web/Guide/HTML/Content_categories#interactive_content"
-          >інтерактивним вмістом</a
-        > чи елементом
-        <a href="/uk/docs/Web/HTML/Element/a"
-          >a</a
-        >; крім того, жодний нащадок не може мати атрибута
-        <a
-          href="/uk/docs/Web/HTML/Global_attributes/tabindex"
-          >tabindex</a
-        >.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Упущення тегів</th>
-      <td>{{no_tag_omission}}</td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені батьківські елементи</th>
-      <td>
-        Будь-який елемент, що приймає
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#phrasing_content"
-          >оповідальний вміст</a
-        >, або будь-який елемент, що приймає
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#flow_content"
-          >потоковий елемент</a
-        >, але не інший елемент <code>&#x3C;a></code>.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Неявна роль ARIA</th>
-      <td>
-        {{ARIARole("link")}}, коли присутній атрибут <code>href</code>, інакше –
-        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"
-          >жодної відповідної ролі</a
-        >
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені ролі ARIA</th>
-      <td>
-        <p>Коли присутній атрибут <code>href</code>:</p>
-        <ul>
-          <li>{{ARIARole("button")}}</li>
-          <li>{{ARIARole("checkbox")}}</li>
-          <li>{{ARIARole("menuitem")}}</li>
-          <li>{{ARIARole("menuitemcheckbox")}}</li>
-          <li>{{ARIARole("menuitemradio")}}</li>
-          <li>{{ARIARole("option")}}</li>
-          <li>{{ARIARole("radio")}}</li>
-          <li>{{ARIARole("switch")}}</li>
-          <li>{{ARIARole("tab")}}</li>
-          <li>{{ARIARole("treeitem")}}</li>
-        </ul>
-        <p>Коли атрибута <code>href</code> немає:</p>
-        <ul>
-          <li>будь-яка роль</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Інтерфейс DOM</th>
-      <td>{{DOMxRef("HTMLAnchorElement")}}</td>
-    </tr>
-  </tbody>
-</table>
 
 ## Приклади
 
@@ -487,6 +390,103 @@ document
 
 - [Тремтіння рук та проблема велетенської кнопки (англ.)](https://axesslab.com/hand-tremors/)
 
+## Технічний підсумок
+
+<table class="properties">
+  <tbody>
+    <tr>
+      <th scope="row">
+        <a href="/uk/docs/Web/Guide/HTML/Content_categories"
+          >Категорії вмісту</a
+        >
+      </th>
+      <td>
+        <a href="/uk/docs/Web/Guide/HTML/Content_categories#potokovyi-vmist"
+          >Потоковий вміст</a
+        >,
+        <a href="/uk/docs/Web/Guide/HTML/Content_categories#opovidalnyi-vmist"
+          >оповідальний вміст</a
+        >,
+        <a
+          href="/uk/docs/Web/Guide/HTML/Content_categories#interaktyvnyi-vmist"
+          >інтерактивний вміст</a
+        >, відчутний вміст.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволений вміст</th>
+      <td>
+        <a
+          href="/uk/docs/Web/Guide/HTML/Content_categories#model-prozoroho-vmistu"
+          >Прозорий</a
+        >, але жодний нащадок не може бути
+        <a
+          href="/uk/docs/Web/Guide/HTML/Content_categories#interaktyvnyi-vmist"
+          >інтерактивним вмістом</a
+        > чи елементом
+        <a href="/uk/docs/Web/HTML/Element/a"
+          >a</a
+        >; крім того, жодний нащадок не може мати атрибута
+        <a
+          href="/uk/docs/Web/HTML/Global_attributes/tabindex"
+          >tabindex</a
+        >.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Упущення тегів</th>
+      <td>{{no_tag_omission}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені батьківські елементи</th>
+      <td>
+        Будь-який елемент, що приймає
+        <a href="/uk/docs/Web/Guide/HTML/Content_categories#opovidalnyi-vmist"
+          >оповідальний вміст</a
+        >, або будь-який елемент, що приймає
+        <a href="/uk/docs/Web/Guide/HTML/Content_categories#potokovyi-vmist"
+          >потоковий елемент</a
+        >, але не інший елемент <code>&#x3C;a></code>.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Неявна роль ARIA</th>
+      <td>
+        {{ARIARole("link")}}, коли присутній атрибут <code>href</code>, інакше –
+        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"
+          >жодної відповідної ролі</a
+        >
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені ролі ARIA</th>
+      <td>
+        <p>Коли присутній атрибут <code>href</code>:</p>
+        <ul>
+          <li>{{ARIARole("button")}}</li>
+          <li>{{ARIARole("checkbox")}}</li>
+          <li>{{ARIARole("menuitem")}}</li>
+          <li>{{ARIARole("menuitemcheckbox")}}</li>
+          <li>{{ARIARole("menuitemradio")}}</li>
+          <li>{{ARIARole("option")}}</li>
+          <li>{{ARIARole("radio")}}</li>
+          <li>{{ARIARole("switch")}}</li>
+          <li>{{ARIARole("tab")}}</li>
+          <li>{{ARIARole("treeitem")}}</li>
+        </ul>
+        <p>Коли атрибута <code>href</code> немає:</p>
+        <ul>
+          <li>будь-яка роль</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Інтерфейс DOM</th>
+      <td>{{DOMxRef("HTMLAnchorElement")}}</td>
+    </tr>
+  </tbody>
+</table>
+
 ## Специфікації
 
 {{Specifications}}
@@ -498,4 +498,6 @@ document
 ## Дивіться також
 
 - {{HTMLElement("link")}} подібний до `<a>`, але призначений для гіперпосилань метаданих, невидимих для користувачів.
-- {{CSSxRef(":link")}} – псевдоклас CSS, який дає збіг з елементами `<a>`, що мають дійсні атрибути `href`.
+- {{CSSxRef(":visited")}} – це псевдоклас CSS, що дає збіг з елементами `<a>`, в атрибуті `href` яких задані URL, котрі користувач уже відвідував у минулому.
+- {{CSSxRef(":link")}} – це псевдоклас CSS, що дає збіг з елементами `<a>`, в атрибуті `href` яких задані URL, котрі користувач поки не відвідував.
+- {{CSSxRef(":any-link")}} – це псевдоклас CSS, що дає збіг з елементами `<a>`, котрі мають атрибут `href`.
