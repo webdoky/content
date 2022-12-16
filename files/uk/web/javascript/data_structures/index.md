@@ -1,6 +1,7 @@
 ---
 title: Типи даних та структури даних JavaScript
 slug: Web/JavaScript/Data_structures
+page-type: guide
 tags:
   - Beginner
   - Guide
