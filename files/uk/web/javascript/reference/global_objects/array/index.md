@@ -1,6 +1,7 @@
 ---
 title: Array (масив)
 slug: Web/JavaScript/Reference/Global_Objects/Array
+page-type: javascript-class
 tags:
   - Array
   - Class

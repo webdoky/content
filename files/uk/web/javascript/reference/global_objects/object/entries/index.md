@@ -1,6 +1,7 @@
 ---
 title: Object.entries()
 slug: Web/JavaScript/Reference/Global_Objects/Object/entries
+page-type: javascript-static-method
 tags:
   - JavaScript
   - Method
@@ -91,7 +92,7 @@ console.log(map); // Map(2) {"foo" => "bar", "baz" => 42}
 
 ### Ітерування по Object
 
-За допомогою [деструктуризації масиву](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#destrukturyzatsiia-masyvu) можна з легкістю перебирати поля об'єкта.
+За допомогою [деструктурування масиву](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#destrukturuvannia-masyvu) можна з легкістю перебирати поля об'єкта.
 
 ```js
 // За допомогою циклу for...of

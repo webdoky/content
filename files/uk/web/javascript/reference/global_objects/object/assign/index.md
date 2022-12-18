@@ -1,6 +1,7 @@
 ---
 title: Object.assign()
 slug: Web/JavaScript/Reference/Global_Objects/Object/assign
+page-type: javascript-static-method
 tags:
   - ECMAScript 2015
   - JavaScript
@@ -38,7 +39,7 @@ Object.assign(target, ...sources)
 
 Властивості цільового об'єкта перезаписуються властивостями донорів, якщо вони мають однакові {{jsxref("Object/keys", "ключі", "", 1)}}. Властивості наступних донорських об'єктів перезаписують властивості попередніх (в цільовому об'єкті).
 
-Метод `Object.assign()` копіює до цільового об'єкта лише _перелічувані_ та _власні_ властивості донорських об'єктів. Він використовує `[[Get]]` на донорі та `[[Set]]` на цільовому об'єкті, тобто він викликає [геттери](/uk/docs/Web/JavaScript/Reference/Functions/get) й [сеттери](/uk/docs/Web/JavaScript/Reference/Functions/set). Інакше кажучи, він саме _присвоює_ властивості, замість копіювання чи оголошення нових. Це може робити його непридатним для злиття нових властивостей у прототип, якщо донори для злиття містять геттери.
+Метод `Object.assign()` копіює до цільового об'єкта лише _перелічувані_ та _власні_ властивості донорських об'єктів. Він використовує `[[Get]]` на донорі та `[[Set]]` на цільовому об'єкті, тобто він викликає [гетери](/uk/docs/Web/JavaScript/Reference/Functions/get) й [сетери](/uk/docs/Web/JavaScript/Reference/Functions/set). Інакше кажучи, він саме _присвоює_ властивості, замість копіювання чи оголошення нових. Це може робити його непридатним для злиття нових властивостей у прототип, якщо донори для злиття містять гетери.
 
 Для копіювання оголошень властивостей (включно з їхньою перелічуваністю) у прототипи слід натомість використовувати {{jsxref("Object.getOwnPropertyDescriptor()")}} та {{jsxref("Object.defineProperty()")}}.
 
@@ -114,7 +115,7 @@ console.log(obj); // { a: 1, b: 2, c: 3 }
 
 ```js
 const o1 = { a: 1 };
-const o2 = { [Symbol('foo')]: 2 };
+const o2 = { [Symbol("foo")]: 2 };
 
 const obj = Object.assign({}, o1, o2);
 console.log(obj); // { a : 1, [Symbol("foo")]: 2 } (для порівняння, вада 1207182 у Firefox)
@@ -135,7 +136,7 @@ const obj = Object.create(
       value: 3,
       enumerable: true, // baz є власною перелічуваною властивістю.
     },
-  },
+  }
 );
 
 const copy = Object.assign({}, obj);
@@ -145,10 +146,10 @@ console.log(copy); // { baz: 3 }
 ### Примітиви обгортаються в об'єкти
 
 ```js
-const v1 = 'abc';
+const v1 = "abc";
 const v2 = true;
 const v3 = 10;
-const v4 = Symbol('foo');
+const v4 = Symbol("foo");
 
 const obj = Object.assign({}, v1, null, v2, undefined, v3, v4);
 // Примітиви обгортаються, null та undefined ігноруються.
@@ -159,7 +160,7 @@ console.log(obj); // { "0": "a", "1": "b", "2": "c" }
 ### Винятки переривають операцію копіювання, що триває
 
 ```js
-const target = Object.defineProperty({}, 'foo', {
+const target = Object.defineProperty({}, "foo", {
   value: 1,
   writable: false,
 }); // target.foo — це властивість лише для читання
@@ -188,7 +189,7 @@ const obj = {
 let copy = Object.assign({}, obj);
 console.log(copy);
 // { foo: 1, bar: 2 }
-// Значення copy.bar дорівнює поверненому значенню геттера obj.bar.
+// Значення copy.bar дорівнює поверненому значенню гетера obj.bar.
 
 // Ось фінкція присвоєння, яка капіює дескриптори цілком
 function completeAssign(target, ...sources) {
@@ -228,4 +229,4 @@ console.log(copy);
 - [Поліфіл `Object.assign` у `core-js`](https://github.com/zloirock/core-js#ecmascript-object)
 - {{jsxref("Object.defineProperties()")}}
 - [Перелічуваність і власність властивостей](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties)
-- [Розгортання в об'єктних літералах](/uk/docs/Web/JavaScript/Reference/Operators/Spread_syntax#spread_in_object_literals)
+- [Розгортання в об'єктних літералах](/uk/docs/Web/JavaScript/Reference/Operators/Spread_syntax#rozghortannia-v-obiektnykh-literalakh)

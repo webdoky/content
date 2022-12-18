@@ -1,6 +1,0 @@
-# Redirect map file
-# URLs must be tab-separated
-#
-# FROM-URL	TO-URL
-/uk/docs/Web/CSS/transform-function/rotate()	/uk/docs/Web/CSS/transform-function/rotate
-/uk/docs/Web/Guide/HTML/Content_categories	/uk/docs/Web/HTML/Content_categories
