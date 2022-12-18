@@ -1,6 +1,7 @@
 ---
 title: Довідник з JavaScript
 slug: Web/JavaScript/Reference
+page-type: landing-page
 tags:
   - Code
   - ECMAScript
