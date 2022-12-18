@@ -13,7 +13,7 @@ browser-compat: javascript.builtins.Object.fromEntries
 
 {{JSRef}}
 
-Метод **`Object.fromEntries()`** перетворює список пар ключ-значення на об'єкт.
+Метод **`Object.fromEntries()`** ("із записів") перетворює список пар ключ-значення на об'єкт.
 
 {{EmbedInteractiveExample("pages/js/object-fromentries.html")}}
 
@@ -27,7 +27,7 @@ Object.fromEntries(iterable)
 
 - `iterable`
 
-  - : [Ітерований об'єкт](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#protokol-iterovanoho-obiekta), Як от {{jsxref("Array", "масив")}} чи {{jsxref("Map", "відображення)}}, який містить певний перелік об'єктів. Кожний такий об'єкт мусить містити дві властивості:
+  - : [Ітерований об'єкт](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#protokol-iterovanoho-obiekta), як от {{jsxref("Array", "масив")}} чи {{jsxref("Map", "відображення)}}, який містить певний перелік об'єктів. Кожний такий об'єкт мусить містити дві властивості:
 
     - `0`
       - : Рядок або [символ](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol), що представляє ключ властивості.
@@ -46,7 +46,7 @@ Object.fromEntries(iterable)
 
 Метод `Object.fromEntries()` виконує зворотну від {{jsxref("Object.entries()")}} операцію, за винятком того, що `Object.entries()` повертає лише властивості з рядковими ключами, а `Object.fromEntries()` може також створювати властивості з символьними ключами.
 
-> **Примітка:** На відміну від {{jsxref("Array.from()")}}, `Object.fromEntries()` не використовує значення `this`, тому виклик його з іншим конструктором не створить об'єкти того типу.
+> **Примітка:** На відміну від {{jsxref("Array.from()")}}, `Object.fromEntries()` не використовує значення `this`, тому виклик його з іншим конструктором не створить об'єкти іншого типу.
 
 ## Приклади
 
