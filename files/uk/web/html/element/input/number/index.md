@@ -24,47 +24,6 @@ browser-compat: html.elements.input.type_number
 
 В браузерах, що не підтримують полів типу `number`, такі поля працюють як поля типу `text`.
 
-<table class="properties">
-  <tbody>
-    <tr>
-      <td><strong><a href="#znachennia">Значення</a></strong></td>
-      <td>{{jsxref("Number")}}, що представляє число, або порожнє</td>
-    </tr>
-    <tr>
-      <td><strong>Події</strong></td>
-      <td>
-        {{domxref("HTMLElement/change_event", "change")}} та
-        {{domxref("HTMLElement/input_event", "input")}}
-      </td>
-    </tr>
-    <tr>
-      <td><strong>Підтримувані загальні атрибути</strong></td>
-      <td>
-        {{htmlattrxref("autocomplete", "input")}},
-        {{htmlattrxref("list", "input")}},
-        {{htmlattrxref("placeholder", "input")}},
-        {{htmlattrxref("readonly", "input")}}
-      </td>
-    </tr>
-    <tr>
-      <td><strong>Атрибути IDL</strong></td>
-      <td><code>list</code>, <code>value</code>, <code>valueAsNumber</code></td>
-    </tr>
-    <tr>
-      <td><strong>Інтерфейс DOM</strong></td>
-      <td><p>{{domxref("HTMLInputElement")}}</p></td>
-    </tr>
-    <tr>
-      <td><strong>Методи</strong></td>
-      <td>
-        {{domxref("HTMLInputElement.select", "select()")}},
-        {{domxref("HTMLInputElement.stepUp", "stepUp()")}},
-        {{domxref("HTMLInputElement.stepDown", "stepDown()")}}
-      </td>
-    </tr>
-  </tbody>
-</table>
-
 ## Значення
 
 Значення, що представляє значення числа, введеного в поле. Можна встановити усталене значення поля, включивши число в атрибут {{htmlattrxref("value", "input")}}, отак:
@@ -447,6 +406,49 @@ switchBtn.addEventListener("click", () => {
 Неявна [роль](/uk/docs/Web/Accessibility/ARIA/Roles) елемента `<input type="number">` – [`spinbutton`](/uk/docs/Web/Accessibility/ARIA/Roles/spinbutton_role) (лічильник). Якщо лічильник не є важливою особливістю контрольного елемента, слід розглянути варіант _не_ використовувати `type="number"`. Натомість варто застосувати [`inputmode="numeric"`](/uk/docs/Web/HTML/Global_attributes/inputmode) вкупі з атрибутом [`pattern`](/uk/docs/Web/HTML/Attributes/pattern), котрий обмежить символи числами й пов'язаними символами. При використанні `<input type="number">` присутній ризик того, що користувачі випадково збільшать число, поки намагаються зробити щось інше. Крім того, якщо користувачі намагаються ввести щось, що не є числом, то не має явного пояснення того, що саме вони роблять не так.
 
 Також слід розглянути варіант використання атрибута [`autocomplete`](/uk/docs/Web/HTML/Attributes/autocomplete), аби допомогти користувачам заповнити форму швидше і з меншими шансами отримання помилок. Наприклад, для ввімкнення автозаповнення поштового індексу, слід задати `autocomplete="postal-code"`.
+
+## Технічний підсумок
+
+<table class="properties">
+  <tbody>
+    <tr>
+      <td><strong><a href="#znachennia">Значення</a></strong></td>
+      <td>{{jsxref("Number")}}, що представляє число, або порожнє</td>
+    </tr>
+    <tr>
+      <td><strong>Події</strong></td>
+      <td>
+        {{domxref("HTMLElement/change_event", "change")}} та
+        {{domxref("HTMLElement/input_event", "input")}}
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Підтримувані загальні атрибути</strong></td>
+      <td>
+        {{htmlattrxref("autocomplete", "input")}},
+        {{htmlattrxref("list", "input")}},
+        {{htmlattrxref("placeholder", "input")}},
+        {{htmlattrxref("readonly", "input")}}
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Атрибути IDL</strong></td>
+      <td><code>list</code>, <code>value</code>, <code>valueAsNumber</code></td>
+    </tr>
+    <tr>
+      <td><strong>Інтерфейс DOM</strong></td>
+      <td><p>{{domxref("HTMLInputElement")}}</p></td>
+    </tr>
+    <tr>
+      <td><strong>Методи</strong></td>
+      <td>
+        {{domxref("HTMLInputElement.select", "select()")}},
+        {{domxref("HTMLInputElement.stepUp", "stepUp()")}},
+        {{domxref("HTMLInputElement.stepDown", "stepDown()")}}
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## Специфікації
 

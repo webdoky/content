@@ -35,45 +35,6 @@ browser-compat: html.elements.input.type_radio
 
 > **Примітка:** [Поля з галочками](/uk/docs/Web/HTML/Element/input/checkbox) подібні до радіокнопок, але мають важливу особливість: радіокнопки задумані для вибору з асортименту одного значення, натомість поля з галочками дають змогу по одному вмикати й вимикати значення. Коли присутні декілька контрольних елементів, радіокнопки дозволяють вибрати одну із них, натомість поля з галочками дають змогу вибрати декілька значень.
 
-<table class="properties">
-  <tbody>
-    <tr>
-      <td><strong><a href="#znachennia">Значення</a></strong></td>
-      <td>
-        Рядок, що представляє значення радіокнопки
-      </td>
-    </tr>
-    <tr>
-      <td><strong>Події</strong></td>
-      <td>{{domxref("HTMLElement/change_event", "change")}} та {{domxref("HTMLElement/input_event", "input")}}</td>
-    </tr>
-    <tr>
-      <td><strong>Підтримувані загальні атрибути</strong></td>
-      <td>
-        <code><a href="#attr-checked">checked</a></code
-        >, <code><a href="#attr-value">value</a></code> та
-        <code
-          ><a href="/uk/docs/Web/HTML/Attributes/required">required</a></code
-        >
-      </td>
-    </tr>
-    <tr>
-      <td><strong>Атрибути IDL</strong></td>
-      <td><code>checked</code> і <code>value</code></td>
-    </tr>
-    <tr>
-      <td><strong>Інтерфейс DOM</strong></td>
-      <td><p>{{domxref("HTMLInputElement")}}</p></td>
-    </tr>
-    <tr>
-      <td><strong>Методи</strong></td>
-      <td>
-        {{domxref("HTMLInputElement.select", "select()")}}
-      </td>
-    </tr>
-  </tbody>
-</table>
-
 ## Значення
 
 Атрибут `value` є рядком, що містить значення радіокнопки. Це значення ніколи не демонструється користувачу {{Glossary("user agent", "користувацьким агентом")}}. Замість цього воно використовується, щоб визначити, яка радіокнопка з групи була вибрана.
@@ -335,6 +296,47 @@ button:active {
 {{EmbedLiveSample('oformlennia-radiopoliv', 600, 120)}}
 
 Зверніть увагу на те, що при клацанні радіокнопки, коли дві кнопки міняють стан, присутній приємний плавний ефект появи-зникнення. На додачу до цього, стиль та забарвлення легенди й кнопки подання – видозмінені, щоб мати суттєвий контраст. Це може бути не таким виглядом, який хотілось би мати в реальному вебзастосунку, зате показує доступні можливості.
+
+## Технічний підсумок
+
+<table class="properties">
+  <tbody>
+    <tr>
+      <td><strong><a href="#znachennia">Значення</a></strong></td>
+      <td>
+        Рядок, що представляє значення радіокнопки
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Події</strong></td>
+      <td>{{domxref("HTMLElement/change_event", "change")}} та {{domxref("HTMLElement/input_event", "input")}}</td>
+    </tr>
+    <tr>
+      <td><strong>Підтримувані загальні атрибути</strong></td>
+      <td>
+        <code><a href="#attr-checked">checked</a></code
+        >, <code><a href="#attr-value">value</a></code> та
+        <code
+          ><a href="/uk/docs/Web/HTML/Attributes/required">required</a></code
+        >
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Атрибути IDL</strong></td>
+      <td><code>checked</code> і <code>value</code></td>
+    </tr>
+    <tr>
+      <td><strong>Інтерфейс DOM</strong></td>
+      <td><p>{{domxref("HTMLInputElement")}}</p></td>
+    </tr>
+    <tr>
+      <td><strong>Методи</strong></td>
+      <td>
+        {{domxref("HTMLInputElement.select", "select()")}}
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## Специфікації
 
