@@ -14,7 +14,7 @@ browser-compat: javascript.operators.optional_chaining
 
 {{JSSidebar("Operators")}}
 
-**Оператор необов'язкового ланцюжка (`?.`)** звертається до властивості об'єкта або викликає функцію. Якщо об'єкт – {{jsxref("undefined")}} або [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null), то замість викидання помилки – повертається {{jsxref("undefined")}}.
+**Оператор необов'язкового ланцюжка (`?.`)** звертається до властивості об'єкта або викликає функцію. Якщо об'єкт, до якого відбувається звертання, або функція, що викликається – {{jsxref("undefined")}} або [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null), то замість викидання помилки – повертається {{jsxref("undefined")}}.
 
 {{EmbedInteractiveExample("pages/js/expressions-optionalchainingoperator.html", "taller")}}
 
