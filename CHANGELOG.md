@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2022-12-16 - 2022-12-23]
+
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/replaceall (#1147) ([b44c07e](https://github.com/webdoky/content/commit/b44c07e9cb5a6d154b78b22567f01d72457c22aa))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/date/parse (#1146) ([7ef16f0](https://github.com/webdoky/content/commit/7ef16f01f81c72b36a395094ccfea32a8faaacc7))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/date/now (#1145) ([669707d](https://github.com/webdoky/content/commit/669707d20569c9d370d06d81f54e01c4c1280cc2))
+* **Оновлення перекладу(JS):** web/javascript/reference/operators/optional_chaining (#1144) ([92403fc](https://github.com/webdoky/content/commit/92403fcb8b869c766c5333e44e62c3a8e349519f))
+
 ## [2022-12-09 - 2022-12-16]
 
 * **Оновлення перекладу(JS):** web/javascript/reference/global_objects/math (#1134) ([2ac8248](https://github.com/webdoky/content/commit/2ac82482529e7111c4298dc401cf93b9e883a079))
