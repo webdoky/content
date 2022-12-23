@@ -49,7 +49,7 @@ browser-compat: html.elements.iframe
 
     > **Примітка:** Цей атрибут вважається застарілим, він був перевизначений як `allow="payment"`.
 
-- {{htmlattrdef("credentialless")}} {{Experimental_Inline}}
+- {{htmlattrdef("credentialless")}} {{Experimental_Inline}} {{Non-standard_Inline}}
 
   - : Можна задати `true`, аби зробити `<iframe>` безправним, тобто його вміст завантажується у новий, ефемерний контекст. Такий контекст не має доступу до спільного сховища і прав доступу батьківського контексту. Зате правила вбудовування {{httpheader("Cross-Origin-Embedder-Policy")}} (COEP) можуть не застосовуватися, тож документи, для яких задано COEP, можуть вбудовувати сторонні документи, для яких COEP не задано. Подробиці – на сторінці [безправного IFrame](/uk/docs/Web/Security/IFrame_credentialless)
 
