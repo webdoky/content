@@ -29,15 +29,9 @@ browser-compat: html.elements.script
         >
       </th>
       <td>
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#metadata_content"
-          >Вміст метаданих</a
-        >,
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#flow_content"
-          >Потоковий вміст</a
-        >,
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#phrasing_content"
-          >Оповідальний вміст</a
-        >.
+        <a href="/uk/docs/Web/Guide/HTML/Content_categories#vmist-metadanykh">Вміст метаданих</a>,
+        <a href="/uk/docs/Web/Guide/HTML/Content_categories#potokovyi-vmist">потоковий вміст</a>,
+        <a href="/uk/docs/Web/Guide/HTML/Content_categories#opovidalnyi-vmist">оповідальний вміст</a>.
       </td>
     </tr>
     <tr>
@@ -52,20 +46,14 @@ browser-compat: html.elements.script
       <th scope="row">Дозволені батьківські елементи</th>
       <td>
         Будь-який елемент, що приймає
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#metadata_content"
-          >вміст метаданих</a
-        >, або ж будь-який елемент, що приймає
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#phrasing_content"
-          >оповідальний вміст</a
-        >.
+        <a href="/uk/docs/Web/Guide/HTML/Content_categories#vmist-metadanykh">вміст метаданих</a>, або ж будь-який елемент, що приймає
+        <a href="/uk/docs/Web/Guide/HTML/Content_categories#opovidalnyi-vmist">оповідальний вміст</a>.
       </td>
     </tr>
     <tr>
       <th scope="row">Неявна роль ARIA</th>
       <td>
-        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"
-          >Відповідної ролі немає</a
-        >
+        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role">Відповідної ролі немає</a>
       </td>
     </tr>
     <tr>
@@ -145,15 +133,27 @@ browser-compat: html.elements.script
 
 - {{htmlattrdef("src")}}
   - : Цей атрибут вказує URI зовнішнього сценарію; може використовуватися як альтернатива вбудовуванню сценарію прямо в документ.
-- {{htmlattrdef("type")}}
+- [**`type`**](/uk/docs/Web/HTML/Element/script/type)
 
-  - : Цей атрибут вказує тип сценарію. Значення цього атрибута належать до однієї з наступних категорій:
-
-    - **Тип MIME – опущений чи JavaScript:** Це вказує на те, що сценарій – мовою JavaScript. Специфікація HTML вимагає від авторів опускати атрибут замість вказувати надлишковий тип MIME. В раніших браузерах такі значення вказували мову скриптового програмування вбудованого чи імпортованого (за допомогою атрибута `src`) коду. Типи MIME JavaScript [перелічені в специфікації](/uk/docs/Web/HTTP/Basics_of_HTTP/MIME_types#typy-javascript).
-    - **`module`:** Призводить до розгляду коду як модуля JavaScript. Обробка вмісту такого сценарію відкладається. Атрибути `charset` і `defer` не мають дії.
-      Для інформації щодо застосування `module` дивіться наш посібник [Модулі JavaScript](/uk/docs/Web/JavaScript/Guide/Modules).
-      На відміну від класичних, модульні сценарії вимагають для отримання з іншого походження використання протоколу CORS.
-    - **Будь-яке інше значення:** Вбудований вміст розглядається як блок даних, що не обробляється браузером. Розробники мусять використовувати для позначення блоків даних дійсні типи MIME, котрі не є типами MIME JavaScript. Атрибут `src` буде проігнорований.
+  - : Цей атрибут вказує тип сценарію.
+    Значення цього атрибута – щось із наступного:
+    - **Атрибут не заданий (усталено), є порожнім рядком або типом MIME JavaScript**
+      - : Вказує на те, що сценарій є "класичним сценарієм" і містить код мовою JavaScript.
+        Розробників заохочують опускати атрибут, якщо сценарій вказує на код мовою JavaScript, а не задавати тип MIME.
+        Типи MIME JavaScript – [перелічені в специфікації типів медіа IANA](/uk/docs/Web/HTTP/Basics_of_HTTP/MIME_types#typy-javascript)
+    - `module`
+      - : Це значення призводить до розгляду коду як модуля JavaScript.
+        Обробка вмісту сценарію – відкладається.
+        Атрибути `charset` і `defer` – не діють.
+        Про застосування `module` – дивіться наш посібник [Модулі JavaScript](/uk/docs/Web/JavaScript/Guide/Modules).
+        На відміну від класичних, модульні сценарії вимагають для отримання з іншого походження використання протоколу CORS.
+    - [`importmap`](/uk/docs/Web/HTML/Element/script/type/importmap)
+      - : Це значення вказує на те, що тіло елемента вміщає карту імпортування.
+        Карта імпортування – об'єкт JSON, котрий розробники можуть використовувати для контролю того, як браузер розв'язує модульні специфікатори при імпорті [модулів JavaScript](/uk/docs/Web/JavaScript/Guide/Modules#import-moduliv-za-dopomohoiu-kart-importuvannia).
+    - **Будь-яке інше значення**
+      - : Вміст всередині розглядається як масив даних і не обробляється самим браузером.
+        Розробники повинні використовувати для позначення масивів даних дійсні типи MIME, котрі не є типами MIME JavaScript.
+        Вся решта атрибутів буде проігнорована, включно з атрибутом `src`.
 
 - {{htmlattrdef("blocking")}}
   - : Цей атрибут явно вказує, що певні операції повинні бути заблоковані отриманням такого сценарію. Операції до блокування повинні бути розділеним пробілами списком атрибутів блокування, перелічених нижче.
@@ -170,7 +170,9 @@ browser-compat: html.elements.script
 
 Сценарії без атрибутів {{HTMLAttrxRef("async", "script")}}, {{HTMLAttrxRef("defer", "script")}} і `type="module"`, так само як супутні скрипти без атрибута `type="module"`, отримуються й виконуються негайно, до того, як браузер продовжує розбір сторінки.
 
-Сценарій повинен бути наданий з типом MIME `text/javascript`, але браузери є поблажливими й блокують сценарії лише тоді, коли сценарій надається з типом зображення (`image/*`); типом відео (`video/*`); типом аудіо (`audio/*`); чи `text/csv`. Якщо сценарій заблокований, то елементові надсилається подія {{domxref("Element/error_event", "error")}}, інакше – надсилається подія {{domxref("Element/load_event", "load")}}.
+Сценарій повинен бути наданий з типом MIME `text/javascript`, але браузери є поблажливими й блокують сценарії лише тоді, коли сценарій надається з типом зображення (`image/*`); типом відео (`video/*`); типом аудіо (`audio/*`); чи `text/csv`.
+
+Якщо сценарій заблокований, то елементові надсилається подія {{domxref("Element/error_event", "error")}}, а якщо ні – надсилається подія {{domxref("Element/load_event", "load")}}.
 
 ## Приклади
 
@@ -198,6 +200,39 @@ browser-compat: html.elements.script
 <script type="module" src="main.js"></script>
 <script nomodule src="fallback.js"></script>
 ```
+
+### Імпорт модулів за допомогою importmap
+
+При імпортуванні модулів у сценаріях, якщо не використовувати можливість [`type=importmap`](#importmap), то кожний модуль повинен імпортуватися за допомогою модульного специфікатора, котрий є або абсолютним, або відносним URL.
+У прикладі нижче перший модульний специфікатор ("./shapes/square.js") розв'язується відносно базового URL документа, а другий – є абсолютним URL.
+
+```js
+import { name as squareName, draw } from "./shapes/square.js";
+import { name as circleName } from "https://example.com/shapes/circle.js";
+```
+
+Карта імпортування дає змогу надати відображення, котре, якщо дає збіг, може замінити текст у модульному специфікаторі.
+Карта імпортування нижче визначає ключі `square` та `circle`, котрі можуть бути застосовані як псевдоніми для модульних специфікаторів, показаних вище.
+
+```html
+<script type="importmap">
+  {
+    "imports": {
+      "square": "./shapes/square.js",
+      "circle": "https://example.com/shapes/circle.js"
+    }
+  }
+</script>
+```
+
+Це дає змогу імпортувати модулі за допомогою імен (а не абсолютних чи відносних URL).
+
+```js
+import { name as squareName, draw } from "square";
+import { name as circleName } from "circle";
+```
+
+Більше прикладів того, що можна робити з картами імпортування, дивіться в розділі [Імпорт модулів за допомогою карт імпортування](/uk/docs/Web/JavaScript/Guide/Modules#import-moduliv-za-dopomohoiu-kart-importuvannia) посібника з модулів JavaScript.
 
 ### Вбудовування даних в HTML
 
@@ -235,14 +270,6 @@ browser-compat: html.elements.script
 ## Сумісність із браузерами
 
 {{Compat}}
-
-### Примітки щодо сумісності
-
-В старіших браузерах, що не підтримували атрибут `async`, вставлені розбирачем сценарії блокують розбір; вбудовані сценаріями сценарії виконуються асинхронно в IE та WebKit, але синхронно – в Opera й Firefox до версії 4. У Firefox 4 властивість DOM `async` для створених сценаріями сценаріїв мала усталене значення `true`, тож усталена поведінка відповідає поведінці IE та WebKit.
-
-Щоб зробити запит на виконання вставлених сценаріями зовнішніх сценаріїв у порядку додання в браузерах, де `document.createElement("script").async` обчислюється в `true` (як то Firefox 4), слід встановити `async="false"` на тих сценаріях, на яких треба зберегти порядок.
-
-> **Застереження:** Ніколи не можна викликати `document.write()` з асинхронного сценарію. У Firefox 3.6 виклик `document.write()` мав непередбачувану дію. У Firefox 4 виклик `document.write()` з асинхронного сценарію не мав жодної дії (крім виводу застереження в консоль помилок).
 
 ## Дивіться також
 
