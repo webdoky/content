@@ -1,6 +1,7 @@
 ---
 title: Array.prototype.shift()
 slug: Web/JavaScript/Reference/Global_Objects/Array/shift
+page-type: javascript-instance-method
 tags:
   - Array
   - JavaScript
@@ -63,12 +64,12 @@ console.log("Усунуто такий елемент:", shifted);
 Метод shift() нерідко застосовують всередині умови циклу while. В наступному прикладі кожна ітерація прибирає з масиву наступний елемент, поки він не стане порожнім:
 
 ```js
-const names = ["Артем", "Олександр", "Максим", "Богдан", "Назар"];
+const names = ["Артем", "Владлен", "Максим", "Марія", "Фахрудін"];
 
 while (typeof (i = names.shift()) !== "undefined") {
   console.log(i);
 }
-// Артем, Олександр, Максим, Богдан, Назар
+// Артем, Владлен, Максим, Марія, Фахрудін
 ```
 
 ### Виклик shift() на об'єктах-немасивах
