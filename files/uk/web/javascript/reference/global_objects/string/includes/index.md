@@ -1,6 +1,7 @@
 ---
 title: String.prototype.includes()
 slug: Web/JavaScript/Reference/Global_Objects/String/includes
+page-type: javascript-instance-method
 tags:
   - JavaScript
   - Method
@@ -49,13 +50,13 @@ includes(searchString, position)
 Метод `includes()` чутливий до регістру. Для прикладу, наступний вираз поверне `false`:
 
 ```js
-'Синій кит'.includes('синій'); // повертає false
+"Синій кит".includes("синій"); // повертає false
 ```
 
 Це обмеження можна обійти, привівши і вихідний рядок, і шуканий, до нижнього регістру:
 
 ```js
-'Синій кит'.toLowerCase().includes('синій'); // повертає true
+"Синій кит".toLowerCase().includes("синій"); // повертає true
 ```
 
 ## Приклади
@@ -63,14 +64,14 @@ includes(searchString, position)
 ### Застосування методу includes()
 
 ```js
-const str = 'Чи бути, чи не бути — ось питання.';
+const str = "Чи бути, чи не бути — ось питання.";
 
-console.log(str.includes('Чи бути')); // true
-console.log(str.includes('питання')); // true
-console.log(str.includes('не існує')); // false
-console.log(str.includes('Чи бути', 1)); // false
-console.log(str.includes('ЧИ БУТИ')); // false
-console.log(str.includes('')); // true
+console.log(str.includes("Чи бути")); // true
+console.log(str.includes("питання")); // true
+console.log(str.includes("не існує")); // false
+console.log(str.includes("Чи бути", 1)); // false
+console.log(str.includes("ЧИ БУТИ")); // false
+console.log(str.includes("")); // true
 ```
 
 ## Специфікації
