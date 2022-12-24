@@ -1,6 +1,7 @@
 ---
 title: Замикання
 slug: Web/JavaScript/Closures
+page-type: guide
 tags:
   - Closure
   - ES5
