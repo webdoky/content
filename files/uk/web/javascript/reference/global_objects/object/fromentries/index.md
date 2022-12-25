@@ -79,7 +79,7 @@ console.log(obj); // { 0: "a", 1: "b", 2: "c" }
 
 ### Перетворення об'єктів
 
-За допомогою `Object.fromEntries`, а також його зворотного методу {{jsxref("Object.entries()")}}, та [методів для маніпуляції масивом](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#metody-prymirnyka) можна виконувати такі трансформації, як:
+За допомогою `Object.fromEntries`, а також зворотного йому методу {{jsxref("Object.entries()")}} і [методів для маніпуляції масивом](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#metody-prymirnyka) можна виконувати такі трансформації, як:
 
 ```js
 const object1 = { a: 1, b: 2, c: 3 };
