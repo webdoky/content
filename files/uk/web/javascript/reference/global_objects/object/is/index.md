@@ -17,7 +17,7 @@ browser-compat: javascript.builtins.Object.is
 
 {{JSRef}}
 
-Метод **`Object.is()`** визначає, чи два передані значення є насправді [одним значенням](/uk/docs/Web/JavaScript/Equality_comparisons_and_sameness#same-value_equality_using_object.is).
+Метод **`Object.is()`** визначає, чи два передані значення є насправді [одним значенням](/uk/docs/Web/JavaScript/Equality_comparisons_and_sameness#rivnist-odnoho-znachennia-za-dopomohoiu-object-is).
 
 ## Синтаксис
 
@@ -38,7 +38,7 @@ Object.is(value1, value2)
 
 ## Опис
 
-Метод `Object.is()` визначає, чи являються два передані значення [одним](/uk/docs/Web/JavaScript/Equality_comparisons_and_sameness#same-value_equality_using_object.is). Два значення вважаються одним, якщо виконується одна з наведених нижче умов:
+Метод `Object.is()` визначає, чи є два передані значення [одним і тим же значенням](/uk/docs/Web/JavaScript/Equality_comparisons_and_sameness#rivnist-odnoho-znachennia-za-dopomohoiu-object-is). Два значення вважаються одним і тим же, якщо виконується одна з наведених нижче умов:
 
 - обидва вони – {{jsxref("undefined")}}
 - обидва вони – [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null)
@@ -54,7 +54,7 @@ Object.is(value1, value2)
   - обидва дорівнюють {{jsxref("NaN")}}
   - або обидва є ненульовими значеннями, не дорівнюють {{jsxref("NaN")}}, і мають однакові числові значення
 
-`Object.is()` не є еквівалентом оператору [`==`](/uk/docs/Web/JavaScript/Reference/Operators/Equality). Оператор `==` застосовує різноманітні зведення до операндів з кожного боку (якщо вони не є значеннями одного типу) перед перевіркою на рівність (що призводить до такої поведінки, як істинність виразу `"" == false`), проте метод `Object.is()` не виконує зведення жодного значення.
+`Object.is()` не є еквівалентом оператору [`==`](/uk/docs/Web/JavaScript/Reference/Operators/Equality). Оператор `==` застосовує різноманітні зведення типів до операндів з обох боків (якщо вони не є значеннями одного типу) перед перевіркою на рівність (що призводить до такої поведінки, як істинність виразу `"" == false`), натомість метод `Object.is()` не виконує зведення жодного значення.
 
 `Object.is()` також _не_ еквівалентний оператору [`===`](/uk/docs/Web/JavaScript/Reference/Operators/Strict_equality). Єдиною відмінністю між `Object.is()` та `===` є їхнє ставлення до нулів зі знаками, і значень `NaN`. Оператор `===` (як і оператор `==`) сприймає числові значення `-0` та `+0` як рівні, проте сприймає значення {{jsxref("NaN")}} не рівними між собою.
 
