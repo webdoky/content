@@ -40,11 +40,11 @@ Object.is(value1, value2)
 
 Метод `Object.is()` визначає, чи являються два передані значення [одним](/uk/docs/Web/JavaScript/Equality_comparisons_and_sameness#same-value_equality_using_object.is). Два значення вважаються одним, якщо виконується одна з наведених нижче умов:
 
-- обидва дорівнюють {{jsxref("undefined")}}
-- обидва дорівнюють [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null)
-- обидва `true` чи обидва `false`
+- обидва вони – {{jsxref("undefined")}}
+- обидва вони – [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null)
+- обидва `true`, чи обидва `false`
 - обидва є рядками однакової довжини, з однаковими символами та в однаковій послідовності
-- обидва дорівнюють одному об'єкту (тобто обидва значення посилаються на один об'єкт в пам'яті)
+- обидва є одним і тим же об'єктом (тобто обидва значення посилаються на один об'єкт в пам'яті)
 - обидва значення є [числами BigInt](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt) та мають одне числове значення
 - обидва значення є [символами](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol), що посилаються на одне символьне значення
 - обидва є числами та:
