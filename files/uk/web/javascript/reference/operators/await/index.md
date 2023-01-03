@@ -298,7 +298,7 @@ async function noAwait() {
 }
 ```
 
-Проте слід врахувати випадок, коли `someAsyncTask` асинхронно викидає помилку.
+Проте слід врахувати випадок, коли `lastAsyncTask` асинхронно викидає помилку.
 
 ```js
 async function lastAsyncTask() {
