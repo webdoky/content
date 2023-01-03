@@ -13,7 +13,7 @@ browser-compat: javascript.builtins.Object.values
 
 {{JSRef}}
 
-Метод **`Object.values()`** (значення) повертає масив значень власних перелічуваних властивостей переданого об'єкта, чиїми ключами є рядки.
+Статичний метод **`Object.values()`** (значення) повертає масив значень власних перелічуваних властивостей переданого об'єкта, чиїми ключами є рядки.
 
 {{EmbedInteractiveExample("pages/js/object-values.html")}}
 
