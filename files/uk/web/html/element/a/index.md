@@ -263,7 +263,7 @@ document
 
 Елементи `<a>` можуть мати наслідки для захищеності та приватності користувачів. Дивіться [Заголовок `Referer`: занепокоєння щодо приватності та захищеності](/uk/docs/Web/Security/Referer_header:_privacy_and_security_concerns) для отримання інформації на цю тему.
 
-Використання `target="_blank"` без [`rel="noreferrer"`](/uk/docs/Web/HTML/Link_types/noreferrer) і [`rel="noopener"`](/uk/docs/Web/HTML/Link_types/noopener) робить вебсайт вразливим то атак експлуатації API {{domxref("window.opener")}} ([опис вразливості (англ.)](https://www.jitbit.com/alexblog/256-targetblank---the-most-underestimated-vulnerability-ever/)); втім, майте на увазі, що в новіших версіях браузерів встановлення `target="_blank"` неявно додає такий само захист, як встановлення `rel="noopener"`. Дивіться [сумісність із браузерами](#sumisnist-iz-brauzeramy) для отримання деталей.
+Використання `target="_blank"` без [`rel="noreferrer"`](/uk/docs/Web/HTML/Link_types/noreferrer) і [`rel="noopener"`](/uk/docs/Web/HTML/Link_types/noopener) робить вебсайт вразливим то атак експлуатації API {{domxref("window.opener")}}; втім, майте на увазі, що в новіших версіях браузерів встановлення `target="_blank"` неявно додає такий само захист, як встановлення `rel="noopener"`. Дивіться [сумісність із браузерами](#sumisnist-iz-brauzeramy) для отримання деталей.
 
 ## Доступність
 
