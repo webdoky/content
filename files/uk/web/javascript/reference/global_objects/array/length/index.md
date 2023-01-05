@@ -1,6 +1,7 @@
 ---
 title: Array.prototype.length
 slug: Web/JavaScript/Reference/Global_Objects/Array/length
+page-type: javascript-instance-data-property
 tags:
   - Array
   - JavaScript
@@ -11,9 +12,13 @@ browser-compat: javascript.builtins.Array.length
 
 {{JSRef}}
 
-Властивість **`length`** (довжина) об'єкта `Array`, що представляє число елементів у такому масиві. Значення є беззнаковим 32-бітовим цілим числом, котре завжди більше за найбільший індекс елемента масиву.
+Властивість даних **`length`** (довжина) примірника {{jsxref("Array")}}, що представляє число елементів у такому масиві. Значення є беззнаковим 32-бітовим цілим числом, котре завжди більше за найбільший індекс елемента масиву.
 
 {{EmbedInteractiveExample("pages/js/array-length.html","shorter")}}
+
+## Значення
+
+Невід'ємне число, менше від 2<sup>32</sup>.
 
 {{js_property_attributes(1, 0, 0)}}
 
