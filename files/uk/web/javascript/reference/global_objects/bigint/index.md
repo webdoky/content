@@ -207,7 +207,7 @@ Boolean(12n);
 - BigInt повертаються як є.
 - [`undefined`](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined) і [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) викидають {{jsxref("TypeError")}}.
 - `true` стає `1n`; `false` стає `0n`.
-- Рядки перетворюються шляхом розбору їх так, ніби вони містять цілочисловий літерал. Будь-яка невдача розбору призводить до {{jsxref("SyntaxError")}}. Синтаксис є підмножиною [рядкових літералів чисел](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#zvedennia-do-chysla), у якій десятковий розділювач і показник експоненти – заборонені.
+- Рядки перетворюються шляхом розбору їх так, ніби вони містять цілочисловий літерал. Будь-яка невдача розбору призводить до {{jsxref("SyntaxError")}}. Синтаксис є підмножиною [рядкових літералів чисел](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#zvedennia-do-chysla), у якій десятковий розділювач і експоненційний запис – заборонені.
 - [Number](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number) викидають {{jsxref("TypeError")}} для запобігання небажаному неявному зведенню, що призвело б до втрати точності.
 - [Symbol](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol) викидають {{jsxref("TypeError")}}.
 - Об'єкти [перетворюються на примітиви](/uk/docs/Web/JavaScript/Data_structures#zvedennia-do-prymityva) шляхом виклику їх методів [`[@@toPrimitive]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive) (з підказкою `"number"`), `valueOf()` і `toString()` – у такому порядку. Потім результівний примітив перетворюється на BigInt.
