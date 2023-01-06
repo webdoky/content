@@ -174,7 +174,7 @@ o = new Constructor();
 o = Object.create(Constructor.prototype);
 ```
 
-Безперечно, якщо функція `Constructor` містить дійсний код ініціалізації — метод `Object.create()` не зможе його відобразити.
+Авжеж, якщо функція `Constructor` містить якийсь код ініціалізації — метод `Object.create()` не зможе його відтворити.
 
 ## Специфікації
 
