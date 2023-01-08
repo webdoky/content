@@ -644,14 +644,14 @@ tr:last-child td {
     <tr>
       <th scope="row">Синій</th>
       <td><code>#0057b8</code></td>
-      <td><code>hsla(212, 100%, 36.1%, 1)</code></td>
-      <td><code>rgba(0, 87, 184, 1)</code></td>
+      <td><code>hsl(212 100% 36.1% / 1)</code></td>
+      <td><code>rgb(0 87 184 / 1)</code></td>
     </tr>
     <tr>
       <th scope="row">Жовтий</th>
       <td><code>#ffd700</code></td>
-      <td><code>hsla(51, 100%, 50%, 1)</code></td>
-      <td><code>rgba(255, 215, 0, 1)</code></td>
+      <td><code>hsl(51 100% 50% / 1)</code></td>
+      <td><code>rgb(255 215 0 / 1)</code></td>
     </tr>
   </tbody>
 </table>
