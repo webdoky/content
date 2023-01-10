@@ -3,7 +3,7 @@ title: Шпаргалка синтаксису регулярних виразі
 slug: Web/JavaScript/Guide/Regular_Expressions/Cheatsheet
 page-type: guide
 tags:
-  - Cheatsheet
+  - Cheat sheet
   - Guide
   - JavaScript
   - RegExp
