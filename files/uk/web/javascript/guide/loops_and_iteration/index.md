@@ -1,6 +1,7 @@
 ---
 title: Цикли й ітерація
 slug: Web/JavaScript/Guide/Loops_and_iteration
+page-type: guide
 tags:
   - Guide
   - JavaScript
@@ -33,7 +34,7 @@ for (let step = 0; step < 5; step++) {
 - [Інструкція for](#instruktsiia-for)
 - [Інструкція do...while](#instruktsiia-dowhile)
 - [Інструкція while](#instruktsiia-while)
-- [Інструкція з міткою](#instruktsiia-z-mitkoyu)
+- [Інструкція з міткою](#instruktsiia-z-mitkoiu)
 - [Інструкція break](#instruktsiia-break)
 - [Інструкція continue](#instruktsiia-continue)
 - [Інструкція for...in](#instruktsiia-forin)

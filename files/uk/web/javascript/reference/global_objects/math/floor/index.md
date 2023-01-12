@@ -1,6 +1,7 @@
 ---
 title: Math.floor()
 slug: Web/JavaScript/Reference/Global_Objects/Math/floor
+page-type: javascript-static-method
 tags:
   - JavaScript
   - Math
@@ -11,7 +12,7 @@ browser-compat: javascript.builtins.Math.floor
 
 {{JSRef}}
 
-Функція **`Math.floor()`** повертає найбільше ціле число, що менше або дорівнює значенню аргументу.
+Статичний метод **`Math.floor()`** повертає найбільше ціле число, що менше або дорівнює значенню аргументу.
 
 {{EmbedInteractiveExample("pages/js/math-floor.html")}}
 

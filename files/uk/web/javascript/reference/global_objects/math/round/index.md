@@ -1,6 +1,7 @@
 ---
 title: Math.round()
 slug: Web/JavaScript/Reference/Global_Objects/Math/round
+page-type: javascript-static-method
 tags:
   - JavaScript
   - Math
@@ -12,7 +13,7 @@ browser-compat: javascript.builtins.Math.round
 
 {{JSRef}}
 
-Функція **`Math.round()`** (округлити) повертає значення числа, округлене до найближчого цілого.
+Статичний метод **`Math.round()`** (округлити) повертає значення числа, округлене до найближчого цілого.
 
 {{EmbedInteractiveExample("pages/js/math-round.html")}}
 

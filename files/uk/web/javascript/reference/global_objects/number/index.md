@@ -1,6 +1,7 @@
 ---
 title: Number
 slug: Web/JavaScript/Reference/Global_Objects/Number
+page-type: javascript-class
 tags:
   - Class
   - JavaScript
@@ -12,7 +13,7 @@ browser-compat: javascript.builtins.Number
 
 {{JSRef}}
 
-Значення **`Number`** представляють числа з рухомою комою, як то `37` чи `-9.25`.
+Значення **`Number`** (число) представляють числа з рухомою комою, як то `37` чи `-9.25`.
 
 Конструктор `Number` містить константи й методи для роботи з числами. Значення інших типів можуть бути перетворені на числа за допомогою функції `Number()`.
 
