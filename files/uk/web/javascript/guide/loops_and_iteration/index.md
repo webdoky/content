@@ -87,7 +87,7 @@ for ([initialExpression]; [conditionExpression]; [incrementExpression])
 Тут інструкція `for` оголошує змінну `i` та ініціалізує її значенням `0`. Вона перевіряє, що `i` менша за кількість варіантів у елементі `<select>`, виконує наступну інструкцію `if` та збільшує `i` після кожного проходження тіла циклу.
 
 ```js
-function howMany(selectObject) {
+function countSelected(selectObject) {
   let numberSelected = 0;
   for (let i = 0; i < selectObject.options.length; i++) {
     if (selectObject.options[i].selected) {
@@ -101,7 +101,7 @@ const btn = document.getElementById("btn");
 
 btn.addEventListener("click", () => {
   const musicTypes = document.selectForm.musicTypes;
-  console.log(`Обрано варіантів: ${howMany(musicTypes)}.`);
+  console.log(`Обрано варіантів: ${countSelected(musicTypes)}.`);
 });
 ```
 
