@@ -1,6 +1,7 @@
 ---
 title: "<input>: Елемент введення (форм)"
 slug: Web/HTML/Element/input
+page-type: html-element
 tags:
   - Data entry
   - Element
@@ -358,11 +359,11 @@ browser-compat: html.elements.input
 
 - [`autocomplete`](/uk/docs/Web/HTML/Attributes/autocomplete)
 
-  - : (**Не** булів атрибут!) Атрибут [`autocomplete`](/uk/docs/Web/HTML/Attributes/autocomplete) приймає розділений пробілами рядок, що описує, який тип функціональності автозаповнення слід надати (якщо це можливо). Типова реалізація автозаповнення нагадує попередні значення, введені у таке ж поле вводу, але можуть існувати складніші форми автозаповнення. Наприклад, браузер може використовувати список контактів пристрою для автозаповнення адрес `email` у полі введення електронної адреси. Дивіться {{SectionOnPage("/uk/docs/Web/HTML/Attributes/autocomplete", "Значення")}} щодо дозволених значень.
+  - : (**Не** булів атрибут!) Атрибут [`autocomplete`](/uk/docs/Web/HTML/Attributes/autocomplete) приймає розділений пробілами рядок, що описує, який тип функціональності автозаповнення слід надати (якщо це можливо). Типова реалізація автозаповнення нагадує попередні значення, введені у таке ж поле вводу, але можуть існувати складніші форми автозаповнення. Наприклад, браузер може використовувати список контактів пристрою для автозаповнення адрес `email` у полі введення електронної адреси. Дивіться [`autocomplete`](/uk/docs/Web/HTML/Attributes/autocomplete#znachennia) щодо дозволених значень.
 
     Атрибут `autocomplete` чинний на `hidden`, `text`, `search`, `url`, `tel`, `email`, `date`, `month`, `week`, `time`, `datetime-local`, `number`, `range`, `color` та `password`. Цей атрибут не діє на типах полів введення, що не повертають числових або текстових даних, тобто діє на всіх типах, окрім `checkbox`, `radio`, `file`, а також типів кнопок.
 
-    Дивіться [Атрибут автозаповнення HTML](/uk/docs/Web/HTML/Attributes/autocomplete) для подробиць, включно з інформацією про безпеку паролів та тим, як `autocomplete` поводиться трохи інакше для типу `hidden`.
+    Дивіться [Атрибут `autocomplete`](/uk/docs/Web/HTML/Attributes/autocomplete) щодо подробиць, включно з інформацією про безпеку паролів та тим, як `autocomplete` поводиться трохи інакше для типу `hidden`.
 
 - `autofocus`
 
@@ -1210,7 +1211,7 @@ Firefox використовує наступну евристику для ви
                     href="/uk/docs/Web/Accessibility/ARIA/Roles/textbox_role">textbox</a></code>
               </li>
               <li>
-                з атрибутом <code>list</code>: {{ARIARole("combobox")}}
+                з атрибутом <code>list</code>: <a href="/uk/docs/Web/Accessibility/ARIA/Roles/combobox_role"><code>combobox</code></a>
               </li>
             </ul>
           </li>
@@ -1220,10 +1221,10 @@ Firefox використовує наступну евристику для ви
               ><a href="/uk/docs/Web/Accessibility/ARIA/Roles/button_role">button</a></code>
           </li>
           <li>
-            <code>type=number</code>: {{ARIARole("spinbutton")}}
+            <code>type=number</code>: <a href="/uk/docs/Web/Accessibility/ARIA/Roles/spinbutton_role"><code>spinbutton</code></a>
           </li>
-          <li><code>type=radio</code>: {{ARIARole("radio")}}</li>
-          <li><code>type=range</code>: {{ARIARole("slider")}}</li>
+          <li><code>type=radio</code>: <a href="/uk/docs/Web/Accessibility/ARIA/Roles/radio_role"><code>radio</code></a></li>
+          <li><code>type=range</code>: <a href="/uk/docs/Web/Accessibility/ARIA/Roles/slider_role"><code>slider</code></a></li>
           <li>
             <code>type=reset</code>:
             <code><a href="/uk/docs/Web/Accessibility/ARIA/Roles/button_role">button</a></code>
@@ -1232,10 +1233,10 @@ Firefox використовує наступну евристику для ви
             <code>type=search</code>
             <ul>
               <li>
-                без атрибута <code>list</code>: {{ARIARole("searchbox")}}
+                без атрибута <code>list</code>: <a href="/uk/docs/Web/Accessibility/ARIA/Roles/searchbox_role"><code>searchbox</code></a>
               </li>
               <li>
-                з атрибутом <code>list</code>: {{ARIARole("combobox")}}
+                з атрибутом <code>list</code>: <a href="/uk/docs/Web/Accessibility/ARIA/Roles/combobox_role"><code>combobox</code></a>
               </li>
             </ul>
           </li>
@@ -1253,7 +1254,7 @@ Firefox використовує наступну евристику для ви
                 <code><a href="/uk/docs/Web/Accessibility/ARIA/Roles/textbox_role">textbox</a></code>
               </li>
               <li>
-                з атрибутом <code>list</code>: {{ARIARole("combobox")}}
+                з атрибутом <code>list</code>: <a href="/uk/docs/Web/Accessibility/ARIA/Roles/combobox_role"><code>combobox</code></a>
               </li>
             </ul>
           </li>
@@ -1265,7 +1266,7 @@ Firefox використовує наступну евристику для ви
                 <code><a href="/uk/docs/Web/Accessibility/ARIA/Roles/textbox_role">textbox</a></code>
               </li>
               <li>
-                з атрибутом <code>list</code>: {{ARIARole("combobox")}}
+                з атрибутом <code>list</code>: <a href="/uk/docs/Web/Accessibility/ARIA/Roles/combobox_role"><code>combobox</code></a>
               </li>
             </ul>
           </li>
@@ -1277,7 +1278,7 @@ Firefox використовує наступну евристику для ви
                 <code><a href="/uk/docs/Web/Accessibility/ARIA/Roles/textbox_role">textbox</a></code>
               </li>
               <li>
-                з атрибутом <code>list</code>: {{ARIARole("combobox")}}
+                з атрибутом <code>list</code>: <a href="/uk/docs/Web/Accessibility/ARIA/Roles/combobox_role"><code>combobox</code></a>
               </li>
             </ul>
           </li>
@@ -1293,34 +1294,34 @@ Firefox використовує наступну евристику для ви
       <td>
         <ul>
           <li>
-            <code>type=button</code>: {{ARIARole("checkbox")}},
-            {{ARIARole("combobox")}},
-            {{ARIARole("link")}},
-            {{ARIARole("menuitem")}},
-            {{ARIARole("menuitemcheckbox")}},
-            {{ARIARole("menuitemradio")}},
-            {{ARIARole("option")}}, {{ARIARole("radio")}},
-            {{ARIARole("switch")}}, {{ARIARole("tab")}}
+            <code>type=button</code>: <a href="/uk/docs/Web/Accessibility/ARIA/Roles/checkbox_role"><code>checkbox</code></a>,
+            <a href="/uk/docs/Web/Accessibility/ARIA/Roles/combobox_role"><code>combobox</code></a>,
+            <a href="/uk/docs/Web/Accessibility/ARIA/Roles/link_role"><code>link</code></a>,
+            <a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitem_role"><code>menuitem</code></a>,
+            <a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitemcheckbox_role"><code>menuitemcheckbox</code></a>,
+            <a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitemradio_role"><code>menuitemradio</code></a>,
+            <a href="/uk/docs/Web/Accessibility/ARIA/Roles/option_role"><code>option</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/radio_role"><code>radio</code></a>,
+            <a href="/uk/docs/Web/Accessibility/ARIA/Roles/switch_role"><code>switch</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/tab_role"><code>tab</code></a>
           </li>
           <li>
-            <code>type=checkbox</code>: {{ARIARole("button")}}, коли використовується разом з <code>aria-pressed</code>,
-            {{ARIARole("menuitemcheckbox")}},
-            {{ARIARole("option")}}, {{ARIARole("switch")}}
+            <code>type=checkbox</code>: <a href="/uk/docs/Web/Accessibility/ARIA/Roles/button_role"><code>button</code></a>, коли використовується разом з <code>aria-pressed</code>,
+            <a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitemcheckbox_role"><code>menuitemcheckbox</code></a>,
+            <a href="/uk/docs/Web/Accessibility/ARIA/Roles/option_role"><code>option</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/switch_role"><code>switch</code></a>
           </li>
           <li>
-            <code>type=image</code>: {{ARIARole("link")}},
-            {{ARIARole("menuitem")}},
-            {{ARIARole("menuitemcheckbox")}},
-            {{ARIARole("menuitemradio")}},
-            {{ARIARole("radio")}}, {{ARIARole("switch")}}
+            <code>type=image</code>: <a href="/uk/docs/Web/Accessibility/ARIA/Roles/link_role"><code>link</code></a>,
+            <a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitem_role"><code>menuitem</code></a>,
+            <a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitemcheckbox_role"><code>menuitemcheckbox</code></a>,
+            <a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitemradio_role"><code>menuitemradio</code></a>,
+            <a href="/uk/docs/Web/Accessibility/ARIA/Roles/radio_role"><code>radio</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/switch_role"><code>switch</code></a>
           </li>
           <li>
-            <code>type=radio</code>: {{ARIARole("menuitemradio")}}
+            <code>type=radio</code>: <a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitemradio_role"><code>menuitemradio</code></a>
           </li>
           <li>
             <code>type=text</code> без атрибута <code>list</code>:
-            {{ARIARole("combobox")}}, {{ARIARole("searchbox")}},
-            {{ARIARole("spinbutton")}}
+            <a href="/uk/docs/Web/Accessibility/ARIA/Roles/combobox_role"><code>combobox</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/searchbox_role"><code>searchbox</code></a>,
+            <a href="/uk/docs/Web/Accessibility/ARIA/Roles/spinbutton_role"><code>spinbutton</code></a>
           </li>
           <li>
             <code>type=color|date|datetime-local|email|file|hidden|</code>
