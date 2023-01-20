@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2023-01-13 - 2023-01-20]
+
+...
+
 ## [2022-12-30 - 2023-01-06]
 
 * **Оновлення перекладу(CSS):** web/css/_colon_nth-child (#1142) ([27eccbf](https://github.com/webdoky/content/commit/27eccbf6767a48777bb5a5782937497cf03d5a5a))
