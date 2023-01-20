@@ -1,6 +1,7 @@
 ---
 title: Довідник елементів HTML
 slug: Web/HTML/Element
+page-type: landing-page
 tags:
   - Basic
   - Element
