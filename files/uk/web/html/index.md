@@ -1,6 +1,7 @@
 ---
 title: "HTML: мова розмітки гіпертексту"
 slug: Web/HTML
+page-type: landing-page
 tags:
   - HTML
   - Landing
