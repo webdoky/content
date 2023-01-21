@@ -78,7 +78,7 @@ browser-compat: html.elements.a
     - `unsafe-url`: Посилач включатиме походження _та_ шлях (але не [фрагмент](/uk/docs/Web/API/HTMLAnchorElement/hash), [пароль](/uk/docs/Web/API/HTMLAnchorElement/password) чи [ім'я користувача](/uk/docs/Web/API/HTMLAnchorElement/username)). **Це значення є небезпечним**, тому що воно пропускає походження та шляхи з захищених TLS ресурсів до незахищених походжень.
 
 - {{HTMLAttrDef("rel")}}
-  - : Відношення вказаного URL як розділені пробілами [типи посилань](/uk/docs/Web/HTML/Link_types).
+  - : Відношення вказаного URL як розділені пробілами типи посилань.
 - {{HTMLAttrDef("target")}}
 
   - : Де показувати вказаний URL; значенням є ім'я _контексту перегляду_ (вкладка, вікно чи {{HTMLElement("iframe")}}). Наступні ключові слова мають особливі значення щодо того, де завантажувати URL:
@@ -88,7 +88,7 @@ browser-compat: html.elements.a
     - `_parent`: контекст перегляду, що є батьківським відносно поточного. Якщо такого контексту немає, це значення поводиться як `_self`.
     - `_top`: найвищий контекст перегляду (серед тих, що є предками відносно поточного). Якщо предків немає, це значення поводиться як `_self`.
 
-    > **Примітка:** `target="_blank"` на елементах `<a>` неявно встановлює таку саму поведінку `rel`, як встановлення [`rel="noopener"`](/uk/docs/Web/HTML/Link_types/noopener), що не заповнює `window.opener`.
+    > **Примітка:** `target="_blank"` на елементах `<a>` неявно встановлює таку саму поведінку `rel`, як встановлення [`rel="noopener"`](/uk/docs/Web/HTML/Attributes/rel/noopener), що не заповнює `window.opener`.
 
 - {{HTMLAttrDef("type")}}
   - : Дає підказку щодо формату ресурсу за URL у вигляді {{Glossary("MIME type", "типу MIME")}}. Вбудованої функціональності немає.
@@ -263,7 +263,7 @@ document
 
 Елементи `<a>` можуть мати наслідки для захищеності та приватності користувачів. Дивіться [Заголовок `Referer`: занепокоєння щодо приватності та захищеності](/uk/docs/Web/Security/Referer_header:_privacy_and_security_concerns) для отримання інформації на цю тему.
 
-Використання `target="_blank"` без [`rel="noreferrer"`](/uk/docs/Web/HTML/Link_types/noreferrer) і [`rel="noopener"`](/uk/docs/Web/HTML/Link_types/noopener) робить вебсайт вразливим то атак експлуатації API {{domxref("window.opener")}}; втім, майте на увазі, що в новіших версіях браузерів встановлення `target="_blank"` неявно додає такий само захист, як встановлення `rel="noopener"`. Дивіться [сумісність із браузерами](#sumisnist-iz-brauzeramy) для отримання деталей.
+Використання `target="_blank"` без [`rel="noreferrer"`](/uk/docs/Web/HTML/Attributes/rel/noreferrer) і [`rel="noopener"`](/uk/docs/Web/HTML/Attributes/rel/noopener) робить вебсайт вразливим то атак експлуатації API {{domxref("window.opener")}}; втім, майте на увазі, що в новіших версіях браузерів встановлення `target="_blank"` неявно додає такий само захист, як встановлення `rel="noopener"`. Дивіться [сумісність із браузерами](#sumisnist-iz-brauzeramy) для отримання деталей.
 
 ## Доступність
 
