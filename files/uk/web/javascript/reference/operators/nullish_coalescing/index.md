@@ -29,7 +29,7 @@ leftExpr ?? rightExpr
 
 Оператор null-злиття має п'ятий з кінця [пріоритет оператора](/uk/docs/Web/JavaScript/Reference/Operators/Operator_Precedence) – зразу після `||` і зразу перед [умовним (тернарним) оператором](/uk/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
 
-Не можна безпосередньо поєднувати з `??` і оператор логічного І (`&&`), і оператор логічного АБО (`||`). Така спроба призведе до викидання [синтаксичної помилки](/uk/docs/Web/JavaScript/Reference/Errors/Cant_use_nullish_coalescing_unparenthesized).
+Як оператор логічного І (`&&`), так і оператор логічного АБО (`||`) не можна безпосередньо поєднувати з `??`. Така спроба призведе до викидання [синтаксичної помилки](/uk/docs/Web/JavaScript/Reference/Errors/Cant_use_nullish_coalescing_unparenthesized).
 
 ```js example-bad
 null || undefined ?? "foo"; // запускає SyntaxError
@@ -127,7 +127,7 @@ console.log(B() ?? C());
 
 ### Взаємини з оператором необов'язкового ланцюжка (?.)
 
-Оператор null-злиття обробляє `undefined` і `null` як особливі значення, так само як [оператор необов'язкового ланцюжка (`?.`)](/uk/docs/Web/JavaScript/Reference/Operators/Optional_chaining), котрий є корисним для доступу до властивості об'єкта, котрий може виявитись `null` чи `undefined`. Поєднуючи їх, можна безпечно звертатися до властивості об'єкта, котрий може виявитись відсутнім, і задати усталене значення на випадок того, що це саме так.
+Оператор null-злиття обробляє `undefined` і `null` як особливі значення, так само як [оператор необов'язкового ланцюжка (`?.`)](/uk/docs/Web/JavaScript/Reference/Operators/Optional_chaining), котрий є корисним для доступу до властивості об'єкта, котрий може виявитись `null` чи `undefined`. Поєднуючи їх, можна безпечно звертатися до властивості об'єкта, котрий може виявитись відсутнім, і задати усталене значення на такий випадок.
 
 ```js
 const foo = { someFooProp: "привіт" };
