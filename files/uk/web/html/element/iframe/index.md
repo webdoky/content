@@ -1,6 +1,7 @@
 ---
 title: "<iframe>: Елемент супутнього фрейму"
 slug: Web/HTML/Element/iframe
+page-type: html-element
 tags:
   - Content
   - Element
@@ -235,9 +236,7 @@ browser-compat: html.elements.iframe
     <tr>
       <th scope="row">Дозволені ролі ARIA</th>
       <td>
-        {{ARIARole("application")}}, {{ARIARole("document")}},
-        {{ARIARole("img")}}, {{ARIARole("none")}},
-        {{ARIARole("presentation")}}
+        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/application_role"><code>application</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/document_role"><code>document</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/img_role"><code>img</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/none_role"><code>none</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/presentation_role"><code>presentation</code></a>
       </td>
     </tr>
     <tr>
