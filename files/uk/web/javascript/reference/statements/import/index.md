@@ -16,7 +16,7 @@ browser-compat: javascript.statements.import
 
 {{jsSidebar("Statements")}}
 
-Оголошення статичного імпорту **`import`** застосовуються для імпорту незмінних живих прив'язок, які, своєю чергою, [експортуються](/uk/docs/Web/JavaScript/Reference/Statements/export) іншим модулем. Імпортовані прив'язки називаються _живими_, оскільки вони оновлюються модулем, який їх експортує, проте вони не можуть бути модифіковані модулем, що їх імпортує.
+Оголошення статичного імпорту **`import`** застосовуються для імпорту незмінних живих прив'язок, які, своєю чергою, [експортуються](/uk/docs/Web/JavaScript/Reference/Statements/export) іншим модулем. Імпортовані прив'язки називаються _живими_, оскільки вони оновлюються модулем, який їх експортує, проте їм не можуть бути присвоєні значення в модулі, що їх імпортує.
 
 Для того, аби отримати змогу вжити оголошення `import` у файлі з вихідним кодом, цей файл повинен бути інтерпретований середовищем виконання як [модуль](/uk/docs/Web/JavaScript/Guide/Modules). В HTML цього можна досягти шляхом додавання `type="module"` до тега {{HTMLElement("script")}}. Модулі автоматично інтерпретуються в [суворому режимі](/uk/docs/Web/JavaScript/Reference/Strict_mode).
 
@@ -141,7 +141,7 @@ import * as myModule from "/modules/my-module.js";
 myModule.doAllTheAmazingThings();
 ```
 
-Значення `myModule` — це [запечатаний](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/isSealed) об'єкт, [чиїм прототипом є `null`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#obiekty-z-prototypom-null). Всі його ключі є [перелічуваними](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) в лексикографічному порядку (тобто в послідовності, згідно з якою працює [`Array.prototype.sort()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#opys)), причому усталений експорт буде доступний за ключем `default`.
+Значення `myModule` — це [запечатаний](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/isSealed) об'єкт, [чиїм прототипом є `null`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#obiekty-z-prototypom-null). Усталений експорт доступний за ключем, що зветься `default`. Більше інформації про це – в розділі [об'єкта простору імен модуля](/uk/docs/Web/JavaScript/Reference/Operators/import#obiekt-prostoru-imen-modulia).
 
 > **Примітка:** JavaScript не підтримує довільні імпорти, як от `import * from "module-name"`, через високу ймовірність конфліктів імен.
 
@@ -191,7 +191,9 @@ console.log(getPrimes(10)); // [2, 3, 5, 7]
 
 ### Імпортовані значення можуть модифікуватися лише експортером
 
-Імпортований ідентифікатор є _живою прив'язкою_, оскільки модуль, що експортує його, може також змінювати його, причому імпортоване значення буде мінятись. Проте, модуль, який його імпортує, не може його перезаписати.
+Імпортований ідентифікатор є _живою прив'язкою_, оскільки модуль, що експортує його, може також присвоїти йому нове значення, і тоді імпортоване значення зміниться. Проте модуль, що імпортує його, присвоїти йому нове значення не може. Попри це, будь-який модуль, що користується імпортованим об'єктом, може змінювати його, і таке змінене значення буде спостерігатися в усіх модулях, що імпортують той самий об'єкт.
+
+Крім цього, нове значення можна спостерігати крізь [об'єкт простору імен модуля](/uk/docs/Web/JavaScript/Reference/Operators/import#obiekt-prostoru-imen-modulia).
 
 ```js
 // my-module.js
@@ -204,9 +206,13 @@ setTimeout(() => {
 ```js
 // main.js
 import { myValue } from "/modules/my-module.js";
+import * as myModule from "/modules/my-module.js";
+
 console.log(myValue); // 1
+console.log(myModule.myValue); // 1
 setTimeout(() => {
   console.log(myValue); // 2; my-module оновив своє значення
+  console.log(myModule.myValue); // 2
   myValue = 3; // TypeError: Assignment to constant variable.
   // Приймаючий модуль може лише читати значення, проте не перезаписувати його.
 }, 1000);
