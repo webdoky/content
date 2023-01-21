@@ -1,6 +1,7 @@
 ---
 title: Метатег області перегляду
 slug: Web/HTML/Viewport_meta_tag
+page-type: guide
 tags:
   - Layout
   - Responsiveness
@@ -36,7 +37,7 @@ spec-urls: https://drafts.csswg.org/css-viewport/#viewport-meta
 Серед базових властивостей тега `<meta>` "viewport":
 
 - `width`
-  - : Контролює розмір області перегляду. Може бути задана у вигляді конкретної кількості пікселів, як от `width=600`, або спеціального значення `device-width`, котре тотожне [100vw](/uk/docs/Web/CSS/length#vidnosni-odynytsi-vymiriuvannia-na-osnovi-oblasti-perehliadu), тобто 100% ширини області перегляду. Мінімум – `1`. Максимум – `10000`. Від'ємні значення – ігноруються.
+  - : Контролює розмір області перегляду. Може бути задана у вигляді конкретної кількості пікселів, як от `width=600`, або спеціального значення `device-width`, котре тотожне [100vw](/uk/docs/Web/CSS/length#vidnosni-odynytsi-vymiriuvannia-dovzhyny-zasnovani-na-oblasti-perehliadu), тобто 100% ширини області перегляду. Мінімум – `1`. Максимум – `10000`. Від'ємні значення – ігноруються.
 - `height`
   - : Контролює розмір області перегляду. Може бути задана у вигляді конкретної кількості пікселів, як от `height=400`, або спеціального значення `device-height`, котре тотожне [100vh](/uk/docs/Web/CSS/length#vh), тобто 100% висоти області перегляду. Мінімум – `1`. Максимум – `10000`. Від'ємні значення – ігноруються.
 - `initial-scale`
