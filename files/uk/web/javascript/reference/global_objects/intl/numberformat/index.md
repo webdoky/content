@@ -19,8 +19,6 @@ browser-compat: javascript.builtins.Intl.NumberFormat
 
 {{EmbedInteractiveExample("pages/js/intl-numberformat.html")}}
 
-<!-- Вихідний код цього інтерактивного прикладу зберігається в репозиторії на GitHub. Якщо ви бажаєте докластися до проєкту інтерактивних прикладів, то клонуйте https://github.com/webdoky/interactive-examples і надішліть нам pull request. -->
-
 ## Конструктор
 
 - {{jsxref("Intl/NumberFormat/NumberFormat", "Intl.NumberFormat()")}}
