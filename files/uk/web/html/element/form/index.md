@@ -1,6 +1,7 @@
 ---
 title: "<form>: Елемент форми"
 slug: Web/HTML/Element/form
+page-type: html-element
 tags:
   - Element
   - Form Element
@@ -195,7 +196,7 @@ browser-compat: html.elements.form
           ><a href="/uk/docs/Web/Accessibility/ARIA/Roles/search_role"
             >search</a
           ></code
-        >, {{ARIARole("none")}} або {{ARIARole("presentation")}}
+        >, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/none_role"><code>none</code></a> або <a href="/uk/docs/Web/Accessibility/ARIA/Roles/presentation_role"><code>presentation</code></a>
       </td>
     </tr>
     <tr>
