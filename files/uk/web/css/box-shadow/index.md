@@ -155,7 +155,7 @@ blockquote {
 
 ```css
 p {
-  box-shadow: 0 0 0 2em #f4aab9, 0 0 0 4em #66ccff;
+  box-shadow: 0 0 0 2em #2e3436, 0 0 0 4em #edd400;
   margin: 4em;
   padding: 1em;
 }
