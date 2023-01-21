@@ -1,6 +1,7 @@
 ---
 title: Користувацький агент
 slug: Glossary/User_agent
+page-type: glossary-definition
 tags:
   - Browser
   - UA
