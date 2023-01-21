@@ -1,6 +1,7 @@
 ---
 title: "<a>: Якірний елемент"
 slug: Web/HTML/Element/a
+page-type: html-element
 tags:
   - Content
   - Element
@@ -453,7 +454,7 @@ document
     <tr>
       <th scope="row">Неявна роль ARIA</th>
       <td>
-        {{ARIARole("link")}}, коли присутній атрибут <code>href</code>, інакше –
+        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/link_role"><code>link</code></a>, коли присутній атрибут <code>href</code>, інакше –
         <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"
           >жодної відповідної ролі</a
         >
@@ -464,16 +465,16 @@ document
       <td>
         <p>Коли присутній атрибут <code>href</code>:</p>
         <ul>
-          <li>{{ARIARole("button")}}</li>
-          <li>{{ARIARole("checkbox")}}</li>
-          <li>{{ARIARole("menuitem")}}</li>
-          <li>{{ARIARole("menuitemcheckbox")}}</li>
-          <li>{{ARIARole("menuitemradio")}}</li>
-          <li>{{ARIARole("option")}}</li>
-          <li>{{ARIARole("radio")}}</li>
-          <li>{{ARIARole("switch")}}</li>
-          <li>{{ARIARole("tab")}}</li>
-          <li>{{ARIARole("treeitem")}}</li>
+          <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/button_role"><code>button</code></a></li>
+          <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/checkbox_role"><code>checkbox</code></a></li>
+          <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitem_role"><code>menuitem</code></a></li>
+          <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitemcheckbox_role"><code>menuitemcheckbox</code></a></li>
+          <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitemradio_role"><code>menuitemradio</code></a></li>
+          <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/option_role"><code>option</code></a></li>
+          <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/radio_role"><code>radio</code></a></li>
+          <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/switch_role"><code>switch</code></a></li>
+          <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/tab_role"><code>tab</code></a></li>
+          <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/treeitem_role"><code>treeitem</code></a></li>
         </ul>
         <p>Коли атрибута <code>href</code> немає:</p>
         <ul>
