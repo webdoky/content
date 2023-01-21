@@ -1,6 +1,7 @@
 ---
 title: "<script>: Елемент сценарію"
 slug: Web/HTML/Element/script
+page-type: html-element
 tags:
   - Element
   - HTML
