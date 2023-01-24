@@ -60,7 +60,7 @@ CSS у деяких випадках обробляє заміщені елем�
 
 - [Специфікація HTML](https://html.spec.whatwg.org/multipage/rendering.html#replaced-elements)
 - {{glossary("void element", "Пусті елементи")}}
-- CSS key concepts:
+- Ключові концепції CSS:
   - [Синтаксис CSS](/uk/docs/Web/CSS/Syntax)
   - [Директиви](/uk/docs/Web/CSS/At-rule)
   - [Коментарі](/uk/docs/Web/CSS/Comments)
