@@ -135,7 +135,7 @@ browser-compat: html.elements.table
     - `none` – жодні напрямні не будуть виведені; це усталене значення;
     - `groups` – призведе до виводу напрямних винятково між групами рядів (визначених елементами {{HTMLElement("thead")}}, {{HTMLElement("tbody")}} і {{HTMLElement("tfoot")}}) та між групами колонок (визначеними елементами {{HTMLElement("col")}} і {{HTMLElement("colgroup")}});
     - `rows` – напрямні будуть виведені між рядами;
-    - `columns` – напрямні будуть виведені між колонками;
+    - `cols` – напрямні будуть виведені між колонками;
     - `all` – напрямні будуть виведені і між рядами, і між колонками.
 
     Подібного ефекту можна досягнути, застосувавши властивість {{cssxref("border")}} до відповідних елементів {{HTMLElement("thead")}}, {{HTMLElement("tbody")}}, {{HTMLElement("tfoot")}}, {{HTMLElement("col")}} чи {{HTMLElement("colgroup")}}.
