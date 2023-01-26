@@ -290,9 +290,9 @@ browser-compat: html.elements.input
       <th colspan="3">Невживані значення</th>
     </tr>
     <tr>
-      <td><code>datetime</code></td>
+      <td><code>datetime</code> {{deprecated_inline}}</td>
       <td>
-        {{deprecated_inline}} Контрольний елемент для введення дати та часу (години, хвилини, секунди та частки секунди) на основі Всесвітнього координованого часу.
+        Контрольний елемент для введення дати та часу (години, хвилини, секунди та частки секунди) на основі Всесвітнього координованого часу.
       </td>
       <td id="exampledatetime">
         <pre class="brush: html hidden">
@@ -342,7 +342,7 @@ browser-compat: html.elements.input
 | [`src`](#src-dzherelo)                                   | `image`                                                              | Те саме, що атрибут <code>src</code> елемента {{htmlelement('img')}}; адреса ресурсу зображення                    |
 | [`step`](#step-krok)                                     | `date`, `month`, `week`, `time`, `datetime-local`, `number`, `range` | Крок квантування дійсних значень.                                                                                  |
 | [`type`](#type-typ)                                      | усі                                                                  | Тип контрольного елемента                                                                                          |
-| [`value`](#value-znachennia)                             | усі                                                                  | Початкове значення контрольного елемента.                                                                          |
+| [`value`](#value-znachennia)                             | усі, крім `image`                                                    | Початкове значення контрольного елемента.                                                                          |
 | [`width`](#width-shyryna)                                | `image`                                                              | Те саме, що атрибут <code>width</code> елемента {{htmlelement('img')}}                                             |
 
 Кілька додаткових нестандартних атрибутів перелічені після описів стандартних атрибутів.
