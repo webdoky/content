@@ -1,6 +1,7 @@
 ---
 title: "<video>: Елемент вбудованого відео"
 slug: Web/HTML/Element/video
+page-type: html-element
 tags:
   - Element
   - HTML
@@ -206,7 +207,7 @@ browser-compat: html.elements.video
     </tr>
     <tr>
       <td>
-        {{domxref("HTMLMediaElement.playing_event", 'playing ')}}
+        {{domxref("HTMLMediaElement.playing_event", 'playing')}}
       </td>
       <td>
         Відтворення готово розпочатися, бувши призупиненим чи відкладеним через нестачу даних.
@@ -517,7 +518,7 @@ AddType video/webm .webm
     </tr>
     <tr>
       <th scope="row">Дозволені ролі ARIA</th>
-      <td>{{ARIARole("application")}}</td>
+      <td><a href="/uk/docs/Web/Accessibility/ARIA/Roles/application_role"><code>application</code></a></td>
     </tr>
     <tr>
       <th scope="row">Інтерфейс DOM</th>

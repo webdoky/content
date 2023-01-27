@@ -32,6 +32,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 * **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/find ([516c8119](https://github.com/webdoky/content/commit/516c8119b089fe7f46e6835d2f7b1d275eaa3a0b))
 * **Оновлення перекладу(HTML):** web/html (#1230) ([68dbad5e](https://github.com/webdoky/content/commit/68dbad5ec974e94d0ba51e158f489548d22a8f29))
 
+## [2023-01-13 - 2023-01-20]
+
+...
+
+## [2023-01-06 - 2023-01-13]
+
+* **Оновлення перекладу(JS):** web/javascript/guide/loops_and_iteration ([843051b](https://github.com/webdoky/content/commit/843051b01839c129701119674efc3768c3396d2c))
+* **Оновлення перекладу(JS):** web/javascript/guide/using_promises (#1066) ([35420be](https://github.com/webdoky/content/commit/35420be82e439b4319a60b7abfbb500bd9334619))
+* **Переклад(JS):** web/javascript/reference/global_objects/bigint (#1046) ([cb92b4d](https://github.com/webdoky/content/commit/cb92b4d7c11b2849ee9a43c07b0c99a681c2e988))
+* **Оновлення перекладу(HTML):** web/html/element/table ([212dd10](https://github.com/webdoky/content/commit/212dd108e4e5ffa09d34dd35beb49288ffda816f))
+* **Оновлення перекладу(CSS):** web/css/background-color ([4a77690](https://github.com/webdoky/content/commit/4a7769020a46d3e8db22feac15ce2df29926a163))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/promise/all ([024f314](https://github.com/webdoky/content/commit/024f314d2a8dd9cdd566960bf4f8faba3aa780c9))
+
 ## [2022-12-30 - 2023-01-06]
 
 * **Оновлення перекладу(CSS):** web/css/_colon_nth-child (#1142) ([27eccbf](https://github.com/webdoky/content/commit/27eccbf6767a48777bb5a5782937497cf03d5a5a))
