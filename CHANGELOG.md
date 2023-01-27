@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2023-01-13 - 2023-01-20]
+
+...
+
 ## [2023-01-06 - 2023-01-13]
 
 * **Оновлення перекладу(JS):** web/javascript/guide/loops_and_iteration ([843051b](https://github.com/webdoky/content/commit/843051b01839c129701119674efc3768c3396d2c))
