@@ -57,7 +57,7 @@ width: calc(100% - 80px);
 
 ## Занепокоєння щодо доступності
 
-Коли `calc()` використовується для контролю розміру тексту, слід слідкувати, аби одне зі значень мало [відносну одиницю довжини](/uk/docs/Web/CSS/length#relative_length_units), наприклад:
+Коли `calc()` використовується для контролю розміру тексту, слід слідкувати, аби одне зі значень мало [відносну одиницю довжини](/uk/docs/Web/CSS/length#vidnosni-odynytsi-dovzhyny), наприклад:
 
 ```css
 h1 {
@@ -81,9 +81,6 @@ h1 {
 ```
 
 Це дасть `.modal` фінальне значення `z-index` 2.
-
-> **Примітка:** Браузер Chrome наразі не приймає деякі значення, повернені **`calc()`**, коли очікується ціле число.
-> В тому числі – будь-яке ділення, навіть коли результатом є ціле число, наприклад, `z-index: calc(4 / 2);` – не приймається.
 
 ## Приклади
 
@@ -109,7 +106,7 @@ h1 {
 <div class="banner">Це банер!</div>
 ```
 
-{{EmbedLiveSample('roztashuvannia-na-ekrani-obiekta-z-zovnishnim-vidstupom', 'auto', '60')}}
+{{EmbedLiveSample('roztashuvannia-obiekta-z-zovnishnim-vidstupom-na-ekrani', 'auto', '60')}}
 
 ### Автоматичний розмір полів форми для вписування їх у контейнер
 
@@ -142,7 +139,7 @@ input {
 </form>
 ```
 
-{{EmbedLiveSample('avtomatychnyi-rozmir-poliv-formy-dlia-vpysuvannia-v-konteiner', '700', '80')}}
+{{EmbedLiveSample('avtomatychnyi-rozmir-poliv-formy-dlia-vpysuvannia-yikh-u-konteiner', '700', '80')}}
 
 ### Вкладений `calc()` зі змінними CSS
 
