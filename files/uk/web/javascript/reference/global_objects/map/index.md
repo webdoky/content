@@ -116,7 +116,7 @@ browser-compat: javascript.builtins.Map
         Кількість елементів всередині <code>Map</code> легко отримується з його властивості {{jsxref("Map.prototype.size", "size")}}.
       </td>
       <td>
-        Кількість елементів всередині <code>Object</code> слід обраховувати самотужки.
+        З'ясування кількості елементів усередині <code>Object</code> виконується в обхід, менш ефективно. Загальноприйнятий спосіб це зробити – через {{jsxref("Array/length", "length")}} масиву, поверненого з {{jsxref("Object.keys()")}}.
       </td>
     </tr>
     <tr>
