@@ -1,6 +1,7 @@
 ---
 title: "<form>: Елемент форми"
 slug: Web/HTML/Element/form
+page-type: html-element
 tags:
   - Element
   - Form Element
@@ -51,9 +52,11 @@ browser-compat: html.elements.form
     - `on`: Браузер може заповнювати поля автоматично.
 
 - {{htmlattrdef("name")}}
+
   - : Ім'я форми. Значення мусить не бути порожнім рядком, і бути унікальним серед елементів `form` у колекції форм, в котрій лежить форма, якщо така є.
+
 - {{htmlattrdef("rel")}}
-  - : Утворює гіперпосилання чи анотацію, залежно від значення; дивіться подробиці на сторінці атрибута [`rel`](/uk/docs/Web/HTML/Attributes/rel).
+  - : Контролює анотації й те, якого роду посилання породжує форма. Серед анотацій: [`external`](/uk/docs/Web/HTML/Attributes/rel#attr-external), [`nofollow`](/uk/docs/Web/HTML/Attributes/rel#attr-nofollow), [`opener`](/uk/docs/Web/HTML/Attributes/rel#attr-opener), [`noopener`](/uk/docs/Web/HTML/Attributes/rel#attr-noopener і [`noreferrer`](/uk/docs/Web/HTML/Attributes/rel#attr-noreferrer). Серед різновидів посилань: [`help`](/uk/docs/Web/HTML/Attributes/rel#attr-help), [`prev`](/uk/docs/Web/HTML/Attributes/rel#attr-prev), [`next`](/uk/docs/Web/HTML/Attributes/rel#attr-next), [`search`](/uk/docs/Web/HTML/Attributes/rel#attr-search) і [`license`](/uk/docs/Web/HTML/Attributes/rel#attr-license). Значення [`rel`](/uk/docs/Web/HTML/Attributes/rel) є розділеним пробілами списком таких значень.
 
 ### Атрибути для подання форми
 
@@ -89,13 +92,11 @@ browser-compat: html.elements.form
   - : Вказує, де виводити відповідь після поданні форми. Це ім'я чи ключове слово на позначення _контексту перегляду_ (наприклад, вкладки, вікна чи iframe). Наступні ключові слова мають особливі значення:
 
     - `_self` (усталене): Завантажувати в поточний контекст перегляду.
-    - `_blank`: Завантажувати в новий безіменний контекст перегляду.
+    - `_blank`: Завантажувати в новий безіменний контекст перегляду. Це додає такої ж логіки, як задання [`rel="noopener"`](#attr-rel), тобто відсутність заповнення [`window.opener`](/uk/docs/Web/API/Window/opener).
     - `_parent`: Завантажувати в батьківський щодо поточного контекст перегляду. Якщо батьківського немає, то діє так само як `_self`.
     - `_top`: Завантажувати в контекст перегляду найвищого рівня (тобто контекст перегляду, що є предком поточного і не має предка). Якщо батьківського контексту немає, то діє так само як `_self`.
 
     Це значення може бути відкинуто атрибутом {{htmlattrxref("formtarget", "button")}} на елементі {{HTMLElement("button")}}, [`<input type="submit">`](/uk/docs/Web/HTML/Element/input/submit) чи [`<input type="image">`](/uk/docs/Web/HTML/Element/input/image).
-
-    > **Примітка:** Встановлення на елементах `<form>` `target="_blank"` неявно задає таку само логіку `rel`, як встановлення [`rel="noopener"`](/uk/docs/Web/HTML/Link_types/noopener), тобто відсутність заповнення `window.opener`.
 
 ## Приклади
 
@@ -195,7 +196,7 @@ browser-compat: html.elements.form
           ><a href="/uk/docs/Web/Accessibility/ARIA/Roles/search_role"
             >search</a
           ></code
-        >, {{ARIARole("none")}} або {{ARIARole("presentation")}}
+        >, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/none_role"><code>none</code></a> або <a href="/uk/docs/Web/Accessibility/ARIA/Roles/presentation_role"><code>presentation</code></a>
       </td>
     </tr>
     <tr>
