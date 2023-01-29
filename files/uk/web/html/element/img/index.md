@@ -1,6 +1,7 @@
 ---
 title: "<img>: Елемент вбудовування зображень"
 slug: Web/HTML/Element/img
+page-type: html-element
 tags:
   - Content
   - Element
@@ -117,6 +118,10 @@ SVG залишається рекомендованим форматом для 
       - : Розшифрувати зображення асинхронно, щоб зменшити затримку представлення решти вмісту.
     - `auto`
       - : Усталене значення: немає рекомендацій щодо режиму розшифрування. Браузер вирішує, що буде найкращим для користувача.
+
+- {{htmlattrdef("elementtiming")}}
+
+  - : Позначає зображення для відстеження з боку API {{domxref("PerformanceElementTiming")}}. Задане значення стає ідентифікатором відстежуваного елемента зображення. Дивіться також сторінку атрибута [`elementtiming`](/uk/docs/Web/HTML/Attributes/elementtiming).
 
 - {{htmlattrdef("fetchpriority")}} {{experimental_inline}}
 
@@ -426,15 +431,15 @@ SVG залишається рекомендованим форматом для 
                   ></code
                 >
               </li>
-              <li>{{ARIARole("link")}}</li>
-              <li>{{ARIARole("menuitem")}}</li>
-              <li>{{ARIARole("menuitemcheckbox")}}</li>
-              <li>{{ARIARole("menuitemradio")}}</li>
-              <li>{{ARIARole("option")}}</li>
-              <li>{{ARIARole("progressbar")}}</li>
-              <li>{{ARIARole("scrollbar")}}</li>
-              <li>{{ARIARole("separator")}}</li>
-              <li>{{ARIARole("slider")}}</li>
+              <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/link_role"><code>link</code></a></li>
+              <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitem_role"><code>menuitem</code></a></li>
+              <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitemcheckbox_role"><code>menuitemcheckbox</code></a></li>
+              <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitemradio_role"><code>menuitemradio</code></a></li>
+              <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/option_role"><code>option</code></a></li>
+              <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/progressbar_role"><code>progressbar</code></a></li>
+              <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/scrollbar_role"><code>scrollbar</code></a></li>
+              <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/separator_role"><code>separator</code></a></li>
+              <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/slider_role"><code>slider</code></a></li>
               <li>
                 <code
                   ><a
@@ -450,12 +455,11 @@ SVG залишається рекомендованим форматом для 
                   ></code
                 >
               </li>
-              <li>{{ARIARole("treeitem")}}</li>
+              <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/treeitem_role"><code>treeitem</code></a></li>
             </ul>
           </li>
           <li>
-            з порожнім атрибутом <code>alt</code> – {{ARIARole("none")}}
-            чи {{ARIARole("presentation")}}
+            з порожнім атрибутом <code>alt</code> – <a href="/uk/docs/Web/Accessibility/ARIA/Roles/none_role"><code>none</code></a> або <a href="/uk/docs/Web/Accessibility/ARIA/Roles/presentation_role"><code>presentation</code></a>
           </li>
           <li>
             без атрибута <code>alt</code> – жодна <code>role</code> не дозволена
