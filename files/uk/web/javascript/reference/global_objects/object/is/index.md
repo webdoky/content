@@ -17,7 +17,7 @@ browser-compat: javascript.builtins.Object.is
 
 {{JSRef}}
 
-Метод **`Object.is()`** визначає, чи два передані значення є насправді [одним значенням](/uk/docs/Web/JavaScript/Equality_comparisons_and_sameness#rivnist-odnoho-znachennia-za-dopomohoiu-object-is).
+Статичний метод **`Object.is()`** визначає, чи два передані значення є насправді [одним значенням](/uk/docs/Web/JavaScript/Equality_comparisons_and_sameness#rivnist-odnoho-znachennia-za-dopomohoiu-object-is).
 
 ## Синтаксис
 
