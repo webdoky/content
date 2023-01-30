@@ -15,7 +15,7 @@ browser-compat: javascript.builtins.Object.create
 
 {{JSRef}}
 
-Метод **`Object.create()`** ("створити") створює новий об'єкт, використовуючи певний наявний об'єкт як прототип новоствореного об'єкта.
+Статичний метод **`Object.create()`** ("створити") створює новий об'єкт, використовуючи певний наявний об'єкт як прототип новоствореного об'єкта.
 
 {{EmbedInteractiveExample("pages/js/object-create.html", "taller")}}
 
