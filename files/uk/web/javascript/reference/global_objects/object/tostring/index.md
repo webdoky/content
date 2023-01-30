@@ -25,7 +25,7 @@ toString()
 
 ### Параметри
 
-Усталено метод `toString()` не приймає аргументів. Проте, об'єкти, які успадковують від `Object`, можуть заміщати його власними реалізаціями, що приймають аргументи. До прикладу, методи [`Number.prototype.toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number/toString) і [`BigInt.prototype.toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/toString) приймають необов'язковий параметр `radix`.
+Усталено метод `toString()` не приймає аргументів. Проте об'єкти, які успадковують від `Object`, можуть заміщати його власними реалізаціями, що приймають аргументи. До прикладу, методи [`Number.prototype.toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number/toString) і [`BigInt.prototype.toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/toString) приймають необов'язковий параметр `radix`.
 
 ### Повернене значення
 
@@ -39,7 +39,7 @@ JavaScript викликає метод `toString` для [перетворенн
 
 Всі об'єкти, які успадковують від `Object.prototype` (тобто всі, за винятком [об'єктів з прототипом `null`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#obiekty-z-prototypom-null)) також успадковують і метод `toString()`. При створенні власного об'єкта можна замістити `toString()` так, щоб викликався власний метод — таким чином цей об'єкт можливо буде перетворити на рядкове значення. Інший варіант — додати метод [`@@toPrimitive`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive), який дає змогу іще краще керувати процесом перетворення, і який завжди матиме пріоритет над `valueOf` чи `toString`, для будь-якого виду перетворення.
 
-Аби застосувати базовий метод `Object.prototype.toString()` на об'єкті, в якому його було заміщено (або звернутися до нього на значеннях `null` чи `undefined`), слід на ньому викликати {{jsxref("Function.prototype.call()")}} чи {{jsxref("Function.prototype.apply()")}}, передавши першим параметром (називається `thisArg`) об'єкт, який потрібно дослідити.
+Аби застосувати базовий метод `Object.prototype.toString()` на об'єкті, в якому його було заміщено (або звернутися до нього на значеннях `null` чи `undefined`), слід на такому методі викликати {{jsxref("Function.prototype.call()")}} чи {{jsxref("Function.prototype.apply()")}}, передавши першим параметром (називається `thisArg`) об'єкт, який потрібно дослідити.
 
 ```js
 const arr = [1, 2, 3];
@@ -59,7 +59,7 @@ Object.prototype.toString.call(arr); // "[object Array]"
 - [`Date`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Date)
 - [`RegExp`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
 
-Об'єкт [`arguments`](/uk/docs/Web/JavaScript/Reference/Functions/arguments) повертає `"[object Arguments]"`. Всі інші, включно з означеними користувачем класами, повертатиме `"[object Object]"` (якщо не матиме свого `Symbol.toStringTag`).
+Об'єкт [`arguments`](/uk/docs/Web/JavaScript/Reference/Functions/arguments) повертає `"[object Arguments]"`. Всі інші, включно з означеними користувачем класами, повертатимуть `"[object Object]"` (якщо не матимуть власного `Symbol.toStringTag`).
 
 Закликання `Object.prototype.toString()` на значеннях [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) та {{jsxref("undefined")}} поверне `[object Null]` та `[object Undefined]` відповідно.
 
@@ -107,7 +107,7 @@ class Dog {
 }
 ```
 
-З урахуванням попереднього коду, кожного разу коли примірник класу `Dog` вживається в рядковому контексті, JavaScript автоматично викличе метод `toString()`.
+З урахуванням попереднього коду, кожного разу, коли примірник класу `Dog` вживається в рядковому контексті, JavaScript автоматично викличе метод `toString()`.
 
 ```js
 const theDog = new Dog("Лапа", "лабрадор", "шоколадний", "дівчинка");
