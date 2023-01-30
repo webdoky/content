@@ -173,6 +173,14 @@ p.auto {
 
 {{EmbedLiveSample("vstanovlennia-riznykh-znachen-overflow-dlia-tekstu", "600", "250")}}
 
+### Занепокоєння щодо доступності
+
+Область прокрутного вмісту не може прокручуватись користувачем, в розпорядженні якого є лише клавіатура, окрім користувачів Firefox (котрий усталено дає змогу контейнерові такого змісту отримувати фокус за допомогою клавіатури).
+
+Аби дати змогу користувачам лише клавіатури прокручувати такий контейнер не тільки у Firefox, розробникам слід задавати цьому контейнеру [`tabindex`](/uk/docs/Web/HTML/Global_attributes/tabindex), вживши `tabindex="0"`. На жаль, коли читач з екрана зустріне таку зупинку табуляції, то не матиме контексту для розуміння, що це таке, і оголосить увесь його вміст. Задання такому контейнерові відповідної [ролі WAI-ARIA](/uk/docs/Web/Accessibility/ARIA/Roles) (`role="region"`, наприклад) і доступного імені (за допомогою [`aria-label`](/uk/docs/Web/Accessibility/ARIA/Attributes/aria-label) або [`aria-labelledby`](/uk/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby)) може пом'якшити цю проблему.
+
+- [Прокрутні області, доступні з клавіатури](https://adrianroselli.com/2022/06/keyboard-only-scrolling-areas.html)
+
 ## Специфікації
 
 {{Specifications}}

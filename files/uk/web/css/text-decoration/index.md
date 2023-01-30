@@ -26,7 +26,7 @@ browser-compat: css.properties.text-decoration
 - [`text-decoration-color`](/uk/docs/Web/CSS/text-decoration-color)
 - [`text-decoration-line`](/uk/docs/Web/CSS/text-decoration-line)
 - [`text-decoration-style`](/uk/docs/Web/CSS/text-decoration-style)
-- [`text-decoration-thickness`](/uk/docs/Web/CSS/text-decoration-thickness) {{Non-standard_Inline}}
+- [`text-decoration-thickness`](/uk/docs/Web/CSS/text-decoration-thickness)
 
 ## Синтаксис
 

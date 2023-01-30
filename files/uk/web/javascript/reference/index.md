@@ -187,6 +187,7 @@ tags:
 
 - {{jsxref("Statements/Empty", "Порожня інструкція", "", 1)}}
 - {{jsxref("Statements/block", "Блок", "", 1)}}
+- {{jsxref("Statements/Expression_statement", "Інструкція-вираз", "", 1)}}
 - {{jsxref("Statements/debugger", "debugger")}}
 - {{jsxref("Statements/export", "export")}}
 - {{jsxref("Statements/import", "import")}}

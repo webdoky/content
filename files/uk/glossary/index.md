@@ -1,6 +1,7 @@
 ---
 title: "Глосарій ВебДоків: Означення термінів Інтернету"
 slug: Glossary
+page-type: glossary-definition
 tags:
   - Beginner
   - Definitions

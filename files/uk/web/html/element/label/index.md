@@ -1,6 +1,7 @@
 ---
 title: "<label>: Елемент підпису"
 slug: Web/HTML/Element/label
+page-type: html-element
 tags:
   - Element
   - Forms

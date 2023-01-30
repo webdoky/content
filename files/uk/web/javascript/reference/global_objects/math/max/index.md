@@ -1,6 +1,7 @@
 ---
 title: Math.max()
 slug: Web/JavaScript/Reference/Global_Objects/Math/max
+page-type: javascript-static-method
 tags:
   - JavaScript
   - Math
@@ -16,7 +17,7 @@ browser-compat: javascript.builtins.Math.max
 
 {{JSRef}}
 
-Функція **`Math.max()`** (максимум) повертає найбільше значення з-поміж переданих нуля чи більше вхідних чисел, або -{{jsxref("Infinity")}}, якщо параметрів немає.
+Статичний метод **`Math.max()`** (максимум) повертає найбільше значення з-поміж переданих нуля чи більше вхідних чисел, або -{{jsxref("Infinity")}}, якщо параметрів немає.
 
 {{EmbedInteractiveExample("pages/js/math-max.html")}}
 

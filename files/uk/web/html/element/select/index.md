@@ -1,6 +1,7 @@
 ---
 title: "<select>: Елемент вибору HTML"
 slug: Web/HTML/Element/select
+page-type: html-element
 tags:
   - Element
   - Forms
@@ -129,7 +130,7 @@ browser-compat: html.elements.select
 
 ## Оформлення засобами CSS
 
-Елемент `<select>` відомий складністю ефективного оформлення засобами CSS. Можна повпливати на певні аспекти, як і в будь-якого елемента, – наприклад, оперуючи [рамковою моделлю](/uk/docs/Learn/CSS/Building_blocks/The_box_model), [використаним шрифтом](/uk/docs/Web/CSS/CSS_Fonts) тощо, а також можна використати властивість {{cssxref("appearance")}} , щоб усунути усталений системний вигляд.
+Елемент `<select>` відомий складністю ефективного оформлення засобами CSS. Можна повпливати на певні аспекти, як і в будь-якого елемента, – наприклад, оперуючи [рамковою моделлю](/uk/docs/Learn/CSS/Building_blocks/The_box_model), [використаним шрифтом](/uk/docs/Web/CSS/CSS_Fonts) тощо, а також можна використати властивість {{cssxref("appearance")}}, щоб усунути усталений системний вигляд.
 
 Втім, ці властивості не дають сталих результатах на всіх браузерах, тож важко робити речі штибу шикування різних типів елементів форми одне з одним в один стовпець. Внутрішня структура елемента `<select>` – складна, а також важка для контролю. При потребі отримати повний контроль слід розглянути варіанти використання бібліотеки з добрими можливостями з оформленнями віджетів форми та розгортання власного спадного меню за допомогою несемантичних елементів і JavaScript, а також [WAI-ARIA](/uk/docs/Learn/Accessibility/WAI-ARIA_basics) для надання семантики.
 
@@ -194,7 +195,7 @@ browser-compat: html.elements.select
 
 Цей приклад по суті:
 
-- Клонує контекст `<select>` [`<option>`и](/uk/docs/Web/HTML/Element/option)) в обгортку-предка та наново реалізує стандартну очікувану поведінку за допомогою додаткових елементів HTML та JavaScript. В тому числі базову поведінку табуляції для надання доступності з клавіатури.
+- Клонує контекст `<select>` (елементи [`<option>`](/uk/docs/Web/HTML/Element/option)) в обгортку-предка та наново реалізує стандартну очікувану поведінку за допомогою додаткових елементів HTML та JavaScript. В тому числі базову поведінку табуляції для надання доступності з клавіатури.
 - Відтворює певні стандартні нативні атрибути у вигляді `data-`-атрибутів нових елементів, щоб керувати станом та CSS.
 
 > **Примітка:** Не всі нативні можливості підтримуються, це лишень підтвердження концепції. Реалізація заснована на стандартному HTML, але таких само результатів можна досягти на основі JSON-даних, власного HTML чи інших рішень.
@@ -602,18 +603,13 @@ document.forms[0].onsubmit = (e) => {
     <tr>
       <th scope="row">Неявна роль ARIA</th>
       <td>
-        {{ARIARole("combobox")}}, якщо <strong>немає</strong> атрибута
-        <code>multiple</code> і <strong>немає</strong> атрибута
-        <code>size</code> зі значенням, більшим за 1, інакше –
-        {{ARIARole("listbox")}}
+        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/combobox_role"><code>combobox</code></a>, якщо <strong>немає</strong> атрибута <code>multiple</code> і <strong>немає</strong> атрибута <code>size</code> зі значенням, більшим за 1, інакше – <a href="/uk/docs/Web/Accessibility/ARIA/Roles/listbox_role"><code>listbox</code></a>
       </td>
     </tr>
     <tr>
       <th scope="row">Дозволені ролі ARIA</th>
       <td>
-        {{ARIARole("menu")}}, якщо <strong>немає</strong> атрибута
-        <code>multiple</code> і <strong>немає</strong> атрибута
-        <code>size</code> зі значенням, більшим за 1, інакше – всі ролі недозволені
+        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/menu_role"><code>menu</code></a>, якщо <strong>немає</strong> атрибута <code>multiple</code> і <strong>немає</strong> атрибута <code>size</code> зі значенням, більшим за 1, інакше – всі ролі недозволені
       </td>
     </tr>
     <tr>

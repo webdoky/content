@@ -1,6 +1,7 @@
 ---
 title: "<div>: елемент поділу вмісту"
 slug: Web/HTML/Element/div
+page-type: html-element
 tags:
   - Content Division
   - Element

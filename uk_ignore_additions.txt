@@ -2,6 +2,7 @@
 Гідде
 Кайшу
 каше
+Зальго
 не-ASCII
 не-HTML
 не-JavaScript
