@@ -1,6 +1,7 @@
 ---
 title: Оператор delete
 slug: Web/JavaScript/Reference/Operators/delete
+page-type: javascript-operator
 tags:
   - JavaScript
   - Language feature
@@ -208,7 +209,7 @@ var nameOther = "XYZ";
 
 // До цієї глобальної властивості можна звернутися за допомогою:
 Object.getOwnPropertyDescriptor(globalThis, "nameOther");
-// Object {
+// {
 //   value: "XYZ",
 //   writable: true,
 //   enumerable: true,
