@@ -100,8 +100,6 @@ browser-compat: html.elements.form
 
 ## Приклади
 
-### HTML
-
 ```html
 <!-- Форма, котра пошле запит GET на поточний URL -->
 <form method="get">
@@ -130,8 +128,6 @@ browser-compat: html.elements.form
   </fieldset>
 </form>
 ```
-
-{{EmbedLiveSample('pryklady', '100%', 110)}}
 
 ## Технічний підсумок
 
