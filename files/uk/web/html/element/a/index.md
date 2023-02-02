@@ -1,6 +1,7 @@
 ---
 title: "<a>: Якірний елемент"
 slug: Web/HTML/Element/a
+page-type: html-element
 tags:
   - Content
   - Element
@@ -53,10 +54,11 @@ browser-compat: html.elements.a
 
   - : URL, на котрий вказує гіперпосилання. Посилання не обмежені HTTP URL: вони можуть використовувати будь-яку схему URL, котру підтримують браузери:
 
-    - Секції сторінки з URL фрагментів
-    - Шматочки медіафайлів з фрагментами медіа
-    - Номери телефонів з URL `tel:`
-    - Адреси електронної пошти з URL `mailto:`
+    - Розділи сторінки – за допомогою фрагментів документів
+    - Конкретні частини тексту - за допомогою [текстових фрагментів](/uk/docs/Web/Text_fragments)
+    - Шматочки медіафайлів – за допомогою фрагментів медіа
+    - Номери телефонів – за допомогою URL `tel:`
+    - Адреси електронної пошти – за допомогою URL `mailto:`
     - Хоч веббраузери можуть не підтримувати інші схеми URL, вебсайти можуть їх підтримувати за допомогою [`registerProtocolHandler()`](/uk/docs/Web/API/Navigator/registerProtocolHandler)
 
 - {{HTMLAttrDef("hreflang")}}
@@ -77,7 +79,7 @@ browser-compat: html.elements.a
     - `unsafe-url`: Посилач включатиме походження _та_ шлях (але не [фрагмент](/uk/docs/Web/API/HTMLAnchorElement/hash), [пароль](/uk/docs/Web/API/HTMLAnchorElement/password) чи [ім'я користувача](/uk/docs/Web/API/HTMLAnchorElement/username)). **Це значення є небезпечним**, тому що воно пропускає походження та шляхи з захищених TLS ресурсів до незахищених походжень.
 
 - {{HTMLAttrDef("rel")}}
-  - : Відношення вказаного URL як розділені пробілами [типи посилань](/uk/docs/Web/HTML/Link_types).
+  - : Відношення вказаного URL як розділені пробілами типи посилань.
 - {{HTMLAttrDef("target")}}
 
   - : Де показувати вказаний URL; значенням є ім'я _контексту перегляду_ (вкладка, вікно чи {{HTMLElement("iframe")}}). Наступні ключові слова мають особливі значення щодо того, де завантажувати URL:
@@ -87,7 +89,7 @@ browser-compat: html.elements.a
     - `_parent`: контекст перегляду, що є батьківським відносно поточного. Якщо такого контексту немає, це значення поводиться як `_self`.
     - `_top`: найвищий контекст перегляду (серед тих, що є предками відносно поточного). Якщо предків немає, це значення поводиться як `_self`.
 
-    > **Примітка:** `target="_blank"` на елементах `<a>` неявно встановлює таку саму поведінку `rel`, як встановлення [`rel="noopener"`](/uk/docs/Web/HTML/Link_types/noopener), що не заповнює `window.opener`.
+    > **Примітка:** `target="_blank"` на елементах `<a>` неявно встановлює таку саму поведінку `rel`, як встановлення [`rel="noopener"`](/uk/docs/Web/HTML/Attributes/rel/noopener), що не заповнює `window.opener`.
 
 - {{HTMLAttrDef("type")}}
   - : Дає підказку щодо формату ресурсу за URL у вигляді {{Glossary("MIME type", "типу MIME")}}. Вбудованої функціональності немає.
@@ -177,7 +179,7 @@ a {
 
 ```html
 <a href="tel:+49.157.0156">+49 157 0156</a>
-<a href="tel:+1(555)5309">(555) 5309</a>
+<a href="tel:+1(800)555-0123">(800) 555-0123</a>
 ```
 
 Поведінка посилання `tel:` відрізняється залежно від можливостей пристрою:
@@ -262,7 +264,7 @@ document
 
 Елементи `<a>` можуть мати наслідки для захищеності та приватності користувачів. Дивіться [Заголовок `Referer`: занепокоєння щодо приватності та захищеності](/uk/docs/Web/Security/Referer_header:_privacy_and_security_concerns) для отримання інформації на цю тему.
 
-Використання `target="_blank"` без [`rel="noreferrer"`](/uk/docs/Web/HTML/Link_types/noreferrer) і [`rel="noopener"`](/uk/docs/Web/HTML/Link_types/noopener) робить вебсайт вразливим то атак експлуатації API {{domxref("window.opener")}} ([опис вразливості (англ.)](https://www.jitbit.com/alexblog/256-targetblank---the-most-underestimated-vulnerability-ever/)); втім, майте на увазі, що в новіших версіях браузерів встановлення `target="_blank"` неявно додає такий само захист, як встановлення `rel="noopener"`. Дивіться [сумісність із браузерами](#sumisnist-iz-brauzeramy) для отримання деталей.
+Використання `target="_blank"` без [`rel="noreferrer"`](/uk/docs/Web/HTML/Attributes/rel/noreferrer) і [`rel="noopener"`](/uk/docs/Web/HTML/Attributes/rel/noopener) робить вебсайт вразливим то атак експлуатації API {{domxref("window.opener")}}; втім, майте на увазі, що в новіших версіях браузерів встановлення `target="_blank"` неявно додає такий само захист, як встановлення `rel="noopener"`. Дивіться [сумісність із браузерами](#sumisnist-iz-brauzeramy) для отримання деталей.
 
 ## Доступність
 
@@ -452,7 +454,7 @@ document
     <tr>
       <th scope="row">Неявна роль ARIA</th>
       <td>
-        {{ARIARole("link")}}, коли присутній атрибут <code>href</code>, інакше –
+        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/link_role"><code>link</code></a>, коли присутній атрибут <code>href</code>, інакше –
         <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"
           >жодної відповідної ролі</a
         >
@@ -463,16 +465,16 @@ document
       <td>
         <p>Коли присутній атрибут <code>href</code>:</p>
         <ul>
-          <li>{{ARIARole("button")}}</li>
-          <li>{{ARIARole("checkbox")}}</li>
-          <li>{{ARIARole("menuitem")}}</li>
-          <li>{{ARIARole("menuitemcheckbox")}}</li>
-          <li>{{ARIARole("menuitemradio")}}</li>
-          <li>{{ARIARole("option")}}</li>
-          <li>{{ARIARole("radio")}}</li>
-          <li>{{ARIARole("switch")}}</li>
-          <li>{{ARIARole("tab")}}</li>
-          <li>{{ARIARole("treeitem")}}</li>
+          <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/button_role"><code>button</code></a></li>
+          <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/checkbox_role"><code>checkbox</code></a></li>
+          <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitem_role"><code>menuitem</code></a></li>
+          <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitemcheckbox_role"><code>menuitemcheckbox</code></a></li>
+          <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitemradio_role"><code>menuitemradio</code></a></li>
+          <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/option_role"><code>option</code></a></li>
+          <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/radio_role"><code>radio</code></a></li>
+          <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/switch_role"><code>switch</code></a></li>
+          <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/tab_role"><code>tab</code></a></li>
+          <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/treeitem_role"><code>treeitem</code></a></li>
         </ul>
         <p>Коли атрибута <code>href</code> немає:</p>
         <ul>
@@ -498,6 +500,7 @@ document
 ## Дивіться також
 
 - {{HTMLElement("link")}} подібний до `<a>`, але призначений для гіперпосилань метаданих, невидимих для користувачів.
-- {{CSSxRef(":visited")}} – це псевдоклас CSS, що дає збіг з елементами `<a>`, в атрибуті `href` яких задані URL, котрі користувач уже відвідував у минулому.
 - {{CSSxRef(":link")}} – це псевдоклас CSS, що дає збіг з елементами `<a>`, в атрибуті `href` яких задані URL, котрі користувач поки не відвідував.
+- {{CSSxRef(":visited")}} – це псевдоклас CSS, що дає збіг з елементами `<a>`, в атрибуті `href` яких задані URL, котрі користувач уже відвідував у минулому.
 - {{CSSxRef(":any-link")}} – це псевдоклас CSS, що дає збіг з елементами `<a>`, котрі мають атрибут `href`.
+- [Текстові фрагменти](/uk/docs/Web/Text_fragments) – це інструкції користувацькому агентові, додані до URL, що дають змогу авторам вмісту посилатися на конкретний текст на сторінці, не вимагаючи від елементів мати ID.

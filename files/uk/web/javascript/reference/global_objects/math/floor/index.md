@@ -12,7 +12,7 @@ browser-compat: javascript.builtins.Math.floor
 
 {{JSRef}}
 
-Функція **`Math.floor()`** повертає найбільше ціле число, що менше або дорівнює значенню аргументу.
+Статичний метод **`Math.floor()`** повертає найбільше ціле число, що менше або дорівнює значенню аргументу.
 
 {{EmbedInteractiveExample("pages/js/math-floor.html")}}
 

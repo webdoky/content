@@ -1,6 +1,7 @@
 ---
 title: "<iframe>: Елемент супутнього фрейму"
 slug: Web/HTML/Element/iframe
+page-type: html-element
 tags:
   - Content
   - Element
@@ -48,6 +49,10 @@ browser-compat: html.elements.iframe
   - : Слід надати цьому атрибутові значення `true`, якщо `<iframe>` до іншого походження треба дозволити викликати [API запитів платежів](/uk/docs/Web/API/Payment_Request_API).
 
     > **Примітка:** Цей атрибут вважається застарілим, він був перевизначений як `allow="payment"`.
+
+- {{htmlattrdef("credentialless")}} {{Experimental_Inline}} {{Non-standard_Inline}}
+
+  - : Можна задати `true`, аби зробити `<iframe>` безправним, тобто його вміст буде завантажений у новий, ефемерний контекст. Він не матиме доступу до мережі, реп'яшків та сховища даних, пов'язаних з його походженням. Такий фрейм використовуватиме новий контекст, локальний щодо часу життя документа верхнього рівня. Зате правила вбудовування {{httpheader("Cross-Origin-Embedder-Policy")}} (COEP) можуть не застосовуватися, тож документи, для яких задано COEP, можуть вбудовувати сторонні документи, для яких COEP не задано. Подробиці – на сторінці [безправного IFrame](/uk/docs/Web/Security/IFrame_credentialless)
 
 - {{htmlattrdef("csp")}} {{experimental_inline}}
 
@@ -231,9 +236,7 @@ browser-compat: html.elements.iframe
     <tr>
       <th scope="row">Дозволені ролі ARIA</th>
       <td>
-        {{ARIARole("application")}}, {{ARIARole("document")}},
-        {{ARIARole("img")}}, {{ARIARole("none")}},
-        {{ARIARole("presentation")}}
+        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/application_role"><code>application</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/document_role"><code>document</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/img_role"><code>img</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/none_role"><code>none</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/presentation_role"><code>presentation</code></a>
       </td>
     </tr>
     <tr>

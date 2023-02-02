@@ -294,18 +294,20 @@ const func = (a, b, c)
 
 Для потреб форматування можна поставити розрив рядка після стрілки, або ж використати дужки або фігурні дужки навколо тіла функції, як показано нижче. Крім цього, розриви рядка можна розмістити між параметрами.
 
-```js
-const func = (a, b, c) => 1;
-
-const func2 = (a, b, c) => 1;
-
+```js-nolint
+const func = (a, b, c) =>
+  1;
+const func2 = (a, b, c) => (
+  1
+);
 const func3 = (a, b, c) => {
   return 1;
 };
-
-const func4 = (a, b, c) => 1;
-
-// помилки SyntaxError не буде
+const func4 = (
+  a,
+  b,
+  c,
+) => 1;
 ```
 
 ### Порядок розбору
@@ -419,7 +421,7 @@ const obj = {
   count: 10,
   doSomethingLater() {
     setTimeout(function () {
-      // функція виконується в області видимості window
+      // ця функція виконується в контексті window
       this.count++;
       console.log(this.count);
     }, 300);

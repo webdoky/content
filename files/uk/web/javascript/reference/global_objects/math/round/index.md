@@ -13,7 +13,7 @@ browser-compat: javascript.builtins.Math.round
 
 {{JSRef}}
 
-Функція **`Math.round()`** (округлити) повертає значення числа, округлене до найближчого цілого.
+Статичний метод **`Math.round()`** (округлити) повертає значення числа, округлене до найближчого цілого.
 
 {{EmbedInteractiveExample("pages/js/math-round.html")}}
 
