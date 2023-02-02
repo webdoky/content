@@ -302,6 +302,10 @@ otherCheckbox.addEventListener("change", () => {
         {{domxref("HTMLInputElement.select", "select()")}}
       </td>
     </tr>
+    <tr>
+      <td><strong>Неявна роль ARIA</strong></td>
+      <td><a href="/uk/docs/Web/Accessibility/ARIA/Roles/checkbox_role"><code>checkbox</code></a></td>
+    </tr>
   </tbody>
 </table>
 
