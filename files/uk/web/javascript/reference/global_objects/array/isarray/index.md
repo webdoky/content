@@ -16,6 +16,8 @@ browser-compat: javascript.builtins.Array.isArray
 
 Статичний метод **`Array.isArray()`** ("чи є масивом") з'ясовує, чи є передане значення примірником {{jsxref("Array")}}.
 
+{{EmbedInteractiveExample("pages/js/array-isarray.html")}}
+
 ## Синтаксис
 
 ```js-nolint
