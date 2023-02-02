@@ -28,7 +28,7 @@ includes(searchString, position)
 ### Параметри
 
 - `searchString`
-  - : Рядок, який необхідно знайти всередині початкового рядка `str`. Не може бути регулярним виразом.
+  - : Рядок, який необхідно знайти всередині початкового рядка `str`. Не може [бути регулярним виразом](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp#osoblyva-obrobka-rehuliarnykh-vyraziv). Усі значення, що не є регулярними виразами, [зводяться до рядків](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka), тож опускання цього параметра або передача в ньому `undefined` змушує `includes()` шукати рядок `"undefined"`, а це рідко саме те, що потрібно.
 - `position` {{optional_inline}}
   - : Номер позиції всередині рядка, з якої розпочнеться пошук шуканого рядка `searchString`. (Усталено дорівнює `0`.)
 

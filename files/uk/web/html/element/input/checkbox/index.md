@@ -1,6 +1,7 @@
 ---
 title: <input type="checkbox">
 slug: Web/HTML/Element/input/checkbox
+page-type: html-element
 tags:
   - Element
   - HTML
@@ -87,7 +88,7 @@ browser-compat: html.elements.input.type_checkbox
 
 {{EmbedLiveSample('obrobka-dekilkokh-poliv-dlia-halochky', 600, 100)}}
 
-В цьому прикладі, як бачите, кожне поле для галочки отримало однакове значення атрибута `name`. Якщо обидві поля мають галочку при поданні форми, то рядок пар ключ-значення, поданий на сервер, буде схожим на отакий: `interest=coding&interest=music`. Коли цей рядок отримає сервер, треба буде розібрати його не як асоціативний масив, щоб були враховані усі значення за ключем `interest`, а не тільки останнє. Для прикладу – одна з технік, що використовується на Python: [Обробка декількох полів для галочки з однією серверною змінною (англ.)](https://stackoverflow.com/questions/18745456/handle-multiple-checkboxes-with-a-single-serverside-variable).
+В цьому прикладі, як бачите, кожне поле для галочки отримало однакове значення атрибута `name`. Якщо обидва поля мають галочку при поданні форми, то рядок пар ключ-значення, поданий на сервер, буде схожим на отакий: `interest=coding&interest=music`. Коли цей рядок отримає сервер, треба буде розібрати його не як асоціативний масив, щоб були враховані усі значення за ключем `interest`, а не тільки останнє. Для прикладу – одна з технік, що використовується на Python: [Обробка декількох полів для галочки з однією серверною змінною (англ.)](https://stackoverflow.com/questions/18745456/handle-multiple-checkboxes-with-a-single-serverside-variable).
 
 ### Усталена галочка в полях
 

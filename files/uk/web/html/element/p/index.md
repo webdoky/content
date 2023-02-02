@@ -1,6 +1,7 @@
 ---
 title: "<p>: Елемент абзацу"
 slug: Web/HTML/Element/p
+page-type: html-element
 tags:
   - Element
   - HTML
