@@ -336,6 +336,12 @@ button:active {
         {{domxref("HTMLInputElement.select", "select()")}}
       </td>
     </tr>
+    <tr>
+      <td><strong>Неявна роль ARIA</strong></td>
+      <td>
+        <code><a href="/uk/docs/Web/Accessibility/ARIA/Roles/radio_role">radio</a></code>
+      </td>
+    </tr>
   </tbody>
 </table>
 
