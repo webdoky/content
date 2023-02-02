@@ -13,7 +13,7 @@ browser-compat: css.properties.flex-direction
 
 {{CSSRef}}
 
-Властивість [CSS](/uk/docs/Web/CSS) **`flex-direction`** (гнучкий напрям) задає те, як гнучкі елементи розміщаються в гнучкому контейнері, встановлюючи головну вісь та напрям розташування (прямий або зворотний).
+Властивість [CSS](/uk/docs/Web/CSS) **`flex-direction`** (гнучкий напрям) задає те, як гнучкі елементи розміщаються в гнучкому контейнері, встановлюючи головну вісь та її напрям (прямий або зворотний).
 
 {{EmbedInteractiveExample("pages/css/flex-direction.html")}}
 
@@ -22,13 +22,13 @@ browser-compat: css.properties.flex-direction
 ## Синтаксис
 
 ```css
-/* Такий напрямок, що текст викладається в лінію */
+/* Такий напрямок, в якому літери тексту викладаються в рядок */
 flex-direction: row;
 
 /* Як <row>, але в зворотному порядку */
 flex-direction: row-reverse;
 
-/* Такий напрямок, що рядки тексту ставляться один на другий */
+/* Такий напрямок, в якому рядки тексту додаються одне до одного */
 flex-direction: column;
 
 /* Як <column>, але в зворотному порядку */
@@ -129,7 +129,7 @@ flex-direction: unset;
 }
 ```
 
-#### Result
+#### Результат
 
 {{EmbedLiveSample('rozvorot-kolonok-ta-riadiv-hnuchkoho-konteinera', '', '550')}}
 
