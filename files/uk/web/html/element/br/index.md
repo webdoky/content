@@ -1,6 +1,7 @@
 ---
 title: "<br>: Елемент розриву рядка"
 slug: Web/HTML/Element/br
+page-type: html-element
 tags:
   - Element
   - HTML
@@ -51,7 +52,7 @@ browser-compat: html.elements.br
 
 Результат має такий вигляд:
 
-{{ EmbedLiveSample('prostyi-br', '100%', '90') }}
+{{EmbedLiveSample('prostyi-br', '100%', '90')}}
 
 ## Занепокоєння щодо доступності
 
@@ -108,7 +109,7 @@ browser-compat: html.elements.br
     <tr>
       <th scope="row">Дозволені ролі ARIA</th>
       <td>
-        {{ARIARole("none")}}, {{ARIARole("presentation")}}
+        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/none_role"><code>none</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/presentation_role"><code>presentation</code></a>
       </td>
     </tr>
     <tr>

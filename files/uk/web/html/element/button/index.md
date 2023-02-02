@@ -1,6 +1,7 @@
 ---
 title: "<button>: Елемент кнопки"
 slug: Web/HTML/Element/button
+page-type: html-element
 tags:
   - Element
   - Forms
@@ -247,12 +248,7 @@ Firefox додасть кнопці, що має фокус, дрібний пу
     <tr>
       <th scope="row">Дозволені ролі ARIA</th>
       <td>
-        {{ARIARole("checkbox")}}, {{ARIARole("combobox")}},
-        {{ARIARole("link")}}, {{ARIARole("menuitem")}},
-        {{ARIARole("menuitemcheckbox")}},
-        {{ARIARole("menuitemradio")}}, {{ARIARole("option")}},
-        {{ARIARole("radio")}}, {{ARIARole("switch")}},
-        {{ARIARole("tab")}}
+        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/checkbox_role"><code>checkbox</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/combobox_role"><code>combobox</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/link_role"><code>link</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitem_role"><code>menuitem</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitemcheckbox_role"><code>menuitemcheckbox</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitemradio_role"><code>menuitemradio</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/option_role"><code>option</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/radio_role"><code>radio</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/switch_role"><code>switch</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/tab_role"><code>tab</code></a>
       </td>
     </tr>
     <tr>

@@ -1,7 +1,10 @@
+import compact from "lodash/compact";
+import map from "lodash/map";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 
 import checkFile from "./utils/check-file";
+import doesFileExist from "./utils/does-file-exist";
 import { executeWithResult } from "./utils/execute";
 import {
   startLanguageTool,
@@ -26,12 +29,24 @@ async function check() {
     );
 
     targetFiles = Array.from(
+      // uniq (yes, a single file may contain both staged and unstaged changes)
       new Set(
         gitStagedUpdates
           .split("\n")
           .concat(gitNonStagedUpdates.split("\n"))
           .filter((filePath) => filePath.endsWith(".md"))
-      ) // uniq (yes, a single file may contain both staged and unstaged changes)
+      )
+    );
+    // Remove non-existent (removed in current change) files
+    targetFiles = compact(
+      await Promise.all(
+        map(targetFiles, async (targetFile) => {
+          if (await doesFileExist(targetFile)) {
+            return targetFile;
+          }
+          return null;
+        })
+      )
     );
   } else {
     targetFiles = argv._;
