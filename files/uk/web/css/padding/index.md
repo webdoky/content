@@ -25,10 +25,10 @@ browser-compat: css.properties.padding
 
 Ця властивість є скороченням для наступних властивостей CSS:
 
+- {{cssxref("padding-top")}}
+- {{cssxref("padding-right")}}
 - {{cssxref("padding-bottom")}}
 - {{cssxref("padding-left")}}
-- {{cssxref("padding-right")}}
-- {{cssxref("padding-top")}}
 
 ## Синтаксис
 
