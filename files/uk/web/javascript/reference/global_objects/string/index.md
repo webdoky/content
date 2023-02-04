@@ -56,7 +56,7 @@ const string4 = new String("Об'єкт рядка");
 
 ### Порівняння рядків
 
-У мові «C» для порівняння рядків використовується функція `strcmp()`. У JavaScript для цього існують [оператори більше та менше](/uk/docs/Web/JavaScript/Reference/Operators):
+Для порівняння рядків слід використовувати [оператори більше та менше](/uk/docs/Web/JavaScript/Reference/Operators):
 
 ```js
 const a = "a";
