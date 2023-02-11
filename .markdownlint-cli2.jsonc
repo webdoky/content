@@ -230,7 +230,7 @@
         {
           "name": "capital-glossary",
           "message": "Glossary macros must lead to capitalized or upperscore references",
-          "searchPattern": "/{{G|glossary\\(\"([a-z])/g",
+          "searchPattern": "/{{{[gG]lossary\\(\"[a-z][^}]+\"\\)}}/g",
           "skipCode": true
         }
       ]
