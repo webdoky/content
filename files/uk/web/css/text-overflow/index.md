@@ -223,7 +223,7 @@ for (const para of paras) {
 
 #### Результат
 
-{{EmbedLiveSample('syntaksys-dvoh-znachen', 600, 360)}}
+{{EmbedLiveSample('syntaksys-dvokh-znachen', 600, 360)}}
 
 ## Специфікації
 
