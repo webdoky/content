@@ -25,7 +25,7 @@ Promise.all(iterable)
 ### Параметри
 
 - `iterable`
-  - : [Ітерований об'єкт](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#protokol-iteruvannia) (наприклад, {{jsxref("Array")}}) з промісами.
+  - : [Ітерований об'єкт](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#protokol-iterovanoho-obiekta) (наприклад, {{jsxref("Array")}}) з промісами.
 
 ### Повернене значення
 
