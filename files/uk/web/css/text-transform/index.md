@@ -340,7 +340,7 @@ strong {
 
 Це демонструє те, як грецький символ сигми (`Σ`) перетворюється на звичайну малу сигму (`σ`) або на варіант для кінця слова (`ς`), залежно від контексту.
 
-{{EmbedLiveSample('pryklad-z-vykorystanniam-lowercase-hretska-', '100%', '100px')}}
+{{EmbedLiveSample('pryklad-z-vykorystanniam-lowercase-hretska-σ', '100%', '100px')}}
 
 ### Приклад з використанням "lowercase" (литовська мова)
 
@@ -426,7 +426,7 @@ strong {
 
 Японська півширинна катакана вживалася для представлення катакани 8-бітними кодами символів. На відміну від звичайних (повноширинних) символів катакани, літера зі знаком дзвінкості представляється у вигляді двох кодових точок: тіла літери й знака дзвінкості. `full-width` поєднує їх в одну кодову точку, коли перетворює такі символи на повноширинні.
 
-{{EmbedLiveSample('pryklad-z-vykorystanniam-full-width-yaponska-pivshyrynna-katakana', '100%', '175px')}}
+{{EmbedLiveSample('pryklad-z-vykorystanniam-full-width-iaponska-pivshyrynna-katakana', '100%', '175px')}}
 
 ### Приклад з використанням "full-size-kana"
 
