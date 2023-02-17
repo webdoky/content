@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2023-02-10 - 2023-02-17]
+
+* **Переклад(CSS):** web/css/border-style (#1291) ([b1aba36](https://github.com/webdoky/content/commit/b1aba36697ba50757c0c9677efe5f9fbceab0772))
+* **Переклад(CSS):** web/css/css_selectors (#1288) ([23bce99](https://github.com/webdoky/content/commit/23bce992106a1fdbc77f7e583578d683b86b2e25))
+* **Переклад(CSS):** web/css/flex-wrap (#1296) ([76a7a04](https://github.com/webdoky/content/commit/76a7a04c0b49cc964b74ca3c1bed59b22d49ae2d))
+
 ## [2023-02-03 - 2023-02-10]
 
 * **Переклад(CSS):** web/css/z-index (#1292) ([709157c](https://github.com/webdoky/content/commit/709157c285870bc21ee76a84130280eab5e26c2e))
