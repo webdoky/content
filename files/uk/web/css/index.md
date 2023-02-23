@@ -1,19 +1,7 @@
 ---
 title: "CSS: Каскадні таблиці стилів"
 slug: Web/CSS
-tags:
-  - CSS
-  - Cascading Style Sheets
-  - Design
-  - Guide
-  - Landing
-  - Layout
-  - Reference
-  - Style Sheets
-  - Styles
-  - Stylesheets
-  - "l10n:priority"
-translation_of: Web/CSS
+page-type: landing-page
 ---
 
 {{CSSRef}}
