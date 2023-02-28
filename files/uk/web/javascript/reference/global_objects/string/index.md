@@ -2,12 +2,6 @@
 title: String
 slug: Web/JavaScript/Reference/Global_Objects/String
 page-type: javascript-class
-tags:
-  - Class
-  - ECMAScript 2015
-  - JavaScript
-  - Reference
-  - String
 browser-compat: javascript.builtins.String
 ---
 
@@ -245,6 +239,11 @@ let longString =
   - : Повертає новий рядок, створений з необробленого рядка, переданого аргументом.
 
 ## Властивості примірників
+
+Ці властивості означені на `String.prototype` і є спільними для всіх примірників `String`.
+
+- {{jsxref("Object/constructor", "String.prototype.constructor")}}
+  - : Функція-конструктор, що створила об'єкт-примірник. Для примірників `String` початковим значенням є конструктор {{jsxref("String/String", "String")}}.
 
 Ці властивості є власними властивостями кожного окремого примірника `String`.
 
