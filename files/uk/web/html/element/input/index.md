@@ -1162,13 +1162,13 @@ Firefox використовує наступну евристику для ви
   <tbody>
     <tr>
       <th scope="row">
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories"
+        <a href="/uk/docs/Web/HTML/Content_categories"
           >Категорії вмісту</a
         >
       </th>
       <td>
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#flow_content">Потоковий вміст</a>, перелічуваний, подаваний, скиданий, пов'язаний з формою елемент,
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#phrasing_content">оповідальний вміст</a>. Якщо <a href="#type-typ"><code>type</code></a> – не
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist">Потоковий вміст</a>, перелічуваний, подаваний, скиданий, пов'язаний з формою елемент,
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist">оповідальний вміст</a>. Якщо <a href="#type-typ"><code>type</code></a> – не
         <code>hidden</code>, то – підписуваний елемент, дотиковий вміст.
       </td>
     </tr>
@@ -1184,7 +1184,7 @@ Firefox використовує наступну евристику для ви
       <th scope="row">Дозволені предки</th>
       <td>
         Будь-який елемент, що приймає
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#phrasing_content">оповідальний вміст</a>.
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist">оповідальний вміст</a>.
       </td>
     </tr>
     <tr>
