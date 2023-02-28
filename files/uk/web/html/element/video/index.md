@@ -454,12 +454,12 @@ AddType video/webm .webm
   <tbody>
     <tr>
       <th scope="row">
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories"
+        <a href="/uk/docs/Web/HTML/Content_categories"
           >Категорії вмісту</a
         >
       </th>
       <td>
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#flow_content"
+        <a href="/uk/docs/Web/HTML/Content_categories#flow_content"
           >Потоковий вміст</a
         >, оповідальний вміст, вбудований вміст. Якщо має атрибут
         {{htmlattrxref("controls", "video")}}: інтерактивний
