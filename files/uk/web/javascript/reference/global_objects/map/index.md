@@ -246,7 +246,7 @@ console.log(contacts.size); // 1
 - {{jsxref("Map.prototype.size")}}
   - : Повертає кількість пар ключ-значення об'єкта `Map`.
 - `Map.prototype[@@toStringTag]`
-  - : Початковим значенням властивості [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) ж рядок `"Map"`. Вона використовується в {{jsxref("Object.prototype.toString()")}}.
+  - : Початковим значенням властивості [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) є рядок `"Map"`. Вона використовується в {{jsxref("Object.prototype.toString()")}}.
 
 ## Методи примірника
 
