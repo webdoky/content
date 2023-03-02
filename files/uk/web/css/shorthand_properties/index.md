@@ -2,14 +2,6 @@
 title: Властивості-скорочення
 slug: Web/CSS/Shorthand_properties
 page-type: guide
-tags:
-  - CSS
-  - Guide
-  - Layout
-  - Reference
-  - Shorthand Properties
-  - properties
-  - shorthand
 ---
 
 {{CSSRef}}
