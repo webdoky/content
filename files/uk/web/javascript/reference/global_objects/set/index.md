@@ -2,15 +2,6 @@
 title: Set
 slug: Web/JavaScript/Reference/Global_Objects/Set
 page-type: javascript-class
-tags:
-  - Class
-  - ECMAScript 2015
-  - Global Objects
-  - JavaScript
-  - Object
-  - Reference
-  - set
-  - Polyfill
 browser-compat: javascript.builtins.Set
 ---
 
@@ -44,10 +35,14 @@ browser-compat: javascript.builtins.Set
 
 ## Властивості примірника
 
-- `Set.prototype[@@toStringTag]`
-  - : Початкове значення властивості [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"Set"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}.
+Ці властивості означені на `Set.prototype` і є спільними для всіх примірників `Set`.
+
+- {{jsxref("Object/constructor", "Set.prototype.constructor")}}
+  - : Функція-конструктор, що створила об'єкт-примірник. Для примірників `Set` початковим значенням є конструктор {{jsxref("Set/Set", "Set")}}.
 - {{jsxref("Set.prototype.size")}} (розмір)
   - : Повертає кількість значень, присутніх в об'єкті `Set`.
+- `Set.prototype[@@toStringTag]`
+  - : Початкове значення властивості [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"Set"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}.
 
 ## Методи примірника
 
