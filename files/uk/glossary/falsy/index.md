@@ -23,7 +23,7 @@ tags:
 | {{Glossary("null")}}        | [null](/uk/docs/Web/JavaScript/Reference/Operators/null) — відсутність будь-якого значення.                                                                                                                                                  |
 | {{Glossary("undefined")}}   | [undefined](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined) — примітивне значення.                                                                                                                                               |
 | {{Glossary("NaN")}}         | [NaN](/uk/docs/Web/JavaScript/Reference/Global_Objects/NaN) — нечисло.                                                                                                                                                                       |
-| {{domxref("document.all")}} | Об'єкти є хибними тоді й лише тоді, коли мають приховану комірку [\[\[IsHTMLDDA\]\]](https://tc39.es/ecma262/#sec-IsHTMLDDA-internal-slot). Така комірка існує лише в {{domxref("document.all")}} і не може бути задана засобами JavaScript. |
+| {{domxref("document.all")}} | Об'єкти є хибними тоді й лише тоді, коли мають внутрішню комірку [\[\[IsHTMLDDA\]\]](https://tc39.es/ecma262/#sec-IsHTMLDDA-internal-slot). Така комірка існує лише в {{domxref("document.all")}} і не може бути задана засобами JavaScript. |
 
 ## Приклади
 
