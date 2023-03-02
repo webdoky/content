@@ -80,7 +80,7 @@ browser-compat: javascript.builtins.Error
 ## Методи примірника
 
 - {{jsxref("Error.prototype.toString()")}}
-  - : Повертає рядок, що представляє заданий об'єкт. Відкидає метод {{jsxref("Object.prototype.toString()")}}.
+  - : Повертає рядок, що представляє заданий об'єкт. Заміщує метод {{jsxref("Object.prototype.toString()")}}.
 
 ## Приклади
 
