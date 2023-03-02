@@ -2,10 +2,6 @@
 title: Object (Об'єкт)
 slug: Web/JavaScript/Reference/Global_Objects/Object
 page-type: javascript-class
-tags:
-  - Class
-  - JavaScript
-  - Object
 browser-compat: javascript.builtins.Object
 ---
 
@@ -213,8 +209,10 @@ JavaScript також має вбудовані API, що виробляють `
 
 ## Властивості примірника
 
+Ці властивості означені на `Object.prototype` і є спільними для всіх примірників `Object`.
+
 - {{jsxref("Object.prototype.constructor")}} (конструктор)
-  - : Вказує на функцію, яка створює прототип об'єкта.
+  - : Функція-конструктор, що створила об'єкт-примірник. Для простих примірників `Object` початковим значенням є конструктор {{jsxref("Object/Object", "Object")}}. Кожний з примірників інших конструкторів успадковує властивість `constructor` від відповідного об'єкта `Constructor.prototype`.
 - [`Object.prototype.__proto__`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/proto) {{Deprecated_Inline}}
   - : Вказує на об'єкт, який було використано як прототип під час створення примірника цього об'єкта.
 
