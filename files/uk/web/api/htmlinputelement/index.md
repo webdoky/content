@@ -2,16 +2,6 @@
 title: HTMLInputElement
 slug: Web/API/HTMLInputElement
 page-type: web-api-interface
-tags:
-  - API
-  - DOM
-  - HTML DOM
-  - HTMLInputElement
-  - Input
-  - Interface
-  - NeedsContent
-  - NeedsMarkupWork
-  - Reference
 browser-compat: api.HTMLInputElement
 ---
 
@@ -67,7 +57,7 @@ browser-compat: api.HTMLInputElement
 
 - {{domxref("HTMLInputElement.type", "type")}}
 
-  - : `string`: **Повертає чи задає** атрибут [`type`](/uk/docs/Web/HTML/Element/input#type-typ) елемента, , що вказує на тип контрольного елемента до виводу. Можливі значення перелічені в документації атрибута [`type`](/uk/docs/Web/HTML/Element/input#type-typ).
+  - : `string`: **Повертає чи задає** атрибут [`type`](/uk/docs/Web/HTML/Element/input#type-typ) елемента, що вказує на тип контрольного елемента до виводу. Можливі значення перелічені в документації атрибута [`type`](/uk/docs/Web/HTML/Element/input#type-typ).
 
 - {{domxref("HTMLInputElement.useMap", "useMap")}} {{Deprecated_Inline}}
 
@@ -142,7 +132,7 @@ browser-compat: api.HTMLInputElement
 
 - {{domxref("HTMLInputElement.defaultChecked", "defaultChecked")}}
 
-  - : `boolean`: **Повертає чи задає** усталений стан радіокнопки чи поля для галочки, початково задане в HTML, що породив такий об'єкт.
+  - : `boolean`: **Повертає чи задає** усталений стан радіокнопки або поля для галочки, початково заданий в HTML, що породив такий об'єкт.
 
 - {{domxref("HTMLInputElement.indeterminate", "indeterminate")}}
   - : `boolean`: **Повертає** значення, котре вказує на те, чи перебуває поле для галочки або радіокнопка в стані невизначеності. Для полів для галочки такий стан призводить до певного затемнення, аби продемонструвати, що стан поля – невизначеність (немає ані галочки, ані відсутності галочки). Не впливає на значення атрибута `checked`, а клацання поля призведе до присвоєння `indeterminate` значення хибності.
