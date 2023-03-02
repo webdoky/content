@@ -2,12 +2,6 @@
 title: typeof
 slug: Web/JavaScript/Reference/Operators/typeof
 page-type: javascript-operator
-tags:
-  - JavaScript
-  - Language feature
-  - Operator
-  - Reference
-  - Unary
 browser-compat: javascript.operators.typeof
 ---
 
@@ -32,19 +26,19 @@ typeof operand
 
 Таблиця нижче наводить всі можливі повернені значення `typeof`. Більше інформації про типи та примітиви можна знайти на сторінці, присвяченій [структурам даних JavaScript](/uk/docs/Web/JavaScript/Data_structures).
 
-| Тип                                                                                                                                                                    | Результат                            |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
-| [Undefined](/uk/docs/Glossary/undefined)                                                                                                                               | `"undefined"`                        |
-| [Null](/uk/docs/Glossary/Null)                                                                                                                                         | `"object"` ([причина](#typeof-null)) |
-| [Boolean](/uk/docs/Glossary/Boolean)                                                                                                                                   | `"boolean"`                          |
-| [Number](/uk/docs/Glossary/Number)                                                                                                                                     | `"number"`                           |
-| [BigInt](/uk/docs/Glossary/BigInt)                                                                                                                                     | `"bigint"`                           |
-| [String](/uk/docs/Glossary/String)                                                                                                                                     | `"string"`                           |
-| [Symbol](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol)                                                                                                      | `"symbol"`                           |
-| Об'єкт [Function](/uk/docs/Glossary/Function) (реалізовує [[Call]] у термінах ECMA-262; [класи](/uk/docs/Web/JavaScript/Reference/Statements/class) також є функціями) | `"function"`                         |
-| Будь-який інший об'єкт                                                                                                                                                 | `"object"`                           |
+| Тип                                                                                                                                                                                                   | Результат                            |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
+| [Undefined](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined)                                                                                                                               | `"undefined"`                        |
+| [Null](/uk/docs/Web/JavaScript/Reference/Operators/null)                                                                                                                                              | `"object"` ([причина](#typeof-null)) |
+| [Boolean](/uk/docs/Web/JavaScript/Reference/Global_Objects/Boolean)                                                                                                                                   | `"boolean"`                          |
+| [Number](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number)                                                                                                                                     | `"number"`                           |
+| [BigInt](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt)                                                                                                                                     | `"bigint"`                           |
+| [String](/uk/docs/Web/JavaScript/Reference/Global_Objects/String)                                                                                                                                     | `"string"`                           |
+| [Symbol](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol)                                                                                                                                     | `"symbol"`                           |
+| Об'єкт [Function](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function) (реалізовує [[Call]] у термінах ECMA-262; [класи](/uk/docs/Web/JavaScript/Reference/Statements/class) також є функціями) | `"function"`                         |
+| Будь-який інший об'єкт                                                                                                                                                                                | `"object"`                           |
 
-Цей список значень є вичерпним. Повідомляють, що рушії, котрі не відповідають специфікації, виробляють (чи історично виробляли) інакші значення, ніж перелічені вище. Старий Internet Explorer був єдиним браузером, про котрий відомо, що він [реалізовував додаткові повернені значення](https://github.com/tc39/ecma262/issues/1440#issuecomment-461963872), до того, як специфікація прибрала логіку повернення `typeof` визначених реалізацією рядків для невикличних нестандартних екзотичних об'єктів.
+Цей список значень є вичерпним. Повідомляють, що рушії, котрі не відповідають специфікації, виробляють (чи історично виробляли) інакші значення, ніж перелічені вище.
 
 ## Приклади
 
