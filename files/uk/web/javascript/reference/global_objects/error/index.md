@@ -2,12 +2,6 @@
 title: Error
 slug: Web/JavaScript/Reference/Global_Objects/Error
 page-type: javascript-class
-tags:
-  - Class
-  - JavaScript
-  - Object
-  - Reference
-  - Polyfill
 browser-compat: javascript.builtins.Error
 ---
 
@@ -50,32 +44,35 @@ browser-compat: javascript.builtins.Error
 ## Статичні методи
 
 - `Error.captureStackTrace()` {{non-standard_inline}}
-
   - : Нестандартна функція V8, що створює на примірнику Error властивість {{JSxRef("Error.prototype.stack", "stack")}}.
-
 - `Error.stackTraceLimit` {{non-standard_inline}}
-
   - : Нестандартна числова властивість V8, що обмежує те, скільки фреймів стека включається в трасування стека помилки.
-
 - `Error.prepareStackTrace()` {{non-standard_inline}} {{optional_inline}}
   - : Нестандартна функція V8, котра, якщо задана користувацьким кодом, викликається рушієм V8 для викинутих винятків, даючи користувачеві змогу задавати власне форматування трасувань стека.
 
 ## Властивості примірника
 
-- {{jsxref("Error.prototype.message")}}
-  - : Повідомлення помилки. Для створених користувачем об'єктів `Error` це рядок, заданий як перший аргумент конструктора.
+Ці властивості означені на `Error.prototype` і є спільними для всіх примірників `Error`.
+
+- {{jsxref("Object/constructor", "Error.prototype.constructor")}}
+  - : Функція-конструктор, що створила об'єкт-примірник. Для примірників `Error` початковим значенням є конструктор {{jsxref("Error/Error", "Error")}}.
 - {{jsxref("Error.prototype.name")}}
-  - : Назва помилки. Визначається на основі функції-конструктора.
-- {{jsxref("Error.prototype.cause")}}
-  - : Причина помилки, що вказує на причину викидання помилки – зазвичай інша, перехоплена помилка. Для створених користувачем об'єктів `Error`, це значення, що задається властивістю `cause` другого аргументу конструктора.
-- {{jsxref("Error.prototype.fileName")}} {{non-standard_inline}}
-  - : Нестандартна властивість Mozilla для шляху до файлу, що спричинив помилку.
-- {{jsxref("Error.prototype.lineNumber")}} {{non-standard_inline}}
-  - : Нестандартна властивість Mozilla для номера рядка у файлі, що спричинив помилку.
-- {{jsxref("Error.prototype.columnNumber")}} {{non-standard_inline}}
-  - : Нестандартна властивість Mozilla для номера колонки в рядку, що спричинила помилку.
+  - : Представляє назву типу помилки. Для `Error.prototype.name` початковим значенням є `"Error"`. Підкласи, наприклад, {{jsxref("TypeError")}} і {{jsxref("SyntaxError")}}, мають власні властивості `name`.
 - {{jsxref("Error.prototype.stack")}} {{non-standard_inline}}
   - : Нестандартна властивість для трасування стека.
+
+Ці властивості є власними властивостями кожного окремого примірника `Error`.
+
+- {{jsxref("Error/message", "message")}}
+  - : Повідомлення помилки. Для створених користувачем об'єктів `Error` це рядок, заданий як перший аргумент конструктора.
+- {{jsxref("Error/cause", "cause")}}
+  - : Причина помилки, що вказує на причину викидання помилки – зазвичай інша, перехоплена помилка. Для створених користувачем об'єктів `Error`, це значення, що задається властивістю `cause` другого аргументу конструктора.
+- {{jsxref("Error/fileName", "fileName")}} {{non-standard_inline}}
+  - : Нестандартна властивість Mozilla для шляху до файлу, що спричинив помилку.
+- {{jsxref("Error/lineNumber", "lineNumber")}} {{non-standard_inline}}
+  - : Нестандартна властивість Mozilla для номера рядка у файлі, що спричинив помилку.
+- {{jsxref("Error/columnNumber", "columnNumber")}} {{non-standard_inline}}
+  - : Нестандартна властивість Mozilla для номера колонки в рядку, що спричинила помилку.
 
 ## Методи примірника
 
