@@ -2,11 +2,6 @@
 title: Boolean
 slug: Web/JavaScript/Reference/Global_Objects/Boolean
 page-type: javascript-class
-tags:
-  - Boolean
-  - Class
-  - JavaScript
-  - Reference
 browser-compat: javascript.builtins.Boolean
 ---
 
@@ -105,6 +100,13 @@ if ([] == false) {
 
 - {{jsxref("Global_Objects/Boolean/Boolean", "Boolean()")}}
   - : Створює новий об'єкт `Boolean`.
+
+## Властивості примірника
+
+Ці властивості означені на `Boolean.prototype` і є спільними для всіх примірників `Boolean`.
+
+- {{jsxref("Object/constructor", "Boolean.prototype.constructor")}}
+  - : Функція-конструктор, що створила об'єкт-примірник. Для примірників `Boolean` початковим значенням є конструктор {{jsxref("Boolean/Boolean", "Boolean")}}.
 
 ## Методи примірника
 
