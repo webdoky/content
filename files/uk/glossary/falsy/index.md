@@ -2,9 +2,6 @@
 title: Хибні значення
 slug: Glossary/Falsy
 page-type: glossary-definition
-tags:
-  - CodingScripting
-  - JavaScript
 ---
 
 **Хибне** значення – це значення, яке вважається хибою, коли зустрічається в {{Glossary("Boolean", "булевому")}} контексті.
