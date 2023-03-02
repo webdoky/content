@@ -2,17 +2,6 @@
 title: cursor
 slug: Web/CSS/cursor
 page-type: css-property
-tags:
-  - Arrow
-  - CSS
-  - CSS Property
-  - Cursor
-  - Custom Cursor
-  - Reference
-  - UI
-  - mouse
-  - pointer
-  - recipe:css-property
 browser-compat: css.properties.cursor
 ---
 
@@ -186,7 +175,7 @@ cursor: unset;
             <img src="no-drop.gif" alt="піктограма вказівника і піктограма заборони" />
           </td>
           <td>
-            Елемент не може бути кинутим в поточному положенні.<br />{{bug("275173")}}: На Windows та macOS <code>no-drop</code> еквівалентно <code>not-allowed</code>.
+            Елемент не може бути кинутим в поточному положенні.<br />[Вада Firefox 275173](https://bugzil.la/275173): На Windows та macOS <code>no-drop</code> еквівалентно <code>not-allowed</code>.
           </td>
         </tr>
         <tr style="cursor: not-allowed">
@@ -211,8 +200,8 @@ cursor: unset;
           <td><code>all-scroll</code></td>
           <td><img alt="піктограма крапки середнього розміру з чотирма трикутниками навколо." src="all-scroll.gif" /></td>
           <td>
-            Дещо може бути прокручено у будь-якому напрямку (панорамовано).<br />{{bug("275174")}}:
-            На Windows <code>all-scroll</code> еквівалентно <code>move</code>.
+            Дещо може бути прокручено у будь-якому напрямку (панорамовано).<br />
+            [Вада Firefox 275174](https://bugzil.la/275174): На Windows <code>all-scroll</code> еквівалентно <code>move</code>.
           </td>
         </tr>
         <tr style="cursor: col-resize">
