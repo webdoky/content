@@ -53,4 +53,3 @@ console.log(today.toISOString()); // Повертає 2011-10-05T14:48:00.000Z
 - {{jsxref("Date.prototype.toLocaleDateString()")}}
 - {{jsxref("Date.prototype.toTimeString()")}}
 - {{jsxref("Date.prototype.toUTCString()")}}
-- [Поліфіл](https://github.com/behnammodi/polyfill/blob/master/date.polyfill.js)

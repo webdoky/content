@@ -79,8 +79,8 @@ browser-compat: html.elements.form
   - : Метод [HTTP](/uk/docs/Web/HTTP), котрим буде подана форма.
     Єдині дозволені методи (значення) (чутливі до регістру):
 
-    - `post`: [Метод POST (англ.)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.5); дані форми надсилаються як [тіло запиту](/uk/docs/Web/API/Request/body).
-    - `get` (усталене значення): [Метод GET (англ.)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.3); дані форми додаються до URL `action` після роздільника `?`. Слід застосовувати, коли форма [не має побічних ефектів](/uk/docs/Glossary/Idempotent).
+    - `post`: Метод {{HTTPMethod("POST")}}; дані форми надсилаються як [тіло запиту](/uk/docs/Web/API/Request/body).
+    - `get` (усталене значення): Метод {{HTTPMethod("GET")}}; дані форми додаються до URL `action` після роздільника `?`. Слід застосовувати, коли форма [не має побічних ефектів](/uk/docs/Glossary/Idempotent).
     - `dialog`: Коли форма знаходиться всередині {{HTMLElement("dialog")}}, при поданні закриває діалог і викидає подію подання, не подаючи дані й не очищаючи форму.
 
     Це значення відкидається атрибутами {{htmlattrxref("formmethod", "button")}} на елементах {{HTMLElement("button")}}, [`<input type="submit">`](/uk/docs/Web/HTML/Element/input/submit) чи [`<input type="image">`](/uk/docs/Web/HTML/Element/input/image).

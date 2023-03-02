@@ -486,6 +486,10 @@ daySelect.onchange = () => {
         {{domxref("HTMLInputElement.stepUp", "stepUp()")}}
       </td>
     </tr>
+     <tr>
+      <td><strong>Неявна роль ARIA</strong></td>
+      <td><a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"><code>немає відповідної ролі</code></a></td>
+    </tr>
   </tbody>
 </table>
 

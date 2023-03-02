@@ -448,6 +448,12 @@ switchBtn.addEventListener("click", () => {
         {{domxref("HTMLInputElement.stepDown", "stepDown()")}}
       </td>
     </tr>
+    <tr>
+      <td><strong>Неявна роль ARIA</strong></td>
+      <td>
+        <code><a href="/uk/docs/Web/Accessibility/ARIA/Roles/spinbutton_role">spinbutton</a></code>
+      </td>
+    </tr>
   </tbody>
 </table>
 

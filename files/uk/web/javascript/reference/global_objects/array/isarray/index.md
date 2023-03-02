@@ -16,6 +16,8 @@ browser-compat: javascript.builtins.Array.isArray
 
 Статичний метод **`Array.isArray()`** ("чи є масивом") з'ясовує, чи є передане значення примірником {{jsxref("Array")}}.
 
+{{EmbedInteractiveExample("pages/js/array-isarray.html")}}
+
 ## Синтаксис
 
 ```js-nolint
@@ -95,5 +97,4 @@ arr instanceof Array; // false
 ## Дивіться також
 
 - [Поліфіл `Array.isArray` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
-- [Поліфіл](https://github.com/behnammodi/polyfill/blob/master/array.polyfill.js)
 - {{jsxref("Array")}}

@@ -2,14 +2,6 @@
 title: Array.prototype.indexOf()
 slug: Web/JavaScript/Reference/Global_Objects/Array/indexOf
 page-type: javascript-instance-method
-tags:
-  - Array
-  - JavaScript
-  - Method
-  - Prototype
-  - Reference
-  - indexof
-  - Polyfill
 browser-compat: javascript.builtins.Array.indexOf
 ---
 
@@ -42,7 +34,7 @@ indexOf(searchElement, fromIndex)
 
 ## Опис
 
-Метод `indexOf()` порівнює `searchElement` з елементами масиву за допомогою [строгої рівності](/uk/docs/Web/JavaScript/Reference/Operators/Strict_equality) (того самого алгоритму, що використовується оператором `===`).
+Метод `indexOf()` порівнює `searchElement` з елементами масиву за допомогою [строгої рівності](/uk/docs/Web/JavaScript/Reference/Operators/Strict_equality) (того самого алгоритму, що використовується оператором `===`). Значення [`NaN`](/uk/docs/Web/JavaScript/Reference/Global_Objects/NaN) при порівнянні ніколи не бувають рівними будь-чому, тому `indexOf()` завжди повертає `-1`, коли `searchElement` – це `NaN`.
 
 Метод `indexOf()` пропускає порожні комірки в [розріджених масивах](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy).
 
@@ -61,6 +53,13 @@ array.indexOf(7); // -1
 array.indexOf(9, 2); // 2
 array.indexOf(2, -1); // -1
 array.indexOf(2, -3); // 0
+```
+
+Не можна використовувати `indexOf()` для пошуку `NaN`.
+
+```js
+const array = [NaN];
+array.indexOf(NaN); // -1
 ```
 
 ### Пошук усіх входжень елемента

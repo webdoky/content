@@ -2,22 +2,6 @@
 title: "<video>: Елемент вбудованого відео"
 slug: Web/HTML/Element/video
 page-type: html-element
-tags:
-  - Element
-  - HTML
-  - HTML Video
-  - HTML Video Player
-  - HTML embedded content
-  - Media
-  - Movie Playback
-  - Movies
-  - Multimedia
-  - Playing Movies
-  - Playing Video
-  - Reference
-  - Showing Video
-  - Video
-  - Web
 browser-compat: html.elements.video
 ---
 
@@ -470,12 +454,12 @@ AddType video/webm .webm
   <tbody>
     <tr>
       <th scope="row">
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories"
+        <a href="/uk/docs/Web/HTML/Content_categories"
           >Категорії вмісту</a
         >
       </th>
       <td>
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#flow_content"
+        <a href="/uk/docs/Web/HTML/Content_categories#flow_content"
           >Потоковий вміст</a
         >, оповідальний вміст, вбудований вміст. Якщо має атрибут
         {{htmlattrxref("controls", "video")}}: інтерактивний
