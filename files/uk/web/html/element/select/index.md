@@ -568,7 +568,7 @@ document.forms[0].onsubmit = (e) => {
         <a href="/uk/docs/Web/HTML/Content_categories#form_podavanyi"
           >подаваний</a
         >
-        <a href="/uk/docs/Web/HTML/Content_categories#form-associated_"
+        <a href="/uk/docs/Web/HTML/Content_categories#formovyi-vmist"
           >асоційований з формою</a
         > елемент
       </td>
@@ -588,7 +588,7 @@ document.forms[0].onsubmit = (e) => {
       <th scope="row">Дозволені предки</th>
       <td>
         Будь-які елементи, котрі приймають
-        <a href="/uk/docs/Web/HTML/Content_categories#phrasing_content"
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
           >оповідальний вміст</a
         >.
       </td>
