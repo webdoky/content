@@ -2,10 +2,6 @@
 title: Посібник з JavaScript
 slug: Web/JavaScript/Guide
 page-type: guide
-tags:
-  - Guide
-  - JavaScript
-  - "l10n:priority"
 ---
 
 {{jsSidebar("Посібник з JavaScript")}}
@@ -100,8 +96,8 @@ tags:
 
 Огляд: [Індексовані колекції](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 
-- [Масиви](/uk/docs/Web/JavaScript/Guide/Indexed_collections#obiekt-array)
-- [Типізовані масиви](/uk/docs/Web/JavaScript/Guide/Indexed_collections#typizovani-masyvy)
+- [Масиви](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- [Типізовані масиви](/uk/docs/Web/JavaScript/Typed_arrays)
 
 ## Колекції з ключами
 
@@ -116,7 +112,7 @@ tags:
 
 Огляд: [Робота з об'єктами](/uk/docs/Web/JavaScript/Guide/Working_with_Objects)
 
-- [Об'єкти та властивості](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#obiekty-ta-vlastyvosti)
+- [Об'єкти та властивості](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#obiekty-i-vlastyvosti)
 - [Створення об'єктів](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#stvorennia-novykh-obiektiv)
 - [Означення методів](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#oznachennia-metodiv)
 - [Гетер і сетер](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#oznachennia-heteriv-ta-seteriv)
@@ -136,7 +132,7 @@ tags:
 
 - [Гарантії](/uk/docs/Web/JavaScript/Guide/Using_promises#harantii)
 - [Ланцюжки](/uk/docs/Web/JavaScript/Guide/Using_promises#utvorennia-lantsiuzhkiv)
-- [Поширення помилки](/uk/docs/Web/JavaScript/Guide/Using_promises#poshyrennia-pomylky)
+- [Обробка помилок](/uk/docs/Web/JavaScript/Guide/Using_promises#obrobka-pomylok)
 - [Композиція](/uk/docs/Web/JavaScript/Guide/Using_promises#kompozytsiia)
 - [Хронометраж](/uk/docs/Web/JavaScript/Guide/Using_promises#khronometrazh)
 
@@ -146,7 +142,7 @@ tags:
 
 - [Ітератори](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators#iteratory)
 - [Ітеровані об'єкти](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators#iterovani-obiekty)
-- [Генератори](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators#heneratory)
+- [Генератори](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators#funktsii-heneratory)
 
 ## Метапрограмування
 
