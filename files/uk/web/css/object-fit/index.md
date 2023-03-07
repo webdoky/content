@@ -2,16 +2,6 @@
 title: object-fit
 slug: Web/CSS/object-fit
 page-type: css-property
-tags:
-  - CSS
-  - CSS Images
-  - CSS Property
-  - Layout
-  - Reference
-  - CSS layout
-  - object-fit
-  - recipe:css-property
-  - size
 browser-compat: css.properties.object-fit
 ---
 
@@ -145,7 +135,7 @@ img {
 
 #### Результат
 
-{{ EmbedLiveSample('zadannia-object-fit-zobrazhenniu', 500, 1100) }}
+{{EmbedLiveSample('zadannia-object-fit-zobrazhenniu', 500, 1100)}}
 
 ## Специфікації
 
