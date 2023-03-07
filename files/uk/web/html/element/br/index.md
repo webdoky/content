@@ -2,12 +2,6 @@
 title: "<br>: Елемент розриву рядка"
 slug: Web/HTML/Element/br
 page-type: html-element
-tags:
-  - Element
-  - HTML
-  - HTML text-level semantics
-  - Reference
-  - Web
 browser-compat: html.elements.br
 ---
 
@@ -27,7 +21,7 @@ browser-compat: html.elements.br
 
 ### Нерекомендовані атрибути
 
-- {{htmlattrdef("clear")}} {{Deprecated_Inline}}
+- `clear` {{Deprecated_Inline}}
   - : Вказує, де повинен початися новий рядок після розриву.
 
 ## Оформлення засобами CSS
@@ -66,15 +60,15 @@ browser-compat: html.elements.br
   <tbody>
     <tr>
       <th scope="row">
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories"
+        <a href="/uk/docs/Web/HTML/Content_categories"
           >Категорії вмісту</a
         >
       </th>
       <td>
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#flow_content"
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
           >Потоковий вміст</a
         >,
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#phrasing_content"
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
           >оповідальний вміст</a
         >.
       </td>
@@ -93,7 +87,7 @@ browser-compat: html.elements.br
       <th scope="row">Дозволені батьківські елементи</th>
       <td>
         Всі елементи, що приймають
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#opovidalnyi-vmist"
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
           >оповідальний вміст</a
         >.
       </td>
