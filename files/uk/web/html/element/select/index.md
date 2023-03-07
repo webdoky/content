@@ -2,13 +2,6 @@
 title: "<select>: Елемент вибору HTML"
 slug: Web/HTML/Element/select
 page-type: html-element
-tags:
-  - Element
-  - Forms
-  - HTML
-  - HTML forms
-  - Reference
-  - Web
 browser-compat: html.elements.select
 ---
 
@@ -32,25 +25,25 @@ browser-compat: html.elements.select
 
 Цей елемент приймає [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
 
-- {{htmlattrdef("autocomplete")}} (автозаповнення)
+- `autocomplete` (автозаповнення)
   - : Рядок, що дає підказку функціональності автозаповнення {{Glossary("user agent", "користувацького агента")}}. Повний список значень та деталей про те, як використовувати автозаповнення, доступний за посиланням: [HTML-атрибут автозаповнення](/uk/docs/Web/HTML/Attributes/autocomplete).
-- {{htmlattrdef("autofocus")}} (автофокус)
+- `autofocus` (автофокус)
   - : Цей булів атрибут дає змогу вказати, що контрольний елемент повинен отримати фокус введення, коли сторінка завантажилась. Лише один елемент форми в документі може мати атрибут `autofocus`.
-- {{htmlattrdef("disabled")}} (вимкнений)
+- `disabled` (вимкнений)
   - : Цей булів атрибут показує, що користувач не може взаємодіяти з контрольним елементом. Якщо цей атрибут не вказаний, то контрольний елемент успадковує це налаштування від контейнерного елемента, наприклад, {{htmlelement("fieldset")}}; якщо немає контейнерного елемента з атрибутом `disabled`, то контрольний елемент є увімкненим.
-- {{htmlattrdef("form")}} (форма)
+- `form` (форма)
 
   - : Елемент {{HTMLElement("form")}}, з котрим елемент `<select>` пов'язаний (його _форма-власник_). Значення цього атрибута мусить відповідати значенню атрибута {{htmlattrxref("id")}} елемента `<form>` в тому самому документі. (Якщо цей атрибут не вказаний, то `<select>` пов'язується з елементом `<form>`, котрий є його предком, якщо такий предок є.)
 
     Цей атрибут дає змогу пов'язати елементи `<select>` із `<form>`'ами будь-де в документі, не поміщаючи їх у відповідний `<form>`. Також така поведінка змушує нехтувати батьківським елементом `<form>`.
 
-- {{htmlattrdef("multiple")}} (декілька)
+- `multiple` (декілька)
   - : Цей булів атрибут показує, що зі списку можуть бути обрані кілька варіантів. Якщо він не вказаний, то лише один варіант може бути обраним водночас. Коли вказаний `multiple`, більшість браузерів замість однорядкового спадного списку показують віконце списку з прокруткою.
-- {{htmlattrdef("name")}} (ім'я)
+- `name` (ім'я)
   - : Цей атрибут використовується, щоб вказати ім'я контрольного елемента.
-- {{htmlattrdef("required")}} (обов'язковий)
+- `required` (обов'язковий)
   - : Булів атрибут, що показує, що повинен бути обраний варіант із непустим значенням-рядком.
-- {{htmlattrdef("size")}} (розмір)
+- `size` (розмір)
 
   - : Якщо контрольний елемент поданий у вигляді віконця списку з прокруткою (наприклад, коли вказано `multiple`), цей атрибут представляє кількість рядів списку, контрі повинні бути видимі водночас. Браузери не зобов'язані показувати елемент вибору як віконце списку з прокруткою. Усталене значення – `0`.
 
@@ -548,34 +541,34 @@ document.forms[0].onsubmit = (e) => {
   <tbody>
     <tr>
       <th scope="row">
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories"
+        <a href="/uk/docs/Web/HTML/Content_categories"
           >Категорії вмісту</a
         >
       </th>
       <td>
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#potokovyi-vmist"
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
           >Потоковий вміст</a
         >,
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#opovidalnyi-vmist"
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
           >оповідальний вміст</a
         >,
         <a
-          href="/uk/docs/Web/Guide/HTML/Content_categories#interaktyvnyi-vmist"
+          href="/uk/docs/Web/HTML/Content_categories#interaktyvnyi-vmist"
           >інтерактивний вміст</a
         >,
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#form_spyskovi"
+        <a href="/uk/docs/Web/HTML/Content_categories#form_spyskovi"
           >списковий</a
         >,
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#form_pidpysuvani"
+        <a href="/uk/docs/Web/HTML/Content_categories#form_pidpysuvani"
           >підписуваний</a
         >,
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#form_skydanyi"
+        <a href="/uk/docs/Web/HTML/Content_categories#form_skydanyi"
           >скиданий</a
         > та
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#form_podavanyi"
+        <a href="/uk/docs/Web/HTML/Content_categories#form_podavanyi"
           >подаваний</a
         >
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#form-associated_"
+        <a href="/uk/docs/Web/HTML/Content_categories#form-associated_"
           >асоційований з формою</a
         > елемент
       </td>
@@ -595,7 +588,7 @@ document.forms[0].onsubmit = (e) => {
       <th scope="row">Дозволені предки</th>
       <td>
         Будь-які елементи, котрі приймають
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#phrasing_content"
+        <a href="/uk/docs/Web/HTML/Content_categories#phrasing_content"
           >оповідальний вміст</a
         >.
       </td>
