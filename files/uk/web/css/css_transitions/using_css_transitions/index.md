@@ -2,11 +2,6 @@
 title: Застосування переходів CSS
 slug: Web/CSS/CSS_Transitions/Using_CSS_transitions
 page-type: guide
-tags:
-  - Advanced
-  - CSS
-  - CSS Transitions
-  - Guide
 spec-urls: https://drafts.csswg.org/css-transitions/
 ---
 
@@ -239,7 +234,7 @@ document.addEventListener(
 
 ### Відстеження початку й завершення переходу
 
-Подію {{domxref("HTMLElement/transitionend_event", "transitionend")}} можна використати для відстеження того, що анімація завершила виконання. Це об'єкт {{domxref("TransitionEvent")}} котрий має на дві властивості більше, ніж типовий об'єкт {{domxref("Event")}}:
+Подію {{domxref("Element/transitionend_event", "transitionend")}} можна використати для відстеження того, що анімація завершила виконання. Це об'єкт {{domxref("TransitionEvent")}} котрий має на дві властивості більше, ніж типовий об'єкт {{domxref("Event")}}:
 
 - `propertyName`
   - : Рядок, котрий вказує на ім'я властивості CSS, чий перехід завершився.
@@ -252,7 +247,7 @@ document.addEventListener(
 el.addEventListener("transitionend", updateTransition, true);
 ```
 
-Початок переходу відстежується за допомогою {{domxref("HTMLElement/transitionrun_event", "transitionrun")}} (спрацьовує до усіх затримок) і {{domxref("HTMLElement/transitionstart_event", "transitionstart")}} (спрацьовує після усіх затримок), в аналогічний спосіб:
+Початок переходу відстежується за допомогою {{domxref("Element/transitionrun_event", "transitionrun")}} (спрацьовує до усіх затримок) і {{domxref("Element/transitionstart_event", "transitionstart")}} (спрацьовує після усіх затримок), в аналогічний спосіб:
 
 ```js
 el.addEventListener("transitionrun", signalStart, true);
@@ -267,5 +262,5 @@ el.addEventListener("transitionstart", signalStart, true);
 
 ## Дивіться також
 
-- Інтерфейс {{domxref("TransitionEvent")}} і подія {{domxref("HTMLElement/transitionend_event", "transitionend")}}.
+- Інтерфейс {{domxref("TransitionEvent")}} і подія {{domxref("Element/transitionend_event", "transitionend")}}.
 - [Застосування анімацій CSS](/uk/docs/Web/CSS/CSS_Animations/Using_CSS_animations)
