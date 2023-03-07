@@ -2,19 +2,11 @@
 title: Робота з об'єктами
 slug: Web/JavaScript/Guide/Working_with_Objects
 page-type: guide
-tags:
-  - Beginner
-  - Comparing object
-  - Document
-  - Guide
-  - JavaScript
-  - Object
-  - "l10n:priority"
 ---
 
 {{jsSidebar("JavaScript Guide")}} {{PreviousNext("Web/JavaScript/Guide/Keyed_collections", "Web/JavaScript/Guide/Using_Classes")}}
 
-JavaScript збудовано на основі простої, заснованої на об'єктах парадигми. Об'єкт — це колекція [властивостей](/uk/docs/Glossary/property/JavaScript), а властивість — це зв'язок між назвою (або іменем чи _ключем_) та значенням. Значенням властивості може бути функція — таку властивість називають [методом](/uk/docs/Glossary/Method).
+JavaScript збудовано на основі простої, заснованої на об'єктах парадигми. Об'єкт — це колекція [властивостей](/uk/docs/Glossary/Property/JavaScript), а властивість — це зв'язок між назвою (або іменем чи _ключем_) та значенням. Значенням властивості може бути функція — таку властивість називають [методом](/uk/docs/Glossary/Method).
 
 Об'єкти в JavaScript, як і в багатьох інших мовах програмування, можна порівняти з об'єктами реального світу. В JavaScript об'єкт є окремою сутністю, що має властивості й тип. Порівняймо його, наприклад, з чашкою. Чашка є об'єктом, що має властивості. Чашка має колір, конструкцію, вагу, певний матеріал тощо. Так само об'єкти JavaScript можуть мати властивості, котрі визначають їх характеристики.
 
@@ -188,7 +180,7 @@ const myCar = {
 };
 ```
 
-Подібно до змінних JavaScript, імена властивостей - чутливі до регістру. Вони можуть бути лише рядками чи примірниками Symbol: усі ключі [перетворюються на рядки](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka), окрім Symbol. [Індекси масивів](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#indeksy-masyviv) фактично є властивостями з рядковими ключами, що містять цілі числа.
+Подібно до змінних JavaScript, імена властивостей - чутливі до регістру. Вони можуть бути лише рядками чи примірниками Symbol: усі ключі [перетворюються на рядки](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka), окрім Symbol. [Індекси масивів](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#indeksy-masyvu) фактично є властивостями з рядковими ключами, що містять цілі числа.
 
 ### Звертання до властивостей
 
