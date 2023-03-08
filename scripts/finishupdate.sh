@@ -13,6 +13,8 @@ function alter_section_name()
     echo "API"
   elif [ "$1" == 'html' ]; then
     echo "HTML"
+  elif [ "$1" == 'svg' ]; then
+    echo "SVG"
   else
     echo $1
   fi
@@ -54,9 +56,9 @@ translation_slug=${translation_folder#/}
 translation_slug=${translation_folder#files/uk/}
 
 if [ "$params" == '--allow-update' ]; then
-  ./scripts/startupdate.sh $translation --allow-update
+  ./scripts/startupdate.sh $translation --allow-update || exit 1
 else
-  ./scripts/startupdate.sh $translation
+  ./scripts/startupdate.sh $translation || exit 1
 fi
 
 # Folder must be added, not single file: the folder may contain misc files

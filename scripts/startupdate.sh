@@ -33,4 +33,4 @@ target_branch_name=$(echo "$target_branch_name" | tr '[:upper:]' '[:lower:]')
 target_branch_name="update/$target_branch_name"
 
 # Use gotobranch script
-./scripts/gotobranch.sh $target_branch_name $2
+./scripts/gotobranch.sh $target_branch_name $2 || exit 1
