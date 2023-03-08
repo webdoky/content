@@ -48,10 +48,10 @@ import "module-name";
 
 Існує чотири форми оголошень `import`:
 
-+- [Іменований імпорт](#imenovanyi-import): `import { export1, export2 } from "module-name";`
-+- [Усталений імпорт](#ustalenyi-import): `import defaultExport from "module-name";`
-+- [Імпорт простору імен](#import-prostoru-imen): `import * as name from "module-name";`
-+- [Імпорт заради побічних ефектів](#importuvannia-modulia-lyshe-zarady-yoho-pobichnykh-efektiv): `import "module-name";`
+- [Іменований імпорт](#imenovanyi-import): `import { export1, export2 } from "module-name";`
+- [Усталений імпорт](#ustalenyi-import): `import defaultExport from "module-name";`
+- [Імпорт простору імен](#import-prostoru-imen): `import * as name from "module-name";`
+- [Імпорт заради побічних ефектів](#importuvannia-modulia-lyshe-zarady-yoho-pobichnykh-efektiv): `import "module-name";`
 
 Нижче наведено приклади для пояснення синтаксису.
 
