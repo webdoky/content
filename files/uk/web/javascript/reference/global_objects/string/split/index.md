@@ -2,14 +2,6 @@
 title: String.prototype.split()
 slug: Web/JavaScript/Reference/Global_Objects/String/split
 page-type: javascript-instance-method
-tags:
-  - JavaScript
-  - Method
-  - Prototype
-  - Reference
-  - Regular Expressions
-  - String
-  - Polyfill
 browser-compat: javascript.builtins.String.split
 ---
 
@@ -22,7 +14,6 @@ browser-compat: javascript.builtins.String.split
 ## Синтаксис
 
 ```js-nolint
-split()
 split(separator)
 split(separator, limit)
 ```
@@ -30,7 +21,7 @@ split(separator, limit)
 ### Параметри
 
 - `separator` (розділювач) {{optional_inline}}
-  - : Патерн, що вказує, де повинно відбутися кожне розщеплення. Може бути або рядком, або об'єктом з методом [`Symbol.split`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/split); типовим прикладом такого об'єкта є {{jsxref("Global_Objects/RegExp", "регулярний вираз", "", 1)}}. Якщо цей параметр `undefined`, то повертається вихідний рядок, обгорнутий в масив.
+  - : Патерн, що вказує, де повинно відбутися кожне розщеплення. Може бути або рядком, або об'єктом з методом [`Symbol.split`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/split); типовим прикладом такого об'єкта є {{jsxref("Global_Objects/RegExp", "регулярний вираз", "", 1)}}. Усі значення, котрі не є об'єктами з методом `@@split`, [зводяться до рядків](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka), тож опускання цього параметра або передача в ньому `undefined` змушує `split()` розбивати рядок за розділювачем `"undefined"`, а це рідко є тим, що потрібно.
 - `limit` (обмеження) {{optional_inline}}
   - : Невід'ємне ціле число, котре позначає обмеження кількості підрядків, які буде включено в повернений масив. Якщо цей параметр задано, рядок розділяється в кожному місці, де трапляється вказаний `separator`, проте зупиняється, коли в масиві опиняється вказана в `limit` кількість елементів. Будь-який залишок тексту не буде включено в масив узагалі.
     - Масив може містити менше елементів, ніж вказано в `limit`, якщо функція дійшла до кінця рядка раніше, ніж був вибраний `limit`.
@@ -66,13 +57,13 @@ split(separator, limit)
 
 ### Застосування split()
 
-Якщо початковий рядок порожній, і не вказаний жодний розділювач, `split()` поверне масив з одним порожнім рядком замість порожнього масиву. Якщо ж обидва значення — і рядок, і розділювач — це порожні рядки, буде повернено порожній масив.
+Коли рядок порожній і заданий непорожній розділювач, `split()` повертає `[""]`. Якщо і рядок, і розділювач є порожніми рядками, то повертається порожній масив.
 
 ```js
 const emptyString = "";
 
-// Рядок є порожнім, жодний розділювач не вказаний
-console.log(emptyString.split());
+// рядок – порожній, а розділювач – ні
+console.log(emptyString.split("a"));
 // [""]
 
 // і рядок, і розділювач – порожні рядки

@@ -2,18 +2,12 @@
 title: background
 slug: Web/CSS/background
 page-type: css-shorthand-property
-tags:
-  - CSS
-  - CSS Background
-  - CSS Property
-  - Reference
-  - recipe:css-shorthand-property
 browser-compat: css.properties.background
 ---
 
 {{CSSRef("CSS Background")}}
 
-Властивість-[скорочення](/uk/docs/Web/CSS/Shorthand_properties) [CSS](/uk/docs/Web/CSS) **`background`** ("тло", "фон") встановлює усі властивості стилю тла за раз: колір, зображення, вихідне положення, розмір, метод повторення.
+Властивість-[скорочення](/uk/docs/Web/CSS/Shorthand_properties) [CSS](/uk/docs/Web/CSS) **`background`** ("тло", "фон") встановлює усі властивості стилю тла за раз: колір, зображення, вихідне положення, розмір, метод повторення. Властивості-складові, не задані у складі скорочення `background`, отримують свої усталені значення.
 
 {{EmbedInteractiveExample("pages/css/background.html")}}
 
@@ -72,19 +66,27 @@ background: unset;
 ### Значення
 
 - `<attachment>` (прикріплення)
-  - : Дивіться {{cssxref("background-attachment")}}.
+  - : Дивіться {{cssxref("background-attachment")}}. Усталено – `scroll`.
 - `<box>` (рамки)
-  - : Дивіться {{cssxref("background-clip")}} та {{cssxref("background-origin")}}.
+  - : Дивіться {{cssxref("background-clip")}} та {{cssxref("background-origin")}}. Усталено – `border-box` і `padding-box` відповідно.
 - `<background-color>` (колір тла)
-  - : Дивіться {{cssxref("background-color")}}.
+  - : Дивіться {{cssxref("background-color")}}. Усталено – `transparent`.
 - `<bg-image>` (зображення тла)
-  - : Дивіться {{Cssxref("background-image")}}.
+  - : Дивіться {{Cssxref("background-image")}}. Усталено – `none`.
 - `<position>` (положення)
-  - : Дивіться {{cssxref("background-position")}}.
+  - : Дивіться {{cssxref("background-position")}}. Усталено – 0% 0%.
 - `<repeat-style>` (стиль повторення)
-  - : Дивіться {{cssxref("background-repeat")}}.
+  - : Дивіться {{cssxref("background-repeat")}}. Усталено – `repeat`.
 - `<bg-size>` (розмір тла)
-  - : Дивіться {{cssxref("background-size")}}.
+  - : Дивіться {{cssxref("background-size")}}. Усталено – `auto`.
+
+Наступні три рядки CSS – рівносильні:
+
+```css
+background: none;
+background: transparent;
+background: repeat scroll 0% 0% / auto padding-box border-box none transparent;
+```
 
 ## Занепокоєння щодо доступності
 

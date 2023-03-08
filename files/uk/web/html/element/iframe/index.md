@@ -1,19 +1,7 @@
 ---
 title: "<iframe>: Елемент супутнього фрейму"
 slug: Web/HTML/Element/iframe
-tags:
-  - Content
-  - Element
-  - Embedded content
-  - Embedding
-  - Frames
-  - HTML
-  - HTML embedded content
-  - Inline Frames
-  - Reference
-  - Web
-  - embedded
-  - iframe
+page-type: html-element
 browser-compat: html.elements.iframe
 ---
 
@@ -31,110 +19,103 @@ browser-compat: html.elements.iframe
 
 Цей елемент приймає [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
 
-- {{htmlattrdef("allow")}}
+- `allow`
 
   - : Задає [політику дозволів](/uk/docs/Web/HTTP/Permissions_Policy) для `<iframe>`. Політика визначає те, які можливості доступні `<iframe>` (наприклад, доступ до мікрофона, камери, батареї, поширення в Інтернеті тощо), залежно від походження запиту.
 
     > **Примітка:** Політика дозволів, задана атрибутом `allow`, реалізовує додаткові обмеження, поверх політики, заданої в заголовку {{httpheader("Permissions-Policy")}}. Перша не замінює другу.
 
-- {{htmlattrdef("allowfullscreen")}}
+- `allowfullscreen`
 
   - : Слід надати цьому атрибутові значення `true`, якщо `<iframe>` може активувати повноекранний режим, викликавши метод {{domxref("Element.requestFullscreen", "requestFullscreen()")}}.
 
     > **Примітка:** Цей атрибут вважається застарілим, він був перевизначений як `allow="fullscreen"`.
 
-- {{htmlattrdef("allowpaymentrequest")}} {{Experimental_Inline}}
+- `allowpaymentrequest` {{Experimental_Inline}}
 
   - : Слід надати цьому атрибутові значення `true`, якщо `<iframe>` до іншого походження треба дозволити викликати [API запитів платежів](/uk/docs/Web/API/Payment_Request_API).
 
     > **Примітка:** Цей атрибут вважається застарілим, він був перевизначений як `allow="payment"`.
 
-- {{htmlattrdef("csp")}} {{experimental_inline}}
+- `credentialless` {{Experimental_Inline}} {{Non-standard_Inline}}
+
+  - : Можна задати `true`, аби зробити `<iframe>` безправним, тобто його вміст буде завантажений у новий, ефемерний контекст. Він не матиме доступу до мережі, реп'яшків та сховища даних, пов'язаних з його походженням. Такий фрейм використовуватиме новий контекст, локальний щодо часу життя документа верхнього рівня. Зате правила вбудовування {{httpheader("Cross-Origin-Embedder-Policy")}} (COEP) можуть не застосовуватися, тож документи, для яких задано COEP, можуть вбудовувати сторонні документи, для яких COEP не задано. Подробиці – на сторінці [безправного IFrame](/uk/docs/Web/Security/IFrame_credentialless)
+
+- `csp` {{experimental_inline}}
 
   - : [Політика захисту вмісту](/uk/docs/Web/HTTP/CSP), нав'язана вбудованому ресурсу. Дивіться {{domxref("HTMLIFrameElement.csp")}} для отримання подробиць.
 
-- {{htmlattrdef("fetchpriority")}} {{Experimental_Inline}}
-
-  - : Надає підказку щодо відносного пріоритету отримання документа супутнього фрейму. Дозволені значення:
-
-    - `high`
-      - : Сигналізує про високий пріоритет відносно інших документів супутніх фреймів.
-    - `low`
-      - : Сигналізує про низький пріоритет відносно інших документів супутніх фреймів.
-    - `auto`
-      - : Усталене значення: Сигналізує про автоматичне визначення пріоритету відносно інших супутніх фреймів.
-
-- {{htmlattrdef("height")}}
+- `height`
   - : Висота фрейму в пікселях CSS. Усталене значення – `150`.
-- {{htmlattrdef("loading")}} {{experimental_inline}}
+- `loading` {{experimental_inline}}
 
   - : Вказує, як браузер повинен завантажувати супутній фрейм:
 
     - `eager`: Завантажувати супутній фрейм негайно, незалежно від того, чи лежить він поза видимою областю перегляду (усталене значення).
     - `lazy`: Відкласти завантаження супутнього фрейму до часу, коли він досягне обчисленої відстані від області перегляду, як задано браузером.
 
-- {{htmlattrdef("name")}}
+- `name`
   - : Ім'я вбудованого навігаційного контексту, на котре можна цілитися. Може використовуватися в атрибуті `target` елементів {{HTMLElement("a")}}, {{HTMLElement("form")}} і {{HTMLElement("base")}}; атрибуті `formtarget` елементів {{HTMLElement("input")}} і {{HTMLElement("button")}}; параметрі `windowName` метода {{domxref("Window.open()","window.open()")}}.
-- {{htmlattrdef("referrerpolicy")}}
+- `referrerpolicy`
 
   - : Вказує, якого [посилача](/uk/docs/Web/API/Document/referrer) слід надсилати при отриманні ресурсу фрейму:
 
     - `no-referrer`: Заголовок {{HTTPHeader("Referer")}} не буде надісланий.
     - `no-referrer-when-downgrade`: Заголовок {{HTTPHeader("Referer")}} не буде надісланий {{Glossary("origin", "походженням")}}, що не мають {{Glossary("TLS")}} ({{Glossary("HTTPS")}}).
-    - `origin`: Надісланий посилач буде обмежений походженням сторінки, що звертається: її [схемою](/uk/docs/Learn/Common_questions/What_is_a_URL), {{Glossary("host", "хостом")}} і {{Glossary("port", "портом")}}.
+    - `origin`: Надісланий посилач буде обмежений походженням сторінки, що звертається: її [схемою](/uk/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL), {{Glossary("host", "хостом")}} і {{Glossary("port", "портом")}}.
     - `origin-when-cross-origin`: Посилач, надісланий до інших походжень, буде обмежений схемою, хостом і портом. Переходи в межах того самого походження все ж включатимуть повний шлях.
     - `same-origin`: Посилач буде надісланий в межах {{Glossary("Same-origin policy", "того самого походження")}}, натомість запити до інших походжень не міститимуть інформації про посилача.
     - `strict-origin`: Надсилати походження документа як посилач лише тоді, коли рівень протоколу захисту залишається тим самим (HTTPS→HTTPS), але не надсилати його за менш захищеною адресою (HTTPS→HTTP).
     - `strict-origin-when-cross-origin` (усталене значення): Надсилати увесь URL при виконанні запиту за тим самим походженням; надсилати лише походження, коли рівень протоколу захисту залишається тим самим (HTTPS→HTTPS); не надсилати заголовку за менш захищеною адресою (HTTPS→HTTP).
     - `unsafe-url`: Посилач включатиме походження _і_ шлях (але не [фрагмент](/uk/docs/Web/API/HTMLAnchorElement/hash), [пароль](/uk/docs/Web/API/HTMLAnchorElement/password) чи [ім'я користувача](/uk/docs/Web/API/HTMLAnchorElement/username)). **Це значення є небезпечним**, адже випускає походження й шляхи з ресурсів, захищених TLS, до незахищених походжень.
 
-- {{htmlattrdef("sandbox")}}
+- `sandbox`
 
   - : Накладає на вміст фрейму додаткові обмеження. Значення атрибута може бути або порожнім, щоб застосувати всі обмеження, або розділеними пробілами позначками для зняття певних обмежень:
 
+    - `allow-downloads`: Дозволяє стягнення файлів за допомогою елементів {{HTMLElement("a")}} та {{HTMLElement("area")}} з атрибутом [download](/uk/docs/Web/HTML/Element/a#download), а також переходу, що приводить до стягування файлу. Це працює незалежно від того, чи клацнув користувач посилання, чи це запустив код на JS, без дій користувача.
     - `allow-downloads-without-user-activation` {{experimental_inline}}: Дозволяє завантаженням відбуватися без рухів з боку користувача.
-    - `allow-downloads`: Дозволяє завантаженням відбуватися без рухів з боку користувача.
-    - `allow-forms`: Дозволяє ресурсові подавати форми. Якщо це ключове слово не використано, то подання форм заблоковано.
-    - `allow-modals`: Дає ресурсові [відкривати модальні вікна (англ.)](https://html.spec.whatwg.org/multipage/origin.html#sandboxed-modals-flag).
+    - `allow-forms`: Дозволяє сторінці подавати форми. Якщо це ключове слово не вжито, то форма буде виведена як зазвичай, але її подання не запустить валідацію введення, надсилання даних на вебсервер чи закривання діалогу.
+    - `allow-modals`: Дозволяє сторінці відкривати модальні вікна за допомогою {{domxref("Window.alert()")}}, {{domxref("Window.confirm()")}}, {{domxref("Window.print()")}} і {{domxref("Window.prompt()")}}, а відкриття {{HTMLElement("dialog")}} – дозволено незалежно від присутності чи відсутності цього ключового слова. Також це дозволяє сторінці приймати подію {{domxref("BeforeUnloadEvent")}}.
     - `allow-orientation-lock`: Дає ресурсові [блокувати орієнтацію екрана](/uk/docs/Web/API/Screen/lockOrientation).
-    - `allow-pointer-lock`: Дає ресурсові використовувати [API блокування вказівника](/uk/docs/Web/API/Pointer_Lock_API).
-    - `allow-popups`: Дозволяє спливні вікна (як то `window.open()`, `target="_blank"` чи `showModalDialog()`). Якщо це ключове слово не застосовано, то спливне вікно мовчки зазнає невдачі.
-    - `allow-popups-to-escape-sandbox`: Дає огородженому документові відкривати нові вікна без того, щоб такі вікна успадковували огородження. Наприклад, це дає змогу безпечно огородити рекламне оголошення, не накладаючи такі самі обмеження на сторінку, на котру посилається це оголошення.
-    - `allow-presentation`: Дає ресурсові почати [сеанс презентації](/uk/docs/Web/API/PresentationRequest).
+    - `allow-pointer-lock`: Дозволяє сторінці використовувати [API блокування вказівника](/uk/docs/Web/API/Pointer_Lock_API).
+    - `allow-popups`: Дозволяє спливні вікна (наприклад, із {{domxref("Window.open()")}}, `target="_blank"`, {{domxref("Window.showModalDialog()")}})). Якщо це ключове слово не застосовано, то спроба використати цю функціональність тихо зазнає невдачі.
+    - `allow-popups-to-escape-sandbox`: Дозволяє огородженому документові відкривати нові вікна без накладання на них позначок огородження. Це дозволяє, наприклад, сторонньому рекламному оголошенню бути безпечно огородженим, не накладаючи такі самі обмеження на сторінки, на котрі воно посилається.
+    - `allow-presentation`: Дозволяє батьківській сторінці контролювати те, чи може супутній фрейм починати [сеанс презентації](/uk/docs/Web/API/PresentationRequest).
     - `allow-same-origin`: Якщо ця позначка не застосована, то ресурс вважається таким, що має особливе походження, котре ніколи не відповідає {{Glossary("same-origin policy", "політиці того самого походження")}} (потенційно запобігаючи доступові до [сховища даних і реп'яшків](/uk/docs/Web/Security/Same-origin_policy#dostup-do-skhovyshcha-danykh-z-inshoho-pokhodzhennia) і певних API JavaScript).
-    - `allow-scripts`: Дозволяє ресурсові запускати сценарії (але не створювати спливні вікна).
+    - `allow-scripts`: Дозволяє сторінці запускати сценарії (але не створювати спливні вікна). Якщо це ключове слово не вжито, то така операція – не дозволена.
     - `allow-storage-access-by-user-activation` {{experimental_inline}}: Дає ресурсові запитувати доступ до можливостей сховища батьківського контексту за допомогою [API доступу до сховища](/uk/docs/Web/API/Storage_Access_API).
     - `allow-top-navigation`: Дає ресурсові виконувати переходи в навігаційному контексті вищого рівня (тому, що зветься `_top`).
     - `allow-top-navigation-by-user-activation`: Дає ресурсові виконувати переходи в навігаційному контексті вищого рівня, але лише тоді, коли це ініційовано рухом користувача.
+    - `allow-top-navigation-to-custom-protocols`: Дозволяє перехід за протоколами, відмінними від `http`, вбудованими в браузер чи [зареєстрованими вебсайтом](/uk/docs/Web/API/Navigator/registerProtocolHandler/Web-based_protocol_handlers). Ця можливість також вмикається ключовими словами `allow-popups` і `allow-top-navigation`.
 
     > **Примітка:**
     >
     > - Коли вбудований документ має таке саме походження, як батьківська сторінка, **наполегливо не рекомендовано** використовувати водночас `allow-scripts` і `allow-same-origin`, адже це дає вбудованому документові змогу прибрати атрибут `sandbox` – роблячи його не більш безпечним, ніж без атрибута `sandbox` узагалі.
     > - Огородження не має сенсу, якщо нападник може вивести вміст поза огородженим `iframe` – наприклад, якщо переглядач відкриє фрейм у новій вкладці. Такий вміст повинен також надаватися з _окремого походження_, щоб обмежити потенційну шкоду.
-    > - Атрибут `sandbox` не підтримується в Internet Explorer 9 і старших його версіях.
 
-- {{htmlattrdef("src")}}
+- `src`
   - : URL сторінки, що вбудовується. Щоб вбудувати порожню сторінку, котра відповідає [політиці того самого походження](/uk/docs/Web/Security/Same-origin_policy#uspadkovani-pokhodzhennia), слід використовувати значення `about:blank`. Також слід звернути увагу, що програмне усування атрибута `<iframe>` src (наприклад, за допомогою {{domxref("Element.removeAttribute()")}}) призводить до того, що в Firefox (починаючи від версії 65), браузерах на основі Chromium та Safari/iOS буде завантажено `about:blank`.
-- {{htmlattrdef("srcdoc")}}
+- `srcdoc`
   - : Супутній HTML для вбудовування, що відкидає атрибут `src`. Якщо браузер не підтримує атрибут `srcdoc`, то скористається URL в атрибуті `src`.
-- {{htmlattrdef("width")}}
+- `width`
   - : Ширина фрейму в пікселях CSS. Усталене значення – `300`.
 
 ### Нерекомендовані атрибути
 
 Ці атрибути є нерекомендованими й можуть більше не підтримуватися в усіх користувацьких агентах. Слід уникати їх використання в новому вмісті, а зі старого намагатися усувати.
 
-- {{htmlattrdef("align")}} {{deprecated_inline}}
+- `align` {{deprecated_inline}}
   - : Шикування цього елемента відносно контексту навколо.
-- {{htmlattrdef("frameborder")}} {{deprecated_inline}}
+- `frameborder` {{deprecated_inline}}
   - : Значення `1` (усталене) малює навколо такого фрейму межу. Значення `0` усуває межу навколо такого фрейму; натомість слід використовувати для контролю меж `<iframe>` властивість CSS {{cssxref("border")}}.
-- {{htmlattrdef("longdesc")}} {{deprecated_inline}}
+- `longdesc` {{deprecated_inline}}
   - : URL довгого опису вмісту супутнього фрейму. У зв'язку з поширеним зловживанням, цей атрибут не є корисним в невізуальних браузерах.
-- {{htmlattrdef("marginheight")}} {{deprecated_inline}}
+- `marginheight` {{deprecated_inline}}
   - : Кількість простору в пікселях між вмістом фрейму і його верхньою й нижньою межами.
-- {{htmlattrdef("marginwidth")}} {{deprecated_inline}}
+- `marginwidth` {{deprecated_inline}}
   - : Кількість простору в пікселях між вмістом фрейму і його лівою й правою межами.
-- {{htmlattrdef("scrolling")}} {{deprecated_inline}}
+- `scrolling` {{deprecated_inline}}
 
   - : Вказує, коли браузерові слід надати фреймові смугу прокручування:
 
@@ -195,15 +176,15 @@ browser-compat: html.elements.iframe
   <tbody>
     <tr>
       <th scope="row">
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories"
+        <a href="/uk/docs/Web/HTML/Content_categories"
           >Категорії вмісту</a
         >
       </th>
       <td>
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#potokovyi-vmist"
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
           >Потоковий вміст</a
         >,
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#opovidalnyi-vmist"
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
           >оповідальний вміст</a
         >, вбудований вміст, інтерактивний вміст, відчутний вміст.
       </td>
@@ -231,9 +212,7 @@ browser-compat: html.elements.iframe
     <tr>
       <th scope="row">Дозволені ролі ARIA</th>
       <td>
-        {{ARIARole("application")}}, {{ARIARole("document")}},
-        {{ARIARole("img")}}, {{ARIARole("none")}},
-        {{ARIARole("presentation")}}
+        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/application_role"><code>application</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/document_role"><code>document</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/img_role"><code>img</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/none_role"><code>none</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/presentation_role"><code>presentation</code></a>
       </td>
     </tr>
     <tr>

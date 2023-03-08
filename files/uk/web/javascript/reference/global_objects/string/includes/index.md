@@ -1,13 +1,7 @@
 ---
 title: String.prototype.includes()
 slug: Web/JavaScript/Reference/Global_Objects/String/includes
-tags:
-  - JavaScript
-  - Method
-  - Prototype
-  - Reference
-  - String
-  - Polyfill
+page-type: javascript-instance-method
 browser-compat: javascript.builtins.String.includes
 ---
 
@@ -27,13 +21,13 @@ includes(searchString, position)
 ### Параметри
 
 - `searchString`
-  - : Рядок, який необхідно знайти всередині початкового рядка `str`. Не може бути регулярним виразом.
+  - : Рядок, який необхідно знайти всередині початкового рядка `str`. Не може [бути регулярним виразом](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp#osoblyva-obrobka-rehuliarnykh-vyraziv). Усі значення, що не є регулярними виразами, [зводяться до рядків](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka), тож опускання цього параметра або передача в ньому `undefined` змушує `includes()` шукати рядок `"undefined"`, а це рідко саме те, що потрібно.
 - `position` {{optional_inline}}
   - : Номер позиції всередині рядка, з якої розпочнеться пошук шуканого рядка `searchString`. (Усталено дорівнює `0`.)
 
 ### Повернене значення
 
-Повертає **`true`**, якщо шуканий рядок було знайдено будь-де всередині початкового рядка, і **`false`**, якщо рядок знайдено не було.
+Повертає **`true`**, якщо шуканий рядок було знайдено будь-де всередині початкового рядка, в тому числі коли `searchString` є порожнім рядком, інакше – **`false`**.
 
 ### Винятки
 
@@ -49,13 +43,13 @@ includes(searchString, position)
 Метод `includes()` чутливий до регістру. Для прикладу, наступний вираз поверне `false`:
 
 ```js
-'Синій кит'.includes('синій'); // повертає false
+"Синій кит".includes("синій"); // повертає false
 ```
 
 Це обмеження можна обійти, привівши і вихідний рядок, і шуканий, до нижнього регістру:
 
 ```js
-'Синій кит'.toLowerCase().includes('синій'); // повертає true
+"Синій кит".toLowerCase().includes("синій"); // повертає true
 ```
 
 ## Приклади
@@ -63,14 +57,14 @@ includes(searchString, position)
 ### Застосування методу includes()
 
 ```js
-const str = 'Чи бути, чи не бути — ось питання.';
+const str = "Чи бути, чи не бути — ось питання.";
 
-console.log(str.includes('Чи бути')); // true
-console.log(str.includes('питання')); // true
-console.log(str.includes('не існує')); // false
-console.log(str.includes('Чи бути', 1)); // false
-console.log(str.includes('ЧИ БУТИ')); // false
-console.log(str.includes('')); // true
+console.log(str.includes("Чи бути")); // true
+console.log(str.includes("питання")); // true
+console.log(str.includes("не існує")); // false
+console.log(str.includes("Чи бути", 1)); // false
+console.log(str.includes("ЧИ БУТИ")); // false
+console.log(str.includes("")); // true
 ```
 
 ## Специфікації

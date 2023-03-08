@@ -60,6 +60,19 @@ browser-compat: javascript.builtins.Map
       </td>
     </tr>
     <tr>
+      <th scope="row">Безпека</th>
+      <td>
+        Об'єкти <code>Map</code> безпечно використовувати з наданими користувачем ключами та значеннями.
+      </td>
+      <td>
+        <p>
+          Задання наданих користувачем пар ключ-значення на об'єкті <code>Object</code> може дати нападникові змогу замістити прототип об'єкта, що може призвести до <a href="https://github.com/eslint-community/eslint-plugin-security/blob/main/docs/the-dangers-of-square-bracket-notation.md">
+            атак об'єктних ін'єкцій
+          </a>. Подібно до проблеми конфліктних ключів, ситуацію тут можна поліпшити шляхом використання об'єктів з прототипом <code>null</code>.
+        </p>
+      </td>
+    </tr>
+    <tr>
       <th scope="row">Типи ключів</th>
       <td>
         Ключі в <code>Map</code> можуть мати будь-яке значення (включно з функціями, об'єктами та будь-якими примітивними значеннями).
@@ -103,7 +116,7 @@ browser-compat: javascript.builtins.Map
         Кількість елементів всередині <code>Map</code> легко отримується з його властивості {{jsxref("Map.prototype.size", "size")}}.
       </td>
       <td>
-        Кількість елементів всередині <code>Object</code> слід обраховувати самотужки.
+        З'ясування кількості елементів усередині <code>Object</code> виконується в обхід, менш ефективно. Загальноприйнятий спосіб це зробити – через {{jsxref("Array/length", "length")}} масиву, поверненого з {{jsxref("Object.keys()")}}.
       </td>
     </tr>
     <tr>

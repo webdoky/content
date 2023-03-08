@@ -1,17 +1,7 @@
 ---
 title: <input type="file">
 slug: Web/HTML/Element/input/file
-tags:
-  - Directory Picker
-  - File
-  - File Picker
-  - Files
-  - Form input
-  - HTML
-  - HTML forms
-  - Input Type
-  - Reference
-  - Type
+page-type: html-element
 browser-compat: html.elements.input.type_file
 ---
 
@@ -131,7 +121,7 @@ This produces the following output:
 - `webkitRelativePath` (відносний шлях WebKit) {{non-standard_inline}}
   - : Рядок, що представляє шлях до файлу відносно базової директорії, обраної при виборі директорії (тобто в інтерфейсі вибору `file`, що має атрибут {{htmlattrxref("webkitdirectory", "input/file")}}). _Ця властивість є нестандартною, її слід використовувати з обережністю._
 
-> **Примітка:** У всіх сучасних браузерах значення `HTMLInputElement.files` можна як отримати, так і встановити; останнім з браузерів цю функціональність додав Firefox у версії 57 (дивіться {{bug(1384030)}}).
+> **Примітка:** У всіх сучасних браузерах значення `HTMLInputElement.files` можна як отримати, так і встановити; останнім з браузерів цю функціональність додав Firefox у версії 57 (дивіться [ваду Firefox 1384030](https://bugzil.la/1384030)).
 
 ### Обмеження прийнятних типів файлу
 
@@ -435,6 +425,10 @@ function returnFileSize(number) {
       <td>
         {{domxref("HTMLInputElement.select", "select()")}}
       </td>
+    </tr>
+    <tr>
+      <td><strong>Неявна роль ARIA</strong></td>
+      <td><a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"><code>немає відповідної ролі</code></a></td>
     </tr>
   </tbody>
 </table>

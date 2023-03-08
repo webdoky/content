@@ -2,19 +2,12 @@
 title: Object.assign()
 slug: Web/JavaScript/Reference/Global_Objects/Object/assign
 page-type: javascript-static-method
-tags:
-  - ECMAScript 2015
-  - JavaScript
-  - Method
-  - Object
-  - Reference
-  - Polyfill
 browser-compat: javascript.builtins.Object.assign
 ---
 
 {{JSRef}}
 
-Метод **`Object.assign()`** (присвоїти) копіює всі {{jsxref("Object/propertyIsEnumerable", "перелічувані", "", 1)}} {{jsxref("Object/hasOwn", "власні властивості", "", 1)}} від одного чи більше _донорських об'єктів_ до _цільового об'єкта_. Він повертає модифікований цільовий об'єкт.
+Статичний метод **`Object.assign()`** (присвоїти) копіює всі {{jsxref("Object/propertyIsEnumerable", "перелічувані", "", 1)}} {{jsxref("Object/hasOwn", "власні властивості", "", 1)}} від одного чи більше _донорських об'єктів_ до _цільового об'єкта_. Він повертає модифікований цільовий об'єкт.
 
 {{EmbedInteractiveExample("pages/js/object-assign.html")}}
 

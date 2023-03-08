@@ -2,16 +2,6 @@
 title: Array.prototype.reduce()
 slug: Web/JavaScript/Reference/Global_Objects/Array/reduce
 page-type: javascript-instance-method
-tags:
-  - Array
-  - Array method
-  - ECMAScript 5
-  - JavaScript
-  - Method
-  - Prototype
-  - Reduce
-  - Reference
-  - Polyfill
 browser-compat: javascript.builtins.Array.reduce
 ---
 
@@ -335,10 +325,10 @@ console.log(doubledPositiveNumbers); // [12, 4]
 /**
  * Створює ланцюжок із серії обробників промісів
  *
- * @param {array} arr Список обробників промісів, кожен з яких отримує
+ * @param {array} arr – Список обробників промісів, кожен з яких отримує
  * вирішений результат попереднього обробника і повертає іще один проміс.
- * @param {*} input Початкове значення для старту ланцюжка промісів
- * @return {Object} Остаточний проміс, до котрого приєднаний ланцюжок обробників
+ * @param {*} input – Початкове значення для старту ланцюжка промісів
+ * @return {Object} – Остаточний проміс, до котрого приєднаний ланцюжок обробників
  */
 function runPromiseInSequence(arr, input) {
   return arr.reduce(

@@ -1,10 +1,7 @@
 ---
 title: Посібник з JavaScript
 slug: Web/JavaScript/Guide
-tags:
-  - Guide
-  - JavaScript
-  - "l10n:priority"
+page-type: guide
 ---
 
 {{jsSidebar("Посібник з JavaScript")}}
@@ -50,11 +47,11 @@ tags:
 
 - [`for`](/uk/docs/Web/JavaScript/Guide/Loops_and_iteration#instruktsiia-for)
 - [`while`](/uk/docs/Web/JavaScript/Guide/Loops_and_iteration#instruktsiia-while)
-- [`do...while`](/uk/docs/Web/JavaScript/Guide/Loops_and_iteration#instruktsiia-do...while)
+- [`do...while`](/uk/docs/Web/JavaScript/Guide/Loops_and_iteration#instruktsiia-dowhile)
 - [`continue`](/uk/docs/Web/JavaScript/Guide/Loops_and_iteration#instruktsiia-continue)
 - [`break`](/uk/docs/Web/JavaScript/Guide/Loops_and_iteration#instruktsiia-break)
-- [`for...in`](/uk/docs/Web/JavaScript/Guide/Loops_and_iteration#instruktsiia-for...in)
-- [`for...of`](/uk/docs/Web/JavaScript/Guide/Loops_and_iteration#instruktsiia-for...of)
+- [`for...in`](/uk/docs/Web/JavaScript/Guide/Loops_and_iteration#instruktsiia-forin)
+- [`for...of`](/uk/docs/Web/JavaScript/Guide/Loops_and_iteration#instruktsiia-forof)
 
 ## Функції
 
@@ -62,7 +59,7 @@ tags:
 
 - [Визначення функцій](/uk/docs/Web/JavaScript/Guide/Functions#vyznachennia-funktsii)
 - [Виклик функцій](/uk/docs/Web/JavaScript/Guide/Functions#vyklyk-funktsii)
-- [Область видимості функції](/uk/docs/Web/JavaScript/Guide/Functions#oblast-vydymosti-funktsii)
+- [Функційна область видимості](/uk/docs/Web/JavaScript/Guide/Functions#funktsiina-oblast-vydymosti)
 - [Замикання](/uk/docs/Web/JavaScript/Guide/Functions#zamykannia)
 - [Аргументи](/uk/docs/Web/JavaScript/Guide/Functions#vykorystannia-obiekta-arguments) й [параметри](/uk/docs/Web/JavaScript/Guide/Functions#parametry-funktsii)
 - [Стрілкові функції](/uk/docs/Web/JavaScript/Guide/Functions#strilkovi-funktsii)
@@ -99,8 +96,8 @@ tags:
 
 Огляд: [Індексовані колекції](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 
-- [Масиви](/uk/docs/Web/JavaScript/Guide/Indexed_collections#obiekt-array)
-- [Типізовані масиви](/uk/docs/Web/JavaScript/Guide/Indexed_collections#typizovani-masyvy)
+- [Масиви](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- [Типізовані масиви](/uk/docs/Web/JavaScript/Typed_arrays)
 
 ## Колекції з ключами
 
@@ -115,10 +112,10 @@ tags:
 
 Огляд: [Робота з об'єктами](/uk/docs/Web/JavaScript/Guide/Working_with_Objects)
 
-- [Об'єкти та властивості](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#obiekty-ta-vlastyvosti)
+- [Об'єкти та властивості](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#obiekty-i-vlastyvosti)
 - [Створення об'єктів](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#stvorennia-novykh-obiektiv)
-- [Визначення методів](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#vyznachennia-metodiv)
-- [Гетер і сетер](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#vyznachennoa-heteriv-i-seteriv)
+- [Означення методів](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#oznachennia-metodiv)
+- [Гетер і сетер](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#oznachennia-heteriv-ta-seteriv)
 
 ## Застосування класів
 
@@ -134,8 +131,8 @@ tags:
 Огляд: [Проміси](/uk/docs/Web/JavaScript/Guide/Using_promises)
 
 - [Гарантії](/uk/docs/Web/JavaScript/Guide/Using_promises#harantii)
-- [Ланцюжки](/uk/docs/Web/JavaScript/Guide/Using_promises#lantsiuzhky)
-- [Поширення помилок](/uk/docs/Web/JavaScript/Guide/Using_promises#poshyrennia-pomylok)
+- [Ланцюжки](/uk/docs/Web/JavaScript/Guide/Using_promises#utvorennia-lantsiuzhkiv)
+- [Обробка помилок](/uk/docs/Web/JavaScript/Guide/Using_promises#obrobka-pomylok)
 - [Композиція](/uk/docs/Web/JavaScript/Guide/Using_promises#kompozytsiia)
 - [Хронометраж](/uk/docs/Web/JavaScript/Guide/Using_promises#khronometrazh)
 
@@ -145,7 +142,7 @@ tags:
 
 - [Ітератори](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators#iteratory)
 - [Ітеровані об'єкти](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators#iterovani-obiekty)
-- [Генератори](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators#heneratory)
+- [Генератори](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators#funktsii-heneratory)
 
 ## Метапрограмування
 
@@ -161,9 +158,9 @@ tags:
 Огляд: [Модулі JavaScript](/uk/docs/Web/JavaScript/Guide/Modules)
 
 - [Експортування](/uk/docs/Web/JavaScript/Guide/Modules#eksport-mozhlyvostei-modulia)
-- [Імпортування](/uk/docs/Web/JavaScript/Guide/Modules#import-mozhlyvostei-u-vash-stsenarii)
-- [Усталений експорт](/uk/docs/Web/JavaScript/Guide/Modules#ustaleni-eksporty-proty-imenovanykh)
-- [Експорт та імпорт з перейменуванням](/uk/docs/Web/JavaScript/Guide/Modules#pereimenuvannia-importiv-ta-eksportiv)
+- [Імпортування](/uk/docs/Web/JavaScript/Guide/Modules#import-mozhlyvostei-do-stsenariiu)
+- [Усталений експорт](/uk/docs/Web/JavaScript/Guide/Modules#ustalenyi-eksport-proty-imenovanoho-eksportu)
+- [Експорт та імпорт з перейменуванням](/uk/docs/Web/JavaScript/Guide/Modules#import-ta-eksport-z-pereimenuvanniam)
 - [Агрегування модулів](/uk/docs/Web/JavaScript/Guide/Modules#ahrehuvannia-moduliv)
 - [Динамічне завантаження модулів](/uk/docs/Web/JavaScript/Guide/Modules#dynamichne-zavantazhennia-moduliv)
 

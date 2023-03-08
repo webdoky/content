@@ -2,19 +2,12 @@
 title: Object.keys()
 slug: Web/JavaScript/Reference/Global_Objects/Object/keys
 page-type: javascript-static-method
-tags:
-  - ECMAScript 5
-  - JavaScript
-  - JavaScript 1.8.5
-  - Method
-  - Object
-  - Polyfill
 browser-compat: javascript.builtins.Object.keys
 ---
 
 {{JSRef}}
 
-Метод **`Object.keys()`** (ключі) повертає масив, що складається з імен власних перелічуваних властивостей переданого об'єкта, що мають рядкові ключі.
+Статичний метод **`Object.keys()`** (ключі) повертає масив, що складається з імен власних перелічуваних властивостей переданого об'єкта, що мають рядкові ключі.
 
 {{EmbedInteractiveExample("pages/js/object-keys.html")}}
 

@@ -2,13 +2,6 @@
 title: ":nth-child()"
 slug: Web/CSS/:nth-child
 page-type: css-pseudo-class
-tags:
-  - CSS
-  - Layout
-  - Pseudo-class
-  - Reference
-  - Selector
-  - Web
 browser-compat: css.selectors.nth-child
 ---
 
@@ -39,13 +32,13 @@ browser-compat: css.selectors.nth-child
 
 - `<An+B>`
 
-  - : Представляє елементи в списку, чиї індекси дають збіг зі знайденими в самописному патерні чисел, визначеному `An+B`, де:
+  - : Представляє елементи, чий номер місця в наборі сестринських елементів дає збіг з патерном `An+B` для кожного невід'ємного значення `n`, де:
 
     - `A` – цілий числовий крок,
     - `B` – цілий числовий відступ,
     - `n` – всі невід'ємні цілі числа, починаючи від 0.
 
-    Такий запис можна читати так: елемент списку номер `An+B`.
+    Такий запис можна читати так: елемент списку номер `An+B`. І `A`, і `B` – мусять мати значення типу {{cssxref("&lt;integer&gt;")}}.
 
 ## Приклади
 
@@ -163,7 +156,7 @@ div em {
 
 #### Результат
 
-{{EmbedLiveSample('rozhornutyi-pryklad', 550, 550)}}
+{{EmbedLiveSample('rozghornutyi-pryklad', 550, 550)}}
 
 ## Специфікації
 
@@ -175,4 +168,4 @@ div em {
 
 ## Дивіться також
 
-- {{ Cssxref(":nth-of-type") }}, {{ Cssxref(":nth-last-child") }}
+- {{Cssxref(":nth-of-type")}}, {{Cssxref(":nth-last-child")}}

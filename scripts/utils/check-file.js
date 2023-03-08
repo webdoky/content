@@ -19,11 +19,19 @@ const markdownIt = new MarkdownIt({
   // breaks: true,
 });
 
+/**
+ *
+ * @param {string} html HTML to remove code from
+ * @returns {string} HTML without code snippets
+ */
 function stripCodeListings(html) {
   debug("stripCodeListings(...)");
   // Only removes multiline listings
-  const modifiedHtml = html.replace(/<code(?: [^>]+)*>(.+?)<\/code>/gi, '"$1"');
-  return modifiedHtml.replace(
+  const modifiedHtml = html.replaceAll(
+    /<code(?: [^>]+)*>(.+?)<\/code>/gi,
+    '"$1"'
+  );
+  return modifiedHtml.replaceAll(
     /<code(?: [^>]+)*>[\S\s]*?\n[\S\s]*?(<\/code>)/gim,
     ""
   );
@@ -36,8 +44,8 @@ function stripCodeListings(html) {
  */
 function stripMacrosInterpolation(text) {
   debug("stripMacrosInterpolation(...)");
-  let modifiedText = text.replace(/{{\s?\w+\s?}}/gi, "");
-  modifiedText = modifiedText.replace(
+  let modifiedText = text.replaceAll(/{{\s?\w+\s?}}/gi, "");
+  modifiedText = modifiedText.replaceAll(
     /{{\s?(\w+)\((?:["']?[^"',]+["']?,\s*)?(["']?[^"',]+["']?)(?:,\s["']?[^"',]+["']?)*\s?\)\s?}}/gim,
     (_, macrosName, lastParameter) => {
       if (MACROS_TO_STRIP.has(macrosName)) {
@@ -48,7 +56,10 @@ function stripMacrosInterpolation(text) {
       return `${lastParameter}`;
     }
   );
-  return modifiedText.replace(/{{\s?\w+\(["']?([^"']+)["']?\)\s?}}/gim, "$1");
+  return modifiedText.replaceAll(
+    /{{\s?\w+\(["']?([^"']+)["']?\)\s?}}/gim,
+    "$1"
+  );
 }
 
 function convertHtmlToText(html) {

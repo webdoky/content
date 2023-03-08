@@ -2,20 +2,6 @@
 title: Зміни розмірів зображень тла за допомогою background-size
 slug: Web/CSS/CSS_Backgrounds_and_Borders/Resizing_background_images
 page-type: guide
-tags:
-  - CSS
-  - CSS Background
-  - Example
-  - Guide
-  - Intermediate
-  - Reference
-  - Scale
-  - Scaling
-  - Web
-  - dimensions
-  - height
-  - resize
-  - width
 ---
 
 {{CSSRef}}
@@ -59,13 +45,13 @@ background-size: 300px 150px;
 
 Результат має наступний вигляд:
 
-![Розтягнений новий логотип Firefox](s.codepen.io_richienb_debug_lonxgp_pnkvygvggyxa.png)
+![Розтягнений новий логотип Firefox](stretched_firefox_logo.png)
 
 ## Масштабування зображення в бік збільшення
 
 Інші крайнощі: можна масштабувати зображення на тлі в бік збільшення. Тут – піктограма 32x32 пікселів масштабується до 300x300 пікселів:
 
-![Масштабований логотип MDN](favicon57.de33179910ae.1.1.png)
+![Масштабований логотип MDN](scaled_mdn_logo.png)
 
 ```css
 .square2 {
@@ -83,7 +69,7 @@ background-size: 300px 150px;
 
 ## Особливі значення: "contain" і "cover"
 
-Окрім значень {{cssxref("&lt;length&gt;")}}, властивість CSS {{ cssxref("background-size") }} пропонує два особливі значення розміру, `contain` і `cover`. Погляньмо на них.
+Окрім значень {{cssxref("&lt;length&gt;")}}, властивість CSS {{cssxref("background-size")}} пропонує два особливі значення розміру, `contain` і `cover`. Погляньмо на них.
 
 ### contain
 
@@ -114,7 +100,7 @@ background-size: 300px 150px;
 
 #### Результат
 
-{{ EmbedLiveSample('contain', 250, 250) }}
+{{EmbedLiveSample('contain', 250, 250)}}
 
 ### cover
 
@@ -145,10 +131,10 @@ background-size: 300px 150px;
 
 #### Результат
 
-{{ EmbedLiveSample('cover', 250, 250) }}
+{{EmbedLiveSample('cover', 250, 250)}}
 
 ## Дивіться також
 
-- {{ cssxref("background-size") }}
-- {{ cssxref("background") }}
+- {{cssxref("background-size")}}
+- {{cssxref("background")}}
 - [Масштабування тла формату SVG](/uk/docs/Web/CSS/Scaling_of_SVG_backgrounds)

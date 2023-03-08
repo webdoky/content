@@ -1,11 +1,7 @@
 ---
 title: Типи даних та структури даних JavaScript
 slug: Web/JavaScript/Data_structures
-tags:
-  - Beginner
-  - Guide
-  - JavaScript
-  - Types
+page-type: guide
 ---
 
 {{jsSidebar("More")}}
@@ -58,11 +54,11 @@ console.log(result); // 421
 
 Тип Null населений винятково одним значенням: [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null)
 
-### Undefined type
+### Тип Undefined
 
 Тип Undefined населений винятково одним значенням: [`undefined`](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined).
 
-Концептуально `undefined` вказує на відсутність _значення_, натомість `null` вказує на відсутність _об'єкта_ (що може бути певного роду виправданням для [`typeof null === "object"`](/uk/docs/Web/JavaScript/Reference/Operators/typeof#typeof_null)). Мова зазвичай використовує `undefined`, коли щось позбавлено значення:
+Концептуально `undefined` вказує на відсутність _значення_, натомість `null` вказує на відсутність _об'єкта_ (що може бути певного роду виправданням для [`typeof null === "object"`](/uk/docs/Web/JavaScript/Reference/Operators/typeof#typeof-null)). Мова зазвичай використовує `undefined`, коли щось позбавлено значення:
 
 - Інструкція [`return`](/uk/docs/Web/JavaScript/Reference/Statements/return) без значення (`return;`) неявно повертає `undefined`.
 - Звертання до відсутньої властивості [об'єкта](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object) (`obj.iDontExist`) повертає `undefined`.

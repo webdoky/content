@@ -2,12 +2,6 @@
 title: text-decoration
 slug: Web/CSS/text-decoration
 page-type: css-shorthand-property
-tags:
-  - CSS
-  - CSS Property
-  - CSS Text Decoration
-  - Reference
-  - recipe:css-shorthand-property
 browser-compat: css.properties.text-decoration
 ---
 
@@ -26,7 +20,7 @@ browser-compat: css.properties.text-decoration
 - [`text-decoration-color`](/uk/docs/Web/CSS/text-decoration-color)
 - [`text-decoration-line`](/uk/docs/Web/CSS/text-decoration-line)
 - [`text-decoration-style`](/uk/docs/Web/CSS/text-decoration-style)
-- [`text-decoration-thickness`](/uk/docs/Web/CSS/text-decoration-thickness) {{Non-standard_Inline}}
+- [`text-decoration-thickness`](/uk/docs/Web/CSS/text-decoration-thickness)
 
 ## Синтаксис
 
