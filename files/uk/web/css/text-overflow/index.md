@@ -2,11 +2,6 @@
 title: text-overflow
 slug: Web/CSS/text-overflow
 page-type: css-property
-tags:
-  - CSS
-  - CSS Property
-  - Reference
-  - recipe:css-property
 browser-compat: css.properties.text-overflow
 ---
 
@@ -223,7 +218,7 @@ for (const para of paras) {
 
 #### Результат
 
-{{EmbedLiveSample('syntaksys-dvoh-znachen', 600, 360)}}
+{{EmbedLiveSample('syntaksys-dvokh-znachen', 600, 360)}}
 
 ## Специфікації
 

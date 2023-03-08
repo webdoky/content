@@ -12,7 +12,7 @@ browser-compat: css.properties.margin
 
 {{CSSRef}}
 
-Скорочення [CSS](/uk/docs/Web/CSS) **`margin`** (берег) задає [область зовнішнього відступу](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#oblast-zovnishnioho-vidstupu) з усіх чотирьох боків елемента.
+Скорочення [CSS](/uk/docs/Web/CSS) **`margin`** (берег) задає [область зовнішніх відступів](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#oblast-zovnishnikh-vidstupiv) з усіх чотирьох боків елемента.
 
 {{EmbedInteractiveExample("pages/css/margin.html")}}
 
@@ -117,7 +117,7 @@ margin: unset;
 }
 ```
 
-{{ EmbedLiveSample('prostyi-pryklad','100%',120) }}
+{{EmbedLiveSample('prostyi-pryklad','100%',120)}}
 
 ### Більше прикладів
 
