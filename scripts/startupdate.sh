@@ -2,7 +2,7 @@
 
 set -e
 
-TARGET_FILE=$@
+TARGET_FILE=$(echo $@ | cut -d" " -f1)
 
 
 if [[ -z $TARGET_FILE ]]; then
@@ -33,4 +33,4 @@ target_branch_name=$(echo "$target_branch_name" | tr '[:upper:]' '[:lower:]')
 target_branch_name="update/$target_branch_name"
 
 # Use gotobranch script
-./scripts/gotobranch.sh $target_branch_name
+./scripts/gotobranch.sh $target_branch_name $2
