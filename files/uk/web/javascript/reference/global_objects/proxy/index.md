@@ -2,11 +2,6 @@
 title: Proxy
 slug: Web/JavaScript/Reference/Global_Objects/Proxy
 page-type: javascript-class
-tags:
-  - Class
-  - ECMAScript 2015
-  - JavaScript
-  - Proxy
 browser-compat: javascript.builtins.Proxy
 ---
 
@@ -152,6 +147,8 @@ console.log(proxy3.message2); // світе
 
 - {{jsxref("Global_Objects/Proxy/Proxy", "Proxy()")}}
   - : Створює новий об'єкт `Proxy`.
+
+> **Примітка:** Властивості `Proxy.prototype` немає, тож примірники `Proxy` не мають жодних особливих властивостей або методів.
 
 ## Статичні методи
 
@@ -357,7 +354,7 @@ console.log(`item2: ${item2.getAttribute("aria-selected")}`);
 ```js
 const products = new Proxy(
   {
-    browsers: ["Internet Explorer", "Netscape"],
+    browsers: ["Firefox", "Chrome"],
   },
   {
     get(obj, prop) {
@@ -391,21 +388,21 @@ const products = new Proxy(
 );
 
 console.log(products.browsers);
-//  ['Internet Explorer', 'Netscape']
+//  ['Firefox', 'Chrome']
 
-products.browsers = "Firefox";
+products.browsers = "Safari";
 //  передати рядок (через помилку)
 
 console.log(products.browsers);
-//  ['Firefox'] <- проблем немає, значення є масивом
+//  ['Safari'] <- проблем немає, значення є масивом
 
-products.latestBrowser = "Chrome";
+products.latestBrowser = "Edge";
 
 console.log(products.browsers);
-//  ['Firefox', 'Chrome']
+//  ['Safari', 'Edge']
 
 console.log(products.latestBrowser);
-//  'Chrome'
+//  'Edge'
 ```
 
 ### Знаходження об'єкта – елемента масиву – за його властивістю
