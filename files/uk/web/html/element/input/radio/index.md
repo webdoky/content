@@ -2,23 +2,6 @@
 title: <input type="radio">
 slug: Web/HTML/Element/input/radio
 page-type: html-element
-tags:
-  - Choosing Options
-  - Element
-  - Form Options
-  - HTML
-  - HTML Input Types
-  - HTML forms
-  - HTML input
-  - Input
-  - Input Types
-  - Options
-  - Radio Buttons
-  - Radio Groups
-  - Reference
-  - form
-  - radio
-  - radio button
 browser-compat: html.elements.input.type_radio
 ---
 
@@ -138,17 +121,17 @@ form.addEventListener(
 
 На додачу до загальних атрибутів, притаманних всім елементам {{HTMLElement("input")}}, поля `radio` на додачу підтримують наступні:
 
-- {{htmlattrdef("checked")}}
+- `checked`
 
   - : Булів атрибут, котрий, коли присутній, вказує, що радіокнопка є вибраною.
 
     На відміну від інших браузерів, Firefox усталено [зберігає динамічний стан позначеності (англ.)](https://stackoverflow.com/questions/5985839/bug-with-firefox-disabled-attribute-of-input-not-resetting-when-refreshing) поля `<input>` між завантаженнями сторінки. Використовуйте атрибут {{htmlattrxref("autocomplete","input")}}, щоб контролювати цю функціональність.
 
-- {{htmlattrdef("value")}}
+- `value`
 
   - : Атрибут `value` поділяють всі поля {{HTMLElement("input")}}; втім, для полів типу `radio` він має особливе призначення: коли подається форма, то лише ті радіокнопки, що є позначеними, подаються на сервер, і їх надіслане значення – значення атрибута `value`. Якщо ж атрибут `value` не вказаний, то його значення усталено вважається рівним `on`. Це показано в розділі [Значення](#znachennia) вище.
 
-- {{htmlattrdef("required")}}
+- `required`
   - : Атрибут `required` поділяє більшість типів {{HTMLElement("input")}}. Якщо будь-яка з радіокнопок однієї групи має атрибут `required`, то одна з радіокнопок такої групи мусить бути позначеною, проте це не обов'язково повинна бути саме та, що має атрибут.
 
 ## Використання радіополів

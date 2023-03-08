@@ -2,18 +2,6 @@
 title: "<script>: Елемент сценарію"
 slug: Web/HTML/Element/script
 page-type: html-element
-tags:
-  - Element
-  - HTML
-  - HTML scripting
-  - HTML:Flow content
-  - HTML:Metadata content
-  - HTML:Phrasing content
-  - HTML:Script-supporting element
-  - Reference
-  - Script
-  - Web
-  - tag
 browser-compat: html.elements.script
 ---
 
@@ -25,14 +13,14 @@ browser-compat: html.elements.script
   <tbody>
     <tr>
       <th scope="row">
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories"
+        <a href="/uk/docs/Web/HTML/Content_categories"
           >Категорії вмісту</a
         >
       </th>
       <td>
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#vmist-metadanykh">Вміст метаданих</a>,
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#potokovyi-vmist">потоковий вміст</a>,
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#opovidalnyi-vmist">оповідальний вміст</a>.
+        <a href="/uk/docs/Web/HTML/Content_categories#vmist-metadanykh">Вміст метаданих</a>,
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist">потоковий вміст</a>,
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist">оповідальний вміст</a>.
       </td>
     </tr>
     <tr>
@@ -47,8 +35,8 @@ browser-compat: html.elements.script
       <th scope="row">Дозволені батьківські елементи</th>
       <td>
         Будь-який елемент, що приймає
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#vmist-metadanykh">вміст метаданих</a>, або ж будь-який елемент, що приймає
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#opovidalnyi-vmist">оповідальний вміст</a>.
+        <a href="/uk/docs/Web/HTML/Content_categories#vmist-metadanykh">вміст метаданих</a>, або ж будь-який елемент, що приймає
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist">оповідальний вміст</a>.
       </td>
     </tr>
     <tr>
@@ -72,7 +60,7 @@ browser-compat: html.elements.script
 
 Цей елемент приймає [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
 
-- {{htmlattrdef("async")}}
+- `async`
 
   - : Для класичних сценаріїв, коли присутній атрибут `async`, то такий класичний скрипт отримується паралельно до розбору сторінки, і виконується відразу, коли стає доступним.
 
@@ -84,9 +72,9 @@ browser-compat: html.elements.script
 
     Дивіться [Сумісність із браузерами](#sumisnist-iz-brauzeramy) для отримання приміток щодо підтримки браузерами. Дивіться також [Асинхронні сценарії для asm.js](/uk/docs/Games/Techniques/Async_scripts).
 
-- {{htmlattrdef("crossorigin")}}
+- `crossorigin`
   - : Звичайні елементи `script` передають {{domxref('Window.error_event', 'window.onerror')}} украй обмежену інформацію щодо сценаріїв, що не проходять стандартних перевірок {{Glossary("CORS")}}. Щоб дозволити логування помилок для сайтів, котрі використовують окремий домен для статичних мультимедійних файлів, слід використовувати цей атрибут. Дивіться [Атрибути налаштувань CORS](/uk/docs/Web/HTML/Attributes/crossorigin) для отримання більш докладного пояснення його дійсних аргументів.
-- {{htmlattrdef("defer")}}
+- `defer`
 
   - : Цей булів атрибут встановлюється, аби вказати браузерові, що сценарій треба виконувати після розбору сторінки, але до викидання події {{domxref("Document/DOMContentLoaded_event", "DOMContentLoaded")}}.
 
@@ -100,7 +88,7 @@ browser-compat: html.elements.script
 
     Цей атрибут дає змогу усунути проблему **JavaScript, що блокує розбір сторінки**: браузеру не потрібно завантажувати й виконувати сценарії до продовження розбору. `async` в цьому випадку має подібну дію.
 
-- {{htmlattrdef("fetchpriority")}} {{Experimental_Inline}}
+- `fetchpriority` {{Experimental_Inline}}
 
   - : Надає рекомендацію щодо відносного пріоритету отримання зовнішнього сценарію. Дозволені значення:
 
@@ -111,19 +99,19 @@ browser-compat: html.elements.script
     - `auto`
       - : Усталене значення: сигналізує про автоматичне визначення пріоритету отримання відносно інших зовнішніх сценаріїв.
 
-- {{htmlattrdef("integrity")}}
+- `integrity`
   - : Цей атрибут містить супутні метадані, котрі користувацький агент може використати для перевірки того, що отриманий ресурс був доставлений без неочікуваних втручань. Дивіться [Цілісність підресурсу](/uk/docs/Web/Security/Subresource_Integrity).
-- {{htmlattrdef("nomodule")}}
+- `nomodule`
   - : Цей булів атрибут встановлюється, аби вказати, що сценарій не повинен виконуватися в браузерах, що підтримують [модулі ES](/uk/docs/Web/JavaScript/Guide/Modules); може використовуватися для надання запасних сценаріїв старішим браузерам, що не підтримують модульний код JavaScript.
-- {{htmlattrdef("nonce")}}
+- `nonce`
   - : Криптографічне одноразове значення, що дозволяє сценарії в [script-src політики безпеки вмісту](/uk/docs/Web/HTTP/Headers/Content-Security-Policy/script-src). Сервер мусить породити унікальне значення `nonce` щоразу, коли передає політику. Є критичним надавати `nonce`, що не може бути вгаданим, оскільки в решті обхід політики ресурсу є тривіальним.
-- {{htmlattrdef("referrerpolicy")}}
+- `referrerpolicy`
 
   - : Вказує, який [посилач](/uk/docs/Web/API/Document/referrer) повинен бути надісланий при отриманні сценарію чи ресурсів, отриманих сценарієм:
 
     - `no-referrer`: Заголовок {{HTTPHeader("Referer")}} не буде надісланий.
     - `no-referrer-when-downgrade`: Заголовок {{HTTPHeader("Referer")}} не буде надісланий {{Glossary("origin", "походженням")}}, що не мають {{Glossary("TLS")}} ({{Glossary("HTTPS")}}).
-    - `origin`: Посилач буде обмежений походженням поточної сторінки: її [схемою](/uk/docs/Learn/Common_questions/What_is_a_URL), {{Glossary("host", "хостом")}} та {{Glossary("port", "портом")}}.
+    - `origin`: Посилач буде обмежений походженням поточної сторінки: її [схемою](/uk/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL), {{Glossary("host", "хостом")}} та {{Glossary("port", "портом")}}.
     - `origin-when-cross-origin`: Посилач, надісланий іншим походженням, буде обмежений схемою, хостом та портом. Переходи в межах того самого походження включатимуть увесь шлях.
     - `same-origin`: Посилач буде надсилатися в межах {{Glossary("Same-origin policy", "того самого походження")}}, однак запити до інших походжень не міститимуть інформації про посилача.
     - `strict-origin`: Надсилати як посилача виключно походження документа, якщо рівень безпеки протоколу – той самий (HTTPS→HTTPS), інакше – не надсилати посилача (HTTPS→HTTP).
@@ -132,7 +120,7 @@ browser-compat: html.elements.script
 
     > **Примітка:** Значення порожнього рядка (`""`) є водночас і усталеним значенням, і запасним значенням, коли `referrerpolicy` не підтримується. Якщо `referrerpolicy` не вказаний явно на елементі `<script>`, то буде прийнята політика посилача вищого рівня, тобто та, що встановлена для всього документа чи всього домену. Якщо політика вищого рівня недоступна, то порожній рядок розглядається як еквівалент до `strict-origin-when-cross-origin`.
 
-- {{htmlattrdef("src")}}
+- `src`
   - : Цей атрибут вказує URI зовнішнього сценарію; може використовуватися як альтернатива вбудовуванню сценарію прямо в документ.
 - [**`type`**](/uk/docs/Web/HTML/Element/script/type)
 
@@ -141,7 +129,7 @@ browser-compat: html.elements.script
     - **Атрибут не заданий (усталено), є порожнім рядком або типом MIME JavaScript**
       - : Вказує на те, що сценарій є "класичним сценарієм" і містить код мовою JavaScript.
         Розробників заохочують опускати атрибут, якщо сценарій вказує на код мовою JavaScript, а не задавати тип MIME.
-        Типи MIME JavaScript – [перелічені в специфікації типів медіа IANA](/uk/docs/Web/HTTP/Basics_of_HTTP/MIME_types#typy-javascript)
+        Типи MIME JavaScript – [перелічені в специфікації типів медіа IANA](/uk/docs/Web/HTTP/Basics_of_HTTP/MIME_types#textjavascript)
     - `module`
       - : Це значення призводить до розгляду коду як модуля JavaScript.
         Обробка вмісту сценарію – відкладається.
@@ -156,15 +144,15 @@ browser-compat: html.elements.script
         Розробники повинні використовувати для позначення масивів даних дійсні типи MIME, котрі не є типами MIME JavaScript.
         Вся решта атрибутів буде проігнорована, включно з атрибутом `src`.
 
-- {{htmlattrdef("blocking")}}
+- `blocking`
   - : Цей атрибут явно вказує, що певні операції повинні бути заблоковані отриманням такого сценарію. Операції до блокування повинні бути розділеним пробілами списком атрибутів блокування, перелічених нижче.
     - `render`: Візуалізація вмісту на екрані – заблокована.
 
 ### Нерекомендовані атрибути
 
-- {{htmlattrdef("charset")}} {{Deprecated_inline}}
+- `charset` {{Deprecated_inline}}
   - : Коли цей атрибут присутній, його значення мусить бути нечутливим до регістру ASCII-відповідником до "`utf-8`". Немає потреби вказувати атрибут `charset`, тому що документи зобов'язані використовувати UTF-8, а елемент `script` успадковує своє кодування символів від документа.
-- {{htmlattrdef("language")}} {{Deprecated_inline}} {{Non-standard_Inline}}
+- `language` {{Deprecated_inline}} {{Non-standard_Inline}}
   - : Подібно до атрибута `type`, цей атрибут вказує мову сценаріїв, що використовується. Проте на відміну від атрибута `type`, можливі значення цього атрибута ніколи не були стандартизовані. Натомість слід використовувати атрибут `type`.
 
 ## Примітки
@@ -275,6 +263,5 @@ import { name as circleName } from "circle";
 ## Дивіться також
 
 - {{domxref("document.currentScript")}}
-- [Діаграма сумісності подій вузлів `<script>` і `<link>` Раяна Ґроува (англ.)](https://pie.gd/test/script-link-events/)
 - [Стаття Флавіо Коупса про ефективне завантаження JavaScript та пояснення відмінностей між `async` і `defer` (англ.)](https://flaviocopes.com/javascript-async-defer/)
 - Посібник [Модулі JavaScript](/uk/docs/Web/JavaScript/Guide/Modules)

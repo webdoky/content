@@ -2,11 +2,6 @@
 title: Базові концепції сіткового компонування
 slug: Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout
 page-type: guide
-tags:
-  - CSS
-  - CSS Grids
-  - Guide
-  - Layout
 ---
 
 {{CSSRef}}
@@ -361,7 +356,7 @@ _Сітковий контейнер_ утворюється шляхом ого
 }
 ```
 
-{{EmbedLiveSample('neiavni-ta-yavni-sitky', '230', '450')}}
+{{EmbedLiveSample('yavni-ta-neiavni-sitky', '230', '450')}}
 
 ### Калібрування доріжок та minmax
 

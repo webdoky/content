@@ -2,13 +2,6 @@
 title: Array (масив)
 slug: Web/JavaScript/Reference/Global_Objects/Array
 page-type: javascript-class
-tags:
-  - Array
-  - Class
-  - Example
-  - Global Objects
-  - JavaScript
-  - Reference
 browser-compat: javascript.builtins.Array
 ---
 
@@ -273,10 +266,17 @@ f("a", "b"); // 'a+b'
 
 ## Властивості примірника
 
-- {{jsxref("Array.prototype.length")}} ("довжина")
-  - : Відображає кількість елементів у масиві.
+Ці властивості означені на `Array.prototype` і є спільними для всіх примірників `Array`.
+
+- {{jsxref("Object/constructor", "Array.prototype.constructor")}}
+  - : Функція-конструктор, котра створила об'єкт-примірник. Для примірників `Array` початковим значенням цієї властивості є конструктор {{jsxref("Array/Array", "Array")}}.
 - {{jsxref("Array/@@unscopables", "Array.prototype[@@unscopables]")}} ("недоступні для огляду")
   - : Містить імена властивостей, котрі не були включені до стандарту ECMAScript до версії ES2015 та є ігнорованими інструкцією прив'язування [`with`](/uk/docs/Web/JavaScript/Reference/Statements/with).
+
+Ці властивості є власними властивостями кожного примірника `Array`.
+
+- {{jsxref("Array/length", "length")}}
+  - : Відображає кількість елементів у масиві.
 
 ## Методи примірника
 
@@ -660,7 +660,7 @@ const fruitsCopy3 = fruits.slice();
 const fruitsDeepCopy = JSON.parse(JSON.stringify(fruits));
 ```
 
-Також глибинні копії можна створювати за допомогою метода [`structuredClone()`](/uk/docs/Web/API/structuredClone), причому перевага такого підходу – {{Glossary("transferable objects", "переносні об'єкти")}} джерела будуть _перенесені_ в нову копію, а не просто скопійовані.
+Також глибинні копії можна створювати за допомогою метода [`structuredClone()`](/uk/docs/Web/API/structuredClone), причому перевага такого підходу – [переносні об'єкти](/uk/docs/Web/API/Web_Workers_API/Transferable_objects) всередині джерела будуть _перенесені_ в нову копію, а не просто скопійовані.
 
 Врешті решт, важливо розуміти, що присвоєння наявного масиву новій змінній не створює копій ані масиву, ані його елементів. Натомість нова змінна є лишень посиланням чи псевдонімом початкового масиву; тобто початкове ім'я масиву та нове ім'я змінної є лише двома іменами одного й того ж об'єкта (і, таким чином, завжди будуть вважатись [строго рівними](/uk/docs/Web/JavaScript/Equality_comparisons_and_sameness#stroha-rivnist-za-dopomohoiu-)). Отже, якщо внести будь-які зміни або у значення початкового масиву, або у значення нової змінної, то зміняться обидва:
 
