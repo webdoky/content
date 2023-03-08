@@ -1,5 +1,7 @@
 #!/bin/sh
 
+params=$@
+
 # Alters section name for some sections
 function alter_section_name()
 {
@@ -51,7 +53,11 @@ translation_folder=${translation%/index.md}
 translation_slug=${translation_folder#/}
 translation_slug=${translation_folder#files/uk/}
 
-./scripts/startupdate.sh $translation --allow-update
+if [ "$params" == '--allow-update' ]; then
+  ./scripts/startupdate.sh $translation --allow-update
+else
+  ./scripts/startupdate.sh $translation
+fi
 
 # Folder must be added, not single file: the folder may contain misc files
 git add $translation_folder
