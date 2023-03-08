@@ -2,14 +2,6 @@
 title: Використання промісів
 slug: Web/JavaScript/Guide/Using_promises
 page-type: guide
-tags:
-  - Guide
-  - Intermediate
-  - JavaScript
-  - Promise
-  - Promises
-  - asynchronous
-  - "l10n:priority"
 ---
 
 {{jsSidebar("JavaScript Guide")}}{{PreviousNext("Web/JavaScript/Guide/Using_Classes", "Web/JavaScript/Guide/Iterators_and_Generators")}}
@@ -434,7 +426,7 @@ wait(10 * 1000)
 
 В API на основі функцій зворотного виклику те, коли і як ці функції викликаються, залежить від автора API. Наприклад, вони можуть бути викликані синхронно або асинхронно:
 
-```js
+```js example-bad
 function doSomething(callback) {
   if (Math.random() > 0.5) {
     callback();
@@ -444,7 +436,7 @@ function doSomething(callback) {
 }
 ```
 
-Це призводить до [стану Зальго](https://blog.izs.me/2013/08/designing-apis-for-asynchrony/), адже робить важким аналіз побічних дій:
+Підхід вище наполегливо не рекомендується, адже призводить до так званого "стану Зальґо". У контексті проєктування асинхронних API це означає функцію зворотного виклику, що викликається синхронно в одних випадках, але асинхронно в інших, призводячи до неоднозначності для того, хто її викликає. Більше контексту на цю тему можна знайти в статті [Проєктування API з асинхронністю](https://blog.izs.me/2013/08/designing-apis-for-asynchrony/), де цей термін уперше вбув формально введений. Такий підхід до створення API призводить до того, що побічні ефекти важко аналізувати:
 
 ```js
 let value = 1;
