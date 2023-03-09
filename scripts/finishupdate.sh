@@ -2,6 +2,8 @@
 
 params=$@
 
+allow_update_option=$(echo $@ | cut -d" " -f2)
+
 # Alters section name for some sections
 function alter_section_name()
 {
@@ -83,7 +85,15 @@ target_branch_name=$(echo $target_branch_name | sed -E 's/\.\.\.+/-/g')
 target_branch_name="$action/$target_branch_name"
 
 # Use gotobranch script
-./scripts/gotobranch.sh $target_branch_name $2 || exit 1
+gtb_result=$(./scripts/gotobranch.sh $target_branch_name $allow_update_option)
+
+if [ $gtb_result ]; then
+  if [ $(git rev-parse --abbrev-ref HEAD) == "$target_branch_name" ] && [ "$allow_update_option" == "--allow-update" ]; then
+    echo 'Already on correct branch'
+  else
+    exit 1
+  fi
+fi
 
 
 echo "Staging the translation"
