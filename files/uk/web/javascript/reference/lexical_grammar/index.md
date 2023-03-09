@@ -33,7 +33,7 @@ browser-compat: javascript.grammar
 | U+0020       | Пробіл                               | \<SP>       | Звичайний пробіл                                                                                                                                         |                           |
 | U+00A0       | Безрозривний пробіл                  | \<NBSP>     | Звичайний пробіл, але без точки, в якій може статися розрив рядка                                                                                        |                           |
 | U+FEFF       | Безрозривний пробіл нульової довжини | \<ZWNBSP>   | Коли маркер BOM стоїть не на початку сценарію, він є звичайним пробільним символом                                                                       |                           |
-| Інші         | Інші пробільні символи Unicode       | \<USP>      | [Символи загальної категорії "Space_Separator"][https://util.unicode.org/UnicodeJsps/list-unicodeset.jsp?a=%5Cp%7BGeneral_Category%3DSpace_Separator%7D] |                           |
+| Інші         | Інші пробільні символи Unicode       | \<USP>      | [Символи загальної категорії "Space_Separator"](https://util.unicode.org/UnicodeJsps/list-unicodeset.jsp?a=%5Cp%7BGeneral_Category%3DSpace_Separator%7D) |                           |
 
 > **Примітка:** Серед тих [символів, що мають властивість "White_Space", але не належать до загальної категорії "Space_Separator"](https://util.unicode.org/UnicodeJsps/list-unicodeset.jsp?a=%5Cp%7BWhite_Space%7D%26%5CP%7BGeneral_Category%3DSpace_Separator%7D), U+0009, U+000B і U+000C у JavaScript все одно обробляються як пробіли; U+0085 NEXT LINE не має особливої ролі; решта – стають множиною [символів кінця рядка](#symvoly-kintsia-riadka).
 
@@ -208,7 +208,7 @@ const els\u{65} = 1;
 - {{jsxref("Statements/if...else", "else")}}
 - {{jsxref("Statements/export", "export")}}
 - [`extends`](/uk/docs/Web/JavaScript/Reference/Classes/extends)
-- [`false`](#bulevi-literaly)
+- [`false`](#buliv-literal)
 - {{jsxref("Statements/try...catch", "finally")}}
 - {{jsxref("Statements/for", "for")}}
 - {{jsxref("Statements/function", "function")}}
@@ -223,7 +223,7 @@ const els\u{65} = 1;
 - {{jsxref("Statements/switch", "switch")}}
 - {{jsxref("Operators/this", "this")}}
 - {{jsxref("Statements/throw", "throw")}}
-- [`true`](#bulevi-literaly)
+- [`true`](#buliv-literal)
 - {{jsxref("Statements/try...catch", "try")}}
 - {{jsxref("Operators/typeof", "typeof")}}
 - {{jsxref("Statements/var", "var")}}
@@ -645,12 +645,128 @@ class A {
 Є кілька емпіричних правил для роботи з автоматичним вставлянням, коли є потреба примушувати до стилю без крапок з комою:
 
 - Постфіксні `++` і `--` слід писати на тому ж рядку, що і їхні операнди.
+
+  ```js-nolint example-bad
+  const a = b
+  ++
+  console.log(a) // ReferenceError: Invalid left-hand side expression in prefix operation
+  ```
+
+  ```js-nolint example-good
+  const a = b++
+  console.log(a)
+  ```
+
 - Вирази після `return`, `throw` і `yield` повинні стояти на тому ж рядку, що й ключове слово.
+
+  ```js-nolint example-bad
+  function foo() {
+    return
+      1 + 1 // Повертає undefined; 1 + 1 – ігнорується
+  }
+  ```
+
+  ```js-nolint example-good
+  function foo() {
+    return 1 + 1
+  }
+  function foo() {
+    return (
+      1 + 1
+    )
+  }
+  ```
+
 - Подібно до цього, ідентифікатор позначки після `break` або `continue` повинен стояти на тому ж рядку, що й ключове слово.
+
+  ```js-nolint example-bad
+  outerBlock: {
+    innerBlock: {
+      break
+        outerBlock // SyntaxError: Illegal break statement
+    }
+  }
+  ```
+
+  ```js-nolint example-good
+  outerBlock: {
+    innerBlock: {
+      break outerBlock
+    }
+  }
+  ```
+
 - `=>` стрілкової функції повинна стояти на тому ж рядку, що і її параметри.
+
+  ```js-nolint example-bad
+  const foo = (a, b)
+    => a + b
+  ```
+
+  ```js-nolint example-good
+  const foo = (a, b) =>
+    a + b
+  ```
+
 - Після `async` асинхронних функцій, методів тощо не може зразу стояти символ кінця рядка.
+
+  ```js-nolint example-bad
+  async
+  function foo() {}
+  ```
+
+  ```js-nolint example-good
+  async function
+  foo() {}
+  ```
+
 - Якщо рядок починається з `(`, `[`, `` ` ``, `+`, `-` або `/` (як в літералах регулярних виразів), слід поставити перед цим крапку з комою, або ж поставити в кінець попереднього рядка крапку з комою.
+
+  ```js-nolint example-bad
+  // () може зливатися з попереднім рядком як частина виклику функції
+  (() => {
+    // ...
+  })()
+  // [ може зливатися з попереднім рядком як частина звертання до властивості
+  [1, 2, 3].forEach(console.log)
+  // ` може зливатися з попереднім рядком як частина тегованого шаблонного літерала
+  `string text ${data}`.match(pattern).forEach(console.log)
+  // + може зливатися з попереднім рядком як частина бінарного виразу +
+  +a.toString()
+  // - може зливатися з попереднім рядком як частина бінарного виразу -
+  -a.toString()
+  // / може зливатися з попереднім рядком як частина виразу ділення
+  /pattern/.exec(str).forEach(console.log)
+  ```
+
+  ```js-nolint example-good
+  ;(() => {
+    // ...
+  })()
+  ;[1, 2, 3].forEach(console.log)
+  ;`string text ${data}`.match(pattern).forEach(console.log)
+  ;+a.toString()
+  ;-a.toString()
+  ;/pattern/.exec(str).forEach(console.log)
+  ```
+
 - Поля класу краще закінчувати крапкою з комою: на додачу до попереднього правила (котре включає оголошення поля, після якого стоїть [обчислювана властивість](/uk/docs/Web/JavaScript/Reference/Operators/Object_initializer#imena-obchysliuvanykh-vlastyvostei), адже останні починаються з `[`), крапки з комою також необхідні між оголошенням поля та генераторним методом.
+
+  ```js-nolint example-bad
+  class A {
+    a = 1
+    [b] = 2
+    *gen() {} // Розглядається як a = 1[b] = 2 * gen() {}
+  }
+  ```
+
+  ```js-nolint example-good
+  class A {
+    a = 1;
+    [b] = 2;
+    *gen() {}
+  }
+  ```
 
 ## Сумісність із браузерами
 
