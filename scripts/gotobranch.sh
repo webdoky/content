@@ -5,8 +5,8 @@ set -e
 TARGET_BRANCH_NAME=$(echo $@ | cut -d" " -f1)
 
 if [[ -z $TARGET_BRANCH_NAME ]]; then
-    echo "Specify some branch name"
-    exit 1
+  echo "Specify some branch name"
+  exit 1
 fi
 
 if [ "$2" != "--allow-update" ]; then
@@ -18,7 +18,7 @@ fi
 
 if [ "$2" != "--allow-update" ]; then
   if [[ -n $(git branch --list $TARGET_BRANCH_NAME) ]]; then
-      git branch -D $TARGET_BRANCH_NAME
+    git branch -D $TARGET_BRANCH_NAME
   fi
 fi
 
