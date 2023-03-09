@@ -97,3 +97,42 @@ yarn run gotobranch chore/update-deps
 5. Переводить рядок в нижній регістр.
 6. Додає до рядка префікс гілок Git `update/`.
 7. Викликає сценарій [gotobranch](#gotobranch) з отриманим рядком як аргументом.
+
+Тобто, якщо стисло, цей сценарій створює гілку на основі шляху до файлу.
+
+Викликається в один з наступних способів:
+
+```sh
+./scripts/startupdate.sh files/uk/web/javascript/reference/classes/index.md
+./scripts/startupdate.sh /Users/User/Projects/webdoky/content/files/uk/web/javascript/reference/classes/index.md
+./scripts/startupdate.sh https://webdoky.org/uk/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
+yarn startupdate files/uk/web/javascript/reference/classes/index.md
+yarn startupdate /Users/User/Projects/webdoky/content/files/uk/web/javascript/reference/classes/index.md
+yarn startupdate https://webdoky.org/uk/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
+yarn su files/uk/web/javascript/reference/classes/index.md
+yarn su /Users/User/Projects/webdoky/content/files/uk/web/javascript/reference/classes/index.md
+yarn su https://webdoky.org/uk/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
+```
+
+### finishupdate
+
+Зберігається в файлі `scripts/finishupdate.sh`.
+
+1. Знаходить нові зміни в `index.md` файлах (або нові `index.md` файли). Якщо таких змін не 1, зупиняється з помилкою.
+2. З'ясовує тип змін: оновлення або новий переклад.
+3. З'ясовує розділ, до якого належить переклад.
+4. Викликає сценарій [startupdate](#startupdate) з аргументом `--allow-update`, завдяки чому той не видаляє стару гілку з відповідною назвою, але обов'язково переходить в неї.
+5. Додає в коміт папку оновлення (де лежить `index.md` файл).
+6. Додає в коміт файли з виправленнями LanguageTool.
+7. `git commit`
+8. `git push`
+
+Тобто, якщо стисло, цей сценарій створює гілку на основі шляху до файлу.
+
+Викликається в один з наступних способів (наприклад, коли потрібна гілка `chore/update-deps`):
+
+```sh
+./scripts/finishupdate.sh
+yarn finishupdate
+yarn fu
+```

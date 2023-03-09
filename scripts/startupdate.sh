@@ -2,7 +2,7 @@
 
 set -e
 
-TARGET_FILE=$@
+TARGET_FILE=$(echo $@ | cut -d" " -f1)
 
 
 if [[ -z $TARGET_FILE ]]; then
@@ -29,8 +29,11 @@ target_branch_name=${target_branch_name//\//-}
 # Lowercase
 target_branch_name=$(echo "$target_branch_name" | tr '[:upper:]' '[:lower:]')
 
+# Three dots are not allowed, they are replaced with a hyphen
+target_branch_name=$(echo $target_branch_name | sed -E 's/\.\.\.+/-/g')
+
 # Add branch name prefix
 target_branch_name="update/$target_branch_name"
 
 # Use gotobranch script
-./scripts/gotobranch.sh $target_branch_name
+./scripts/gotobranch.sh $target_branch_name $2 || exit 1
