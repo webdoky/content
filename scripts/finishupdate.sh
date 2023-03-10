@@ -85,9 +85,10 @@ target_branch_name=$(echo $target_branch_name | sed -E 's/\.\.\.+/-/g')
 target_branch_name="$action/$target_branch_name"
 
 # Use gotobranch script
-gtb_result=$(./scripts/gotobranch.sh $target_branch_name $allow_update_option)
+./scripts/gotobranch.sh $target_branch_name $allow_update_option
+gtb_result=$?
 
-if [ $gtb_result ]; then
+if [ $gtb_result != 0 ]; then
   if [ $(git rev-parse --abbrev-ref HEAD) == "$target_branch_name" ] && [ "$allow_update_option" == "--allow-update" ]; then
     echo 'Already on correct branch'
   else
