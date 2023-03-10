@@ -298,8 +298,8 @@ button:active {
     <tr>
       <td><strong>Підтримувані загальні атрибути</strong></td>
       <td>
-        <code><a href="#attr-checked">checked</a></code
-        >, <code><a href="#attr-value">value</a></code> та
+        <code><a href="#checked">checked</a></code
+        >, <code><a href="#value">value</a></code> та
         <code
           ><a href="/uk/docs/Web/HTML/Attributes/required">required</a></code
         >
