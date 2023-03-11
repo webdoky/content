@@ -330,7 +330,7 @@ document
 <a href="2017-annual-report.ppt">2017 Річний звіт (PowerPoint) </a>
 ```
 
-Якщо призначення посилання позначено іконкою, слід пересвідчитись, що ця іконка має {{HTMLAttrxRef("alt", "img", "текстову альтернативу", "true")}}:
+Якщо призначення посилання позначено іконкою, слід пересвідчитись, що ця іконка має [_текстову альтернативу_](/uk/docs/Web/HTML/Element/img#alt):
 
 ```html
 <a target="_blank" href="https://uk.wikipedia.org">
