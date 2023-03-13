@@ -2,22 +2,6 @@
 title: "<video>: Елемент вбудованого відео"
 slug: Web/HTML/Element/video
 page-type: html-element
-tags:
-  - Element
-  - HTML
-  - HTML Video
-  - HTML Video Player
-  - HTML embedded content
-  - Media
-  - Movie Playback
-  - Movies
-  - Multimedia
-  - Playing Movies
-  - Playing Video
-  - Reference
-  - Showing Video
-  - Video
-  - Web
 browser-compat: html.elements.video
 ---
 
@@ -35,7 +19,7 @@ browser-compat: html.elements.video
 
 Подібно до всіх решти елементів HTML, цей елемент підтримує [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
 
-- {{htmlattrdef("autoplay")}}
+- `autoplay`
 
   - : Булів атрибут; коли вказаний, то відео автоматично починає відтворення, щойно може, не зупиняючи закінчення завантаження даних
 
@@ -45,19 +29,19 @@ browser-compat: html.elements.video
 
     В певних браузерах (наприклад, Chrome 70.0) автоматичне відтворення не працює, якщо немає атрибута `muted`.
 
-- {{htmlattrdef("autopictureinpicture")}} {{experimental_inline}}
+- `autopictureinpicture` {{experimental_inline}}
   - : Булів атрибут, котрий, якщо його значення – `true`, вказує, що елемент повинен автоматично ввімкнути режим картинки-в-картинці, коли користувач перемикається туди й назад між поточним документом та іншим документом чи застосунком.
-- {{htmlattrdef("controls")}}
+- `controls`
   - : Якщо присутній цей атрибут, то браузер запропонує користувачеві контрольні засоби для керування відтворенням відео, в тому числі гучністю, перемоткою та паузою-відновленням відтворення.
-- {{htmlattrdef("controlslist")}} {{experimental_inline}}{{non-standard_inline}}
+- `controlslist` {{experimental_inline}}{{non-standard_inline}}
 
   - : Атрибут [`controlslist` (англ.)](https://wicg.github.io/controls-list/explainer.html), бувши вказаним, допомагає браузеру обрати, які контрольні елементи показати на елементі `video`, коли браузер показує власний набір контрольних елементів (тобто коли вказаний атрибут `controls`).
 
     Дозволені значення: `nodownload`, `nofullscreen` і `noremoteplayback`.
 
-    Використовуйте атрибут [`disablepictureinpicture`](#attr-disablepictureinpicture) при потребі вимкнути режим картинки-в-картинці (і контрольні елементи).
+    Використовуйте атрибут [`disablepictureinpicture`](#disablepictureinpicture) при потребі вимкнути режим картинки-в-картинці (і контрольні елементи).
 
-- {{htmlattrdef("crossorigin")}}
+- `crossorigin`
 
   - : Цей [перелічуваний](/uk/docs/Glossary/Enumerated) атрибут вказує, чи треба використовувати для отримання відповідного відео CORS. [Ресурси, що дозволяють CORS](/uk/docs/Web/HTML/CORS_enabled_image), можуть бути перевикористані в елементі {{HTMLElement("canvas")}}, не бувши _ославленими_. Дозволеними значеннями є:
 
@@ -68,25 +52,25 @@ browser-compat: html.elements.video
 
     Коли цього атрибута немає, ресурс отримується без запиту CORS (тобто без надсилання заголовка HTTP `Origin:`), запобігаючи його неославленому використанню в елементах {{HTMLElement('canvas')}}. Якщо значення недійсне, то це працює так, ніби використано ключове слово `anonymous`. Дивіться [атрибути налаштувань CORS](/uk/docs/Web/HTML/Attributes/crossorigin) для отримання додаткової інформації.
 
-- {{htmlattrdef("disablepictureinpicture")}} {{experimental_inline}}
+- `disablepictureinpicture` {{experimental_inline}}
   - : Запобігає тому, щоб браузер пропонував контекстне меню картинки-в-картинці чи, у певних випадках, автоматично запитував картинку-в-картинці.
-- {{htmlattrdef("disableremoteplayback")}} {{experimental_inline}}
+- `disableremoteplayback` {{experimental_inline}}
 
   - : Булів атрибут, що використовується для вимкнення можливості віддаленого відтворення на пристроях, що під'єднані за допомогою провідних (HDMI, DVI тощо) та безпровідних технологій (Miracast, Chromecast, DLNA, AirPlay тощо).
 
     У Safari як запасний варіант можна використати [`x-webkit-airplay="deny"` (англ.)](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/AirPlayGuide/OptingInorOutofAirPlay/OptingInorOutofAirPlay.html).
 
-- {{htmlattrdef("height")}}
+- `height`
   - : Висота області відтворення відео, задана в [пікселях CSS (англ.)](https://drafts.csswg.org/css-values/#px) (приймаються лише абсолютні значення; [жодних відсотків (англ.)](https://html.spec.whatwg.org/multipage/embedded-content.html#dimension-attributes)).
-- {{htmlattrdef("loop")}}
+- `loop`
   - : Булів атрибут; коли вказаний, браузер автоматично перемотуватиме на початок після досягнення кінця відео.
-- {{htmlattrdef("muted")}}
+- `muted`
   - : Булів атрибут, що вказує усталене налаштування для аудіо, включеного у відео. Якщо встановлений, то аудіо спершу буде заглушене. Усталене значення – `false`, отже – аудіо буде відтворено разом з відтворенням відео.
-- {{htmlattrdef("playsinline")}}
+- `playsinline`
   - : Булів атрибут, що вказує, що відео повинно бути відтворено "вбудованим", тобто в межах області відтворення елемента. Зверніть увагу, що відсутність цього атрибута _не_ означає, що відео завжди буде відтворено в повноекранному режимі.
-- {{htmlattrdef("poster")}}
+- `poster`
   - : URL зображення, що буде показано, поки відео стягується. Якщо цей атрибут не вказаний, то нічого не буде показано, поки не буде доступний перший кадр, а потім – як кадр анонсу буде показаний перший кадр.
-- {{htmlattrdef("preload")}}
+- `preload`
 
   - : Цей атрибут повинен надавати пораду браузерові про те, що, як вважає автор, приведе до найкращого користувацького досвіду щодо того, який вміст завантажений до відтворення відео. Може мати одне з наступних значень:
 
@@ -102,9 +86,9 @@ browser-compat: html.elements.video
     > - Атрибут `autoplay` має пріоритет над `preload`. Якщо вказаний `autoplay`, то, очевидно, браузер буде змушений почати завантажувати відео, аби його відтворити.
     > - Специфікація не змушує браузер виконувати вказівку цього атрибута; це радше порада.
 
-- {{htmlattrdef("src")}}
+- `src`
   - : URL відео, що має бути вбудоване. Цей атрибут необов'язковий; натомість для вказівки, яке відео вбудовувати, можна використати елемент {{HTMLElement("source")}} всередині блока `<video>`.
-- {{htmlattrdef("width")}}
+- `width`
   - : Ширина області відтворення відео, задана в [пікселях CSS (англ.)](https://drafts.csswg.org/css-values/#px) (приймаються лише абсолютні значення; [жодних відсотків (англ.)](https://html.spec.whatwg.org/multipage/embedded-content.html#dimension-attributes)).
 
 ## Події
@@ -470,12 +454,12 @@ AddType video/webm .webm
   <tbody>
     <tr>
       <th scope="row">
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories"
+        <a href="/uk/docs/Web/HTML/Content_categories"
           >Категорії вмісту</a
         >
       </th>
       <td>
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#flow_content"
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
           >Потоковий вміст</a
         >, оповідальний вміст, вбудований вміст. Якщо має атрибут
         {{htmlattrxref("controls", "video")}}: інтерактивний

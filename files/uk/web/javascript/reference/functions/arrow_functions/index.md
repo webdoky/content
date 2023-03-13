@@ -2,13 +2,6 @@
 title: Вирази стрілкових функцій
 slug: Web/JavaScript/Reference/Functions/Arrow_functions
 page-type: javascript-language-feature
-tags:
-  - ECMAScript 2015
-  - Functions
-  - Intermediate
-  - JavaScript
-  - Language feature
-  - Reference
 browser-compat: javascript.functions.arrow_functions
 ---
 
@@ -25,12 +18,22 @@ browser-compat: javascript.functions.arrow_functions
 ## Синтаксис
 
 ```js-nolint
+() => expression
+
 param => expression
+
 (param) => expression
+
 (param1, paramN) => expression
+
+() => {
+  statements
+}
+
 param => {
   statements
 }
+
 (param1, paramN) => {
   statements
 }
@@ -101,7 +104,7 @@ const b = 2;
   return a + b + 100;
 })
 
-// Стрілкова функція (без аргументів)
+// Стрілкова функція (без параметрів)
 () => a + b + 100;
 ```
 

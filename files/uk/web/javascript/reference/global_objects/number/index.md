@@ -2,12 +2,6 @@
 title: Number
 slug: Web/JavaScript/Reference/Global_Objects/Number
 page-type: javascript-class
-tags:
-  - Class
-  - JavaScript
-  - Number
-  - Reference
-  - Polyfill
 browser-compat: javascript.builtins.Number
 ---
 
@@ -97,11 +91,18 @@ JavaScript має низькорівневі функції, що працюют
 
 ```js
 new Int32Array([1.1, 1.9, -1.1, -1.9]); // Int32Array(4) [ 1, 1, -1, -1 ]
-new Int8Array([257, -257]); // Int8Array(1) [ 1, -1 ]
-// 257 = 0001 0000 0001 = 0000 0001 (остача від ділення на 2^8) = 1
-// -257 = 1110 1111 1111 = 1111 1111 (остача від ділення на 2^8) = -1 (як ціле зі знаком)
-new Uint8Array([257, -257]); // Uint8Array(1) [ 1, 255 ]
-// -257 = 1110 1111 1111 = 1111 1111 (mod 2^8) = 255 (як ціле без знаку)
+
+new Int8Array([257, -257]); // Int8Array(2) [ 1, -1 ]
+// 257 = 0001 0000 0001
+//     =      0000 0001 (mod 2^8)
+//     = 1
+// -257 = 1110 1111 1111
+//      =      1111 1111 (mod 2^8)
+//      = -1 (як ціле зі знаком)
+new Uint8Array([257, -257]); // Uint8Array(2) [ 1, 255 ]
+// -257 = 1110 1111 1111
+//      =      1111 1111 (mod 2^8)
+//      = 255 (як ціле без знаку)
 ```
 
 ## Конструктор
@@ -148,6 +149,13 @@ new Uint8Array([257, -257]); // Uint8Array(1) [ 1, 255 ]
   - : Те саме, що й глобальна функція {{jsxref("parseFloat", "parseFloat()")}}.
 - {{jsxref("Number.parseInt()")}}
   - : Те саме, що й глобальна функція {{jsxref("parseInt", "parseInt()")}}.
+
+## Властивості примірника
+
+Ці властивості означені на `Number.prototype` і є спільними для всіх примірників `Number`.
+
+- {{jsxref("Object/constructor", "Number.prototype.constructor")}}
+  - : Функція-конструктор, що створила об'єкт-примірник. Для примірників `Number` початковим значенням є конструктор {{jsxref("Number/Number", "Number")}}.
 
 ## Методи примірника
 

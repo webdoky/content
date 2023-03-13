@@ -2,11 +2,6 @@
 title: Інструкції та оголошення
 slug: Web/JavaScript/Reference/Statements
 page-type: landing-page
-tags:
-  - JavaScript
-  - Landing page
-  - Reference
-  - statements
 browser-compat: javascript.statements
 ---
 

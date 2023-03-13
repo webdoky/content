@@ -2,15 +2,6 @@
 title: import
 slug: Web/JavaScript/Reference/Statements/import
 page-type: javascript-statement
-tags:
-  - ECMAScript 2015
-  - JavaScript
-  - Language feature
-  - Modules
-  - Reference
-  - Statement
-  - dynamic import
-  - import
 browser-compat: javascript.statements.import
 ---
 
@@ -57,10 +48,10 @@ import "module-name";
 
 Існує чотири форми оголошень `import`:
 
-+- [Іменований імпорт](#imenovanyi-import): `import { export1, export2 } from "module-name";`
-+- [Усталений імпорт](#ustalenyi-import): `import defaultExport from "module-name";`
-+- [Імпорт простору імен](#import-prostoru-imen): `import * as name from "module-name";`
-+- [Імпорт заради побічних ефектів](#importuvannia-modulia-lyshe-zarady-yoho-pobichnykh-efektiv): `import "module-name";`
+- [Іменований імпорт](#imenovanyi-import): `import { export1, export2 } from "module-name";`
+- [Усталений імпорт](#ustalenyi-import): `import defaultExport from "module-name";`
+- [Імпорт простору імен](#import-prostoru-imen): `import * as name from "module-name";`
+- [Імпорт заради побічних ефектів](#importuvannia-modulia-lyshe-zarady-yoho-pobichnykh-efektiv): `import "module-name";`
 
 Нижче наведено приклади для пояснення синтаксису.
 
@@ -141,7 +132,7 @@ import * as myModule from "/modules/my-module.js";
 myModule.doAllTheAmazingThings();
 ```
 
-Значення `myModule` — це [запечатаний](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/isSealed) об'єкт, [чиїм прототипом є `null`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#obiekty-z-prototypom-null). Усталений експорт доступний за ключем, що зветься `default`. Більше інформації про це – в розділі [об'єкта простору імен модуля](/uk/docs/Web/JavaScript/Reference/Operators/import#obiekt-prostoru-imen-modulia).
+Значення `myModule` — це [запечатаний](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/isSealed) об'єкт, [чиїм прототипом є `null`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#null-prototypni-obiekty). Усталений експорт доступний за ключем, що зветься `default`. Більше інформації про це – в розділі [об'єкта простору імен модуля](/uk/docs/Web/JavaScript/Reference/Operators/import#obiekt-prostoru-imen-modulia).
 
 > **Примітка:** JavaScript не підтримує довільні імпорти, як от `import * from "module-name"`, через високу ймовірність конфліктів імен.
 

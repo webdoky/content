@@ -1,19 +1,7 @@
 ---
 title: "CSS: Каскадні таблиці стилів"
 slug: Web/CSS
-tags:
-  - CSS
-  - Cascading Style Sheets
-  - Design
-  - Guide
-  - Landing
-  - Layout
-  - Reference
-  - Style Sheets
-  - Styles
-  - Stylesheets
-  - "l10n:priority"
-translation_of: Web/CSS
+page-type: landing-page
 ---
 
 {{CSSRef}}
@@ -88,6 +76,10 @@ CSS належить до ключових мов **відкритого веб�
 - Для перевірки валідності CSS можна застосовувати [Службу перевірки CSS від W3C](https://jigsaw.w3.org/css-validator/). Це незамінний інструмент зневадження.
 - [Інструменти розробника Firefox (англ.)](https://firefox-source-docs.mozilla.org/devtools-user/index.html) дають змогу переглядати CSS сторінки на льоту за допомогою [Інспектора (англ.)](https://firefox-source-docs.mozilla.org/devtools-user/page_inspector/index.html) та [Редактора стилів (англ.)](https://firefox-source-docs.mozilla.org/devtools-user/style_editor/index.html).
 - [Розширення веброзробника](https://addons.mozilla.org/uk/firefox/addon/web-developer/) для Firefox дає змогу відстежувати та редагувати CSS відображених вебсайтів на льоту.
+
+## Метаінформація про вади
+
+- Firefox: [Вада Firefox 1323667](https://bugzil.la/1323667)
 
 ## Дивіться також
 
