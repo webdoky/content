@@ -718,26 +718,22 @@ console.log(obj.barProp);
 Крім цього, при ітеруванні властивостей об'єкта, **кожна** перелічувана властивість, присутня в ланцюжку прототипів, так само буде перелічена. Для перевірки того, чи має об'єкт властивість, означену на _ньому самому_, а не десь в ланцюжку прототипів, необхідно використовувати методи [`hasOwnProperty`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty) або [`Object.hasOwn`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwn). Усі об'єкти, крім тих, що мають `null` у `[[Prototype]]`, успадковують [`hasOwnProperty`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty) від `Object.prototype` — якщо цей метод не перевизначений десь у ланцюжку прототипів. Щоб запропонувати конкретний приклад, візьмімо код прикладу з графом вище:
 
 ```js
-console.log(g.hasOwnProperty("vertices"));
-// true
-
-console.log(Object.hasOwn(g, "vertices"));
-// true
-
-console.log(g.hasOwnProperty("nope"));
-// false
-
-console.log(Object.hasOwn(g, "nope"));
-// false
-
-console.log(g.hasOwnProperty("addVertex"));
-// false
-
-console.log(Object.hasOwn(g, "addVertex"));
-// false
-
-console.log(Object.getPrototypeOf(g).hasOwnProperty("addVertex"));
-// true
+function Graph() {
+  this.vertices = [];
+  this.edges = [];
+}
+Graph.prototype.addVertex = function (v) {
+  this.vertices.push(v);
+};
+const g = new Graph();
+// g ---> Graph.prototype ---> Object.prototype ---> null
+g.hasOwnProperty("vertices"); // true
+Object.hasOwn(g, "vertices"); // true
+g.hasOwnProperty("nope"); // false
+Object.hasOwn(g, "nope"); // false
+g.hasOwnProperty("addVertex"); // false
+Object.hasOwn(g, "addVertex"); // false
+Object.getPrototypeOf(g).hasOwnProperty("addVertex"); // true
 ```
 
 Примітка: **Не**достатньо перевірити, чи має властивість значення [`undefined`](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined). Властивість може прекрасно існувати, і водночас її значенням може бути `undefined`.
