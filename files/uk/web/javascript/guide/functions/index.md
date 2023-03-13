@@ -2,12 +2,6 @@
 title: Функції
 slug: Web/JavaScript/Guide/Functions
 page-type: guide
-tags:
-  - Beginner
-  - Functions
-  - Guide
-  - JavaScript
-  - "l10n:priority"
 ---
 
 {{jsSidebar("JavaScript Guide")}} {{PreviousNext("Web/JavaScript/Guide/Loops_and_iteration", "Web/JavaScript/Guide/Expressions_and_Operators")}}
@@ -164,7 +158,7 @@ square(5);
 
 Функції повинні бути _доступні в області видимості_, коли викликані, але оголошення функції може бути [піднято](#pidniattia-funktsii) (стояти в коді нижче власного виклику). Областю видимості оголошення функції є та функція, в якій перша була оголошена (або вся програма, якщо функцію оголошено на верхньому рівні).
 
-Аргументи функцій не обмежені рядками й числами. У функції можна передавати цілі об'єкти. Функція `showProps()` (визначена в [Роботі з об'єктами](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#obiekty-ta-vlastyvosti)) є прикладом функції, котра приймає об'єкт за аргумент.
+Аргументи функцій не обмежені рядками й числами. У функції можна передавати цілі об'єкти. Функція `showProps()` (визначена в [Роботі з об'єктами](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#obiekty-i-vlastyvosti)) є прикладом функції, котра приймає об'єкт за аргумент.
 
 Функція може викликати сама себе. Наприклад, ось функція, що рекурсивно обчислює факторіали:
 

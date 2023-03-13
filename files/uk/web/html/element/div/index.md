@@ -2,16 +2,6 @@
 title: "<div>: елемент поділу вмісту"
 slug: Web/HTML/Element/div
 page-type: html-element
-tags:
-  - Content Division
-  - Element
-  - HTML
-  - HTML grouping content
-  - HTML:Flow content
-  - Layout
-  - Reference
-  - Web
-  - div
 browser-compat: html.elements.div
 ---
 
@@ -88,20 +78,20 @@ browser-compat: html.elements.div
   <tbody>
     <tr>
       <th scope="row">
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories"
+        <a href="/uk/docs/Web/HTML/Content_categories"
           >Категорії вмісту</a
         >
       </th>
       <td>
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#potokovyi-vmist"
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
           >Потоковий вміст</a
-        >, <a href="/uk/docs/Web/Guide/HTML/Content_categories#vidchutnyi-vmist">відчутний вміст</a>.
+        >, <a href="/uk/docs/Web/HTML/Content_categories#vidchutnyi-vmist">відчутний вміст</a>.
       </td>
     </tr>
     <tr>
       <th scope="row">Дозволений вміст</th>
       <td>
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#potokovyi-vmist"
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
           >Потоковий вміст</a
         >.<br />Або (в HTML за {{glossary("WHATWG")}}): якщо предок – елемент
         {{HTMLElement("dl")}}: один чи більше елементів
@@ -119,7 +109,7 @@ browser-compat: html.elements.div
       <th scope="row">Дозволені предки</th>
       <td>
         Будь-який елемент, що приймає
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#potokovyi-vmist"
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
           >потоковий вміст</a
         >.<br />Або (у HTML за {{glossary("WHATWG")}}):
         елемент {{HTMLElement("dl")}}.

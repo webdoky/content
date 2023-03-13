@@ -2,15 +2,6 @@
 title: Set
 slug: Web/JavaScript/Reference/Global_Objects/Set
 page-type: javascript-class
-tags:
-  - Class
-  - ECMAScript 2015
-  - Global Objects
-  - JavaScript
-  - Object
-  - Reference
-  - set
-  - Polyfill
 browser-compat: javascript.builtins.Set
 ---
 
@@ -20,7 +11,7 @@ browser-compat: javascript.builtins.Set
 
 ## Опис
 
-Об'єкти `Set` є колекціями значень. Конкретне значення в `Set` **може зустрітись лише раз**; воно є неповторним у межах колекції `Set`. Ітерування елементів `Set` відбувається в порядку додання. _Порядок додання_ відповідає порядкові, в якому кожен елемент був успішно вставлений у множину методом [`add()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Set/add) (тобто коли до виклику `add()` у множині не було ідентичного елемента).
+Об'єкти `Set` є колекціями значень. Конкретне значення в множині **може зустрітись лише раз**, воно є неповторним у межах колекції цієї множини. Ітерування елементів `Set` відбувається в порядку додання. _Порядок додання_ відповідає порядкові, в якому кожен елемент був успішно вставлений у множину методом [`add()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Set/add) (тобто коли до виклику `add()` у множині не було ідентичного елемента).
 
 Специфікація вимагає, щоб множини були реалізовані "так, щоб в середньому час доступу був сублінійним відносно числа елементів колекції". Таким чином, внутрішньо вони можуть бути представлені як геш-таблиця (з доступом O(1)), як дерево пошуку (з доступом O(log(N))) або будь-яка інша структура даних, поки складність доступу краща за O(N).
 
@@ -30,7 +21,7 @@ browser-compat: javascript.builtins.Set
 
 ### Швидкодія
 
-Метод `Set` [`has`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Set/has) перевіряє, чи присутнє значення в об'єкті `Set`, використовуючи підхід, що в середньому є швидшим за перевірку більшості елементів, що були до того додані до `Set`. Для прикладу, це в середньому швидше, ніж метод [`Array.prototype.includes`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/includes), коли об'єкт `Array` має `length`, що дорівнює `size` об'єкта `Set`.
+Метод [`has`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Set/has) перевіряє, чи присутнє значення в множині, використовуючи підхід, що в середньому є швидшим за перевірку більшості елементів, що були до того додані до множини. Для прикладу, це в середньому швидше, ніж метод [`Array.prototype.includes`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/includes), коли масив має `length`, що дорівнює значенню `size` множини.
 
 ## Конструктор
 
@@ -44,10 +35,14 @@ browser-compat: javascript.builtins.Set
 
 ## Властивості примірника
 
-- `Set.prototype[@@toStringTag]`
-  - : Початкове значення властивості [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"Set"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}.
+Ці властивості означені на `Set.prototype` і є спільними для всіх примірників `Set`.
+
+- {{jsxref("Object/constructor", "Set.prototype.constructor")}}
+  - : Функція-конструктор, що створила об'єкт-примірник. Для примірників `Set` початковим значенням є конструктор {{jsxref("Set/Set", "Set")}}.
 - {{jsxref("Set.prototype.size")}} (розмір)
   - : Повертає кількість значень, присутніх в об'єкті `Set`.
+- `Set.prototype[@@toStringTag]`
+  - : Початкове значення властивості [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"Set"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}.
 
 ## Методи примірника
 
@@ -233,7 +228,7 @@ symmetricDifference(setA, setC); // повертає Set {1, 2, 5, 6}
 difference(setA, setC); // повертає Set {1, 2}
 ```
 
-### Зв'язок з об'єктами Array
+### Зв'язок з масивами
 
 ```js
 const myArray = ["value1", "value2", "value3"];
@@ -267,12 +262,12 @@ const text = "Індія";
 const mySet = new Set(text); // Set(5) {'І', 'н', 'д', 'і', 'я'}
 mySet.size; // 5
 
-//чутливість до регістру та усунення дублікатів
+// чутливість до регістру та усунення дублікатів
 new Set("Firefox"); // Set(7) { "F", "i", "r", "e", "f", "o", "x" }
 new Set("firefox"); // Set(6) { "f", "i", "r", "e", "o", "x" }
 ```
 
-### Використання Set для пересвідчення щодо унікальності всіх значень у списку
+### Використання множини для пересвідчення щодо унікальності всіх значень у списку
 
 ```js
 const array = Array.from(document.querySelectorAll("[id]")).map((e) => e.id);

@@ -2,18 +2,12 @@
 title: padding
 slug: Web/CSS/padding
 page-type: css-shorthand-property
-tags:
-  - CSS
-  - CSS Padding
-  - CSS Property
-  - Reference
-  - recipe:css-shorthand-property
 browser-compat: css.properties.padding
 ---
 
 {{CSSRef}}
 
-[Властивість-скорочення](/uk/docs/Web/CSS/Shorthand_properties) [CSS](/uk/docs/Web/CSS) **`padding`** (набивка) встановлює [розмах внутрішніх відступів](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#padding_area) з усіх чотирьох сторін елемента за раз.
+[Властивість-скорочення](/uk/docs/Web/CSS/Shorthand_properties) [CSS](/uk/docs/Web/CSS) **`padding`** (набивка) встановлює [розмах внутрішніх відступів](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#oblast-vnutrishnikh-vidstupiv) з усіх чотирьох сторін елемента за раз.
 
 {{EmbedInteractiveExample("pages/css/padding.html")}}
 

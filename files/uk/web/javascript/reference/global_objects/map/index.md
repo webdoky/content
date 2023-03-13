@@ -2,13 +2,6 @@
 title: Map
 slug: Web/JavaScript/Reference/Global_Objects/Map
 page-type: javascript-class
-tags:
-  - Class
-  - ECMAScript 2015
-  - JavaScript
-  - Map
-  - Reference
-  - Polyfill
 browser-compat: javascript.builtins.Map
 ---
 
@@ -244,10 +237,16 @@ console.log(contacts.size); // 1
 
 ## Властивості примірника
 
+Ці властивості означені на `Map.prototype` і є спільними для всіх примірників `Map`.
+
+- {{jsxref("Object/constructor", "Map.prototype.constructor")}}
+  - : Функція-конструктор, що створила об'єкт-примірник. Для примірників `Map` початковим значенням є конструктор {{jsxref("Map/Map", "Map")}}.
 - `Map.prototype[@@toStringTag]`
   - : Початкове значення властивості [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"Map"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}.
 - {{jsxref("Map.prototype.size")}}
   - : Повертає кількість пар ключ-значення об'єкта `Map`.
+- `Map.prototype[@@toStringTag]`
+  - : Початковим значенням властивості [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) є рядок `"Map"`. Вона використовується в {{jsxref("Object.prototype.toString()")}}.
 
 ## Методи примірника
 

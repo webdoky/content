@@ -2,12 +2,6 @@
 title: grid-template-columns
 slug: Web/CSS/grid-template-columns
 page-type: css-property
-tags:
-  - CSS
-  - CSS Grid
-  - CSS Property
-  - Reference
-  - recipe:css-property
 browser-compat: css.properties.grid-template-columns
 ---
 
@@ -88,8 +82,9 @@ grid-template-columns: unset;
     > **Примітка:** Розміри доріжок `auto` (і лише розміри доріжок `auto`) можуть бути розтягнені властивостями {{cssxref("align-content")}} і {{cssxref("justify-content")}}. Таким чином, усталено доріжка з розміром `auto` займатиме увесь незайнятий у контейнері сітки простір.
 
 - `{{cssxref("fit-content_function", "fit-content( [ &lt;length&gt; | &lt;percentage&gt; ] )")}}`
+
   - : Представляє формулу `max(minimum, min(limit, max-content))`, де _minimum_ представляє мінімум `auto` (котрий нерідко, хоч і не завжди, рівний мінімумові {{cssxref("min-content")}}), а _limit_ – функція калібрування доріжки, передана як аргумент у fit-content(). По суті, обчислюється як менше серед `minmax(auto, max-content)` і `minmax(auto, limit)`.
- 
+
 - {{cssxref("repeat", "repeat( [ &lt;positive-integer&gt; | auto-fill | auto-fit ] , &lt;track-list&gt; )")}}
   - : Представляє повторюваний фрагмент списку доріжки й дає змогу визначити багато колонок, що утворюють циклічний патерн, у більш компактному вигляді.
 - [`masonry`](/uk/docs/Web/CSS/CSS_Grid_Layout/Masonry_Layout) {{Experimental_Inline}}
@@ -155,6 +150,6 @@ grid-template-columns: unset;
 ## Дивіться також
 
 - Пов'язані властивості CSS: {{cssxref("grid-template-rows")}}, {{cssxref("grid-template-areas")}}, {{cssxref("grid-template")}}
-- Посібник з сіткового компонування: _[Базові концепції сіткового компонування – доріжки сітки](/uk/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout#dorizhky-sitky)_
+- Посібник з сіткового компонування: _[Базові концепції сіткового компонування – сіткові доріжки](/uk/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout#sitkovi-dorizhky)_
 - Відеоурок: _[Визначення сітки (англ.)](https://gridbyexample.com/video/series-define-a-grid/)_
 - [Subgrid](/uk/docs/Web/CSS/CSS_Grid_Layout/Subgrid)
