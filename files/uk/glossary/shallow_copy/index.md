@@ -2,8 +2,6 @@
 title: Поверхневе копіювання
 slug: Glossary/Shallow_copy
 page-type: glossary-definition
-tags:
-  - Shallow copy
 ---
 
 {{MDNSidebar}}
