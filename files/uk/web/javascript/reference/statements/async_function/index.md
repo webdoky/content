@@ -1,12 +1,7 @@
 ---
 title: async function
 slug: Web/JavaScript/Reference/Statements/async_function
-tags:
-  - Example
-  - Function
-  - JavaScript
-  - Language feature
-  - Statement
+page-type: javascript-statement
 browser-compat: javascript.statements.async_function
 ---
 

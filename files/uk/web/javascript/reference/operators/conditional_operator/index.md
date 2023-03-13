@@ -1,17 +1,7 @@
 ---
 title: Умовний (тернарний) оператор
 slug: Web/JavaScript/Reference/Operators/Conditional_Operator
-tags:
-  - Conditional
-  - Decision
-  - JS
-  - JavaScript
-  - Language feature
-  - Operator
-  - Reference
-  - else
-  - if
-  - ternary
+page-type: javascript-operator
 browser-compat: javascript.operators.conditional
 ---
 

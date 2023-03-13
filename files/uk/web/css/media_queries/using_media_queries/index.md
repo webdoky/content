@@ -2,14 +2,6 @@
 title: Використання медіазапитів
 slug: Web/CSS/Media_Queries/Using_media_queries
 page-type: guide
-tags:
-  - Advanced
-  - CSS
-  - Guide
-  - Media
-  - Media Queries
-  - Responsive Design
-  - Web
 ---
 
 {{CSSRef}}
@@ -20,7 +12,7 @@ tags:
 
 - Для умовного застосування стилів за допомогою [директив](/uk/docs/Web/CSS/At-rule) [CSS](/uk/docs/Web/CSS) {{cssxref("@media")}} та {{cssxref("@import")}}.
 - Для націлення на певні медіа {{HTMLElement("style")}}, {{HTMLElement("link")}}, {{HTMLElement("source")}} та інших [HTML](/uk/docs/Web/HTML) елементів за допомогою атрибуту `media=`.
-- Для [перевірки та відстеження станів медіа](/uk/docs/Web/CSS/Media_Queries/Testing_media_queries) за допомогою методів [JavaScript](/uk/docs/Web/JavaScript) {{domxref("Window.matchMedia()")}} та {{domxref("MediaQueryList.addListener()")}}.
+- Для [перевірки та відстеження станів медіа](/uk/docs/Web/CSS/Media_Queries/Testing_media_queries) за допомогою методів {{domxref("Window.matchMedia()")}} та {{domxref("EventTarget.addEventListener()")}}.
 
 > **Примітка:** Приклади на цій сторінці використовують медіазапит CSS `@media` для ілюстративних потреб, однак базовий синтаксис залишається однаковим для всіх типів медіазапитів.
 

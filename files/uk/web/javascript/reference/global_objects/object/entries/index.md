@@ -1,18 +1,13 @@
 ---
 title: Object.entries()
 slug: Web/JavaScript/Reference/Global_Objects/Object/entries
-tags:
-  - JavaScript
-  - Method
-  - Object
-  - Reference
-  - Polyfill
+page-type: javascript-static-method
 browser-compat: javascript.builtins.Object.entries
 ---
 
 {{JSRef}}
 
-Метод **`Object.entries()`** (записи) повертає власні перелічувані властивості об'єкта, котрі мають рядкові ключі, у вигляді масиву пар ключ-значення.
+Статичний метод **`Object.entries()`** (записи) повертає власні перелічувані властивості об'єкта, котрі мають рядкові ключі, у вигляді масиву пар ключ-значення.
 
 {{EmbedInteractiveExample("pages/js/object-entries.html")}}
 
@@ -91,7 +86,7 @@ console.log(map); // Map(2) {"foo" => "bar", "baz" => 42}
 
 ### Ітерування по Object
 
-За допомогою [деструктуризації масиву](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#destrukturyzatsiia-masyvu) можна з легкістю перебирати поля об'єкта.
+За допомогою [деструктурування масиву](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#destrukturuvannia-masyvu) можна з легкістю перебирати поля об'єкта.
 
 ```js
 // За допомогою циклу for...of

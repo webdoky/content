@@ -1,12 +1,7 @@
 ---
 title: Object.prototype.hasOwnProperty()
 slug: Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty
-tags:
-  - JavaScript
-  - Method
-  - Object
-  - Prototype
-  - hasOwnProperty
+page-type: javascript-instance-method
 browser-compat: javascript.builtins.Object.hasOwnProperty
 ---
 
@@ -134,7 +129,7 @@ Object.prototype.hasOwnProperty.call(foo, "bar"); // true
 
 // Використання hasOwnProperty іншого Object
 // і виклик його з foo як 'this'
-({}.hasOwnProperty.call(foo, "bar")); // true
+({}).hasOwnProperty.call(foo, "bar"); // true
 ```
 
 Зверніть увагу, що у двох перших випадках нові об'єкти не створюються.

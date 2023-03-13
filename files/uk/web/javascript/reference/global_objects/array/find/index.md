@@ -1,20 +1,13 @@
 ---
 title: Array.prototype.find()
 slug: Web/JavaScript/Reference/Global_Objects/Array/find
-tags:
-  - Array
-  - ECMAScript 2015
-  - JavaScript
-  - Method
-  - Prototype
-  - Reference
-  - Polyfill
+page-type: javascript-instance-method
 browser-compat: javascript.builtins.Array.find
 ---
 
 {{JSRef}}
 
-Метод `find()` (знайти) повертає значення першого елементу в даному масиві, яке задовольняє передану функцію перевірки. Якщо жоден елемент не задовольняє перевіркову функцію, буде повернуто {{jsxref("undefined")}}.
+Метод **`find()`** (знайти) повертає значення першого елементу в даному масиві, яке задовольняє передану функцію перевірки. Якщо жоден елемент не задовольняє перевіркову функцію, буде повернуто {{jsxref("undefined")}}.
 
 {{EmbedInteractiveExample("pages/js/array-find.html","shorter")}}
 

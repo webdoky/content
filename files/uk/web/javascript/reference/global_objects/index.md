@@ -1,11 +1,7 @@
 ---
 title: Стандартні вбудовані об'єкти
 slug: Web/JavaScript/Reference/Global_Objects
-tags:
-  - JavaScript
-  - Landing page
-  - Overview
-  - Reference
+page-type: landing-page
 ---
 
 {{JSSidebar("Objects")}}

@@ -1,8 +1,0 @@
-# Redirect map file
-# URLs must be tab-separated
-#
-# FROM-URL	TO-URL
-/uk/docs/A_re-introduction_to_JavaScript	/uk/docs/Web/JavaScript/Language_Overview
-/uk/docs/JavaScript/A_re-introduction_to_JavaScript	/uk/docs/Web/JavaScript/Language_Overview
-/uk/docs/Web/Guide/HTML/Content_categories	/uk/docs/Web/HTML/Content_categories
-/uk/docs/Web/JavaScript/A_re-introduction_to_JavaScript	/uk/docs/Web/JavaScript/Language_Overview

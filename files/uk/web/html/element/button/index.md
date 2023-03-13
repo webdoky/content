@@ -1,136 +1,41 @@
 ---
 title: "<button>: Елемент кнопки"
 slug: Web/HTML/Element/button
-tags:
-  - Element
-  - Forms
-  - HTML
-  - HTML forms
-  - Reference
-  - Web
+page-type: html-element
 browser-compat: html.elements.button
 ---
 
 {{HTMLSidebar}}
 
-Елемент [HTML](/uk/docs/Web/HTML) **`<button>`** (кнопка) – інтерактивний елемент, що активується користувачем за допомогою миші, клавіатури, пальця, голосової команди чи іншої допоміжної технології. Бувши активованою, кнопка виконує програмовану дію, наприклад, подання [форми](/uk/docs/Learn/Forms) чи відкриття діалогу.
+Елемент [HTML](/uk/docs/Web/HTML) **`<button>`** (кнопка) – інтерактивний елемент, що активується користувачем за допомогою миші, клавіатури, пальця, голосової команди чи іншої допоміжної технології. Бувши активованою, кнопка виконує дію, наприклад, подання [форми](/uk/docs/Learn/Forms) чи відкриття діалогу.
 
 Усталено кнопки HTML подаються в стилі, що нагадує стиль платформи, на котрій працює {{Glossary("user agent", "користувацький агент")}}, але вигляд кнопок можна змінити за допомогою [CSS](/uk/docs/Web/CSS).
 
 {{EmbedInteractiveExample("pages/tabbed/button.html", "tabbed-shorter")}}
 
-<table class="properties">
-  <tbody>
-    <tr>
-      <th scope="row">
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories"
-          >Категорії вмісту</a
-        >
-      </th>
-      <td>
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#potokovyi-vmist"
-          >Потоковий вміст</a
-        >,
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#opovidalnyi-vmist"
-          >оповідальний вміст</a
-        >,
-        <a
-          href="/uk/docs/Web/Guide/HTML/Content_categories#interaktyvnyi-vmist"
-          >інтерактивний вміст</a
-        >,
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#perelicheni"
-          >перелічений</a
-        >,
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#pidpysuvani"
-          >підписуваний</a
-        > та
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#podavani"
-          >подаваний</a
-        >
-        <a
-          href="/uk/docs/Web/Guide/HTML/Content_categories#poviazanyi-z-formoiu-vmist"
-          >пов'язаний з формою</a
-        >
-        елемент, дотиковий вміст.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволений вміст</th>
-      <td>
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#phrasing_content"
-          >Оповідальний вміст</a
-        >
-        але не повинно бути
-        <a
-          href="/uk/docs/Web/Guide/HTML/Content_categories#interactive_content"
-          >інтерактивного вмісту</a
-        >
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Упускання тегів</th>
-      <td>{{no_tag_omission}}</td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені батьківські елементи</th>
-      <td>
-        Будь-який елемент, що приймає
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#phrasing_content"
-          >оповідальний вміст</a
-        >.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Неявна роль ARIA</th>
-      <td>
-        <code
-          ><a href="/uk/docs/Web/Accessibility/ARIA/Roles/button_role"
-            >button</a
-          ></code
-        >
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені ролі ARIA</th>
-      <td>
-        {{ARIARole("checkbox")}}, {{ARIARole("combobox")}},
-        {{ARIARole("link")}}, {{ARIARole("menuitem")}},
-        {{ARIARole("menuitemcheckbox")}},
-        {{ARIARole("menuitemradio")}}, {{ARIARole("option")}},
-        {{ARIARole("radio")}}, {{ARIARole("switch")}},
-        {{ARIARole("tab")}}
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Інтерфейс DOM</th>
-      <td>{{domxref("HTMLButtonElement")}}</td>
-    </tr>
-  </tbody>
-</table>
-
 ## Attributes
 
 Атрибути цього елемента включають [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
 
-- {{htmlattrdef("autofocus")}}
+- `autofocus`
   - : Цей булів атрибут вказує, що кнопка повинна отримати [фокус](/uk/docs/Web/API/HTMLElement/focus) введення, коли сторінка завантажилась. **Лише один елемент в документі може мати такий атрибут.**
-- {{htmlattrdef("autocomplete")}} {{non-standard_inline}}
-  - : Цей атрибут {{HTMLElement("button")}} є нестандартним, специфічним для Firefox. На відміну від інших браузерів, [Firefox зберігає динамічний стан вимкненості (англ.)](https://stackoverflow.com/questions/5985839/bug-with-firefox-disabled-attribute-of-input-not-resetting-when-refreshing) елемента {{HTMLElement("button")}} між завантаженнями сторінки. Встановлення на кнопці `autocomplete="off"` вимикає цю функціональність; дивіться {{bug(654072)}}.
-- {{htmlattrdef("disabled")}}
+- `autocomplete` {{non-standard_inline}}
+  - : Цей атрибут {{HTMLElement("button")}} є нестандартним, специфічним для Firefox. На відміну від інших браузерів, [Firefox зберігає динамічний стан вимкненості (англ.)](https://stackoverflow.com/questions/5985839/bug-with-firefox-disabled-attribute-of-input-not-resetting-when-refreshing) елемента {{HTMLElement("button")}} між завантаженнями сторінки. Встановлення на кнопці `autocomplete="off"` вимикає цю функціональність; дивіться [ваду Firefox 654072](https://bugzil.la/654072).
+- `disabled`
 
   - : Цей булів атрибут не дає користувачеві взаємодіяти з кнопкою: вона не може бути натиснута чи отримати фокус.
 
     Firefox, на відміну від решти браузерів, [зберігає динамічний стан вимкненості](https://stackoverflow.com/questions/5985839/bug-with-firefox-disabled-attribute-of-input-not-resetting-when-refreshing) елемента {{HTMLElement("button")}} між завантаженнями сторінки. Використовуйте атрибут {{htmlattrxref("autocomplete","button")}}, щоб контролювати цю функціональність.
 
-- {{htmlattrdef("form")}}
+- `form`
 
   - : Елемент {{HTMLElement("form")}}, з яким кнопка повинна бути пов'язана (її _форма-власник_). Значення цього атрибута мусить дорівнювати значенню атрибута `id` елемента `<form>` у тому самому документі. (Якщо цей атрибут не вказаний, то `<button>` пов'язується з елементом `<form>`, що є її предком, якщо такий є.)
 
     Цей атрибут дає змогу пов'язувати елементи `<button>` з елементами `<form>`, що знаходяться будь-де в елементі, а не лише тими, в котрих `<button>` знаходиться. Також таке пов'язування відкидає зв'язок з елементом `<form>`, що є предком `<button>`.
 
-- {{htmlattrdef("formaction")}}
+- `formaction`
   - : URL, що обробляє інформацію, подану кнопкою. Відкидає атрибут {{htmlattrxref("action","form")}} форми-власника кнопки. Нічого не робить, якщо форми-власника немає.
-- {{htmlattrdef("formenctype")}}
+- `formenctype`
 
   - : Якщо кнопка є кнопкою подання (вона знаходиться всередині `<form>` чи пов'язана з формою в інакший спосіб, а також не має `type="button"`), то цей атрибут вказує, як кодувати дані форми при її поданні. Можливі значення:
 
@@ -140,7 +45,7 @@ browser-compat: html.elements.button
 
     Якщо вказаний цей атрибут, він відкидає атрибут {{htmlattrxref("enctype","form")}} форми-власника кнопки.
 
-- {{htmlattrdef("formmethod")}}
+- `formmethod`
 
   - : Якщо кнопка є кнопкою подання (вона знаходиться всередині `<form>` чи пов'язана з формою в інакший спосіб, а також не має `type="button"`), то цей атрибут задає [метод HTTP](/uk/docs/Web/HTTP/Methods), що використовується для подання форми:
 
@@ -149,13 +54,13 @@ browser-compat: html.elements.button
 
     Коли вказаний, то відкидає атрибут {{htmlattrxref("method","form")}} форми-власника кнопки.
 
-- {{htmlattrdef("formnovalidate")}}
+- `formnovalidate`
 
   - : Якщо кнопка є кнопкою подання, то цей булів атрибут вказує, що форма не повинна бути [перевірена](/uk/docs/Learn/Forms/Form_validation) при поданні. Якщо вказаний цей атрибут, то він відкидає атрибут {{htmlattrxref("novalidate","form")}} форми-власника кнопки.
 
     Цей атрибут також доступний на елементах [`<input type="image">`](/uk/docs/Web/HTML/Element/input/image) й [`<input type="submit">`](/uk/docs/Web/HTML/Element/input/submit).
 
-- {{htmlattrdef("formtarget")}}
+- `formtarget`
 
   - : Якщо кнопка є кнопкою подання, то цей атрибут є визначеним автором іменем чи стандартизованим ключовим словом, що починається з підкреслення, котре вказує, де показувати відповідь на подання форми. Це `name` чи ключове слово на позначення _контексту перегляду_ (вкладки, вікна чи {{HTMLElement("iframe")}}). Якщо цей атрибут вказаний, то він відкидає атрибут {{htmlattrxref("target", "form")}} форми-власника кнопки. Наступні ключові слова мають особливі значення:
 
@@ -164,9 +69,9 @@ browser-compat: html.elements.button
     - `_parent`: Завантажує відповідь у контекст перегляду, що є батьківським відносно поточного. Якщо батьківського контексту немає, то результат такий самий, як при використанні значення `_self`.
     - `_top`: Завантажує відповідь у контекст перегляду вищого рівня (тобто такий контекст перегляду, що є предком відносно поточного, а сам батьківського контексту не має). Якщо батьківського контексту немає, то результат такий самий, як при використанні значення `_self`.
 
-- {{htmlattrdef("name")}}
+- `name`
   - : Ім'я кнопки, котре подається в парі зі значенням атрибута `value` як частина даних форми, коли ця кнопка використовується для її подання.
-- {{htmlattrdef("type")}}
+- `type`
 
   - : Усталена поведінка кнопки. Можливими значеннями є:
 
@@ -174,7 +79,7 @@ browser-compat: html.elements.button
     - `reset`: Кнопка скидає усі контрольні елементи до їх початкових значень, подібно до [\<input type="reset">](/uk/docs/Web/HTML/Element/input/reset). (Така логіка має тенденцію дратувати користувачів.)
     - `button`: Кнопка не має усталеної поведінки й нічого не робить, коли на неї натискають. Можуть бути клієнтські сценарії, що слухають події елемента.
 
-- {{htmlattrdef("value")}}
+- `value`
   - : Визначає значення, асоційоване з `name` кнопки, коли вона подається разом з даними форми. Це значення передається серверу в параметрах, коли форма подається за допомогою цієї кнопки.
 
 ## Примітки
@@ -184,6 +89,8 @@ browser-compat: html.elements.button
 Елементи `<button>` набагато простіше оформлювати, ніж елементи {{HTMLElement("input")}}. Можна додати HTML всередину (припустімо, `<i>`, `<br>` чи навіть `<img>`), а також використати для складної візуалізації псевдоелементи {{Cssxref("::after")}} і {{Cssxref("::before")}}.
 
 Якщо кнопки не призначені для подання даних форми на сервер, слід пересвідчитись, що вони мають атрибут `type` зі значенням `button`. Інакше вони спробують подати дані форми й завантажити (відсутню) відповідь, можливо, руйнуючи поточний стан документа.
+
+Хоч `<button type="button">` не має усталеної поведінки, сценарії можуть додавати обробники подій, котрі реалізують якусь логіку. Активована кнопка може виконувати програмовані дії, описані мовою [JavaScript](/uk/docs/Learn/JavaScript), як то усунення елемента зі списку.
 
 ## Приклад
 
@@ -256,7 +163,93 @@ Firefox додасть кнопці, що має фокус, дрібний пу
 
 ### Клацання й фокус
 
-Те, чи передасть клацання кнопки {{HTMLElement("button")}} або {{HTMLElement("input")}} цій кнопці фокус, залежить від браузера й операційної системи. Більшість браузерів – це робить, але [Safari – ні, і це не помилка](https://bugs.webkit.org/show_bug.cgi?id=22261).
+Те, чи передасть клацання кнопки {{HTMLElement("button")}} або {{HTMLElement("input")}} цій кнопці фокус, залежить від браузера й операційної системи. Більшість браузерів – це робить, але [Safari – ні, і це не помилка](https://webkit.org/b/22261).
+
+## Технічний підсумок
+
+<table class="properties">
+  <tbody>
+    <tr>
+      <th scope="row">
+        <a href="/uk/docs/Web/HTML/Content_categories"
+          >Категорії вмісту</a
+        >
+      </th>
+      <td>
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
+          >Потоковий вміст</a
+        >,
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
+          >оповідальний вміст</a
+        >,
+        <a
+          href="/uk/docs/Web/HTML/Content_categories#interaktyvnyi-vmist"
+          >інтерактивний вміст</a
+        >,
+        <a href="/uk/docs/Web/HTML/Content_categories#perelicheni"
+          >перелічений</a
+        >,
+        <a href="/uk/docs/Web/HTML/Content_categories#pidpysni"
+          >підписуваний</a
+        > та
+        <a href="/uk/docs/Web/HTML/Content_categories#podavalni"
+          >подаваний</a
+        >
+        <a
+          href="/uk/docs/Web/HTML/Content_categories#formovyi-vmist"
+          >пов'язаний з формою</a
+        >
+        елемент, відчутний вміст.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволений вміст</th>
+      <td>
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
+          >Оповідальний вміст</a
+        >,
+        але не повинно бути
+        <a
+          href="/uk/docs/Web/HTML/Content_categories#interaktyvnyi-vmist"
+          >інтерактивного вмісту</a
+        >
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Упускання тегів</th>
+      <td>{{no_tag_omission}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені батьківські елементи</th>
+      <td>
+        Будь-який елемент, що приймає
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
+          >оповідальний вміст</a
+        >.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Неявна роль ARIA</th>
+      <td>
+        <code
+          ><a href="/uk/docs/Web/Accessibility/ARIA/Roles/button_role"
+            >button</a
+          ></code
+        >
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені ролі ARIA</th>
+      <td>
+        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/checkbox_role"><code>checkbox</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/combobox_role"><code>combobox</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/link_role"><code>link</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitem_role"><code>menuitem</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitemcheckbox_role"><code>menuitemcheckbox</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitemradio_role"><code>menuitemradio</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/option_role"><code>option</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/radio_role"><code>radio</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/switch_role"><code>switch</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/tab_role"><code>tab</code></a>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Інтерфейс DOM</th>
+      <td>{{domxref("HTMLButtonElement")}}</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Специфікації
 

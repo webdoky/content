@@ -1,23 +1,7 @@
 ---
 title: <input type="radio">
 slug: Web/HTML/Element/input/radio
-tags:
-  - Choosing Options
-  - Element
-  - Form Options
-  - HTML
-  - HTML Input Types
-  - HTML forms
-  - HTML input
-  - Input
-  - Input Types
-  - Options
-  - Radio Buttons
-  - Radio Groups
-  - Reference
-  - form
-  - radio
-  - radio button
+page-type: html-element
 browser-compat: html.elements.input.type_radio
 ---
 
@@ -34,45 +18,6 @@ browser-compat: html.elements.input.type_radio
 ![Показує, який вигляд у старі часи мали радіокнопки.](old-radio.jpg)
 
 > **Примітка:** [Поля з галочками](/uk/docs/Web/HTML/Element/input/checkbox) подібні до радіокнопок, але мають важливу особливість: радіокнопки задумані для вибору з асортименту одного значення, натомість поля з галочками дають змогу по одному вмикати й вимикати значення. Коли присутні декілька контрольних елементів, радіокнопки дозволяють вибрати одну із них, натомість поля з галочками дають змогу вибрати декілька значень.
-
-<table class="properties">
-  <tbody>
-    <tr>
-      <td><strong><a href="#znachennia">Значення</a></strong></td>
-      <td>
-        Рядок, що представляє значення радіокнопки
-      </td>
-    </tr>
-    <tr>
-      <td><strong>Події</strong></td>
-      <td>{{domxref("HTMLElement/change_event", "change")}} та {{domxref("HTMLElement/input_event", "input")}}</td>
-    </tr>
-    <tr>
-      <td><strong>Підтримувані загальні атрибути</strong></td>
-      <td>
-        <code><a href="#attr-checked">checked</a></code
-        >, <code><a href="#attr-value">value</a></code> та
-        <code
-          ><a href="/uk/docs/Web/HTML/Attributes/required">required</a></code
-        >
-      </td>
-    </tr>
-    <tr>
-      <td><strong>Атрибути IDL</strong></td>
-      <td><code>checked</code> і <code>value</code></td>
-    </tr>
-    <tr>
-      <td><strong>Інтерфейс DOM</strong></td>
-      <td><p>{{domxref("HTMLInputElement")}}</p></td>
-    </tr>
-    <tr>
-      <td><strong>Методи</strong></td>
-      <td>
-        {{domxref("HTMLInputElement.select", "select()")}}
-      </td>
-    </tr>
-  </tbody>
-</table>
 
 ## Значення
 
@@ -176,17 +121,17 @@ form.addEventListener(
 
 На додачу до загальних атрибутів, притаманних всім елементам {{HTMLElement("input")}}, поля `radio` на додачу підтримують наступні:
 
-- {{htmlattrdef("checked")}}
+- `checked`
 
   - : Булів атрибут, котрий, коли присутній, вказує, що радіокнопка є вибраною.
 
     На відміну від інших браузерів, Firefox усталено [зберігає динамічний стан позначеності (англ.)](https://stackoverflow.com/questions/5985839/bug-with-firefox-disabled-attribute-of-input-not-resetting-when-refreshing) поля `<input>` між завантаженнями сторінки. Використовуйте атрибут {{htmlattrxref("autocomplete","input")}}, щоб контролювати цю функціональність.
 
-- {{htmlattrdef("value")}}
+- `value`
 
   - : Атрибут `value` поділяють всі поля {{HTMLElement("input")}}; втім, для полів типу `radio` він має особливе призначення: коли подається форма, то лише ті радіокнопки, що є позначеними, подаються на сервер, і їх надіслане значення – значення атрибута `value`. Якщо ж атрибут `value` не вказаний, то його значення усталено вважається рівним `on`. Це показано в розділі [Значення](#znachennia) вище.
 
-- {{htmlattrdef("required")}}
+- `required`
   - : Атрибут `required` поділяє більшість типів {{HTMLElement("input")}}. Якщо будь-яка з радіокнопок однієї групи має атрибут `required`, то одна з радіокнопок такої групи мусить бути позначеною, проте це не обов'язково повинна бути саме та, що має атрибут.
 
 ## Використання радіополів
@@ -335,6 +280,53 @@ button:active {
 {{EmbedLiveSample('oformlennia-radiopoliv', 600, 120)}}
 
 Зверніть увагу на те, що при клацанні радіокнопки, коли дві кнопки міняють стан, присутній приємний плавний ефект появи-зникнення. На додачу до цього, стиль та забарвлення легенди й кнопки подання – видозмінені, щоб мати суттєвий контраст. Це може бути не таким виглядом, який хотілось би мати в реальному вебзастосунку, зате показує доступні можливості.
+
+## Технічний підсумок
+
+<table class="properties">
+  <tbody>
+    <tr>
+      <td><strong><a href="#znachennia">Значення</a></strong></td>
+      <td>
+        Рядок, що представляє значення радіокнопки
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Події</strong></td>
+      <td>{{domxref("HTMLElement/change_event", "change")}} та {{domxref("HTMLElement/input_event", "input")}}</td>
+    </tr>
+    <tr>
+      <td><strong>Підтримувані загальні атрибути</strong></td>
+      <td>
+        <code><a href="#checked">checked</a></code
+        >, <code><a href="#value">value</a></code> та
+        <code
+          ><a href="/uk/docs/Web/HTML/Attributes/required">required</a></code
+        >
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Атрибути IDL</strong></td>
+      <td><code>checked</code> і <code>value</code></td>
+    </tr>
+    <tr>
+      <td><strong>Інтерфейс DOM</strong></td>
+      <td><p>{{domxref("HTMLInputElement")}}</p></td>
+    </tr>
+    <tr>
+      <td><strong>Методи</strong></td>
+      <td>
+        {{domxref("HTMLInputElement.select", "select()")}}
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Неявна роль ARIA</strong></td>
+      <td>
+        <code><a href="/uk/docs/Web/Accessibility/ARIA/Roles/radio_role">radio</a></code>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## Специфікації
 

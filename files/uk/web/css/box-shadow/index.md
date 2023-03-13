@@ -2,18 +2,6 @@
 title: box-shadow
 slug: Web/CSS/box-shadow
 page-type: css-property
-tags:
-  - CSS
-  - CSS Backgrounds and Borders
-  - CSS Property
-  - CSS Styles
-  - HTML Colors
-  - Reference
-  - Shadows
-  - Styles
-  - Styling HTML
-  - box-shadow
-  - recipe:css-property
 browser-compat: css.properties.box-shadow
 ---
 
@@ -160,6 +148,8 @@ p {
   padding: 1em;
 }
 ```
+
+<!-- ці кольори свідомо зроблені рожевим і блакитним. WCAG вимагає колірного контрасту між текстом і тлом, а не між кольорами, що межують. -->
 
 #### Результат
 

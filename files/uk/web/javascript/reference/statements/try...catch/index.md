@@ -1,11 +1,7 @@
 ---
 title: try...catch
 slug: Web/JavaScript/Reference/Statements/try...catch
-tags:
-  - Exception
-  - JavaScript
-  - Language feature
-  - Statement
+page-type: javascript-statement
 browser-compat: javascript.statements.try_catch
 ---
 
@@ -111,7 +107,7 @@ try {
 
 ### Ідентифікатор винятку
 
-Коли в блоку `try` викидається виняток, `exception_var` (тобто `e` в `catch (e)`) зберігає значення винятку. Цей ідентифікатор можна використати для отримання інформації про викинутий виняток. Він доступний лише в {{Glossary("Scope", "області видимості ")}} блоку `catch`. Якщо значення винятку непотрібне, цей ідентифікатор можна опустити.
+Коли в блоку `try` викидається виняток, `exception_var` (тобто `e` в `catch (e)`) зберігає значення винятку. Цей ідентифікатор можна використати для отримання інформації про викинутий виняток. Він доступний лише в {{Glossary("Scope", "області видимості")}} блоку `catch`. Якщо значення винятку непотрібне, цей ідентифікатор можна опустити.
 
 ```js
 function isValidJSON(text) {

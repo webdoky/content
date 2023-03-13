@@ -1,15 +1,7 @@
 ---
 title: Присвоєння з деструктуруванням
 slug: Web/JavaScript/Reference/Operators/Destructuring_assignment
-tags:
-  - Destructuring
-  - Destructuring_assignment
-  - ECMAScript 2015
-  - ES6
-  - JavaScript
-  - Language feature
-  - Nested object and array destructuring
-  - Operator
+page-type: javascript-language-feature
 browser-compat: javascript.operators.destructuring
 ---
 
@@ -154,7 +146,7 @@ const { b = console.log("hey") } = { b: 2 };
 
 ### Решта властивостей
 
-В кінці деструктурування можна поставити решту властивостей `...rest`. Цей патерн збереже всю решту властивостей об'єкта чи масиву в новий об'єкт чи масив.
+В кінці деструктурування можна поставити решту властивостей `...rest`. Цей патерн збереже всю решту властивостей об'єкта чи масиву в новий об'єкт або масив.
 
 ```js
 const { a, ...others } = { a: 1, b: 2, c: 3 };

@@ -1,23 +1,13 @@
 ---
 title: "<input>: Елемент введення (форм)"
 slug: Web/HTML/Element/input
-tags:
-  - Data entry
-  - Element
-  - Forms
-  - HTML
-  - HTML forms
-  - HTML input tag
-  - Input
-  - MakeBrowserAgnostic
-  - Reference
-  - Web
+page-type: html-element
 browser-compat: html.elements.input
 ---
 
 {{HTMLSidebar}}
 
-Елемент [HTML](/uk/docs/Web/HTML) **`<input>`** використовується для створення інтерактивних засобів керування у вебформах, щоб приймати дані від користувача; доступно широке розмаїття типів даних введення та контрольних віджетів, залежно від пристрою та {{Glossary("user agent", "користувацького агента")}}. Елемент `<input>` – один із найпотужніших та найскладніших у всій HTML, тому що має безліч комбінацій типів введення та атрибутів.
+Елемент [HTML](/uk/docs/Web/HTML) **`<input>`** використовується для створення інтерактивних засобів керування у вебформах, щоб приймати дані від користувача; доступно широке розмаїття типів даних введення та контрольних віджетів, залежно від пристрою та {{Glossary("User agent", "користувацького агента")}}. Елемент `<input>` – один із найпотужніших та найскладніших у всій HTML, тому що має безліч комбінацій типів введення та атрибутів.
 
 {{EmbedInteractiveExample("pages/tabbed/input-text.html", "tabbed-shorter")}}
 
@@ -289,9 +279,9 @@ browser-compat: html.elements.input
       <th colspan="3">Невживані значення</th>
     </tr>
     <tr>
-      <td><code>datetime</code></td>
+      <td><code>datetime</code> {{deprecated_inline}}</td>
       <td>
-        {{deprecated_inline}} Контрольний елемент для введення дати та часу (години, хвилини, секунди та частки секунди) на основі Всесвітнього координованого часу.
+        Контрольний елемент для введення дати та часу (години, хвилини, секунди та частки секунди) на основі Всесвітнього координованого часу.
       </td>
       <td id="exampledatetime">
         <pre class="brush: html hidden">
@@ -341,7 +331,7 @@ browser-compat: html.elements.input
 | [`src`](#src-dzherelo)                                   | `image`                                                              | Те саме, що атрибут <code>src</code> елемента {{htmlelement('img')}}; адреса ресурсу зображення                    |
 | [`step`](#step-krok)                                     | `date`, `month`, `week`, `time`, `datetime-local`, `number`, `range` | Крок квантування дійсних значень.                                                                                  |
 | [`type`](#type-typ)                                      | усі                                                                  | Тип контрольного елемента                                                                                          |
-| [`value`](#value-znachennia)                             | усі                                                                  | Початкове значення контрольного елемента.                                                                          |
+| [`value`](#value-znachennia)                             | усі, крім `image`                                                    | Початкове значення контрольного елемента.                                                                          |
 | [`width`](#width-shyryna)                                | `image`                                                              | Те саме, що атрибут <code>width</code> елемента {{htmlelement('img')}}                                             |
 
 Кілька додаткових нестандартних атрибутів перелічені після описів стандартних атрибутів.
@@ -358,11 +348,11 @@ browser-compat: html.elements.input
 
 - [`autocomplete`](/uk/docs/Web/HTML/Attributes/autocomplete)
 
-  - : (**Не** булів атрибут!) Атрибут [`autocomplete`](/uk/docs/Web/HTML/Attributes/autocomplete) приймає розділений пробілами рядок, що описує, який тип функціональності автозаповнення слід надати (якщо це можливо). Типова реалізація автозаповнення нагадує попередні значення, введені у таке ж поле вводу, але можуть існувати складніші форми автозаповнення. Наприклад, браузер може використовувати список контактів пристрою для автозаповнення адрес `email` у полі введення електронної адреси. Дивіться {{SectionOnPage("/uk/docs/Web/HTML/Attributes/autocomplete", "Значення")}} щодо дозволених значень.
+  - : (**Не** булів атрибут!) Атрибут [`autocomplete`](/uk/docs/Web/HTML/Attributes/autocomplete) приймає розділений пробілами рядок, що описує, який тип функціональності автозаповнення слід надати (якщо це можливо). Типова реалізація автозаповнення нагадує попередні значення, введені у таке ж поле вводу, але можуть існувати складніші форми автозаповнення. Наприклад, браузер може використовувати список контактів пристрою для автозаповнення адрес `email` у полі введення електронної адреси. Дивіться [`autocomplete`](/uk/docs/Web/HTML/Attributes/autocomplete#znachennia) щодо дозволених значень.
 
     Атрибут `autocomplete` чинний на `hidden`, `text`, `search`, `url`, `tel`, `email`, `date`, `month`, `week`, `time`, `datetime-local`, `number`, `range`, `color` та `password`. Цей атрибут не діє на типах полів введення, що не повертають числових або текстових даних, тобто діє на всіх типах, окрім `checkbox`, `radio`, `file`, а також типів кнопок.
 
-    Дивіться [Атрибут автозаповнення HTML](/uk/docs/Web/HTML/Attributes/autocomplete) для подробиць, включно з інформацією про безпеку паролів та тим, як `autocomplete` поводиться трохи інакше для типу `hidden`.
+    Дивіться [Атрибут `autocomplete`](/uk/docs/Web/HTML/Attributes/autocomplete) щодо подробиць, включно з інформацією про безпеку паролів та тим, як `autocomplete` поводиться трохи інакше для типу `hidden`.
 
 - `autofocus`
 
@@ -451,7 +441,7 @@ browser-compat: html.elements.input
 
 - `max` (максимум)
 
-  - : Чинний для `date`, `month`, `week`, `time`, `datetime-local`, `number` та`range`. Встановлює найбільше значення діапазону дозволених значень. Якщо введене у поле значення [`value`](#value-znachennia) більше за значення цього атрибута, то елемент провалює [валідацію обмежень](/uk/docs/Web/Guide/HTML/Constraint_validation). Якщо значення атрибута `max` не є числом, то елемент не має максимального значення.
+  - : Чинний для `date`, `month`, `week`, `time`, `datetime-local`, `number` та`range`. Встановлює найбільше значення діапазону дозволених значень. Якщо введене у поле значення [`value`](#value-znachennia) більше за значення цього атрибута, то елемент провалює [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation). Якщо значення атрибута `max` не є числом, то елемент не має максимального значення.
 
     Існує особливий випадок: якщо тип даних є періодичним (наприклад, датою чи часом), то значення `max` може бути меншим за значення `min`, що вказує на те, що діапазон може бути циклічним; наприклад, так можна вказати часовий діапазон від 22:00 до 4:00.
 
@@ -459,11 +449,11 @@ browser-compat: html.elements.input
 
   - : Чинний для `text`, `search`, `url`, `tel`, `email` та `password`. Встановлює найбільшу прийнятну кількість символів (як кодових одиниць UTF-16), що їх користувач може ввести у поле. Мусить мати ціле числове значення, не менше за `0`. Якщо атрибут `maxlength` не вказаний, або вказане недійсне значення, то поле не має максимальної довжини. Це значення мусить бути більшим або рівним значенню `minlength`.
 
-    Поле введення провалить [валідацію обмежень](/uk/docs/Web/Guide/HTML/Constraint_validation), якщо довжина введеного в поле тексту перевищить `maxlength` кодових одиниць UTF-16. Усталено браузери не дають користувачам вводити більше символів, ніж дозволено атрибутом `maxlength`. Детальніше про це в секції [Валідація на клієнтському боці](#validatsiia-na-kliientskomu-botsi).
+    Поле введення провалить [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation), якщо довжина введеного в поле тексту перевищить `maxlength` кодових одиниць UTF-16. Усталено браузери не дають користувачам вводити більше символів, ніж дозволено атрибутом `maxlength`. Детальніше про це в секції [Валідація на клієнтському боці](#validatsiia-na-kliientskomu-botsi).
 
 - `min` (мінімум)
 
-  - : Чинний для `date`, `month`, `week`, `time`, `datetime-local`, `number` та `range`. Визначає нижню межу діапазону прийнятних значень. Якщо значення [`value`](#value-znachennia), введене в елемент, менше за значення `min`, то елемент провалює [валідацію обмежень](/uk/docs/Web/Guide/HTML/Constraint_validation). Якщо значення атрибута `min` не є числом, то елемент не має мінімального значення.
+  - : Чинний для `date`, `month`, `week`, `time`, `datetime-local`, `number` та `range`. Визначає нижню межу діапазону прийнятних значень. Якщо значення [`value`](#value-znachennia), введене в елемент, менше за значення `min`, то елемент провалює [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation). Якщо значення атрибута `min` не є числом, то елемент не має мінімального значення.
 
     Це значення повинно бути меншим або рівним значенню атрибута `max`. Якщо присутній атрибут `min`, але його значення не вказане або недійсне, то не застосовується жодне мінімальне значення. Якщо атрибут `min` дійсний, і непусте значення поля менше за мінімум, встановлений атрибутом `min`, то валідація обмежень перешкодить поданню форми. Детальніше про це в секції [Валідація на клієнтському боці](#validatsiia-na-kliientskomu-botsi).
 
@@ -473,7 +463,7 @@ browser-compat: html.elements.input
 
   - : Чинний для `text`, `search`, `url`, `tel`, `email` та `password`. Встановлює найменшу прийнятну кількість символів (як кодових одиниць UTF-16), що їх користувач може ввести у поле. Мусить мати ціле числове значення, менше або рівне значенню `maxlength`. Якщо атрибут `minlength` не вказаний, або вказане недійсне значення, то поле не має мінімальної довжини.
 
-    Поле введення провалить [валідацію обмежень](/uk/docs/Web/Guide/HTML/Constraint_validation), якщо довжина введеного в поле тексту менша за `minlength` кодових одиниць UTF-16, і форма не буде подана. Детальніше про це в секції [Валідація на клієнтському боці](#validatsiia-na-kliientskomu-botsi).
+    Поле введення провалить [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation), якщо довжина введеного в поле тексту менша за `minlength` кодових одиниць UTF-16, і форма не буде подана. Детальніше про це в секції [Валідація на клієнтському боці](#validatsiia-na-kliientskomu-botsi).
 
 - `multiple` (кілька)
 
@@ -487,7 +477,7 @@ browser-compat: html.elements.input
 
     Існують два особливі випадки:
 
-    1. `_charset_` : Якщо використовувати такий рядок як значення імені елемента `<input>` типу {{HTMLElement("input/hidden", "hidden")}}, то значення поля введення `value` автоматично встановлюється {{Glossary("user agent", "користувацьким агентом")}} у кодування символів, що застосовується при поданні форми.
+    1. `_charset_` : Якщо використовувати такий рядок як значення імені елемента `<input>` типу {{HTMLElement("input/hidden", "hidden")}}, то значення поля введення `value` автоматично встановлюється {{Glossary("User agent", "користувацьким агентом")}} у кодування символів, що застосовується при поданні форми.
     2. `isindex`: З історичних причин ім'я [`isindex` (англ.)](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fe-name) заборонено.
 
     Атрибут [`name`](#name-imia) створює особливу поведінку на радіокнопках.
@@ -513,7 +503,7 @@ browser-compat: html.elements.input
 
 - `pattern` (патерн)
 
-  - : Чинний для полів типів `text`, `search`, `url`, `tel`, `email` і `password` атрибут `pattern` – регулярний вираз, котрому повинно відповідати значення [`value`](#value-znachennia) поля введення, щоб пройти [валідацію обмежень](/uk/docs/Web/Guide/HTML/Constraint_validation). Значенням атрибута має бути дійсний регулярний вираз JavaScript, такий, як використовується типом {{jsxref("RegExp")}} і як документовано у наших [настановах із регулярних виразів](/uk/docs/Web/JavaScript/Guide/Regular_Expressions). При компіляції регулярного виразу автоматично вказується прапорець `'u'`, тож схема розглядається як послідовність кодових точок Unicode, а не як ASCIII. Текст схеми не повинен бути оточений рисками.
+  - : Чинний для полів типів `text`, `search`, `url`, `tel`, `email` і `password` атрибут `pattern` – регулярний вираз, котрому повинно відповідати значення [`value`](#value-znachennia) поля введення, щоб пройти [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation). Значенням атрибута має бути дійсний регулярний вираз JavaScript, такий, як використовується типом {{jsxref("RegExp")}} і як документовано у наших [настановах із регулярних виразів](/uk/docs/Web/JavaScript/Guide/Regular_Expressions). При компіляції регулярного виразу автоматично вказується прапорець `'u'`, тож схема розглядається як послідовність кодових точок Unicode, а не як ASCIII. Текст схеми не повинен бути оточений рисками.
 
     Якщо атрибут `pattern` присутній, але не має значення, або має недійсне значення, то регулярний вираз не застосовується, і такий атрибут цілком ігнорується. Якщо атрибут з патерном дійсний, і непусте значення поля введення не відповідає йому, то валідація обмежень перешкодить поданню форми.
 
@@ -655,7 +645,7 @@ browser-compat: html.elements.input
 
 - `incremental` {{non-standard_inline}} (інкрементальний)
 
-  - : Булів атрибут `incremental` – це розширення WebKit і Blink (тож підтримується Safari, Opera, Chrome тощо), котрий, якщо присутній, вказує {{Glossary("user agent", "користувацькому агентові")}} обробляти введення як пошук в реальному часі. Поки користувач редагує значення поля, користувацький агент надсилає об'єктові {{domxref("HTMLInputElement")}}, що представляє поле пошуку, події {{domxref("HTMLInputElement/search_event", "search")}}. Це дає змогу кодові оновлювати результати пошуку в реальному часі, поки користувач редагує пошук.
+  - : Булів атрибут `incremental` – це розширення WebKit і Blink (тож підтримується Safari, Opera, Chrome тощо), котрий, якщо присутній, вказує {{Glossary("User agent", "користувацькому агентові")}} обробляти введення як пошук в реальному часі. Поки користувач редагує значення поля, користувацький агент надсилає об'єктові {{domxref("HTMLInputElement")}}, що представляє поле пошуку, події {{domxref("HTMLInputElement/search_event", "search")}}. Це дає змогу кодові оновлювати результати пошуку в реальному часі, поки користувач редагує пошук.
 
     Якщо атрибут `incremental` не вказаний, то подія {{domxref("HTMLInputElement/search_event", "search")}} надсилається лише якщо користувач явно запускає пошук (наприклад, натиснувши клавішу <kbd>Enter</kbd> чи <kbd>Return</kbd> при редагуванні поля).
 
@@ -1143,7 +1133,7 @@ nameInput.addEventListener("invalid", () => {
 
 > **Примітка:** Слід завжди валідувати обмеження введення як на клієнтському, так і на серверному боці. Валідація обмежень не усуває потреби валідації на _серверному боці_. Недійсні значення можуть все ж бути надіслані давнішими браузерами чи недоброзичливцями.
 
-> **Примітка:** Firefox підтримував власницький атрибут помилки — `x-moz-errormessage` — протягом багатьох версій, котрий давав змогу подібним чином встановлювати спеціальні повідомлення про помилки. Це було прибрано у версії 66 (дивіться {{bug(1513890)}}).
+> **Примітка:** Firefox підтримував власницький атрибут помилки — `x-moz-errormessage` — протягом багатьох версій, котрий давав змогу подібним чином встановлювати спеціальні повідомлення про помилки. Це було прибрано у версії 66 (дивіться [ваду Firefox 1513890](https://bugzil.la/1513890)).
 
 ### Локалізація
 
@@ -1161,19 +1151,19 @@ Firefox використовує наступну евристику для ви
   <tbody>
     <tr>
       <th scope="row">
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories"
+        <a href="/uk/docs/Web/HTML/Content_categories"
           >Категорії вмісту</a
         >
       </th>
       <td>
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#flow_content">Потоковий вміст</a>, перелічуваний, подаваний, скиданий, пов'язаний з формою елемент,
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#phrasing_content">оповідальний вміст</a>. Якщо <a href="#type-typ"><code>type</code></a> – не
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist">Потоковий вміст</a>, перелічуваний, подаваний, скиданий, пов'язаний з формою елемент,
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist">оповідальний вміст</a>. Якщо <a href="#type-typ"><code>type</code></a> – не
         <code>hidden</code>, то – підписуваний елемент, дотиковий вміст.
       </td>
     </tr>
     <tr>
       <th scope="row">Дозволений вміст</th>
-      <td>Жодного; це {{Glossary("void element", "пустий елемент")}}.</td>
+      <td>Жодного; це {{Glossary("Void element", "пустий елемент")}}.</td>
     </tr>
     <tr>
       <th scope="row">Упущення тега</th>
@@ -1183,7 +1173,7 @@ Firefox використовує наступну евристику для ви
       <th scope="row">Дозволені предки</th>
       <td>
         Будь-який елемент, що приймає
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#phrasing_content">оповідальний вміст</a>.
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist">оповідальний вміст</a>.
       </td>
     </tr>
     <tr>
@@ -1210,7 +1200,7 @@ Firefox використовує наступну евристику для ви
                     href="/uk/docs/Web/Accessibility/ARIA/Roles/textbox_role">textbox</a></code>
               </li>
               <li>
-                з атрибутом <code>list</code>: {{ARIARole("combobox")}}
+                з атрибутом <code>list</code>: <a href="/uk/docs/Web/Accessibility/ARIA/Roles/combobox_role"><code>combobox</code></a>
               </li>
             </ul>
           </li>
@@ -1220,10 +1210,10 @@ Firefox використовує наступну евристику для ви
               ><a href="/uk/docs/Web/Accessibility/ARIA/Roles/button_role">button</a></code>
           </li>
           <li>
-            <code>type=number</code>: {{ARIARole("spinbutton")}}
+            <code>type=number</code>: <a href="/uk/docs/Web/Accessibility/ARIA/Roles/spinbutton_role"><code>spinbutton</code></a>
           </li>
-          <li><code>type=radio</code>: {{ARIARole("radio")}}</li>
-          <li><code>type=range</code>: {{ARIARole("slider")}}</li>
+          <li><code>type=radio</code>: <a href="/uk/docs/Web/Accessibility/ARIA/Roles/radio_role"><code>radio</code></a></li>
+          <li><code>type=range</code>: <a href="/uk/docs/Web/Accessibility/ARIA/Roles/slider_role"><code>slider</code></a></li>
           <li>
             <code>type=reset</code>:
             <code><a href="/uk/docs/Web/Accessibility/ARIA/Roles/button_role">button</a></code>
@@ -1232,10 +1222,10 @@ Firefox використовує наступну евристику для ви
             <code>type=search</code>
             <ul>
               <li>
-                без атрибута <code>list</code>: {{ARIARole("searchbox")}}
+                без атрибута <code>list</code>: <a href="/uk/docs/Web/Accessibility/ARIA/Roles/searchbox_role"><code>searchbox</code></a>
               </li>
               <li>
-                з атрибутом <code>list</code>: {{ARIARole("combobox")}}
+                з атрибутом <code>list</code>: <a href="/uk/docs/Web/Accessibility/ARIA/Roles/combobox_role"><code>combobox</code></a>
               </li>
             </ul>
           </li>
@@ -1253,7 +1243,7 @@ Firefox використовує наступну евристику для ви
                 <code><a href="/uk/docs/Web/Accessibility/ARIA/Roles/textbox_role">textbox</a></code>
               </li>
               <li>
-                з атрибутом <code>list</code>: {{ARIARole("combobox")}}
+                з атрибутом <code>list</code>: <a href="/uk/docs/Web/Accessibility/ARIA/Roles/combobox_role"><code>combobox</code></a>
               </li>
             </ul>
           </li>
@@ -1265,7 +1255,7 @@ Firefox використовує наступну евристику для ви
                 <code><a href="/uk/docs/Web/Accessibility/ARIA/Roles/textbox_role">textbox</a></code>
               </li>
               <li>
-                з атрибутом <code>list</code>: {{ARIARole("combobox")}}
+                з атрибутом <code>list</code>: <a href="/uk/docs/Web/Accessibility/ARIA/Roles/combobox_role"><code>combobox</code></a>
               </li>
             </ul>
           </li>
@@ -1277,7 +1267,7 @@ Firefox використовує наступну евристику для ви
                 <code><a href="/uk/docs/Web/Accessibility/ARIA/Roles/textbox_role">textbox</a></code>
               </li>
               <li>
-                з атрибутом <code>list</code>: {{ARIARole("combobox")}}
+                з атрибутом <code>list</code>: <a href="/uk/docs/Web/Accessibility/ARIA/Roles/combobox_role"><code>combobox</code></a>
               </li>
             </ul>
           </li>
@@ -1293,34 +1283,34 @@ Firefox використовує наступну евристику для ви
       <td>
         <ul>
           <li>
-            <code>type=button</code>: {{ARIARole("checkbox")}},
-            {{ARIARole("combobox")}},
-            {{ARIARole("link")}},
-            {{ARIARole("menuitem")}},
-            {{ARIARole("menuitemcheckbox")}},
-            {{ARIARole("menuitemradio")}},
-            {{ARIARole("option")}}, {{ARIARole("radio")}},
-            {{ARIARole("switch")}}, {{ARIARole("tab")}}
+            <code>type=button</code>: <a href="/uk/docs/Web/Accessibility/ARIA/Roles/checkbox_role"><code>checkbox</code></a>,
+            <a href="/uk/docs/Web/Accessibility/ARIA/Roles/combobox_role"><code>combobox</code></a>,
+            <a href="/uk/docs/Web/Accessibility/ARIA/Roles/link_role"><code>link</code></a>,
+            <a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitem_role"><code>menuitem</code></a>,
+            <a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitemcheckbox_role"><code>menuitemcheckbox</code></a>,
+            <a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitemradio_role"><code>menuitemradio</code></a>,
+            <a href="/uk/docs/Web/Accessibility/ARIA/Roles/option_role"><code>option</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/radio_role"><code>radio</code></a>,
+            <a href="/uk/docs/Web/Accessibility/ARIA/Roles/switch_role"><code>switch</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/tab_role"><code>tab</code></a>
           </li>
           <li>
-            <code>type=checkbox</code>: {{ARIARole("button")}}, коли використовується разом з <code>aria-pressed</code>,
-            {{ARIARole("menuitemcheckbox")}},
-            {{ARIARole("option")}}, {{ARIARole("switch")}}
+            <code>type=checkbox</code>: <a href="/uk/docs/Web/Accessibility/ARIA/Roles/button_role"><code>button</code></a>, коли використовується разом з <code>aria-pressed</code>,
+            <a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitemcheckbox_role"><code>menuitemcheckbox</code></a>,
+            <a href="/uk/docs/Web/Accessibility/ARIA/Roles/option_role"><code>option</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/switch_role"><code>switch</code></a>
           </li>
           <li>
-            <code>type=image</code>: {{ARIARole("link")}},
-            {{ARIARole("menuitem")}},
-            {{ARIARole("menuitemcheckbox")}},
-            {{ARIARole("menuitemradio")}},
-            {{ARIARole("radio")}}, {{ARIARole("switch")}}
+            <code>type=image</code>: <a href="/uk/docs/Web/Accessibility/ARIA/Roles/link_role"><code>link</code></a>,
+            <a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitem_role"><code>menuitem</code></a>,
+            <a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitemcheckbox_role"><code>menuitemcheckbox</code></a>,
+            <a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitemradio_role"><code>menuitemradio</code></a>,
+            <a href="/uk/docs/Web/Accessibility/ARIA/Roles/radio_role"><code>radio</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/switch_role"><code>switch</code></a>
           </li>
           <li>
-            <code>type=radio</code>: {{ARIARole("menuitemradio")}}
+            <code>type=radio</code>: <a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitemradio_role"><code>menuitemradio</code></a>
           </li>
           <li>
             <code>type=text</code> без атрибута <code>list</code>:
-            {{ARIARole("combobox")}}, {{ARIARole("searchbox")}},
-            {{ARIARole("spinbutton")}}
+            <a href="/uk/docs/Web/Accessibility/ARIA/Roles/combobox_role"><code>combobox</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/searchbox_role"><code>searchbox</code></a>,
+            <a href="/uk/docs/Web/Accessibility/ARIA/Roles/spinbutton_role"><code>spinbutton</code></a>
           </li>
           <li>
             <code>type=color|date|datetime-local|email|file|hidden|</code>
@@ -1369,7 +1359,7 @@ Firefox використовує наступну евристику для ви
 
 ## Дивіться також
 
-- [Валідація обмежень форми](/uk/docs/Web/Guide/HTML/Constraint_validation)
+- [Валідація обмежень форми](/uk/docs/Web/HTML/Constraint_validation)
 - [Ваша перша форма HTML](/uk/docs/Learn/Forms/Your_first_form)
 - [Як упорядковувати форму HTML](/uk/docs/Learn/Forms/How_to_structure_a_web_form)
 - [Нативні віджети форми](/uk/docs/Learn/Forms/Basic_native_form_controls)

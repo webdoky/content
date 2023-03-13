@@ -1,15 +1,7 @@
 ---
 title: "<table>: Елемент таблиці"
 slug: Web/HTML/Element/table
-tags:
-  - Element
-  - HTML
-  - HTML tabular data
-  - NeedsLiveSample
-  - Reference
-  - Sorting
-  - Tables
-  - Web
+page-type: html-element
 browser-compat: html.elements.table
 ---
 
@@ -23,12 +15,12 @@ browser-compat: html.elements.table
   <tbody>
     <tr>
       <th scope="row">
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories"
+        <a href="/uk/docs/Web/HTML/Content_categories"
           >Категорії вмісту</a
         >
       </th>
       <td>
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#potokovyi-vmist"
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
           >Потоковий вміст</a
         >
       </td>
@@ -87,7 +79,7 @@ browser-compat: html.elements.table
 
 ### Нерекомендовані атрибути
 
-- {{htmlattrdef("align")}} {{Deprecated_inline}}
+- `align` {{Deprecated_inline}}
 
   - : Цей [перелічуваний](/uk/docs/Glossary/Enumerated) атрибут показує, як таблиця повинна шикуватися всередині контейнерного документа. Може мати наступні значення:
 
@@ -97,51 +89,51 @@ browser-compat: html.elements.table
 
     Щоб отримати подібний до атрибута align ефект, слід задати {{cssxref("margin-left")}} і {{cssxref("margin-right")}} зі значенням `auto` або {{cssxref("margin")}} зі значенням `0 auto`.
 
-- {{htmlattrdef("bgcolor")}} {{Deprecated_inline}}
+- `bgcolor` {{Deprecated_inline}}
 
-  - : Колір тла таблиці. Є [шестицифровим шістнадцятковим кодом RGB](/uk/docs/Web/CSS/color_value#koliory-rgb) з префіксом '`#`'. Також може бути використане одне з наперед визначених [колірних ключових слів](/uk/docs/Web/CSS/color_value#kliuchovi-slova-kolioru).
+  - : Колір тла таблиці. Є [шестицифровим шістнадцятковим кодом RGB](/uk/docs/Web/CSS/hex-color) з префіксом '`#`'. Також може бути використане одне з наперед визначених [колірних ключових слів](/uk/docs/Web/CSS/named-color).
 
     Подібного ефекту можна досягнути за допомогою властивості CSS {{cssxref("background-color")}}.
 
-- {{htmlattrdef("border")}} {{Deprecated_inline}}
+- `border` {{Deprecated_inline}}
 
   - : Цей цілочисловий атрибут визначає у пікселях розмір рамки, що оточує таблицю. Якщо задано 0, то атрибут {{htmlattrxref("frame", "table")}} отримує порожнє значення.
 
     Подібного ефекту можна досягнути за допомогою властивості-скорочення CSS {{cssxref("border")}}.
 
-- {{htmlattrdef("cellpadding")}} {{Deprecated_inline}}
+- `cellpadding` {{Deprecated_inline}}
 
   - : Цей атрибут визначає проміжок між вмістом комірки та її межами, показаними чи ні. Якщо розмір cellpadding визначений у пікселях, то цей піксельний простір буде застосований до всіх чотирьох сторін вмісту комірки. Якщо розмір визначений за допомогою відсоткового значення, то вміст буде центрований, і загальний вертикальний простір (згори та внизу) представлятиме це значення. Те саме діє для загального горизонтального простору (зліва та справа).
 
     Подібного ефекту можна досягнути, застосувавши властивість {{cssxref("border-collapse")}} зі значенням collapse до елемента `<table>`, і властивість {{cssxref("padding")}} до елементів {{HTMLElement("td")}}.
 
-- {{htmlattrdef("cellspacing")}} {{Deprecated_inline}}
+- `cellspacing` {{Deprecated_inline}}
 
   - : Цей атрибут визначає розмір простору між двома комірками у відсоткових значеннях чи пікселях. Він застосовується і по горизонталі, і по вертикалі, до простору між верхом таблиці та комірками першого ряду, лівого боку таблиці та першої колонки, правого боку таблиці та останньої колонки, і низу таблиці та останнього ряду.
 
     Подібного ефекту можна досягнути, застосувавши властивість {{cssxref("border-spacing")}} до елемента `<table>`. `border-spacing` ніяк не діє, якщо {{cssxref("border-collapse")}} має значення collapse.
 
-- {{htmlattrdef("frame")}} {{Deprecated_inline}}
+- `frame` {{Deprecated_inline}}
 
   - : Цей атрибут визначає, який бік рамок, що оточують таблицю, повинен бути показаний.
 
     Подібного ефекту можна досягнути за допомогою властивостей {{cssxref("border-style")}} і {{cssxref("border-width")}}.
 
-- {{htmlattrdef("rules")}} {{Deprecated_inline}}
+- `rules` {{Deprecated_inline}}
 
   - : Цей атрибут визначає, де напрямні, тобто лінії, повинні з'явитися в таблиці. Може мати наступні значення:
 
     - `none` – жодні напрямні не будуть виведені; це усталене значення;
     - `groups` – призведе до виводу напрямних винятково між групами рядів (визначених елементами {{HTMLElement("thead")}}, {{HTMLElement("tbody")}} і {{HTMLElement("tfoot")}}) та між групами колонок (визначеними елементами {{HTMLElement("col")}} і {{HTMLElement("colgroup")}});
     - `rows` – напрямні будуть виведені між рядами;
-    - `columns` – напрямні будуть виведені між колонками;
+    - `cols` – напрямні будуть виведені між колонками;
     - `all` – напрямні будуть виведені і між рядами, і між колонками.
 
     Подібного ефекту можна досягнути, застосувавши властивість {{cssxref("border")}} до відповідних елементів {{HTMLElement("thead")}}, {{HTMLElement("tbody")}}, {{HTMLElement("tfoot")}}, {{HTMLElement("col")}} чи {{HTMLElement("colgroup")}}.
 
-- {{htmlattrdef("summary")}} {{Deprecated_inline}}
+- `summary` {{Deprecated_inline}}
   - : Цей атрибут визначає альтернативний текст, що резюмує вміст таблиці. Замість нього слід використовувати елемент {{htmlelement("caption")}}.
-- {{htmlattrdef("width")}} {{Deprecated_inline}}
+- `width` {{Deprecated_inline}}
   - : Цей атрибут визначає ширину таблиці. Замість нього слід використовувати властивість {{cssxref("width")}}.
 
 ## Приклади
@@ -380,7 +372,7 @@ for (const table of allTables) {
 
 ### Виведення великих таблиць у малому просторі
 
-Поширена проблема з таблицями в Інтернеті – те, що вони не працюють нативно достатньо добре на дрібних екранах, коли в них багато вмісту, і спосіб зробити їх прокрутними – неочевидний, особливо коли розмітка надходить з CDN і не можна додати обгортку.
+Поширена проблема з таблицями в Інтернеті – те, що вони не працюють нативно достатньо добре на дрібних екранах, коли в них багато вмісту, і спосіб зробити їх прокрутними – неочевидний, особливо коли розмітка надходить з CMS і не можна додати обгортку.
 
 Цей приклад пропонує один зі способів виведення таблиць у малому просторі. HTML приховано, адже він дуже великий, і в ньому немає нічого особливого. У цьому прикладі цікавіше дослідити CSS.
 
@@ -644,14 +636,14 @@ tr:last-child td {
     <tr>
       <th scope="row">Синій</th>
       <td><code>#0057b8</code></td>
-      <td><code>hsla(212, 100%, 36.1%, 1)</code></td>
-      <td><code>rgba(0, 87, 184, 1)</code></td>
+      <td><code>hsl(212 100% 36.1% / 1)</code></td>
+      <td><code>rgb(0 87 184 / 1)</code></td>
     </tr>
     <tr>
       <th scope="row">Жовтий</th>
       <td><code>#ffd700</code></td>
-      <td><code>hsla(51, 100%, 50%, 1)</code></td>
-      <td><code>rgba(255, 215, 0, 1)</code></td>
+      <td><code>hsl(51 100% 50% / 1)</code></td>
+      <td><code>rgb(255 215 0 / 1)</code></td>
     </tr>
   </tbody>
 </table>

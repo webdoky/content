@@ -1,13 +1,7 @@
 ---
 title: Map
 slug: Web/JavaScript/Reference/Global_Objects/Map
-tags:
-  - Class
-  - ECMAScript 2015
-  - JavaScript
-  - Map
-  - Reference
-  - Polyfill
+page-type: javascript-class
 browser-compat: javascript.builtins.Map
 ---
 
@@ -59,6 +53,19 @@ browser-compat: javascript.builtins.Map
       </td>
     </tr>
     <tr>
+      <th scope="row">Безпека</th>
+      <td>
+        Об'єкти <code>Map</code> безпечно використовувати з наданими користувачем ключами та значеннями.
+      </td>
+      <td>
+        <p>
+          Задання наданих користувачем пар ключ-значення на об'єкті <code>Object</code> може дати нападникові змогу замістити прототип об'єкта, що може призвести до <a href="https://github.com/eslint-community/eslint-plugin-security/blob/main/docs/the-dangers-of-square-bracket-notation.md">
+            атак об'єктних ін'єкцій
+          </a>. Подібно до проблеми конфліктних ключів, ситуацію тут можна поліпшити шляхом використання об'єктів з прототипом <code>null</code>.
+        </p>
+      </td>
+    </tr>
+    <tr>
       <th scope="row">Типи ключів</th>
       <td>
         Ключі в <code>Map</code> можуть мати будь-яке значення (включно з функціями, об'єктами та будь-якими примітивними значеннями).
@@ -102,7 +109,7 @@ browser-compat: javascript.builtins.Map
         Кількість елементів всередині <code>Map</code> легко отримується з його властивості {{jsxref("Map.prototype.size", "size")}}.
       </td>
       <td>
-        Кількість елементів всередині <code>Object</code> слід обраховувати самотужки.
+        З'ясування кількості елементів усередині <code>Object</code> виконується в обхід, менш ефективно. Загальноприйнятий спосіб це зробити – через {{jsxref("Array/length", "length")}} масиву, поверненого з {{jsxref("Object.keys()")}}.
       </td>
     </tr>
     <tr>
@@ -230,10 +237,16 @@ console.log(contacts.size); // 1
 
 ## Властивості примірника
 
+Ці властивості означені на `Map.prototype` і є спільними для всіх примірників `Map`.
+
+- {{jsxref("Object/constructor", "Map.prototype.constructor")}}
+  - : Функція-конструктор, що створила об'єкт-примірник. Для примірників `Map` початковим значенням є конструктор {{jsxref("Map/Map", "Map")}}.
 - `Map.prototype[@@toStringTag]`
   - : Початкове значення властивості [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"Map"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}.
 - {{jsxref("Map.prototype.size")}}
   - : Повертає кількість пар ключ-значення об'єкта `Map`.
+- `Map.prototype[@@toStringTag]`
+  - : Початковим значенням властивості [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) є рядок `"Map"`. Вона використовується в {{jsxref("Object.prototype.toString()")}}.
 
 ## Методи примірника
 

@@ -1,18 +1,7 @@
 ---
 title: "<a>: Якірний елемент"
 slug: Web/HTML/Element/a
-tags:
-  - Content
-  - Element
-  - HTML
-  - HTML text-level semantics
-  - HTML:Flow content
-  - HTML:Interactive content
-  - HTML:Palpable Content
-  - HTML:Phrasing content
-  - Inline element
-  - Reference
-  - Web
+page-type: html-element
 browser-compat: html.elements.a
 ---
 
@@ -28,9 +17,9 @@ browser-compat: html.elements.a
 
 Атрибути цього елемента включають [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
 
-- {{HTMLAttrDef("download")}}
+- `download`
 
-  - : Змушує браузер обробляти заданий URL як завантаження. Може використовуватись як без, так і зі значенням:
+  - : Змушує браузер обробляти заданий URL як завантаження. Може використовуватись як без, так і зі значенням `filename`:
 
     - Якщо значення немає, то браузер запропонує ім'я файлу та розширення, згенеровані з різних джерел:
 
@@ -38,7 +27,7 @@ browser-compat: html.elements.a
       - Останнього сегмента [шляху](/uk/docs/Web/API/URL/pathname) URL
       - {{Glossary("MIME_type", "Типу медіаданих")}} (із заголовка {{HTTPHeader("Content-Type")}}, початку [URL `data:`](/uk/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) чи {{domxref("Blob.type")}} в [URL `blob:`](/uk/docs/Web/API/URL/createObjectURL))
 
-    - Якщо значення задане, то воно буде запропоновано як назва файлу. Символи `/` і `\` перетворюються на підкреслення (`_`). Файлові системи можуть забороняти інші символи в іменах файлів, тож браузери підлаштовуватимуть запропоноване ім'я, якщо це необхідно.
+    - `filename`: якщо значення задане, то воно буде запропоновано як назва файлу. Символи `/` і `\` перетворюються на підкреслення (`_`). Файлові системи можуть забороняти інші символи в іменах файлів, тож браузери підлаштовуватимуть запропоноване ім'я, якщо це необхідно.
 
     > **Примітка:**
     >
@@ -49,36 +38,37 @@ browser-compat: html.elements.a
     >   - Якщо заголовок задає `filename`, то таке ім'я файлу матиме пріоритет над заданим в атрибуті `download`.
     >   - Якщо заголовок задає природу ресурсу як `inline` (вбудовану), Chrome і Firefox віддадуть пріоритет атрибутові та оброблятимуть це як завантаження. Старі версії Firefox (до 82) віддавали пріоритет заголовкові та показували вміст як вбудований.
 
-- {{HTMLAttrDef("href")}}
+- `href`
 
   - : URL, на котрий вказує гіперпосилання. Посилання не обмежені HTTP URL: вони можуть використовувати будь-яку схему URL, котру підтримують браузери:
 
-    - Секції сторінки з URL фрагментів
-    - Шматочки медіафайлів з фрагментами медіа
-    - Номери телефонів з URL `tel:`
-    - Адреси електронної пошти з URL `mailto:`
+    - Розділи сторінки – за допомогою фрагментів документів
+    - Конкретні частини тексту - за допомогою [текстових фрагментів](/uk/docs/Web/Text_fragments)
+    - Шматочки медіафайлів – за допомогою фрагментів медіа
+    - Номери телефонів – за допомогою URL `tel:`
+    - Адреси електронної пошти – за допомогою URL `mailto:`
     - Хоч веббраузери можуть не підтримувати інші схеми URL, вебсайти можуть їх підтримувати за допомогою [`registerProtocolHandler()`](/uk/docs/Web/API/Navigator/registerProtocolHandler)
 
-- {{HTMLAttrDef("hreflang")}}
+- `hreflang`
   - : Рекомендації щодо мови тексту в ресурсі за посиланням. Вбудованої логіки немає. Дозволені значення – такі самі, як в [глобального атрибута `lang`](/uk/docs/Web/HTML/Global_attributes/lang).
-- {{HTMLAttrDef("ping")}}
+- `ping`
   - : Розділений пробілами список URL. Коли відбувається перехід за посиланням, браузер пошле на ці URL {{HTTPMethod("POST")}}-запити з тілом `PING`. Зазвичай цей атрибут використовується для відстеження.
-- {{HTMLAttrDef("referrerpolicy")}}
+- `referrerpolicy`
 
   - : Яка інформація про [посилача](/uk/docs/Web/HTTP/Headers/Referer) буде надіслана при переході за посиланням.
 
     - `no-referrer`: Заголовок {{HTTPHeader("Referer")}} не буде надісланий.
     - `no-referrer-when-downgrade`: Заголовок {{HTTPHeader("Referer")}} не буде надісланий на ті {{Glossary("origin", "походження")}}, що не мають {{Glossary("TLS")}} ({{Glossary("HTTPS")}}).
-    - `origin`: Надісланий посилач буде обмежений походженням сторінки, що містить посилання: її [схемою](/uk/docs/Learn/Common_questions/What_is_a_URL), {{Glossary("host", "хостом")}} та {{Glossary("port", "портом")}}.
+    - `origin`: Надісланий посилач буде обмежений походженням сторінки, що містить посилання: її [схемою](/uk/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL), {{Glossary("host", "хостом")}} та {{Glossary("port", "портом")}}.
     - `origin-when-cross-origin`: Посилач, надісланий іншим походженням, буде обмежений схемою, хостом та портом. Переходи в межах того самого походження включатимуть увесь шлях.
     - `same-origin`: Посилач буде надісланий, якщо {{Glossary("Same-origin policy", "збігається походження")}}, натомість запити між різними походженнями не міститимуть інформації про посилача.
     - `strict-origin`: Надсилати як посилач походження документа, коли рівень протоколу захисту залишається сталим (HTTPS→HTTPS), але не надсилати його за менш захищеною адресою (HTTPS→HTTP).
     - `strict-origin-when-cross-origin` (усталене значення): Надсилати увесь URL при виконанні запиту за тим само походженням, надсилати лише походження, коли рівень протоколу захисту залишається сталим (HTTPS→HTTPS), і не надсилати заголовка за менш захищеною адресою (HTTPS→HTTP).
     - `unsafe-url`: Посилач включатиме походження _та_ шлях (але не [фрагмент](/uk/docs/Web/API/HTMLAnchorElement/hash), [пароль](/uk/docs/Web/API/HTMLAnchorElement/password) чи [ім'я користувача](/uk/docs/Web/API/HTMLAnchorElement/username)). **Це значення є небезпечним**, тому що воно пропускає походження та шляхи з захищених TLS ресурсів до незахищених походжень.
 
-- {{HTMLAttrDef("rel")}}
-  - : Відношення вказаного URL як розділені пробілами [типи посилань](/uk/docs/Web/HTML/Link_types).
-- {{HTMLAttrDef("target")}}
+- `rel`
+  - : Відношення вказаного URL як розділені пробілами типи посилань.
+- `target`
 
   - : Де показувати вказаний URL; значенням є ім'я _контексту перегляду_ (вкладка, вікно чи {{HTMLElement("iframe")}}). Наступні ключові слова мають особливі значення щодо того, де завантажувати URL:
 
@@ -87,131 +77,34 @@ browser-compat: html.elements.a
     - `_parent`: контекст перегляду, що є батьківським відносно поточного. Якщо такого контексту немає, це значення поводиться як `_self`.
     - `_top`: найвищий контекст перегляду (серед тих, що є предками відносно поточного). Якщо предків немає, це значення поводиться як `_self`.
 
-    > **Примітка:** `target="_blank"` на елементах `<a>` неявно встановлює таку саму поведінку `rel`, як встановлення [`rel="noopener"`](/uk/docs/Web/HTML/Link_types/noopener), що не заповнює `window.opener`.
+    > **Примітка:** `target="_blank"` на елементах `<a>` неявно встановлює таку саму поведінку `rel`, як встановлення [`rel="noopener"`](/uk/docs/Web/HTML/Attributes/rel/noopener), що не заповнює `window.opener`.
 
-- {{HTMLAttrDef("type")}}
+- `type`
   - : Дає підказку щодо формату ресурсу за URL у вигляді {{Glossary("MIME type", "типу MIME")}}. Вбудованої функціональності немає.
 
 ### Нерекомендовані атрибути
 
-- {{HTMLAttrDef("charset")}} {{Deprecated_Inline}}
+- `charset` {{Deprecated_Inline}}
 
   - : Підказка щодо {{Glossary("character encoding", "кодування символів")}} ресурсу за URL.
 
     > **Примітка:** Цей атрибут є нерекомендованим і **не повинен використовуватись авторами**. Використовуйте HTTP заголовок {{HTTPHeader("Content-Type")}} за вказаним URL.
 
-- {{HTMLAttrDef("coords")}} {{Deprecated_Inline}}
+- `coords` {{Deprecated_Inline}}
   - : Використовується разом з [атрибутом `shape`](#attr-shape). Розділений комами список координат.
-- {{HTMLAttrDef("name")}} {{Deprecated_Inline}}
+- `name` {{Deprecated_Inline}}
 
   - : Був необхідним для встановлення можливого цільового місця на сторінці. В HTML 4.01 і `id`, і `name` могли використовуватися на `<a>`, за умови що вони мали ідентичні значення.
 
     > **Примітка:** Використовуйте натомість глобальний атрибут {{HTMLAttrxRef("id")}}.
 
-- {{HTMLAttrDef("rev")}} {{Deprecated_Inline}}
+- `rev` {{Deprecated_Inline}}
   - : Вказував зворотне посилання; протилежність [атрибута `rel`](#attr-rel). Став нерекомендованим через те, що збивав з пантелику.
-- {{HTMLAttrDef("shape")}} {{Deprecated_Inline}}
+- `shape` {{Deprecated_Inline}}
 
   - : Форма регіону гіперпосилання на бітовій карті.
 
     > **Примітка:** Використовуйте натомість для бітових карт елемент {{HTMLElement("area")}}.
-
-## Властивості
-
-<table class="properties">
-  <tbody>
-    <tr>
-      <th scope="row">
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories"
-          >Категорії вмісту</a
-        >
-      </th>
-      <td>
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#flow_content"
-          >Потоковий вміст</a
-        >,
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#phrasing_content"
-          >оповідальний вміст</a
-        >,
-        <a
-          href="/uk/docs/Web/Guide/HTML/Content_categories#interactive_content"
-          >інтерактивний вміст</a
-        >, дотиковий вміст.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволений вміст</th>
-      <td>
-        <a
-          href="/uk/docs/Web/Guide/HTML/Content_categories#model-prozoroho-vmistu"
-          >Прозорий</a
-        >, але жодний нащадок не може бути
-        <a
-          href="/uk/docs/Web/Guide/HTML/Content_categories#interactive_content"
-          >інтерактивним вмістом</a
-        > чи елементом
-        <a href="/uk/docs/Web/HTML/Element/a"
-          >a</a
-        >; крім того, жодний нащадок не може мати атрибута
-        <a
-          href="/uk/docs/Web/HTML/Global_attributes/tabindex"
-          >tabindex</a
-        >.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Упущення тегів</th>
-      <td>{{no_tag_omission}}</td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені батьківські елементи</th>
-      <td>
-        Будь-який елемент, що приймає
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#phrasing_content"
-          >оповідальний вміст</a
-        >, або будь-який елемент, що приймає
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#flow_content"
-          >потоковий елемент</a
-        >, але не інший елемент <code>&#x3C;a></code>.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Неявна роль ARIA</th>
-      <td>
-        {{ARIARole("link")}}, коли присутній атрибут <code>href</code>, інакше –
-        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"
-          >жодної відповідної ролі</a
-        >
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені ролі ARIA</th>
-      <td>
-        <p>Коли присутній атрибут <code>href</code>:</p>
-        <ul>
-          <li>{{ARIARole("button")}}</li>
-          <li>{{ARIARole("checkbox")}}</li>
-          <li>{{ARIARole("menuitem")}}</li>
-          <li>{{ARIARole("menuitemcheckbox")}}</li>
-          <li>{{ARIARole("menuitemradio")}}</li>
-          <li>{{ARIARole("option")}}</li>
-          <li>{{ARIARole("radio")}}</li>
-          <li>{{ARIARole("switch")}}</li>
-          <li>{{ARIARole("tab")}}</li>
-          <li>{{ARIARole("treeitem")}}</li>
-        </ul>
-        <p>Коли атрибута <code>href</code> немає:</p>
-        <ul>
-          <li>будь-яка роль</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Інтерфейс DOM</th>
-      <td>{{DOMxRef("HTMLAnchorElement")}}</td>
-    </tr>
-  </tbody>
-</table>
 
 ## Приклади
 
@@ -258,6 +151,10 @@ a {
 <h2 id="rozdil-nyzhche">Розділ нижче</h2>
 ```
 
+#### Результат
+
+{{EmbedLiveSample('posylannia-na-element-v-mezhakh-tiiei-samoi-storinky')}}
+
 > **Примітка:** Для посилання на верх поточної сторінки можна використовувати `href="#top"` чи пустий фрагмент (`href="#"`), [це описано в специфікації HTML (англ.)](https://html.spec.whatwg.org/multipage/browsing-the-web.html#scroll-to-the-fragment-identifier).
 
 ### Посилання на адресу електронної пошти
@@ -268,14 +165,22 @@ a {
 <a href="mailto:nowhere@mozilla.org">Послати в нікуди електронного листа</a>
 ```
 
+#### Результат
+
+{{EmbedLiveSample('posylannia-na-adresu-elektronnoi-poshty')}}
+
 Для деталей щодо URL `mailto:`, наприклад, включення в них теми чи тіла листа, читайте [посилання електронної пошти](/uk/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#posylannia-elektronnoi-poshty) чи {{RFC(6068)}}.
 
 ### Посилання на номери телефонів
 
 ```html
 <a href="tel:+49.157.0156">+49 157 0156</a>
-<a href="tel:+1(555)5309">(555) 5309</a>
+<a href="tel:+1(800)555-0123">(800) 555-0123</a>
 ```
+
+#### Результат
+
+{{EmbedLiveSample('posylannia-na-nomery-telefoniv')}}
 
 Поведінка посилання `tel:` відрізняється залежно від можливостей пристрою:
 
@@ -359,7 +264,7 @@ document
 
 Елементи `<a>` можуть мати наслідки для захищеності та приватності користувачів. Дивіться [Заголовок `Referer`: занепокоєння щодо приватності та захищеності](/uk/docs/Web/Security/Referer_header:_privacy_and_security_concerns) для отримання інформації на цю тему.
 
-Використання `target="_blank"` без [`rel="noreferrer"`](/uk/docs/Web/HTML/Link_types/noreferrer) і [`rel="noopener"`](/uk/docs/Web/HTML/Link_types/noopener) робить вебсайт вразливим то атак експлуатації API {{domxref("window.opener")}} ([опис вразливості (англ.)](https://www.jitbit.com/alexblog/256-targetblank---the-most-underestimated-vulnerability-ever/)); втім, майте на увазі, що в новіших версіях браузерів встановлення `target="_blank"` неявно додає такий само захист, як встановлення `rel="noopener"`. Дивіться [сумісність із браузерами](#sumisnist-iz-brauzeramy) для отримання деталей.
+Використання `target="_blank"` без [`rel="noreferrer"`](/uk/docs/Web/HTML/Attributes/rel/noreferrer) і [`rel="noopener"`](/uk/docs/Web/HTML/Attributes/rel/noopener) робить вебсайт вразливим то атак експлуатації API {{domxref("window.opener")}}; втім, майте на увазі, що в новіших версіях браузерів встановлення `target="_blank"` неявно додає такий само захист, як встановлення `rel="noopener"`. Дивіться [сумісність із браузерами](#sumisnist-iz-brauzeramy) для отримання деталей.
 
 ## Доступність
 
@@ -375,6 +280,10 @@ document
 <p>Дізнайтеся більше про наші продукти <a href="/products">тут</a>.</p>
 ```
 
+##### Результат
+
+{{EmbedLiveSample('nevyraznyi-tekst-posylannia-iz-problemamy-dostupnosti')}}
+
 #### Виразний текст посилання
 
 На щастя, це легко виправити, і виходить насправді коротше за версію з проблемами доступності!
@@ -382,6 +291,10 @@ document
 ```html example-good
 <p>Дізнайтеся більше <a href="/products">про наші продукти</a>.</p>
 ```
+
+##### Результат
+
+{{EmbedLiveSample('vyraznyi-tekst-posylannia-1')}}
 
 Допоміжне програмне забезпечення має зручне скорочення для перелічення усіх посилань на сторінці. Втім, виразний текст посилань корисний для всіх користувачів: скорочення "перелічити всі посилання" імітує те, як зрячі користувачі хутко проглядають сторінки.
 
@@ -407,6 +320,10 @@ document
 </a>
 ```
 
+##### Результат
+
+{{EmbedLiveSample('posylannia-shcho-vidkryvaietsia-v-novii-vkladtsi-chy-novomu-vikni')}}
+
 #### Посилання на не-HTML ресурс
 
 ```html
@@ -426,6 +343,10 @@ document
   <img alt="(файл PowerPoint)" src="ppt-icon.svg" />
 </a>
 ```
+
+##### Результат
+
+{{EmbedLiveSample('posylannia-na-ne-html-resurs')}}
 
 - [WebAIM: Посилання та гіпертекст – гіпертекстові посилання (англ.)](https://webaim.org/techniques/hypertext/hypertext_links)
 - [MDN / Розуміння WCAG, Настанови 3.2](/uk/docs/Web/Accessibility/Understanding_WCAG/Understandable#guideline_3.2_—_predictable_make_web_pages_appear_and_operate_in_predictable_ways)
@@ -458,7 +379,11 @@ document
 }
 ```
 
-Стрибкові посилання дають користувачам клавіатури пропустити вміст, що повторюється на багатьох сторінках, наприклад, навігацію у верхньому колонтитулі.
+#### Результат
+
+{{EmbedLiveSample('strybkovi-posylannia')}}
+
+Стрибкові посилання дають користувачам клавіатури змогу пропустити вміст, що повторюється на багатьох сторінках, наприклад, навігацію у верхньому колонтитулі.
 
 Стрибкові посилання особливо корисні для тих, хто орієнтується за допомогою допоміжних технологій, як то управління за допомогою перемикачів, голосових команд чи ротових або наголовних паличок, коли проходження крізь повторювані посилання може бути працемістким.
 
@@ -487,6 +412,107 @@ document
 
 - [Тремтіння рук та проблема велетенської кнопки (англ.)](https://axesslab.com/hand-tremors/)
 
+## Технічний підсумок
+
+<table class="properties">
+  <tbody>
+    <tr>
+      <th scope="row">
+        <a href="/uk/docs/Web/HTML/Content_categories"
+          >Категорії вмісту</a
+        >
+      </th>
+      <td>
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
+          >Потоковий вміст</a
+        >,
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
+          >оповідальний вміст</a
+        >,
+        <a
+          href="/uk/docs/Web/HTML/Content_categories#interaktyvnyi-vmist"
+          >інтерактивний вміст</a
+        >, відчутний вміст.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволений вміст</th>
+      <td>
+        <a
+          href="/uk/docs/Web/HTML/Content_categories#model-prozoroho-vmistu"
+          >Прозорий</a
+        >, але жодний нащадок не може бути
+        <a
+          href="/uk/docs/Web/HTML/Content_categories#interaktyvnyi-vmist"
+          >інтерактивним вмістом</a
+        > чи елементом
+        <a href="/uk/docs/Web/HTML/Element/a"
+          >a</a
+        >; крім того, жодний нащадок не може мати атрибута
+        <a
+          href="/uk/docs/Web/HTML/Global_attributes/tabindex"
+          >tabindex</a
+        >.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Упущення тегів</th>
+      <td>{{no_tag_omission}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені батьківські елементи</th>
+      <td>
+        Будь-який елемент, що приймає
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
+          >оповідальний вміст</a
+        >, або будь-який елемент, що приймає
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
+          >потоковий елемент</a
+        >, але не інший елемент <code>&#x3C;a></code>.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Неявна роль ARIA</th>
+      <td>
+        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/link_role"><code>link</code></a>, коли присутній атрибут <code>href</code>, інакше –
+        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"
+          >жодної відповідної ролі</a
+        >
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені ролі ARIA</th>
+      <td>
+        <p>Коли присутній атрибут <code>href</code>:</p>
+        <ul>
+          <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/button_role"><code>button</code></a></li>
+          <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/checkbox_role"><code>checkbox</code></a></li>
+          <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitem_role"><code>menuitem</code></a></li>
+          <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitemcheckbox_role"><code>menuitemcheckbox</code></a></li>
+          <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/menuitemradio_role"><code>menuitemradio</code></a></li>
+          <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/option_role"><code>option</code></a></li>
+          <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/radio_role"><code>radio</code></a></li>
+          <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/switch_role"><code>switch</code></a></li>
+          <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/tab_role"><code>tab</code></a></li>
+          <li><a href="/uk/docs/Web/Accessibility/ARIA/Roles/treeitem_role"><code>treeitem</code></a></li>
+        </ul>
+        <p>Коли атрибута <code>href</code> немає:</p>
+        <ul>
+          <li>будь-яка роль</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Інтерфейс DOM</th>
+      <td>{{DOMxRef("HTMLAnchorElement")}}</td>
+    </tr>
+  </tbody>
+</table>
+
+### Результат
+
+{{EmbedLiveSample('pryklady')}}
+
 ## Специфікації
 
 {{Specifications}}
@@ -498,4 +524,7 @@ document
 ## Дивіться також
 
 - {{HTMLElement("link")}} подібний до `<a>`, але призначений для гіперпосилань метаданих, невидимих для користувачів.
-- {{CSSxRef(":link")}} – псевдоклас CSS, який дає збіг з елементами `<a>`, що мають дійсні атрибути `href`.
+- {{CSSxRef(":link")}} – це псевдоклас CSS, що дає збіг з елементами `<a>`, в атрибуті `href` яких задані URL, котрі користувач поки не відвідував.
+- {{CSSxRef(":visited")}} – це псевдоклас CSS, що дає збіг з елементами `<a>`, в атрибуті `href` яких задані URL, котрі користувач уже відвідував у минулому.
+- {{CSSxRef(":any-link")}} – це псевдоклас CSS, що дає збіг з елементами `<a>`, котрі мають атрибут `href`.
+- [Текстові фрагменти](/uk/docs/Web/Text_fragments) – це інструкції користувацькому агентові, додані до URL, що дають змогу авторам вмісту посилатися на конкретний текст на сторінці, не вимагаючи від елементів мати ID.

@@ -1,19 +1,15 @@
 ---
 title: Array.isArray()
 slug: Web/JavaScript/Reference/Global_Objects/Array/isArray
-tags:
-  - Array
-  - ECMAScript 5
-  - JavaScript
-  - Method
-  - Reference
-  - Polyfill
+page-type: javascript-static-method
 browser-compat: javascript.builtins.Array.isArray
 ---
 
 {{JSRef}}
 
 Статичний метод **`Array.isArray()`** ("чи є масивом") з'ясовує, чи є передане значення примірником {{jsxref("Array")}}.
+
+{{EmbedInteractiveExample("pages/js/array-isarray.html")}}
 
 ## Синтаксис
 
@@ -94,5 +90,4 @@ arr instanceof Array; // false
 ## Дивіться також
 
 - [Поліфіл `Array.isArray` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
-- [Поліфіл](https://github.com/behnammodi/polyfill/blob/master/array.polyfill.js)
 - {{jsxref("Array")}}

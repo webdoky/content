@@ -1,18 +1,13 @@
 ---
 title: JSON.parse()
 slug: Web/JavaScript/Reference/Global_Objects/JSON/parse
-tags:
-  - ECMAScript 5
-  - JSON
-  - JavaScript
-  - Method
-  - Reference
+page-type: javascript-static-method
 browser-compat: javascript.builtins.JSON.parse
 ---
 
 {{JSRef}}
 
-Метод **`JSON.parse()`** (розібрати) розбирає рядок у форматі JSON, конструюючи значення чи об'єкт JavaScript, описаний рядком. Можна передати функцію як необов'язковий параметр _reviver_ для виконання трансформацій над результівним об'єктом перед його поверненням.
+Статичний метод **`JSON.parse()`** (розібрати) розбирає рядок у форматі JSON, конструюючи значення чи об'єкт JavaScript, описаний рядком. Можна передати функцію як необов'язковий параметр _reviver_ для виконання трансформацій над результівним об'єктом перед його поверненням.
 
 {{EmbedInteractiveExample("pages/js/json-parse.html")}}
 

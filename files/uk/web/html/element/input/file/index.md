@@ -1,17 +1,7 @@
 ---
 title: <input type="file">
 slug: Web/HTML/Element/input/file
-tags:
-  - Directory Picker
-  - File
-  - File Picker
-  - Files
-  - Form input
-  - HTML
-  - HTML forms
-  - Input Type
-  - Reference
-  - Type
+page-type: html-element
 browser-compat: html.elements.input.type_file
 ---
 
@@ -20,49 +10,6 @@ browser-compat: html.elements.input.type_file
 Елементи {{HTMLElement("input")}} з атрибутом **`type="file"`** дають користувачеві змогу обрати один чи більше файлів з його пристрою. Бувши обраними, файли можуть бути завантажені на сервер за допомогою [подання форми](/uk/docs/Learn/Forms), або ж використані за допомогою коду на JavaScript та [файлового API](/uk/docs/Web/API/File_API/Using_files_from_web_applications).
 
 {{EmbedInteractiveExample("pages/tabbed/input-file.html", "tabbed-shorter")}}
-
-<table class="properties">
-  <tbody>
-    <tr>
-      <td><strong><a href="#znachennia">Значення</a></strong></td>
-      <td>
-        Рядок, що представляє шлях до вибраного файлу.
-      </td>
-    </tr>
-    <tr>
-      <td><strong>Події</strong></td>
-      <td>
-        {{domxref("HTMLElement/change_event", "change")}} та {{domxref("HTMLElement/input_event", "input")}}
-      </td>
-    </tr>
-    <tr>
-      <td><strong>Підтримувані загальні атрибути</strong></td>
-      <td>{{htmlattrxref("required", "input")}}</td>
-    </tr>
-    <tr>
-      <td><strong>Додаткові атрибути</strong></td>
-      <td>
-        <a href="#accept" aria-current="page"><code>accept</code></a>,
-        <a href="#capture" aria-current="page"><code>capture</code></a>,
-        <a href="#multiple" aria-current="page"><code>multiple</code></a>
-      </td>
-    </tr>
-    <tr>
-      <td><strong>Атрибути IDL</strong></td>
-      <td><code>files</code> і <code>value</code></td>
-    </tr>
-    <tr>
-      <td><strong>Інтерфейс DOM</strong></td>
-      <td><p>{{domxref("HTMLInputElement")}}</p></td>
-    </tr>
-    <tr>
-      <td><strong>Методи</strong></td>
-      <td>
-        {{domxref("HTMLInputElement.select", "select()")}}
-      </td>
-    </tr>
-  </tbody>
-</table>
 
 ## Значення
 
@@ -84,12 +31,12 @@ browser-compat: html.elements.input.type_file
 <input
   type="file"
   id="docpicker"
-  accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+  accept=".doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
 ```
 
 ### capture
 
-Значення атрибута [`capture`](/uk/docs/Web/HTML/Attributes/capture) – рядок, що вказує яку камеру слід використовувати для захоплення фото чи відео, якщо атрибут [`accept`](/uk/docs/Web/HTML/Attributes/accept) вказує, що введені дані повинні бути фото чи відео. Значення `user` ("користувач") вказує, що повинні використовуватися фронтальні камера та (або) мікрофон. Значення `environment` ("середовище") вказує, що повинні використовуватися камера та (або) мікрофон, спрямовані назовні. Якщо такого атрибута немає, то {{Glossary("user agent", "користувацький агент")}} вільний сам вирішувати, що робити. Якщо вказаний фронтальний режим, але він недоступний, то користувацький агент може відступити до свого усталеного режиму.
+Значення атрибута [`capture`](/uk/docs/Web/HTML/Attributes/capture) – рядок, що вказує яку камеру слід використовувати для захоплення фото чи відео, якщо атрибут [`accept`](/uk/docs/Web/HTML/Attributes/accept) вказує, що введені дані повинні бути фото чи відео. Значення `user` ("користувач") вказує, що повинні використовуватися фронтальні камера чи мікрофон. Значення `environment` ("середовище") вказує, що повинні використовуватися камера чи мікрофон, спрямовані назовні. Якщо такого атрибута немає, то {{Glossary("user agent", "користувацький агент")}} вільний сам вирішувати, що робити. Якщо вказаний фронтальний режим, але він недоступний, то користувацький агент може відступити до свого усталеного режиму.
 
 > **Примітка:** `capture` раніше був булевим атрибутом, котрий призводив до запиту на використання захоплення медіа, камери чи мікрофона, а не введення файлу.
 
@@ -174,7 +121,7 @@ This produces the following output:
 - `webkitRelativePath` (відносний шлях WebKit) {{non-standard_inline}}
   - : Рядок, що представляє шлях до файлу відносно базової директорії, обраної при виборі директорії (тобто в інтерфейсі вибору `file`, що має атрибут {{htmlattrxref("webkitdirectory", "input/file")}}). _Ця властивість є нестандартною, її слід використовувати з обережністю._
 
-> **Примітка:** У всіх сучасних браузерах значення `HTMLInputElement.files` можна як отримати, так і встановити; останнім з браузерів цю функціональність додав Firefox у версії 57 (дивіться {{bug(1384030)}}).
+> **Примітка:** У всіх сучасних браузерах значення `HTMLInputElement.files` можна як отримати, так і встановити; останнім з браузерів цю функціональність додав Firefox у версії 57 (дивіться [ваду Firefox 1384030](https://bugzil.la/1384030)).
 
 ### Обмеження прийнятних типів файлу
 
@@ -436,6 +383,55 @@ function returnFileSize(number) {
 Приклад має наступний вигляд; пограйтеся:
 
 {{EmbedLiveSample('pryklady', '100%', 200)}}
+
+## Технічний підсумок
+
+<table class="properties">
+  <tbody>
+    <tr>
+      <td><strong><a href="#znachennia">Значення</a></strong></td>
+      <td>
+        Рядок, що представляє шлях до вибраного файлу.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Події</strong></td>
+      <td>
+        {{domxref("HTMLElement/change_event", "change")}} та {{domxref("HTMLElement/input_event", "input")}}
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Підтримувані загальні атрибути</strong></td>
+      <td>{{htmlattrxref("required", "input")}}</td>
+    </tr>
+    <tr>
+      <td><strong>Додаткові атрибути</strong></td>
+      <td>
+        <a href="#accept" aria-current="page"><code>accept</code></a>,
+        <a href="#capture" aria-current="page"><code>capture</code></a>,
+        <a href="#multiple" aria-current="page"><code>multiple</code></a>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Атрибути IDL</strong></td>
+      <td><code>files</code> і <code>value</code></td>
+    </tr>
+    <tr>
+      <td><strong>Інтерфейс DOM</strong></td>
+      <td><p>{{domxref("HTMLInputElement")}}</p></td>
+    </tr>
+    <tr>
+      <td><strong>Методи</strong></td>
+      <td>
+        {{domxref("HTMLInputElement.select", "select()")}}
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Неявна роль ARIA</strong></td>
+      <td><a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"><code>немає відповідної ролі</code></a></td>
+    </tr>
+  </tbody>
+</table>
 
 ## Специфікації
 

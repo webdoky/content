@@ -2,19 +2,6 @@
 title: background-color
 slug: Web/CSS/background-color
 page-type: css-property
-tags:
-  - CSS
-  - CSS Background
-  - CSS Property
-  - Graphics
-  - HTML Colors
-  - HTML Styles
-  - Layout
-  - Reference
-  - Styles
-  - Styling HTML
-  - background-color
-  - recipe:css-property
 browser-compat: css.properties.background-color
 ---
 
@@ -40,16 +27,13 @@ background-color: #11ffeeff; /* Цілком непрозорий */
 background-color: #1fef; /* Цілком непрозорий, скорочений запис  */
 
 /* Значення RGB */
-background-color: rgb(255, 255, 128); /* Цілком непрозорий */
-background-color: rgba(117, 190, 218, 0.5); /* Прозорий на 50% */
+background-color: rgb(255 255 128); /* Цілком непрозорий */
+background-color: rgb(117 190 218 / 0.5); /* Прозорий на 50% */
 
 /* Значення HSL */
-background-color: hsl(50, 33%, 25%); /* Цілком непрозорий */
-background-color: hsla(
-  50,
-  33%,
-  25%,
-  0.75
+background-color: hsl(50 33% 25%); /* Цілком непрозорий */
+background-color: hsl(
+  50 33% 25% / 0.75
 ); /* непрозорий на 75%, а отже – прозорий на 25% */
 
 /* Особливі значення – ключові слова */

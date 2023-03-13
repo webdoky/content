@@ -1,6 +1,7 @@
 ---
 title: <input type="checkbox">
 slug: Web/HTML/Element/input/checkbox
+page-type: html-element
 tags:
   - Element
   - HTML
@@ -20,43 +21,6 @@ browser-compat: html.elements.input.type_checkbox
 {{EmbedInteractiveExample("pages/tabbed/input-checkbox.html", "tabbed-standard")}}
 
 > **Примітка:** [Радіокнопки](/uk/docs/Web/HTML/Element/input/radio) схожі на поля позначок, але мають важливу відмінність: радіокнопки групуються так, щоб лише одна радіокнопка була водночас обрана, натомість поля для галочки дають змогу включати й виключати окремі означення. Коли існують декілька контрольних елементів, радіокнопки дозволяють лише одній з них бути ввімкненою, а поля для галочки дозволяють вибір декількох значень.
-
-<table class="properties">
-  <tbody>
-    <tr>
-      <td><strong><a href="#znachennia">Значення</a></strong></td>
-      <td>
-        Рядок, що представляє значення поля для галочки.
-      </td>
-    </tr>
-    <tr>
-      <td><strong>Події</strong></td>
-      <td>{{domxref("HTMLElement/change_event", "change")}} та {{domxref("HTMLElement/input_event", "input")}}</td>
-    </tr>
-    <tr>
-      <td><strong>Підтримувані загальні атрибути</strong></td>
-      <td><code>checked</code></td>
-    </tr>
-    <tr>
-      <td><strong>Атрибути IDL</strong></td>
-      <td>
-        <code><a href="#attr-checked">checked</a></code>,
-        <code><a href="#attr-indeterminate">indeterminate</a></code> і
-        <code><a href="#attr-value">value</a></code>
-      </td>
-    </tr>
-    <tr>
-      <td><strong>Інтерфейс DOM</strong></td>
-      <td><p>{{domxref("HTMLInputElement")}}</p></td>
-    </tr>
-    <tr>
-      <td><strong>Методи</strong></td>
-      <td>
-        {{domxref("HTMLInputElement.select", "select()")}}
-      </td>
-    </tr>
-  </tbody>
-</table>
 
 ## Значення
 
@@ -88,13 +52,13 @@ browser-compat: html.elements.input.type_checkbox
 
 На додачу до загальних атрибутів, котрі поділяють всі елементи {{HTMLElement("input")}}, поля "`checkbox`" підтримують наступні:
 
-- {{htmlattrdef("checked")}} (перевірений)
+- `checked` (перевірений)
 
   - : Булів атрибут, що вказує, чи має поле галочку спочатку (при завантаженні сторінки). Воно _не_ вказує, чи є поле порожнім наразі: якщо стан поля зміниться, цей атрибут вмісту не відобразить змін. (Оновиться лише IDL атрибут {{domxref("HTMLInputElement")}}'а `checked`ʼ.)
     > **Примітка:** На відміну від інших полів введення, значення поля для галочки включається у дані подання лише якщо поле позначено (`checked`). Якщо воно таким є, то значення атрибута `value` стає значенням поля у формі.
     > На відміну від інших браузерів, Firefox усталено [зберігає динамічний стан галочки (англ.)](https://stackoverflow.com/questions/5985839/bug-with-firefox-disabled-attribute-of-input-not-resetting-when-refreshing) поля між завантаженнями сторінки. Використовуйте для контролю цього функціоналу атрибут {{htmlattrxref("autocomplete","input")}}.
 
-- {{htmlattrdef("value")}} (значення)
+- `value` (значення)
 
   - : Атрибут `value` поділяють всі {{HTMLElement("input", "елементи введення")}}; проте у полів типу `checkbox` він має особливе призначення: коли форма подається, то лише ті поля для галочки, котрі на той час мають галочку, подаються на сервер, і відповідним їх значенням є значення атрибута `value`. Якщо атрибут `value` не вказаний, то він вважається рівним рядкові `on`. Це показано у розділі [Значення](#znachennia) вище.
 
@@ -124,7 +88,7 @@ browser-compat: html.elements.input.type_checkbox
 
 {{EmbedLiveSample('obrobka-dekilkokh-poliv-dlia-halochky', 600, 100)}}
 
-В цьому прикладі, як бачите, кожне поле для галочки отримало однакове значення атрибута `name`. Якщо обидві поля мають галочку при поданні форми, то рядок пар ключ-значення, поданий на сервер, буде схожим на отакий: `interest=coding&interest=music`. Коли цей рядок отримає сервер, треба буде розібрати його не як асоціативний масив, щоб були враховані усі значення за ключем `interest`, а не тільки останнє. Для прикладу – одна з технік, що використовується на Python: [Обробка декількох полів для галочки з однією серверною змінною (англ.)](https://stackoverflow.com/questions/18745456/handle-multiple-checkboxes-with-a-single-serverside-variable).
+В цьому прикладі, як бачите, кожне поле для галочки отримало однакове значення атрибута `name`. Якщо обидва поля мають галочку при поданні форми, то рядок пар ключ-значення, поданий на сервер, буде схожим на отакий: `interest=coding&interest=music`. Коли цей рядок отримає сервер, треба буде розібрати його не як асоціативний масив, щоб були враховані усі значення за ключем `interest`, а не тільки останнє. Для прикладу – одна з технік, що використовується на Python: [Обробка декількох полів для галочки з однією серверною змінною (англ.)](https://stackoverflow.com/questions/18745456/handle-multiple-checkboxes-with-a-single-serverside-variable).
 
 ### Усталена галочка в полях
 
@@ -211,7 +175,7 @@ function updateDisplay() {
 
 ## Валідація
 
-Поля для галочки підтримують [валідацію](/uk/docs/Web/Guide/HTML/Constraint_validation) (доступну всім елементам {{HTMLElement("input")}}). Втім, більшість значень {{domxref("ValidityState")}} завжди буде `false`. Якщо таке поле має атрибут {{htmlattrxref("required", "input")}}, але не має галочки, то {{domxref("ValidityState.valueMissing")}} буде `true`.
+Поля для галочки підтримують [валідацію](/uk/docs/Web/HTML/Constraint_validation) (доступну всім елементам {{HTMLElement("input")}}). Втім, більшість значень {{domxref("ValidityState")}} завжди буде `false`. Якщо таке поле має атрибут {{htmlattrxref("required", "input")}}, але не має галочки, то {{domxref("ValidityState.valueMissing")}} буде `true`.
 
 ## Приклади
 
@@ -301,6 +265,49 @@ otherCheckbox.addEventListener("change", () => {
 ```
 
 {{EmbedLiveSample('pryklady', '100%', 300)}}
+
+## Технічний підсумок
+
+<table class="properties">
+  <tbody>
+    <tr>
+      <td><strong><a href="#znachennia">Значення</a></strong></td>
+      <td>
+        Рядок, що представляє значення поля для галочки.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Події</strong></td>
+      <td>{{domxref("HTMLElement/change_event", "change")}} та {{domxref("HTMLElement/input_event", "input")}}</td>
+    </tr>
+    <tr>
+      <td><strong>Підтримувані загальні атрибути</strong></td>
+      <td><code>checked</code></td>
+    </tr>
+    <tr>
+      <td><strong>Атрибути IDL</strong></td>
+      <td>
+        <code><a href="#checked">checked</a></code>,
+        <code><a href="#indeterminate">indeterminate</a></code> і
+        <code><a href="#value">value</a></code>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Інтерфейс DOM</strong></td>
+      <td><p>{{domxref("HTMLInputElement")}}</p></td>
+    </tr>
+    <tr>
+      <td><strong>Методи</strong></td>
+      <td>
+        {{domxref("HTMLInputElement.select", "select()")}}
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Неявна роль ARIA</strong></td>
+      <td><a href="/uk/docs/Web/Accessibility/ARIA/Roles/checkbox_role"><code>checkbox</code></a></td>
+    </tr>
+  </tbody>
+</table>
 
 ## Специфікації
 

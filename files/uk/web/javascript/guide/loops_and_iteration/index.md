@@ -1,12 +1,7 @@
 ---
 title: Цикли й ітерація
 slug: Web/JavaScript/Guide/Loops_and_iteration
-tags:
-  - Guide
-  - JavaScript
-  - Loop
-  - Syntax
-  - "l10n:priority"
+page-type: guide
 ---
 
 {{jsSidebar("JavaScript Guide")}}
@@ -33,7 +28,7 @@ for (let step = 0; step < 5; step++) {
 - [Інструкція for](#instruktsiia-for)
 - [Інструкція do...while](#instruktsiia-dowhile)
 - [Інструкція while](#instruktsiia-while)
-- [Інструкція з міткою](#instruktsiia-z-mitkoyu)
+- [Інструкція з міткою](#instruktsiia-z-mitkoiu)
 - [Інструкція break](#instruktsiia-break)
 - [Інструкція continue](#instruktsiia-continue)
 - [Інструкція for...in](#instruktsiia-forin)
@@ -86,7 +81,7 @@ for ([initialExpression]; [conditionExpression]; [incrementExpression])
 Тут інструкція `for` оголошує змінну `i` та ініціалізує її значенням `0`. Вона перевіряє, що `i` менша за кількість варіантів у елементі `<select>`, виконує наступну інструкцію `if` та збільшує `i` після кожного проходження тіла циклу.
 
 ```js
-function howMany(selectObject) {
+function countSelected(selectObject) {
   let numberSelected = 0;
   for (let i = 0; i < selectObject.options.length; i++) {
     if (selectObject.options[i].selected) {
@@ -100,7 +95,7 @@ const btn = document.getElementById("btn");
 
 btn.addEventListener("click", () => {
   const musicTypes = document.selectForm.musicTypes;
-  console.log(`Обрано варіантів: ${howMany(musicTypes)}.`);
+  console.log(`Обрано варіантів: ${countSelected(musicTypes)}.`);
 });
 ```
 

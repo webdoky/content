@@ -1,16 +1,7 @@
 ---
 title: <input type="number">
 slug: Web/HTML/Element/input/number
-tags:
-  - Element
-  - Forms
-  - HTML
-  - HTML forms
-  - Input
-  - Input Element
-  - Input Type
-  - Number
-  - Reference
+page-type: html-element
 browser-compat: html.elements.input.type_number
 ---
 
@@ -23,47 +14,6 @@ browser-compat: html.elements.input.type_number
 {{EmbedInteractiveExample("pages/tabbed/input-number.html", "tabbed-shorter")}}
 
 В браузерах, що не підтримують полів типу `number`, такі поля працюють як поля типу `text`.
-
-<table class="properties">
-  <tbody>
-    <tr>
-      <td><strong><a href="#znachennia">Значення</a></strong></td>
-      <td>{{jsxref("Number")}}, що представляє число, або порожнє</td>
-    </tr>
-    <tr>
-      <td><strong>Події</strong></td>
-      <td>
-        {{domxref("HTMLElement/change_event", "change")}} та
-        {{domxref("HTMLElement/input_event", "input")}}
-      </td>
-    </tr>
-    <tr>
-      <td><strong>Підтримувані загальні атрибути</strong></td>
-      <td>
-        {{htmlattrxref("autocomplete", "input")}},
-        {{htmlattrxref("list", "input")}},
-        {{htmlattrxref("placeholder", "input")}},
-        {{htmlattrxref("readonly", "input")}}
-      </td>
-    </tr>
-    <tr>
-      <td><strong>Атрибути IDL</strong></td>
-      <td><code>list</code>, <code>value</code>, <code>valueAsNumber</code></td>
-    </tr>
-    <tr>
-      <td><strong>Інтерфейс DOM</strong></td>
-      <td><p>{{domxref("HTMLInputElement")}}</p></td>
-    </tr>
-    <tr>
-      <td><strong>Методи</strong></td>
-      <td>
-        {{domxref("HTMLInputElement.select", "select()")}},
-        {{domxref("HTMLInputElement.stepUp", "stepUp()")}},
-        {{domxref("HTMLInputElement.stepDown", "stepDown()")}}
-      </td>
-    </tr>
-  </tbody>
-</table>
 
 ## Значення
 
@@ -85,13 +35,13 @@ browser-compat: html.elements.input.type_number
 
 ### `max`
 
-Найбільше значення, котре таке поле повинно приймати. Якщо значення, введене в елемент, перевищує `max`, то елемент не проходить [валідацію обмежень](/uk/docs/Web/Guide/HTML/Constraint_validation). Якщо значення `max` не є числом, то елемент не має максимального значення.
+Найбільше значення, котре таке поле повинно приймати. Якщо значення, введене в елемент, перевищує `max`, то елемент не проходить [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation). Якщо значення `max` не є числом, то елемент не має максимального значення.
 
 Це значення мусить бути більшим або рівним значенню атрибута `min`.
 
 ### `min`
 
-Найменше значення, котре таке поле повинно приймати. Якщо значення, введене в елемент, менше за `min`, то елемент не проходить [валідацію обмежень](/uk/docs/Web/Guide/HTML/Constraint_validation). Якщо значення `min` не є числом, то елемент не має мінімального значення.
+Найменше значення, котре таке поле повинно приймати. Якщо значення, введене в елемент, менше за `min`, то елемент не проходить [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation). Якщо значення `min` не є числом, то елемент не має мінімального значення.
 
 Це значення мусить бути меншим або рівним значенню атрибута `max`.
 
@@ -101,7 +51,7 @@ browser-compat: html.elements.input.type_number
 
 Якщо вміст контрольного елемента має одну напрямленість ({{Glossary("LTR")}} чи {{Glossary("RTL")}}), але треба вивести заповнювач з протилежною напрямленістю, можна використати форматувальні символи двонапрямленого алгоритму Unicode, аби відкинути напрямленість заповнювача; дивіться [Як використовувати контрольні засоби Unicode для двонапрямленого тексту (англ.)](https://www.w3.org/International/questions/qa-bidi-unicode-controls) для отримання докладнішої інформації.
 
-> **Примітка:** За можливості слід уникати використання атрибута `placeholder`. Він не настільки семантично корисний, як інші способи пояснити форму, і може призвести до неочікуваних технічних проблем зі вмістом. Дивіться {{SectionOnPage("/uk/docs/Web/HTML/Element/input", "Підписи й заповнювачі")}} для отримання докладнішої інформації.
+> **Примітка:** За можливості слід уникати використання атрибута `placeholder`. Він не настільки семантично корисний, як інші способи пояснити форму, і може призвести до неочікуваних технічних проблем зі вмістом. Дивіться [підписи `<input>`](/uk/docs/Web/HTML/Element/input#pidpysy) для отримання докладнішої інформації.
 
 ### `readonly`
 
@@ -129,7 +79,7 @@ browser-compat: html.elements.input.type_number
 
 Елементи `<input type="number">` можуть допомогти спростити роботу з побудови користувацького інтерфейсу й логіки введення в форму чисел. При створенні числового поля з правильним значенням `type`, тобто `number`, додається автоматична валідація того, що введений текст є числом, а ще, зазвичай, – комплект кнопок вгору й вниз, аби зменшувати чи збільшувати значення на крок.
 
-> **Застереження:** Логічно, що не повинно бути змоги вводити в числове поле символи, котрі не є числами. Певні браузери дозволяють недійсні символи, інші – ні; дивіться {{bug(1398528)}}.
+> **Застереження:** Логічно, що не повинно бути змоги вводити в числове поле символи, котрі не є числами. Певні браузери дозволяють недійсні символи, інші – ні; дивіться [ваду Firefox 1398528](https://bugzil.la/1398528).
 
 > **Примітка:** Користувач може погратися з HTML за лаштунками, тому сайт _не мусить_ використовувати просту валідацію на клієнтському боці для жодних потреб безпеки. Розробник _мусить_ перевірити на боці сервера будь-яку транзакцію, в котрій надане значення може мати будь-якого роду безпекові наслідки.
 
@@ -447,6 +397,55 @@ switchBtn.addEventListener("click", () => {
 Неявна [роль](/uk/docs/Web/Accessibility/ARIA/Roles) елемента `<input type="number">` – [`spinbutton`](/uk/docs/Web/Accessibility/ARIA/Roles/spinbutton_role) (лічильник). Якщо лічильник не є важливою особливістю контрольного елемента, слід розглянути варіант _не_ використовувати `type="number"`. Натомість варто застосувати [`inputmode="numeric"`](/uk/docs/Web/HTML/Global_attributes/inputmode) вкупі з атрибутом [`pattern`](/uk/docs/Web/HTML/Attributes/pattern), котрий обмежить символи числами й пов'язаними символами. При використанні `<input type="number">` присутній ризик того, що користувачі випадково збільшать число, поки намагаються зробити щось інше. Крім того, якщо користувачі намагаються ввести щось, що не є числом, то не має явного пояснення того, що саме вони роблять не так.
 
 Також слід розглянути варіант використання атрибута [`autocomplete`](/uk/docs/Web/HTML/Attributes/autocomplete), аби допомогти користувачам заповнити форму швидше і з меншими шансами отримання помилок. Наприклад, для ввімкнення автозаповнення поштового індексу, слід задати `autocomplete="postal-code"`.
+
+## Технічний підсумок
+
+<table class="properties">
+  <tbody>
+    <tr>
+      <td><strong><a href="#znachennia">Значення</a></strong></td>
+      <td>{{jsxref("Number")}}, що представляє число, або порожнє</td>
+    </tr>
+    <tr>
+      <td><strong>Події</strong></td>
+      <td>
+        {{domxref("HTMLElement/change_event", "change")}} та
+        {{domxref("HTMLElement/input_event", "input")}}
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Підтримувані загальні атрибути</strong></td>
+      <td>
+        {{htmlattrxref("autocomplete", "input")}},
+        {{htmlattrxref("list", "input")}},
+        {{htmlattrxref("placeholder", "input")}},
+        {{htmlattrxref("readonly", "input")}}
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Атрибути IDL</strong></td>
+      <td><code>list</code>, <code>value</code>, <code>valueAsNumber</code></td>
+    </tr>
+    <tr>
+      <td><strong>Інтерфейс DOM</strong></td>
+      <td><p>{{domxref("HTMLInputElement")}}</p></td>
+    </tr>
+    <tr>
+      <td><strong>Методи</strong></td>
+      <td>
+        {{domxref("HTMLInputElement.select", "select()")}},
+        {{domxref("HTMLInputElement.stepUp", "stepUp()")}},
+        {{domxref("HTMLInputElement.stepDown", "stepDown()")}}
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Неявна роль ARIA</strong></td>
+      <td>
+        <code><a href="/uk/docs/Web/Accessibility/ARIA/Roles/spinbutton_role">spinbutton</a></code>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## Специфікації
 

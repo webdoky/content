@@ -1,18 +1,7 @@
 ---
 title: Довідник з JavaScript
 slug: Web/JavaScript/Reference
-tags:
-  - Code
-  - ECMAScript
-  - ECMAScript6
-  - ES6
-  - JS
-  - JavaScript
-  - Landing page
-  - Reference
-  - es
-  - "l10n:priority"
-  - programming
+page-type: landing-page
 ---
 
 {{JsSidebar}}
@@ -186,6 +175,7 @@ tags:
 
 - {{jsxref("Statements/Empty", "Порожня інструкція", "", 1)}}
 - {{jsxref("Statements/block", "Блок", "", 1)}}
+- {{jsxref("Statements/Expression_statement", "Інструкція-вираз", "", 1)}}
 - {{jsxref("Statements/debugger", "debugger")}}
 - {{jsxref("Statements/export", "export")}}
 - {{jsxref("Statements/import", "import")}}

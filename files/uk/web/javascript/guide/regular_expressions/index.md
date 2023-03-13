@@ -1,14 +1,7 @@
 ---
 title: Регулярні вирази
 slug: Web/JavaScript/Guide/Regular_Expressions
-tags:
-  - Guide
-  - Intermediate
-  - JavaScript
-  - Reference
-  - RegExp
-  - Regular Expressions
-  - regex
+page-type: guide
 ---
 
 {{jsSidebar("JavaScript Guide")}} {{PreviousNext("Web/JavaScript/Guide/Text_formatting", "Web/JavaScript/Guide/Indexed_collections")}}
@@ -65,7 +58,7 @@ tags:
 - [Квантори](/uk/docs/Web/JavaScript/Guide/Regular_Expressions/Quantifiers)
   - : Вказують кількість символів чи виразів для збігу.
 - [Екранування юнікодних полів](/uk/docs/Web/JavaScript/Guide/Regular_Expressions/Unicode_Property_Escapes)
-  - : Розрізнення, засноване на властивостях символів юнікоду. Наприклад, літери верхнього та нижнього регістру, математичні та розділові знаки.
+  - : Розрізнення, засноване на властивостях символів Unicode. Наприклад, літери верхнього та нижнього регістру, математичні та розділові знаки.
 
 Нижче наведено єдину таблицю всіх спеціальних символів, які можна використовувати в регулярних виразах:
 
@@ -82,11 +75,13 @@ tags:
   <tbody>
     <tr>
       <td>
-        <code>\</code>, <code>.</code>, <code>\cX</code>, <code>\d</code>,
-        <code>\D</code>, <code>\f</code>, <code>\n</code>, <code>\r</code>,
-        <code>\s</code>, <code>\S</code>, <code>\t</code>, <code>\v</code>,
-        <code>\w</code>, <code>\W</code>, <code>\0</code>, <code>\xhh</code>,
-        <code>\uhhhh</code>, <code>\uhhhhh</code>, <code>[\b]</code>
+        <code>[xyz]</code>, <code>[^xyz]</code>, <code>.</code>,
+        <code>\d</code>, <code>\D</code>, <code>\w</code>, <code>\W</code>,
+        <code>\s</code>, <code>\S</code>, <code>\t</code>, <code>\r</code>,
+        <code>\n</code>, <code>\v</code>, <code>\f</code>, <code>[\b]</code>,
+        <code>\0</code>, <code>\c<em>X</em></code>, <code>\x<em>hh</em></code>,
+        <code>\u<em>hhhh</em></code>, <code>\u<em>{hhhh}</em></code>,
+        <code><em>x</em>|<em>y</em></code>
       </td>
       <td>
         <p>
@@ -99,9 +94,9 @@ tags:
     </tr>
     <tr>
       <td>
-        <code>^</code>, <code>$</code>, <code>x(?=y)</code>,
-        <code>x(?!y)</code>, <code>(?&#x3C;=y)x</code>,
-        <code>(?&#x3C;!y)x</code>, <code>\b</code>, <code>\B</code>
+        <code>^</code>, <code>$</code>, <code>\b</code>, <code>\B</code>,
+        <code>x(?=y)</code>, <code>x(?!y)</code>, <code>(?&#x3C;=y)x</code>,
+        <code>(?&#x3C;!y)x</code>
       </td>
       <td>
         <p>
@@ -114,9 +109,8 @@ tags:
     </tr>
     <tr>
       <td>
-        <code>(x)</code>, <code>(?:x)</code>, <code>(?&#x3C;Name>x)</code>,
-        <code>x|y</code>, <code>[xyz]</code>, <code>[^xyz]</code>,
-        <code>\<em>Number</em></code>
+        <code>(<em>x</em>)</code>, <code>(?&#x3C;Name>x)</code>, <code>(?:<em>x</em>)</code>,
+        <code>\<em>n</em></code>, <code>\k&#x3C;Name></code>
       </td>
       <td>
         <p>
@@ -129,9 +123,9 @@ tags:
     </tr>
     <tr>
       <td>
-        <code>*</code>, <code>+</code>, <code>?</code>,
-        <code>x{<em>n</em>}</code>, <code>x{<em>n</em>,}</code>,
-        <code>x{<em>n</em>,<em>m</em>}</code>
+        <code><em>x</em>*</code>, <code><em>x</em>+</code>, <code><em>x</em>?</code>,
+        <code><em>x</em>{<em>n</em>}</code>, <code><em>x</em>{<em>n</em>,}</code>,
+        <code><em>x</em>{<em>n</em>,<em>m</em>}</code>
       </td>
       <td>
         <p>
@@ -463,7 +457,7 @@ form.addEventListener("submit", (event) => {
 
 #### Результат
 
-{{ EmbedLiveSample('zastosuvannia-spetsialnykh-symvoliv-dlia-perevirky-vvodu') }}
+{{EmbedLiveSample('zastosuvannia-spetsialnykh-symvoliv-dlia-perevirky-vvodu')}}
 
 ## Інструменти
 

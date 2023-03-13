@@ -1,22 +1,13 @@
 ---
 title: Math.max()
 slug: Web/JavaScript/Reference/Global_Objects/Math/max
-tags:
-  - JavaScript
-  - Math
-  - Method
-  - Maximum
-  - Reference
-  - Largest
-  - Largest Number
-  - Largest Value
-  - max
+page-type: javascript-static-method
 browser-compat: javascript.builtins.Math.max
 ---
 
 {{JSRef}}
 
-Функція **`Math.max()`** (максимум) повертає найбільше значення з-поміж переданих нуля чи більше вхідних чисел, або -{{jsxref("Infinity")}}, якщо параметрів немає.
+Статичний метод **`Math.max()`** (максимум) повертає найбільше значення з-поміж переданих нуля чи більше вхідних чисел, або -{{jsxref("Infinity")}}, якщо параметрів немає.
 
 {{EmbedInteractiveExample("pages/js/math-max.html")}}
 

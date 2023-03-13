@@ -1,13 +1,7 @@
 ---
 title: Date.prototype.toISOString()
 slug: Web/JavaScript/Reference/Global_Objects/Date/toISOString
-tags:
-  - Date
-  - JavaScript
-  - Method
-  - Prototype
-  - Reference
-  - polyfill
+page-type: javascript-instance-method
 browser-compat: javascript.builtins.Date.toISOString
 ---
 
@@ -52,4 +46,3 @@ console.log(today.toISOString()); // Повертає 2011-10-05T14:48:00.000Z
 - {{jsxref("Date.prototype.toLocaleDateString()")}}
 - {{jsxref("Date.prototype.toTimeString()")}}
 - {{jsxref("Date.prototype.toUTCString()")}}
-- [Поліфіл](https://github.com/behnammodi/polyfill/blob/master/date.polyfill.js)

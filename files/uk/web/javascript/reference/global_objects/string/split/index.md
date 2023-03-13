@@ -1,14 +1,7 @@
 ---
 title: String.prototype.split()
 slug: Web/JavaScript/Reference/Global_Objects/String/split
-tags:
-  - JavaScript
-  - Method
-  - Prototype
-  - Reference
-  - Regular Expressions
-  - String
-  - Polyfill
+page-type: javascript-instance-method
 browser-compat: javascript.builtins.String.split
 ---
 
@@ -21,7 +14,6 @@ browser-compat: javascript.builtins.String.split
 ## Синтаксис
 
 ```js-nolint
-split()
 split(separator)
 split(separator, limit)
 ```
@@ -29,7 +21,7 @@ split(separator, limit)
 ### Параметри
 
 - `separator` (розділювач) {{optional_inline}}
-  - : Патерн, що вказує, де повинно відбутися кожне розщеплення. Може бути або рядком, або об'єктом з методом [`Symbol.split`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/split); типовим прикладом такого об'єкта є {{jsxref("Global_Objects/RegExp", "регулярний вираз", "", 1)}}. Якщо цей параметр `undefined`, то повертається вихідний рядок, обгорнутий в масив.
+  - : Патерн, що вказує, де повинно відбутися кожне розщеплення. Може бути або рядком, або об'єктом з методом [`Symbol.split`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/split); типовим прикладом такого об'єкта є {{jsxref("Global_Objects/RegExp", "регулярний вираз", "", 1)}}. Усі значення, котрі не є об'єктами з методом `@@split`, [зводяться до рядків](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka), тож опускання цього параметра або передача в ньому `undefined` змушує `split()` розбивати рядок за розділювачем `"undefined"`, а це рідко є тим, що потрібно.
 - `limit` (обмеження) {{optional_inline}}
   - : Невід'ємне ціле число, котре позначає обмеження кількості підрядків, які буде включено в повернений масив. Якщо цей параметр задано, рядок розділяється в кожному місці, де трапляється вказаний `separator`, проте зупиняється, коли в масиві опиняється вказана в `limit` кількість елементів. Будь-який залишок тексту не буде включено в масив узагалі.
     - Масив може містити менше елементів, ніж вказано в `limit`, якщо функція дійшла до кінця рядка раніше, ніж був вибраний `limit`.
@@ -46,7 +38,7 @@ split(separator, limit)
 Якщо `separator` – порожній рядок (`""`), то `str` перетворюється на масив своїх "символів" UTF-16, котрий не містить порожніх рядків на жодному зі своїх кінців.
 
 > **Примітка:** Таким чином, при передачі рядка як `separator` – `"".split("")` є єдиним способом отримати порожній масив.
-> **Застереження:** Коли як розділювач використовується порожній рядок (`""`), то рядок **не** ділиться на _видимі символи_ ([графемні кластери (англ.)](https://unicode.org/reports/tr29/#Grapheme_Cluster_Boundaries)) чи символи юнікоду (кодові точки), натомість – на кодові одиниці UTF-17. Отже – руйнуються [сурогатні пари (англ.)](https://unicode.org/faq/utf_bom.html#utf16-2). Дивіться ["Як на JavaScript отримати з рядка масив символів?" на StackOverflow (англ.)](https://stackoverflow.com/questions/4547609/how-to-get-character-array-from-a-string/34717402#34717402).
+> **Застереження:** Коли як розділювач використовується порожній рядок (`""`), то рядок **не** ділиться на _видимі символи_ ([графемні кластери (англ.)](https://unicode.org/reports/tr29/#Grapheme_Cluster_Boundaries)) чи символи Unicode (кодові точки), натомість – на кодові одиниці UTF-16. Отже – руйнуються [сурогатні пари (англ.)](https://unicode.org/faq/utf_bom.html#utf16-2). Дивіться ["Як на JavaScript отримати з рядка масив символів?" на StackOverflow (англ.)](https://stackoverflow.com/questions/4547609/how-to-get-character-array-from-a-string/34717402#34717402).
 
 Якщо `separator` є регулярним виразом, що дає збіг з порожніми рядками, то те, чи розбивається збіг на кодові одиниці UTF-16, чи на кодові точки Unicode, залежить від присутності на регулярному виразові позначки [`u`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/unicode).
 
@@ -65,13 +57,13 @@ split(separator, limit)
 
 ### Застосування split()
 
-Якщо початковий рядок порожній, і не вказаний жодний розділювач, `split()` поверне масив з одним порожнім рядком замість порожнього масиву. Якщо ж обидва значення — і рядок, і розділювач — це порожні рядки, буде повернено порожній масив.
+Коли рядок порожній і заданий непорожній розділювач, `split()` повертає `[""]`. Якщо і рядок, і розділювач є порожніми рядками, то повертається порожній масив.
 
 ```js
 const emptyString = "";
 
-// Рядок є порожнім, жодний розділювач не вказаний
-console.log(emptyString.split());
+// рядок – порожній, а розділювач – ні
+console.log(emptyString.split("a"));
 // [""]
 
 // і рядок, і розділювач – порожні рядки
