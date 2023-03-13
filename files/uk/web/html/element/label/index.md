@@ -43,7 +43,7 @@ browser-compat: html.elements.label
 
 - `for`
 
-  - : Значення атрибута `for` мусить бути одним {{htmlattrxref("id")}} [підписуваного](/uk/docs/Web/HTML/Content_categories#pidpysuvani) елемента форми у тому самому документі, що й елемент `<label>`. Отже, будь-який елемент `label` може бути пов'язаний лише з одним контрольним елементом.
+  - : Значення атрибута `for` мусить бути одним [`id`](/uk/docs/Web/HTML/Global_attributes#id) [підписуваного](/uk/docs/Web/HTML/Content_categories#pidpysuvani) елемента форми у тому самому документі, що й елемент `<label>`. Отже, будь-який елемент `label` може бути пов'язаний лише з одним контрольним елементом.
 
     > **Примітка:** Щоб задати атрибут `for` програмно, слід використовувати [`htmlFor`](/uk/docs/Web/API/HTMLLabelElement/htmlFor).
 
