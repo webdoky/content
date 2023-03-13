@@ -29,6 +29,9 @@ target_branch_name=${target_branch_name//\//-}
 # Lowercase
 target_branch_name=$(echo "$target_branch_name" | tr '[:upper:]' '[:lower:]')
 
+# Three dots are not allowed, they are replaced with a hyphen
+target_branch_name=$(echo $target_branch_name | sed -E 's/\.\.\.+/-/g')
+
 # Add branch name prefix
 target_branch_name="update/$target_branch_name"
 

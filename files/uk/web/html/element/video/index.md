@@ -39,7 +39,7 @@ browser-compat: html.elements.video
 
     Дозволені значення: `nodownload`, `nofullscreen` і `noremoteplayback`.
 
-    Використовуйте атрибут [`disablepictureinpicture`](#attr-disablepictureinpicture) при потребі вимкнути режим картинки-в-картинці (і контрольні елементи).
+    Використовуйте атрибут [`disablepictureinpicture`](#disablepictureinpicture) при потребі вимкнути режим картинки-в-картинці (і контрольні елементи).
 
 - `crossorigin`
 

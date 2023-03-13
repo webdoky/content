@@ -2,6 +2,8 @@
 
 params=$@
 
+allow_update_option=$(echo $@ | cut -d" " -f2)
+
 # Alters section name for some sections
 function alter_section_name()
 {
@@ -40,14 +42,14 @@ set -- $changed_translations
 
 action_marker=$1
 translation=$2
-if [ "$action_marker" == "M" ]; then
-  # Modified
-  action="update"
-elif [ "$action_marker" == "??" ]; then
+if [ "$action_marker" == "??" ] || [ "$action_marker" == "AM" ] || [ "$action_marker" == "A" ]; then
   # Untracked; new file
   action="translation"
+elif [ "$action_marker" == "M" ]; then
+  # Modified
+  action="update"
 else
-  echo "Better commit this manually."
+  echo "$action_marker -- better commit this manually."
   exit 1
 fi
 translation_folder=${translation%/index.md}
@@ -55,12 +57,47 @@ translation_folder=${translation%/index.md}
 translation_slug=${translation_folder#/}
 translation_slug=${translation_folder#files/uk/}
 
-if [ "$params" == '--allow-update' ]; then
-  ./scripts/startupdate.sh $translation --allow-update || exit 1
-else
-  ./scripts/startupdate.sh $translation || exit 1
+echo "Switching to a proper Git branch..."
+PREFIXES_TO_DROP=("$(pwd)/" "https://webdoky.org/uk/docs" "/" "files/uk" "/")
+SUFFIXES_TO_DROP=("index.md" "/")
+
+target_branch_name=$translation_slug
+
+# Drop usual prefixes: root URL, absolute and relative root folders
+for prefix in "${PREFIXES_TO_DROP[@]}"; do
+  target_branch_name=${target_branch_name#$prefix}
+done
+# Drop usual suffixes: index.md and a slash
+for suffix in "${SUFFIXES_TO_DROP[@]}"; do
+  target_branch_name=${target_branch_name%"$suffix"}
+done
+
+# Replace slashes with hyphens
+target_branch_name=${target_branch_name//\//-}
+
+# Lowercase
+# target_branch_name=$(echo "$target_branch_name" | tr '[:upper:]' '[:lower:]')
+
+# Three dots are not allowed, they are replaced with a hyphen
+target_branch_name=$(echo $target_branch_name | sed -E 's/\.\.\.+/-/g')
+
+# Add branch name prefix
+target_branch_name="$action/$target_branch_name"
+
+# Use gotobranch script
+./scripts/gotobranch.sh $target_branch_name $allow_update_option
+gtb_result=$?
+
+if [ $gtb_result != 0 ]; then
+  if [ $(git rev-parse --abbrev-ref HEAD) == "$target_branch_name" ] && [ "$allow_update_option" == "--allow-update" ]; then
+    echo 'Already on correct branch'
+  else
+    exit 1
+  fi
 fi
 
+
+echo "Staging the translation"
 # Folder must be added, not single file: the folder may contain misc files
 git add $translation_folder
 
@@ -70,7 +107,11 @@ if [ "$section" == "web" ]; then
 fi
 section=$(alter_section_name $section)
 
+
+echo "Staging LanguageTool corrections"
 # Always commit language alterings
 git add ./*_additions.txt
+echo "Git commit"
 git commit -m "$action($section): $translation_slug"
+echo "Git push"
 git push
