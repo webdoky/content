@@ -240,7 +240,7 @@ console.log(contacts.size); // 1
 Ці властивості означені на `Map.prototype` і є спільними для всіх примірників `Map`.
 
 - {{jsxref("Object/constructor", "Map.prototype.constructor")}}
-  - : Функція-конструктор, що створила об'єкт-примірник. For `Map` instances, the initial value is the {{jsxref("Map/Map", "Map")}} constructor. Для примірників `Map` початковим значенням є конструктор {{jsxref("Map/Map", "Map")}}.
+  - : Функція-конструктор, що створила об'єкт-примірник. Для примірників `Map` початковим значенням є конструктор {{jsxref("Map/Map", "Map")}}.
 - {{jsxref("Map.prototype.size")}}
   - : Повертає кількість пар ключ-значення об'єкта `Map`.
 - `Map.prototype[@@toStringTag]`
