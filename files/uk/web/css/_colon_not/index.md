@@ -2,15 +2,6 @@
 title: ":not()"
 slug: Web/CSS/:not
 page-type: css-pseudo-class
-tags:
-  - ":not()"
-  - CSS
-  - Layout
-  - Negation
-  - Pseudo-class
-  - Reference
-  - Selector
-  - Web
 browser-compat: css.selectors.not
 ---
 
@@ -40,7 +31,7 @@ browser-compat: css.selectors.not
 - `:not(.foo)` дасть збіг з усім, що не є `.foo`, _включно з {{HTMLElement("html")}} і {{HTMLElement("body")}}._
 - Цей селектор дасть збіг з усім, що "не є X". Це може бути неочікуваним при використанні [комбінатора нащадків](/uk/docs/Web/CSS/Descendant_combinator), оскільки є декілька шляхів для вибору цільового елемента. Наприклад, `body :not(table) a` все одно застосується до посилань всередині {{HTMLElement("table")}}, оскільки {{HTMLElement("tr")}}, {{HTMLElement("tbody")}}, {{HTMLElement("th")}}, {{HTMLElement("td")}}, {{HTMLElement("caption")}} тощо є збігом для частини селектора `:not(table)`.
 - Можна заперечувати декілька селекторів водночас. Наприклад: `:not(.foo, .bar)` – рівносильно `:not(.foo):not(.bar)`.
-- Якщо будь-який з селекторів, переданих у псевдоклас `:not()`, є недійсним або не підтримується браузером, то недійсним стане все правило. Дієвий спосіб обійти цю логіку – використовувати псевдоклас [`:is`](/uk/docs/Web/CSS/:is), котрий приймає поблажливий список селекторів. Наприклад, `:not(.foo, :invalid-pseudo-class)` зробить недійсним усе правило, натомість `:is(:not(.foo), :not(:invalid-pseudo-class))` дасть збіг з будь-яким елементом, котрий не є `.foo`.
+- Якщо будь-який з селекторів, переданих у псевдоклас `:not()`, є недійсним або не підтримується браузером, то недійсним стане все правило. Дієвий спосіб обійти цю логіку – використовувати псевдоклас [`:is`](/uk/docs/Web/CSS/:is), котрий приймає поблажливий список селекторів. Наприклад, `:not(.foo, :invalid-pseudo-class)` зробить недійсним усе правило, натомість `:is(:not(.foo), :not(:invalid-pseudo-class))` дасть збіг з будь-яким елементом (_включно з {{HTMLElement("html")}} і {{HTMLElement("body")}}_), котрий не є `.foo`.
 
 ## Приклади
 
@@ -94,6 +85,41 @@ h2 :not(span.foo) {
 #### Результат
 
 {{EmbedLiveSample('bazovyi-nabir-prykladiv-z-not', '100%', 320)}}
+
+### :not() із недійсними селекторами
+
+Цей приклад демонструє використання `:not()` з недійсними селекторами та те, як запобігти нечинності всього селектора.
+
+#### HTML
+
+```html
+<div>Я – div</div>
+<p class="foo">Я – абзац із .foo</p>
+<p class="bar">Я – абзац із .bar</p>
+```
+
+#### CSS
+
+```css
+/* Недійсне правило, нічого не робить */
+:not(.foo, :invalid-pseudo-class) {
+  color: red;
+  font-style: italic;
+}
+/* Вибрати всі елементи без класу `foo`, що може включати елементи <html> і <body> */
+:is(:not(.foo), :not(:invalid-pseudo-class)) {
+  text-decoration: underline;
+}
+/* Вибрати всі елементи <p> без класу `foo` */
+p:is(:not(.foo), :not(:invalid-pseudo-class)) {
+  color: green;
+  border-top: dotted thin currentcolor;
+}
+```
+
+#### Результат
+
+{{EmbedLiveSample('not-iz-nediisnymy-selektoramy', '100%', 320)}}
 
 ## Специфікації
 
