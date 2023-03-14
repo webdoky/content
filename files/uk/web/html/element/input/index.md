@@ -591,6 +591,12 @@ browser-compat: html.elements.input
   </thead>
   <tbody>
     <tr>
+      <td><a href="#autocapitalize"><code>autocapitalize</code></a></td>
+      <td>
+        Рядок, що вказує на те, як до вмісту текстових елементів повинно застосовуватись автоматичне додавання великих літер. <strong>Лише Safari.</strong>
+      </td>
+    </tr>
+    <tr>
       <td><a href="#autocorrect"><code>autocorrect</code></a></td>
       <td>
         Рядок, котрий вказує, чи є автокорекція <code>on</code> (ввімкнена) або <code>off</code> (вимкнена). <strong>Лише Safari.</strong>
@@ -633,6 +639,19 @@ browser-compat: html.elements.input
     </tr>
   </tbody>
 </table>
+
+- `autocapitalize` {{non-standard_inline}}
+
+  - : (Лише Safari). Рядок, що вказує на те, як повинно застосовуватись автоматичне додавання великих літер, коли користувач редагує таке поле. Дозволені значення:
+
+    - `none`
+      - : Не додавати автоматично жодних великих літер
+    - `sentences`
+      - : Автоматично робити великою першу літеру кожного речення.
+    - `words`
+      - : Автоматично робити великою першу літеру кожного слова.
+    - `characters`
+      - : Автоматично робити великою кожну літеру.
 
 - `autocorrect` {{non-standard_inline}} (автокоригування)
 
