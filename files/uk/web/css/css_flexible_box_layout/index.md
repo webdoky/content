@@ -1,5 +1,5 @@
 ---
-title: Компонування Гнучкої рамки CSS (Флексбокс)
+title: Компонування гнучкої рамки CSS
 slug: Web/CSS/CSS_Flexible_Box_Layout
 page-type: css-module
 spec-urls: https://drafts.csswg.org/css-flexbox/
