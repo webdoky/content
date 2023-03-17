@@ -3,6 +3,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2023-03-10 - 2023-03-17]
+
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/regexp ([e45f339](https://github.com/webdoky/content/commit/e45f3398da2ebde47ac2dda9bb59845231acfdd1))
+* **Оновлення перекладу(CSS):** web/css/align-items ([2e4ebcd](https://github.com/webdoky/content/commit/2e4ebcd2d4a6f5395c2c565fd09192b93ac7c848))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/number ([6ae9340](https://github.com/webdoky/content/commit/6ae93409a02569bfacab83ba3d599ae0dd26eda0))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/split ([d1600bb](https://github.com/webdoky/content/commit/d1600bb957ae14649b810a6553a074e5e5e44f81))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/tolowercase ([743bcbb](https://github.com/webdoky/content/commit/743bcbb822a46d0c8510b68c11078e9a6d555c54))
+* **Оновлення перекладу(CSS):** web/css/length ([82fcda3](https://github.com/webdoky/content/commit/82fcda33701632614e80b1ea1c0c7c1519637921))
+* **Оновлення перекладу(CSS):** web/css/inheritance ([69eb1e5](https://github.com/webdoky/content/commit/69eb1e518f8230dcb6a517eba472cfa00ceaf12a))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/touppercase ([02b7752](https://github.com/webdoky/content/commit/02b7752f9cad93f0e71656083011d170f5616760))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/charat ([c599d89](https://github.com/webdoky/content/commit/c599d8986bbc42843354643606ebc78c001be09e))
+* **Оновлення перекладу(CSS):** web/css/padding ([95d0d26](https://github.com/webdoky/content/commit/95d0d260bed2dcfb3d37ec8eb749c233c6d0796d))
+* **Оновлення перекладу(CSS):** web/css/text-align ([7a66396](https://github.com/webdoky/content/commit/7a663964b5e19c514dd6f16ba859c0714ed13b46))
+
 ## [2023-03-03 - 2023-03-10]
 
 * **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/padstart ([778865b](https://github.com/webdoky/content/commit/778865b10a91c84585e3419af1266ebc54018379))
