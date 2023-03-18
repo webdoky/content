@@ -1,17 +1,10 @@
 ---
 title: String.prototype.at()
 slug: Web/JavaScript/Reference/Global_Objects/String/at
-tags:
-  - String
-  - JavaScript
-  - Method
-  - Prototype
-  - Reference
-  - polyfill
-  - at
-  - Experimental
+page-type: javascript-instance-method
 browser-compat: javascript.builtins.String.at
 ---
+
 {{JSRef}}
 
 Метод **`at()`** приймає ціле число і повертає новий {{jsxref('String', 'рядок')}}, що складається з однієї кодової одиниці UTF-16, розміщеної за вказаною позицією. Цей метод приймає як додатні, так і від'ємні цілі числа. Від'ємні числа позначають номер позиції у зворотному напрямку, від останнього символу рядка.
@@ -20,7 +13,7 @@ browser-compat: javascript.builtins.String.at
 
 ## Синтаксис
 
-```js
+```js-nolint
 at(index)
 ```
 
@@ -45,15 +38,13 @@ function returnLast(arr) {
   return arr.at(-1);
 }
 
-let invoiceRef = 'мійІнвойс01';
+let invoiceRef = "мійІнвойс01";
 
-console.log( returnLast(invoiceRef) );
-// Друкує: '1'
+console.log(returnLast(invoiceRef)); // '1'
 
-invoiceRef = 'мійІнвойс02';
+invoiceRef = "мійІнвойс02";
 
-console.log( returnLast(invoiceRef) );
-// Друкує: '2'
+console.log(returnLast(invoiceRef)); // '2'
 ```
 
 ### Порівняння методів
@@ -61,19 +52,19 @@ console.log( returnLast(invoiceRef) );
 Нижче наведено порівняння різних способів отримання передостаннього символу {{jsxref('String', 'рядка')}}. Позаяк всі наведені далі методи — коректні, з-поміж них виділяється лаконічність і чіткість саме методу `at()`.
 
 ```js
-const myString = 'Всякий зелений автобус їде швидко.';
+const myString = "Всякий зелений автобус їде швидко.";
 
 // Використання властивості "length" і методу charAt()
-const lengthWay = myString.charAt(myString.length-2);
-console.log(lengthWay); // Друкує: 'о'
+const lengthWay = myString.charAt(myString.length - 2);
+console.log(lengthWay); // 'о'
 
 // За допомогою методу slice()
 const sliceWay = myString.slice(-2, -1);
-console.log(sliceWay); // Друкує: 'о'
+console.log(sliceWay); // 'о'
 
 // Шляхом застосування методу at()
 const atWay = myString.at(-2);
-console.log(atWay); // Друкує: 'о'
+console.log(atWay); // 'о'
 ```
 
 ## Специфікації
@@ -86,7 +77,7 @@ console.log(atWay); // Друкує: 'о'
 
 ## Дивіться також
 
-- Поліфіл методу `String.prototype.at` також доступний у [`core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
+- [Поліфіл `String.prototype.at` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
 - [Поліфіл методу "at()"](https://github.com/tc39/proposal-relative-indexing-method#polyfill).
 - {{jsxref("String.prototype.indexOf()")}}
 - {{jsxref("String.prototype.lastIndexOf()")}}
