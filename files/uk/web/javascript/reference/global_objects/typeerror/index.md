@@ -1,12 +1,7 @@
 ---
 title: TypeError
 slug: Web/JavaScript/Reference/Global_Objects/TypeError
-tags:
-  - Class
-  - JavaScript
-  - Object
-  - Reference
-  - TypeError
+page-type: javascript-class
 browser-compat: javascript.builtins.TypeError
 ---
 
@@ -22,6 +17,8 @@ browser-compat: javascript.builtins.TypeError
 
 `TypeError` – це {{Glossary("serializable object", "серіалізовний об'єкт")}}, тож може бути клонований за допомогою {{domxref("structuredClone()")}} або скопійований між [воркерами](/uk/docs/Web/API/Worker) за допомогою {{domxref("Worker/postMessage()", "postMessage()")}}.
 
+`TypeError` є підкласом {{jsxref("Error")}}.
+
 ## Конструктор
 
 - {{jsxref("Global_Objects/TypeError/TypeError", "TypeError()")}}
@@ -29,20 +26,18 @@ browser-compat: javascript.builtins.TypeError
 
 ## Властивості примірника
 
-- {{jsxref("Error.prototype.message", "TypeError.prototype.message")}}
-  - : Повідомлення помилки. Успадковано від {{jsxref("Error")}}.
-- {{jsxref("Error.prototype.name", "TypeError.prototype.name")}}
-  - : Ім'я помилки. Успадковано від {{jsxref("Error")}}.
-- {{jsxref("Error.prototype.cause", "TypeError.prototype.cause")}}
-  - : Причина помилки. Успадковано від {{jsxref("Error")}}.
-- {{jsxref("Error.prototype.fileName", "TypeError.prototype.fileName")}} {{non-standard_inline}}
-  - : Шлях до файлу, що запустив цю помилку. Успадковано від {{jsxref("Error")}}.
-- {{jsxref("Error.prototype.lineNumber", "TypeError.prototype.lineNumber")}} {{non-standard_inline}}
-  - : Номер рядка, що запустив цю помилку. Успадковано від {{jsxref("Error")}}.
-- {{jsxref("Error.prototype.columnNumber", "TypeError.prototype.columnNumber")}} {{non-standard_inline}}
-  - : Номер колонки в рядку, що запустила цю помилку. Успадковано від {{jsxref("Error")}}.
-- {{jsxref("Error.prototype.stack", "TypeError.prototype.stack")}} {{non-standard_inline}}
-  - : Траса стека. Успадковано від {{jsxref("Error")}}.
+_Також успадковує властивості примірника від свого предка – {{jsxref("Error")}}._
+
+Ці властивості означені на `TypeError.prototype` і є спільними для всіх примірників `TypeError`.
+
+- {{jsxref("Object/constructor", "TypeError.prototype.constructor")}}
+  - : Функція-конструктор, що створила об'єкт-примірник. Для примірників `TypeError` початковим значенням є конструктор {{jsxref("TypeError/TypeError", "TypeError")}}.
+- {{jsxref("Error/name", "TypeError.prototype.name")}}
+  - : Представляє назву типу помилки. Для `TypeError.prototype.name` початковим значенням є `"TypeError"`.
+
+## Методи примірника
+
+_Успадковує методи примірника від свого предка – {{jsxref("Error")}}_.
 
 ## Приклади
 
