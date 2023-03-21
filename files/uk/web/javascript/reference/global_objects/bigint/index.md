@@ -1,11 +1,6 @@
 ---
 title: BigInt
 slug: Web/JavaScript/Reference/Global_Objects/BigInt
-tags:
-  - BigInt
-  - Class
-  - JavaScript
-  - Reference
 browser-compat: javascript.builtins.BigInt
 ---
 
@@ -230,6 +225,10 @@ Boolean(12n);
 
 ## Властивості примірника
 
+Ці властивості означені на `BigInt.prototype` і є спільними для всіх примірників `BigInt`.
+
+- {{jsxref("Object/constructor", "BigInt.prototype.constructor")}}
+  - : Функція-конструктор, що створила об'єкт-примірник. Для примірників `BigInt` початкове значення – конструктор {{jsxref("BigInt/BigInt", "BigInt")}}.
 - `BigInt.prototype[@@toStringTag]`
   - : Початкове значення [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"BigInt"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}. Проте у зв'язку з тим, що `BigInt` також має власну реалізацію метода [`toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/toString), ця властивість не використовується, якщо не викликати [`Object.prototype.toString.call()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/call) зі значенням BigInt як `thisArg`.
 
