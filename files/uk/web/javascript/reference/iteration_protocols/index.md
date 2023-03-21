@@ -2,14 +2,6 @@
 title: Протоколи ітерування
 slug: Web/JavaScript/Reference/Iteration_protocols
 page-type: guide
-tags:
-  - ECMAScript 2015
-  - Guide
-  - Intermediate
-  - Iterable
-  - Iterator
-  - JavaScript
-  - Protocols
 ---
 
 {{jsSidebar("More")}}
@@ -127,7 +119,9 @@ console.log(aGeneratorObject[Symbol.iterator]() === aGeneratorObject);
 
 ### Вбудовані ітеровані об'єкти
 
-{{jsxref("String")}}, {{jsxref("Array")}}, {{jsxref("TypedArray")}}, {{jsxref("Map")}}, {{jsxref("Set")}} і [`Segments`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter/segment/Segments) (повернений з [`Intl.Segmenter.prototype.segment()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter/segment)) є вбудованими ітерованими об'єктами, адже кожний з їхніх об'єктів `prototype` має реалізацію метода `@@iterator`. На додачу, об'єкт [`arguments`](/uk/docs/Web/JavaScript/Reference/Functions/arguments) і частина типів колекцій DOM, як то {{domxref("NodeList")}}, так само є ітерованими об'єктами. Вбудованих асинхронних ітерованих об'єктів наразі немає.
+{{jsxref("String")}}, {{jsxref("Array")}}, {{jsxref("TypedArray")}}, {{jsxref("Map")}}, {{jsxref("Set")}} і [`Segments`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter/segment/Segments) (повернений з [`Intl.Segmenter.prototype.segment()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter/segment)) є вбудованими ітерованими об'єктами, адже кожний з їхніх об'єктів `prototype` має реалізацію метода `@@iterator`. На додачу, об'єкт [`arguments`](/uk/docs/Web/JavaScript/Reference/Functions/arguments) і частина типів колекцій DOM, як то {{domxref("NodeList")}}, так само є ітерованими об'єктами.
+
+[`ReadableStream`](/uk/docs/Web/API/ReadableStream) – єдиний вбудований асинхронно ітерований об'єкт на час написання цих слів.
 
 [Генераторні функції](/uk/docs/Web/JavaScript/Reference/Statements/function*) повертають [генераторні об'єкти](/uk/docs/Web/JavaScript/Reference/Global_Objects/Generator), котрі є ітерованими ітераторами. [Асинхронні генераторні функції](/uk/docs/Web/JavaScript/Reference/Statements/async_function*) повертають [асинхронні генераторні об'єкти](/uk/docs/Web/JavaScript/Reference/Global_Objects/AsyncGenerator), котрі є асинхронними ітерованими ітераторами.
 
