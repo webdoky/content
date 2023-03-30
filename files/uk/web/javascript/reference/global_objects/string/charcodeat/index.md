@@ -9,9 +9,9 @@ browser-compat: javascript.builtins.String.charCodeAt
 
 Метод **`charCodeAt()`** повертає ціле число в діапазоні від `0` до `65535`, що відповідає кодовій одиниці UTF-16 за переданим індексом в рядку.
 
-{{EmbedInteractiveExample("pages/js/string-charcodeat.html", "shorter")}}
-
 Значення кодової одиниці UTF-16 збігається зі значенням коду символу в Unicode для тих кодів, які поміщаються в одну кодову одиницю UTF-16. Якщо ж кодова одиниця Unicode не може бути виражена через одну кодову одиницю UTF-16 (через те, що її значення більше за `0xFFFF`), то значення коду, поверненого методом, буде _першою частиною сурогатної пари_ коду. Щоб отримати значення коду цілком, краще застосувати {{jsxref("Global_Objects/String/codePointAt", "codePointAt()")}}.
+
+{{EmbedInteractiveExample("pages/js/string-charcodeat.html", "shorter")}}
 
 ## Синтаксис
 
