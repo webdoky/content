@@ -2,15 +2,6 @@
 title: "@font-face"
 slug: Web/CSS/@font-face
 page-type: css-at-rule
-tags:
-  - "@font-face"
-  - At-rule
-  - CSS
-  - CSS Fonts
-  - Fonts
-  - Nick Names
-  - Reference
-  - typography
 browser-compat: css.at-rules.font-face
 ---
 
@@ -49,7 +40,7 @@ browser-compat: css.at-rules.font-face
 
     > **Примітка:** Дескриптор font-variant був прибраний зі специфікації у 2018 році. Підтримуються значення властивості {{cssxref("font-variant")}}, але немає рівносильного дескриптора.
 
-- {{cssxref("font-feature-settings", "font-feature-settings")}}
+- {{cssxref("@font-face/font-feature-settings", "font-feature-settings")}}
   - : Дає змогу контролювати передові типографські можливості в шрифтах OpenType.
 - {{cssxref("@font-face/font-variation-settings", "font-variation-settings")}}
   - : Дає змогу на низькому рівні контролювати варіації шрифтів TrueType та OpenType, шляхом задання чотирилітерних назв осей можливостей для видозміни, поруч з їхніми значеннями.
