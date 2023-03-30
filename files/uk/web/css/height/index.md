@@ -2,22 +2,12 @@
 title: height
 slug: Web/CSS/height
 page-type: css-property
-tags:
-  - CSS
-  - CSS Property
-  - Layout
-  - Reference
-  - Vertical
-  - dimensions
-  - height
-  - recipe:css-property
-  - size
 browser-compat: css.properties.height
 ---
 
 {{CSSRef}}
 
-Властивість CSS **`height`** (висота) вказує висоту елемента. Усталено властивість визначає висоту [області вмісту](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#oblast-vmistu). Втім, якщо властивість {{cssxref("box-sizing")}} має значення `border-box`, то вказане значення стає висотою [відмежованої області](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#vidmezhovana-oblast).
+Властивість CSS **`height`** (висота) вказує висоту елемента. Усталено властивість визначає висоту [області вмісту](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#oblast-vmistu). Втім, якщо властивість {{cssxref("box-sizing")}} має значення `border-box`, то вказане значення стає висотою [області меж](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#oblast-mezh).
 
 {{EmbedInteractiveExample("pages/css/height.html")}}
 
