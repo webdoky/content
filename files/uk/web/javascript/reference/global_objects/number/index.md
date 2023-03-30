@@ -1,5 +1,5 @@
 ---
-title: Number (Число)
+title: Number
 slug: Web/JavaScript/Reference/Global_Objects/Number
 page-type: javascript-class
 browser-compat: javascript.builtins.Number
