@@ -189,5 +189,5 @@ HTML вище виведе таке:
 
   - властивість {{CSSxRef("list-style")}} – для вибору типу маркера.
   - [Лічильники CSS](/uk/docs/Web/CSS/CSS_Counter_Styles/Using_CSS_counters) – для обробки складних вкладених переліків.
-  - властивість {{CSSxRef("line-height")}} – для імітації нерекомендованого атрибута {{HTMLAttrxRef("compact", "ul")}}
+  - властивість {{CSSxRef("line-height")}} – для імітації нерекомендованого атрибута [`compact`](#compact).
   - властивість {{CSSxRef("margin")}} – для керування відступами в списку.
