@@ -2,24 +2,12 @@
 title: "<a>: Якірний елемент"
 slug: Web/HTML/Element/a
 page-type: html-element
-tags:
-  - Content
-  - Element
-  - HTML
-  - HTML text-level semantics
-  - HTML:Flow content
-  - HTML:Interactive content
-  - HTML:Palpable Content
-  - HTML:Phrasing content
-  - Inline element
-  - Reference
-  - Web
 browser-compat: html.elements.a
 ---
 
 {{HTMLSidebar}}
 
-Елемент [HTML](/uk/docs/Web/HTML) **`<a>`** (він же _якірний_ елемент) з [атрибутом `href`](#attr-href) створює гіперпосилання до вебсторінок, файлів, адрес електронної пошти, місць на тій самій сторінці чи будь-чого іще, на що може посилатися URL.
+Елемент [HTML](/uk/docs/Web/HTML) **`<a>`** (він же _якірний_ елемент) з [атрибутом `href`](#href) створює гіперпосилання до вебсторінок, файлів, адрес електронної пошти, місць на тій самій сторінці чи будь-чого іще, на що може посилатися URL.
 
 Вміст всередині кожного `<a>` _повинен_ відображати спрямування посилання. Якщо присутній атрибут `href`, то натискання клавіші `Enter`, коли фокус знаходиться на елементі `<a>`, активує перехід.
 
@@ -29,7 +17,7 @@ browser-compat: html.elements.a
 
 Атрибути цього елемента включають [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
 
-- {{HTMLAttrDef("download")}}
+- `download`
 
   - : Змушує браузер обробляти заданий URL як завантаження. Може використовуватись як без, так і зі значенням `filename`:
 
@@ -50,7 +38,7 @@ browser-compat: html.elements.a
     >   - Якщо заголовок задає `filename`, то таке ім'я файлу матиме пріоритет над заданим в атрибуті `download`.
     >   - Якщо заголовок задає природу ресурсу як `inline` (вбудовану), Chrome і Firefox віддадуть пріоритет атрибутові та оброблятимуть це як завантаження. Старі версії Firefox (до 82) віддавали пріоритет заголовкові та показували вміст як вбудований.
 
-- {{HTMLAttrDef("href")}}
+- `href`
 
   - : URL, на котрий вказує гіперпосилання. Посилання не обмежені HTTP URL: вони можуть використовувати будь-яку схему URL, котру підтримують браузери:
 
@@ -61,26 +49,26 @@ browser-compat: html.elements.a
     - Адреси електронної пошти – за допомогою URL `mailto:`
     - Хоч веббраузери можуть не підтримувати інші схеми URL, вебсайти можуть їх підтримувати за допомогою [`registerProtocolHandler()`](/uk/docs/Web/API/Navigator/registerProtocolHandler)
 
-- {{HTMLAttrDef("hreflang")}}
+- `hreflang`
   - : Рекомендації щодо мови тексту в ресурсі за посиланням. Вбудованої логіки немає. Дозволені значення – такі самі, як в [глобального атрибута `lang`](/uk/docs/Web/HTML/Global_attributes/lang).
-- {{HTMLAttrDef("ping")}}
+- `ping`
   - : Розділений пробілами список URL. Коли відбувається перехід за посиланням, браузер пошле на ці URL {{HTTPMethod("POST")}}-запити з тілом `PING`. Зазвичай цей атрибут використовується для відстеження.
-- {{HTMLAttrDef("referrerpolicy")}}
+- `referrerpolicy`
 
   - : Яка інформація про [посилача](/uk/docs/Web/HTTP/Headers/Referer) буде надіслана при переході за посиланням.
 
     - `no-referrer`: Заголовок {{HTTPHeader("Referer")}} не буде надісланий.
     - `no-referrer-when-downgrade`: Заголовок {{HTTPHeader("Referer")}} не буде надісланий на ті {{Glossary("origin", "походження")}}, що не мають {{Glossary("TLS")}} ({{Glossary("HTTPS")}}).
-    - `origin`: Надісланий посилач буде обмежений походженням сторінки, що містить посилання: її [схемою](/uk/docs/Learn/Common_questions/What_is_a_URL), {{Glossary("host", "хостом")}} та {{Glossary("port", "портом")}}.
+    - `origin`: Надісланий посилач буде обмежений походженням сторінки, що містить посилання: її [схемою](/uk/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL), {{Glossary("host", "хостом")}} та {{Glossary("port", "портом")}}.
     - `origin-when-cross-origin`: Посилач, надісланий іншим походженням, буде обмежений схемою, хостом та портом. Переходи в межах того самого походження включатимуть увесь шлях.
     - `same-origin`: Посилач буде надісланий, якщо {{Glossary("Same-origin policy", "збігається походження")}}, натомість запити між різними походженнями не міститимуть інформації про посилача.
     - `strict-origin`: Надсилати як посилач походження документа, коли рівень протоколу захисту залишається сталим (HTTPS→HTTPS), але не надсилати його за менш захищеною адресою (HTTPS→HTTP).
     - `strict-origin-when-cross-origin` (усталене значення): Надсилати увесь URL при виконанні запиту за тим само походженням, надсилати лише походження, коли рівень протоколу захисту залишається сталим (HTTPS→HTTPS), і не надсилати заголовка за менш захищеною адресою (HTTPS→HTTP).
     - `unsafe-url`: Посилач включатиме походження _та_ шлях (але не [фрагмент](/uk/docs/Web/API/HTMLAnchorElement/hash), [пароль](/uk/docs/Web/API/HTMLAnchorElement/password) чи [ім'я користувача](/uk/docs/Web/API/HTMLAnchorElement/username)). **Це значення є небезпечним**, тому що воно пропускає походження та шляхи з захищених TLS ресурсів до незахищених походжень.
 
-- {{HTMLAttrDef("rel")}}
+- `rel`
   - : Відношення вказаного URL як розділені пробілами типи посилань.
-- {{HTMLAttrDef("target")}}
+- `target`
 
   - : Де показувати вказаний URL; значенням є ім'я _контексту перегляду_ (вкладка, вікно чи {{HTMLElement("iframe")}}). Наступні ключові слова мають особливі значення щодо того, де завантажувати URL:
 
@@ -91,28 +79,28 @@ browser-compat: html.elements.a
 
     > **Примітка:** `target="_blank"` на елементах `<a>` неявно встановлює таку саму поведінку `rel`, як встановлення [`rel="noopener"`](/uk/docs/Web/HTML/Attributes/rel/noopener), що не заповнює `window.opener`.
 
-- {{HTMLAttrDef("type")}}
+- `type`
   - : Дає підказку щодо формату ресурсу за URL у вигляді {{Glossary("MIME type", "типу MIME")}}. Вбудованої функціональності немає.
 
 ### Нерекомендовані атрибути
 
-- {{HTMLAttrDef("charset")}} {{Deprecated_Inline}}
+- `charset` {{Deprecated_Inline}}
 
   - : Підказка щодо {{Glossary("character encoding", "кодування символів")}} ресурсу за URL.
 
     > **Примітка:** Цей атрибут є нерекомендованим і **не повинен використовуватись авторами**. Використовуйте HTTP заголовок {{HTTPHeader("Content-Type")}} за вказаним URL.
 
-- {{HTMLAttrDef("coords")}} {{Deprecated_Inline}}
-  - : Використовується разом з [атрибутом `shape`](#attr-shape). Розділений комами список координат.
-- {{HTMLAttrDef("name")}} {{Deprecated_Inline}}
+- `coords` {{Deprecated_Inline}}
+  - : Використовується разом з [атрибутом `shape`](#shape). Розділений комами список координат.
+- `name` {{Deprecated_Inline}}
 
   - : Був необхідним для встановлення можливого цільового місця на сторінці. В HTML 4.01 і `id`, і `name` могли використовуватися на `<a>`, за умови що вони мали ідентичні значення.
 
-    > **Примітка:** Використовуйте натомість глобальний атрибут {{HTMLAttrxRef("id")}}.
+    > **Примітка:** Використовуйте натомість глобальний атрибут [`id`](/uk/docs/Web/HTML/Global_attributes#id).
 
-- {{HTMLAttrDef("rev")}} {{Deprecated_Inline}}
-  - : Вказував зворотне посилання; протилежність [атрибута `rel`](#attr-rel). Став нерекомендованим через те, що збивав з пантелику.
-- {{HTMLAttrDef("shape")}} {{Deprecated_Inline}}
+- `rev` {{Deprecated_Inline}}
+  - : Вказував зворотне посилання; протилежність [атрибута `rel`](#rel). Став нерекомендованим через те, що збивав з пантелику.
+- `shape` {{Deprecated_Inline}}
 
   - : Форма регіону гіперпосилання на бітовій карті.
 
@@ -163,6 +151,10 @@ a {
 <h2 id="rozdil-nyzhche">Розділ нижче</h2>
 ```
 
+#### Результат
+
+{{EmbedLiveSample('posylannia-na-element-v-mezhakh-tiiei-samoi-storinky')}}
+
 > **Примітка:** Для посилання на верх поточної сторінки можна використовувати `href="#top"` чи пустий фрагмент (`href="#"`), [це описано в специфікації HTML (англ.)](https://html.spec.whatwg.org/multipage/browsing-the-web.html#scroll-to-the-fragment-identifier).
 
 ### Посилання на адресу електронної пошти
@@ -173,6 +165,10 @@ a {
 <a href="mailto:nowhere@mozilla.org">Послати в нікуди електронного листа</a>
 ```
 
+#### Результат
+
+{{EmbedLiveSample('posylannia-na-adresu-elektronnoi-poshty')}}
+
 Для деталей щодо URL `mailto:`, наприклад, включення в них теми чи тіла листа, читайте [посилання електронної пошти](/uk/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#posylannia-elektronnoi-poshty) чи {{RFC(6068)}}.
 
 ### Посилання на номери телефонів
@@ -181,6 +177,10 @@ a {
 <a href="tel:+49.157.0156">+49 157 0156</a>
 <a href="tel:+1(800)555-0123">(800) 555-0123</a>
 ```
+
+#### Результат
+
+{{EmbedLiveSample('posylannia-na-nomery-telefoniv')}}
 
 Поведінка посилання `tel:` відрізняється залежно від можливостей пристрою:
 
@@ -280,6 +280,10 @@ document
 <p>Дізнайтеся більше про наші продукти <a href="/products">тут</a>.</p>
 ```
 
+##### Результат
+
+{{EmbedLiveSample('nevyraznyi-tekst-posylannia-iz-problemamy-dostupnosti')}}
+
 #### Виразний текст посилання
 
 На щастя, це легко виправити, і виходить насправді коротше за версію з проблемами доступності!
@@ -287,6 +291,10 @@ document
 ```html example-good
 <p>Дізнайтеся більше <a href="/products">про наші продукти</a>.</p>
 ```
+
+##### Результат
+
+{{EmbedLiveSample('vyraznyi-tekst-posylannia-1')}}
 
 Допоміжне програмне забезпечення має зручне скорочення для перелічення усіх посилань на сторінці. Втім, виразний текст посилань корисний для всіх користувачів: скорочення "перелічити всі посилання" імітує те, як зрячі користувачі хутко проглядають сторінки.
 
@@ -312,13 +320,17 @@ document
 </a>
 ```
 
+##### Результат
+
+{{EmbedLiveSample('posylannia-shcho-vidkryvaietsia-v-novii-vkladtsi-chy-novomu-vikni')}}
+
 #### Посилання на не-HTML ресурс
 
 ```html
 <a href="2017-annual-report.ppt">2017 Річний звіт (PowerPoint) </a>
 ```
 
-Якщо призначення посилання позначено іконкою, слід пересвідчитись, що ця іконка має {{HTMLAttrxRef("alt", "img", "текстову альтернативу", "true")}}:
+Якщо призначення посилання позначено іконкою, слід пересвідчитись, що ця іконка має [_текстову альтернативу_](/uk/docs/Web/HTML/Element/img#alt):
 
 ```html
 <a target="_blank" href="https://uk.wikipedia.org">
@@ -331,6 +343,10 @@ document
   <img alt="(файл PowerPoint)" src="ppt-icon.svg" />
 </a>
 ```
+
+##### Результат
+
+{{EmbedLiveSample('posylannia-na-ne-html-resurs')}}
 
 - [WebAIM: Посилання та гіпертекст – гіпертекстові посилання (англ.)](https://webaim.org/techniques/hypertext/hypertext_links)
 - [MDN / Розуміння WCAG, Настанови 3.2](/uk/docs/Web/Accessibility/Understanding_WCAG/Understandable#guideline_3.2_—_predictable_make_web_pages_appear_and_operate_in_predictable_ways)
@@ -363,7 +379,11 @@ document
 }
 ```
 
-Стрибкові посилання дають користувачам клавіатури пропустити вміст, що повторюється на багатьох сторінках, наприклад, навігацію у верхньому колонтитулі.
+#### Результат
+
+{{EmbedLiveSample('strybkovi-posylannia')}}
+
+Стрибкові посилання дають користувачам клавіатури змогу пропустити вміст, що повторюється на багатьох сторінках, наприклад, навігацію у верхньому колонтитулі.
 
 Стрибкові посилання особливо корисні для тих, хто орієнтується за допомогою допоміжних технологій, як то управління за допомогою перемикачів, голосових команд чи ротових або наголовних паличок, коли проходження крізь повторювані посилання може бути працемістким.
 
@@ -398,19 +418,19 @@ document
   <tbody>
     <tr>
       <th scope="row">
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories"
+        <a href="/uk/docs/Web/HTML/Content_categories"
           >Категорії вмісту</a
         >
       </th>
       <td>
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#potokovyi-vmist"
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
           >Потоковий вміст</a
         >,
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#opovidalnyi-vmist"
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
           >оповідальний вміст</a
         >,
         <a
-          href="/uk/docs/Web/Guide/HTML/Content_categories#interaktyvnyi-vmist"
+          href="/uk/docs/Web/HTML/Content_categories#interaktyvnyi-vmist"
           >інтерактивний вміст</a
         >, відчутний вміст.
       </td>
@@ -419,11 +439,11 @@ document
       <th scope="row">Дозволений вміст</th>
       <td>
         <a
-          href="/uk/docs/Web/Guide/HTML/Content_categories#model-prozoroho-vmistu"
+          href="/uk/docs/Web/HTML/Content_categories#model-prozoroho-vmistu"
           >Прозорий</a
         >, але жодний нащадок не може бути
         <a
-          href="/uk/docs/Web/Guide/HTML/Content_categories#interaktyvnyi-vmist"
+          href="/uk/docs/Web/HTML/Content_categories#interaktyvnyi-vmist"
           >інтерактивним вмістом</a
         > чи елементом
         <a href="/uk/docs/Web/HTML/Element/a"
@@ -443,10 +463,10 @@ document
       <th scope="row">Дозволені батьківські елементи</th>
       <td>
         Будь-який елемент, що приймає
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#opovidalnyi-vmist"
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
           >оповідальний вміст</a
         >, або будь-який елемент, що приймає
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#potokovyi-vmist"
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
           >потоковий елемент</a
         >, але не інший елемент <code>&#x3C;a></code>.
       </td>
@@ -488,6 +508,10 @@ document
     </tr>
   </tbody>
 </table>
+
+### Результат
+
+{{EmbedLiveSample('pryklady')}}
 
 ## Специфікації
 

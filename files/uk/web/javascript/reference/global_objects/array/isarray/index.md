@@ -2,13 +2,6 @@
 title: Array.isArray()
 slug: Web/JavaScript/Reference/Global_Objects/Array/isArray
 page-type: javascript-static-method
-tags:
-  - Array
-  - ECMAScript 5
-  - JavaScript
-  - Method
-  - Reference
-  - Polyfill
 browser-compat: javascript.builtins.Array.isArray
 ---
 
@@ -97,5 +90,4 @@ arr instanceof Array; // false
 ## Дивіться також
 
 - [Поліфіл `Array.isArray` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
-- [Поліфіл](https://github.com/behnammodi/polyfill/blob/master/array.polyfill.js)
 - {{jsxref("Array")}}

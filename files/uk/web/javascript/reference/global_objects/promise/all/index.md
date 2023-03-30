@@ -2,11 +2,6 @@
 title: Promise.all()
 slug: Web/JavaScript/Reference/Global_Objects/Promise/all
 page-type: javascript-static-method
-tags:
-  - ECMAScript 2015
-  - JavaScript
-  - Method
-  - Promise
 browser-compat: javascript.builtins.Promise.all
 ---
 
@@ -25,7 +20,7 @@ Promise.all(iterable)
 ### Параметри
 
 - `iterable`
-  - : [Ітерований об'єкт](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#protokol-iteruvannia) (наприклад, {{jsxref("Array")}}) з промісами.
+  - : [Ітерований об'єкт](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#protokol-iterovanoho-obiekta) (наприклад, {{jsxref("Array")}}) з промісами.
 
 ### Повернене значення
 

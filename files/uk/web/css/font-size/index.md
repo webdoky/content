@@ -2,18 +2,12 @@
 title: font-size
 slug: Web/CSS/font-size
 page-type: css-property
-tags:
-  - CSS
-  - CSS Fonts
-  - CSS Property
-  - Reference
-  - recipe:css-property
 browser-compat: css.properties.font-size
 ---
 
 {{CSSRef}}
 
-Властивість [CSS](/uk/docs/Web/CSS) **`font-size`** (розмір шрифту) встановлює розмір шрифту. Зміна розміру шрифту також змінює розміри одиниць вимірювання {{cssxref("&lt;length&gt;")}}, залежних від розміру шрифту, наприклад, `em`, `ex`, і так далі.
+Властивість [CSS](/uk/docs/Web/CSS) **`font-size`** (розмір шрифту) задає розмір шрифту. Зміна розміру шрифту також змінює розміри одиниць вимірювання {{cssxref("&lt;length&gt;")}}, залежних від розміру шрифту, наприклад, `em`, `ex`, і так далі.
 
 {{EmbedInteractiveExample("pages/css/font-size.html")}}
 
@@ -75,7 +69,7 @@ font-size: unset;
 > **Примітка:** Для якнайкращої доступності в загальному випадку найкраще використовувати значення, що відносні щодо усталеного розміру шрифту користувача.
 
 - `math` {{Experimental_Inline}}
-  При визначенні обчисленого значення властивості `font-size` мають бути застосовані особливі [правила математичного масштабування (англ.](https://w3c.github.io/mathml-core/#the-math-script-level-property) .
+  При визначенні обчисленого значення властивості `font-size` мають бути застосовані особливі [правила математичного масштабування (англ.)](https://w3c.github.io/mathml-core/#the-math-script-level-property).
 
 ## Опис
 

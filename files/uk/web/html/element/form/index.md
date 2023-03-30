@@ -2,15 +2,6 @@
 title: "<form>: Елемент форми"
 slug: Web/HTML/Element/form
 page-type: html-element
-tags:
-  - Element
-  - Form Element
-  - Forms
-  - HTML
-  - HTML Form Element
-  - HTML forms
-  - Reference
-  - Web
 browser-compat: html.elements.form
 ---
 
@@ -26,7 +17,7 @@ browser-compat: html.elements.form
 
 Цей елемент включає [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
 
-- {{htmlattrdef("accept")}} {{deprecated_inline}}
+- `accept` {{deprecated_inline}}
 
   - : Розділені комами [типи вмісту](/uk/docs/Web/SVG/Content_type), котрі приймає сервер.
 
@@ -35,7 +26,7 @@ browser-compat: html.elements.form
 - {{htmlattrdef("accept-charset")}}
   - : Розділені пробілами {{Glossary("character encoding", "кодування символів")}}, котрі приймає сервер. Браузер використає їх в порядку, в якому вони вказані. Усталене значення – [таке саме кодування, яке має сторінка](/uk/docs/Web/HTTP/Headers/Content-Encoding).
     (У попередніх версіях HTML кодування символів також могли бути розділені комами.)
-- {{htmlattrdef("autocapitalize")}} {{non-standard_inline}}
+- `autocapitalize` {{non-standard_inline}}
 
   - : Нестандартний атрибут, що використовується iOS Safari для контролю того, як текстові елементи форми повинні автоматично отримувати великі літери. Атрибути `autocapitalize` на елементах форми відкидають такі атрибути на `<form>`. Можливі значення:
 
@@ -44,27 +35,27 @@ browser-compat: html.elements.form
     - `words`: Велика літера на початку кожного слова.
     - `characters`: Усі літери великі – тобто верхній регістр.
 
-- {{htmlattrdef("autocomplete")}}
+- `autocomplete`
 
   - : Показує, чи можуть поля введення усталено автоматично заповнюватись браузером. Атрибути `autocomplete` елементів форми відкидають такий атрибут на `<form>`. Можливі значення:
 
     - `off`: Браузер може не заповнювати автоматично поля. (Браузери мають тенденцію ігнорувати це там, де підозрюють форми автентифікації; дивіться [Атрибут autocomplete і поля автентифікації](/uk/docs/Web/Security/Securing_your_site/Turning_off_form_autocompletion#atrybut-autocomplete-i-polia-avtentyfikatsii).)
     - `on`: Браузер може заповнювати поля автоматично.
 
-- {{htmlattrdef("name")}}
+- `name`
 
   - : Ім'я форми. Значення мусить не бути порожнім рядком, і бути унікальним серед елементів `form` у колекції форм, в котрій лежить форма, якщо така є.
 
-- {{htmlattrdef("rel")}}
-  - : Контролює анотації й те, якого роду посилання породжує форма. Серед анотацій: [`external`](/uk/docs/Web/HTML/Attributes/rel#attr-external), [`nofollow`](/uk/docs/Web/HTML/Attributes/rel#attr-nofollow), [`opener`](/uk/docs/Web/HTML/Attributes/rel#attr-opener), [`noopener`](/uk/docs/Web/HTML/Attributes/rel#attr-noopener і [`noreferrer`](/uk/docs/Web/HTML/Attributes/rel#attr-noreferrer). Серед різновидів посилань: [`help`](/uk/docs/Web/HTML/Attributes/rel#attr-help), [`prev`](/uk/docs/Web/HTML/Attributes/rel#attr-prev), [`next`](/uk/docs/Web/HTML/Attributes/rel#attr-next), [`search`](/uk/docs/Web/HTML/Attributes/rel#attr-search) і [`license`](/uk/docs/Web/HTML/Attributes/rel#attr-license). Значення [`rel`](/uk/docs/Web/HTML/Attributes/rel) є розділеним пробілами списком таких значень.
+- `rel`
+  - : Контролює анотації й те, якого роду посилання породжує форма. Серед анотацій: [`external`](/uk/docs/Web/HTML/Attributes/rel#external), [`nofollow`](/uk/docs/Web/HTML/Attributes/rel#nofollow), [`opener`](/uk/docs/Web/HTML/Attributes/rel#opener), [`noopener`](/uk/docs/Web/HTML/Attributes/rel#noopener і [`noreferrer`](/uk/docs/Web/HTML/Attributes/rel#noreferrer). Серед різновидів посилань: [`help`](/uk/docs/Web/HTML/Attributes/rel#help), [`prev`](/uk/docs/Web/HTML/Attributes/rel#prev), [`next`](/uk/docs/Web/HTML/Attributes/rel#next), [`search`](/uk/docs/Web/HTML/Attributes/rel#search) і [`license`](/uk/docs/Web/HTML/Attributes/rel#license). Значення [`rel`](/uk/docs/Web/HTML/Attributes/rel) є розділеним пробілами списком таких значень.
 
 ### Атрибути для подання форми
 
 Наступні атрибути контролюють поведінку під час подання форми.
 
-- {{htmlattrdef("action")}}
+- `action`
   - : URL, що обробляє подання форми. Це значення може бути відкинуто атрибутом {{htmlattrxref("formaction", "button")}} на елементі {{HTMLElement("button")}}, [`<input type="submit">`](/uk/docs/Web/HTML/Element/input/submit) чи [`<input type="image">`](/uk/docs/Web/HTML/Element/input/image). Цей атрибут ігнорується, коли задано `method="dialog"`.
-- {{htmlattrdef("enctype")}}
+- `enctype`
 
   - : Якщо значення атрибута `method` – `post`, то `enctype` – це [тип MIME](https://uk.wikipedia.org/wiki/MIME_%D1%82%D0%B8%D0%BF) подання форми. Можливі значення:
 
@@ -74,25 +65,25 @@ browser-compat: html.elements.form
 
     Це значення може бути відкинуто атрибутами {{htmlattrxref("formenctype", "button")}} на елементах {{HTMLElement("button")}}, [`<input type="submit">`](/uk/docs/Web/HTML/Element/input/submit) чи [`<input type="image">`](/uk/docs/Web/HTML/Element/input/image).
 
-- {{htmlattrdef("method")}}
+- `method`
 
   - : Метод [HTTP](/uk/docs/Web/HTTP), котрим буде подана форма.
     Єдині дозволені методи (значення) (чутливі до регістру):
 
-    - `post`: [Метод POST (англ.)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.5); дані форми надсилаються як [тіло запиту](/uk/docs/Web/API/Request/body).
-    - `get` (усталене значення): [Метод GET (англ.)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.3); дані форми додаються до URL `action` після роздільника `?`. Слід застосовувати, коли форма [не має побічних ефектів](/uk/docs/Glossary/Idempotent).
+    - `post`: Метод {{HTTPMethod("POST")}}; дані форми надсилаються як [тіло запиту](/uk/docs/Web/API/Request/body).
+    - `get` (усталене значення): Метод {{HTTPMethod("GET")}}; дані форми додаються до URL `action` після роздільника `?`. Слід застосовувати, коли форма [не має побічних ефектів](/uk/docs/Glossary/Idempotent).
     - `dialog`: Коли форма знаходиться всередині {{HTMLElement("dialog")}}, при поданні закриває діалог і викидає подію подання, не подаючи дані й не очищаючи форму.
 
     Це значення відкидається атрибутами {{htmlattrxref("formmethod", "button")}} на елементах {{HTMLElement("button")}}, [`<input type="submit">`](/uk/docs/Web/HTML/Element/input/submit) чи [`<input type="image">`](/uk/docs/Web/HTML/Element/input/image).
 
-- {{htmlattrdef("novalidate")}}
+- `novalidate`
   - : Цей булів атрибут указує, що форма не повинна затверджуватися при поданні. Якщо цей атрибут не заданий (а отже – форма **_має_** затвердження), це може бути відкинуто атрибутом {{htmlattrxref("formnovalidate", "button")}} на елементі {{HTMLElement("button")}}, [`<input type="submit">`](/uk/docs/Web/HTML/Element/input/submit) чи [`<input type="image">`](/uk/docs/Web/HTML/Element/input/image), що належить формі.
-- {{htmlattrdef("target")}}
+- `target`
 
   - : Вказує, де виводити відповідь після поданні форми. Це ім'я чи ключове слово на позначення _контексту перегляду_ (наприклад, вкладки, вікна чи iframe). Наступні ключові слова мають особливі значення:
 
     - `_self` (усталене): Завантажувати в поточний контекст перегляду.
-    - `_blank`: Завантажувати в новий безіменний контекст перегляду. Це додає такої ж логіки, як задання [`rel="noopener"`](#attr-rel), тобто відсутність заповнення [`window.opener`](/uk/docs/Web/API/Window/opener).
+    - `_blank`: Завантажувати в новий безіменний контекст перегляду. Це додає такої ж логіки, як задання [`rel="noopener"`](#rel), тобто відсутність заповнення [`window.opener`](/uk/docs/Web/API/Window/opener).
     - `_parent`: Завантажувати в батьківський щодо поточного контекст перегляду. Якщо батьківського немає, то діє так само як `_self`.
     - `_top`: Завантажувати в контекст перегляду найвищого рівня (тобто контекст перегляду, що є предком поточного і не має предка). Якщо батьківського контексту немає, то діє так само як `_self`.
 
@@ -135,15 +126,15 @@ browser-compat: html.elements.form
   <tbody>
     <tr>
       <th scope="row">
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories"
+        <a href="/uk/docs/Web/HTML/Content_categories"
           >Категорії вмісту</a
         >
       </th>
       <td>
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#potokovyi-vmist"
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
           >Потоковий вміст</a
         >,
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#vidchutnyi-vmist"
+        <a href="/uk/docs/Web/HTML/Content_categories#vidchutnyi-vmist"
           >відчутний вміст</a
         >
       </td>
@@ -151,7 +142,7 @@ browser-compat: html.elements.form
     <tr>
       <th scope="row">Дозволений вміст</th>
       <td>
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#potokovyi-vmist"
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
           >Потоковий вміст</a
         >, але жодних елементів <code>&#x3C;form></code>
       </td>
@@ -164,7 +155,7 @@ browser-compat: html.elements.form
       <th scope="row">Дозволені батьківські елементи</th>
       <td>
         Всі елементи, що приймають
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#potokovyi-vmist"
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
           >потоковий вміст</a
         >
       </td>

@@ -2,19 +2,12 @@
 title: for...of
 slug: Web/JavaScript/Reference/Statements/for...of
 page-type: javascript-statement
-tags:
-  - ECMAScript 2015
-  - ES6
-  - JavaScript
-  - Language feature
-  - Reference
-  - Statement
 browser-compat: javascript.statements.for_of
 ---
 
 {{jsSidebar("Statements")}}
 
-Інструкція **`for...of`** виконує цикл, що обробляє послідовність значень, отриманих з [ітерованого об'єкта](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#protokol-iteruvannia). До ітерованих об'єктів належать екземпляри вбудованих типів, як то {{jsxref("Array")}}, {{jsxref("String")}}, {{jsxref("TypedArray")}}, {{jsxref("Map")}}, {{jsxref("Set")}}, {{domxref("NodeList")}} (та інших колекцій DOM), а також об'єкт {{jsxref("Functions/arguments", "arguments")}}, породжені [генераторними функціями](/uk/docs/Web/JavaScript/Reference/Statements/function*) [генератори](/uk/docs/Web/JavaScript/Reference/Global_Objects/Generator) й визначені користувачем ітеровані об'єкти.
+Інструкція **`for...of`** виконує цикл, що обробляє послідовність значень, отриманих з [ітерованого об'єкта](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#protokol-iterovanoho-obiekta). До ітерованих об'єктів належать екземпляри вбудованих типів, як то {{jsxref("Array")}}, {{jsxref("String")}}, {{jsxref("TypedArray")}}, {{jsxref("Map")}}, {{jsxref("Set")}}, {{domxref("NodeList")}} (та інших колекцій DOM), а також об'єкт {{jsxref("Functions/arguments", "arguments")}}, породжені [генераторними функціями](/uk/docs/Web/JavaScript/Reference/Statements/function*) [генератори](/uk/docs/Web/JavaScript/Reference/Global_Objects/Generator) й визначені користувачем ітеровані об'єкти.
 
 {{EmbedInteractiveExample("pages/js/statement-forof.html")}}
 
@@ -317,7 +310,7 @@ for (const value of generator) {
 
 Як інструкція `for...in`, так інструкція `for...of` – щось ітерують. Основна різниця полягає в тому, що саме вони ітерують.
 
-Інструкція {{jsxref("Statements/for...in", "for...in")}} ітерує [перелічувані рядкові властивості](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) об'єкта, натомість інструкція `for...of` ітерує значення, котрі [ітерований об'єкт](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#protokol-iterovanoho) визначає для ітерування.
+Інструкція {{jsxref("Statements/for...in", "for...in")}} ітерує [перелічувані рядкові властивості](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) об'єкта, натомість інструкція `for...of` ітерує значення, котрі [ітерований об'єкт](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#protokol-iterovanoho-obiekta) визначає для ітерування.
 
 Наступний приклад демонструє різницю між циклом `for...of` та циклом `for...in` при застосуванні на {{jsxref("Array")}}.
 

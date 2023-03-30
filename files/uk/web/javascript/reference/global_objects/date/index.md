@@ -2,14 +2,6 @@
 title: Date
 slug: Web/JavaScript/Reference/Global_Objects/Date
 page-type: javascript-class
-tags:
-  - Class
-  - Date
-  - Epoch
-  - JavaScript
-  - Time
-  - Unix Epoch
-  - timeStamp
 browser-compat: javascript.builtins.Date
 ---
 
@@ -54,6 +46,13 @@ browser-compat: javascript.builtins.Date
 
 - {{jsxref("Date.UTC()")}}
   - : Приймає ті ж аргументи, що й найдовша форма конструктора (тобто від 2 до 7 аргументів) і повертає кількість мілісекунд від 1 січня 1970 року, 00:00:00 UTC, без врахування високосних секунд.
+
+## Властивості примірника
+
+Ці властивості означені на `Date.prototype` і є спільними для всіх примірників `Date`.
+
+- {{jsxref("Object/constructor", "Date.prototype.constructor")}}
+  - : Функція-конструктор, що створила об'єкт-примірник. Для примірників `Date` початковим значенням є конструктор {{jsxref("Date/Date", "Date")}}.
 
 ## Методи примірника
 

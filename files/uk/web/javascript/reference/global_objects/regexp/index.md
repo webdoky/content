@@ -1,14 +1,7 @@
 ---
-title: RegExp
+title: RegExp (регулярний вираз)
 slug: Web/JavaScript/Reference/Global_Objects/RegExp
 page-type: javascript-class
-tags:
-  - Class
-  - JavaScript
-  - Reference
-  - RegExp
-  - Regular Expressions
-  - Polyfill
 browser-compat: javascript.builtins.RegExp
 ---
 
@@ -123,6 +116,10 @@ re.exec("bar"); // [ 'bar', index: 0, input: 'bar', groups: undefined ]
 
 ## Властивості примірника
 
+Ці властивості означені на `RegExp.prototype` і є спільними для всіх примірників `RegExp`.
+
+- {{jsxref("Object/constructor", "RegExp.prototype.constructor")}}
+  - : Функція-конструктор, що створила об'єкт-примірник. Для примірників `RegExp` початковим значенням є конструктор {{jsxref("RegExp/RegExp", "RegExp")}}.
 - {{JSxRef("RegExp.prototype.flags")}} (позначки)
   - : Рядок, що містить позначки об'єкта `RegExp`.
 - {{JSxRef("RegExp.prototype.dotAll")}} (точка все)
@@ -141,7 +138,10 @@ re.exec("bar"); // [ 'bar', index: 0, input: 'bar', groups: undefined ]
   - : Чи є пошук липким.
 - {{JSxRef("RegExp.prototype.unicode")}}
   - : Чи ввімкнені можливості Unicode.
-- {{jsxref("RegExp.prototype.lastIndex")}} (останній індекс)
+
+Ці властивості є власними властивостями кожного окремого примірника `RegExp`.
+
+- {{jsxref("RegExp/lastIndex", "lastIndex")}} (останній індекс)
   - : Індекс, з якого почнеться наступний пошук збігу.
 
 ## Методи примірника
@@ -310,7 +310,7 @@ order.match(new RegExp(`\\b(${breakfasts.join("|")})\\b`, "g"));
 // група: undefined
 ```
 
-Зверніть увагу, що заради сумісності `RegExp.$N` й далі повертає порожній рядок, а не `undefined` ([вада 1053944](https://bugzilla.mozilla.org/show_bug.cgi?id=1053944)).
+Зверніть увагу, що заради сумісності `RegExp.$N` й далі повертає порожній рядок, а не `undefined` ([вада 1053944](https://bugzil.la/1053944)).
 
 ## Дивіться також
 

@@ -2,14 +2,6 @@
 title: Сіткове компонування CSS
 slug: Web/CSS/CSS_Grid_Layout
 page-type: css-module
-tags:
-  - CSS
-  - Grid Layout
-  - Grids
-  - Guide
-  - Layout
-  - Overview
-  - Reference
 spec-urls: https://drafts.csswg.org/css-grid/
 ---
 
@@ -157,7 +149,7 @@ spec-urls: https://drafts.csswg.org/css-grid/
   - [Простір сітки](/uk/docs/Glossary/Grid_Areas)
   - [Жолоби](/uk/docs/Glossary/Gutters)
   - [Вісь сітки](/uk/docs/Glossary/Grid_Axis)
-  - [Ряд сітки](/uk/docs/Glossary/Grid_Rows)
+  - [Ряд сітки](/uk/docs/Glossary/Grid_Row)
   - [Колонка сітки](/uk/docs/Glossary/Grid_Column)
 - [Сітка за прикладом](https://gridbyexample.com/) - Колекція прикладів застосування та відеоуроків
 - [Довідка сітки CSS - Codrops (англ.)](https://tympanus.net/codrops/css_reference/grid/)
