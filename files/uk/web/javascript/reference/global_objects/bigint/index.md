@@ -157,6 +157,11 @@ const o = Object(0n);
 o === o; // true
 ```
 
+Через те, що перетворення між значеннями Number та значеннями BigInt можуть призводити до втрати точності, рекомендовано наступне:
+
+- Значення BigInt слід використовувати лише тоді, коли доцільно очікувати значень, більших за 2<sup>53</sup>.
+- Не слід перетворювати між собою значення BigInt і Number.
+
 ### Перевірки умов
 
 Значення BigInt відповідають тим самим правилам перетворення, що й Number, коли:
@@ -194,61 +199,6 @@ Boolean(12n);
 !0n;
 // true
 ```
-
-### Зведення до BigInt
-
-Чимало вбудованих операцій, котрі очікують на BigInt, спершу зводять свої аргументи до BigInt. [Ця операція](https://tc39.es/ecma262/#sec-tobigint) може бути підсумована отак:
-
-- BigInt повертаються як є.
-- [`undefined`](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined) і [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) викидають {{jsxref("TypeError")}}.
-- `true` стає `1n`; `false` стає `0n`.
-- Рядки перетворюються шляхом розбору їх так, ніби вони містять цілочисловий літерал. Будь-яка невдача розбору призводить до {{jsxref("SyntaxError")}}. Синтаксис є підмножиною [рядкових літералів чисел](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#zvedennia-do-chysla), у якій десятковий розділювач і експоненційний запис – заборонені.
-- [Number](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number) викидають {{jsxref("TypeError")}} для запобігання небажаному неявному зведенню, що призвело б до втрати точності.
-- [Symbol](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol) викидають {{jsxref("TypeError")}}.
-- Об'єкти [перетворюються на примітиви](/uk/docs/Web/JavaScript/Data_structures#zvedennia-do-prymityva) шляхом виклику їх методів [`[@@toPrimitive]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive) (з підказкою `"number"`), `valueOf()` і `toString()` – у такому порядку. Потім результівний примітив перетворюється на BigInt.
-
-Найкращий спосіб досягнути в JavaScript майже такого ж ефекту – функція [`BigInt()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/BigInt): `BigInt(x)` використовує такий же алгоритм для перетворення `x`, окрім того, що [Number](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number) не викидають {{jsxref("TypeError")}}, а перетворюються на BigInt, якщо є цілими числами.
-
-Зверніть увагу, що вбудовані операції, котрі очікують на BigInt, нерідко після зведення обрізають BigInt до фіксованої ширини. Серед таких операцій – {{jsxref("BigInt.asIntN()")}}, {{jsxref("BigInt.asUintN()")}}, а також методи об'єктів {{jsxref("BigInt64Array")}} і {{jsxref("BigUint64Array")}}.
-
-## Конструктор
-
-- [`BigInt()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/BigInt)
-  - : Створює нове значення BigInt
-
-## Статичні методи
-
-- [`BigInt.asIntN()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/asIntN)
-  - : Обрізає значення BigInt до знакового цілого числа, і повертає його.
-- [`BigInt.asUintN()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/asUintN)
-  - : Обрізає значення BigInt до беззнакового цілого числа, і повертає його.
-
-## Властивості примірника
-
-Ці властивості означені на `BigInt.prototype` і є спільними для всіх примірників `BigInt`.
-
-- {{jsxref("Object/constructor", "BigInt.prototype.constructor")}}
-  - : Функція-конструктор, що створила об'єкт-примірник. Для примірників `BigInt` початкове значення – конструктор {{jsxref("BigInt/BigInt", "BigInt")}}.
-- `BigInt.prototype[@@toStringTag]`
-  - : Початкове значення [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"BigInt"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}. Проте у зв'язку з тим, що `BigInt` також має власну реалізацію метода [`toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/toString), ця властивість не використовується, якщо не викликати [`Object.prototype.toString.call()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/call) зі значенням BigInt як `thisArg`.
-
-## Методи примірника
-
-- [`BigInt.prototype.toLocaleString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/toLocaleString)
-  - : Повертає рядок з чутливим до мови представленням цього значення BigInt. Заміщає метод [`Object.prototype.toLocaleString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/toLocaleString).
-- [`BigInt.prototype.toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/toString)
-  - : Повертає рядкове представлення цього значення BigInt за заданою основою числення. Заміщає метод [`Object.prototype.toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/toString).
-- [`BigInt.prototype.valueOf()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/valueOf)
-  - : Повертає це значення BigInt. Заміщає метод [`Object.prototype.valueOf()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf).
-
-## Рекомендації щодо застосування
-
-### Зведення
-
-Через те, що перетворення між значеннями Number та значеннями BigInt можуть призводити до втрати точності, рекомендовано наступне:
-
-- Значення BigInt слід використовувати лише тоді, коли доцільно очікувати значень, більших за 2^53
-- Не слід перетворювати між собою значення BigInt і Number.
 
 ### Криптографія
 
@@ -300,6 +250,52 @@ console.log(parsed);
 ```
 
 > **Примітка:** Хоч замінювач для `JSON.stringify()` можна зробити узагальненим, і коректно серіалізувати значення BigInt для всіх можливих об'єктів, та відновлювач для `JSON.parse()` мусить бути конкретним для структури очікуваного корисного навантаження, тому що серіалізація відбувається _зі втратами_: неможливо відрізнити рядок, котрий представляє BigInt, від звичайного рядка.
+
+### Зведення до BigInt
+
+Чимало вбудованих операцій, котрі очікують на BigInt, спершу зводять свої аргументи до BigInt. [Ця операція](https://tc39.es/ecma262/#sec-tobigint) може бути підсумована отак:
+
+- BigInt повертаються як є.
+- [`undefined`](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined) і [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) викидають {{jsxref("TypeError")}}.
+- `true` стає `1n`; `false` стає `0n`.
+- Рядки перетворюються шляхом розбору їх так, ніби вони містять цілочисловий літерал. Будь-яка невдача розбору призводить до {{jsxref("SyntaxError")}}. Синтаксис є підмножиною [рядкових літералів чисел](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#zvedennia-do-chysla), у якій десятковий розділювач і експоненційний запис – заборонені.
+- [Number](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number) викидають {{jsxref("TypeError")}} для запобігання небажаному неявному зведенню, що призвело б до втрати точності.
+- [Symbol](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol) викидають {{jsxref("TypeError")}}.
+- Об'єкти [перетворюються на примітиви](/uk/docs/Web/JavaScript/Data_structures#zvedennia-do-prymityva) шляхом виклику їх методів [`[@@toPrimitive]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive) (з підказкою `"number"`), `valueOf()` і `toString()` – у такому порядку. Потім результівний примітив перетворюється на BigInt.
+
+Найкращий спосіб досягнути в JavaScript майже такого ж ефекту – функція [`BigInt()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/BigInt): `BigInt(x)` використовує такий же алгоритм для перетворення `x`, окрім того, що [Number](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number) не викидають {{jsxref("TypeError")}}, а перетворюються на BigInt, якщо є цілими числами.
+
+Зверніть увагу, що вбудовані операції, котрі очікують на BigInt, нерідко після зведення обрізають BigInt до фіксованої ширини. Серед таких операцій – {{jsxref("BigInt.asIntN()")}}, {{jsxref("BigInt.asUintN()")}}, а також методи об'єктів {{jsxref("BigInt64Array")}} і {{jsxref("BigUint64Array")}}.
+
+## Конструктор
+
+- [`BigInt()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/BigInt)
+  - : Створює нове значення BigInt.
+
+## Статичні методи
+
+- [`BigInt.asIntN()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/asIntN)
+  - : Обрізає значення BigInt до знакового цілого числа, і повертає його.
+- [`BigInt.asUintN()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/asUintN)
+  - : Обрізає значення BigInt до беззнакового цілого числа, і повертає його.
+
+## Властивості примірника
+
+Ці властивості означені на `BigInt.prototype` і є спільними для всіх примірників `BigInt`.
+
+- {{jsxref("Object/constructor", "BigInt.prototype.constructor")}}
+  - : Функція-конструктор, що створила об'єкт-примірник. Для примірників `BigInt` початкове значення – конструктор {{jsxref("BigInt/BigInt", "BigInt")}}.
+- `BigInt.prototype[@@toStringTag]`
+  - : Початкове значення [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"BigInt"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}. Проте у зв'язку з тим, що `BigInt` також має власну реалізацію метода [`toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/toString), ця властивість не використовується, якщо не викликати [`Object.prototype.toString.call()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/call) зі значенням BigInt як `thisArg`.
+
+## Методи примірника
+
+- [`BigInt.prototype.toLocaleString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/toLocaleString)
+  - : Повертає рядок з чутливим до мови представленням цього значення BigInt. Заміщає метод [`Object.prototype.toLocaleString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/toLocaleString).
+- [`BigInt.prototype.toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/toString)
+  - : Повертає рядкове представлення цього значення BigInt за заданою основою числення. Заміщає метод [`Object.prototype.toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/toString).
+- [`BigInt.prototype.valueOf()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/valueOf)
+  - : Повертає це значення BigInt. Заміщає метод [`Object.prototype.valueOf()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf).
 
 ## Приклади
 
