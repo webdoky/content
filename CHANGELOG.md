@@ -3,6 +3,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2023-03-24 - 2023-03-31]
+
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/normalize (#1579) ([c1f3310](https://github.com/webdoky/content/commit/c1f33109ad0a1eff93580d7bad510af4a9d045c6))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/number (#1575) ([c4308a5](https://github.com/webdoky/content/commit/c4308a575926f1f1edc89d7ad3cce0a508bdc6f4))
+* **Оновлення перекладу(JS):** web/javascript/guide/using_promises (#1481) ([c532ce5](https://github.com/webdoky/content/commit/c532ce582c45f0478694af90c04f5b6936656a24))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/encodeuricomponent (#1480) ([32319f1](https://github.com/webdoky/content/commit/32319f1930b36386ec0fa858791a41f5986baeb7))
+* **Оновлення перекладу(HTML):** web/html/element (#1334) ([dcdc6cb](https://github.com/webdoky/content/commit/dcdc6cb5d3f49badebf345601f617c3ed0e87ef6))
+* **Переклад(CSS):** web/css/css_flexible_box_layout (#1302) ([f64a7f7](https://github.com/webdoky/content/commit/f64a7f7f3290787016d9078149ab7ee119eaae70))
+* **Переклад(Glossary):** glossary/shallow_copy (#1286) ([20b967c](https://github.com/webdoky/content/commit/20b967cf86a2f4e33220225cf9d02ddb8fcc3218))
+* **Переклад(CSS):** web/css/_colon_not (#1303) ([cba95b5](https://github.com/webdoky/content/commit/cba95b57c0b215007ab43b598adbfaccf786fbde))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/charcodeat (#1545) ([3d7795c](https://github.com/webdoky/content/commit/3d7795caf78addb8d08564d4c214a45ebcef8409))
+* **Переклад(JS):** web/javascript/language_overview (#1063) ([f1f2228](https://github.com/webdoky/content/commit/f1f22281f695076476d75b6150a3d97a201cb72a))
+* **Оновлення перекладу(JS):** web/javascript/reference/operators/delete ([0f336f7](https://github.com/webdoky/content/commit/0f336f74639fad8c274003dd8bf14b17dcfb26d9))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/object/tostring ([2896f66](https://github.com/webdoky/content/commit/2896f664e27e37b0e0faa6f64e1d15b3be743377))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/object/fromentries ([d2aa137](https://github.com/webdoky/content/commit/d2aa137ce0dc66c564325d97de646771959dfcb1))
+
 ## [2023-03-17 - 2023-03-24]
 
 * **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/fromcharcode ([29ed54d](https://github.com/webdoky/content/commit/29ed54dd8a122547979b9d2ec0da01b23eece7f2))
