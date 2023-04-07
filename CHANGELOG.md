@@ -5,7 +5,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [2023-03-31 - 2023-04-07]
 
-...
+* **Оновлення перекладу(HTML):** web/html/element/input/radio ([89cb6466](https://github.com/webdoky/content/commit/89cb646681f125a0bd099f8e08aa1662f9e8e05c))
+* **Оновлення перекладу(JS):** web/javascript/guide/using_promises ([c90f5d61](https://github.com/webdoky/content/commit/c90f5d61fca30c38496f12a25f3f56117bbe699d))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/split ([86136479](https://github.com/webdoky/content/commit/86136479858ef035b57cf51e7ac3f53f3cdd7b4e))
 
 ## [2023-03-24 - 2023-03-31]
 
