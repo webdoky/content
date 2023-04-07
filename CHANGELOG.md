@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2023-03-31 - 2023-04-07]
+
+...
+
 ## [2023-03-24 - 2023-03-31]
 
 * **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/normalize (#1579) ([c1f3310](https://github.com/webdoky/content/commit/c1f33109ad0a1eff93580d7bad510af4a9d045c6))
