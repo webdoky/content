@@ -9,7 +9,7 @@
     "yargs": "^17.3.1"
   },
   "engines": {
-    "node": ">= 14"
+    "node": ">= 14 <= 16"
   },
   "license": "MIT",
   "name": "webdoky-content",
@@ -19,15 +19,14 @@
     "check": "node --experimental-specifier-resolution=node scripts/check.js",
     "check-diff": "node --experimental-specifier-resolution=node scripts/check.js --changedOnly",
     "check:debug": "DEBUG=true yarn run check",
-    "finishupdate": "./scripts/finishupdate.sh",
+    "finishupdate": "node --experimental-specifier-resolution=node ./scripts/finishupdate.js",
+    "finishupdatefix": "node --experimental-specifier-resolution=node ./scripts/finishupdate.js --update",
     "fix": "eslint . --fix",
     "fu": "yarn finishupdate",
-    "gotobranch": "./scripts/gotobranch.sh",
+    "fux": "yarn finishupdatefix",
     "lint": "eslint .",
     "postinstall": "docker build . -t lt-custom",
-    "rebuild": "yarn postinstall --no-cache && (docker rm ltc || true)",
-    "startupdate": "./scripts/startupdate.sh",
-    "su": "yarn run startupdate"
+    "rebuild": "yarn postinstall --no-cache && (docker rm ltc || true)"
   },
   "type": "module",
   "version": "1.0.0",
