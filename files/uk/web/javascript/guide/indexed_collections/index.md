@@ -2,10 +2,6 @@
 title: Індексовані колекції
 slug: Web/JavaScript/Guide/Indexed_collections
 page-type: guide
-tags:
-  - Guide
-  - JavaScript
-  - "l10n:priority"
 ---
 
 {{jsSidebar("JavaScript Guide")}} {{PreviousNext("Web/JavaScript/Guide/Regular_Expressions", "Web/JavaScript/Guide/Keyed_Collections")}}
@@ -97,7 +93,7 @@ const wisenArray = Array.of(9.3); // wisenArray містить лише один
 const myArray = ["Вітер", "Дощ", "Вогонь"];
 ```
 
-До першого елемента масиву можна звернутись як до `myArray[0]`, – до другого – як до `myArray[1]`, тощо… Індекси елементів починаються від нуля.
+До першого елемента масиву можна звернутись як до `myArray[0]`, – до другого – як до `myArray[1]` тощо… Індекси елементів починаються від нуля.
 
 > **Примітка:** Також [засоби доступу до властивостей](/uk/docs/Web/JavaScript/Reference/Operators/Property_Accessors) можна використовувати для звертання до інших властивостей масиву, як з об'єктом.
 >
