@@ -17,14 +17,18 @@ const { update } = yargs(hideBin(process.argv))
   .parse();
 
 const TRANSLATION_SLUG_PARTS_TO_DROP = 2;
-const SECTIONS_TO_UPPERCASE = new Set(["html", "css", "svg", "api", "js"]);
+const SECTIONS_TRANSFORMS = new Map([
+  ["accessibility", "A11y"],
+  ["html", "HTML"],
+  ["css", "CSS"],
+  ["svg", "SVG"],
+  ["api", "API"],
+  ["javascript", "JS"],
+]);
 
 // Alters section name for some sections
 function alterSectionName(section) {
-  if (SECTIONS_TO_UPPERCASE.has(section)) {
-    return section.toUpperCase();
-  }
-  return section;
+  return SECTIONS_TRANSFORMS.get(section) || section;
 }
 
 const requiredTranslationNumber = 1;

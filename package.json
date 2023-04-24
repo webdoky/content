@@ -26,7 +26,9 @@
     "fux": "yarn finishupdatefix",
     "lint": "eslint .",
     "postinstall": "docker build . -t lt-custom",
-    "rebuild": "yarn postinstall --no-cache && (docker rm ltc || true)"
+    "rebuild": "yarn postinstall --no-cache && (docker rm ltc || true)",
+    "sl": "yarn sort-lines",
+    "sort-lines": "node --experimental-specifier-resolution=node ./scripts/sort-lines.js"
   },
   "type": "module",
   "version": "1.0.0",
