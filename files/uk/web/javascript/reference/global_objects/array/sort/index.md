@@ -11,34 +11,30 @@ browser-compat: javascript.builtins.Array.sort
 
 Складність алгоритму сортування щодо використання часу та місця в пам'яті – ніяк не гарантується і залежить від реалізації.
 
+Щоб відсортувати елементи в масиві, не змінюючи вихідний масив, слід використовувати {{jsxref("Array/toSorted", "toSorted()")}}.
+
 {{EmbedInteractiveExample("pages/js/array-sort.html")}}
 
 ## Синтаксис
 
 ```js-nolint
-// Без функції порівняння
 sort()
-
-// Стрілкова функція
-sort((a, b) => { /* … */ } )
-
-// Функція порівняння
 sort(compareFn)
-
-// Функція порівняння, оголошена на місці
-sort(function compareFn(a, b) { /* … */ })
 ```
 
 ### Параметри
 
 - `compareFn` (функція порівняння) {{optional_inline}}
 
-  - : Задає функцію, яка визначатиме порядок сортування. Якщо вона опущена, то елементи масиву перетворюються на рядки, а потім сортуються відносно значення коду Unicode кожного символу.
+  - : A function that defines the sort order. The return value should be a number whose positivity indicates the relative order of the two elements. The function is called with the following arguments:
+  - : Функція, що визначає порядок сортування. Повернене значення повинно бути числом, чия додатність вказує на відносний порядок двох елементів. Ця функція викликається з наступними аргументами:
 
     - `a`
-      - : Перший елемент для порівняння.
+      - : Перший елемент для порівняння. Ніколи не буває `undefined`.
     - `b`
-      - : Другий елемент для порівняння.
+      - : Другий елемент для порівняння. Ніколи не буває `undefined`.
+
+    Коли цей параметр відсутній, то елементи масиву перетворюються на рядки, а потім сортуються відповідно до значення кодової точки Unicode кожного символу.
 
 ### Повернене значення
 
@@ -54,11 +50,11 @@ sort(function compareFn(a, b) { /* … */ })
 
 Якщо було передано функцію порівняння `compareFn`, то всі елементи масиву, котрі не є `undefined`, сортуються відповідно до поверненого значення функції порівняння (всі елементи, рівні `undefined`, складаються в кінець масиву без викликання `compareFn`).
 
-| Повернене значення `compareFn(a, b)` | Порядок сортування                    |
-| ------------------------------------ | ------------------------------------- |
-| > 0                                  | сортує `a` після `b`                  |
-| < 0                                  | сортує `a` перед `b`                  |
-| === 0                                | зберігає початковий порядок `a` і `b` |
+| Повернене значення `compareFn(a, b)` | Порядок сортування                        |
+| ------------------------------------ | ----------------------------------------- |
+| > 0                                  | сортує `a` після `b`, наприклад, `[b, a]` |
+| < 0                                  | сортує `a` перед `b`, наприклад, `[a, b]` |
+| === 0                                | зберігає початковий порядок `a` і `b`     |
 
 Отже, функція порівняння має наступну форму:
 
@@ -214,7 +210,7 @@ sorted[0] = 10;
 console.log(numbers[0]); // 10
 ```
 
-Якщо потрібно, аби `sort()` не змінював вихідний масив, а повертав [поверхнево скопійований](/uk/docs/Glossary/Shallow_copy) масив, як інші методи (наприклад, [`map()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/map)), можна зробити поверхневу копію до виклику `sort()`, використовуючи [синтаксис розгортання](/uk/docs/Web/JavaScript/Reference/Operators/Spread_syntax) чи [`Array.from()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/from).
+Якщо потрібно, аби `sort()` не змінював вихідний масив, а повертав [поверхнево скопійований](/uk/docs/Glossary/Shallow_copy) масив, як інші методи (наприклад, [`map()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/map)), то слід використати метод {{jsxref("Array/toSorted", "toSorted()")}}. Інший варіант – перед викликом `sort()` створити поверхневу копію, використовуючи [синтаксис розгортання](/uk/docs/Web/JavaScript/Reference/Operators/Spread_syntax) чи [`Array.from()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/from).
 
 ```js
 const numbers = [3, 1, 4, 1, 5];
@@ -330,8 +326,12 @@ console.log(Array.prototype.sort.call(arrayLike));
 ## Дивіться також
 
 - [Поліфіл для `Array.prototype.sort` з сучасною поведінкою (включно зі стабільним сортуванням) у `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
+- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- {{jsxref("Array")}}
 - {{jsxref("Array.prototype.reverse()")}}
+- {{jsxref("Array.prototype.toSorted()")}}
 - {{jsxref("String.prototype.localeCompare()")}}
-- [Про стабільність алгоритму, застосованого в рушії V8 (англ.)](https://v8.dev/blog/array-sort)
-- [Стабільність сортування V8 (англ.)](https://v8.dev/features/stable-sort)
-- [Демонстрація стабільності сортування від Матіаса Байненса (англ.)](https://mathiasbynens.be/demo/sort-stability)
+- {{jsxref("TypedArray.prototype.sort()")}}
+- [Сортування штук у V8](https://v8.dev/blog/array-sort) на v8.dev (28 вересня 2018 року)
+- [Стабільний `Array.prototype.sort`](https://v8.dev/features/stable-sort) на v8.dev (2 липня 2019 року)
+- [Стабільність `Array.prototype.sort` stability](https://mathiasbynens.be/demo/sort-stability) від Матіаса Байненса
