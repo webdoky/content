@@ -121,7 +121,6 @@ if (targetBranchName.endsWith("-")) {
 // Add branch name prefix
 targetBranchName = `${action}/${targetBranchName}`;
 
-// Use gotobranch script
 try {
   if (!update) {
     if (doesGitBranchExistOnRemote(targetBranchName)) {
@@ -151,7 +150,7 @@ try {
     execSync("git rev-parse --abbrev-ref HEAD", {
       encoding: "utf8",
     }).trim() === targetBranchName &&
-    translationSlug === "--allow-update"
+    update
   ) {
     console.log("Already on correct branch");
   } else {
@@ -162,9 +161,9 @@ try {
 console.log("Staging the translation");
 // Folder must be added, not single file: the folder may contain misc files
 execSync(`git add ${translationFolder}`, { stdio: "inherit" });
-let section = translationSlug.split("/")[0];
+let section = translationSlugParts[0];
 if (section === "web") {
-  [, section] = translationSlug.split("/");
+  [, section] = translationSlugParts;
 }
 section = alterSectionName(section);
 
