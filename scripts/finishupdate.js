@@ -1,5 +1,6 @@
 import { execSync } from "child_process";
 
+import compact from "lodash/compact";
 import includes from "lodash/includes";
 import toString from "lodash/toString";
 import yargs from "yargs";
@@ -54,7 +55,7 @@ if (numberOfTranslations > requiredTranslationNumber) {
   process.exit(1);
 }
 
-const [actionMarker, translation] = changedTranslations[0].split(" ");
+const [actionMarker, translation] = compact(changedTranslations[0].split(" "));
 let action;
 switch (actionMarker) {
   case "??":
@@ -77,7 +78,7 @@ const translationFolder = translation.replace("/index.md", "");
 const translationSlugParts = translationFolder.split("/");
 const translationSlug = translationSlugParts
   .slice(TRANSLATION_SLUG_PARTS_TO_DROP)
-  .join("-");
+  .join("/");
 
 console.log("Switching to a proper Git branch...");
 const prefixesToDrop = [
