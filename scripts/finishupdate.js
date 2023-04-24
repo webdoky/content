@@ -75,10 +75,10 @@ switch (actionMarker) {
 }
 
 const translationFolder = translation.replace("/index.md", "");
-const translationSlugParts = translationFolder.split("/");
-const translationSlug = translationSlugParts
-  .slice(TRANSLATION_SLUG_PARTS_TO_DROP)
-  .join("/");
+const translationSlugParts = translationFolder
+  .split("/")
+  .slice(TRANSLATION_SLUG_PARTS_TO_DROP);
+const translationSlug = translationSlugParts.join("/");
 
 console.log("Switching to a proper Git branch...");
 const prefixesToDrop = [
@@ -126,7 +126,7 @@ try {
   if (!update) {
     if (doesGitBranchExistOnRemote(targetBranchName)) {
       console.warn(
-        "Branch already exists on remote. Use --update to update it, or check if there is a PR from it already."
+        `Branch ${targetBranchName} already exists on remote. Use --update to update it, or check if there is a PR from it already.`
       );
       process.exit(1);
     }
