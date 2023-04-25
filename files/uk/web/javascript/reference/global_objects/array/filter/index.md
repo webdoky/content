@@ -14,37 +14,21 @@ browser-compat: javascript.builtins.Array.filter
 ## Синтаксис
 
 ```js-nolint
-// Стрілкова функція
-filter((element) => { /* … */ } )
-filter((element, index) => { /* … */ } )
-filter((element, index, array) => { /* … */ } )
-
-// Функція зворотного виклику
 filter(callbackFn)
 filter(callbackFn, thisArg)
-
-// Функція зворотного виклику, яка оголошена на місці
-filter(function(element) { /* … */ })
-filter(function(element, index) { /* … */ })
-filter(function(element, index, array){ /* … */ })
-filter(function(element, index, array) { /* … */ }, thisArg)
 ```
 
 ### Параметри
 
 - `callbackFn`
-
-  - : Функція-предикат для перевірки кожного з елементів масиву. Повертає значення, що або обчислюється до `true` і зберігає елемент, або зводиться до `false` із протилежним результатом.
-
-    Ця функція викликається із наступними аргументами:
-
+  - : A function to execute for each element in the array. It should return a [truthy](/uk/docs/Glossary/Truthy) value to keep the element in the resulting array, and a [falsy](/uk/docs/Glossary/Falsy) value otherwise. The function is called with the following arguments:
+  - : Функція до виконання над кожним елементом у масиві. Вона повинна повертати [істинне](/uk/docs/Glossary/Truthy) значення, щоб зберегти елемент у результівному масиві, а інакше – [хибне](/uk/docs/Glossary/Falsy). Ця функція викликається із наступними аргументами:
     - `element`
       - : Поточний елемент масиву, що опрацьовується функцією.
     - `index`
       - : Індекс елементу, що опрацьовується.
     - `array`
       - : Початковий масив, на якому було викликано `filter()`.
-
 - `thisArg` {{optional_inline}}
   - : Значення для використання як `this` при виконанні `callbackFn`. Більше про це в [ітеративних методах](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#iteratyvni-metody).
 
@@ -183,7 +167,7 @@ console.log("Відфільтрований масив\n", arrByID);
 // Відфільтрований масив
 // [{ id: 15 }, { id: -1 }, { id: 3 }, { id: 12.2 }]
 
-console.log("Кількість некоректних значень = ", invalidEntries);
+console.log("Кількість некоректних значень =", invalidEntries);
 // Кількість некоректних значень = 5
 ```
 
@@ -279,8 +263,11 @@ console.log(deleteWords);
 ## Дивіться також
 
 - [Поліфіл методу `Array.prototype.filter` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
+- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- {{jsxref("Array")}}
 - {{jsxref("Array.prototype.forEach()")}}
 - {{jsxref("Array.prototype.every()")}}
+- {{jsxref("Array.prototype.map()")}}
 - {{jsxref("Array.prototype.some()")}}
 - {{jsxref("Array.prototype.reduce()")}}
-- {{jsxref("Array.prototype.find()")}}
+- {{jsxref("TypedArray.prototype.filter()")}}
