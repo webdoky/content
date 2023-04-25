@@ -53,9 +53,9 @@ browser-compat: html.elements.ul
 </ul>
 ```
 
-HTML вище виведе таке:
+#### Результат
 
-{{EmbedLiveSample("prostyi-pryklad", 400, 100)}}
+{{EmbedLiveSample("prostyi-pryklad", 400, 120)}}
 
 ### Вкладені переліки
 
@@ -86,9 +86,9 @@ HTML вище виведе таке:
 </ul>
 ```
 
-HTML вище виведе таке:
+#### Результат
 
-{{EmbedLiveSample("vkladeni-pereliky", 400, 220)}}
+{{EmbedLiveSample("vkladeni-pereliky", 400, 340)}}
 
 ### Впорядкований перелік, що містить невпорядкований перелік
 
@@ -109,9 +109,9 @@ HTML вище виведе таке:
 </ul>
 ```
 
-HTML вище виведе таке:
+#### Результат
 
-{{EmbedLiveSample("vporiadkovanyi-perelik-shcho-mistyt-nevporiadkovanyi-perelik", 400, 150)}}
+{{EmbedLiveSample("vporiadkovanyi-perelik-shcho-mistyt-nevporiadkovanyi-perelik", 400, 190)}}
 
 ## Технічний підсумок
 
