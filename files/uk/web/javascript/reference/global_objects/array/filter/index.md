@@ -21,7 +21,6 @@ filter(callbackFn, thisArg)
 ### Параметри
 
 - `callbackFn`
-  - : A function to execute for each element in the array. It should return a [truthy](/uk/docs/Glossary/Truthy) value to keep the element in the resulting array, and a [falsy](/uk/docs/Glossary/Falsy) value otherwise. The function is called with the following arguments:
   - : Функція до виконання над кожним елементом у масиві. Вона повинна повертати [істинне](/uk/docs/Glossary/Truthy) значення, щоб зберегти елемент у результівному масиві, а інакше – [хибне](/uk/docs/Glossary/Falsy). Ця функція викликається із наступними аргументами:
     - `element`
       - : Поточний елемент масиву, що опрацьовується функцією.
