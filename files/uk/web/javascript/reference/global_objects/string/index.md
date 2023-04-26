@@ -331,10 +331,10 @@ let longString =
   - : Повертає рядок, де всі [самотні сурогати](#symvoly-utf-16-kodovi-tochky-unicode-ta-hrafemni-klastery) замінені на символ-замінник Unicode U+FFFD.
 - {{jsxref("String.prototype.trim()")}} (підрізати)
   - : Обрізає пробільні символи на початку та в кінці рядка.
-- {{jsxref("String.prototype.trimStart()")}} (підрізати початок)
-  - : Обрізає пробільні символи на початку рядка.
 - {{jsxref("String.prototype.trimEnd()")}} (підрізати кінець)
   - : Обрізає пробільні символи в кінці рядка.
+- {{jsxref("String.prototype.trimStart()")}} (підрізати початок)
+  - : Обрізає пробільні символи на початку рядка.
 - {{jsxref("String.prototype.valueOf()")}} (значення (об'єкта))
   - : Повертає примітив — значення вказаного об'єкта. Заміщує метод {{jsxref("Object.prototype.valueOf()")}}.
 - [`String.prototype[@@iterator]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/@@iterator)
