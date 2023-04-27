@@ -233,11 +233,11 @@ for (let i = 0; i < a.length; i++) {
 let x = 0;
 let z = 0;
 labelCancelLoops: while (true) {
-  console.log("Зовнішній цикл: ", x);
+  console.log("Зовнішній цикл:", x);
   x += 1;
   z = 1;
   while (true) {
-    console.log("Внутрішній цикл: ", z);
+    console.log("Внутрішній цикл:", z);
     z += 1;
     if (z === 10 && x === 10) {
       break labelCancelLoops;
@@ -301,10 +301,10 @@ checkiandj: while (i < 4) {
     if (j % 2 === 0) {
       continue checkj;
     }
-    console.log(j, " непарне число.");
+    console.log(j, "– непарне число.");
   }
-  console.log("i = ", i);
-  console.log("j = ", j);
+  console.log("i =", i);
+  console.log("j =", j);
 }
 ```
 
@@ -371,7 +371,7 @@ for (const i of arr) {
 // Виводить: 3 5 7
 ```
 
-Інструкції `for...of` і `for...in` також можуть використовуватися вкупі з [деструктуруванням](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment). Наприклад, водночас можна обробляти в циклі і ключі, і значення об'єкта, використовуючи {{jsxref("Object.entries()")}}.
+Інструкції `for...of` і `for...in` також можуть використовуватися вкупі з [деструктуруванням](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment). Наприклад, водночас можна обробляти в циклі як ключі, так і значення об'єкта, використовуючи {{jsxref("Object.entries()")}}.
 
 ```js
 const obj = { foo: 1, bar: 2 };

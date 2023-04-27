@@ -2,13 +2,6 @@
 title: "<label>: Елемент підпису"
 slug: Web/HTML/Element/label
 page-type: html-element
-tags:
-  - Element
-  - Forms
-  - HTML
-  - HTML forms
-  - Reference
-  - Web
 browser-compat: html.elements.label
 ---
 
@@ -48,9 +41,9 @@ browser-compat: html.elements.label
 
 Цей елемент включає [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
 
-- {{HTMLAttrDef("for")}}
+- `for`
 
-  - : Значення атрибута `for` мусить бути одним {{htmlattrxref("id")}} [підписуваного](/uk/docs/Web/Guide/HTML/Content_categories#pidpysuvani) елемента форми у тому самому документі, що й елемент `<label>`. Отже, будь-який елемент `label` може бути пов'язаний лише з одним контрольним елементом.
+  - : Значення атрибута `for` мусить бути одним [`id`](/uk/docs/Web/HTML/Global_attributes#id) [підписуваного](/uk/docs/Web/HTML/Content_categories#pidpysuvani) елемента форми у тому самому документі, що й елемент `<label>`. Отже, будь-який елемент `label` може бути пов'язаний лише з одним контрольним елементом.
 
     > **Примітка:** Щоб задати атрибут `for` програмно, слід використовувати [`htmlFor`](/uk/docs/Web/API/HTMLLabelElement/htmlFor).
 
@@ -144,23 +137,23 @@ browser-compat: html.elements.label
   <tbody>
     <tr>
       <th scope="row">
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories"
+        <a href="/uk/docs/Web/HTML/Content_categories"
           >Категорії вмісту</a
         >
       </th>
       <td>
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#potokovyi-vmist"
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
           >Потоковий вміст</a
         >,
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#opovidalnyi-vmist"
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
           >оповідальний вміст</a
         >,
         <a
-          href="/uk/docs/Web/Guide/HTML/Content_categories#interaktyvnyi-vmist"
+          href="/uk/docs/Web/HTML/Content_categories#interaktyvnyi-vmist"
           >інтерактивний вміст</a
         >,
         <a
-          href="/uk/docs/Web/Guide/HTML/Content_categories#formovyi-vmist"
+          href="/uk/docs/Web/HTML/Content_categories#formovyi-vmist"
           >формовий вміст</a
         >, дотиковий вміст.
       </td>
@@ -168,10 +161,10 @@ browser-compat: html.elements.label
     <tr>
       <th scope="row">Дозволений вміст</th>
       <td>
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#opovidalnyi-vmist"
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
           >Оповідальний вміст</a
         >, що не містить жодних елементів <code>label</code>. Не дозволені інші
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#labelable"
+        <a href="/uk/docs/Web/HTML/Content_categories#labelable"
           >підписувані</a
         >
         елементи, крім того, що підписується підписом.
@@ -185,7 +178,7 @@ browser-compat: html.elements.label
       <th scope="row">Дозволені батьківські елементи</th>
       <td>
         Всі елементи, що приймають
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#opovidalnyi-vmist"
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
           >оповідальний вміст</a
         >.
       </td>
