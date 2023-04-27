@@ -130,6 +130,8 @@ textarea:valid {
 <textarea name="textarea" rows="10" cols="50">Напишіть тут щось</textarea>
 ```
 
+#### Результат
+
 {{EmbedLiveSample('bazovyi-pryklad','600','150')}}
 
 ### Приклад з використанням "minlength" і "maxlength"
@@ -141,6 +143,8 @@ textarea:valid {
 Напишіть тут щось…
 </textarea>
 ```
+
+#### Результат
 
 {{EmbedLiveSample('pryklad-z-vykorystanniam-minlength-i-maxlength','600','80')}}
 
@@ -158,7 +162,9 @@ textarea:valid {
   placeholder="Текст коментаря."></textarea>
 ```
 
-{{EmbedLiveSample('pryklad-z-vykorystanniam-placeholder','600','80')}}
+#### Результат
+
+{{EmbedLiveSample('pryklad-z-vykorystanniam-placeholder','600','100')}}
 
 > **Примітка:** Заповнювачі повинні застосовуватися лише для демонстрування типу даних, котрий повинен бути введений у форму; вони _не_ є заміною доброго елемента {{HTMLElement("label")}}, зв'язаного з полем. Дивіться розгорнуте пояснення в [Підписах `<input>`](/uk/docs/Web/HTML/Element/input#pidpysy).
 
@@ -177,7 +183,9 @@ textarea:valid {
 </textarea>
 ```
 
-{{EmbedLiveSample('disabled-i-readonly','600','80')}}
+#### Результат
+
+{{EmbedLiveSample('disabled-i-readonly','600','100')}}
 
 ## Технічний підсумок
 
