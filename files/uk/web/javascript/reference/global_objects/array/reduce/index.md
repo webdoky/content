@@ -405,7 +405,7 @@ console.log(Array.prototype.reduce.call(arrayLike, (x, y) => x + y));
 ## Дивіться також
 
 - [Поліфіл для `Array.prototype.reduce` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
-- [Indexed collections](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
 - {{jsxref("Array.prototype.group()")}}
 - {{jsxref("Array.prototype.groupToMap()")}}
