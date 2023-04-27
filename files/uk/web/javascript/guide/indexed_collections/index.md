@@ -1,10 +1,10 @@
 ---
-title: Індексовані колекції
+title: Колекції з індексами
 slug: Web/JavaScript/Guide/Indexed_collections
 page-type: guide
 ---
 
-{{jsSidebar("JavaScript Guide")}} {{PreviousNext("Web/JavaScript/Guide/Regular_Expressions", "Web/JavaScript/Guide/Keyed_Collections")}}
+{{jsSidebar("JavaScript Guide")}} {{PreviousNext("Web/JavaScript/Guide/Regular_expressions", "Web/JavaScript/Guide/Keyed_Collections")}}
 
 Цей розділ знайомить з колекціями даних, котрі упорядковані за значенням індексу. Серед них – масиви та масивоподібні конструкції, як то об'єкти {{jsxref("Array")}} і {{jsxref("TypedArray")}}.
 
@@ -87,7 +87,7 @@ const wisenArray = Array.of(9.3); // wisenArray містить лише один
 
 ## Звертання до елементів масиву
 
-Через те, що елементи також є властивостями, до них можна звертатися за допомогою [засобів доступу до властивостей](/uk/docs/Web/JavaScript/Reference/Operators/Property_Accessors). Припустімо, визначено такий масив:
+Через те, що елементи також є властивостями, до них можна звертатися за допомогою [засобів доступу до властивостей](/uk/docs/Web/JavaScript/Reference/Operators/Property_accessors). Припустімо, визначено такий масив:
 
 ```js
 const myArray = ["Вітер", "Дощ", "Вогонь"];
@@ -95,7 +95,7 @@ const myArray = ["Вітер", "Дощ", "Вогонь"];
 
 До першого елемента масиву можна звернутись як до `myArray[0]`, – до другого – як до `myArray[1]` тощо… Індекси елементів починаються від нуля.
 
-> **Примітка:** Також [засоби доступу до властивостей](/uk/docs/Web/JavaScript/Reference/Operators/Property_Accessors) можна використовувати для звертання до інших властивостей масиву, як з об'єктом.
+> **Примітка:** Також [засоби доступу до властивостей](/uk/docs/Web/JavaScript/Reference/Operators/Property_accessors) можна використовувати для звертання до інших властивостей масиву, як з об'єктом.
 >
 > ```js
 > const arr = ["один", "два", "три"];
@@ -226,7 +226,7 @@ nonsparseArray.forEach((element) => {
 // четвертий
 ```
 
-Оскільки елементи масивів JavaScript зберігаються як стандартні властивості об'єкта, не варто ітерувати масиви JavaScript за допомогою циклу {{jsxref("Statements/for...in","for...in")}}, адже будуть перелічені і звичайні елементи, і всі перелічувані властивості.
+Оскільки елементи масивів JavaScript зберігаються як стандартні властивості об'єкта, не варто ітерувати масиви JavaScript за допомогою циклу {{jsxref("Statements/for...in","for...in")}}, адже будуть перелічені як звичайні елементи, так і всі перелічувані властивості.
 
 ### Методи масивів
 
@@ -586,7 +586,7 @@ arr.property = "значення";
 console.log(arr.property); // "значення"
 ```
 
-Наприклад, коли масив є результатом пошуку збігу між регулярним виразом та рядком, масив повертає властивості та елементи, що містять інформацію про збіг. Масив є поверненим значенням методів [`RegExp.prototype.exec()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec), [`String.prototype.match()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/match) і [`String.prototype.split()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/split). Інформацію про використання масивів з регулярними виразами дивіться на сторінці [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_Expressions).
+Наприклад, коли масив є результатом пошуку збігу між регулярним виразом та рядком, масив повертає властивості та елементи, що містять інформацію про збіг. Масив є поверненим значенням методів [`RegExp.prototype.exec()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec), [`String.prototype.match()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/match) і [`String.prototype.split()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/split). Інформацію про використання масивів з регулярними виразами дивіться на сторінці [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_expressions).
 
 ## Робота з масивоподібними об'єктами
 
@@ -621,4 +621,4 @@ Array.prototype.forEach.call("a string", (chr) => {
 });
 ```
 
-{{PreviousNext("Web/JavaScript/Guide/Regular_Expressions", "Web/JavaScript/Guide/Keyed_Collections")}}
+{{PreviousNext("Web/JavaScript/Guide/Regular_expressions", "Web/JavaScript/Guide/Keyed_Collections")}}
