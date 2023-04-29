@@ -1,26 +1,21 @@
 ---
 title: String.prototype.localeCompare()
 slug: Web/JavaScript/Reference/Global_Objects/String/localeCompare
-tags:
-  - Internationalization
-  - JavaScript
-  - Method
-  - Prototype
-  - Reference
-  - String
+page-type: javascript-instance-method
 browser-compat: javascript.builtins.String.localeCompare
 ---
+
 {{JSRef}}
 
-Метод **`localeCompare()`** повертає число, яке вказує, чи переданий рядок під час сортування повинен стояти перед, після, або є еквівалентним до початкового рядка.
+Метод **`localeCompare()`** повертає число, яке вказує, чи переданий рядок під час сортування повинен стояти перед, після, або є еквівалентним до початкового рядка. В реалізаціях, що підтримують [API `Intl.Collator`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator), цей метод просто викликає `Intl.Collator`.
+
+Для порівняння великої кількості рядків (наприклад, під час сортування великих масивів) краще створити окремий об'єкт {{jsxref("Intl.Collator")}} і застосувати функцію, яка надається його методом {{jsxref("Intl/Collator/compare", "compare()")}}.
 
 {{EmbedInteractiveExample("pages/js/string-localecompare.html")}}
 
-Нові аргументи `locales` та `options` дають змогу вказувати в застосунках мову, згідно з правилами якої слід виконувати сортування, та підлаштовувати поведінку функції. В старіших реалізаціях, які не зважають на аргументи `locales` та `options`, мова і порядок сортування цілком залежать від реалізації.
-
 ## Синтаксис
 
-```js
+```js-nolint
 localeCompare(compareString)
 localeCompare(compareString, locales)
 localeCompare(compareString, locales, options)
@@ -28,18 +23,31 @@ localeCompare(compareString, locales, options)
 
 ### Параметри
 
+Параметри `locales` і `options` налаштовують поведінку функції й дають застосункам змогу задати мову, чиї поняття про форматування повинні бути застосовані.
+
+В реалізаціях, що підтримують [API `Intl.Collator`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator), ці параметри точно відповідають параметрам конструктора [`Intl.Collator()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator/Collator). Від реалізацій без підтримки `Intl.Collator` очікується ігнорування обох цих параметрів, через що повернений результат порівняння цілком залежить від реалізації – від нього лишень вимагають _сталості_.
+
 - `compareString`
-  - : Рядок, з яким порівнюється початковий рядок `referenceStr`.
-- `locales` та `options`
+  - : Рядок, з яким порівнюється вихідний рядок `referenceStr`. Будь-які значення [зводяться до рядка](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka), тож пропуск цього параметра або передача `undefined` призводить до того, що `localeCompare()` виконує порівняння з рядком `"undefined"`, а це рідко саме те, що потрібно.
+- `locales` {{optional_inline}}
 
-  - : Ці аргументи підлаштовують поведінку функції та дозволяють застосункам вказувати мову, чиї правила форматування слід застосовувати. В реалізаціях, які не зважають на аргументи `locales` та `options`, локаль та форма поверненого рядка повністю залежать від реалізації.
+  - : Рядок з тегом мови BCP 47, або масив таких рядків. Відповідає параметрові [`locales`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator/Collator#locales) конструктора `Intl.Collator()`.
 
-    Більше деталей про ці параметри, і як їх використовувати, можна знайти в розділі [конструктор `Intl.Collator()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Collator/Collator).
+    В реалізаціях без підтримки `Intl.Collator` цей параметр ігнорується, і зазвичай використовується домашня локаль.
+
+- `options` {{optional_inline}}
+
+  - : Об'єкт, що налаштовує формат виведення. Відповідає параметрові [`options`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator/Collator#options) конструктора `Intl.Collator()`.
+
+    В реалізаціях без підтримки `Intl.Collator` цей параметр ігнорується.
+
+Деталі щодо параметрів `locales` і `options` та їх використання – дивіться на сторінці [конструктора `Intl.Collator()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator/Collator).
 
 ### Повернене значення
 
-Повертає **від'ємне** число, якщо початковий рядок `referenceStr` опиняється перед `compareString`; **додатне** — якщо `referenceStr` опиняється після `compareString`;
-`0` — якщо вони еквівалентні.
+**Від'ємне** число, якщо `referenceStr` повинен стояти до `compareString`; **додатне**, якщо `referenceStr` повинен стояти після `compareString`; `0`, якщо ці рядки рівносильні.
+
+В реалізаціях з `Intl.Collator` це рівносильно `new Intl.Collator(locales, options).compare(referenceStr, compareString)`.
 
 ## Опис
 
@@ -49,28 +57,24 @@ localeCompare(compareString, locales, options)
 - Додатне, якщо `referenceStr` опиняється після `compareString`
 - Повертає `0`, якщо рядки еквівалентні
 
-> **Зауваження:** Не варто покладатись на конкретні значення `-1` чи `1`.
+> **Примітка:** Не варто покладатись на конкретні значення `-1` чи `1`.
 >
-> Додатні та від'ємні цілочисельні результати можуть відрізнятися залежно від браузера (так само як і між різними версіями одного браузера), оскільки специфікація W3C формально вимагає лише від'ємність чи додатність значення, а не його величину. Деякі браузери можуть повертати `-2` чи `2`, або навіть якісь інші додатні чи від'ємні значення.
-
-## Швидкодія
-
-Для порівняння великої кількості рядків (наприклад, під час сортування великих масивів) краще створити окремий об'єкт {{jsxref("Global_Objects/Collator", "Intl.Collator")}} і застосувати функцію, яка надається його властивістю {{jsxref("Collator.prototype.compare", "compare")}}.
+> Додатні та від'ємні цілочисельні результати можуть відрізнятися залежно від браузера (так само як і між різними версіями одного браузера), оскільки специфікація ECMAScript формально вимагає лише від'ємність чи додатність значення, а не його величину. Деякі браузери можуть повертати `-2` чи `2`, або навіть якісь інші додатні чи від'ємні значення.
 
 ## Приклади
 
-### Застосування методу `localeCompare()`
+### Застосування методу localeCompare()
 
 ```js
 // Літера "a" знаходиться перед "c", що видає в результаті від'ємне значення
-'a'.localeCompare('c'); // -2 або -1 (чи якесь інше від'ємне число)
+"a".localeCompare("c"); // -2 або -1 (чи якесь інше від'ємне число)
 
 // З точки зору алфавітного порядку –
 // слово "check" йде після "against", видаючи в результаті додатне значення
-'check'.localeCompare('against'); // 2 або 1 (чи якесь інше додатне значення)
+"check".localeCompare("against"); // 2 або 1 (чи якесь інше додатне значення)
 
 // "a" та "a" — еквівалентні, що видає в результаті беззнаковий нуль
-'a'.localeCompare('a'); // 0
+"a".localeCompare("a"); // 0
 ```
 
 ### Сортування масиву
@@ -78,8 +82,8 @@ localeCompare(compareString, locales, options)
 `localeCompare()` дає змогу виконувати нечутливе до регістру сортування масиву.
 
 ```js
-let items = ['réservé', 'Premier', 'Cliché', 'communiqué', 'café', 'Adieu'];
-items.sort( (a, b) => a.localeCompare(b, 'fr', {ignorePunctuation: true}));
+const items = ["réservé", "Premier", "Cliché", "communiqué", "café", "Adieu"];
+items.sort((a, b) => a.localeCompare(b, "fr", { ignorePunctuation: true }));
 // ['Adieu', 'café', 'Cliché', 'communiqué', 'Premier', 'réservé']
 ```
 
@@ -92,33 +96,33 @@ items.sort( (a, b) => a.localeCompare(b, 'fr', {ignorePunctuation: true}));
 ```js
 function localeCompareSupportsLocales() {
   try {
-    'foo'.localeCompare('bar', 'i');
+    "foo".localeCompare("bar", "i");
   } catch (e) {
-    return e.name === 'RangeError';
+    return e.name === "RangeError";
   }
   return false;
 }
 ```
 
-### Застосування аргументу `locales`
+### Застосування аргументу locales
 
 Результат, повернений методом `localeCompare()`, відрізняється для різних мов. Аби отримати порядок сортування згідно з мовою інтерфейсу конкретного застосунку, необхідно впевнитися, що ця мова (разом із, можливо, якимись запасними варіантами мов) вказана в аргументі `locales`:
 
 ```js
-console.log('ä'.localeCompare('z', 'de')); // від'ємне значення: у німецькій мові ä ставиться перед z
-console.log('ä'.localeCompare('z', 'sv')); // додатне значення: у шведській мові ä ставиться після z
+console.log("ä".localeCompare("z", "de")); // від'ємне значення: у німецькій мові ä ставиться перед z
+console.log("ä".localeCompare("z", "sv")); // додатне значення: у шведській мові ä ставиться після z
 ```
 
-### Застосування аргументу `options`
+### Застосування аргументу options
 
 Результат, отриманий з `localeCompare()`, можна налаштувати за допомогою аргументу `options`:
 
 ```js
 // у німецькій мові базовою літерою "ä" є "a"
-console.log('ä'.localeCompare('a', 'de', { sensitivity: 'base' })); // 0
+console.log("ä".localeCompare("a", "de", { sensitivity: "base" })); // 0
 
 // у шведській мові "ä" та "a" — це літери з різними основами
-console.log('ä'.localeCompare('a', 'sv', { sensitivity: 'base' })); // додатне значення
+console.log("ä".localeCompare("a", "sv", { sensitivity: "base" })); // додатне значення
 ```
 
 ### Сортування чисел
@@ -128,7 +132,7 @@ console.log('ä'.localeCompare('a', 'sv', { sensitivity: 'base' })); // дода
 console.log("2".localeCompare("10")); // 1
 
 // сортування чисел шляхом вказання "options":
-console.log("2".localeCompare("10", undefined, {numeric: true})); // -1
+console.log("2".localeCompare("10", undefined, { numeric: true })); // -1
 
 // сортування чисел шляхом передачі спеціальної позначки локалі:
 console.log("2".localeCompare("10", "en-u-kn-true")); // -1
@@ -144,4 +148,4 @@ console.log("2".localeCompare("10", "en-u-kn-true")); // -1
 
 ## Дивіться також
 
-- {{jsxref("Global_Objects/Collator", "Intl.Collator")}}
+- [`Intl.Collator`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator)
