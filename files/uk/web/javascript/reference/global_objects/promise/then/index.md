@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.Promise.then
 
 {{JSRef}}
 
-Метод **`then()`** (тоді) повертає {{jsxref("Promise")}}. Він приймає два аргументи – функції зворотного виклику на випадок успіху й невдачі `Promise`, відповідно. Цей метод негайно повертає рівносильний об'єкт {{jsxref("Promise")}}, завдяки чому можна [утворювати ланцюжки](/uk/docs/Web/JavaScript/Guide/Using_promises#utvorennia-lantsiuzhkiv) з викликів інших методів промісів.
+Метод **`then()`** (тоді) примірників {{jsxref("Promise")}} приймає до двох аргументів – функцій зворотного виклику на випадок успіху й невдачі `Promise`, відповідно. Він негайно повертає рівносильний об'єкт {{jsxref("Promise")}}, завдяки чому можна [утворювати ланцюжки](/uk/docs/Web/JavaScript/Guide/Using_promises#utvorennia-lantsiuzhkiv) з викликів інших методів промісів.
 
 {{EmbedInteractiveExample("pages/js/promise-then.html")}}
 
