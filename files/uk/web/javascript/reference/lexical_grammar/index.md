@@ -3,6 +3,7 @@ title: Лексична граматика
 slug: Web/JavaScript/Reference/Lexical_grammar
 page-type: guide
 browser-compat: javascript.grammar
+spec-urls: https://tc39.es/ecma262/multipage/ecmascript-language-lexical-grammar.html
 ---
 
 {{JsSidebar("More")}}
@@ -37,13 +38,13 @@ browser-compat: javascript.grammar
 
 > **Примітка:** Серед тих [символів, що мають властивість "White_Space", але не належать до загальної категорії "Space_Separator"](https://util.unicode.org/UnicodeJsps/list-unicodeset.jsp?a=%5Cp%7BWhite_Space%7D%26%5CP%7BGeneral_Category%3DSpace_Separator%7D), U+0009, U+000B і U+000C у JavaScript все одно обробляються як пробіли; U+0085 NEXT LINE не має особливої ролі; решта – стають множиною [символів кінця рядка](#symvoly-kintsia-riadka).
 
-> **Примітка:** Зміни до стандарту Unicode, що використовується рушієм JavaScript, можуть вплинути на поведінку програм. Наприклад, ES2016 оновив посилання на стандарт Unicode від версії 5.1 до 8.0.0, що призвело до переведення символу U+180E MONGOLIAN VOWEL SEPARATOR з категорії "Space_Separator" до категорії "Format (Cf)", а також зробило його непробільним. Як наслідок, результат [`"\u180E".trim().length`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/Trim) змінився від `0` до `1`.
+> **Примітка:** Зміни до стандарту Unicode, що використовується рушієм JavaScript, можуть вплинути на поведінку програм. Наприклад, ES2016 оновив посилання на стандарт Unicode від версії 5.1 до 8.0.0, що призвело до переведення символу U+180E MONGOLIAN VOWEL SEPARATOR з категорії "Space_Separator" до категорії "Format (Cf)", а також зробило його непробільним. Як наслідок, результат [`"\u180E".trim().length`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/trim) змінився від `0` до `1`.
 
 ## Символи кінця рядка
 
 На додачу до [пробільних](#probily) символів, символи кінця рядка використовуються для покращення прочитності тексту коду. Проте в деяких випадках вони можуть впливати на виконання коду на JavaScript, адже є кілька місць, у яких вони заборонені. Крім цього, символи кінця рядка впливають на процес [автоматичного вставляння крапок з комою](#avtomatychne-vstavliannia-krapok-z-komoiu).
 
-Поза контекстом лексичної граматики пробіли та символи кінця рядка нерідко не розрізняються. Наприклад, {{jsxref("String.prototype.trim()")}} прибирає з початку та кінця рядка усі пробіли та символи кінця рядка. [Клас екранування символів](/uk/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes) `\s` у регулярних виразах дає збіг з усіма пробілами та символами кінця рядка.
+Поза контекстом лексичної граматики пробіли та символи кінця рядка нерідко не розрізняються. Наприклад, {{jsxref("String.prototype.trim()")}} прибирає з початку та кінця рядка усі пробіли та символи кінця рядка. [Клас екранування символів](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Character_classes) `\s` у регулярних виразах дає збіг з усіма пробілами та символами кінця рядка.
 
 Лише нижчеперелічені кодові точки Unicode обробляються в ECMAScript як символи кінця рядка, а всі решта символи розриву рядка розглядаються як пробіли (наприклад, Next Line, NEL, U+0085 – вважаються пробілами).
 
@@ -621,7 +622,7 @@ const a = 1(1).toString();
 const b = 1[1, 2, 3].forEach(console.log);
 ```
 
-Так вийшло, що це дійсний синтаксис. `1[1, 2, 3]` – це [аксесор властивості](/uk/docs/Web/JavaScript/Reference/Operators/Property_Accessors) з виразом, об'єднаним [комою](/uk/docs/Web/JavaScript/Reference/Operators/Comma_Operator). Таким чином, при запуску коду вийдуть помилки виду "1 is not a function" and "Cannot read properties of undefined (reading 'forEach')".
+Так вийшло, що це дійсний синтаксис. `1[1, 2, 3]` – це [аксесор властивості](/uk/docs/Web/JavaScript/Reference/Operators/Property_accessors) з виразом, об'єднаним [комою](/uk/docs/Web/JavaScript/Reference/Operators/Comma_operator). Таким чином, при запуску коду вийдуть помилки виду "1 is not a function" and "Cannot read properties of undefined (reading 'forEach')".
 
 Всередині класів пастками також можуть бути поля класів та генераторні методи.
 
@@ -768,16 +769,16 @@ class A {
   }
   ```
 
+## Специфікації
+
+{{Specifications}}
+
 ## Сумісність із браузерами
 
 {{Compat}}
 
 ## Дивіться також
 
-- [Лексична граматика в специфікації ECMAScript](https://tc39.es/ecma262/#sec-ecmascript-language-lexical-grammar)
-- [Джефф Волден – Двійкові та вісімкові числа](https://whereswalden.com/2013/08/12/micro-feature-from-es6-now-in-firefox-aurora-and-nightly-binary-and-octal-numbers/)
-- [Матіас Байненс – Послідовності екранування символів у JavaScript](https://mathiasbynens.be/notes/javascript-escapes)
-- [Boolean](/uk/docs/Web/JavaScript/Data_structures#typ-boolean)
-- [Number](/uk/docs/Web/JavaScript/Data_structures#typ-number)
-- [string](/uk/docs/Web/JavaScript/Data_structures#typ-string)
-- {{jsxref("RegExp")}}
+- [Граматика та типи](/uk/docs/Web/JavaScript/Guide/Grammar_and_types)
+- [Мікроможливість з ES6, уже доступна в Firefox Aurora та Nightly, – двійкові та вісімкові числа](https://whereswalden.com/2013/08/12/micro-feature-from-es6-now-in-firefox-aurora-and-nightly-binary-and-octal-numbers/) від Джефа Волдена (12 серпня 2013 року)
+- [Послідовності екранування символів у JavaScript](https://mathiasbynens.be/notes/javascript-escapes) від Матіаса Байненса (21 грудня 2011 року)
