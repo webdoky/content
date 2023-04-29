@@ -93,6 +93,21 @@ function encodeRFC3986URIComponent(str) {
 }
 ```
 
+### Кодування самотнього старшого сурогату викидає помилку
+
+Викидається помилка {{jsxref("URIError")}}, якщо спробувати закодувати сурогат, який не є частиною пари старшого та молодшого сурогатів. Наприклад:
+
+```js
+// Пара старший-молодший – ОК
+encodeURIComponent("\uD800\uDFFF"); // "%F0%90%8F%BF"
+// Самотній старший сурогат викидає помилку "URIError: malformed URI sequence"
+encodeURIComponent("\uD800");
+// Самотній молодший сурогат викидає помилку "URIError: malformed URI sequence"
+encodeURIComponent("\uDFFF");
+```
+
+Можна скористатися методом {{jsxref("String.prototype.toWellFormed()")}}, котрий замінює самотні сурогати на символ заміни Unicode (U+FFFD), щоб уникнути цієї помилки. Також можна скористатися методом {{jsxref("String.prototype.isWellFormed()")}}, щоб перевірити, чи містить рядок самотні сурогати, перед тим, як передати його у `encodeURIComponent()`.
+
 ## Специфікації
 
 {{Specifications}}
