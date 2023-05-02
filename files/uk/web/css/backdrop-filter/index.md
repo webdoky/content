@@ -126,4 +126,4 @@ body {
 - {{cssxref("&lt;filter-function&gt;")}}
 - {{cssxref("background-blend-mode")}}, {{cssxref("mix-blend-mode")}}
 - [Фільтрувальні ефекти CSS](/uk/docs/Web/CSS/filter_effects/)
-- [Сполучення та змішування CSS](/uk/docs/Web/CSS/Compositing_and_Blending)
+- [Компонування та накладання в CSS](/uk/docs/Web/CSS/Compositing_and_Blending)
