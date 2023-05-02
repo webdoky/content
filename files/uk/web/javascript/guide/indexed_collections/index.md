@@ -4,7 +4,7 @@ slug: Web/JavaScript/Guide/Indexed_collections
 page-type: guide
 ---
 
-{{jsSidebar("JavaScript Guide")}} {{PreviousNext("Web/JavaScript/Guide/Regular_expressions", "Web/JavaScript/Guide/Keyed_Collections")}}
+{{jsSidebar("JavaScript Guide")}} {{PreviousNext("Web/JavaScript/Guide/Regular_expressions", "Web/JavaScript/Guide/Keyed_collections")}}
 
 Цей розділ знайомить з колекціями даних, котрі упорядковані за значенням індексу. Серед них – масиви та масивоподібні конструкції, як то об'єкти {{jsxref("Array")}} і {{jsxref("TypedArray")}}.
 
@@ -14,7 +14,7 @@ _Масив_ – упорядкований список значень, до к
 
 JavaScript не має явного типу даних – масиву. Проте для роботи з масивами в застосунках можна використати наперед визначений об'єкт `Array` і його методи. Об'єкт `Array` має методи для роботи з масивами у різний спосіб, як то їх об'єднання, розвороту й сортування. Він має властивість для з'ясування довжини масиву та інші властивості – для використання з регулярними виразами.
 
-Ця стаття зосереджена на масивах, однак чимало тих же концепцій застосовуються також до типізованих масивів, адже масиви й типізовані масиви мають чимало подібних методів. Більше інформації про типізовані масиви – у [довідці типізованих масивів](/uk/docs/Web/JavaScript/Typed_arrays).
+Ця стаття зосереджена на масивах, однак чимало тих же концепцій застосовуються також до типізованих масивів, адже масиви й типізовані масиви мають чимало подібних методів. Більше інформації про типізовані масиви – у [посібнику типізованих масивів](/uk/docs/Web/JavaScript/Guide/Typed_arrays).
 
 ## Створення масиву
 
@@ -621,4 +621,4 @@ Array.prototype.forEach.call("a string", (chr) => {
 });
 ```
 
-{{PreviousNext("Web/JavaScript/Guide/Regular_expressions", "Web/JavaScript/Guide/Keyed_Collections")}}
+{{PreviousNext("Web/JavaScript/Guide/Regular_expressions", "Web/JavaScript/Guide/Keyed_collections")}}
