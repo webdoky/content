@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.String.length
 
 {{JSRef}}
 
-Властивість даних рядка **`length`** містить довжину рядка в кодових одиницях UTF-16.
+Властивість даних значень {{jsxref("String")}} **`length`** (довжина) містить довжину рядка в кодових одиницях UTF-16.
 
 {{EmbedInteractiveExample("pages/js/string-length.html", "shorter")}}
 
