@@ -57,7 +57,7 @@ import "module-name";
 
 ### Іменований імпорт
 
-Нехай дано певне значення під назвою `myExport`, експортоване з модуля `my-module` або явно за допомогою інструкції {{JSxRef("Statements/export", "export")}}, або неявно (як `export * from 'another.js'`). Такий код додасть значення `myExport` у поточну область.
+Нехай дано певне значення під назвою `myExport`, експортоване з модуля `my-module` або явно за допомогою інструкції {{jsxref("Statements/export", "export")}}, або неявно – як `export * from "another.js"`. Такий код додасть значення `myExport` у поточну область.
 
 ```js
 import { myExport } from "/modules/my-module.js";

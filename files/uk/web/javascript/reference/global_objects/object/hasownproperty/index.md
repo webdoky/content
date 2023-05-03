@@ -9,9 +9,9 @@ browser-compat: javascript.builtins.Object.hasOwnProperty
 
 Метод **`hasOwnProperty()`** (має власну властивість) повертає булеве значення, котре вказує на те, чи має об'єкт задану властивість як свою власну (але не успадковану).
 
-{{EmbedInteractiveExample("pages/js/object-prototype-hasownproperty.html")}}
-
 > **Примітка:** {{jsxref("Object.hasOwn()")}} є рекомендованою альтернативою `hasOwnProperty()` в тих браузерах, у котрих підтримується.
+
+{{EmbedInteractiveExample("pages/js/object-prototype-hasownproperty.html")}}
 
 ## Синтаксис
 
