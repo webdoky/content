@@ -1,6 +1,7 @@
 ---
 title: BigInt
 slug: Web/JavaScript/Reference/Global_Objects/BigInt
+page-type: javascript-class
 browser-compat: javascript.builtins.BigInt
 ---
 
@@ -33,7 +34,7 @@ const hugeBin = BigInt(
 // 9007199254740991n
 ```
 
-Значення BigInt у певних аспектах подібні до значень Number, але також відрізняються в кількох ключових нюансах: значення BigInt не можуть використовуватися з методами вбудованого об'єкта [`Math`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Math) і не можуть змішуватися в операціях зі значенням Number; усі значення повинні бути зведені до одного типу. Проте слід обережно зводити значення туди-назад, адже точність значення BigInt може бути втрачена при зведенні до значення Number.
+Значення BigInt у певних аспектах подібні до значень Number, але також відрізняються в кількох ключових нюансах: значення BigInt не можуть використовуватися з методами вбудованого об'єкта [`Math`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Math) і не можуть змішуватися в операціях зі значеннями Number; усі значення повинні бути зведені до одного типу. Проте слід обережно зводити значення туди-назад, адже точність значення BigInt може бути втрачена при зведенні до значення Number.
 
 ### Інформація про тип
 
@@ -103,33 +104,21 @@ const truncated = 5n / 2n;
 Значення BigInt строго не дорівнює значенню Number, проте _дорівнює_ нестрого:
 
 ```js
-0n === 0;
-// false
-
-0n == 0;
-// true
+0n === 0; // false
+0n == 0; // true
 ```
 
 Значення Number і значення BigInt можуть порівнюватися як звично:
 
 ```js
-1n < 2;
-// true
-
-2n > 1;
-// true
-
-2 > 2;
-// false
-
-2n > 2;
-// false
-
-2n >= 2;
-// true
+1n < 2; // true
+2n > 1; // true
+2 > 2; // false
+2n > 2; // false
+2n >= 2; // true
 ```
 
-Значення BigInt та Number можуть зустрічатися в одному масиві й сортуватися:
+Значення BigInt і значення Number можуть змішуватися в масивах і сортуватися:
 
 ```js
 const mixed = [4n, 6, -12n, 10, 4, 0, 0n];
@@ -160,7 +149,7 @@ o === o; // true
 Через те, що перетворення між значеннями Number та значеннями BigInt можуть призводити до втрати точності, рекомендовано наступне:
 
 - Значення BigInt слід використовувати лише тоді, коли доцільно очікувати значень, більших за 2<sup>53</sup>.
-- Не слід перетворювати між собою значення BigInt і Number.
+- Не слід перетворювати між собою значення BigInt і значення Number.
 
 ### Перевірки умов
 
@@ -178,31 +167,19 @@ if (0n) {
 } else {
   console.log("Привіт з else!");
 }
-
 // "Привіт з else!"
 
-0n || 12n;
-// 12n
-
-0n && 12n;
-// 0n
-
-Boolean(0n);
-// false
-
-Boolean(12n);
-// true
-
-!12n;
-// false
-
-!0n;
-// true
+0n || 12n; // 12n
+0n && 12n; // 0n
+Boolean(0n); // false
+Boolean(12n); // true
+!12n; // false
+!0n; // true
 ```
 
 ### Криптографія
 
-Операції, котрі підтримують значення BigInt, мають не сталий час виконання, а тому вразливі до [атак по часу](https://uk.wikipedia.org/wiki/%D0%90%D1%82%D0%B0%D0%BA%D0%B0_%D0%BF%D0%BE_%D1%87%D0%B0%D1%81%D1%83). Таким чином, значення BigInt у JavaScript можуть бути небезпечними для використання в криптографії, якщо не вживати застережних заходів. Як дуже узагальнений приклад – нападник може виміряти часову різницю між `101n ** 65537n` і `17n ** 9999n`, завдяки чому – оцінити потужність таємних значень, як то приватних ключів, на основі витрат часу. Якщо все ж необхідно використовувати BigInt, слід звернутися до [ЧаПів атак по часу](https://timing.attacks.cr.yp.to/programming.html) щодо загальних порад на тему цієї проблеми.
+Операції, котрі підтримують значення BigInt, мають несталий час виконання, а тому вразливі до [атак по часу](https://uk.wikipedia.org/wiki/%D0%90%D1%82%D0%B0%D0%BA%D0%B0_%D0%BF%D0%BE_%D1%87%D0%B0%D1%81%D1%83). Таким чином, значення BigInt у JavaScript можуть бути небезпечними для використання в криптографії, якщо не вживати застережних заходів. Як дуже узагальнений приклад – нападник може виміряти часову різницю між `101n ** 65537n` і `17n ** 9999n`, завдяки чому – оцінити потужність таємних значень, як то приватних ключів, на основі витрат часу. Якщо все ж необхідно використовувати BigInt, слід звернутися до [ЧаПів атак по часу](https://timing.attacks.cr.yp.to/programming.html) щодо загальних порад на тему цієї проблеми.
 
 ### Використання всередині JSON
 
@@ -269,14 +246,14 @@ console.log(parsed);
 
 ## Конструктор
 
-- [`BigInt()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/BigInt)
+- {{jsxref("BigInt/BigInt", "BigInt()")}}
   - : Створює нове значення BigInt.
 
 ## Статичні методи
 
-- [`BigInt.asIntN()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/asIntN)
+- {{jsxref("BigInt.asIntN()")}}
   - : Обрізає значення BigInt до знакового цілого числа, і повертає його.
-- [`BigInt.asUintN()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/asUintN)
+- {{jsxref("BigInt.asUintN()")}}
   - : Обрізає значення BigInt до беззнакового цілого числа, і повертає його.
 
 ## Властивості примірника
@@ -290,12 +267,12 @@ console.log(parsed);
 
 ## Методи примірника
 
-- [`BigInt.prototype.toLocaleString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/toLocaleString)
+- {{jsxref("BigInt.prototype.toLocaleString()")}}
   - : Повертає рядок з чутливим до мови представленням цього значення BigInt. Заміщає метод [`Object.prototype.toLocaleString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/toLocaleString).
-- [`BigInt.prototype.toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/toString)
+- {{jsxref("BigInt.prototype.toString()")}}
   - : Повертає рядкове представлення цього значення BigInt за заданою основою числення. Заміщає метод [`Object.prototype.toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/toString).
-- [`BigInt.prototype.valueOf()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/valueOf)
-  - : Повертає це значення BigInt. Заміщає метод [`Object.prototype.valueOf()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf).
+- {{jsxref("BigInt.prototype.valueOf()")}}
+  - : Повертає поточне значення BigInt. Заміщає метод [`Object.prototype.valueOf()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf).
 
 ## Приклади
 
