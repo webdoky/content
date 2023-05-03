@@ -1,14 +1,10 @@
 ---
 title: String.prototype.toUpperCase()
 slug: Web/JavaScript/Reference/Global_Objects/String/toUpperCase
-tags:
-  - JavaScript
-  - Method
-  - Prototype
-  - Reference
-  - String
+page-type: javascript-instance-method
 browser-compat: javascript.builtins.String.toUpperCase
 ---
+
 {{JSRef}}
 
 Метод **`toUpperCase()`** повертає значення рядка, на якому викликається, переведене у верхній регістр (значення буде перетворене на рядок, якщо воно таким не є).
@@ -17,18 +13,13 @@ browser-compat: javascript.builtins.String.toUpperCase
 
 ## Синтаксис
 
-```js
+```js-nolint
 toUpperCase()
 ```
 
 ### Повернене значення
 
 Новий рядок, що містить значення рядка, на якому було викликано метод, переведене у верхній регістр.
-
-### Винятки
-
-- {{jsxref("TypeError")}}
-  - : Коли викликається на значеннях {{jsxref("null")}} чи {{jsxref("undefined")}}, наприклад, `String.prototype.toUpperCase.call(undefined)`.
 
 ## Опис
 
@@ -39,7 +30,7 @@ toUpperCase()
 ### Базове застосування
 
 ```js
-console.log('абетка'.toUpperCase()); // 'АБЕТКА'
+console.log("абетка".toUpperCase()); // 'АБЕТКА'
 ```
 
 ### Перетворення нерядкових значень `this` на рядки
@@ -48,9 +39,9 @@ console.log('абетка'.toUpperCase()); // 'АБЕТКА'
 
 ```js
 const a = String.prototype.toUpperCase.call({
-  toString: function toString() {
-    return 'абвгґд';
-  }
+  toString() {
+    return "абвгґд";
+  },
 });
 
 const b = String.prototype.toUpperCase.call(true);

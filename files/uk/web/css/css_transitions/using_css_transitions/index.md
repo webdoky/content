@@ -70,8 +70,8 @@ div {
 ```html hidden
 <body>
   <p>
-    Рамки нижче поєднують переходи для: width, height, background-color,
-    transform. Наведіть на рамки, щоб побачити анімування цих властивостей.
+    Рамки нижче поєднують переходи для: width, height, background-color, rotate.
+    Наведіть на рамки, щоб побачити анімування цих властивостей.
   </p>
   <div class="box">Зразок</div>
 </body>
@@ -87,7 +87,7 @@ div {
   width: 100px;
   height: 100px;
   background-color: #0000ff;
-  transition: width 2s, height 2s, background-color 2s, transform 2s;
+  transition: width 2s, height 2s, background-color 2s, rotate 2s;
 }
 
 .box:hover {

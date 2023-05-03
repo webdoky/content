@@ -267,7 +267,7 @@ display: unset;
 
 ### Таблиці
 
-Зміна значення `display` для елемента {{HTMLElement("table")}} на `block`, `grid` чи `flex` змінить його представлення у [дереві доступності](/uk/docs/Learn/Accessibility/What_is_accessibility#accessibility_apis). Це спричинить до того, що таблиця не буде оголошена як слід технологією читання екрана.
+У частині браузерів зміна значення `display` для елемента {{HTMLElement("table")}} на `block`, `grid` чи `flex` змінить його представлення у [дереві доступності](/uk/docs/Learn/Accessibility/What_is_accessibility#accessibility_apis). Це спричинить до того, що така таблиця не буде коректно оголошена технологією читання з екрана.
 
 - [Коротка нотатка про те, що властивість CSS display робить із семантикою таблиці — The Paciello Group](https://www.tpgi.com/short-note-on-what-css-display-properties-do-to-table-semantics/)
 - [Прихований вміст для кращої доступності | Go Make Things](https://gomakethings.com/hidden-content-for-better-a11y/)
