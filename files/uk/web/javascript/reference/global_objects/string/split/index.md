@@ -77,12 +77,12 @@ console.log(emptyString.split(emptyString));
 function splitString(stringToSplit, separator) {
   const arrayOfStrings = stringToSplit.split(separator);
 
-  console.log("Початковий рядок — ", stringToSplit);
-  console.log("Розділювач — ", separator);
+  console.log("Початковий рядок —", stringToSplit);
+  console.log("Розділювач —", separator);
   console.log(
-    "Масив містить ",
+    "Масив містить",
     arrayOfStrings.length,
-    " елементів: ",
+    "елементів:",
     arrayOfStrings.join(" / ")
   );
 }
@@ -171,7 +171,7 @@ console.log(splits);
 ["Здрастуй ", "1", " слово. Речення номер ", "2", "."];
 ```
 
-> **Примітка:** `\d` шукає збіги з [класом символів](/uk/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes), що відповідає цифрам від 0 до 9.
+> **Примітка:** `\d` шукає збіги з [класом символів](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Character_classes), що відповідає цифрам від 0 до 9.
 
 ### Використання власного розщеплювача
 
@@ -285,4 +285,4 @@ console.log(commands.split(splitCommands, 3)); // ["світло увімкну�
 - {{jsxref("String.prototype.indexOf()")}}
 - {{jsxref("String.prototype.lastIndexOf()")}}
 - {{jsxref("Array.prototype.join()")}}
-- [Застосування регулярних виразів у JavaScript](/uk/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Застосування регулярних виразів у JavaScript](/uk/docs/Web/JavaScript/Guide/Regular_expressions)

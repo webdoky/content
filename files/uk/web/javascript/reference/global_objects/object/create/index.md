@@ -2,14 +2,6 @@
 title: Object.create()
 slug: Web/JavaScript/Reference/Global_Objects/Object/create
 page-type: javascript-static-method
-tags:
-  - ECMAScript 5
-  - JavaScript
-  - Method
-  - "Null"
-  - Object
-  - Reference
-  - Polyfill
 browser-compat: javascript.builtins.Object.create
 ---
 
@@ -82,7 +74,10 @@ Rectangle.prototype = Object.create(Shape.prototype, {
 
 const rect = new Rectangle();
 
-console.log("Чи є `rect` примірником класу Rectangle?", rect instanceof Rectangle); // true
+console.log(
+  "Чи є `rect` примірником класу Rectangle?",
+  rect instanceof Rectangle
+); // true
 console.log("Чи є `rect` примірником класу Shape?", rect instanceof Shape); // true
 rect.move(1, 1); // Друкує 'Фігуру переміщено.'
 ```
@@ -122,7 +117,7 @@ o = Object.create(Object.prototype, {
 o = Object.create({}, { p: { value: 42 } });
 ```
 
-За допомогою `Object.create()` можна створити об'єкт, [чиїм прототипом є `null`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#obiekty-z-prototypom-null). Еквівалентним синтаксисом на об'єктних ініціалізаторах було б вказання ключа [`__proto__`](/uk/docs/Web/JavaScript/Reference/Operators/Object_initializer#vstanovliuvach-prototypu).
+За допомогою `Object.create()` можна створити об'єкт, [чиїм прототипом є `null`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#null-prototypni-obiekty). Еквівалентним синтаксисом на об'єктних ініціалізаторах було б вказання ключа [`__proto__`](/uk/docs/Web/JavaScript/Reference/Operators/Object_initializer#vstanovliuvach-prototypu).
 
 ```js
 o = Object.create(null);
@@ -158,7 +153,7 @@ o2 = Object.create(
       enumerable: true,
       configurable: true,
     },
-  },
+  }
 );
 // Це не еквівалентно виразові:
 // o2 = Object.create({ p: 42 })
