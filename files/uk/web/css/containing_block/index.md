@@ -37,7 +37,7 @@ page-type: guide
    1. Має властивість {{cssxref("transform")}} чи {{cssxref("perspective")}}, чиє значення – не `none`
    2. Має властивість {{cssxref("will-change")}} зі значенням `transform` або `perspective`
    3. Має властивість {{cssxref("filter")}}, чиє значення – не `none`, або властивість `will-change` зі значенням `filter` (останнє працює лише в Firefox).
-   4. Має властивість {{cssxref("contain")}} зі значенням `paint` (`contain: paint;`)
+   4. Має властивість {{cssxref("contain")}} зі значенням `layout`, `paint`, `strict` або `content` (наприклад, `contain: paint;`)
    5. Має властивість {{cssxref("backdrop-filter")}}, чи значення – не `none` (наприклад, `backdrop-filter: blur(10px);`)
 
 > **Примітка:** Контейнерний блок, в котрому знаходиться кореневий елемент ({{HTMLElement("html")}}), – це прямокутник, що зветься **початковим контейнерним блоком**. Він має розміри, що дорівнюють розмірам області перегляду (при безперервному виводі) або області сторінки (при сторінковому виводі).
@@ -253,7 +253,7 @@ p {
   - [Директиви](/uk/docs/Web/CSS/At-rule)
   - [Коментарі](/uk/docs/Web/CSS/Comments)
   - [Специфічність](/uk/docs/Web/CSS/Specificity)
-  - [Успадкування](/uk/docs/Web/CSS/inheritance)
+  - [Успадкування](/uk/docs/Web/CSS/Inheritance)
   - [Рамкова модель](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
   - [Режими компонування](/uk/docs/Web/CSS/Layout_mode)
   - [Моделі візуального форматування](/uk/docs/Web/CSS/Visual_formatting_model)
