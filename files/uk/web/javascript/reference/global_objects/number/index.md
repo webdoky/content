@@ -13,12 +13,15 @@ browser-compat: javascript.builtins.Number
 
 ## Опис
 
-Числа найчастіше виражають у літеральних формах, як то `0b101`, `0o13`, `0x0A`. [Лексична граматика](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#chyslovi-literaly) містить докладнішу довідку.
+Числа найчастіше виражають у літеральних формах, як то `255` або `3.14159`. [Лексична граматика](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#chyslovi-literaly) містить докладнішу довідку.
 
 ```js
-123; // сто двадцять три
-123.0; // те саме
-123 === 123.0; // true
+255; // двісті п'ятдесят п'ять
+255.0; // те саме число
+255 === 255.0; // true
+255 === 0xff; // true (шістнадцятковий запис)
+255 === 0b11111111; // true (двійковий запис)
+255 === 0.255e3; // true (десятковий експоненційний запис)
 ```
 
 Числовий літерал, як то `37`, в коді JavaScript є значенням з рухомою комою, а не цілим. Немає загальновживаного окремого типу цілих чисел. (JavaScript тепер має тип {{jsxref("BigInt")}}, але він був розроблений не для заміни Number в повсякденному використанні. `37` – це все ж `Number`, а не BigInt.)
@@ -67,7 +70,7 @@ Number(undefined); // NaN
   - `+` і `-` дозволені на початку й позначають знак числа. (У звичайному коді вони "мають вигляд" частини літерала, хоча насправді є окремими унарними операторами.). Проте знак може бути лише один, і після нього не повинно бути пробілів.
   - `Infinity` та `-Infinity` беруться за літерали. У звичайному коді вони є глобальними змінними.
   - Порожні рядки й рядки лише з пробілів – перетворюються на `0`.
-  - [Числові роздільники](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#chyslovi-rozdilnyky) не дозволені.
+  - [Числові роздільники](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#rozdiliuvachi-rozriadiv) не дозволені.
 - [BigInt](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt) викидають {{jsxref("TypeError")}}, аби запобігти ненавмисному неявному зведенню, і як наслідок – втраті точності.
 - [Символи](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol) викидають {{jsxref("TypeError")}}.
 - Об'єкти спершу [перетворюються на примітиви](/uk/docs/Web/JavaScript/Data_structures#zvedennia-do-prymityva) шляхом виклику їх методів [`[@@toPrimitive]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive) (з підказкою `"number"`), `valueOf()` і `toString()` – в такому порядку. Результівний примітив опісля перетворюється на число.
