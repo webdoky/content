@@ -73,7 +73,7 @@ browser-compat: html.global_attributes
 - [`inputmode`](/uk/docs/Web/HTML/Global_attributes/inputmode)
   - : Надає браузерам підказку щодо того, який тип віртуальної клавіатури використовувати при редагуванні цього елемента чи його вмісту. Використовується перш за все на елементах {{HTMLElement("input")}}, але є застосовним до будь-якого елементу, поки він перебуває в режимі [`contenteditable`](#contenteditable).
 - [`is`](/uk/docs/Web/HTML/Global_attributes/is)
-  - : Дає змогу вказати, що стандартний елемент HTML повинен поводитись як зареєстрований користувацький вбудований елемент (подробиці у [Використанні користувацьких елементів](/uk/docs/Web/Web_Components/Using_custom_elements)).
+  - : Дає змогу вказати, що стандартний елемент HTML повинен поводитись як зареєстрований користувацький вбудований елемент (подробиці у [Використанні користувацьких елементів](/uk/docs/Web/API/Web_components/Using_custom_elements)).
 
 > **Примітка:** Атрибути `item*` є частиною [Функціональності мікроданих HTML WHATWG (англ.)](https://html.spec.whatwg.org/multipage/microdata.html#microdata).
 
@@ -93,10 +93,12 @@ browser-compat: html.global_attributes
   - : Криптографічний однораз ("одноразове число"), що може бути використаний [Політикою безпеки вмісту](/uk/docs/Web/HTTP/CSP) для визначення того, чи буде даному запитові дозволено відбутися.
 - [`part`](/uk/docs/Web/HTML/Global_attributes/part)
   - : Розділений пробілами список імен частин елемента. Імена частин дають CSS змогу вибирати й оформлювати конкретні елементи в тіньовому дереві за допомогою псевдоелемента {{CSSxRef("::part")}}.
+- [`popover`](/uk/docs/Web/HTML/Global_attributes/popover)
+  - : Задає те, що елемент повинен бути оброблений як спливне віконце. Елемент з атрибутом `popover` приховується на сторінці, поки його не відкриють, взаємодіючи з закличним елементом, що має атрибут [`popovertarget`](/uk/docs/Web/HTML/Element/button#popovertarget), або за допомогою [`showPopover()`](/uk/docs/Web/API/HTMLElement/showPopover/).
 - [`role`](/uk/docs/Web/Accessibility/ARIA/Roles)
   - : Ролі визначають семантичне значення вмісту, даючи читачам з екрана та іншим інструментам представляти й підтримувати взаємодію з об'єктом у спосіб, що узгоджений з очікуваннями користувача щодо об'єкта такого типу. `role` додаються до елементів HTML за допомогою `role="role_type"`, де `role_type` – ім'я ролі в специфікації ARIA.
 - [`slot`](/uk/docs/Web/HTML/Global_attributes/slot)
-  - : Присвоює елементові гніздо в тіньовому дереві [тіньового DOM](/uk/docs/Web/Web_Components/Using_shadow_DOM): елемент з атрибутом `slot` призначається в гніздо, утворене елементом {{HTMLElement("slot")}}, значення чийого атрибута [`name`](/uk/docs/Web/HTML/Element/slot#name) збігається зі значенням атрибута `slot` поточного елемента.
+  - : Присвоює елементові гніздо в тіньовому дереві [тіньового DOM](/uk/docs/Web/API/Web_components/Using_shadow_DOM): елемент з атрибутом `slot` призначається в гніздо, утворене елементом {{HTMLElement("slot")}}, значення чийого атрибута [`name`](/uk/docs/Web/HTML/Element/slot#name) збігається зі значенням атрибута `slot` поточного елемента.
 - [`spellcheck`](/uk/docs/Web/HTML/Global_attributes/spellcheck)
 
   - : Атрибут, що визначає, чи повинен елемент бути перевірений на помилки правопису. Може мати наступні значення:
