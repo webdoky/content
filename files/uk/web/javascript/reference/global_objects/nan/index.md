@@ -1,10 +1,7 @@
 ---
 title: NaN
 slug: Web/JavaScript/Reference/Global_Objects/NaN
-tags:
-  - JavaScript
-  - Property
-  - Reference
+page-type: javascript-global-property
 browser-compat: javascript.builtins.NaN
 ---
 
@@ -12,15 +9,19 @@ browser-compat: javascript.builtins.NaN
 
 Глобальна властивість **`NaN`** – значення, що представляє "Not-A-Number" – нечисло.
 
-{{js_property_attributes(0, 0, 0)}}
-
 {{EmbedInteractiveExample("pages/js/globalprops-nan.html")}}
+
+## Значення
+
+Те саме числове значення, що й {{jsxref("Number.NaN")}}.
+
+{{js_property_attributes(0, 0, 0)}}
 
 ## Опис
 
 `NaN` – властивість _глобального об'єкта_. Інакше кажучи, це змінна в глобальній області видимості.
 
-Початкове значення `NaN` – нечисло – таке саме, як значення {{jsxref("Number.NaN")}}. В сучасних браузерах `NaN` є неналаштовною властивістю, недоступною для запису. Навіть коли це не так, слід уникати її змін. Потреба використовувати `NaN` у програмі все одно трапляється нечасто.
+В сучасних браузерах `NaN` є неналаштовною властивістю, недоступною для запису. Навіть коли це не так, слід уникати її змін.
 
 Є п'ять різновидів операцій, що повертають `NaN`:
 
