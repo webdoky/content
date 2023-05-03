@@ -67,7 +67,7 @@ transform: unset;
 
 - {{cssxref("&lt;transform-function&gt;")}}
   - : Одна чи більше [функцій перетворення CSS](/uk/docs/Web/CSS/transform-function) до застосування.
-    Функції перетворення множаться в порядку зліва направо, а отже – складені перетворення фактично застосовуються в порядку справа наліво.
+    Функції перетворення множаться в порядку зліва направо, а отже – складені перетворення фактично [застосовуються в порядку справа наліво](#poriadok-peretvoren).
 - `none`
   - : Вказує, що не застосовується жодне перетворення.
 
@@ -115,6 +115,70 @@ div {
 #### Результат
 
 {{EmbedLiveSample("peremishchennia-y-obertannia-elementa", "400", "160")}}
+
+### Порядок перетворень
+
+Порядок функцій перетвору – має значення. В цьому прикладі дві рамки повертаються й переміщуються на однакові значення, але порядок функцій перетворення – різний.
+
+#### HTML
+
+```html
+<div class="original"></div>
+<div class="one">1</div>
+<div class="two">2</div>
+```
+
+#### CSS
+
+```css hidden
+div {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  left: 200px;
+  top: 50px;
+  font-size: 4rem;
+  line-height: 200px;
+  text-align: center;
+}
+.original {
+  border: 1px dashed;
+}
+.original:before,
+.original:after {
+  content: "";
+  position: absolute;
+  top: 100px;
+  width: 500px;
+  left: -150px;
+  height: 1px;
+  border-top: 2px dotted;
+}
+.original:after {
+  transform: rotate(135deg);
+}
+.one {
+  background-color: #ccc;
+}
+.two {
+  background-color: #d6bb72;
+}
+```
+
+```css
+.one {
+  transform: translateX(200px) rotate(135deg);
+}
+.two {
+  transform: rotate(135deg) translateX(200px);
+}
+```
+
+#### Результат
+
+{{EmbedLiveSample("poriadok-peretvoren", "400", "460")}}
+
+Коли елемент повертається перед переміщенням, то напрямок переміщення – по повернутій осі. Такі осі показані пунктирними лініями.
 
 ### Більше прикладів
 
