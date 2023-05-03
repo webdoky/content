@@ -58,7 +58,7 @@ page-type: landing-page
 
 - [Розуміння клієнтських фреймворків JavaScript](/uk/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks)
   - : JavaScript фреймворки – неодмінна частина сучасної клієнтської веброзробки, що забезпечує розробників перевіреними інструментами для побудови масштабованих інтерактивних вебзастосунків. Цей модуль надає деякі фундаментальні знання про те, як влаштовані клієнтські фреймворки, і як вони вписуються в ваш інструментарій, перед тим як розглянути найбільш популярні із них на сьогодні у наступних посібниках.
-- [Огляд мови JavaScript](/uk/docs/Web/JavaScript/Language_Overview)
+- [Огляд мови JavaScript](/uk/docs/Web/JavaScript/Language_overview)
   - : Огляд базових мови та семантики JavaScript для тих, хто прийшов з інших мов програмування і хоче різко набрати темп вивчення.
 - [Структури даних у JavaScript](/uk/docs/Web/JavaScript/Data_structures)
   - : Огляд наявних структур даних у JavaScript.
@@ -73,11 +73,9 @@ page-type: landing-page
 
 - [Наслідування та ланцюжок прототипів](/uk/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
   - : Роз'яснення прототипного наслідування (яке часто недооцінюють та невірно розуміють).
-- [Типізовані масиви JavaScript](/uk/docs/Web/JavaScript/Typed_arrays)
-  - : Типізовані масиви JavaScript надають інструмент для доступу до необроблених бінарних даних.
-- [Керування пам'яттю](/uk/docs/Web/JavaScript/Memory_Management)
+- [Керування пам'яттю](/uk/docs/Web/JavaScript/Memory_management)
   - : Життєвий цикл пам'яті та збирання сміття у JavaScript.
-- [Модель багатопотоковості та цикл подій](/uk/docs/Web/JavaScript/EventLoop)
+- [Модель багатопотоковості та цикл подій](/uk/docs/Web/JavaScript/Event_loop)
   - : JavaScript має модель багатопотоковості, засновану на "циклі подій".
 
 ## Довідник
@@ -87,7 +85,7 @@ page-type: landing-page
 - [Стандартні об'єкти](/uk/docs/Web/JavaScript/Reference/Global_Objects)
   - : Докладно про стандартні вбудовані об'єкти: {{jsxref("Array")}}, {{jsxref("Boolean")}}, {{jsxref("Date")}}, {{jsxref("Error")}}, {{jsxref("Function")}}, {{jsxref("JSON")}}, {{jsxref("Math")}}, {{jsxref("Number")}}, {{jsxref("Object")}}, {{jsxref("RegExp")}}, {{jsxref("String")}}, {{jsxref("Map")}}, {{jsxref("Set")}}, {{jsxref("WeakMap")}}, {{jsxref("WeakSet")}}, та інші.
 - [Вирази та оператори](/uk/docs/Web/JavaScript/Reference/Operators)
-  - : Дізнайтеся більше про поведінку операторів мови JavaScript {{jsxref("Operators/instanceof", "instanceof")}}, {{jsxref("Operators/typeof", "typeof")}}, {{jsxref("Operators/new", "new")}}, {{jsxref("Operators/this", "this")}}, [пріоритет операторів](/uk/docs/Web/JavaScript/Reference/Operators/Operator_Precedence) та інші.
+  - : Дізнайтеся більше про поведінку операторів мови JavaScript {{jsxref("Operators/instanceof", "instanceof")}}, {{jsxref("Operators/typeof", "typeof")}}, {{jsxref("Operators/new", "new")}}, {{jsxref("Operators/this", "this")}}, [пріоритет операторів](/uk/docs/Web/JavaScript/Reference/Operators/Operator_precedence) та інші.
 - [Інструкції та оголошення](/uk/docs/Web/JavaScript/Reference/Statements)
   - : Дізнайтеся, як працюють {{jsxref("Statements/do...while", "do-while")}}, {{jsxref("Statements/for...in", "for-in")}}, {{jsxref("Statements/for...of", "for-of")}}, {{jsxref("Statements/try...catch", "try-catch")}}, {{jsxref("Statements/let", "let")}}, {{jsxref("Statements/var", "var")}}, {{jsxref("Statements/const", "const")}}, {{jsxref("Statements/if...else", "if-else")}}, {{jsxref("Statements/switch", "switch")}} та інші інструкції й ключові слова JavaScript.
 - [Функції](/uk/docs/Web/JavaScript/Reference/Functions)
