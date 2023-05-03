@@ -2,20 +2,6 @@
 title: color
 slug: Web/CSS/color
 page-type: css-property
-tags:
-  - CSS
-  - CSS Colors
-  - CSS Property
-  - CSS Text
-  - HTML Colors
-  - HTML Styles
-  - Layout
-  - Reference
-  - Styling HTML
-  - Styling text
-  - Web
-  - color
-  - recipe:css-property
 browser-compat: css.properties.color
 ---
 
@@ -84,6 +70,8 @@ color: unset;
 
 - {{cssxref("&lt;color&gt;")}}
   - : Задає колір текстових і оздобних частин елемента.
+- [`currentcolor`](/uk/docs/Web/CSS/color_value#kliuchove-slovo-currentcolor)
+  - : Задає колір як значення властивості `color` елемента. Проте якщо це значення вжито як значення `color` то `currentcolor` обробляється як `inherit`.
 
 ## Занепокоєння щодо доступності
 
