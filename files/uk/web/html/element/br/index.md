@@ -44,9 +44,9 @@ browser-compat: html.elements.br
 Україна<br />
 ```
 
-Результат має такий вигляд:
+#### Результат
 
-{{EmbedLiveSample('prostyi-br', '100%', '90')}}
+{{EmbedLiveSample('prostyi-br', 640, 120)}}
 
 ## Занепокоєння щодо доступності
 
