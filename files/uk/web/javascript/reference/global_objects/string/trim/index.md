@@ -21,7 +21,7 @@ trim()
 
 ### Повернене значення
 
-Новий рядок, який містить значення початкового рядка з обрізаними пробілами з обох кінців. Пробіли означені як [пробільні](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#probily) символи плюс [символи кінця рядка](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#symvoly-kintsia-riadka).
+Новий рядок, який містить значення початкового рядка з обрізаними пробілами з обох кінців. Під пробілами тут маються на увазі власне [пробільні](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#probily) символи, плюс [символи кінця рядка](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#symvoly-kintsia-riadka).
 
 Якщо ні початок, ні кінець початкового рядка `str` не містять ніяких пробільних символів, однаково повертається новий рядок (практично — копія рядка `str`).
 
