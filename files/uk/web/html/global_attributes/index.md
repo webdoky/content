@@ -94,7 +94,7 @@ browser-compat: html.global_attributes
 - [`part`](/uk/docs/Web/HTML/Global_attributes/part)
   - : Розділений пробілами список імен частин елемента. Імена частин дають CSS змогу вибирати й оформлювати конкретні елементи в тіньовому дереві за допомогою псевдоелемента {{CSSxRef("::part")}}.
 - [`popover`](/uk/docs/Web/HTML/Global_attributes/popover)
-  - : Задає те, що елемент повинен бути оброблений як спливне віконце. Елемент з атрибутом `popover` приховується на сторінці, поки його не відкриють, взаємодіючи з закличним елементом, що має атрибут [`popovertarget`](/uk/docs/Web/HTML/Element/button#popovertarget), або за допомогою [`showPopover()`](/uk/docs/Web/API/HTMLElement/showPopover/).
+  - : Використовується для позначення елемента як спливного (дивіться {{domxref("Popover API", "Popover API", "", "nocode")}}). Спливні елементи приховані за допомогою `display: none`, поки не будуть відкриті за допомогою заклично-контрольного елемента (тобто `<button>` або `<input type="button">` з атрибутом [`popovertarget`](/uk/docs/Web/HTML/Element/button#popovertarget)) або виклику {{domxref("HTMLElement.showPopover()")}}.
 - [`role`](/uk/docs/Web/Accessibility/ARIA/Roles)
   - : Ролі визначають семантичне значення вмісту, даючи читачам з екрана та іншим інструментам представляти й підтримувати взаємодію з об'єктом у спосіб, що узгоджений з очікуваннями користувача щодо об'єкта такого типу. `role` додаються до елементів HTML за допомогою `role="role_type"`, де `role_type` – ім'я ролі в специфікації ARIA.
 - [`slot`](/uk/docs/Web/HTML/Global_attributes/slot)
