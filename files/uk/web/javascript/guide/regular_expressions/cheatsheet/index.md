@@ -1,16 +1,16 @@
 ---
 title: Шпаргалка синтаксису регулярних виразів
-slug: Web/JavaScript/Guide/Regular_Expressions/Cheatsheet
+slug: Web/JavaScript/Guide/Regular_expressions/Cheatsheet
 page-type: guide
 ---
 
 {{jsSidebar("JavaScript Guide")}}
 
-Ця сторінка містить загальну шпаргалку всіх можливостей синтаксису `RegExp` шляхом компіляції вмісту всіх статей посібника з `RegExp`. За потреби більше інформації про конкретну тему можна знайти за посиланням на відповідному заголовку, або ж [у посібнику](/uk/docs/Web/JavaScript/Guide/Regular_Expressions).
+Ця сторінка містить загальну шпаргалку всіх можливостей синтаксису `RegExp` шляхом компіляції вмісту всіх статей посібника з `RegExp`. За потреби більше інформації про конкретну тему можна знайти за посиланням на відповідному заголовку, або ж [у посібнику](/uk/docs/Web/JavaScript/Guide/Regular_expressions).
 
 ## Класи символів
 
-[Класи символів](/uk/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes) розрізняють ґатунки символів, наприклад, розрізняють літери й цифри.
+[Класи символів](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Character_classes) розрізняють ґатунки символів, наприклад, розрізняють літери й цифри.
 
 <table class="standard-table">
   <thead>
@@ -56,7 +56,7 @@ page-type: guide
         <div class="notecard note">
           <p>
             <strong>Примітка:</strong> Символ ^ може також вказувати на
-            <a href="/uk/docs/Web/JavaScript/Guide/Regular_Expressions/Assertions">початок введення</a>.
+            <a href="/uk/docs/Web/JavaScript/Guide/Regular_expressions/Assertions">початок введення</a>.
           </p>
         </div>
       </td>
@@ -155,7 +155,7 @@ page-type: guide
     <tr>
       <td><code>[\b]</code></td>
       <td>
-        Дає збіг із забоєм. Якщо шукаєте символ кінця слова (<code>\b</code>), то погляньте в <a href="/uk/docs/Web/JavaScript/Guide/Regular_Expressions/Assertions">Межах</a>.
+        Дає збіг із забоєм. Якщо шукаєте символ кінця слова (<code>\b</code>), то погляньте в <a href="/uk/docs/Web/JavaScript/Guide/Regular_expressions/Assertions">Межах</a>.
       </td>
     </tr>
     <tr>
@@ -214,7 +214,7 @@ page-type: guide
           Зверніть увагу, що певні символи, як то <code>:</code>, <code>-</code>,
           <code>@</code> тощо не мають спеціального значення ані коли екрановані, ані коли неекрановані. Послідовності екранування виду <code>\:</code>,
           <code>\-</code>, <code>\@</code> у регулярних виразах рівносильні власним літеральним, неекранованим еквівалентам. Проте в регулярних виразах з <a
-            href="/uk/docs/Web/JavaScript/Guide/Regular_Expressions#pohlyblenyi-poshuk-z-poznachkamy"
+            href="/uk/docs/Web/JavaScript/Guide/Regular_expressions#pohlyblenyi-poshuk-z-poznachkamy"
             >позначкою Unicode</a> вони призводять до помилки <em>invalid identity escape</em> (недійсна екранована одиниця). Так зроблено для надійної зворотної сумісності з наявним кодом, котрий використовує нові послідовності екранування, наприклад, <code>\p</code> чи <code>\k</code>.
         </p>
         <div class="notecard note">
@@ -234,7 +234,7 @@ page-type: guide
         </p>
         <div class="notecard note">
           <p>
-            <strong>Примітка:</strong> Диз'юнкція – іще один спосіб задати "варіанти вибору", але вона не є класом символів. Диз'юнкції не є атомарними: необхідно застосувати <a href="/uk/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Backreferences">групу</a>, аби зробити її частиною більшого патерну. Патерн <code>[abc]</code> у дії рівносильний <code>(?:a|b|c)</code>.
+            <strong>Примітка:</strong> Диз'юнкція – іще один спосіб задати "варіанти вибору", але вона не є класом символів. Диз'юнкції не є атомарними: необхідно застосувати <a href="/uk/docs/Web/JavaScript/Guide/Regular_expressions/Groups_and_backreferences">групу</a>, аби зробити її частиною більшого патерну. Патерн <code>[abc]</code> у дії рівносильний <code>(?:a|b|c)</code>.
           </p>
         </div>
       </td>
@@ -244,7 +244,7 @@ page-type: guide
 
 ## Судження
 
-[Судження](/uk/docs/Web/JavaScript/Guide/Regular_Expressions/Assertions) включають межі, котрі позначають початок і кінець рядків та слів, а також інші патерни, котрі в певний спосіб позначають те, що збіг можливий (включно з зазиральними, озиральними та умовними виразами).
+[Судження](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Assertions) включають межі, котрі позначають початок і кінець рядків та слів, а також інші патерни, котрі в певний спосіб позначають те, що збіг можливий (включно з зазиральними, озиральними та умовними виразами).
 
 ### Судження типу межі
 
@@ -264,7 +264,7 @@ page-type: guide
         </p>
         <div class="notecard note">
           <p>
-            <strong>Примітка:</strong> Цей символ має інакше значення, коли зустрічається на початку <a href="/uk/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes">класу символів</a>.
+            <strong>Примітка:</strong> Цей символ має інакше значення, коли зустрічається на початку <a href="/uk/docs/Web/JavaScript/Guide/Regular_expressions/Character_classes">класу символів</a>.
           </p>
         </div>
       </td>
@@ -298,7 +298,7 @@ page-type: guide
         </ul>
         <p>
           Про збіг із символом забою (<code>[\b]</code>) – у <a
-            href="/uk/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes"
+            href="/uk/docs/Web/JavaScript/Guide/Regular_expressions/Character_classes"
             >Класах символів</a>.
         </p>
       </td>
@@ -365,7 +365,7 @@ page-type: guide
 
 ## Групи та зворотні посилання
 
-[Групи та зворотні посилання](/uk/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Backreferences) вказують на групи символів-виразів.
+[Групи та зворотні посилання](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Groups_and_backreferences) вказують на групи символів-виразів.
 
 <table class="standard-table">
   <thead>
@@ -453,9 +453,9 @@ page-type: guide
 
 ## Квантори
 
-[Квантори](/uk/docs/Web/JavaScript/Guide/Regular_Expressions/Quantifiers) позначають кількість символів або виразів, котрі повинні давати збіг.
+[Квантори](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Quantifiers) позначають кількість символів або виразів, котрі повинні давати збіг.
 
-> **Примітка:** У тексті нижче _елементами_ звуться не лише окремі символи, а й також [класи символів](/uk/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes), [екранування властивостей Unicode](/uk/docs/Web/JavaScript/Guide/Regular_Expressions/Unicode_Property_Escapes), [групи та зворотні посилання](/uk/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Backreferences).
+> **Примітка:** У тексті нижче _елементами_ звуться не лише окремі символи, а й також [класи символів](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Character_classes), [екранування властивостей Unicode](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Unicode_property_escapes), [групи та зворотні посилання](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Groups_and_backreferences).
 
 <table class="standard-table">
   <thead>
@@ -554,7 +554,7 @@ page-type: guide
 
 ## Екранування властивостей Unicode
 
-[Екранування властивостей Unicode](/uk/docs/Web/JavaScript/Guide/Regular_Expressions/Unicode_Property_Escapes) дають змогу шукати збіг з символами на основі їх властивостей Unicode.
+[Екранування властивостей Unicode](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Unicode_property_escapes) дають змогу шукати збіг з символами на основі їх властивостей Unicode.
 
 ```js
 // Небінарні значення
