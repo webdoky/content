@@ -21,7 +21,7 @@ browser-compat: javascript.builtins.TypeError
 
 ## Конструктор
 
-- {{jsxref("Global_Objects/TypeError/TypeError", "TypeError()")}}
+- {{jsxref("TypeError/TypeError", "TypeError()")}}
   - : Створює новий об'єкт `TypeError`.
 
 ## Властивості примірника
