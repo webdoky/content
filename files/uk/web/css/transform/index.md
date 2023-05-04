@@ -196,5 +196,5 @@ div {
 
 - [Застосування перетворень CSS](/uk/docs/Web/CSS/CSS_Transforms/Using_CSS_transforms)
 - Тип даних {{cssxref("&lt;transform-function&gt;")}}, де пояснені всі функції перетворення.
-- Окремі властивості CSS: {{cssxref('translate')}}, {{cssxref('rotate')}}) і {{cssxref('scale')}} (властивості `skew` немає).
+- Окремі властивості CSS: {{cssxref('translate')}}, {{cssxref('rotate')}} і {{cssxref('scale')}} (властивості `skew` немає).
 - Інструмент для візуалізації функцій перетворень CSS, доступний в мережі: [Ігровий майданчик перетворень CSS](https://css-transform.moro.es/)
