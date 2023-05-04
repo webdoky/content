@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.String.matchAll
 
 {{JSRef}}
 
-Метод **`matchAll()`** повертає ітератор з усіма результатами зіставлення рядка з _[регулярним виразом](/uk/docs/Web/JavaScript/Guide/Regular_Expressions)_, в тому числі [групи захоплення](/uk/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Backreferences).
+Метод **`matchAll()`** повертає ітератор з усіма результатами зіставлення рядка з _[регулярним виразом](/uk/docs/Web/JavaScript/Guide/Regular_expressions)_, в тому числі [групи захоплення](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Groups_and_backreferences).
 
 {{EmbedInteractiveExample("pages/js/string-matchall.html")}}
 
@@ -29,7 +29,7 @@ matchAll(regexp)
 
 ### Повернене значення
 
-[Ітерований ітератор](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators) (непридатний до повторного перебирання) збігів. Кожний збіг є масивом з такою ж структурою, як повернене значення методу {{jsxref("RegExp.prototype.exec()")}}.
+[Ітерований об'єкт-ітератор](/uk/docs/Web/JavaScript/Reference/Global_Objects/Iterator) (непридатний до повторного перебирання) зі збігами. Кожний збіг є масивом з такою ж структурою, як повернене значення методу {{jsxref("RegExp.prototype.exec()")}}.
 
 ### Винятки
 
@@ -153,8 +153,8 @@ str.matchAll({
 
 - Поліфіл методу `String.prototype.matchAll` доступний у [`core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
 - {{jsxref("String.prototype.match()")}}
-- [Застосування регулярних виразів у JavaScript](/uk/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [Групи захоплення](/uk/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Backreferences)
+- [Застосування регулярних виразів у JavaScript](/uk/docs/Web/JavaScript/Guide/Regular_expressions)
+- [Групи захоплення](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Groups_and_backreferences)
 - {{jsxref("RegExp")}}
 - {{jsxref("RegExp.prototype.exec()")}}
 - {{jsxref("RegExp.prototype.test()")}}
