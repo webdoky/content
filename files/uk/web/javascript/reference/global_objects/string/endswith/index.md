@@ -32,7 +32,7 @@ endsWith(searchString, endPosition)
 ### Винятки
 
 - {{jsxref("TypeError")}}
-  - : Коли `searchString` [є регулярним виразом](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp#osoblyva-obrobka-rehuliarnykh-vyraziv).
+  - : Викидається, коли `searchString` [є регулярним виразом](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp#osoblyva-obrobka-rehuliarnykh-vyraziv).
 
 ## Опис
 
