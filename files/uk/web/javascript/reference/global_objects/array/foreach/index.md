@@ -14,37 +14,20 @@ browser-compat: javascript.builtins.Array.forEach
 ## Синтаксис
 
 ```js-nolint
-// Стрілкова функція
-forEach((element) => { /* … */ })
-forEach((element, index) => { /* … */ })
-forEach((element, index, array) => { /* … */ })
-
-// Функція зворотного виклику
 forEach(callbackFn)
 forEach(callbackFn, thisArg)
-
-// Функція зворотного виклику, оголошена на місці
-forEach(function(element) { /* … */ })
-forEach(function(element, index) { /* … */ })
-forEach(function(element, index, array){ /* … */ })
-forEach(function(element, index, array) { /* … */ }, thisArg)
 ```
 
 ### Параметри
 
 - `callbackFn`
-
-  - : Функція до виконання для кожного елемента масиву. Її повернене значення - відкидається.
-
-    Ця функція викликається із наступними аргументами:
-
+  - : Функція до виконання для кожного елемента масиву. Її повернене значення - відкидається. Ця функція викликається із наступними аргументами:
     - `element`
       - : Поточний елемент масиву, який опрацьовується.
     - `index`
       - : Індекс поточного елемента масиву, що опрацьовується.
     - `array`
       - : Власне масив, на якому було викликано `forEach()`.
-
 - `thisArg` {{optional_inline}}
   - : Значення для використання за `this` при виконанні `callbackFn`. Докладніше про це в [ітеративних методах](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#iteratyvni-metody).
 
@@ -274,11 +257,13 @@ Array.prototype.forEach.call(arrayLike, (x) => console.log(x));
 ## Дивіться також
 
 - [Поліфіл для `Array.prototype.forEach` у `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
+- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- {{jsxref("Array")}}
 - {{jsxref("Array.prototype.find()")}}
-- {{jsxref("Array.prototype.findIndex()")}}
 - {{jsxref("Array.prototype.map()")}}
 - {{jsxref("Array.prototype.filter()")}}
 - {{jsxref("Array.prototype.every()")}}
 - {{jsxref("Array.prototype.some()")}}
+- {{jsxref("TypedArray.prototype.forEach()")}}
 - {{jsxref("Map.prototype.forEach()")}}
 - {{jsxref("Set.prototype.forEach()")}}

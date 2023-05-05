@@ -14,37 +14,20 @@ browser-compat: javascript.builtins.Array.every
 ## Синтаксис
 
 ```js-nolint
-// Стрілкова функція
-every((element) => { /* … */ } )
-every((element, index) => { /* … */ } )
-every((element, index, array) => { /* … */ } )
-
-// Функція зворотного виклику
 every(callbackFn)
 every(callbackFn, thisArg)
-
-// Вбудована функція зворотного виклику
-every(function(element) { /* … */ })
-every(function(element, index) { /* … */ })
-every(function(element, index, array){ /* … */ })
-every(function(element, index, array) { /* … */ }, thisArg)
 ```
 
 ### Параметри
 
 - `callbackFn` (функція зворотного виклику)
-
-  - : Функція для виконання на кожному елементі масиву. Вона повинна повертати значення [істинності](/uk/docs/Glossary/Truthy), аби показати, що елемент проходить перевірку, інакше – значення хибності.
-
-    Ця функція викликається з наступними аргументами:
-
+  - : Функція для виконання на кожному елементі масиву. Вона повинна повертати значення [істинності](/uk/docs/Glossary/Truthy), аби показати, що елемент проходить перевірку, інакше – значення хибності. Ця функція викликається з наступними аргументами:
     - `element` (елемент)
       - : Поточний елемент масиву, що обробляється.
     - `index` (індекс)
       - : Індекс поточного елемента масиву, що обробляється.
     - `array` (масив)
       - : Масив, на котрому викликали `every()`.
-
 - `thisArg` (аргумент this) {{optional_inline}}
   - : Значення, що буде використовуватись як `this` при виконанні `callbackFn`. Докладніше про це – в [ітеративних методах](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#iteratyvni-metody)
 
@@ -187,6 +170,8 @@ console.log(
 ## Дивіться також
 
 - [Поліфіл `Array.prototype.every` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
+- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- {{jsxref("Array")}}
 - {{jsxref("Array.prototype.forEach()")}}
 - {{jsxref("Array.prototype.some()")}}
 - {{jsxref("Array.prototype.find()")}}

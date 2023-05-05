@@ -54,8 +54,8 @@ browser-compat: html.elements.p
     <tr>
       <th scope="row">Неявна роль ARIA</th>
       <td>
-        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"
-          >Немає відповідної ролі</a
+        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/structural_roles"
+          >paragraph</a
         >
       </td>
     </tr>
@@ -76,7 +76,7 @@ browser-compat: html.elements.p
 
 > **Примітка:** Атрибут `align` на тегах `<p>` є застарілим і не повинен використовуватися.
 
-## Приклад
+## Приклади
 
 ### HTML
 
@@ -93,7 +93,7 @@ browser-compat: html.elements.p
 
 ### Результат
 
-{{EmbedLiveSample('pryklad')}}
+{{EmbedLiveSample('pryklady')}}
 
 ## Оформлення абзаців
 

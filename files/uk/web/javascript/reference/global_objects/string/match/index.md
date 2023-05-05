@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.String.match
 
 {{JSRef}}
 
-Метод **`match()`** (парувати, шукати збіг) отримує результат зіставлення рядка з [регулярним виразом](/uk/docs/Web/JavaScript/Guide/Regular_Expressions).
+Метод **`match()`** (парувати, шукати збіг) отримує результат зіставлення рядка з [регулярним виразом](/uk/docs/Web/JavaScript/Guide/Regular_expressions).
 
 {{EmbedInteractiveExample("pages/js/string-match.html", "shorter")}}
 
@@ -83,7 +83,7 @@ console.log(matches);
 // ['A', 'B', 'C', 'D', 'E', 'a', 'b', 'c', 'd', 'e']
 ```
 
-> **Примітка:** також зверніть увагу на метод {{jsxref("String.prototype.matchAll()")}} та [Розширений пошук з прапорцями](/uk/docs/Web/JavaScript/Guide/Regular_Expressions#pohlyblenyi-poshuk-z-poznachkamy).
+> **Примітка:** також зверніть увагу на метод {{jsxref("String.prototype.matchAll()")}} та [Розширений пошук з прапорцями](/uk/docs/Web/JavaScript/Guide/Regular_expressions#pohlyblenyi-poshuk-z-poznachkamy).
 
 ### Застосування іменованих груп захоплення
 
@@ -144,7 +144,7 @@ str3.match(null); // повертає ["null"]
 console.log("123".match("1.3")); // [ "123" ]
 ```
 
-Є збіг, тому що `.` в регулярному виразі дає збіг з усіма символами. Щоб змусити `.` давати збіг лише з символом крапки, треба екранувати введення.
+Є збіг, тому що `.` в регулярному виразі дає збіг з будь-яким символом. Щоб змусити `.` давати збіг лише з символом крапки, треба екранувати введення.
 
 ```js
 console.log("123".match("1\\.3")); // null
