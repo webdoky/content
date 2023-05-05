@@ -108,5 +108,5 @@ regex.test("foobarfoo"); // false
 
 ## Дивіться також
 
-- Розділ [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_Expressions) у [Посібнику з JavaScript](/uk/docs/Web/JavaScript/Guide)
+- Розділ [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_expressions) у [Посібнику з JavaScript](/uk/docs/Web/JavaScript/Guide)
 - {{jsxref("RegExp")}}
