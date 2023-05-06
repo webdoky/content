@@ -1,5 +1,5 @@
 ---
-title: Посібник JavaScript
+title: Посібник з JavaScript
 slug: Web/JavaScript/Guide
 page-type: guide
 ---
