@@ -17,7 +17,7 @@ browser-compat: html.elements.input.type_date
 
 ## Значення
 
-Рядок, що представляє дату, введену в поле. Має формат згідно з [форматом рядків дат](/uk/docs/Web/HTML/Date_and_time_formats#riadky-dat).
+Рядок, що представляє дату, введену в поле. Форматується згідно з [форматом рядків дат](/uk/docs/Web/HTML/Date_and_time_formats#riadky-dat).
 
 Можна встановити усталене значення поля введення з датою всередині атрибута [`value`](/uk/docs/Web/HTML/Element/input#value-znachennia), ось так:
 
