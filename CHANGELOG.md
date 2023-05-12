@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2023-05-05 - 2023-05-12]
+
+* **Переклад(glossary):** glossary/block-level_content (#1742) ([817c710d](https://github.com/webdoky/content/commit/817c710d3a5a2761109c814791ec61eb6c90c169))
+* **Переклад(CSS):** web/css/@font-face (#1305) ([85f16059](https://github.com/webdoky/content/commit/85f16059eeabaf34fe3baa6b8e7b2a1c9b0a6aee))
+
 ## [2023-04-28 - 2023-05-05]
 
 * **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/lastindexof ([6f27deb0](https://github.com/webdoky/content/commit/6f27deb08d03a72ce06b8574d90340045c327bcf))
