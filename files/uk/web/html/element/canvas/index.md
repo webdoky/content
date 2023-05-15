@@ -1,0 +1,172 @@
+---
+title: "<canvas>: Елемент полотна графіки"
+slug: Web/HTML/Element/canvas
+page-type: html-element
+browser-compat: html.elements.canvas
+---
+
+{{HTMLSidebar}}
+
+**Елемент HTML `<canvas>`** слід використовувати для малювання графіки та анімацій, або вкупі з [API сценаріїв полотна](/uk/docs/Web/API/Canvas_API), або з [API WebGL](/uk/docs/Web/API/WebGL_API).
+
+<table class="properties">
+  <tbody>
+    <tr>
+      <th scope="row">
+        <a href="/uk/docs/Web/HTML/Content_categories"
+          >Категорії вмісту</a
+        >
+      </th>
+      <td>
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
+          >Потоковий вміст</a
+        >,
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
+          >оповідальний вміст</a
+        >,
+        <a href="/uk/docs/Web/HTML/Content_categories#vbudovanyi-vmist"
+          >вбудований вміст</a
+        >, відчутний вміст.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволений вміст</th>
+      <td>
+        Прозорий вміст, але жодних нащадків
+        <a
+          href="/uk/docs/Web/HTML/Content_categories#interaktyvnyi-vmist"
+          >інтерактивного вмісту</a
+        >, окрім елементів {{HTMLElement("a")}},
+        елементів {{HTMLElement("button")}},
+        елементів {{HTMLElement("input")}}, чий атрибут
+        <a href="/uk/docs/Web/HTML/Element/input#type-typ"><code>type</code></a> має значення
+        <code>checkbox</code>, <code>radio</code> або <code>button</code>.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Пропуск тега</th>
+      <td>{{no_tag_omission}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені батьківські елементи</th>
+      <td>
+        Всі елементи, що приймають
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
+          >оповідальний вміст</a
+        >.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Неявна роль ARIA</th>
+      <td>
+        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"
+          >Немає відповідної ролі</a
+        >
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені ролі ARIA</th>
+      <td>Усі</td>
+    </tr>
+    <tr>
+      <th scope="row">Інтерфейс DOM</th>
+      <td>{{domxref("HTMLCanvasElement")}}</td>
+    </tr>
+  </tbody>
+</table>
+
+## Атрибути
+
+Цей елемент, крім перелічених нижче, приймає [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
+
+- `height`
+  - : Висота координатного простору в пікселях CSS. Усталено – 150.
+- `moz-opaque` {{non-standard_inline}} {{deprecated_inline}}
+  - : Дозволяє полотну знати, чи буде фактором прозорість. Якщо полотно знає, що прозорості немає, то можна оптимізувати продуктивність малювання. Це підтримується лише браузерами на основі Mozilla; замість цього атрибута використовуйте стандартизований виклик методу {{domxref("HTMLCanvasElement.getContext()", "canvas.getContext('2d', { alpha: false })")}}.
+- `width`
+  - : Ширина координатного простору в пікселях CSS. Усталено – 300.
+
+## Примітки щодо використання
+
+### Альтернативний вміст
+
+Усередині блоку `<canvas>` слід надати альтернативний вміст. Цей вміст буде візуалізовано як в старіших браузерах, що не підтримують полотна, так і в браузерах з вимкненим JavaScript.
+
+### Обов'язковість тега \</canvas>
+
+На відміну від елемента {{HTMLElement("img")}}, елемент {{HTMLElement("canvas")}} **вимагає** кінцевого тега (`</canvas>`).
+
+### Розмір полотна за допомогою CSS або HTML
+
+Виведений розмір полотна можна змінити за допомогою CSS, але якщо це зробити, то зображення буде масштабовано під час візуалізації, щоб вписатися в стилізований розмір, що може зробити остаточне візуалізоване зображення спотвореним.
+
+Краще задавати розміри полотна, задаючи атрибути `width` і `height` безпосередньо для елементів `<canvas>`, або безпосередньо в HTML, або за допомогою JavaScript.
+
+### Максимальний розмір полотна
+
+Максимальний розмір елемента `<canvas>` дуже великий, але точне значення залежить від браузера. Наведено деякі дані, які були зібрані з різних тестів та інших джерел (наприклад, [Stack Overflow](https://stackoverflow.com/questions/6081483/maximum-size-of-a-canvas-element)):
+
+| Браузер | Максимум висоти | Максимум ширини | Максимум площі                             |
+| ------- | --------------- | --------------- | ------------------------------------------ |
+| Chrome  | 32,767 pixels   | 32,767 pixels   | 268,435,456 pixels (i.e., 16,384 x 16,384) |
+| Firefox | 32,767 pixels   | 32,767 pixels   | 472,907,776 pixels (i.e., 22,528 x 20,992) |
+| Safari  | 32,767 pixels   | 32,767 pixels   | 268,435,456 pixels (i.e., 16,384 x 16,384) |
+| IE      | 8,192 pixels    | 8,192 pixels    | ?                                          |
+
+> **Примітка:** Перевищення максимальних розмірів або площі робить полотно непридатним для використання: команди малювання не працюватимуть.
+
+## Приклади
+
+### HTML
+
+Цей фрагмент коду додає елемент полотна до HTML-документа. Надається запасний текст, на випадок, якщо браузер не може прочитати або візуалізувати полотно.
+
+```html
+<canvas width="300" height="300">
+  Альтернативний текст, що описує те, що показує полотно.
+</canvas>
+```
+
+### JavaScript
+
+Потім, у коді JavaScript, викликається {{domxref("HTMLCanvasElement.getContext()")}}, щоб отримати контекст малювання та почати малювати на полотні:
+
+```js
+const canvas = document.querySelector("canvas");
+const ctx = canvas.getContext("2d");
+ctx.fillStyle = "green";
+ctx.fillRect(10, 10, 100, 100);
+```
+
+### Результат
+
+{{EmbedLiveSample('pryklady')}}
+
+## Занепокоєння щодо доступності
+
+### Альтернативний вміст
+
+Елемент `<canvas>` сам по собі є лише бітовим зображенням і не надає інформації про будь-які намальовані об'єкти. Вміст полотна не відображається в інструментах доступності, як це відбувається з семантичним HTML. Загалом, слід уникати використання полотен у доступних вебсайтах та застосунках. Наступні посібники можуть допомогти зробити полотно більш доступним.
+
+- [Ситуації для застосування доступності полотен](https://www.w3.org/WAI/PF/HTML/wiki/Canvas_Accessibility_Use_Cases)
+- [Проблеми доступності елемента полотна](https://www.w3.org/html/wg/wiki/AddedElementCanvas)
+- [Доступність полотна HTML у Firefox 13 – від Стіва Фолкнера](https://www.tpgi.com/html5-canvas-accessibility-in-firefox-13/)
+- [Найкращі практики інтерактивних елементів полотна](https://html.spec.whatwg.org/multipage/scripting.html#best-practices)
+
+## Специфікації
+
+{{Specifications}}
+
+## Сумісність із браузерами
+
+{{Compat}}
+
+## Дивіться також
+
+- [Портал полотен на WebDoky](/uk/docs/Web/API/Canvas_API)
+- [Підручник з полотен](/uk/docs/Web/API/Canvas_API/Tutorial)
+- [Кілька демо на тему полотен](/uk/docs/Web/Demos#canvas)
+- [Шпаргалка з полотен (2009)](https://simon.html5.org/dump/html5-canvas-cheat-sheet.html)
+- [Шпаргалка з полотен (pdf) (2015)](https://websitesetup.org/wp-content/uploads/2015/11/Infopgraphic-CanvasCheatSheet-Final2.pdf)
+- [Шпаргалка з полотен (pdf)](https://www.coding-dude.com/wp/wp-content/uploads/2020/09/HTML5-canvas-cheat-sheet.pdf)
+- [Знайомство з полотнами від Apple (2013)](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/HTML-canvas-guide/Introduction/Introduction.html)
