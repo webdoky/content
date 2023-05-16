@@ -98,7 +98,7 @@ if ([] == false) {
 
 ## Конструктор
 
-- {{jsxref("Global_Objects/Boolean/Boolean", "Boolean()")}}
+- {{jsxref("Boolean/Boolean", "Boolean()")}}
   - : Створює новий об'єкт `Boolean`.
 
 ## Властивості примірника
