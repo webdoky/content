@@ -178,7 +178,7 @@ flex: unset;
 }
 ```
 
-{{EmbedLiveSample("opys", 1200, 400, "", "", "example-outcome-frame")}}
+{{EmbedLiveSample("opys", 1200, 400)}}
 
 Усталено гнучкі елементи не скорочуються до розмірів, менших за їх мінімальний розмір вмісту. Щоб це змінити, треба задати елементові {{cssxref("min-width")}} чи {{cssxref("min-height")}}.
 
@@ -194,14 +194,16 @@ flex: unset;
 
 ### flex: auto
 
+Цей приклад демонструє те, як гнучкий елемент з `flex: auto` зростає для поглинання всього вільного простору в контейнері.
+
 #### HTML
 
 ```html
 <div id="flex-container">
-  <div class="flex-item" id="flex">
-    Гнучкий елемент (клацніть, аби показати чи прибрати звичайний елемент)
+  <div id="flex-auto">
+    flex: auto (аби показати чи приховати звичайний елемент)
   </div>
-  <div class="raw-item" id="raw">Звичайний елемент</div>
+  <div id="flex-initial">flex: initial</div>
 </div>
 ```
 
@@ -210,43 +212,41 @@ flex: unset;
 ```css
 #flex-container {
   display: flex;
-  flex-direction: row;
-}
-
-#flex-container > .flex-item {
-  flex: auto;
-}
-
-#flex-container > .raw-item {
-  width: 5rem;
-}
-```
-
-```js hidden
-const flex = document.getElementById("flex");
-const raw = document.getElementById("raw");
-flex.addEventListener("click", () => {
-  raw.style.display = raw.style.display === "none" ? "block" : "none";
-});
-```
-
-```css hidden
-#flex-container {
-  width: 100%;
   font-family: Consolas, Arial, sans-serif;
 }
-
 #flex-container > div {
-  border: 1px solid #f00;
   padding: 1rem;
 }
-
-#flex-container > .raw-item {
+#flex-auto {
+  flex: auto;
+  border: 1px solid #f00;
+}
+#flex-initial {
   border: 1px solid #000;
 }
 ```
 
+#### JavaScript
+
+```js
+const flexAuto = document.getElementById("flex-auto");
+const flexInitial = document.getElementById("flex-initial");
+flexAuto.addEventListener("click", () => {
+  flexInitial.style.display =
+    flexInitial.style.display === "none" ? "block" : "none";
+});
+```
+
 #### Результат
+
+Гнучкий контейнер вміщає два гнучкі елементи:
+
+- "flex: auto" має `flex` зі значенням [`auto`](auto)
+- "flex: initial" має `flex` зі значенням [`initial`](#initial)
+
+Елемент "flex: initial" займає стільки простору, скільки вимагає його власна ширина, але не розширюється, щоб зайняти більше простору. Всю решту простору займає "flex: auto".
+
+Коли клацнути "flex: auto", задається властивість {{cssxref("display")}} елемента "flex: initial" зі значенням `none`, що видаляє його з компонування. Елемент "flex: auto" розширюється, щоб зайняти весь доступний простір у контейнері.
 
 {{EmbedLiveSample('flex-auto','100%','100')}}
 
