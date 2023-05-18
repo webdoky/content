@@ -171,8 +171,8 @@
         {
           "name": "no-en-us-link",
           "message": "Internal links should lead to '/uk'",
-          "search": "(/en-US/docs",
-          "replace": "(/uk/docs",
+          "search": "/en-US/docs",
+          "replace": "/uk/docs",
           "skipCode": true
         },
         {
