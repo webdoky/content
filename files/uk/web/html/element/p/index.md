@@ -9,7 +9,7 @@ browser-compat: html.elements.p
 
 Елемент [HTML](/uk/docs/Web/HTML) **`<p>`** ("paragraph" – абзац) представляє абзац. Абзаци зазвичай представлені у візуальних медіа як блоки тексту, відділені від сусідніх блоків пустими рядками чи відступом першого рядка, однак абзаци HTML можуть бути будь-яким структурним групуванням пов'язаного вмісту, як то зображень чи полів форми.
 
-Абзаци є [елементами блокового рівня](/uk/docs/Web/HTML/Block-level_elements), отже – будуть автоматично закриті, якщо при розборі до тега `</p>` зустрівся інший елемент блокового рівня. Дивіться "Упускання тега" нижче.
+Абзаци є [елементами блокового рівня](/uk/docs/Glossary/Block-level_content), отже – будуть автоматично закриті, якщо при розборі до тега `</p>` зустрівся інший елемент блокового рівня. Дивіться "Пропуск тега" нижче.
 
 {{EmbedInteractiveExample("pages/tabbed/p.html", "tabbed-standard")}}
 
@@ -36,9 +36,9 @@ browser-compat: html.elements.p
       </td>
     </tr>
     <tr>
-      <th scope="row">Упускання тега</th>
+      <th scope="row">Пропуск тега</th>
       <td>
-        Початковий тег – обов'язковий. Кінцевий тег може бути упущений, якщо після елемента {{HTMLElement("p")}} зразу стоїть елемент
+        Початковий тег – обов'язковий. Кінцевий тег може бути пропущений, якщо після елемента {{HTMLElement("p")}} зразу стоїть елемент
         {{HTMLElement("address")}}, {{HTMLElement("article")}}, {{HTMLElement("aside")}}, {{HTMLElement("blockquote")}}, {{HTMLElement("div")}}, {{HTMLElement("dl")}}, {{HTMLElement("fieldset")}}, {{HTMLElement("footer")}}, {{HTMLElement("form")}}, {{HTMLElement("Heading_Elements", "h1")}}, {{HTMLElement("Heading_Elements", "h2")}}, {{HTMLElement("Heading_Elements", "h3")}}, {{HTMLElement("Heading_Elements", "h4")}}, {{HTMLElement("Heading_Elements", "h5")}}, {{HTMLElement("Heading_Elements", "h6")}}, {{HTMLElement("header")}}, {{HTMLElement("hr")}}, {{HTMLElement("menu")}}, {{HTMLElement("nav")}}, {{HTMLElement("ol")}}, {{HTMLElement("pre")}}, {{HTMLElement("section")}}, {{HTMLElement("table")}}, {{HTMLElement("ul")}} чи інший {{HTMLElement("p")}}, або якщо в батьківському елементі немає більше вмісту і батьківський елемент не є елементом {{HTMLElement("a")}}.
       </td>
     </tr>
@@ -54,8 +54,8 @@ browser-compat: html.elements.p
     <tr>
       <th scope="row">Неявна роль ARIA</th>
       <td>
-        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"
-          >Немає відповідної ролі</a
+        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/structural_roles"
+          >paragraph</a
         >
       </td>
     </tr>
@@ -76,7 +76,7 @@ browser-compat: html.elements.p
 
 > **Примітка:** Атрибут `align` на тегах `<p>` є застарілим і не повинен використовуватися.
 
-## Приклад
+## Приклади
 
 ### HTML
 
@@ -93,7 +93,7 @@ browser-compat: html.elements.p
 
 ### Результат
 
-{{EmbedLiveSample('pryklad')}}
+{{EmbedLiveSample('pryklady')}}
 
 ## Оформлення абзаців
 
