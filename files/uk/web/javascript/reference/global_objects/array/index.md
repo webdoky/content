@@ -151,9 +151,8 @@ console.log(fruits.length); // 2
 
 {{jsxref("Array/group", "group()")}} і {{jsxref("Array/groupToMap", "groupToMap()")}} не використовують `@@species` для створення нових масивів для кожного елементу групи, а завжди використовують простий конструктор `Array`. Концептуально, вони не є методами копіювання.
 
-The following table lists the methods that mutate the original array, and the corresponding non-mutating alternative:
 
-Наступна таблиця перераховує методи, які змінюють початковий масив, і відповідні їм незмінювальні альтернативи:
+Наступна таблиця перераховує методи, які змінюють вихідний масив, і відповідні їм незмінювальні альтернативи:
 
 | Змінювальний метод                             | Незмінювальна альтернатива                               |
 | ---------------------------------------------- | -------------------------------------------------------- |
@@ -167,7 +166,6 @@ The following table lists the methods that mutate the original array, and the co
 | {{jsxref("Array/splice", "splice()")}}         | {{jsxref("Array/toSpliced", "toSpliced()")}}             |
 | {{jsxref("Array/unshift", "unshift(v1, v2)")}} | {{jsxref("Array/toSpliced", "toSpliced(0, 0, v1, v2)")}} |
 
-An easy way to change a mutating method into a non-mutating alternative is to use the [spread syntax](/uk/docs/Web/JavaScript/Reference/Operators/Spread_syntax) or {{jsxref("Array/slice", "slice()")}} to create a copy first:
 
 Легкий спосіб замінити змінювальний метод на незмінювальний альтернативний – використати [синтаксис розгортання](/uk/docs/Web/JavaScript/Reference/Operators/Spread_syntax) або {{jsxref("Array/slice", "slice()")}}, щоб спершу створити копію:
 
