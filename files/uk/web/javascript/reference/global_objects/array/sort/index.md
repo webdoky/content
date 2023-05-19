@@ -26,7 +26,6 @@ sort(compareFn)
 
 - `compareFn` (функція порівняння) {{optional_inline}}
 
-  - : A function that defines the sort order. The return value should be a number whose positivity indicates the relative order of the two elements. The function is called with the following arguments:
   - : Функція, що визначає порядок сортування. Повернене значення повинно бути числом, чия додатність вказує на відносний порядок двох елементів. Ця функція викликається з наступними аргументами:
 
     - `a`
