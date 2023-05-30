@@ -305,7 +305,7 @@ console.log(eval(s2.valueOf())); // повертає число 4
 - {{jsxref("String.prototype.big()")}} (великий) {{Deprecated_Inline}}
   - : {{HTMLElement("big")}}
 - {{jsxref("String.prototype.blink()")}} (блимання) {{Deprecated_Inline}}
-  - : {{HTMLElement("blink")}}
+  - : `<blink>`
 - {{jsxref("String.prototype.bold()")}} (грубий) {{Deprecated_Inline}}
   - : {{HTMLElement("b")}}
 - {{jsxref("String.prototype.fixed()")}} (фіксований) {{Deprecated_Inline}}
