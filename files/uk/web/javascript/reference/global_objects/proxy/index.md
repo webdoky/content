@@ -145,7 +145,7 @@ console.log(proxy3.message2); // світе
 
 ## Конструктор
 
-- {{jsxref("Global_Objects/Proxy/Proxy", "Proxy()")}}
+- {{jsxref("Proxy/Proxy", "Proxy()")}}
   - : Створює новий об'єкт `Proxy`.
 
 > **Примітка:** Властивості `Proxy.prototype` немає, тож примірники `Proxy` не мають жодних особливих властивостей або методів.
