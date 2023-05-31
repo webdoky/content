@@ -9,8 +9,6 @@ browser-compat: javascript.builtins.Array.from
 
 Статичний метод **`Array.from()`** (із) створює новий, поверхнево скопійований примірник `Array` на основі [ітерованого](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#protokol-iterovanoho-obiekta) або [масивоподібного](/uk/docs/Web/JavaScript/Guide/Indexed_collections#robota-z-masyvopodibnymy-obiektamy) об'єкта.
 
-Щоб перетворити [асинхронний ітерований об'єкт](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#asynkhronnyi-iterator-i-protokol-asynkhronnoho-iterovanoho-obiekta) на масив, слід використовувати {{jsxref("Array.fromAsync()")}}.
-
 {{EmbedInteractiveExample("pages/js/array-from.html","shorter")}}
 
 ## Синтаксис
@@ -44,6 +42,8 @@ Array.from(arrayLike, mapFn, thisArg)
 
 - [ітерованих об'єктів](/uk/docs/Web/JavaScript/Reference/Iteration_protocols) (таких, як {{jsxref("Map")}} і {{jsxref("Set")}}); або, якщо об'єкт не є ітерованим,
 - масивоподібних об'єктів (об'єктів зі властивістю `length` та індексованими елементами).
+
+Щоб перетворити звичайний об'єкт, що не є ітерованим або масивоподібним, на масив (шляхом перелічування його ключів властивостей, значень, або і ключів, і значень), використовуйте {{jsxref("Object.keys()")}}, {{jsxref("Object.values()")}} або {{jsxref("Object.entries()")}}. Щоб перетворити [асинхронний ітерований об'єкт](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#asynkhronnyi-iterator-i-protokol-asynkhronnoho-iterovanoho-obiekta) на масив, використовуйте {{jsxref("Array.fromAsync()")}}.
 
 `Array.from()` ніколи не породжує розріджених масивів. Якщо об'єкт `arrayLike` не має частини властивостей-індексів, то такі пропущені індекси отримують `undefined` у новому масиві.
 
