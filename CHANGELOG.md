@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2023-05-26 - 2023-06-02]
+
+* **Переклад(CSS):** web/css/css_cascading_variables (#1807) ([c3269fcc](https://github.com/webdoky/content/commit/c3269fcc93c466630ca883a2c933da3ed4e1b0b6))
+
 ## [2023-05-19 - 2023-05-26]
 
 * **Переклад(CSS):** web/css/used_value (#1780) ([5481c68d](https://github.com/webdoky/content/commit/5481c68d9acc6ceea4dfb33ec6f4d3006ef6737c))
