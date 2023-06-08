@@ -171,8 +171,8 @@
         {
           "name": "no-en-us-link",
           "message": "Internal links should lead to '/uk'",
-          "search": "(/en-US/docs",
-          "replace": "(/uk/docs",
+          "search": "/en-US/docs",
+          "replace": "/uk/docs",
           "skipCode": true
         },
         {
@@ -206,8 +206,8 @@
         {
           "name": "fqdn-moz-links",
           "message": "Don't use developer.mozilla.org for links",
-          "search": "](https://developer.mozilla.org/",
-          "replace": "](/",
+          "search": "](https://developer.mozilla.org/en-US/docs",
+          "replace": "](/en-US/docs",
           "skipCode": true
         },
         {
@@ -242,6 +242,13 @@
           "message": "Don't use localhost for links",
           "searchPattern": "/\\]\\(https?:\\/\\/localhost:\\d+\\//g",
           "replace": "](/",
+          "skipCode": true
+        },
+        {
+          "name": "blog-link",
+          "message": "Make blog links external",
+          "search": "(/en-US/blog",
+          "replace": "(https://developer.mozilla.org/en-US/blog",
           "skipCode": true
         }
       ]

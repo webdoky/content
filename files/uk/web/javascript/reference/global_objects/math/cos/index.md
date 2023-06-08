@@ -1,41 +1,32 @@
 ---
 title: Math.cos()
 slug: Web/JavaScript/Reference/Global_Objects/Math/cos
-tags:
-  - Geometry
-  - JavaScript
-  - Math
-  - Method
-  - Reference
-  - Trigonometry
-  - cos
-  - cosine
+page-type: javascript-static-method
 browser-compat: javascript.builtins.Math.cos
 ---
+
 {{JSRef}}
 
-Статична функція **`Math.cos()`** повертає {{interwiki("wikipedia", "косинус")}} переданого кута, який має бути вказаний в {{interwiki("wikipedia", "радіанах")}}.
+Статичний метод **`Math.cos()`** (косинус) повертає косинус числа в радіанах.
 
 {{EmbedInteractiveExample("pages/js/math-cos.html")}}
 
 ## Синтаксис
 
-```js
+```js-nolint
 Math.cos(x)
 ```
 
 ### Параметри
 
 - `x`
-  - : Кут в радіанах, косинус якого потрібно отримати.
+  - : Число, що представляє кут в радіанах.
 
 ### Повернене значення
 
-Косинус переданого числа.
+Косинус `x`, в діапазоні від -1 до 1 включно. Якщо `x` – це {{jsxref("Infinity")}}, `-Infinity` або {{jsxref("NaN")}}, то повертається {{jsxref("NaN")}}.
 
 ## Опис
-
-Метод `Math.cos()` повертає числове значення з проміжку між -1 та 1, яке відповідає косинусу кута.
 
 Оскільки `cos()` — це статичний метод об'єкта `Math`, його потрібно завжди використовувати через `Math.cos()`. Не слід звертатись до нього як до методу власноруч створеного екземпляра `Math` (`Math` не є конструктором).
 
@@ -44,11 +35,13 @@ Math.cos(x)
 ### Застосування Math.cos()
 
 ```js
-Math.cos(0);           // 1
-Math.cos(1);           // 0.5403023058681398
-
-Math.cos(Math.PI);     // -1
+Math.cos(-Infinity); // NaN
+Math.cos(-0); // 1
+Math.cos(0); // 1
+Math.cos(1); // 0.5403023058681398
+Math.cos(Math.PI); // -1
 Math.cos(2 * Math.PI); // 1
+Math.cos(Infinity); // NaN
 ```
 
 ## Специфікації
