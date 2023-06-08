@@ -280,7 +280,7 @@ const countedNames = names.reduce((allNames, name) => {
 const names = ["Аліса", "Богдан", "Тетяна", "Борис", "Аліса"];
 const countedNames = names.reduce((allNames, name) => {
   const currCount = allNames[name] ?? 0;
-  allNames[names] = currCount + 1;
+  allNames[name] = currCount + 1;
   // повернути allNames, бо інакше – наступна ітерація отримає undefined
   return allNames;
 }, Object.create(null));
@@ -291,7 +291,7 @@ const names = ["Аліса", "Богдан", "Тетяна", "Борис", "Ал
 const countedNames = Object.create(null);
 for (const name of names) {
   const currCount = countedNames[name] ?? 0;
-  countedNames[names] = currCount + 1;
+  countedNames[name] = currCount + 1;
 }
 ```
 
