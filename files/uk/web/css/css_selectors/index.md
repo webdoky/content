@@ -2,12 +2,6 @@
 title: Селектори CSS
 slug: Web/CSS/CSS_Selectors
 page-type: landing-page
-tags:
-  - CSS
-  - Guide
-  - Overview
-  - Reference
-  - Selectors
 spec-urls: https://drafts.csswg.org/selectors/
 ---
 
@@ -69,7 +63,7 @@ spec-urls: https://drafts.csswg.org/selectors/
 
     **Приклад:** `div, span` дасть збіг і з елементами {{HTMLElement("span")}}, і з елементами {{HTMLElement("div")}}.
 
-## Combinators
+## Комбінатори
 
 - [Комбінатор нащадків](/uk/docs/Web/CSS/Descendant_combinator)
 
@@ -101,7 +95,7 @@ spec-urls: https://drafts.csswg.org/selectors/
 
     **Синтаксис:** `A + B`
 
-    **Приклад:** `h2 + p` дасть збіг з першим елементом {{HTMLElement("p")}}, котрий стоїть _зразу_ після елемента {{HTMLElement("h2")}}.
+    **Приклад:** `h2 + p` дасть збіг з першим елементом {{HTMLElement("p")}}, котрий стоїть _зразу_ після елемента {{HTMLElement("Heading_Elements", "h2")}}.
 
 - [Колонковий комбінатор](/uk/docs/Web/CSS/Column_combinator) {{Experimental_Inline}}
 

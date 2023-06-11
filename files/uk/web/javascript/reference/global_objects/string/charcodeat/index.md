@@ -1,25 +1,21 @@
 ---
 title: String.prototype.charCodeAt()
 slug: Web/JavaScript/Reference/Global_Objects/String/charCodeAt
-tags:
-  - JavaScript
-  - Method
-  - Reference
-  - String
-  - Unicode
+page-type: javascript-instance-method
 browser-compat: javascript.builtins.String.charCodeAt
 ---
+
 {{JSRef}}
 
 Метод **`charCodeAt()`** повертає ціле число в діапазоні від `0` до `65535`, що відповідає кодовій одиниці UTF-16 за переданим індексом в рядку.
 
-{{EmbedInteractiveExample("pages/js/string-charcodeat.html", "shorter")}}
-
 Значення кодової одиниці UTF-16 збігається зі значенням коду символу в Unicode для тих кодів, які поміщаються в одну кодову одиницю UTF-16. Якщо ж кодова одиниця Unicode не може бути виражена через одну кодову одиницю UTF-16 (через те, що її значення більше за `0xFFFF`), то значення коду, поверненого методом, буде _першою частиною сурогатної пари_ коду. Щоб отримати значення коду цілком, краще застосувати {{jsxref("Global_Objects/String/codePointAt", "codePointAt()")}}.
+
+{{EmbedInteractiveExample("pages/js/string-charcodeat.html", "shorter")}}
 
 ## Синтаксис
 
-```js
+```js-nolint
 charCodeAt(index)
 ```
 
@@ -34,7 +30,7 @@ charCodeAt(index)
 
 ## Опис
 
-Коди Unicode варіюються в діапазоні від `0` до `1114111` (`0x10FFFF`). Перші 128 кодів Unicode цілком збігаються з кодуванням ASCII. (Більш поглиблену інформацію про юнікод можна знайти в розділі [Настанови з JavaScript](/uk/docs/Web/JavaScript/Guide/Values,_variables,_and_literals#Unicode).)
+Коди Unicode варіюються в діапазоні від `0` до `1114111` (`0x10FFFF`). Перші 128 кодів Unicode цілком збігаються з кодуванням ASCII. (Більш поглиблену інформацію про Unicode можна знайти в [Символах UTF-16, кодових точках Unicode і графемних кластерах](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#symvoly-utf-16-kodovi-tochky-unicode-ta-hrafemni-klastery).)
 
 > **Примітка:** `charCodeAt()` завжди повертатиме значення, менше за `65536`. Причина цього полягає в тому, що коди з більшим значенням позначаються _парою_ "сурогатних" псевдосимволів (з меншим числовим значенням), які разом складаються в справжній символ.
 >
@@ -48,10 +44,10 @@ charCodeAt(index)
 
 ### Застосування charCodeAt()
 
-Наступний приклад повертає `65`, юнікодне значення A.
+Наступний приклад повертає `65`, значення A в Unicode.
 
 ```js
-'ABC'.charCodeAt(0)  // повертає 65
+"ABC".charCodeAt(0); // повертає 65
 ```
 
 ### Лагодження методу charCodeAt() для обробки символів з-поза меж Базового багатомовного плану, коли їхня присутність у рядку заздалегідь не відома
@@ -63,24 +59,25 @@ function fixedCharCodeAt(str, idx) {
   // наприклад fixedCharCodeAt('\uD800\uDC00', 0); // 65536
   // наприклад fixedCharCodeAt('\uD800\uDC00', 1); // false
   idx = idx || 0;
-  var code = str.charCodeAt(idx);
-  var hi, low;
+  const code = str.charCodeAt(idx);
+  let hi, low;
 
   // Старший сурогат (також можна замінити останнє
   // шістнадцяткове значення на 0xDB7F, щоб старші сурогати
   // сприймались як окремі символи приватного плану)
-  if (0xD800 <= code && code <= 0xDBFF) {
+  if (0xd800 <= code && code <= 0xdbff) {
     hi = code;
     low = str.charCodeAt(idx + 1);
     if (isNaN(low)) {
-      throw 'High surrogate not followed by ' +
-        'low surrogate in fixedCharCodeAt()';
+      throw (
+        "Старший сурогат, після якого немає " +
+        "молодшого сурогата, в fixedCharCodeAt()"
+      );
     }
-    return (
-      (hi - 0xD800) * 0x400) +
-      (low - 0xDC00) + 0x10000;
+    return (hi - 0xd800) * 0x400 + (low - 0xdc00) + 0x10000;
   }
-  if (0xDC00 <= code && code <= 0xDFFF) { // Молодший сурогат
+  if (0xdc00 <= code && code <= 0xdfff) {
+    // Молодший сурогат
     // Хибне значення повертається для того, щоб дозволити циклу
     // пропустити цю ітерацію, оскільки молодший сурогат мав би
     // вже опрацюватись під час обробки старшого в попередній ітерації
@@ -98,17 +95,15 @@ function fixedCharCodeAt(str, idx) {
 
 ```js
 function knownCharCodeAt(str, idx) {
-  str += '';
-  var code,
-      end = str.length;
+  str += "";
+  const end = str.length;
 
-  var surrogatePairs = /[\uD800-\uDBFF][\uDC00-\uDFFF]/g;
-  while ((surrogatePairs.exec(str)) != null) {
-    var li = surrogatePairs.lastIndex;
+  const surrogatePairs = /[\uD800-\uDBFF][\uDC00-\uDFFF]/g;
+  while (surrogatePairs.exec(str) !== null) {
+    const li = surrogatePairs.lastIndex;
     if (li - 2 < idx) {
       idx++;
-    }
-    else {
+    } else {
       break;
     }
   }
@@ -117,16 +112,15 @@ function knownCharCodeAt(str, idx) {
     return NaN;
   }
 
-  code = str.charCodeAt(idx);
+  const code = str.charCodeAt(idx);
 
   var hi, low;
-  if (0xD800 <= code && code <= 0xDBFF) {
-    hi = code;
-    low = str.charCodeAt(idx + 1);
+  if (0xd800 <= code && code <= 0xdbff) {
+    const hi = code;
+    const low = str.charCodeAt(idx + 1);
     // Опрацьовується іще одна позиція, оскільки один із "символів"
     // є частиною сурогатної пари
-    return ((hi - 0xD800) * 0x400) +
-      (low - 0xDC00) + 0x10000;
+    return (hi - 0xd800) * 0x400 + (low - 0xdc00) + 0x10000;
   }
   return code;
 }

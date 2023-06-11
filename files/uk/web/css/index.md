@@ -54,7 +54,7 @@ CSS належить до ключових мов **відкритого веб�
 - Ключові концепції CSS:
 
   - [Синтаксис та форми мови](/uk/docs/Web/CSS/Syntax)
-  - [Специфічність](/uk/docs/Web/CSS/Specificity), [наслідування](/uk/docs/Web/CSS/inheritance), and [каскадність](/uk/docs/Web/CSS/Cascade)
+  - [Специфічність](/uk/docs/Web/CSS/Specificity), [наслідування](/uk/docs/Web/CSS/Inheritance), and [каскадність](/uk/docs/Web/CSS/Cascade)
   - [Одиниці вимірювання і значення CSS](/uk/docs/Web/CSS/CSS_Values_and_Units) та [функціональні нотації](/uk/docs/Web/CSS/CSS_Functions)
   - [Блокова модель](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model) та [перекриття зовнішніх відступів](/uk/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
   - [Місткий блок](/uk/docs/Web/CSS/Containing_block)

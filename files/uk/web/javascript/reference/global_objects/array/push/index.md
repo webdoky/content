@@ -7,13 +7,14 @@ browser-compat: javascript.builtins.Array.push
 
 {{JSRef}}
 
-Метод **`push()`** (запхати) додає один або декілька елементів у кінець масиву та повертає нову довжину масиву.
+Метод **`push()`** (запхати) додає задані елементи в кінець масиву та повертає нову довжину масиву.
 
 {{EmbedInteractiveExample("pages/js/array-push.html")}}
 
 ## Синтаксис
 
 ```js-nolint
+push()
 push(element0)
 push(element0, element1)
 push(element0, element1, /* … ,*/ elementN)
@@ -124,7 +125,10 @@ console.log(obj.length); // 2
 ## Дивіться також
 
 - [Поліфіл `Array.prototype.push` доступний у складі `core-js`, з виправленнями для цього метода](https://github.com/zloirock/core-js#ecmascript-array)
+- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- {{jsxref("Array")}}
 - {{jsxref("Array.prototype.pop()")}}
 - {{jsxref("Array.prototype.shift()")}}
 - {{jsxref("Array.prototype.unshift()")}}
 - {{jsxref("Array.prototype.concat()")}}
+- {{jsxref("Array.prototype.splice()")}}

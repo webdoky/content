@@ -123,7 +123,7 @@ browser-compat: javascript.builtins.Map
       <td>
         <p>
           <code>Object</code> не реалізовує <a
-            href="/uk/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterable_protocol"
+            href="/uk/docs/Web/JavaScript/Reference/Iteration_protocols#protokol-iterovanoho-obiekta"
             >протокол ітерації</a
           >, тому поля об'єктів типово не можна перебирати напряму JavaScript-інструкцією
           <a href="/uk/docs/Web/JavaScript/Reference/Statements/for...of"
@@ -232,7 +232,7 @@ console.log(contacts.size); // 1
 
 ## Статичні властивості
 
-- {{jsxref("Map.@@species", "get Map[@@species]")}}
+- {{jsxref("Map/@@species", "Map[@@species]")}}
   - : Функція конструктора, що застосовується для створення похідних об'єктів.
 
 ## Властивості примірника
@@ -254,22 +254,22 @@ console.log(contacts.size); // 1
   - : Видаляє всі пари ключ-значення з об'єкта `Map`.
 - {{jsxref("Map.prototype.delete()")}}
   - : Повертає `true`, якщо вказаний елемент знаходився всередині `Map` і був успішно видалений, або ж `false`, якщо вказаний елемент не існує. Після цього `map.has(key)` повертатиме `false`.
-- {{jsxref("Map.prototype.get()")}}
-  - : Повертає значення, пов'язане з `key`, або ж `undefined`, якщо такого значення немає.
-- {{jsxref("Map.prototype.has()")}}
-  - : Повертає булеве значення, яке відображає наявність чи відсутність якогось значення, пов'язаного з переданим ключем, в об'єкті `Map`.
-- {{jsxref("Map.prototype.set()")}}
-  - : Призначає значення за переданим ключем в об'єкті `Map`. Повертає об'єкт `Map`.
-- {{jsxref("Map/@@iterator", "Map.prototype[@@iterator]()")}}
-  - : Повертає новий об'єкт Iterator, що містить масив із двох елементів: `[key, value]`, на кожний елемент об'єкта `Map`, у порядку їх вставки.
-- {{jsxref("Map.prototype.keys()")}}
-  - : Повертає новий об'єкт Iterator, що містить ключі кожного елементу об'єкта `Map`, в порядку їх вставки.
-- {{jsxref("Map.prototype.values()")}}
-  - : Повертає новий об'єкт Iterator, який містить значення кожного елементу об'єкта `Map`, в порядку їх вставки.
 - {{jsxref("Map.prototype.entries()")}}
   - : Повертає новий об'єкт Iterator, що містить масив із двох елементів: `[key, value]`, на кожний елемент об'єкта `Map`, у порядку їх вставки.
 - {{jsxref("Map.prototype.forEach()")}}
   - : Викликає функцію `callbackFn` один раз для кожної пари ключ-значення, наявної в об'єкті `Map`, в порядку вставки. Якщо в метод `forEach` передано параметр `thisArg`, його буде використано як значення `this` для кожної функції зворотного виклику.
+- {{jsxref("Map.prototype.get()")}}
+  - : Повертає значення, пов'язане з `key`, або ж `undefined`, якщо такого значення немає.
+- {{jsxref("Map.prototype.has()")}}
+  - : Повертає булеве значення, яке відображає наявність чи відсутність якогось значення, пов'язаного з переданим ключем, в об'єкті `Map`.
+- {{jsxref("Map.prototype.keys()")}}
+  - : Повертає новий об'єкт Iterator, що містить ключі кожного елементу об'єкта `Map`, в порядку їх вставки.
+- {{jsxref("Map.prototype.set()")}}
+  - : Призначає значення за переданим ключем в об'єкті `Map`. Повертає об'єкт `Map`.
+- {{jsxref("Map.prototype.values()")}}
+  - : Повертає новий об'єкт Iterator, який містить значення кожного елементу об'єкта `Map`, в порядку їх вставки.
+- [`Map.prototype[@@iterator]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Map/@@iterator)
+  - : Повертає новий об'єкт Iterator, що містить масив із двох елементів: `[key, value]`, на кожний елемент об'єкта `Map`, у порядку їх вставки.
 
 ## Приклади
 
