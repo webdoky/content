@@ -196,3 +196,4 @@ body {
 - {{cssxref("image/image","image()")}}
 - {{cssxref("image/image-set","image-set()")}}
 - {{cssxref("cross-fade", "cross-fade()")}}
+- [Нові функції, градієнти та барви у Кольорах CSS (Рівень 4)](https://developer.mozilla.org/en-US/blog/css-color-module-level-4/) на блозі MDN (3 травня 2023 року)
