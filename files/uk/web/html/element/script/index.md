@@ -161,7 +161,7 @@ browser-compat: html.elements.script
 
 Сценарій повинен бути наданий з типом MIME `text/javascript`, але браузери є поблажливими й блокують сценарії лише тоді, коли сценарій надається з типом зображення (`image/*`); типом відео (`video/*`); типом аудіо (`audio/*`); чи `text/csv`.
 
-Якщо сценарій заблокований, то елементові надсилається подія {{domxref("Element/error_event", "error")}}, а якщо ні – надсилається подія {{domxref("Element/load_event", "load")}}.
+Якщо сценарій заблокований, то елементові надсилається подія {{domxref("HTMLElement/error_event", "error")}}, а якщо ні – надсилається подія {{domxref("HTMLElement/load_event", "load")}}.
 
 ## Приклади
 
