@@ -10,43 +10,58 @@ browser-compat: css.types.color
 [Тип даних](/uk/docs/Web/CSS/CSS_Types) [CSS](/uk/docs/Web/CSS) **`<color>`** (колір) представляє колір.
 `<color>` також може включати _значення прозорості_ [альфа-каналу](https://uk.wikipedia.org/wiki/%D0%90%D0%BB%D1%8C%D1%84%D0%B0-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%B8%D0%BD%D0%B3), котре вказує на те, як колір повинен [комбінуватися (англ.)](https://www.w3.org/TR/compositing-1/#simplealphacompositing) зі своїм тлом.
 
-`<color>` можна задати в один із наступних способів:
-
-- Для [кольорового простору sRGB](https://uk.wikipedia.org/wiki/SRGB):
-
-  - Наперед визначеним ключовим словом (наприклад, `blue` чи `pink`), як описано на [сторінці `<named-color>`](/uk/docs/Web/CSS/named-color).
-
-  - Функційним записом {{cssxref("color_value/rgb","rgb()")}} або [шістнадцятковим числом з `#`](/uk/docs/Web/CSS/hex-color), використовуючи [кубічну систему координат RGB](https://en.wikipedia.org/wiki/RGB_color_model#Geometric_representation).
-
-  - Функційним записом {{cssxref("color_value/hsl","hsl()")}} – за допомогою [циліндричної системи координат HSL](https://en.wikipedia.org/wiki/HSL_and_HSV).
-
-  - Функційним записом {{cssxref("color_value/hwb","hwb()")}} – за допомогою [циліндричної системи координат HWB](https://en.wikipedia.org/wiki/HWB_color_model).
-
-- Будь-який видимий колір – в один з наступних способів:
-
-  - Функційним записом {{cssxref("color_value/lch","lch()")}} – за допомогою [циліндричної системи координат LCH](https://en.wikipedia.org/wiki/CIELAB_color_space#Cylindrical_representation:_CIELCh_or_CIEHLC).
-
-  - Функційним записом {{cssxref("color_value/oklch","oklch()")}} – за допомогою [циліндричної системи координат Oklch](https://bottosson.github.io/posts/oklab/).
-
-  - Функційним записом {{cssxref("color_value/lab","lab()")}} – за допомогою колірного простору [CIELAB](https://uk.wikipedia.org/wiki/Lab).
-
-  - Функційним записом {{cssxref("color_value/oklab","oklab()")}} – за допомогою колірного простору [Oklab](https://bottosson.github.io/posts/oklab/).
-
-- Функційного запису {{cssxref("color_value/color","color()")}} – з використанням різноманітних наперед визначених або користувацьких кольорових просторів.
-
-> **Примітка:** Ці колірні значення можна використовувати для [застосування кольору до HTML-елементів за допомогою CSS](/uk/docs/Web/CSS/CSS_Colors/Applying_color).
+> **Примітка:** Попри те, що значення `<color>` мають точну визначеність, їхній фактичний вигляд може відрізнятися (іноді суттєво) на різних пристроях. Це пов'язано з тим, що більшість пристроїв не відкалібровано, і частина браузерів не підтримує [колірні профілі](https://en.wikipedia.org/wiki/ICC_profile) пристроїв виведення.
 
 ## Синтаксис
 
-Тип даних `<color>` задається за допомогою одного з варіантів, описаних нижче.
+```css
+/* Іменовані кольори */
+rebeccapurple
+aliceblue
 
-> **Примітка:** Попри те, що значення `<color>` визначені з досконалою точністю, їх реальний вигляд може відрізнятися (іноді суттєво) на різних пристроях. Це пов'язано з тим, що більшість пристроїв – некалібровані, і тим, що частина браузерів не підтримує [кольорові профілі (англ.)](https://en.wikipedia.org/wiki/ICC_profile) пристроїв виведення.
+/* Шістнадцятковий запис RGB */
+#f09
+#ff0099
 
-### Іменовані кольори
+/* RGB (Red, Green, Blue – червоний, зелений, синій) */
+rgb(255 0 153)
+rgb(255 0 153 / 80%)
 
-Іменовані кольори – нечутливі до регістру символів ідентифікатори, що представляють певні кольори, як то `red`, `blue`, `black` чи `lightseagreen`. Попри те, що імена більш-менш описують відповідні їм кольори, ці імена, по суті, є штучними, без строго обґрунтування їх вибору.
+/* HSL (Hue, Saturation, Lightness – барва, насиченість, світлість) */
+hsl(150 30% 60%)
+hsl(150 30% 60% / 0.8)
 
-Повний список таких ключових слів описаний на [сторінці `<named-color>`](/uk/docs/Web/CSS/named-color).
+/* HWB (Hue, Whiteness, Blackness – барва, білизна, чорнота) */
+hwb(12 50% 0%)
+hwb(194 0% 0% / 0.5)
+
+/* LAB (Lightness, A-axis, B-axis – світлість, вісь A, вісь B) */
+lab(50% 40 59.5)
+lab(50% 40 59.5 / 0.5)
+
+/* LCH (Lightness, Chroma, Hue – світлість, інтенсивність, барва) */
+lch(52.2% 72.2 50)
+lch(52.2% 72.2 50 / 0.5)
+
+/* Oklab (Lightness, A-axis, B-axis – світлість, вісь A, вісь B) */
+oklab(59% 0.1 0.1)
+oklab(59% 0.1 0.1 / 0.5)
+
+/* Oklch (Lightness, Chroma, Hue – світлість, інтенсивність, барва) */
+oklch(60% 0.15 50)
+oklch(60% 0.15 50 / 0.5)
+```
+
+Значення `<color>` можна задати за допомогою одного з методів, перелічених нижче:
+
+- Ключовими словами: {{CSSXref("&lt;named-color&gt;")}} (such as `blue` or `pink`), {{CSSXref("&lt;system-color&gt;")}} і [`currentcolor`](#kliuchove-slovo-currentcolor).
+- Шістнадцятковим записом: {{CSSXref("&lt;hex-color&gt;")}} (наприклад, `#ff0000`).
+- Параметрами в колірному просторі, за допомогою функційних записів:
+  - Колірного простору [sRGB](https://uk.wikipedia.org/wiki/SRGB): {{CSSXref("color_value/hsl", "hsl()")}}, {{CSSXref("color_value/hwb", "hwb()")}}, {{CSSXref("color_value/rgb", "rgb()")}};
+  - Колірного простору [CIELAB](https://uk.wikipedia.org/wiki/Lab): {{CSSXref("color_value/lab", "lab()")}}, {{CSSXref("color_value/lch", "lch()")}};
+  - Колірного простору [Oklab](https://bottosson.github.io/posts/oklab/): {{CSSXref("color_value/oklab", "oklab()")}}, {{CSSXref("color_value/oklch", "oklch()")}};
+  - Інших колірних просторів: {{CSSXref("color_value/color", "color()")}}.
+- Шляхом змішування двох кольорів: {{CSSXref("color_value/color-mix", "color-mix()")}}.
 
 ### Ключове слово currentcolor
 
