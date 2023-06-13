@@ -28,7 +28,7 @@ browser-compat: javascript.builtins.Array
 console.log(arr.0); // синтаксична помилка
 ```
 
-Синтаксис JavaScript вимагає, аби до властивостей, що починаються з цифри, зверталися за допомогою [запису квадратних дужок](/uk/docs/Web/JavaScript/Guide/Working_with_objects#obiekty-ta-vlastyvosti), а не [запису крапки](/uk/docs/Web/JavaScript/Reference/Operators/Property_accessors). Крім цього, можна брати в лапки індекси масивів (наприклад, `years['2']` замість `years[2]`), хоч зазвичай для цього немає потреби.
+Синтаксис JavaScript вимагає, аби до властивостей, що починаються з цифри, зверталися за допомогою [запису квадратних дужок](/uk/docs/Web/JavaScript/Guide/Working_with_objects#obiekty-i-vlastyvosti), а не [запису крапки](/uk/docs/Web/JavaScript/Reference/Operators/Property_accessors). Крім цього, можна брати в лапки індекси масивів (наприклад, `years['2']` замість `years[2]`), хоч зазвичай для цього немає потреби.
 
 `2` в записі `years[2]` зводиться до рядка рушієм JavaScript шляхом неявного перетворення `toString`. Як наслідок, `'2'` і `'02'` вказують на дві різні комірки в об'єкті `years`, і результатом роботи наступного прикладу може бути `true`:
 
@@ -151,7 +151,6 @@ console.log(fruits.length); // 2
 
 {{jsxref("Array/group", "group()")}} і {{jsxref("Array/groupToMap", "groupToMap()")}} не використовують `@@species` для створення нових масивів для кожного елементу групи, а завжди використовують простий конструктор `Array`. Концептуально, вони не є методами копіювання.
 
-
 Наступна таблиця перераховує методи, які змінюють вихідний масив, і відповідні їм незмінювальні альтернативи:
 
 | Змінювальний метод                             | Незмінювальна альтернатива                               |
@@ -165,7 +164,6 @@ console.log(fruits.length); // 2
 | {{jsxref("Array/sort", "sort()")}}             | {{jsxref("Array/toSorted", "toSorted()")}}               |
 | {{jsxref("Array/splice", "splice()")}}         | {{jsxref("Array/toSpliced", "toSpliced()")}}             |
 | {{jsxref("Array/unshift", "unshift(v1, v2)")}} | {{jsxref("Array/toSpliced", "toSpliced(0, 0, v1, v2)")}} |
-
 
 Легкий спосіб замінити змінювальний метод на незмінювальний альтернативний – використати [синтаксис розгортання](/uk/docs/Web/JavaScript/Reference/Operators/Spread_syntax) або {{jsxref("Array/slice", "slice()")}}, щоб спершу створити копію:
 
@@ -196,7 +194,7 @@ method(callbackFn, thisArg)
 
 Аргумент `thisArg` (чиє усталене значення – `undefined`) використовуватиметься як значення `this` при виклику `callbackFn`. Значення `this`, отримане функцією `callbackFn`, визначається згідно зі [звичними правилами](/uk/docs/Web/JavaScript/Reference/Operators/this): якщо `callbackFn` є [несуворою](/uk/docs/Web/JavaScript/Reference/Strict_mode#bez-zaminy-this) функцією, то примітивні значення `this` загортаються в об'єкти, а `undefined` і `null` – замінюються на [`globalThis`](/uk/docs/Web/JavaScript/Reference/Global_Objects/globalThis). Аргумент `thisArg` є беззмістовним для будь-якої `callbackFn`, визначеною у вигляді [стрілкової функції](/uk/docs/Web/JavaScript/Reference/Functions/Arrow_functions), адже такі функції не мають власного зв'язування `this`.
 
-Усі ітеративні методи є [копіювальними](#kopiiuvalni-ta-zminiuvalni-metody) та [узагальненими](#uzahalneni-metody-masyvu), хоч вони по-різному поводяться з [порожніми комірками](#metody-masyvu-y-porozhni-komirky).
+Усі ітеративні методи є [копіювальними](#kopiiuvalni-ta-zminiuvalni-metody) та [узагальненими](#uzahalneni-metody-masyviv), хоч вони по-різному поводяться з [порожніми комірками](#metody-masyvu-y-porozhni-komirky).
 
 Наступні методи - ітеративні:
 
@@ -280,7 +278,7 @@ f("a", "b"); // 'a+b'
 
 - {{jsxref("Array.from()")}} ("від")
   - : Створює новий примірник `Array` на основі ітерованого або масивоподібного об'єкта.
-- {{jsxref("Array.fromAsync()")}} {{Experimental_Inline}}
+- {{jsxref("Array.fromAsync()")}}
   - : Створює новий примірник `Array` на основі асинхронного ітератора, ітерованого або масивоподібного об'єкта.
 - {{jsxref("Array.isArray()")}} ("чи є масивом")
   - : Повертає `true`, якщо аргумент є масивом, інакше – `false`.
