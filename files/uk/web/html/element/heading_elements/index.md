@@ -1,16 +1,11 @@
 ---
 title: "<h1>–<h6>: Елементи заголовків розділів HTML"
 slug: Web/HTML/Element/Heading_Elements
-tags:
-  - Element
-  - HTML
-  - HTML sections
-  - Reference
-  - Web
+page-type: html-element
 browser-compat: html.elements.h1
 ---
 
-{{HTMLRef}}
+{{HTMLSidebar}}
 
 Елементи [HTML](/uk/docs/Web/HTML) від **`<h1>`** до **`<h6>`** представляють шість рівнів заголовків розділів. `<h1>` – для розділу найвищого рівня, а `<h6>` – для найнижчого.
 
@@ -20,12 +15,12 @@ browser-compat: html.elements.h1
   <tbody>
     <tr>
       <th scope="row">
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories"
+        <a href="/uk/docs/Web/HTML/Content_categories"
           >Категорії вмісту</a
         >
       </th>
       <td>
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#flow_content"
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
           >Потоковий вміст</a
         >, заголовковий вміст, дотиковий вміст.
       </td>
@@ -33,7 +28,7 @@ browser-compat: html.elements.h1
     <tr>
       <th scope="row">Дозволений вміст</th>
       <td>
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#phrasing_content"
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
           >Оповідальний вміст</a
         >.
       </td>
@@ -46,7 +41,7 @@ browser-compat: html.elements.h1
       <th scope="row">Дозволені батьківські елементи</th>
       <td>
         Будь-який елемент, що приймає
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#potokovyi-vmist"
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
           >потоковий вміст</a
         >.
       </td>
@@ -62,8 +57,8 @@ browser-compat: html.elements.h1
     <tr>
       <th scope="row">Дозволені ролі ARIA</th>
       <td>
-        {{ARIARole("tab")}}, {{ARIARole("presentation")}} і
-        {{ARIARole("none")}}
+        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/tab_role"><code>tab</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/presentation_role"><code>presentation</code></a> і
+        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/none_role"><code>none</code></a>
       </td>
     </tr>
     <tr>
@@ -77,20 +72,19 @@ browser-compat: html.elements.h1
 
 Ці елементи приймають лише [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
 
-> **Примітка:** Атрибут `align` є застарілим; не слід його використовувати.
-
 ## Примітки щодо застосування
 
 - Заголовкова інформація може використовуватися користувацькими агентами для автоматичного конструювання змісту документа.
-- Слід уникати використання заголовкових елементів для змін розміру тексту. Натомість слід використовувати властивість {{glossary("CSS")}} {{cssxref("font-size")}}.
-- Слід уникати пропускання рівнів заголовків: починайте з `<h1>`, далі використовуйте `<h2>`, і так далі.
-- Слід використовувати лише один `<h1>` на сторінку чи представлення. Він повинен стисло описувати загальне призначення вмісту.
+- Не використовуйте заголовкові елементи для зміни розміру тексту. Замість цього використовуйте властивість {{glossary("CSS")}} {{cssxref("font-size")}}.
+- Не пропускайте рівні заголовків – завжди почитайте з `<h1>`, далі `<h2>` і так далі.
 
-### Не слід використовувати декілька елементів `<h1>` на одній сторінці
+### Уникайте використання кількох `<h1>` на одній сторінці
 
-Використання на одній сторінці більш ніж одного `<h1>` було дозволено в старших версіях специфікації HTML, що включала концепцію _алгоритму плану_. Проте це ніколи не вважалося найкращим підходом. Більше про це – в [Не існує алгоритму плану документа (англ.)](https://adrianroselli.com/2016/08/there-is-no-document-outline-algorithm.html).
+Хоч використання кількох елементів `<h1>` на одній сторінці дозволено стандартом HTML (якщо вони не [вкладені](#vkladenist)), це не вважається найкращою практикою. Сторінка, як правило, повинна мати лише один елемент `<h1>`, що описує вміст сторінки (подібно до [елемента `<title>`](/uk/docs/Web/HTML/Element/title) документа).
 
-Слід використовувати лише один `<h1>` на сторінку і [вкладати заголовки одне в одного][#vkladenist], не перестрибуючи рівні.
+> **Примітка:** Вкладеність кількох елементів `<h1>` у вкладених [розділових елементах](/uk/docs/Web/HTML/Element#content_sectioning) була дозволена в старших версіях стандарту HTML. Проте це ніколи не вважалося найкращою практикою, і тепер – неправильно. Більше про це – в [Немає алгоритму плану документа](https://adrianroselli.com/2016/08/there-is-no-document-outline-algorithm.html).
+
+Краще використовувати лише один `<h1>` на сторінку і [вкладати заголовки одне в одного](#vkladenist), не перестрибуючи рівні.
 
 ## Приклади
 
@@ -107,9 +101,7 @@ browser-compat: html.elements.h1
 <h6>Заголовок рівня 6</h6>
 ```
 
-Ось результат цього коду:
-
-{{ EmbedLiveSample('vsi-zaholovky', '280', '300', '') }}
+{{EmbedLiveSample('vsi-zaholovky', '280', '300')}}
 
 ### Сторінка-приклад
 
@@ -131,9 +123,7 @@ browser-compat: html.elements.h1
 <p>Певний текст отут…</p>
 ```
 
-Ось результат цього коду:
-
-{{ EmbedLiveSample('storinka-pryklad', '280', '480', '') }}
+{{EmbedLiveSample('storinka-pryklad', '280', '480')}}
 
 ## Занепокоєння щодо доступності
 
@@ -141,7 +131,7 @@ browser-compat: html.elements.h1
 
 Поширений підхід до орієнтування користувачів ПЗ читачів з екрана – перехід від заголовка, щоб швидко з'ясувати вміст сторінки. У зв'язку з цим важливо не пропускати одного чи більше рівнів заголовків. Це створило б плутанину, оскільки особа, що так орієнтується, може загубитися, не розуміючи, де подівся пропущений заголовок.
 
-#### Так робити не слід
+**Не робіть так:**
 
 ```html example-bad
 <h1>Заголовок рівня 1</h1>
@@ -149,7 +139,7 @@ browser-compat: html.elements.h1
 <h4>Заголовок рівня 4</h4>
 ```
 
-#### А так робити варто
+**Краще робіть так:**
 
 ```html example-good
 <h1>Заголовок рівня 1</h1>
@@ -201,9 +191,9 @@ browser-compat: html.elements.h1
 
 Інший поширений підхід до орієнтування користувачів ПЗ читачів з екрана – утворити список [розділення вмісту](/uk/docs/Web/HTML/Element#rozdilennia-vmistu) і використовувати його для з'ясування компонування сторінки.
 
-Розділений вміст можна розмітити за допомогою комбінації атрибутів [`aria-labelledby`](/uk/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby) та {{htmlattrxref("id")}}, які повинні стисло описувати призначення розділу. Такий підхід корисний в тих ситуаціях, коли на одній сторінці більш ніж один розділовий елемент.
+Розділений вміст можна розмітити за допомогою комбінації атрибутів [`aria-labelledby`](/uk/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby) та [`id`](/uk/docs/Web/HTML/Global_attributes#id), які повинні стисло описувати призначення розділу. Такий підхід корисний в тих ситуаціях, коли на одній сторінці більш ніж один розділовий елемент.
 
-#### Приклад
+#### Приклади розділення вмісту
 
 ```html
 <header>
@@ -222,6 +212,8 @@ browser-compat: html.elements.h1
   </nav>
 </footer>
 ```
+
+{{EmbedLiveSample('pryklady-rozdilennia-vmistu')}}
 
 В цьому прикладі технологія читача з екрана оголосить, що є два розділи {{HTMLElement("nav")}}, один з яких називається "Первинна навігація", а другий – "Нижня навігація". Якби підписи не були надані, то особа, що використовує ПЗ читача з екрана була б змушена досліджувати вміст кожного елемента `nav`, аби з'ясувати його призначення.
 

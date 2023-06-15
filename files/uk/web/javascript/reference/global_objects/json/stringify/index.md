@@ -41,7 +41,7 @@ JSON.stringify(value, replacer, space)
 
 ### Винятки
 
-- {{JSxRef("TypeError")}}
+- {{jsxref("TypeError")}}
   - : Викидається, коли виконується одна з двох умов:
     - `value` містить циклічне посилання.
     - Зустрічається значення {{jsxref("BigInt")}}.

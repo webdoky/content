@@ -1,6 +1,6 @@
 ---
 title: Застосування переходів CSS
-slug: Web/CSS/CSS_Transitions/Using_CSS_transitions
+slug: Web/CSS/CSS_transitions/Using_CSS_transitions
 page-type: guide
 spec-urls: https://drafts.csswg.org/css-transitions/
 ---
@@ -17,9 +17,7 @@ spec-urls: https://drafts.csswg.org/css-transitions/
 
 ## До яких властивостей CSS можна застосувати переходи?
 
-Веброзробник може визначати, яка властивість буде анімована і як. Це дає змогу створювати складні переходи. Оскільки немає сенсу анімувати частину властивостей, [список анімованих властивостей](/uk/docs/Web/CSS/CSS_animated_properties) обмежений конкретним їх набором.
-
-> **Примітка:** Набір властивостей, котрі можна анімувати, змінюється по ходу розвитку специфікації.
+Веброзробник може визначати, яка властивість буде анімована і як. Це дає змогу створювати складні переходи. Проте частина властивостей є [неанімованими](/uk/docs/Web/CSS/CSS_animated_properties), адже їх немає змісту анімувати.
 
 > **Примітка:** Значення `auto` нерідко є дуже складним випадком. Специфікація радить не анімувати від і до `auto`. Частина користувацьких агентів, як то засновані на Gecko, реалізовують цю вимогу, а інші, як то засновані на WebKit, є менш суворими. Використання анімацій з `auto` може приводити до неочікуваних результатів, залежних від браузера та його версії, його слід уникати.
 
@@ -70,14 +68,14 @@ div {
 ```html hidden
 <body>
   <p>
-    Рамки нижче поєднують переходи для: width, height, background-color,
-    transform. Наведіть на рамки, щоб побачити анімування цих властивостей.
+    Рамки нижче поєднують переходи для: width, height, background-color, rotate.
+    Наведіть на рамки, щоб побачити анімування цих властивостей.
   </p>
   <div class="box">Зразок</div>
 </body>
 ```
 
-#### Вміст CSS
+#### CSS
 
 ```css
 .box {
@@ -87,7 +85,7 @@ div {
   width: 100px;
   height: 100px;
   background-color: #0000ff;
-  transition: width 2s, height 2s, background-color 2s, transform 2s;
+  transition: width 2s, height 2s, background-color 2s, rotate 2s;
 }
 
 .box:hover {
@@ -263,4 +261,4 @@ el.addEventListener("transitionstart", signalStart, true);
 ## Дивіться також
 
 - Інтерфейс {{domxref("TransitionEvent")}} і подія {{domxref("Element/transitionend_event", "transitionend")}}.
-- [Застосування анімацій CSS](/uk/docs/Web/CSS/CSS_Animations/Using_CSS_animations)
+- [Застосування анімацій CSS](/uk/docs/Web/CSS/CSS_animations/Using_CSS_animations)
