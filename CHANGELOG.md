@@ -3,6 +3,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2023-06-09 - 2023-06-16]
+
+* **Оновлення перекладу(CSS):** web/css/gradient/linear-gradient (#1829) ([c1c631cb](https://github.com/webdoky/content/commit/c1c631cbb60339bb5bdb116a8a522046a098315e))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/proxy ([68b2a851](https://github.com/webdoky/content/commit/68b2a8518b8cb2e055df69b6674b0386f0ee9c8b))
+* **Переклад(CSS):** web/css/border-width (#1320) ([f2c68549](https://github.com/webdoky/content/commit/f2c68549a0efba12241d029b7c2a5ffb9bccad5b))
+* **Оновлення перекладу(HTML):** web/html/element/script ([82773895](https://github.com/webdoky/content/commit/82773895d8893e1e03847b64e49ee40fd5337766))
+* **Оновлення перекладу(HTML):** web/html/element/select ([6eb96ce9](https://github.com/webdoky/content/commit/6eb96ce9e8e18e487ec7f1f730fe579bcc81ae00))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array ([c214a536](https://github.com/webdoky/content/commit/c214a536cead9faab823716de6e683bbd73b7470))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/object/assign ([16e332fc](https://github.com/webdoky/content/commit/16e332fcb69426342a480bdc1162542430baf988))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/shift ([a21b5394](https://github.com/webdoky/content/commit/a21b5394dd1bab7868f84be4919980038556ed5a))
+* **Оновлення перекладу(JS):** web/javascript/guide/regular_expressions ([d4efe957](https://github.com/webdoky/content/commit/d4efe9573f25de1b8d38c1ec2851bfed4cb03ad3))
+* **Оновлення перекладу(CSS):** web/css/backdrop-filter ([9fb8858c](https://github.com/webdoky/content/commit/9fb8858cd1d76f77b211a54240228b082a71219b))
+* **Переклад(JS):** web/javascript/reference/operators/new (#1318) ([2c5c3005](https://github.com/webdoky/content/commit/2c5c300550cdb2bfb32d4b2325c5251a562f1c85))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/sort ([68866790](https://github.com/webdoky/content/commit/68866790600854056ea0269785c7b3d4fca550d9))
+
 ## [2023-06-02 - 2023-06-09]
 
 * **Переклад(HTML):** web/html/element/input/submit (#1601) ([c75de05f](https://github.com/webdoky/content/commit/c75de05f1809562756d43f1e5c446436852d7c64))
