@@ -112,7 +112,7 @@ console.log(typeof (1).getThis()); // "object"
 console.log(getThis() === globalThis); // true
 ```
 
-При типових викликах функцій `this` неявно передається, неначе параметр, через префікс функції (частину перед крапкою).Також можна задати значення `this`явно – за допомогою методів {{jsxref("Function.prototype.call()")}}, {{jsxref("Function.prototype.apply()")}} або {{jsxref("Reflect.apply()")}}. За допомогою {{jsxref("Function.prototype.bind()")}} можна створити нову функцію з певним значенням `this`, яке не змінюється незалежно від того, як вона викликається. При використанні цих методів правила заміни `this`, зазначені вище, все одно застосовуються, якщо ця функція є несуворою.
+При типових викликах функцій `this` неявно передається, неначе параметр, через префікс функції (частину перед крапкою). Також можна задати значення `this` явно – за допомогою методів {{jsxref("Function.prototype.call()")}}, {{jsxref("Function.prototype.apply()")}} або {{jsxref("Reflect.apply()")}}. За допомогою {{jsxref("Function.prototype.bind()")}} можна створити нову функцію з певним значенням `this`, яке не змінюється незалежно від того, як вона викликається. При використанні цих методів правила заміни `this`, зазначені вище, все одно застосовуються, якщо ця функція є несуворою.
 
 #### Зворотний виклик
 
@@ -147,8 +147,6 @@ const globalObject = this;
 const foo = () => this;
 console.log(foo() === globalObject); // true
 ```
-
-Arrow functions create a [closure](/uk/docs/Web/JavaScript/Closures) over the `this` value of its surrounding scope, which means arrow functions behave as if they are "auto-bound" — no matter how it's invoked, `this` is set to what it was when the function was created (in the example above, the global object). The same applies to arrow functions created inside other functions: their `this` remains that of the enclosing lexical context. [See example below](#this_in_arrow_functions).
 
 Стрілкові функції утворюють [замикання](/uk/docs/Web/JavaScript/Closures) над значенням `this` навколишнього лексичного контексту, що означає, що вони поводяться так, ніби вони "автоматично зв'язуються": незалежно від того, як вони закликаються, `this` задається таким, яким воно було, коли функція була створена (у прикладі вище – має значення глобального об'єкта). Те ж саме стосується стрілкових функцій, створених всередині інших функцій: їх `this` залишається таким, яким воно було в лексичному контексті, що оточує їх. [Дивіться приклад нижче](#this-u-strilkovykh-funktsiiakh).
 
