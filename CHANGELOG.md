@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2023-06-16 - 2023-06-23]
+
+* **Оновлення перекладу(HTML):** web/html/element/input/checkbox ([5b1a6cac](https://github.com/webdoky/content/commit/5b1a6cace6f7a24838226da4873f14197285a45b))
+* **Переклад(JS):** web/javascript/reference/operators/this (#1824) ([892795da](https://github.com/webdoky/content/commit/892795da84ca788c283148a10c1a4c10662fa05e))
+
 ## [2023-06-09 - 2023-06-16]
 
 * **Оновлення перекладу(CSS):** web/css/gradient/linear-gradient (#1829) ([c1c631cb](https://github.com/webdoky/content/commit/c1c631cbb60339bb5bdb116a8a522046a098315e))
