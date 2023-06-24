@@ -398,9 +398,7 @@ td {
 
 У першій таблиці просто використовується `:nth-child(even)`. Третій рядок має атрибут `hidden`. Тому в цьому випадку третій рядок не видно, а другий і четвертий рядки вважаються парними, хоча візуально це не так.
 
-In the second table the _of syntax_ is used to target only the `tr`s that are **not** hidden using `:nth-child(even of :not(hidden))`.
-
-У другій таблиці для вибору лише тих `tr`, які **не** приховані за допомогою `:nth-child(even of :not(hidden))`, використовується _запис of_.
+У другій таблиці для вибору лише тих `tr`, які **не** приховані за допомогою `:nth-child(even of :not([hidden]))`, використовується _запис of_.
 
 {{EmbedLiveSample('vykorystannia-of-selector-dlia-vypravlennia-smuhastykh-tablyts', 550, 180)}}
 
