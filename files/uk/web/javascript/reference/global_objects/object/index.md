@@ -139,7 +139,7 @@ JavaScript також має вбудовані API, що виробляють `
 
 ### Зведення до об'єкта
 
-Чимало вбудованих операцій, котрі очікують отримати об'єкти, спершу зводять свої аргументи до об'єктів. [Ця операція](https://tc39.es/ecma262/#sec-toobject) може бути підсумована так:
+Чимало вбудованих операцій, котрі очікують отримати об'єкти, спершу зводять свої аргументи до об'єктів. [Ця операція](https://tc39.es/ecma262/multipage/abstract-operations.html#sec-toobject) може бути підсумована так:
 
 - Об'єкти повертаються як є.
 - [`undefined`](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined) і [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) викидають {{jsxref("TypeError")}}.
