@@ -54,7 +54,7 @@ const re = new RegExp("\\w+");
 
 > **Примітка:** Для перевірки того, чи є щось "регулярним виразом", може бути застосована [качина типізація](https://uk.wikipedia.org/wiki/%D0%9A%D0%B0%D1%87%D0%B8%D0%BD%D0%B0_%D1%82%D0%B8%D0%BF%D1%96%D0%B7%D0%B0%D1%86%D1%96%D1%8F). Такий об'єкт не зобов'язаний бути `RegExp`!
 
-Частина вбудованих методів обробляє регулярні вирази по-особливому. Вони вирішують, чи є `x` регулярним виразом, за [кілька кроків (англ.)](https://tc39.es/ecma262/#sec-isregexp):
+Частина вбудованих методів обробляє регулярні вирази по-особливому. Вони вирішують, чи є `x` регулярним виразом, за [кілька кроків](https://tc39.es/ecma262/multipage/abstract-operations.html#sec-isregexp):
 
 1. `x` мусить бути об'єктом (не примітивом).
 2. Якщо [`x[Symbol.match]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/match) – не `undefined`, то треба перевірити цю властивість на [істинність](/uk/docs/Glossary/Truthy).
@@ -138,6 +138,8 @@ re.exec("bar"); // [ 'bar', index: 0, input: 'bar', groups: undefined ]
   - : Чи є пошук липким.
 - {{jsxref("RegExp.prototype.unicode")}}
   - : Чи ввімкнені можливості Unicode.
+- {{jsxref("RegExp.prototype.unicodeSets")}}
+  - : Чи додана позначка `v`, оновлена версія режиму `u`, чи ні.
 
 Ці властивості є власними властивостями кожного окремого примірника `RegExp`.
 
