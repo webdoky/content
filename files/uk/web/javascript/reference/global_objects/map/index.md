@@ -88,14 +88,7 @@ browser-compat: javascript.builtins.Map
         <p>
           Цей порядок було вперше визначено лише для власних властивостей в ECMAScript
           2015; ECMAScript 2020 визначає також порядок успадкованих властивостей.
-          Дивіться специфікації абстрактних операцій
-          <a href="https://tc39.es/ecma262/#sec-ordinaryownpropertykeys"
-            >OrdinaryOwnPropertyKeys</a
-          >
-          та
-          <a href="https://tc39.es/ecma262/#sec-enumerate-object-properties"
-            >EnumerateObjectProperties</a
-          >. Проте зауважте, що жоден механізм не дозволяє перебрати <strong>всі</strong> властивості об'єкта; різні механізми охоплюють різні підмножини властивостей. Зокрема, ({{jsxref("Statements/for...in", "for-in")}}
+          Проте зауважте, що жоден механізм не дозволяє перебрати <strong>всі</strong> властивості об'єкта; різні механізми охоплюють різні підмножини властивостей. Зокрема, ({{jsxref("Statements/for...in", "for-in")}}
           охоплює лише перелічувані властивості з рядковими ключами;
           {{jsxref("Object.keys")}} враховує лише власні перелічувані властивості з рядковими ключами;
           {{jsxref("Object.getOwnPropertyNames")}} включає власні властивості з рядковими ключами, навіть неперелічувані;
