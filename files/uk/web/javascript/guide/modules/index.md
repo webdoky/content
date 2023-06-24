@@ -215,7 +215,7 @@ import { name as squareNameFour } from "https://example.com/shapes/square.js";
 
 ### Перевірка можливостей
 
-Підтримку карт імпортування можна перевірити за допомогою статичного методу [`HTMLScriptElement.supports()`](/uk/docs/Web/API/HTMLScriptElement/supports) (котрий сам має широку підтримку):
+Підтримку карт імпортування можна перевірити за допомогою статичного методу [`HTMLScriptElement.supports()`](/uk/docs/Web/API/HTMLScriptElement/supports_static) (котрий сам має широку підтримку):
 
 ```js
 if (HTMLScriptElement.supports?.("importmap")) {
