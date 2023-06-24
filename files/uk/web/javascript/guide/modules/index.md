@@ -690,6 +690,11 @@ import("./modules/myModule.js").then((module) => {
 });
 ```
 
+> **Примітка:** Динамічний імпорт дозволений у головному потоці браузера, а також у спільних та виділених воркерах.
+> Проте `import()` викине помилку, якщо буде викликана в сервісному воркері або ворклеті.
+
+<!-- https://whatpr.org/html/6395/webappapis.html#hostimportmoduledynamically(referencingscriptormodule,-specifier,-promisecapability) -->
+
 Погляньмо на приклад. В директорії [dynamic-module-imports](https://github.com/mdn/js-examples/tree/master/module-examples/dynamic-module-imports) є іще один приклад на основі прикладу з класами. Проте цього разу при завантаженні прикладу на полотні нічого не малюється. Натомість включені три кнопки – "Circle", "Square" і "Triangle", котрі, бувши натисненими, динамічно завантажують необхідний модуль, а потім використовують його для малювання відповідної фігури.
 
 В цьому прикладі зміни внесені лише до файлів [`index.html`](https://github.com/mdn/js-examples/blob/master/module-examples/dynamic-module-imports/index.html) і [`main.js`](https://github.com/mdn/js-examples/blob/master/module-examples/dynamic-module-imports/main.js): експорт модулів – такий самий, як до того.
@@ -809,6 +814,78 @@ const triangle1 = new Module.Triangle(
 ```
 
 Це корисно, бо код у [`main.js`](https://github.com/mdn/js-examples/blob/master/module-examples/top-level-await/main.js) не виконається, поки не завершиться код у [`getColors.js`](https://github.com/mdn/js-examples/blob/master/module-examples/top-level-await/modules/getColors.js). Проте це не завадить завантаженню інших модулів. Наприклад, модуль [`canvas.js`](https://github.com/mdn/js-examples/blob/master/module-examples/top-level-await/modules/canvas.js) завантажуватиметься далі, поки виконується отримання `colors`.
+
+## Циклічні імпорти
+
+Модулі можуть імпортувати інші модулі, ті модулі можуть імпортувати інші модулі, і так далі. Це формує [орієнтований граф](https://uk.wikipedia.org/wiki/%D0%9E%D1%80%D1%96%D1%94%D0%BD%D1%82%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B9_%D0%B3%D1%80%D0%B0%D1%84), що зветься «графом залежностей». У досконалому світі цей граф є [ациклічним](https://uk.wikipedia.org/wiki/%D0%A1%D0%BF%D1%80%D1%8F%D0%BC%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B9_%D0%B0%D1%86%D0%B8%D0%BA%D0%BB%D1%96%D1%87%D0%BD%D0%B8%D0%B9_%D0%B3%D1%80%D0%B0%D1%84). У такому випадку його можна оцінити за допомогою обходу в глибину.
+Проте цикли іноді є неминучими. Циклічний імпорт виникає, якщо модуль `a` імпортує модуль `b`, але `b` безпосередньо або опосередковано залежить від `a`. Наприклад:
+
+```js
+// -- a.js --
+import { b } from "./b.js";
+// -- b.js --
+import { a } from "./a.js";
+// Цикл:
+// a.js ───> b.js
+//  ^         │
+//  └─────────┘
+```
+
+Циклічні імпорти не завжди призводять до помилки. Значення імпортованої змінної отримується лише тоді, коли вона фактично використовується (саме тому можливі [живі зв'язки](/uk/docs/Web/JavaScript/Reference/Statements/import#importovani-znachennia-mozhut-modyfikuvatysia-lyshe-eksporterom)), і лише якщо змінна залишається неініціалізованою під час використання, то викидається [`ReferenceError`](/uk/docs/Web/JavaScript/Reference/Errors/Cant_access_lexical_declaration_before_init).
+
+````js
+
+```js
+// -- a.js --
+import { b } from "./b.js";
+setTimeout(() => {
+  console.log(b); // 1
+}, 10);
+export const a = 2;
+// -- b.js --
+import { a } from "./a.js";
+setTimeout(() => {
+  console.log(a); // 2
+}, 10);
+export const b = 1;
+````
+
+У цьому прикладі як `a`, так і `b` – використовуються асинхронно. Тому, коли модуль виконується, ні `b`, ні `a` фактично не зчитуються, тому решта коду виконується як зазвичай, і два оператори `export` надають значення `a` і `b`. Потім, після тайм-ауту, як `a`, так і `b` – доступні, тому дві інструкції `console.log` також виконуються як зазвичай.
+Якщо змінити цей код так, щоб `a` використовувалась синхронно, то виконання модуля не вдасться:
+
+```js
+// -- a.js (модуль входу) --
+import { b } from "./b.js";
+export const a = 2;
+// -- b.js --
+import { a } from "./a.js";
+console.log(a); // ReferenceError: Cannot access 'a' before initialization
+export const b = 1;
+```
+
+Так відбувається через те, що коли JavaScript виконує `a.js`, то необхідно спершу виконати `b.js`, залежність `a.js`. Однак `b.js` використовує змінну `a`, яка ще не доступна.
+З іншого боку, якщо змінити цей код так, щоб `b` використовувалась синхронно, а `a` – асинхронно, то виконання модуля вдасться:
+
+```js
+// -- a.js (модуль входу) --
+import { b } from "./b.js";
+console.log(b); // 1
+export const a = 2;
+// -- b.js --
+import { a } from "./a.js";
+setTimeout(() => {
+  console.log(a); // 2
+}, 10);
+export const b = 1;
+```
+
+Так відбувається через те, що виконання `b.js` завершується нормально, тож значення `b` доступне, коли виконується `a.js`.
+Зазвичай слід уникати циклічних імпортів у своїх проєктах, оскільки вони роблять код більш схильним до помилок. Деякі поширені техніки усунення циклів:
+
+- Злити два модулі в один.
+- Перемістити спільний код у третій модуль.
+- Перемістити частину коду з одного модуля до іншого.
+  Проте також циклічні імпорти можуть виникати, якщо бібліотеки залежать одна від одної, а це важче виправити.
 
 ## Написання "ізоморфних" модулів
 
