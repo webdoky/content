@@ -225,6 +225,40 @@ contacts.delete("Яся"); // true
 console.log(contacts.size); // 1
 ```
 
+### Map-подібні браузерні API
+
+**Браузерні `Map`-подібні об'єкти** – це інтерфейси [Web API](/uk/docs/Web/API), які багато в чому поводяться подібно до `Map`.
+
+Як і `Map`, їхні записи можуть бути ітеровані в тому самому порядку, в якому були додані до об'єкта.
+Також `Map`-подібні об'єкти та `Map` мають властивості та методи, що поділяють однакові назву та поведінку.
+Проте, на відміну від `Map`, ці об'єкти дозволяють лише певні попередньо визначені типи для ключів та значень кожного запису.
+
+Дозволені типи задані у визначенні специфікації IDL.
+Наприклад, {{domxref("RTCStatsReport")}} – це `Map`-подібний об'єкт, який повинен використовувати рядки як ключі та об'єкти як значення.
+Це визначено в специфікації IDL нижче:
+
+```webidl
+interface RTCStatsReport {
+  readonly maplike<DOMString, object>;
+};
+```
+
+`Map`-подібні об'єкти – це або лише для читання, або для читання та запису (див. ключове слово `readonly` у специфікації IDL вище).
+
+- `Map`-подібні об'єкти лише для читання мають властивість [`size`](#map.prototype.size), а також методи: [`entries()`](#map.prototype.entries), [`forEach()`](#map.prototype.foreach), [`get()`](#map.prototype.get), [`has()`](#map.prototype.has), [`keys()`](#map.prototype.keys), [`values()`](#map.prototype.values) та [`@@iterator`](#map.prototypeiterator).
+- Записувані `Map`-подібні об'єкти, на додачу, мають методи: [`clear()`](#map.prototype.clear), [`delete()`](#map.prototype.delete) та [`set()`](#map.prototype.set).
+
+Ці методи та властивості мають таку ж поведінку, як рівносильні сутності в `Map`, окрім обмеження на типи ключів та значень.
+
+Нижче – приклади `Map`-подібних браузерних об'єктів лише для читання:
+
+- {{domxref("AudioParamMap")}}
+- {{domxref("RTCStatsReport")}}
+- {{domxref("EventCounts")}}
+- {{domxref("KeyboardLayoutMap")}}
+- {{domxref("MIDIInputMap")}}
+- {{domxref("MIDIOutputMap")}}
+
 ## Конструктор
 
 - {{jsxref("Map/Map", "Map()")}}
