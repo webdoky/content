@@ -230,7 +230,7 @@ console.log(parsed);
 
 ### Зведення до BigInt
 
-Чимало вбудованих операцій, котрі очікують на BigInt, спершу зводять свої аргументи до BigInt. [Ця операція](https://tc39.es/ecma262/#sec-tobigint) може бути підсумована отак:
+Чимало вбудованих операцій, котрі очікують на BigInt, спершу зводять свої аргументи до BigInt. [Ця операція](https://tc39.es/ecma262/multipage/abstract-operations.html#sec-tobigint) може бути підсумована отак:
 
 - BigInt повертаються як є.
 - [`undefined`](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined) і [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) викидають {{jsxref("TypeError")}}.
