@@ -20,11 +20,8 @@ page-type: guide
 
 Підвластивості {{cssxref("animation")}} – такі:
 
-<!--
 - {{cssxref("animation-composition")}}
-  - : Specifies the {{Glossary("Composite operation")}} to use when multiple animations affect the same property simultaneously.
--->
-
+  - : Задає {{Glossary("Composite operation", "складену операцію")}} для використання в тих випадках, коли на одну властивість одночасно впливають кілька анімацій. Ця властивість не є частиною властивості-скорочення `animation`.
 - {{cssxref("animation-delay")}}
   - : Задає затримку між завантаженням елемента і стартом послідовності анімації, а також те, чи повинна анімація початися зразу зі свого старту, чи якоїсь позиції посередині.
 - {{cssxref("animation-direction")}}
