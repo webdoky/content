@@ -250,8 +250,6 @@ li:nth-child(even of .noted) {
 
 ### Запис of selector і запис selector nth-child
 
-In this example, there are two unordered lists of names. The first list shows the effect of `li:nth-child(-n + 3 of .noted)` and the second list shows the effect of `li.noted:nth-child(-n + 3)`.
-
 У цьому прикладі присутні два невпорядковані списки імен. Перший показує дію `li:nth-child(-n + 3 of .noted)`, а другий – дію `li.noted:nth-child(-n + 3)`.
 
 #### HTML
