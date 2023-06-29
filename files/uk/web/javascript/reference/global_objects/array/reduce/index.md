@@ -231,7 +231,7 @@ console.log([1, 2, undefined, 4].reduce((a, b) => a + b)); // NaN
 
 ### Виклик reduce() на об'єктах-немасивах
 
-Метод `reduce()` зчитує з `this` властивість `length`, а тоді звертається до кожного цілочисельного індексу.
+Метод `reduce()` зчитує з `this` властивість `length`, а тоді звертається до кожної властивості, чий ключ є невід'ємним цілим числом, меншим за `length`.
 
 ```js
 const arrayLike = {
@@ -239,6 +239,7 @@ const arrayLike = {
   0: 2,
   1: 3,
   2: 4,
+  3: 99, // ігнорується reduce(), оскільки length – 3
 };
 console.log(Array.prototype.reduce.call(arrayLike, (x, y) => x + y));
 // 9
