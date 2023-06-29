@@ -91,7 +91,7 @@ console.log([1, , 3].includes(undefined)); // true
 
 ### Виклик includes() на об'єктах-немасивах
 
-Метод `includes()` зчитує з `this` властивість `length`, а потім звертається до кожної цілочислової властивості.
+Метод `includes()` зчитує з `this` властивість `length`, а потім звертається до кожної властивості, чий ключ – невід'ємне ціле число, менше за `length`.
 
 ```js
 const arrayLike = {
@@ -99,6 +99,7 @@ const arrayLike = {
   0: 2,
   1: 3,
   2: 4,
+  3: 1, // ігнорується includes(), оскільки length – 3
 };
 console.log(Array.prototype.includes.call(arrayLike, 2));
 // true
