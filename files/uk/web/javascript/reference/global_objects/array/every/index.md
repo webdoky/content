@@ -153,6 +153,7 @@ const arrayLike = {
   0: "a",
   1: "b",
   2: "c",
+  3: 345, // ігнорується every(), оскільки length – 3
 };
 console.log(
   Array.prototype.every.call(arrayLike, (x) => typeof x === "string")
