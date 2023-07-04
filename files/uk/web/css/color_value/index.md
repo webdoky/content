@@ -533,4 +533,4 @@ hsl(240 100% 50% / 5%)     /*    на 5% непрозорий синій */
 - Тип даних {{cssxref("&lt;hue&gt;")}} представляє колір за кутом відтінку.
 - Кілька загальновживаних властивостей, котрі використовують цей тип даних: {{Cssxref("color")}}, {{Cssxref("background-color")}}, {{Cssxref("border-color")}}, {{Cssxref("box-shadow")}}, {{Cssxref("outline-color")}}, {{Cssxref("text-shadow")}}
 - [Застосування кольору до елементів HTML за допомогою CSS](/uk/docs/Web/CSS/CSS_Colors/Applying_color)
-- [Нові функції, градієнти та барви у Кольорах CSS (Рівень 4)](https://developer.mozilla.org/en-US/blog/css-color-module-level-4/) на блозі MDN (3 травня 2023 року)
+- [Нові функції, градієнти та барви у Кольорах CSS (Рівень 4)](https://developer.mozilla.org/en-US/blog/css-color-module-level-4/) на блозі MDN (2023)
