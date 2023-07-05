@@ -252,7 +252,7 @@ const proxy = new Proxy(aSecret, {
 console.log(proxy.x());
 ```
 
-Частина нативних об'єктів JavaScript має властивості, що звуться _[внутрішніми комірками](https://tc39.es/ecma262/#sec-object-internal-methods-and-internal-slots)_ й не є доступними з коду на JavaScript. Наприклад, об'єкти [`Map`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Map) мають приховану комірку, що зветься `[[MapData]]`, в котрій зберігаються пари ключ-значення відображення. Таким чином, не можна тривіально створити заступник перенаправлення для відображення:
+Частина нативних об'єктів JavaScript має властивості, що звуться _[внутрішніми комірками](https://tc39.es/ecma262/multipage/ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots)_ й не є доступними з коду на JavaScript. Наприклад, об'єкти [`Map`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Map) мають приховану комірку, що зветься `[[MapData]]`, в котрій зберігаються пари ключ-значення відображення. Таким чином, не можна тривіально створити заступник перенаправлення для відображення:
 
 ```js
 const proxy = new Proxy(new Map(), {});
@@ -403,71 +403,6 @@ console.log(products.browsers);
 
 console.log(products.latestBrowser);
 //  'Edge'
-```
-
-### Знаходження об'єкта – елемента масиву – за його властивістю
-
-Цей заступник розширює масив кількома корисними можливостями. Як бачите, можна гнучко "визначати" властивості, без використання {{jsxref("Object.defineProperties", "Object.defineProperties()")}}. Цей приклад може бути пристосований для пошуку ряду таблиці за її коміркою. В такому випадку ціллю буде {{domxref("HTMLTableElement/rows", "table.rows")}}.
-
-```js
-const products = new Proxy(
-  [
-    { name: "Firefox", type: "browser" },
-    { name: "SeaMonkey", type: "browser" },
-    { name: "Thunderbird", type: "mailer" },
-  ],
-  {
-    get(obj, prop) {
-      // Усталена логіка з повернення значення; властивість зазвичай є цілим числом
-      if (prop in obj) {
-        return obj[prop];
-      }
-
-      // Отримання числа продуктів; псевдонім для products.length
-      if (prop === "number") {
-        return obj.length;
-      }
-
-      let result;
-      const types = {};
-
-      for (const product of obj) {
-        if (product.name === prop) {
-          result = product;
-        }
-        if (types[product.type]) {
-          types[product.type].push(product);
-        } else {
-          types[product.type] = [product];
-        }
-      }
-
-      // Отримання продукта за назвою
-      if (result) {
-        return result;
-      }
-
-      // Отримання продуктів за типом
-      if (prop in types) {
-        return types[prop];
-      }
-
-      // Отримання типів продуктів
-      if (prop === "types") {
-        return Object.keys(types);
-      }
-
-      return undefined;
-    },
-  }
-);
-
-console.log(products[0]); // { name: 'Firefox', type: 'browser' }
-console.log(products["Firefox"]); // { name: 'Firefox', type: 'browser' }
-console.log(products["Chrome"]); // undefined
-console.log(products.browser); // [{ name: 'Firefox', type: 'browser' }, { name: 'SeaMonkey', type: 'browser' }]
-console.log(products.types); // ['browser', 'mailer']
-console.log(products.number); // 3
 ```
 
 ### Приклад з повним списком пасток
