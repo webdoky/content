@@ -2,18 +2,12 @@
 title: Object.fromEntries()
 slug: Web/JavaScript/Reference/Global_Objects/Object/fromEntries
 page-type: javascript-static-method
-tags:
-  - JavaScript
-  - Method
-  - Object
-  - Reference
-  - Polyfill
 browser-compat: javascript.builtins.Object.fromEntries
 ---
 
 {{JSRef}}
 
-Метод **`Object.fromEntries()`** ("із записів") перетворює список пар ключ-значення на об'єкт.
+Статичний метод **`Object.fromEntries()`** ("із записів") перетворює список пар ключ-значення на об'єкт.
 
 {{EmbedInteractiveExample("pages/js/object-fromentries.html")}}
 
@@ -85,7 +79,7 @@ console.log(obj); // { 0: "a", 1: "b", 2: "c" }
 const object1 = { a: 1, b: 2, c: 3 };
 
 const object2 = Object.fromEntries(
-  Object.entries(object1).map(([key, val]) => [key, val * 2]),
+  Object.entries(object1).map(([key, val]) => [key, val * 2])
 );
 
 console.log(object2);

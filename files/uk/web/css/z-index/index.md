@@ -2,12 +2,6 @@
 title: z-index
 slug: Web/CSS/z-index
 page-type: css-property
-tags:
-  - CSS
-  - CSS Positioning
-  - CSS Property
-  - Reference
-  - recipe:css-property
 browser-compat: css.properties.z-index
 ---
 
@@ -110,7 +104,7 @@ z-index: unset;
 
 #### Результат
 
-{{EmbedLiveSample('vizualne-nasharuvannia-elementiv', '550', '200', '')}}
+{{EmbedLiveSample('vizualne-nasharuvannia-elementiv', '550', '200')}}
 
 ## Специфікації
 

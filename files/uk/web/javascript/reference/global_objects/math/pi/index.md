@@ -1,20 +1,21 @@
 ---
 title: Math.PI
 slug: Web/JavaScript/Reference/Global_Objects/Math/PI
-tags:
-  - JavaScript
-  - Math
-  - Property
-  - Reference
+page-type: javascript-static-data-property
 browser-compat: javascript.builtins.Math.PI
 ---
+
 {{JSRef}}
 
-Властивість **`Math.PI`** позначає співвідношення довжини кола до його діаметру, що наближено дорівнює 3.14159:
+Статична властивість даних **`Math.PI`** позначає співвідношення довжини кола до його діаметра, що наближено дорівнює 3.14159.
 
-<math display="block"><semantics><mrow><mstyle mathvariant="monospace"><mi>Math.PI</mi></mstyle><mo>=</mo><mi>π</mi><mo>≈</mo><mn>3.14159</mn></mrow><annotation encoding="TeX">\mathtt{\mi{Math.PI}} = \pi \approx 3.14159</annotation></semantics></math>
+{{EmbedInteractiveExample("pages/js/math-pi.html")}}
 
-{{EmbedInteractiveExample("pages/js/math-pi.html")}}{{js_property_attributes(0, 0, 0)}}
+## Значення
+
+<math display="block"><semantics><mrow><mi>𝙼𝚊𝚝𝚑.𝙿𝙸</mi><mo>=</mo><mi>π</mi><mo>≈</mo><mn>3.14159</mn></mrow><annotation encoding="TeX">\mathtt{\mi{Math.PI}} = \pi \approx 3.14159</annotation></semantics></math>
+
+{{js_property_attributes(0, 0, 0)}}
 
 ## Опис
 
@@ -31,7 +32,7 @@ function calculateCircumference(radius) {
   return Math.PI * (radius + radius);
 }
 
-calculateCircumference(1);  // 6.283185307179586
+calculateCircumference(1); // 6.283185307179586
 ```
 
 ## Специфікації

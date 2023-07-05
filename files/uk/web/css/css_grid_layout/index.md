@@ -1,13 +1,13 @@
 ---
 title: Сіткове компонування CSS
-slug: Web/CSS/CSS_Grid_Layout
+slug: Web/CSS/CSS_grid_layout
 page-type: css-module
 spec-urls: https://drafts.csswg.org/css-grid/
 ---
 
 {{CSSRef}}
 
-**Сіткове компонування CSS** чудово справляється з поділом сторінки на основні ділянки, чи визначенням взаємин між частинами інтерфейсу, збудованого з примітивів HTML, в термінах розмірів, положення й нашарування.
+Модуль **Сіткового компонування CSS** чудово справляється з поділом сторінки на основні ділянки, чи визначенням взаємин між частинами інтерфейсу, збудованого з примітивів HTML, в термінах розмірів, положення й нашарування.
 
 Подібно до таблиць, сіткове компонування дає авторові змогу шикувати елементи в колонки й ряди. Проте сітки CSS також дають змогу реалізувати чимало видів компонування, які значно складніше (або взагалі неможливо) виконати за допомогою таблиць. Наприклад, дочірні елементи контейнера сітки можуть розташовуватися так, що вони насправді перекриваються й нашаровуються, подібно до елементів, позиціонованих за допомогою CSS.
 
@@ -122,18 +122,18 @@ spec-urls: https://drafts.csswg.org/css-grid/
 
 ## Посібники
 
-- [Базові концепції сіткового компонування](/uk/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout)
-- [Взаємини сіткового компонування з іншими методиками компонування](/uk/docs/Web/CSS/CSS_Grid_Layout/Relationship_of_Grid_Layout)
-- [Шаблонні простори сітки](/uk/docs/Web/CSS/CSS_Grid_Layout/Grid_Template_Areas)
-- [Сіткове компонування з розташуванням на основі ліній](/uk/docs/Web/CSS/CSS_Grid_Layout/Line-based_Placement_with_CSS_Grid)
-- [Сіткове компонування з іменованими сітковими лініями](/uk/docs/Web/CSS/CSS_Grid_Layout/Layout_using_Named_Grid_Lines)
-- [Автоматичне розташування при сітковому компонуванні](/uk/docs/Web/CSS/CSS_Grid_Layout/Auto-placement_in_CSS_Grid_Layout)
-- [Рамкове шикування при сітковому компонуванні](/uk/docs/Web/CSS/CSS_Grid_Layout/Box_Alignment_in_CSS_Grid_Layout)
-- [Сітки, логічні значення та напрям письма](/uk/docs/Web/CSS/CSS_Grid_Layout/CSS_Grid_Logical_Values_and_Writing_Modes)
-- [Сіткове компонування та доступність](/uk/docs/Web/CSS/CSS_Grid_Layout/CSS_Grid_Layout_and_Accessibility)
-- [Реалізація загальноприйнятих компонувань за допомогою сіток](/uk/docs/Web/CSS/CSS_Grid_Layout/Realizing_common_layouts_using_CSS_Grid_Layout)
-- [Підсітка](/uk/docs/Web/CSS/CSS_Grid_Layout/Subgrid)
-- [Кладкове компонування](/uk/docs/Web/CSS/CSS_Grid_Layout/Masonry_Layout) {{Experimental_Inline}}
+- [Базові концепції сіткового компонування](/uk/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout)
+- [Взаємини сіткового компонування з іншими методиками компонування](/uk/docs/Web/CSS/CSS_grid_layout/Relationship_of_grid_layout_with_other_layout_methods)
+- [Шаблонні простори сітки](/uk/docs/Web/CSS/CSS_grid_layout/Grid_template_areas)
+- [Сіткове компонування з розташуванням на основі ліній](/uk/docs/Web/CSS/CSS_grid_layout/Grid_layout_using_line-based_placement)
+- [Сіткове компонування з іменованими сітковими лініями](/uk/docs/Web/CSS/CSS_grid_layout/Grid_layout_using_named_grid_lines)
+- [Автоматичне розташування при сітковому компонуванні](/uk/docs/Web/CSS/CSS_grid_layout/Auto-placement_in_grid_layout)
+- [Рамкове шикування при сітковому компонуванні](/uk/docs/Web/CSS/CSS_grid_layout/Box_alignment_in_grid_layout)
+- [Сітки, логічні значення та напрям письма](/uk/docs/Web/CSS/CSS_grid_layout/Grids_logical_values_and_writing_modes)
+- [Сіткове компонування та доступність](/uk/docs/Web/CSS/CSS_grid_layout/Grid_layout_and_accessibility)
+- [Реалізація поширених макетів за допомогою сіток](/uk/docs/Web/CSS/CSS_grid_layout/Realizing_common_layouts_using_grids)
+- [Підсітка](/uk/docs/Web/CSS/CSS_grid_layout/Subgrid)
+- [Кладкове компонування](/uk/docs/Web/CSS/CSS_grid_layout/Masonry_layout) {{Experimental_Inline}}
 
 ## Специфікації
 
