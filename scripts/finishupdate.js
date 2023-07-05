@@ -126,6 +126,8 @@ if (targetBranchName.endsWith("-")) {
 // Add branch name prefix
 targetBranchName = `${action}/${targetBranchName}`;
 
+console.log("Target branch name:", targetBranchName);
+
 try {
   if (!update) {
     if (doesGitBranchExistOnRemote(targetBranchName)) {
