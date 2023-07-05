@@ -823,5 +823,5 @@ class A {
 ## Дивіться також
 
 - [Граматика та типи](/uk/docs/Web/JavaScript/Guide/Grammar_and_types)
-- [Мікроможливість з ES6, уже доступна в Firefox Aurora та Nightly, – двійкові та вісімкові числа](https://whereswalden.com/2013/08/12/micro-feature-from-es6-now-in-firefox-aurora-and-nightly-binary-and-octal-numbers/) від Джефа Волдена (12 серпня 2013 року)
-- [Послідовності екранування символів у JavaScript](https://mathiasbynens.be/notes/javascript-escapes) від Матіаса Байненса (21 грудня 2011 року)
+- [Мікроможливість з ES6, уже доступна в Firefox Aurora та Nightly, – двійкові та вісімкові числа](https://whereswalden.com/2013/08/12/micro-feature-from-es6-now-in-firefox-aurora-and-nightly-binary-and-octal-numbers/) від Джефа Волдена (2013)
+- [Послідовності екранування символів у JavaScript](https://mathiasbynens.be/notes/javascript-escapes) від Матіаса Байненса (2011)
