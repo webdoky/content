@@ -315,7 +315,7 @@ const func4 = (
 
 ### Порядок розбору
 
-Хоча стрілка в стрілковій функції не є оператором, ці функції мають особливі правила парсингу, які по-іншому взаємодіють з [пріоритетом операторів](/uk/docs/Web/JavaScript/Reference/Operators/Operator_Precedence) у порівнянні зі звичайними функціями.
+Хоча стрілка в стрілковій функції не є оператором, ці функції мають особливі правила парсингу, які по-іншому взаємодіють з [пріоритетом операторів](/uk/docs/Web/JavaScript/Reference/Operators/Operator_precedence) у порівнянні зі звичайними функціями.
 
 ```js example-bad
 let callback;
@@ -462,4 +462,8 @@ obj.doSomethingLater(); // виводить 11
 
 ## Дивіться також
 
-- ["Поглиблено про ES6: Стрілкові функції" на hacks.mozilla.org (англ.)](https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/)
+- [Посібник з функцій](/uk/docs/Web/JavaScript/Guide/Functions)
+- [Функції](/uk/docs/Web/JavaScript/Reference/Functions)
+- {{jsxref("Statements/function", "function")}}
+- [Вираз `function`](/uk/docs/Web/JavaScript/Reference/Operators/function)
+- [Поглиблено про ES6: Стрілкові функції](https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/) на hacks.mozilla.org (4 червня 2015 року)

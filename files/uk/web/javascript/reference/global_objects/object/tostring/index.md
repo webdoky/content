@@ -2,12 +2,6 @@
 title: Object.prototype.toString()
 slug: Web/JavaScript/Reference/Global_Objects/Object/toString
 page-type: javascript-instance-method
-tags:
-  - JavaScript
-  - Method
-  - Object
-  - Prototype
-  - Polyfill
 browser-compat: javascript.builtins.Object.toString
 ---
 
@@ -37,7 +31,7 @@ JavaScript викликає метод `toString` для [перетворенн
 
 Цей метод пріоритетно викликається під час [зведення до рядка](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka), проте операції [зведення до рядка](/uk/docs/Web/JavaScript/Data_structures#zvedennia-do-chyslovoho) та [зведення до примітива](/uk/docs/Web/JavaScript/Data_structures#zvedennia-do-prymityva) в першу чергу викликають `valueOf()`. Однак, оскільки базовий метод [`valueOf()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf) повертає об'єкт, зазвичай в кінці викликається `toString()`, за умови, що сам об'єкт не заміщує `valueOf()`. Наприклад, вираз `+[1]` поверне `1`, оскільки його метод [`toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/toString) повертає рядок `"1"`, який далі перетворюється на число.
 
-Всі об'єкти, які успадковують від `Object.prototype` (тобто всі, за винятком [об'єктів з прототипом `null`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#obiekty-z-prototypom-null)) також успадковують і метод `toString()`. При створенні власного об'єкта можна замістити `toString()` так, щоб викликався власний метод — таким чином цей об'єкт можливо буде перетворити на рядкове значення. Інший варіант — додати метод [`@@toPrimitive`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive), який дає змогу іще краще керувати процесом перетворення, і який завжди матиме пріоритет над `valueOf` чи `toString`, для будь-якого виду перетворення.
+Всі об'єкти, які успадковують від `Object.prototype` (тобто всі, за винятком [об'єктів з прототипом `null`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#null-prototypni-obiekty)) також успадковують і метод `toString()`. При створенні власного об'єкта можна замістити `toString()` так, щоб викликався власний метод — таким чином цей об'єкт можливо буде перетворити на рядкове значення. Інший варіант — додати метод [`@@toPrimitive`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive), який дає змогу іще краще керувати процесом перетворення, і який завжди матиме пріоритет над `valueOf` чи `toString`, для будь-якого виду перетворення.
 
 Аби застосувати базовий метод `Object.prototype.toString()` на об'єкті, в якому його було заміщено (або звернутися до нього на значеннях `null` чи `undefined`), слід на такому методі викликати {{jsxref("Function.prototype.call()")}} чи {{jsxref("Function.prototype.apply()")}}, передавши першим параметром (називається `thisArg`) об'єкт, який потрібно дослідити.
 
