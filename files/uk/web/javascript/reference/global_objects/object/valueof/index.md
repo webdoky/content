@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.Object.valueOf
 
 {{JSRef}}
 
-Метод {{jsxref("Object")}} **`valueOf()`** (значення) перетворює значення `this` [на об'єкт](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#zvedennia-do-obiekta). Очікується, що цей метод перевизначений похідними об'єктами задля їх власної логіки [перетворення типів](/uk/docs/Web/JavaScript/Data_structures#zvedennia-typiv).
+Метод **`valueOf()`** (значення) примірників {{jsxref("Object")}} перетворює значення `this` [на об'єкт](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#zvedennia-do-obiekta). Очікується, що цей метод перевизначений похідними об'єктами задля їх власної логіки [перетворення типів](/uk/docs/Web/JavaScript/Data_structures#zvedennia-typiv).
 
 {{EmbedInteractiveExample("pages/js/object-prototype-valueof.html")}}
 
