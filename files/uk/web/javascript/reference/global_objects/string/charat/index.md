@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.String.charAt
 
 {{JSRef}}
 
-Метод **`charAt()`** примірника {{jsxref("String")}} повертає новий рядок, що складається з єдиної кодової одиниці UTF-16, знайденої в рядку за переданою позицією.
+Метод **`charAt()`** значень {{jsxref("String")}} повертає новий рядок, що складається з єдиної кодової одиниці UTF-16, знайденої в рядку за переданою позицією.
 
 {{EmbedInteractiveExample("pages/js/string-charat.html", "shorter")}}
 

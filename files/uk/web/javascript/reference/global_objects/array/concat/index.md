@@ -144,8 +144,10 @@ console.log(Array.prototype.concat.call(arrayLike, 3, 4)); // [1, 2, 3, 4]
 ## Дивіться також
 
 - [Поліфіл для `Array.prototype.concat` доступний в складі `core-js`, разом з виправленнями й реалізацією сучасної логіки типу підтримки `Symbol.isConcatSpreadable`](https://github.com/zloirock/core-js#ecmascript-array)
-- {{jsxref("Array/push", "push()")}} / {{jsxref("Array/pop", "pop()")} — щоб додати чи прибрати елементи в кінці масиву
-- {{jsxref("Array/unshift", "unshift()")}} / {{jsxref("Array/shift", "shift()")}} — щоб додати чи прибрати елементи на початку масиву
-- {{jsxref("Array/splice", "splice()")}} — щоб додати чи прибрати елементи у вказаному місці масиву
+- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- {{jsxref("Array")}}
+- {{jsxref("Array.prototype.push()")}}
+- {{jsxref("Array.prototype.unshift()")}}
+- {{jsxref("Array.prototype.splice()")}}
 - {{jsxref("String.prototype.concat()")}}
-- {{jsxref("Symbol.isConcatSpreadable")}} — щоб контролювати сплощення.
+- {{jsxref("Symbol.isConcatSpreadable")}}
