@@ -100,6 +100,7 @@
         "var"
       ]
     },
+    "MD034": false,
     // Pending https://github.com/mdn/content/pull/20115
     "MD037": false,
     "MD040": false,
@@ -124,121 +125,129 @@
           "message": "Don't use curly double quotes",
           "searchPattern": "/“|”/g",
           "replace": "\"",
-          "skipCode": true
+          "searchScope": "text"
         },
         {
           "name": "curly-single-quotes",
           "message": "Don't use curly single quotes",
           "searchPattern": "/‘|’/g",
           "replace": "'",
-          "skipCode": true
+          "searchScope": "text"
         },
         {
           "name": "nbsp",
           "message": "Don't use no-break spaces",
           "searchPattern": "/ /g",
           "replace": " ",
-          "skipCode": false
+          "searchScope": "all"
         },
         {
           "name": "m-dash",
           "message": "Don't use '--'. Use m-dash — instead",
           "search": " -- ",
           "replace": " — ",
-          "skipCode": true
+          "searchScope": "text"
         },
         {
           "name": "relative-link",
           "message": "Internal links should start with '/'",
-          "search": "(uk/docs",
-          "replace": "(/uk/docs",
-          "skipCode": true
+          "searchPattern": "/([\\(\"])en-US\\/docs/g",
+          "replace": "$1/en-US/docs",
+          "searchScope": "text"
         },
         {
           "name": "relative-link-path",
           "message": "Don't use relative paths",
           "search": "](..",
-          "skipCode": true
+          "searchScope": "text"
         },
         {
           "name": "trailing-spaces",
           "message": "Avoid trailing spaces",
           "searchPattern": "/  +$/gm",
           "replace": "",
-          "skipCode": false
+          "searchScope": "all"
         },
         {
           "name": "no-en-us-link",
           "message": "Internal links should lead to '/uk'",
-          "search": "(/en-US/docs",
-          "replace": "(/uk/docs",
-          "skipCode": true
+          "search": "/en-US/docs",
+          "replace": "/uk/docs",
+          "searchScope": "text"
         },
         {
           "name": "no-macros-space-before",
           "message": "There shouldn't be any space after {{ for macros",
           "search": "{{ ",
           "replace": "{{",
-          "skipCode": true
+          "searchScope": "text"
         },
         {
           "name": "no-macros-space-after",
           "message": "There shouldn't be any space before }} for macros",
           "search": " }}",
           "replace": "}}",
-          "skipCode": true
+          "searchScope": "text"
         },
         {
           "name": "double-spaces",
           "message": "Avoid double spaces",
           "searchPattern": "/([^\\s>])  ([^\\s|])/g",
           "replace": "$1 $2",
-          "skipCode": true
+          "searchScope": "text"
         },
         {
           "name": "stuck-definition",
           "message": "Character is stuck to definition description marker",
           "searchPattern": "/- :(\\w)/g",
           "replace": "- : $1",
-          "skipCode": true
+          "searchScope": "text"
         },
         {
           "name": "fqdn-moz-links",
-          "message": "Don't use developer.mozilla.org for links",
-          "search": "](https://developer.mozilla.org/",
+          "message": "Don't use developer.mozilla.org for links, except for blog posts",
+          "searchPattern": "/\\]\\(https:\\/\\/developer.mozilla.org\\/(?!en-US\\/blog\\/)/g",
           "replace": "](/",
-          "skipCode": true
+          "searchScope": "text"
         },
         {
           "name": "fqdn-wd-links",
           "message": "Don't use webdoky.org for links",
           "search": "](https://webdoky.org.org/",
           "replace": "](/",
-          "skipCode": true
+          "searchScope": "text"
         },
         {
           "name": "no-en-us-lt-link",
           "message": "Internal links should lead to '/uk'",
           "search": "(</en-US/docs",
           "replace": "(</uk/docs",
-          "skipCode": true
-        },
-        {
-          "name": "capital-glossary",
-          "message": "Glossary macros must lead to capitalized or upperscore references",
-          "searchPattern": "/{{{[gG]lossary\\(\"[a-z][^}]+\"\\)}}/g",
-          "skipCode": true
+          "searchScope": "text"
         },
         {
           "name": "incorrect-spelling",
           "message": "Incorrect spelling",
-          "searchPattern": ["/e-mail/ig"],
-          "replace": ["email"],
-          "skipCode": false
+          "searchPattern": ["/e-mail/ig", "/(w)eb site/ig"],
+          "replace": ["email", "$1ebsite"],
+          "searchScope": "all"
+        },
+        {
+          "name": "localhost-links",
+          "message": "Don't use localhost for links",
+          "searchPattern": "/\\]\\(https?:\\/\\/localhost:\\d+\\//g",
+          "replace": "](/",
+          "searchScope": "text"
+        },
+        {
+          "name": "blog-link",
+          "message": "Make blog links external",
+          "search": "(/en-US/blog",
+          "replace": "(https://developer.mozilla.org/en-US/blog",
+          "searchScope": "text"
         }
       ]
     }
   },
   "customRules": ["markdownlint-rule-search-replace"],
-  "ignores": ["node_modules", ".github"]
+  "ignores": ["node_modules", ".github", "tests"]
 }

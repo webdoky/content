@@ -48,7 +48,7 @@ backdrop-filter: unset;
 - `none`
   - : До задника не застосовується жодний фільтр.
 - `<filter-function-list>`
-  - : Розділений пробілами список значень {{cssxref("&lt;filter-function&gt;")}}, або [SVG-фільтр](/uk/docs/Web/SVG/Element/filter), що буде застосовано до задника.
+  - : Розділений пробілами список значень {{cssxref("&lt;filter-function&gt;")}}, або [SVG-фільтр](/uk/docs/Web/SVG/Element/filter), що буде застосовано до задника. Серед значень `<filter-function>` CSS – {{CSSxRef("filter-function/blur", "blur()")}}, {{CSSxRef("filter-function/brightness", "brightness()")}}, {{CSSxRef("filter-function/contrast", "contrast()")}}, {{CSSxRef("filter-function/drop-shadow", "drop-shadow()")}}, {{CSSxRef("filter-function/grayscale", "grayscale()")}}, {{CSSxRef("filter-function/hue-rotate", "hue-rotate()")}}, {{CSSxRef("filter-function/invert", "invert()")}}, {{CSSxRef("filter-function/opacity", "opacity()")}}, {{CSSxRef("filter-function/saturate", "saturate()")}} і {{CSSxRef("filter-function/sepia", "sepia()")}}.
 
 ## Формальне визначення
 
@@ -64,37 +64,37 @@ backdrop-filter: unset;
 
 ```css
 .box {
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 5px;
-  font-family: sans-serif;
-  text-align: center;
-  line-height: 1;
-  -webkit-backdrop-filter: blur(10px);
+  background-color: rgb(255 255 255 / 0.3);
   backdrop-filter: blur(10px);
-  max-width: 50%;
-  max-height: 50%;
-  padding: 20px 40px;
 }
 
+body {
+  background-image: url("anemones.jpg");
+}
+```
+
+```css hidden
 html,
 body {
   height: 100%;
   width: 100%;
 }
 
-body {
-  background-image: url("anemones.jpg"), linear-gradient(rgb(219, 166, 166), rgb(0, 0, 172));
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .container {
+  background-size: cover;
   align-items: center;
   display: flex;
   justify-content: center;
   height: 100%;
   width: 100%;
+}
+.box {
+  border-radius: 5px;
+  font-family: sans-serif;
+  text-align: center;
+  max-width: 50%;
+  max-height: 50%;
+  padding: 20px 40px;
 }
 ```
 
@@ -123,3 +123,7 @@ body {
 ## Дивіться також
 
 - {{cssxref("filter")}}
+- {{cssxref("&lt;filter-function&gt;")}}
+- {{cssxref("background-blend-mode")}}, {{cssxref("mix-blend-mode")}}
+- [Фільтрувальні ефекти CSS](/uk/docs/Web/CSS/CSS_filter_effects)
+- [Компонування та накладання в CSS](/uk/docs/Web/CSS/CSS_compositing_and_blending)

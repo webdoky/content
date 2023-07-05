@@ -2,12 +2,6 @@
 title: Object.prototype.hasOwnProperty()
 slug: Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty
 page-type: javascript-instance-method
-tags:
-  - JavaScript
-  - Method
-  - Object
-  - Prototype
-  - hasOwnProperty
 browser-compat: javascript.builtins.Object.hasOwnProperty
 ---
 
@@ -15,9 +9,9 @@ browser-compat: javascript.builtins.Object.hasOwnProperty
 
 Метод **`hasOwnProperty()`** (має власну властивість) повертає булеве значення, котре вказує на те, чи має об'єкт задану властивість як свою власну (але не успадковану).
 
-{{EmbedInteractiveExample("pages/js/object-prototype-hasownproperty.html")}}
-
 > **Примітка:** {{jsxref("Object.hasOwn()")}} є рекомендованою альтернативою `hasOwnProperty()` в тих браузерах, у котрих підтримується.
+
+{{EmbedInteractiveExample("pages/js/object-prototype-hasownproperty.html")}}
 
 ## Синтаксис
 
@@ -135,7 +129,7 @@ Object.prototype.hasOwnProperty.call(foo, "bar"); // true
 
 // Використання hasOwnProperty іншого Object
 // і виклик його з foo як 'this'
-({}.hasOwnProperty.call(foo, "bar")); // true
+({}).hasOwnProperty.call(foo, "bar"); // true
 ```
 
 Зверніть увагу, що у двох перших випадках нові об'єкти не створюються.
