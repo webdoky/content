@@ -32,7 +32,7 @@ startsWith(searchString, position)
 ### Винятки
 
 - {{jsxref("TypeError")}}
-  - : Thrown if `searchString` [is a regex](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp#special_handling_for_regexes).
+  - : Викидається, коли `searchString` [є регулярним виразом](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp#osoblyva-obrobka-rehuliarnykh-vyraziv).
 
 ## Опис
 
