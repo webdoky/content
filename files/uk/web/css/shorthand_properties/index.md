@@ -175,7 +175,7 @@ CSS має універсальну властивість-скорочення,
   - [Директиви](/uk/docs/Web/CSS/At-rule)
   - [Коментарі](/uk/docs/Web/CSS/Comments)
   - [Специфічність](/uk/docs/Web/CSS/Specificity)
-  - [Успадкування](/uk/docs/Web/CSS/inheritance)
+  - [Успадкування](/uk/docs/Web/CSS/Inheritance)
   - [Рамкова модель](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
   - [Режими компонування](/uk/docs/Web/CSS/Layout_mode)
   - [Моделі візуального форматування](/uk/docs/Web/CSS/Visual_formatting_model)

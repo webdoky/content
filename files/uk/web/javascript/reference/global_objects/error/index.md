@@ -33,7 +33,7 @@ browser-compat: javascript.builtins.Error
   - : Створює примірник, що представляє помилку, котра трапляється, коли в {{JSxRef("encodeURI", "encodeURI()")}} або {{JSxRef("decodeURI", "decodeURI()")}} передано невідповідні параметри.
 - {{JSxRef("AggregateError")}}
   - : Створює примірник, що представляє кілька помилок, загорнутих в одну помилку, коли операція потребує звітування про декілька помилок, наприклад, {{JSxRef("Promise.any()")}}.
-- {{JSxRef("InternalError")}} {{non-standard_inline}}
+- {{JSxRef("InternalError")}} {{Non-standard_Inline}}
   - : Створює примірник, що представляє помилку, котра трапляється тоді, коли викидається внутрішня помилка рушія JavaScript. Наприклад, "забагато рекурсії".
 
 ## Конструктор
@@ -43,11 +43,11 @@ browser-compat: javascript.builtins.Error
 
 ## Статичні методи
 
-- `Error.captureStackTrace()` {{non-standard_inline}}
+- `Error.captureStackTrace()` {{Non-standard_Inline}}
   - : Нестандартна функція V8, що створює на примірнику Error властивість {{JSxRef("Error.prototype.stack", "stack")}}.
-- `Error.stackTraceLimit` {{non-standard_inline}}
+- `Error.stackTraceLimit` {{Non-standard_Inline}}
   - : Нестандартна числова властивість V8, що обмежує те, скільки фреймів стека включається в трасування стека помилки.
-- `Error.prepareStackTrace()` {{non-standard_inline}} {{optional_inline}}
+- `Error.prepareStackTrace()` {{Non-standard_Inline}} {{Optional_Inline}}
   - : Нестандартна функція V8, котра, якщо задана користувацьким кодом, викликається рушієм V8 для викинутих винятків, даючи користувачеві змогу задавати власне форматування трасувань стека.
 
 ## Властивості примірника
@@ -58,21 +58,21 @@ browser-compat: javascript.builtins.Error
   - : Функція-конструктор, що створила об'єкт-примірник. Для примірників `Error` початковим значенням є конструктор {{jsxref("Error/Error", "Error")}}.
 - {{jsxref("Error.prototype.name")}}
   - : Представляє назву типу помилки. Для `Error.prototype.name` початковим значенням є `"Error"`. Підкласи, наприклад, {{jsxref("TypeError")}} і {{jsxref("SyntaxError")}}, мають власні властивості `name`.
-- {{jsxref("Error.prototype.stack")}} {{non-standard_inline}}
+- {{jsxref("Error.prototype.stack")}} {{Non-standard_Inline}}
   - : Нестандартна властивість для трасування стека.
 
 Ці властивості є власними властивостями кожного окремого примірника `Error`.
 
-- {{jsxref("Error/message", "message")}}
-  - : Повідомлення помилки. Для створених користувачем об'єктів `Error` це рядок, заданий як перший аргумент конструктора.
 - {{jsxref("Error/cause", "cause")}}
   - : Причина помилки, що вказує на причину викидання помилки – зазвичай інша, перехоплена помилка. Для створених користувачем об'єктів `Error`, це значення, що задається властивістю `cause` другого аргументу конструктора.
-- {{jsxref("Error/fileName", "fileName")}} {{non-standard_inline}}
-  - : Нестандартна властивість Mozilla для шляху до файлу, що спричинив помилку.
-- {{jsxref("Error/lineNumber", "lineNumber")}} {{non-standard_inline}}
-  - : Нестандартна властивість Mozilla для номера рядка у файлі, що спричинив помилку.
-- {{jsxref("Error/columnNumber", "columnNumber")}} {{non-standard_inline}}
+- {{jsxref("Error/columnNumber", "columnNumber")}} {{Non-standard_Inline}}
   - : Нестандартна властивість Mozilla для номера колонки в рядку, що спричинила помилку.
+- {{jsxref("Error/fileName", "fileName")}} {{Non-standard_Inline}}
+  - : Нестандартна властивість Mozilla для шляху до файлу, що спричинив помилку.
+- {{jsxref("Error/lineNumber", "lineNumber")}} {{Non-standard_Inline}}
+  - : Нестандартна властивість Mozilla для номера рядка у файлі, що спричинив помилку.
+- {{jsxref("Error/message", "message")}}
+  - : Повідомлення помилки. Для створених користувачем об'єктів `Error` це рядок, заданий як перший аргумент конструктора.
 
 ## Методи примірника
 
@@ -154,7 +154,7 @@ try {
 
 > **Примітка:** При написанні бібліотеки краще використовувати причину помилки для розрізнення різних помилок, що породжуються, а не просити користувачів бібліотеки розбирати повідомлення помилок. Шукайте приклад на [сторінці причини помилки](/uk/docs/Web/JavaScript/Reference/Global_Objects/Error/cause#nadannia-strukturovanykh-danykh-yak-prychyny-pomylky).
 
-[Власні типи помилок](#vlasni-typy-pomylok) також можуть використовувати властивість [`cause`](#error.prototype.cause), за умови, що конструктор підкласів передає параметр `options` при виклику `super()`. Конструктор базового класу `Error()` зчитає `options.cause` та означить на новому примірнику помилки властивість `cause`.
+[Власні типи помилок](#vlasni-typy-pomylok) також можуть використовувати властивість `cause`, за умови, що конструктор підкласів передає параметр `options` при виклику `super()`. Конструктор базового класу `Error()` зчитає `options.cause` та означить на новому примірнику помилки властивість `cause`.
 
 ```js
 class MyError extends Error {

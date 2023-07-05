@@ -104,7 +104,7 @@ z-index: unset;
 
 #### Результат
 
-{{EmbedLiveSample('vizualne-nasharuvannia-elementiv', '550', '200', '')}}
+{{EmbedLiveSample('vizualne-nasharuvannia-elementiv', '550', '200')}}
 
 ## Специфікації
 

@@ -4,7 +4,7 @@ slug: Web/JavaScript/Guide/Using_promises
 page-type: guide
 ---
 
-{{jsSidebar("JavaScript Guide")}}{{PreviousNext("Web/JavaScript/Guide/Using_Classes", "Web/JavaScript/Guide/Iterators_and_Generators")}}
+{{jsSidebar("JavaScript Guide")}}{{PreviousNext("Web/JavaScript/Guide/Using_classes", "Web/JavaScript/Guide/Typed_arrays")}}
 
 {{jsxref("Promise")}} – це об'єкт, що представляє завершення або невдачу асинхронної операції. Оскільки більшість людей користуються вже створеними промісами, цей посібник спершу пояснить використання повернених промісів, а потім – як їх створювати.
 
@@ -448,7 +448,7 @@ console.log(value); // 1 чи 2?
 
 З іншого боку, проміси є формою [інверсії контролю](https://en.wikipedia.org/wiki/Inversion_of_control): автор API не контролює того, коли викликається функція зворотного виклику. Натомість справа підтримки черги функцій зворотного виклику та прийняття рішень про те, коли викликати функції зворотного виклику, делегується реалізації промісів, тож водночас і користувач API, і його автор – автоматично отримують потужні семантичні гарантії, серед яких:
 
-- Функції зворотного виклику, додані за допомогою [`then()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Promise/then), ніколи не закликаються до [завершення поточного спрацювання](/uk/docs/Web/JavaScript/EventLoop#spratsiuvannia-do-zavershennia) циклу подій JavaScript.
+- Функції зворотного виклику, додані за допомогою [`then()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Promise/then), ніколи не закликаються до [завершення поточного спрацювання](/uk/docs/Web/JavaScript/Event_loop#spratsiuvannia-do-zavershennia) циклу подій JavaScript.
 - Ці функції зворотного виклику закликаються, якщо вони були додані _після_ успіху чи невдачі асинхронної операції, котру представляє відповідний проміс.
 - Шляхом багаторазового виклику [`then()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) можуть бути додані кілька функцій зворотного виклику. Вони закликаються одна після одної, згідно з порядком, в якому були додані.
 
@@ -517,4 +517,4 @@ console.log("Проміс (в очікуванні)", promise);
 - [Venkatraman.R - Інструменти для юніттестування промісів (англ.)](https://tech.io/playgrounds/11107/tools-for-promises-unittesting/introduction)
 - [Нолан Лоусон: Маємо проблему з промісами – Поширені помилки з промісами (англ.)](https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html)
 
-{{PreviousNext("Web/JavaScript/Guide/Using_Classes", "Web/JavaScript/Guide/Iterators_and_Generators")}}
+{{PreviousNext("Web/JavaScript/Guide/Using_classes", "Web/JavaScript/Guide/Typed_arrays")}}
