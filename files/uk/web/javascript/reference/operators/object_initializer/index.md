@@ -7,7 +7,7 @@ browser-compat: javascript.operators.object_initializer
 
 {{JsSidebar("Operators")}}
 
-**Об'єктний ініціалізатор** – це розділений список з нуля або більше пар назв властивостей та відповідних їм значень в об'єкті, оточений фігурними дужками (`{}`). Також об'єкти можуть бути ініціалізовані за допомогою [`Object.create()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/create) або [шляхом виклику функції-конструктора](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#zastosuvannia-funktsii-konstruktora) з оператором [`new`](/uk/docs/Web/JavaScript/Reference/Operators/new).
+**Об'єктний ініціалізатор** – це розділений список з нуля або більше пар назв властивостей та відповідних їм значень в об'єкті, оточений фігурними дужками (`{}`). Також об'єкти можуть бути ініціалізовані за допомогою [`Object.create()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/create) або [шляхом виклику функції-конструктора](/uk/docs/Web/JavaScript/Guide/Working_with_objects#zastosuvannia-funktsii-konstruktora) з оператором [`new`](/uk/docs/Web/JavaScript/Reference/Operators/new).
 
 {{EmbedInteractiveExample("pages/js/expressions-objectinitializer.html", "taller")}}
 
@@ -84,7 +84,7 @@ const object = {
 
 ### Звертання до властивостей
 
-Коли створено об'єкт, може знадобитися зчитати або змінити його. До його властивостей можна звернутися за допомогою запису крапки або запису квадратних дужок. (Докладніше про це читайте в [аксесорах властивостей](/uk/docs/Web/JavaScript/Reference/Operators/Property_Accessors).)
+Коли створено об'єкт, може знадобитися зчитати або змінити його. До його властивостей можна звернутися за допомогою запису крапки або запису квадратних дужок. (Докладніше про це читайте в [аксесорах властивостей](/uk/docs/Web/JavaScript/Reference/Operators/Property_accessors).)
 
 ```js
 object.foo; // "bar"
@@ -179,7 +179,7 @@ const o = {
 
 ### Обчислені назви властивостей
 
-Запис об'єктного ініціалізатора також підтримує обчислені назви властивостей. Це дає змогу додавати вираз у квадратних дужках `[]`, котрий буде обчислений і вжитий як назва властивості. Це нагадує запис квадратних дужок запису [аксесора властивостей](/uk/docs/Web/JavaScript/Reference/Operators/Property_Accessors), котрий ви уже, можливо, використовуєте для зчитування та запису властивостей.
+Запис об'єктного ініціалізатора також підтримує обчислені назви властивостей. Це дає змогу додавати вираз у квадратних дужках `[]`, котрий буде обчислений і вжитий як назва властивості. Це нагадує запис квадратних дужок запису [аксесора властивостей](/uk/docs/Web/JavaScript/Reference/Operators/Property_accessors), котрий ви уже, можливо, використовуєте для зчитування та запису властивостей.
 
 Відтак, можна використовувати подібний запис і в об'єктних літералах:
 
@@ -301,7 +301,7 @@ const obj7 =  {
 
 ## Дивіться також
 
-- [Аксесори властивостей](/uk/docs/Web/JavaScript/Reference/Operators/Property_Accessors)
+- [Аксесори властивостей](/uk/docs/Web/JavaScript/Reference/Operators/Property_accessors)
 - [`get`](/uk/docs/Web/JavaScript/Reference/Functions/get) і [`set`](/uk/docs/Web/JavaScript/Reference/Functions/set)
 - [Означення методів](/uk/docs/Web/JavaScript/Reference/Functions/Method_definitions)
 - [Лексична граматика](/uk/docs/Web/JavaScript/Reference/Lexical_grammar)
