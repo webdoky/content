@@ -7,7 +7,7 @@ browser-compat: javascript.statements.if_else
 
 {{jsSidebar("Statements")}}
 
-Інструкція **`if...else`** (якщо... інакше) виконує інструкцію if, якщо задана умова є {{Glossary("truthy", "істинною")}}. Якщо ця умова є{{Glossary("falsy", "хибною")}}, то виконується інша інструкція, в положенні `else`.
+Інструкція **`if...else`** (якщо... інакше) виконує інструкцію if, якщо задана умова є {{Glossary("truthy", "істинною")}}. Якщо ця умова є {{Glossary("falsy", "хибною")}}, то виконується інша інструкція, в положенні `else`.
 
 {{EmbedInteractiveExample("pages/js/statement-ifelse.html")}}
 
@@ -169,4 +169,4 @@ if (x = y) {
 
 - {{jsxref("Statements/block", "block")}}
 - {{jsxref("Statements/switch", "switch")}}
-- [Умовний оператор](/uk/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
+- [Умовний оператор](/uk/docs/Web/JavaScript/Reference/Operators/Conditional_operator)
