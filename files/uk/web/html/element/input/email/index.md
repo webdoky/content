@@ -33,13 +33,13 @@ browser-compat: html.elements.input.type_email
 
 ### maxlength
 
-Найбільше число символів (як кодових одиниць UTF-16), яке користувач може ввести в поле `email`. Це повинно бути ціле число, не менше 0. Якщо не задано `maxlength`, або якщо задано недійсне значення, то поле `email` не має максимальної довжини. Це значення повинно бути більше або рівне значенню `minlength`.
+Найбільша довжина рядка (у кодових одиницях UTF-16), який користувач може ввести в поле `email`. Це повинно бути ціле число, не менше 0. Якщо не задано `maxlength`, або якщо задано недійсне значення, то поле `email` не має максимальної довжини. Це значення повинно бути більше або рівне значенню `minlength`.
 
 Таке поле провалить [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation), якщо довжина текстового значення поля перевищує `maxlength` кодових одиниць UTF-16. Валідація обмежень застосовується лише тоді, коли значення змінив користувач.
 
 ### minlength
 
-Найменше число символів (як кодових одиниць UTF-16), яке користувач може ввести в поле `email`. Це повинно бути невід'ємне ціле число, менше або рівне `maxlength`. Якщо не задано `minlength`, або якщо недійсне значення, то поле `email` не має мінімальної довжини.
+Найменша довжина рядка (у кодових одиницях UTF-16), який користувач може ввести в поле `email`. Це повинно бути невід'ємне ціле число, менше або рівне `maxlength`. Якщо не задано `minlength`, або якщо недійсне значення, то поле `email` не має мінімальної довжини.
 
 Таке поле провалить [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation), якщо довжина тексту, введеного в поле, менша за `minlength` кодових одиниць UTF-16. Валідація обмежень застосовується лише тоді, коли значення змінив користувач.
 
@@ -51,7 +51,7 @@ browser-compat: html.elements.input.type_email
 
 ### pattern
 
-Атрибут `pattern`, коли заданий, є регулярним виразом, котрому повинно відповідати [`value`](/uk/docs/Web/HTML/Element/input#value), щоб пройти [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation). Це повинен бути дійсний регулярний вираз JavaScript, у такому вигляді, як використовується типом {{jsxref("RegExp")}}, і такому, як це задокументовано в [посібнику з регулярних виразів](/uk/docs/Web/JavaScript/Guide/Regular_Expressions); при компіляції такого виразу використовується позначка `'u'`, аби патерн оброблявся як послідовність кодових точок Unicode, а не символів ASCII. Скісних рисок на кінцях тексту патерну бути не повинно.
+Атрибут `pattern`, коли заданий, є регулярним виразом, котрому повинно відповідати [`value`](/uk/docs/Web/HTML/Element/input#value), щоб пройти [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation). Це повинен бути дійсний регулярний вираз JavaScript, у такому вигляді, як використовується типом {{jsxref("RegExp")}}, і такому, як це задокументовано в [посібнику з регулярних виразів](/uk/docs/Web/JavaScript/Guide/Regular_expressions); при компіляції такого виразу використовується позначка `'u'`, аби патерн оброблявся як послідовність кодових точок Unicode, а не символів ASCII. Скісних рисок на кінцях тексту патерну бути не повинно.
 
 Якщо заданий патерн не заданий або недійсний, то регулярний вираз не застосовується, і цей атрибут цілковито ігнорується.
 
@@ -284,7 +284,7 @@ label::after {
 
 ![Недійсна адреса електронної пошти в стані помилки зі спливним повідомленням із поля: "будь ласка, введіть адресу електронно пошти".](enter-valid-email-address.png)
 
-Якщо так все й залишити, то буде хоча б валідація коректних адрес електронної пошти. Але хочеться піти іще трохи далі – пересвідчитись, що адреса електронної пошти має форму "_ім'якористувача_@beststartupever.com". Саме для цього застосуємо [`pattern`](/uk/docs/Web/HTML/Element/input#pattern). Задамо атрибут `pattern` зі значенням `.+@beststartupever.com`. Цей простий регулярний вираз вимагає рядка, що складається зі щонайменше одного символу будь-якого роду, після якого "@", а потім – доменне ім'я "beststartupever.com".
+Якщо так все й залишити, то буде хоча б валідація коректних адрес електронної пошти. Але хочеться піти іще трохи далі – пересвідчитись, що адреса електронної пошти має форму "_ім'якористувача<_@beststartupever.com>". Саме для цього застосуємо [`pattern`](/uk/docs/Web/HTML/Element/input#pattern). Задамо атрибут `pattern` зі значенням `.+@beststartupever.com`. Цей простий регулярний вираз вимагає рядка, що складається зі щонайменше одного символу будь-якого роду, після якого "@", а потім – доменне ім'я "beststartupever.com".
 
 Зверніть увагу, що це й близько не адекватний фільтр для дійсних адрес електронної пошти: такий регулярний вираз дозволяє штуки роду " @beststartupever.com" (зверніть увагу на пробіл на початку) або "@@beststartupever.com", що геть не є дійсними адресами. Проте браузер запускає над уведеним текстом і стандартний фільтр адрес електронної пошти, _і_ наш власний патерн. Як наслідок, виходить валідація, що має суть "пересвідчитись, що це нагадує дійсну адресу електронної пошти, і якщо це так, то пересвідчитись що це також адреса на beststartupever.com."
 
@@ -349,7 +349,8 @@ label::after {
         <a href="/uk/docs/Web/HTML/Element/input#maxlength"><code>maxlength</code></a>,
         <a href="/uk/docs/Web/HTML/Element/input#minlength"><code>minlength</code></a>,
         <a href="/uk/docs/Web/HTML/Element/input#multiple"><code>multiple</code></a>,
-        <a href="/uk/docs/Web/HTML/Element/input#pattern"><code>name`](/uk/docs/Web/HTML/Element/input#name), [`pattern</code></a>,
+        <a href="/en-US/docs/Web/HTML/Element/input#name"><code>name</code></a>,
+        <a href="/en-US/docs/Web/HTML/Element/input#pattern"><code>pattern</code></a>,
         <a href="/uk/docs/Web/HTML/Element/input#placeholder"><code>placeholder</code></a>,
         <a href="/uk/docs/Web/HTML/Element/input#readonly"><code>readonly</code></a>,
         <a href="/uk/docs/Web/HTML/Element/input#required"><code>required</code></a>,
@@ -373,9 +374,11 @@ label::after {
     </tr>
     <tr>
       <td><strong>Неявна роль ARIA</strong></td>
-      <td>без атрибута <code>list</code>:
-                <code><a href="/uk/docs/Web/Accessibility/ARIA/Roles/textbox_role">textbox</a></code></td>
-      <td>з атрибутом <code>list</code>: <code><a href="/uk/docs/Web/Accessibility/ARIA/Roles/combobox_role">combobox</a></code></td>
+      <td>
+        без атрибута <code>list</code>:
+        <code><a href="/uk/docs/Web/Accessibility/ARIA/Roles/textbox_role">textbox</a></code><br />
+        з атрибутом <code>list</code>: <code><a href="/uk/docs/Web/Accessibility/ARIA/Roles/combobox_role">combobox</a></code>
+      </td>
     </tr>
   </tbody>
 </table>
