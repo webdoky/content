@@ -27,7 +27,7 @@ browser-compat: html.elements.input.type_color
 
 ### Задання усталеного кольору
 
-Можна оновити простий приклад вище для задання усталеного значення, щоб поле було наперед заповнено усталеним кольором, і інтерфейс вибору кольору (якщо він є) також отримав це значення як усталене:
+Можна оновити простий приклад вище для задання усталеного значення, щоб інтерфейс вибору кольору був наперед заповнений усталеним кольором, і інтерфейс вибору кольору (якщо він є) також отримав це значення як усталене:
 
 ```html
 <input type="color" value="#ff0000" />
@@ -58,10 +58,10 @@ function watchColorPicker(event) {
 
 Коли браузер не підтримує інтерфейс вибору кольору, його реалізацією полів кольору є текстове поле, що автоматично валідує вміст, аби пересвідчитися, що значення має коректний формат. У такому випадку можна використати метод {{domxref("HTMLInputElement.select", "select()")}}, аби вибрати текст, присутній в полі редагування.
 
-Якщо замість цього браузер використовує колірну палітру, то `select()` нічого не робить. Слід мати на увазі цю логіку, щоб код міг реагувати відповідно в будь-якому випадку.
+Якщо замість цього браузер використовує інтерфейс вибору кольору, то `select()` нічого не робить. Слід мати на увазі цю логіку, щоб код міг реагувати відповідно в будь-якому випадку.
 
 ```js
-colorWell.select();
+colorPicker.select();
 ```
 
 ## Валідація
@@ -74,7 +74,7 @@ colorWell.select();
 
 ### HTML
 
-HTML є доволі прямолінійним: кілька абзаців з описовим матеріалом, а також {{HTMLElement("input")}} типу `color` з ідентифікатором `colorWell`, який використовується для зміни кольору тексту абзаців.
+HTML є доволі прямолінійним: кілька абзаців з описовим матеріалом, а також {{HTMLElement("input")}} типу `color` з ідентифікатором `color-picker`, який використовується для зміни кольору тексту абзаців.
 
 ```html
 <p>
@@ -82,8 +82,8 @@ HTML є доволі прямолінійним: кілька абзаців з 
   <code>&lt;input type="color"&gt;</code>.
 </p>
 
-<label for="colorWell">Колір:</label>
-<input type="color" value="#ff0000" id="colorWell" />
+<label for="color-picker">Колір:</label>
+<input type="color" value="#ff0000" id="color-picker" />
 
 <p>
   Спостерігайте за зміною кольору абзаців при виборі кольору. При змінах в
@@ -96,10 +96,10 @@ HTML є доволі прямолінійним: кілька абзаців з 
 
 ### JavaScript
 
-По-перше, є трохи налаштування. Тут створюється кілька змінних, налаштовується змінна, що містить колір, котрий буде заданий колірній палітрі при першому завантаженні, а потім налаштовується обробник {{domxref("Window/load_event", "load")}}, щоб виконати стартову роботу, коли сторінка повністю завантажена.
+По-перше, є трохи налаштування. Тут створюється кілька змінних, налаштовується змінна, що містить колір, котрий буде заданий інтерфейсові вибору кольору при першому завантаженні, а потім налаштовується обробник {{domxref("Window/load_event", "load")}}, щоб виконати стартову роботу, коли сторінка повністю завантажена.
 
 ```js
-let colorWell;
+let colorPicker;
 const defaultColor = "#0000ff";
 
 window.addEventListener("load", startup, false);
@@ -111,15 +111,15 @@ window.addEventListener("load", startup, false);
 
 ```js
 function startup() {
-  colorWell = document.querySelector("#colorWell");
-  colorWell.value = defaultColor;
-  colorWell.addEventListener("input", updateFirst, false);
-  colorWell.addEventListener("change", updateAll, false);
-  colorWell.select();
+  colorPicker = document.querySelector("#color-picker");
+  colorPicker.value = defaultColor;
+  colorPicker.addEventListener("input", updateFirst, false);
+  colorPicker.addEventListener("change", updateAll, false);
+  colorPicker.select();
 }
 ```
 
-Цей код отримує посилання на елемент кольору `<input>` у змінну, що зветься `colorWell`, потім задає значення поля кольору – значення `defaultColor`. Далі налаштовується подія {{domxref("HTMLElement/input_event", "input")}} поля кольору, щоб викликати функцію `updateFirst()`, а подія {{domxref("HTMLElement/change_event", "change")}} – викликати `updateAll()`. Це можна побачити нижче.
+Цей код отримує посилання на елемент кольору `<input>` у змінну, що зветься `colorPicker`, потім задає значення поля кольору – значення `defaultColor`. Далі налаштовується подія {{domxref("HTMLElement/input_event", "input")}} поля кольору, щоб викликати функцію `updateFirst()`, а подія {{domxref("HTMLElement/change_event", "change")}} – викликати `updateAll()`. Це можна побачити нижче.
 
 Насамкінець викликається {{domxref("HTMLInputElement.select", "select()")}}, аби вибрати текстовий вміст колірного поля, якщо контрольний елемент реалізований як текстове поле (це не спрацює, якщо замість цього наданий інтерфейс вибору кольору).
 
