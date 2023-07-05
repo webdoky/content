@@ -21,37 +21,14 @@ browser-compat: javascript.builtins.Array.reduce
 ## Синтаксис
 
 ```js-nolint
-// Стрілкова функція
-reduce((accumulator, currentValue) => { /* … */ } )
-reduce((accumulator, currentValue, currentIndex) => { /* … */ } )
-reduce((accumulator, currentValue, currentIndex, array) => { /* … */ } )
-
-reduce((accumulator, currentValue) => { /* … */ } , initialValue)
-reduce((accumulator, currentValue, currentIndex) => { /* … */ } , initialValue)
-reduce((accumulator, currentValue, currentIndex, array) => { /* … */ }, initialValue)
-
-// Функція зворотного виклику
 reduce(callbackFn)
 reduce(callbackFn, initialValue)
-
-// Оголошена на місці функція зворотного виклику
-reduce(function(accumulator, currentValue) { /* … */ })
-reduce(function(accumulator, currentValue, currentIndex) { /* … */ })
-reduce(function(accumulator, currentValue, currentIndex, array) { /* … */ })
-
-reduce(function(accumulator, currentValue) { /* … */ }, initialValue)
-reduce(function(accumulator, currentValue, currentIndex) { /* … */ }, initialValue)
-reduce(function(accumulator, currentValue, currentIndex, array) { /* … */ }, initialValue)
 ```
 
 ### Параметри
 
 - `callbackFn`
-
-  - : Функція для виконання на кожному елементі масиву. Її повернене значення стає значенням параметра `accumulator` при наступному заклику `callbackFn`. При останньому заклику повернене значення стане поверненим значенням `reduce()`.
-
-    Ця функція викликається з наступними аргументами:
-
+  - : Функція для виконання на кожному елементі масиву. Її повернене значення стає значенням параметра `accumulator` при наступному заклику `callbackFn`. При останньому заклику повернене значення стане поверненим значенням `reduce()`. Ця функція викликається з наступними аргументами:
     - _accumulator_
       - : Результат виконання попереднього виклику `callbackFn`. Під час першого виклику, якщо заданий аргумент `initialValue`, то приймає його значення, інакше – `array[0]`.
     - _currentValue_:
@@ -60,7 +37,6 @@ reduce(function(accumulator, currentValue, currentIndex, array) { /* … */ }, i
       - : Індекс поточного елемента. Під час першого виклику, якщо заданий аргумент `initialValue`, то приймає значення `0`, інакше – `1`.
     - _array_:
       - : Масив, на якому було викликано `reduce()`.
-
 - `initialValue` {{optional_inline}}
   - : Значення, яким ініціалізується `accumulator` під час першого виконання функції зворотного виклику.
     Якщо `initialValue` задане, то `callbackFn` почне виконання з першим значенням масиву як `currentValue`.
@@ -74,7 +50,7 @@ reduce(function(accumulator, currentValue, currentIndex, array) { /* … */ }, i
 
 - {{jsxref("TypeError")}}
 
-  - : Масив не містить елементів, і не задано параметр `initialValue`.
+  - : Викидається, якщо масив не містить елементів, а `initialValue` – не задано.
 
 ## Опис
 
@@ -303,7 +279,7 @@ console.log(myArrayWithNoDuplicates);
 
 ### Заміна .filter().map() на .reduce()
 
-Застосування {{jsxref("Array/map", "map()")}} після {{jsxref("Array/filter", "filter()")}} змушує програму перебирати масив двічі; втім, аналогічного результату можна досягти, перебираючи масив лише один раз із {{jsxref("Array/reduce", "reduce()")}}, таким чином зробивши це більш ефективно. (Якщо вам до вподоби цикли `for`, можна відфільтрувати та перебрати масив за один раз із {{jsxref("Array/forEach", "forEach()")}}.)
+Застосування {{jsxref("Array/map", "map()")}} після {{jsxref("Array/filter", "filter()")}} змушує програму перебирати масив двічі; втім, аналогічного результату можна досягти, перебираючи масив лише один раз із `reduce()`, таким чином зробивши це більш ефективно. (Якщо вам до вподоби цикли `for`, можна відфільтрувати та перебрати масив за один раз із {{jsxref("Array/forEach", "forEach()")}}.)
 
 ```js
 const numbers = [-5, 6, 2, 0];
@@ -429,4 +405,12 @@ console.log(Array.prototype.reduce.call(arrayLike, (x, y) => x + y));
 ## Дивіться також
 
 - [Поліфіл для `Array.prototype.reduce` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
+- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- {{jsxref("Array")}}
+- {{jsxref("Array.prototype.group()")}}
+- {{jsxref("Array.prototype.groupToMap()")}}
+- {{jsxref("Array.prototype.map()")}}
+- {{jsxref("Array.prototype.flat()")}}
+- {{jsxref("Array.prototype.flatMap()")}}
 - {{jsxref("Array.prototype.reduceRight()")}}
+- {{jsxref("TypedArray.prototype.reduce()")}}

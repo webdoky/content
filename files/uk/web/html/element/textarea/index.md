@@ -285,7 +285,6 @@ textarea:valid {
 - {{HTMLElement("optgroup")}}
 - {{HTMLElement("option")}}
 - {{HTMLElement("input")}}
-- {{HTMLElement("keygen")}}
 - {{HTMLElement("fieldset")}}
 - {{HTMLElement("output")}}
 - {{HTMLElement("progress")}}
