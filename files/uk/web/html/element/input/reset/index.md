@@ -153,7 +153,6 @@ browser-compat: html.elements.input.type_reset
 
 - {{HTMLElement("input")}} та інтерфейс {{domxref("HTMLInputElement")}}, що його реалізовує.
 - [Форми та кнопки](/uk/docs/Learn/Forms/Basic_native_form_controls#realni-knopky)
-- [Форми (доступність)](/uk/docs/Web/Accessibility/ARIA/forms)
 - [Форми HTML](/uk/docs/Learn/Forms)
 - Елемент {{HTMLElement("button")}}
 - [Сумісність властивостей CSS](/uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls)
