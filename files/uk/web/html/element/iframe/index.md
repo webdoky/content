@@ -47,7 +47,7 @@ browser-compat: html.elements.iframe
 
 - `height`
   - : Висота фрейму в пікселях CSS. Усталене значення – `150`.
-- `loading` {{experimental_inline}}
+- `loading`
 
   - : Вказує, як браузер повинен завантажувати супутній фрейм:
 

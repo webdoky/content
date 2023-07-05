@@ -1,6 +1,6 @@
 ---
 title: Умовний (тернарний) оператор
-slug: Web/JavaScript/Reference/Operators/Conditional_Operator
+slug: Web/JavaScript/Reference/Operators/Conditional_operator
 page-type: javascript-operator
 browser-compat: javascript.operators.conditional
 ---
@@ -100,4 +100,4 @@ function example() {
 - [Оператор нульового злиття](/uk/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing)
 - [Необов'язкові послідовності](/uk/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
 - [Приймання рішень в коді — умовні вирази](/uk/docs/Learn/JavaScript/Building_blocks/conditionals)
-- [Вирази та оператори](/uk/docs/Web/JavaScript/Guide/Expressions_and_Operators)
+- [Вирази та оператори](/uk/docs/Web/JavaScript/Guide/Expressions_and_operators)

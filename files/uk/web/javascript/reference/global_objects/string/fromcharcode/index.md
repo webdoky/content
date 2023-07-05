@@ -1,15 +1,10 @@
 ---
 title: String.fromCharCode()
 slug: Web/JavaScript/Reference/Global_Objects/String/fromCharCode
-tags:
-  - JavaScript
-  - Method
-  - Reference
-  - String
-  - UTF-16
-  - Unicode
+page-type: javascript-static-method
 browser-compat: javascript.builtins.String.fromCharCode
 ---
+
 {{JSRef}}
 
 Статичний метод **`String.fromCharCode()`** повертає рядок, сформований з вказаної послідовності кодових одиниць UTF-16.
@@ -18,10 +13,10 @@ browser-compat: javascript.builtins.String.fromCharCode
 
 ## Синтаксис
 
-```js
+```js-nolint
 String.fromCharCode(num1)
 String.fromCharCode(num1, num2)
-String.fromCharCode(num1, num2, ..., numN)
+String.fromCharCode(num1, num2, /* …, */ numN)
 ```
 
 ### Параметри
@@ -45,7 +40,7 @@ String.fromCharCode(num1, num2, ..., numN)
 
 Оскільки `fromCharCode()` працює лише з 16-бітними значеннями (так само як контрольна послідовність `\u`), для отримання допоміжного символу необхідна сурогатна пара. Наприклад, `String.fromCharCode(0xD83C, 0xDF03)` і `\uD83C\uDF03` обидва повернуть ту саму кодову одиницю: `U+1F303` "Зоряна ніч".
 
-Незважаючи на те, що існує математична залежність між значенням допоміжної кодової одиниці (наприклад, `0x1F303`) і обома сурогатними парами, що її позначають (наприклад, `0xD83C` та `0xDF03`), необхідний додатковий крок для обчислення або пошуку значень сурогатних пар кожного разу, коли вживається допоміжна кодова одиниця. З цієї причини зручніше використовувати {{jsxref("String.fromCodePoint()")}} (яка входить до стандарту ES2015), що дає змогу отримувати допоміжні символи на основі дійсних значень їхніх кодових одиниць. Наприклад, `String.fromCodePoint(0x1F303)` поверне кодову одиницю `U+1F303` "Зоряна ніч".
+Попри те, що існує математична залежність між значенням допоміжної кодової одиниці (наприклад, `0x1F303`) і обома сурогатними парами, що її позначають (наприклад, `0xD83C` та `0xDF03`), необхідний додатковий крок для обчислення або пошуку значень сурогатних пар кожного разу, коли вживається допоміжна кодова одиниця. З цієї причини зручніше використовувати {{jsxref("String.fromCodePoint()")}}, що дає змогу отримувати допоміжні символи на основі дійсних значень їхніх кодових одиниць. Наприклад, `String.fromCodePoint(0x1F303)` поверне кодову одиницю `U+1F303` "Зоряна ніч".
 
 ## Приклади
 
@@ -54,19 +49,19 @@ String.fromCharCode(num1, num2, ..., numN)
 В UTF-16 символи базового багатомовного плану займають одну кодову одиницю:
 
 ```js
-String.fromCharCode(65, 66, 67);   // повертає "ABC"
-String.fromCharCode(0x2014);       // повертає "—"
-String.fromCharCode(0x12014);      // також повертає "—"; цифра 1 обрізається, тож нею знехтувано
-String.fromCharCode(8212);         // також повертає "—"; 8212 — це десяткова форма числа 0x2014
+String.fromCharCode(65, 66, 67); // повертає "ABC"
+String.fromCharCode(0x2014); // повертає "—"
+String.fromCharCode(0x12014); // також повертає "—"; цифра 1 обрізається, тож нею знехтувано
+String.fromCharCode(8212); // також повертає "—"; 8212 — це десяткова форма числа 0x2014
 ```
 
 Допоміжні символи в UTF-16 вимагають двох кодових одиниць (так звана сурогатна пара):
 
 ```js
-String.fromCharCode(0xD83C, 0xDF03); // Кодова одиниця U+1F303 "Зоряна
-String.fromCharCode(55356, 57091);   // ніч" == "\uD83C\uDF03"
+String.fromCharCode(0xd83c, 0xdf03); // Кодова одиниця U+1F303 "Зоряна
+String.fromCharCode(55356, 57091); // ніч" === "\uD83C\uDF03"
 
-String.fromCharCode(0xD834, 0xDF06, 0x61, 0xD834, 0xDF07); // "\uD834\uDF06a\uD834\uDF07"
+String.fromCharCode(0xd834, 0xdf06, 0x61, 0xd834, 0xdf07); // "\uD834\uDF06a\uD834\uDF07"
 ```
 
 ## Специфікації

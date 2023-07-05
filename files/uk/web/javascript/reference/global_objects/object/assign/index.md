@@ -54,9 +54,9 @@ console.log(copy); // { a: 1 }
 
 ### Застереження щодо глибинного клонування
 
-Для [глибокого клонування](/uk/docs/Glossary/Deep_copy) необхідно використовувати альтернативи, оскільки `Object.assign()` копіює значення властивостей.
+Для [глибокого клонування](/uk/docs/Glossary/Deep_copy) необхідно використовувати альтернативи штибу [`structuredClone()`](/uk/docs/Web/API/structuredClone), оскільки `Object.assign()` копіює значення властивостей.
 
-Якщо значення в донорі містить посилання на об'єкт, він скопіює лише це посилання.
+Якщо значення в донорі містить посилання на об'єкт, `Object.assign()` скопіює лише це посилання.
 
 ```js
 const obj1 = { a: 0, b: { c: 0 } };
@@ -73,7 +73,7 @@ console.log(obj1); // { a: 1, b: { c: 3 } }
 console.log(obj2); // { a: 2, b: { c: 3 } }
 // Глибоке клонування
 const obj3 = { a: 0, b: { c: 0 } };
-const obj4 = JSON.parse(JSON.stringify(obj3));
+const obj4 = structuredClone(obj3);
 obj3.a = 4;
 obj3.b.c = 4;
 console.log(obj4); // { a: 0, b: { c: 0 } }
