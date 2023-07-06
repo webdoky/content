@@ -7,7 +7,7 @@ browser-compat: html.elements.canvas
 
 {{HTMLSidebar}}
 
-**Елемент HTML `<canvas>`** слід використовувати для малювання графіки та анімацій, або вкупі з [API сценаріїв полотна](/uk/docs/Web/API/Canvas_API), або з [API WebGL](/uk/docs/Web/API/WebGL_API).
+**Елемент HTML `<canvas>`** (полотно) слід використовувати для малювання графіки та анімацій, або вкупі з [API сценаріїв полотна](/uk/docs/Web/API/Canvas_API), або з [API WebGL](/uk/docs/Web/API/WebGL_API).
 
 <table class="properties">
   <tbody>
@@ -92,7 +92,7 @@ browser-compat: html.elements.canvas
 
 Усередині блоку `<canvas>` слід надати альтернативний вміст. Цей вміст буде візуалізовано як в старіших браузерах, що не підтримують полотна, так і в браузерах з вимкненим JavaScript.
 
-### Обов'язковість тега \</canvas>
+### Кінцевий тег `</canvas>`
 
 На відміну від елемента {{HTMLElement("img")}}, елемент {{HTMLElement("canvas")}} **вимагає** кінцевого тега (`</canvas>`).
 
@@ -115,6 +115,13 @@ browser-compat: html.elements.canvas
 
 > **Примітка:** Перевищення максимальних розмірів або площі робить полотно непридатним для використання: команди малювання не працюватимуть.
 
+### Застосування позаекранного полотна
+
+Полотно може бути візуалізовано за допомогою API {{domxref("OffscreenCanvas")}}, в якому документ і полотно – розділені.
+Перевага такого підходу – те, що візуалізацією полотна може зайнятися [воркерний потік](/uk/docs/Web/API/Web_Workers_API/Using_web_workers), а головний потік вебзастосунку не блокується операціями з полотном.
+Завдяки паралелізації роботи решта елементів інтерфейсу вебзастосунку надалі будуть реагувати, навіть коли на позаекранному полотні виконуються складні графічні операції.
+Більше інформації – в документації API {{domxref("OffscreenCanvas")}}.
+
 ## Приклади
 
 ### HTML
@@ -122,7 +129,7 @@ browser-compat: html.elements.canvas
 Цей фрагмент коду додає елемент полотна до HTML-документа. Надається запасний текст, на випадок, якщо браузер не може прочитати або візуалізувати полотно.
 
 ```html
-<canvas width="300" height="300">
+<canvas width="120" height="120">
   Альтернативний текст, що описує те, що показує полотно.
 </canvas>
 ```
@@ -135,12 +142,13 @@ browser-compat: html.elements.canvas
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 ctx.fillStyle = "green";
+// Додати на (10, 10) прямокутник з розмірами 100x100 пікселів
 ctx.fillRect(10, 10, 100, 100);
 ```
 
 ### Результат
 
-{{EmbedLiveSample('pryklady')}}
+{{EmbedLiveSample('pryklady', 600, 150)}}
 
 ## Занепокоєння щодо доступності
 
@@ -163,10 +171,11 @@ ctx.fillRect(10, 10, 100, 100);
 
 ## Дивіться також
 
-- [Портал полотен на WebDoky](/uk/docs/Web/API/Canvas_API)
+- [API полотен](/uk/docs/Web/API/Canvas_API)
 - [Підручник з полотен](/uk/docs/Web/API/Canvas_API/Tutorial)
 - [Кілька демо на тему полотен](/uk/docs/Web/Demos#canvas)
-- [Шпаргалка з полотен (2009)](https://simon.html5.org/dump/html5-canvas-cheat-sheet.html)
-- [Шпаргалка з полотен (pdf) (2015)](https://websitesetup.org/wp-content/uploads/2015/11/Infopgraphic-CanvasCheatSheet-Final2.pdf)
-- [Шпаргалка з полотен (pdf)](https://www.coding-dude.com/wp/wp-content/uploads/2020/09/HTML5-canvas-cheat-sheet.pdf)
-- [Знайомство з полотнами від Apple (2013)](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/HTML-canvas-guide/Introduction/Introduction.html)
+- [OffscreenCanvas](/uk/docs/Web/API/OffscreenCanvas)
+- [Шпаргалка з полотен](https://simon.html5.org/dump/html5-canvas-cheat-sheet.html) (2009)
+- [Шпаргалка з полотен](https://websitesetup.org/wp-content/uploads/2015/11/Infopgraphic-CanvasCheatSheet-Final2.pdf) (pdf) (2015)
+- [Шпаргалка з полотен](https://www.coding-dude.com/wp/wp-content/uploads/2020/09/HTML5-canvas-cheat-sheet.pdf) (pdf) (2020)
+- [Знайомство з полотнами від Apple](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/HTML-canvas-guide/Introduction/Introduction.html) (2013)
