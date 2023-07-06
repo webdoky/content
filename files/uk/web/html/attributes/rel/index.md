@@ -132,7 +132,7 @@ browser-compat:
 
     Якщо є кілька елементів `<link rel="icon">`, то браузер використовує їх атрибути [`media`](/uk/docs/Web/HTML/Element/link#media), [`type`](/uk/docs/Web/HTML/Element/link#type) і [`sizes`](/uk/docs/Web/HTML/Element/link#sizes) для вибору найбільш підхожої піктограми. Якщо декілька піктограм однаково підходять, то використовується остання з них. Якщо найбільш підхожа піктограма пізніше виявиться непідхожою, наприклад, через те, що вона використовує непідтримуваний формат, то браузер переходить до наступної найбільш підхожої, і т.д..
 
-    > **Примітка:** До Firefox 83 атрибут [crossorigin](/uk/docs/Web/HTML/Attributes/crossorigin) не підтримувався для `rel="icon"`, також є [відкрита проблема для Chrome](https://crbug.com/1121645).
+    > **Примітка:** Атрибут [`crossorigin`](/uk/docs/Web/HTML/Attributes/crossorigin) не підтримується для `rel="icon"` у браузерах на основі Chromium. Дивіться [відкриту проблему Chromium](https://crbug.com/1121645).
 
     > **Примітка:** Apple iOS не використовує для вибору піктограми вебсторінки для Web Clip чи стартового заповнювача ані цей тип зв'язку, ані атрибут [`sizes`](/uk/docs/Web/HTML/Element/link#sizes), як це роблять інші браузери.
     > Замість цього використовується нестандартні можливості [`apple-touch-icon`](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html#//apple_ref/doc/uid/TP40002051-CH3-SW4) і [`apple-touch-startup-image`](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html#//apple_ref/doc/uid/TP40002051-CH3-SW6), відповідно.
@@ -172,7 +172,8 @@ browser-compat:
 - `preconnect`
   - : Надає браузеру підказку про те, що слід відкрити з'єднання з пов'язаним вебсайтом наперед, не видаючи йому жодної приватної інформації та не стягуючи жодний вміст, щоб коли за посиланням відбувся перехід, то пов'язаний вміст міг бути стягнутий швидше.
 - `prefetch`
-  - : Задає те, що користувацький агент повинен наперед стягнути та відкласти цільовий ресурс, адже він, ймовірно, знадобиться при подальшій навігації. У [ЧаПах передстягнення посилань](/uk/docs/Web/HTTP/Link_prefetching_FAQ) є деталі щодо того, які посилання можуть бути передстягнуті та щодо альтернативних методів.
+  - : Задає те, що користувацький агент повинен наперед стягнути та відкласти цільовий ресурс, адже він, ймовірно, знадобиться при подальшій навігації.
+    Більше про це – читайте в {{Glossary("prefetch")}}.
 - `preload`
   - : Задає те, що користувацький агент повинен наперед стягнути та відкласти цільовий ресурс для поточної навігації, згідно з потенційною ціллю, заданою в атрибуті [`as`](/uk/docs/Web/HTML/Element/link#as) (та пріоритетом, пов'язаним з відповідною ціллю). Дивіться сторінку значення [`preload`](/uk/docs/Web/HTML/Attributes/rel/preload).
 - `prerender` {{Deprecated_Inline}} {{Non-standard_Inline}}
