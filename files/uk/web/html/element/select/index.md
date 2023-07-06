@@ -495,7 +495,7 @@ for (const select of selects) {
 
   div.onclick = (e) => {
     if (!multiple) {
-      const open = this.hasAttribute("data-open");
+      const open = div.hasAttribute("data-open");
       e.stopPropagation();
       if (open) {
         div.removeAttribute("data-open");

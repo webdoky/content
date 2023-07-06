@@ -322,17 +322,19 @@ date.toLocaleTimeString(); // 02:50:21
 ### Отримання дати, місяця, року чи часу
 
 ```js
-const date = new Date();
+const date = new Date("2000-01-17T16:45:30");
 const [month, day, year] = [
   date.getMonth(),
   date.getDate(),
   date.getFullYear(),
 ];
+// [0, 17, 2000], оскільки місяці нумеруються від 0
 const [hour, minutes, seconds] = [
   date.getHours(),
   date.getMinutes(),
   date.getSeconds(),
 ];
+// [16, 45, 30]
 ```
 
 ### Інтерпретація двоцифрових років
