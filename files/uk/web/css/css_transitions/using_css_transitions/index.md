@@ -1,6 +1,6 @@
 ---
 title: Застосування переходів CSS
-slug: Web/CSS/CSS_Transitions/Using_CSS_transitions
+slug: Web/CSS/CSS_transitions/Using_CSS_transitions
 page-type: guide
 spec-urls: https://drafts.csswg.org/css-transitions/
 ---
@@ -75,7 +75,7 @@ div {
 </body>
 ```
 
-#### Вміст CSS
+#### CSS
 
 ```css
 .box {
@@ -261,4 +261,4 @@ el.addEventListener("transitionstart", signalStart, true);
 ## Дивіться також
 
 - Інтерфейс {{domxref("TransitionEvent")}} і подія {{domxref("Element/transitionend_event", "transitionend")}}.
-- [Застосування анімацій CSS](/uk/docs/Web/CSS/CSS_Animations/Using_CSS_animations)
+- [Застосування анімацій CSS](/uk/docs/Web/CSS/CSS_animations/Using_CSS_animations)
