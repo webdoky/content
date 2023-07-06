@@ -78,7 +78,7 @@ browser-compat: html.elements.dialog
     </p>
     <div>
       <button value="cancel" formmethod="dialog">Скасувати</button>
-      <button id="confirmBtn" value="default">Надіслати</button>
+      <button id="confirmBtn" value="default">Підтвердити</button>
     </div>
   </form>
 </dialog>
@@ -107,13 +107,14 @@ selectEl.addEventListener("change", (e) => {
   confirmBtn.value = selectEl.value;
 });
 
-// Кнопка "Підтвердити" викликає подію "close" на діалозі – у зв'язку з [formmethod="dialog"]
+// Кнопка "Скасувати" закриває діалог без подання, у зв'язку з [formmethod="dialog"], запускаючи подію закриття.
 favDialog.addEventListener("close", (e) => {
   outputBox.value =
     favDialog.returnValue === "default"
       ? "Немає значення повернення."
       : `Значення повернення: ${favDialog.returnValue}.`; // Необхідно перевіряти на "default", а не на порожній рядок
 });
+// Не дати кнопці "підтвердження" запустити усталену поведінку подання форми, а також закрити діалог методом `close()`, що запускає подію "close".
 confirmBtn.addEventListener("click", (event) => {
   event.preventDefault(); // Ми не хочемо подавати цю несправжню форму
   favDialog.close(selectEl.value); // Тут необхідно надіслати значення віконця вибору.
@@ -124,7 +125,7 @@ confirmBtn.addEventListener("click", (event) => {
 
 {{EmbedLiveSample("pohlyblenyi-pryklad", "100%", 300)}}
 
-Цей модальний діалог може бути закритий трьома способами. Для користувачів клавіатури, модальні діалоги можуть бути закриті за допомогою клавіші <kbd>Esc</kbd>. У цьому прикладі, кнопка "Скасувати" закриває діалог за допомогою методу форми `dialog`, а "Надіслати" закриває діалог за допомогою методу {{domxref("HTMLDialogElement.close()")}}.
+Цей модальний діалог може бути закритий трьома способами. Для користувачів клавіатури, модальні діалоги можуть бути закриті за допомогою клавіші <kbd>Esc</kbd>. У цьому прикладі, кнопка "Скасувати" закриває діалог за допомогою методу форми `dialog`, а "Підтвердити" закриває діалог за допомогою методу {{domxref("HTMLDialogElement.close()")}}.
 Кнопка "Скасувати" має атрибут [`formmethod="dialog"`](/uk/docs/Web/HTML/Element/input/submit#formmethod), який відкидає типове значення {{HTTPMethod("GET")}} атрибута [`method`](/uk/docs/Web/HTML/Element/form#method) елемента {{HTMLElement("form")}}. Коли метод форми – [`dialog`](#prymytky-shchodo-zastosuvannia), стан форми зберігається, а не подається, і діалог закривається.
 Коли `action` немає, подання форми з усталеним методом {{HTTPMethod("GET")}} призводить до перезавантаження сторінки. Тут використовується JavaScript, щоб запобігти поданню та закрити діалог за допомогою методів {{domxref("event.preventDefault()")}} і {{domxref("HTMLDialogElement.close()")}} відповідно.
 
