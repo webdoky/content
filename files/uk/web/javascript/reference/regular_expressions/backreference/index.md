@@ -38,7 +38,7 @@ browser-compat: javascript.regular_expressions.backreference
 /(a)\2/u; // SyntaxError: Invalid regular expression: Invalid escape
 ```
 
-У режимі без [Unicode](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/unicode) недійсні зворотні посилання стають послідовностями [старого вісімкового екранування](/uk/docs/Web/JavaScript/Reference/Deprecated_and_obsolete_features#poslidovnosti-ekranuvannia). Це [застарілий синтаксис, збережений задля сумісності у Вебі](/uk/docs/Web/JavaScript/Reference/Deprecated_and_obsolete_features#regexp), і на нього не слід покладатися.
+У [режимі без урахування Unicode](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/unicode#rezhym-z-urakhuvanniam-unicode) недійсні зворотні посилання стають послідовностями [старого вісімкового екранування](/uk/docs/Web/JavaScript/Reference/Deprecated_and_obsolete_features#poslidovnosti-ekranuvannia). Це [нерекомендований синтаксис, збережений задля сумісності у Вебі](/uk/docs/Web/JavaScript/Reference/Deprecated_and_obsolete_features#regexp), і на нього не слід покладатися.
 
 ```js
 /(a)\2/.test("a\x02"); // true
