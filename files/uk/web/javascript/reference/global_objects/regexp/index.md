@@ -9,7 +9,7 @@ browser-compat: javascript.builtins.RegExp
 
 Об'єкт **`RegExp`** (регулярний вираз) використовується для пошуку в тексті збігів за патерном.
 
-Для знайомства з регулярними виразами прочитайте [розділ Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_expressions) в [Настановах JavaScript](/uk/docs/Web/JavaScript/Guide/Regular_expressions).
+Для знайомства з регулярними виразами прочитайте [розділ про регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_expressions) в посібнику з JavaScript. Для отримання детальної інформації про синтаксис регулярних виразів прочитайте [довідку з регулярних виразів](/uk/docs/Web/JavaScript/Reference/Regular_expressions).
 
 ## Опис
 
@@ -263,7 +263,7 @@ console.log(regex.lastIndex); // 23
 // і так далі
 ```
 
-Можливість [екранування властивостей Unicode](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Unicode_property_escapes) пропонує простіший спосіб цілитися на конкретні діапазони Unicode, дозволяючи інструкції штибу `\p{scx=Cyrl}` (для збігу з будь-якою кириличною літерою) чи `\p{L}/u` (для збігу з літерою з будь-якої мови).
+Можливість [екранування властивостей Unicode](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Unicode_character_class_escape) пропонує простіший спосіб цілитися на конкретні діапазони Unicode, дозволяючи інструкції штибу `\p{scx=Cyrl}` (для збігу з будь-якою кириличною літерою) чи `\p{L}/u` (для збігу з літерою з будь-якої мови).
 
 ### Видобування імені піддомену з URL
 
@@ -315,7 +315,8 @@ order.match(new RegExp(`\\b(${breakfasts.join("|")})\\b`, "g"));
 ## Дивіться також
 
 - [Поліфіл багатьох сучасних можливостей `RegExp` (позначки `dotAll`, `sticky`, іменовані групи захоплення тощо) у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
-- Розділ [Посібника JavaScript](/uk/docs/Web/JavaScript/Guide) – [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_expressions)
+- [Посібник з регулярних виразів](/uk/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Довідка з регулярних виразів](/uk/docs/Web/JavaScript/Reference/Regular_expressions)
 - {{jsxref("String.prototype.match()")}}
 - {{jsxref("String.prototype.replace()")}}
 - {{jsxref("String.prototype.split()")}}
