@@ -3,6 +3,27 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2023-06-30 - 2023-07-07]
+
+* **Переклад(HTML):** web/html/attributes/required (#1781) ([b7506f6d](https://github.com/webdoky/content/commit/b7506f6d0604ab8b56567068cb1291df7f33ea01))
+* **Переклад(JS):** web/javascript/reference/global_objects/object/valueof (#1492) ([1276b1b9](https://github.com/webdoky/content/commit/1276b1b9fc46283a32aeb15bb58e8d99357ad1c7))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/startswith ([62eedeea](https://github.com/webdoky/content/commit/62eedeeaf2ed40f8e7c9a0f7a18216ff9f4d55ab))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/startswith ([9784b8d6](https://github.com/webdoky/content/commit/9784b8d6bee793c30ef3181a1bd7eb598e815e35))
+* **Оновлення перекладу(JS):** web/javascript/reference/operators/await ([68786a5f](https://github.com/webdoky/content/commit/68786a5fff049f1e4c40972abf03cae29a888d3f))
+* **Оновлення перекладу(HTML):** web/html/element/table ([92fbc786](https://github.com/webdoky/content/commit/92fbc7867194e6f67c459f17504c17ecd7132816))
+* **Оновлення перекладу(JS):** web/javascript/reference/classes ([219052e5](https://github.com/webdoky/content/commit/219052e593a35db809ae55dbc095a387f0894ea5))
+* **Оновлення перекладу(JS):** web/javascript/reference/functions/arrow_functions ([6842b22b](https://github.com/webdoky/content/commit/6842b22b2fd202b445d4137995425e860fcf5970))
+* **Оновлення перекладу(JS):** web/javascript ([a4cb41f7](https://github.com/webdoky/content/commit/a4cb41f7d0489f43931623f66471fd67f1bfad76))
+* **Оновлення перекладу(HTML):** web/html/element/textarea ([b7359bf5](https://github.com/webdoky/content/commit/b7359bf5b032b3621df8850616f0801f87916d5f))
+* **Оновлення перекладу(JS):** web/javascript/reference/operators/destructuring_assignment ([31418d17](https://github.com/webdoky/content/commit/31418d178c7fa5b3ac59c5c6aaadb2f4adc87e26))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array ([4dd6f931](https://github.com/webdoky/content/commit/4dd6f931a959c96cd493a487536d1df598768839))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/date/tolocalestring (#1647) ([25420523](https://github.com/webdoky/content/commit/25420523860cf3fd7f472080d49208ebbfeacb2c))
+* **Оновлення перекладу(CSS):** web/css/overflow (#1624) ([53861b04](https://github.com/webdoky/content/commit/53861b0424024d027731709e074b5b80c5cfb61e))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/map (#1863) ([09d56cae](https://github.com/webdoky/content/commit/09d56cae59de7cab095c6f25a8fb7a22db116deb))
+* **Оновлення перекладу(JS):** web/javascript/reference/template_literals ([b38168fa](https://github.com/webdoky/content/commit/b38168fac5c6bbf4274a930a8326f5fea5417a8f))
+* **Оновлення перекладу(CSS):** web/css/gradient/linear-gradient ([cd8643bb](https://github.com/webdoky/content/commit/cd8643bb566bbb5589a55ab4981d3f0ba659ccf6))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/sort ([93b66e7c](https://github.com/webdoky/content/commit/93b66e7c052b7793cfe8df87959863132a3a2d6a))
+
 ## [2023-06-23 - 2023-06-30]
 
 * **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/filter (#1861) ([2928704f](https://github.com/webdoky/content/commit/2928704f9043b4df5c6709b2751a44f58cc6bf7b))
