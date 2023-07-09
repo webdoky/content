@@ -40,13 +40,13 @@ position: unset;
 
 - `absolute` (абсолютне)
 
-  - : Елемент зникає зі звичайного плину документа, і для нього не виділяється жодного простору у макеті сторінки. Він позиціонується відносно до свого найближчого [позиціонованого](#typy-pozytsionuvannia) предка, якщо такий є; інакше – він розміщується відносно початкового [контейнерного блока](/uk/docs/Web/CSS/Containing_block). Його остаточна позиція визначена значеннями властивостей `top`, `right`, `bottom` та `left`.
+  - : Елемент зникає зі звичайного плину документа, і для нього не виділяється жодного простору у макеті сторінки. Такий елемент позиціонується відносно до свого найближчого [контейнерного блока](/uk/docs/Web/CSS/Containing_block#vyznachennia-konteinernoho-bloka). Його остаточна позиція визначена значеннями властивостей `top`, `right`, `bottom` та `left`.
 
     Це значення створює новий [контекст нагромадження](/uk/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context), коли значення `z-index` відмінне від `auto`. Зовнішні поля абсолютно позиціонованих елементів не [перекриваються](/uk/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing) з іншими зовнішніми полями.
 
 - `fixed` (фіксоване)
 
-  - : Елемент зникає зі звичайного плину документа, і для нього не виділяється жодного простору у макеті сторінки. Він позиціонується відносно до початкового [контейнерного блока](/uk/docs/Web/CSS/Containing_block), встановленого {{glossary("viewport", "областю перегляду")}}, крім випадків, коли один з предків елемента має властивість `transform`, `perspective` або `filter`, значення котрої відмінне від `none` (дивіться також [Специфікацію трансформацій CSS (англ.)](https://www.w3.org/TR/css-transforms-1/#propdef-transform)), або коли властивість [`will-change`](/uk/docs/Web/CSS/will-change) має значення `transform`, – у таких випадках предок з однією з вищезгаданих властивостей поводиться як контейнерний блок. (Зверніть увагу: існує неузгодженість браузерів щодо впливу властивостей `perspective` та `filter` на формування контейнерного блоку.) Остаточна позиція елемента визначена значеннями властивостей `top`, `right`, `bottom` та `left`.
+  - : Елемент зникає зі звичайного плину документа, і для нього не виділяється жодного простору у макеті сторінки. Такий елемент позиціонується відносно свого найближчого [контейнерного блока](/uk/docs/Web/CSS/Containing_block#vyznachennia-konteinernoho-bloka) Остаточна позиція елемента визначена значеннями властивостей `top`, `right`, `bottom` та `left`.
 
     Це значення завжди створює новий [контекст нагромадження](/uk/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context). При друкові документа такий елемент друкується на одній позиції на _кожній сторінці_.
 
@@ -348,7 +348,10 @@ dt {
   border-bottom: 1px solid #989ea4;
   border-top: 1px solid #717d85;
   color: #fff;
-  font: bold 18px/21px Helvetica, Arial, sans-serif;
+  font:
+    bold 18px/21px Helvetica,
+    Arial,
+    sans-serif;
   margin: 0;
   padding: 2px 0 0 12px;
   position: -webkit-sticky;
@@ -357,7 +360,10 @@ dt {
 }
 
 dd {
-  font: bold 20px/45px Helvetica, Arial, sans-serif;
+  font:
+    bold 20px/45px Helvetica,
+    Arial,
+    sans-serif;
   margin: 0;
   padding: 0 0 0 12px;
   white-space: nowrap;
