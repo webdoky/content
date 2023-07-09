@@ -26,7 +26,7 @@ sort(compareFn)
 
 - `compareFn` (функція порівняння) {{optional_inline}}
 
-  - : Функція, що визначає порядок сортування. Повернене значення повинно бути числом, чия додатність вказує на відносний порядок двох елементів. Ця функція викликається з наступними аргументами:
+  - : Функція, що визначає порядок сортування. Повернене значення повинно бути числом, чий знак вказує на відносний порядок двох елементів: це значення від'ємне, якщо `a` менше `b`, додатне, якщо `a` більше `b`, і нуль, якщо вони рівні. `NaN` обробляється як `0`. Ця функція викликається з наступними аргументами:
 
     - `a`
       - : Перший елемент для порівняння. Ніколи не буває `undefined`.
@@ -221,7 +221,7 @@ console.log(numbers[0]); // 3
 
 ### Стабільність сортування
 
-Починаючи з версії 10 (тобто ECMAScript 2019), [специфікація (англ.)](https://tc39.es/ecma262/#sec-array.prototype.sort) постулює, що `Array.prototype.sort` дає стабільне сортування.
+Починаючи з версії 10 (тобто ECMAScript 2019), специфікація постулює, що `Array.prototype.sort` дає стабільне сортування.
 
 Для прикладу, скажімо, є список студентів з їхніми оцінками. Зауважте, що цей список вже відсортований за іменами в алфавітному порядку:
 
@@ -331,6 +331,6 @@ console.log(Array.prototype.sort.call(arrayLike));
 - {{jsxref("Array.prototype.toSorted()")}}
 - {{jsxref("String.prototype.localeCompare()")}}
 - {{jsxref("TypedArray.prototype.sort()")}}
-- [Сортування штук у V8](https://v8.dev/blog/array-sort) на v8.dev (28 вересня 2018 року)
-- [Стабільний `Array.prototype.sort`](https://v8.dev/features/stable-sort) на v8.dev (2 липня 2019 року)
+- [Сортування штук у V8](https://v8.dev/blog/array-sort) на v8.dev (2018)
+- [Стабільний `Array.prototype.sort`](https://v8.dev/features/stable-sort) на v8.dev (2019)
 - [Стабільність `Array.prototype.sort` stability](https://mathiasbynens.be/demo/sort-stability) від Матіаса Байненса
