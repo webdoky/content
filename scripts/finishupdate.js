@@ -123,45 +123,51 @@ if (targetBranchName.endsWith("-")) {
   targetBranchName = targetBranchName.slice(0, -"-".length);
 }
 
-// Add branch name prefix
-targetBranchName = `${action}/${targetBranchName}`;
+const currentBranchName = execSync("git rev-parse --abbrev-ref HEAD", {
+  encoding: "utf8",
+}).trim();
 
-console.log("Target branch name:", targetBranchName);
+// Check for the case of updating new translation
+if (!(update && currentBranchName.endsWith(targetBranchName))) {
+  // Add branch name prefix
+  targetBranchName = `${action}/${targetBranchName}`;
 
-try {
-  if (!update) {
-    if (doesGitBranchExistOnRemote(targetBranchName)) {
-      console.warn(
-        `Branch ${targetBranchName} already exists on remote. Use --update to update it, or check if there is a PR from it already.`
-      );
-      process.exit(1);
-    }
-    if (doesGitBranchExistLocally(targetBranchName)) {
-      execSync(`git branch -D ${targetBranchName}`);
-    }
-  }
-  execSync(`git checkout master`);
-  execSync(`git pull`);
+  console.log("Target branch name:", targetBranchName);
   try {
-    execSync(`git checkout -b ${targetBranchName}`);
-  } catch (error) {
-    if (update && includes(toString(error), "already exists")) {
-      execSync(`git checkout ${targetBranchName}`);
+    if (!update) {
+      if (doesGitBranchExistOnRemote(targetBranchName)) {
+        console.warn(
+          `Branch ${targetBranchName} already exists on remote. Use --update to update it, or check if there is a PR from it already.`
+        );
+        process.exit(1);
+      }
+      if (doesGitBranchExistLocally(targetBranchName)) {
+        execSync(`git branch -D ${targetBranchName}`);
+      }
+    }
+    execSync(`git checkout master`);
+    execSync(`git pull`);
+    try {
+      execSync(`git checkout -b ${targetBranchName}`);
+    } catch (error) {
+      if (update && includes(toString(error), "already exists")) {
+        execSync(`git checkout ${targetBranchName}`);
+      } else {
+        console.error(error);
+        process.exit(1);
+      }
+    }
+  } catch {
+    if (
+      execSync("git rev-parse --abbrev-ref HEAD", {
+        encoding: "utf8",
+      }).trim() === targetBranchName &&
+      update
+    ) {
+      console.log("Already on correct branch");
     } else {
-      console.error(error);
       process.exit(1);
     }
-  }
-} catch {
-  if (
-    execSync("git rev-parse --abbrev-ref HEAD", {
-      encoding: "utf8",
-    }).trim() === targetBranchName &&
-    update
-  ) {
-    console.log("Already on correct branch");
-  } else {
-    process.exit(1);
   }
 }
 
