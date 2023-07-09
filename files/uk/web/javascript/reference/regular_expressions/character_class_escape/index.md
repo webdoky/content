@@ -26,15 +26,15 @@ browser-compat: javascript.regular_expressions.character_class_escape
 - `\d`
   - : Дає збіг з будь-яким символом-цифрою. Рівносильний `[0-9]`.
 - `\w`
-  - : Дає збіг з будь-яким символом слова, причому серед символів слова – літери (A–Z, a–z), цифри (0–9) та підкреслення (\_). Якщо задано як позначку [`u`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/unicode), так і позначку [`i`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/ignoreCase), то також дає збіг з іншими символами Unicode, які канонічно перетворюються на один з вищезазначених символів під час [згортання регістру](https://unicode.org/Public/UCD/latest/ucd/CaseFolding.txt).
+  - : Дає збіг з будь-яким символом слова, причому серед символів слова – літери (A–Z, a–z), цифри (0–9) та підкреслення (\_). Якщо задано як позначку [врахування Unicode](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/unicode#rezhym-z-urakhuvanniam-unicode), так і позначку [`i`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/ignoreCase), то також дає збіг з іншими символами Unicode, які канонічно перетворюються на один з вищезазначених символів під час [згортання регістру](https://unicode.org/Public/UCD/latest/ucd/CaseFolding.txt).
 - `\s`
   - : Дає збіг з будь-яким [пробільним символом](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#probily) або [символом завершення рядка](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#symvoly-kintsia-riadka).
 
-Форми з великими літерами, `\D`, `\W` та `\S`, заперечують збіг з `\d`, `\w` та `\s` відповідно. Вони дають збіг з будь-яким символом, який не належить до набору символів, з яким дає збіг форма з малою літерою.
+Форми з великими літерами, `\D`, `\W` та `\S`, створюють відповідні доповняльні класи щодо `\d`, `\w` та `\s` відповідно. Вони дають збіг з будь-яким символом, який не належить до набору символів, з яким дає збіг форма з малою літерою.
 
-[Екранування класів символів Unicode](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Unicode_character_class_escape) починаються з `\p` і `\P`, але підтримуються лише [юнікодному режимі](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/unicode). В неюнікодному режимі ці екранування є [екрануваннями ідентичності](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Character_escape) символів `p` і `P`.
+[Екранування класів символів Unicode](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Unicode_character_class_escape) починаються з `\p` і `\P`, але підтримуються лише в [режимі з урахуванням Unicode](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/unicode#rezhym-z-urakhuvanniam-unicode). В режимі без урахування Unicode ці екранування є [екрануваннями ідентичності](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Character_escape) символів `p` і `P`.
 
-Екранування класів символів можуть вживатися в [класах символів](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Character_class). Однак вони не можуть використовуватися як межі діапазонів символів. Це дозволяється лише як [нерекомендований запис для забезпечення вебсумісності](/uk/docs/Web/JavaScript/Reference/Deprecated_and_obsolete_features#regexp), і на це не можна покладатися.
+Екранування класів символів можуть вживатися в [класах символів](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Character_class). Однак вони не можуть використовуватися як межі діапазонів символів, – це дозволяється лише як [нерекомендований запис для забезпечення вебсумісності](/uk/docs/Web/JavaScript/Reference/Deprecated_and_obsolete_features#regexp), і на це не можна покладатися.
 
 ## Приклади
 
