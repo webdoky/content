@@ -13,7 +13,7 @@ browser-compat: html.elements.input.type_file
 
 ## Значення
 
-Атрибут файлового поля [`value`](/uk/docs/Web/HTML/Element/input#value) містить рядок, що представляє шлях до обраного файлу (або файлів). Поки жоден файл не обраний, значенням є порожній рядок (`""`). Коли користувач обирає декілька файлів, то `value` представляє перший файл з обраних. Решта файлів можуть бути встановлені за допомогою [властивості поля `HTMLInputElement.files`](/uk/docs/Web/API/File_API/Using_files_from_web_applications#otrymannia-informatsii-pro-obrani-faily).
+Атрибут файлового поля [`value`](/uk/docs/Web/HTML/Element/input#value-znachennia) містить рядок, що представляє шлях до обраного файлу (або файлів). Поки жоден файл не обраний, значенням є порожній рядок (`""`). Коли користувач обирає декілька файлів, то `value` представляє перший файл з обраних. Решта файлів можуть бути встановлені за допомогою [властивості поля `HTMLInputElement.files`](/uk/docs/Web/API/File_API/Using_files_from_web_applications#otrymannia-informatsii-pro-obrani-faily).
 
 > **Примітка:** Значенням [завжди є ім'я файлу, перед котрим додано `C:\fakepath\` (англ.)](https://html.spec.whatwg.org/multipage/input.html#fakepath-srsly), що не є справжнім шляхом до файлу. Так зроблено, щоб не дати зловмисним програмам дізнатися про файлову структуру пристрою користувача.
 
@@ -402,7 +402,7 @@ function returnFileSize(number) {
     </tr>
     <tr>
       <td><strong>Підтримувані загальні атрибути</strong></td>
-      <td><a href="/uk/docs/Web/HTML/Element/input#required"><code>required</code></a></td>
+      <td><a href="/uk/docs/Web/HTML/Element/input#required-oboviazkovyi"><code>required</code></a></td>
     </tr>
     <tr>
       <td><strong>Додаткові атрибути</strong></td>

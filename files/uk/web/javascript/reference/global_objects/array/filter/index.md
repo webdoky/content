@@ -197,9 +197,9 @@ console.log([1, , undefined].filter((x) => x === undefined)); // [undefined]
 console.log([1, , undefined].filter((x) => x !== 2)); // [1, undefined]
 ```
 
-### Виклик filter() на масивоподібних об'єктах
+### Виклик filter() на об'єктах-немасивах
 
-Метод `filter()` зчитує з `this` властивість `length`, а потім звертається до кожного цілочислового індексу.
+Метод `filter()` зчитує з `this` властивість `length`, а потім звертається до кожної властивості, чий ключ – невід'ємне ціле число, менше за `length`.
 
 ```js
 const arrayLike = {
@@ -207,6 +207,7 @@ const arrayLike = {
   0: "a",
   1: "b",
   2: "c",
+  3: "a", // ігнорується filter(), оскільки length – 3
 };
 console.log(Array.prototype.filter.call(arrayLike, (x) => x <= "b")); // [ 'a', 'b' ]
 ```
