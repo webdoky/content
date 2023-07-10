@@ -61,6 +61,7 @@ const s = Boolean(myString); // початкове значення – true
 - [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) стає `false`.
 - `0`, `-0` і `NaN` стають `false`, а решта чисел – `true`.
 - `0n` стає `false`, а решта значень [BigInt](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt) – `true`.
+- Порожній рядок `""` стає `false`, а інші рядки – `true`.
 - [Символи](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol) стають `true`.
 - Усі об'єкти – стають `true`.
 
