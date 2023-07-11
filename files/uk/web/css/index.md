@@ -63,8 +63,8 @@ CSS належить до ключових мов **відкритого веб�
   - [Скорочені властивості CSS](/uk/docs/Web/CSS/Shorthand_properties)
   - [Flex-верстання у CSS](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout)
   - [Grid-верстання у CSS](/uk/docs/Web/CSS/CSS_Grid_Layout)
-  - [Селектори CSS](/uk/docs/Web/CSS/CSS_Selectors)
-  - [Медіазапити](/uk/docs/Web/CSS/Media_Queries)
+  - [Селектори CSS](/uk/docs/Web/CSS/CSS_selectors)
+  - [Медіазапити](/uk/docs/Web/CSS/CSS_media_queries)
   - [Анімація](/uk/docs/Web/CSS/animation)
 
 ## Книга рецептів
