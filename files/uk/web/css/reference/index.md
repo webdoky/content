@@ -6,7 +6,7 @@ page-type: landing-page
 
 {{CSSRef}}
 
-Використовуйте цей **Довідник CSS** для орієнтування в [алфавітному покажчику](#pokazhchyk) усіх стандартних властивостей [CSS](/uk/docs/Web/CSS), [псевдокласів](/uk/docs/Web/CSS/Pseudo-classes), [псевдоелементів](/uk/docs/Web/CSS/Pseudo-elements), [типів даних](/uk/docs/Web/CSS/CSS_Types), [функційних записів](/uk/docs/Web/CSS/CSS_Functions) і [директив](/uk/docs/Web/CSS/At-rule). Крім того, можна переглянути [ключові концепції CSS](#kontseptsii) та список [селекторів, упорядкований за типами](#selektory). Крім того, включений стислий [Довідник DOM-CSS / CSSOM](#dom-css--cssom).
+Використовуйте цей **Довідник CSS** для орієнтування в [алфавітному покажчику](#pokazhchyk) усіх стандартних властивостей [CSS](/uk/docs/Web/CSS), [псевдокласів](/uk/docs/Web/CSS/Pseudo-classes), [псевдоелементів](/uk/docs/Web/CSS/Pseudo-elements), [типів даних](/uk/docs/Web/CSS/CSS_Types), [функційних записів](/uk/docs/Web/CSS/CSS_functions) і [директив](/uk/docs/Web/CSS/At-rule). Крім того, можна переглянути [ключові концепції CSS](#kontseptsii) та список [селекторів, упорядкований за типами](#selektory). Крім того, включений стислий [Довідник DOM-CSS / CSSOM](#dom-css--cssom).
 
 ## Базовий синтаксис правил
 
@@ -60,7 +60,7 @@ div.menu-bar li:hover > ul {
 
 ## Селектори
 
-Далі – різні [селектори](/uk/docs/Web/CSS/CSS_Selectors), що дають стилям змогу бути умовними на основі різних можливостей елементів у DOM.
+Далі – різні [селектори](/uk/docs/Web/CSS/CSS_selectors), що дають стилям змогу бути умовними на основі різних можливостей елементів у DOM.
 
 ### Базові селектори
 
@@ -101,7 +101,7 @@ div.menu-bar li:hover > ul {
 
 > **Callout:**
 >
-> Дивіться також [Селектори в специфікації Селектори рівень 4 (англ.)](https://www.w3.org/TR/selectors/#overview).
+> Дивіться також [селектори в специфікації Селекторів](https://drafts.csswg.org/selectors/) і [специфікацію псевдоелементів](https://drafts.csswg.org/css-pseudo/).
 
 ## Концепції
 
@@ -116,8 +116,8 @@ div.menu-bar li:hover > ul {
 - [Властивості-скорочення](/uk/docs/Web/CSS/Shorthand_properties)
 - [Специфічність](/uk/docs/Web/CSS/Specificity)
 - [Синтаксис визначення значень](/uk/docs/Web/CSS/Value_definition_syntax)
-- [Одиниці вимірювання й типи значень CSS](/uk/docs/Web/CSS/CSS_Values_and_Units)
-- [Функційні записи CSS](/uk/docs/Web/CSS/CSS_Functions)
+- [Одиниці вимірювання й типи значень CSS](/uk/docs/Web/CSS/CSS_values_and_units)
+- [Функційні записи CSS](/uk/docs/Web/CSS/CSS_functions)
 
 ### Значення
 
