@@ -3,6 +3,33 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2023-07-07 - 2023-07-14]
+
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/regexp (#1843) ([db278084](https://github.com/webdoky/content/commit/db278084a1edf91f6625cf776e7ef508248d150e))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/from (#1763) ([69512c2d](https://github.com/webdoky/content/commit/69512c2dfcec78be450ca505baf2a31467cc79fe))
+* **Оновлення перекладу(JS):** web/javascript/reference/statements/for...of (#1814) ([5bcaf47d](https://github.com/webdoky/content/commit/5bcaf47dd4eeb1d3314bee7156cfa76f0d9faf1f))
+* **Оновлення перекладу(CSS):** web/css/position ([2661ed0d](https://github.com/webdoky/content/commit/2661ed0d1399f75c618627cb702235fa4484f9fc))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/math/ln10 ([21ac3925](https://github.com/webdoky/content/commit/21ac39252a06aa56455e1567edb3ae2452f20fda))
+* **Оновлення перекладу(CSS):** web/css/css_transitions/using_css_transitions ([2d649933](https://github.com/webdoky/content/commit/2d649933f9f6556798904e517320d3019976d955))
+* **Оновлення перекладу(CSS):** web/css/@media/prefers-reduced-transparency ([a101cf51](https://github.com/webdoky/content/commit/a101cf512afa2c289625b0e8ada1a42ac0649c47))
+* **Оновлення перекладу(HTML):** web/html/element/form ([8e59a00a](https://github.com/webdoky/content/commit/8e59a00a361be768c5f102dbb4105b3ef256bf59))
+* **Оновлення перекладу(HTML):** web/html/element ([0edcb931](https://github.com/webdoky/content/commit/0edcb931410b0d2d97bdd483e645ed2067cfe5ce))
+* **Оновлення перекладу(HTML):** web/html ([adf2c11d](https://github.com/webdoky/content/commit/adf2c11d481a9aa083a197fbbdc47b7a917ed922))
+* **Оновлення перекладу(CSS):** web/css ([5857fe63](https://github.com/webdoky/content/commit/5857fe636a40cf5bb79ca4d090fc4b62a331a91a))
+* **Оновлення перекладу(JS):** web/javascript/guide/modules ([e558090e](https://github.com/webdoky/content/commit/e558090e860fad3f62ea6b52cd816513a64a6c7e))
+* **Оновлення перекладу(CSS):** web/css/containing_block ([7e7cce85](https://github.com/webdoky/content/commit/7e7cce85ba5793d32b3980daabc3951f3e9d10ad))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/fromcharcode (#1890) ([c8c104dd](https://github.com/webdoky/content/commit/c8c104dd35c6a894eccba4a68a11655a9134038f))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/reduce (#1791) ([0c3097c1](https://github.com/webdoky/content/commit/0c3097c124093e10f322c87e13c7d59257346242))
+* **Оновлення перекладу(HTML):** web/html/element/link ([129fd1fc](https://github.com/webdoky/content/commit/129fd1fc74956e52d78247d418e9edb77b80b4ff))
+* **Оновлення перекладу(HTML):** web/html/element/img ([b85c6bec](https://github.com/webdoky/content/commit/b85c6bec1276c8792a40cbc27160c3aaf60d8155))
+* **Оновлення перекладу(JS):** web/javascript ([14054d06](https://github.com/webdoky/content/commit/14054d066eeaccc7bfbce5961eceeb0e1ac1cc36))
+* **Оновлення перекладу(CSS):** web/css/justify-content ([2d3a762b](https://github.com/webdoky/content/commit/2d3a762b14e9400c73521bd25cb321c39200fe28))
+* **Оновлення перекладу(HTML):** web/html/element/input/radio ([25cab89c](https://github.com/webdoky/content/commit/25cab89cb81bf09be78ac7e3b0ef0cd69519b55c))
+* **Оновлення перекладу(CSS):** web/css/position ([9cdfd72e](https://github.com/webdoky/content/commit/9cdfd72e708bcd72d7109e6c91a9b4a5c34fc3a6))
+* **Оновлення перекладу(JS):** web/javascript/closures (#1874) ([9c101d97](https://github.com/webdoky/content/commit/9c101d976cb953599953a7e45606ffed5a821566))
+* **Оновлення перекладу(CSS):** web/css/line-height (#1882) ([745deb1a](https://github.com/webdoky/content/commit/745deb1a0a656c0e7e65eda37eec9c6a4a57e61e))
+* **Переклад(HTML):** web/html/element/input/hidden (#1587) ([96463050](https://github.com/webdoky/content/commit/964630502515edd7e7f4954e88ca40d18812fe4b))
+
 ## [2023-06-30 - 2023-07-07]
 
 * **Переклад(HTML):** web/html/attributes/required (#1781) ([b7506f6d](https://github.com/webdoky/content/commit/b7506f6d0604ab8b56567068cb1291df7f33ea01))
