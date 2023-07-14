@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.Array.from
 
 {{JSRef}}
 
-Статичний метод **`Array.from()`** (із) створює новий, поверхнево скопійований примірник `Array` на основі ітерованого чи масивоподібного об'єкта.
+Статичний метод **`Array.from()`** (із) створює новий, поверхнево скопійований примірник `Array` на основі [ітерованого](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#protokol-iterovanoho-obiekta) або [масивоподібного](/uk/docs/Web/JavaScript/Guide/Indexed_collections#robota-z-masyvopodibnymy-obiektamy) об'єкта.
 
 {{EmbedInteractiveExample("pages/js/array-from.html","shorter")}}
 
@@ -15,20 +15,8 @@ browser-compat: javascript.builtins.Array.from
 
 ```js-nolint
 Array.from(arrayLike)
-
-// Стрілкова функція
-Array.from(arrayLike, (element) => { /* … */ } )
-Array.from(arrayLike, (element, index) => { /* … */ } )
-
-// Функція відображення
 Array.from(arrayLike, mapFn)
 Array.from(arrayLike, mapFn, thisArg)
-
-// Функція відображення, оголошена на місці
-Array.from(arrayLike, function mapFn(element) { /* … */ })
-Array.from(arrayLike, function mapFn(element, index) { /* … */ })
-Array.from(arrayLike, function mapFn(element) { /* … */ }, thisArg)
-Array.from(arrayLike, function mapFn(element, index) { /* … */ }, thisArg)
 ```
 
 ### Параметри
@@ -36,16 +24,11 @@ Array.from(arrayLike, function mapFn(element, index) { /* … */ }, thisArg)
 - `arrayLike` (масивоподібне)
   - : Ітерований чи масивоподібний об'єкт для перетворення на масив.
 - `mapFn` (функція відображення) {{Optional_inline}}
-
-  - : Функція відображення, що буде викликана на кожному елементі масиву. Якщо вона задана, то кожне значення, додане до масиву, спершу буде пропущено крізь цю функцію, і замість нього до масиву буде додано результівне значення `mapFn`.
-
-    Ця функція викликається з наступними аргументами:
-
+  - : Функція до виклику на кожному елементі масиву. Якщо вона задана, то кожне значення перед додаванням до масиву спершу пропускається крізь цю функцію, і замість нього до масиву додається значення, що повернено з `mapFn`. Ця функція викликається з наступними аргументами:
     - `element`
       - : Поточний елемент масиву, що обробляється.
     - `index`
       - : Індекс поточного елемента масиву, що обробляється.
-
 - `thisArg` {{Optional_inline}}
   - : Значення для використання як `this` при виконанні `mapFn`.
 
@@ -60,11 +43,13 @@ Array.from(arrayLike, function mapFn(element, index) { /* … */ }, thisArg)
 - [ітерованих об'єктів](/uk/docs/Web/JavaScript/Reference/Iteration_protocols) (таких, як {{jsxref("Map")}} і {{jsxref("Set")}}); або, якщо об'єкт не є ітерованим,
 - масивоподібних об'єктів (об'єктів зі властивістю `length` та індексованими елементами).
 
+Щоб перетворити звичайний об'єкт, що не є ітерованим або масивоподібним, на масив (шляхом перелічування його ключів властивостей, значень, або і ключів, і значень), використовуйте {{jsxref("Object.keys()")}}, {{jsxref("Object.values()")}} або {{jsxref("Object.entries()")}}. Щоб перетворити [асинхронний ітерований об'єкт](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#asynkhronnyi-iterator-i-protokol-asynkhronnoho-iterovanoho-obiekta) на масив, використовуйте {{jsxref("Array.fromAsync()")}}.
+
 `Array.from()` ніколи не породжує розріджених масивів. Якщо об'єкт `arrayLike` не має частини властивостей-індексів, то такі пропущені індекси отримують `undefined` у новому масиві.
 
 `Array.from()` має необов'язковий параметр `mapFn`, котрий дає змогу виконувати функцію на кожному елементі масиву, що створюється, подібно до {{jsxref("Array.prototype.map()", "map()")}}. Ясніше висловлюючись, `Array.from(obj, mapFn, thisArg)` дає такий само результат, як `Array.from(obj).map(mapFn, thisArg)`, окрім того, що не створює проміжний масив, і `mapFn` отримує лише два аргументи (`element`, `index`), без передачі всього масиву, тому що масив іще в процесі створення.
 
-> **Примітка:** Така логіка – більш важлива для [типізованих масивів](/uk/docs/Web/JavaScript/Typed_arrays), адже проміжний масив обов'язково містив би значення, що вписувались би у відповідний тип. `Array.from()` реалізований так, щоб мати таку ж сигнатуру, як {{jsxref("TypedArray.from()")}}.
+> **Примітка:** Така логіка – більш важлива для [типізованих масивів](/uk/docs/Web/JavaScript/Guide/Typed_arrays), адже проміжний масив обов'язково містив би значення, що вписувались би у відповідний тип. `Array.from()` реалізований так, щоб мати таку ж сигнатуру, як {{jsxref("TypedArray.from()")}}.
 
 Метод `Array.from()` є узагальненим фабричним методом. Наприклад, якщо підклас `Array` успадковує метод `from()`, то успадкований метод `from()` повертатиме нові примірники підкласу, а не примірники `Array`. Фактично значення `this` може бути будь-якою функцією-конструктором, котра приймає єдиний аргумент, що представляє довжину нового масиву. Коли передається `arrayLike` – ітерований об'єкт, то конструктор викликається без аргументів; коли передається масивоподібний об'єкт, то конструктор викликається з [нормалізованою довжиною](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#normalizatsiia-vlastyvosti-length) масивоподібного об'єкта. Остаточне значення `length` присвоюється знову, коли ітерація завершується. Якщо значення `this` не є функцією-конструктором, то замість нього використовується конструктор `Array`.
 
@@ -200,7 +185,10 @@ console.log(Array.from.call({}, { length: 1, 0: "foo" })); // [ 'foo' ]
 ## Дивіться також
 
 - [Поліфіл `Array.from` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
+- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
+- {{jsxref("Array/Array", "Array()")}}
 - {{jsxref("Array.of()")}}
+- {{jsxref("Array.fromAsync()")}}
 - {{jsxref("Array.prototype.map()")}}
 - {{jsxref("TypedArray.from()")}}
