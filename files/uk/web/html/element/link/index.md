@@ -29,7 +29,7 @@ browser-compat: html.elements.link
 
 ```html
 <link
-  rel="apple-touch-icon-precomposed"
+  rel="apple-touch-icon"
   sizes="114x114"
   href="apple-icon-114.png"
   type="image/png" />
@@ -317,19 +317,13 @@ browser-compat: html.elements.link
 
 ```html
 <!-- iPad третього покоління з дисплеєм високої роздільної здатності Retina: -->
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="144x144"
-  href="favicon144.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="favicon144.png" />
 <!-- iPhone з дисплеєм високої роздільної здатності Retina: -->
-<link
-  rel="apple-touch-icon-precomposed"
-  sizes="114x114"
-  href="favicon114.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="favicon114.png" />
 <!-- iPad першого й другого поколінь: -->
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="favicon72.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="favicon72.png" />
 <!-- iPhone без Retina, iPod Touch, а також пристрої Android 2.1+: -->
-<link rel="apple-touch-icon-precomposed" href="favicon57.png" />
+<link rel="apple-touch-icon" href="favicon57.png" />
 <!-- базовий favicon -->
 <link rel="icon" href="favicon32.png" />
 ```
