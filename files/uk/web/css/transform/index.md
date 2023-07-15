@@ -16,7 +16,7 @@ browser-compat: css.properties.transform
 В такому випадку елемент діє для будь-яких `position: fixed;` чи `position: absolute;` елементів, котрі містить, як [контейнерний блок](/uk/docs/Web/CSS/Containing_block).
 
 > **Застереження:** Перетворені за допомогою `transform` можуть бути лише елементи, котрі піддаються перетворенню.
-> А саме – всі елементи, чиє компонування обумовлене рамковою моделлю CSS, окрім: [незаміщених рядкових рамок](/uk/docs/Web/CSS/Visual_formatting_model#elementy-riadkovoho-rivnia-ta-riadkovi-ramky), [рамок колонок таблиці](/uk/docs/Web/HTML/Element/col) й [рамок груп колонок таблиці](/uk/docs/Web/HTML/Element/colgroup).
+> А саме – всі елементи, чиє компонування обумовлене рамковою моделлю CSS, окрім: [незаміщених рядкових рамок](/uk/docs/Glossary/Inline-level_content), [рамок колонок таблиці](/uk/docs/Web/HTML/Element/col) й [рамок груп колонок таблиці](/uk/docs/Web/HTML/Element/colgroup).
 
 ## Синтаксис
 
