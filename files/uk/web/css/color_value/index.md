@@ -220,7 +220,7 @@ div:nth-child(12) {
 
 #### Результат
 
-{{EmbedLiveSample("tsilkom-nasycheni-koliory-srgb", "100%", 200)}}
+{{EmbedLiveSample("tsilkom-nasycheni-kolory-srgb", "100%", 200)}}
 
 ### Різні відтінки червоного
 
@@ -343,7 +343,7 @@ div:nth-child(6) {
 ## Дивіться також
 
 - {{CSSXref("opacity")}} – властивість, що дає змогу визначати прозорість на рівні елемента
-- {{CSSXref("&lt;hue&gt;")}} тип даних, що представляє кут відтінку кольору
+- {{CSSXref("&lt;hue&gt;")}} тип даних, що представляє кут барви кольору
 - {{CSSXref("color")}}, {{CSSXref("background-color")}}, {{CSSXref("border-color")}}, {{CSSXref("box-shadow")}}, {{CSSXref("outline-color")}}, {{CSSXref("text-shadow")}} – поширені властивості, що використовують `<color>`
 - [Застосування кольору до елементів HTML за допомогою CSS](/uk/docs/Web/CSS/CSS_colors/Applying_color)
 - [Нові функції, градієнти та барви у Кольорах CSS (Рівень 4)](https://developer.mozilla.org/en-US/blog/css-color-module-level-4/) на блозі MDN (2023)
