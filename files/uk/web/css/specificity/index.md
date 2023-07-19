@@ -448,10 +448,10 @@ input[type="password"]:required {
   - [Директиви](/uk/docs/Web/CSS/At-rule)
   - [Коментарі](/uk/docs/Web/CSS/Comments)
   - [Успадкування](/uk/docs/Web/CSS/Inheritance)
-  - [Рамкова модель](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+  - [Рамкова модель](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
   - [Режими компонування](/uk/docs/Web/CSS/Layout_mode)
   - [Моделі візуального форматування](/uk/docs/Web/CSS/Visual_formatting_model)
-  - [Перекриття зовнішніх відступів](/uk/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
+  - [Перекриття зовнішніх відступів](/uk/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
   - Значення
     - [Початкові значення](/uk/docs/Web/CSS/initial_value)
     - [Обчислені значення](/uk/docs/Web/CSS/computed_value)
