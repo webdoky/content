@@ -303,14 +303,16 @@ console.log(result); // 20
 
 ```js
 function outer() {
-  const x = 5;
-  if (Math.random() > 0.5) {
+  let getY;
+  {
     const y = 6;
-    return () => console.log(x, y);
+    getY = () => y;
   }
+  console.log(typeof y); // undefined
+  console.log(getY()); // 6
 }
 
-outer()(); // 5 6
+outer();
 ```
 
 Замикання над модулями можуть бути цікавішими.
