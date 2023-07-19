@@ -6,7 +6,7 @@ page-type: guide
 
 {{CSSRef}}
 
-На розмір і положення елемента нерідко впливає його **контейнерний блок**. Найчастіше контейнерним блоком є [область вмісту](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#oblast-vmistu) найближчого предка елемента, причому такого, що належить до [блокового рівня](/uk/docs/Glossary/Block-level_content), але це не завжди так. У цій статті розглядаються чинники, котрі впливають на визначення контейнерного блока елемента.
+На розмір і положення елемента нерідко впливає його **контейнерний блок**. Найчастіше контейнерним блоком є [область вмісту](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model#oblast-vmistu) найближчого предка елемента, причому такого, що належить до [блокового рівня](/uk/docs/Glossary/Block-level_content), але це не завжди так. У цій статті розглядаються чинники, котрі впливають на визначення контейнерного блока елемента.
 
 Коли користувацький агент (як то ваш браузер) компонує документ, він генерує для кожного елемента рамку. Кожна рамка поділяється на чотири області:
 
@@ -257,10 +257,10 @@ p {
   - [Коментарі](/uk/docs/Web/CSS/Comments)
   - [Специфічність](/uk/docs/Web/CSS/Specificity)
   - [Успадкування](/uk/docs/Web/CSS/Inheritance)
-  - [Рамкова модель](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+  - [Рамкова модель](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
   - [Режими компонування](/uk/docs/Web/CSS/Layout_mode)
   - [Моделі візуального форматування](/uk/docs/Web/CSS/Visual_formatting_model)
-  - [Перекриття зовнішніх відступів](/uk/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
+  - [Перекриття зовнішніх відступів](/uk/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
   - Значення
     - [Початкові значення](/uk/docs/Web/CSS/initial_value)
     - [Обчислені значення](/uk/docs/Web/CSS/computed_value)
