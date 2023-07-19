@@ -925,7 +925,10 @@ input[pattern] {
 ```css
 input.custom {
   caret-color: red;
-  font: 16px "Helvetica", "Arial", "sans-serif";
+  font:
+    16px "Helvetica",
+    "Arial",
+    "sans-serif";
 }
 ```
 
@@ -941,7 +944,7 @@ input.custom {
 
 Для докладнішої інформації про додання кольору до елементів у HTML дивіться:
 
-- [Застосування кольору до елементів HTML за допомогою CSS](/uk/docs/Web/CSS/CSS_Colors/Applying_color).
+- [Застосування кольору до елементів HTML за допомогою CSS](/uk/docs/Web/CSS/CSS_colors/Applying_color).
 
 Також дивіться:
 
@@ -1150,7 +1153,7 @@ nameInput.addEventListener("invalid", () => {
     nameInput.setCustomValidity("Введіть ім'я користувача!");
   } else {
     nameInput.setCustomValidity(
-      "Імена користувачів можуть містити лише великі та малі літери. Спробуйте ще!"
+      "Імена користувачів можуть містити лише великі та малі літери. Спробуйте ще!",
     );
   }
 });
