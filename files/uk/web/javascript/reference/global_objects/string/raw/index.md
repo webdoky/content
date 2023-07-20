@@ -77,7 +77,7 @@ String.raw`Привіт \${name}!`;
 Чимало інструментів по-особливому обробляє літерали, теговані певним іменем.
 
 ```js
-// Some formatters will format this literal's content as HTML
+// Частина форматувальників відформатує вміст цього літерала як HTML
 const doc = html`<!DOCTYPE html>
   <html lang="uk">
     <head>
