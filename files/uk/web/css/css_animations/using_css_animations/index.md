@@ -380,4 +380,5 @@ function listener(event) {
 ## Дивіться також
 
 - {{domxref("AnimationEvent", "AnimationEvent")}}
-- [Застосування переходів CSS](/uk/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
+- [Поради та хитрощі щодо анімацій CSS](/uk/docs/Web/CSS/CSS_animations/Tips)
+- [Застосування переходів CSS](/uk/docs/Web/CSS/CSS_transitions/Using_CSS_transitions)
