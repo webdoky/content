@@ -194,14 +194,14 @@ flex: unset;
 
 ### flex: auto
 
-Цей приклад демонструє те, як гнучкий елемент з `flex: auto` зростає для поглинання всього вільного простору в контейнері.
+Цей приклад демонструє те, як гнучкий елемент із `flex: auto` зростає, щоб зайняти вільний простір у контейнері.
 
 #### HTML
 
 ```html
 <div id="flex-container">
   <div id="flex-auto">
-    flex: auto (аби показати чи приховати звичайний елемент)
+    flex: auto (клацніть, аби показати чи прибрати звичайний елемент)
   </div>
   <div id="flex-initial">flex: initial</div>
 </div>
@@ -239,14 +239,14 @@ flexAuto.addEventListener("click", () => {
 
 #### Результат
 
-Гнучкий контейнер вміщає два гнучкі елементи:
+Цей гнучкий контейнер вміщає два гнучкі елементи:
 
 - "flex: auto" має `flex` зі значенням [`auto`](auto)
 - "flex: initial" має `flex` зі значенням [`initial`](#initial)
 
-Елемент "flex: initial" займає стільки простору, скільки вимагає його власна ширина, але не розширюється, щоб зайняти більше простору. Всю решту простору займає "flex: auto".
+Елемент "flex: initial" займає стільки простору, скільки вимагає його ширина, але не розширюється, щоб зайняти більше. Весь вільний простір займає "flex: auto".
 
-Коли клацнути "flex: auto", задається властивість {{cssxref("display")}} елемента "flex: initial" зі значенням `none`, що видаляє його з компонування. Елемент "flex: auto" розширюється, щоб зайняти весь доступний простір у контейнері.
+Коли клацнути "flex: auto", елемент "flex: initial" отримує властивість {{cssxref("display")}} зі значенням `none`, що прибирає його з макета. Потім елемент "flex: auto" розширюється, щоб зайняти ввесь доступний в контейнері простір.
 
 {{EmbedLiveSample('flex-auto','100%','100')}}
 
@@ -260,5 +260,5 @@ flexAuto.addEventListener("click", () => {
 
 ## See also
 
-- Посібник зі флексбокса CSS: _[Базові концепції флексбоксу](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)_
-- Посібник зі флексбокса CSS: _[Контролювання співвідношень гнучких елементів за головною віссю](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Controlling_Ratios_of_Flex_Items_Along_the_Main_Ax)_
+- Посібник зі флексбокса CSS: _[Базові концепції флексбоксу](/uk/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox)_
+- Посібник зі флексбокса CSS: _[Контролювання співвідношень гнучких елементів за головною віссю](/uk/docs/Web/CSS/CSS_flexible_box_layout/Controlling_ratios_of_flex_items_along_the_main_axis)_
