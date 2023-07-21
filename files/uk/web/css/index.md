@@ -56,14 +56,14 @@ CSS належить до ключових мов **відкритого веб�
   - [Синтаксис та форми мови](/uk/docs/Web/CSS/Syntax)
   - [Специфічність](/uk/docs/Web/CSS/Specificity), [наслідування](/uk/docs/Web/CSS/Inheritance), and [каскадність](/uk/docs/Web/CSS/Cascade)
   - [Одиниці вимірювання і значення CSS](/uk/docs/Web/CSS/CSS_Values_and_Units) та [функціональні нотації](/uk/docs/Web/CSS/CSS_Functions)
-  - [Блокова модель](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model) та [перекриття зовнішніх відступів](/uk/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
+  - [Блокова модель](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model) та [перекриття зовнішніх відступів](/uk/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
   - [Місткий блок](/uk/docs/Web/CSS/Containing_block)
-  - [Контекст перекриття](/uk/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context "Контекст нагромадження") та [блоково-форматований](/uk/docs/Web/Guide/CSS/Block_formatting_context "Контекст блокового форматування") контекст
+  - [Контекст перекриття](/uk/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context "Контекст нагромадження") та [блоково-форматований](/uk/docs/Web/Guide/CSS/Block_formatting_context "Контекст блокового форматування") контекст
   - [Початкові](/uk/docs/Web/CSS/initial_value), [обчислені](/uk/docs/Web/CSS/computed_value), [використані](/uk/docs/Web/CSS/used_value) та [дійсні](/uk/docs/Web/CSS/actual_value) значення
   - [Скорочені властивості CSS](/uk/docs/Web/CSS/Shorthand_properties)
-  - [Flex-верстання у CSS](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout)
-  - [Grid-верстання у CSS](/uk/docs/Web/CSS/CSS_Grid_Layout)
-  - [Селектори CSS](/uk/docs/Web/CSS/CSS_selectors)
+  - [Flex-верстання у CSS](/uk/docs/Web/CSS/CSS_flexible_box_layout)
+  - [Grid-верстання у CSS](/uk/docs/Web/CSS/CSS_grid_layout)
+  - [Селектори CSS](/uk/docs/Web/CSS/CSS_Selectors)
   - [Медіазапити](/uk/docs/Web/CSS/CSS_media_queries)
   - [Анімація](/uk/docs/Web/CSS/animation)
 
