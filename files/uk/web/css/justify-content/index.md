@@ -13,7 +13,7 @@ browser-compat: css.properties.justify-content
 
 {{EmbedInteractiveExample("pages/css/justify-content.html")}}
 
-Шикування виконується після того, як застосовані довжини та автоматичні зовнішні поля, тобто якщо при [гнучкій розкладці](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout)
+Шикування виконується після того, як застосовані довжини та автоматичні зовнішні поля, тобто якщо при [гнучкій розкладці](/uk/docs/Web/CSS/CSS_flexible_box_layout)
 є принаймні один гнучкий елемент, в котрого значення властивості {{cssxref("flex-grow")}} відмінне від `0` — воно не діятиме, оскільки не буде жодного вільного простору.
 
 ## Синтаксис
@@ -167,7 +167,7 @@ justifyContent.addEventListener("change", (evt) => {
 
 ## Дивіться також
 
-- Настанови із гнучких блоків CSS: _[Основні концепції гнучкого блока](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)_
-- Настанови із гнучких блоків CSS: _[Шикування елементів у гнучкому контейнері](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container)_
-- Настанови із сітки CSS: _[Блокове шикування при сітковій розкладці CSS](/uk/docs/Web/CSS/CSS_Grid_Layout/Box_Alignment_in_CSS_Grid_Layout)_
-- [Блокове шикування CSS](/uk/docs/Web/CSS/CSS_Box_Alignment)
+- Настанови із гнучких блоків CSS: _[Основні концепції гнучкого блока](/uk/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox)_
+- Настанови із гнучких блоків CSS: _[Шикування елементів у гнучкому контейнері](/uk/docs/Web/CSS/CSS_flexible_box_layout/Aligning_items_in_a_flex_container)_
+- Настанови із сітки CSS: _[Блокове шикування при сітковій розкладці CSS](/uk/docs/Web/CSS/CSS_Grid_Layout/Box_alignment_in_grid_layout)_
+- [Блокове шикування CSS](/uk/docs/Web/CSS/CSS_box_alignment)
