@@ -12,7 +12,7 @@ browser-compat: css.properties.transform
 
 {{EmbedInteractiveExample("pages/css/transform.html")}}
 
-Якщо властивість має значення, відмінне від `none`, то створюється [контекст нагромадження](/uk/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context).
+Якщо властивість має значення, відмінне від `none`, то створюється [контекст нагромадження](/uk/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context).
 В такому випадку елемент діє для будь-яких `position: fixed;` чи `position: absolute;` елементів, котрі містить, як [контейнерний блок](/uk/docs/Web/CSS/Containing_block).
 
 > **Застереження:** Перетворені за допомогою `transform` можуть бути лише елементи, котрі піддаються перетворенню.
