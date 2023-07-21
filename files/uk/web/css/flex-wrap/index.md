@@ -11,7 +11,7 @@ browser-compat: css.properties.flex-wrap
 
 {{EmbedInteractiveExample("pages/css/flex-wrap.html")}}
 
-Більше властивостей та інформації шукайте у [Використанні гнучких рамок CSS](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox).
+Більше властивостей та інформації шукайте у [Використанні гнучких рамок CSS](/uk/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox).
 
 ## Синтаксис
 
@@ -135,5 +135,5 @@ flex-wrap: unset;
 
 ## Дивіться також
 
-- Посібник з Флексбоксу CSS: _[Базові концепції Флексбоксу](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)_
-- Посібник з Флексбоксу CSS: _[Майстерність загортання гнучких елементів](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Mastering_Wrapping_of_Flex_Items)_
+- Посібник з Флексбоксу CSS: _[Базові концепції Флексбоксу](/uk/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox)_
+- Посібник з Флексбоксу CSS: _[Майстерність загортання гнучких елементів](/uk/docs/Web/CSS/CSS_flexible_box_layout/Mastering_wrapping_of_flex_items)_
