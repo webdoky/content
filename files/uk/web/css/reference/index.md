@@ -6,7 +6,7 @@ page-type: landing-page
 
 {{CSSRef}}
 
-Використовуйте цей **Довідник CSS** для орієнтування в [алфавітному покажчику](#pokazhchyk) усіх стандартних властивостей [CSS](/uk/docs/Web/CSS), [псевдокласів](/uk/docs/Web/CSS/Pseudo-classes), [псевдоелементів](/uk/docs/Web/CSS/Pseudo-elements), [типів даних](/uk/docs/Web/CSS/CSS_Types), [функційних записів](/uk/docs/Web/CSS/CSS_functions) і [директив](/uk/docs/Web/CSS/At-rule). Крім того, можна переглянути [ключові концепції CSS](#kontseptsii) та список [селекторів, упорядкований за типами](#selektory). Крім того, включений стислий [Довідник DOM-CSS / CSSOM](#dom-css--cssom).
+Використовуйте цей **Довідник CSS** для орієнтування в [алфавітному покажчику](#pokazhchyk) усіх стандартних властивостей [CSS](/uk/docs/Web/CSS), [псевдокласів](/uk/docs/Web/CSS/Pseudo-classes), [псевдоелементів](/uk/docs/Web/CSS/Pseudo-elements), [типів даних](/uk/docs/Web/CSS/CSS_Types), [функційних записів](/uk/docs/Web/CSS/CSS_Functions) і [директив](/uk/docs/Web/CSS/At-rule). Крім того, можна переглянути [ключові концепції CSS](#kontseptsii) та список [селекторів, упорядкований за типами](#selektory). Крім того, включений стислий [Довідник DOM-CSS / CSSOM](#dom-css--cssom).
 
 ## Базовий синтаксис правил
 
@@ -60,7 +60,7 @@ div.menu-bar li:hover > ul {
 
 ## Селектори
 
-Далі – різні [селектори](/uk/docs/Web/CSS/CSS_selectors), що дають стилям змогу бути умовними на основі різних можливостей елементів у DOM.
+Далі – різні [селектори](/uk/docs/Web/CSS/CSS_Selectors), що дають стилям змогу бути умовними на основі різних можливостей елементів у DOM.
 
 ### Базові селектори
 
@@ -116,8 +116,8 @@ div.menu-bar li:hover > ul {
 - [Властивості-скорочення](/uk/docs/Web/CSS/Shorthand_properties)
 - [Специфічність](/uk/docs/Web/CSS/Specificity)
 - [Синтаксис визначення значень](/uk/docs/Web/CSS/Value_definition_syntax)
-- [Одиниці вимірювання й типи значень CSS](/uk/docs/Web/CSS/CSS_values_and_units)
-- [Функційні записи CSS](/uk/docs/Web/CSS/CSS_functions)
+- [Одиниці вимірювання й типи значень CSS](/uk/docs/Web/CSS/CSS_Values_and_Units)
+- [Функційні записи CSS](/uk/docs/Web/CSS/CSS_Functions)
 
 ### Значення
 
@@ -131,12 +131,12 @@ div.menu-bar li:hover > ul {
 ### Компонування
 
 - [Контекст блокового форматування](/uk/docs/Web/Guide/CSS/Block_formatting_context)
-- [Рамкова модель](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+- [Рамкова модель](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
 - [Контейнерний блок](/uk/docs/Web/CSS/Containing_block)
 - [Спосіб компонування](/uk/docs/Web/CSS/Layout_mode)
-- [Перекриття зовнішніх відступів](/uk/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
+- [Перекриття зовнішніх відступів](/uk/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
 - [Заміщені елементи](/uk/docs/Web/CSS/Replaced_element)
-- [Контекст нагромадження](/uk/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context)
+- [Контекст нагромадження](/uk/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context)
 - [Модель візуального форматування](/uk/docs/Web/CSS/Visual_formatting_model)
 
 ## DOM-CSS / CSSOM
