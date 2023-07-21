@@ -15,8 +15,6 @@ browser-compat: css.properties.display
 
 ## Синтаксис
 
-Властивість CSS `display` вказується за допомогою ключових слів.
-
 ```css
 /* складені значення */
 display: block;
@@ -54,6 +52,8 @@ display: revert;
 display: revert-layer;
 display: unset;
 ```
+
+Властивість CSS `display` задається за допомогою ключових слів.
 
 ## Згруповані значення
 
