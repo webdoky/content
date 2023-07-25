@@ -1,14 +1,10 @@
 ---
 title: String.prototype.valueOf()
 slug: Web/JavaScript/Reference/Global_Objects/String/valueOf
-tags:
-  - JavaScript
-  - Method
-  - Prototype
-  - Reference
-  - String
+page-type: javascript-instance-method
 browser-compat: javascript.builtins.String.valueOf
 ---
+
 {{JSRef}}
 
 Метод **`valueOf()`** повертає примітивне значення об'єкта {{jsxref("String")}}.
@@ -17,7 +13,7 @@ browser-compat: javascript.builtins.String.valueOf
 
 ## Синтаксис
 
-```js
+```js-nolint
 valueOf()
 ```
 
@@ -36,8 +32,8 @@ valueOf()
 ### Застосування `valueOf()`
 
 ```js
-var x = new String('Привіт, світе');
-console.log(x.valueOf()); // Виводить 'Привіт, світе'
+const x = new String("Привіт, світе");
+console.log(x.valueOf()); // 'Привіт, світе'
 ```
 
 ## Специфікації

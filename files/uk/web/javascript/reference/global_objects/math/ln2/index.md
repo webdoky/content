@@ -1,20 +1,21 @@
 ---
 title: Math.LN2
 slug: Web/JavaScript/Reference/Global_Objects/Math/LN2
-tags:
-  - JavaScript
-  - Math
-  - Property
-  - Reference
+page-type: javascript-static-data-property
 browser-compat: javascript.builtins.Math.LN2
 ---
+
 {{JSRef}}
 
-Властивість  **`Math.LN2`** відображає натуральний логарифм 2, що наближено дорівнює 0.693:
+Статична властивість даних **`Math.LN2`** відображає натуральний логарифм 2, що наближено дорівнює 0.693:
 
-<math display="block"><semantics><mrow><mstyle mathvariant="monospace"><mi>Math.LN2</mi></mstyle><mo>=</mo><mo lspace="0em" rspace="0em">ln</mo><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo><mo>≈</mo><mn>0.693</mn></mrow><annotation encoding="TeX">\mathtt{\mi{Math.LN2}} = \ln(2) \approx 0.693</annotation></semantics></math>
+{{EmbedInteractiveExample("pages/js/math-ln2.html","shorter")}}
 
-{{EmbedInteractiveExample("pages/js/math-ln2.html","shorter")}}{{js_property_attributes(0, 0, 0)}}
+## Значення
+
+<math display="block"><semantics><mrow><mi>𝙼𝚊𝚝𝚑.𝙻𝙽𝟸</mi><mo>=</mo><mo lspace="0em" rspace="0em">ln</mo><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo><mo>≈</mo><mn>0.693</mn></mrow><annotation encoding="TeX">\mathtt{\mi{Math.LN2}} = \ln(2) \approx 0.693</annotation></semantics></math>
+
+{{js_property_attributes(0, 0, 0)}}
 
 ## Опис
 

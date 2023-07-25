@@ -1,6 +1,6 @@
 ---
 title: Успадкування
-slug: Web/CSS/inheritance
+slug: Web/CSS/Inheritance
 page-type: guide
 ---
 

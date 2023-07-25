@@ -1,6 +1,6 @@
 ---
 title: Зміни розмірів зображень тла за допомогою background-size
-slug: Web/CSS/CSS_Backgrounds_and_Borders/Resizing_background_images
+slug: Web/CSS/CSS_backgrounds_and_borders/Resizing_background_images
 page-type: guide
 ---
 
@@ -37,7 +37,7 @@ page-type: guide
 
 ## Розтягування зображення
 
-Також можна задати і горизонтальний, і вертикальний розміри зображення, отак:
+Також можна задати як горизонтальний, так і вертикальний розміри зображення, отак:
 
 ```css
 background-size: 300px 150px;

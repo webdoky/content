@@ -28,8 +28,8 @@ repeat(count)
 
 ### Винятки
 
-- {{jsxref("Errors/Negative_repetition_count", "RangeError")}}: вказана кількість повторів має бути невід'ємним числом.
-- {{jsxref("Errors/Resulting_string_too_large", "RangeError")}}: вказана кількість повторів має бути скінченною, і не повинна переповнювати максимальний розмір рядка.
+- {{jsxref("RangeError")}}
+  - : Викидається, коли `count` є від'ємним, або коли `count` перевищує максимальну довжину рядка.
 
 ## Приклади
 

@@ -9,7 +9,7 @@ browser-compat: javascript.functions.arrow_functions
 
 **Вираз стрілкової функції** — це компактна альтернатива традиційному [виразові функції](/uk/docs/Web/JavaScript/Reference/Operators/function), що має певні семантичні відмінності й свідомі обмеження у використанні:
 
-- Стрілкові функції не мають власної прив'язки до [`this`](/uk/docs/Web/JavaScript/Reference/Operators/this), [`arguments`](/uk/docs/Web/JavaScript/Reference/Functions/arguments) та [`super`](/uk/docs/Web/JavaScript/Reference/Operators/super), і їх не слід використовувати як [методи](/uk/docs/Glossary/Method).
+- Стрілкові функції не мають власних {{glossary("binding", "зв'язувань")}} [`this`](/uk/docs/Web/JavaScript/Reference/Operators/this), [`arguments`](/uk/docs/Web/JavaScript/Reference/Functions/arguments) та [`super`](/uk/docs/Web/JavaScript/Reference/Operators/super), і їх не слід використовувати як [методи](/uk/docs/Glossary/Method).
 - Стрілкові функції не можуть використовуватися як [конструктори](/uk/docs/Glossary/Constructor). Виклик їх з [`new`](/uk/docs/Web/JavaScript/Reference/Operators/new) викидає {{jsxref("TypeError")}}. Крім цього, вони не мають доступу до ключового слова [`new.target`](/uk/docs/Web/JavaScript/Reference/Operators/new.target)
 - Стрілкові функції не можуть використовувати у своєму тілі [`yield`](/uk/docs/Web/JavaScript/Reference/Operators/yield) і не можуть створюватися як генераторні функції.
 
@@ -315,7 +315,7 @@ const func4 = (
 
 ### Порядок розбору
 
-Хоча стрілка в стрілковій функції не є оператором, ці функції мають особливі правила парсингу, які по-іншому взаємодіють з [пріоритетом операторів](/uk/docs/Web/JavaScript/Reference/Operators/Operator_Precedence) у порівнянні зі звичайними функціями.
+Хоча стрілка в стрілковій функції не є оператором, ці функції мають особливі правила парсингу, які по-іншому взаємодіють з [пріоритетом операторів](/uk/docs/Web/JavaScript/Reference/Operators/Operator_precedence) у порівнянні зі звичайними функціями.
 
 ```js example-bad
 let callback;
@@ -462,4 +462,8 @@ obj.doSomethingLater(); // виводить 11
 
 ## Дивіться також
 
-- ["Поглиблено про ES6: Стрілкові функції" на hacks.mozilla.org (англ.)](https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/)
+- [Посібник з функцій](/uk/docs/Web/JavaScript/Guide/Functions)
+- [Функції](/uk/docs/Web/JavaScript/Reference/Functions)
+- {{jsxref("Statements/function", "function")}}
+- [Вираз `function`](/uk/docs/Web/JavaScript/Reference/Operators/function)
+- [Поглиблено про ES6: Стрілкові функції](https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/) на hacks.mozilla.org (2015)

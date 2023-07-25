@@ -1,5 +1,6 @@
 import { execSync } from "child_process";
 
+import compact from "lodash/compact";
 import includes from "lodash/includes";
 import toString from "lodash/toString";
 import yargs from "yargs";
@@ -16,14 +17,18 @@ const { update } = yargs(hideBin(process.argv))
   .parse();
 
 const TRANSLATION_SLUG_PARTS_TO_DROP = 2;
-const SECTIONS_TO_UPPERCASE = new Set(["html", "css", "svg", "api", "js"]);
+const SECTIONS_TRANSFORMS = new Map([
+  ["accessibility", "A11y"],
+  ["html", "HTML"],
+  ["css", "CSS"],
+  ["svg", "SVG"],
+  ["api", "API"],
+  ["javascript", "JS"],
+]);
 
 // Alters section name for some sections
 function alterSectionName(section) {
-  if (SECTIONS_TO_UPPERCASE.has(section)) {
-    return section.toUpperCase();
-  }
-  return section;
+  return SECTIONS_TRANSFORMS.get(section) || section;
 }
 
 const requiredTranslationNumber = 1;
@@ -54,7 +59,7 @@ if (numberOfTranslations > requiredTranslationNumber) {
   process.exit(1);
 }
 
-const [actionMarker, translation] = changedTranslations[0].split(" ");
+const [actionMarker, translation] = compact(changedTranslations[0].split(" "));
 let action;
 switch (actionMarker) {
   case "??":
@@ -74,10 +79,10 @@ switch (actionMarker) {
 }
 
 const translationFolder = translation.replace("/index.md", "");
-const translationSlugParts = translationFolder.split("/");
-const translationSlug = translationSlugParts
-  .slice(TRANSLATION_SLUG_PARTS_TO_DROP)
-  .join("-");
+const translationSlugParts = translationFolder
+  .split("/")
+  .slice(TRANSLATION_SLUG_PARTS_TO_DROP);
+const translationSlug = translationSlugParts.join("/");
 
 console.log("Switching to a proper Git branch...");
 const prefixesToDrop = [
@@ -118,43 +123,51 @@ if (targetBranchName.endsWith("-")) {
   targetBranchName = targetBranchName.slice(0, -"-".length);
 }
 
-// Add branch name prefix
-targetBranchName = `${action}/${targetBranchName}`;
+const currentBranchName = execSync("git rev-parse --abbrev-ref HEAD", {
+  encoding: "utf8",
+}).trim();
 
-try {
-  if (!update) {
-    if (doesGitBranchExistOnRemote(targetBranchName)) {
-      console.warn(
-        "Branch already exists on remote. Use --update to update it, or check if there is a PR from it already."
-      );
-      process.exit(1);
-    }
-    if (doesGitBranchExistLocally(targetBranchName)) {
-      execSync(`git branch -D ${targetBranchName}`);
-    }
-  }
-  execSync(`git checkout master`);
-  execSync(`git pull`);
+// Check for the case of updating new translation
+if (!(update && currentBranchName.endsWith(targetBranchName))) {
+  // Add branch name prefix
+  targetBranchName = `${action}/${targetBranchName}`;
+
+  console.log("Target branch name:", targetBranchName);
   try {
-    execSync(`git checkout -b ${targetBranchName}`);
-  } catch (error) {
-    if (update && includes(toString(error), "already exists")) {
-      execSync(`git checkout ${targetBranchName}`);
+    if (!update) {
+      if (doesGitBranchExistOnRemote(targetBranchName)) {
+        console.warn(
+          `Branch ${targetBranchName} already exists on remote. Use --update to update it, or check if there is a PR from it already.`
+        );
+        process.exit(1);
+      }
+      if (doesGitBranchExistLocally(targetBranchName)) {
+        execSync(`git branch -D ${targetBranchName}`);
+      }
+    }
+    execSync(`git checkout master`);
+    execSync(`git pull`);
+    try {
+      execSync(`git checkout -b ${targetBranchName}`);
+    } catch (error) {
+      if (update && includes(toString(error), "already exists")) {
+        execSync(`git checkout ${targetBranchName}`);
+      } else {
+        console.error(error);
+        process.exit(1);
+      }
+    }
+  } catch {
+    if (
+      execSync("git rev-parse --abbrev-ref HEAD", {
+        encoding: "utf8",
+      }).trim() === targetBranchName &&
+      update
+    ) {
+      console.log("Already on correct branch");
     } else {
-      console.error(error);
       process.exit(1);
     }
-  }
-} catch {
-  if (
-    execSync("git rev-parse --abbrev-ref HEAD", {
-      encoding: "utf8",
-    }).trim() === targetBranchName &&
-    update
-  ) {
-    console.log("Already on correct branch");
-  } else {
-    process.exit(1);
   }
 }
 

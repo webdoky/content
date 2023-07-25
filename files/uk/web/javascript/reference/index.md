@@ -105,6 +105,8 @@ page-type: landing-page
 
 ### Об'єкти абстракцій контролю
 
+- {{JSxRef("Iterator")}}
+- {{JSxRef("AsyncIterator")}}
 - {{JSxRef("Promise")}}
 - {{JSxRef("GeneratorFunction")}}
 - {{JSxRef("AsyncGeneratorFunction")}}
@@ -120,15 +122,16 @@ page-type: landing-page
 ### Інтернаціоналізація
 
 - {{JSxRef("Intl")}}
-- {{JSxRef("Global_Objects/Intl/Collator", "Intl.Collator")}}
-- {{JSxRef("Global_Objects/Intl/DateTimeFormat", "Intl.DateTimeFormat")}}
-- {{JSxRef("Global_Objects/Intl/DisplayNames", "Intl.DisplayNames")}}
-- {{JSxRef("Global_Objects/Intl/ListFormat", "Intl.ListFormat")}}
-- {{JSxRef("Global_Objects/Intl/Locale", "Intl.Locale")}}
-- {{JSxRef("Global_Objects/Intl/NumberFormat", "Intl.NumberFormat")}}
-- {{JSxRef("Global_Objects/Intl/PluralRules", "Intl.PluralRules")}}
-- {{JSxRef("Global_Objects/Intl/RelativeTimeFormat", "Intl.RelativeTimeFormat")}}
-- {{JSxRef("Global_Objects/Intl/Segmenter", "Intl.Segmenter")}}
+- {{JSxRef("Intl.Collator")}}
+- {{JSxRef("Intl.DateTimeFormat")}}
+- {{JSxRef("Intl.DisplayNames")}}
+- {{JSxRef("Intl.DurationFormat")}}
+- {{JSxRef("Intl.ListFormat")}}
+- {{JSxRef("Intl.Locale")}}
+- {{JSxRef("Intl.NumberFormat")}}
+- {{JSxRef("Intl.PluralRules")}}
+- {{JSxRef("Intl.RelativeTimeFormat")}}
+- {{JSxRef("Intl.Segmenter")}}
 
 ### Інші
 
@@ -274,7 +277,7 @@ page-type: landing-page
 
 ### Умовний (тернарний) оператор
 
-- {{JSxRef("Operators/Conditional_Operator", "(condition ? ifTrue : ifFalse)")}}
+- {{JSxRef("Operators/Conditional_operator", "(condition ? ifTrue : ifFalse)")}}
 
 ### Оператори присвоєння
 
@@ -307,7 +310,7 @@ page-type: landing-page
 
 ### Оператор коми
 
-- {{JSxRef("Operators/Comma_Operator", ",")}}
+- {{JSxRef("Operators/Comma_operator", ",")}}
 
 ## Функції
 

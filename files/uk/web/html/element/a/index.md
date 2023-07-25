@@ -25,7 +25,7 @@ browser-compat: html.elements.a
 
       - Заголовка HTTP {{HTTPHeader("Content-Disposition")}}
       - Останнього сегмента [шляху](/uk/docs/Web/API/URL/pathname) URL
-      - {{Glossary("MIME_type", "Типу медіаданих")}} (із заголовка {{HTTPHeader("Content-Type")}}, початку [URL `data:`](/uk/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) чи {{domxref("Blob.type")}} в [URL `blob:`](/uk/docs/Web/API/URL/createObjectURL))
+      - {{Glossary("MIME_type", "Типу медіаданих")}} (із заголовка {{HTTPHeader("Content-Type")}}, початку [URL `data:`](/uk/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) чи {{domxref("Blob.type")}} в [URL `blob:`](/uk/docs/Web/API/URL/createObjectURL_static))
 
     - `filename`: якщо значення задане, то воно буде запропоновано як назва файлу. Символи `/` і `\` перетворюються на підкреслення (`_`). Файлові системи можуть забороняти інші символи в іменах файлів, тож браузери підлаштовуватимуть запропоноване ім'я, якщо це необхідно.
 
@@ -232,6 +232,7 @@ a {
 const canvas = document.querySelector("canvas");
 const c = canvas.getContext("2d");
 c.fillStyle = "hotpink";
+let isDrawing;
 
 function draw(x, y) {
   if (isDrawing) {
@@ -243,7 +244,7 @@ function draw(x, y) {
 }
 
 canvas.addEventListener("mousemove", (event) =>
-  draw(event.offsetX, event.offsetY)
+  draw(event.offsetX, event.offsetY),
 );
 canvas.addEventListener("mousedown", () => (isDrawing = true));
 canvas.addEventListener("mouseup", () => (isDrawing = false));
@@ -252,7 +253,7 @@ document
   .querySelector("a")
   .addEventListener(
     "click",
-    (event) => (event.target.href = canvas.toDataURL())
+    (event) => (event.target.href = canvas.toDataURL()),
   );
 ```
 

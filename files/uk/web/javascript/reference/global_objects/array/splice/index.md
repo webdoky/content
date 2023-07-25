@@ -7,7 +7,9 @@ browser-compat: javascript.builtins.Array.splice
 
 {{JSRef}}
 
-Метод **`splice()`** (зростити) змінює вміст масиву шляхом видалення чи заміни наявних елементів і/або додавання нових [на місці (англ.)](https://en.wikipedia.org/wiki/In-place_algorithm). Щоб отримати частину масиву без внесення змін до нього, &mdash; зверніться до {{jsxref("Array.prototype.slice()", "slice()")}}.
+Метод **`splice()`** (зростити) змінює вміст масиву шляхом видалення чи заміни наявних елементів і/або додавання нових [на місці (англ.)](https://en.wikipedia.org/wiki/In-place_algorithm).
+
+Щоб створити новий масив, в якому частина видалена чи замінена, не змінюючи вихідний масив, слід скористатися {{jsxref("Array/toSpliced", "toSpliced()")}}. Щоб отримати доступ до частини масиву без його зміни, дивіться {{jsxref("Array.prototype.slice()", "slice()")}}.
 
 {{EmbedInteractiveExample("pages/js/array-splice.html")}}
 
@@ -16,8 +18,9 @@ browser-compat: javascript.builtins.Array.splice
 ```js-nolint
 splice(start)
 splice(start, deleteCount)
-splice(start, deleteCount, item1)
-splice(start, deleteCount, item1, item2, itemN)
+splice(start, deleteCount, item0)
+splice(start, deleteCount, item0, item1)
+splice(start, deleteCount, item0, item1, /* … ,*/ itemN)
 ```
 
 ### Параметри
@@ -26,8 +29,9 @@ splice(start, deleteCount, item1, item2, itemN)
 
   - : Індекс, за яким почнуться зміни в масиві, [перетворений на ціле число](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#peretvorennia-na-tsile).
     - Від'ємний індекс рахується від кінця масиву: якщо `start < 0`, використовується `start + array.length`.
-    - Якщо `start < -array.length` або `start` опущено, використовується `0`.
+    - Якщо `start < -array.length`, використовується `0`.
     - Якщо `start >= array.length`, то жодний елемент не буде видалено, але метод спрацює як функція додавання, додаючи передані елементи.
+    - Якщо `start` пропущено (і `splice()` викликано без аргументів), то нічого не видаляється. Це відрізняється від передачі значення `undefined`, яке перетворюється на `0`.
 
 - `deleteCount` (кількість до видалення) {{optional_inline}}
 
@@ -37,7 +41,7 @@ splice(start, deleteCount, item1, item2, itemN)
 
     Якщо `deleteCount` — `0` або від'ємне число, жоден елемент не видалиться. В цьому випадку необхідно вказати принаймні один новий елемент (див. далі).
 
-- `item1`, …, `itemN` {{optional_inline}}
+- `item0`, …, `itemN` {{optional_inline}}
   - : Елементи, які буде додано до масиву, починаючи з індексу `start`.
     Якщо не вказано жодного, `splice()` лише видалить елементи з масиву.
 
@@ -176,6 +180,12 @@ console.log(arrayLike);
 
 ## Дивіться також
 
-- {{jsxref("Array.prototype.push()", "push()")}} / {{jsxref("Array.prototype.pop()", "pop()")}} — додати чи видалити елементи з кінця масиву
-- {{jsxref("Array.prototype.unshift()", "unshift()")}} / {{jsxref("Array.prototype.shift()", "shift()")}} — додати чи видалити елементи з початку масиву
-- {{jsxref("Array.prototype.concat()", "concat()")}} — повертає новий масив, складений з цього масиву, з'єднаного з іншим масивом (масивами) та/чи значеннями
+- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- {{jsxref("Array")}}
+- {{jsxref("Array.prototype.concat()")}}
+- {{jsxref("Array.prototype.push()")}}
+- {{jsxref("Array.prototype.pop()")}}
+- {{jsxref("Array.prototype.shift()")}}
+- {{jsxref("Array.prototype.slice()")}}
+- {{jsxref("Array.prototype.toSpliced()")}}
+- {{jsxref("Array.prototype.unshift()")}}
