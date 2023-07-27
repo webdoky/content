@@ -37,7 +37,7 @@ encodeURIComponent(uriComponent)
 
 `encodeURIComponent()` використовує такий же алгоритм кодування, як описаний для {{jsxref("encodeURI()")}}. Він екранує усі символи, **окрім**:
 
-```
+```plain
 A–Z a–z 0–9 - _ . ! ~ * ' ( )
 ```
 
@@ -54,7 +54,7 @@ A–Z a–z 0–9 - _ . ! ~ * ' ( )
 ```js
 const fileName = "my file(2).txt";
 const header = `Content-Disposition: attachment; filename*=UTF-8''${encodeRFC5987ValueChars(
-  fileName
+  fileName,
 )}`;
 
 console.log(header);
@@ -69,12 +69,12 @@ function encodeRFC5987ValueChars(str) {
       // RFC5987 – ні, тому цей символ немає потреби екранувати.
       .replace(
         /['()*]/g,
-        (c) => `%${c.charCodeAt(0).toString(16).toUpperCase()}`
+        (c) => `%${c.charCodeAt(0).toString(16).toUpperCase()}`,
       )
       // Наступне не обов'язково для процентного кодування згідно з RFC5987,
       // тож можна дозволити трохи кращу прочитність по той бік дроту: |`^
       .replace(/%(7C|60|5E)/g, (str, hex) =>
-        String.fromCharCode(parseInt(hex, 16))
+        String.fromCharCode(parseInt(hex, 16)),
       )
   );
 }
@@ -88,7 +88,7 @@ function encodeRFC5987ValueChars(str) {
 function encodeRFC3986URIComponent(str) {
   return encodeURIComponent(str).replace(
     /[!'()*]/g,
-    (c) => `%${c.charCodeAt(0).toString(16).toUpperCase()}`
+    (c) => `%${c.charCodeAt(0).toString(16).toUpperCase()}`,
   );
 }
 ```
