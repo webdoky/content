@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2023-07-21 - 2023-07-28]
+
+* **Переклад(glossary):** glossary/render_blocking (#1957) ([ecce1c93](https://github.com/webdoky/content/commit/ecce1c937db0c0dd0531a1f005971fb190cb5e00))
+* **Переклад(CSS):** web/css/_colon_enabled (#1956) ([08d0b567](https://github.com/webdoky/content/commit/08d0b56781784d3044165e0d425fe2e7429e870e))
+* **Оновлення перекладу(CSS):** web/css/flex (#1762) ([7084b4a1](https://github.com/webdoky/content/commit/7084b4a111ae847c69a7f910c965dc7666deec48))
+* **Оновлення перекладу(JS):** web/javascript/reference/lexical_grammar (#1671) ([93fbc620](https://github.com/webdoky/content/commit/93fbc620501da9c261d8dae8b062652722683029))
+* **Переклад(HTML):** web/html/element/input/text (#1606) ([f49b2354](https://github.com/webdoky/content/commit/f49b2354750794f75e05e1fe24ff52182fc23989))
+* **Переклад(HTML):** web/html/element/input/color (#1583) ([fe19e979](https://github.com/webdoky/content/commit/fe19e97997d9feed78a2b2b65b090c0fb00bfca6))
+
 ## [2023-07-14 - 2023-07-21]
 
 * **Оновлення перекладу(CSS):** web/css/value_definition_syntax ([78275377](https://github.com/webdoky/content/commit/782753774997b3bcd97eef96b033eaef9af2f79e))
