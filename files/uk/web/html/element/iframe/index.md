@@ -232,4 +232,5 @@ browser-compat: html.elements.iframe
 
 ## Дивіться також
 
+- [CSP – frame-ancestors](/uk/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors)
 - [Приватність, дозволи та захист інформації](/uk/docs/Web/Privacy)
