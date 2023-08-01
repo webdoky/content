@@ -386,16 +386,17 @@ browser-compat: html.elements.input
 
     ```html
     <form action="page.html" method="post">
-      <label
-        >Фрукт:
-        <input type="text" name="fruit" dirname="fruit.dir" value="вишня"
-      /></label>
+      <label>
+        Фрукт:
+        <input type="text" name="fruit" dirname="fruit-dir" value="вишня" />
+      </label>
       <input type="submit" />
     </form>
-    <!-- page.html?fruit=вишня&fruit.dir=ltr -->
+    <!-- page.html?fruit=вишня&fruit-dir=ltr -->
     ```
 
-    Коли форма вище подається, поле введення надсилає як пару `name` / `value` у вигляді `fruit=вишня`, так пару `dirname` / напрям у вигляді `fruit.dir=ltr`.
+    Коли форма вище подається, поле введення надсилає як пару `name` / `value` у вигляді `fruit=вишня`, так пару `dirname` / напрям у вигляді `fruit-dir=ltr`.
+    Більше про це – на сторінці [атрибута `dirname`](/uk/docs/Web/HTML/Attributes/dirname).
 
 - `disabled` (вимкнене)
 
@@ -1098,8 +1099,8 @@ input.custom {
 - {{domxref('validityState.rangeOverflow')}} (вихід за верхню межу діапазону)
 - {{domxref('validityState.stepMismatch')}} (невідповідність кроку)
 - {{domxref('validityState.badInput')}} (невдале введення)
-- {{domxref('validityState.valid')}} (дійсний)
-- {{domxref('validityState.customError')}} (особлива помилка)
+- {{domxref('validityState', 'validityState.valid')}} (дійсний)
+- {{domxref('validityState', 'validityState.customError')}} (особлива помилка)
 
 Для кожної з цих булевих властивостей значення `true` вказує, що з відповідної причини валідація може бути провалена, окрім властивості `valid`, що має значення `true`, коли значення елемента задовільняє усі обмеження.
 
