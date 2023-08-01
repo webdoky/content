@@ -177,6 +177,12 @@ browser-compat: html.elements.video
     </tr>
     <tr>
       <td>
+        {{domxref("HTMLMediaElement.loadstart_event", 'loadstart')}}
+      </td>
+      <td>Спрацьовує, коли браузер розпочинає завантаження ресурсу.</td>
+    </tr>
+    <tr>
+      <td>
         {{domxref("HTMLMediaElement.pause_event", 'pause')}}
       </td>
       <td>Відтворення було призупинено.</td>
