@@ -1,25 +1,23 @@
 ---
 title: String.prototype.substr()
 slug: Web/JavaScript/Reference/Global_Objects/String/substr
-tags:
-  - Deprecated
-  - JavaScript
-  - Method
-  - Prototype
-  - Reference
-  - String
-  - Polyfill
+page-type: javascript-instance-method
+status:
+  - deprecated
 browser-compat: javascript.builtins.String.substr
 ---
+
 {{JSRef}} {{deprecated_header}}
 
-Метод **`substr()`** повертає порцію рядка, яка починається за вказаним індексом і продовжується вказану кількість символів.
+Метод **`substr()`** (підрядок) повертає порцію рядка, яка починається за вказаним індексом і продовжується протягом заданої кількості символів.
+
+> **Примітка:** `substr` не є частиною специфікації ECMAScript: він означений в [Додатку B: Додаткових можливостях ECMAScript для веббраузерів](https://tc39.es/ecma262/multipage/additional-ecmascript-features-for-web-browsers.html), котрий є нормативним необов'язковим для небраузерних платформ. Таким чином, краще користуватися замість нього стандартними методами [`String.prototype.substring()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/substring) і [`String.prototype.slice()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/slice), аби код виходив якнайкраще кросплатформовим. [Сторінка `String.prototype.substring()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/substring#riznytsia-mizh-metodamy-substring-ta-substr) містить порівняння цих трьох методів.
 
 {{EmbedInteractiveExample("pages/js/string-substr.html")}}
 
 ## Синтаксис
 
-```js
+```js-nolint
 substr(start)
 substr(start, length)
 ```
@@ -28,8 +26,8 @@ substr(start, length)
 
 - `start`
   - : Індекс першого символу, який буде включено до поверненого підрядка.
-- `length`
-  - : Необов'язковий параметр. Кількість символів, які будуть вибрані.
+- `length` {{optional_inline}}
+  - : Кількість символів, які будуть вибрані.
 
 ### Повернене значення
 
@@ -37,57 +35,32 @@ substr(start, length)
 
 ## Опис
 
-Метод `substr()` вибирає послідовність довжиною `length` символів з початкового рядка `str`, рахуючи від індексу `start`.
+Метод рядка `substr()` видобуває з цього рядка `length` символів, рахуючи від індексу `start`.
 
-- Якщо `start` — невід'ємне число, індекс місця початку вибірки буде обчислено від початку рядка. Його значення обмежене числом `str.length - 1`.
-- Якщо `start` — це від'ємне число, індекс місця початку обраховується з кінця рядка. Його значення обмежується `-str.length`.
-- Примітка: в діалекті Microsoft JScript від'ємні значення аргументу `start` не вважаються такими, що вказують на кінець рядка.
-- Якщо параметр `length` опущено, метод `substr()` вибирає всі символи аж до кінця рядка.
-- Якщо `length` дорівнює {{jsxref("undefined")}}, метод `substr()` вибирає символи до кінця рядка.
-- Якщо `length` — від'ємне число, його значення сприймається так само як і `0`.
-- Для обох аргументів `start` та `length`, значення {{jsxref("NaN")}} обробляється так само як і `0`.
+- Якщо `start >= str.length`, то повертається порожній рядок.
+- Якщо `start < 0`, то індекс рахують від кінця рядка. Висловлюючись формальніше, в такому випадку підрядок починається на позиції `max(start + str.length, 0)`.
+- Якщо `start` пропущено або має значення {{jsxref("undefined")}}, то він вважається рівним `0`.
+- Якщо `length` пропущено або має значення {{jsxref("undefined")}}, або ж якщо `start + length >= str.length`, то `substr()` видобуває символи аж до кінця рядка
+- Якщо `length <0`, то повертається порожній рядок.
+- І на місці `start`, і на місці `length`, – {{jsxref("NaN")}} рівносильно `0`.
 
-## Поліфіл
-
-Діалект JScript від Microsoft не підтримує від'ємні значення як індекс початку. Аби отримати можливість користуватися цим функціоналом у JScript, можна використати наступний код:
-
-```js
-// запускати лише якщо функція substr() зламана
-if ('ab'.substr(-1) != 'b') {
-  /**
-   *  Отримання підрядка з рядка
-   *  @param  {integer}  start   де почати підрядок
-   *  @param  {integer}  length  скільки символів повернути
-   *  @return {string}
-   */
-  String.prototype.substr = function(substr) {
-    return function(start, length) {
-      // викликати оригінальний метод
-      return substr.call(this,
-      	// в разі отримання від'ємного індексу початку — обрахувати, яка це позиція
-        // від початку рядка, і підправити параметр початку для від'ємних значень
-        start < 0 ? this.length + start : start,
-        length)
-    }
-  }(String.prototype.substr);
-}
-```
+Попри те, що заохочується уникання використання `substr()`, не існує тривіального способу перейти в історичному коді від `substr()` і до `slice()`, і до `substring()`, не додаючи по суті поліфіл `substr()`. Наприклад, `str.substr(a, l)`, `str.slice(a, a + l)` і `str.substring(a, a + l)` дають три різні результати, коли `str = "01234", a = 1, l = -2`: `substr()` повертає порожній рядок, `slice()` повертає `"123"`, а `substring()` – `"0"`. Фактичний підхід до рефакторингу залежить від можливого діапазону `a` та `l`.
 
 ## Приклади
 
 ### Застосування substr()
 
 ```js
-var aString = 'Mozilla';
+const aString = "Mozilla";
 
-console.log(aString.substr(0, 1));   // 'M'
-console.log(aString.substr(1, 0));   // ''
-console.log(aString.substr(-1, 1));  // 'a'
-console.log(aString.substr(1, -1));  // ''
-console.log(aString.substr(-3));     // 'lla'
-console.log(aString.substr(1));      // 'ozilla'
+console.log(aString.substr(0, 1)); // 'M'
+console.log(aString.substr(1, 0)); // ''
+console.log(aString.substr(-1, 1)); // 'a'
+console.log(aString.substr(1, -1)); // ''
+console.log(aString.substr(-3)); // 'lla'
+console.log(aString.substr(1)); // 'ozilla'
 console.log(aString.substr(-20, 2)); // 'Mo'
-console.log(aString.substr(20, 2));  // ''
+console.log(aString.substr(20, 2)); // ''
 ```
 
 ## Специфікації

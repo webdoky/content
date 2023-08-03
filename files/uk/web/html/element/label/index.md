@@ -2,13 +2,6 @@
 title: "<label>: Елемент підпису"
 slug: Web/HTML/Element/label
 page-type: html-element
-tags:
-  - Element
-  - Forms
-  - HTML
-  - HTML forms
-  - Reference
-  - Web
 browser-compat: html.elements.label
 ---
 
@@ -48,9 +41,9 @@ browser-compat: html.elements.label
 
 Цей елемент включає [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
 
-- {{HTMLAttrDef("for")}}
+- `for`
 
-  - : Значення атрибута `for` мусить бути одним {{htmlattrxref("id")}} [підписуваного](/uk/docs/Web/Guide/HTML/Content_categories#pidpysuvani) елемента форми у тому самому документі, що й елемент `<label>`. Отже, будь-який елемент `label` може бути пов'язаний лише з одним контрольним елементом.
+  - : Значення атрибута `for` мусить бути одним [`id`](/uk/docs/Web/HTML/Global_attributes#id) [підписуваного](/uk/docs/Web/HTML/Content_categories#pidpysni) елемента форми у тому самому документі, що й елемент `<label>`. Отже, будь-який елемент `label` може бути пов'язаний лише з одним контрольним елементом.
 
     > **Примітка:** Щоб задати атрибут `for` програмно, слід використовувати [`htmlFor`](/uk/docs/Web/API/HTMLLabelElement/htmlFor).
 
@@ -58,7 +51,7 @@ browser-compat: html.elements.label
 
     Декільком елементам `label` можна надати однакове значення атрибутів `for`; це призводить до того, що пов'язаний контрольний елемент (той, на котрий посилається `for`) має декілька підписів.
 
-    > **Примітка:** Елемент `<label>` може мати і атрибут `for`, і контрольний елемент всередині себе, за умови що атрибут `for` вказує на той контрольний елемент, що всередині.
+    > **Примітка:** Елемент `<label>` може мати як атрибут `for`, так і контрольний елемент всередині себе, за умови що атрибут `for` вказує на той контрольний елемент, що всередині.
 
 ## Оформлення засобами CSS
 
@@ -72,7 +65,7 @@ browser-compat: html.elements.label
 <label>Клацни мене <input type="text" /></label>
 ```
 
-{{EmbedLiveSample('vyznachennia-neiavnoho-pidpysu', '200', '50', '')}}
+{{EmbedLiveSample('vyznachennia-neiavnoho-pidpysu', '200', '50')}}
 
 ### Визначення явного підпису з атрибутом "for"
 
@@ -81,7 +74,7 @@ browser-compat: html.elements.label
 <input type="text" id="username" />
 ```
 
-{{EmbedLiveSample('vyznachennia-yavnoho-pidpysu-z-atrybutom-for', '200', '50', '')}}
+{{EmbedLiveSample('vyznachennia-yavnoho-pidpysu-z-atrybutom-for', '200', '50')}}
 
 ## Занепокоєння щодо доступності
 
@@ -89,7 +82,7 @@ browser-compat: html.elements.label
 
 Не слід вміщувати інтерактивні елементи, як то {{HTMLElement("a", "anchors")}} чи {{HTMLElement("button", "buttons")}}, всередину `label`. Подібна практика ускладнює активацію поля форми, пов'язаного з `label`.
 
-#### Так робити не варто
+**Не робіть так:**
 
 ```html example-bad
 <label for="tac">
@@ -98,7 +91,7 @@ browser-compat: html.elements.label
 </label>
 ```
 
-#### А так – варто
+**Краще робіть так:**
 
 ```html example-good
 <label for="tac">
@@ -116,7 +109,7 @@ browser-compat: html.elements.label
 
 Якщо [форма](/uk/docs/Web/HTML/Element/form) чи розділ форми потребує заголовка, слід використовувати елемент {{HTMLElement("legend")}}, розташований всередині {{HTMLElement("fieldset")}}.
 
-#### Так робити не варто
+**Не робіть так:**
 
 ```html example-bad
 <label for="your-name">
@@ -125,7 +118,7 @@ browser-compat: html.elements.label
 </label>
 ```
 
-#### А так – варто
+**Краще робіть так:**
 
 ```html example-good
 <label class="large-label" for="your-name">
@@ -144,23 +137,23 @@ browser-compat: html.elements.label
   <tbody>
     <tr>
       <th scope="row">
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories"
+        <a href="/uk/docs/Web/HTML/Content_categories"
           >Категорії вмісту</a
         >
       </th>
       <td>
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#potokovyi-vmist"
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
           >Потоковий вміст</a
         >,
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#opovidalnyi-vmist"
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
           >оповідальний вміст</a
         >,
         <a
-          href="/uk/docs/Web/Guide/HTML/Content_categories#interaktyvnyi-vmist"
+          href="/uk/docs/Web/HTML/Content_categories#interaktyvnyi-vmist"
           >інтерактивний вміст</a
         >,
         <a
-          href="/uk/docs/Web/Guide/HTML/Content_categories#formovyi-vmist"
+          href="/uk/docs/Web/HTML/Content_categories#formovyi-vmist"
           >формовий вміст</a
         >, дотиковий вміст.
       </td>
@@ -168,13 +161,13 @@ browser-compat: html.elements.label
     <tr>
       <th scope="row">Дозволений вміст</th>
       <td>
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#opovidalnyi-vmist"
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
           >Оповідальний вміст</a
         >, що не містить жодних елементів <code>label</code>. Не дозволені інші
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#labelable"
-          >підписувані</a
+        <a href="/uk/docs/Web/HTML/Content_categories#pidpysni"
+          >підписні</a
         >
-        елементи, крім того, що підписується підписом.
+        елементи, крім того, що підписується цим підписом.
       </td>
     </tr>
     <tr>
@@ -185,7 +178,7 @@ browser-compat: html.elements.label
       <th scope="row">Дозволені батьківські елементи</th>
       <td>
         Всі елементи, що приймають
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#opovidalnyi-vmist"
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
           >оповідальний вміст</a
         >.
       </td>

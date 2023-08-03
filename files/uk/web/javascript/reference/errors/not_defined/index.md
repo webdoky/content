@@ -10,7 +10,7 @@ page-type: javascript-error
 
 ## Повідомлення
 
-```
+```plain
 ReferenceError: "x" is not defined (браузери на основі V8 і Firefox)
 ReferenceError: Can't find variable: x (Safari)
 ```

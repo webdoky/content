@@ -21,7 +21,7 @@ browser-compat: html.elements.form
 
   - : Розділені комами [типи вмісту](/uk/docs/Web/SVG/Content_type), котрі приймає сервер.
 
-    > **Примітка:** **Цей атрибут тепер нерекомендований, його не слід використовувати.** Натомість слід використовувати атрибут {{htmlattrxref("accept", "input")}} на елементах `<input type=file>`.
+    > **Примітка:** **Цей атрибут тепер нерекомендований, його не слід використовувати.** Натомість слід використовувати атрибут [`accept`](/uk/docs/Web/HTML/Element/input#accept-pryimannia) на елементах `<input type=file>`.
 
 - {{htmlattrdef("accept-charset")}}
   - : Розділені пробілами {{Glossary("character encoding", "кодування символів")}}, котрі приймає сервер. Браузер використає їх в порядку, в якому вони вказані. Усталене значення – [таке саме кодування, яке має сторінка](/uk/docs/Web/HTTP/Headers/Content-Encoding).
@@ -54,7 +54,7 @@ browser-compat: html.elements.form
 Наступні атрибути контролюють поведінку під час подання форми.
 
 - `action`
-  - : URL, що обробляє подання форми. Це значення може бути відкинуто атрибутом {{htmlattrxref("formaction", "button")}} на елементі {{HTMLElement("button")}}, [`<input type="submit">`](/uk/docs/Web/HTML/Element/input/submit) чи [`<input type="image">`](/uk/docs/Web/HTML/Element/input/image). Цей атрибут ігнорується, коли задано `method="dialog"`.
+  - : URL, що обробляє подання форми. Це значення може бути відкинуто атрибутом [`formaction`](/uk/docs/Web/HTML/Element/button#formaction) на елементі {{HTMLElement("button")}}, [`<input type="submit">`](/uk/docs/Web/HTML/Element/input/submit) чи [`<input type="image">`](/uk/docs/Web/HTML/Element/input/image). Цей атрибут ігнорується, коли задано `method="dialog"`.
 - `enctype`
 
   - : Якщо значення атрибута `method` – `post`, то `enctype` – це [тип MIME](https://uk.wikipedia.org/wiki/MIME_%D1%82%D0%B8%D0%BF) подання форми. Можливі значення:
@@ -63,7 +63,7 @@ browser-compat: html.elements.form
     - `multipart/form-data`: Слід застосовувати, якщо форма містить елементи {{HTMLElement("input")}} з `type=file`.
     - `text/plain`: Корисно для потреб зневадження.
 
-    Це значення може бути відкинуто атрибутами {{htmlattrxref("formenctype", "button")}} на елементах {{HTMLElement("button")}}, [`<input type="submit">`](/uk/docs/Web/HTML/Element/input/submit) чи [`<input type="image">`](/uk/docs/Web/HTML/Element/input/image).
+    Це значення може бути відкинуто атрибутами [`formenctype`](/uk/docs/Web/HTML/Element/button#formenctype) на елементах {{HTMLElement("button")}}, [`<input type="submit">`](/uk/docs/Web/HTML/Element/input/submit) чи [`<input type="image">`](/uk/docs/Web/HTML/Element/input/image).
 
 - `method`
 
@@ -72,12 +72,12 @@ browser-compat: html.elements.form
 
     - `post`: Метод {{HTTPMethod("POST")}}; дані форми надсилаються як [тіло запиту](/uk/docs/Web/API/Request/body).
     - `get` (усталене значення): Метод {{HTTPMethod("GET")}}; дані форми додаються до URL `action` після роздільника `?`. Слід застосовувати, коли форма [не має побічних ефектів](/uk/docs/Glossary/Idempotent).
-    - `dialog`: Коли форма знаходиться всередині {{HTMLElement("dialog")}}, при поданні закриває діалог і викидає подію подання, не подаючи дані й не очищаючи форму.
+    - `dialog`: Коли форма знаходиться всередині {{HTMLElement("dialog")}}, при поданні закриває діалог і запускає подію `submit`, не надсилаючи дані й не очищаючи форму.
 
-    Це значення відкидається атрибутами {{htmlattrxref("formmethod", "button")}} на елементах {{HTMLElement("button")}}, [`<input type="submit">`](/uk/docs/Web/HTML/Element/input/submit) чи [`<input type="image">`](/uk/docs/Web/HTML/Element/input/image).
+    Це значення відкидається атрибутами [`formmethod`](/uk/docs/Web/HTML/Element/button#formmethod) на елементах {{HTMLElement("button")}}, [`<input type="submit">`](/uk/docs/Web/HTML/Element/input/submit) чи [`<input type="image">`](/uk/docs/Web/HTML/Element/input/image).
 
 - `novalidate`
-  - : Цей булів атрибут указує, що форма не повинна затверджуватися при поданні. Якщо цей атрибут не заданий (а отже – форма **_має_** затвердження), це може бути відкинуто атрибутом {{htmlattrxref("formnovalidate", "button")}} на елементі {{HTMLElement("button")}}, [`<input type="submit">`](/uk/docs/Web/HTML/Element/input/submit) чи [`<input type="image">`](/uk/docs/Web/HTML/Element/input/image), що належить формі.
+  - : Цей булів атрибут указує, що форма не повинна затверджуватися при поданні. Якщо цей атрибут не заданий (а отже – форма **_має_** затвердження), це може бути відкинуто атрибутом [`formnovalidate`](/uk/docs/Web/HTML/Element/button#formnovalidate) на елементі {{HTMLElement("button")}}, [`<input type="submit">`](/uk/docs/Web/HTML/Element/input/submit) чи [`<input type="image">`](/uk/docs/Web/HTML/Element/input/image), що належить формі.
 - `target`
 
   - : Вказує, де виводити відповідь після поданні форми. Це ім'я чи ключове слово на позначення _контексту перегляду_ (наприклад, вкладки, вікна чи iframe). Наступні ключові слова мають особливі значення:
@@ -87,7 +87,7 @@ browser-compat: html.elements.form
     - `_parent`: Завантажувати в батьківський щодо поточного контекст перегляду. Якщо батьківського немає, то діє так само як `_self`.
     - `_top`: Завантажувати в контекст перегляду найвищого рівня (тобто контекст перегляду, що є предком поточного і не має предка). Якщо батьківського контексту немає, то діє так само як `_self`.
 
-    Це значення може бути відкинуто атрибутом {{htmlattrxref("formtarget", "button")}} на елементі {{HTMLElement("button")}}, [`<input type="submit">`](/uk/docs/Web/HTML/Element/input/submit) чи [`<input type="image">`](/uk/docs/Web/HTML/Element/input/image).
+    Це значення може бути відкинуто атрибутом [`formtarget`](/uk/docs/Web/HTML/Element/button#formtarget) на елементі {{HTMLElement("button")}}, [`<input type="submit">`](/uk/docs/Web/HTML/Element/input/submit) чи [`<input type="image">`](/uk/docs/Web/HTML/Element/input/image).
 
 ## Приклади
 
@@ -119,6 +119,10 @@ browser-compat: html.elements.form
   </fieldset>
 </form>
 ```
+
+### Результат
+
+{{EmbedLiveSample('pryklady')}}
 
 ## Технічний підсумок
 

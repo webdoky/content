@@ -2,13 +2,6 @@
 title: <percentage>
 slug: Web/CSS/percentage
 page-type: css-type
-tags:
-  - CSS
-  - CSS Data Type
-  - Data Type
-  - Layout
-  - Reference
-  - Web
 browser-compat: css.types.percentage
 ---
 
@@ -24,7 +17,7 @@ browser-compat: css.types.percentage
 
 ## Інтерполяція
 
-При анімації значення типу даних `<percentage>` {{Glossary("interpolation", "інтерполюються")}} як дійсні числа з рухомою комою. Швидкість інтерполяції визначається [функцією хронометражу](/uk/docs/Web/CSS/easing-function), зв'язаною з анімацією.
+При анімації значення типу даних `<percentage>` {{Glossary("interpolation", "інтерполюються")}} як дійсні числа з рухомою комою. Швидкість інтерполяції визначається [функцією пом'якшення](/uk/docs/Web/CSS/easing-function), зв'язаною з анімацією.
 
 ## Приклади
 

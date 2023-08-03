@@ -34,7 +34,7 @@ includes(searchElement, fromIndex)
 
 ## Опис
 
-Метод `includes()` порівнює `searchElement` з елементами масиву за допомогою алгоритму [SameValueZero](/uk/docs/Web/JavaScript/Reference/Operators/Strict_equality). Усі нульові значення вважаються рівними, незалежно від свого знаку. (Тобто `-0` рівносильно `0`), але `false` _не_ вважається тотожним `0`. Може бути виконаний коректний пошук [`NaN`](/uk/docs/Web/JavaScript/Reference/Global_Objects/NaN).
+Метод `includes()` порівнює `searchElement` з елементами масиву за допомогою алгоритму [SameValueZero](/uk/docs/Web/JavaScript/Equality_comparisons_and_sameness#rivnist-iz-odnakovym-nulem). Усі нульові значення вважаються рівними, незалежно від свого знаку. (Тобто `-0` рівносильно `0`), але `false` _не_ вважається тотожним `0`. Може бути виконаний коректний пошук [`NaN`](/uk/docs/Web/JavaScript/Reference/Global_Objects/NaN).
 
 Бувши використаним на [розріджених масивах](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy), метод `includes()` ітерує порожні комірки так, ніби вони містять значення `undefined`.
 
@@ -91,7 +91,7 @@ console.log([1, , 3].includes(undefined)); // true
 
 ### Виклик includes() на об'єктах-немасивах
 
-Метод `includes()` зчитує з `this` властивість `length`, а потім звертається до кожної цілочислової властивості.
+Метод `includes()` зчитує з `this` властивість `length`, а потім звертається до кожної властивості, чий ключ – невід'ємне ціле число, менше за `length`.
 
 ```js
 const arrayLike = {
@@ -99,6 +99,7 @@ const arrayLike = {
   0: 2,
   1: 3,
   2: 4,
+  3: 1, // ігнорується includes(), оскільки length – 3
 };
 console.log(Array.prototype.includes.call(arrayLike, 2));
 // true
@@ -117,8 +118,10 @@ console.log(Array.prototype.includes.call(arrayLike, 1));
 ## Дивіться також
 
 - [Поліфіл для `Array.prototype.includes` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
-- {{jsxref("TypedArray.prototype.includes()")}}
-- {{jsxref("String.prototype.includes()")}}
+- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- {{jsxref("Array")}}
 - {{jsxref("Array.prototype.indexOf()")}}
 - {{jsxref("Array.prototype.find()")}}
 - {{jsxref("Array.prototype.findIndex()")}}
+- {{jsxref("TypedArray.prototype.includes()")}}
+- {{jsxref("String.prototype.includes()")}}

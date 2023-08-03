@@ -1,17 +1,14 @@
 ---
-title: '-moz-image-rect'
+title: "-moz-image-rect"
 slug: Web/CSS/-moz-image-rect
-tags:
-  - CSS
-  - CSS Function
-  - CSS Images
-  - CSS:Mozilla Extensions
-  - Function
-  - Non-standard
-  - Reference
+page-type: css-function
+status:
+  - experimental
+  - non-standard
 browser-compat: css.types.-moz-image-rect
 ---
-{{CSSRef}}{{Non-standard_Header}}
+
+{{CSSRef}}{{Non-standard_Header}}{{SeeCompatTable}}
 
 Властивість [CSS](/uk/docs/Web/CSS) **`-moz-image-rect`** для {{CSSxRef("background-image")}} дає змогу використовувати частину більшого зображення як тло.
 
@@ -54,14 +51,14 @@ CSS описує один стиль контейнера, далі стилі �
 
 ```css
 #container {
-  width:267px;
-  height:272px;
-  top:100px;
-  left:100px;
-  position:absolute;
-  font-size:16px;
-  text-shadow:white 0px 0px 6px;
-  text-align:center;
+  width: 267px;
+  height: 272px;
+  top: 100px;
+  left: 100px;
+  position: absolute;
+  font-size: 16px;
+  text-shadow: white 0px 0px 6px;
+  text-align: center;
 }
 ```
 
@@ -70,9 +67,9 @@ CSS описує один стиль контейнера, далі стилі �
 ```css
 #box1 {
   background-image: -moz-image-rect(url(firefox.png), 0%, 50%, 50%, 0%);
-  width:133px;
-  height:136px;
-  position:absolute;
+  width: 133px;
+  height: 136px;
+  position: absolute;
 }
 ```
 
@@ -81,9 +78,9 @@ CSS описує один стиль контейнера, далі стилі �
 ```css
 #box2 {
   background-image: -moz-image-rect(url(firefox.png), 0%, 100%, 50%, 50%);
-  width:133px;
-  height:136px;
-  position:absolute;
+  width: 133px;
+  height: 136px;
+  position: absolute;
 }
 ```
 
@@ -94,15 +91,15 @@ CSS описує один стиль контейнера, далі стилі �
 ```css
 #box3 {
   background-image: -moz-image-rect(url(firefox.png), 50%, 50%, 100%, 0%);
-  width:133px;
-  height:136px;
-  position:absolute;
+  width: 133px;
+  height: 136px;
+  position: absolute;
 }
 #box4 {
   background-image: -moz-image-rect(url(firefox.png), 50%, 100%, 100%, 50%);
-  width:133px;
-  height:136px;
-  position:absolute;
+  width: 133px;
+  height: 136px;
+  position: absolute;
 }
 ```
 
@@ -127,18 +124,18 @@ HTML код доволі простий:
 
 ```js
 function rotate() {
-  var prevStyle = window.getComputedStyle(document.getElementById("box4"), null).getPropertyValue("background-image");
+  let prevStyle = window
+    .getComputedStyle(document.getElementById("box4"), null)
+    .getPropertyValue("background-image");
 
   // Тепер, оскільки збережене останнє значення, починається чергування
-
-  for (var i=1; i<=4; i++) {
-    var curId = "box" + i;
+  for (let i = 1; i <= 4; i++) {
+    const curId = `box${i}`;
 
     // Зсування зображень тла
-
-    var curStyle = window.getComputedStyle(document.getElementById(curId), null).getPropertyValue("background-image");
-    document.getElementById(curId).style.backgroundImage = prevStyle;
-    prevStyle = curStyle;
+    const curStyle = window
+      .getComputedStyle(document.getElementById(curId), null)
+      .getPropertyValue("background-image");
   }
 }
 ```

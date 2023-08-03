@@ -7,7 +7,7 @@ browser-compat: html.elements.a
 
 {{HTMLSidebar}}
 
-Елемент [HTML](/uk/docs/Web/HTML) **`<a>`** (він же _якірний_ елемент) з [атрибутом `href`](#attr-href) створює гіперпосилання до вебсторінок, файлів, адрес електронної пошти, місць на тій самій сторінці чи будь-чого іще, на що може посилатися URL.
+Елемент [HTML](/uk/docs/Web/HTML) **`<a>`** (він же _якірний_ елемент) з [атрибутом `href`](#href) створює гіперпосилання до вебсторінок, файлів, адрес електронної пошти, місць на тій самій сторінці чи будь-чого іще, на що може посилатися URL.
 
 Вміст всередині кожного `<a>` _повинен_ відображати спрямування посилання. Якщо присутній атрибут `href`, то натискання клавіші `Enter`, коли фокус знаходиться на елементі `<a>`, активує перехід.
 
@@ -25,7 +25,7 @@ browser-compat: html.elements.a
 
       - Заголовка HTTP {{HTTPHeader("Content-Disposition")}}
       - Останнього сегмента [шляху](/uk/docs/Web/API/URL/pathname) URL
-      - {{Glossary("MIME_type", "Типу медіаданих")}} (із заголовка {{HTTPHeader("Content-Type")}}, початку [URL `data:`](/uk/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) чи {{domxref("Blob.type")}} в [URL `blob:`](/uk/docs/Web/API/URL/createObjectURL))
+      - {{Glossary("MIME_type", "Типу медіаданих")}} (із заголовка {{HTTPHeader("Content-Type")}}, початку [URL `data:`](/uk/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) чи {{domxref("Blob.type")}} в [URL `blob:`](/uk/docs/Web/API/URL/createObjectURL_static))
 
     - `filename`: якщо значення задане, то воно буде запропоновано як назва файлу. Символи `/` і `\` перетворюються на підкреслення (`_`). Файлові системи можуть забороняти інші символи в іменах файлів, тож браузери підлаштовуватимуть запропоноване ім'я, якщо це необхідно.
 
@@ -91,15 +91,15 @@ browser-compat: html.elements.a
     > **Примітка:** Цей атрибут є нерекомендованим і **не повинен використовуватись авторами**. Використовуйте HTTP заголовок {{HTTPHeader("Content-Type")}} за вказаним URL.
 
 - `coords` {{Deprecated_Inline}}
-  - : Використовується разом з [атрибутом `shape`](#attr-shape). Розділений комами список координат.
+  - : Використовується разом з [атрибутом `shape`](#shape). Розділений комами список координат.
 - `name` {{Deprecated_Inline}}
 
   - : Був необхідним для встановлення можливого цільового місця на сторінці. В HTML 4.01 і `id`, і `name` могли використовуватися на `<a>`, за умови що вони мали ідентичні значення.
 
-    > **Примітка:** Використовуйте натомість глобальний атрибут {{HTMLAttrxRef("id")}}.
+    > **Примітка:** Використовуйте натомість глобальний атрибут [`id`](/uk/docs/Web/HTML/Global_attributes#id).
 
 - `rev` {{Deprecated_Inline}}
-  - : Вказував зворотне посилання; протилежність [атрибута `rel`](#attr-rel). Став нерекомендованим через те, що збивав з пантелику.
+  - : Вказував зворотне посилання; протилежність [атрибута `rel`](#rel). Став нерекомендованим через те, що збивав з пантелику.
 - `shape` {{Deprecated_Inline}}
 
   - : Форма регіону гіперпосилання на бітовій карті.
@@ -232,6 +232,7 @@ a {
 const canvas = document.querySelector("canvas");
 const c = canvas.getContext("2d");
 c.fillStyle = "hotpink";
+let isDrawing;
 
 function draw(x, y) {
   if (isDrawing) {
@@ -243,7 +244,7 @@ function draw(x, y) {
 }
 
 canvas.addEventListener("mousemove", (event) =>
-  draw(event.offsetX, event.offsetY)
+  draw(event.offsetX, event.offsetY),
 );
 canvas.addEventListener("mousedown", () => (isDrawing = true));
 canvas.addEventListener("mouseup", () => (isDrawing = false));
@@ -252,7 +253,7 @@ document
   .querySelector("a")
   .addEventListener(
     "click",
-    (event) => (event.target.href = canvas.toDataURL())
+    (event) => (event.target.href = canvas.toDataURL()),
   );
 ```
 
@@ -330,7 +331,7 @@ document
 <a href="2017-annual-report.ppt">2017 Річний звіт (PowerPoint) </a>
 ```
 
-Якщо призначення посилання позначено іконкою, слід пересвідчитись, що ця іконка має {{HTMLAttrxRef("alt", "img", "текстову альтернативу", "true")}}:
+Якщо призначення посилання позначено іконкою, слід пересвідчитись, що ця іконка має [_текстову альтернативу_](/uk/docs/Web/HTML/Element/img#alt):
 
 ```html
 <a target="_blank" href="https://uk.wikipedia.org">

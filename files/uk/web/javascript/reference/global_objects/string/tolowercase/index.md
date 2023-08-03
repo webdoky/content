@@ -1,14 +1,10 @@
 ---
 title: String.prototype.toLowerCase()
 slug: Web/JavaScript/Reference/Global_Objects/String/toLowerCase
-tags:
-  - JavaScript
-  - Method
-  - Prototype
-  - Reference
-  - String
+page-type: javascript-instance-method
 browser-compat: javascript.builtins.String.toLowerCase
 ---
+
 {{JSRef}}
 
 Метод **`toLowerCase()`** повертає значення рядка, на якому викликається, переведене у нижній регістр.
@@ -17,7 +13,7 @@ browser-compat: javascript.builtins.String.toLowerCase
 
 ## Синтаксис
 
-```js
+```js-nolint
 toLowerCase()
 ```
 
@@ -34,7 +30,7 @@ toLowerCase()
 ### Застосування `toLowerCase()`
 
 ```js
-console.log('АБЕТКА'.toLowerCase()); // 'абетка'
+console.log("АБЕТКА".toLowerCase()); // 'абетка'
 ```
 
 ## Специфікації

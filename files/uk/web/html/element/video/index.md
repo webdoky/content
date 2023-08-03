@@ -29,8 +29,6 @@ browser-compat: html.elements.video
 
     В певних браузерах (наприклад, Chrome 70.0) автоматичне відтворення не працює, якщо немає атрибута `muted`.
 
-- `autopictureinpicture` {{experimental_inline}}
-  - : Булів атрибут, котрий, якщо його значення – `true`, вказує, що елемент повинен автоматично ввімкнути режим картинки-в-картинці, коли користувач перемикається туди й назад між поточним документом та іншим документом чи застосунком.
 - `controls`
   - : Якщо присутній цей атрибут, то браузер запропонує користувачеві контрольні засоби для керування відтворенням відео, в тому числі гучністю, перемоткою та паузою-відновленням відтворення.
 - `controlslist` {{experimental_inline}}{{non-standard_inline}}
@@ -39,7 +37,7 @@ browser-compat: html.elements.video
 
     Дозволені значення: `nodownload`, `nofullscreen` і `noremoteplayback`.
 
-    Використовуйте атрибут [`disablepictureinpicture`](#attr-disablepictureinpicture) при потребі вимкнути режим картинки-в-картинці (і контрольні елементи).
+    Використовуйте атрибут [`disablepictureinpicture`](#disablepictureinpicture) при потребі вимкнути режим картинки-в-картинці (і контрольні елементи).
 
 - `crossorigin`
 
@@ -327,7 +325,7 @@ elem.audioTracks.onremovetrack = (event) => {
 
 Якщо для подачі відео Ogg Theora використовується Apache Web Server, то цю проблему можна вирішити шляхом додавання до типу MIME "video/ogg" розширень типу файлу відео. Найпоширеніші розширення типу файлу – ".ogm", ".ogv" і ".ogg". Щоб це зробити, відредагуйте файл "mime.types" file в "/etc/apache" або використайте директиву конфігурації `"AddType"` в `httpd.conf`.
 
-```
+```plain
 AddType video/ogg .ogm
 AddType video/ogg .ogv
 AddType video/ogg .ogg
@@ -335,7 +333,7 @@ AddType video/ogg .ogg
 
 Якщо відео подаються як WebM, то така проблема для Apache Web Server може бути вирішена шляхом додавання розширення відеофайлів (найпоширеніше розширення – ".webm") до типу MIME "video/webm" за допомогою файлу "mime.types" в "/etc/apache" чи за допомогою директиви "AddType" в `httpd.conf`.
 
-```
+```plain
 AddType video/webm .webm
 ```
 
@@ -422,7 +420,7 @@ AddType video/webm .webm
 
 На додачу до розмовного діалогу, субтитри й розшифровки також повинні ідентифікувати музику й звукові ефекти, що доносять важливу інформацію. В тому числі емоції й тон:
 
-```
+```plain
 14
 00:03:14 --> 00:03:18
 [Драматична рок-музика]
@@ -462,7 +460,7 @@ AddType video/webm .webm
         <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
           >Потоковий вміст</a
         >, оповідальний вміст, вбудований вміст. Якщо має атрибут
-        {{htmlattrxref("controls", "video")}}: інтерактивний
+        <a href="/uk/docs/Web/HTML/Element/video#controls"><code>controls</code></a>: інтерактивний
         вміст і дотиковий вміст.
       </td>
     </tr>
@@ -470,7 +468,7 @@ AddType video/webm .webm
       <th scope="row">Дозволений вміст</th>
       <td>
         <p>
-          Якщо елемент має атрибут {{htmlattrxref("src", "video")}}:
+          Якщо елемент має атрибут <a href="/uk/docs/Web/HTML/Element/video#src"><code>src</code></a>:
           нуль чи більше елементів {{HTMLElement("track")}},
           після котрих – прозорий вміст, що не містить мультимедійних елементів, тобто
           жодних {{HTMLElement("audio")}} чи

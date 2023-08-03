@@ -2,11 +2,6 @@
 title: encodeURIComponent()
 slug: Web/JavaScript/Reference/Global_Objects/encodeURIComponent
 page-type: javascript-function
-tags:
-  - JavaScript
-  - Method
-  - Reference
-  - URI
 browser-compat: javascript.builtins.encodeURIComponent
 ---
 
@@ -68,10 +63,14 @@ console.log(header);
 function encodeRFC5987ValueChars(str) {
   return (
     encodeURIComponent(str)
-      // Зверніть увагу, що коли RFC3986 резервує "!", то RFC5987 – ні,
-      // тому цей символ немає потреби екранувати
-      .replace(/['()*]/g, (c) => `%${c.charCodeAt(0).toString(16)}`) // отже, %27 %28 %29 %2a (Зверніть увагу, що дійсне кодування "*" – %2A
-      // з чого випливає потреба викликати toUpperCase() для коректного кодування)
+      // Рядок нижче утворює послідовності %27 %28 %29 %2A (Зверніть увагу, що
+      // дійсне кодування "*" – це %2A, з чого випливає потреба викликати
+      // toUpperCase() для коректного кодування). І хоча RFC3986 резервує "!",
+      // RFC5987 – ні, тому цей символ немає потреби екранувати.
+      .replace(
+        /['()*]/g,
+        (c) => `%${c.charCodeAt(0).toString(16).toUpperCase()}`
+      )
       // Наступне не обов'язково для процентного кодування згідно з RFC5987,
       // тож можна дозволити трохи кращу прочитність по той бік дроту: |`^
       .replace(/%(7C|60|5E)/g, (str, hex) =>

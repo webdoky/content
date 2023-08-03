@@ -7,13 +7,14 @@ browser-compat: javascript.builtins.Array.push
 
 {{JSRef}}
 
-Метод **`push()`** (запхати) додає один або декілька елементів у кінець масиву та повертає нову довжину масиву.
+Метод **`push()`** (запхати) додає задані елементи в кінець масиву та повертає нову довжину масиву.
 
 {{EmbedInteractiveExample("pages/js/array-push.html")}}
 
 ## Синтаксис
 
 ```js-nolint
+push()
 push(element0)
 push(element0, element1)
 push(element0, element1, /* … ,*/ elementN)
@@ -34,7 +35,7 @@ push(element0, element1, /* … ,*/ elementN)
 
 {{jsxref("Array.prototype.unshift()")}} має подібну до `push()` логіку, але додає значення в початок масиву.
 
-Метод `push()` – видозмінює масив, на котрому викликаний. Він змінює довжину і зміст `this`. Якщо необхідно, аби значення `this` було тим самим, але був повернений новий масив з елементами, доданими в його кінець, можна натомість використати [`arr.concat([element0, element1, /* ... ,*/ elementN])`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/concat). Зверніть увагу, що елементи загорнуті в додатковий масив: інакше, якщо елемент сам є масивом, він буде розгорнутий, а не доданий як один елемент, у зв'язку з логікою `concat()`.
+Метод `push()` – це [змінювальний метод](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#kopiiuvalni-ta-zminiuvalni-metody). Він змінює довжину і зміст `this`. Якщо необхідно, аби значення `this` було тим самим, але був повернений новий масив з елементами, доданими в його кінець, можна натомість використати [`arr.concat([element0, element1, /* ... ,*/ elementN])`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/concat). Зверніть увагу, що елементи загорнуті в додатковий масив: інакше, якщо елемент сам є масивом, він буде розгорнутий, а не доданий як один елемент, у зв'язку з логікою `concat()`.
 
 Метод `push()` є [узагальненим](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#uzahalneni-metody-masyvu). Він лишень очікує, що значення `this` матиме властивість `length`, а також властивості з цілочисловими ключами. Попри те, що рядки також є масивоподібними, цей метод не підходить для застосування до них, адже рядки є незмінними значеннями.
 
@@ -124,7 +125,10 @@ console.log(obj.length); // 2
 ## Дивіться також
 
 - [Поліфіл `Array.prototype.push` доступний у складі `core-js`, з виправленнями для цього метода](https://github.com/zloirock/core-js#ecmascript-array)
+- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- {{jsxref("Array")}}
 - {{jsxref("Array.prototype.pop()")}}
 - {{jsxref("Array.prototype.shift()")}}
 - {{jsxref("Array.prototype.unshift()")}}
 - {{jsxref("Array.prototype.concat()")}}
+- {{jsxref("Array.prototype.splice()")}}

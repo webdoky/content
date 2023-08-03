@@ -2,12 +2,6 @@
 title: Number
 slug: Web/JavaScript/Reference/Global_Objects/Number
 page-type: javascript-class
-tags:
-  - Class
-  - JavaScript
-  - Number
-  - Reference
-  - Polyfill
 browser-compat: javascript.builtins.Number
 ---
 
@@ -19,12 +13,15 @@ browser-compat: javascript.builtins.Number
 
 ## Опис
 
-Числа найчастіше виражають у літеральних формах, як то `0b101`, `0o13`, `0x0A`. [Лексична граматика](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#chyslovi-literaly) містить докладнішу довідку.
+Числа найчастіше виражають у літеральних формах, як то `255` або `3.14159`. [Лексична граматика](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#chyslovi-literaly) містить докладнішу довідку.
 
 ```js
-123; // сто двадцять три
-123.0; // те саме
-123 === 123.0; // true
+255; // двісті п'ятдесят п'ять
+255.0; // те саме число
+255 === 255.0; // true
+255 === 0xff; // true (шістнадцятковий запис)
+255 === 0b11111111; // true (двійковий запис)
+255 === 0.255e3; // true (десятковий експоненційний запис)
 ```
 
 Числовий літерал, як то `37`, в коді JavaScript є значенням з рухомою комою, а не цілим. Немає загальновживаного окремого типу цілих чисел. (JavaScript тепер має тип {{jsxref("BigInt")}}, але він був розроблений не для заміни Number в повсякденному використанні. `37` – це все ж `Number`, а не BigInt.)
@@ -73,7 +70,7 @@ Number(undefined); // NaN
   - `+` і `-` дозволені на початку й позначають знак числа. (У звичайному коді вони "мають вигляд" частини літерала, хоча насправді є окремими унарними операторами.). Проте знак може бути лише один, і після нього не повинно бути пробілів.
   - `Infinity` та `-Infinity` беруться за літерали. У звичайному коді вони є глобальними змінними.
   - Порожні рядки й рядки лише з пробілів – перетворюються на `0`.
-  - [Числові роздільники](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#chyslovi-rozdilnyky) не дозволені.
+  - [Числові роздільники](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#rozdiliuvachi-rozriadiv) не дозволені.
 - [BigInt](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt) викидають {{jsxref("TypeError")}}, аби запобігти ненавмисному неявному зведенню, і як наслідок – втраті точності.
 - [Символи](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol) викидають {{jsxref("TypeError")}}.
 - Об'єкти спершу [перетворюються на примітиви](/uk/docs/Web/JavaScript/Data_structures#zvedennia-do-prymityva) шляхом виклику їх методів [`[@@toPrimitive]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive) (з підказкою `"number"`), `valueOf()` і `toString()` – в такому порядку. Результівний примітив опісля перетворюється на число.
@@ -97,16 +94,23 @@ JavaScript має низькорівневі функції, що працюют
 
 ```js
 new Int32Array([1.1, 1.9, -1.1, -1.9]); // Int32Array(4) [ 1, 1, -1, -1 ]
-new Int8Array([257, -257]); // Int8Array(1) [ 1, -1 ]
-// 257 = 0001 0000 0001 = 0000 0001 (остача від ділення на 2^8) = 1
-// -257 = 1110 1111 1111 = 1111 1111 (остача від ділення на 2^8) = -1 (як ціле зі знаком)
-new Uint8Array([257, -257]); // Uint8Array(1) [ 1, 255 ]
-// -257 = 1110 1111 1111 = 1111 1111 (mod 2^8) = 255 (як ціле без знаку)
+
+new Int8Array([257, -257]); // Int8Array(2) [ 1, -1 ]
+// 257 = 0001 0000 0001
+//     =      0000 0001 (mod 2^8)
+//     = 1
+// -257 = 1110 1111 1111
+//      =      1111 1111 (mod 2^8)
+//      = -1 (як ціле зі знаком)
+new Uint8Array([257, -257]); // Uint8Array(2) [ 1, 255 ]
+// -257 = 1110 1111 1111
+//      =      1111 1111 (mod 2^8)
+//      = 255 (як ціле без знаку)
 ```
 
 ## Конструктор
 
-- [`Number()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number/Number)
+- {{jsxref("Number/Number", "Number()")}}
   - : Створює нове значення `Number`.
 
 Коли `Number` викликається як конструктор (із `new`), це породжує об'єкт {{jsxref("Number")}}, котрий **не** є примітивом. Наприклад, `typeof new Number(42) === "object"`, і `new Number(42) !== 42` (проте `new Number(42) == 42`).
@@ -131,23 +135,28 @@ new Uint8Array([257, -257]); // Uint8Array(1) [ 1, 255 ]
   - : Особливе значення, що представляє від'ємну нескінченність. Повертається при переповненні.
 - {{jsxref("Number.POSITIVE_INFINITY")}}
   - : Особливе значення, що представляє нескінченність. Повертається при переповненні.
-- {{jsxref("Number", "Number.prototype")}}
-  - : Дає змогу додавати до об'єкта `Number` нові властивості.
 
 ## Статичні методи
 
-- {{jsxref("Number.isNaN()")}}
-  - : З'ясовує, чи є передане значення `NaN`.
 - {{jsxref("Number.isFinite()")}}
   - : З'ясовує, чи є передане значення скінченним числом.
 - {{jsxref("Number.isInteger()")}}
   - : З'ясовує, чи є передане значення цілим числом.
+- {{jsxref("Number.isNaN()")}}
+  - : З'ясовує, чи є передане значення `NaN`.
 - {{jsxref("Number.isSafeInteger()")}}
   - : З'ясовує, чи є передане значення безпечним цілим (числом в діапазоні від -(2<sup>53</sup> - 1) до 2<sup>53</sup> - 1).
 - {{jsxref("Number.parseFloat()")}}
   - : Те саме, що й глобальна функція {{jsxref("parseFloat", "parseFloat()")}}.
 - {{jsxref("Number.parseInt()")}}
   - : Те саме, що й глобальна функція {{jsxref("parseInt", "parseInt()")}}.
+
+## Властивості примірника
+
+Ці властивості означені на `Number.prototype` і є спільними для всіх примірників `Number`.
+
+- {{jsxref("Object/constructor", "Number.prototype.constructor")}}
+  - : Функція-конструктор, що створила об'єкт-примірник. Для примірників `Number` початковим значенням є конструктор {{jsxref("Number/Number", "Number")}}.
 
 ## Методи примірника
 

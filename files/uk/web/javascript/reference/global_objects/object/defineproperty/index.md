@@ -2,12 +2,6 @@
 title: Object.defineProperty()
 slug: Web/JavaScript/Reference/Global_Objects/Object/defineProperty
 page-type: javascript-static-method
-tags:
-  - ECMAScript 5
-  - JavaScript
-  - JavaScript 1.8.5
-  - Method
-  - Object
 browser-compat: javascript.builtins.Object.defineProperty
 ---
 
@@ -84,30 +78,30 @@ Object.defineProperty(obj, prop, descriptor)
 const obj = {};
 // 1. Застосування null як прототипа – немає успадкованих властивостей
 const descriptor = Object.create(null);
-descriptor.value = 'static';
+descriptor.value = "static";
 
 // як усталено: неперелічувана, неналаштовна, незаписувана
-Object.defineProperty(obj, 'key', descriptor);
+Object.defineProperty(obj, "key", descriptor);
 
 // 2. Явним чином, шляхом використання одноразового об'єктного літерала
 // із вказаними всіма атрибутами
-Object.defineProperty(obj, 'key2', {
+Object.defineProperty(obj, "key2", {
   enumerable: false,
   configurable: false,
   writable: false,
-  value: 'static'
+  value: "static",
 });
 
 // 3. Повторно використовуючи один об'єкт
 function withValue(value) {
-  const d = withValue.d || (
-    withValue.d = {
+  const d =
+    withValue.d ||
+    (withValue.d = {
       enumerable: false,
       writable: false,
       configurable: false,
       value,
-    }
-  );
+    });
 
   // уникання подвійної роботи під час присвоєння значення
   if (d.value !== value) d.value = value;
@@ -115,7 +109,7 @@ function withValue(value) {
   return d;
 }
 // і далі
-Object.defineProperty(obj, 'key', withValue('static'));
+Object.defineProperty(obj, "key", withValue("static"));
 
 // якщо доступна операція заморожування, перешкоджає
 // додаванню чи видаленню властивостей прототипа об'єкта
@@ -140,22 +134,26 @@ const o = {}; // Створює новий об'єкт
 
 // Приклад додавання властивості об'єкта за допомогою
 // defineProperty з дескриптором властивості даних
-Object.defineProperty(o, 'a', {
+Object.defineProperty(o, "a", {
   value: 37,
   writable: true,
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 // властивість 'a' існує всередині об'єкта o, і її значення дорівнює 37
 
 // Приклад додавання властивості об'єкта за допомогою
 // defineProperty з дескриптором аксесорної властивості
 let bValue = 38;
-Object.defineProperty(o, 'b', {
-  get() { return bValue; },
-  set(newValue) { bValue = newValue; },
+Object.defineProperty(o, "b", {
+  get() {
+    return bValue;
+  },
+  set(newValue) {
+    bValue = newValue;
+  },
   enumerable: true,
-  configurable: true
+  configurable: true,
 });
 o.b; // 38
 // властивість 'b' існує в об'єкті o, і її значення дорівнює 38
@@ -163,9 +161,11 @@ o.b; // 38
 // доки властивість o.b не буде перевизначено
 
 // Неможливо змішати обидва типи:
-Object.defineProperty(o, 'conflict', {
+Object.defineProperty(o, "conflict", {
   value: 0x9f91102,
-  get() { return 0xdeadbeef; }
+  get() {
+    return 0xdeadbeef;
+  },
 });
 // викидає TypeError: атрибут value мусить бути
 // присутнім лише в дескрипторах даних,
@@ -183,9 +183,9 @@ Object.defineProperty(o, 'conflict', {
 ```js
 const o = {}; // Створює новий об'єкт
 
-Object.defineProperty(o, 'a', {
+Object.defineProperty(o, "a", {
   value: 37,
-  writable: false
+  writable: false,
 });
 
 console.log(o.a); // 37
@@ -196,9 +196,9 @@ console.log(o.a); // 37; Присвоєння не спрацювало
 
 // суворий режим
 (() => {
-  'use strict';
+  "use strict";
   const o = {};
-  Object.defineProperty(o, 'b', {
+  Object.defineProperty(o, "b", {
     value: 2,
     writable: false,
   });
@@ -215,26 +215,26 @@ console.log(o.a); // 37; Присвоєння не спрацювало
 
 ```js
 const o = {};
-Object.defineProperty(o, 'a', {
+Object.defineProperty(o, "a", {
   value: 1,
-  enumerable: true
+  enumerable: true,
 });
-Object.defineProperty(o, 'b', {
+Object.defineProperty(o, "b", {
   value: 2,
-  enumerable: false
+  enumerable: false,
 });
-Object.defineProperty(o, 'c', {
-  value: 3
+Object.defineProperty(o, "c", {
+  value: 3,
 }); // усталене значення enumerable — false
 o.d = 4; // усталене значення enumerable дорівнює true,
-         // якщо властивість створюється шляхом її встановлення
-Object.defineProperty(o, Symbol.for('e'), {
+// якщо властивість створюється шляхом її встановлення
+Object.defineProperty(o, Symbol.for("e"), {
   value: 5,
-  enumerable: true
+  enumerable: true,
 });
-Object.defineProperty(o, Symbol.for('f'), {
+Object.defineProperty(o, Symbol.for("f"), {
   value: 6,
-  enumerable: false
+  enumerable: false,
 });
 
 for (const i in o) {
@@ -244,20 +244,20 @@ for (const i in o) {
 
 Object.keys(o); // ['a', 'd']
 
-o.propertyIsEnumerable('a'); // true
-o.propertyIsEnumerable('b'); // false
-o.propertyIsEnumerable('c'); // false
-o.propertyIsEnumerable('d'); // true
-o.propertyIsEnumerable(Symbol.for('e')); // true
-o.propertyIsEnumerable(Symbol.for('f')); // false
+o.propertyIsEnumerable("a"); // true
+o.propertyIsEnumerable("b"); // false
+o.propertyIsEnumerable("c"); // false
+o.propertyIsEnumerable("d"); // true
+o.propertyIsEnumerable(Symbol.for("e")); // true
+o.propertyIsEnumerable(Symbol.for("f")); // false
 
-const p = { ...o }
-p.a // 1
-p.b // undefined
-p.c // undefined
-p.d // 4
-p[Symbol.for('e')] // 5
-p[Symbol.for('f')] // undefined
+const p = { ...o };
+p.a; // 1
+p.b; // undefined
+p.c; // undefined
+p.d; // 4
+p[Symbol.for("e")]; // 5
+p[Symbol.for("f")]; // undefined
 ```
 
 #### Атрибут configurable
@@ -268,45 +268,49 @@ p[Symbol.for('f')] // undefined
 
 ```js
 const o = {};
-Object.defineProperty(o, 'a', {
-  get() { return 1; },
+Object.defineProperty(o, "a", {
+  get() {
+    return 1;
+  },
   configurable: false,
 });
 
-Object.defineProperty(o, 'a', {
-  configurable: true
+Object.defineProperty(o, "a", {
+  configurable: true,
 }); // викидає TypeError
-Object.defineProperty(o, 'a', {
-  enumerable: true
+Object.defineProperty(o, "a", {
+  enumerable: true,
 }); // викидає TypeError
-Object.defineProperty(o, 'a', {
-  set() {}
+Object.defineProperty(o, "a", {
+  set() {},
 }); // викидає TypeError (set до цього дорівнював undefined)
-Object.defineProperty(o, 'a', {
-  get() { return 1; }
+Object.defineProperty(o, "a", {
+  get() {
+    return 1;
+  },
 }); // викидає TypeError
 // (навіть якщо новий гетер робить точнісінько те саме)
-Object.defineProperty(o, 'a', {
-  value: 12
+Object.defineProperty(o, "a", {
+  value: 12,
 }); // викидає TypeError // ('value' можна змінювати із 'configurable', встановленим у false, проте не в цьому випадку, через наявність аксесора 'get')
 
 console.log(o.a); // 1
 delete o.a; // Нічого не відбувається
 console.log(o.a); // 1
 
-Object.defineProperty(o, 'b', {
+Object.defineProperty(o, "b", {
   writable: true,
   configurable: false,
 });
 console.log(o.b); // undefined
-Object.defineProperty(o, 'b', {
+Object.defineProperty(o, "b", {
   value: 1,
 }); // Навіть якщо configurable дорівнює false, значення досі можна замінювати, оскільки об'єкт залишається записуваним
 console.log(o.b); // 1
-Object.defineProperty(o, 'b', {
+Object.defineProperty(o, "b", {
   writable: false,
 });
-Object.defineProperty(o, 'b', {
+Object.defineProperty(o, "b", {
   value: 1,
 }); // TypeError: властивість не можна змінити, оскільки воне не є ні записуваною, ні налаштовною
 ```
@@ -315,28 +319,28 @@ Object.defineProperty(o, 'b', {
 
 ### Додавання атрибутів і усталених значень
 
-Важливо розуміти, яким чином застосовуються усталені значення атрибутів. Нерідко існує певна відмінність між застосуванням запису через крапку для присвоєння значення, і вживанням методу `Object.defineProperty()`, як проілюстровано у прикладі нижче.
+Важливо розуміти, яким чином застосовуються усталені значення атрибутів. Нерідко існує певна відмінність між застосуванням для присвоєння значень [звертань до властивостей](/uk/docs/Web/JavaScript/Reference/Operators/Property_accessors) і вживанням методу `Object.defineProperty()`, як проілюстровано у прикладі нижче.
 
 ```js
 const o = {};
 
 o.a = 1;
 // є еквівалентом до:
-Object.defineProperty(o, 'a', {
+Object.defineProperty(o, "a", {
   value: 1,
   writable: true,
   configurable: true,
-  enumerable: true
+  enumerable: true,
 });
 
 // З іншого боку,
-Object.defineProperty(o, 'a', { value: 1 });
+Object.defineProperty(o, "a", { value: 1 });
 // є еквівалентом до:
-Object.defineProperty(o, 'a', {
+Object.defineProperty(o, "a", {
   value: 1,
   writable: false,
   configurable: false,
-  enumerable: false
+  enumerable: false,
 });
 ```
 
@@ -349,15 +353,15 @@ function Archiver() {
   let temperature = null;
   const archive = [];
 
-  Object.defineProperty(this, 'temperature', {
+  Object.defineProperty(this, "temperature", {
     get() {
-      console.log('отримати!');
+      console.log("отримати!");
       return temperature;
     },
     set(value) {
       temperature = value;
       archive.push({ val: temperature });
-    }
+    },
   });
 
   this.getArchive = () => archive;
@@ -375,19 +379,19 @@ arc.getArchive(); // [{ val: 11 }, { val: 13 }]
 ```js
 const pattern = {
   get() {
-    return 'Я завжди повертаю цей рядок, незалежно від того, що мені присвоєно';
+    return "Я завжди повертаю цей рядок, незалежно від того, що мені присвоєно";
   },
   set() {
-    this.myname = 'це рядок із моїм іменем';
+    this.myname = "це рядок із моїм іменем";
   },
 };
 
 function TestDefineSetAndGet() {
-  Object.defineProperty(this, 'myproperty', pattern);
+  Object.defineProperty(this, "myproperty", pattern);
 }
 
 const instance = new TestDefineSetAndGet();
-instance.myproperty = 'test';
+instance.myproperty = "test";
 console.log(instance.myproperty);
 // Я завжди повертаю цей рядок, незалежно від того, що мені присвоєно
 
@@ -399,8 +403,7 @@ console.log(instance.myname); // це рядок із моїм іменем
 Коли успадковується аксесорна властивість, її методи `get` та `set` викликаються, коли до цієї властивості звертаються чи модифікують її на дочірніх об'єктах. Якщо ці методи використовують змінну для зберігання значення, це значення поділятимуть всі об'єкти.
 
 ```js
-function MyClass() {
-}
+function MyClass() {}
 
 let value;
 Object.defineProperty(MyClass.prototype, "x", {
@@ -409,7 +412,7 @@ Object.defineProperty(MyClass.prototype, "x", {
   },
   set(x) {
     value = x;
-  }
+  },
 });
 
 const a = new MyClass();
@@ -421,8 +424,7 @@ console.log(b.x); // 1
 Це можна виправити, якщо зберігати значення всередині іншої властивості. Всередині методів `get` та `set` значення `this` вказує на об'єкт, який було використано для доступу чи зміни властивості.
 
 ```js
-function MyClass() {
-}
+function MyClass() {}
 
 Object.defineProperty(MyClass.prototype, "x", {
   get() {
@@ -430,7 +432,7 @@ Object.defineProperty(MyClass.prototype, "x", {
   },
   set(x) {
     this.storedX = x;
-  }
+  },
 });
 
 const a = new MyClass();
@@ -439,16 +441,15 @@ a.x = 1;
 console.log(b.x); // undefined
 ```
 
-На відміну від аксесорних властивостей, значення властивостей даних завжди встановлюються на самому об'єкті, а не на його прототипі. Проте, якщо успадковується незаписувана властивість, то це перешкодить внесенням змін до неї на дочірньому об'єкті.
+На відміну від аксесорних властивостей, значення властивостей даних завжди встановлюються на самому об'єкті, а не на його прототипі. Проте, якщо успадковується незаписувана властивість даних, то це перешкодить внесенням змін до неї на дочірньому об'єкті.
 
 ```js
-function MyClass() {
-}
+function MyClass() {}
 
 MyClass.prototype.x = 1;
 Object.defineProperty(MyClass.prototype, "y", {
   writable: false,
-  value: 1
+  value: 1,
 });
 
 const a = new MyClass();
