@@ -3,6 +3,32 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2023-07-28 - 2023-08-04]
+
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/date/date (#1803) ([a750d747](https://github.com/webdoky/content/commit/a750d747120c00a299cd085d47d23ac4cdabbce5))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/set (#1953) ([1d33c6a0](https://github.com/webdoky/content/commit/1d33c6a0e0009b12c1011a74984ebdfd7c3b6945))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/encodeuricomponent (#1676) ([e156034e](https://github.com/webdoky/content/commit/e156034eacbb5e499c4916a034c7258468c1338c))
+* **Переклад(HTML):** web/html/element/input/range (#1597) ([56d2dfab](https://github.com/webdoky/content/commit/56d2dfab82c0066fa1d76efe23bbe02c9eaa6b40))
+* **Оновлення перекладу(CSS):** web/css/color (#1698) ([7f1a5ee4](https://github.com/webdoky/content/commit/7f1a5ee4c25a2d4a3ea98982a0fbb13d076678f9))
+* **Переклад(glossary):** glossary/repaint (#1992) ([998de734](https://github.com/webdoky/content/commit/998de734ba8f90199f40057e81526273b78c1aaf))
+* **Переклад(HTML):** web/html/element/input/password (#1595) ([9649bf19](https://github.com/webdoky/content/commit/9649bf19775fc9730ef9eb87826c402f6940d646))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/intl/numberformat (#1709) ([fc4e2076](https://github.com/webdoky/content/commit/fc4e2076b2c57484e78de2e70cd35a1f0da30bf2))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/bigint (#1569) ([478211c1](https://github.com/webdoky/content/commit/478211c1a803f78f5d31bb3375f27743c4cbea06))
+* **Оновлення перекладу(HTML):** web/html/element/button (#1980) ([f7a56cff](https://github.com/webdoky/content/commit/f7a56cff6a1d8d2d003e8416f656e3de9f3bf3a2))
+* **Оновлення перекладу(CSS):** web/css/position (#1988) ([a2333bee](https://github.com/webdoky/content/commit/a2333bee0b7480fbd018defc2aaacf8b35b7b2c6))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array (#1987) ([d1b52aea](https://github.com/webdoky/content/commit/d1b52aeac6399f055653c2b909283e52d2b926b6))
+* **Оновлення перекладу(CSS):** web/css/css_selectors (#1946) ([695d2b8a](https://github.com/webdoky/content/commit/695d2b8a60a54740b6d08ab38965af40569bc3be))
+* **Оновлення перекладу(HTML):** web/html/element/video (#1977) ([31822dc6](https://github.com/webdoky/content/commit/31822dc61d78b384d706c2ce7aedebe55ad52e47))
+* **Переклад(js):** Web/JavaScript/Reference/Global_Objects/Array/unshift (#1985) ([884d7c13](https://github.com/webdoky/content/commit/884d7c13ae9d366db2929120749b02e2285b55ee))
+* **Переклад(JS):** web/javascript/reference/operators/object_initializer (#1502) ([69a3012e](https://github.com/webdoky/content/commit/69a3012ef3cc7de69ae5f8b7924752d61dd6c9e8))
+* **Переклад(JS):** web/javascript/reference/statements/if...else (#1493) ([12dce902](https://github.com/webdoky/content/commit/12dce902440b132b55a2c76365b00f7cef36c85d))
+* **Переклад(JS):** web/javascript/reference/global_objects/infinity ([a5c7b828](https://github.com/webdoky/content/commit/a5c7b8289a993924a7b1d41fe33b7ef2f2d5c8db))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/charcodeat (#1885) ([a66cb6fb](https://github.com/webdoky/content/commit/a66cb6fb15fc86028fe30bc911c833abd8881e9f))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/date/now (#1819) ([61662e3c](https://github.com/webdoky/content/commit/61662e3c0841d8f776684e64566e3c279c548d59))
+* **Переклад(CSS):** web/css/_colon_disabled (#1975) ([0a2d0b1c](https://github.com/webdoky/content/commit/0a2d0b1c4508c0ff38217bafb459a54a460c859d))
+* **Оновлення перекладу(JS):** web/javascript/reference/statements/try...catch (#1800) ([e73d72bb](https://github.com/webdoky/content/commit/e73d72bb087c10d6e04e842a1f030f07db404d76))
+* **Оновлення перекладу(JS):** web/javascript/reference/statements/for...in (#1815) ([afec6683](https://github.com/webdoky/content/commit/afec6683e4626fe308033492b6f3e5a6c64f67fb))
+
 ## [2023-07-21 - 2023-07-28]
 
 * **Переклад(glossary):** glossary/render_blocking (#1957) ([ecce1c93](https://github.com/webdoky/content/commit/ecce1c937db0c0dd0531a1f005971fb190cb5e00))
