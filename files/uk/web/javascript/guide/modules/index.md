@@ -373,6 +373,9 @@ import fp from "lodash/fp.js";
 
 Інструкції `import` і `export` можна використовувати лише в модулях, але не у звичайних сценаріях.
 
+> **Примітка:** Модулі та їхні залежності можуть бути завантажені наперед шляхом задання їх в елементах [`<link>`](/uk/docs/Web/HTML/Element/link) з атрибутом [`rel="modulepreloaded"`](/uk/docs/Web/HTML/Attributes/rel/modulepreload).
+> Це може суттєво знизити час завантаження, коли ці модулі використовуються.
+
 ## Інші відмінності між модулями й звичайними сценаріями
 
 - Слід звернути увагу на локальне тестування: якщо спробувати завантажити файл HTML локально (тобто з URL `file://`), то трапляться помилки CORS, у зв'язку з вимогами безпеки модулів JavaScript. Тестування треба проводити за допомогою сервера.
@@ -384,7 +387,7 @@ import fp from "lodash/fp.js";
 Визначені в модулі змінні обмежені модулем, якщо явно не прикріплені до глобального об'єкта. З іншого боку, глобально описані змінні доступні всередині модуля. Наприклад, в наступному коді:
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-US">
   <head>
     <meta charset="UTF-8" />
@@ -716,7 +719,7 @@ squareBtn.addEventListener("click", () => {
       50,
       50,
       100,
-      "blue"
+      "blue",
     );
     square1.draw();
     square1.reportArea();
@@ -791,7 +794,7 @@ const square1 = new Module.Square(
   50,
   50,
   100,
-  colors.blue
+  colors.blue,
 );
 
 const circle1 = new Module.Circle(
@@ -800,7 +803,7 @@ const circle1 = new Module.Circle(
   75,
   200,
   100,
-  colors.green
+  colors.green,
 );
 
 const triangle1 = new Module.Triangle(
@@ -809,7 +812,7 @@ const triangle1 = new Module.Triangle(
   100,
   75,
   190,
-  colors.yellow
+  colors.yellow,
 );
 ```
 
