@@ -61,7 +61,7 @@ console.log(Object.keys(fruits)); // ['0', '1', '2', '5']
 console.log(fruits.length); // 6
 ```
 
-Збільшення властивості {{jsxref("Array/length", "length")}}.
+Збільшення властивості {{jsxref("Array/length", "length")}} спричиняє розширення масиву шляхом додавання порожніх комірок, без додавання жодних нових елементів – навіть без додавання `undefined`.
 
 ```js
 fruits.length = 10;
