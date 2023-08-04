@@ -58,7 +58,7 @@ spec-urls: https://drafts.csswg.org/selectors/
 - {{CSSXref(":last-of-type")}}
 - {{CSSXref(":link")}}
 - {{CSSXref(":local-link")}}
-- `:matches()` (застарілий історичний селектор-псевдонім {{CSSXref( ":is", ":is()")}})
+- `:matches()` (застарілий історичний селектор-псевдонім для {{CSSXref( ":is", ":is()")}})
 - {{CSSXref(":modal")}}
 - {{CSSXref(":muted")}}
 - {{CSSXref(":not", ":not()")}}
