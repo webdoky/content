@@ -87,7 +87,11 @@ browser-compat: html.elements.table
     - `center`: таблиця виводиться в центрі документа;
     - `right`: таблиця виводиться з правого боку документа.
 
-    Щоб отримати подібний до атрибута align ефект, слід задати {{cssxref("margin-left")}} і {{cssxref("margin-right")}} зі значенням `auto` або {{cssxref("margin")}} зі значенням `0 auto`.
+    Щоб отримати подібний до атрибута align ефект, слід задати {{cssxref("margin-left")}} і {{cssxref("margin-right")}}:
+
+    - `left`: `margin-right: auto; margin-left: 0;`
+    - `center`: `margin-right: auto; margin-left: auto;`
+    - `right`: `margin-right: 0; margin-left: auto;`
 
 - `bgcolor` {{Deprecated_inline}}
 

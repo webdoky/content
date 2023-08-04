@@ -1,24 +1,19 @@
 ---
 title: String.prototype.trimEnd()
 slug: Web/JavaScript/Reference/Global_Objects/String/trimEnd
-tags:
-  - JavaScript
-  - Method
-  - Prototype
-  - Reference
-  - String
-  - Polyfill
+page-type: javascript-instance-method
 browser-compat: javascript.builtins.String.trimEnd
 ---
+
 {{JSRef}}
 
-Метод **`trimEnd()`** видаляє пробільні символи з кінця рядка. Для цього методу також існує псевдонім `trimRight()`.
+Метод **`trimEnd()`** (обітнути кінець) видаляє пробільні символи з кінця рядка та повертає новий рядок, не змінюючи вихідний. Для цього методу також існує псевдонім `trimRight()`.
 
 {{EmbedInteractiveExample("pages/js/string-trimend.html")}}
 
 ## Синтаксис
 
-```js
+```js-nolint
 trimEnd()
 
 trimRight()
@@ -26,13 +21,13 @@ trimRight()
 
 ### Повернене значення
 
-Новий рядок, що містить значення початкового рядка `str`, у якого пробільні символи в кінці (з правого боку) — обрізані.
+Новий рядок, що містить значення початкового рядка `str`, у якого пробільні символи в кінці (з правого боку) — обрізані. Пробільні символи визначені як символи-[пробіли](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#probily) плюс [символи кінця рядка](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#symvoly-kintsia-riadka).
 
-Якщо кінець рядка `str` не містить пробільних символів, однаково повертається новий рядок (практично — копія рядка `str`), без викидання жодних винятків.
+Якщо кінець рядка `str` не містить пробільних символів, однаково повертається новий рядок (практично — копія рядка `str`).
 
 ### Вживання псевдонімів
 
-Для одноманітності з функціями, подібними до {{jsxref("String.prototype.padEnd")}}, функція має стандартизоване ім'я `trimEnd`. Щоправда, з міркувань сумісності вебу, метод `trimRight` залишається псевдонімом для `trimEnd`. В деяких рушіях це буквально означає:
+Після того, як метод {{jsxref("String/trim", "trim()")}} був стандартизований, рушії також реалізували нестандартний метод `trimRight`. Проте, заради одноманітності з {{jsxref("String/padEnd", "padEnd()")}}, коли цей метод було стандартизовано, було обрано назву `trimEnd`. У зв'язку з міркуваннями вебсумісності `trimRight` залишається псевдонімом `trimEnd`, і вони посилаються на той самий об'єкт-функцію. У деяких рушіях це означає:
 
 ```js
 String.prototype.trimRight.name === "trimEnd";
@@ -42,16 +37,17 @@ String.prototype.trimRight.name === "trimEnd";
 
 ### Застосування trimEnd()
 
-Наступний приклад виводить рядок `' foo'` в нижньому регістрі:
+Наступний приклад обтинає пробіли на кінці `str`, але не на початку.
 
 ```js
-var str = '   foo  ';
+<!-- markdownlint-disable-next-line -->
+let str = "   foo  ";
 
 console.log(str.length); // 8
 
 str = str.trimEnd();
 console.log(str.length); // 6
-console.log(str);        // '   foo'
+console.log(str); // '   foo'
 ```
 
 ## Специфікації

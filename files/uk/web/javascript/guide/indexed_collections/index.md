@@ -480,7 +480,7 @@ console.log(a3.some(isNumber)); // false
 const a = [10, 20, 30];
 const total = a.reduce(
   (accumulator, currentValue) => accumulator + currentValue,
-  0
+  0,
 );
 console.log(total); // 60
 ```
@@ -569,7 +569,7 @@ for (let i = 0; i < 4; i++) {
 
 Цей приклад створює масив з наступними рядами:
 
-```
+```plain
 Ряд 0: [0, 0] [0, 1] [0, 2] [0, 3]
 Ряд 1: [1, 0] [1, 1] [1, 2] [1, 3]
 Ряд 2: [2, 0] [2, 1] [2, 2] [2, 3]
