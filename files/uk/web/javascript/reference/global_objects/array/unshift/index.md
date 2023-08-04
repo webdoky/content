@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.Array.unshift
 
 {{JSRef}}
 
-Метод **`unshift()`** додає вказані елементи на
+Метод **`unshift()`** (відсунути) додає вказані елементи на
 початок масиву та повертає нову довжину масиву.
 
 {{EmbedInteractiveExample("pages/js/array-unshift.html")}}
