@@ -98,7 +98,7 @@ console.log(arrayLike);
 // { '0': 1, '1': 2, '4': 4, length: 5, unrelated: 'foo' }
 
 const plainObj = {};
-// Немає властивості довжини, тому довжина дорівнює 0
+// Немає властивості length, тому довжина дорівнює 0
 Array.prototype.unshift.call(plainObj, 1, 2);
 console.log(plainObj);
 // { '0': 1, '1': 2, length: 2 }
