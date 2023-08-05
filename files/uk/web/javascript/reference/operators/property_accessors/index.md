@@ -93,11 +93,11 @@ document ["createElement"]("pre");
 ```js
 const key = "name";
 const getKey = () => "name";
-const Obj = { name: "Michel" };
+const Obj = { name: "Міхал" };
 
-Obj["name"]; // повертає "Michel"
-Obj[key]; // обчислюється як Obj["name"] і повертає "Michel"
-Obj[getKey()]; // обчислюється як Obj["name"] і повертає "Michel"
+Obj["name"]; // повертає "Міхал"
+Obj[key]; // обчислюється як Obj["name"] і повертає "Міхал"
+Obj[getKey()]; // обчислюється як Obj["name"] і повертає "Міхал"
 ```
 
 А проте, стережіться використання квадратних дужок для звертання до властивостей, назви яких прийшли зовні. Вони можуть зробити код сприйнятливим до [атак втручання в об'єкти](https://github.com/nodesecurity/eslint-plugin-security/blob/main/docs/the-dangers-of-square-bracket-notation.md).
