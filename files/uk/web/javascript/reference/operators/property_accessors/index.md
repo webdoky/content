@@ -7,7 +7,7 @@ browser-compat: javascript.operators.property_accessors
 
 {{jsSidebar("Operators")}}
 
-**Аксесори властивості** надають доступ до властивостей об'єкта за допомогою крапки (крапкова нотація) або квадратних дужок (дужкова нотація).
+**Аксесори властивостей** надають доступ до властивостей об'єкта за допомогою крапки (крапкова нотація) і квадратних дужок (дужкова нотація).
 
 {{EmbedInteractiveExample("pages/js/expressions-propertyaccessors.html", "taller")}}
 
