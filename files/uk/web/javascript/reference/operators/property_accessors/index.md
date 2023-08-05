@@ -45,7 +45,7 @@ object.1 = 'bar'; // SyntaxError
 console.log(object.1); // SyntaxError
 ```
 
-Тут метод під назвою `createElement`, зчитується з `document` і викликається.
+Тут метод під назвою `createElement` береться з `document` і викликається.
 
 ```js
 document.createElement("pre");
