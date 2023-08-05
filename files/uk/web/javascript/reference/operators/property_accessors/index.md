@@ -112,7 +112,7 @@ object["1"] = "value";
 console.log(object[1]);
 ```
 
-Слідуючий код також виводить `'value'`, оскільки `foo` і `bar` перетворюються на той самий рядок (`"[object Object]"`).
+Наступний код також виводить `'value'`, оскільки `foo` і `bar` перетворюються на один і той же рядок (`"[object Object]"`).
 
 ```js
 const foo = { uniqueProp: 1 };
