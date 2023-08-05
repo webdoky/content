@@ -26,7 +26,7 @@ object[expression]
 
 ### Крапкова нотація
 
-`propertyName` у синтаксисі `object.propertyName` має бути дійсним [ідентифікатором] JavaScript (/uk/docs/Web/JavaScript/Reference/Lexical_grammar#identifiers), який також може бути [зарезервованим словом](/uk/ docs/Web/JavaScript/Reference/Lexical_grammar#keywords). Наприклад, `object.$1` дійсний, тоді як `object.1` ні.
+`propertyName` у синтаксисі `object.propertyName` має бути дійсним [ідентифікатором](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#identifiers)  JavaScript , який також може бути [зарезервованим словом](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#keywords). Наприклад, `object.$1` дійсний, тоді як `object.1` ні.
 
 ```js
 const variable = object.propertyName;
