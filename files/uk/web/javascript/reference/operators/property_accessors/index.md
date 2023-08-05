@@ -64,7 +64,7 @@ document.createElement("pre");
 77..toExponential();
 // або
 77.0.toExponential();
-// because 77. === 77.0, не має двозначності
+// тому що 77. === 77.0, немає двозначності
 ```
 
 ### Дужкова нотація
