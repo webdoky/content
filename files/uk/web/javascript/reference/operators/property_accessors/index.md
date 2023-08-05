@@ -69,7 +69,7 @@ document.createElement("pre");
 
 ### Дужкова нотація
 
-У синтаксисі `object[expression]`, `expression` має обчислюватися як рядок або [Symbol](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol), який представляє назву властивості. Таким чином, це може бути будь-який рядковий літерал, наприклад, `'1foo'`, `'!bar!'` або навіть `' '` (пробіл).
+У синтаксисі `object[expression]`, `expression` має обчислюватися до рядка або [Symbol](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol), який представляє назву властивості. Таким чином, це може бути будь-який рядковий літерал, наприклад, `'1foo'`, `'!bar!'` або навіть `' '` (пробіл).
 
 ```js
 const variable = object[propertyName];
