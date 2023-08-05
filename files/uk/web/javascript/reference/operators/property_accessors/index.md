@@ -82,7 +82,7 @@ object[propertyName] = value;
 document["createElement"]("pre");
 ```
 
-Пробіл перед позначенням у дужках допускається.
+Пробіл перед дужковим звертанням – допускається.
 
 ```js-nolint
 document ["createElement"]("pre");
