@@ -100,7 +100,7 @@ Obj[key]; // обчислюється як Obj["name"] і повертає "Mich
 Obj[getKey()]; // обчислюється як Obj["name"] і повертає "Michel"
 ```
 
-Попри те, стережіться використання квадратних дужок для доступу до властивостей, назви яких надаються зовнішнім введенням. Це може зробити ваш код сприйнятливим до [атак із впровадженням об'єктів](https://github.com/nodesecurity/eslint-plugin-security/blob/main/docs/the-dangers-of-square-bracket-notation.md).
+А проте, стережіться використання квадратних дужок для звертання до властивостей, назви яких прийшли зовні. Вони можуть зробити код сприйнятливим до [атак втручання в об'єкти](https://github.com/nodesecurity/eslint-plugin-security/blob/main/docs/the-dangers-of-square-bracket-notation.md).
 
 ### Назви властивостей
 
