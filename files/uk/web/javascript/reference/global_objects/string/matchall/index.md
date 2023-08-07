@@ -60,7 +60,7 @@ while ((match = regexp.exec(str)) !== null) {
 // Знайдено слово foosball, початок=16, закінчення=24.
 ```
 
-За наявності методу `matchAll` є можливість уникати циклу {{jsxref("Statements/while", "while")}} і використання методу `exec` із `g`. Повертається ітератор, який можна використовувати зі зручнішими конструкціями – {{jsxref("Statements/for...of", "for...of")}}, [розгортанням масиву](/uk/docs/Web/JavaScript/Reference/Operators/Spread_syntax) і {{jsxref("Array.from()")}}:
+За наявності методу `matchAll` є можливість уникати циклу {{jsxref("Statements/while", "while")}} і використання методу `exec` із `g`. Це можливо завдяки тому, що повертається ітератор, який можна використовувати зі зручнішими конструкціями – {{jsxref("Statements/for...of", "for...of")}}, [розгортанням масиву](/uk/docs/Web/JavaScript/Reference/Operators/Spread_syntax) і {{jsxref("Array.from()")}}:
 
 ```js
 const regexp = /foo[a-z]*/g;
