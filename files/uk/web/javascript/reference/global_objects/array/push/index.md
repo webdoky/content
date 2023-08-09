@@ -17,7 +17,7 @@ browser-compat: javascript.builtins.Array.push
 push()
 push(element0)
 push(element0, element1)
-push(element0, element1, /* … ,*/ elementN)
+push(element0, element1, /* …, */ elementN)
 ```
 
 ### Параметри
