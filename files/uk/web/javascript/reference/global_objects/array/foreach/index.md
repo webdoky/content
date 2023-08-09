@@ -33,7 +33,7 @@ forEach(callbackFn, thisArg)
 
 ### Результат
 
-`undefined`.
+{{jsxref("undefined")}}.
 
 ## Опис
 
