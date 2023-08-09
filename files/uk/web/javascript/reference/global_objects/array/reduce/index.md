@@ -109,7 +109,7 @@ const array = [15, 16, 17, 18, 19];
 function reducer(accumulator, currentValue, index) {
   const returns = accumulator + currentValue;
   console.log(
-    `accumulator: ${accumulator}, currentValue: ${currentValue}, index: ${index}, returns: ${returns}`
+    `accumulator: ${accumulator}, currentValue: ${currentValue}, index: ${index}, returns: ${returns}`,
   );
   return returns;
 }
@@ -135,7 +135,7 @@ array.reduce(reducer);
 ```js
 [15, 16, 17, 18, 19].reduce(
   (accumulator, currentValue) => accumulator + currentValue,
-  10
+  10,
 );
 ```
 
@@ -159,7 +159,7 @@ array.reduce(reducer);
 const objects = [{ x: 1 }, { x: 2 }, { x: 3 }];
 const sum = objects.reduce(
   (accumulator, currentValue) => accumulator + currentValue.x,
-  0
+  0,
 );
 
 console.log(sum); // 6
@@ -310,7 +310,7 @@ for (const name of names) {
   const flattened = array.flat();
   ```
 
-- Групування об'єктів за властивістю. Краще використати {{jsxref("Array/group", "group()")}}.
+- Групування об'єктів за властивістю. Краще використати {{jsxref("Object.groupBy()")}}.
 
   ```js example-bad
   const groups = array.reduce((acc, obj) => {
@@ -321,7 +321,7 @@ for (const name of names) {
   ```
 
   ```js example-good
-  const groups = array.group((obj) => obj.name);
+  const groups = Object.groupBy(array, (obj) => obj.name);
   ```
 
 - Зчеплення масивів, що містяться в масиві об'єктів. Краще використати {{jsxref("Array/flatMap", "flatMap()")}}.
@@ -347,7 +347,7 @@ for (const name of names) {
   ```js example-bad
   const uniqArray = array.reduce(
     (acc, cur) => (acc.includes(cur) ? acc : [...acc, cur]),
-    []
+    [],
   );
   ```
 
@@ -403,10 +403,10 @@ for (const name of names) {
 - [Поліфіл для `Array.prototype.reduce` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
 - [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
-- {{jsxref("Array.prototype.group()")}}
-- {{jsxref("Array.prototype.groupToMap()")}}
 - {{jsxref("Array.prototype.map()")}}
 - {{jsxref("Array.prototype.flat()")}}
 - {{jsxref("Array.prototype.flatMap()")}}
 - {{jsxref("Array.prototype.reduceRight()")}}
 - {{jsxref("TypedArray.prototype.reduce()")}}
+- {{jsxref("Object.groupBy()")}}
+- {{jsxref("Map.groupBy()")}}
