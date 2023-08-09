@@ -22,7 +22,7 @@ async function name(param0) {
 async function name(param0, param1) {
   statements
 }
-async function name(param0, param1, /* … ,*/ paramN) {
+async function name(param0, param1, /* …, */ paramN) {
   statements
 }
 ```
@@ -124,10 +124,10 @@ function foo() {
 ```js
 async function foo() {
   const result1 = await new Promise((resolve) =>
-    setTimeout(() => resolve("1"))
+    setTimeout(() => resolve("1")),
   );
   const result2 = await new Promise((resolve) =>
-    setTimeout(() => resolve("2"))
+    setTimeout(() => resolve("2")),
   );
 }
 foo();
@@ -167,78 +167,92 @@ function resolveAfter1Second() {
   console.log("початок швидкого промісу");
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve("шкидко");
+      resolve("швидко");
       console.log("швидкий проміс виконано");
     }, 1000);
   });
 }
 
 async function sequentialStart() {
-  console.log("==ПОСЛІДОВНИЙ ПОЧАТОК==");
+  console.log("== sequentialStart починається ==");
 
-  // 1. Виконання підходить до цього місця майже миттєво
-  const slow = await resolveAfter2Seconds();
-  console.log(slow); // 2. цей рядок виконується через 2 секунди після 1.
+  // 1. Запустити таймер, вивести, коли він добіжить кінця
+  const slow = resolveAfter2Seconds();
+  console.log(await slow);
 
-  const fast = await resolveAfter1Second();
-  console.log(fast); // 3. цей рядок виконується через 3 секунди після 1.
+  // 2. Запустити наступний таймер після очікування на попередній
+  const fast = resolveAfter1Second();
+  console.log(await fast);
+
+  console.log("== sequentialStart завершено ==");
 }
 
-async function concurrentStart() {
-  console.log('==ОДНОЧАСНИЙ ПОЧАТОК із "await"==');
-  const slow = resolveAfter2Seconds(); // негайно запускає таймер
-  const fast = resolveAfter1Second(); // негайно запускає таймер
+async function sequentialWait() {
+  console.log("== sequentialWait починається ==");
 
-  // 1. Виконання підходить до цього місця майже миттєво
-  console.log(await slow); // 2. цей рядок виконується через 2 секунди після 1.
-  console.log(await fast); // 3. цей рядок виконується через 2 секунди після 1., негайно за 2., оскільки швидкий проміс уже виконано
+  // 1. Запустити два таймери, не чекаючи на жодний з них
+  const slow = resolveAfter2Seconds();
+  const fast = resolveAfter1Second();
+
+  // 2. Чекати завершення повільного таймера, а тоді вивести результат
+  console.log(await slow);
+  // 3. Чекати завершення швидкого таймера, а тоді вивести результат
+  console.log(await fast);
+
+  console.log("== sequentialWait завершено ==");
 }
 
-function concurrentPromise() {
-  console.log('==ОДНОЧАСНИЙ ПОЧАТОК із "Promise.all"==');
-  return Promise.all([resolveAfter2Seconds(), resolveAfter1Second()]).then(
-    (messages) => {
-      console.log(messages[0]); // повільно
-      console.log(messages[1]); // швидко
-    }
-  );
+async function concurrent1() {
+  console.log("== concurrent1 починається ==");
+
+  // 1. Одночасно запустити два таймери, і чекати завершення обох
+  const results = await Promise.all([
+    resolveAfter2Seconds(),
+    resolveAfter1Second(),
+  ]);
+  // 2. Вивести результати разом
+  console.log(results[0]);
+  console.log(results[1]);
+
+  console.log("== concurrent1 завершено ==");
 }
 
-async function parallel() {
-  console.log('==ПАРАЛЕЛЬНЕ виконання з "await Promise.all"==');
+async function concurrent2() {
+  console.log("== concurrent2 починається ==");
 
-  // Запускає 2 "завдання" паралельно, і очікує на завершення обох
+  // 1. Запустити два таймери одночасно, а вивести зразу після завершення кожного з них
   await Promise.all([
     (async () => console.log(await resolveAfter2Seconds()))(),
     (async () => console.log(await resolveAfter1Second()))(),
   ]);
+  console.log("== concurrent2 завершено ==");
 }
 
-sequentialStart(); // через 2 секунди друкує "повільно", потім іще за 1 секунду — "швидко"
+sequentialStart(); // за 2 секунди виводить "повільно", а ще через 1 – "швидко"
 
-// очікує на завершення коду вище
-setTimeout(concurrentStart, 4000); // через 2 секунди друкує "повільно", і потім "швидко"
+// дочекатися завершення вище
+setTimeout(sequentialWait, 4000); // за 2 секунди виводить "повільно", а тоді "швидко"
 
-// знову очікує
-setTimeout(concurrentPromise, 7000); // так само, як і concurrentStart
+// чекати знову
+setTimeout(concurrent1, 7000); // те саме, що й sequentialWait
 
-// і знову очікує
-setTimeout(parallel, 10000); // справді паралельно: через 1 секунду друкує "швидко", а потім іще за одну секунду — "повільно"
+// чекати знову
+setTimeout(concurrent2, 10000); // за 1 секунду виводить "швидко", а через ще 1 – "повільно"
 ```
 
-#### Вираз await і паралелізм
+#### Вираз await та одночасність
 
 У випадку послідовного старту у функції `sequentialStart` виконання зупиняється на 2 секунди на першому `await`, і потім іще на секунду на другому `await`. Другий таймер не створюється, поки не сплине час першого, тому загалом код завершує роботу за 3 секунди.
 
-У випадку одночасного старту у функції `concurrentStart` обидва таймери створюються, а потім очікуються виразами `await`. Таймери виконують відлік одночасно, тобто код завершить роботу радше за 2, ніж за 3 секунди. Інакше кажучи — тоді, коли завершить відлік найповільніший таймер. Втім, виклики `await` все-таки виконуються послідовно, тобто другий `await` чекатиме на завершення першого. В цьому випадку результат швидшого таймера обробляється після завершення роботи повільнішого.
+У випадку одночасного старту у функції `sequentialWait` обидва таймери створюються, а потім очікуються виразами `await`. Таймери виконують відлік одночасно, тобто код завершить роботу радше за 2, ніж за 3 секунди. Інакше кажучи — тоді, коли завершить відлік найповільніший таймер. Втім, виклики `await` все-таки виконуються послідовно, тобто другий `await` чекатиме на завершення першого. В цьому випадку результат швидшого таймера обробляється після завершення роботи повільнішого.
 
-Якщо потрібно безпечним чином виконати паралельно два чи більше завдання, слід застосувати `await` до виклику [`Promise.all`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Promise/all) чи [`Promise.allSettled`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled).
+Якщо потрібно безпечним чином виконати інші задачі після того, як дві або більше задач запущені одночасно та завершені, необхідно застосувати `await` до виклику {{jsxref("Promise.all()")}} або {{jsxref("Promise.allSettled()")}}.
 
-> **Застереження:** Функції `concurrentStart` та `concurrentPromise` не є функціонально еквівалентними.
+> **Застереження:** Функції `sequentialWait` та `concurrent1` не є функціонально еквівалентними.
 >
-> Якщо у функції `concurrentStart` `швидкий` проміс відхиляється перед сповненням `повільного` промісу, то буде викинуто помилку необробленого відхилення промісу, незалежно від наявності умови `catch` у місці виклику.
+> Якщо у функції `sequentialWait` `швидкий` проміс відхиляється перед сповненням `повільного` промісу, то буде викинуто помилку необробленого відхилення промісу, незалежно від наявності умови `catch` у місці виклику.
 >
-> У функції `concurrentPromise` `Promise.all` зв'язує ланцюжок промісів за один прохід, тобто операція негайно завершить роботу в разі помилки незалежно від послідовності відхилення промісів, і помилка завжди відбуватиметься всередині налаштованого ланцюжка промісів, що дає змогу її обробити у звичайний спосіб.
+> У функції `concurrent1` `Promise.all` зв'язує ланцюжок промісів за один прохід, тобто операція негайно завершить роботу в разі помилки незалежно від послідовності відхилення промісів, і помилка завжди відбуватиметься всередині налаштованого ланцюжка промісів, що дає змогу її обробити у звичайний спосіб.
 
 ### Переписування ланцюжка промісів за допомогою асинхронної функції
 
