@@ -115,8 +115,6 @@ console.log(fruits.length); // 2
 - {{jsxref("Array/findIndex", "findIndex()")}}
 - {{jsxref("Array/findLast", "findLast()")}}
 - {{jsxref("Array/findLastIndex", "findLastIndex()")}}
-- {{jsxref("Array/group", "group()")}} {{Experimental_Inline}}
-- {{jsxref("Array/groupToMap", "groupToMap()")}} {{Experimental_Inline}}
 - {{jsxref("Array/includes", "includes()")}}
 - {{jsxref("Array/join", "join()")}}
 - {{jsxref("Array/keys", "keys()")}}
@@ -148,8 +146,6 @@ console.log(fruits.length); // 2
 - {{jsxref("Array/toSorted", "toSorted()")}}
 - {{jsxref("Array/toSpliced", "toSpliced()")}}
 - {{jsxref("Array/with", "with()")}}
-
-{{jsxref("Array/group", "group()")}} і {{jsxref("Array/groupToMap", "groupToMap()")}} не використовують `@@species` для створення нових масивів для кожного елементу групи, а завжди використовують простий конструктор `Array`. Концептуально, вони не є методами копіювання.
 
 Наступна таблиця перераховує методи, які змінюють вихідний масив, і відповідні їм незмінювальні альтернативи:
 
@@ -206,8 +202,6 @@ method(callbackFn, thisArg)
 - {{jsxref("Array/findLastIndex", "findLastIndex()")}}
 - {{jsxref("Array/flatMap", "flatMap()")}}
 - {{jsxref("Array/forEach", "forEach()")}}
-- {{jsxref("Array/group", "group()")}}
-- {{jsxref("Array/groupToMap", "groupToMap()")}}
 - {{jsxref("Array/map", "map()")}}
 - {{jsxref("Array/some", "some()")}}
 
@@ -329,10 +323,6 @@ f("a", "b"); // 'a+b'
   - : Повертає новий масив, утворений застосуванням переданої функції зворотного виклику до кожного елемента поточного масиву, а тоді – сплощенням результату на один рівень.
 - {{jsxref("Array.prototype.forEach()")}} ("для кожного")
   - : Викликає функцію для кожного елемента поточного масиву.
-- {{jsxref("Array.prototype.group()")}} ("групувати") {{Experimental_Inline}}
-  - : Групує елементи масиву згідно з рядками, поверненими перевірковою функцією.
-- {{jsxref("Array.prototype.groupToMap()")}} ("групувати в Map") {{Experimental_Inline}}
-  - : Групує елементи масиву в Map згідно зі значеннями, поверненими перевірковою функцією.
 - {{jsxref("Array.prototype.includes()")}} ("включає")
   - : Визначає, чи містить поточний масив певне значення, повертаючи `true` чи `false` відповідно.
 - {{jsxref("Array.prototype.indexOf()")}} ("індекс")
@@ -705,40 +695,6 @@ console.log(fruits);
 console.log(fruitsAlias);
 // ['Яблуко', 'Банан', 'Полуниця', 'Манго']
 ```
-
-### Групування елементів масиву
-
-Метод {{jsxref("Array.prototype.group()")}} може використовуватись для групування елементів масиву за допомогою перевіркової функції, що повертає рядок, котрий вказує на відповідну групу для поточного елемента.
-
-Нижче – простий інвентарний масив, що включає об'єкти "їжі", котрі мають поля `name` (ім'я) та `type` (тип).
-
-```js
-const inventory = [
-  { name: "холодок", type: "vegetables" },
-  { name: "банани", type: "fruit" },
-  { name: "коза", type: "meat" },
-  { name: "вишні", type: "fruit" },
-  { name: "риба", type: "meat" },
-];
-```
-
-Для використання `group()` передається функція зворотного виклику, котра викликається із поточним елементом та (необов'язково) поточним індексом і всім масивом – та повертає рядок, котрий позначає групу для елемента.
-
-Код нижче використовує для повернення значення поля `type` кожного елемента масиву стрілкову функцію (вона використовує для розпакування із переданого об'єкта значення поля `type` [синтаксис деструктуризації об'єкта для аргументів функції](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#rozpakovuvannia-vlastyvostei-obiekta-peredanoho-parametrom-funktsii)).
-Результатом є об'єкт, котрий має властивості, названі відповідно до унікальних рядків, повернених функцією зворотного виклику.
-Кожній властивості присвоєний масив, що містить елементи групи.
-
-```js
-const result = inventory.group(({ type }) => type);
-console.log(result.vegetables);
-// [{ name: "холодок", type: "vegetables" }]
-```
-
-Зверніть увагу, що повернений об'єкт посилається на _ті самі_ елементи, що й вихідний масив (не створюються {{glossary("deep copy","глибокі копії")}}).
-Зміна внутрішньої структури цих елементів отримає відображення як на вихідному масиві, так на поверненому об'єкті.
-
-Якщо не підходить використання рядка як ключа, – наприклад, якщо інформація, за якою необхідне групування, асоційована з об'єктом, котрий може змінюватися, – то натомість можна використати метод {{jsxref("Array.prototype.groupToMap()")}}.
-Він вельми подібний до `group`, але групує елементи масиву в {{jsxref("Map")}}, що може використовувати як ключі довільні ({{Glossary("object","об'єктні")}} чи {{Glossary("primitive","примітивні")}}) значення.
 
 ### Створення двовимірного масиву
 
