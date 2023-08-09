@@ -20,7 +20,7 @@ splice(start)
 splice(start, deleteCount)
 splice(start, deleteCount, item0)
 splice(start, deleteCount, item0, item1)
-splice(start, deleteCount, item0, item1, /* … ,*/ itemN)
+splice(start, deleteCount, item0, item1, /* …, */ itemN)
 ```
 
 ### Параметри
