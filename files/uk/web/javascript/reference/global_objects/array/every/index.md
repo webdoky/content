@@ -14,37 +14,20 @@ browser-compat: javascript.builtins.Array.every
 ## Синтаксис
 
 ```js-nolint
-// Стрілкова функція
-every((element) => { /* … */ } )
-every((element, index) => { /* … */ } )
-every((element, index, array) => { /* … */ } )
-
-// Функція зворотного виклику
 every(callbackFn)
 every(callbackFn, thisArg)
-
-// Вбудована функція зворотного виклику
-every(function(element) { /* … */ })
-every(function(element, index) { /* … */ })
-every(function(element, index, array){ /* … */ })
-every(function(element, index, array) { /* … */ }, thisArg)
 ```
 
 ### Параметри
 
 - `callbackFn` (функція зворотного виклику)
-
-  - : Функція для виконання на кожному елементі масиву. Вона повинна повертати значення [істинності](/uk/docs/Glossary/Truthy), аби показати, що елемент проходить перевірку, інакше – значення хибності.
-
-    Ця функція викликається з наступними аргументами:
-
+  - : Функція для виконання на кожному елементі масиву. Вона повинна повертати значення [істинності](/uk/docs/Glossary/Truthy), аби показати, що елемент проходить перевірку, інакше – значення хибності. Ця функція викликається з наступними аргументами:
     - `element` (елемент)
       - : Поточний елемент масиву, що обробляється.
     - `index` (індекс)
       - : Індекс поточного елемента масиву, що обробляється.
     - `array` (масив)
       - : Масив, на котрому викликали `every()`.
-
 - `thisArg` (аргумент this) {{optional_inline}}
   - : Значення, що буде використовуватись як `this` при виконанні `callbackFn`. Докладніше про це – в [ітеративних методах](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#iteratyvni-metody)
 
@@ -162,7 +145,7 @@ arr.every((elem, index, arr) => {
 
 ### Виклик every() на об'єктах-немасивах
 
-Метод `every()` зчитує з `this` властивість `length`, а потім звертається до кожної цілочислової властивості, поки не буде досягнено кінця або `callbackFn` не поверне `false`.
+Метод `every()` зчитує з `this` властивість `length`, а потім звертається до кожної властивості, чий ключ є невід'ємним цілим числом, меншим за `length`, поки не будуть перебрані вони всі або `callbackFn` не поверне `false`.
 
 ```js
 const arrayLike = {
@@ -170,6 +153,7 @@ const arrayLike = {
   0: "a",
   1: "b",
   2: "c",
+  3: 345, // ігнорується every(), оскільки length – 3
 };
 console.log(
   Array.prototype.every.call(arrayLike, (x) => typeof x === "string")
@@ -187,6 +171,8 @@ console.log(
 ## Дивіться також
 
 - [Поліфіл `Array.prototype.every` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
+- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- {{jsxref("Array")}}
 - {{jsxref("Array.prototype.forEach()")}}
 - {{jsxref("Array.prototype.some()")}}
 - {{jsxref("Array.prototype.find()")}}

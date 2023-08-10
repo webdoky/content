@@ -14,37 +14,20 @@ browser-compat: javascript.builtins.Array.some
 ## Синтаксис
 
 ```js-nolint
-// Стрілкова функція
-some((element) => { /* … */ } )
-some((element, index) => { /* … */ } )
-some((element, index, array) => { /* … */ } )
-
-// Функція зворотного виклику
 some(callbackFn)
 some(callbackFn, thisArg)
-
-// Вбудована функція зворотного виклику
-some(function(element) { /* … */ })
-some(function(element, index) { /* … */ })
-some(function(element, index, array){ /* … */ })
-some(function(element, index, array) { /* … */ }, thisArg)
 ```
 
 ### Параметри
 
 - `callbackFn` (функція зворотного виклику)
-
-  - : Функція для виконання на кожному елементі масиву. Повинна повертати [значення істинності](/uk/docs/Glossary/Truthy), коли елемент проходить перевірку, а інакше – хибності.
-
-    Ця функція викликається з наступними аргументами:
-
+  - : Функція для виконання на кожному елементі масиву. Повинна повертати [істинне значення](/uk/docs/Glossary/Truthy), коли елемент проходить перевірку, а інакше – [хибне](/uk/docs/Glossary/Falsy). Ця функція викликається з наступними аргументами:
     - `element` (елемент)
       - : Поточний елемент масиву, що обробляється.
     - `index` (індекс)
       - : Індекс поточного елементу масиву, що обробляється.
     - `array` (масив)
       - : Масив, на котрому викликали `some()`.
-
 - `thisArg` (аргумент `this`) {{optional_inline}}
   - : Значення, котре використовуватиметься як `this` при виконанні `callbackFn`. Докладніше – в [ітеративних методах](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#iteratyvni-metody).
 
@@ -65,6 +48,8 @@ some(function(element, index, array) { /* … */ }, thisArg)
 - `callbackFn` не оброблятиме жодних елементів, доданих поза початковою довжиною масиву, актуальною на мить початку виклику `some()`.
 - Зміни до вже оброблених індексів не призводять до повторного виклику на них `callbackFn`.
 - Якщо наявний, поки необроблений елемент масиву змінюється `callbackFn`, то його значення, передане в `callbackFn`, буде значенням на ту мить, коли цей елемент обробляється. [Видалені](/uk/docs/Web/JavaScript/Reference/Operators/delete) елементи – не обробляються.
+
+> **Застереження:** Паралельні зміни, подібні до описаних вище, часто призводять до складно зрозумілого коду і, як правило, їх слід уникати (за винятком спеціальних випадків).
 
 Метод `some()` є [узагальненим](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#uzahalneni-metody-masyvu). Він лишень очікує, що значення `this` матиме властивість `length`, а також властивості з цілочисловими ключами.
 
@@ -138,7 +123,7 @@ console.log([1, undefined, 1].some((x) => x !== 1)); // true
 
 ### Виклик some() на об'єктах-немасивах
 
-Метод `some()` зчитує з `this` властивість `length`, а потім звертається до кожної цілочислової властивості.
+Метод `some()` зчитує з `this` властивість `length`, а потім звертається до кожної властивості, чий ключ є невід'ємним цілим числом, меншим за `length`, поки не будуть перебрані вони всі або `callbackFn` не поверне `true`.
 
 ```js
 const arrayLike = {
@@ -146,6 +131,7 @@ const arrayLike = {
   0: "a",
   1: "b",
   2: "c",
+  3: 3, // ігнорується some(), оскільки length – 3
 };
 console.log(Array.prototype.some.call(arrayLike, (x) => typeof x === "number")); // false
 ```
@@ -160,8 +146,11 @@ console.log(Array.prototype.some.call(arrayLike, (x) => typeof x === "number"));
 
 ## Дивіться також
 
-- [Поліфіл `Array.prototype.some` у `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
+- [Поліфіл `Array.prototype.some` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
+- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- {{jsxref("Array")}}
 - {{jsxref("Array.prototype.every()")}}
 - {{jsxref("Array.prototype.forEach()")}}
 - {{jsxref("Array.prototype.find()")}}
+- {{jsxref("Array.prototype.includes()")}}
 - {{jsxref("TypedArray.prototype.some()")}}

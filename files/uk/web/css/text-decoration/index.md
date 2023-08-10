@@ -112,7 +112,9 @@ text-decoration: unset;
 </p>
 ```
 
-{{EmbedLiveSample('pryklady','auto','320')}}
+#### Результат
+
+{{EmbedLiveSample('pryklady','auto','520')}}
 
 ## Специфікації
 

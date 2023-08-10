@@ -21,9 +21,12 @@ export async function executeWithResult(command) {
     childProcess.exec(command, (error, stdout, stderr) => {
       if (error) {
         reject(error);
-      } else {
-        resolve({ stdout, stderr });
+        return;
       }
+      if (stderr) {
+        reject(stderr);
+      }
+      resolve(stdout);
     });
   });
 }
