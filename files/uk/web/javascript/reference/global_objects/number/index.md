@@ -110,7 +110,7 @@ new Uint8Array([257, -257]); // Uint8Array(2) [ 1, 255 ]
 
 ## Конструктор
 
-- [`Number()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number/Number)
+- {{jsxref("Number/Number", "Number()")}}
   - : Створює нове значення `Number`.
 
 Коли `Number` викликається як конструктор (із `new`), це породжує об'єкт {{jsxref("Number")}}, котрий **не** є примітивом. Наприклад, `typeof new Number(42) === "object"`, і `new Number(42) !== 42` (проте `new Number(42) == 42`).
@@ -135,17 +135,15 @@ new Uint8Array([257, -257]); // Uint8Array(2) [ 1, 255 ]
   - : Особливе значення, що представляє від'ємну нескінченність. Повертається при переповненні.
 - {{jsxref("Number.POSITIVE_INFINITY")}}
   - : Особливе значення, що представляє нескінченність. Повертається при переповненні.
-- {{jsxref("Number", "Number.prototype")}}
-  - : Дає змогу додавати до об'єкта `Number` нові властивості.
 
 ## Статичні методи
 
-- {{jsxref("Number.isNaN()")}}
-  - : З'ясовує, чи є передане значення `NaN`.
 - {{jsxref("Number.isFinite()")}}
   - : З'ясовує, чи є передане значення скінченним числом.
 - {{jsxref("Number.isInteger()")}}
   - : З'ясовує, чи є передане значення цілим числом.
+- {{jsxref("Number.isNaN()")}}
+  - : З'ясовує, чи є передане значення `NaN`.
 - {{jsxref("Number.isSafeInteger()")}}
   - : З'ясовує, чи є передане значення безпечним цілим (числом в діапазоні від -(2<sup>53</sup> - 1) до 2<sup>53</sup> - 1).
 - {{jsxref("Number.parseFloat()")}}

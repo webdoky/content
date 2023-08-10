@@ -2,13 +2,6 @@
 title: RegExp.prototype.test()
 slug: Web/JavaScript/Reference/Global_Objects/RegExp/test
 page-type: javascript-instance-method
-tags:
-  - JavaScript
-  - Method
-  - Prototype
-  - Reference
-  - RegExp
-  - Regular Expressions
 browser-compat: javascript.builtins.RegExp.test
 ---
 
@@ -29,7 +22,7 @@ test(str)
 ### Параметри
 
 - `str`
-  - : Рядок, в якому буде виконуватись пошук збігу з регулярним виразом.
+  - : Рядок, в якому буде виконуватись пошук збігу з регулярним виразом. Будь-які значення [зводяться до рядка](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka), тож пропуск цього параметра чи передача `undefined` змусить `test()` шукати рядок `"undefined"`, а це рідко саме те, що необхідно.
 
 ### Повертає
 
@@ -115,5 +108,5 @@ regex.test("foobarfoo"); // false
 
 ## Дивіться також
 
-- Розділ [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_Expressions) у [Посібнику з JavaScript](/uk/docs/Web/JavaScript/Guide)
+- Розділ [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_expressions) у [Посібнику з JavaScript](/uk/docs/Web/JavaScript/Guide)
 - {{jsxref("RegExp")}}

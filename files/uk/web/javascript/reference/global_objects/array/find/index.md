@@ -9,48 +9,31 @@ browser-compat: javascript.builtins.Array.find
 
 Метод **`find()`** (знайти) повертає значення першого елементу в даному масиві, яке задовольняє передану функцію перевірки. Якщо жоден елемент не задовольняє перевіркову функцію, буде повернуто {{jsxref("undefined")}}.
 
-{{EmbedInteractiveExample("pages/js/array-find.html","shorter")}}
-
 - Якщо потрібен **індекс** знайденого елементу в масиві, використовуйте {{jsxref("Array/findIndex", "findIndex()")}}.
 - Якщо потрібно знайти **індекс вже наявного значення**, застосуйте {{jsxref("Array.prototype/indexOf()")}}. (Вона схожа до {{jsxref("Array/findIndex", "findIndex()")}}, проте перевіряє кожний елемент на рівність зі значенням замість використання перевіркової функції.)
 - Якщо потрібно визначити, чи якесь значення **наявне** в масиві, використайте
   {{jsxref("Array/includes", "includes()")}}. Знову ж таки, цей метод перевіряє кожний елемент на рівність із переданим значенням замість застосування перевіркової функції.
 - Якщо ж потрібно взнати, чи хоч якийсь елемент задовольняє передану перевіркову функцію, слід застосувати {{jsxref("Array/some", "some()")}}.
 
+{{EmbedInteractiveExample("pages/js/array-find.html","shorter")}}
+
 ## Синтаксис
 
 ```js-nolint
-// Стрілкова функція
-find((element) => { /* … */ } )
-find((element, index) => { /* … */ } )
-find((element, index, array) => { /* … */ } )
-
-// Функція зворотного виклику
 find(callbackFn)
 find(callbackFn, thisArg)
-
-// Функція зворотного виклику, оголошена на місці
-find(function(element) { /* … */ })
-find(function(element, index) { /* … */ })
-find(function(element, index, array){ /* … */ })
-find(function(element, index, array) { /* … */ }, thisArg)
 ```
 
 ### Параметри
 
 - `callbackFn`
-
-  - : Функція для виконання на кожному елементі масиву. Вона повинна повертати [істинне](/uk/docs/Glossary/Truthy) значення для позначення того, що шуканий елемент був знайдений.
-
-    Ця функція викликається із наступними аргументами:
-
+  - : Функція для виконання на кожному елементі масиву. Вона повинна повертати [істинне](/uk/docs/Glossary/Truthy) значення для позначення того, що шуканий елемент був знайдений, а інакше – [хибне](/uk/docs/Glossary/Falsy). Ця функція викликається із наступними аргументами:
     - `element`
       - : Поточний елемент масиву, що обробляється.
     - `index`
       - : Індекс (порядковий номер) поточного елемента масиву, що обробляється.
     - `array`
       - : Масив, на якому було викликано метод `find`.
-
 - `thisArg` {{optional_inline}}
   - : Значення для використання як `this` при виконанні `callbackFn`. Більше про це в [ітеративних методах](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#iteratyvni-metody).
 
@@ -137,7 +120,7 @@ const array = [0, 1, , , , 5, 6];
 
 // Покаже всі індекси, а не лише ті, що мають присвоєне значення
 array.find((value, index) => {
-  console.log("Відвідано індекс ", index, " зі значенням ", value);
+  console.log("Відвідано індекс", index, "зі значенням", value);
 });
 // Відвідано індекс 0 зі значенням 0
 // Відвідано індекс 1 зі значенням 1
@@ -151,11 +134,11 @@ array.find((value, index) => {
 array.find((value, index) => {
   // Видаляємо 5-й елемент під час першої ітерації
   if (index === 0) {
-    console.log("Видалення array[5] зі значенням ", array[5]);
+    console.log("Видалення array[5] зі значенням", array[5]);
     delete array[5];
   }
   // 5-й елемент все ж опрацьовується, хоча ми його видалили
-  console.log("Відвідано індекс ", index, " зі значенням ", value);
+  console.log("Відвідано індекс", index, "зі значенням", value);
 });
 // Видалення array[5] зі значенням 5
 // Відвідано індекс 0 зі значенням 0
@@ -169,11 +152,12 @@ array.find((value, index) => {
 
 ### Виклик find() на об'єктах-немасивах
 
-Метод `find()` зчитує з `this` властивість `length`, а потім звертається до кожної цілочислової властивості.
+Метод `find()` зчитує з `this` властивість `length`, а потім звертається до кожної властивості, чий ключ – невід'ємне ціле число, менше за `length`.
 
 ```js
 const arrayLike = {
   length: 3,
+  "-1": 0.1, // ігнорується find(), оскільки -1 < 0
   0: 2,
   1: 7.3,
   2: 4,
@@ -192,8 +176,13 @@ console.log(Array.prototype.find.call(arrayLike, (x) => !Number.isInteger(x))); 
 ## Дивіться також
 
 - [Поліфіл до `Array.prototype.find` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
-- {{jsxref("Array.prototype.findIndex()")}} – знайти елемент і повернути його індекс
-- {{jsxref("Array.prototype.includes()")}} – перевірити, чи значення присутнє в масиві
-- {{jsxref("Array.prototype.filter()")}} – отримати підхожі елементи
-- {{jsxref("Array.prototype.every()")}} – перевірити всі елементи
-- {{jsxref("Array.prototype.some()")}} – перевіряти до першого збігу
+- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- {{jsxref("Array")}}
+- {{jsxref("Array.prototype.findIndex()")}}
+- {{jsxref("Array.prototype.findLast()")}}
+- {{jsxref("Array.prototype.findLastIndex()")}}
+- {{jsxref("Array.prototype.includes()")}}
+- {{jsxref("Array.prototype.filter()")}}
+- {{jsxref("Array.prototype.every()")}}
+- {{jsxref("Array.prototype.some()")}}
+- {{jsxref("TypedArray.prototype.find()")}}

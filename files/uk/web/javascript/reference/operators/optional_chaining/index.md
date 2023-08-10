@@ -75,7 +75,7 @@ const result = someInterface.customMethod?.();
 
 ### Необов'язковий ланцюжок з виразами
 
-Також оператор необов'язкового ланцюжка можна використовувати вкупі з [записом квадратних дужок](/uk/docs/Web/JavaScript/Reference/Operators/Property_Accessors#zapys-kvadratnykh-duzhok), котрий дає змогу передати як ім'я властивості – вираз:
+Також оператор необов'язкового ланцюжка можна використовувати вкупі з [записом квадратних дужок](/uk/docs/Web/JavaScript/Reference/Operators/Property_accessors#zapys-kvadratnykh-duzhok), котрий дає змогу передати як ім'я властивості – вираз:
 
 ```js
 const nestedProp = obj?.["prop" + "Name"];

@@ -7,9 +7,9 @@ browser-compat: javascript.statements.async_function
 
 {{jsSidebar("Statements")}}
 
-Оголошення **`async function`** оголошує асинхронну функцію, всередині тіла якої дозволене вживання ключового слова `await`. Ключові слова `async` та `await` дають змогу записувати асинхронну (засновану на промісах) поведінку в чистішому стилі, уникаючи необхідності явно задавати ланцюжки промісів.
+Оголошення **`async function`** створює {{glossary("binding", "зв'язування")}} нової асинхронної функції з її новою назвою. Всередині її тіла дозволене вживання ключового слова `await`, що дає змогу записувати асинхронну (засновану на промісах) поведінку в чистішому стилі та уникати необхідності явно задавати ланцюжки промісів.
 
-Асинхронні функції також можна оголошувати {{jsxref("Operators/async_function", "як вирази", "", 1)}}.
+Асинхронні функції також можна оголошувати за допомогою [виразів `async function`](/uk/docs/Web/JavaScript/Reference/Operators/async_function).
 
 {{EmbedInteractiveExample("pages/js/statement-async.html", "taller")}}
 
@@ -26,6 +26,8 @@ async function name(param0, param1, /* … ,*/ paramN) {
   statements
 }
 ```
+
+> **Примітка:** Між `async` і `function` не може бути символів кінця рядка, бо інакше буде [автоматично вставлено](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#avtomatychne-vstavliannia-krapok-z-komoiu) крапку з комою, що зробить `async` ідентифікатором, а все решту — оголошенням `function`.
 
 ### Параметри
 
@@ -48,7 +50,7 @@ async function name(param0, param1, /* … ,*/ paramN) {
 >
 > Самостійний `await` можна використовувати всередині [модулів JavaScript.](/uk/docs/Web/JavaScript/Guide/Modules)
 
-> **Примітка:** Мета `async`/`await` — спростити синтаксис, необхідний для користування API, заснованим на промісах. Поведінка `async`/`await` — схожа до комбінації [генераторів](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators) із промісами.
+> **Примітка:** Мета `async`/`await` — спростити синтаксис, необхідний для користування API, заснованим на промісах. Поведінка `async`/`await` — схожа до комбінації [генераторів](/uk/docs/Web/JavaScript/Guide/Iterators_and_generators) із промісами.
 
 Асинхронні функції завжди повертають проміс. Якщо повернене з асинхронної функції значення не є явним промісом, воно буде неявно обгорнуте в нього.
 

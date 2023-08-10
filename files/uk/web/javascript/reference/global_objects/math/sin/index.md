@@ -1,37 +1,32 @@
 ---
 title: Math.sin()
 slug: Web/JavaScript/Reference/Global_Objects/Math/sin
-tags:
-  - JavaScript
-  - Math
-  - Method
-  - Reference
+page-type: javascript-static-method
 browser-compat: javascript.builtins.Math.sin
 ---
+
 {{JSRef}}
 
-Функція **`Math.sin()`** повертає синус числа.
+Статичний метод **`Math.sin()`** повертає синус числа в радіанах.
 
 {{EmbedInteractiveExample("pages/js/math-sin.html")}}
 
 ## Синтаксис
 
-```js
+```js-nolint
 Math.sin(x)
 ```
 
 ### Параметри
 
 - `x`
-  - : Число (кут в радіанах).
+  - : Число, що представляє кут в радіанах.
 
 ### Повернене значення
 
-Синус переданого числа.
+Синус `x`, число в діапазоні від -1 до 1 включно. Якщо `x` – це {{jsxref("Infinity")}}, `-Infinity` або {{jsxref("NaN")}}, то повертається {{jsxref("NaN")}}.
 
 ## Опис
-
-Метод `Math.sin()` повертає числове значення з проміжку від -1 до 1, яке відповідає значення синусу переданого кута в радіанах.
 
 Оскільки `sin()` — це статичний метод об'єкта `Math`, його потрібно завжди використовувати через `Math.sin()`. Не слід звертатись до нього як до методу власноруч створеного екземпляра `Math` (`Math` не є конструктором).
 
@@ -40,10 +35,12 @@ Math.sin(x)
 ### Застосування Math.sin()
 
 ```js
-Math.sin(0);           // 0
-Math.sin(1);           // 0.8414709848078965
-
+Math.sin(-Infinity); // NaN
+Math.sin(-0); // -0
+Math.sin(0); // 0
+Math.sin(1); // 0.8414709848078965
 Math.sin(Math.PI / 2); // 1
+Math.sin(Infinity); // NaN
 ```
 
 ## Специфікації

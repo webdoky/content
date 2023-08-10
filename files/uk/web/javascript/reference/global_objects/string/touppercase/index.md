@@ -21,11 +21,6 @@ toUpperCase()
 
 Новий рядок, що містить значення рядка, на якому було викликано метод, переведене у верхній регістр.
 
-### Винятки
-
-- {{jsxref("TypeError")}}
-  - : Коли викликається на значеннях [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) чи {{jsxref("undefined")}}, наприклад, `String.prototype.toUpperCase.call(undefined)`.
-
 ## Опис
 
 Метод `toUpperCase()` повертає значення рядка, переведене у верхній регістр. Цей метод не впливає на значення початкового рядка, оскільки рядки в JavaScript є незмінними.

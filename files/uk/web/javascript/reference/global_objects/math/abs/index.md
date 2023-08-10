@@ -1,22 +1,19 @@
 ---
 title: Math.abs()
 slug: Web/JavaScript/Reference/Global_Objects/Math/abs
-tags:
-  - JavaScript
-  - Math
-  - Method
-  - Reference
+page-type: javascript-static-method
 browser-compat: javascript.builtins.Math.abs
 ---
+
 {{JSRef}}
 
-Функція **`Math.abs()`** повертає модуль числа. Це означає, що вона поверне `x`, якщо `x` — додатне число або нуль, та `x` із протилежним знаком, якщо `x` — від'ємне число.
+Статичний метод **`Math.abs()`** повертає модуль числа.
 
 {{EmbedInteractiveExample("pages/js/math-abs.html")}}
 
 ## Синтаксис
 
-```js
+```js-nolint
 Math.abs(x)
 ```
 
@@ -27,7 +24,7 @@ Math.abs(x)
 
 ### Повернене значення
 
-Модуль переданого числа.
+Модуль переданого числа `x`. Якщо число `x` є від'ємним (в тому числі `-0`), то цей статичний метод повертає `-x`. Інакше – повертає `x`. Таким чином, результат завжди є додатним числом або `0`.
 
 ## Опис
 
@@ -35,21 +32,32 @@ Math.abs(x)
 
 ## Приклади
 
-### Поведінка Math.abs()
-
-Передача в метод таких значень, як: порожній об'єкт, масив з понад одним елементом, нечисловий рядок, чи змінна з {{jsxref("undefined")}} або без значення взагалі — поверне {{jsxref("NaN")}}. Передача в метод значень {{jsxref("null")}}, порожнього рядка чи порожнього масиву поверне 0.
+### Застосування Math.abs()
 
 ```js
-Math.abs('-1');     // 1
-Math.abs(-2);       // 2
-Math.abs(null);     // 0
-Math.abs('');       // 0
-Math.abs([]);       // 0
-Math.abs([2]);      // 2
-Math.abs([1,2]);    // NaN
-Math.abs({});       // NaN
-Math.abs('string'); // NaN
-Math.abs();         // NaN
+Math.abs(-Infinity); // Infinity
+Math.abs(-1); // 1
+Math.abs(-0); // 0
+Math.abs(0); // 0
+Math.abs(1); // 1
+Math.abs(Infinity); // Infinity
+```
+
+### Перетворення параметра
+
+`Math.abs()` [зводить свій параметр до числа](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#zvedennia-do-chysla). Значення, для яких це неможливо, стають `NaN`, тож `Math.abs()` у таких випадках, відповідно, повертає `NaN`.
+
+```js
+Math.abs("-1"); // 1
+Math.abs(-2); // 2
+Math.abs(null); // 0
+Math.abs(""); // 0
+Math.abs([]); // 0
+Math.abs([2]); // 2
+Math.abs([1, 2]); // NaN
+Math.abs({}); // NaN
+Math.abs("string"); // NaN
+Math.abs(); // NaN
 ```
 
 ## Специфікації

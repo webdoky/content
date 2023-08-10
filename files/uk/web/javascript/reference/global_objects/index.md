@@ -12,7 +12,7 @@ page-type: landing-page
 
 Сам **глобальний об'єкт** доступний із використанням оператора {{JSxRef("Operators/this", "this")}} у глобальній області видимості. Насправді глобальна область видимості **складається з** властивостей цього глобального об'єкта, включно з успадкованими полями, якщо такі є.
 
-Інші об'єкти у глобальній області видимості є або [створеними користувацьким скриптом](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#stvorennia-novykh-obiektiv), або ж надані керівним застосунком. Ті керівні об'єкти, котрі доступні в контексті браузера, задокументовані у [довіднику з API](/uk/docs/Web/API).
+Інші об'єкти у глобальній області видимості є або [створеними користувацьким скриптом](/uk/docs/Web/JavaScript/Guide/Working_with_objects#stvorennia-novykh-obiektiv), або ж надані керівним застосунком. Ті керівні об'єкти, котрі доступні в контексті браузера, задокументовані у [довіднику з API](/uk/docs/Web/API).
 
 Більше інформації про відмінності між [DOM](/uk/docs/Web/API/Document_Object_Model) і ядром [JavaScript](/uk/docs/Web/JavaScript) можна знайти в [технологічному огляді JavaScript](/uk/docs/Web/JavaScript/JavaScript_technologies_overview).
 
@@ -129,6 +129,8 @@ page-type: landing-page
 
 Абстракції контролю допомагають структурувати код, особливо якщо він асинхронний (зокрема без використання глибоко вкладених функцій зворотного виклику).
 
+- {{JSxRef("Iterator")}}
+- {{JSxRef("AsyncIterator")}}
 - {{JSxRef("Promise")}}
 - {{JSxRef("GeneratorFunction")}}
 - {{JSxRef("AsyncGeneratorFunction")}}
@@ -146,12 +148,13 @@ page-type: landing-page
 Додатки до ядра ECMAScript із функціональністю, що чутлива до мови.
 
 - {{JSxRef("Intl")}}
-- {{JSxRef("Global_Objects/Intl/Collator", "Intl.Collator")}}
-- {{JSxRef("Global_Objects/Intl/DateTimeFormat", "Intl.DateTimeFormat")}}
-- {{JSxRef("Global_Objects/Intl/DisplayNames", "Intl.DisplayNames")}}
-- {{JSxRef("Global_Objects/Intl/ListFormat", "Intl.ListFormat")}}
-- {{JSxRef("Global_Objects/Intl/Locale", "Intl.Locale")}}
-- {{JSxRef("Global_Objects/Intl/NumberFormat", "Intl.NumberFormat")}}
-- {{JSxRef("Global_Objects/Intl/PluralRules", "Intl.PluralRules")}}
-- {{JSxRef("Global_Objects/Intl/RelativeTimeFormat", "Intl.RelativeTimeFormat")}}
-- {{JSxRef("Global_Objects/Intl/Segmenter", "Intl.Segmenter")}}
+- {{JSxRef("Intl.Collator")}}
+- {{JSxRef("Intl.DateTimeFormat")}}
+- {{JSxRef("Intl.DisplayNames")}}
+- {{JSxRef("Intl.DurationFormat")}}
+- {{JSxRef("Intl.ListFormat")}}
+- {{JSxRef("Intl.Locale")}}
+- {{JSxRef("Intl.NumberFormat")}}
+- {{JSxRef("Intl.PluralRules")}}
+- {{JSxRef("Intl.RelativeTimeFormat")}}
+- {{JSxRef("Intl.Segmenter")}}

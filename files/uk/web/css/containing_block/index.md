@@ -2,22 +2,11 @@
 title: Компонування та контейнерний блок
 slug: Web/CSS/Containing_block
 page-type: guide
-tags:
-  - CSS
-  - CSS Position
-  - Containers
-  - Guide
-  - Layout
-  - Position
-  - Style
-  - blocks
-  - containing block
-  - size
 ---
 
 {{CSSRef}}
 
-На розмір і положення елемента нерідко впливає його **контейнерний блок**. Найчастіше контейнерним блоком є [область вмісту](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#oblast-vmistu) найближчого предка елемента, причому такого, що належить до [блокового рівня](/uk/docs/Web/HTML/Block-level_elements), але це не завжди так. У цій статті розглядаються чинники, котрі впливають на визначення контейнерного блока елемента.
+На розмір і положення елемента нерідко впливає його **контейнерний блок**. Найчастіше контейнерним блоком є [область вмісту](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model#oblast-vmistu) найближчого предка елемента, причому такого, що належить до [блокового рівня](/uk/docs/Glossary/Block-level_content), але це не завжди так. У цій статті розглядаються чинники, котрі впливають на визначення контейнерного блока елемента.
 
 Коли користувацький агент (як то ваш браузер) компонує документ, він генерує для кожного елемента рамку. Кожна рамка поділяється на чотири області:
 
@@ -47,11 +36,14 @@ tags:
 
    1. Має властивість {{cssxref("transform")}} чи {{cssxref("perspective")}}, чиє значення – не `none`
    2. Має властивість {{cssxref("will-change")}} зі значенням `transform` або `perspective`
-   3. Має властивість {{cssxref("filter")}}, чиє значення – не `none`, або властивість `will-change` зі значенням `filter` (останнє працює лише в Firefox).
-   4. Має властивість {{cssxref("contain")}} зі значенням `paint` (`contain: paint;`)
-   5. Має властивість {{cssxref("backdrop-filter")}}, чи значення – не `none` (наприклад, `backdrop-filter: blur(10px);`)
+   3. Має властивість {{cssxref("filter")}}, чиє значення – не `none`, або властивість `will-change` зі значенням `filter` (останнє працює лише в Firefox)
+   4. Має властивість {{cssxref("contain")}} зі значенням `layout`, `paint`, `strict` або `content` (наприклад, `contain: paint;`)
+   5. Має властивість {{cssxref("container-type")}} зі значенням, відмінним від `normal`
+   6. Має властивість {{cssxref("backdrop-filter")}}, чи значення – не `none` (наприклад, `backdrop-filter: blur(10px);`)
 
 > **Примітка:** Контейнерний блок, в котрому знаходиться кореневий елемент ({{HTMLElement("html")}}), – це прямокутник, що зветься **початковим контейнерним блоком**. Він має розміри, що дорівнюють розмірам області перегляду (при безперервному виводі) або області сторінки (при сторінковому виводі).
+
+> **Примітка:** Браузери по-різному обробляють властивості `perspective` і `filter` при формуванні контейнерного блока.
 
 ## Обчислення відсоткових значень на основі контейнерного блока
 
@@ -59,6 +51,8 @@ tags:
 
 1. Властивості {{cssxref("height")}}, {{cssxref("top")}} і {{cssxref("bottom")}} обчислюють відсоткові значення відносно `height` контейнерного блока.
 2. Властивості {{cssxref("width")}}, {{cssxref("left")}}, {{cssxref("right")}}, {{cssxref("padding")}} і {{cssxref("margin")}} обчислюють відсоткові значення відносно `width` контейнерного блока.
+
+> **Примітка:** **Контейнери-блоки** (як то елементи inline-block, block або list-item) містять або лише рамки рядкового рівня, що беруть участь в рядковому контексті форматування, або лише рамки блокового рівня, що беруть участь в блоковому контексті форматування. Елемент є контейнером-блоком лише тоді, коли він містить рамки блокового рівня або рядкового рівня.
 
 ## Трохи прикладів
 
@@ -76,7 +70,7 @@ tags:
 
 ### Приклад 1
 
-У цьому прикладі абзац позиціюється статично, тож його контейнерний блок – {{HTMLElement("section")}}, тому що це найближчий предок, котрий є блоковим контейнером.
+У цьому прикладі абзац позиціюється статично, тож його контейнерний блок – {{HTMLElement("section")}}, тому що це найближчий предок, котрий є блоковим контейнером (у зв'язку з `display: block`).
 
 ```html hidden
 <body>
@@ -262,11 +256,11 @@ p {
   - [Директиви](/uk/docs/Web/CSS/At-rule)
   - [Коментарі](/uk/docs/Web/CSS/Comments)
   - [Специфічність](/uk/docs/Web/CSS/Specificity)
-  - [Успадкування](/uk/docs/Web/CSS/inheritance)
-  - [Рамкова модель](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+  - [Успадкування](/uk/docs/Web/CSS/Inheritance)
+  - [Рамкова модель](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
   - [Режими компонування](/uk/docs/Web/CSS/Layout_mode)
   - [Моделі візуального форматування](/uk/docs/Web/CSS/Visual_formatting_model)
-  - [Перекриття зовнішніх відступів](/uk/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
+  - [Перекриття зовнішніх відступів](/uk/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
   - Значення
     - [Початкові значення](/uk/docs/Web/CSS/initial_value)
     - [Обчислені значення](/uk/docs/Web/CSS/computed_value)

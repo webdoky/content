@@ -13,7 +13,7 @@ browser-compat: html.elements.select
 
 Приклад вище показує типове використання `<select>`. Елемент отримує атрибут `id`, котрий дає змогу пов'язати його з елементом {{htmlelement("label")}} для потреб доступності, а також атрибут `name`, котрий представляє ім'я відповідної порції даних при поданні форми на сервер. Кожен варіант меню описується елементом {{htmlelement("option")}}, дочірнім щодо `<select>`.
 
-Кожен елемент `<option>` повинен мати атрибут {{htmlattrxref("value", "option")}}, що містить значення, котре буде подано на сервер, якщо відповідний варіант – обраний. Якщо атрибута `value` немає, то усталеним значенням є текст всередині елемента. Щоб елемент `option` був обраним при першому завантаженні сторінки, слід вказати атрибут {{htmlattrxref("selected", "option")}} елемента `<option>`.
+Кожен елемент `<option>` повинен мати атрибут [`value`](/uk/docs/Web/HTML/Element/option#value), що містить значення, котре буде подано на сервер, якщо відповідний варіант – обраний. Якщо атрибута `value` немає, то усталеним значенням є текст всередині елемента. Щоб елемент `option` був обраним при першому завантаженні сторінки, слід вказати атрибут [`selected`](/uk/docs/Web/HTML/Element/option#selected) елемента `<option>`.
 
 Елемент `<select>` має певні унікальні атрибути для контролю над собою, наприклад, `multiple` для задання можливості (чи неможливості) вибору кількох варіантів та `size` з кількістю варіантів, котру можна обрати водночас. Також він приймає більшість звичних атрибутів полів вводу, наприклад, `required`, `disabled`, `autofocus` тощо.
 
@@ -33,7 +33,7 @@ browser-compat: html.elements.select
   - : Цей булів атрибут показує, що користувач не може взаємодіяти з контрольним елементом. Якщо цей атрибут не вказаний, то контрольний елемент успадковує це налаштування від контейнерного елемента, наприклад, {{htmlelement("fieldset")}}; якщо немає контейнерного елемента з атрибутом `disabled`, то контрольний елемент є увімкненим.
 - `form` (форма)
 
-  - : Елемент {{HTMLElement("form")}}, з котрим елемент `<select>` пов'язаний (його _форма-власник_). Значення цього атрибута мусить відповідати значенню атрибута {{htmlattrxref("id")}} елемента `<form>` в тому самому документі. (Якщо цей атрибут не вказаний, то `<select>` пов'язується з елементом `<form>`, котрий є його предком, якщо такий предок є.)
+  - : Елемент {{HTMLElement("form")}}, з котрим елемент `<select>` пов'язаний (його _форма-власник_). Значення цього атрибута мусить відповідати значенню атрибута [`id`](/uk/docs/Web/HTML/Global_attributes#id) елемента `<form>` в тому самому документі. (Якщо цей атрибут не вказаний, то `<select>` пов'язується з елементом `<form>`, котрий є його предком, якщо такий предок є.)
 
     Цей атрибут дає змогу пов'язати елементи `<select>` із `<form>`'ами будь-де в документі, не поміщаючи їх у відповідний `<form>`. Також така поведінка змушує нехтувати батьківським елементом `<form>`.
 
@@ -123,7 +123,7 @@ browser-compat: html.elements.select
 
 ## Оформлення засобами CSS
 
-Елемент `<select>` відомий складністю ефективного оформлення засобами CSS. Можна повпливати на певні аспекти, як і в будь-якого елемента, – наприклад, оперуючи [рамковою моделлю](/uk/docs/Learn/CSS/Building_blocks/The_box_model), [використаним шрифтом](/uk/docs/Web/CSS/CSS_Fonts) тощо, а також можна використати властивість {{cssxref("appearance")}}, щоб усунути усталений системний вигляд.
+Елемент `<select>` відомий складністю ефективного оформлення засобами CSS. Можна повпливати на певні аспекти, як і в будь-якого елемента, – наприклад, оперуючи [рамковою моделлю](/uk/docs/Learn/CSS/Building_blocks/The_box_model), [використаним шрифтом](/uk/docs/Web/CSS/CSS_fonts) тощо, а також можна використати властивість {{cssxref("appearance")}}, щоб усунути усталений системний вигляд.
 
 Втім, ці властивості не дають сталих результатах на всіх браузерах, тож важко робити речі штибу шикування різних типів елементів форми одне з одним в один стовпець. Внутрішня структура елемента `<select>` – складна, а також важка для контролю. При потребі отримати повний контроль слід розглянути варіанти використання бібліотеки з добрими можливостями з оформленнями віджетів форми та розгортання власного спадного меню за допомогою несемантичних елементів і JavaScript, а також [WAI-ARIA](/uk/docs/Learn/Accessibility/WAI-ARIA_basics) для надання семантики.
 
@@ -149,6 +149,8 @@ browser-compat: html.elements.select
 </select>
 ```
 
+#### Результат
+
 {{EmbedLiveSample("prostyi-select", "", "100")}}
 
 ### Поглиблений приклад select з використанням багатьох можливостей
@@ -172,6 +174,8 @@ browser-compat: html.elements.select
   </select>
 </label>
 ```
+
+#### Результат
 
 {{EmbedLiveSample("pohlyblenyi-pryklad-select-z-vykorystanniam-bahatokh-mozhlyvostei", "", "100")}}
 
@@ -491,7 +495,7 @@ for (const select of selects) {
 
   div.onclick = (e) => {
     if (!multiple) {
-      const open = this.hasAttribute("data-open");
+      const open = div.hasAttribute("data-open");
       e.stopPropagation();
       if (open) {
         div.removeAttribute("data-open");
@@ -518,7 +522,7 @@ for (const select of selects) {
     ...Array.from(options).map((e) => {
       span.innerText = e.label;
       return div.offsetWidth;
-    })
+    }),
   );
 
   console.log(width);
@@ -556,17 +560,17 @@ document.forms[0].onsubmit = (e) => {
           href="/uk/docs/Web/HTML/Content_categories#interaktyvnyi-vmist"
           >інтерактивний вміст</a
         >,
-        <a href="/uk/docs/Web/HTML/Content_categories#form_spyskovi"
-          >списковий</a
+        <a href="/uk/docs/Web/HTML/Content_categories#perelicheni"
+          >перелічений</a
         >,
-        <a href="/uk/docs/Web/HTML/Content_categories#form_pidpysuvani"
-          >підписуваний</a
+        <a href="/uk/docs/Web/HTML/Content_categories#pidpysni"
+          >підписний</a
         >,
-        <a href="/uk/docs/Web/HTML/Content_categories#form_skydanyi"
+        <a href="/uk/docs/Web/HTML/Content_categories#skydani"
           >скиданий</a
         > та
-        <a href="/uk/docs/Web/HTML/Content_categories#form_podavanyi"
-          >подаваний</a
+        <a href="/uk/docs/Web/HTML/Content_categories#podavalni"
+          >подавальний</a
         >
         <a href="/uk/docs/Web/HTML/Content_categories#formovyi-vmist"
           >асоційований з формою</a

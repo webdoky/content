@@ -4,7 +4,7 @@ slug: Web/JavaScript/Guide/Using_promises
 page-type: guide
 ---
 
-{{jsSidebar("JavaScript Guide")}}{{PreviousNext("Web/JavaScript/Guide/Using_classes", "Web/JavaScript/Guide/Iterators_and_generators")}}
+{{jsSidebar("JavaScript Guide")}}{{PreviousNext("Web/JavaScript/Guide/Using_classes", "Web/JavaScript/Guide/Typed_arrays")}}
 
 {{jsxref("Promise")}} – це об'єкт, що представляє завершення або невдачу асинхронної операції. Оскільки більшість людей користуються вже створеними промісами, цей посібник спершу пояснить використання повернених промісів, а потім – як їх створювати.
 
@@ -517,4 +517,4 @@ console.log("Проміс (в очікуванні)", promise);
 - [Venkatraman.R - Інструменти для юніттестування промісів (англ.)](https://tech.io/playgrounds/11107/tools-for-promises-unittesting/introduction)
 - [Нолан Лоусон: Маємо проблему з промісами – Поширені помилки з промісами (англ.)](https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html)
 
-{{PreviousNext("Web/JavaScript/Guide/Using_classes", "Web/JavaScript/Guide/Iterators_and_generators")}}
+{{PreviousNext("Web/JavaScript/Guide/Using_classes", "Web/JavaScript/Guide/Typed_arrays")}}

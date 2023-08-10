@@ -41,7 +41,7 @@ shift()
 ```js
 const myFish = ["янгол", "клоун", "мандаринка", "осетер"];
 
-console.log("myFish до:", JSON.stringify(myFish));
+console.log("myFish до:", myFish);
 // myFish до: ['янгол', 'клоун', 'мандаринка', 'осетер'];
 
 const shifted = myFish.shift();
@@ -97,7 +97,10 @@ console.log(plainObj);
 
 ## Дивіться також
 
+- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- {{jsxref("Array")}}
 - {{jsxref("Array.prototype.push()")}}
 - {{jsxref("Array.prototype.pop()")}}
 - {{jsxref("Array.prototype.unshift()")}}
 - {{jsxref("Array.prototype.concat()")}}
+- {{jsxref("Array.prototype.splice()")}}
