@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.Array.map
 
 {{JSRef}}
 
-Метод **`map()`** (відобразити) створює новий масив, наповнений результатами виклику переданої функції на кожному з елементів початкового масиву.
+Метод **`map()`** (відобразити) примірників {{jsxref("Array")}} створює новий масив, наповнений результатами виклику переданої функції на кожному з елементів початкового масиву.
 
 {{EmbedInteractiveExample("pages/js/array-map.html")}}
 
@@ -98,6 +98,59 @@ const doubles = numbers.map((num) => num * 2);
 
 console.log(doubles); // [2, 8, 18]
 console.log(numbers); // [1, 4, 9]
+```
+
+### Відображення з побічними ефектами
+
+Функція зворотного виклику може мати побічні ефекти.
+
+```js
+const cart = [5, 15, 25];
+let total = 0;
+const withTax = cart.map((cost) => {
+  total += cost;
+  return cost * 1.2;
+});
+console.log(withTax); // [6, 18, 30]
+console.log(total); // 45
+```
+
+Це не рекомендовано, адже копіювальні методи найкраще використовувати вкупі з чистими функціями. У цьому випадку – можемо захотіти пройтися масивом двічі.
+
+```js
+const cart = [5, 15, 25];
+const total = cart.reduce((acc, cost) => acc + cost, 0);
+const withTax = cart.map((cost) => cost * 1.2);
+```
+
+Іноді цей патерн доходить до крайнощів, і _єдиною_ корисною річчю, котру робить `map()`, виявляються побічні ефекти.
+
+```js
+const products = [
+  { name: "спортивна автівка" },
+  { name: "ноутбук" },
+  { name: "телефон" },
+];
+
+products.map((product) => {
+  product.price = 100;
+});
+```
+
+Як згадувалось вище, це є антипатерном. Якщо повернене значення `map()` не використовується, краще натомість використати `forEach()` або цикл `for...of`.
+
+```js
+products.forEach((product) => {
+  product.price = 100;
+});
+```
+
+Або, якщо необхідно створити новий масив:
+
+```js
+const productsWithPrice = products.map((product) => {
+  return { ...product, price: 100 };
+});
 ```
 
 ### Виклик map() на об'єктах-немасивах
