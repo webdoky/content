@@ -116,7 +116,7 @@ const obj = { a: 1, b: 2 };
 
 Зверніть увагу, що еквівалентний до коду вище _патерн зв'язування_ не є дійсним синтаксисом:
 
-```js example-bad
+```js-nolint example-bad
 const numbers = [];
 const obj = { a: 1, b: 2 };
 const { a: numbers[0], b: numbers[1] } = obj;
@@ -284,7 +284,7 @@ console.log(a, b, c, d, e, f); // 1 2 3 4 5 6
 
 З іншого боку, деструктурування об'єкта може мати лише ідентифікатор як властивість решти.
 
-```js example-bad
+```js-nolint example-bad
 const { a, ...{ b } } = { a: 1, b: 2 };
 // SyntaxError: `...` must be followed by an identifier in declaration contexts
 let a, b;
@@ -549,7 +549,7 @@ for (const {
 
 #### Деструктурування, і обчислені імена властивостей
 
-Деструктурування дає змогу використовувати обчислені імена властивостей, подібні до таких в [об'єктних літералах](/uk/docs/Web/JavaScript/Reference/Operators/Object_initializer#computed_property_names).
+Деструктурування дає змогу використовувати обчислені імена властивостей, подібні до таких в [об'єктних літералах](/uk/docs/Web/JavaScript/Reference/Operators/Object_initializer#obchysleni-nazvy-vlastyvostei).
 
 ```js
 const key = "z";
