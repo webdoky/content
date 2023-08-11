@@ -186,7 +186,7 @@ console.log(`Привіт``Світ`); // TypeError: "Привіт" is not a fun
 
 Єдиним винятком є необов'язкове зв'язування, котре викине синтаксичну помилку.
 
-```js example-bad
+```js-nolint example-bad
 console.log?.`Привіт`; // SyntaxError: Invalid tagged template on optional chain
 console?.log`Привіт`; // SyntaxError: Invalid tagged template on optional chain
 ```
@@ -290,7 +290,7 @@ console.log(identity`Привіт\n${2 + 3}!`);
 ```js
 const html = (strings, ...values) => String.raw({ raw: strings }, ...values);
 // Певні форматери форматують вміст цього літерала як HTML
-const doc = html`<!DOCTYPE html>
+const doc = html`<!doctype html>
   <html lang="uk">
     <head>
       <title>Привіт</title>
@@ -336,7 +336,7 @@ latex`\unicode`;
 
 Слід зауважити, що обмеження екранованих послідовностей було прибрано лише з _тегованих_ шаблонів, проте в _нетегованих_ літералах вони залишилися:
 
-```js example-bad
+```js-nolint example-bad
 const bad = `неправильна екранована послідовність: \unicode`;
 ```
 
