@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.Array.forEach
 
 {{JSRef}}
 
-Метод **`forEach()`** ("для кожного") виконує дану функцію один раз для кожного елементу масиву.
+Метод **`forEach()`** ("для кожного") примірників {{jsxref("Array")}} виконує передану функцію один раз для кожного елементу масиву.
 
 {{EmbedInteractiveExample("pages/js/array-foreach.html")}}
 
