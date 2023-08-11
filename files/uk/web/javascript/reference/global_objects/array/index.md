@@ -24,8 +24,8 @@ browser-compat: javascript.builtins.Array
 
 Елементи масиву є властивостями об'єкта так само, як `toString` (для точності, втім, слід нагадати, що `toString()` є методом). Попри це, спроба отримати елемент масиву у наступний спосіб призведе до синтаксичної помилки, адже таке ім'я властивості є недійсним:
 
-```js example-bad
-console.log(arr.0); // синтаксична помилка
+```js-nolint example-bad
+arr.0; // синтаксична помилка
 ```
 
 Синтаксис JavaScript вимагає, аби до властивостей, що починаються з цифри, зверталися за допомогою [запису квадратних дужок](/uk/docs/Web/JavaScript/Guide/Working_with_objects#obiekty-i-vlastyvosti), а не [запису крапки](/uk/docs/Web/JavaScript/Reference/Operators/Property_accessors). Крім цього, можна брати в лапки індекси масивів (наприклад, `years['2']` замість `years[2]`), хоч зазвичай для цього немає потреби.
