@@ -307,7 +307,7 @@ browser-compat: html.elements.input
 | [`autocomplete`](#autocomplete)                          | усі, крім `checkbox`, `radio` та кнопок                              | Вказівка для функціональності автоматичного заповнення форм                                                        |
 | [`capture`](#capture-zakhoplennia)                       | `file`                                                               | Спосіб захоплення медіа для контрольних елементів завантаження файлів                                              |
 | [`checked`](#checked)                                    | `checkbox`, `radio`                                                  | Вказує, чи є контрольний елемент обраним                                                                           |
-| [`dirname`](#dirname-imia-napriamu)                      | `search`, `text`                                                     | Ім'я поля форми для надсилання напряму письма при поданні форми                                                    |
+| [`dirname`](#dirname-imia-napriamu)                      | `hidden`, `text`, `search`, `url`, `tel`, `email`                    | Ім'я поля форми для надсилання напряму письма при поданні форми                                                    |
 | [`disabled`](#disabled-vymknene)                         | усі                                                                  | Вказує, чи є контрольний елемент вимкненим                                                                         |
 | [`form`](#form-forma)                                    | усі                                                                  | Асоціює контрольний елемент з елементом форми                                                                      |
 | [`formaction`](#formaction-diia-formy)                   | `image`, `submit`                                                    | URL для подання форми                                                                                              |
@@ -382,7 +382,7 @@ browser-compat: html.elements.input
 
 - `dirname` (ім'я напряму)
 
-  - : Чинний лише для типів полів введення `text` та `search`. Атрибут `dirname` вмикає подання напрямленості введеного тексту. Коли присутній такий атрибут, від контрольного елемента будуть подані дві пари ім'я-значення: перша – [`name`](#name-imia) та [`value`](#value-znachennia), а друга – значення атрибута `dirname` як ім'я і `ltr` або `rtl` як значення, встановлене браузером.
+  - : Чинний для типів полів введення`hidden`, `text`, `search`, `url`, `tel` та `email`. Атрибут `dirname` вмикає подання напрямленості введеного тексту. Коли присутній такий атрибут, від контрольного елемента будуть подані дві пари ім'я-значення: перша – [`name`](#name-imia) та [`value`](#value-znachennia), а друга – значення атрибута `dirname` як ім'я і `ltr` або `rtl` як значення, визначене браузером.
 
     ```html
     <form action="page.html" method="post">
