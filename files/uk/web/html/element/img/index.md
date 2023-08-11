@@ -96,7 +96,7 @@ SVG залишається рекомендованим форматом для 
 
     Нерідко складно помітити який-небудь суттєвий ефект, коли `decoding` використовується на статичних елементах `<img>`. Ймовірно, вони спершу візуалізуються як порожні зображення, поки отримуються файли зображень (або з мережі, або з кешу), а потім так чи інакше обробляються незалежно, тож "синхронізація" оновлень вмісту – менш помітна. Однак блокування візуалізації під час декодування, хоча й невелике, _може_ бути виміряне – навіть якщо важко помітити його людським зором. Дивіться більш докладний аналіз у [Що насправді робить атрибут image decoding?](https://www.tunetheweb.com/blog/what-does-the-image-decoding-attribute-actually-do/) (tunetheweb.com, 2023).
 
-    Using different `decoding` types can result in more noticeable differences when dynamically inserting `<img>` elements into the DOM via JavaScript — see {{domxref("HTMLImageElement.decoding")}} for more details.
+    Використання різних типів `decoding` може призвести до більш помітної різниці при динамічному вставлянні елементів `<img>` у DOM засобами JavaScript – дивіться подробиці в {{domxref("HTMLImageElement.decoding")}}.
 
     Дозволені значення:
 
