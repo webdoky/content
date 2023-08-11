@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.Array.filter
 
 {{JSRef}}
 
-Метод **`filter()`** (фільтрувати) створює [поверхневу копію](/uk/docs/Glossary/Shallow_copy) частини даного масиву, відфільтрованого до тих елементів даного масиву, що проходять перевірку, реалізовану в переданій функції.
+Метод **`filter()`** (фільтрувати) примірників {{jsxref("Array")}} створює [поверхневу копію](/uk/docs/Glossary/Shallow_copy) частини даного масиву, відфільтрованого до тих елементів даного масиву, що проходять перевірку, реалізовану в переданій функції.
 
 {{EmbedInteractiveExample("pages/js/array-filter.html","shorter")}}
 
