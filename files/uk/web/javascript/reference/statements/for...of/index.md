@@ -55,7 +55,7 @@ for (let value of iterable) {
 
 Проте особливе правило забороняє використовувати як ім'я змінної `async`. Наступний синтаксис – недійсний:
 
-```js example-bad
+```js-nolint example-bad
 let async;
 for (async of [1, 2, 3]); // SyntaxError: The left-hand side of a for-of loop may not be 'async'.
 ```
