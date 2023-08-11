@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.Array.push
 
 {{JSRef}}
 
-Метод **`push()`** (запхати) додає задані елементи в кінець масиву та повертає нову довжину масиву.
+Метод **`push()`** (запхати) примірників {{jsxref("Array")}} додає задані елементи в кінець масиву та повертає нову довжину масиву.
 
 {{EmbedInteractiveExample("pages/js/array-push.html")}}
 
