@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.String.endsWith
 
 {{JSRef}}
 
-Метод **`endsWith()`** (закінчується підрядком) визначає, чи завершується рядок символами з рядка-параметра, повертаючи `true` або `false` відповідно.
+Метод **`endsWith()`** (закінчується підрядком) значень {{jsxref("String")}} визначає, чи завершується його рядок символами з рядка-параметра, повертаючи `true` або `false` відповідно.
 
 {{EmbedInteractiveExample("pages/js/string-endswith.html")}}
 
