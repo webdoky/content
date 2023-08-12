@@ -56,7 +56,7 @@ let { bar } = foo; // де foo = { bar: 10, baz: 12 };
 - Оголошення `let` не можуть бути [оголошені повторно](#povtorni-oholoshennia) будь-яким іншим оголошенням в тій же області видимості.
 - Ключове слово `let` позначає [_оголошення_, а не _інструкції_](/uk/docs/Web/JavaScript/Reference/Statements#vidminnosti-mizh-instruktsiiamy-ta-oholoshenniamy). Це означає, що не можна використовувати самотнє оголошення `let` як тіло блоку (що має зміст, адже до такої змінної не було б нізвідки доступу).
 
-  ```js example-bad
+  ```js-nolint example-bad
   if (true) let a = 1; // SyntaxError: Lexical declaration cannot appear in a single-statement context
   ```
 
@@ -115,7 +115,7 @@ console.log(typeof undeclaredVariable); // "undefined"
 
 Оголошення `let` не можуть бути в одній області видимості з будь-яким іншим оголошенням, включаючи оголошення `let`, {{jsxref("Statements/const", "const")}}, {{jsxref("Statements/class", "class")}}, {{jsxref("Statements/function", "function")}}, {{jsxref("Statements/var", "var")}} та {{jsxref("Statements/import", "import")}}.
 
-```js example-bad
+```js-nolint example-bad
 {
   let foo;
   let foo; // SyntaxError: Identifier 'a' has already been declared
@@ -124,7 +124,7 @@ console.log(typeof undeclaredVariable); // "undefined"
 
 Оголошення `let` всередині тіла функції не може мати таке ж ім'я, як в одного з параметрів. Оголошення `let` всередині блоку `catch` не може мати таке ж ім'я, як зв'язаний `catch` ідентифікатор.
 
-```js
+```js-nolint example-bad
 function foo(a) {
   let a = 1; // SyntaxError: Identifier 'a' has already been declared
 }
@@ -138,8 +138,9 @@ try {
 
 Можуть зустрітися помилки в {{jsxref("Statements/switch", "switch")}}, оскільки там є лише один блок.
 
-```js example-bad
+```js-nolint example-bad
 let x = 1;
+
 switch (x) {
   case 0:
     let foo;
@@ -255,7 +256,7 @@ console.log(b); // 2
 
 Проте поєднання оголошень `var` і `let` нижче – {{jsxref("SyntaxError", "синтаксична помилка")}}, у зв'язку з тим, що `var` не обмежена блоком, а отже – обидві змінні мають однакову область видимості. Це призводить до неявного повторного оголошення змінної.
 
-```js example-bad
+```js-nolint example-bad
 let x = 1;
 
 {
