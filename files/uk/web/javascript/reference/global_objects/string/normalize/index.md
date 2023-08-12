@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.String.normalize
 
 {{JSRef}}
 
-Метод **`normalize()`** повертає нормалізовану форму Unicode рядка.
+Метод **`normalize()`** (нормалізувати, привести до норми) значень повертає нормалізовану форму Unicode свого рядка.
 
 {{EmbedInteractiveExample("pages/js/string-normalize.html", "taller")}}
 
