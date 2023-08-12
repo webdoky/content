@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.String.trimStart
 
 {{JSRef}}
 
-Метод **`trimStart()`** (обітнути початок) прибирає пробіли з початку рядка та повертає новий рядок, не змінюючи вихідний. Метод `trimLeft()` є його псевдонімом.
+Метод **`trimStart()`** (обітнути початок) значень {{jsxref("String")}} прибирає пробіли з початку свого рядка та повертає новий рядок, не змінюючи вихідний. Метод `trimLeft()` є його псевдонімом.
 
 {{EmbedInteractiveExample("pages/js/string-trimstart.html")}}
 
