@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.String.concat
 
 {{JSRef}}
 
-Метод **`concat()`** (зчепити) приєднує рядкові аргументи до рядка, на якому викликається, і повертає результат як новий рядок.
+Метод **`concat()`** (зчепити) значень {{jsxref("String")}} приєднує рядкові аргументи до свого рядка, і повертає результат як новий рядок.
 
 {{EmbedInteractiveExample("pages/js/string-concat.html")}}
 
