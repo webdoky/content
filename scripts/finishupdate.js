@@ -69,10 +69,12 @@ switch (actionMarker) {
     action = "translation";
     break;
   }
-  case "M":
   case "R": {
-    action = "update";
     translation = last(changedTranslations[0].split(" -> "));
+    // intentionally no break here
+  }
+  case "M": {
+    action = "update";
     break;
   }
   default: {
