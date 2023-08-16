@@ -2,25 +2,19 @@
 title: width
 slug: Web/CSS/width
 page-type: css-property
-tags:
-  - CSS
-  - CSS Property
-  - Layout
-  - Reference
-  - dimensions
-  - recipe:css-property
-  - size
-  - width
 browser-compat: css.properties.width
 ---
 
 {{CSSRef}}
 
-Властивість CSS **`width`** (ширина) встановлює ширину елемента. Усталено вона встановлює ширину [області вмісту](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#oblast-vmistu), однак якщо властивість {{cssxref("box-sizing")}} має значення `border-box`, то вказане значення стає шириною [відмежованої області](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#vidmezhovana-oblast).
+Властивість CSS **`width`** (ширина) встановлює ширину елемента. Усталено вона встановлює ширину [області вмісту](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model#oblast-vmistu), однак якщо властивість {{cssxref("box-sizing")}} має значення `border-box`, то вказане значення стає шириною [відмежованої області](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model#vidmezhovana-oblast).
 
 {{EmbedInteractiveExample("pages/css/width.html")}}
 
-Властивості {{cssxref("min-width")}} та {{cssxref("max-width")}} зневажають `width`.
+Задане значення `width` застосовується до області вмісту, поки воно залишається в межах значень, заданих властивостями {{cssxref("min-width")}} і {{cssxref("max-width")}}.
+
+- Якщо значення `width` менше за значення `min-width`, то `min-width` відкидає `width`.
+- Якщо значення `width` більше за значення `max-width`, то `max-width` відкидає `width`.
 
 ## Синтаксис
 
@@ -49,7 +43,7 @@ width: unset;
 ### Значення
 
 - {{cssxref("&lt;length&gt;")}}
-  - : Визначає ширину у вигляді абсолютного значення.
+  - : Визначає ширину у вигляді значення відстані.
 - {{cssxref("&lt;percentage&gt;")}}
   - : Визначає ширину у вигляді відсотків від ширини контейнерного блока.
 - `auto` (автоматично)
@@ -178,7 +172,7 @@ p.minblue {
 
 ## Дивіться також
 
-- [Блокова модель](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+- [Блокова модель](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
 - {{cssxref("height")}}
 - {{cssxref("box-sizing")}}
 - {{cssxref("min-width")}}, {{cssxref("max-width")}}
