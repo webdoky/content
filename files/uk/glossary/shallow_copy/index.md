@@ -44,7 +44,7 @@ console.log(ingredientsList[1].list);
 // Array [ "рисове борошно", "вода" ]
 ```
 
-Re-assigning the value of a top-level property (the `0` index in this case) will only be visible in the changed object.
+Повторне присвоєння значення властивості найвищого рівня (у цьому випадку – індексові `0`) буде помітно лише на зміненому об'єкті.
 
 ```js
 ingredientsListCopy[0] = "рисова локшина";
