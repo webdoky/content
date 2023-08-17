@@ -167,7 +167,7 @@ console.log(Pi); // 3.14
 
 Змінній, оголошеній за допомогою `const`, не можна повторно присвоїти значення.
 
-```js example-bad
+```js-nolint example-bad
 const Pi = 3.14;
 Pi = 1; // викине помилку, адже не можна змінювати сталу змінну.
 ```
@@ -375,7 +375,7 @@ try {
   if (e instanceof RangeError) {
     console.error(
       "Схоже, що параметр лежить поза множиною допустимих значень:",
-      e
+      e,
     );
     console.log("Повторна спроба...");
     buildMySite("./website");
