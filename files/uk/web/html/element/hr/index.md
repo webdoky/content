@@ -77,7 +77,7 @@ browser-compat: html.elements.hr
     <tr>
       <th scope="row">Дозволені батьківські елементи</th>
       <td>
-        Всі елементи, що приймають
+        Усі елементи, що приймають
         <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
           >потоковий вміст</a
         >.
