@@ -7,47 +7,30 @@ browser-compat: javascript.builtins.Array.findIndex
 
 {{JSRef}}
 
-Метод **`findIndex()`** (знайти індекс) повертає **індекс** першого елемента масиву, що задовольняє надану перевіркову функцію.
+Метод **`findIndex()`** (знайти індекс) примірників {{jsxref("Array")}} повертає **індекс** першого елемента масиву, що задовольняє надану перевіркову функцію.
 Якщо жоден елемент не задовольняє перевіркову функцію, повертається -1.
 
-{{EmbedInteractiveExample("pages/js/array-findindex.html","shorter")}}
-
 Дивіться також метод {{jsxref("Array/find", "find()")}}, котрий повертає перший елемент, що задовольняє перевіркову функцію (а не його індекс).
+
+{{EmbedInteractiveExample("pages/js/array-findindex.html","shorter")}}
 
 ## Синтаксис
 
 ```js-nolint
-// Стрілкова функція
-findIndex((element) => { /* … */ } )
-findIndex((element, index) => { /* … */ } )
-findIndex((element, index, array) => { /* … */ } )
-
-// Функція зворотного виклику
 findIndex(callbackFn)
 findIndex(callbackFn, thisArg)
-
-// Вбудована функція зворотного виклику
-findIndex(function(element) { /* … */ })
-findIndex(function(element, index) { /* … */ })
-findIndex(function(element, index, array){ /* … */ })
-findIndex(function(element, index, array) { /* … */ }, thisArg)
 ```
 
 ### Параметри
 
 - `callbackFn` (функція зворотного виклику)
-
-  - : Функція для виконання на кожному елементі масиву. Повинна повернути значення [істинності](/uk/docs/Glossary/Truthy), аби показати, що шуканий елемент знайдено.
-
-    Ця функція викликається з наступними аргументами:
-
+  - : Функція для виконання на кожному елементі масиву. Повинна повернути [істинне](/uk/docs/Glossary/Truthy) значення, аби показати, що шуканий елемент знайдено, а інакше – [хибне](/uk/docs/Glossary/Falsy). Ця функція викликається з наступними аргументами:
     - `element` (елемент)
       - : Елемент масиву, що наразі обробляється.
     - `index` (індекс)
       - : Індекс елемента масиву, що наразі обробляється.
     - `array` (масив)
       - : Масив, на котрому викликали `findIndex()`.
-
 - `thisArg` (аргумент `this`) {{optional_inline}}
   - : Значення для використання за `this` при виконанні `callbackFn`. Більше про це – в [ітеративних методах](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#iteratyvni-metody).
 
@@ -104,17 +87,18 @@ console.log([1, , 3].findIndex((x) => x === undefined)); // 1
 
 ### Виклик findIndex() на об'єктах-немасивах
 
-Метод `findIndex()` зчитує з `this` властивість `length`, а потім звертається до кожної цілочислової властивості.
+Метод `findIndex()` зчитує з `this` властивість `length`, а потім звертається до кожної цілочислової властивості, чий ключ є невід'ємним цілим числом, меншим за `length.`
 
 ```js
 const arrayLike = {
   length: 3,
+  "-1": 0.1, // ігнорується findIndex(), оскільки -1 < 0
   0: 2,
   1: 7.3,
   2: 4,
 };
 console.log(
-  Array.prototype.findIndex.call(arrayLike, (x) => !Number.isInteger(x))
+  Array.prototype.findIndex.call(arrayLike, (x) => !Number.isInteger(x)),
 ); // 1
 ```
 
@@ -128,6 +112,12 @@ console.log(
 
 ## Дивіться також
 
-- [Поліфіл `Array.prototype.findIndex` у `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
+- [Поліфіл `Array.prototype.findIndex` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
+- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- {{jsxref("Array")}}
 - {{jsxref("Array.prototype.find()")}}
+- {{jsxref("Array.prototype.findLast()")}}
+- {{jsxref("Array.prototype.findLastIndex()")}}
 - {{jsxref("Array.prototype.indexOf()")}}
+- {{jsxref("Array.prototype.lastIndexOf()")}}
+- {{jsxref("TypedArray.prototype.findIndex()")}}
