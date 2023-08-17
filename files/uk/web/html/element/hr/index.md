@@ -1,84 +1,32 @@
 ---
-title: '<hr> (horizontal rule — горизонтальна лінія): Елемент розділу між темами'
+title: "<hr> – Елемент тематичного розриву (горизонтальна лінія)"
 slug: Web/HTML/Element/hr
-tags:
-  - Element
-  - HTML
-  - HTML grouping content
-  - Reference
+page-type: html-element
 browser-compat: html.elements.hr
 ---
 
-{{HTMLRef}}
+{{HTMLSidebar}}
 
-Елемент **<hr>** в [HTML](/uk/docs/Web/HTML) служить для розділення елементів рівня абзацу: наприклад, коли змінюється сцена в історії, чи тема всередині секції.
+Елемент [HTML](/uk/docs/Web/HTML) **`<hr>`** (horizontal rule - горизонтальна лінія) служить для розділення елементів рівня абзацу: наприклад, коли змінюється сцена в історії, чи тема всередині розділу.
 
 {{EmbedInteractiveExample("pages/tabbed/hr.html", "tabbed-shorter")}}
 
-Історично, елемент **<hr>** зображався як горизонтальна лінія. Позаяк він все ще може мати вигляд горизонтальної лінії у візуальних браузерах, цей елемент тепер має більше семантичний зміст, аніж графічний. Отже, якщо потрібно просто провести горизонтальну лінію, слід робити це за допомогою відповідного CSS.
+Історично цей елемент зображався як горизонтальна лінійка чи лінія. Позаяк він все ще може мати вигляд горизонтальної лінії у візуальних браузерах, цей елемент тепер має більше семантичний зміст, аніж візуальний. Отже, якщо потрібно просто провести горизонтальну лінію, слід робити це за допомогою відповідного CSS.
 
-<table class="properties">
-  <tbody>
-    <tr>
-      <th scope="row">
-        <a href="/en-US/docs/Web/Guide/HTML/Content_categories"
-          >Категорії вмісту</a
-        >
-      </th>
-      <td>
-        <a href="/en-US/docs/Web/Guide/HTML/Content_categories#flow_content"
-          >Основний вміст</a
-        >.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволений вміст</th>
-      <td>Ніякого, це {{Glossary("empty element", "порожній елемент")}}.</td>
-    </tr>
-    <tr>
-      <th scope="row">Пропуск тегів</th>
-      <td>Повинен мати початковий тег, проте не повинен мати кінцевого тега.</td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені батьківські елементи</th>
-      <td>
-        Будь-який елемент, який дозволяє містити
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#flow_content"
-          >основний вміст</a
-        >.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Неявна ARIA-роль</th>
-      <td>{{ARIARole("separator")}}</td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені ARIA-ролі</th>
-      <td>
-        {{ARIARole("presentation")}} чи {{ARIARole("none")}}
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">DOM-інтерфейс</th>
-      <td>{{domxref("HTMLHRElement")}}</td>
-    </tr>
-  </tbody>
-</table>
+## Атрибути
 
-## Атрибути елементу
+Серед атрибутів цього елемента присутні [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
 
-Атрибути <hr> елементу включають [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
-
-- {{htmlattrdef("align")}} {{deprecated_inline}}
-  - : Вирівнює елемент на сторінці. Усталене значення — вирівнювати по лівому боці.
-- {{htmlattrdef("color")}} {{Non-standard_inline}}
-  - : Задає колір лінії шляхом вказування словесного позначення кольору, або його шістнадцяткового значення.
-- {{htmlattrdef("noshade")}} {{deprecated_inline}}
-  - : Визначає, що лінія буде позбавлена тіні.
-- {{htmlattrdef("size")}} {{deprecated_inline}}
-  - : Встановлює висоту лінії в пікселях.
-- {{htmlattrdef("width")}} {{deprecated_inline}}
-  - : Встановлює довжину лінії на сторінці у пікселях чи відсотках.
+- `align` {{deprecated_inline}} {{Non-standard_Inline}}
+  - : Задає шикування лінії на сторінці. Якщо значення не задано, то усталеним значенням є `left`.
+- `color` {{deprecated_inline}} {{Non-standard_Inline}}
+  - : Задає колір лінії за допомогою назви кольору або шістнадцяткового значення.
+- `noshade` {{deprecated_inline}} {{Non-standard_Inline}}
+  - : Задає лінії відсутність тіні.
+- `size` {{deprecated_inline}} {{Non-standard_Inline}}
+  - : Задає висоту лінії в пікселях.
+- `width` {{deprecated_inline}} {{Non-standard_Inline}}
+  - : Задає довжину лінії на сторінці, за допомогою значення в пікселях або відсотках.
 
 ## Приклад
 
@@ -86,31 +34,77 @@ browser-compat: html.elements.hr
 
 ```html
 <p>
-  Це — перший абзац тексту.
-  Це — перший абзац тексту.
-  Це — перший абзац тексту.
-  Це — перший абзац тексту.
+  Це перший абзац тексту. Це перший абзац тексту. Це перший абзац тексту. Це
+  перший абзац тексту.
 </p>
 
-<hr>
+<hr />
 
 <p>
-  Це — другий абзац тексту.
-  Це — другий абзац тексту.
-  Це — другий абзац тексту.
-  Це — другий абзац тексту.
+  Це другий абзац тексту. Це другий абзац тексту. Це другий абзац тексту. Це
+  другий абзац тексту.
 </p>
 ```
 
 ### Результат
 
-{{EmbedLiveSample("Example")}}
+{{EmbedLiveSample("pryklad")}}
+
+## Технічний підсумок
+
+<table class="properties">
+  <tbody>
+    <tr>
+      <th scope="row">
+        <a href="/uk/docs/Web/HTML/Content_categories"
+          >Категорії вмісту</a
+        >
+      </th>
+      <td>
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
+          >Потоковий вміст</a
+        >.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволений вміст</th>
+      <td>Жодного; це {{Glossary("Void element", "пустий елемент")}}.</td>
+    </tr>
+    <tr>
+      <th scope="row">Пропуск тега</th>
+      <td>Повинен мати початковий тег, проте не повинен мати кінцевого тега.</td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені батьківські елементи</th>
+      <td>
+        Всі елементи, що приймають
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
+          >потоковий вміст</a
+        >.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Неявна роль ARIA</th>
+      <td><a href="/uk/docs/Web/Accessibility/ARIA/Roles/separator_role"><code>separator</code></a></td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені ролі ARIA</th>
+      <td>
+        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/presentation_role"><code>presentation</code></a> або <a href="/uk/docs/Web/Accessibility/ARIA/Roles/none_role">жодної ролі</a>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Інтерфейс DOM</th>
+      <td>{{domxref("HTMLHRElement")}}</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Специфікації
 
 {{Specifications}}
 
-## Сумісність з браузерами
+## Сумісність із браузерами
 
 {{Compat}}
 
