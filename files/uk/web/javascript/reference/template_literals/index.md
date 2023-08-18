@@ -193,7 +193,7 @@ console?.log`Привіт`; // SyntaxError: Invalid tagged template on optional 
 
 Зверніть увагу, що ці два вирази усе ж є розбірливими. Це означає, що вони не будуть піддані [автоматичному доданню крапки з комою](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#avtomatychne-vstavliannia-krapok-z-komoiu), котре додає крапку з комою для виправлення коду, котрий без цього є нерозбірливим.
 
-```js example-bad
+```jss-nolint example-bad
 // Усе ж синтаксична помилка
 const a = console?.log
 `Привіт`
