@@ -1,26 +1,23 @@
 ---
 title: String.prototype.anchor()
 slug: Web/JavaScript/Reference/Global_Objects/String/anchor
-tags:
-  - Deprecated
-  - HTML wrapper methods
-  - JavaScript
-  - Method
-  - Prototype
-  - Reference
-  - String
-  - Polyfill
+page-type: javascript-instance-method
+status:
+  - deprecated
 browser-compat: javascript.builtins.String.anchor
 ---
+
 {{JSRef}} {{deprecated_header}}
 
-Метод **`anchor()`** створює рядок, який починається початковим тегом `<a name="...">`, далі містить якийсь текст, і потім завершується кінцевим тегом `</a>`.
+Метод **`anchor()`** (якір) значень {{jsxref("String")}} створює рядок, що вбудовує рядок цього метода в елемент {{HTMLElement("a")}} з іменем (`<a name="...">str</a>`).
 
-> **Застереження:** Не варто використовувати цей метод. Замість нього слід вживати [DOM API](/uk/docs/Web/API/Document_Object_Model). Крім того, специфікація HTML більше не допускає наявності атрибута `name` в елементу {{HTMLElement("a")}}, тож результат виконання цього методу навіть не є дійсною розміткою.
+> **Примітка:** Всі [Методи для обгортання HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html) – нерекомендовані, вони стандартизовані лише для потреб сумісності. Замість них слід використовувати [API DOM](/uk/docs/Web/API/Document_Object_Model), наприклад, [`document.createElement()`](/uk/docs/Web/API/Document/createElement).
+>
+> Специфікація HTML більше не дозволяє елементам {{HTMLElement("a")}} мати атрибут `name`, тож цей метод навіть не породжує дійсну розмітку.
 
 ## Синтаксис
 
-```js
+```js-nolint
 anchor(name)
 ```
 
@@ -31,21 +28,16 @@ anchor(name)
 
 ### Повернене значення
 
-Рядок, що починається початковим тегом `<a name="name">`, далі містить текст _str_, і потім завершується кінцевим тегом `</a>`.
-
-## Опис
-
-Не слід застосовувати цей метод. Натомість краще використовувати [DOM
-API](/uk/docs/Web/API/Document_Object_Model). Окрім того, специфікація HTML більше не допускає наявності атрибута `name` в елементу {{HTMLElement("a")}}, тож результат виконання цього методу навіть не є дійсною розміткою.
+Рядок, що починається з початкового тега `<a name="name">` (подвійні лапки у `name` замінюються на `&quot;`), потім текст `str`, і в кінці – кінцевий тег `</a>`.
 
 ## Приклади
 
 ### Застосування методу anchor()
 
 ```js
-var myString = 'Зміст';
+const myString = "Зміст";
 
-document.body.innerHTML = myString.anchor('contents_anchor');
+document.body.innerHTML = myString.anchor("contents_anchor");
 ```
 
 виведе наступний HTML:
@@ -64,5 +56,5 @@ document.body.innerHTML = myString.anchor('contents_anchor');
 
 ## Дивіться також
 
-- Поліфіл `String.prototype.anchor` наявний у [`core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
+- [Поліфіл `String.prototype.anchor` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
 - {{jsxref("String.prototype.link()")}}
