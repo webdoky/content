@@ -34,7 +34,7 @@ async function name(param0, param1, /* …, */ paramN) {
 - `name`
   - : Назва функції.
 - `param` {{optional_inline}}
-  - : Назва аргументу, який передається до функції.
+  - : Ім'я формального параметра функції. Про синтаксис параметрів читайте в [довідці функцій](/uk/docs/Web/JavaScript/Guide/Functions#parametry-funktsii).
 - `statements` {{optional_inline}}
   - : Інструкції, що формують тіло функції. Може застосовуватись функціонал `await`.
 
