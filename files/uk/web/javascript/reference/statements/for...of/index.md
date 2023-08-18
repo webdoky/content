@@ -19,7 +19,7 @@ for (variable of iterable)
 ```
 
 - `variable`
-  - : На кожній ітерації отримує значення з послідовності. Повинно бути або оголошенням з [`const`](/uk/docs/Web/JavaScript/Reference/Statements/const), [`let`](/uk/docs/Web/JavaScript/Reference/Statements/let) чи [`var`](/uk/docs/Web/JavaScript/Reference/Statements/var), або ціллю [присвоєння](/uk/docs/Web/JavaScript/Reference/Operators/Assignment) (наприклад, попередньо визначеною змінною чи властивістю об'єкта). Змінні, оголошені з `var`, не є локальними щодо циклу, тобто перебувають в тій же області видимості, що й цикл `for...of`.
+  - : На кожній ітерації отримує значення з послідовності. Повинно бути або оголошенням з [`const`](/uk/docs/Web/JavaScript/Reference/Statements/const), [`let`](/uk/docs/Web/JavaScript/Reference/Statements/let) чи [`var`](/uk/docs/Web/JavaScript/Reference/Statements/var), або ціллю [присвоєння](/uk/docs/Web/JavaScript/Reference/Operators/Assignment) (наприклад, попередньо визначеною змінною, властивістю об'єкта чи [патерном присвоєння з деструктуруванням](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)). Змінні, оголошені з `var`, не є локальними щодо циклу, тобто перебувають в тій же області видимості, що й цикл `for...of`.
 - `iterable`
   - : Ітерований об'єкт. Джерело послідовності значень, котрі обробляє цикл.
 - `statement`
