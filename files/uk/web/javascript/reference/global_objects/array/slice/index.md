@@ -89,7 +89,7 @@ console.log("newCar[0].color =", newCar[0].color);
 
 Скрипт надрукує такий текст:
 
-```
+```plain
 myCar = [
   {color: 'червоний', wheels: 4, engine: {cylinders: 4, size: 2.2 } },
   2,
@@ -113,6 +113,7 @@ const arrayLike = {
   0: 2,
   1: 3,
   2: 4,
+  3: 33, // ігнорується slice(), оскільки length – 3
 };
 console.log(Array.prototype.slice.call(arrayLike, 1, 3));
 // [ 3, 4 ]
@@ -151,6 +152,12 @@ console.log([1, 2, , 4, 5].slice(1, 4)); // [2, порожньо, 4]
 
 ## Дивіться також
 
+- [Поліфіл `Array.prototype.slice` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
+- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- {{jsxref("Array")}}
+- {{jsxref("Array.prototype.pop()")}}
+- {{jsxref("Array.prototype.shift()")}}
+- {{jsxref("Array.prototype.concat()")}}
 - {{jsxref("Array.prototype.splice()")}}
-- {{jsxref("Function.prototype.call()")}}
-- {{jsxref("Function.prototype.bind()")}}
+- {{jsxref("TypedArray.prototype.slice()")}}
+- {{jsxref("String.prototype.slice()")}}

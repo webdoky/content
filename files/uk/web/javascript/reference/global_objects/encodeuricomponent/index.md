@@ -2,11 +2,6 @@
 title: encodeURIComponent()
 slug: Web/JavaScript/Reference/Global_Objects/encodeURIComponent
 page-type: javascript-function
-tags:
-  - JavaScript
-  - Method
-  - Reference
-  - URI
 browser-compat: javascript.builtins.encodeURIComponent
 ---
 
@@ -42,7 +37,7 @@ encodeURIComponent(uriComponent)
 
 `encodeURIComponent()` використовує такий же алгоритм кодування, як описаний для {{jsxref("encodeURI()")}}. Він екранує усі символи, **окрім**:
 
-```
+```plain
 A–Z a–z 0–9 - _ . ! ~ * ' ( )
 ```
 
@@ -59,7 +54,7 @@ A–Z a–z 0–9 - _ . ! ~ * ' ( )
 ```js
 const fileName = "my file(2).txt";
 const header = `Content-Disposition: attachment; filename*=UTF-8''${encodeRFC5987ValueChars(
-  fileName
+  fileName,
 )}`;
 
 console.log(header);
@@ -68,14 +63,18 @@ console.log(header);
 function encodeRFC5987ValueChars(str) {
   return (
     encodeURIComponent(str)
-      // Зверніть увагу, що коли RFC3986 резервує "!", то RFC5987 – ні,
-      // тому цей символ немає потреби екранувати
-      .replace(/['()*]/g, (c) => `%${c.charCodeAt(0).toString(16)}`) // отже, %27 %28 %29 %2a (Зверніть увагу, що дійсне кодування "*" – %2A
-      // з чого випливає потреба викликати toUpperCase() для коректного кодування)
+      // Рядок нижче утворює послідовності %27 %28 %29 %2A (Зверніть увагу, що
+      // дійсне кодування "*" – це %2A, з чого випливає потреба викликати
+      // toUpperCase() для коректного кодування). І хоча RFC3986 резервує "!",
+      // RFC5987 – ні, тому цей символ немає потреби екранувати.
+      .replace(
+        /['()*]/g,
+        (c) => `%${c.charCodeAt(0).toString(16).toUpperCase()}`,
+      )
       // Наступне не обов'язково для процентного кодування згідно з RFC5987,
       // тож можна дозволити трохи кращу прочитність по той бік дроту: |`^
       .replace(/%(7C|60|5E)/g, (str, hex) =>
-        String.fromCharCode(parseInt(hex, 16))
+        String.fromCharCode(parseInt(hex, 16)),
       )
   );
 }
@@ -89,10 +88,25 @@ function encodeRFC5987ValueChars(str) {
 function encodeRFC3986URIComponent(str) {
   return encodeURIComponent(str).replace(
     /[!'()*]/g,
-    (c) => `%${c.charCodeAt(0).toString(16).toUpperCase()}`
+    (c) => `%${c.charCodeAt(0).toString(16).toUpperCase()}`,
   );
 }
 ```
+
+### Кодування самотнього старшого сурогату викидає помилку
+
+Викидається помилка {{jsxref("URIError")}}, якщо спробувати закодувати сурогат, який не є частиною пари старшого та молодшого сурогатів. Наприклад:
+
+```js
+// Пара старший-молодший – ОК
+encodeURIComponent("\uD800\uDFFF"); // "%F0%90%8F%BF"
+// Самотній старший сурогат викидає помилку "URIError: malformed URI sequence"
+encodeURIComponent("\uD800");
+// Самотній молодший сурогат викидає помилку "URIError: malformed URI sequence"
+encodeURIComponent("\uDFFF");
+```
+
+Можна скористатися методом {{jsxref("String.prototype.toWellFormed()")}}, котрий замінює самотні сурогати на символ заміни Unicode (U+FFFD), щоб уникнути цієї помилки. Також можна скористатися методом {{jsxref("String.prototype.isWellFormed()")}}, щоб перевірити, чи містить рядок самотні сурогати, перед тим, як передати його у `encodeURIComponent()`.
 
 ## Специфікації
 

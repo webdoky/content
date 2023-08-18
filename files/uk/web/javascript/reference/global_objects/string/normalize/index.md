@@ -1,32 +1,26 @@
 ---
 title: String.prototype.normalize()
 slug: Web/JavaScript/Reference/Global_Objects/String/normalize
-tags:
-  - ECMAScript 2015
-  - JavaScript
-  - Method
-  - Prototype
-  - Reference
-  - String
-  - Unicode
+page-type: javascript-instance-method
 browser-compat: javascript.builtins.String.normalize
 ---
+
 {{JSRef}}
 
-Метод **`normalize()`** повертає нормалізовану юнікодну форму рядка.
+Метод **`normalize()`** повертає нормалізовану форму Unicode рядка.
 
 {{EmbedInteractiveExample("pages/js/string-normalize.html", "taller")}}
 
 ## Синтаксис
 
-```js
+```js-nolint
 normalize()
 normalize(form)
 ```
 
 ### Параметри
 
-- `form` {{optional_inline}}
+- `form` {{optional_inline}}
 
   - : Форма нормалізації Unicode, задана одним із чотирьох значень: `"NFC"`, `"NFD"`, `"NFKC"` чи `"NFKD"`. Якщо цей параметр не задано, або передано {{jsxref("undefined")}}, буде використана `"NFC"`.
 
@@ -43,7 +37,7 @@ normalize(form)
 
 ### Повернене значення
 
-Рядок, що містить нормалізовану юнікодну форму переданого рядка.
+Рядок, що містить нормалізовану форму Unicode переданого рядка.
 
 ### Викинуті помилки
 
@@ -58,22 +52,22 @@ normalize(form)
 - Кодова точка літери `"n"` (U+006E), із кодовою точкою комбінованої тильди (U+0303) одразу за нею.
 
 ```js
-let string1 = '\u00F1';
-let string2 = '\u006E\u0303';
+const string1 = "\u00F1";
+const string2 = "\u006E\u0303";
 
-console.log(string1);  //  ñ
-console.log(string2);  //  ñ
+console.log(string1); // ñ
+console.log(string2); // ñ
 ```
 
 Щоправда, оскільки це різні кодові точки, під час порівняння такі рядки не будуть вважатися однаковими. Більш того, кількість кодових точок теж відрізняється, тому довжини цих рядків також різні.
 
 ```js
-let string1 = '\u00F1';            // ñ
-let string2 = '\u006E\u0303';      // ñ
+const string1 = "\u00F1"; // ñ
+const string2 = "\u006E\u0303"; // ñ
 
 console.log(string1 === string2); // false
-console.log(string1.length);      // 1
-console.log(string2.length);      // 2
+console.log(string1.length); // 1
+console.log(string2.length); // 2
 ```
 
 Метод `normalize()` допомагає розв'язати цю проблему шляхом перетворення рядка на нормалізовану форму, спільну для всіх послідовностей кодових точок, яким відповідають однакові символи. Існує дві основні форми нормалізації: одна заснована на **канонічній еквівалентності**, а інша — на **сумісності**.
@@ -85,33 +79,33 @@ console.log(string2.length);      // 2
 Для отримання форми рядка, яка буде однаковою для всіх канонічно еквівалентних рядків, метод `normalize()` вживається з аргументом `"NFD"` чи `"NFC"`. У наведеному нижче прикладі відбувається нормалізація двох різних варіацій символу `"ñ"`:
 
 ```js
-let string1 = '\u00F1';           // ñ
-let string2 = '\u006E\u0303';     // ñ
+let string1 = "\u00F1"; // ñ
+let string2 = "\u006E\u0303"; // ñ
 
-string1 = string1.normalize('NFD');
-string2 = string2.normalize('NFD');
+string1 = string1.normalize("NFD");
+string2 = string2.normalize("NFD");
 
 console.log(string1 === string2); // true
-console.log(string1.length);      // 2
-console.log(string2.length);      // 2
+console.log(string1.length); // 2
+console.log(string2.length); // 2
 ```
 
 #### Компонована те декомпонована форми
 
-Варто зауважити, що довжина форми, нормалізованої методом `"NFD"`, дорівнює `2`. Так виходить, тому що `"NFD"` видає **декомпоновану** версію канонічної форми, в якій поодинокі кодові точки розділені на декілька базових. Декомпонована канонічна форма літери `"ñ"` — це послідовність `"\u006E\u0303"`.
+Варто зауважити, що довжина форми, нормалізованої методом `"NFD"`, дорівнює `2`. Так виходить, тому що `"NFD"` видає **декомпоновану** версію канонічної форми, в якій поодинокі кодові точки розділені на декілька базових. Декомпонована канонічна форма літери `"ñ"` — це послідовність `"\u006E\u0303"`.
 
 Для отримання **компонованої** канонічної форми, в якій декілька послідовних кодових точок заміняються їх одинарними відповідниками (де це можливо), слід передати аргумент `"NFC"`. Компонована канонічна форма літери `"ñ"` — це `"\u00F1"`:
 
 ```js
-let string1 = '\u00F1';                           // ñ
-let string2 = '\u006E\u0303';                     // ñ
+let string1 = "\u00F1"; // ñ
+let string2 = "\u006E\u0303"; // ñ
 
-string1 = string1.normalize('NFC');
-string2 = string2.normalize('NFC');
+string1 = string1.normalize("NFC");
+string2 = string2.normalize("NFC");
 
-console.log(string1 === string2);                 // true
-console.log(string1.length);                      // 1
-console.log(string2.length);                      // 1
+console.log(string1 === string2); // true
+console.log(string1.length); // 1
+console.log(string2.length); // 1
 console.log(string2.codePointAt(0).toString(16)); // f1
 ```
 
@@ -131,23 +125,23 @@ console.log(string2.codePointAt(0).toString(16)); // f1
 Для отримання форми рядка, яка буде однаковою для всіх сумісних рядків, використовується `normalize()` з аргументом `"NFKD"` чи `"NFKC"`:
 
 ```js
-let string1 = '\uFB00';
-let string2 = '\u0066\u0066';
+let string1 = "\uFB00";
+let string2 = "\u0066\u0066";
 
-console.log(string1);             // ﬀ
-console.log(string2);             // ff
+console.log(string1); // ﬀ
+console.log(string2); // ff
 console.log(string1 === string2); // false
-console.log(string1.length);      // 1
-console.log(string2.length);      // 2
+console.log(string1.length); // 1
+console.log(string2.length); // 2
 
-string1 = string1.normalize('NFKD');
-string2 = string2.normalize('NFKD');
+string1 = string1.normalize("NFKD");
+string2 = string2.normalize("NFKD");
 
-console.log(string1);             // ff <- вигляд змінився
-console.log(string2);             // ff
+console.log(string1); // ff <- вигляд змінився
+console.log(string2); // ff
 console.log(string1 === string2); // true
-console.log(string1.length);      // 2
-console.log(string2.length);      // 2
+console.log(string1.length); // 2
+console.log(string2.length); // 2
 ```
 
 Під час застосування сумісної нормалізації важливо врахувати, для чого ті рядки будуть потім використовуватись, оскільки така нормалізована форма підходить не для всіх застосувань. В наведеному вище прикладі нормалізація чудово підходить для пошуку, оскільки вона дає змогу користувачу знайти рядок шляхом пошуку літери `"f"`. Проте вона може не підходити для зображення, оскільки візуально вигляд нормалізованої форми відрізняється.
@@ -156,40 +150,40 @@ console.log(string2.length);      // 2
 
 ## Приклади
 
-### Застосування методу `normalize()`
+### Застосування normalize()
 
 ```js
 // Початковий рядок
 
 // U+1E9B: LATIN SMALL LETTER LONG S WITH DOT ABOVE
 // U+0323: COMBINING DOT BELOW
-let str = '\u1E9B\u0323';
+const str = "\u1E9B\u0323";
 
 // Канонічна компонована форма (NFC)
 
 // U+1E9B: LATIN SMALL LETTER LONG S WITH DOT ABOVE
 // U+0323: COMBINING DOT BELOW
-str.normalize('NFC'); // '\u1E9B\u0323'
-str.normalize();      // те саме, що й вище
+str.normalize("NFC"); // '\u1E9B\u0323'
+str.normalize(); // те саме, що й вище
 
 // Канонічна декомпонована форма (NFD)
 
 // U+017F: LATIN SMALL LETTER LONG S
 // U+0323: COMBINING DOT BELOW
 // U+0307: COMBINING DOT ABOVE
-str.normalize('NFD'); // '\u017F\u0323\u0307'
+str.normalize("NFD"); // '\u017F\u0323\u0307'
 
 // Сумісна компонована форма (NFKC)
 
 // U+1E69: LATIN SMALL LETTER S WITH DOT BELOW AND DOT ABOVE
-str.normalize('NFKC'); // '\u1E69'
+str.normalize("NFKC"); // '\u1E69'
 
 // Сумісна декомпонована форма (NFKD)
 
 // U+0073: LATIN SMALL LETTER S
 // U+0323: COMBINING DOT BELOW
 // U+0307: COMBINING DOT ABOVE
-str.normalize('NFKD'); // '\u0073\u0323\u0307'
+str.normalize("NFKD"); // '\u0073\u0323\u0307'
 ```
 
 ## Специфікації
@@ -202,5 +196,5 @@ str.normalize('NFKD'); // '\u0073\u0323\u0307'
 
 ## Дивіться також
 
-- [Стандарт Unicode, додаток #15, Форми нормалізації Unicode (англ.)](http://www.unicode.org/reports/tr15/)
-- [Юнікодна еквівалентність](https://en.wikipedia.org/wiki/Unicode_equivalence)
+- [Стандарт Unicode, додаток #15, Форми нормалізації Unicode (англ.)](https://www.unicode.org/reports/tr15/)
+- [Еквівалентність за Unicode](https://en.wikipedia.org/wiki/Unicode_equivalence)

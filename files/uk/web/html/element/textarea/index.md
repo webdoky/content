@@ -1,18 +1,11 @@
 ---
 title: "<textarea>: Елемент текстової області"
 slug: Web/HTML/Element/textarea
-tags:
-  - Element
-  - Forms
-  - HTML
-  - HTML forms
-  - Reference
-  - Web
-  - textarea
+page-type: html-element
 browser-compat: html.elements.textarea
 ---
 
-{{HTMLRef}}
+{{HTMLSidebar}}
 
 Елемент [HTML](/uk/docs/Web/HTML) **`<textarea>`** (текстова область) представляє контрольний елемент для редагування багаторядкового простого тексту, корисний тоді, коли є потреба дати користувачам змогу вводити чималу кількість тексту довільної форми, наприклад, коментар до відгуку чи форму зворотного зв'язку.
 
@@ -31,16 +24,16 @@ browser-compat: html.elements.textarea
 
 Цей елемент включає [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
 
-- {{htmlattrdef("autocomplete")}}
+- `autocomplete`
 
   - : Цей атрибут вказує, чи повинно значення контрольного елемента автоматично доповнюватися браузером. Можливі значення:
 
     - `off`: Користувач мусить явно ввести значення в це поле при кожному використанні, або ж документ пропонує власний метод автодоповнення; браузер не доповнює вміст поля автоматично.
     - `on`: Браузер може автоматично доповнити значення на основі значень, котрі користувач уводив при попередніх використаннях.
 
-    Якщо атрибут `autocomplete` не заданий на елементі `<textarea>`, то браузер використовує значення атрибута `autocomplete` форми-власника елемента `<textarea>`. Форма-власник – це або елемент {{HTMLElement("form")}}, нащадком якого є цей елемент `<textarea>`, або елемент форми, чий `id` заданий в атрибуті `form` елемента поля. Щоб отримати більше інформації, шукайте атрибут {{htmlattrxref("autocomplete", "form")}} у {{HTMLElement("form")}}.
+    Якщо атрибут `autocomplete` не заданий на елементі `<textarea>`, то браузер використовує значення атрибута `autocomplete` форми-власника елемента `<textarea>`. Форма-власник – це або елемент {{HTMLElement("form")}}, нащадком якого є цей елемент `<textarea>`, або елемент форми, чий `id` заданий в атрибуті `form` елемента поля. Щоб отримати більше інформації, шукайте атрибут [`autocomplete`](/uk/docs/Web/HTML/Element/form#autocomplete) у {{HTMLElement("form")}}.
 
-- {{ htmlattrdef("autocorrect") }} {{non-standard_inline}}
+- `autocorrect` {{non-standard_inline}}
 
   - : Рядок, що вказує на те, чи треба вмикати автоматичне виправлення правопису й обробку текстових замін (якщо такі налаштовані), коли користувач редагує цю `textarea`. Дозволені значення:
 
@@ -49,33 +42,38 @@ browser-compat: html.elements.textarea
     - `off`
       - : Вимкнути автоматичні виправлення правопису й текстові заміни.
 
-- {{ htmlattrdef("autofocus") }}
+- `autofocus`
   - : Цей булів атрибут дає змогу задати те, що контрольний елемент форми повинен отримати фокус при завантаженні сторінки. Лише один формовий елемент документа може мати такий атрибут.
-- {{ htmlattrdef("cols") }}
+- `cols`
   - : Видима ширина текстового контрольного елемента, задана в ширинах середнього символу. Якщо заданий, то мусить бути додатним цілим числом. Якщо не заданий, то усталене значення – `20`.
-- {{ htmlattrdef("disabled") }}
-  - : Цей булів атрибут вказує, що користувач не може взаємодіяти з контрольним елементом. Якщо цей атрибут не задано, то контрольний елемент успадковує це налаштування від свого контейнерного елемента, наприклад – {{ HTMLElement("fieldset") }}; якщо контейнерного елемента немає, коли заданий атрибут `disabled`, то контрольний елемент увімкнено.
-- {{ htmlattrdef("form") }}
+- `dirname`
+
+  - : Цей атрибут вживається для позначення напряму письма тексту елемента, подібно до атрибута [`dirname`](/uk/docs/Web/HTML/Element/input#dirname-imia-napriamu) елемента `<input>`.
+    Більше про це – на сторінці [атрибута `dirname`](/uk/docs/Web/HTML/Attributes/dirname).
+
+- `disabled`
+  - : Цей булів атрибут вказує, що користувач не може взаємодіяти з контрольним елементом. Якщо цей атрибут не задано, то контрольний елемент успадковує це налаштування від свого контейнерного елемента, наприклад – {{HTMLElement("fieldset")}}; якщо контейнерного елемента немає, коли заданий атрибут `disabled`, то контрольний елемент увімкнено.
+- `form`
   - : Елемент форми, з котрим пов'язаний елемент `<textarea>` (його "форма-власник"). Значення атрибута мусить відповідати `id` елемента форми в тому самому документі. Якщо такий атрибут не задано, то елемент `<textarea>` мусить бути нащадком елемента форми. Цей атрибут дає змогу розміщувати елементи `<textarea>` будь-де в документі, а не лише серед нащадків елементів форм.
-- {{ htmlattrdef("maxlength") }}
-  - : Максимальна кількість символів (кодових одиниць UTF-16), котру може ввести користувач. Якщо це значення не задано, то користувач може ввести необмежену кількість символів.
-- {{ htmlattrdef("minlength") }}
-  - : Мінімальна кількість символів (кодових одиниць UTF-16), котру повинен увести користувач.
-- {{ htmlattrdef("name") }}
+- `maxlength`
+  - : Максимальна довжина рядка (у кодових одиницях UTF-16), котру може ввести користувач. Якщо це значення не задано, то користувач може ввести необмежену кількість символів.
+- `minlength`
+  - : Мінімальна довжина рядка (у кодових одиницях UTF-16), котру повинен увести користувач.
+- `name`
   - : Ім'я контрольного елемента.
-- {{ htmlattrdef("placeholder") }}
+- `placeholder`
 
   - : Підказка користувачеві щодо того, що може бути введено в контрольний елемент.
 
-    > **Примітка:** Заповнювач слід використовувати лише для демонстрування типу даних, котрий повинен бути введений у форму; заповнювачі _не_ замінюють доброго елемента {{HTMLElement("label")}}, зв'язаного з полем. Дивіться докладне пояснення в {{SectionOnPage("/uk/docs/Web/HTML/Element/input", "Підписи та заповнювачі")}}.
+    > **Примітка:** Заповнювач слід використовувати лише для демонстрування типу даних, котрий повинен бути введений у форму; заповнювачі _не_ замінюють доброго елемента {{HTMLElement("label")}}, зв'язаного з полем. Дивіться докладне пояснення в [Підписах `<input>`](/uk/docs/Web/HTML/Element/input#pidpysy).
 
-- {{ htmlattrdef("readonly") }}
+- `readonly`
   - : Цей булів атрибут вказує на те, що користувач не може змінювати значення контрольного елемента. На відміну від атрибута `disabled`, атрибут `readonly` не заважає користувачеві клацати чи вибирати контрольний елемент. Значення контрольного елемента лише для зчитування – подається з формою.
-- {{ htmlattrdef("required") }}
+- `required`
   - : Цей атрибут задає те, що користувач мусить увести значення перед поданням форми.
-- {{ htmlattrdef("rows") }}
+- `rows`
   - : Число видимих рядів тексту в контрольному елементі. Якщо вказаний, то мусить бути доданим цілим числом. Якщо не заданий, то усталене значення – 2.
-- {{ htmlattrdef("spellcheck") }}
+- `spellcheck`
 
   - : Задає, чи підпадає `<textarea>` під перевірку правопису з боку браузера чи ОС. Значенням можуть бути:
 
@@ -83,12 +81,12 @@ browser-compat: html.elements.textarea
     - `default` : Вказує на те, що елемент повинен працювати згідно з усталеною логікою, можливо, на основі значення `spellcheck` батьківського елемента.
     - `false` : Вказує, що елемент не повинен перевірятися на правопис.
 
-- {{ htmlattrdef("wrap") }}
+- `wrap`
 
-  - : Вказує на те, як контрольний елемент розриває рядки тексту. Можливі значення:
+  - : Вказує на те, як контрольний елемент повинен обробляти розриви рядків при поданні форми. Можливі значення:
 
-    - `hard`: Браузер автоматично вставляє розриви рядка (CR+LF), щоб жоден рядок не був ширшим за контрольний елемент; також, щоб це працювало, повинен бути заданий атрибут `cols`.
-    - `soft`: Браузер пересвідчується, що всі розриви рядка в значенні поля містять пару CR+LF, але не додає жодних додаткових розривів рядка.
+    - `hard`: Браузер автоматично вставляє розриви рядка (CR+LF), щоб жоден рядок не був ширшим за контрольний елемент; також, щоб це працювало, повинен бути заданий атрибут [`cols`](#cols).
+    - `soft`: Браузер пересвідчується, що всі розриви рядка у введеному значенні поля є парами `CR+LF`, але до значення не додаються жодні додаткові розриви.
     - `off` {{non-standard_inline}}: Подібне до `soft`, але змінює вигляд на `white-space: pre`, щоб сегменти рядків, котрі виходять за межі `cols`, не переходили на новий рядок, а `<textarea>` ставав прокрутним по горизонталі.
 
     Якщо цей атрибут не заданий, усталеним значенням є `soft`.
@@ -105,7 +103,7 @@ browser-compat: html.elements.textarea
 
 ### Контроль можливості зміни розмірів текстової області користувачем
 
-У більшості браузерів користувач може змінювати розміри `<textarea>`: у правому куті помітна ручка для перетягування, за допомогою котрої можна змінити розміри елемента на сторінці. Ця можливість контролюється властивістю CSS{{ cssxref("resize") }} – усталено змінювання розмірів увімкнене, але його можна явно вимкнути, застосувавши `resize` зі значенням `none`:
+У більшості браузерів користувач може змінювати розміри `<textarea>`: у правому куті помітна ручка для перетягування, за допомогою котрої можна змінити розміри елемента на сторінці. Ця можливість контролюється властивістю CSS{{cssxref("resize")}} – усталено змінювання розмірів увімкнене, але його можна явно вимкнути, застосувавши `resize` зі значенням `none`:
 
 ```css
 textarea {
@@ -137,7 +135,9 @@ textarea:valid {
 <textarea name="textarea" rows="10" cols="50">Напишіть тут щось</textarea>
 ```
 
-{{ EmbedLiveSample('bazovyi-pryklad','600','150') }}
+#### Результат
+
+{{EmbedLiveSample('bazovyi-pryklad','600','150')}}
 
 ### Приклад з використанням "minlength" і "maxlength"
 
@@ -149,7 +149,9 @@ textarea:valid {
 </textarea>
 ```
 
-{{ EmbedLiveSample('pryklad-z-vykorystanniam-minlength-i-maxlength','600','80') }}
+#### Результат
+
+{{EmbedLiveSample('pryklad-z-vykorystanniam-minlength-i-maxlength','600','80')}}
 
 Зверніть увагу, що `minlength` не заважає користувачеві прибрати символи так, щоб кількість введених перейшла межу мінімуму, але робить значення, введене в `<textarea>`, недійсним. Також зверніть увагу, що навіть коли задано значення `minlength` (наприклад, 3), порожня `<textarea>` все одно вважається дійсною, якщо на додачу немає атрибута `required`.
 
@@ -165,9 +167,11 @@ textarea:valid {
   placeholder="Текст коментаря."></textarea>
 ```
 
-{{ EmbedLiveSample('pryklad-z-vykorystanniam-placeholder','600','80') }}
+#### Результат
 
-> **Примітка:** Заповнювачі повинні застосовуватися лише для демонстрування типу даних, котрий повинен бути введений у форму; вони _не_ є заміною доброго елемента {{HTMLElement("label")}}, зв'язаного з полем. Дивіться розгорнуте пояснення в {{SectionOnPage("/uk/docs/Web/HTML/Element/input", "Підписи та заповнювачі")}}.
+{{EmbedLiveSample('pryklad-z-vykorystanniam-placeholder','600','100')}}
+
+> **Примітка:** Заповнювачі повинні застосовуватися лише для демонстрування типу даних, котрий повинен бути введений у форму; вони _не_ є заміною доброго елемента {{HTMLElement("label")}}, зв'язаного з полем. Дивіться розгорнуте пояснення в [Підписах `<input>`](/uk/docs/Web/HTML/Element/input#pidpysy).
 
 ### Disabled і readonly
 
@@ -184,7 +188,9 @@ textarea:valid {
 </textarea>
 ```
 
-{{ EmbedLiveSample('disabled-i-readonly','600','80') }}
+#### Результат
+
+{{EmbedLiveSample('disabled-i-readonly','600','100')}}
 
 ## Технічний підсумок
 
@@ -192,34 +198,34 @@ textarea:valid {
   <tbody>
     <tr>
       <th scope="row">
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories"
+        <a href="/uk/docs/Web/HTML/Content_categories"
           >Категорії вмісту</a
         >
       </th>
       <td>
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#potokovyi-vmist"
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
           >Потоковий вміст</a
         >,
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#opovidalnyi-vmist"
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
           >оповідальний вміст</a
         >,
         <a
-          href="/uk/docs/Web/Guide/HTML/Content_categories#interaktyvnyi-vmist"
+          href="/uk/docs/Web/HTML/Content_categories#interaktyvnyi-vmist"
           >інтерактивний вміст</a
         >,
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#form-perelicheni"
+        <a href="/uk/docs/Web/HTML/Content_categories#perelicheni"
           >перелічений</a
         >,
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#form-pidpysuvanyi"
-          >підписуваний</a
+        <a href="/uk/docs/Web/HTML/Content_categories#pidpysni"
+          >підписний</a
         >,
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#form-skydanyi"
+        <a href="/uk/docs/Web/HTML/Content_categories#skydani"
           >скиданий</a
         > і
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#form-podavanyi"
-          >подаваний</a
+        <a href="/uk/docs/Web/HTML/Content_categories#podavalni"
+          >подавальний</a
         >
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#formovyi"
+        <a href="/uk/docs/Web/HTML/Content_categories#formovyi-vmist"
           >формовий</a
         >
         елемент.
@@ -237,7 +243,7 @@ textarea:valid {
       <th scope="row">Дозволені батьківські елементи</th>
       <td>
         Усі елементи, що приймають
-        <a href="/uk/docs/Web/Guide/HTML/Content_categories#opovidalnyi-vmist"
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
           >оповідальний вміст</a
         >.
       </td>
@@ -275,17 +281,16 @@ textarea:valid {
 
 Інші формові елементи:
 
-- {{ HTMLElement("form") }}
-- {{ HTMLElement("button") }}
-- {{ HTMLElement("datalist") }}
-- {{ HTMLElement("legend") }}
-- {{ HTMLElement("label") }}
-- {{ HTMLElement("select") }}
-- {{ HTMLElement("optgroup") }}
-- {{ HTMLElement("option") }}
-- {{ HTMLElement("input") }}
-- {{ HTMLElement("keygen") }}
-- {{ HTMLElement("fieldset") }}
-- {{ HTMLElement("output") }}
-- {{ HTMLElement("progress") }}
-- {{ HTMLElement("meter") }}
+- {{HTMLElement("form")}}
+- {{HTMLElement("button")}}
+- {{HTMLElement("datalist")}}
+- {{HTMLElement("legend")}}
+- {{HTMLElement("label")}}
+- {{HTMLElement("select")}}
+- {{HTMLElement("optgroup")}}
+- {{HTMLElement("option")}}
+- {{HTMLElement("input")}}
+- {{HTMLElement("fieldset")}}
+- {{HTMLElement("output")}}
+- {{HTMLElement("progress")}}
+- {{HTMLElement("meter")}}

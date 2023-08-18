@@ -8,6 +8,8 @@ browser-compat: javascript.builtins.Date.toLocaleDateString
 
 Метод **`toLocaleDateString()`** повертає рядок із чутливим до мови відображенням тієї частини вказаної дати, яка містить лише календарну дату, в часовому поясі користувацького агента. В тих реалізаціях, що мають підтримку [API `Intl.DateTimeFormat`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat), цей метод просто викликає `Intl.DateTimeFormat`.
 
+Під час форматування великої кількості дат, краще створити окремий об'єкт {{jsxref("Intl.DateTimeFormat")}}, і використовувати його метод {{jsxref("Intl/DateTimeFormat/format", "format()")}}.
+
 {{EmbedInteractiveExample("pages/js/date-tolocaledatestring.html")}}
 
 ## Синтаксис
@@ -44,10 +46,6 @@ toLocaleDateString(locales, options)
 
 В реалізаціях, що містять `Intl.DateTimeFormat`, це еквівалентно викликові `new Intl.DateTimeFormat(locales, options).format(date)`, де параметр `options` нормалізовано так, як описано вище.
 
-## Швидкодія
-
-Під час форматування великої кількості дат, краще створити окремий об'єкт [`Intl.DateTimeFormat`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat), і використовувати його метод [`format()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/format).
-
 ## Приклади
 
 ### Застосування toLocaleDateString()
@@ -63,19 +61,17 @@ console.log(date.toLocaleDateString());
 // "12/11/2012", якщо виконано в локалі en-US та часовому поясі America/Los_Angeles
 ```
 
-### Перевірка підтримки аргументів locales та options
+### Перевірка підтримки параметрів locales та options
 
-Аргументи `locales` та `options` підтримуються поки не у всіх браузерах.
-Для перевірки, чи якась реалізація їх підтримує, можна скористатися перевіркою виконання вимоги відхиляти недійсні позначення мови із викиданням винятку {{jsxref("RangeError")}}:
+Параметри `locales` та `options` можуть підтримуватися не у всіх реалізаціях, оскільки підтримка API інтернаціоналізації є необов'язковою, і деякі системи можуть не мати необхідних даних. У реалізаціях без підтримки інтернаціоналізації `toLocaleString()` завжди використовує локаль системи, що може не відповідати вашим потребам. Оскільки будь-яка реалізація, що підтримує параметри `locales` та `options`, повинна підтримувати API {{jsxref("Intl")}}, ви можете перевірити його наявність для підтримки:
 
 ```js
 function toLocaleDateStringSupportsLocales() {
-  try {
-    new Date().toLocaleDateString("i");
-  } catch (e) {
-    return e.name === "RangeError";
-  }
-  return false;
+  return (
+    typeof Intl === "object" &&
+    !!Intl &&
+    typeof Intl.DateTimeFormat === "function"
+  );
 }
 ```
 
