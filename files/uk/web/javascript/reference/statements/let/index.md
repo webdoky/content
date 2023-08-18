@@ -24,16 +24,9 @@ let name1 = value1, name2, /* …, */ nameN = valueN;
 ### Параметри
 
 - `nameN`
-  - : Назва змінної для оголошення. Кожна з них повинна бути дійсним [ідентифікатором](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#identyfikatory) JavaScript.
+  - : Назва змінної для оголошення. Кожна з них повинна бути дійсним [ідентифікатором](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#identyfikatory) JavaScript або [патерном присвоєння з деструктуруванням](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
 - `valueN` {{optional_inline}}
   - : Початкове значення змінної. Може бути будь-яким допустимим виразом. Усталене значення – `undefined`.
-
-Для оголошення змінних також може використовуватися запис [деструктурування](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
-
-```js
-let { bar } = foo; // де foo = { bar: 10, baz: 12 };
-// Це створює змінну з назвою 'bar', котра має значення 10
-```
 
 ## Опис
 
@@ -263,6 +256,18 @@ let x = 1;
   var x = 2; // SyntaxError через повторне оголошення
 }
 ```
+
+### Оголошення з деструктуруванням
+
+Лівий бік кожного `=` також може бути патерном зв'язування. Це дає змогу створювати кілька змінних за раз.
+
+```js
+const result = /(a+)(b+)(c+)/.exec("aaabcc");
+let [, a, b, c] = result;
+console.log(a, b, c); // "aaa" "b" "cc"
+```
+
+Більше про це - в [Присвоєнні з деструктуруванням](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
 
 ## Специфікації
 
