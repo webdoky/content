@@ -238,4 +238,4 @@ printCustomerCity({
 
 ## Дивіться також
 
-- [Оператор null-злиття](/uk/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing)
+- [Оператор null-злиття (`??`)](/uk/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing)
