@@ -121,6 +121,8 @@ console.log(val); // Виводить 0.
 
 Корисний для складних присвоєнь синтаксис [присвоєння з деструктуруванням](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) – це вираз JavaScript, котрий дає змогу видобути дані з масивів та об'єктів за допомогою синтаксису, котрий є дзеркальним відображенням конструювання масивів та об'єктних літералів.
 
+Без деструктурування для видобуття з масивів і об'єктів кількох значень необхідні кілька інструкцій:
+
 ```js
 const foo = ["один", "два", "три"];
 
@@ -128,8 +130,11 @@ const foo = ["один", "два", "три"];
 const one = foo[0];
 const two = foo[1];
 const three = foo[2];
+```
 
-// з деструктуруванням
+Завдяки деструктуруванню можна видобувати кілька значень в окремі змінні за допомогою однієї інструкції:
+
+```js
 const [one, two, three] = foo;
 ```
 
@@ -988,7 +993,7 @@ a * c + b * c // 9
 [Оператор `new`](/uk/docs/Web/JavaScript/Reference/Operators/new) можна використовувати для створення примірника власного об'єктного типу або одного із вбудованих об'єктних типів. Робиться це так:
 
 ```js
-const objectName = new objectType(param1, param2, /* …, */ paramN);
+const objectName = new ObjectType(param1, param2, /* …, */ paramN);
 ```
 
 ### super
@@ -996,7 +1001,7 @@ const objectName = new objectType(param1, param2, /* …, */ paramN);
 [Ключове слово `super`](/uk/docs/Web/JavaScript/Reference/Operators/super) використовується для виклику функцій на батьківському об'єкті.
 Корисно, наприклад, при використанні [класів](/uk/docs/Web/JavaScript/Reference/Classes) – викликати батьківський конструктор.
 
-```js
+```js-nolint
 super(args); // викликається батьківський конструктор.
 super.functionOnParent(args);
 ```
