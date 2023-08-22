@@ -17,7 +17,7 @@ browser-compat: javascript.builtins.Array.concat
 concat()
 concat(value0)
 concat(value0, value1)
-concat(value0, value1, /* … ,*/ valueN)
+concat(value0, value1, /* …, */ valueN)
 ```
 
 ### Параметри
@@ -129,7 +129,13 @@ console.log([1, 2].concat([3, , 5])); // [1, 2, 3, порожньо, 5]
 ```js
 console.log(Array.prototype.concat.call({}, 1, 2, 3)); // [{}, 1, 2, 3]
 console.log(Array.prototype.concat.call(1, 2, 3)); // [ [Number: 1], 2, 3 ]
-const arrayLike = { [Symbol.isConcatSpreadable]: true, length: 2, 0: 1, 1: 2 };
+const arrayLike = {
+  [Symbol.isConcatSpreadable]: true,
+  length: 2,
+  0: 1,
+  1: 2,
+  2: 99, // ігнорується concat(), оскільки length – 2
+};
 console.log(Array.prototype.concat.call(arrayLike, 3, 4)); // [1, 2, 3, 4]
 ```
 

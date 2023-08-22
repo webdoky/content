@@ -151,7 +151,7 @@ background-size: unset;
 
 {{EmbedLiveSample("cherepytsia-z-velykym-zobrazhenniam", 340, 340)}}
 
-Більше прикладів у [Зміні розміру зображень тла](/uk/docs/Web/CSS/CSS_Backgrounds_and_Borders/Resizing_background_images).
+Більше прикладів у [Зміні розміру зображень тла](/uk/docs/Web/CSS/CSS_backgrounds_and_borders/Resizing_background_images).
 
 ## Специфікації
 
@@ -163,6 +163,6 @@ background-size: unset;
 
 ## See also
 
-- [Зміна розміру зображень тла](/uk/docs/Web/CSS/CSS_Backgrounds_and_Borders/Resizing_background_images)
+- [Зміна розміру зображень тла](/uk/docs/Web/CSS/CSS_backgrounds_and_borders/Resizing_background_images)
 - [Масштабування тла SVG](/uk/docs/Web/CSS/Scaling_of_SVG_backgrounds)
 - {{cssxref("object-fit")}}
