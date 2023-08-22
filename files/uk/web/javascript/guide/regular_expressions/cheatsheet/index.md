@@ -455,7 +455,7 @@ page-type: guide
 
 [Квантори](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Quantifiers) позначають кількість символів або виразів, котрі повинні давати збіг.
 
-> **Примітка:** У тексті нижче _елементами_ звуться не лише окремі символи, а й також [класи символів](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Character_classes), [екранування властивостей Unicode](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Unicode_property_escapes), [групи та зворотні посилання](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Groups_and_backreferences).
+> **Примітка:** У тексті нижче _елементами_ звуться не лише окремі символи, а й також [класи символів](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Character_classes) і [групи та зворотні посилання](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Groups_and_backreferences).
 
 <table class="standard-table">
   <thead>
@@ -551,37 +551,3 @@ page-type: guide
     </tr>
   </tbody>
 </table>
-
-## Екранування властивостей Unicode
-
-[Екранування властивостей Unicode](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Unicode_property_escapes) дають змогу шукати збіг з символами на основі їх властивостей Unicode.
-
-```js
-// Небінарні значення
-/\p{UnicodePropertyValue}/
-/\p{UnicodePropertyName=UnicodePropertyValue}/
-
-// Бінарні та небінарні значення
-/\p{UnicodeBinaryPropertyName}/
-
-// Заперечення: \P – це \p із запереченням
-/\P{UnicodePropertyValue}/
-/\P{UnicodeBinaryPropertyName}/
-```
-
-- `UnicodeBinaryPropertyName`
-  - : Назва [бінарної властивості](https://tc39.es/ecma262/multipage/text-processing.html#table-binary-unicode-properties). Наприклад: [`ASCII`](https://unicode.org/reports/tr18/#General_Category_Property), [`Alpha`](https://unicode.org/reports/tr44/#Alphabetic), `Math`, [`Diacritic`](https://unicode.org/reports/tr44/#Diacritic), [`Emoji`](https://unicode.org/reports/tr51/#Emoji_Properties), [`Hex_Digit`](https://unicode.org/reports/tr44/#Hex_Digit), `Math`, [`White_space`](https://unicode.org/reports/tr44/#White_Space) тощо. Більше інформації – в [PropList.txt даних Unicode](https://www.unicode.org/Public/UCD/latest/ucd/PropList.txt).
-- `UnicodePropertyName`
-
-  - : Назва [небінарної](https://tc39.es/ecma262/multipage/text-processing.html#table-nonbinary-unicode-properties) властивості:
-
-    - [General_Category](https://unicode.org/reports/tr18/#General_Category_Property) (`gc`)
-    - [Script](https://unicode.org/reports/tr24/#Script) (`sc`)
-    - [Script_Extensions](https://unicode.org/reports/tr24/#Script_Extensions) (`scx`)
-
-    Також дивіться [PropertyValueAliases.txt](https://www.unicode.org/Public/UCD/latest/ucd/PropertyValueAliases.txt)
-
-- `UnicodePropertyValue`
-  - : Одна з лексем, перелічених у розділі Значень нижче. Чимало значень мають псевдоніми чи скорочення (наприклад, значення `Decimal_Number` для властивості `General_Category` може бути записано як `Nd`, `digit` або `Decimal_Number`). Для більшості значень частина `UnicodePropertyName` та знак рівності можуть бути опущені. Якщо задана частина `UnicodePropertyName`, то значення мусить відповідати заданому типові властивості.
-
-> **Примітка:** Оскільки доступно чимало властивостей і значень, вони не будуть описані вичерпно тут, а радше наведені в різних прикладах.
