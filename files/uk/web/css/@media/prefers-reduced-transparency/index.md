@@ -9,7 +9,7 @@ browser-compat: css.at-rules.media.prefers-reduced-transparency
 
 {{CSSRef}}{{SeeCompatTable}}
 
-[Ознака медіа](/uk/docs/Web/CSS/Media_Queries/Using_media_queries#oznaky-media) [CSS](/uk/docs/Web/CSS) **`prefers-reduced-transparency`** (віддає перевагу зниженій прозорості) використовується для з'ясування того, що користувач ввімкнув на своєму пристрої налаштування для зниження прозорих чи напівпрозорих шарових ефектів, що на цьому пристрої застосовуються. Ввімкнення такого налаштування може допомогти покращити контрастність та читабельність для деяких користувачів.
+[Ознака медіа](/uk/docs/Web/CSS/CSS_media_queries/Using_media_queries#oznaky-media) [CSS](/uk/docs/Web/CSS) **`prefers-reduced-transparency`** (віддає перевагу зниженій прозорості) використовується для з'ясування того, що користувач ввімкнув на своєму пристрої налаштування для зниження прозорих чи напівпрозорих шарових ефектів, що на цьому пристрої застосовуються. Ввімкнення такого налаштування може допомогти покращити контрастність та читабельність для деяких користувачів.
 
 ## Синтаксис
 
@@ -69,4 +69,4 @@ browser-compat: css.at-rules.media.prefers-reduced-transparency
 ## Дивіться також
 
 - Медіазапит [prefers-reduced-motion](/uk/docs/Web/CSS/@media/prefers-reduced-motion)
-- [Застосування медіазапитів](/uk/docs/Web/CSS/Media_Queries/Using_media_queries)
+- [Застосування медіазапитів](/uk/docs/Web/CSS/CSS_media_queries/Using_media_queries)
