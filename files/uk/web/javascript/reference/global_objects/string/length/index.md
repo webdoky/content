@@ -94,4 +94,4 @@ console.log(myString.length); // 8
 
 ## Дивіться також
 
-- [Властивість `String.length` в JavaScript та інтернаціоналізація вебзастосунків (англ.)](https://downloads.teradata.com/blog/jasonstrimpel/2011/11/javascript-string-length-and-internationalizing-web-applications)
+- [`Array` – `length`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/length)
