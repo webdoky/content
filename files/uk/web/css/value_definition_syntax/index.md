@@ -415,10 +415,10 @@ _Помножувач оклику_ після групи вказує, що г�
   - [Коментарі](/uk/docs/Web/CSS/Comments)
   - [Специфічність](/uk/docs/Web/CSS/Specificity)
   - [Успадкування](/uk/docs/Web/CSS/Inheritance)
-  - [Рамкова модель](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+  - [Рамкова модель](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
   - [Способи компонування](/uk/docs/Web/CSS/Layout_mode)
   - [Моделі візуального форматування](/uk/docs/Web/CSS/Visual_formatting_model)
-  - [Перекриття зовнішніх полів](/uk/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
+  - [Перекриття зовнішніх полів](/uk/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
   - Значення
     - [Початкові значення](/uk/docs/Web/CSS/initial_value)
     - [Обчислені значення](/uk/docs/Web/CSS/computed_value)

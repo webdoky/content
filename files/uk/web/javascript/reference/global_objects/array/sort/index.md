@@ -331,6 +331,6 @@ console.log(Array.prototype.sort.call(arrayLike));
 - {{jsxref("Array.prototype.toSorted()")}}
 - {{jsxref("String.prototype.localeCompare()")}}
 - {{jsxref("TypedArray.prototype.sort()")}}
-- [Сортування штук у V8](https://v8.dev/blog/array-sort) на v8.dev (28 вересня 2018 року)
-- [Стабільний `Array.prototype.sort`](https://v8.dev/features/stable-sort) на v8.dev (2 липня 2019 року)
+- [Сортування штук у V8](https://v8.dev/blog/array-sort) на v8.dev (2018)
+- [Стабільний `Array.prototype.sort`](https://v8.dev/features/stable-sort) на v8.dev (2019)
 - [Стабільність `Array.prototype.sort` stability](https://mathiasbynens.be/demo/sort-stability) від Матіаса Байненса

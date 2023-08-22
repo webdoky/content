@@ -206,6 +206,6 @@ p.overlay {
 - {{Cssxref("overflow-x")}}, {{Cssxref("overflow-y")}}
 - {{Cssxref("overflow-block")}}, {{Cssxref("overflow-clip-margin")}}, {{Cssxref("overflow-inline")}}
 - {{Cssxref("clip")}}, {{Cssxref("display")}}, {{cssxref("text-overflow")}}, {{cssxref("white-space")}}
-- [Переповнення CSS](/uk/docs/Web/CSS/CSS_Overflow)
+- [Переповнення CSS](/uk/docs/Web/CSS/CSS_overflow)
 - [Keyboard-only scrolling areas](https://adrianroselli.com/2022/06/keyboard-only-scrolling-areas.html) on adrianroselli.com (November 28, 2022)
 - [Області прокручення лише клавіатурою](https://adrianroselli.com/2022/06/keyboard-only-scrolling-areas.html) на adrianroselli.com (28 листопада 2022 року)
