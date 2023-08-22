@@ -7,7 +7,7 @@ browser-compat: javascript.statements.switch
 
 {{jsSidebar("Statements")}}
 
-Інструкція **`switch`** (перемикач) обчислює [вираз](/uk/docs/Web/JavaScript/Guide/Expressions_and_Operators), зіставляючи значення виразу з низкою пунктів `case`, і виконує [інструкції](/uk/docs/Web/JavaScript/Reference/Statements) після першого `case`, що дав збіг, поки не зустрінеться інструкція `break`. Відбудеться перехід до інструкції `switch` `default`, якщо жоден `case` не дасть збігу зі значенням виразу.
+Інструкція **`switch`** (перемикач) обчислює [вираз](/uk/docs/Web/JavaScript/Guide/Expressions_and_operators), зіставляючи значення виразу з низкою пунктів `case`, і виконує [інструкції](/uk/docs/Web/JavaScript/Reference/Statements) після першого `case`, що дав збіг, поки не зустрінеться інструкція `break`. Відбудеться перехід до інструкції `switch` `default`, якщо жоден `case` не дасть збігу зі значенням виразу.
 
 {{EmbedInteractiveExample("pages/js/statement-switch.html", "taller")}}
 
@@ -16,22 +16,15 @@ browser-compat: javascript.statements.switch
 ```js-nolint
 switch (expression) {
   case value1:
-    // Інструкції, які слід виконати, коли
-    // результат виразу збігається зі value1
-    [break;]
+    інструкції
   case value2:
-    // Інструкції, які слід виконати, коли
-    // результат виразу збігається зі value2
-    [break;]
+    інструкції
+  // …
   ...
   case valueN:
-    // Інструкції, які слід виконати, коли
-    // результат виразу збігається зі valueN
-    [break;]
-  [default:
-    // Інструкції, які слід виконати, коли
-    // результат виразу не збігається зі жодним варіантом
-    [break;]]
+    інструкції
+  default:
+    інструкції
 }
 ```
 
@@ -85,7 +78,7 @@ switch (foo) {
 // Виводить 0 і 1
 ```
 
-Замість `break` можна використовувати інші інструкції контролю плину виконання, наприклад, інструкцію [`return`](/uk/docs/Web/JavaScript/Reference/Statements/return).
+Інші інструкції контролю плину виконання, у відповідному контексті, також мають ефект виходу з інструкції `switch`. Наприклад, якщо інструкція `switch` міститься в функції, то інструкція [`return`](/uk/docs/Web/JavaScript/Reference/Statements/return) припиняє виконання тіла функції, а отже – виконання інструкції `switch`. Якщо інструкція `switch` міститься в циклі, то інструкція [`continue`](/uk/docs/Web/JavaScript/Reference/Statements/continue) зупиняє інструкцію `switch` і переходить до наступної ітерації циклу.
 
 ### Лексична область видимості
 

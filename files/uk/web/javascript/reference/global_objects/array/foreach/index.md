@@ -231,7 +231,7 @@ console.log(flatten(nested)); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 ### Виклик forEach() на об'єктах-немасивах
 
-Метод `forEach()` зчитує з `this` властивість `length`, а потім звертається до кожної цілочислової властивості.
+Метод `forEach()` зчитує з `this` властивість `length`, а потім звертається до кожної властивості, чий ключ – невід'ємне ціле число, менше за `length`.
 
 ```js
 const arrayLike = {
@@ -239,6 +239,7 @@ const arrayLike = {
   0: 2,
   1: 3,
   2: 4,
+  3: 5, // ігнорується forEach(), оскільки length – 3
 };
 Array.prototype.forEach.call(arrayLike, (x) => console.log(x));
 // 2
