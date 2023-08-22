@@ -22,7 +22,7 @@ endsWith(searchString, endPosition)
 
 - `searchString`
   - : Символи, які потрібно шукати в кінці рядка `str`. Цей параметр не може [бути регулярним виразом](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp#osoblyva-obrobka-rehuliarnykh-vyraziv). Будь-які значення, що не є регулярними виразами, [зводяться до рядків](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka), тож пропуск цього параметра або передача в ньому `undefined` змусить `endsWith` шукати рядок `"undefined"`, а це рідко саме те, що потрібно.
-- `length` {{optional_inline}}
+- `endPosition` {{optional_inline}}
   - : Кінцева позиція, на якій очікується зустріти `searchString` (індекс останнього символу `searchString` плюс 1). Усталено дорівнює значенню `str.length`.
 
 ### Повернене значення
