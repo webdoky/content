@@ -66,12 +66,12 @@ page-type: guide
 
 ## Вирази та оператори
 
-Огляд: [Вирази та оператори](/uk/docs/Web/JavaScript/Guide/Expressions_and_Operators)
+Огляд: [Вирази та оператори](/uk/docs/Web/JavaScript/Guide/Expressions_and_operators)
 
-- [Присвоєння](/uk/docs/Web/JavaScript/Guide/Expressions_and_Operators#operatory-prysvoiennia) й [Порівняння](/uk/docs/Web/JavaScript/Guide/Expressions_and_Operators#operatory-porivniannia)
-- [Арифметичні оператори](/uk/docs/Web/JavaScript/Guide/Expressions_and_Operators#aryfmetychni-operatory)
-- [Побітові](/uk/docs/Web/JavaScript/Guide/Expressions_and_Operators#bitovi-operatory) й [логічні оператори](/uk/docs/Web/JavaScript/Guide/Expressions_and_Operators#lohichni-operatory)
-- [Умовний (тернарний) оператор](/uk/docs/Web/JavaScript/Guide/Expressions_and_Operators#umovnyi-ternarnyi-operator)
+- [Присвоєння](/uk/docs/Web/JavaScript/Guide/Expressions_and_operators#operatory-prysvoiennia) й [Порівняння](/uk/docs/Web/JavaScript/Guide/Expressions_and_operators#operatory-porivniannia)
+- [Арифметичні оператори](/uk/docs/Web/JavaScript/Guide/Expressions_and_operators#aryfmetychni-operatory)
+- [Побітові](/uk/docs/Web/JavaScript/Guide/Expressions_and_operators#bitovi-operatory) й [логічні оператори](/uk/docs/Web/JavaScript/Guide/Expressions_and_operators#lohichni-operatory)
+- [Умовний (тернарний) оператор](/uk/docs/Web/JavaScript/Guide/Expressions_and_operators#umovnyi-ternarnyi-operator)
 
 ## Числа та дати
 
@@ -90,14 +90,11 @@ page-type: guide
 - [Об'єкт `String`](/uk/docs/Web/JavaScript/Guide/Text_formatting#obiekty-string)
 - [Літерали шаблонів](/uk/docs/Web/JavaScript/Guide/Text_formatting#bahatoriadkovi-shablonni-literaly)
 - [Інтернаціоналізація](/uk/docs/Web/JavaScript/Guide/Text_formatting#internatsionalizatsiia)
-- [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_expressions)
 
-## Індексовані колекції
+## Колекції з індексами
 
-Огляд: [Індексовані колекції](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
-
-- [Масиви](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
-- [Типізовані масиви](/uk/docs/Web/JavaScript/Typed_arrays)
+Огляд: [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 
 ## Колекції з ключами
 
@@ -110,21 +107,21 @@ page-type: guide
 
 ## Робота з об'єктами
 
-Огляд: [Робота з об'єктами](/uk/docs/Web/JavaScript/Guide/Working_with_Objects)
+Огляд: [Робота з об'єктами](/uk/docs/Web/JavaScript/Guide/Working_with_objects)
 
-- [Об'єкти та властивості](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#obiekty-i-vlastyvosti)
-- [Створення об'єктів](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#stvorennia-novykh-obiektiv)
-- [Означення методів](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#oznachennia-metodiv)
-- [Гетер і сетер](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#oznachennia-heteriv-ta-seteriv)
+- [Об'єкти та властивості](/uk/docs/Web/JavaScript/Guide/Working_with_objects#obiekty-i-vlastyvosti)
+- [Створення об'єктів](/uk/docs/Web/JavaScript/Guide/Working_with_objects#stvorennia-novykh-obiektiv)
+- [Означення методів](/uk/docs/Web/JavaScript/Guide/Working_with_objects#oznachennia-metodiv)
+- [Гетер і сетер](/uk/docs/Web/JavaScript/Guide/Working_with_objects#oznachennia-heteriv-ta-seteriv)
 
 ## Застосування класів
 
-Огляд: [Застосування класів](/uk/docs/Web/JavaScript/Guide/Using_Classes)
+Огляд: [Застосування класів](/uk/docs/Web/JavaScript/Guide/Using_classes)
 
-- [Оголошення класу](/uk/docs/Web/JavaScript/Guide/Using_Classes#oholoshennia-klasu)
-- [Різноманітні особливості класів](/uk/docs/Web/JavaScript/Guide/Using_Classes#konstruktor)
-- [Розширення й успадкування](/uk/docs/Web/JavaScript/Guide/Using_Classes#extends-y-uspadkuvannia)
-- [Чому саме класи?](/uk/docs/Web/JavaScript/Guide/Using_Classes#chomu-same-klasy)
+- [Оголошення класу](/uk/docs/Web/JavaScript/Guide/Using_classes#oholoshennia-klasu)
+- [Різноманітні особливості класів](/uk/docs/Web/JavaScript/Guide/Using_classes#konstruktor)
+- [Розширення й успадкування](/uk/docs/Web/JavaScript/Guide/Using_classes#extends-y-uspadkuvannia)
+- [Чому саме класи?](/uk/docs/Web/JavaScript/Guide/Using_classes#chomu-same-klasy)
 
 ## Проміси
 
@@ -136,13 +133,17 @@ page-type: guide
 - [Композиція](/uk/docs/Web/JavaScript/Guide/Using_promises#kompozytsiia)
 - [Хронометраж](/uk/docs/Web/JavaScript/Guide/Using_promises#khronometrazh)
 
+## Типізовані масиви
+
+Огляд: [Типізовані масиви](/uk/docs/Web/JavaScript/Guide/Typed_arrays)
+
 ## Ітератори та генератори
 
-Огляд: [Ітератори та генератори](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators)
+Огляд: [Ітератори та генератори](/uk/docs/Web/JavaScript/Guide/Iterators_and_generators)
 
-- [Ітератори](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators#iteratory)
-- [Ітеровані об'єкти](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators#iterovani-obiekty)
-- [Генератори](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators#funktsii-heneratory)
+- [Ітератори](/uk/docs/Web/JavaScript/Guide/Iterators_and_generators#iteratory)
+- [Ітеровані об'єкти](/uk/docs/Web/JavaScript/Guide/Iterators_and_generators#iterovani-obiekty)
+- [Генератори](/uk/docs/Web/JavaScript/Guide/Iterators_and_generators#funktsii-heneratory)
 
 ## Метапрограмування
 
