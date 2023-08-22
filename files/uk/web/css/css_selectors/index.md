@@ -1,166 +1,200 @@
 ---
 title: Селектори CSS
-slug: Web/CSS/CSS_Selectors
-page-type: landing-page
+slug: Web/CSS/CSS_selectors
+page-type: css-module
 spec-urls: https://drafts.csswg.org/selectors/
 ---
 
-{{CSSRef("Selectors")}}
+{{CSSRef}}
 
-**Селектори CSS** визначають патерни для вибору елементів, на котрих потім застосовується набір правил CSS.
+Модуль **Селекторів CSS** визначає патерни для вибору елементів, до яких потім застосовуються правила CSS, з урахуванням їх {{cssxref("specificity", "специфічності")}}. Модуль селекторів CSS пропонує більш ніж 60 селекторів і п'ять комбінаторів. [Інші модулі](#sporidneni-kontseptsii) пропонують додаткові селектори псевдокласів і псевдоелементів.
 
-На основі типів елементів, котрі вони можуть вибирати, селектори CSS можуть бути згруповані в наступні категорії.
+У CSS селектори – це патерни, що використовуються для зіставлення, або вибору, елементів, що оформлюються. Селектори також використовуються в JavaScript, щоб дати змогу вибирати вузли DOM, що повертаються у вигляді [`NodeList`](/uk/docs/Web/API/NodeList).
 
-## Базові селектори
+Селектори, незалежно від того, вживаються вони в CSS чи в JavaScript, дають змогу націлюватися на елементи HTML на основі їхніх типу, атрибутів, поточного стану та навіть положення в DOM. Комбінатори дають змогу бути більш точними при виборі елементів, дозволяючи вибирати елементи на основі їхнього відносного положення щодо інших елементів.
 
-- [Загальний селектор](/uk/docs/Web/CSS/Universal_selectors)
+## Довідка
 
-  - : Вибирає усі елементи. Крім цього, можна додати обмеження для конкретного простору імен, або всіх просторів імен.
+### Комбінатори та розділювачі
 
-    **Синтаксис:** `*` `ns|*` `*|*`
+- `+` ([Комбінатор суміжних чи наступних сестринських елементів](/uk/docs/Web/CSS/Adjacent_sibling_combinator))
+- `>` ([Дочірній комбінатор](/uk/docs/Web/CSS/Child_combinator))
+- `||` ([Колонковий комбінатор](/uk/docs/Web/CSS/Column_combinator)) {{Experimental_Inline}}
+- `~` ([Комбінатор загальних чи подальших сестринських елементів](/uk/docs/Web/CSS/General_sibling_combinator))
+- " " ([Комбінатор нащадків](/uk/docs/Web/CSS/Descendant_combinator))
+- `|` ([Розділювач областей імен](/uk/docs/Web/CSS/Namespace_separator))
 
-    **Приклад:** `*` дасть збіг з усіма елементами в документі.
+### Селектори
 
-- [Селектор типу](/uk/docs/Web/CSS/Type_selectors)
+- {{CSSXref(":active")}}
+- {{CSSXref(":any-link")}}
+- {{CSSXref(":autofill")}}
+- {{CSSXref(":blank")}}
+- {{CSSXref(":buffering")}}
+- {{CSSXref(":checked")}}
+- {{CSSXref(":current")}}
+- {{CSSXref(":current", ":current()")}}
+- {{CSSXref(":default")}}
+- {{CSSXref(":defined")}}
+- {{CSSXref(":dir", ":dir()")}}
+- {{CSSXref(":disabled")}}
+- {{CSSXref(":empty")}}
+- {{CSSXref(":enabled")}}
+- {{CSSXref(":first-child")}}
+- {{CSSXref(":first-of-type")}}
+- {{CSSXref(":focus")}}
+- {{CSSXref(":focus-visible")}}
+- {{CSSXref(":focus-within")}}
+- {{CSSXref(":fullscreen")}}
+- {{CSSXref(":future")}}
+- {{CSSXref(":has", ":has()")}}
+- {{CSSXref(":hover")}}
+- {{CSSXref(":indeterminate")}}
+- {{CSSXref(":in-range")}}
+- {{CSSXref(":invalid")}}
+- {{CSSXref(":is", ":is()")}}
+- {{CSSXref(":lang", ":lang()")}}
+- {{CSSXref(":last-child")}}
+- {{CSSXref(":last-of-type")}}
+- {{CSSXref(":link")}}
+- {{CSSXref(":local-link")}}
+- `:matches()` (застарілий історичний селектор-псевдонім для {{CSSXref( ":is", ":is()")}})
+- {{CSSXref(":modal")}}
+- {{CSSXref(":muted")}}
+- {{CSSXref(":not", ":not()")}}
+- {{CSSXref(":nth-child", ":nth-child()")}}
+- {{CSSXref(":nth-col", ":nth-col()")}}
+- {{CSSXref(":nth-last-child", ":nth-last-child()")}}
+- {{CSSXref(":nth-last-col", ":nth-last-col()")}}
+- {{CSSXref(":nth-last-of-type", ":nth-last-of-type()")}}
+- {{CSSXref(":nth-of-type", ":nth-of-type()")}}
+- {{CSSXref(":only-child")}}
+- {{CSSXref(":only-of-type")}}
+- {{CSSXref(":optional")}}
+- {{CSSXref(":out-of-range")}}
+- {{CSSXref(":past")}}
+- {{CSSXref(":paused")}}
+- {{CSSXref(":picture-in-picture")}}
+- {{CSSXref(":placeholder-shown")}}
+- {{CSSXref(":playing")}}
+- {{CSSXref(":read-only")}}
+- {{CSSXref(":read-write")}}
+- {{CSSXref(":required")}}
+- {{CSSXref(":root")}}
+- {{CSSXref(":scope")}}
+- {{CSSXref(":seeking")}}
+- {{CSSXref(":stalled")}}
+- {{CSSXref(":target")}}
+- {{CSSXref(":target-within")}}
+- {{CSSXref(":user-invalid")}}
+- {{CSSXref(":user-valid")}}
+- {{CSSXref(":valid")}}
+- {{CSSXref(":visited")}}
+- {{CSSXref(":volume-locked")}}
+- {{CSSXref(":where", ":where()")}}
+- [Псевдокласи `:-webkit-`](/uk/docs/Web/CSS/WebKit_Extensions#pseudo-classes)
+- [Селектори атрибутів](/uk/docs/Web/CSS/Attribute_selectors)
+- [Селектор класів](/uk/docs/Web/CSS/Class_selectors)
+- [Селектори ідентифікаторів](/uk/docs/Web/CSS/ID_selectors)
+- [Селектори типів](/uk/docs/Web/CSS/Type_selectors)
+- [Загальні селектори](/uk/docs/Web/CSS/Universal_selectors)
 
-  - : Вибирає усі елементи, що мають задану назву вузла.
+## Терміни
 
-    **Синтаксис:** `elementname`
-
-    **Приклад:** `input` дасть збіг з будь-яким елементом {{HTMLElement("input")}}.
-
-- [Селектор класу](/uk/docs/Web/CSS/Class_selectors)
-
-  - : Вибирає всі елементи, що мають заданий атрибут `class`.
-
-    **Синтаксис:** `.classname`
-
-    **Приклад:** `.index` дасть збіг з будь-яким елементом, що має `class="index"`.
-
-- [Селектор ідентифікатора](/uk/docs/Web/CSS/ID_selectors)
-
-  - : Вибирає елемент на основі значення його атрибута `id`. В документі повинен бути лише один елемент з таким ідентифікатором.
-
-    **Синтаксис:** `#idname`
-
-    **Приклад:** `#toc` дасть збіг з елементом, що має `id="toc"`.
-
-- [Селектор атрибута](/uk/docs/Web/CSS/Attribute_selectors)
-
-  - : Вибирає всі елементи, що мають заданий атрибут.
-
-    **Синтаксис:** `[attr]` `[attr=value]` `[attr~=value]` `[attr|=value]` `[attr^=value]` `[attr$=value]` `[attr*=value]`
-
-    **Приклад:** `[autoplay]` дасть збіг з усіма елементами, що мають атрибут `autoplay` (з будь-якими значеннями).
-
-## Групування селекторів
-
+- Термін глосарія {{glossary("Pseudo-class", "псевдоклас")}}
+- [Функційні псевдокласи](/uk/docs/Web/CSS/Pseudo-classes#funktsiini-psevdoklasy)
+- [Комбінатори](/uk/docs/Web/CSS/CSS_selectors/Selectors_and_combinators#kombinatory)
+- [Простий селектор](/uk/docs/Web/CSS/CSS_selectors/Selectors_and_combinators#prostyi-selektor)
+- [Складений селектор](/uk/docs/Web/CSS/CSS_selectors/Selectors_and_combinators#skladenyi-selektor)
+- [Складний селектор](/uk/docs/Web/CSS/CSS_selectors/Selectors_and_combinators#skladnyi-selektor)
+- [Відносний селектор](/uk/docs/Web/CSS/CSS_selectors/Selectors_and_combinators#vidnosnyi-selektor)
 - [Список селекторів](/uk/docs/Web/CSS/Selector_list)
+- [Специфічність](/uk/docs/Web/CSS/Specificity)
 
-  - : Селектор `,` – це метод групування, що вибирає всі вузли збігів.
+## Посібники
 
-    **Синтаксис:** `A, B`
+- [Селектори та комбінатори CSS](/uk/docs/Web/CSS/CSS_selectors/Selectors_and_combinators)
 
-    **Приклад:** `div, span` дасть збіг і з елементами {{HTMLElement("span")}}, і з елементами {{HTMLElement("div")}}.
+  - : Огляд різних типів простих селекторів та різних комбінаторів, визначених у модулях селекторів CSS та псевдо CSS.
 
-## Комбінатори
+- [Структура селекторів CSS](/uk/docs/Web/CSS/CSS_selectors/Selector_structure)
 
-- [Комбінатор нащадків](/uk/docs/Web/CSS/Descendant_combinator)
-
-  - : Комбінатор " " (пробіл) вибирає вузли, що є нащадками першого елемента.
-
-    **Синтаксис:** `A B`
-
-    **Приклад:** `div span` дасть збіг з усіма елементами {{HTMLElement("span")}}, котрі знаходяться всередині елементів {{HTMLElement("div")}}.
-
-- [Дочірній комбінатор](/uk/docs/Web/CSS/Child_combinator)
-
-  - : Комбінатор `>` вибирає вузли, котрі є безпосередніми нащадками першого елемента.
-
-    **Синтаксис:** `A > B`
-
-    **Приклад:** `ul > li` дасть збіг з усіма елементами {{HTMLElement("li")}}, що вкладені безпосередньо в елементи {{HTMLElement("ul")}}.
-
-- [Загальний комбінатор сестер](/uk/docs/Web/CSS/General_sibling_combinator)
-
-  - : Комбінатор `~` вибирає сестринські елементи. Це означає, що другий елемент стоїть після першого (хоч необов'язково зразу після), і вони обидва поділяють спільний батьківський елемент.
-
-    **Синтаксис:** `A ~ B`
-
-    **Приклад:** `p ~ span` дасть збіг з усіма елементами {{HTMLElement("span")}}, котрі стоять після {{HTMLElement("p")}}, зразу чи опосередковано.
-
-- [Комбінатор сусідніх сестер](/uk/docs/Web/CSS/Adjacent_sibling_combinator)
-
-  - : Комбінатор `+` дає збіг з другим елементом лише тоді, коли він стоїть _зразу_ після першого.
-
-    **Синтаксис:** `A + B`
-
-    **Приклад:** `h2 + p` дасть збіг з першим елементом {{HTMLElement("p")}}, котрий стоїть _зразу_ після елемента {{HTMLElement("Heading_Elements", "h2")}}.
-
-- [Колонковий комбінатор](/uk/docs/Web/CSS/Column_combinator) {{Experimental_Inline}}
-
-  - : Комбінатор `||` вибирає вузли, котрі належать до колонки.
-
-    **Синтаксис:** `A || B`
-
-    **Приклад:** `col || td` дасть збіг з усіма елементами {{HTMLElement("td")}}, котрі належать до контексту {{HTMLElement("col")}}.
-
-## Псевдокласи та псевдоелементи
+  - : Пояснення структури селекторів CSS і термінології, запровадженої в модулі селекторів CSS, від "простого селектора" до "поблажливого списку відносних селекторів".
 
 - [Псевдокласи](/uk/docs/Web/CSS/Pseudo-classes)
 
-  - : Псевдо `:` дає змогу вибирати елементи на основі інформації про стан, котра не вміщена в дереві документа.
+  - : Перелічує псевдокласи, селектори, що дають змогу вибирати елементи на основі інформації про їхній стан, що не вміщена в дереві документа, визначені в різних модулях CSS та HTML.
 
-    **Приклад:** `a:visited` дасть збіг з усіма елементами {{HTMLElement("a")}}, котрі були відвідані користувачем.
+- [Навчання: Селектори CSS](/uk/docs/Learn/CSS/Building_blocks/Selectors)
 
-- [Псевдоелементи](/uk/docs/Web/CSS/Pseudo-elements)
+  - : Частина Цеглинок CSS, включає підручники про [Селектори типу, класу та ідентифікатора](/uk/docs/Learn/CSS/Building_blocks/Selectors/Type_Class_and_ID_Selectors), [Селектори атрибутів](/uk/docs/Learn/CSS/Building_blocks/Selectors/Attribute_selectors), [Псевдокласи та псевдоелементи](/uk/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements), [Комбінатори](/uk/docs/Learn/CSS/Building_blocks/Selectors/Combinators), [Каскад, специфічність і успадкування](/uk/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance) та [Шари каскаду](/uk/docs/Learn/CSS/Building_blocks/Cascade_layers).
 
-  - : Псевдо `::` представляє сутності, котрі не включені в HTML.
+- [Використання в селекторах псевдокласу `:target`](/uk/docs/Web/CSS/CSS_selectors/Using_the_:target_pseudo-class_in_selectors)
 
-    **Приклад:** `p::first-line` дасть збіг з першими рядками кожного з елементів {{HTMLElement("p")}}.
+  - : Дізнайтеся, як використовувати псевдоклас {{CSSXref(":target")}} для оформлення елемента, що є цільовим для ідентифікатора фрагмента URL.
 
-## Структура селектора
+- [Навчання: Псевдокласи користувацького інтерфейсу](/uk/docs/Learn/Forms/UI_pseudo-classes)
 
-Термін "селектор" може позначати щось із наступного:
+  - : Вивчіть різні псевдокласи користувацького інтерфейсу, доступні для оформлення форм у різних станах.
 
-- Простий селектор
+- [Віднаходження елементів DOM за допомогою селекторів](/uk/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors)
 
-  - : Селектор з єдиної складової, як то одного селектора ідентифікатора або селектора типу, котрий не використовується в поєднанні з іншими селекторами й не містить жодних інших селекторів-складових чи комбінаторів. Про елемент кажуть, що він збігається з простим селектором, коли цей простий селектор точно описує елемент. Усі [базові селектори](#bazovi-selektory), атрибути, а також [псевдокласи та псевдоелементи](#psevdoklasy-ta-psevdoelementy) є простими селекторами.
+  - : API селекторів дає змогу використовувати селектори в JavaScript для отримання вузлів елементів з DOM.
 
-- Складений селектор
+## Споріднені концепції
 
-  - : Послідовність [простих селекторів](#prostyi-selektor), не розділених [комбінаторами](#kombinatory). Складений селектор представляє набір одночасних умов для кожного елемента. Про елемент кажуть, що він дає збіг зі складовим селектором, коли елемент дає збіг з усіма простими селекторами, що є складовими цього складеного селектора.
+- Псевдоклас {{CSSXref(":popover-open")}}
 
-    [Селектор типу](/uk/docs/Web/CSS/Type_selectors) або [загальний селектор](/uk/docs/Web/CSS/Universal_selectors) повинен стояти в складеному селекторі першим. У послідовності може бути лише один селектор типу або загальний селектор. Оскільки пробіл представляє [комбінатор нащадків](/uk/docs/Web/CSS/Descendant_combinator), то між простими селекторами складеного селектора не дозволені пробіли.
+- Модуль контексту CSS
 
-    **Приклад:** `a#selected {...}`
+  - Псевдоклас {{CSSXref(":host")}}
+  - Псевдоклас {{CSSXref(":host_function", ":host()")}}
+  - Псевдоклас {{cssxref(":host-context", ":host-context()")}}
+  - Псевдоелемент {{CSSXref("::slotted")}}
 
-- Складний селектор
+- [Модуль псевдоелементів CSS](/uk/docs/Web/CSS/CSS_pseudo) (представляє сутності, не включені в HTML)
 
-  - : Послідовність з одного або більшої кількості простих чи [складених селекторів](#skladenyi-selektor), розділених [комбінаторами](#kombinatory). Складний селектор представляє набір одночасних умов для набору елементів. Ці умови застосовуються в контексті відносин, описаних комбінаторами. Про елемент кажуть, що він дає збіг зі складним селектором, коли цей елемент дає збіг зі складеними селекторами та комбінаторами між цими складеними селекторами.
+  - {{CSSXref("::after")}}
+  - {{CSSXref("::before")}}
+  - {{CSSXref("::file-selector-button")}}
+  - {{CSSXref("::first-letter")}}
+  - {{CSSXref("::first-line")}}
+  - {{CSSXref("::grammar-error")}}
+  - {{CSSXref("::marker")}}
+  - {{CSSXref("::placeholder")}}
+  - {{CSSXref("::selection")}}
+  - {{CSSXref("::spelling-error")}}
+  - {{CSSXref("::target-text")}}
 
-    **Приклади:** `a#selected > .icon {...}`, `.box h2 + p {...}`, `a .icon {...}`
+- [Модуль тіньових частин HTML](/uk/docs/Web/CSS/CSS_shadow_parts)
 
-- Відносний селектор
+  - Псевдоелемент {{CSSXref("::part")}}
 
-  - : Селектор, що представляє елемент, відносний щодо одного чи більшої кількості елементів, перед якими стоїть комбінатор. Відносні селектори, котрі не починаються з явного [комбінатора](#kombinatory), мають неявний [комбінатор нащадків](/uk/docs/Web/CSS/Descendant_combinator).
+- [Модуль позиційного компонування CSS](/uk/docs/Web/CSS/CSS_positioned_layout)
 
-    **Приклад:** `+ div#topic > #reference {...}`, `> .icon {...}`, `dt:has(+ img) ~ dd {...}`
+  - {{CSSxRef("::backdrop")}}
 
-- [Список селекторів](/uk/docs/Web/CSS/Selector_list)
+- Інші [Псевдоелементи](/uk/docs/Web/CSS/Pseudo-elements)
 
-  - : Розділений комами список [простих](#prostyi-selektor), [складених](#skladenyi-selektor) чи [складних](#skladnyi-selektor) селекторів. Якщо тип списку селекторів є важливим, але не заданий, то такий список зветься _складним списком селекторів_. Про елемент кажуть, що він дає збіг зі списком селекторів, коли цей елемент дає збіг з будь-яким (щонайменше одним) з селекторів цього списку селекторів. Дізнайтесь більше про те, коли список селекторів вважається [недійсним](/uk/docs/Web/CSS/Selector_list#nediisnyi-spysok-selektoriv) і те, як сформувати [поблажливий список селекторів](/uk/docs/Web/CSS/Selector_list#poblazhlyvyi-spysok-selektoriv).
+  - {{CSSxRef("::cue")}}
+  - {{CSSxRef("::cue-region")}}
 
-    **Приклад:** `#main, article.heading {...}`
+- Директива {{CSSXref("@namespace")}}
+
+- {{cssxref("important", "!important")}}
+- [Специфічність](/uk/docs/Web/CSS/Specificity)
+- [Каскад](/uk/docs/Web/CSS/Cascade)
+
+- Метод {{domxref("Document.querySelector")}}
+- Метод {{domxref("Document.querySelectorAll")}}
+- Метод {{domxref("NodeList.forEach()")}}
 
 ## Специфікації
 
 {{Specifications}}
 
-Дивіться подробиці в таблицях специфікацій [псевдокласу](/uk/docs/Web/CSS/Pseudo-classes#specifications) та [псевдоелемента](/uk/docs/Web/CSS/Pseudo-elements#specifications).
-
 ## Дивіться також
 
-- [Псевдоклас `:has()`](/uk/docs/Web/CSS/:has)
-- [Специфічність CSS](/uk/docs/Web/CSS/Specificity)
-- [Список селекторів](/uk/docs/Web/CSS/Selector_list)
+- [Модуль псевдоелементів CSS](/uk/docs/Web/CSS/CSS_pseudo)
+- [Модуль каскаду та успадкування CSS](/uk/docs/Web/CSS/CSS_cascade)
+- [Застосування тіньового DOM](/uk/docs/Web/API/Web_components/Using_shadow_DOM)

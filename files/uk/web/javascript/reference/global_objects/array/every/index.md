@@ -145,7 +145,7 @@ arr.every((elem, index, arr) => {
 
 ### Виклик every() на об'єктах-немасивах
 
-Метод `every()` зчитує з `this` властивість `length`, а потім звертається до кожної цілочислової властивості, поки не буде досягнено кінця або `callbackFn` не поверне `false`.
+Метод `every()` зчитує з `this` властивість `length`, а потім звертається до кожної властивості, чий ключ є невід'ємним цілим числом, меншим за `length`, поки не будуть перебрані вони всі або `callbackFn` не поверне `false`.
 
 ```js
 const arrayLike = {
@@ -153,6 +153,7 @@ const arrayLike = {
   0: "a",
   1: "b",
   2: "c",
+  3: 345, // ігнорується every(), оскільки length – 3
 };
 console.log(
   Array.prototype.every.call(arrayLike, (x) => typeof x === "string")

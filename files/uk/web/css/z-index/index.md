@@ -13,7 +13,7 @@ browser-compat: css.properties.z-index
 
 Для позиціонованої рамки (тобто такої, що має `position` зі значенням, відмінним від `static`) властивість `z-index` задає:
 
-1. Рівень накладання рамки в поточному [контексті нагромадження](/uk/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context).
+1. Рівень накладання рамки в поточному [контексті нагромадження](/uk/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context).
 2. Те, чи утворює рамка локальний контекст нагромадження.
 
 ## Синтаксис
@@ -117,4 +117,4 @@ z-index: unset;
 ## Дивіться також
 
 - Властивість CSS {{Cssxref("position")}}
-- [Розуміння z-index CSS](/uk/docs/Web/CSS/CSS_Positioning/Understanding_z_index)
+- [Розуміння z-index CSS](/uk/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index)
