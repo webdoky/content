@@ -59,4 +59,4 @@ Math.imul(0xfffffffe, 5); // -10
 ## Дивіться також
 
 - [Поліфіл `Math.imul` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-math)
-- [Emscripten](https://en.wikipedia.org/wiki/Emscripten)
+- [Emscripten](https://uk.wikipedia.org/wiki/Emscripten) на Вікіпедії
