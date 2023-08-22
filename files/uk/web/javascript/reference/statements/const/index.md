@@ -20,16 +20,9 @@ const name1 = value1, name2 = value2, /* …, */ nameN = valueN;
 ```
 
 - `nameN`
-  - : Назва сталої, що може бути будь-яким дозволеним {{Glossary("identifier", "ідентифікатором")}}.
+  - : Назва змінної до оголошення. Кожна назва повинна бути дозволеним [ідентифікатором](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#identyfikatory) JavaScript або [зв'язувальним патерном деструктурування](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
 - `valueN`
-  - : Значення сталої. Може бути будь-яким дозволеним виразом, включно з функцією.
-
-Також для оголошення змінних можна використовувати запис [деструктурування](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
-
-```js
-const { bar } = foo; // де foo = { bar: 10, baz: 12 };
-// Це створює сталу з назвою 'bar', що має значення 10
-```
+  - : Початкове значення змінної. Може бути будь-яким дозволеним виразом.
 
 ## Опис
 
@@ -41,13 +34,13 @@ const { bar } = foo; // де foo = { bar: 10, baz: 12 };
 - Оголошення `const` не можуть бути [виконані повторно](/uk/docs/Web/JavaScript/Reference/Statements/let#povtorni-oholoshennia) будь-яким іншим оголошенням в тій же області видимості.
 - З `const` починаються [_оголошення_, але не _інструкції_](/uk/docs/Web/JavaScript/Reference/Statements#riznytsia-mizh-instruktsiiamy-ta-oholoshenniamy). Це означає, що не можна використовувати самотнє оголошення `const` як тіло блоку (це має зміст, адже в такому разі не було б можливості звернутися до такої змінної).
 
-  ```js example-bad
+  ```js-nolint example-bad
   if (true) const a = 1; // SyntaxError: Lexical declaration cannot appear in a single-statement context
   ```
 
 Ініціалізатор сталої – обов'язковий. Обов'язково задати значення в самому оголошенні. (Це має зміст, враховуючи те, що значення не можна змінити пізніше.)
 
-```js example-bad
+```js-nolint example-bad
 const FOO; // SyntaxError: Missing initializer in const declaration
 ```
 
@@ -70,7 +63,7 @@ const MY_FAV = 7;
 console.log("моє улюблене число: " + MY_FAV);
 ```
 
-```js
+```js-nolint example-bad
 // Повторне присвоєння сталій змінній спричиняє помилку
 MY_FAV = 20; // TypeError: Assignment to constant variable
 
@@ -84,7 +77,7 @@ let MY_FAV = 20; // SyntaxError: Identifier 'MY_FAV' has already been declared
 
 Важливо зауважити про природу блокової області видимості.
 
-```js
+```js-nolint
 const MY_FAV = 7;
 
 if (MY_FAV === 7) {
@@ -101,7 +94,7 @@ console.log(MY_FAV); // 7
 
 ### const для об'єктів і масивів
 
-`const` так само працює для об'єктів і масивів. Спроба перезаписати об'єкт призведе до помилки "Assignment to constant variable" (присвоєння сталій).
+Оголошення `const` так само працює для об'єктів і масивів. Спроба перезаписати об'єкт призведе до помилки "Assignment to constant variable" (присвоєння сталій).
 
 ```js example-bad
 const MY_OBJECT = { key: "value" };
@@ -128,6 +121,18 @@ MY_ARRAY = ["B"];
 ```js
 MY_ARRAY.push("A"); // ["A"]
 ```
+
+### Оголошення з деструктуруванням
+
+Лівий бік кожного `=` також може бути зв'язувальним патерном. Це дає змогу створювати декілька змінних за раз.
+
+```js
+const result = /(a+)(b+)(c+)/.exec("aaabcc");
+const [, a, b, c] = result;
+console.log(a, b, c); // "aaa" "b" "cc"
+```
+
+Більше про це – на сторінці [Присвоєння з деструктуруванням](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
 
 ## Специфікації
 
