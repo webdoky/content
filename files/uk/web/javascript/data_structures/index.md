@@ -231,7 +231,7 @@ JavaScript має стандартну бібліотеку вбудованих
 
 ### Зведення до примітива
 
-Процес [зведення до примітива](https://tc39.es/ecma262/#sec-toprimitive) використовується, коли очікується примітивне значення, але немає конкретних вимог щодо того, якого саме типу має бути це значення. Так трапляється зазвичай тоді, коли однаково прийнятними є [рядок](#typ-string), [число](#typ-number) і [BigInt](#typ-bigint). Наприклад:
+Процес [зведення до примітива](https://tc39.es/ecma262/multipage/abstract-operations.html#sec-toprimitive) використовується, коли очікується примітивне значення, але немає конкретних вимог щодо того, якого саме типу має бути це значення. Так трапляється зазвичай тоді, коли однаково прийнятними є [рядок](#typ-string), [число](#typ-number) і [BigInt](#typ-bigint). Наприклад:
 
 - Конструктор [`Date()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Date/Date), коли він отримує один аргумент, що не є примірником `Date`: рядки представляють рядки дат, натомість числа – мітки часу.
 - Оператор [`+`](/uk/docs/Web/JavaScript/Reference/Operators/Addition): якщо один з операндів є рядком, то виконується зчеплення, інакше – арифметичне додавання.
@@ -272,4 +272,4 @@ Neither `{}` nor `[]` has a `[@@toPrimitive]()` method. Both `{}` and `[]` inher
 - [Структури даних і алгоритми JavaScript від Олексія Трехлеба](https://github.com/trekhleb/javascript-algorithms)
 - [Колекція загальновживаних структур даних та алгоритмів у JavaScript від Ніколаса Закаса](https://github.com/humanwhocodes/computer-science-in-javascript)
 - [Реалізація дерев пошуку на JavaScript](https://github.com/monmohan/dsjslib)
-- [Типи даних і значення в специфікації ECMAScript (англ.)](https://tc39.es/ecma262/#sec-ecmascript-data-types-and-values)
+- [Типи даних і значення в специфікації ECMAScript](https://tc39.es/ecma262/multipage/ecmascript-data-types-and-values.html)

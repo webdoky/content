@@ -331,4 +331,4 @@ eat(); // глобальний об'єкт (у несуворому режимі
 - [`class`](/uk/docs/Web/JavaScript/Reference/Statements/class)
 - [Вираз `class`](/uk/docs/Web/JavaScript/Reference/Operators/class)
 - [Функції](/uk/docs/Web/JavaScript/Reference/Functions)
-- [Заглиблення в ES6: Класи](https://hacks.mozilla.org/2015/07/es6-in-depth-classes/) на hacks.mozilla.org (22 липня 2015 року)
+- [Заглиблення в ES6: Класи](https://hacks.mozilla.org/2015/07/es6-in-depth-classes/) на hacks.mozilla.org (2015)

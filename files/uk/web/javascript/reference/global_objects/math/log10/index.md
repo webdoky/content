@@ -1,90 +1,51 @@
 ---
 title: Math.log10()
 slug: Web/JavaScript/Reference/Global_Objects/Math/log10
-tags:
-  - ECMAScript 2015
-  - JavaScript
-  - Math
-  - Method
-  - Reference
-  - Polyfill
+page-type: javascript-static-method
 browser-compat: javascript.builtins.Math.log10
 ---
+
 {{JSRef}}
 
-Функція **`Math.log10()`** повертає логарифм числа за основою 10, а саме:
+Статичний метод **`Math.log10()`** повертає логарифм числа за основою 10. Тобто
 
-<math display="block"><semantics><mrow><mo>∀</mo>
-<mi>x</mi>
-<mo>></mo>
-<mn>0</mn>
-<mo>,</mo>
-<mstyle mathvariant="monospace"><mrow><mo lspace="0em" rspace="thinmathspace">Math.log10</mo>
-<mo stretchy="false">(</mo>
-<mi>x</mi>
-<mo stretchy="false">)</mo>
-</mrow></mstyle><mo>=</mo>
-<msub><mo lspace="0em" rspace="0em">log</mo>
-<mn>10</mn>
-</msub><mo stretchy="false">(</mo>
-<mi>x</mi>
-<mo stretchy="false">)</mo>
-<mo>=</mo>
-<mtext>такий унікальний</mtext>
-<mspace width="thickmathspace"></mspace><mi>y</mi>
-<mspace width="thickmathspace"></mspace><mtext>, для якого</mtext>
-<mspace width="thickmathspace"></mspace><msup><mn>10</mn>
-<mi>y</mi>
-</msup><mo>=</mo>
-<mi>x</mi>
-</mrow><annotation encoding="TeX">\forall x > 0, \mathtt{\operatorname{Math.log10}(x)} =
-\log_{10}(x) = \text{the unique} \; y \; \text{such that} \; 10^y = x</annotation></semantics></math>
+<math display="block"><semantics><mrow><mo>∀</mo><mi>x</mi><mo>&gt;</mo><mn>0</mn><mo>,</mo><mspace width="0.2777777777777778em"></mspace><mrow><mo lspace="0em" rspace="0.16666666666666666em">𝙼𝚊𝚝𝚑.𝚕𝚘𝚐𝟷𝟶</mo><mo stretchy="false">(</mo><mi>𝚡</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><msub><mo lspace="0em" rspace="0em">log</mo><mn>10</mn></msub><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mtext>такий унікальний&nbsp;</mtext><mi>y</mi><mtext>&nbsp;, для якого&nbsp;</mtext><msup><mn>10</mn><mi>y</mi></msup><mo>=</mo><mi>x</mi></mrow><annotation encoding="TeX">\forall x &gt; 0,\;\mathtt{\operatorname{Math.log10}(x)} = \log\_{10}(x) = \text{такий унікальний } y \text{ , для якого } 10^y = x</annotation></semantics></math>
 
 {{EmbedInteractiveExample("pages/js/math-log10.html")}}
 
 ## Синтаксис
 
-```js
+```js-nolint
 Math.log10(x)
 ```
 
 ### Параметри
 
 - `x`
-  - : Число.
+  - : Число, більше або рівне 0.
 
 ### Повернене значення
 
-Логарифм переданого числа за основою 10. Якщо число від'ємне, буде повернено {{jsxref("NaN")}}.
+Логарифм `x` за основою 10. Якщо `x < 0`, то повертається {{jsxref("NaN")}}.
 
 ## Опис
 
-Якщо значення `x` менше за 0, то повернений результат завжди {{jsxref("NaN")}}.
-
 Оскільки `log10()` — це статичний метод об'єкта `Math`, його потрібно завжди використовувати через `Math.log10()`. Не слід звертатись до нього, як до методу власноруч створеного екземпляра `Math` (`Math` не є конструктором).
 
-Ця функція еквівалентна Math.log(x) / Math.log(10). Для отримання значення log10(e) використовуйте сталу {{jsxref("Math.LOG10E")}}, яка дорівнює 1 / {{jsxref("Math.LN10")}}.
+Ця функція є рівносильною `Math.log(x) / Math.log(10)`. Для отримання `log10(e)` слід використовувати сталу {{jsxref("Math.LOG10E")}}, рівну 1 / {{jsxref("Math.LN10")}}.
 
 ## Приклади
 
 ### Застосування Math.log10()
 
 ```js
-Math.log10(2);      // 0.3010299956639812
-Math.log10(1);      // 0
-Math.log10(0);      // -Infinity
-Math.log10(-2);     // NaN
+Math.log10(-2); // NaN
+Math.log10(-0); // -Infinity
+Math.log10(0); // -Infinity
+Math.log10(1); // 0
+Math.log10(2); // 0.3010299956639812
 Math.log10(100000); // 5
-```
-
-## Поліфіл
-
-Цей функціонал можна відтворити за допомогою такої функції:
-
-```js
-Math.log10 = Math.log10 || function(x) {
-  return Math.log(x) * Math.LOG10E;
-};
+Math.log10(Infinity); // Infinity
 ```
 
 ## Специфікації
@@ -97,7 +58,7 @@ Math.log10 = Math.log10 || function(x) {
 
 ## Дивіться також
 
-- Поліфіл для `Math.log10` також доступний у [`core-js`](https://github.com/zloirock/core-js#ecmascript-math)
+- [Поліфіл `Math.log10` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-math)
 - {{jsxref("Math.exp()")}}
 - {{jsxref("Math.log()")}}
 - {{jsxref("Math.log1p()")}}
