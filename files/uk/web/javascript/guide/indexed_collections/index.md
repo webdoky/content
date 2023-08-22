@@ -1,10 +1,10 @@
 ---
-title: Індексовані колекції
+title: Колекції з індексами
 slug: Web/JavaScript/Guide/Indexed_collections
 page-type: guide
 ---
 
-{{jsSidebar("JavaScript Guide")}} {{PreviousNext("Web/JavaScript/Guide/Regular_Expressions", "Web/JavaScript/Guide/Keyed_Collections")}}
+{{jsSidebar("JavaScript Guide")}} {{PreviousNext("Web/JavaScript/Guide/Regular_expressions", "Web/JavaScript/Guide/Keyed_collections")}}
 
 Цей розділ знайомить з колекціями даних, котрі упорядковані за значенням індексу. Серед них – масиви та масивоподібні конструкції, як то об'єкти {{jsxref("Array")}} і {{jsxref("TypedArray")}}.
 
@@ -14,16 +14,16 @@ _Масив_ – упорядкований список значень, до к
 
 JavaScript не має явного типу даних – масиву. Проте для роботи з масивами в застосунках можна використати наперед визначений об'єкт `Array` і його методи. Об'єкт `Array` має методи для роботи з масивами у різний спосіб, як то їх об'єднання, розвороту й сортування. Він має властивість для з'ясування довжини масиву та інші властивості – для використання з регулярними виразами.
 
-Ця стаття зосереджена на масивах, однак чимало тих же концепцій застосовуються також до типізованих масивів, адже масиви й типізовані масиви мають чимало подібних методів. Більше інформації про типізовані масиви – у [довідці типізованих масивів](/uk/docs/Web/JavaScript/Typed_arrays).
+Ця стаття зосереджена на масивах, однак чимало тих же концепцій застосовуються також до типізованих масивів, адже масиви й типізовані масиви мають чимало подібних методів. Більше інформації про типізовані масиви – у [посібнику типізованих масивів](/uk/docs/Web/JavaScript/Guide/Typed_arrays).
 
 ## Створення масиву
 
 Наступні інструкції створюють рівносильні масиви:
 
 ```js
-const arr1 = new Array(element0, element1, /* … ,*/ elementN);
-const arr2 = Array(element0, element1, /* … ,*/ elementN);
-const arr3 = [element0, element1, /* … ,*/ elementN];
+const arr1 = new Array(element0, element1, /* …, */ elementN);
+const arr2 = Array(element0, element1, /* …, */ elementN);
+const arr3 = [element0, element1, /* …, */ elementN];
 ```
 
 `element0, element1, …, elementN` – список значень елементів масиву. Коли ці значення задані, масив ініціалізується з ними як своїми елементами. Властивість масиву `length` отримує число аргументів.
@@ -51,22 +51,29 @@ arr3.length = arrayLength;
 ```js
 const obj = {};
 // …
-obj.prop = [element0, element1, /* … ,*/ elementN];
+obj.prop = [element0, element1, /* …, */ elementN];
 
 // Або
-const obj = { prop: [element0, element1, /* … ,*/ elementN] };
+const obj = { prop: [element0, element1, /* …, */ elementN] };
 ```
 
 Коли є охота ініціалізувати масив єдиним елементом, і трапилось так, що цей елемент – `Number`, треба використовувати синтаксис з квадратними дужками. Коли в конструктор або функцію `Array()` передається єдине значення `Number`, воно тлумачиться як `arrayLength`, а не як єдиний елемент.
 
+Це створює масив з лише одним елементом: числом 42.
+
 ```js
-// Це створює масив з лише одним елементом: числом 42.
 const arr = [42];
+```
 
-// Це створює масив без елементів, а arr.length отримує значення 42.
+Це створює масив без елементів, а `arr.length` отримує значення 42.
+
+```js
 const arr = Array(42);
+```
 
-// Це рівносильно:
+Це рівносильно:
+
+```js
 const arr = [];
 arr.length = 42;
 ```
@@ -87,7 +94,7 @@ const wisenArray = Array.of(9.3); // wisenArray містить лише один
 
 ## Звертання до елементів масиву
 
-Через те, що елементи також є властивостями, до них можна звертатися за допомогою [засобів доступу до властивостей](/uk/docs/Web/JavaScript/Reference/Operators/Property_Accessors). Припустімо, визначено такий масив:
+Через те, що елементи також є властивостями, до них можна звертатися за допомогою [засобів доступу до властивостей](/uk/docs/Web/JavaScript/Reference/Operators/Property_accessors). Припустімо, визначено такий масив:
 
 ```js
 const myArray = ["Вітер", "Дощ", "Вогонь"];
@@ -95,7 +102,7 @@ const myArray = ["Вітер", "Дощ", "Вогонь"];
 
 До першого елемента масиву можна звернутись як до `myArray[0]`, – до другого – як до `myArray[1]` тощо… Індекси елементів починаються від нуля.
 
-> **Примітка:** Також [засоби доступу до властивостей](/uk/docs/Web/JavaScript/Reference/Operators/Property_Accessors) можна використовувати для звертання до інших властивостей масиву, як з об'єктом.
+> **Примітка:** Також [засоби доступу до властивостей](/uk/docs/Web/JavaScript/Reference/Operators/Property_accessors) можна використовувати для звертання до інших властивостей масиву, як з об'єктом.
 >
 > ```js
 > const arr = ["один", "два", "три"];
@@ -226,7 +233,7 @@ nonsparseArray.forEach((element) => {
 // четвертий
 ```
 
-Оскільки елементи масивів JavaScript зберігаються як стандартні властивості об'єкта, не варто ітерувати масиви JavaScript за допомогою циклу {{jsxref("Statements/for...in","for...in")}}, адже будуть перелічені і звичайні елементи, і всі перелічувані властивості.
+Оскільки елементи масивів JavaScript зберігаються як стандартні властивості об'єкта, не варто ітерувати масиви JavaScript за допомогою циклу {{jsxref("Statements/for...in","for...in")}}, адже будуть перелічені як звичайні елементи, так і всі перелічувані властивості.
 
 ### Методи масивів
 
@@ -480,7 +487,7 @@ console.log(a3.some(isNumber)); // false
 const a = [10, 20, 30];
 const total = a.reduce(
   (accumulator, currentValue) => accumulator + currentValue,
-  0
+  0,
 );
 console.log(total); // 60
 ```
@@ -488,6 +495,40 @@ console.log(total); // 60
 Метод [`reduceRight()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight) працює подібно до `reduce()`, але починає від останнього елемента.
 
 `reduce` і `reduceRight` – найменш очевидні серед ітеративних методів масивів. Їх слід використовувати для алгоритмів, що рекурсивно об'єднують два значення для зведення послідовності до єдиного значення.
+
+## Перетворення масивів
+
+Можна виконувати перетворення в обидва боки між масивами та іншими структурами даних.
+
+### Групування елементів масиву
+
+Метод {{jsxref("Object.groupBy()")}} може використовуватися для групування елементів масиву, за допомогою перевіркової функції, що повертає рядок, який позначає групу для поточного елемента.
+
+Тут – простий інвентарний масив, що містить об'єкти "їжі", котрі мають `name` (назву) та `type` (тип).
+
+```js
+const inventory = [
+  { name: "asparagus", type: "vegetables" },
+  { name: "bananas", type: "fruit" },
+  { name: "goat", type: "meat" },
+  { name: "cherries", type: "fruit" },
+  { name: "fish", type: "meat" },
+];
+```
+
+Щоб використати `group()`, необхідно надати функцію зворотного виклику, що викликається з поточним елементом, і (необов'язково) – поточними індексом та масивом, і повертає рядок, що позначає групу для елемента.
+
+Код нижче використовує стрілкову функцію, щоб повернути `type` кожного елемента масиву (застосовується [запис деструктурування об'єкта для аргументів функції](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#rozpakovuvannia-vlastyvostei-obiekta-peredanoho-parametrom-funktsii), щоб розпакувати елемент `type` з переданого об'єкта). Результатом є об'єкт, що має властивості, названі згідно з унікальними рядками, поверненими функцією зворотного виклику. Кожній з властивостей присвоюється масив, що містить елементи групи.
+
+```js
+const result = inventory.group(({ type }) => type);
+console.log(result.vegetables);
+// [{ name: "asparagus", type: "vegetables" }]
+```
+
+Зверніть увагу на те, що повернений об'єкт посилається на _ті самі_ елементи, що й у вихідному масиві (а не їхні {{glossary("deep copy","глибокі копії")}}). Внесення змін до внутрішньої структури цих елементів відбиватиметься і на вихідному масиві, і на поверненому об'єкті.
+
+Якщо немає змоги використати як ключ рядок, наприклад, якщо інформація для групування пов'язана з об'єктом, що може змінитись, то натомість можна скористатися {{jsxref("Map.groupBy()")}}. Цей статичний метод вельми подібний до `Object.groupBy()`, крім того, що групує елементи масиву в {{jsxref("Map")}}, котрий може використовувати як ключ будь-яке значення (і {{Glossary("object", "об'єкт")}}, і {{Glossary("primitive", "примітивне")}}).
 
 ## Розріджені масиви
 
@@ -569,7 +610,7 @@ for (let i = 0; i < 4; i++) {
 
 Цей приклад створює масив з наступними рядами:
 
-```
+```plain
 Ряд 0: [0, 0] [0, 1] [0, 2] [0, 3]
 Ряд 1: [1, 0] [1, 1] [1, 2] [1, 3]
 Ряд 2: [2, 0] [2, 1] [2, 2] [2, 3]
@@ -586,7 +627,7 @@ arr.property = "значення";
 console.log(arr.property); // "значення"
 ```
 
-Наприклад, коли масив є результатом пошуку збігу між регулярним виразом та рядком, масив повертає властивості та елементи, що містять інформацію про збіг. Масив є поверненим значенням методів [`RegExp.prototype.exec()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec), [`String.prototype.match()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/match) і [`String.prototype.split()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/split). Інформацію про використання масивів з регулярними виразами дивіться на сторінці [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_Expressions).
+Наприклад, коли масив є результатом пошуку збігу між регулярним виразом та рядком, масив повертає властивості та елементи, що містять інформацію про збіг. Масив є поверненим значенням методів [`RegExp.prototype.exec()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec), [`String.prototype.match()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/match) і [`String.prototype.split()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/split). Інформацію про використання масивів з регулярними виразами дивіться на сторінці [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_expressions).
 
 ## Робота з масивоподібними об'єктами
 
@@ -621,4 +662,4 @@ Array.prototype.forEach.call("a string", (chr) => {
 });
 ```
 
-{{PreviousNext("Web/JavaScript/Guide/Regular_Expressions", "Web/JavaScript/Guide/Keyed_Collections")}}
+{{PreviousNext("Web/JavaScript/Guide/Regular_expressions", "Web/JavaScript/Guide/Keyed_collections")}}

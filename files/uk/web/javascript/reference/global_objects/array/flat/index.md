@@ -32,7 +32,7 @@ flat(depth)
 
 Метод `flat()` – [копіювальний метод](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#kopiiuvalni-ta-zminiuvalni-metody). Він не змінює `this`, а повертає [поверхневу копію](/uk/docs/Glossary/Shallow_copy), що містить ті самі елементи, що присутні у вихідному масиві.
 
-Метод `flat()` ігнорує порожні комірки, якщо сплощуваний масив є [розрідженим](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy). Наприклад, якщо `depth` – 1, то порожні комірки і в кореневому масиві, і в масивах першого рівня вкладеності – ігноруються, але порожні комірки в масивах глибших рівнів зберігаються вкупі з самими цими масивами.
+Метод `flat()` ігнорує порожні комірки, якщо сплощуваний масив є [розрідженим](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy). Наприклад, якщо `depth` – 1, то порожні комірки, як в кореневому масиві, так і в масивах першого рівня вкладеності – ігноруються, але порожні комірки в масивах глибших рівнів зберігаються вкупі з самими цими масивами.
 
 Метод `pop()` є [узагальненим](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#uzahalneni-metody-masyvu). Він лишень очікує, що значення `this` матиме властивість `length`, а також цілочислові властивості. Проте його елементи мусять бути масивами, аби бути сплощеними.
 
@@ -76,7 +76,7 @@ console.log(array2.flat(2)); // [ 1, 3, "a", "d", "e"]
 
 ### Виклик flat() на об'єктах-немасивах
 
-Метод `flat()` зчитує з `this` властивість `length`, а тоді звертається до кожного цілочислового індексу. Якщо елемент не є масивом, то він безпосередньо додається в кінець результату. Якщо елемент є масивом, то він сплощується згідно з параметром `depth`.
+Метод `flat()` зчитує з `this` властивість `length`, а тоді звертається до кожної властивості, чий ключ – невід'ємне ціле число, менше за `length`. Якщо елемент не є масивом, то він безпосередньо додається в кінець результату. Якщо елемент є масивом, то він сплощується згідно з параметром `depth`.
 
 ```js
 const arrayLike = {
@@ -85,6 +85,7 @@ const arrayLike = {
   // Масивоподібні об'єкти не сплощуються
   1: { length: 2, 0: 3, 1: 4 },
   2: 5,
+  3: 3, // ігнорується flat(), оскільки length – 3
 };
 console.log(Array.prototype.flat.call(arrayLike));
 // [ 1, 2, { '0': 3, '1': 4, length: 2 }, 5 ]
@@ -101,7 +102,9 @@ console.log(Array.prototype.flat.call(arrayLike));
 ## Дивіться також
 
 - [Поліфіл `Array.prototype.flat` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
+- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- {{jsxref("Array")}}
+- {{jsxref("Array.prototype.concat()")}}
 - {{jsxref("Array.prototype.flatMap()")}}
 - {{jsxref("Array.prototype.map()")}}
 - {{jsxref("Array.prototype.reduce()")}}
-- {{jsxref("Array.prototype.concat()")}}

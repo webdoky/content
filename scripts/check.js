@@ -21,10 +21,8 @@ async function check() {
   let result = true;
   let targetFiles;
   if (argv.changedOnly) {
-    const { stdout: gitStagedUpdates } = await executeWithResult(
-      LIST_GIT_UPDATES_STAGED
-    );
-    const { stdout: gitNonStagedUpdates } = await executeWithResult(
+    const gitStagedUpdates = await executeWithResult(LIST_GIT_UPDATES_STAGED);
+    const gitNonStagedUpdates = await executeWithResult(
       LIST_GIT_UPDATES_NON_STAGED
     );
 

@@ -1,6 +1,6 @@
 ---
 title: Застосування анімацій CSS
-slug: Web/CSS/CSS_Animations/Using_CSS_animations
+slug: Web/CSS/CSS_animations/Using_CSS_animations
 page-type: guide
 ---
 
@@ -20,11 +20,8 @@ page-type: guide
 
 Підвластивості {{cssxref("animation")}} – такі:
 
-<!--
 - {{cssxref("animation-composition")}}
-  - : Specifies the {{Glossary("Composite operation")}} to use when multiple animations affect the same property simultaneously.
--->
-
+  - : Задає {{Glossary("Composite operation", "складену операцію")}} для використання в тих випадках, коли на одну властивість одночасно впливають кілька анімацій. Ця властивість не є частиною властивості-скорочення `animation`.
 - {{cssxref("animation-delay")}}
   - : Задає затримку між завантаженням елемента і стартом послідовності анімації, а також те, чи повинна анімація початися зразу зі свого старту, чи якоїсь позиції посередині.
 - {{cssxref("animation-direction")}}
@@ -383,4 +380,5 @@ function listener(event) {
 ## Дивіться також
 
 - {{domxref("AnimationEvent", "AnimationEvent")}}
-- [Застосування переходів CSS](/uk/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
+- [Поради та хитрощі щодо анімацій CSS](/uk/docs/Web/CSS/CSS_animations/Tips)
+- [Застосування переходів CSS](/uk/docs/Web/CSS/CSS_transitions/Using_CSS_transitions)

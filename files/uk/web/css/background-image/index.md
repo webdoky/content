@@ -21,10 +21,6 @@ browser-compat: css.properties.background-image
 
 ## Синтаксис
 
-Кожне зображення тла вказується як ключове слово `none` або як значення {{cssxref("&lt;image&gt;")}}.
-
-Аби вказати кілька зображень тла – слід вказати кілька значень, розділених комами:
-
 ```css
 background-image: linear-gradient(
     to bottom,
@@ -40,18 +36,22 @@ background-image: revert-layer;
 background-image: unset;
 ```
 
+Кожне зображення тла вказується як ключове слово `none` або як значення {{cssxref("&lt;image&gt;")}}.
+
+Аби вказати кілька зображень тла – слід вказати кілька значень, розділених комами.
+
 ### Значення
 
 - `none`
   - : Ключове слово, що вказує на відсутність зображень.
 - `<image>`
-  - : Значення {{cssxref("&lt;image&gt;")}}, котре вказує зображення до нанесення. Може бути кілька зображень, розділених комами, оскільки підтримуються [кілька фонів](/uk/docs/Web/CSS/CSS_Backgrounds_and_Borders/Using_multiple_backgrounds).
+  - : Значення {{cssxref("&lt;image&gt;")}}, котре вказує зображення до нанесення. Може бути кілька зображень, розділених комами, оскільки підтримуються [кілька фонів](/uk/docs/Web/CSS/CSS_backgrounds_and_borders/Using_multiple_backgrounds).
 
 ## Занепокоєння щодо доступності
 
 Браузери не надають допоміжній технології жодної особливої інформації про зображення тла. Це важливо перш за все для програм зчитування екрана, оскільки вони не оголошують присутності зображень тла і, таким чином, нічого не передають користувачам про них. Якщо зображення містить критичну для розуміння призначення сторінки в цілому інформацію, краще описати його в документі семантично.
 
-- [MDN Розуміння WCAG, пояснення Настанов 1.1](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#guideline_1.1_%e2%80%94_providing_text_alternatives_for_non-text_content)
+- [MDN Розуміння WCAG, пояснення Настанови 1.1](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#nastanova-1-1-nadannia-tekstovykh-alternatyv-netekstovomu-vmistu)
 - [Розуміння мірила успіху 1.1.1 | W3C Розуміння WCAG 2.0](https://www.w3.org/TR/2016/NOTE-UNDERSTANDING-WCAG20-20161007/text-equiv-all.html)
 
 ## Формальне визначення
