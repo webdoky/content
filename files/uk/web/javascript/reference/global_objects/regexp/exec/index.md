@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.RegExp.exec
 
 {{JSRef}}
 
-Метод **`exec()`** (виконати) виконує пошук збігу в заданому рядку й повертає результівний масив або [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null).
+Метод **`exec()`** (виконати) примірників {{jsxref("RegExp")}} виконує пошук збігу свого регулярного виразу в заданому рядку й повертає результівний масив або [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null).
 
 {{EmbedInteractiveExample("pages/js/regexp-prototype-exec.html")}}
 
@@ -99,7 +99,7 @@ while ((myArray = myRe.exec(str)) !== null) {
 
 Цей сценарій виведе наступний текст:
 
-```
+```plain
 Знайдено abb. Наступне зіставлення починається від 3
 Знайдено ab. Наступне зіставлення починається від 9
 ```
@@ -133,5 +133,5 @@ console.log(matches[1]);
 
 ## Дивіться також
 
-- Розділ [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_expressions) [Посібника з JavaScript](/uk/docs/Web/JavaScript/Guide)
+- [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_expressions)
 - {{jsxref("RegExp")}}
