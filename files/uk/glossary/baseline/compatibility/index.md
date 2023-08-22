@@ -1,6 +1,7 @@
 ---
 title: База (сумісність)
 slug: Glossary/Baseline/Compatibility
+page-type: glossary-definition
 ---
 
 {{GlossarySidebar}}
