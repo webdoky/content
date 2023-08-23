@@ -34,7 +34,7 @@ browser-compat: javascript.regular_expressions.backreference
 
 Зворотне посилання повинно вказувати на наявну групу захоплення. Якщо номер, який вона задає, більший за загальну кількість груп захоплення, викидається синтаксична помилка.
 
-```js
+```js-nolint example-bad
 /(a)\2/u; // SyntaxError: Invalid regular expression: Invalid escape
 ```
 
