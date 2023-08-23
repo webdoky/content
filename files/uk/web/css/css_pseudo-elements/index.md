@@ -63,7 +63,7 @@ spec-urls: https://drafts.csswg.org/css-pseudo/
   - {{cssxref("::cue", "::cue()")}}
   - {{cssxref("::cue-region")}}
 
-- Модуль Області видимості CSS
+- Модуль [Області видимості CSS](/uk/docs/Web/CSS/CSS_scoping)
 
   - {{CSSXref(":host")}}
   - {{CSSXref(":host_function", ":host()")}}
