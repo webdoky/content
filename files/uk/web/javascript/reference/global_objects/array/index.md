@@ -20,7 +20,7 @@ browser-compat: javascript.builtins.Array
 
 ### Індекси масиву
 
-Об'єкти `Array` не можуть використовувати як індекси елементів рядки (як це буває в [асоціативному масиві](https://uk.wikipedia.org/wiki/%D0%90%D1%81%D0%BE%D1%86%D1%96%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D0%B8%D0%B9_%D0%BC%D0%B0%D1%81%D0%B8%D0%B2)), а мусять використовувати цілі числа (або відповідну їм рядкову форму). Встановлення чи отримання значень за ключами, що не є цілими числами, не встановить і не отримає елементів самого списку елементів масиву, але встановить чи отримає змінну, пов'язану з [колекцією властивостей об'єкта](/uk/docs/Web/JavaScript/Data_structures#vlastyvosti) масиву. Об'єктні властивості масиву та список елементів масиву – окремі одне від одного, і [операції перебору та зміни](/uk/docs/Web/JavaScript/Guide/Indexed_collections#metody-masyvu) не можуть застосовуватись до таких іменованих властивостей.
+Об'єкти `Array` не можуть використовувати як індекси елементів рядки (як це буває в [асоціативному масиві](https://uk.wikipedia.org/wiki/%D0%90%D1%81%D0%BE%D1%86%D1%96%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D0%B8%D0%B9_%D0%BC%D0%B0%D1%81%D0%B8%D0%B2)), а мусять використовувати цілі числа (або відповідну їм рядкову форму). Встановлення чи отримання значень за ключами, що не є цілими числами, не встановить і не отримає елементів самого списку елементів масиву, але встановить чи отримає змінну, пов'язану з [колекцією властивостей об'єкта](/uk/docs/Web/JavaScript/Data_structures#vlastyvosti) масиву. Об'єктні властивості масиву та список елементів масиву – окремі одне від одного, і [операції перебору та зміни](/uk/docs/Web/JavaScript/Guide/Indexed_collections#metody-masyviv) не можуть застосовуватись до таких іменованих властивостей.
 
 Елементи масиву є властивостями об'єкта так само, як `toString` (для точності, втім, слід нагадати, що `toString()` є методом). Попри це, спроба отримати елемент масиву у наступний спосіб призведе до синтаксичної помилки, адже таке ім'я властивості є недійсним:
 
@@ -61,7 +61,7 @@ console.log(Object.keys(fruits)); // ['0', '1', '2', '5']
 console.log(fruits.length); // 6
 ```
 
-Збільшення властивості {{jsxref("Array/length", "length")}}.
+Збільшення властивості {{jsxref("Array/length", "length")}} спричиняє розширення масиву шляхом додавання порожніх комірок, без додавання жодних нових елементів – навіть `undefined`.
 
 ```js
 fruits.length = 10;
@@ -79,7 +79,7 @@ console.log(Object.keys(fruits)); // ['0', '1']
 console.log(fruits.length); // 2
 ```
 
-Така поведінка докладніше пояснена на сторінці {{jsxref("Array/length")}}.
+Така поведінка докладніше пояснена на сторінці {{jsxref("Array/length", "length")}}.
 
 ### Методи масиву й порожні комірки
 
@@ -192,9 +192,9 @@ method(callbackFn, thisArg)
 
 Те, що має повернути `callbackFn`, залежить від викликаного метода масиву.
 
-Аргумент `thisArg` (чиє усталене значення – `undefined`) використовуватиметься як значення `this` при виклику `callbackFn`. Значення `this`, отримане функцією `callbackFn`, визначається згідно зі [звичними правилами](/uk/docs/Web/JavaScript/Reference/Operators/this): якщо `callbackFn` є [несуворою](/uk/docs/Web/JavaScript/Reference/Strict_mode#bez-zaminy-this) функцією, то примітивні значення `this` загортаються в об'єкти, а `undefined` і `null` – замінюються на [`globalThis`](/uk/docs/Web/JavaScript/Reference/Global_Objects/globalThis). Аргумент `thisArg` є беззмістовним для будь-якої `callbackFn`, визначеною у вигляді [стрілкової функції](/uk/docs/Web/JavaScript/Reference/Functions/Arrow_functions), адже такі функції не мають власного зв'язування `this`.
+Аргумент `thisArg` (чиє усталене значення – `undefined`) використовуватиметься як значення `this` при виклику `callbackFn`. Значення `this`, отримане функцією `callbackFn`, визначається згідно зі [звичними правилами](/uk/docs/Web/JavaScript/Reference/Operators/this): якщо `callbackFn` є [несуворою](/uk/docs/Web/JavaScript/Reference/Strict_mode#bez-zaminy-this) функцією, то примітивні значення `this` загортаються в об'єкти, а `undefined` і `null` – замінюються на [`globalThis`](/uk/docs/Web/JavaScript/Reference/Global_Objects/globalThis). Аргумент `thisArg` є беззмістовним для будь-якої `callbackFn`, визначеною у вигляді [стрілкової функції](/uk/docs/Web/JavaScript/Reference/Functions/Arrow_functions), адже такі функції не мають власного {{glossary("binding", "зв'язування")}} `this`.
 
-Усі ітеративні методи є [копіювальними](#kopiiuvalni-ta-zminiuvalni-metody) та [узагальненими](#uzahalneni-metody-masyviv), хоч вони по-різному поводяться з [порожніми комірками](#metody-masyvu-y-porozhni-komirky).
+Усі ітеративні методи є [копіювальними](#kopiiuvalni-ta-zminiuvalni-metody) та [узагальненими](#uzahalneni-metody-masyvu), хоч вони по-різному поводяться з [порожніми комірками](#metody-masyvu-y-porozhni-komirky).
 
 Наступні методи - ітеративні:
 
@@ -237,7 +237,7 @@ console.log(Array.prototype.join.call(arrayLike, "+")); // 'a+b'
 
 Властивість `length` [перетворюється на ціле число](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#peretvorennia-na-tsile), а потім обрізається до діапазону між 0 і 2<sup>53</sup> - 1. `NaN` стає `0`, тож навіть тоді, коли `length` немає або в ній `undefined`, це працює так, ніби довжина дорівнює `0`.
 
-Мова JavaScript уникає задання `length` зі значенням [небезпечного цілого числа](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER). Всі вбудовані методи викидають {{jsxref("TypeError")}}, коли `length` задається з числом, більшим за 2<sup>53</sup> - 1. Однак оскільки властивість масивів {{jsxref("Array/length", "length")}} завжди викидає помилку, коли отримує значення, більше за 2<sup>32</sup>, то зазвичай поріг небезпечних цілих чисел не досягається, якщо метод не викликається на об'єкті, що не є масивом.
+Мова JavaScript уникає задання `length` зі значенням [небезпечного цілого числа](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER). Всі вбудовані методи викидають {{jsxref("TypeError")}}, коли `length` задається з числом, більшим за 2<sup>53</sup> - 1. Однак оскільки властивість масивів {{jsxref("Array/length", "length")}} завжди викидає помилку, коли отримує значення, більше за 2<sup>32</sup> - 1, то зазвичай поріг небезпечних цілих чисел не досягається, якщо метод не викликається на об'єкті, що не є масивом.
 
 ```js
 Array.prototype.flat.call({}); // []
@@ -253,7 +253,7 @@ console.log(a.length); // 0
 
 #### Масивоподібні об'єкти
 
-Термін [_масивоподібний об'єкт_](/uk/docs/Web/JavaScript/Guide/Indexed_collections#robota-z-masyvopodibnymy-obiektamy) позначає будь-який об'єкт, що не викидає помилки при процесі перетворення `length`, описаному вище. На практиці очікується, що такий об'єкт має властивість `length`, а також індексовані елементи в діапазоні від `0` до `length - 1`. (Якщо він має не всі індекси, то це на практиці буде рівносильно [розрідженому масивові](#metody-masyvu-y-porozhni-komirky).)
+Термін [_масивоподібний об'єкт_](/uk/docs/Web/JavaScript/Guide/Indexed_collections#robota-z-masyvopodibnymy-obiektamy) позначає будь-який об'єкт, що не викидає помилки при процесі перетворення `length`, описаному вище. На практиці очікується, що такий об'єкт має властивість `length`, а також індексовані елементи в діапазоні від `0` до `length - 1`. (Якщо він має не всі індекси, то це на практиці буде рівносильно [розрідженому масивові](#metody-masyvu-y-porozhni-komirky).) Усі індекси - цілі числа, менші за нуль або більші за `length - 1`, ігноруються, коли метод масиву працює над масивоподібним об'єктом.
 
 Масивоподібними є чимало об'єктів DOM – наприклад, [`NodeList`](/uk/docs/Web/API/NodeList) і [`HTMLCollection`](/uk/docs/Web/API/HTMLCollection). Об'єкт [`arguments`](/uk/docs/Web/JavaScript/Reference/Functions/arguments) так само є масивоподібним. На них можна викликати методи масиву, навіть якщо вони самі цих методів не мають.
 

@@ -344,4 +344,4 @@ withAwait();
 - {{jsxref("Statements/async_function", "async function")}}
 - [Вираз `async function`](/uk/docs/Web/JavaScript/Reference/Operators/async_function)
 - {{jsxref("AsyncFunction")}}
-- [await зовнішнього рівня](https://v8.dev/features/top-level-await) на v8.dev (8 жовтня 2019 року)
+- [await зовнішнього рівня](https://v8.dev/features/top-level-await) на v8.dev (2019)

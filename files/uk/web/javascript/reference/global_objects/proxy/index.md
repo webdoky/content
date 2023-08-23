@@ -252,7 +252,7 @@ const proxy = new Proxy(aSecret, {
 console.log(proxy.x());
 ```
 
-Частина нативних об'єктів JavaScript має властивості, що звуться _[внутрішніми комірками](https://tc39.es/ecma262/#sec-object-internal-methods-and-internal-slots)_ й не є доступними з коду на JavaScript. Наприклад, об'єкти [`Map`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Map) мають приховану комірку, що зветься `[[MapData]]`, в котрій зберігаються пари ключ-значення відображення. Таким чином, не можна тривіально створити заступник перенаправлення для відображення:
+Частина нативних об'єктів JavaScript має властивості, що звуться _[внутрішніми комірками](https://tc39.es/ecma262/multipage/ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots)_ й не є доступними з коду на JavaScript. Наприклад, об'єкти [`Map`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Map) мають приховану комірку, що зветься `[[MapData]]`, в котрій зберігаються пари ключ-значення відображення. Таким чином, не можна тривіально створити заступник перенаправлення для відображення:
 
 ```js
 const proxy = new Proxy(new Map(), {});
