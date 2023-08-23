@@ -348,7 +348,7 @@ console.log(red.getRed()); // 255
 
 Звертання до приватних полів поза класом – це рання синтаксична помилка. Мова може захистити від цього, оскільки `#privateField` – це спеціальний синтаксис, тому вона може виконати деякий статичний аналіз і знайти всі використання приватних полів ще до того, як виконуватиме код.
 
-```js example-bad
+```js-nolint example-bad
 console.log(red.#values); // SyntaxError: Private field '#values' must be declared in an enclosing class
 ```
 
@@ -423,7 +423,7 @@ class Color {
 
 Використання приватних властивостей має певні обмеження: одне й те ж ім'я не може бути оголошено двічі в одному класі, а також їх не можна видаляти. І перше, і друге – призводять до ранніх синтаксичних помилок.
 
-```js example-bad
+```js-nolint example-bad
 class BadIdeas {
   #firstName;
   #firstName; // тут стається синтаксична помилка
@@ -690,7 +690,7 @@ console.log(ColorWithAlpha.isValid(255, 0, 0, -1)); // false
 
 Похідні класи не мають доступу до приватних полів батьківського класу – це ще один ключовий аспект того, що приватні поля в JavaScript є «суворо приватними». Приватні поля обмежені областю видимості тільки тілом класу і не доступні для _будь-якого_ зовнішнього коду.
 
-```js example-bad
+```js-nolint example-bad
 class ColorWithAlpha extends Color {
   log() {
     console.log(this.#values); // SyntaxError: Private field '#values' must be declared in an enclosing class
