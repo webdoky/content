@@ -67,7 +67,7 @@ console.log(`theTree.constructor – це ${theTree.constructor}`);
 
 Цей приклад має наступний вивід:
 
-```
+```plain
 theTree.constructor – це function Tree(name) {
   this.name = name;
 }
@@ -307,6 +307,6 @@ console.log(new Child(1, 1).getOffsetByInitialPosition()); // { offsetX: -1, off
 
 ## Дивіться також
 
-- {{jsxref("statements/class", "Оголошення класу")}}
-- {{jsxref("Classes/constructor", "Конструктор класу")}}
-- Glossary: {{Glossary("constructor")}}
+- {{jsxref("Statements/class", "class")}}
+- {{jsxref("Classes/constructor", "constructor")}}
+- {{Glossary("Constructor", "Конструктор")}}
