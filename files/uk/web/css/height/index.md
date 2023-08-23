@@ -7,7 +7,7 @@ browser-compat: css.properties.height
 
 {{CSSRef}}
 
-Властивість CSS **`height`** (висота) вказує висоту елемента. Усталено властивість визначає висоту [області вмісту](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#oblast-vmistu). Втім, якщо властивість {{cssxref("box-sizing")}} має значення `border-box`, то вказане значення стає висотою [області меж](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#oblast-mezh).
+Властивість CSS **`height`** (висота) вказує висоту елемента. Усталено властивість визначає висоту [області вмісту](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model#oblast-vmistu). Втім, якщо властивість {{cssxref("box-sizing")}} має значення `border-box`, то вказане значення стає висотою [області меж](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model#oblast-mezh).
 
 {{EmbedInteractiveExample("pages/css/height.html")}}
 
@@ -127,7 +127,7 @@ div {
 
 ## Дивіться також
 
-- [Блокова модель](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+- [Блокова модель](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
 - {{cssxref("width")}}
 - {{cssxref("box-sizing")}}
 - {{cssxref("min-height")}}, {{cssxref("max-height")}}

@@ -7,7 +7,7 @@ browser-compat: css.properties.padding
 
 {{CSSRef}}
 
-[Властивість-скорочення](/uk/docs/Web/CSS/Shorthand_properties) [CSS](/uk/docs/Web/CSS) **`padding`** (набивка) встановлює [розмах внутрішніх відступів](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#oblast-vnutrishnikh-vidstupiv) з усіх чотирьох сторін елемента за раз.
+[Властивість-скорочення](/uk/docs/Web/CSS/Shorthand_properties) [CSS](/uk/docs/Web/CSS) **`padding`** (набивка) встановлює [розмах внутрішніх відступів](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model#oblast-vnutrishnikh-vidstupiv) з усіх чотирьох сторін елемента за раз.
 
 {{EmbedInteractiveExample("pages/css/padding.html")}}
 
@@ -133,6 +133,6 @@ padding: 1em 3px 30px 5px;
 
 ## Дивіться також
 
-- [Вступ до базової рамкової моделі CSS](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+- [Вступ до базової рамкової моделі CSS](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
 - {{cssxref("padding-top")}}, {{cssxref("padding-right")}}, {{cssxref("padding-bottom")}} та {{cssxref("padding-left")}}.
 - Відповідні логічні властивості: {{cssxref("padding-block-start")}}, {{cssxref("padding-block-end")}}, {{cssxref("padding-inline-start")}} та {{cssxref("padding-inline-end")}}, а також скорочення {{cssxref("padding-block")}} і {{cssxref("padding-inline")}}
