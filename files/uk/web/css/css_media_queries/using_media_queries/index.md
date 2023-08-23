@@ -1,6 +1,6 @@
 ---
 title: Використання медіазапитів
-slug: Web/CSS/Media_Queries/Using_media_queries
+slug: Web/CSS/CSS_media_queries/Using_media_queries
 page-type: guide
 ---
 
@@ -12,7 +12,7 @@ page-type: guide
 
 - Для умовного застосування стилів за допомогою [директив](/uk/docs/Web/CSS/At-rule) [CSS](/uk/docs/Web/CSS) {{cssxref("@media")}} та {{cssxref("@import")}}.
 - Для націлення на певні медіа {{HTMLElement("style")}}, {{HTMLElement("link")}}, {{HTMLElement("source")}} та інших [HTML](/uk/docs/Web/HTML) елементів за допомогою атрибуту `media=`.
-- Для [перевірки та відстеження станів медіа](/uk/docs/Web/CSS/Media_Queries/Testing_media_queries) за допомогою методів {{domxref("Window.matchMedia()")}} та {{domxref("EventTarget.addEventListener()")}}.
+- Для [перевірки та відстеження станів медіа](/uk/docs/Web/CSS/CSS_media_queries/Testing_media_queries) за допомогою методів {{domxref("Window.matchMedia()")}} та {{domxref("EventTarget.addEventListener()")}}.
 
 > **Примітка:** Приклади на цій сторінці використовують медіазапит CSS `@media` для ілюстративних потреб, однак базовий синтаксис залишається однаковим для всіх типів медіазапитів.
 
@@ -54,7 +54,7 @@ page-type: guide
   - {{cssxref("@media/prefers-reduced-transparency", "prefers-reduced-transparency")}} {{experimental_inline}}
   - {{cssxref("@media/resolution", "resolution")}}
   - {{cssxref("@media/scripting", "scripting")}}
-  - {{cssxref("@media/update-frequency", "update")}}
+  - {{cssxref("@media/update", "update")}}
   - {{cssxref("@media/video-dynamic-range", "video-dynamic-range")}}
   - {{cssxref("@media/width", "width")}}.
 
@@ -300,8 +300,8 @@ _Це не має ефекту в сучасних браузерах._
 ## Дивіться також
 
 - [@media](/uk/docs/Web/CSS/@media)
-- [Контейнерні запити](/uk/docs/Web/CSS/CSS_Container_Queries)
-- [Програмна перевірка медіазапитів](/uk/docs/Web/CSS/Media_Queries/Testing_media_queries)
+- [Контейнерні запити](/uk/docs/Web/CSS/CSS_container_queries)
+- [Програмна перевірка медіазапитів](/uk/docs/Web/CSS/CSS_media_queries/Testing_media_queries)
 - [Анімації CSS між медіазапитами (англ.)](http://davidwalsh.name/animate-media-queries)
 - [Розширені ознаки медіа від Mozilla](/uk/docs/Web/CSS/Mozilla_Extensions#Media_features)
 - [Розширені ознаки медіа в WebKit](/uk/docs/Web/CSS/WebKit_Extensions#oznaky-media)

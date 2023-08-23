@@ -13,7 +13,7 @@ browser-compat: css.properties.box-shadow
 
 Властивість `box-shadow` дає змогу відкидати тінь від рамки майже будь-якого елемента. Якщо на елементі з тінню вказано {{cssxref("border-radius")}}, то тінь так само матиме заокруглені кути. Порядок нагромадження кількох тіней такий самий, як для кількох [тіней тексту](/uk/docs/Web/CSS/text-shadow) (раніше описана перекриває наступні).
 
-[Генератор box-shadow](/uk/docs/Web/CSS/CSS_Backgrounds_and_Borders/Box-shadow_generator) – інтерактивний інструмент, що дає змогу згенерувати `box-shadow`.
+[Генератор box-shadow](/uk/docs/Web/CSS/CSS_backgrounds_and_borders/Box-shadow_generator) – інтерактивний інструмент, що дає змогу згенерувати `box-shadow`.
 
 ## Синтаксис
 
@@ -34,7 +34,9 @@ box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 box-shadow: inset 5em 1em gold;
 
 /* Будь-яка кількість тіней, розділених комами */
-box-shadow: 3px 3px red, -1em 0 0.4em olive;
+box-shadow:
+  3px 3px red,
+  -1em 0 0.4em olive;
 
 /* Глобальні значення */
 box-shadow: inherit;
@@ -118,7 +120,9 @@ box-shadow: unset;
 ```css
 blockquote {
   padding: 20px;
-  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+  box-shadow:
+    inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+    0 0 0 2px rgb(255, 255, 255),
     0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
 ```
@@ -131,7 +135,7 @@ blockquote {
 
 Коли значення `x-offset`, `y-offset` та `blur` – нуль, тінь матиме контур суцільного кольору рівного розміру з усіх боків. Тіні відображаються від спідньої до верхньої, тож перша тінь лежить поверх наступних тіней. Коли значення `border-radius` – 0, як усталено, то кути тіні будуть, власне, кутами. Якщо ж вказана властивість `border-radius` з будь-яким іншим значенням, то кути будуть закруглені.
 
-Додано зовнішнє поле такого ж розміру, як найширша тінь, аби пересвідчитись, що тінь не перекриває суміжні елементи й не виходить за межі рамок контейнера. Властивість `box-shadow` не впливає на виміри [блокової моделі](/uk/docs/Web/CSS/CSS_Box_Model).
+Додано зовнішнє поле такого ж розміру, як найширша тінь, аби пересвідчитись, що тінь не перекриває суміжні елементи й не виходить за межі рамок контейнера. Властивість `box-shadow` не впливає на виміри [блокової моделі](/uk/docs/Web/CSS/CSS_box_model).
 
 #### HTML
 
@@ -143,7 +147,9 @@ blockquote {
 
 ```css
 p {
-  box-shadow: 0 0 0 2em #f4aab9, 0 0 0 4em #66ccff;
+  box-shadow:
+    0 0 0 2em #f4aab9,
+    0 0 0 4em #66ccff;
   margin: 4em;
   padding: 1em;
 }
@@ -168,4 +174,4 @@ p {
 - Тип даних {{cssxref("&lt;color&gt;")}} (для задання кольору тіні)
 - {{cssxref("text-shadow")}}
 - {{cssxref("filter-function/drop-shadow", "drop-shadow()")}}
-- [Застосування кольору до елементів HTML за допомогою CSS](/uk/docs/Web/CSS/CSS_Colors/Applying_color)
+- [Застосування кольору до елементів HTML за допомогою CSS](/uk/docs/Web/CSS/CSS_colors/Applying_color)
