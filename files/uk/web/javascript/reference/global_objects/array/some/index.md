@@ -123,7 +123,7 @@ console.log([1, undefined, 1].some((x) => x !== 1)); // true
 
 ### Виклик some() на об'єктах-немасивах
 
-Метод `some()` зчитує з `this` властивість `length`, а потім звертається до кожної цілочислової властивості.
+Метод `some()` зчитує з `this` властивість `length`, а потім звертається до кожної властивості, чий ключ є невід'ємним цілим числом, меншим за `length`, поки не будуть перебрані вони всі або `callbackFn` не поверне `true`.
 
 ```js
 const arrayLike = {
@@ -131,6 +131,7 @@ const arrayLike = {
   0: "a",
   1: "b",
   2: "c",
+  3: 3, // ігнорується some(), оскільки length – 3
 };
 console.log(Array.prototype.some.call(arrayLike, (x) => typeof x === "number")); // false
 ```

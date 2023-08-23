@@ -354,4 +354,4 @@ const bad = `неправильна екранована послідовніс�
 - {{jsxref("String")}}
 - {{jsxref("String.raw()")}}
 - [Лексична граматика](/uk/docs/Web/JavaScript/Reference/Lexical_grammar)
-- [Поглиблено про ES6: Шаблонні рядки](https://hacks.mozilla.org/2015/05/es6-in-depth-template-strings-2/) на hacks.mozilla.org (14 травня 2015 року)
+- [Поглиблено про ES6: Шаблонні рядки](https://hacks.mozilla.org/2015/05/es6-in-depth-template-strings-2/) на hacks.mozilla.org (2015)

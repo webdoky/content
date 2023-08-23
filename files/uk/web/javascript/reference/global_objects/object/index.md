@@ -129,7 +129,7 @@ if (user.authenticated) {
 
 JavaScript також має вбудовані API, що виробляють `null`-прототипні об'єкти, особливо ті, що використовують об'єкти як імпровізовані колекції ключ-значення. Наприклад:
 
-- Повернене значення {{jsxref("Array.prototype.group()")}}
+- Повернене значення {{jsxref("Object.groupBy()")}}
 - Властивості `groups` та `indices.groups` результату {{jsxref("RegExp.prototype.exec()")}}
 - [`Array.prototype[@@unscopables]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/@@unscopables) (усі об'єкти `@@unscopables` повинні мати прототип `null`)
 - [`import.meta`](/uk/docs/Web/JavaScript/Reference/Operators/import.meta)
@@ -188,6 +188,8 @@ JavaScript також має вбудовані API, що виробляють `
   - : Повертає масив усіх символьних властивостей, знайдених безпосередньо у переданому об'єкті.
 - {{jsxref("Object.getPrototypeOf()")}} (взяти прототип від)
   - : Повертає прототип (внутрішню властивість `[[Prototype]]`) вказаного об'єкта.
+- {{jsxref("Object.groupBy()")}} {{Experimental_Inline}}
+  - : Групує елементи даного ітерованого об'єкта згідно з рядковими значеннями, поверненими переданою функцією зворотного виклику. Повернений об'єкт має окремі властивості для кожної групи, що містять масиви з елементами відповідних груп.
 - {{jsxref("Object.hasOwn()")}}
   - : Повертає `true`, якщо заданий об'єкт має вказану властивість як свою _власну_ властивість, або `false`, якщо властивість є успадкованою або не існує.
 - {{jsxref("Object.is()")}} (є)
