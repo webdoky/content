@@ -21,10 +21,6 @@ browser-compat: css.properties.background-image
 
 ## Синтаксис
 
-Кожне зображення тла вказується як ключове слово `none` або як значення {{cssxref("&lt;image&gt;")}}.
-
-Аби вказати кілька зображень тла – слід вказати кілька значень, розділених комами:
-
 ```css
 background-image: linear-gradient(
     to bottom,
@@ -40,12 +36,16 @@ background-image: revert-layer;
 background-image: unset;
 ```
 
+Кожне зображення тла вказується як ключове слово `none` або як значення {{cssxref("&lt;image&gt;")}}.
+
+Аби вказати кілька зображень тла – слід вказати кілька значень, розділених комами.
+
 ### Значення
 
 - `none`
   - : Ключове слово, що вказує на відсутність зображень.
 - `<image>`
-  - : Значення {{cssxref("&lt;image&gt;")}}, котре вказує зображення до нанесення. Може бути кілька зображень, розділених комами, оскільки підтримуються [кілька фонів](/uk/docs/Web/CSS/CSS_Backgrounds_and_Borders/Using_multiple_backgrounds).
+  - : Значення {{cssxref("&lt;image&gt;")}}, котре вказує зображення до нанесення. Може бути кілька зображень, розділених комами, оскільки підтримуються [кілька фонів](/uk/docs/Web/CSS/CSS_backgrounds_and_borders/Using_multiple_backgrounds).
 
 ## Занепокоєння щодо доступності
 

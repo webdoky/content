@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.Date.toISOString
 
 {{JSRef}}
 
-Метод **`toISOString()`** (до рядка ISO) повертає рядок в _спрощеному_ розширеному форматі ISO ([ISO 8601](https://uk.wikipedia.org/wiki/ISO_8601)), котрий завжди має довжину 24 чи 27 символів (`YYYY-MM-DDTHH:mm:ss.sssZ` або `±YYYYYY-MM-DDTHH:mm:ss.sssZ` відповідно). Часовий пояс завжди – нульове зміщення від Всесвітнього контрольованого часу, що позначено суфіксом `Z`.
+Метод **`toISOString()`** (до рядка ISO) примірників {{jsxref("Date")}} повертає рядок, що представляє поточну дату в [форматі рядка дати та часу](/uk/docs/Web/JavaScript/Reference/Global_Objects/Date#format-riadka-daty-ta-chasu), _спрощеному_ форматі, заснованому на [ISO 8601](https://uk.wikipedia.org/wiki/ISO_8601), що завжди має довжину 24 або 27 символів (`YYYY-MM-DDTHH:mm:ss.sssZ` або `±YYYYYY-MM-DDTHH:mm:ss.sssZ` відповідно). Часова зона – завжди Всесвітній координований час, що позначено суфіксом `Z`.
 
 {{EmbedInteractiveExample("pages/js/date-toisostring.html")}}
 
@@ -19,16 +19,21 @@ toISOString()
 
 ### Повернене значення
 
-Рядок, що представляє дану дату в форматі [ISO 8601](https://uk.wikipedia.org/wiki/ISO_8601), згідно зі всесвітнім часом. Це той самий формат, що потрібен для розбору методом [`Date.parse()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Date/parse#format-riadka-daty-y-chasu).
+Рядок, що представляє дану дату в [форматі рядка дати та часу](/uk/docs/Web/JavaScript/Reference/Global_Objects/Date#format-riadka-daty-ta-chasu), згідно зі всесвітнім часом. Це той самий формат, що потрібен для розпізнання методом {{jsxref("Date.parse()")}}.
+
+### Винятки
+
+- {{jsxref("RangeError")}}
+  - : Викидається, коли дата є [недійсною](/uk/docs/Web/JavaScript/Reference/Global_Objects/Date#epokha-mitky-chasu-ta-nediisna-data), а також коли вона відповідає рокові, що не може бути представлений у форматі рядка дати.
 
 ## Приклади
 
 ### Застосування toISOString()
 
 ```js
-const today = new Date("05 October 2011 14:48 UTC");
+const d = new Date(0);
 
-console.log(today.toISOString()); // Повертає 2011-10-05T14:48:00.000Z
+console.log(d.toISOString()); // "1970-01-01T00:00:00.000Z"
 ```
 
 Приклад вище використовує розбір нестандартного рядкового значення, котре може некоректно розбиратися в браузерах не від Mozilla.
@@ -44,5 +49,5 @@ console.log(today.toISOString()); // Повертає 2011-10-05T14:48:00.000Z
 ## Дивіться також
 
 - {{jsxref("Date.prototype.toLocaleDateString()")}}
-- {{jsxref("Date.prototype.toTimeString()")}}
+- {{jsxref("Date.prototype.toString()")}}
 - {{jsxref("Date.prototype.toUTCString()")}}

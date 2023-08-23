@@ -188,6 +188,6 @@ browser-compat: html.elements.ul
 - Властивості CSS, які можуть бути корисними для оформлення елемента `<ul>`:
 
   - властивість {{CSSxRef("list-style")}} – для вибору типу маркера.
-  - [Лічильники CSS](/uk/docs/Web/CSS/CSS_Counter_Styles/Using_CSS_counters) – для обробки складних вкладених переліків.
+  - [Лічильники CSS](/uk/docs/Web/CSS/CSS_counter_styles/Using_CSS_counters) – для обробки складних вкладених переліків.
   - властивість {{CSSxRef("line-height")}} – для імітації нерекомендованого атрибута [`compact`](#compact).
   - властивість {{CSSxRef("margin")}} – для керування відступами в списку.
