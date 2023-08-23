@@ -49,7 +49,7 @@ browser-compat: javascript.regular_expressions.character_class
 
 Краї діапазону символів не повинні задавати більш ніж один символ, що відбувається, якщо використати [екранування класу символів](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Character_class_escape). Наприклад:
 
-```js
+```js-nolint example-bad
 /[\s-9]/u; // SyntaxError: Invalid regular expression: Invalid character class
 ```
 
