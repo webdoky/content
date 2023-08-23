@@ -17,7 +17,7 @@ browser-compat: javascript.builtins.Math.max
 Math.max()
 Math.max(value0)
 Math.max(value0, value1)
-Math.max(value0, value1, /* … ,*/ valueN)
+Math.max(value0, value1, /* …, */ valueN)
 ```
 
 ### Параметри

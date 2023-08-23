@@ -65,9 +65,7 @@ browser-compat: html.elements.label
 <label>Клацни мене <input type="text" /></label>
 ```
 
-#### Результат
-
-{{EmbedLiveSample('vyznachennia-neiavnoho-pidpysu', '200', '50', '')}}
+{{EmbedLiveSample('vyznachennia-neiavnoho-pidpysu', '200', '50')}}
 
 ### Визначення явного підпису з атрибутом "for"
 
@@ -76,9 +74,7 @@ browser-compat: html.elements.label
 <input type="text" id="username" />
 ```
 
-#### Результат
-
-{{EmbedLiveSample('vyznachennia-yavnoho-pidpysu-z-atrybutom-for', '200', '50', '')}}
+{{EmbedLiveSample('vyznachennia-yavnoho-pidpysu-z-atrybutom-for', '200', '50')}}
 
 ## Занепокоєння щодо доступності
 
@@ -86,7 +82,7 @@ browser-compat: html.elements.label
 
 Не слід вміщувати інтерактивні елементи, як то {{HTMLElement("a", "anchors")}} чи {{HTMLElement("button", "buttons")}}, всередину `label`. Подібна практика ускладнює активацію поля форми, пов'язаного з `label`.
 
-#### Так робити не варто
+**Не робіть так:**
 
 ```html example-bad
 <label for="tac">
@@ -95,7 +91,7 @@ browser-compat: html.elements.label
 </label>
 ```
 
-#### А так – варто
+**Краще робіть так:**
 
 ```html example-good
 <label for="tac">
@@ -113,7 +109,7 @@ browser-compat: html.elements.label
 
 Якщо [форма](/uk/docs/Web/HTML/Element/form) чи розділ форми потребує заголовка, слід використовувати елемент {{HTMLElement("legend")}}, розташований всередині {{HTMLElement("fieldset")}}.
 
-#### Так робити не варто
+**Не робіть так:**
 
 ```html example-bad
 <label for="your-name">
@@ -122,7 +118,7 @@ browser-compat: html.elements.label
 </label>
 ```
 
-#### А так – варто
+**Краще робіть так:**
 
 ```html example-good
 <label class="large-label" for="your-name">

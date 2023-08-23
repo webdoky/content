@@ -2,20 +2,6 @@
 title: color
 slug: Web/CSS/color
 page-type: css-property
-tags:
-  - CSS
-  - CSS Colors
-  - CSS Property
-  - CSS Text
-  - HTML Colors
-  - HTML Styles
-  - Layout
-  - Reference
-  - Styling HTML
-  - Styling text
-  - Web
-  - color
-  - recipe:css-property
 browser-compat: css.properties.color
 ---
 
@@ -25,7 +11,7 @@ browser-compat: css.properties.color
 
 {{EmbedInteractiveExample("pages/css/color.html")}}
 
-Огляд використання кольорів у HTML – на сторінці [Застосування кольору до елементів HTML за допомогою CSS](/uk/docs/Web/CSS/CSS_Colors/Applying_color).
+Огляд використання кольорів у HTML – на сторінці [Застосування кольору до елементів HTML за допомогою CSS](/uk/docs/Web/CSS/CSS_colors/Applying_color).
 
 ## Синтаксис
 
@@ -84,6 +70,8 @@ color: unset;
 
 - {{cssxref("&lt;color&gt;")}}
   - : Задає колір текстових і оздобних частин елемента.
+- [`currentcolor`](/uk/docs/Web/CSS/color_value#kliuchove-slovo-currentcolor)
+  - : Задає колір як значення властивості `color` елемента. Проте якщо це значення вжито як значення `color` то `currentcolor` обробляється як `inherit`.
 
 ## Занепокоєння щодо доступності
 
@@ -153,4 +141,4 @@ p {
 
 - Тип даних {{cssxref("&lt;color&gt;")}}
 - Інші пов'язані з кольором властивості: {{cssxref("background-color")}}, {{cssxref("border-color")}}, {{cssxref("outline-color")}}, {{cssxref("text-decoration-color")}}, {{cssxref("text-emphasis-color")}}, {{cssxref("text-shadow")}}, {{cssxref("caret-color")}}, {{cssxref("column-rule-color")}} і {{cssxref("print-color-adjust")}}
-- [Застосування кольору до елементів HTML за допомогою CSS](/uk/docs/Web/CSS/CSS_Colors/Applying_color)
+- [Застосування кольору до елементів HTML за допомогою CSS](/uk/docs/Web/CSS/CSS_colors/Applying_color)
