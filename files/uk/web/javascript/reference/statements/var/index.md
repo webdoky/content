@@ -22,16 +22,9 @@ var name1 = value1, name2, /* …, */ nameN = valueN;
 ```
 
 - `nameN`
-  - : Ім'я змінної до оголошення. Кожна назва повинна бути дійсним [ідентифікатором](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#identyfikatory) JavaScript.
+  - : Ім'я змінної до оголошення. Кожна назва повинна бути дійсним [ідентифікатором](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#identyfikatory) JavaScript або [патерном зв'язування з деструктуруванням](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
 - `valueN` {{optional_inline}}
   - : Початкове значення змінної. Може бути будь-яким дійсним виразом. Усталене значення – `undefined`.
-
-Також для оголошення змінних можна використовувати запис [деструктурування](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
-
-```js
-var { bar } = foo; // де foo = { bar: 10, baz: 12 };
-// Це створює змінну з іменем 'bar', яка має значення 10
-```
 
 ## Опис
 
@@ -70,7 +63,7 @@ console.log(a); // 3
 
 У сценарії змінна, оголошена за допомогою `var`, додається як неналаштовна властивість глобального об'єкта. Це означає, що її дескриптор властивості не можна змінювати, і її не можна видалити за допомогою {{JSxRef("Operators/delete", "delete")}}. JavaScript має автоматичне керування пам'яттю, і немає сенсу використовувати оператор `delete` на глобальній змінній.
 
-```js example-bad
+```js-nolint example-bad
 "use strict";
 var x = 1;
 Object.hasOwn(globalThis, "x"); // true
@@ -145,14 +138,14 @@ console.log(a); // 1
 
 Оголошення `var` не можуть бути в тій же області видимості, що й оголошення {{jsxref("Statements/let", "let")}}, {{jsxref("Statements/const", "const")}}, {{jsxref("Statements/class", "class")}} або {{jsxref("Statements/import", "import")}}.
 
-```js example-bad
+```js-nolint example-bad
 var a = 1;
 let a = 2; // SyntaxError: Identifier 'a' has already been declared
 ```
 
 У зв'язку з тим, що оголошення `var` не обмежують свою область видимості блоками, це також спрацьовує в наступному випадку:
 
-```js example-bad
+```js-nolint example-bad
 let a = 1;
 {
   var a = 1; // SyntaxError: Identifier 'a' has already been declared
@@ -181,7 +174,7 @@ foo(2); // Виводить 1
 
 Оголошення `var` у блоку `catch` може мати таке ж ім'я, що й зв'язаний `catch` ідентифікатор, але лише тоді, коли зв'язування `catch` є простим ідентифікатором, а не патерном деструктурування. Це [нерекомендований запис](/uk/docs/Web/JavaScript/Reference/Deprecated_and_obsolete_features#instruktsii), на нього не слід покладатися. У такому випадку оголошення піднімається назовні блоку `catch`, але значення, присвоєне у блоку `catch`, не є видимим назовні.
 
-```js example-bad
+```js-nolint example-bad
 try {
   throw 1;
 } catch (e) {
@@ -283,6 +276,18 @@ a(); // Також викликає b.
 console.log(x, z); // 3 5
 console.log(typeof y); // "undefined", оскільки y є локальною для функції a
 ```
+
+### Оголошення з деструктуруванням
+
+Лівий бік кожного `=` також може бути патерном зв'язування. Це дає змогу створювати кілька змінних за раз.
+
+```js
+const result = /(a+)(b+)(c+)/.exec("aaabcc");
+var [, a, b, c] = result;
+console.log(a, b, c); // "aaa" "b" "cc"
+```
+
+Більше про це - в [Присвоєнні з деструктуруванням](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
 
 ## Специфікації
 
