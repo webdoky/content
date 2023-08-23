@@ -89,7 +89,7 @@ console.log("newCar[0].color =", newCar[0].color);
 
 Скрипт надрукує такий текст:
 
-```
+```plain
 myCar = [
   {color: 'червоний', wheels: 4, engine: {cylinders: 4, size: 2.2 } },
   2,
