@@ -38,7 +38,7 @@ animation-range: 25% normal;
 animation-range: 25% 50%;
 animation-range: entry exit; /* Рівносильно entry 0% exit 100% */
 animation-range: cover cover 200px; /* Рівносильно cover 0% cover 200px */
-nimation-range: entry 10% exit; /* Рівносильно entry 10% exit 100% */
+animation-range: entry 10% exit; /* Рівносильно entry 10% exit 100% */
 animation-range: 10% exit 90%;
 animation-range: entry 10% 90%;
 ```
