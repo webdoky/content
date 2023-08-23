@@ -23,7 +23,7 @@ spec-urls: https://drafts.csswg.org/css-color/#interpolation-space
 
 Тип `<color-interpolation-method>` задає те, чи слід використовувати прямокутний колірний простір, чи полярний колірний простір з необов'язковим методом інтерполяції відтінку:
 
-```
+```plain
 in <rectangular-color-space>
 // або
 in <polar-color-space>[ <hue-interpolation method>]
