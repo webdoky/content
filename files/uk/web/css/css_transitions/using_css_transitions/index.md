@@ -1,6 +1,6 @@
 ---
 title: Застосування переходів CSS
-slug: Web/CSS/CSS_Transitions/Using_CSS_transitions
+slug: Web/CSS/CSS_transitions/Using_CSS_transitions
 page-type: guide
 spec-urls: https://drafts.csswg.org/css-transitions/
 ---
@@ -13,7 +13,7 @@ spec-urls: https://drafts.csswg.org/css-transitions/
 
 ![Перехід CSS каже браузеру малювати проміжні стани між вихідним і фінальним станами, демонструючи користувачеві плавний перехід.](transitionsprinciple.png)
 
-Переходи CSS дають змогу вирішувати, котрі властивості анімувати (шляхом _явного їх перелічення_), коли анімація почнеться (шляхом задання _затримки_), як довго триватиме перехід (шляхом задання _тривалості_) та як перебігатиме перехід (шляхом задання _функції хронометражу_, наприклад, лінійно, чи швидко на початку й повільно в кінці).
+Переходи CSS дають змогу вирішувати, котрі властивості анімувати (шляхом [_явного їх перелічення_](/uk/docs/Web/CSS/transition-property)), коли анімація почнеться (шляхом задання [_затримки_](/uk/docs/Web/CSS/transition-delay)), як довго триватиме перехід (шляхом задання [_тривалості_](/uk/docs/Web/CSS/transition-duration)) та як перебігатиме перехід (шляхом задання [_функції пом'якшення_](/uk/docs/Web/CSS/transition-timing-function), наприклад, лінійно, чи швидко на початку й повільно в кінці).
 
 ## До яких властивостей CSS можна застосувати переходи?
 
@@ -32,7 +32,7 @@ spec-urls: https://drafts.csswg.org/css-transitions/
 - {{cssxref("transition-duration")}}
   - : Задає тривалість, протягом якої відбуваються переходи. Можна задати одну тривалість, котра застосовується до всіх властивостей переходу, або декілька значень, аби дати змогу кожній властивості застосовуватися протягом інакшого проміжку часу.
 - {{cssxref("transition-timing-function")}}
-  - : Задає функцію, котра визначає, як обчислюються проміжні значення властивостей. _Функції хронометражу_ визначають, як обраховуються проміжні значення переходу. Більшість [функцій хронометражу](/uk/docs/Web/CSS/easing-function) можуть бути задані шляхом опису графіка відповідної функції, що задає чотири точки, по яких будується кубічна крива Безьє. Також можна обрати пом'якшення зі [Шпаргалки функцій пом'якшення](https://easings.net/uk).
+  - : Задає функцію, котра визначає, як обчислюються проміжні значення властивостей. _Функції пом'якшення_ визначають, як обраховуються проміжні значення переходу. Більшість [функцій пом'якшення](/uk/docs/Web/CSS/easing-function) можуть бути задані шляхом опису графіка відповідної функції, що задає чотири точки, по яких будується кубічна крива Безьє. Також можна обрати пом'якшення зі [Шпаргалки функцій пом'якшення](https://easings.net/uk).
 - {{cssxref("transition-delay")}}
   - : Визначає, скільки триватиме очікування між зміною властивості й фактичним початком переходу.
 
@@ -75,7 +75,7 @@ div {
 </body>
 ```
 
-#### Вміст CSS
+#### CSS
 
 ```css
 .box {
@@ -85,7 +85,11 @@ div {
   width: 100px;
   height: 100px;
   background-color: #0000ff;
-  transition: width 2s, height 2s, background-color 2s, rotate 2s;
+  transition:
+    width 2s,
+    height 2s,
+    background-color 2s,
+    rotate 2s;
 }
 
 .box:hover {
@@ -209,7 +213,7 @@ document.addEventListener(
     f.style.transform = `translateY(${ev.clientY - 25}px)`;
     f.style.transform += `translateX(${ev.clientX - 25}px)`;
   },
-  false
+  false,
 );
 ```
 
@@ -261,4 +265,4 @@ el.addEventListener("transitionstart", signalStart, true);
 ## Дивіться також
 
 - Інтерфейс {{domxref("TransitionEvent")}} і подія {{domxref("Element/transitionend_event", "transitionend")}}.
-- [Застосування анімацій CSS](/uk/docs/Web/CSS/CSS_Animations/Using_CSS_animations)
+- [Застосування анімацій CSS](/uk/docs/Web/CSS/CSS_animations/Using_CSS_animations)

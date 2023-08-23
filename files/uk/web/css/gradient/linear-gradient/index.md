@@ -55,8 +55,6 @@ linear-gradient(45deg, red 0 50%, blue 50% 100%);
   - : Підказка інтерполяції, котра визначає те, як градієнт просувається між зупинками кольору. Довжина визначає те, у якій точці між двома кольоровими зупинками колір градієнта повинен досягнути середньої точки переходу кольору. Якщо цього значення немає, то середнє значення кольору досягається в середній точці між двома зупинками кольору.
 
 > **Примітка:** Відображення [кольорових зупинок градієнтів CSS](#kompozytsiia-liniinykh-hradiientiv) відповідає тим само правилам, що й кольорові зупинки [градієнтів SVG](/uk/docs/Web/SVG/Tutorial/Gradients).
->
-> Також зверніть увагу, що перший приклад вище не відображається так, як зображено, у Mozilla Firefox (конкретно у версії 80.0b3). Вам доведеться задати властивість html height зі значенням 100% або 100vh, аби відображалося як зображено.
 
 ## Опис
 
@@ -64,7 +62,7 @@ linear-gradient(45deg, red 0 50%, blue 50% 100%);
 
 Щоб створити лінійний градієнт, котрий повторюється для заповнення власного контейнера, слід натомість використовувати функцію {{cssxref("gradient/repeating-linear-gradient", "repeating-linear-gradient()")}}.
 
-Через те, що `<gradient>` належить до типу даних `<image>`, градієнти можуть використовуватись лише там, де можуть використовуватися `<image>`. Через це `linear-gradient()` не може працювати на {{CSSxRef("background-color")}} та інших властивостях, що використовують тип даних {{CSSxRef("&lt;color&gt;")}}.
+Через те, що `<gradient>` належить до типу даних `<image>`, градієнти можуть використовуватись лише там, де можуть використовуватися [`<image>`](/uk/docs/Web/CSS/image). Через це `linear-gradient()` не може працювати на {{CSSxRef("background-color")}} та інших властивостях, що використовують тип даних {{CSSxRef("&lt;color&gt;")}}.
 
 ### Композиція лінійних градієнтів
 
@@ -107,7 +105,7 @@ linear-gradient(red, orange 10% 30%, yellow 50% 70%, green 90%);
 linear-gradient(red 0%, orange 10% 30%, yellow 50% 70%, green 90% 100%);
 ```
 
-Усталено, якщо немає кольору з зупинкою 0%, то в цій точці буде перший оголошений колір. Аналогічно – останній колір буде продовжений до позначки 100%, або буде поставлений на 100%, якщо для останньої зупинки не оголошено довжини.
+Усталено, якщо немає кольору з зупинкою `0%`, то в цій точці буде перший оголошений колір. Аналогічно – останній колір буде продовжений до позначки `100%`, або буде поставлений на `100%`, якщо для останньої зупинки не оголошено довжини.
 
 ## Формальний синтаксис
 
@@ -177,7 +175,7 @@ body {
 
 ### Більше прикладів linear-gradient
 
-Будь ласка, дивіться більше прикладів у [Використанні градієнтів CSS](/uk/docs/Web/CSS/CSS_Images/Using_CSS_gradients).
+Будь ласка, дивіться більше прикладів у [використанні градієнтів CSS](/uk/docs/Web/CSS/CSS_images/Using_CSS_gradients).
 
 ## Специфікації
 
@@ -189,11 +187,12 @@ body {
 
 ## Дивіться також
 
-- [Використання градієнтів CSS](/uk/docs/Web/CSS/CSS_Images/Using_CSS_gradients)
+- [Використання градієнтів CSS](/uk/docs/Web/CSS/CSS_images/Using_CSS_gradients)
 - Інші функції градієнта: {{cssxref("gradient/repeating-linear-gradient", "repeating-linear-gradient()")}}, {{cssxref("gradient/radial-gradient", "radial-gradient()")}}, {{cssxref("gradient/repeating-radial-gradient", "repeating-radial-gradient()")}}, {{cssxref("gradient/conic-gradient", "conic-gradient()")}}, {{cssxref("gradient/repeating-conic-gradient", "repeating-conic-gradient()")}}
 - {{CSSxRef("&lt;image&gt;")}}
 - {{cssxref("element", "element()")}}
 - {{cssxref("image/image","image()")}}
 - {{cssxref("image/image-set","image-set()")}}
 - {{cssxref("cross-fade", "cross-fade()")}}
-- [Нові функції, градієнти та барви у Кольорах CSS (Рівень 4)](https://developer.mozilla.org/en-US/blog/css-color-module-level-4/) на блозі MDN (3 травня 2023 року)
+- [Модуль зображень CSS](/uk/docs/Web/CSS/CSS_images)
+- [Нові функції, градієнти та барви у Кольорах CSS (Рівень 4)](https://developer.mozilla.org/en-US/blog/css-color-module-level-4/) на блозі MDN (2023)
