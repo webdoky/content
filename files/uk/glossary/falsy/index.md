@@ -4,23 +4,27 @@ slug: Glossary/Falsy
 page-type: glossary-definition
 ---
 
+{{GlossarySidebar}}
+
 **Хибне** значення – це значення, яке вважається хибою, коли зустрічається в {{Glossary("Boolean", "булевому")}} контексті.
 
 {{Glossary("JavaScript")}} використовує {{Glossary("Type_Conversion", "перетворення типів")}} для зведення будь-якого значення до булевого в тих контекстах, які цього вимагають, як то {{Glossary("Conditional", "умовні інструкції")}} та {{Glossary("Loop", "цикли")}}.
 
 Наступна таблиця містить вичерпний список хибних значень JavaScript:
 
-| Значення                    | Опис                                                                                                                                                                                                                                         |
-| --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `false`                     | Ключове слово [`false`](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#zarezervovani-slova).                                                                                                                                              |
-| `0`                         | {{jsxref("Number", "Число")}} нуль (таким чином, так само `0.0` тощо, а також `0x0`).                                                                                                                                                        |
-| `-0`                        | {{jsxref("Number", "Число")}} від'ємний нуль (таким чином, так само `-0.0` тощо, а також `-0x0`).                                                                                                                                            |
-| `0n`                        | {{jsxref("BigInt")}} – нуль (таким чином, так само`0x0n`). Зверніть увагу на те, що немає від'ємного нуля {{jsxref("BigInt")}}: зворотнім значенням `0n` є `0n`.                                                                             |
-| `""`, `''`, ` `` `          | Значення порожнього [рядка](/uk/docs/Web/JavaScript/Reference/Global_Objects/String).                                                                                                                                                        |
-| {{Glossary("null")}}        | [null](/uk/docs/Web/JavaScript/Reference/Operators/null) — відсутність будь-якого значення.                                                                                                                                                  |
-| {{Glossary("undefined")}}   | [undefined](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined) — примітивне значення.                                                                                                                                               |
-| {{Glossary("NaN")}}         | [NaN](/uk/docs/Web/JavaScript/Reference/Global_Objects/NaN) — нечисло.                                                                                                                                                                       |
-| {{domxref("document.all")}} | Об'єкти є хибними тоді й лише тоді, коли мають внутрішню комірку [\[\[IsHTMLDDA\]\]](https://tc39.es/ecma262/#sec-IsHTMLDDA-internal-slot). Така комірка існує лише в {{domxref("document.all")}} і не може бути задана засобами JavaScript. |
+| Значення                    | Тип       | Опис                                                                                                                                                     |
+| --------------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| {{Glossary("null")}}        | Null      | Ключове слово [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) — відсутність будь-якого значення.                                              |
+| {{Glossary("undefined")}}   | Undefined | [`undefined`](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined) — примітивне значення.                                                         |
+| `false`                     | Boolean   | Ключове слово [`false`](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#zarezervovani-slova).                                                          |
+| {{Glossary("NaN")}}         | Number    | [`NaN`](/uk/docs/Web/JavaScript/Reference/Global_Objects/NaN) — не число.                                                                                |
+| `0`                         | Number    | {{jsxref("Number", "Числовий")}} нуль, у тому числі `0.0`, `0x0` тощо.                                                                                   |
+| `-0`                        | Number    | {{jsxref("Number", "Числовий")}} від'ємний нуль, у тому числі `-0.0`, `-0x0` тощо.                                                                       |
+| `0n`                        | BigInt    | Нуль-{{jsxref("BigInt")}}, у тому числі `0x0n` тощо. Зверніть увагу, що немає від'ємного нуля-{{jsxref("BigInt")}}: протилежним числом щодо `0n` є `0n`. |
+| `""`                        | String    | Значення порожнього [рядка](/uk/docs/Web/JavaScript/Reference/Global_Objects/String), в тому числі `''` і ` `` `.                                        |
+| {{domxref("document.all")}} | Object    | Єдиний хибний об'єкт у JavaScript – це вбудоване значення {{domxref("document.all")}}.                                                                   |
+
+Значення `null` і `undefined` також є [нульовими](/uk/docs/Glossary/Nullish).
 
 ## Приклади
 

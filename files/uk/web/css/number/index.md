@@ -2,13 +2,6 @@
 title: <number>
 slug: Web/CSS/number
 page-type: css-type
-tags:
-  - CSS
-  - CSS Data Type
-  - Data Type
-  - Layout
-  - Reference
-  - Web
 browser-compat: css.types.number
 ---
 
@@ -22,7 +15,7 @@ browser-compat: css.types.number
 
 ## Інтерполяція
 
-При анімуванні, значення типу даних CSS `<number>` інтерполюються як дійсні числа з рухомою комою. Швидкість інтерполяції визначається [функцією хронометражу](/uk/docs/Web/CSS/easing-function), прив'язаною до конкретної анімації.
+При анімуванні, значення типу даних CSS `<number>` інтерполюються як дійсні числа з рухомою комою. Швидкість інтерполяції визначається [функцією пом'якшення](/uk/docs/Web/CSS/easing-function), прив'язаною до конкретної анімації.
 
 ## Приклади
 
