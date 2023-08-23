@@ -72,10 +72,6 @@ reduce(callbackFn, initialValue)
 
 Метод `reduce()` є [узагальненим](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#uzahalneni-metody-masyvu). Він лишень очікує, що значення `this` матиме властивість `length`, а також властивості з цілочисловими ключами.
 
-### Коли не варто використовувати reduce()
-
-Рекурсивні функції, такі, як `reduce()`, можуть бути потужними, але іноді складними для розуміння, особливо для менш досвідчених розробників на JavaScript. Якщо код стає яснішим при використанні інших методів масиву, розробники мусять зважити прочитність супроти інших переваг використання `reduce()`. У тих випадках, коли `reduce()` є найкращим варіантом, документування та семантичне іменування змінних можуть допомогти пом'якшити недоліки прочитності.
-
 ### Крайові випадки
 
 Якщо масив містить лише один елемент (незалежно від його позиції), і значення `initialValue` передано не було, або ж якщо `initialValue` було передано, проте сам масив порожній, то повернеться саме значення _без_ викликання `callbackFn`.
@@ -169,210 +165,64 @@ const sum = objects.reduce(
 console.log(sum); // 6
 ```
 
-### Сплощення масиву з масивами
+### Послідовний конвеєр функцій
+
+Функція `pipe` (конвеєр) приймає послідовність функцій та повертає нову функцію. Коли нова функція викликається з аргументом, то послідовність функцій викликається послідовно, і кожна з них отримує значення, повернене попередньою функцією.
 
 ```js
-const flattened = [
-  [0, 1],
-  [2, 3],
-  [4, 5],
-].reduce((accumulator, currentValue) => accumulator.concat(currentValue), []);
-// сплощений результат: [0, 1, 2, 3, 4, 5]
-```
-
-### Обрахунок кількості входжень різних значень в об'єкті
-
-```js
-const names = ["Аліса", "Богдан", "Тома", "Борис", "Аліса"];
-
-const countedNames = names.reduce((allNames, name) => {
-  const currCount = allNames[name] ?? 0;
-  return {
-    ...allNames,
-    [name]: currCount + 1,
-  };
-}, {});
-// countedNames містить:
-// { 'Аліса': 2, 'Богдан': 1, 'Тома': 1, 'Борис': 1 }
-```
-
-### Групування об'єктів за певною властивістю
-
-```js
-const people = [
-  { name: "Аліса", age: 21 },
-  { name: "Максим", age: 20 },
-  { name: "Яна", age: 20 },
-];
-
-function groupBy(objectArray, property) {
-  return objectArray.reduce((acc, obj) => {
-    const key = obj[property];
-    const curGroup = acc[key] ?? [];
-    return { ...acc, [key]: [...curGroup, obj] };
-  }, {});
-}
-
-const groupedPeople = groupBy(people, "age");
-console.log(groupedPeople);
-// {
-//   20: [
-//     { name: 'Максим', age: 20 },
-//     { name: 'Яна', age: 20 }
-//   ],
-//   21: [{ name: 'Аліса', age: 21 }]
-// }
-```
-
-### Зчеплення масивів, що знаходяться всередині масиву об'єктів, за допомогою синтаксису розгортання та initialValue
-
-```js
-// friends - масив об'єктів,
-// у кожного з котрих поле "books" — це перелік улюблених книжок
-const friends = [
-  {
-    name: "Анна",
-    books: ["Біблія", "Енеїда"],
-    age: 21,
-  },
-  {
-    name: "Богдан",
-    books: ["Чорна рада", "Тіні забутих предків"],
-    age: 26,
-  },
-  {
-    name: "Аліса",
-    books: ["Залишенець. Чорний ворон", "Ворошиловград"],
-    age: 18,
-  },
-];
-
-// allbooks - список, що міститиме всі книги друзів +
-// додатковий список, що знаходиться всередині initialValue
-const allbooks = friends.reduce(
-  (accumulator, currentValue) => [...accumulator, ...currentValue.books],
-  ["Абетка"]
-);
-
-console.log(allbooks);
-// [
-//   'Абетка', 'Біблія', 'Енеїда', 'Чорна рада',
-//   'Тіні забутих предків', 'Залишенець. Чорний ворон',
-//   'Ворошиловград'
-// ]
-```
-
-### Видалити дублікати з масиву
-
-> **Примітка:** Такого ж самого ефекту можна досягти за допомогою {{jsxref("Set")}} і {{jsxref("Array.from()")}}, з кращою швидкодією, ось так: `const arrayWithNoDuplicates = Array.from(new Set(myArray))`.
-
-```js
-const myArray = ["a", "b", "a", "b", "c", "e", "e", "c", "d", "d", "d", "d"];
-const myArrayWithNoDuplicates = myArray.reduce((accumulator, currentValue) => {
-  if (!accumulator.includes(currentValue)) {
-    return [...accumulator, currentValue];
-  }
-  return accumulator;
-}, []);
-console.log(myArrayWithNoDuplicates);
-```
-
-### Заміна .filter().map() на .reduce()
-
-Застосування {{jsxref("Array/map", "map()")}} після {{jsxref("Array/filter", "filter()")}} змушує програму перебирати масив двічі; втім, аналогічного результату можна досягти, перебираючи масив лише один раз із `reduce()`, таким чином зробивши це більш ефективно. (Якщо вам до вподоби цикли `for`, можна відфільтрувати та перебрати масив за один раз із {{jsxref("Array/forEach", "forEach()")}}.)
-
-```js
-const numbers = [-5, 6, 2, 0];
-
-const doubledPositiveNumbers = numbers.reduce((accumulator, currentValue) => {
-  if (currentValue > 0) {
-    const doubled = currentValue * 2;
-    return [...accumulator, doubled];
-  }
-  return accumulator;
-}, []);
-
-console.log(doubledPositiveNumbers); // [12, 4]
-```
-
-### Послідовне запускання промісів
-
-```js
-/**
- * Створює ланцюжок із серії обробників промісів
- *
- * @param {array} arr – Список обробників промісів, кожен з яких отримує
- * вирішений результат попереднього обробника і повертає іще один проміс.
- * @param {*} input – Початкове значення для старту ланцюжка промісів
- * @return {Object} – Остаточний проміс, до котрого приєднаний ланцюжок обробників
- */
-function runPromiseInSequence(arr, input) {
-  return arr.reduce(
-    (promiseChain, currentFunction) => promiseChain.then(currentFunction),
-    Promise.resolve(input)
-  );
-}
-
-// функція з промісом номер 1
-function p1(a) {
-  return new Promise((resolve, reject) => {
-    resolve(a * 5);
-  });
-}
-
-// функція з промісом номер 2
-function p2(a) {
-  return new Promise((resolve, reject) => {
-    resolve(a * 2);
-  });
-}
-
-// функція номер 3 — обгорнеться у виконаний проміс викликом .then()
-function f3(a) {
-  return a * 3;
-}
-
-// функція з промісом номер 4
-function p4(a) {
-  return new Promise((resolve, reject) => {
-    resolve(a * 4);
-  });
-}
-
-const promiseArr = [p1, p2, f3, p4];
-runPromiseInSequence(promiseArr, 10).then(console.log); // 1200
-```
-
-### Компонування функцій у конвеєр
-
-```js
-// Базові блоки для подальшого компонування
-const double = (x) => 2 * x;
-const triple = (x) => 3 * x;
-const quadruple = (x) => 4 * x;
-
-// Компонування функцій, що дає змогу отримати функціонал конвейєра
 const pipe =
   (...functions) =>
   (initialValue) =>
     functions.reduce((acc, fn) => fn(acc), initialValue);
-
+// Цеглинки для використання в компонуванні
+const double = (x) => 2 * x;
+const triple = (x) => 3 * x;
+const quadruple = (x) => 4 * x;
 // Скомпоновані функції для множення конкретних значень
 const multiply6 = pipe(double, triple);
 const multiply9 = pipe(triple, triple);
 const multiply16 = pipe(quadruple, quadruple);
 const multiply24 = pipe(double, triple, quadruple);
-
-// Застосування
+// Використання
 multiply6(6); // 36
 multiply9(9); // 81
 multiply16(16); // 256
 multiply24(10); // 240
 ```
 
-### Використання reduce() з розрідженими масивами
+### Почерговий запуск промісів
 
-`reduce()` пропускає пропущені в розріджених масивах елементи, але не пропускає значення `undefined`.
+[Послідовне виконання промісів](/uk/docs/Web/JavaScript/Guide/Using_promises#komponuvannia) – це по суті той самий конвеєр функцій, показаний в попередньому розділі, але виконаний асинхронно.
+
+```js
+// Порівняйте це з конвеєром: fn(acc) змінено на acc.then(fn),
+// а initialValue гарантовано є промісом
+const asyncPipe =
+  (...functions) =>
+  (initialValue) =>
+    functions.reduce((acc, fn) => acc.then(fn), Promise.resolve(initialValue));
+// Цеглинки для використання в компонуванні
+const p1 = async (a) => a * 5;
+const p2 = async (a) => a * 2;
+// Скомпоновані функції також можуть повертати непроміси, оскільки всі
+// значення, зрештою, загортаються в проміси
+const f3 = (a) => a * 3;
+const p4 = async (a) => a * 4;
+asyncPipe(p1, p2, f3, p4)(10).then(console.log); // 1200
+```
+
+Функцію `asyncPipe` також можна реалізувати за допомогою `async` та `await`, що краще демонструє її подібність до `pipe`:
+
+```js
+const asyncPipe =
+  (...functions) =>
+  (initialValue) =>
+    functions.reduce(async (acc, fn) => fn(await acc), initialValue);
+```
+
+### Застосування reduce() до розріджених масивів
+
+Метод `reduce()` пропускає в розріджених масивах відсутні елементи, але не пропускає значення `undefined`.
 
 ```js
 console.log([1, 2, , 4].reduce((a, b) => a + b)); // 7
@@ -381,7 +231,7 @@ console.log([1, 2, undefined, 4].reduce((a, b) => a + b)); // NaN
 
 ### Виклик reduce() на об'єктах-немасивах
 
-Метод `reduce()` зчитує з `this` властивість `length`, а потім звертається до кожної цілочислової властивості.
+Метод `reduce()` зчитує з `this` властивість `length`, а тоді звертається до кожної властивості, чий ключ є невід'ємним цілим числом, меншим за `length`.
 
 ```js
 const arrayLike = {
@@ -389,10 +239,156 @@ const arrayLike = {
   0: 2,
   1: 3,
   2: 4,
+  3: 99, // ігнорується reduce(), оскільки length – 3
 };
 console.log(Array.prototype.reduce.call(arrayLike, (x, y) => x + y));
 // 9
 ```
+
+### Коли не варто використовувати reduce()
+
+Багатоцільові функції вищого порядку, подібні до `reduce()`, можуть бути потужними, але іноді їх важко зрозуміти, особливо для менш досвідчених розробників на JavaScript. Якщо код стає зрозумілішим при використанні інших методів масиву, розробники повинні зважити компроміс між читабельністю та іншими перевагами використання `reduce()`.
+
+Зверніть увагу на те, що `reduce()` завжди еквівалентний циклу `for...of`, за винятком того, що замість внесення змін до змінної у верхній області видимості ми тепер повертаємо нове значення для кожної ітерації:
+
+```js
+const val = array.reduce((acc, cur) => update(acc, cur), initialValue);
+// Це рівносильно до:
+let val = initialValue;
+for (const cur of array) {
+  val = update(val, cur);
+}
+```
+
+Як зазначено вище, причина того, що може виникнути бажання використовувати `reduce()`, – імітування практик функціонального програмування щодо беззмінності даних. Таким чином, розробники, які дотримуються беззмінності акумулятора, часто копіюють весь акумулятор для кожної ітерації, отак:
+
+```js example-bad
+const names = ["Аліса", "Богдан", "Тетяна", "Борис", "Аліса"];
+const countedNames = names.reduce((allNames, name) => {
+  const currCount = Object.hasOwn(allNames, name) ? allNames[name] : 0;
+  return {
+    ...allNames,
+    [name]: currCount + 1,
+  };
+}, {});
+```
+
+Цей код працює повільно, оскільки кожна ітерація повинна копіювати весь об'єкт `allNames`, який може бути великим, в залежності від того, скільки є унікальних імен. Цей код має найгіршу продуктивність – `O(N^2)`, де `N` – довжина `names`.
+
+Кращий варіант – _змінювати_ об'єкт `allNames` на кожній ітерації. Проте якщо `allNames` все одно змінюється, то можна перетворити `reduce()` на простий цикл `for`, що набагато зрозуміліше:
+
+```js example-bad
+const names = ["Аліса", "Богдан", "Тетяна", "Борис", "Аліса"];
+const countedNames = names.reduce((allNames, name) => {
+  const currCount = allNames[name] ?? 0;
+  allNames[name] = currCount + 1;
+  // повернути allNames, бо інакше – наступна ітерація отримає undefined
+  return allNames;
+}, Object.create(null));
+```
+
+```js example-good
+const names = ["Аліса", "Богдан", "Тетяна", "Борис", "Аліса"];
+const countedNames = Object.create(null);
+for (const name of names) {
+  const currCount = countedNames[name] ?? 0;
+  countedNames[name] = currCount + 1;
+}
+```
+
+Таким чином, якщо акумулятор є масивом або об'єктом, і на кожній ітерації цей масив або об'єкт копіюється, можна випадково ввести у код квадратичну складність, що призводить до швидкого погіршення продуктивності на великих даних.
+
+Частина прийнятних ситуацій для використання `reduce()` подана вище (перш за все, сумування масиву, послідовне виконання промісів та конвеєр функцій). В інших випадках існують кращі варіанти, ніж `reduce()`.
+
+- Сплощення масиву масивів. Краще використати {{jsxref("Array/flat", "flat()")}}.
+
+  ```js example-bad
+  const flattened = array.reduce((acc, cur) => acc.concat(cur), []);
+  ```
+
+  ```js example-good
+  const flattened = array.flat();
+  ```
+
+- Групування об'єктів за властивістю. Краще використати {{jsxref("Array/group", "group()")}}.
+
+  ```js example-bad
+  const groups = array.reduce((acc, obj) => {
+    const key = obj.name;
+    const curGroup = acc[key] ?? [];
+    return { ...acc, [key]: [...curGroup, obj] };
+  }, {});
+  ```
+
+  ```js example-good
+  const groups = array.group((obj) => obj.name);
+  ```
+
+- Зчеплення масивів, що містяться в масиві об'єктів. Краще використати {{jsxref("Array/flatMap", "flatMap()")}}.
+
+  ```js example-bad
+  const friends = [
+    { name: "Анна", books: ["Біблія", "Вогнесміх"] },
+    {
+      name: "Борислав",
+      books: ["Хіба ревуть воли, як ясла повні", "Кайдашева сім'я"],
+    },
+    { name: "Аліса", books: ["Бот: Атакамська криза", "Культ"] },
+  ];
+  const allBooks = friends.reduce((acc, cur) => [...acc, ...cur.books], []);
+  ```
+
+  ```js example-good
+  const allBooks = friends.flatMap((person) => person.books);
+  ```
+
+- Усунення з масиву дублікатів. Краще використати {{jsxref("Set")}} і {{jsxref("Array.from()")}}.
+
+  ```js example-bad
+  const uniqArray = array.reduce(
+    (acc, cur) => (acc.includes(cur) ? acc : [...acc, cur]),
+    []
+  );
+  ```
+
+  ```js example-good
+  const uniqArray = Array.from(new Set(array));
+  ```
+
+- Видалення або додавання елементів масиву. Краще використати {{jsxref("Array/flatMap", "flatMap()")}}.
+
+  ```js example-bad
+  // Беремо масив чисел і розбиваємо цілі квадрати на їхні квадратні корені
+  const roots = array.reduce((acc, cur) => {
+    if (cur < 0) return acc;
+    const root = Math.sqrt(cur);
+    if (Number.isInteger(root)) return [...acc, root, root];
+    return [...acc, cur];
+  }, []);
+  ```
+
+  ```js example-good
+  const roots = array.flatMap((val) => {
+    if (val < 0) return [];
+    const root = Math.sqrt(val);
+    if (Number.isInteger(root)) return [root, root];
+    return [val];
+  });
+  ```
+
+  Якщо елементи масиву лише видаляються, також можна використати {{jsxref("Array/filter", "filter()")}}.
+
+- Пошук елементів або перевірка того, що елементи задовольняють умові. Краще використати {{jsxref("Array/find", "find()")}} і {{jsxref("Array/find", "findIndex()")}}, або {{jsxref("Array/some", "some()")}} і {{jsxref("Array/every", "every()")}}. Ці методи мають додаткову перевагу: вони повертають результат, щойно він відомий, без ітерування всього масиву.
+
+  ```js example-bad
+  const allEven = array.reduce((acc, cur) => acc && cur % 2 === 0, true);
+  ```
+
+  ```js example-good
+  const allEven = array.every((val) => val % 2 === 0);
+  ```
+
+У тих випадках, коли `reduce()` є найкращим варіантом, документація та семантичне іменування змінних можуть допомогти полегшити проблему з читабельністю.
 
 ## Специфікації
 

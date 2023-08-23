@@ -21,7 +21,7 @@ browser-compat: html.elements.form
 
   - : Розділені комами [типи вмісту](/uk/docs/Web/SVG/Content_type), котрі приймає сервер.
 
-    > **Примітка:** **Цей атрибут тепер нерекомендований, його не слід використовувати.** Натомість слід використовувати атрибут [`accept`](/uk/docs/Web/HTML/Element/input#accept) на елементах `<input type=file>`.
+    > **Примітка:** **Цей атрибут тепер нерекомендований, його не слід використовувати.** Натомість слід використовувати атрибут [`accept`](/uk/docs/Web/HTML/Element/input#accept-pryimannia) на елементах `<input type=file>`.
 
 - {{htmlattrdef("accept-charset")}}
   - : Розділені пробілами {{Glossary("character encoding", "кодування символів")}}, котрі приймає сервер. Браузер використає їх в порядку, в якому вони вказані. Усталене значення – [таке саме кодування, яке має сторінка](/uk/docs/Web/HTTP/Headers/Content-Encoding).
