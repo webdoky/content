@@ -818,7 +818,7 @@ const triangle1 = new Module.Triangle(
 
 Це корисно, бо код у [`main.js`](https://github.com/mdn/js-examples/blob/master/module-examples/top-level-await/main.js) не виконається, поки не завершиться код у [`getColors.js`](https://github.com/mdn/js-examples/blob/master/module-examples/top-level-await/modules/getColors.js). Проте це не завадить завантаженню інших модулів. Наприклад, модуль [`canvas.js`](https://github.com/mdn/js-examples/blob/master/module-examples/top-level-await/modules/canvas.js) завантажуватиметься далі, поки виконується отримання `colors`.
 
-## Оголошення імпорту – піднімаються
+## Оголошення імпорту піднімаються
 
 Оголошення імпорту – [піднімаються](/uk/docs/Glossary/Hoisting). В цьому випадку це означає, що імпортовані значення доступні в коді модуля навіть до рядка, котрий їх оголошує, і що побічні ефекти імпортованого модуля виробляються до запуску решти коду поточного модуля.
 Тож, наприклад, у `main.js`, імпортування `Canvas` в середині коду все одно працюватиме:
