@@ -13,6 +13,7 @@ const MACROS_TO_STRIP = new Set([
   "EmbedInteractiveExample",
   "EmbedLiveSample",
   "jsSidebar",
+  "js_property_attributes"
 ]);
 
 const markdownIt = new MarkdownIt({
@@ -82,6 +83,9 @@ function convertHtmlToText(html) {
     }),
   );
   debug(result);
+  writeFile("output.txt", result, () => {
+    console.log("Output TXT written");
+  });
   return result;
 }
 
