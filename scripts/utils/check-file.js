@@ -1,4 +1,4 @@
-import fs from "fs";
+import fs, { writeFile } from "fs";
 
 import chalk from "chalk";
 import { convert } from "html-to-text";
@@ -27,14 +27,26 @@ const markdownIt = new MarkdownIt({
 function stripCodeListings(html) {
   debug("stripCodeListings(...)");
   // Only removes multiline listings
-  const modifiedHtml = html.replaceAll(
+  let modifiedHtml = html.replace(
+    /<h2>title: ([^\n]+)[\S\s]*?<\/h2>/gim,
+    "<h1>$1</h1>",
+  );
+  modifiedHtml = modifiedHtml.replaceAll(
     /<code(?: [^>]+)*>(.+?)<\/code>/gi,
-    '"$1"'
+    '"$1"',
   );
-  return modifiedHtml.replaceAll(
+  modifiedHtml = modifiedHtml.replaceAll(
     /<code(?: [^>]+)*>[\S\s]*?\n[\S\s]*?(<\/code>)/gim,
-    ""
+    "",
   );
+  modifiedHtml = modifiedHtml.replaceAll(
+    /&lt;math[\S\s]+&lt;\/math&gt;/gim,
+    "",
+  );
+  writeFile("output.html", modifiedHtml, () => {
+    console.log("Output HTML written");
+  });
+  return modifiedHtml;
 }
 
 /**
@@ -54,11 +66,11 @@ function stripMacrosInterpolation(text) {
       }
       debug(`Macros ${macrosName}: staying`);
       return `${lastParameter}`;
-    }
+    },
   );
   return modifiedText.replaceAll(
     /{{\s?\w+\(["']?([^"']+)["']?\)\s?}}/gim,
-    "$1"
+    "$1",
   );
 }
 
@@ -67,7 +79,7 @@ function convertHtmlToText(html) {
   const result = stripMacrosInterpolation(
     convert(stripCodeListings(html), {
       ignoreHref: true,
-    })
+    }),
   );
   debug(result);
   return result;
@@ -75,7 +87,8 @@ function convertHtmlToText(html) {
 
 function convertMarkdownToHtml(markdown) {
   debug("convertMarkdownToHtml(...)");
-  return markdownIt.render(markdown);
+  const html = markdownIt.render(markdown);
+  return html;
 }
 
 function getText(filePath) {
