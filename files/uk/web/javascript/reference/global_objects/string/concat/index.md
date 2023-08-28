@@ -14,6 +14,7 @@ browser-compat: javascript.builtins.String.concat
 ## Синтаксис
 
 ```js-nolint
+concat()
 concat(str1)
 concat(str1, str2)
 concat(str1, str2, /* …, */ strN)
@@ -68,4 +69,4 @@ const greetList = ["Привіт", " ", "Венкате", "!"];
 ## Дивіться також
 
 - {{jsxref("Array.prototype.concat()")}}
-- [Оператор додавання](/uk/docs/Web/JavaScript/Reference/Operators/Addition)
+- [Додавання (`+`)](/uk/docs/Web/JavaScript/Reference/Operators/Addition)
