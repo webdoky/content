@@ -1,12 +1,7 @@
 ---
 title: Категорії вмісту
-slug: Web/HTML/Content_categories 
-tags:
-  - Advanced
-  - Guide
-  - HTML
-  - NeedsUpdate
-  - Web
+slug: Web/HTML/Content_categories
+page-type: guide
 ---
 
 {{HTMLSidebar}}
@@ -21,7 +16,7 @@ tags:
 
 > **Примітка:** Більш докладне обговорення таких категорій вмісту та відповідної їм функціональності лежить поза обсягом цієї статті; на цю тему може бути доречним прочитати [відповідні частини специфікації HTML](https://html.spec.whatwg.org/multipage/dom.html#kinds-of-content).
 
-[![Діаграма Венна, що демонструє, як взаємовідносяться різні категорії вмісту. Наступні розділи пояснюють ці взаємини у текстовий спосіб.](content_categories_venn.png)](/uk/docs/Web/Guide/HTML/Content_categories/content_categories_venn.png)
+[![Діаграма Венна, що демонструє, як взаємовідносяться різні категорії вмісту. Наступні розділи пояснюють ці взаємини у текстовий спосіб.](content_categories_venn.png)](/uk/docs/Web/HTML/Content_categories/content_categories_venn.png)
 
 ## Головні категорії вмісту
 
@@ -29,7 +24,7 @@ tags:
 
 Елементи, що належать до категорії _вмісту метаданих_, видозмінюють представлення чи поведінку решти документа, задають посилання на інші документи чи доносять іншу _супутню_ інформацію.
 
-Елементи, що належать до цієї категорії: {{HTMLElement("base")}}, {{HTMLElement("command")}} {{deprecated_inline}}, {{HTMLElement("link")}}, {{HTMLElement("meta")}}, {{HTMLElement("noscript")}}, {{HTMLElement("script")}}, {{HTMLElement("style")}} і {{HTMLElement("title")}}.
+Елементи, що належать до цієї категорії: {{HTMLElement("base")}}, {{HTMLElement("link")}}, {{HTMLElement("meta")}}, {{HTMLElement("noscript")}}, {{HTMLElement("script")}}, {{HTMLElement("style")}} і {{HTMLElement("title")}}.
 
 ### Потоковий вміст
 
@@ -52,12 +47,12 @@ tags:
 - {{HTMLElement("canvas")}}
 - {{HTMLElement("cite")}}
 - {{HTMLElement("code")}}
-- {{HTMLElement("command")}} {{deprecated_inline}}
 - {{HTMLElement("data")}}
 - {{HTMLElement("datalist")}}
 - {{HTMLElement("del")}}
 - {{HTMLElement("details")}}
 - {{HTMLElement("dfn")}}
+- {{HTMLElement("dialog")}}
 - {{HTMLElement("div")}}
 - {{HTMLElement("dl")}}
 - {{HTMLElement("em")}}
@@ -66,12 +61,12 @@ tags:
 - {{HTMLElement("figure")}}
 - {{HTMLElement("footer")}}
 - {{HTMLElement("form")}}
-- {{HTMLElement("h1")}}
-- {{HTMLElement("h2")}}
-- {{HTMLElement("h3")}}
-- {{HTMLElement("h4")}}
-- {{HTMLElement("h5")}}
-- {{HTMLElement("h6")}}
+- {{HTMLElement("Heading_Elements", "h1")}}
+- {{HTMLElement("Heading_Elements", "h2")}}
+- {{HTMLElement("Heading_Elements", "h3")}}
+- {{HTMLElement("Heading_Elements", "h4")}}
+- {{HTMLElement("Heading_Elements", "h5")}}
+- {{HTMLElement("Heading_Elements", "h6")}}
 - {{HTMLElement("header")}}
 - {{HTMLElement("hgroup")}}
 - {{HTMLElement("hr")}}
@@ -81,7 +76,6 @@ tags:
 - {{HTMLElement("input")}}
 - {{HTMLElement("ins")}}
 - {{HTMLElement("kbd")}}
-- {{HTMLElement("keygen")}} {{deprecated_inline}}
 - {{HTMLElement("label")}}
 - {{HTMLElement("main")}}
 - {{HTMLElement("map")}}
@@ -102,9 +96,11 @@ tags:
 - {{HTMLElement("ruby")}}
 - {{HTMLElement("s")}}
 - {{HTMLElement("samp")}}
+- {{HTMLElement("search")}}
 - {{HTMLElement("script")}}
 - {{HTMLElement("section")}}
 - {{HTMLElement("select")}}
+- {{HTMLElement("slot")}}
 - {{HTMLElement("small")}}
 - {{HTMLElement("span")}}
 - {{HTMLElement("strong")}}
@@ -120,6 +116,7 @@ tags:
 - {{HTMLElement("var")}}
 - {{HTMLElement("video")}}
 - {{HTMLElement("wbr")}}
+- Простий текст
 
 До цієї категорії належать іще кілька елементів, але лише за виконання певних умов:
 
@@ -138,7 +135,7 @@ tags:
 
 Заголовковий вміст – підмножина потокового вмісту, що визначає заголовок розділу, або позначений явним елементом [розділового вмісту](#rozdilovyi-vmist), або неявно визначений самим заголовковим вмістом. Заголовковий вміст може використовуватися всюди, де очікується потоковий вміст.
 
-Елементи, що належать до цієї категорії: {{HTMLElement("h1")}}, {{HTMLElement("h2")}}, {{HTMLElement("h3")}}, {{HTMLElement("h4")}}, {{HTMLElement("h5")}}, {{HTMLElement("h6")}} і {{HTMLElement("hgroup")}}.
+Елементи, що належать до цієї категорії: {{HTMLElement("Heading_Elements", "h1")}}, {{HTMLElement("Heading_Elements", "h2")}}, {{HTMLElement("Heading_Elements", "h3")}}, {{HTMLElement("Heading_Elements", "h4")}}, {{HTMLElement("Heading_Elements", "h5")}}, {{HTMLElement("Heading_Elements", "h6")}} і {{HTMLElement("hgroup")}}.
 
 > **Примітка:** Хоч елемент {{HTMLElement("header")}} з високою ймовірністю міститиме заголовковий вміст, сам він не є заголовковим вмістом.
 
@@ -153,13 +150,13 @@ tags:
 - {{HTMLElement("abbr")}}
 - {{HTMLElement("audio")}}
 - {{HTMLElement("b")}}
+- {{HTMLElement("bdi")}}
 - {{HTMLElement("bdo")}}
 - {{HTMLElement("br")}}
 - {{HTMLElement("button")}}
 - {{HTMLElement("canvas")}}
 - {{HTMLElement("cite")}}
 - {{HTMLElement("code")}}
-- {{HTMLElement("command")}} {{deprecated_inline}}
 - {{HTMLElement("data")}}
 - {{HTMLElement("datalist")}}
 - {{HTMLElement("dfn")}}
@@ -170,7 +167,6 @@ tags:
 - {{HTMLElement("img")}}
 - {{HTMLElement("input")}}
 - {{HTMLElement("kbd")}}
-- {{HTMLElement("keygen")}} {{deprecated_inline}}
 - {{HTMLElement("label")}}
 - {{HTMLElement("mark")}}
 - {{MathMLElement("math")}}
@@ -186,12 +182,14 @@ tags:
 - {{HTMLElement("samp")}}
 - {{HTMLElement("script")}}
 - {{HTMLElement("select")}}
+- {{HTMLElement("slot")}}
 - {{HTMLElement("small")}}
 - {{HTMLElement("span")}}
 - {{HTMLElement("strong")}}
 - {{HTMLElement("sub")}}
 - {{HTMLElement("sup")}}
 - {{SVGElement("svg")}}
+- {{HTMLElement("template")}}
 - {{HTMLElement("textarea")}}
 - {{HTMLElement("time")}}
 - {{HTMLElement("u")}}
@@ -228,22 +226,21 @@ tags:
 
 Інтерактивний вміст є підмножиною потокового вмісту, що включає елементи, котрі розроблені конкретно для взаємодії з користувачем, і можуть використовуватися всюди, де очікується потоковий вміст. Серед елементів, що належать до цієї категорії:
 
-- {{HTMLElement("a")}}
 - {{HTMLElement("button")}}
 - {{HTMLElement("details")}}
 - {{HTMLElement("embed")}}
 - {{HTMLElement("iframe")}}
-- {{HTMLElement("keygen")}} {{deprecated_inline}}
 - {{HTMLElement("label")}}
 - {{HTMLElement("select")}} і {{HTMLElement("textarea")}}.
 
 Частина елементів належить до цієї категорії лише за певних умов:
 
-- {{HTMLElement("audio")}}, коли присутній атрибут {{htmlattrxref("controls", "audio")}}
-- {{HTMLElement("img")}}, коли присутній атрибут {{htmlattrxref("usemap", "img")}}
+- {{HTMLElement("a")}}, якщо присутній атрибут [`href`](/uk/docs/Web/HTML/Element/a#href)
+- {{HTMLElement("audio")}}, коли присутній атрибут [`controls`](/uk/docs/Web/HTML/Element/audio#controls)
+- {{HTMLElement("img")}}, коли присутній атрибут [`usemap`](/uk/docs/Web/HTML/Element/img#usemap)
 - {{HTMLElement("input")}}, коли атрибут [type](/uk/docs/Web/HTML/Element/input#type-typ) не має значення "hidden"
-- {{HTMLElement("object")}}, коли присутній атрибут {{htmlattrxref("usemap", "object")}}
-- {{HTMLElement("video")}}, коли присутній атрибут {{htmlattrxref("controls", "video")}}
+- {{HTMLElement("object")}}, коли присутній атрибут [`usemap`](/uk/docs/Web/HTML/Element/object#usemap)
+- {{HTMLElement("video")}}, коли присутній атрибут [`controls`](/uk/docs/Web/HTML/Element/video#controls)
 
 ### Відчутний вміст
 
@@ -256,7 +253,6 @@ tags:
 - {{HTMLElement("button")}}
 - {{HTMLElement("fieldset")}}
 - {{HTMLElement("input")}}
-- {{HTMLElement("keygen")}} {{deprecated_inline}}
 - {{HTMLElement("label")}}
 - {{HTMLElement("meter")}}
 - {{HTMLElement("object")}}
@@ -268,13 +264,13 @@ tags:
 Ця категорія містить декілька підкатегорій:
 
 - перелічені
-  - : Елементи, котрі перелічені в колекціях {{domxref("HTMLFormElement.elements", "form.elements")}} і `fieldset.elements`. Включає {{HTMLElement("button")}}, {{HTMLElement("fieldset")}}, {{HTMLElement("input")}}, {{HTMLElement("keygen")}} {{deprecated_inline}}, {{HTMLElement("object")}}, {{HTMLElement("output")}}, {{HTMLElement("select")}} і {{HTMLElement("textarea")}}.
+  - : Елементи, котрі перелічені в колекціях {{domxref("HTMLFormElement.elements", "form.elements")}} і `fieldset.elements`. Включає {{HTMLElement("button")}}, {{HTMLElement("fieldset")}}, {{HTMLElement("input")}}, {{HTMLElement("object")}}, {{HTMLElement("output")}}, {{HTMLElement("select")}} і {{HTMLElement("textarea")}}.
 - підписні
-  - : Елементи, що можуть бути пов'язані з елементами {{HTMLElement("label")}}. Включає {{HTMLElement("button")}}, {{HTMLElement("input")}}, {{HTMLElement("keygen")}} {{deprecated_inline}}, {{HTMLElement("meter")}}, {{HTMLElement("output")}}, {{HTMLElement("progress")}}, {{HTMLElement("select")}} і {{HTMLElement("textarea")}}.
+  - : Елементи, що можуть бути пов'язані з елементами {{HTMLElement("label")}}. Включає {{HTMLElement("button")}}, {{HTMLElement("input")}}, {{HTMLElement("meter")}}, {{HTMLElement("output")}}, {{HTMLElement("progress")}}, {{HTMLElement("select")}} і {{HTMLElement("textarea")}}.
 - подавальні
-  - : Елементи, що можуть використовуватися для конструювання набору даних форми, коли вона подається. Включає {{HTMLElement("button")}}, {{HTMLElement("input")}}, {{HTMLElement("keygen")}} {{deprecated_inline}}, {{HTMLElement("object")}}, {{HTMLElement("select")}} і {{HTMLElement("textarea")}}.
+  - : Елементи, що можуть використовуватися для конструювання набору даних форми, коли вона подається. Включає {{HTMLElement("button")}}, {{HTMLElement("input")}}, {{HTMLElement("object")}}, {{HTMLElement("select")}} і {{HTMLElement("textarea")}}.
 - скидані
-  - : Елементи, на котрі може повпливати скидання форми. Включає {{HTMLElement("input")}}, {{HTMLElement("keygen")}} {{deprecated_inline}}, {{HTMLElement("output")}}, {{HTMLElement("select")}} і {{HTMLElement("textarea")}}.
+  - : Елементи, на котрі може повпливати скидання форми. Включає {{HTMLElement("input")}}, {{HTMLElement("output")}}, {{HTMLElement("select")}} і {{HTMLElement("textarea")}}.
 
 ## Другорядні категорії
 
