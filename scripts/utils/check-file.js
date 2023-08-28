@@ -35,7 +35,7 @@ function stripCodeListings(html) {
   debug("stripCodeListings(...)");
   // Only removes multiline listings
   let modifiedHtml = html.replace(
-    /<hr>[\s\S]+<(\w+)>title: ([^\n]+)[\S\s]*?<\/\1>[\s\S]+<hr>/gim,
+    /<hr>[\s\S]+<(\w+)>title: ([^\n]+)[\S\s]*?<(?:\/\1|hr)>/gim,
     "<h1>$2</h1>",
   );
   modifiedHtml = modifiedHtml.replaceAll(
