@@ -2,6 +2,7 @@ import fs, { writeFile } from "fs";
 
 import chalk from "chalk";
 import { convert } from "html-to-text";
+// import map from "lodash/map";
 import MarkdownIt from "markdown-it";
 
 import debug from "./debug";
@@ -13,8 +14,10 @@ const MACROS_TO_STRIP = new Set([
   "EmbedInteractiveExample",
   "EmbedLiveSample",
   "jsSidebar",
-  "js_property_attributes"
+  "js_property_attributes",
 ]);
+
+// const COMMENT_REGEXP = /\/\/(.+)|\/\*([\s\S]+)\*\//gim;
 
 const markdownIt = new MarkdownIt({
   // breaks: true,
@@ -26,19 +29,32 @@ const markdownIt = new MarkdownIt({
  * @returns {string} HTML without code snippets
  */
 function stripCodeListings(html) {
+  writeFile("input.html", html, () => {
+    console.log("Input HTML written");
+  });
   debug("stripCodeListings(...)");
   // Only removes multiline listings
   let modifiedHtml = html.replace(
-    /<h2>title: ([^\n]+)[\S\s]*?<\/h2>/gim,
-    "<h1>$1</h1>",
+    /<hr>[\s\S]+<(\w+)>title: ([^\n]+)[\S\s]*?<\/\1>[\s\S]+<hr>/gim,
+    "<h1>$2</h1>",
   );
   modifiedHtml = modifiedHtml.replaceAll(
     /<code(?: [^>]+)*>(.+?)<\/code>/gi,
     '"$1"',
   );
   modifiedHtml = modifiedHtml.replaceAll(
-    /<code(?: [^>]+)*>[\S\s]*?\n[\S\s]*?(<\/code>)/gim,
-    "",
+    /<code(?: [^>]+)*>([\S\s]*?\n[\S\s]*?)<\/code>/gim,
+    // (match, code) => {
+    //   console.info("<CODE>", code, "</CODE>");
+    //   return map(
+    //     [...code.matchAll(COMMENT_REGEXP)],
+    //     ([match, shortComment, longComment]) => {
+    //       console.info(match, "=>", shortComment, "||", longComment);
+    //       return shortComment || longComment || "";
+    //     },
+    //   ).join("\n");
+    // },
+    ''
   );
   modifiedHtml = modifiedHtml.replaceAll(
     /&lt;math[\S\s]+&lt;\/math&gt;/gim,
