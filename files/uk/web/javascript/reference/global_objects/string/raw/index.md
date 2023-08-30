@@ -7,14 +7,17 @@ browser-compat: javascript.builtins.String.raw
 
 {{JSRef}}
 
-Статичний метод **`String.raw()`** — це тегова функція [шаблонних літералів](/uk/docs/Web/JavaScript/Reference/Template_literals). Він подібний до префікса `r` в Python, або префіксу `@` в C# для рядкових літералів. Використовується для отримання необроблених рядкових форм шаблонних літералів — тобто таких, в яких опрацьовані вирази підставлення (наприклад `${foo}`), а екрановані послідовності (зокрема `\n`) — ні.
+Статичний метод **`String.raw()`** (сирий, необроблений) — це тегова функція [шаблонних літералів](/uk/docs/Web/JavaScript/Reference/Template_literals). Він подібний до префікса `r` в Python, або префіксу `@` в C# для рядкових літералів. Використовується для отримання необроблених рядкових форм шаблонних літералів — тобто таких, в яких опрацьовані вирази підставлення (наприклад `${foo}`), а екрановані послідовності (зокрема `\n`) — ні.
 
 {{EmbedInteractiveExample("pages/js/string-raw.html")}}
 
 ## Синтаксис
 
 ```js-nolint
-String.raw(strings, ...substitutions)
+String.raw(strings)
+String.raw(strings, substitution1)
+String.raw(strings, substitution1, substitution2)
+String.raw(strings, substitution1, substitution2, /* …, */ substitutionN)
 
 String.raw`templateString`
 ```
@@ -78,7 +81,7 @@ String.raw`Привіт \${name}!`;
 
 ```js
 // Частина форматувальників відформатує вміст цього літерала як HTML
-const doc = html`<!DOCTYPE html>
+const doc = html`<!doctype html>
   <html lang="uk">
     <head>
       <title>Привіт</title>
