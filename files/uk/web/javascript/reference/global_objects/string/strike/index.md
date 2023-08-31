@@ -1,42 +1,40 @@
 ---
 title: String.prototype.strike()
 slug: Web/JavaScript/Reference/Global_Objects/String/strike
-tags:
-  - Deprecated
-  - HTML wrapper methods
-  - JavaScript
-  - Method
-  - Prototype
-  - String
-  - Polyfill
+page-type: javascript-instance-method
+status:
+  - deprecated
 browser-compat: javascript.builtins.String.strike
 ---
+
 {{JSRef}} {{deprecated_header}}
 
-Метод **`strike()`** створює HTML-елемент {{HTMLElement("strike")}}, який змушує рядок зображатися як закреслений текст.
+Метод **`strike()`** (перекреслений) значень {{jsxref("String")}} створює рядок, що вбудовує рядок цього методу в елемент {{HTMLElement("strike")}} (`<strike>str</strike>`), завдяки якому цей рядок виводиться перекресленим текстом.
+
+> **Примітка:** Всі [обгортальні методи HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html) є нерекомендованими та стандартизовані лише заради потреб сумісності. Замість них слід використовувати [API DOM](/uk/docs/Web/API/Document_Object_Model), наприклад, [`document.createElement()`](/uk/docs/Web/API/Document/createElement).
 
 ## Синтаксис
 
-```js
-strike()
+```js-nolint
+strike();
 ```
+
+### Параметри
+
+Жодних.
 
 ### Повернене значення
 
-Рядок, що містить HTML-елемент {{HTMLElement("strike")}}.
-
-## Опис
-
-Метод `strike()` вписує рядок тексту в елемент `<strike>`: "`<strike>текст</strike>`".
+Рядок, що починається з початкового тега `<strike>`, потім текст `str`, а потім кінцевий тег `</strike>`.
 
 ## Приклади
 
 ### Застосування strike()
 
-Наступний приклад використовує методи рядка для зміни форматування тексту:
+Наступний приклад використовує нерекомендовані методи рядка для зміни форматування тексту:
 
 ```js
-var worldString = 'Привіт, світе';
+const worldString = "Привіт, світе";
 
 console.log(worldString.blink()); // <blink>Привіт, світе</blink>
 console.log(worldString.bold()); // <b>Привіт, світе</b>
