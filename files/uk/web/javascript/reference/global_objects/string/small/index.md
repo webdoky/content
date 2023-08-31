@@ -1,34 +1,31 @@
 ---
 title: String.prototype.small()
 slug: Web/JavaScript/Reference/Global_Objects/String/small
-tags:
-  - Deprecated
-  - HTML wrapper methods
-  - JavaScript
-  - Method
-  - Prototype
-  - Reference
-  - String
-  - Polyfill
+page-type: javascript-instance-method
+status:
+  - deprecated
 browser-compat: javascript.builtins.String.small
 ---
+
 {{JSRef}} {{deprecated_header}}
 
-Метод **`small()`** створює HTML-елемент {{HTMLElement("small")}}, який змушує рядок зображатися дрібним шрифтом.
+Метод **`small()`** (малий) значень {{jsxref("String")}} створює рядок, що вбудовує рядок цього методу в елемент {{HTMLElement("small")}} (`<small>str</small>`), завдяки якому цей рядок виводиться малим шрифтом.
+
+> **Примітка:** Всі [обгортальні методи HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html) є нерекомендованими та стандартизовані заради потреб сумісності. Замість них слід використовувати [API DOM](/uk/docs/Web/API/Document_Object_Model), наприклад, [`document.createElement()`](/uk/docs/Web/API/Document/createElement).
 
 ## Синтаксис
 
-```js
+```js-nolint
 small()
 ```
 
+### Параметри
+
+Жодних.
+
 ### Повернене значення
 
-Рядок, що містить HTML-елемент {{HTMLElement("small")}}.
-
-## Опис
-
-Метод `small()` вписує рядок текст в елемент `<small>`: "`<small>текст</small>`".
+Рядок, що починається з початкового тега `<small>`, потім текст `str`, а потім кінцевий тег `</small>`.
 
 ## Приклади
 
@@ -37,17 +34,17 @@ small()
 Наступний приклад використовує методи рядка для зміни розміру тексту:
 
 ```js
-var worldString = 'Привіт, світе';
+const worldString = "Привіт, світе";
 
-console.log(worldString.small());     // <small>Привіт, світе</small>
-console.log(worldString.big());       // <big>Привіт, світе</big>
+console.log(worldString.small()); // <small>Привіт, світе</small>
+console.log(worldString.big()); // <big>Привіт, світе</big>
 console.log(worldString.fontsize(7)); // <font size="7">Привіт, світе</fontsize>
 ```
 
 За допомогою об'єкта {{domxref("HTMLElement/style", "element.style")}} можна отримати доступ до атрибута `style` елемента і більш загально ним маніпулювати, як от:
 
 ```js
-document.getElementById('yourElemId').style.fontSize = '0.7em';
+document.getElementById("yourElemId").style.fontSize = "0.7em";
 ```
 
 ## Специфікації
