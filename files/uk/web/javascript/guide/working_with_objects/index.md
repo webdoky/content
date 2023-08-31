@@ -1,10 +1,10 @@
 ---
 title: Робота з об'єктами
-slug: Web/JavaScript/Guide/Working_with_Objects
+slug: Web/JavaScript/Guide/Working_with_objects
 page-type: guide
 ---
 
-{{jsSidebar("JavaScript Guide")}} {{PreviousNext("Web/JavaScript/Guide/Keyed_collections", "Web/JavaScript/Guide/Using_Classes")}}
+{{jsSidebar("JavaScript Guide")}} {{PreviousNext("Web/JavaScript/Guide/Keyed_collections", "Web/JavaScript/Guide/Using_classes")}}
 
 JavaScript збудовано на основі простої, заснованої на об'єктах парадигми. Об'єкт — це колекція [властивостей](/uk/docs/Glossary/Property/JavaScript), а властивість — це зв'язок між назвою (або іменем чи _ключем_) та значенням. Значенням властивості може бути функція — таку властивість називають [методом](/uk/docs/Glossary/Method).
 
@@ -55,7 +55,7 @@ const myHonda = {
 };
 ```
 
-Об'єкти, створені за допомогою ініціалізаторів, називаються _простими об'єктами_, адже вони є примірниками {{jsxref("Object")}}, але не будь-якого іншого об'єктного типу. Частина об'єктних типів має особливий синтаксис ініціалізатора – наприклад, [ініціалізатори масивів](/uk/docs/Web/JavaScript/Guide/Grammar_and_types#literaly-masyviv) та [літерали регулярних виразів](/uk/docs/Web/JavaScript/Guide/Regular_Expressions#stvorennia-rehuliarnoho-vyrazu).
+Об'єкти, створені за допомогою ініціалізаторів, називаються _простими об'єктами_, адже вони є примірниками {{jsxref("Object")}}, але не будь-якого іншого об'єктного типу. Частина об'єктних типів має особливий синтаксис ініціалізатора – наприклад, [ініціалізатори масивів](/uk/docs/Web/JavaScript/Guide/Grammar_and_types#literaly-masyviv) та [літерали регулярних виразів](/uk/docs/Web/JavaScript/Guide/Regular_expressions#stvorennia-rehuliarnoho-vyrazu).
 
 ### Застосування функції-конструктора
 
@@ -140,7 +140,7 @@ car1.color = "black";
 
 …додає властивість `color` до об'єкта `car1`, і присвоює їй значення `'black'`. Проте це ніяк не впливає на інші об'єкти. Аби додати нову властивість до всіх об'єктів певного типу, доведеться додати цю властивість до означення об'єкта типу `Car`.
 
-Також для визначення функції-конструктора можна замість синтаксису `function` використати синтаксис [`class`](/uk/docs/Web/JavaScript/Reference/Classes). Більше про це – в [посібнику з класів](/uk/docs/Web/JavaScript/Guide/Using_Classes).
+Також для визначення функції-конструктора можна замість синтаксису `function` використати синтаксис [`class`](/uk/docs/Web/JavaScript/Reference/Classes). Більше про це – в [посібнику з класів](/uk/docs/Web/JavaScript/Guide/Using_classes).
 
 ### Застосування метода Object.create()
 
@@ -184,7 +184,7 @@ const myCar = {
 
 ### Звертання до властивостей
 
-До властивості об'єкта можна звернутися за її іменем. [Доступ до властивостей](/uk/docs/Web/JavaScript/Reference/Operators/Property_Accessors) є у вигляді двох варіантів: _запису точки_ й _запису квадратних дужок_. Наприклад, до властивостей об'єкта `myCar` можна звернутися отак:
+До властивості об'єкта можна звернутися за її іменем. [Доступ до властивостей](/uk/docs/Web/JavaScript/Reference/Operators/Property_accessors) є у вигляді двох варіантів: _запису точки_ й _запису квадратних дужок_. Наприклад, до властивостей об'єкта `myCar` можна звернутися отак:
 
 ```js
 // Запис точки
@@ -281,7 +281,7 @@ function showProps(obj, objName) {
 
 Термін "власна властивість" позначає властивості об'єкта, але не включає властивості з ланцюжка прототипів. Тож виклик функції `showProps(myCar, 'myCar')` надрукує наступне:
 
-```
+```plain
 myCar.make = Ford
 myCar.model = Mustang
 myCar.year = 1969
@@ -366,7 +366,7 @@ const myObj = {
 Далі можна викликати цей метод в контексті об'єкта, як показано нижче:
 
 ```js
-object.methodName(params);
+objectName.methodName(params);
 ```
 
 Означення методів здебільшого виконують на об'єкті зі властивості конструктора `prototype`, аби усі об'єкти такого типу поділяли один метод. Наприклад, можна означити функцію, котра оформлює та виводить властивості раніше означених об'єктів `Car`.
@@ -506,4 +506,4 @@ console.log(fruitbear); // { name: "grape" }; не { name: "apple" }
 - Для заглиблення в тему прочитайте про [Успадкування та ланцюжок прототипів](/uk/docs/Web/JavaScript/Inheritance_and_the_prototype_chain).
 - Більше інформації про класи (інший спосіб створення об'єктів) є в довіднику [Класи JavaScript](/uk/docs/Web/JavaScript/Reference/Classes).
 
-{{PreviousNext("Web/JavaScript/Guide/Regular_Expressions", "Web/JavaScript/Guide/Using_Classes")}}
+{{PreviousNext("Web/JavaScript/Guide/Regular_expressions", "Web/JavaScript/Guide/Using_classes")}}

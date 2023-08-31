@@ -41,8 +41,8 @@ JSON.stringify(value, replacer, space)
 
 ### Винятки
 
-- {{JSxRef("TypeError")}}
-  - : Викидається, коли виконується одна з двох умов:
+- {{jsxref("TypeError")}}
+  - : Викидається в одному з наступних випадків:
     - `value` містить циклічне посилання.
     - Зустрічається значення {{jsxref("BigInt")}}.
 
@@ -177,7 +177,7 @@ JSON.stringify(
   Object.create(null, {
     x: { value: "x", enumerable: false },
     y: { value: "y", enumerable: true },
-  })
+  }),
 );
 // '{"y":"y"}'
 

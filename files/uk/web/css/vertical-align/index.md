@@ -13,10 +13,10 @@ browser-compat: css.properties.vertical-align
 
 Властивість vertical-align може застосовуватися у двох контекстах:
 
-- Для вертикального шикування рамок рядкового елемента всередині рядкових рамок, що його вміщають. Наприклад, це можна застосувати для [вертикального розташування зображення в рядку тексту](#vertykalne-shykuvannia-v-riadkovykh-ramkakh).
+- Для вертикального шикування рамки елемента рядкового рівня всередині лінійної рамки, що його вміщає. Наприклад, це можна застосувати для [вертикального розташування зображення в рядку тексту](#vertykalne-shykuvannia-v-riadkovykh-ramkakh).
 - Для вертикального шикування [вмісту в комірці таблиці](#vertykalne-shykuvannia-u-komirtsi-tablytsi).
 
-Зверніть увагу, що `vertical-align` застосовується лише до рядкових, рядково-блокових та таблично-коміркових елементів: її не можна використовувати для вертикального шикування [елементів блокового рівня](/uk/docs/Web/HTML/Block-level_elements).
+Зверніть увагу, що `vertical-align` застосовується лише до рядкових, рядково-блокових та таблично-коміркових елементів: її не можна використовувати для вертикального шикування [елементів блокового рівня](/uk/docs/Glossary/Block-level_content).
 
 ## Синтаксис
 
@@ -258,7 +258,7 @@ td {
 
 ## Дивіться також
 
-- [Типові випадки використання флексбоксу, розділ "Центрування елемента"](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Typical_Use_Cases_of_Flexbox#tsentruvannia-elementa)
+- [Типові випадки використання флексбоксу, розділ "Центрування елемента"](/uk/docs/Web/CSS/CSS_flexible_box_layout/Typical_use_cases_of_flexbox#tsentruvannia-elementa)
 - {{Cssxref("line-height")}}, {{Cssxref("text-align")}}, {{Cssxref("margin")}}
 - [Розуміння `vertical-align`, або "Як (не варто) центрувати вміст вертикально" (англ.)](http://phrogz.net/css/vertical-align/index.html)
 - [Vertical-Align: Усе, що варто знати (англ.)](https://christopheraue.net/design/vertical-align)

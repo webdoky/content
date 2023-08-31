@@ -13,12 +13,15 @@ browser-compat: javascript.builtins.Number
 
 ## Опис
 
-Числа найчастіше виражають у літеральних формах, як то `0b101`, `0o13`, `0x0A`. [Лексична граматика](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#chyslovi-literaly) містить докладнішу довідку.
+Числа найчастіше виражають у літеральних формах, як то `255` або `3.14159`. [Лексична граматика](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#chyslovi-literaly) містить докладнішу довідку.
 
 ```js
-123; // сто двадцять три
-123.0; // те саме
-123 === 123.0; // true
+255; // двісті п'ятдесят п'ять
+255.0; // те саме число
+255 === 255.0; // true
+255 === 0xff; // true (шістнадцятковий запис)
+255 === 0b11111111; // true (двійковий запис)
+255 === 0.255e3; // true (десятковий експоненційний запис)
 ```
 
 Числовий літерал, як то `37`, в коді JavaScript є значенням з рухомою комою, а не цілим. Немає загальновживаного окремого типу цілих чисел. (JavaScript тепер має тип {{jsxref("BigInt")}}, але він був розроблений не для заміни Number в повсякденному використанні. `37` – це все ж `Number`, а не BigInt.)
@@ -51,11 +54,11 @@ Number(undefined); // NaN
 
 Цілі числа можуть бути представлені без втрати точності лише в діапазоні від -2<sup>53</sup> + 1 до 2<sup>53</sup> - 1 включно (межі доступні як {{jsxref("Number.MIN_SAFE_INTEGER")}} і {{jsxref("Number.MAX_SAFE_INTEGER")}}), тому що мантиса може утримувати лише 53 біти (включно з 1 на початку).
 
-Більше подробиць про це описані в [стандарті ECMAScript (англ.)](https://tc39.es/ecma262/#sec-ecmascript-language-types-number-type).
+Більше подробиць про це описані в [стандарті ECMAScript](https://tc39.es/ecma262/multipage/ecmascript-data-types-and-values.html#sec-ecmascript-language-types-number-type).
 
 ### Зведення до числа
 
-Чимало вбудованих операцій, що приймають числа, спершу зводять свої аргументи до чисел (здебільшого саме через це об'єкти `Number` поводяться подібно до числових примітивів). [Ця операція (англ.)](https://tc39.es/ecma262/#sec-tonumber) може бути підсумована наступним чином:
+Чимало вбудованих операцій, що приймають числа, спершу зводять свої аргументи до чисел (здебільшого саме через це об'єкти `Number` поводяться подібно до числових примітивів). [Ця операція](https://tc39.es/ecma262/multipage/abstract-operations.html#sec-tonumber) може бути підсумована наступним чином:
 
 - Числа повертаються як є.
 - [`undefined`](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined) перетворюється на [`NaN`](/uk/docs/Web/JavaScript/Reference/Global_Objects/NaN).
@@ -67,7 +70,7 @@ Number(undefined); // NaN
   - `+` і `-` дозволені на початку й позначають знак числа. (У звичайному коді вони "мають вигляд" частини літерала, хоча насправді є окремими унарними операторами.). Проте знак може бути лише один, і після нього не повинно бути пробілів.
   - `Infinity` та `-Infinity` беруться за літерали. У звичайному коді вони є глобальними змінними.
   - Порожні рядки й рядки лише з пробілів – перетворюються на `0`.
-  - [Числові роздільники](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#chyslovi-rozdilnyky) не дозволені.
+  - [Числові роздільники](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#rozdiliuvachi-rozriadiv) не дозволені.
 - [BigInt](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt) викидають {{jsxref("TypeError")}}, аби запобігти ненавмисному неявному зведенню, і як наслідок – втраті точності.
 - [Символи](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol) викидають {{jsxref("TypeError")}}.
 - Об'єкти спершу [перетворюються на примітиви](/uk/docs/Web/JavaScript/Data_structures#zvedennia-do-prymityva) шляхом виклику їх методів [`[@@toPrimitive]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive) (з підказкою `"number"`), `valueOf()` і `toString()` – в такому порядку. Результівний примітив опісля перетворюється на число.
@@ -107,7 +110,7 @@ new Uint8Array([257, -257]); // Uint8Array(2) [ 1, 255 ]
 
 ## Конструктор
 
-- [`Number()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number/Number)
+- {{jsxref("Number/Number", "Number()")}}
   - : Створює нове значення `Number`.
 
 Коли `Number` викликається як конструктор (із `new`), це породжує об'єкт {{jsxref("Number")}}, котрий **не** є примітивом. Наприклад, `typeof new Number(42) === "object"`, і `new Number(42) !== 42` (проте `new Number(42) == 42`).
@@ -132,17 +135,15 @@ new Uint8Array([257, -257]); // Uint8Array(2) [ 1, 255 ]
   - : Особливе значення, що представляє від'ємну нескінченність. Повертається при переповненні.
 - {{jsxref("Number.POSITIVE_INFINITY")}}
   - : Особливе значення, що представляє нескінченність. Повертається при переповненні.
-- {{jsxref("Number", "Number.prototype")}}
-  - : Дає змогу додавати до об'єкта `Number` нові властивості.
 
 ## Статичні методи
 
-- {{jsxref("Number.isNaN()")}}
-  - : З'ясовує, чи є передане значення `NaN`.
 - {{jsxref("Number.isFinite()")}}
   - : З'ясовує, чи є передане значення скінченним числом.
 - {{jsxref("Number.isInteger()")}}
   - : З'ясовує, чи є передане значення цілим числом.
+- {{jsxref("Number.isNaN()")}}
+  - : З'ясовує, чи є передане значення `NaN`.
 - {{jsxref("Number.isSafeInteger()")}}
   - : З'ясовує, чи є передане значення безпечним цілим (числом в діапазоні від -(2<sup>53</sup> - 1) до 2<sup>53</sup> - 1).
 - {{jsxref("Number.parseFloat()")}}
@@ -206,7 +207,7 @@ const smallestInt = Number.MIN_SAFE_INTEGER; // -(2**53 - 1) => -900719925474099
 Наступний приклад перетворює об'єкт {{jsxref("Date")}} на числове значення, застосовуючи `Number` як функцію:
 
 ```js
-const d = new Date("December 17, 1995 03:24:00");
+const d = new Date("1995-12-17T03:24:00");
 console.log(Number(d));
 ```
 
@@ -243,5 +244,5 @@ Number("-Infinity"); // -Infinity
 - [Поліфіл сучасної логіки `Number` (з підтримкою двійкових та вісімкових літералів) у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-number)
 - {{jsxref("NaN")}}
 - [Арифметичні оператори](/uk/docs/Web/JavaScript/Reference/Operators#aryfmetychni-operatory)
-- Глобальний об'єкт {{jsxref("Math")}}
-- Цілі числа з довільною точністю: {{jsxref("BigInt")}}
+- {{jsxref("Math")}}
+- {{jsxref("BigInt")}}

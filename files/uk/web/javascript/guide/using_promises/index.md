@@ -2,17 +2,9 @@
 title: Використання промісів
 slug: Web/JavaScript/Guide/Using_promises
 page-type: guide
-tags:
-  - Guide
-  - Intermediate
-  - JavaScript
-  - Promise
-  - Promises
-  - asynchronous
-  - "l10n:priority"
 ---
 
-{{jsSidebar("JavaScript Guide")}}{{PreviousNext("Web/JavaScript/Guide/Using_Classes", "Web/JavaScript/Guide/Iterators_and_Generators")}}
+{{jsSidebar("JavaScript Guide")}}{{PreviousNext("Web/JavaScript/Guide/Using_classes", "Web/JavaScript/Guide/Typed_arrays")}}
 
 {{jsxref("Promise")}} – це об'єкт, що представляє завершення або невдачу асинхронної операції. Оскільки більшість людей користуються вже створеними промісами, цей посібник спершу пояснить використання повернених промісів, а потім – як їх створювати.
 
@@ -434,7 +426,7 @@ wait(10 * 1000)
 
 В API на основі функцій зворотного виклику те, коли і як ці функції викликаються, залежить від автора API. Наприклад, вони можуть бути викликані синхронно або асинхронно:
 
-```js
+```js example-bad
 function doSomething(callback) {
   if (Math.random() > 0.5) {
     callback();
@@ -444,7 +436,7 @@ function doSomething(callback) {
 }
 ```
 
-Це призводить до [стану Зальго](https://blog.izs.me/2013/08/designing-apis-for-asynchrony/), адже робить важким аналіз побічних дій:
+Наведений вище підхід наполегливо не рекомендується, адже призводить до так званого "стану Зальґо". У контексті проєктування асинхронних API це означає, що функція зворотного виклику викликається синхронно в одних випадках, але асинхронно в інших, призводячи до неоднозначності для того, хто її викликає. Більше контексту на цю тему можна знайти в статті [Проєктування API з асинхронністю](https://blog.izs.me/2013/08/designing-apis-for-asynchrony/), де цей термін уперше вбув формально введений. Такий підхід до створення API призводить до того, що побічні ефекти важко аналізувати:
 
 ```js
 let value = 1;
@@ -456,7 +448,7 @@ console.log(value); // 1 чи 2?
 
 З іншого боку, проміси є формою [інверсії контролю](https://en.wikipedia.org/wiki/Inversion_of_control): автор API не контролює того, коли викликається функція зворотного виклику. Натомість справа підтримки черги функцій зворотного виклику та прийняття рішень про те, коли викликати функції зворотного виклику, делегується реалізації промісів, тож водночас і користувач API, і його автор – автоматично отримують потужні семантичні гарантії, серед яких:
 
-- Функції зворотного виклику, додані за допомогою [`then()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Promise/then), ніколи не закликаються до [завершення поточного спрацювання](/uk/docs/Web/JavaScript/EventLoop#spratsiuvannia-do-zavershennia) циклу подій JavaScript.
+- Функції зворотного виклику, додані за допомогою [`then()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Promise/then), ніколи не закликаються до [завершення поточного спрацювання](/uk/docs/Web/JavaScript/Event_loop#spratsiuvannia-do-zavershennia) циклу подій JavaScript.
 - Ці функції зворотного виклику закликаються, якщо вони були додані _після_ успіху чи невдачі асинхронної операції, котру представляє відповідний проміс.
 - Шляхом багаторазового виклику [`then()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) можуть бути додані кілька функцій зворотного виклику. Вони закликаються одна після одної, згідно з порядком, в якому були додані.
 
@@ -525,4 +517,4 @@ console.log("Проміс (в очікуванні)", promise);
 - [Venkatraman.R - Інструменти для юніттестування промісів (англ.)](https://tech.io/playgrounds/11107/tools-for-promises-unittesting/introduction)
 - [Нолан Лоусон: Маємо проблему з промісами – Поширені помилки з промісами (англ.)](https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html)
 
-{{PreviousNext("Web/JavaScript/Guide/Using_Classes", "Web/JavaScript/Guide/Iterators_and_Generators")}}
+{{PreviousNext("Web/JavaScript/Guide/Using_classes", "Web/JavaScript/Guide/Typed_arrays")}}

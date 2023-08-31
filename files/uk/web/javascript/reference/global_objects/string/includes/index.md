@@ -32,7 +32,7 @@ includes(searchString, position)
 ### Винятки
 
 - {{jsxref("TypeError")}}
-  - : Якщо `searchString` [є регулярним виразом](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp#osoblyva-obrobka-rehuliarnykh-vyraziv).
+  - : Викидається, коли `searchString` [є регулярним виразом](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp#osoblyva-obrobka-rehuliarnykh-vyraziv).
 
 ## Опис
 
@@ -46,7 +46,7 @@ includes(searchString, position)
 "Синій кит".includes("синій"); // повертає false
 ```
 
-Це обмеження можна обійти, привівши і вихідний рядок, і шуканий, до нижнього регістру:
+Це обмеження можна обійти, привівши як вихідний рядок, так і шуканий, до нижнього регістру:
 
 ```js
 "Синій кит".toLowerCase().includes("синій"); // повертає true

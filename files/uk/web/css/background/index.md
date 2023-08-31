@@ -92,7 +92,7 @@ background: repeat scroll 0% 0% / auto padding-box border-box none transparent;
 
 Браузери не надають допоміжній технології жодної особливої інформації про зображення тла. Це важливо перш за все для програм зчитування екрана, оскільки вони не оголошують присутності зображень тла і, таким чином, нічого не передають користувачам про них. Якщо зображення містить критичну для розуміння призначення сторінки в цілому інформацію, краще описати його в документі семантично.
 
-- [MDN Розуміння WCAG, пояснення Настанов 1.1](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#guideline_1.1_%e2%80%94_providing_text_alternatives_for_non-text_content)
+- [MDN Розуміння WCAG, пояснення Настанови 1.1](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#nastanova-1-1-nadannia-tekstovykh-alternatyv-netekstovomu-vmistu)
 - [Розуміння мірила успіху 1.1.1 | W3C Розуміння WCAG 2.0 (англ.)](https://www.w3.org/TR/2016/NOTE-UNDERSTANDING-WCAG20-20161007/text-equiv-all.html)
 
 ## Формальне визначення
@@ -145,5 +145,5 @@ background: repeat scroll 0% 0% / auto padding-box border-box none transparent;
 ## Дивіться також
 
 - {{cssxref("box-decoration-break")}} (оздоблення розривів рамок)
-- [Використання градієнтів](/uk/docs/Web/CSS/CSS_Images/Using_CSS_gradients)
-- [Використання кількох фонів](/uk/docs/Web/CSS/CSS_Backgrounds_and_Borders/Using_multiple_backgrounds)
+- [Використання градієнтів](/uk/docs/Web/CSS/CSS_images/Using_CSS_gradients)
+- [Використання кількох фонів](/uk/docs/Web/CSS/CSS_backgrounds_and_borders/Using_multiple_backgrounds)

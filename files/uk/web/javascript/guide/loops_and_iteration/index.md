@@ -185,17 +185,7 @@ label:
   statement
 ```
 
-Значення `label` може бути будь-яким ідентифікатором JavaScript, що не є зарезервованим словом. `statement`, котра ідентифікується міткою, може бути будь-якою інструкцією.
-
-### Приклад
-
-В цьому прикладі мітка `markLoop` ідентифікує цикл `while`.
-
-```js
-markLoop: while (theMark) {
-  doSomething();
-}
-```
+Значення `label` може бути будь-яким ідентифікатором JavaScript, що не є зарезервованим словом. `statement`, котра ідентифікується міткою, може бути будь-якою інструкцією. Приклади застосування інструкцій з мітками шукайте в прикладах `break` і `continue` нижче.
 
 ## Інструкція break
 
@@ -207,7 +197,7 @@ markLoop: while (theMark) {
 
 Синтаксис інструкції `break` має такий вигляд:
 
-```js
+```js-nolint
 break;
 break label;
 ```
@@ -233,11 +223,11 @@ for (let i = 0; i < a.length; i++) {
 let x = 0;
 let z = 0;
 labelCancelLoops: while (true) {
-  console.log("Зовнішній цикл: ", x);
+  console.log("Зовнішній цикл:", x);
   x += 1;
   z = 1;
   while (true) {
-    console.log("Внутрішній цикл: ", z);
+    console.log("Внутрішній цикл:", z);
     z += 1;
     if (z === 10 && x === 10) {
       break labelCancelLoops;
@@ -258,7 +248,7 @@ labelCancelLoops: while (true) {
 
 Синтаксис інструкції `continue` має наступний вигляд:
 
-```js
+```js-nolint
 continue;
 continue label;
 ```
@@ -278,7 +268,8 @@ while (i < 5) {
   n += i;
   console.log(n);
 }
-//1,3,7,12
+// Виводить:
+// 1 3 7 12
 ```
 
 Якщо закоментувати `continue;`, то цикл працюватиме до кінця й виведе `1,3,6,10,15`.
@@ -301,10 +292,10 @@ checkiandj: while (i < 4) {
     if (j % 2 === 0) {
       continue checkj;
     }
-    console.log(j, " непарне число.");
+    console.log(j, "– непарне число.");
   }
-  console.log("i = ", i);
-  console.log("j = ", j);
+  console.log("i =", i);
+  console.log("j =", j);
 }
 ```
 
@@ -334,7 +325,7 @@ function dumpProps(obj, objName) {
 
 Для об'єкта `car` з властивостями `make` і `model` `result` буде:
 
-```
+```plain
 car.make = Ford
 car.model = Mustang
 ```
@@ -371,7 +362,7 @@ for (const i of arr) {
 // Виводить: 3 5 7
 ```
 
-Інструкції `for...of` і `for...in` також можуть використовуватися вкупі з [деструктуруванням](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment). Наприклад, водночас можна обробляти в циклі і ключі, і значення об'єкта, використовуючи {{jsxref("Object.entries()")}}.
+Інструкції `for...of` і `for...in` також можуть використовуватися вкупі з [деструктуруванням](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment). Наприклад, водночас можна обробляти в циклі як ключі, так і значення об'єкта, використовуючи {{jsxref("Object.entries()")}}.
 
 ```js
 const obj = { foo: 1, bar: 2 };

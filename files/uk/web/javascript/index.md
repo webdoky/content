@@ -6,7 +6,7 @@ page-type: landing-page
 
 {{JsSidebar}}
 
-**JavaScript** (**JS**) – це невибаглива до ресурсів мова програмування з {{Glossary("First-class Function", "функціями першого класу")}}, код якої інтерпретується, або компілюється ["на льоту"](https://uk.wikipedia.org/wiki/JIT-%D0%BA%D0%BE%D0%BC%D0%BF%D1%96%D0%BB%D1%8F%D1%86%D1%96%D1%8F). Хоча JavaScript насамперед відома як скриптова мова для вебсторінок, вона також використовується у [багатьох небраузерних середовищах](https://uk.wikipedia.org/wiki/JavaScript#%D0%97%D0%B0%D1%81%D1%82%D0%BE%D1%81%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F), як от: {{Glossary("Node.js")}}, [Apache CouchDB](https://couchdb.apache.org/) та [Adobe Acrobat](https://opensource.adobe.com/dc-acrobat-sdk-docs/acrobatsdk/). JavaScript — це [прототипна](/uk/docs/Glossary/Prototype-based_programming), [однопотокова](/uk/docs/Glossary/Thread) [динамічна](/uk/docs/Glossary/Dynamic_typing) мова, що має декілька парадигм та підтримує об'єктноорієнтований та декларативні (зокрема функційне програмування) стилі.
+**JavaScript** (**JS**) – це невибаглива до ресурсів мова програмування з {{Glossary("First-class Function", "функціями першого класу")}}, код якої інтерпретується (або компілюється ["на льоту"](https://uk.wikipedia.org/wiki/JIT-%D0%BA%D0%BE%D0%BC%D0%BF%D1%96%D0%BB%D1%8F%D1%86%D1%96%D1%8F)). Хоча JavaScript насамперед відома як скриптова мова для вебсторінок, вона також використовується у [багатьох небраузерних середовищах](https://uk.wikipedia.org/wiki/JavaScript#%D0%97%D0%B0%D1%81%D1%82%D0%BE%D1%81%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F), як от: {{Glossary("Node.js")}}, [Apache CouchDB](https://couchdb.apache.org/) та [Adobe Acrobat](https://opensource.adobe.com/dc-acrobat-sdk-docs/acrobatsdk/). JavaScript — це [прототипна](/uk/docs/Glossary/Prototype-based_programming), [однопотокова](/uk/docs/Glossary/Thread) [динамічна](/uk/docs/Glossary/Dynamic_typing) мова, що має декілька парадигм та підтримує об'єктноорієнтований та декларативні (зокрема функційне програмування) стилі.
 
 Серед динамічних можливостей JavaScript – конструювання об'єктів під час виконання, змінні списки параметрів, змінні-функції, динамічне створення сценаріїв (за допомогою [`eval`](/uk/docs/Web/JavaScript/Reference/Global_Objects/eval)), інтроспекція об'єктів (за допомогою [`for...in`](/uk/docs/Web/JavaScript/Reference/Statements/for...in) і [допоміжних засобів `Object`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#statychni-metody)) і відновлення вихідного коду (функції JavaScript зберігають текст свого коду, його можна отримати за допомогою [`toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/toString)).
 
@@ -58,7 +58,7 @@ page-type: landing-page
 
 - [Розуміння клієнтських фреймворків JavaScript](/uk/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks)
   - : JavaScript фреймворки – неодмінна частина сучасної клієнтської веброзробки, що забезпечує розробників перевіреними інструментами для побудови масштабованих інтерактивних вебзастосунків. Цей модуль надає деякі фундаментальні знання про те, як влаштовані клієнтські фреймворки, і як вони вписуються в ваш інструментарій, перед тим як розглянути найбільш популярні із них на сьогодні у наступних посібниках.
-- [Огляд мови JavaScript](/uk/docs/Web/JavaScript/Language_Overview)
+- [Огляд мови JavaScript](/uk/docs/Web/JavaScript/Language_overview)
   - : Огляд базових мови та семантики JavaScript для тих, хто прийшов з інших мов програмування і хоче різко набрати темп вивчення.
 - [Структури даних у JavaScript](/uk/docs/Web/JavaScript/Data_structures)
   - : Огляд наявних структур даних у JavaScript.
@@ -73,12 +73,10 @@ page-type: landing-page
 
 - [Наслідування та ланцюжок прототипів](/uk/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
   - : Роз'яснення прототипного наслідування (яке часто недооцінюють та невірно розуміють).
-- [Типізовані масиви JavaScript](/uk/docs/Web/JavaScript/Typed_arrays)
-  - : Типізовані масиви JavaScript надають інструмент для доступу до необроблених бінарних даних.
-- [Керування пам'яттю](/uk/docs/Web/JavaScript/Memory_Management)
+- [Керування пам'яттю](/uk/docs/Web/JavaScript/Memory_management)
   - : Життєвий цикл пам'яті та збирання сміття у JavaScript.
-- [Модель багатопотоковості та цикл подій](/uk/docs/Web/JavaScript/EventLoop)
-  - : JavaScript має модель багатопотоковості, засновану на "циклі подій".
+- [Цикл подій](/uk/docs/Web/JavaScript/Event_loop)
+  - : JavaScript має модель середовища виконання, засновану на "циклі подій".
 
 ## Довідник
 
@@ -87,7 +85,7 @@ page-type: landing-page
 - [Стандартні об'єкти](/uk/docs/Web/JavaScript/Reference/Global_Objects)
   - : Докладно про стандартні вбудовані об'єкти: {{jsxref("Array")}}, {{jsxref("Boolean")}}, {{jsxref("Date")}}, {{jsxref("Error")}}, {{jsxref("Function")}}, {{jsxref("JSON")}}, {{jsxref("Math")}}, {{jsxref("Number")}}, {{jsxref("Object")}}, {{jsxref("RegExp")}}, {{jsxref("String")}}, {{jsxref("Map")}}, {{jsxref("Set")}}, {{jsxref("WeakMap")}}, {{jsxref("WeakSet")}}, та інші.
 - [Вирази та оператори](/uk/docs/Web/JavaScript/Reference/Operators)
-  - : Дізнайтеся більше про поведінку операторів мови JavaScript {{jsxref("Operators/instanceof", "instanceof")}}, {{jsxref("Operators/typeof", "typeof")}}, {{jsxref("Operators/new", "new")}}, {{jsxref("Operators/this", "this")}}, [пріоритет операторів](/uk/docs/Web/JavaScript/Reference/Operators/Operator_Precedence) та інші.
+  - : Дізнайтеся більше про поведінку операторів мови JavaScript {{jsxref("Operators/instanceof", "instanceof")}}, {{jsxref("Operators/typeof", "typeof")}}, {{jsxref("Operators/new", "new")}}, {{jsxref("Operators/this", "this")}}, [пріоритет операторів](/uk/docs/Web/JavaScript/Reference/Operators/Operator_precedence) та інші.
 - [Інструкції та оголошення](/uk/docs/Web/JavaScript/Reference/Statements)
   - : Дізнайтеся, як працюють {{jsxref("Statements/do...while", "do-while")}}, {{jsxref("Statements/for...in", "for-in")}}, {{jsxref("Statements/for...of", "for-of")}}, {{jsxref("Statements/try...catch", "try-catch")}}, {{jsxref("Statements/let", "let")}}, {{jsxref("Statements/var", "var")}}, {{jsxref("Statements/const", "const")}}, {{jsxref("Statements/if...else", "if-else")}}, {{jsxref("Statements/switch", "switch")}} та інші інструкції й ключові слова JavaScript.
 - [Функції](/uk/docs/Web/JavaScript/Reference/Functions)

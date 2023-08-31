@@ -15,7 +15,7 @@ browser-compat: javascript.operators
 
 ### Первинні вирази
 
-Базові ключові слова та загальні вирази в JavaScript. Ці вирази мають вищий пріоритет (вищий за пріоритет [операторів](/uk/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)).
+Базові ключові слова та загальні вирази в JavaScript. Ці вирази мають вищий пріоритет (вищий за пріоритет [операторів](/uk/docs/Web/JavaScript/Reference/Operators/Operator_precedence)).
 
 - {{JSxRef("Operators/this", "this")}} (це)
   - : Ключове слово `this` посилається на спеціальну властивість контексту виконання.
@@ -168,7 +168,7 @@ browser-compat: javascript.operators
 
 ### Бінарні логічні оператори
 
-Логічні оператори реалізовують булеві (логічні) значення й мають логіку [закорочення](/uk/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#short-circuiting).
+Логічні оператори реалізовують булеві (логічні) значення й мають логіку [закорочення](/uk/docs/Web/JavaScript/Reference/Operators/Operator_precedence#short-circuiting).
 
 - {{JSxRef("Operators/Logical_AND", "&amp;&amp;")}}
   - : Логічний AND.
@@ -179,7 +179,7 @@ browser-compat: javascript.operators
 
 ### Умовний (тернарний) оператор
 
-- {{JSxRef("Operators/Conditional_Operator", "(condition ? ifTrue : ifFalse)")}}
+- {{JSxRef("Operators/Conditional_operator", "(condition ? ifTrue : ifFalse)")}}
   - : Умовний оператор повертає одне з двох значень залежно від логічного значення умови.
 
 ### Оператори присвоєння
@@ -235,7 +235,7 @@ browser-compat: javascript.operators
 
 ### Оператор коми
 
-- {{JSxRef("Operators/Comma_Operator", ",")}}
+- {{JSxRef("Operators/Comma_operator", ",")}}
   - : Оператор кома дозволяє обчислити декілька виразів як одну інструкцію і повертає результат останнього виразу.
 
 ## Специфікації
@@ -248,4 +248,4 @@ browser-compat: javascript.operators
 
 ## Дивіться також
 
-- [Пріоритет операторів](/uk/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
+- [Пріоритет операторів](/uk/docs/Web/JavaScript/Reference/Operators/Operator_precedence)
