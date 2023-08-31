@@ -94,7 +94,7 @@ console.log(aGeneratorObject[Symbol.iterator]() === aGeneratorObject);
 // true: метод @@iterator повертає сам об'єкт (сам ітератор), тож це ітерований ітератор
 ```
 
-Усі вбудовані ітератори успадковують від {{jsxref("Iterator", "Iterator.prototype")}}, котрий має реалізацію методу `[@@iterator]()`, що повертає `this`, тож вбудовані ітератори також є ітерованими об'єктами.
+Усі вбудовані ітератори мають в ланцюжку прототипів об'єкт {{jsxref("Iterator", "Iterator.prototype")}}, котрий має реалізацію методу `[@@iterator]()`, що повертає `this`, тож вбудовані ітератори також є ітерованими об'єктами.
 
 А проте, коли це можливо, краще, щоб `iterable[Symbol.iterator]` повертав різні ітератори, що завжди починаються спочатку, як це робить [`Set.prototype[@@iterator]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Set/@@iterator).
 
