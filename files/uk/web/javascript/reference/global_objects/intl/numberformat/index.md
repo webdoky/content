@@ -95,22 +95,24 @@ const number = 123456.789;
 // задання формату валюти
 console.log(
   new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(
-    number
-  )
+    number,
+  ),
 );
 // 123.456,79 €
 
 // Японська єна не використовує дробових значень
 console.log(
   new Intl.NumberFormat("ja-JP", { style: "currency", currency: "JPY" }).format(
-    number
-  )
+    number,
+  ),
 );
 // ￥123,457
 
 // обмеження до трьох знаків після коми
 console.log(
-  new Intl.NumberFormat("en-IN", { maximumSignificantDigits: 3 }).format(number)
+  new Intl.NumberFormat("en-IN", { maximumSignificantDigits: 3 }).format(
+    number,
+  ),
 );
 // 1,23,000
 
@@ -119,7 +121,7 @@ console.log(
   new Intl.NumberFormat("pt-PT", {
     style: "unit",
     unit: "kilometer-per-hour",
-  }).format(50)
+  }).format(50),
 );
 // 50 km/h
 
@@ -128,7 +130,7 @@ console.log(
     style: "unit",
     unit: "liter",
     unitDisplay: "long",
-  })
+  }),
 );
 // 16 litres
 ```
@@ -145,5 +147,5 @@ console.log(
 
 ## Дивіться також
 
-- {{jsxref("Intl")}}
 - [Поліфіл `Intl.NumberFormat` у складі FormatJS](https://formatjs.io/docs/polyfills/intl-numberformat/)
+- {{jsxref("Intl")}}
