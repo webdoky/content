@@ -31,9 +31,9 @@ forEach(callbackFn, thisArg)
 - `thisArg` {{optional_inline}}
   - : Значення для використання за `this` при виконанні `callbackFn`. Докладніше про це в [ітеративних методах](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#iteratyvni-metody).
 
-### Результат
+### Повернене значення
 
-{{jsxref("undefined")}}.
+Жодного ({{jsxref("undefined")}}).
 
 ## Опис
 
