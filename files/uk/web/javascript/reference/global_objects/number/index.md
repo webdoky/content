@@ -54,11 +54,11 @@ Number(undefined); // NaN
 
 Цілі числа можуть бути представлені без втрати точності лише в діапазоні від -2<sup>53</sup> + 1 до 2<sup>53</sup> - 1 включно (межі доступні як {{jsxref("Number.MIN_SAFE_INTEGER")}} і {{jsxref("Number.MAX_SAFE_INTEGER")}}), тому що мантиса може утримувати лише 53 біти (включно з 1 на початку).
 
-Більше подробиць про це описані в [стандарті ECMAScript (англ.)](https://tc39.es/ecma262/#sec-ecmascript-language-types-number-type).
+Більше подробиць про це описані в [стандарті ECMAScript](https://tc39.es/ecma262/multipage/ecmascript-data-types-and-values.html#sec-ecmascript-language-types-number-type).
 
 ### Зведення до числа
 
-Чимало вбудованих операцій, що приймають числа, спершу зводять свої аргументи до чисел (здебільшого саме через це об'єкти `Number` поводяться подібно до числових примітивів). [Ця операція (англ.)](https://tc39.es/ecma262/#sec-tonumber) може бути підсумована наступним чином:
+Чимало вбудованих операцій, що приймають числа, спершу зводять свої аргументи до чисел (здебільшого саме через це об'єкти `Number` поводяться подібно до числових примітивів). [Ця операція](https://tc39.es/ecma262/multipage/abstract-operations.html#sec-tonumber) може бути підсумована наступним чином:
 
 - Числа повертаються як є.
 - [`undefined`](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined) перетворюється на [`NaN`](/uk/docs/Web/JavaScript/Reference/Global_Objects/NaN).
@@ -207,7 +207,7 @@ const smallestInt = Number.MIN_SAFE_INTEGER; // -(2**53 - 1) => -900719925474099
 Наступний приклад перетворює об'єкт {{jsxref("Date")}} на числове значення, застосовуючи `Number` як функцію:
 
 ```js
-const d = new Date("December 17, 1995 03:24:00");
+const d = new Date("1995-12-17T03:24:00");
 console.log(Number(d));
 ```
 
@@ -244,5 +244,5 @@ Number("-Infinity"); // -Infinity
 - [Поліфіл сучасної логіки `Number` (з підтримкою двійкових та вісімкових літералів) у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-number)
 - {{jsxref("NaN")}}
 - [Арифметичні оператори](/uk/docs/Web/JavaScript/Reference/Operators#aryfmetychni-operatory)
-- Глобальний об'єкт {{jsxref("Math")}}
-- Цілі числа з довільною точністю: {{jsxref("BigInt")}}
+- {{jsxref("Math")}}
+- {{jsxref("BigInt")}}

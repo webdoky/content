@@ -307,7 +307,7 @@ browser-compat: html.elements.input
 | [`autocomplete`](#autocomplete)                          | усі, крім `checkbox`, `radio` та кнопок                              | Вказівка для функціональності автоматичного заповнення форм                                                        |
 | [`capture`](#capture-zakhoplennia)                       | `file`                                                               | Спосіб захоплення медіа для контрольних елементів завантаження файлів                                              |
 | [`checked`](#checked)                                    | `checkbox`, `radio`                                                  | Вказує, чи є контрольний елемент обраним                                                                           |
-| [`dirname`](#dirname-imia-napriamu)                      | `search`, `text`                                                     | Ім'я поля форми для надсилання напряму письма при поданні форми                                                    |
+| [`dirname`](#dirname-imia-napriamu)                      | `hidden`, `text`, `search`, `url`, `tel`, `email`                    | Ім'я поля форми для надсилання напряму письма при поданні форми                                                    |
 | [`disabled`](#disabled-vymknene)                         | усі                                                                  | Вказує, чи є контрольний елемент вимкненим                                                                         |
 | [`form`](#form-forma)                                    | усі                                                                  | Асоціює контрольний елемент з елементом форми                                                                      |
 | [`formaction`](#formaction-diia-formy)                   | `image`, `submit`                                                    | URL для подання форми                                                                                              |
@@ -360,7 +360,7 @@ browser-compat: html.elements.input
 
   - : Булів атрибут, котрий, якщо встановлений, вказує, що поле введення повинно автоматично отримати фокус, коли завершилось завантаження сторінки (або коли елемент {{HTMLElement("dialog")}}, що містить таке поле, був показаний).
 
-    > **Примітка:** Елемент з атрибутом `autofocus` може отримати фокус до того, як спрацює подія {{domxref("Window/DOMContentLoaded_event", "DOMContentLoaded")}}.
+    > **Примітка:** Елемент з атрибутом `autofocus` може отримати фокус до того, як спрацює подія {{domxref("Document/DOMContentLoaded_event", "DOMContentLoaded")}}.
 
     Не більш ніж один елемент в документі може мати атрибут `autofocus`. Якщо встановити його на кількох – фокус отримає перший із них.
 
@@ -382,20 +382,21 @@ browser-compat: html.elements.input
 
 - `dirname` (ім'я напряму)
 
-  - : Чинний лише для типів полів введення `text` та `search`. Атрибут `dirname` вмикає подання напрямленості введеного тексту. Коли присутній такий атрибут, від контрольного елемента будуть подані дві пари ім'я-значення: перша – [`name`](#name-imia) та [`value`](#value-znachennia), а друга – значення атрибута `dirname` як ім'я і `ltr` або `rtl` як значення, встановлене браузером.
+  - : Чинний для типів полів введення`hidden`, `text`, `search`, `url`, `tel` та `email`. Атрибут `dirname` вмикає подання напрямленості введеного тексту. Коли присутній такий атрибут, від контрольного елемента будуть подані дві пари ім'я-значення: перша – [`name`](#name-imia) та [`value`](#value-znachennia), а друга – значення атрибута `dirname` як ім'я і `ltr` або `rtl` як значення, визначене браузером.
 
     ```html
     <form action="page.html" method="post">
-      <label
-        >Фрукт:
-        <input type="text" name="fruit" dirname="fruit.dir" value="вишня"
-      /></label>
+      <label>
+        Фрукт:
+        <input type="text" name="fruit" dirname="fruit-dir" value="вишня" />
+      </label>
       <input type="submit" />
     </form>
-    <!-- page.html?fruit=вишня&fruit.dir=ltr -->
+    <!-- page.html?fruit=вишня&fruit-dir=ltr -->
     ```
 
-    Коли форма вище подається, поле введення надсилає як пару `name` / `value` у вигляді `fruit=вишня`, так пару `dirname` / напрям у вигляді `fruit.dir=ltr`.
+    Коли форма вище подається, поле введення надсилає як пару `name` / `value` у вигляді `fruit=вишня`, так пару `dirname` / напрям у вигляді `fruit-dir=ltr`.
+    Більше про це – на сторінці [атрибута `dirname`](/uk/docs/Web/HTML/Attributes/dirname).
 
 - `disabled` (вимкнене)
 
@@ -505,7 +506,7 @@ browser-compat: html.elements.input
 
 - `pattern` (патерн)
 
-  - : Чинний для полів типів `text`, `search`, `url`, `tel`, `email` і `password` атрибут `pattern` – регулярний вираз, котрому повинно відповідати значення [`value`](#value-znachennia) поля введення, щоб пройти [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation). Значенням атрибута має бути дійсний регулярний вираз JavaScript, такий, як використовується типом {{jsxref("RegExp")}} і як документовано у наших [настановах із регулярних виразів](/uk/docs/Web/JavaScript/Guide/Regular_expressions). При компіляції регулярного виразу автоматично вказується прапорець `'u'`, тож схема розглядається як послідовність кодових точок Unicode, а не як ASCIII. Текст схеми не повинен бути оточений рисками.
+  - : Чинний для полів типів `text`, `search`, `url`, `tel`, `email` і `password` атрибут `pattern` – регулярний вираз, котрому повинно відповідати значення [`value`](#value-znachennia) поля введення, щоб пройти [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation). Значенням атрибута має бути дійсний регулярний вираз JavaScript, такий, як використовується типом {{jsxref("RegExp")}} і як документовано у наших [настановах із регулярних виразів](/uk/docs/Web/JavaScript/Guide/Regular_expressions). При компіляції регулярного виразу автоматично вказується прапорець `'u'`, тож схема розглядається як послідовність кодових точок Unicode, а не як {{Glossary("ASCII")}}. Текст схеми не повинен бути оточений рисками.
 
     Якщо атрибут `pattern` присутній, але не має значення, або має недійсне значення, то регулярний вираз не застосовується, і такий атрибут цілком ігнорується. Якщо атрибут з патерном дійсний, і непусте значення поля введення не відповідає йому, то валідація обмежень перешкодить поданню форми.
 
@@ -1098,8 +1099,8 @@ input.custom {
 - {{domxref('validityState.rangeOverflow')}} (вихід за верхню межу діапазону)
 - {{domxref('validityState.stepMismatch')}} (невідповідність кроку)
 - {{domxref('validityState.badInput')}} (невдале введення)
-- {{domxref('validityState.valid')}} (дійсний)
-- {{domxref('validityState.customError')}} (особлива помилка)
+- {{domxref('validityState', 'validityState.valid')}} (дійсний)
+- {{domxref('validityState', 'validityState.customError')}} (особлива помилка)
 
 Для кожної з цих булевих властивостей значення `true` вказує, що з відповідної причини валідація може бути провалена, окрім властивості `valid`, що має значення `true`, коли значення елемента задовільняє усі обмеження.
 
