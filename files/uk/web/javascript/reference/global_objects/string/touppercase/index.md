@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.String.toUpperCase
 
 {{JSRef}}
 
-Метод **`toUpperCase()`** (до верхнього регістру) значень {{jsxref("String")}} повертає значення свого рядка, переведене у верхній регістр.
+Метод **`toUpperCase()`** (до вищого регістру) значень {{jsxref("String")}} повертає значення свого рядка, переведене у вищий регістр.
 
 {{EmbedInteractiveExample("pages/js/string-touppercase.html","shorter")}}
 
@@ -16,6 +16,10 @@ browser-compat: javascript.builtins.String.toUpperCase
 ```js-nolint
 toUpperCase()
 ```
+
+### Параметри
+
+Жодних.
 
 ### Повернене значення
 
