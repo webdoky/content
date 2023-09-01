@@ -14,6 +14,7 @@ browser-compat: javascript.builtins.String.fromCodePoint
 ## Синтаксис
 
 ```js-nolint
+String.fromCodePoint()
 String.fromCodePoint(num1)
 String.fromCodePoint(num1, num2)
 String.fromCodePoint(num1, num2, /* …, */ numN)
