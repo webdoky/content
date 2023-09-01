@@ -1,7 +1,8 @@
-import fs from "fs";
+import fs, { writeFile } from "fs";
 
 import chalk from "chalk";
 import { convert } from "html-to-text";
+// import map from "lodash/map";
 import MarkdownIt from "markdown-it";
 
 import debug from "./debug";
@@ -13,7 +14,10 @@ const MACROS_TO_STRIP = new Set([
   "EmbedInteractiveExample",
   "EmbedLiveSample",
   "jsSidebar",
+  "js_property_attributes",
 ]);
+
+// const COMMENT_REGEXP = /\/\/(.+)|\/\*([\s\S]+)\*\//gim;
 
 const markdownIt = new MarkdownIt({
   // breaks: true,
@@ -25,16 +29,41 @@ const markdownIt = new MarkdownIt({
  * @returns {string} HTML without code snippets
  */
 function stripCodeListings(html) {
+  writeFile("input.html", html, () => {
+    console.log("Input HTML written");
+  });
   debug("stripCodeListings(...)");
   // Only removes multiline listings
-  const modifiedHtml = html.replaceAll(
+  let modifiedHtml = html.replace(
+    /<hr>[\s\S]+<(\w+)>title: ([^\n]+)[\S\s]*?<(?:\/\1|hr)>/gim,
+    "<h1>$2</h1>",
+  );
+  modifiedHtml = modifiedHtml.replaceAll(
     /<code(?: [^>]+)*>(.+?)<\/code>/gi,
-    '"$1"'
+    '"$1"',
   );
-  return modifiedHtml.replaceAll(
-    /<code(?: [^>]+)*>[\S\s]*?\n[\S\s]*?(<\/code>)/gim,
-    ""
+  modifiedHtml = modifiedHtml.replaceAll(
+    /<code(?: [^>]+)*>([\S\s]*?\n[\S\s]*?)<\/code>/gim,
+    // (match, code) => {
+    //   console.info("<CODE>", code, "</CODE>");
+    //   return map(
+    //     [...code.matchAll(COMMENT_REGEXP)],
+    //     ([match, shortComment, longComment]) => {
+    //       console.info(match, "=>", shortComment, "||", longComment);
+    //       return shortComment || longComment || "";
+    //     },
+    //   ).join("\n");
+    // },
+    ''
   );
+  modifiedHtml = modifiedHtml.replaceAll(
+    /&lt;math[\S\s]+&lt;\/math&gt;/gim,
+    "",
+  );
+  writeFile("output.html", modifiedHtml, () => {
+    console.log("Output HTML written");
+  });
+  return modifiedHtml;
 }
 
 /**
@@ -54,11 +83,11 @@ function stripMacrosInterpolation(text) {
       }
       debug(`Macros ${macrosName}: staying`);
       return `${lastParameter}`;
-    }
+    },
   );
   return modifiedText.replaceAll(
     /{{\s?\w+\(["']?([^"']+)["']?\)\s?}}/gim,
-    "$1"
+    "$1",
   );
 }
 
@@ -67,15 +96,19 @@ function convertHtmlToText(html) {
   const result = stripMacrosInterpolation(
     convert(stripCodeListings(html), {
       ignoreHref: true,
-    })
+    }),
   );
   debug(result);
+  writeFile("output.txt", result, () => {
+    console.log("Output TXT written");
+  });
   return result;
 }
 
 function convertMarkdownToHtml(markdown) {
   debug("convertMarkdownToHtml(...)");
-  return markdownIt.render(markdown);
+  const html = markdownIt.render(markdown);
+  return html;
 }
 
 function getText(filePath) {
