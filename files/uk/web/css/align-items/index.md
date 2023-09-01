@@ -245,8 +245,8 @@ display.addEventListener("change", (evt) => {
 
 ## Дивіться також
 
-- Настанови з Флексбоксу CSS: _[Базові концепції Флексбоксу](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)_
-- Настанови з Флексбоксу CSS: _[Шикування елементів у гнучкому контейнері](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container)_
-- Настанови з сітки CSS: _[Шикування блока при сітковому компонуванні CSS](/uk/docs/Web/CSS/CSS_Grid_Layout/Box_Alignment_in_CSS_Grid_Layout)_
-- [Блокове шикування CSS](/uk/docs/Web/CSS/CSS_Box_Alignment)
+- Настанови з Флексбоксу CSS: _[Базові концепції Флексбоксу](/uk/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox)_
+- Настанови з Флексбоксу CSS: _[Шикування елементів у гнучкому контейнері](/uk/docs/Web/CSS/CSS_flexible_box_layout/Aligning_items_in_a_flex_container)_
+- Настанови з сітки CSS: _[Шикування блока при сітковому компонуванні CSS](/uk/docs/Web/CSS/CSS_grid_layout/Box_alignment_in_grid_layout)_
+- [Блокове шикування CSS](/uk/docs/Web/CSS/CSS_box_alignment)
 - Властивість {{cssxref("align-self")}}
