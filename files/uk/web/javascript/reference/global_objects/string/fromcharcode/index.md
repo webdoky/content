@@ -14,6 +14,7 @@ browser-compat: javascript.builtins.String.fromCharCode
 ## Синтаксис
 
 ```js-nolint
+String.fromCharCode()
 String.fromCharCode(num1)
 String.fromCharCode(num1, num2)
 String.fromCharCode(num1, num2, /* …, */ numN)

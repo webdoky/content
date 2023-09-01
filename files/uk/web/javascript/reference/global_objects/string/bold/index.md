@@ -9,7 +9,7 @@ browser-compat: javascript.builtins.String.bold
 
 {{JSRef}} {{deprecated_header}}
 
-Метод **`bold()`** створює рядок, що вбудовує вихідний рядок в елемент {{HTMLElement("b")}} (`<b>рядок</b>`), що призводить до виведення цього рядка грубим шрифтом.
+Метод **`bold()`** (грубий) значень {{jsxref("String")}} створює рядок, що вбудовує рядок цього методу в елемент {{HTMLElement("b")}} (`<b>рядок</b>`), що призводить до виведення цього рядка грубим шрифтом.
 
 > **Примітка:** Всі [методи для обгортання в HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html) є нерекомендованими, вони стандартизовані суто для потреб сумісності. Замість них слід використовувати [API DOM](/uk/docs/Web/API/Document_Object_Model), як то [`document.createElement()`](/uk/docs/Web/API/Document/createElement).
 
@@ -18,6 +18,10 @@ browser-compat: javascript.builtins.String.bold
 ```js-nolint
 bold()
 ```
+
+### Параметри
+
+Жодних.
 
 ### Повернене значення
 
