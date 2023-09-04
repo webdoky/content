@@ -21,7 +21,7 @@ for (variable in object)
 ### Параметри
 
 - `variable`
-  - : На кожній ітерації отримує ім'я рядкової властивості. Може бути або оголошенням з [`const`](/uk/docs/Web/JavaScript/Reference/Statements/const), [`let`](/uk/docs/Web/JavaScript/Reference/Statements/let) чи [`var`](/uk/docs/Web/JavaScript/Reference/Statements/var), або ціллю [присвоєння](/uk/docs/Web/JavaScript/Reference/Operators/Assignment) (наприклад, заздалегідь оголошеною змінною чи властивістю об'єкта). Змінні, оголошені з `var`, не є локальними щодо циклу, тобто перебувають в тій же області видимості, що й цикл `for...in`.
+  - : На кожній ітерації отримує ім'я рядкової властивості. Може бути або оголошенням з [`const`](/uk/docs/Web/JavaScript/Reference/Statements/const), [`let`](/uk/docs/Web/JavaScript/Reference/Statements/let) чи [`var`](/uk/docs/Web/JavaScript/Reference/Statements/var), або ціллю [присвоєння](/uk/docs/Web/JavaScript/Reference/Operators/Assignment) (наприклад, заздалегідь оголошеною змінною, властивістю об'єкта чи [патерном присвоєння з деструктуруванням](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)). Змінні, оголошені з `var`, не є локальними щодо циклу, тобто перебувають в тій же області видимості, що й цикл `for...in`.
 - `object`
   - : Об'єкт, чиї перелічувані властивості з несимвольними ключами перебираються.
 - `statement`
