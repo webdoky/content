@@ -635,4 +635,4 @@ console.log(prot); // "456"
 ## Дивіться також
 
 - [Оператори присвоєння](/uk/docs/Web/JavaScript/Reference/Operators#operatory-prysvoiennia)
-- ["Поглиблено про ES6: Деструктурування" на hacks.mozilla.org (англ.)](https://hacks.mozilla.org/2015/05/es6-in-depth-destructuring/)
+- [Заглиблення в ES6: Деструктурування](https://hacks.mozilla.org/2015/05/es6-in-depth-destructuring/) на hacks.mozilla.org (2015)
