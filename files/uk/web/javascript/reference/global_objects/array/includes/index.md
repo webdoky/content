@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.Array.includes
 
 {{JSRef}}
 
-Метод **`includes()`** (включає) визначає, чи містить масив вказане значення серед своїх елементів, і повертає `true` чи `false` відповідно до результату.
+Метод **`includes()`** (включає) примірників {{jsxref("Array")}} визначає, чи містить масив вказане значення серед своїх елементів, і повертає `true` чи `false` відповідно до результату.
 
 {{EmbedInteractiveExample("pages/js/array-includes.html")}}
 

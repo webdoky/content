@@ -46,10 +46,10 @@ doSomething(function (result) {
         function (finalResult) {
           console.log(`Отриманий остаточний результат: ${finalResult}`);
         },
-        failureCallback
+        failureCallback,
       );
     },
-    failureCallback
+    failureCallback,
   );
 }, failureCallback);
 ```
@@ -140,7 +140,7 @@ doSomething()
       .then((res) => res.json())
       .then((data) => {
         listOfIngredients.push(data);
-      })
+      }),
   )
   .then(() => {
     console.log(listOfIngredients);
@@ -170,7 +170,7 @@ doSomethingCritical()
   .then((result) =>
     doSomethingOptional(result)
       .then((optionalResult) => doSomethingExtraNice(optionalResult))
-      .catch((e) => {})
+      .catch((e) => {}),
   ) // Ігнорувати, якщо необов'язкові штуки не вдаються; продовжувати.
   .then(() => moreCriticalStuff())
   .catch((e) => console.error(`Critical failure: ${e.message}`));
@@ -268,7 +268,7 @@ doSomething()
   .then((result) => doSomethingElse(result))
   .then((newResult) => doThirdThing(newResult))
   .then((finalResult) =>
-    console.log(`Отриманий остаточний результат: ${finalResult}`)
+    console.log(`Отриманий остаточний результат: ${finalResult}`),
   )
   .catch(failureCallback);
 ```
@@ -509,12 +509,10 @@ console.log("Проміс (в очікуванні)", promise);
 
 ## Дивіться також
 
-- {{jsxref("Promise.prototype.then()")}}
-- [`async` і `await`](/uk/docs/Web/JavaScript/Reference/Statements/async_function)
-- [Специфікація Promises/A+ (англ.)](https://promisesaplus.com/)
-- [Venkatraman.R - JS Promise (Частина 1, Основи (англ.))](https://medium.com/@ramsunvtech/promises-of-promise-part-1-53f769245a53)
-- [Venkatraman.R - JS Promise (Частина 2 - Використання Q.js, When.js і RSVP.js (англ.))](https://medium.com/@ramsunvtech/js-promise-part-2-q-js-when-js-and-rsvp-js-af596232525c#.dzlqh6ski)
-- [Venkatraman.R - Інструменти для юніттестування промісів (англ.)](https://tech.io/playgrounds/11107/tools-for-promises-unittesting/introduction)
-- [Нолан Лоусон: Маємо проблему з промісами – Поширені помилки з промісами (англ.)](https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html)
+- {{jsxref("Promise")}}
+- {{jsxref("Statements/async_function", "async function")}}
+- {{jsxref("Operators/await", "await")}}
+- [Специфікація Promises/A+](https://promisesaplus.com/)
+- [Маємо проблему з промісами](https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html) на pouchdb.com (2015)
 
 {{PreviousNext("Web/JavaScript/Guide/Using_classes", "Web/JavaScript/Guide/Typed_arrays")}}

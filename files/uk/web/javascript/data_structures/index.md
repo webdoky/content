@@ -269,7 +269,5 @@ Neither `{}` nor `[]` has a `[@@toPrimitive]()` method. Both `{}` and `[]` inher
 
 ## Дивіться також
 
-- [Структури даних і алгоритми JavaScript від Олексія Трехлеба](https://github.com/trekhleb/javascript-algorithms)
-- [Колекція загальновживаних структур даних та алгоритмів у JavaScript від Ніколаса Закаса](https://github.com/humanwhocodes/computer-science-in-javascript)
-- [Реалізація дерев пошуку на JavaScript](https://github.com/monmohan/dsjslib)
-- [Типи даних і значення в специфікації ECMAScript](https://tc39.es/ecma262/multipage/ecmascript-data-types-and-values.html)
+- [Структури даних та алгоритми JavaScript](https://github.com/trekhleb/javascript-algorithms) від Олексія Трехлеба
+- [Інформатика в JavaScript](https://github.com/humanwhocodes/computer-science-in-javascript) від Ніколаса Закаса

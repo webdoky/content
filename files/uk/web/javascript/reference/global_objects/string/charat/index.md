@@ -104,4 +104,4 @@ console.log([...str][0]); // "𠮷"
 - {{jsxref("String.prototype.codePointAt()")}}
 - {{jsxref("String.prototype.split()")}}
 - {{jsxref("String.fromCodePoint()")}}
-- [JavaScript має проблему з Unicode – Матіас Байненс (англ.)](https://mathiasbynens.be/notes/javascript-unicode)
+- [JavaScript має проблему з Unicode](https://mathiasbynens.be/notes/javascript-unicode) від Матіаса Байненса (2013)
