@@ -315,3 +315,4 @@ element.style.setProperty("--my-var", jsVar + 4);
 
 - [Синтаксис користувацьких властивостей](/uk/docs/Web/CSS/--*)
 - [`var()`](/uk/docs/Web/CSS/var)
+- Директива {{cssxref("@property")}}

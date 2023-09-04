@@ -1,27 +1,21 @@
 ---
 title: String.prototype.fontsize()
 slug: Web/JavaScript/Reference/Global_Objects/String/fontsize
-tags:
-  - Deprecated
-  - HTML wrapper methods
-  - JavaScript
-  - Method
-  - Prototype
-  - Reference
-  - String
-  - Polyfill
+page-type: javascript-instance-method
+status:
+  - deprecated
 browser-compat: javascript.builtins.String.fontsize
 ---
+
 {{JSRef}} {{deprecated_header}}
 
-Метод **`fontsize()`** створює HTML-елемент {{HTMLElement("font")}}, який змушує рядок зображатись шрифтом вказаного розміру.
+Метод **`fontsize()`** (розмір шрифту) значень {{jsxref("String")}} створює рядок, що вбудовує рядок цього методу в елемент {{HTMLElement("font")}} (`<font size="...">str</font>`), завдяки чому цей текст виводиться з заданим розміром шрифту.
 
-> **Примітка:** елемент \<font> видалено в стандарті [HTML5](/uk/docs/Web/Guide/HTML/HTML5), і його не слід більше використовувати.
-> Натомість веброзробникам слід користуватись властивостями [CSS](/uk/docs/Web/CSS).
+> **Примітка:** Всі [обгортальні методи HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html) є нерекомендованими та стандартизовані лише для потреб сумісності. У випадку `fontsize()`, сам елемент `<font>` було вилучено в [HTML5](/uk/docs/Glossary/HTML5), і його більше не слід використовувати. Замість цього веброзробники повинні використовувати властивості [CSS](/uk/docs/Web/CSS).
 
 ## Синтаксис
 
-```js
+```js-nolint
 fontsize(size)
 ```
 
@@ -32,11 +26,11 @@ fontsize(size)
 
 ### Повернене значення
 
-Рядок, що містить HTML-елемент {{HTMLElement("font")}}.
+Рядок, що починається з початкового тега `<font size="size">` (подвійні лапки в `size` замінюються на `&quot;`), потім текст `str`, і потім кінцевий тег `</font>`.
 
 ## Опис
 
-Коли значення розміру передається як ціле число, розмір шрифту рядка `str` встановлюється в одне із 7 визначених розмірів. Коли значення параметру `size` містить рядок, як от "-2", розмір шрифту рядка `str` змінюється на вказане число відносно величини, заданої в елементі {{HTMLElement("basefont")}}.
+Сам метод `fontsize` просто з'єднує рядкові частини докупи, без жодних валідації та нормалізації. Проте щоб створити дійсний елемент {{HTMLElement("font")}}, то при заданні розміру в вигляді цілого числа слід задати розмір шрифту `str` у вигляді одного з 7 визначених розмірів. Атрибут `size` можна задати у вигляді рядка виду `"-2"` або `"+3"`, щоб підлаштувати розмір шрифту `str` відносно 3, усталеного значення.
 
 ## Приклади
 
@@ -45,17 +39,17 @@ fontsize(size)
 Наступний приклад використовує методи рядка для зміни його розміру:
 
 ```js
-var worldString = 'Привіт, світе!';
+const worldString = "Привіт, світе!";
 
-console.log(worldString.small());     // <small>Привіт, світе!</small>
-console.log(worldString.big());       // <big>Привіт, світе!</big>
+console.log(worldString.small()); // <small>Привіт, світе!</small>
+console.log(worldString.big()); // <big>Привіт, світе!</big>
 console.log(worldString.fontsize(7)); // <font size="7">Привіт, світе!</font>
 ```
 
 За допомогою об'єкта {{domxref("HTMLElement/style", "element.style")}} можна отримати доступ до атрибута `style` елемента і більш загально ним маніпулювати, як от:
 
 ```js
-document.getElementById('yourElemId').style.fontSize = '0.7em';
+document.getElementById("yourElemId").style.fontSize = "0.7em";
 ```
 
 ## Специфікації
@@ -68,6 +62,6 @@ document.getElementById('yourElemId').style.fontSize = '0.7em';
 
 ## Дивіться також
 
-- Поліфіл методу `String.prototype.fontsize` доступний у [`core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
+- [Поліфіл `String.prototype.fontsize` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
 - {{jsxref("String.prototype.big()")}}
 - {{jsxref("String.prototype.small()")}}

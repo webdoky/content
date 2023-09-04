@@ -42,7 +42,7 @@ try {
 
 На відміну від інших конструкцій, як то [`if`](/uk/docs/Web/JavaScript/Reference/Statements/if...else) чи [`for`](/uk/docs/Web/JavaScript/Reference/Statements/for), блоки `try`, `catch` і `finally` мусять бути _блоками_, а не одиничними інструкціями.
 
-```js example-bad
+```js-nolint example-bad
 try doSomething(); // SyntaxError
 catch (e) console.log(e);
 ```
@@ -72,9 +72,9 @@ try {
 
 Зв'язування, створені положенням `catch`, живуть в тій же області видимості, що й сам блок `catch`, тож всі змінні, оголошені в блоці `catch`, не можуть мати назв, що збігаються з назвами зв'язувань, створених положенням `catch`. (Існує [один виняток з цього правила](/uk/docs/Web/JavaScript/Reference/Deprecated_and_obsolete_features#instruktsii), але такий запис – нерекомендований.)
 
-```js example-bad
+```js-nolint example-bad
 try {
-  throw new TypeError("oops");
+  throw new TypeError("ой");
 } catch ({ name, message }) {
   var name; // SyntaxError: Identifier 'name' has already been declared
   let message; // SyntaxError: Identifier 'name' has already been declared
