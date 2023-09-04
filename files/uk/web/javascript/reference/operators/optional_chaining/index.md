@@ -75,7 +75,7 @@ const result = someInterface.customMethod?.();
 
 ### Необов'язковий ланцюжок з виразами
 
-Також оператор необов'язкового ланцюжка можна використовувати вкупі з [записом квадратних дужок](/uk/docs/Web/JavaScript/Reference/Operators/Property_accessors#zapys-kvadratnykh-duzhok), котрий дає змогу передати як ім'я властивості – вираз:
+Також оператор необов'язкового ланцюжка можна використовувати вкупі з [записом квадратних дужок](/uk/docs/Web/JavaScript/Reference/Operators/Property_accessors#duzhkova-notatsiia), котрий дає змогу передати як ім'я властивості – вираз:
 
 ```js
 const nestedProp = obj?.["prop" + "Name"];
@@ -95,7 +95,7 @@ printMagicIndex(); // undefined; якби не ?., тут викинуло б п
 
 Не можна намагатися присвоїти результат виразові необов'язкового ланцюжка:
 
-```js example-bad
+```js-nolint example-bad
 const object = {};
 object?.property = 1; // SyntaxError: Invalid left-hand side in assignment
 ```
@@ -238,4 +238,4 @@ printCustomerCity({
 
 ## Дивіться також
 
-- [Оператор null-злиття](/uk/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing)
+- [Оператор null-злиття (`??`)](/uk/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing)
