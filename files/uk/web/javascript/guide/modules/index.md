@@ -818,6 +818,22 @@ const triangle1 = new Module.Triangle(
 
 Це корисно, бо код у [`main.js`](https://github.com/mdn/js-examples/blob/master/module-examples/top-level-await/main.js) не виконається, поки не завершиться код у [`getColors.js`](https://github.com/mdn/js-examples/blob/master/module-examples/top-level-await/modules/getColors.js). Проте це не завадить завантаженню інших модулів. Наприклад, модуль [`canvas.js`](https://github.com/mdn/js-examples/blob/master/module-examples/top-level-await/modules/canvas.js) завантажуватиметься далі, поки виконується отримання `colors`.
 
+## Оголошення імпорту піднімаються
+
+Оголошення імпорту – [піднімаються](/uk/docs/Glossary/Hoisting). В цьому випадку це означає, що імпортовані значення доступні в коді модуля навіть до рядка, котрий їх оголошує, і що побічні ефекти імпортованого модуля виробляються до запуску решти коду поточного модуля.
+Тож, наприклад, у `main.js`, імпортування `Canvas` в середині коду все одно працюватиме:
+
+```js
+// …
+const myCanvas = new Canvas("myCanvas", document.body, 480, 320);
+myCanvas.create();
+import { Canvas } from "./modules/canvas.js";
+myCanvas.createReportList();
+// …
+```
+
+І все ж, вважається доброю практикою ставити всі свої імпорти на початок коду, що полегшує аналіз залежностей.
+
 ## Циклічні імпорти
 
 Модулі можуть імпортувати інші модулі, ті модулі можуть імпортувати інші модулі, і так далі. Це формує [орієнтований граф](https://uk.wikipedia.org/wiki/%D0%9E%D1%80%D1%96%D1%94%D0%BD%D1%82%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B9_%D0%B3%D1%80%D0%B0%D1%84), що зветься «графом залежностей». У досконалому світі цей граф є [ациклічним](https://uk.wikipedia.org/wiki/%D0%A1%D0%BF%D1%80%D1%8F%D0%BC%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B9_%D0%B0%D1%86%D0%B8%D0%BA%D0%BB%D1%96%D1%87%D0%BD%D0%B8%D0%B9_%D0%B3%D1%80%D0%B0%D1%84). У такому випадку його можна оцінити за допомогою обходу в глибину.

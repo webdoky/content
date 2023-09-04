@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.Array.splice
 
 {{JSRef}}
 
-Метод **`splice()`** (зростити) змінює вміст масиву шляхом видалення чи заміни наявних елементів і/або додавання нових [на місці (англ.)](https://en.wikipedia.org/wiki/In-place_algorithm).
+Метод **`splice()`** (зростити) примірників {{jsxref("Array")}} змінює вміст масиву шляхом видалення чи заміни наявних елементів чи додавання нових [на місці](https://en.wikipedia.org/wiki/In-place_algorithm).
 
 Щоб створити новий масив, в якому частина видалена чи замінена, не змінюючи вихідний масив, слід скористатися {{jsxref("Array/toSpliced", "toSpliced()")}}. Щоб отримати доступ до частини масиву без його зміни, дивіться {{jsxref("Array.prototype.slice()", "slice()")}}.
 
@@ -18,9 +18,9 @@ browser-compat: javascript.builtins.Array.splice
 ```js-nolint
 splice(start)
 splice(start, deleteCount)
-splice(start, deleteCount, item0)
-splice(start, deleteCount, item0, item1)
-splice(start, deleteCount, item0, item1, /* … ,*/ itemN)
+splice(start, deleteCount, item1)
+splice(start, deleteCount, item1, item2)
+splice(start, deleteCount, item1, item2, /* …, */ itemN)
 ```
 
 ### Параметри
@@ -41,7 +41,7 @@ splice(start, deleteCount, item0, item1, /* … ,*/ itemN)
 
     Якщо `deleteCount` — `0` або від'ємне число, жоден елемент не видалиться. В цьому випадку необхідно вказати принаймні один новий елемент (див. далі).
 
-- `item0`, …, `itemN` {{optional_inline}}
+- `item1`, …, `itemN` {{optional_inline}}
   - : Елементи, які буде додано до масиву, починаючи з індексу `start`.
     Якщо не вказано жодного, `splice()` лише видалить елементи з масиву.
 
