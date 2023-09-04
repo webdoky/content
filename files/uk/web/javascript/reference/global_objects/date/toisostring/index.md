@@ -17,6 +17,10 @@ browser-compat: javascript.builtins.Date.toISOString
 toISOString()
 ```
 
+### Параметри
+
+Жодних.
+
 ### Повернене значення
 
 Рядок, що представляє дану дату в [форматі рядка дати та часу](/uk/docs/Web/JavaScript/Reference/Global_Objects/Date#format-riadka-daty-ta-chasu), згідно зі всесвітнім часом. Це той самий формат, що потрібен для розпізнання методом {{jsxref("Date.parse()")}}.
