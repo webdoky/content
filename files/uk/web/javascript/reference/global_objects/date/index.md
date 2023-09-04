@@ -130,7 +130,7 @@ console.log(new Date(8.64e15 + 1).toString()); // "Invalid Date"
 
 Є чимало способів форматування дати як рядка. Специфікація JavaScript визначає лише один формат, який повинен мати повсюдну підтримку – [_формат рядка дати та часу_](https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-date-time-string-format), спрощення розширеного формату календарної дати ISO 8601. Цей формат – наступний:
 
-```
+```plain
 YYYY-MM-DDTHH:mm:ss.sssZ
 ```
 
@@ -427,4 +427,4 @@ const seconds = Math.floor(Date.now() / 1000);
 
 ## Дивіться також
 
-- Конструктор {{jsxref("Date/Date", "Date()")}}
+- {{jsxref("Date/Date", "Date()")}}

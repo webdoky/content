@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.Array.slice
 
 {{JSRef}}
 
-Метод **`slice()`** (вирізати скибку, зріз) повертає [поверхневу копію (зріз)](/uk/docs/Glossary/Shallow_copy) певної частини масиву, взяту від елемента за індексом `start` (включно) до елемента за індексом `end` (не включно), у вигляді нового масиву. Початковий масив не змінюється.
+Метод **`slice()`** (вирізати скибку, зріз) примірників {{jsxref("Array")}} повертає [поверхневу копію (зріз)](/uk/docs/Glossary/Shallow_copy) певної частини масиву, взяту від елемента за індексом `start` (включно) до елемента за індексом `end` (не включно), у вигляді нового масиву. Початковий масив не змінюється.
 
 {{EmbedInteractiveExample("pages/js/array-slice.html", "taller")}}
 
@@ -89,7 +89,7 @@ console.log("newCar[0].color =", newCar[0].color);
 
 Скрипт надрукує такий текст:
 
-```
+```plain
 myCar = [
   {color: 'червоний', wheels: 4, engine: {cylinders: 4, size: 2.2 } },
   2,

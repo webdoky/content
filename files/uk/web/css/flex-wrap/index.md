@@ -135,5 +135,6 @@ flex-wrap: unset;
 
 ## Дивіться також
 
-- Посібник з Флексбоксу CSS: _[Базові концепції Флексбоксу](/uk/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox)_
+- Властивість-скорочення CSS {{CSSXRef("flex-flow")}} для властивостей `flex-wrap` і {{CSSXRef("flex-direction")}}.
+- Посібник з Флексбоксу: _[Базові концепції Флексбоксу](/uk/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox)_
 - Посібник з Флексбоксу CSS: _[Майстерність загортання гнучких елементів](/uk/docs/Web/CSS/CSS_flexible_box_layout/Mastering_wrapping_of_flex_items)_

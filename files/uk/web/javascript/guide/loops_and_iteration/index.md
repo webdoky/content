@@ -185,17 +185,7 @@ label:
   statement
 ```
 
-Значення `label` може бути будь-яким ідентифікатором JavaScript, що не є зарезервованим словом. `statement`, котра ідентифікується міткою, може бути будь-якою інструкцією.
-
-### Приклад
-
-В цьому прикладі мітка `markLoop` ідентифікує цикл `while`.
-
-```js
-markLoop: while (theMark) {
-  doSomething();
-}
-```
+Значення `label` може бути будь-яким ідентифікатором JavaScript, що не є зарезервованим словом. `statement`, котра ідентифікується міткою, може бути будь-якою інструкцією. Приклади застосування інструкцій з мітками шукайте в прикладах `break` і `continue` нижче.
 
 ## Інструкція break
 
@@ -207,7 +197,7 @@ markLoop: while (theMark) {
 
 Синтаксис інструкції `break` має такий вигляд:
 
-```js
+```js-nolint
 break;
 break label;
 ```
@@ -258,7 +248,7 @@ labelCancelLoops: while (true) {
 
 Синтаксис інструкції `continue` має наступний вигляд:
 
-```js
+```js-nolint
 continue;
 continue label;
 ```
@@ -278,7 +268,8 @@ while (i < 5) {
   n += i;
   console.log(n);
 }
-//1,3,7,12
+// Виводить:
+// 1 3 7 12
 ```
 
 Якщо закоментувати `continue;`, то цикл працюватиме до кінця й виведе `1,3,6,10,15`.
@@ -334,7 +325,7 @@ function dumpProps(obj, objName) {
 
 Для об'єкта `car` з властивостями `make` і `model` `result` буде:
 
-```
+```plain
 car.make = Ford
 car.model = Mustang
 ```
