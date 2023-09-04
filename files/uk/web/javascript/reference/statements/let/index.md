@@ -44,7 +44,7 @@ let name1 = value1, name2, /* …, */ nameN = valueN;
 Порівняно з {{jsxref("Statements/var", "var")}}, оголошення `let` мають наступні відмінності:
 
 - Оголошення `let` обмежуються блоками, як і функціями.
-- До оголошень `let` можна звертатися лише після досягнення рядка з оголошенням (дивіться [темпоральну мертву зону](#temporalna-mertva-zona-tdz)). Через це оголошення `let` заведено називати [непіднімальними](/uk/docs/Glossary/Hoisting).
+- До оголошень `let` можна звертатися лише після досягнення місця з оголошенням (дивіться [темпоральну мертву зону](#temporalna-mertva-zona-tdz)). Через це оголошення `let` заведено називати [непіднімальними](/uk/docs/Glossary/Hoisting).
 - Оголошення `let` не створюють властивостей на {{jsxref("globalThis")}}, коли виконуються на зовнішньому рівні сценарію.
 - Оголошення `let` не можуть бути [оголошені повторно](#povtorni-oholoshennia) будь-яким іншим оголошенням в тій же області видимості.
 - Ключове слово `let` позначає [_оголошення_, а не _інструкції_](/uk/docs/Web/JavaScript/Reference/Statements#vidminnosti-mizh-instruktsiiamy-ta-oholoshenniamy). Це означає, що не можна використовувати самотнє оголошення `let` як тіло блоку (що має зміст, адже до такої змінної не було б нізвідки доступу).
@@ -61,11 +61,11 @@ let name1 = value1, name2, /* …, */ nameN = valueN;
 
 ### Темпоральна мертва зона (TDZ)
 
-Про змінну, оголошену з `let`, `const` або `class`, кажуть, що вона перебуває в "темпоральній мертвій зоні" (TDZ) від початку блоку до миті, коли виконання коду досягає рядка, на якому оголошується та ініціалізується ця змінна.
+Про змінну, оголошену з `let`, `const` або `class`, кажуть, що вона перебуває в "темпоральній мертвій зоні" (TDZ) від початку блоку до миті, коли виконання коду досягає місця, в якому оголошується та ініціалізується ця змінна.
 
-Перебуваючи в TDZ, змінна іще не була ініціалізована значенням, і будь-які спроби звернутися до неї призведуть до {{jsxref("ReferenceError")}}. Ця змінна ініціалізується значенням, коли виконання досягне рядка коду, де вона оголошена. Якщо в оголошенні цієї змінної не задане жодне початкове значення, вона ініціалізується значенням `undefined`.
+Перебуваючи в TDZ, змінна іще не була ініціалізована значенням, і будь-які спроби звернутися до неї призведуть до {{jsxref("ReferenceError")}}. Ця змінна ініціалізується значенням, коли виконання досягне місця в коді, де вона оголошена. Якщо в оголошенні цієї змінної не задане жодне початкове значення, вона ініціалізується значенням `undefined`.
 
-Це відрізняється від змінних {{jsxref("Statements/var", "var", "pidniattia")}}, котрі повертають значення `undefined`, якщо звернутися до них до їхнього оголошення. Код нижче демонструє різний результат при звертанні до `let` і `var` вище рядка, на якому вони оголошені.
+Це відрізняється від змінних {{jsxref("Statements/var", "var", "pidniattia")}}, котрі повертають значення `undefined`, якщо звернутися до них до їхнього оголошення. Код нижче демонструє різний результат при звертанні до `let` і `var` вище місця, в якому вони оголошені.
 
 ```js example-bad
 {
@@ -111,7 +111,7 @@ console.log(typeof undeclaredVariable); // "undefined"
 ```js-nolint example-bad
 {
   let foo;
-  let foo; // SyntaxError: Identifier 'a' has already been declared
+  let foo; // SyntaxError: Identifier 'foo' has already been declared
 }
 ```
 
@@ -282,9 +282,9 @@ console.log(a, b, c); // "aaa" "b" "cc"
 - {{jsxref("Statements/var", "var")}}
 - {{jsxref("Statements/const", "const")}}
 - [Підняття](/uk/docs/Glossary/Hoisting)
-- [Заглиблення в ES6: `let` і `const`](https://hacks.mozilla.org/2015/07/es6-in-depth-let-and-const/) на hacks.mozilla.org (31 липня 2015)
-- [Небезпечні зміни `let` і `const` у Firefox 44](https://blog.mozilla.org/addons/2015/10/14/breaking-changes-let-const-firefox-nightly-44/) на blog.mozilla.org (14 жовтня 2015)
-- [Ви не знаєте JS: Області видимості та замикання: Розділ 3: Функція і блокова область видимості](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch3.md)
+- [Заглиблення в ES6: `let` і `const`](https://hacks.mozilla.org/2015/07/es6-in-depth-let-and-const/) на hacks.mozilla.org (2015)
+- [Небезпечні зміни `let` і `const` у Firefox 44](https://blog.mozilla.org/addons/2015/10/14/breaking-changes-let-const-firefox-nightly-44/) на blog.mozilla.org (2015)
+- [Ви не знаєте JS: Області видимості та замикання, р. 3: Функція і блокова область видимості](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch3.md) від Кайла Сімпсона
 - [Що таке Темпоральна мертва зона?](https://stackoverflow.com/questions/33198849/what-is-the-temporal-dead-zone/33198850) на Stack Overflow
 - [Яка різниця між використанням `let` і `var`?](https://stackoverflow.com/questions/762011/whats-the-difference-between-using-let-and-var) на Stack Overflow
 - [Чому для оголошень змінних з блоковою видимістю в JavaScript було обрано ім'я 'let'?](https://stackoverflow.com/questions/37916940/why-was-the-name-let-chosen-for-block-scoped-variable-declarations-in-javascri) на Stack Overflow
