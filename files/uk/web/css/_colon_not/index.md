@@ -35,7 +35,9 @@ browser-compat: css.selectors.not
 
 ## Приклади
 
-### Базовий набір прикладів :not()
+### Використання :not() на дійсних селекторах
+
+Цей приклад демонструє кілька простих випадків застосування `:not()`.
 
 #### HTML
 
@@ -84,9 +86,9 @@ h2 :not(span.foo) {
 
 #### Результат
 
-{{EmbedLiveSample('bazovyi-nabir-prykladiv-z-not', '100%', 320)}}
+{{EmbedLiveSample('vykorystannia-not-na-diisnykh-selektorakh', '100%', 320)}}
 
-### :not() із недійсними селекторами
+### Використання :not() на недійсних селекторах
 
 Цей приклад демонструє використання `:not()` з недійсними селекторами та те, як запобігти нечинності всього селектора.
 
@@ -119,7 +121,7 @@ p:is(:not(.foo), :not(:invalid-pseudo-class)) {
 
 #### Результат
 
-{{EmbedLiveSample('not-iz-nediisnymy-selektoramy', '100%', 320)}}
+{{EmbedLiveSample('vykorystannia-not-na-nediisnykh-selektorakh', '100%', 320)}}
 
 ## Специфікації
 
@@ -138,3 +140,5 @@ p:is(:not(.foo), :not(:invalid-pseudo-class)) {
   - {{cssxref(":has", ":has()")}}
   - {{cssxref(":is", ":is()")}}
   - {{cssxref(":where", ":where()")}}
+
+- [Як :not() утворює ланцюжки з багатьох селекторів](https://developer.mozilla.org/en-US/blog/css-not-pseudo-multiple-selectors/) на блозі MDN (2023)

@@ -113,7 +113,7 @@ browser-compat: html.elements.a
 #### HTML
 
 ```html
-<a href="https://www.mozilla.com">Mozilla </a>
+<a href="https://www.mozilla.com">Mozilla</a>
 ```
 
 #### Результат
@@ -328,7 +328,7 @@ document
 #### Посилання на не-HTML ресурс
 
 ```html
-<a href="2017-annual-report.ppt">2017 Річний звіт (PowerPoint) </a>
+<a href="2017-annual-report.ppt">2017 Річний звіт (PowerPoint)</a>
 ```
 
 Якщо призначення посилання позначено іконкою, слід пересвідчитись, що ця іконка має [_текстову альтернативу_](/uk/docs/Web/HTML/Element/img#alt):
