@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.Array.every
 
 {{JSRef}}
 
-Метод **`every()`** (кожний) перевіряє, чи всі елементи масиву проходять перевірку, реалізовану наданою функцією. Повертає булеве значення.
+Метод **`every()`** (кожний) примірників {{jsxref("Array")}} перевіряє, чи всі елементи масиву проходять перевірку, реалізовану наданою функцією. Повертає булеве значення.
 
 {{EmbedInteractiveExample("pages/js/array-every.html","shorter")}}
 
@@ -57,7 +57,7 @@ every(callbackFn, thisArg)
 
 ### Перевірка розміру всіх елементів масиву
 
-Наступний приклад перевіряє, чи всі елементи масиву більші за 10.
+Наступний приклад перевіряє, чи всі елементи масиву більші за 9.
 
 ```js
 function isBigEnough(element, index, array) {
@@ -156,7 +156,7 @@ const arrayLike = {
   3: 345, // ігнорується every(), оскільки length – 3
 };
 console.log(
-  Array.prototype.every.call(arrayLike, (x) => typeof x === "string")
+  Array.prototype.every.call(arrayLike, (x) => typeof x === "string"),
 ); // true
 ```
 
