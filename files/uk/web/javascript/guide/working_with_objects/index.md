@@ -281,7 +281,7 @@ function showProps(obj, objName) {
 
 Термін "власна властивість" позначає властивості об'єкта, але не включає властивості з ланцюжка прототипів. Тож виклик функції `showProps(myCar, 'myCar')` надрукує наступне:
 
-```
+```plain
 myCar.make = Ford
 myCar.model = Mustang
 myCar.year = 1969

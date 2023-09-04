@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.String.slice
 
 {{JSRef}}
 
-Метод **`slice()`** (викраяти, вирізати скибку) витягає частину рядка і повертає її новим рядком, не змінюючи початковий.
+Метод **`slice()`** (викраяти, вирізати скибку) значень {{jsxref("String")}} витягає частину свого рядка і повертає її новим рядком, не змінюючи початковий.
 
 {{EmbedInteractiveExample("pages/js/string-slice.html", "taller")}}
 

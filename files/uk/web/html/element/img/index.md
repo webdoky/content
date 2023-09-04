@@ -472,8 +472,9 @@ SVG залишається рекомендованим форматом для 
 
 ## Дивіться також
 
+- Елементи {{HTMLElement("picture")}}, {{HTMLElement("object")}} і {{HTMLElement("embed")}}
+- {{cssxref("object-fit")}}, {{cssxref("object-position")}}, {{cssxref("image-orientation")}}, {{cssxref("image-rendering")}} й {{cssxref("image-resolution")}} – властивості, пов'язані з зображеннями.
+- Інтерфейс {{domxref("HTMLImageElement")}} для цього елемента
 - [Зображення в HTML](/uk/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML)
 - [Тип файлу зображення й настанови щодо форматів](/uk/docs/Web/Media/Formats/Image_types)
 - [Чуйні зображення](/uk/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
-- Елементи {{HTMLElement("picture")}}, {{HTMLElement("object")}} і {{HTMLElement("embed")}}
-- Інші пов'язані з зображеннями властивості CSS: {{cssxref("object-fit")}}, {{cssxref("object-position")}}, {{cssxref("image-orientation")}}, {{cssxref("image-rendering")}} й {{cssxref("image-resolution")}}.

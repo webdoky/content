@@ -40,9 +40,9 @@ delete object[property]
 
 ## Опис
 
-Оператор `delete` має такий само [пріоритет](/uk/docs/Web/JavaScript/Reference/Operators/Operator_Precedence), як інші унарні оператори, як то [`typeof`](/uk/docs/Web/JavaScript/Reference/Operators/typeof). Таким чином, він приймає будь-які вирази, сформовані операторами вищого пріоритету. Проте форми, показані нижче, в [суворому режимі](/uk/docs/Web/JavaScript/Reference/Strict_mode) зразу призведуть до синтаксичних помилок:
+Оператор `delete` має такий само [пріоритет](/uk/docs/Web/JavaScript/Reference/Operators/Operator_precedence), як інші унарні оператори, як то [`typeof`](/uk/docs/Web/JavaScript/Reference/Operators/typeof). Таким чином, він приймає будь-які вирази, сформовані операторами вищого пріоритету. Проте форми, показані нижче, в [суворому режимі](/uk/docs/Web/JavaScript/Reference/Strict_mode) зразу призведуть до синтаксичних помилок:
 
-```js example-bad
+```js-nolint example-bad
 delete identifier;
 delete object.#privateProperty;
 ```
@@ -56,7 +56,7 @@ delete console.log(1);
 // Виводить 1, повертає true, але нічого не видалено
 ```
 
-Оператор `delete` прибирає з об'єкта задану властивість. У випадку успішного видалення – повертає `true`, інакше – `false`. Всупереч поширеному уявленню (мабуть, пов'язаному з іншими мовами програмування, як то [delete у C++](https://docs.microsoft.com/cpp/cpp/delete-operator-cpp?view=msvc-170)), оператор `delete` **не має** стосунку до безпосереднього звільнення пам'яті. Керування пам'яттю виконується в непрямий спосіб, шляхом розриву посилань. Дивіться подробиці на сторінці [керування пам'яттю](/uk/docs/Web/JavaScript/Memory_Management).
+Оператор `delete` прибирає з об'єкта задану властивість. У випадку успішного видалення – повертає `true`, інакше – `false`. Всупереч поширеному уявленню (мабуть, пов'язаному з іншими мовами програмування, як то [delete у C++](https://docs.microsoft.com/cpp/cpp/delete-operator-cpp?view=msvc-170)), оператор `delete` **не має** стосунку до безпосереднього звільнення пам'яті. Керування пам'яттю виконується в непрямий спосіб, шляхом розриву посилань. Дивіться подробиці на сторінці [керування пам'яттю](/uk/docs/Web/JavaScript/Memory_management).
 
 Важливо враховувати наступні варіанти:
 
@@ -78,7 +78,7 @@ delete console.log(1);
 // Оскільки використовується var, вона буде позначена як неналаштовна.
 var empCount = 43;
 
-// Створення в глобальній видимості властивості adminName.
+// Створення в глобальній видимості властивості EmployeeDetails.
 // Оскільки var не використовується, вона буде позначена як налаштовна.
 EmployeeDetails = {
   name: "xyz",

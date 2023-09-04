@@ -6,7 +6,7 @@ browser-compat: javascript.builtins.Date.toLocaleString
 
 {{JSRef}}
 
-Метод **`toLocaleString()`** (до рядка згідно з локаллю) повертає рядок з чутливим до мови представленням дати. У реалізаціях без підтримки [API `Intl.DateTimeFormat`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat) цей метод просто викликає `Intl.DateTimeFormat`.
+Метод **`toLocaleString()`** (до рядка згідно з локаллю) примірників {{jsxref("Date")}} повертає рядок з чутливим до мови представленням дати. У реалізаціях без підтримки [API `Intl.DateTimeFormat`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat) цей метод просто викликає `Intl.DateTimeFormat`.
 
 {{EmbedInteractiveExample("pages/js/date-tolocalestring.html")}}
 
