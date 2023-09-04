@@ -17,6 +17,10 @@ browser-compat: javascript.builtins.Date.now
 Date.now()
 ```
 
+### Параметри
+
+Жодних.
+
 ### Повернене значення
 
 Число, котре представляє [мітку часу](/uk/docs/Web/JavaScript/Reference/Global_Objects/Date#epokha-mitky-chasu-ta-nediisna-data) поточної миті в мілісекундах.
