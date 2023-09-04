@@ -355,4 +355,4 @@ for (const i of iterable) {
 
 - {{jsxref("Array.prototype.forEach()")}}
 - {{jsxref("Map.prototype.forEach()")}}
-- {{jsxref("Object.entries()")}} – Знадобиться при використанні `for...of` для об'єктів.
+- {{jsxref("Object.entries()")}}
