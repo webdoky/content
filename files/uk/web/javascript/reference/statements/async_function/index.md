@@ -304,4 +304,4 @@ async function getProcessedData(url) {
 - {{jsxref("Operators/async_function", "Вираз асинхронної функції", "", 1)}}
 - Об'єкт {{jsxref("AsyncFunction")}}
 - {{jsxref("Operators/await", "await")}}
-- [Декорування асинхронних функцій у JavaScript (англ.)](https://innolitics.com/10x/javascript-decorators-for-promise-returning-functions/) на _innolitics.com_
+- [Декорування асинхронних функцій у JavaScript](https://innolitics.com/10x/javascript-decorators-for-promise-returning-functions/) на innolitics.com (2016)
