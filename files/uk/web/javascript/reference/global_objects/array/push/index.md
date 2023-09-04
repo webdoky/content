@@ -15,14 +15,14 @@ browser-compat: javascript.builtins.Array.push
 
 ```js-nolint
 push()
-push(element0)
-push(element0, element1)
-push(element0, element1, /* …, */ elementN)
+push(element1)
+push(element1, element2)
+push(element1, element2, /* …, */ elementN)
 ```
 
 ### Параметри
 
-- `elementN` (елемент № N)
+- `element1`, …, `elementN`
   - : Елемент (або елементи), що потрібно додати у кінець масиву.
 
 ### Повернене значення
