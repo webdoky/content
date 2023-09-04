@@ -17,6 +17,10 @@ browser-compat: javascript.builtins.Array.shift
 shift()
 ```
 
+### Параметри
+
+Жодних.
+
 ### Повернене значення
 
 Значення, котре було прибрано з масиву; {{jsxref("undefined")}}, якщо масив порожній.
