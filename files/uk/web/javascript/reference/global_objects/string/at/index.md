@@ -78,7 +78,6 @@ console.log(atWay); // 'о'
 ## Дивіться також
 
 - [Поліфіл `String.prototype.at` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
-- [Поліфіл методу "at()"](https://github.com/tc39/proposal-relative-indexing-method#polyfill).
 - {{jsxref("String.prototype.indexOf()")}}
 - {{jsxref("String.prototype.lastIndexOf()")}}
 - {{jsxref("String.prototype.charCodeAt()")}}
