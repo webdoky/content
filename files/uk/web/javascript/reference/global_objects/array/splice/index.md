@@ -18,9 +18,9 @@ browser-compat: javascript.builtins.Array.splice
 ```js-nolint
 splice(start)
 splice(start, deleteCount)
-splice(start, deleteCount, item0)
-splice(start, deleteCount, item0, item1)
-splice(start, deleteCount, item0, item1, /* …, */ itemN)
+splice(start, deleteCount, item1)
+splice(start, deleteCount, item1, item2)
+splice(start, deleteCount, item1, item2, /* …, */ itemN)
 ```
 
 ### Параметри
@@ -41,7 +41,7 @@ splice(start, deleteCount, item0, item1, /* …, */ itemN)
 
     Якщо `deleteCount` — `0` або від'ємне число, жоден елемент не видалиться. В цьому випадку необхідно вказати принаймні один новий елемент (див. далі).
 
-- `item0`, …, `itemN` {{optional_inline}}
+- `item1`, …, `itemN` {{optional_inline}}
   - : Елементи, які буде додано до масиву, починаючи з індексу `start`.
     Якщо не вказано жодного, `splice()` лише видалить елементи з масиву.
 
