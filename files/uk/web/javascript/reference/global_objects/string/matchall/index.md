@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.String.matchAll
 
 {{JSRef}}
 
-Метод **`matchAll()`** повертає ітератор з усіма результатами зіставлення рядка з _[регулярним виразом](/uk/docs/Web/JavaScript/Guide/Regular_expressions)_, в тому числі [групи захоплення](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Groups_and_backreferences).
+Метод **`matchAll()`** (шукати всі збіги) значень {{jsxref("String")}} повертає ітератор з усіма результатами зіставлення свого рядка з _[регулярним виразом](/uk/docs/Web/JavaScript/Guide/Regular_expressions)_, в тому числі [групи захоплення](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Groups_and_backreferences).
 
 {{EmbedInteractiveExample("pages/js/string-matchall.html")}}
 
@@ -53,7 +53,7 @@ let match;
 
 while ((match = regexp.exec(str)) !== null) {
   console.log(
-    `Знайдено слово ${match[0]}, початок=${match.index}, закінчення=${regexp.lastIndex}.`
+    `Знайдено слово ${match[0]}, початок=${match.index}, закінчення=${regexp.lastIndex}.`,
   );
 }
 // Знайдено слово football, початок=6, закінчення=14.
@@ -71,7 +71,7 @@ for (const match of matches) {
   console.log(
     `Знайдено слово ${match[0]}, початок=${match.index}, закінчення=${
       match.index + match[0].length
-    }.`
+    }.`,
   );
 }
 // Знайдено слово football, початок=6, закінчення=14.
