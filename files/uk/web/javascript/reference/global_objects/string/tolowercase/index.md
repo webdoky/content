@@ -9,7 +9,7 @@ browser-compat: javascript.builtins.String.toLowerCase
 
 Метод **`toLowerCase()`** (до нижнього регістру) значень {{jsxref("String")}} повертає значення свого рядка, переведене у нижній регістр.
 
-{{EmbedInteractiveExample("pages/js/string-tolowercase.html","shorter")}}
+{{EmbedInteractiveExample("pages/js/string-tolowercase.html", "shorter")}}
 
 ## Синтаксис
 
