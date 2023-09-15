@@ -158,7 +158,7 @@ items.sort((a, b) => {
 
 ### Сортування не-ASCII символів
 
-Для сортування рядків з не-ASCII символами, наприклад, рядків з діакритичними знаками (e, é, è, a, ä, та ін.) чи рядків з інших мов, не англійської, використовуйте {{jsxref("String.prototype.localeCompare()")}}. Ця функція дає змогу порівнювати такі символи так, щоб вони опинилися у вірній послідовності.
+Для сортування рядків з не-{{Glossary("ASCII")}} символами, наприклад, рядків з діакритичними знаками (e, é, è, a, ä, та ін.) чи рядків з інших мов, не англійської, використовуйте {{jsxref("String.prototype.localeCompare()")}}. Ця функція дає змогу порівнювати такі символи так, щоб вони опинилися у вірній послідовності.
 
 ```js
 const items = ["réservé", "premier", "communiqué", "café", "adieu", "éclair"];
@@ -324,7 +324,7 @@ console.log(Array.prototype.sort.call(arrayLike));
 ## Дивіться також
 
 - [Поліфіл для `Array.prototype.sort` з сучасною поведінкою (включно зі стабільним сортуванням) у `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
-- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
 - {{jsxref("Array.prototype.reverse()")}}
 - {{jsxref("Array.prototype.toSorted()")}}

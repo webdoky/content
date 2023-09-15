@@ -7,7 +7,7 @@ browser-compat: javascript.statements.import
 
 {{jsSidebar("Statements")}}
 
-Оголошення статичного імпорту **`import`** застосовуються для імпорту незмінних живих {{glossary("binding", "зв'язувань")}}, які, своєю чергою, [експортуються](/uk/docs/Web/JavaScript/Reference/Statements/export) іншим модулем. Імпортовані зв'язування називаються _живими_, оскільки вони оновлюються модулем, який їх експортує, проте їм не можуть бути присвоєні значення в модулі, що їх імпортує.
+Оголошення статичного імпорту **`import`** застосовуються для імпорту незмінних живих {{Glossary("binding", "зв'язувань")}}, які, своєю чергою, [експортуються](/uk/docs/Web/JavaScript/Reference/Statements/export) іншим модулем. Імпортовані зв'язування називаються _живими_, оскільки вони оновлюються модулем, який їх експортує, проте їм не можуть бути присвоєні значення в модулі, що їх імпортує.
 
 Для того, аби отримати змогу вжити оголошення `import` у файлі з вихідним кодом, цей файл повинен бути інтерпретований середовищем виконання як [модуль](/uk/docs/Web/JavaScript/Guide/Modules). В HTML цього можна досягти шляхом додавання `type="module"` до тега {{HTMLElement("script")}}. Модулі автоматично інтерпретуються в [суворому режимі](/uk/docs/Web/JavaScript/Reference/Strict_mode).
 
@@ -233,12 +233,11 @@ setTimeout(() => {
 
 ## Дивіться також
 
-- {{JSxRef("Statements/export", "export")}}
-- [Динамічні імпорти](/uk/docs/Web/JavaScript/Reference/Operators/import)
+- {{jsxref("Statements/export", "export")}}
+- [`import()`](/uk/docs/Web/JavaScript/Reference/Operators/import)
 - [`import.meta`](/uk/docs/Web/JavaScript/Reference/Operators/import.meta)
-- Лімін Зу, Браян Терлсон і команда Microsoft Edge:
-  [Попередній огляд модулів ES6 та інше, з ES2015, ES2016 і далі (англ.)](https://blogs.windows.com/msedgedev/2016/05/17/es6-modules-and-beyond/)
-- Допис із хаками від Джейсона Орендорффа: [Поглиблено про ES6: Модулі (англ.)](https://hacks.mozilla.org/2015/08/es6-in-depth-modules/)
-- Допис із хаками від Лін Кларк: [Модулі ES: поглиблено і з малюнками (англ.)](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/)
-- Книга Акселя Раушмаєра: ["Дослідження JS: Модулі" (англ.)](https://exploringjs.com/es6/ch_modules.html)
-- Сучасний підручник з JavaScript (uk.javascript.info): [Експорт та імпорт](https://uk.javascript.info/import-export)
+- [Попередній огляд модулів ES6 та інше, з ES2015, ES2016 і далі](https://blogs.windows.com/msedgedev/2016/05/17/es6-modules-and-beyond/) на blogs.windows.com (2016)
+- [Заглиблення в ES6: Модулі](https://hacks.mozilla.org/2015/08/es6-in-depth-modules/) на hacks.mozilla.org (2015)
+- [Модулі ES: Занурення в малюнках](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/) на hacks.mozilla.org (2018)
+- [Дослідження JS, Г. 16: Модулі](https://exploringjs.com/es6/ch_modules.html) від доктора Акселя Раушмаєра
+- [Експорт та імпорт](https://uk.javascript.info/import-export) на uk.javascript.info

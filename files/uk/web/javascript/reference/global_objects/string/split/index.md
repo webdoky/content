@@ -285,4 +285,4 @@ console.log(commands.split(splitCommands, 3)); // ["світло увімкну�
 - {{jsxref("String.prototype.indexOf()")}}
 - {{jsxref("String.prototype.lastIndexOf()")}}
 - {{jsxref("Array.prototype.join()")}}
-- [Застосування регулярних виразів у JavaScript](/uk/docs/Web/JavaScript/Guide/Regular_expressions)
+- Посібник [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_expressions)

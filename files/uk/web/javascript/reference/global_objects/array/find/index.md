@@ -15,7 +15,7 @@ browser-compat: javascript.builtins.Array.find
   {{jsxref("Array/includes", "includes()")}}. Знову ж таки, цей метод перевіряє кожний елемент на рівність із переданим значенням замість застосування перевіркової функції.
 - Якщо ж потрібно взнати, чи хоч якийсь елемент задовольняє передану перевіркову функцію, слід застосувати {{jsxref("Array/some", "some()")}}.
 
-{{EmbedInteractiveExample("pages/js/array-find.html","shorter")}}
+{{EmbedInteractiveExample("pages/js/array-find.html", "shorter")}}
 
 ## Синтаксис
 
@@ -176,7 +176,7 @@ console.log(Array.prototype.find.call(arrayLike, (x) => !Number.isInteger(x))); 
 ## Дивіться також
 
 - [Поліфіл до `Array.prototype.find` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
-- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
 - {{jsxref("Array.prototype.findIndex()")}}
 - {{jsxref("Array.prototype.findLast()")}}

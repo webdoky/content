@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.Object.toString
 
 {{JSRef}}
 
-Метод **`toString()`** повертає рядкове представлення даного об'єкта. Призначення цього методу — бути заміщеним в похідних об'єктах, для реалізації нетипової логіки [перетворення типів](/uk/docs/Web/JavaScript/Data_structures#zvedennia-typiv).
+Метод **`toString()`** (до рядка) примірників {{jsxref("Object")}} повертає рядкове представлення свого об'єкта. Призначення цього методу — бути заміщеним в похідних об'єктах, для реалізації нетипової логіки [перетворення типів](/uk/docs/Web/JavaScript/Data_structures#zvedennia-typiv).
 
 {{EmbedInteractiveExample("pages/js/object-prototype-tostring.html")}}
 

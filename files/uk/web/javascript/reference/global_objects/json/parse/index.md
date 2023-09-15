@@ -40,7 +40,7 @@ JSON.parse(text, reviver)
 
 ## Опис
 
-`JSON.parse()` розбирає рядок JSON згідно з [граматикою JSON](/uk/docs/Web/JavaScript/Reference/Global_Objects/JSON#full_json_grammar), а потім обчислює рядок так, ніби він був виразом JavaScript. Єдиний випадок, за якого дрібка тексту JSON представляє значення, котре відрізняється від такого самого виразу JavaScript – обробка ключа `"__proto__"`: дивіться [Синтаксис літерала об'єкта і JSON](/uk/docs/Web/JavaScript/Reference/Operators/Object_initializer#syntaksys-literala-obiekta-i-json).
+`JSON.parse()` розбирає рядок JSON згідно з [граматикою JSON](/uk/docs/Web/JavaScript/Reference/Global_Objects/JSON#full_json_grammar), а потім обчислює рядок так, ніби він був виразом JavaScript. Єдиний випадок, за якого дрібка тексту JSON представляє значення, котре відрізняється від такого самого виразу JavaScript – обробка ключа `"__proto__"`: дивіться [Синтаксис літерала об'єкта і JSON](/uk/docs/Web/JavaScript/Reference/Operators/Object_initializer#zapys-literaliv-obiektiv-i-json).
 
 ### Параметр reviver
 
@@ -72,7 +72,7 @@ JSON.parse(
   (key, value) =>
     typeof value === "number"
       ? value * 2 // повертає значення * 2 для чисел
-      : value // повертає все інше незмінним
+      : value, // повертає все інше незмінним
 );
 // { p: 10 }
 
@@ -103,12 +103,12 @@ const map = new Map([
   [3, "три"],
 ]);
 const jsonText = JSON.stringify(map, (key, value) =>
-  value instanceof Map ? Array.from(value.entries()) : value
+  value instanceof Map ? Array.from(value.entries()) : value,
 );
 console.log(jsonText);
 // [[1,"один"],[2,"два"],[3,"три"]]
 const map2 = JSON.parse(jsonText, (key, value) =>
-  key === "" ? new Map(value) : value
+  key === "" ? new Map(value) : value,
 );
 console.log(map2);
 // Map { 1 => "один", 2 => "два", 3 => "три" }

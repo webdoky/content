@@ -7,13 +7,14 @@ browser-compat: javascript.builtins.String.concat
 
 {{JSRef}}
 
-Метод **`concat()`** (зчепити) приєднує рядкові аргументи до рядка, на якому викликається, і повертає результат як новий рядок.
+Метод **`concat()`** (зчепити) значень {{jsxref("String")}} приєднує рядкові аргументи до свого рядка, і повертає результат як новий рядок.
 
 {{EmbedInteractiveExample("pages/js/string-concat.html")}}
 
 ## Синтаксис
 
 ```js-nolint
+concat()
 concat(str1)
 concat(str1, str2)
 concat(str1, str2, /* …, */ strN)
@@ -21,7 +22,7 @@ concat(str1, str2, /* …, */ strN)
 
 ### Параметри
 
-- `strN`
+- `str1`, …, `strN`
   - : Один чи більше рядків, які слід приєднати до початкового рядка `str`.
 
 ### Повернене значення
@@ -68,4 +69,4 @@ const greetList = ["Привіт", " ", "Венкате", "!"];
 ## Дивіться також
 
 - {{jsxref("Array.prototype.concat()")}}
-- [Оператор додавання](/uk/docs/Web/JavaScript/Reference/Operators/Addition)
+- [Додавання (`+`)](/uk/docs/Web/JavaScript/Reference/Operators/Addition)
