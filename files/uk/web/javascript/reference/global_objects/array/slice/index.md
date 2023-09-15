@@ -153,7 +153,7 @@ console.log([1, 2, , 4, 5].slice(1, 4)); // [2, порожньо, 4]
 ## Дивіться також
 
 - [Поліфіл `Array.prototype.slice` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
-- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
 - {{jsxref("Array.prototype.pop()")}}
 - {{jsxref("Array.prototype.shift()")}}
