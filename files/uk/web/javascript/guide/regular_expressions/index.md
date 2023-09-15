@@ -49,13 +49,13 @@ page-type: guide
 
 Наступні сторінки містять списки різних спеціальних символів, розбитих на категорії, з описами та прикладами.
 
-- [Перевірки](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Assertions)
+- Посібник [Перевірки](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Assertions)
   - : Перевірки включають межі, які позначають початки й закінчення слів та рядків, та інші патерни, котрі якимось чином вказують, що збіг можливий (включно з випереджувальними, ретроспективними та умовними виразами).
-- [Класи символів](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Character_classes)
+- Посібник [Класи символів](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Character_classes)
   - : Розрізняють різні типи символів. Наприклад, розрізнення літер та цифр.
-- [Групи й зворотні посилання](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Groups_and_backreferences)
+- Посібник [Групи й зворотні посилання](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Groups_and_backreferences)
   - : Групи групують декілька патернів як єдине ціле, а групи захоплення надають додаткову інформацію вкладеного збігу, коли патерн регулярного виразу зіставляється з рядком. Зворотні посилання посилаються на попередньо захоплену групу в тому самому регулярному виразі.
-- [Квантори](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Quantifiers)
+- Посібник [Квантори](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Quantifiers)
   - : Вказують кількість символів чи виразів для збігу.
 
 Нижче наведено єдину таблицю всіх спеціальних символів, які можна використовувати в регулярних виразах:
@@ -152,7 +152,7 @@ page-type: guide
 
 Використовуючи конструктор `RegExp` з рядковим літералом, пам'ятайте, що зворотний скіс — це екранувальний символ в рядкових літералах. І щоб застосувати його в регулярному виразі, слід спершу його екранувати на рівні рядкового літерала. `/a\*b/` та `new RegExp("a\\*b")` створюють один і той самий вираз, який шукатиме літеру "a" з символом за нею "\*" і літерою "b" після них.
 
-Якщо екранувальні рядки ще не входять в готовий патерн, їх можна додати за допомогою {{jsxref('String.prototype.replace()')}}:
+Якщо екранувальні рядки ще не входять в готовий патерн, їх можна додати за допомогою {{jsxref("String.prototype.replace()")}}:
 
 ```js
 function escapeRegExp(string) {
@@ -436,7 +436,7 @@ form.addEventListener("submit", (event) => {
 
 #### Результат
 
-{{EmbedLiveSample('zastosuvannia-spetsialnykh-symvoliv-dlia-perevirky-vvodu')}}
+{{EmbedLiveSample("zastosuvannia-spetsialnykh-symvoliv-dlia-perevirky-vvodu")}}
 
 ## Інструменти
 

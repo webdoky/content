@@ -9,7 +9,7 @@ browser-compat: javascript.functions.arrow_functions
 
 **Вираз стрілкової функції** — це компактна альтернатива традиційному [виразові функції](/uk/docs/Web/JavaScript/Reference/Operators/function), що має певні семантичні відмінності й свідомі обмеження у використанні:
 
-- Стрілкові функції не мають власних {{glossary("binding", "зв'язувань")}} [`this`](/uk/docs/Web/JavaScript/Reference/Operators/this), [`arguments`](/uk/docs/Web/JavaScript/Reference/Functions/arguments) та [`super`](/uk/docs/Web/JavaScript/Reference/Operators/super), і їх не слід використовувати як [методи](/uk/docs/Glossary/Method).
+- Стрілкові функції не мають власних {{Glossary("binding", "зв'язувань")}} [`this`](/uk/docs/Web/JavaScript/Reference/Operators/this), [`arguments`](/uk/docs/Web/JavaScript/Reference/Functions/arguments) та [`super`](/uk/docs/Web/JavaScript/Reference/Operators/super), і їх не слід використовувати як [методи](/uk/docs/Glossary/Method).
 - Стрілкові функції не можуть використовуватися як [конструктори](/uk/docs/Glossary/Constructor). Виклик їх з [`new`](/uk/docs/Web/JavaScript/Reference/Operators/new) викидає {{jsxref("TypeError")}}. Крім цього, вони не мають доступу до ключового слова [`new.target`](/uk/docs/Web/JavaScript/Reference/Operators/new.target)
 - Стрілкові функції не можуть використовувати у своєму тілі [`yield`](/uk/docs/Web/JavaScript/Reference/Operators/yield) і не можуть створюватися як генераторні функції.
 
@@ -153,7 +153,7 @@ const func2 = (x, y) => {
 
 Повертання літералів об'єктів за допомогою синтаксису стислого тіла `(params) => { object: literal }` не працює так, як очікувано.
 
-```js example-bad
+```js-nolint example-bad
 const func = () => { foo: 1 };
 // Виклик func() повертає undefined!
 const func2 = () => { foo: function () {} };
@@ -245,11 +245,6 @@ class C {
 Стрілкові функції не мають власного об'єкта [`arguments`](/uk/docs/Web/JavaScript/Reference/Functions/arguments). Тому в наступному прикладі `arguments` посилається на аргументи зовнішнього контексту:
 
 ```js
-const arguments = [1, 2, 3];
-const arr = () => arguments[0];
-
-arr(); // 1
-
 function foo(n) {
   const f = () => arguments[0] + n; // неявна прив'язка до аргументів функції foo. arguments[0] дорівнює n
   return f();
@@ -289,7 +284,7 @@ console.log("prototype" in Foo); // false
 
 Стрілкова функція не може містити розрив рядка між параметрами і її стрілкою.
 
-```js example-bad
+```js-nolint example-bad
 const func = (a, b, c)
   => 1;
 // SyntaxError: Unexpected token '=>'
@@ -317,7 +312,7 @@ const func4 = (
 
 Хоча стрілка в стрілковій функції не є оператором, ці функції мають особливі правила парсингу, які по-іншому взаємодіють з [пріоритетом операторів](/uk/docs/Web/JavaScript/Reference/Operators/Operator_precedence) у порівнянні зі звичайними функціями.
 
-```js example-bad
+```js-nolint example-bad
 let callback;
 
 callback = callback || () => {};
@@ -462,7 +457,7 @@ obj.doSomethingLater(); // виводить 11
 
 ## Дивіться також
 
-- [Посібник з функцій](/uk/docs/Web/JavaScript/Guide/Functions)
+- Посібник [Функції](/uk/docs/Web/JavaScript/Guide/Functions)
 - [Функції](/uk/docs/Web/JavaScript/Reference/Functions)
 - {{jsxref("Statements/function", "function")}}
 - [Вираз `function`](/uk/docs/Web/JavaScript/Reference/Operators/function)

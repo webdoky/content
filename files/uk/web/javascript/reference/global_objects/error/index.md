@@ -216,7 +216,7 @@ try {
 
 ## Дивіться також
 
-- [Поліфіл `Error`](https://github.com/zloirock/core-js#ecmascript-error) з сучасною логікою штибу підтримки `cause` – доступний у складі [`core-js`](https://github.com/zloirock/core-js)
+- [Поліфіл `Error` з підтримкою `cause` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-error)
 - {{JSxRef("Statements/throw", "throw")}}
 - {{JSxRef("Statements/try...catch", "try...catch")}}
-- [Документація V8](https://v8.dev/docs/stack-trace-api) для `Error.captureStackTrace()`, `Error.stackTraceLimit` і `Error.prepareStackTrace()`.
+- [API трасування стека](https://v8.dev/docs/stack-trace-api) в документації V8

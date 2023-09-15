@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.String.at
 
 {{JSRef}}
 
-Метод **`at()`** приймає ціле число і повертає новий {{jsxref('String', 'рядок')}}, що складається з однієї кодової одиниці UTF-16, розміщеної за вказаною позицією. Цей метод приймає як додатні, так і від'ємні цілі числа. Від'ємні числа позначають номер позиції у зворотному напрямку, від останнього символу рядка.
+Метод **`at()`** (на позиції) значень {{jsxref("String")}} приймає ціле число і повертає новий {{jsxref('String', 'рядок')}}, що складається з однієї кодової одиниці UTF-16, розміщеної за вказаною позицією. Цей метод приймає як додатні, так і від'ємні цілі числа. Від'ємні числа позначають номер позиції у зворотному напрямку, від останнього символу рядка.
 
 {{EmbedInteractiveExample("pages/js/string-at.html")}}
 
@@ -78,7 +78,6 @@ console.log(atWay); // 'о'
 ## Дивіться також
 
 - [Поліфіл `String.prototype.at` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
-- [Поліфіл методу "at()"](https://github.com/tc39/proposal-relative-indexing-method#polyfill).
 - {{jsxref("String.prototype.indexOf()")}}
 - {{jsxref("String.prototype.lastIndexOf()")}}
 - {{jsxref("String.prototype.charCodeAt()")}}

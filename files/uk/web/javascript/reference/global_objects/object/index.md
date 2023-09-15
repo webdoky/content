@@ -188,7 +188,7 @@ JavaScript також має вбудовані API, що виробляють `
   - : Повертає масив усіх символьних властивостей, знайдених безпосередньо у переданому об'єкті.
 - {{jsxref("Object.getPrototypeOf()")}} (взяти прототип від)
   - : Повертає прототип (внутрішню властивість `[[Prototype]]`) вказаного об'єкта.
-- {{jsxref("Object.groupBy()")}} {{Experimental_Inline}}
+- {{jsxref("Object.groupBy()")}} {{experimental_inline}}
   - : Групує елементи даного ітерованого об'єкта згідно з рядковими значеннями, поверненими переданою функцією зворотного виклику. Повернений об'єкт має окремі властивості для кожної групи, що містять масиви з елементами відповідних груп.
 - {{jsxref("Object.hasOwn()")}}
   - : Повертає `true`, якщо заданий об'єкт має вказану властивість як свою _власну_ властивість, або `false`, якщо властивість є успадкованою або не існує.
@@ -215,20 +215,20 @@ JavaScript також має вбудовані API, що виробляють `
 
 Ці властивості означені на `Object.prototype` і є спільними для всіх примірників `Object`.
 
-- [`Object.prototype.__proto__`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/proto) {{Deprecated_Inline}}
+- [`Object.prototype.__proto__`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/proto) {{deprecated_inline}}
   - : Вказує на об'єкт, який було використано як прототип під час створення примірника цього об'єкта.
 - {{jsxref("Object.prototype.constructor")}} (конструктор)
   - : Функція-конструктор, що створила об'єкт-примірник. Для простих примірників `Object` початковим значенням є конструктор {{jsxref("Object/Object", "Object")}}. Кожний з примірників інших конструкторів успадковує властивість `constructor` від відповідного об'єкта `Constructor.prototype`.
 
 ## Методи примірника
 
-- [`Object.prototype.__defineGetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineGetter__) (означити гетер) {{Deprecated_Inline}}
+- [`Object.prototype.__defineGetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineGetter__) (означити гетер) {{deprecated_inline}}
   - : Пов'язує функцію з властивістю так, що під час спроби доступитися до властивості вона викликає цю функцію та повертає її результат.
-- [`Object.prototype.__defineSetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__) (означити сетер) {{Deprecated_Inline}}
+- [`Object.prototype.__defineSetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__) (означити сетер) {{deprecated_inline}}
   - : Пов'язує функцію з властивістю так, що під час спроби встановлення її значення викликається ця функція, яка і змінює властивість.
-- [`Object.prototype.__lookupGetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupGetter__) (шукати гетер) {{Deprecated_Inline}}
+- [`Object.prototype.__lookupGetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupGetter__) (шукати гетер) {{deprecated_inline}}
   - : Повертає функцію, прив'язану до вказаної властивості як гетер.
-- [`Object.prototype.__lookupSetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupSetter__) (шукати сетер) {{Deprecated_Inline}}
+- [`Object.prototype.__lookupSetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupSetter__) (шукати сетер) {{deprecated_inline}}
   - : Повертає функцію, прив'язану до вказаної властивості як сетер.
 - {{jsxref("Object.prototype.hasOwnProperty()")}} (має власну властивість)
   - : Повертає булеве значення, яке вказує на те, що об'єкт містить вказану властивість прямо в собі, а не успадковує її через прототипний ланцюжок.
