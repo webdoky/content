@@ -34,7 +34,7 @@ reduce(callbackFn, initialValue)
     - `currentValue`:
       - : Значення поточного елемента. При першому виклику цим значенням є `array[0]`, якщо `initialValue` задано; інакше це значення – `array[1]`.
     - `currentIndex`:
-      - : Позиція-індекс `currentValue` в типізованому масиві. При першому виклику це значення – 0, якщо `initialValue` задано; інакше це значення – 1.
+      - : Позиція-індекс `currentValue` в масиві. При першому виклику це значення – 0, якщо `initialValue` задано; інакше це значення – 1.
     - `array`:
       - : Масив, на якому було викликано `reduce()`.
 - `initialValue` {{optional_inline}}
@@ -192,7 +192,7 @@ multiply24(10); // 240
 
 ### Почерговий запуск промісів
 
-[Послідовне виконання промісів](/uk/docs/Web/JavaScript/Guide/Using_promises#komponuvannia) – це по суті той самий конвеєр функцій, показаний в попередньому розділі, але виконаний асинхронно.
+[Послідовне виконання промісів](/uk/docs/Web/JavaScript/Guide/Using_promises#kompozytsiia) – це по суті той самий конвеєр функцій, показаний в попередньому розділі, але виконаний асинхронно.
 
 ```js
 // Порівняйте це з конвеєром: fn(acc) змінено на acc.then(fn),
@@ -401,7 +401,7 @@ for (const name of names) {
 ## Дивіться також
 
 - [Поліфіл для `Array.prototype.reduce` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
-- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
 - {{jsxref("Array.prototype.map()")}}
 - {{jsxref("Array.prototype.flat()")}}
