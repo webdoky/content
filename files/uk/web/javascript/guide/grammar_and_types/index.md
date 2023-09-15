@@ -132,9 +132,9 @@ if (Math.random() > 0.5) {
 console.log(y); // ReferenceError: y is not defined
 ```
 
-Проте змінні, створені з `var`, не обмежені блоком, але є локальними відносно _функції (або глобальної) області видимості_, в якій знаходиться блок.
+Проте змінні, створені з `var`, не обмежені блоком, але є локальними відносно _функції (або глобальної області видимості)_, в якій знаходиться блок.
 
-Наприклад, наступний код виведе `5`, тому що область видимості `x` – це глобальний контекст (або функційний контекст, якщо цей код є частиною функції). Область видимості `x` не обмежена блоком `if` зразу навколо змінної.
+Наприклад, наступний код виведе `5`, тому що область видимості `x` – це глобальний контекст (або функційний контекст, якщо цей код є частиною функції). Область видимості `x` не обмежена блоком `if` безпосередньо навколо змінної.
 
 ```js
 if (true) {
@@ -360,13 +360,13 @@ console.log(fish);
 const myList = ["home", , "school"];
 ```
 
-In the following example, the `length` of the array is four, and `myList[0]` and `myList[2]` are missing.
+Нижче, довжина  `length` масиву дорівнює чотири, причому елементи `myList[0]` та `myList[2]` – відсутні.
 
 ```js
 const myList = [, "home", , "school"];
 ```
 
-In the following example, the `length` of the array is four, and `myList[1]` and `myList[3]` are missing. **Only the last comma is ignored.**
+А в цьому прикладі, довжина `length` масиву дорівнює чотири, і елементи `myList[1]` та `myList[3]` – відсутні. **Ігнорується лише остання кома.**
 
 ```js
 const myList = ["home", , "school", ,];
@@ -495,7 +495,7 @@ console.log(unusualPropertyNames.'');   // SyntaxError: Unexpected string
 console.log(unusualPropertyNames.!);    // SyntaxError: Unexpected token !
 ```
 
-Instead, they must be accessed with the bracket notation (`[]`).
+Натомість, до них слід звертатися за допомогою квадратних дужок (`[]`).
 
 ```js example-good
 console.log(unusualPropertyNames[""]); // Порожній рядок
