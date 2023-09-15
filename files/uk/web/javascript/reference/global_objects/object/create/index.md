@@ -22,7 +22,7 @@ Object.create(proto, propertiesObject)
 
 - `proto`
   - : Об'єкт, який буде прототипом новоствореного об'єкта.
-- `propertiesObject` {{Optional_inline}}
+- `propertiesObject` {{optional_inline}}
   - : Якщо цей параметр вказано, і він не дорівнює {{jsxref("undefined")}}, — то це має бути об'єкт, чиї [власні перелічувані властивості](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) позначають дескриптори властивостей, які, з відповідними іменами, буде додано до новоствореного об'єкта. Формат цих властивостей відповідає другому аргументові методу {{jsxref("Object.defineProperties()")}}.
 
 ### Повернене значення
