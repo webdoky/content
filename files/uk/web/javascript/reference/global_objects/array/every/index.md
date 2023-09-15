@@ -9,7 +9,7 @@ browser-compat: javascript.builtins.Array.every
 
 Метод **`every()`** (кожний) примірників {{jsxref("Array")}} перевіряє, чи всі елементи масиву проходять перевірку, реалізовану наданою функцією. Повертає булеве значення.
 
-{{EmbedInteractiveExample("pages/js/array-every.html","shorter")}}
+{{EmbedInteractiveExample("pages/js/array-every.html", "shorter")}}
 
 ## Синтаксис
 
@@ -33,7 +33,7 @@ every(callbackFn, thisArg)
 
 ### Повернене значення
 
-`true`, якщо `callbackFn` повертає значення {{Glossary("truthy", "істинності")}} для кожного елемента масиву. Інакше – `false`.
+`true`, якщо `callbackFn` не повертає {{Glossary("falsy", "хибне")}} значення для одного з елементів масиву, – в цьому випадку негайно повертається `false`
 
 ## Опис
 
@@ -171,7 +171,7 @@ console.log(
 ## Дивіться також
 
 - [Поліфіл `Array.prototype.every` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
-- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
 - {{jsxref("Array.prototype.forEach()")}}
 - {{jsxref("Array.prototype.some()")}}
