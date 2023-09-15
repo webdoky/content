@@ -438,7 +438,7 @@ console.log(`${someString}`); // "hi"
 
 ## Дивіться також
 
-- [Ітератори та генератори](/uk/docs/Web/JavaScript/Guide/Iterators_and_generators)
+- Посібник [Ітератори та генератори](/uk/docs/Web/JavaScript/Guide/Iterators_and_generators)
 - {{jsxref("Statements/function*", "function*")}}
 - {{jsxref("Symbol.iterator")}}
 - {{jsxref("Iterator")}}
