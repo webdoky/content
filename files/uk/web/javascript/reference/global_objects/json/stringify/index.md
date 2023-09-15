@@ -50,14 +50,14 @@ JSON.stringify(value, replacer, space)
 
 Метод `JSON.stringify()` перетворює значення на JSON-запис, що представляє це значення. Значення зводяться до рядкового представлення у наступний спосіб:
 
-- Об'єкти {{JSxRef("Boolean")}}, {{JSxRef("Number")}}, {{JSxRef("String")}} і {{jsxref("BigInt")}} (доступні за допомогою [`Object()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/Object)) під час перетворення на рядок зводяться до відповідних примітивних значень, згідно зі звичаєвою семантикою перетворення. Об'єкти {{jsxref("Symbol")}} (доступні за допомогою [`Object()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/Object)) обробляються як звичайні об'єкти.
+- Об'єкти {{jsxref("Boolean")}}, {{jsxref("Number")}}, {{jsxref("String")}} і {{jsxref("BigInt")}} (доступні за допомогою [`Object()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/Object)) під час перетворення на рядок зводяться до відповідних примітивних значень, згідно зі звичаєвою семантикою перетворення. Об'єкти {{jsxref("Symbol")}} (доступні за допомогою [`Object()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/Object)) обробляються як звичайні об'єкти.
 - Спроби серіалізувати значення {{jsxref("BigInt")}} призведуть до викидання винятку. Проте якщо BigInt має метод `toJSON()` (внаслідок втручання у прототип: `BigInt.prototype.toJSON = ...`), то такий метод зможе надати результат серіалізації. Таке обмеження дає змогу мати певність, що коректна логіка серіалізації (і, вельми ймовірно, відповідна їй логіка десеріалізації) завжди явно надана користувачем.
-- Значення {{JSxRef("undefined")}}, {{JSxRef("Function")}} і {{JSxRef("Symbol")}} не є дійсними значеннями JSON. Якщо будь-які такі значення зустрічаються під час перетворення, то вони або упускаються (коли знайдені в об'єкті), або замінюються на [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) (коли знайдені в масиві). `JSON.stringify()` може повернути `undefined`, якщо передати йому "чисті" значення, як то `JSON.stringify(() => {})` чи `JSON.stringify(undefined)`.
-- Числа {{JSxRef("Infinity")}} і {{JSxRef("NaN")}}, а також значення [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null), – вважаються рівними `null`. (Але на відміну від значення з попереднього пункту, ці значення ніколи не будуть упущені.)
+- Значення {{jsxref("undefined")}}, {{jsxref("Function")}} і {{jsxref("Symbol")}} не є дійсними значеннями JSON. Якщо будь-які такі значення зустрічаються під час перетворення, то вони або упускаються (коли знайдені в об'єкті), або замінюються на [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) (коли знайдені в масиві). `JSON.stringify()` може повернути `undefined`, якщо передати йому "чисті" значення, як то `JSON.stringify(() => {})` чи `JSON.stringify(undefined)`.
+- Числа {{jsxref("Infinity")}} і {{jsxref("NaN")}}, а також значення [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null), – вважаються рівними `null`. (Але на відміну від значення з попереднього пункту, ці значення ніколи не будуть упущені.)
 - Масиви серіалізуються як масиви (оточені квадратними дужками). Лише індекси масиву від 0 і до `length - 1` (включно) серіалізуються; решта властивостей ігноруються.
 - Для інших об'єктів:
 
-  - Усі властивості з ключами типу {{JSxRef("Symbol")}} будуть цілковито проігноровані, навіть коли застосований параметр `replacer`](#parametr-replacer).
+  - Усі властивості з ключами типу {{jsxref("Symbol")}} будуть цілковито проігноровані, навіть коли застосований параметр `replacer`](#parametr-replacer).
 
   - Якщо значення має метод `toJSON()`, то такий метод відповідає за те, які дані будуть серіалізовані. Замість серіалізації об'єкта буде серіалізовано значення, повернене викликом методу `toJSON()`. `JSON.stringify()` викликає `toJSON` з одним параметром, `key` (ключем), котрий має таку саму семантику, як параметр `key` функції [`replacer`](#parametr-replacer):
 
@@ -65,9 +65,9 @@ JSON.stringify(value, replacer, space)
     - якщо це масив, то індекс в масиві, у вигляді рядка
     - якщо `JSON.stringify()` напряму викликається на об'єкті, то порожній рядок
 
-    Об'єкти {{JSxRef("Date")}} реалізовують метод [`toJSON()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Date/toJSON), що повертає рядок (такий само, як [`date.toISOString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)). Отже – вони зводяться до рядків.
+    Об'єкти {{jsxref("Date")}} реалізовують метод [`toJSON()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Date/toJSON), що повертає рядок (такий само, як [`date.toISOString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)). Отже – вони зводяться до рядків.
 
-  - Обробляються лише [власні перелічувані властивості](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties). А отже, {{JSxRef("Map")}}, {{JSxRef("Set")}} тощо – стануть `"{}"`. Можна застосувати параметр [`replacer`](#parametr-replacer), аби серіалізувати їх у щось більш корисне.
+  - Обробляються лише [власні перелічувані властивості](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties). А отже, {{jsxref("Map")}}, {{jsxref("Set")}} тощо – стануть `"{}"`. Можна застосувати параметр [`replacer`](#parametr-replacer), аби серіалізувати їх у щось більш корисне.
 
     Властивості обробляються за таким само алгоритмом, як у [`Object.keys()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/keys), що має чітко визначений порядок і є стабільним для різних реалізацій. Наприклад, `JSON.stringify` для одного об'єкта завжди поверне однаковий рядок, а `JSON.parse(JSON.stringify(obj))` поверне об'єкт з таким само порядком ключів, як у вихідного об'єкта (виходячи з припущення, що об'єкт є цілком JSON-серіалізовним).
 
@@ -82,7 +82,7 @@ JSON.stringify(value, replacer, space)
 Функція `replacer` також викликається для вихідного об'єкта, і при такому виклику `key` є порожнім рядком (`""`). Потім вона викликається для кожної властивості об'єкта чи масиву, котрий приводиться до рядка. Індекси масиву надаються в `key` у рядковій формі. Значення поточної властивості при перетворенні на рядок замінюється значенням, поверненим функцією `replacer`. А отже:
 
 - Якщо повернути число, рядок, булеве значення чи `null`, то таке значення серіалізується безпосередньо і використовується як значення властивості. (Крім того, повернення BigInt призведе до викидання помилки.)
-- Якщо повернути {{JSxRef("Function")}}, {{JSxRef("Symbol")}} чи {{JSxRef("undefined")}}, то властивість не буде включена у вивід.
+- Якщо повернути {{jsxref("Function")}}, {{jsxref("Symbol")}} чи {{jsxref("undefined")}}, то властивість не буде включена у вивід.
 - Якщо повернути будь-який інший об'єкт, то такий об'єкт буде рекурсивно перетворений на рядок, викликаючи функцію `replacer` на кожній своїй властивості.
 
 > **Примітка:** При розборі JSON, згенерованого з використанням функцій `replacer`, з високою імовірністю буде потрібен параметр [`reviver`](/uk/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse#zastosuvannia-parametra-reviver) (відновлювач) для виконання зворотних перетворень.
@@ -295,7 +295,7 @@ JSON.stringify([obj]);
 
 ### Проблема з серіалізацією циклічних посилань
 
-Зауважте, що оскільки [формат JSON (англ.)](https://www.json.org/) не підтримує посилання на об'єкти (хоча [існує чернетка IETF (англ.)](https://datatracker.ietf.org/doc/html/draft-pbryan-zyp-json-ref-03)), буде викинуто виняток {{JSxRef("TypeError")}} під час спроби закодувати об'єкт з циклічними посиланнями.
+Зауважте, що оскільки [формат JSON (англ.)](https://www.json.org/) не підтримує посилання на об'єкти (хоча [існує чернетка IETF (англ.)](https://datatracker.ietf.org/doc/html/draft-pbryan-zyp-json-ref-03)), буде викинуто виняток {{jsxref("TypeError")}} під час спроби закодувати об'єкт з циклічними посиланнями.
 
 ```js example-bad
 const circularReference = {};
@@ -366,4 +366,4 @@ JSON.stringify("\uD800"); // '"\\ud800"'
 ## Дивіться також
 
 - [Поліфіл сучасної поведінки `JSON.stringify` (символи і як слід сформований Unicode) у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-json)
-- {{JSxRef("JSON.parse()")}}
+- {{jsxref("JSON.parse()")}}
