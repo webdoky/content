@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.String.split
 
 {{JSRef}}
 
-Метод **`split()`** (розщепити) приймає патерн і ділить {{jsxref("String", "рядок")}} на впорядкований список підрядків шляхом пошуку переданого патерну, додання підрядків до масиву і повернення цього масиву.
+Метод **`split()`** (розщепити) значень {{jsxref("String")}} приймає патерн і ділить свій рядок на впорядкований список підрядків шляхом пошуку переданого патерну, додання підрядків до масиву і повернення цього масиву.
 
 {{EmbedInteractiveExample("pages/js/string-split.html", "taller")}}
 
@@ -83,7 +83,7 @@ function splitString(stringToSplit, separator) {
     "Масив містить",
     arrayOfStrings.length,
     "елементів:",
-    arrayOfStrings.join(" / ")
+    arrayOfStrings.join(" / "),
   );
 }
 
@@ -285,4 +285,4 @@ console.log(commands.split(splitCommands, 3)); // ["світло увімкну�
 - {{jsxref("String.prototype.indexOf()")}}
 - {{jsxref("String.prototype.lastIndexOf()")}}
 - {{jsxref("Array.prototype.join()")}}
-- [Застосування регулярних виразів у JavaScript](/uk/docs/Web/JavaScript/Guide/Regular_expressions)
+- Посібник [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_expressions)

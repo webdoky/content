@@ -15,7 +15,7 @@ browser-compat: javascript.builtins.Array
 
 - **Масиви JavaScript можуть змінювати розмір** і **можуть містить суміш різних [типів даних](/uk/docs/Web/JavaScript/Data_structures)**. (Коли ці характеристики є небажаними, слід натомість використовувати [типізовані масиви](/uk/docs/Web/JavaScript/Guide/Typed_arrays).)
 - **Масиви JavaScript не є асоціативними**, а отже – елементи масиву не можуть бути отримані з використанням рядків замість індексів, індекси масиву – лише цілі числа.
-- **Масиви JavaScript [нумеруються від нуля (англ.)](https://en.wikipedia.org/wiki/Zero-based_numbering)**: перший елемент масиву знаходиться за індексом `0`, другий – за індексом `1`, і так далі; останній же елемент знаходиться за індексом, рівним значенню властивості масиву {{jsxref("Array/length", "length")}} мінус `1`.
+- **Масиви JavaScript [нумеруються від нуля](https://uk.wikipedia.org/wiki/%D0%9D%D1%83%D0%BC%D0%B5%D1%80%D0%B0%D1%86%D1%96%D1%8F_%D0%B2%D1%96%D0%B4_%D0%BD%D1%83%D0%BB%D1%8F)**: перший елемент масиву знаходиться за індексом `0`, другий – за індексом `1`, і так далі; останній же елемент знаходиться за індексом, рівним значенню властивості масиву {{jsxref("Array/length", "length")}} мінус `1`.
 - **[Операції копіювання масиву](#kopiiuvannia-masyvu) створюють [поверхневі копії](/uk/docs/Glossary/Shallow_copy)**. (Усі стандартні вбудовані операції копіювання _будь-яких_ об'єктів JavaScript створюють поверхневі, а не [глибинні копії](/uk/docs/Glossary/Deep_copy)).
 
 ### Індекси масиву
@@ -24,8 +24,8 @@ browser-compat: javascript.builtins.Array
 
 Елементи масиву є властивостями об'єкта так само, як `toString` (для точності, втім, слід нагадати, що `toString()` є методом). Попри це, спроба отримати елемент масиву у наступний спосіб призведе до синтаксичної помилки, адже таке ім'я властивості є недійсним:
 
-```js example-bad
-console.log(arr.0); // синтаксична помилка
+```js-nolint example-bad
+arr.0; // синтаксична помилка
 ```
 
 Синтаксис JavaScript вимагає, аби до властивостей, що починаються з цифри, зверталися за допомогою [запису квадратних дужок](/uk/docs/Web/JavaScript/Guide/Working_with_objects#obiekty-i-vlastyvosti), а не [запису крапки](/uk/docs/Web/JavaScript/Reference/Operators/Property_accessors). Крім цього, можна брати в лапки індекси масивів (наприклад, `years['2']` замість `years[2]`), хоч зазвичай для цього немає потреби.
@@ -115,8 +115,6 @@ console.log(fruits.length); // 2
 - {{jsxref("Array/findIndex", "findIndex()")}}
 - {{jsxref("Array/findLast", "findLast()")}}
 - {{jsxref("Array/findLastIndex", "findLastIndex()")}}
-- {{jsxref("Array/group", "group()")}} {{Experimental_Inline}}
-- {{jsxref("Array/groupToMap", "groupToMap()")}} {{Experimental_Inline}}
 - {{jsxref("Array/includes", "includes()")}}
 - {{jsxref("Array/join", "join()")}}
 - {{jsxref("Array/keys", "keys()")}}
@@ -148,8 +146,6 @@ console.log(fruits.length); // 2
 - {{jsxref("Array/toSorted", "toSorted()")}}
 - {{jsxref("Array/toSpliced", "toSpliced()")}}
 - {{jsxref("Array/with", "with()")}}
-
-{{jsxref("Array/group", "group()")}} і {{jsxref("Array/groupToMap", "groupToMap()")}} не використовують `@@species` для створення нових масивів для кожного елементу групи, а завжди використовують простий конструктор `Array`. Концептуально, вони не є методами копіювання.
 
 Наступна таблиця перераховує методи, які змінюють вихідний масив, і відповідні їм незмінювальні альтернативи:
 
@@ -192,7 +188,7 @@ method(callbackFn, thisArg)
 
 Те, що має повернути `callbackFn`, залежить від викликаного метода масиву.
 
-Аргумент `thisArg` (чиє усталене значення – `undefined`) використовуватиметься як значення `this` при виклику `callbackFn`. Значення `this`, отримане функцією `callbackFn`, визначається згідно зі [звичними правилами](/uk/docs/Web/JavaScript/Reference/Operators/this): якщо `callbackFn` є [несуворою](/uk/docs/Web/JavaScript/Reference/Strict_mode#bez-zaminy-this) функцією, то примітивні значення `this` загортаються в об'єкти, а `undefined` і `null` – замінюються на [`globalThis`](/uk/docs/Web/JavaScript/Reference/Global_Objects/globalThis). Аргумент `thisArg` є беззмістовним для будь-якої `callbackFn`, визначеною у вигляді [стрілкової функції](/uk/docs/Web/JavaScript/Reference/Functions/Arrow_functions), адже такі функції не мають власного {{glossary("binding", "зв'язування")}} `this`.
+Аргумент `thisArg` (чиє усталене значення – `undefined`) використовуватиметься як значення `this` при виклику `callbackFn`. Значення `this`, отримане функцією `callbackFn`, визначається згідно зі [звичними правилами](/uk/docs/Web/JavaScript/Reference/Operators/this): якщо `callbackFn` є [несуворою](/uk/docs/Web/JavaScript/Reference/Strict_mode#bez-zaminy-this) функцією, то примітивні значення `this` загортаються в об'єкти, а `undefined` і `null` – замінюються на [`globalThis`](/uk/docs/Web/JavaScript/Reference/Global_Objects/globalThis). Аргумент `thisArg` є беззмістовним для будь-якої `callbackFn`, визначеною у вигляді [стрілкової функції](/uk/docs/Web/JavaScript/Reference/Functions/Arrow_functions), адже такі функції не мають власного {{Glossary("binding", "зв'язування")}} `this`.
 
 Усі ітеративні методи є [копіювальними](#kopiiuvalni-ta-zminiuvalni-metody) та [узагальненими](#uzahalneni-metody-masyvu), хоч вони по-різному поводяться з [порожніми комірками](#metody-masyvu-y-porozhni-komirky).
 
@@ -206,8 +202,6 @@ method(callbackFn, thisArg)
 - {{jsxref("Array/findLastIndex", "findLastIndex()")}}
 - {{jsxref("Array/flatMap", "flatMap()")}}
 - {{jsxref("Array/forEach", "forEach()")}}
-- {{jsxref("Array/group", "group()")}}
-- {{jsxref("Array/groupToMap", "groupToMap()")}}
 - {{jsxref("Array/map", "map()")}}
 - {{jsxref("Array/some", "some()")}}
 
@@ -329,10 +323,6 @@ f("a", "b"); // 'a+b'
   - : Повертає новий масив, утворений застосуванням переданої функції зворотного виклику до кожного елемента поточного масиву, а тоді – сплощенням результату на один рівень.
 - {{jsxref("Array.prototype.forEach()")}} ("для кожного")
   - : Викликає функцію для кожного елемента поточного масиву.
-- {{jsxref("Array.prototype.group()")}} ("групувати") {{Experimental_Inline}}
-  - : Групує елементи масиву згідно з рядками, поверненими перевірковою функцією.
-- {{jsxref("Array.prototype.groupToMap()")}} ("групувати в Map") {{Experimental_Inline}}
-  - : Групує елементи масиву в Map згідно зі значеннями, поверненими перевірковою функцією.
 - {{jsxref("Array.prototype.includes()")}} ("включає")
   - : Визначає, чи містить поточний масив певне значення, повертаючи `true` чи `false` відповідно.
 - {{jsxref("Array.prototype.indexOf()")}} ("індекс")
@@ -706,40 +696,6 @@ console.log(fruitsAlias);
 // ['Яблуко', 'Банан', 'Полуниця', 'Манго']
 ```
 
-### Групування елементів масиву
-
-Метод {{jsxref("Array.prototype.group()")}} може використовуватись для групування елементів масиву за допомогою перевіркової функції, що повертає рядок, котрий вказує на відповідну групу для поточного елемента.
-
-Нижче – простий інвентарний масив, що включає об'єкти "їжі", котрі мають поля `name` (ім'я) та `type` (тип).
-
-```js
-const inventory = [
-  { name: "холодок", type: "vegetables" },
-  { name: "банани", type: "fruit" },
-  { name: "коза", type: "meat" },
-  { name: "вишні", type: "fruit" },
-  { name: "риба", type: "meat" },
-];
-```
-
-Для використання `group()` передається функція зворотного виклику, котра викликається із поточним елементом та (необов'язково) поточним індексом і всім масивом – та повертає рядок, котрий позначає групу для елемента.
-
-Код нижче використовує для повернення значення поля `type` кожного елемента масиву стрілкову функцію (вона використовує для розпакування із переданого об'єкта значення поля `type` [синтаксис деструктуризації об'єкта для аргументів функції](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#rozpakovuvannia-vlastyvostei-obiekta-peredanoho-parametrom-funktsii)).
-Результатом є об'єкт, котрий має властивості, названі відповідно до унікальних рядків, повернених функцією зворотного виклику.
-Кожній властивості присвоєний масив, що містить елементи групи.
-
-```js
-const result = inventory.group(({ type }) => type);
-console.log(result.vegetables);
-// [{ name: "холодок", type: "vegetables" }]
-```
-
-Зверніть увагу, що повернений об'єкт посилається на _ті самі_ елементи, що й вихідний масив (не створюються {{glossary("deep copy","глибокі копії")}}).
-Зміна внутрішньої структури цих елементів отримає відображення як на вихідному масиві, так на поверненому об'єкті.
-
-Якщо не підходить використання рядка як ключа, – наприклад, якщо інформація, за якою необхідне групування, асоційована з об'єктом, котрий може змінюватися, – то натомість можна використати метод {{jsxref("Array.prototype.groupToMap()")}}.
-Він вельми подібний до `group`, але групує елементи масиву в {{jsxref("Map")}}, що може використовувати як ключі довільні ({{Glossary("object","об'єктні")}} чи {{Glossary("primitive","примітивні")}}) значення.
-
 ### Створення двовимірного масиву
 
 Створюється шахова дошка у вигляді двовимірного масиву рядків. Перший хід виконується копіюванням `'p'` із `board[6][4]` на `board[4][4]`. Стара позиція, на `[6][4]`, очищується.
@@ -842,6 +798,6 @@ console.log(execResult); // [ "dbBd", "bB", "d" ]
 
 ## Дивіться також
 
-- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("TypedArray")}}
 - {{jsxref("ArrayBuffer")}}

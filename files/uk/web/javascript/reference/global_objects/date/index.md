@@ -427,4 +427,4 @@ const seconds = Math.floor(Date.now() / 1000);
 
 ## Дивіться також
 
-- Конструктор {{jsxref("Date/Date", "Date()")}}
+- {{jsxref("Date/Date", "Date()")}}

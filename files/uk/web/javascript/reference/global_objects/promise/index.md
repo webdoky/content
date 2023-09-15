@@ -467,5 +467,5 @@ btn.addEventListener("click", testPromise);
 - [Поліфіл для `Promise` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-promise)
 - [Застосування промісів](/uk/docs/Web/JavaScript/Guide/Using_promises)
 - [Специфікація Promises/A+ (англ.)](https://promisesaplus.com/)
-- [Promise'и JavaScript: вступ (англ.)](https://web.dev/promises/)
-- [Доменік Денікола: Функції зворотного виклику, проміси та співпрограми – шаблони асинхронного програмування у JavaScript (англ.)](https://de.slideshare.net/domenicdenicola/callbacks-promises-and-coroutines-oh-my-the-evolution-of-asynchronicity-in-javascript)
+- [Проміси JavaScript: вступ](https://web.dev/promises/) на web.dev (2013)
+- Презентація [Функції зворотного виклику, проміси та співпрограми – шаблони асинхронного програмування у JavaScript](https://de.slideshare.net/domenicdenicola/callbacks-promises-and-coroutines-oh-my-the-evolution-of-asynchronicity-in-javascript) від Доменіка Деніколи (2011)

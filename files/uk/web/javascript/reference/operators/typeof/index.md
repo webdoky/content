@@ -150,7 +150,7 @@ typeof (someData + " Wisen"); // 'string'
 typeof undeclaredVariable; // "undefined"
 ```
 
-Проте застосування `typeof` на лексичних оголошеннях ({{JSxRef("Statements/let", "let")}} {{JSxRef("Statements/const", "const")}} і [`class`](/uk/docs/Web/JavaScript/Reference/Statements/class)), в одному блоці перед рядком оголошення, викине {{JSxRef("ReferenceError")}}. Змінні блокової видимості перебувають у _[темпоральній мертвій зоні](/uk/docs/Web/JavaScript/Reference/Statements/let#temporalna-mertva-zona-tdz)_ від початку блока до обробки ініціалізації, протягом чого така змінна викине помилку, якщо спробувати до неї звернутися.
+Проте застосування `typeof` на лексичних оголошеннях ({{JSxRef("Statements/let", "let")}} {{JSxRef("Statements/const", "const")}} і [`class`](/uk/docs/Web/JavaScript/Reference/Statements/class)), в тому ж блоці перед місцем оголошення, викине {{JSxRef("ReferenceError")}}. Змінні блокової видимості перебувають у _[темпоральній мертвій зоні](/uk/docs/Web/JavaScript/Reference/Statements/let#temporalna-mertva-zona-tdz)_ від початку блока до обробки ініціалізації, протягом чого така змінна викине помилку, якщо спробувати до неї звернутися.
 
 ```js example-bad
 typeof newLetVariable; // ReferenceError
