@@ -5,7 +5,7 @@ page-type: guide
 browser-compat: javascript.classes
 ---
 
-{{JsSidebar("Classes")}}
+{{jsSidebar("Classes")}}
 
 Класи — це зразки, за якими створюються нові об'єкти. Вони інкапсулюють дані й код, який працює з цими даними. Класи в JS побудовані на [прототипах](/uk/docs/Web/JavaScript/Inheritance_and_the_prototype_chain), хоча й містять певні унікальні синтаксичні та семантичні особливості.
 
@@ -280,7 +280,7 @@ l.speak();
 
 ### Зв'язування this із примірником і статичні методи
 
-Коли статичний метод або метод примірника викликається без значення {{jsxref("Operators/this", "this")}}, наприклад, шляхом присвоєння методу змінній, а потім виклику його через змінну, то всередині такого методу `this` матиме значення `undefined`. Така логіка діє навіть тоді, коли не задана директива {{jsxref("Strict_mode", "\"use strict\"")}}, адже код всередині тіла `class` завжди виконується в суворому режимі.
+Коли статичний метод або метод примірника викликається без значення {{jsxref("Operators/this", "this")}}, наприклад, шляхом присвоєння методу змінній, а потім виклику його через змінну, то всередині такого методу `this` матиме значення `undefined`. Така логіка діє навіть тоді, коли не задана директива [`"use strict"`](/uk/docs/Web/JavaScript/Reference/Strict_mode), адже код всередині тіла `class` завжди виконується в суворому режимі.
 
 ```js
 class Animal {
@@ -327,7 +327,7 @@ eat(); // глобальний об'єкт (у несуворому режимі
 
 ## Дивіться також
 
-- [Застосування класів](/uk/docs/Web/JavaScript/Guide/Using_classes)
+- Посібник [Застосування класів](/uk/docs/Web/JavaScript/Guide/Using_classes)
 - [`class`](/uk/docs/Web/JavaScript/Reference/Statements/class)
 - [Вираз `class`](/uk/docs/Web/JavaScript/Reference/Operators/class)
 - [Функції](/uk/docs/Web/JavaScript/Reference/Functions)
