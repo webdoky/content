@@ -9,7 +9,7 @@ browser-compat: javascript.functions.arrow_functions
 
 **Вираз стрілкової функції** — це компактна альтернатива традиційному [виразові функції](/uk/docs/Web/JavaScript/Reference/Operators/function), що має певні семантичні відмінності й свідомі обмеження у використанні:
 
-- Стрілкові функції не мають власних {{glossary("binding", "зв'язувань")}} [`this`](/uk/docs/Web/JavaScript/Reference/Operators/this), [`arguments`](/uk/docs/Web/JavaScript/Reference/Functions/arguments) та [`super`](/uk/docs/Web/JavaScript/Reference/Operators/super), і їх не слід використовувати як [методи](/uk/docs/Glossary/Method).
+- Стрілкові функції не мають власних {{Glossary("binding", "зв'язувань")}} [`this`](/uk/docs/Web/JavaScript/Reference/Operators/this), [`arguments`](/uk/docs/Web/JavaScript/Reference/Functions/arguments) та [`super`](/uk/docs/Web/JavaScript/Reference/Operators/super), і їх не слід використовувати як [методи](/uk/docs/Glossary/Method).
 - Стрілкові функції не можуть використовуватися як [конструктори](/uk/docs/Glossary/Constructor). Виклик їх з [`new`](/uk/docs/Web/JavaScript/Reference/Operators/new) викидає {{jsxref("TypeError")}}. Крім цього, вони не мають доступу до ключового слова [`new.target`](/uk/docs/Web/JavaScript/Reference/Operators/new.target)
 - Стрілкові функції не можуть використовувати у своєму тілі [`yield`](/uk/docs/Web/JavaScript/Reference/Operators/yield) і не можуть створюватися як генераторні функції.
 
@@ -457,7 +457,7 @@ obj.doSomethingLater(); // виводить 11
 
 ## Дивіться також
 
-- [Посібник з функцій](/uk/docs/Web/JavaScript/Guide/Functions)
+- Посібник [Функції](/uk/docs/Web/JavaScript/Guide/Functions)
 - [Функції](/uk/docs/Web/JavaScript/Reference/Functions)
 - {{jsxref("Statements/function", "function")}}
 - [Вираз `function`](/uk/docs/Web/JavaScript/Reference/Operators/function)
