@@ -9,7 +9,7 @@ browser-compat: javascript.builtins.String.toUpperCase
 
 Метод **`toUpperCase()`** (до вищого регістру) значень {{jsxref("String")}} повертає значення свого рядка, переведене у вищий регістр.
 
-{{EmbedInteractiveExample("pages/js/string-touppercase.html","shorter")}}
+{{EmbedInteractiveExample("pages/js/string-touppercase.html", "shorter")}}
 
 ## Синтаксис
 
