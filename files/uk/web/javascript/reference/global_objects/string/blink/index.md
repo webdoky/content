@@ -7,9 +7,9 @@ status:
 browser-compat: javascript.builtins.String.blink
 ---
 
-{{JSRef}} {{deprecated_header}}
+{{JSRef}} {{Deprecated_Header}}
 
-Метод **`blink()`** (блимати) значень {{jsxref("String")}} створює рядок, що вбудовує рядок цього методу в (`<blink>str</blink>`), що в старих браузерах змушувало результівний рядок блимати.
+Метод **`blink()`** (блимати) значень {{jsxref("String")}} створює рядок, що вбудовує рядок цього методу в елемент `<blink>` (`<blink>str</blink>`), що в старих браузерах змушувало результівний рядок блимати.
 
 > **Примітка:** Всі [методи для обгортання HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html) – нерекомендовані, вони стандартизовані лише для потреб сумісності. У випадку `blink()` – сам елемент `<blink>` прибраний з сучасних браузерів, і декілька стандартів доступності не схвалюють мерехтливий текст. Уникайте застосування цього елемента за будь-яких умов.
 
@@ -31,16 +31,22 @@ blink()
 
 ### Застосування методу blink()
 
-Наступний приклад демонструє, як змінити форматування рядка за допомогою різних нерекомендованих методів самого рядка:
+Код нижче створює рядок HTML, а потім замінює тіло документа цим рядком:
 
 ```js
-const worldString = "Привіт, світе!";
+const contentString = "Привіт, світе";
 
-console.log(worldString.blink()); // <blink>Привіт, світе!</blink>
-console.log(worldString.bold()); // <b>Привіт, світе!</b>
-console.log(worldString.italics()); // <i>Привіт, світе!</i>
-console.log(worldString.strike()); // <strike>Привіт, світе!</strike>
+document.body.innerHTML = contentString.blink();
 ```
+
+Це породжує наступний HTML:
+
+```html
+<blink>Привіт, світе</blink>
+```
+
+> **Застереження:** Така розмітка є недійсною, адже `blink` більше не є дійсним елементом.
+> Елементів, що блимають, слід взагалі уникати.
 
 ## Специфікації
 
@@ -53,6 +59,4 @@ console.log(worldString.strike()); // <strike>Привіт, світе!</strike>
 ## Дивіться також
 
 - [Поліфіл `String.prototype.blink` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
-- {{jsxref("String.prototype.bold()")}}
-- {{jsxref("String.prototype.italics()")}}
-- {{jsxref("String.prototype.strike()")}}
+- [Методи для обгортання в HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html)
