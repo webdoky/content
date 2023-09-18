@@ -6,7 +6,7 @@ browser-compat: javascript.grammar
 spec-urls: https://tc39.es/ecma262/multipage/ecmascript-language-lexical-grammar.html
 ---
 
-{{JsSidebar("More")}}
+{{jsSidebar("More")}}
 
 Ця сторінка описує лексичну граматику JavaScript. Текст коду на JavaScript – лише послідовність символів, – аби інтерпретатор зрозумів його, рядок повинен бути _розібраний_ до більш структурованого представлення. Початковий етап розбору зветься [лексичним аналізом](https://uk.wikipedia.org/wiki/%D0%9B%D0%B5%D0%BA%D1%81%D0%B8%D1%87%D0%BD%D0%B8%D0%B9_%D0%B0%D0%BD%D0%B0%D0%BB%D1%96%D0%B7), при якому текст оглядається зліва направо й перетворюється на послідовність окремих, неподільних елементів введення. Частина елементів введення неважлива для інтерпретатора, тож може бути прибрана після цього кроку – серед них [пробіли](#probily) та [коментарі](#komentari). Решта, в тому числі [ідентифікатори](#identyfikatory), [ключові слова](#kliuchovi-slova), [літерали](#literaly) та розділові знаки (здебільшого [оператори](/uk/docs/Web/JavaScript/Reference/Operators)), використовуються при подальшому синтаксичному аналізі. [Символи кінця рядка](#symvoly-kintsia-riadka) й багаторядкові коментарі також є синтаксично неважливими, але вони допоміжні для [автоматичного вставляння крапок з комою](#avtomatychne-vstavliannia-krapok-z-komoiu), завдяки якому певні недійсні послідовності лексем стають дійсними.
 
@@ -153,7 +153,7 @@ class C {
 lbl: console.log(1); // Підписи
 ```
 
-У JavaScript ідентифікатори здебільшого складаються з алфавітно-цифрових символів, підкреслень (`_`) і знаків долара (`$`). Вони не можуть починатися з цифр. Проте ідентифікатори JavaScript не обмежені {{glossary("ASCII")}}: так само дозволені чимало кодових точок Unicode. А саме, усі символи категорії [ID_Start](https://util.unicode.org/UnicodeJsps/list-unicodeset.jsp?a=%5Cp%7BID_Start%7D) можуть стояти на початку ідентифікатора, а всі символи категорії [ID_Continue](https://util.unicode.org/UnicodeJsps/list-unicodeset.jsp?a=%5Cp%7BID_Continue%7D) можуть зустрічатися після першого символу.
+У JavaScript ідентифікатори здебільшого складаються з алфавітно-цифрових символів, підкреслень (`_`) і знаків долара (`$`). Вони не можуть починатися з цифр. Проте ідентифікатори JavaScript не обмежені {{Glossary("ASCII")}}: так само дозволені чимало кодових точок Unicode. А саме, усі символи категорії [ID_Start](https://util.unicode.org/UnicodeJsps/list-unicodeset.jsp?a=%5Cp%7BID_Start%7D) можуть стояти на початку ідентифікатора, а всі символи категорії [ID_Continue](https://util.unicode.org/UnicodeJsps/list-unicodeset.jsp?a=%5Cp%7BID_Continue%7D) можуть зустрічатися після першого символу.
 
 > **Примітка:** Якщо, з якоїсь причини, є потреба самотужки розібрати якийсь код на JavaScript, то не слід покладатися на припущення, ніби всі ідентифікатори відповідають патернові `/[A-Za-z_$][\w$]*/` (тобто лише ASCII)! Діапазон символів може бути описаний регулярним виразом `/[$_\p{ID_Start}][$\u200c\u200d\p{ID_Continue}]*/u` (окрім послідовностей екранування Unicode).
 
@@ -822,6 +822,6 @@ class A {
 
 ## Дивіться також
 
-- [Граматика та типи](/uk/docs/Web/JavaScript/Guide/Grammar_and_types)
+- Посібник [Граматика та типи](/uk/docs/Web/JavaScript/Guide/Grammar_and_types)
 - [Мікроможливість з ES6, уже доступна в Firefox Aurora та Nightly, – двійкові та вісімкові числа](https://whereswalden.com/2013/08/12/micro-feature-from-es6-now-in-firefox-aurora-and-nightly-binary-and-octal-numbers/) від Джефа Волдена (2013)
 - [Послідовності екранування символів у JavaScript](https://mathiasbynens.be/notes/javascript-escapes) від Матіаса Байненса (2011)
