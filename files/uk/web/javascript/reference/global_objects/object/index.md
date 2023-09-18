@@ -1,5 +1,5 @@
 ---
-title: Object (Об'єкт)
+title: Object
 slug: Web/JavaScript/Reference/Global_Objects/Object
 page-type: javascript-class
 browser-compat: javascript.builtins.Object
@@ -17,7 +17,7 @@ browser-compat: javascript.builtins.Object
 
 ### Властивості прототипу об'єкта
 
-Слід уникати виклику будь-яких методів `Object.prototype`, особливо тих, котрі не створені поліморфними (тобто лише їхня початкова логіка має зміст, і жодний об'єкт-нащадок не зможе перевизначити їх у змістовний спосіб). Усі об'єкти, що походять від `Object.prototype`, можуть визначати власні властивості, що мають ідентичні імена, але з геть інакшою семантикою, ніж та, на котру ви очікуєте. Понад те, ці властивості не успадковуються [`null`-прототипними об'єктами](#null-prototypni-obiekty). Усі сучасні службові засоби JavaScript для роботи з об'єктами є [статичними](#statychni-metody). Конкретніше:
+Слід уникати виклику будь-яких методів `Object.prototype` безпосередньо з примірника, особливо тих, котрі не створені поліморфними (тобто лише їхня початкова логіка має зміст, і жодний об'єкт-нащадок не зможе перевизначити їх у змістовний спосіб). Усі об'єкти, що походять від `Object.prototype`, можуть визначати власні властивості, що мають ідентичні імена, але з геть інакшою семантикою, ніж та, на котру ви очікуєте. Понад те, ці властивості не успадковуються [`null`-прототипними об'єктами](#null-prototypni-obiekty). Усі сучасні службові засоби JavaScript для роботи з об'єктами є [статичними](#statychni-metody). Конкретніше:
 
 - [`valueOf()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf), [`toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/toString) і [`toLocaleString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/toLocaleString) існують заради поліморфності, і слід очікувати, що об'єкт визначає власну реалізацію з доцільною логікою, тож їх можна викликати як методи примірника. Проте `valueOf()` і `toString()` зазвичай неявно викликаються під час [перетворення типів](/uk/docs/Web/JavaScript/Data_structures#zvedennia-typiv), і їх немає потреби самотужки викликати у своєму коді.
 - [`__defineGetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineGetter__), [`__defineSetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__), [`__lookupGetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupGetter__) і [`__lookupSetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupSetter__) – нерекомендовані до використання. Натомість слід використовувати статичні альтернативи {{jsxref("Object.defineProperty()")}} і {{jsxref("Object.getOwnPropertyDescriptor()")}}.
