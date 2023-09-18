@@ -197,4 +197,5 @@ spec-urls: https://drafts.csswg.org/selectors/
 
 - [Модуль псевдоелементів CSS](/uk/docs/Web/CSS/CSS_pseudo-elements)
 - [Модуль каскаду та успадкування CSS](/uk/docs/Web/CSS/CSS_cascade)
+- [Модуль Вкладеності CSS](/uk/docs/Web/CSS/CSS_nesting)
 - [Застосування тіньового DOM](/uk/docs/Web/API/Web_components/Using_shadow_DOM)
