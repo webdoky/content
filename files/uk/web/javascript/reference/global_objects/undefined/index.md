@@ -7,13 +7,13 @@ browser-compat: javascript.builtins.undefined
 
 {{jsSidebar("Objects")}}
 
-Глобальна властивість **`undefined`** (невизначене) представляє примітивне значення `{{Glossary("Undefined", "undefined")}}`. Це один з {{Glossary("Primitive", "примітивних типів")}} JavaScript.
+Глобальна властивість **`undefined`** (невизначене) представляє примітивне значення [`undefined`](/uk/docs/Web/JavaScript/Data_structures#typ-undefined). Це один з {{Glossary("Primitive", "примітивних типів")}} JavaScript.
 
 {{EmbedInteractiveExample("pages/js/globalprops-undefined.html")}}
 
 ## Значення
 
-Примітивне значення `{{Glossary("Undefined", "undefined")}}`.
+Примітивне значення [`undefined`](/uk/docs/Web/JavaScript/Data_structures#typ-undefined).
 
 {{js_property_attributes(0, 0, 0)}}
 
