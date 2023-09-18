@@ -153,8 +153,8 @@ str.matchAll({
 
 - Поліфіл методу `String.prototype.matchAll` доступний у [`core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
 - {{jsxref("String.prototype.match()")}}
-- [Застосування регулярних виразів у JavaScript](/uk/docs/Web/JavaScript/Guide/Regular_expressions)
-- [Групи захоплення](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Groups_and_backreferences)
+- Посібник [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_expressions)
+- Посібник [Групи та зворотні посилання](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Groups_and_backreferences)
 - {{jsxref("RegExp")}}
 - {{jsxref("RegExp.prototype.exec()")}}
 - {{jsxref("RegExp.prototype.test()")}}
