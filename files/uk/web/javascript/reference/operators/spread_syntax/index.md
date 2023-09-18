@@ -31,18 +31,25 @@ myFunction(a, ...iterableObj, b)
 
 Хоч синтаксис має однаковий вигляд, ці місця мають дещо різну семантику.
 
-Лише [ітеровані](/uk/docs/Web/JavaScript/Reference/Iteration_protocols) об'єкти, як то {{jsxref("Array")}}, можуть бути розгорнуті в масив та параметри функції. Чимало об'єктів не є ітерованими, включно з усіма [простими об'єктами](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object), що не мають метода [`Symbol.iterator`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/iterator):
+Лише [ітеровані](/uk/docs/Web/JavaScript/Reference/Iteration_protocols) значення, як то {{jsxref("Array")}} та {{jsxref("String")}}, можуть бути розгорнуті в [літералах масивів](/uk/docs/Web/JavaScript/Guide/Grammar_and_types#literaly-masyviv) та списках аргументів. Чимало об'єктів не є ітерованими, включно з усіма [простими об'єктами](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object), що не мають метода [`Symbol.iterator`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/iterator):
 
 ```js example-bad
 const obj = { key1: "value1" };
 const array = [...obj]; // TypeError: obj is not iterable
 ```
 
-З іншого боку, розгортання в літералах об'єктів [перелічує](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties#obkhid-vlastyvostei-obiekta) власні властивості об'єкта. В типових масивів усі індекси є перелічуваними власними властивостями, тому масиви можуть бути розгорнуті в об'єкти.
+З іншого боку, розгортання в [літералах об'єктів](/uk/docs/Web/JavaScript/Reference/Operators/Object_initializer) [перелічує](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties#obkhid-vlastyvostei-obiekta) власні властивості значення. В типових масивів усі індекси є перелічуваними власними властивостями, тому масиви можуть бути розгорнуті в об'єкти.
 
 ```js
 const array = [1, 2, 3];
 const obj = { ...array }; // { 0: 1, 1: 2, 2: 3 }
+```
+
+Усі [примітиви](/uk/docs/Web/JavaScript/Data_structures#prymityvni-znachennia) можуть бути розгорнуті в об'єктах. Лише рядки мають перелічувані власні властивості, а розгортання будь-чого іншого не додасть новому об'єктові жодних властивостей.
+
+```js
+const obj = { ...true, ..."test", ...10 };
+// { '0': 't', '1': 'e', '2': 's', '3': 't' }
 ```
 
 При використанні синтаксису розгортання для викликів функцій слід мати на увазі можливість перевищення обмеження кількості аргументів рушія JavaScript. Дивіться {{jsxref("Function.prototype.apply()")}} для отримання подробиць.
@@ -202,7 +209,7 @@ const objectAssign = Object.assign(
       console.log(val);
     },
   },
-  { foo: 1 }
+  { foo: 1 },
 );
 // Друкує "1"; objectAssign.foo досі містить первинний сетер
 
