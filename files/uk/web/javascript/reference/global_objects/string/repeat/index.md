@@ -9,7 +9,7 @@ browser-compat: javascript.builtins.String.repeat
 
 Метод **`repeat()`** (повторювати) значень {{jsxref("String")}} збирає і повертає новий рядок, який містить вказану кількість копій свого рядка, зчеплену докупи.
 
-{{EmbedInteractiveExample("pages/js/string-repeat.html","shorter")}}
+{{EmbedInteractiveExample("pages/js/string-repeat.html", "shorter")}}
 
 ## Синтаксис
 
