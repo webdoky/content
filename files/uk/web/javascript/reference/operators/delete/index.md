@@ -1,5 +1,5 @@
 ---
-title: Оператор delete
+title: delete
 slug: Web/JavaScript/Reference/Operators/delete
 page-type: javascript-operator
 browser-compat: javascript.operators.delete
@@ -65,7 +65,7 @@ delete console.log(1);
 - Неналаштовні властивості не можуть бути прибрані. Серед них – властивості вбудованих об'єктів, як то {{jsxref("Math")}}, {{jsxref("Array")}}, {{jsxref("Object")}}, а також властивості, створені як неналаштовні за допомогою методів штибу {{jsxref("Object.defineProperty()")}}.
 - Видалення змінних, включно з параметрами функцій, ніколи не спрацює. `delete variable` в суворому режимі викине {{jsxref("SyntaxError")}}, а в несуворому – ніяк не подіє.
   - Змінні, оголошені за допомогою {{jsxref("Statements/var", "var")}}, не можуть бути видалені з глобальної області видимості, чи області функції, адже хоч вони могли бути прикріплені до [глобального об'єкта](/uk/docs/Glossary/Global_object), та не є налаштовними.
-  - Змінні, оголошені за допомогою {{jsxref("Statements/let","let")}} або {{jsxref("Statements/const","const")}}, не можуть бути видалені з області видимості, у котрій були визначені, адже не є прикріпленими до об'єкта.
+  - Змінні, оголошені за допомогою {{jsxref("Statements/let", "let")}} або {{jsxref("Statements/const", "const")}}, не можуть бути видалені з області видимості, у котрій були визначені, адже не є прикріпленими до об'єкта.
 
 ## Приклади
 
@@ -184,7 +184,7 @@ Object.defineProperty(Employee, "name", { configurable: false });
 console.log(delete Employee.name); // повертає false
 ```
 
-{{jsxref("Statements/var","var")}} створює неналаштовні властивості, котрі не можна видалити оператором `delete`:
+{{jsxref("Statements/var", "var")}} створює неналаштовні властивості, котрі не можна видалити оператором `delete`:
 
 ```js
 // Оскільки "nameOther" додано за допомогою
