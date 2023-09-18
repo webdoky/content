@@ -96,8 +96,8 @@ function example() {
 
 ## Дивіться також
 
-- [Інструкція "if"](/uk/docs/Web/JavaScript/Reference/Statements/if...else)
+- [`if...else`](/uk/docs/Web/JavaScript/Reference/Statements/if...else)
 - [Оператор null-злиття (`??`)](/uk/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing)
 - [Необов'язковий ланцюжок (`?.`)](/uk/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
 - [Приймання рішень в коді — умовні вирази](/uk/docs/Learn/JavaScript/Building_blocks/conditionals)
-- [Вирази та оператори](/uk/docs/Web/JavaScript/Guide/Expressions_and_operators)
+- Посібник [Вирази та оператори](/uk/docs/Web/JavaScript/Guide/Expressions_and_operators)
