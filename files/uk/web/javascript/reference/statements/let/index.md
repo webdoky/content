@@ -57,7 +57,7 @@ let name1 = value1, name2, /* …, */ nameN = valueN;
 
 Чимало стилів (в тому числі [стиль MDN](/uk/docs/MDN/Writing_guidelines/Writing_style_guide/Code_style_guide/JavaScript#oholoshennia-zminnykh)) рекомендують використовувати {{jsxref("Statements/const", "const")}} замість `let`, якщо змінна не присвоюється повторно у своїй області видимості. Це дає змогу чітко вказати, що тип змінної (або значення, якщо це примітив) ніколи не змінюється. Інші стилі можуть віддавати перевагу `let` для непримітивів, що можуть змінюватися.
 
-Список, що стоїть після ключового слова `let`, зветься _списком {{glossary("binding", "зв'язування")}}_ і розділяється комами, причому ці коми _не_ є [операторами коми](/uk/docs/Web/JavaScript/Reference/Operators/Comma_operator), а знаки `=` _не_ є [операторами присвоєння](/uk/docs/Web/JavaScript/Reference/Operators/Assignment). Ініціалізатори наступних змінних можуть посилатися на попередні змінні в списку.
+Список, що стоїть після ключового слова `let`, зветься _списком {{Glossary("binding", "зв'язування")}}_ і розділяється комами, причому ці коми _не_ є [операторами коми](/uk/docs/Web/JavaScript/Reference/Operators/Comma_operator), а знаки `=` _не_ є [операторами присвоєння](/uk/docs/Web/JavaScript/Reference/Operators/Assignment). Ініціалізатори наступних змінних можуть посилатися на попередні змінні в списку.
 
 ### Темпоральна мертва зона (TDZ)
 
