@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.Array.forEach
 
 {{JSRef}}
 
-Метод **`forEach()`** ("для кожного") виконує дану функцію один раз для кожного елементу масиву.
+Метод **`forEach()`** ("для кожного") примірників {{jsxref("Array")}} виконує передану функцію один раз для кожного елементу масиву.
 
 {{EmbedInteractiveExample("pages/js/array-foreach.html")}}
 
@@ -31,9 +31,9 @@ forEach(callbackFn, thisArg)
 - `thisArg` {{optional_inline}}
   - : Значення для використання за `this` при виконанні `callbackFn`. Докладніше про це в [ітеративних методах](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#iteratyvni-metody).
 
-### Результат
+### Повернене значення
 
-`undefined`.
+Жодного ({{jsxref("undefined")}}).
 
 ## Опис
 
@@ -258,7 +258,7 @@ Array.prototype.forEach.call(arrayLike, (x) => console.log(x));
 ## Дивіться також
 
 - [Поліфіл для `Array.prototype.forEach` у `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
-- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
 - {{jsxref("Array.prototype.find()")}}
 - {{jsxref("Array.prototype.map()")}}

@@ -26,7 +26,7 @@ parseInt(string, radix)
 ### Параметри
 
 - `string` (рядок)
-  - : Рядок, що починається з цілого числа. {{glossary("whitespace", "Пробіли")}} на початку цього аргументу ігноруються.
+  - : Рядок, що починається з цілого числа. {{Glossary("whitespace", "Пробіли")}} на початку цього аргументу ігноруються.
 - `radix` (основа системи числення) {{optional_inline}}
 
   - : Ціле число між `2` та `36`, що представляє _основу системи числення_ `string`. Воно перетворюється на [32-бітове ціле](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#peretvorennia-chysel-fiksovanoi-shyryny); якщо після перетворення воно ненульове і лежить поза діапазоном \[2, 36], то функція поверне `NaN`. Якщо дорівнює `0` або не задане, то основа буде виведена на основі значення `string`. Будьте уважні: усталеним значенням _не_ завжди є `10`! [Опис нижче](#opys) більш детально пояснює, що відбувається, коли не надано `radix`.
@@ -131,7 +131,7 @@ BigInt("900719925474099267");
 // 900719925474099267n
 ```
 
-`parseInt` не працює з [числовими роздільниками](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#chyslovi-rozdilnyky):
+`parseInt` не працює з [розділювачами розрядів](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#rozdiliuvachi-rozriadiv):
 
 ```js example-bad
 parseInt("123_456"); // 123
@@ -177,10 +177,10 @@ parseInt(1e21, 10); // 1
 ## Дивіться також
 
 - {{jsxref("Global_Objects/parseFloat", "parseFloat()")}}
-- [`Number()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number/Number)
+- [Конструктор `Number()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number/Number)
 - {{jsxref("Number.parseFloat()")}}
 - {{jsxref("Number.parseInt()")}}
 - {{jsxref("Global_Objects/isNaN", "isNaN()")}}
 - {{jsxref("Number.prototype.toString()")}}
 - {{jsxref("Object.prototype.valueOf()")}}
-- [`BigInt()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/BigInt)
+- [Конструктор `BigInt()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/BigInt)

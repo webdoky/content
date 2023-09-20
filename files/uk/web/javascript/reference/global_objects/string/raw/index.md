@@ -15,9 +15,9 @@ browser-compat: javascript.builtins.String.raw
 
 ```js-nolint
 String.raw(strings)
-String.raw(strings, substitution1)
-String.raw(strings, substitution1, substitution2)
-String.raw(strings, substitution1, substitution2, /* …, */ substitutionN)
+String.raw(strings, sub1)
+String.raw(strings, sub1, sub2)
+String.raw(strings, sub1, sub2, /* …, */ subN)
 
 String.raw`templateString`
 ```
@@ -26,7 +26,7 @@ String.raw`templateString`
 
 - `strings`
   - : Як слід сформований масивний об'єкт шаблонного літерала, подібний до `{ raw: ['foo', 'bar', 'baz'] }`. Повинен бути об'єктом зі властивістю `raw`, чиє значення – масивоподібний об'єкт з рядками.
-- `...substitutions`
+- `sub1`, …, `subN`
   - : Містить значення для підставлення.
 - `templateString`
   - : [Шаблонний літерал](/uk/docs/Web/JavaScript/Reference/Template_literals); може містити (необов'язково) вирази підставлення (`${...}`).

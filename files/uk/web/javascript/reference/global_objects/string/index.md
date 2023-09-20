@@ -161,8 +161,8 @@ console.log(eval(s2.valueOf())); // повертає число 4
 
 "Самотній сурогат" – це 16-бітова кодова одиниця, яка відповідає одному з описів нижче:
 
-- Перебуває в діапазоні `0xD800`–`0xDBFF` включно (тобто є початковим сурогатом), але також є останньою кодовою одиницею в рядку, або наступна кодова одиниця не є кінцевим сурогатом.
-- Перебуває в діапазоні `0xDC00`–`0xDFFF` включно (тобто є кінцевим сурогатом), але є першою кодовою одиницею в рядку, або попередня кодова одиниця не є початковим сурогатом.
+- Перебуває в діапазоні `0xD800`-`0xDBFF` включно (тобто є початковим сурогатом), але також є останньою кодовою одиницею в рядку, або наступна кодова одиниця не є кінцевим сурогатом.
+- Перебуває в діапазоні `0xDC00`-`0xDFFF` включно (тобто є кінцевим сурогатом), але є першою кодовою одиницею в рядку, або попередня кодова одиниця не є початковим сурогатом.
 
 Самотні сурогати не представляють жодних символів Unicode. Хоча більшість вбудованих методів JavaScript обробляє їх правильно, оскільки всі вони працюють на основі кодових одиниць UTF-16, самотні сурогати нерідко бувають недопустимими значеннями при взаємодії з іншими системами – наприклад, [`encodeURI()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/encodeURI) викидає на самотніх сурогатах {{jsxref("URIError")}}, оскільки кодування URI використовує кодування UTF-8, котре не має кодування для самотніх сурогатів. Рядки, що не містять жодних самотніх сурогатів, називаються _добре сформованими_ рядками і є безпечними для використання з функціями, котрі не працюють з UTF-16 (такими як `encodeURI()` або {{domxref("TextEncoder")}}). Перевірити, чи є рядок добре формованим, можна за допомогою методу {{jsxref("String/isWellFormed", "isWellFormed()")}}, а також можна вичистити самотні сурогати – за допомогою методу {{jsxref("String/toWellFormed", "toWellFormed()")}}.
 
@@ -259,7 +259,7 @@ console.log(eval(s2.valueOf())); // повертає число 4
   - : Повертає масив рядків, отриманих розділенням початкового рядка в усіх точках входження підрядка `sep`.
 - {{jsxref("String.prototype.startsWith()")}} (починається (підрядком))
   - : Визначає, чи рядок, на якому було викликано метод, починається послідовністю символів `searchString`.
-- {{jsxref("String.prototype.substr()")}} (підрядок) {{Deprecated_Inline}}
+- {{jsxref("String.prototype.substr()")}} (підрядок) {{deprecated_inline}}
   - : Повертає підрядок, починаючи з вказаного індексу, і продовжуючи вказану кількість символів.
 - {{jsxref("String.prototype.substring()")}} (підрядок)
   - : Повертає новий рядок, що містить символи початкового рядка, взятих починаючи з вказаного індексу (або з-поміж індексів, якщо було вказано обидва).
@@ -300,31 +300,31 @@ console.log(eval(s2.valueOf())); // повертає число 4
 >
 > Вони мають обмежене застосування, оскільки засновані на дуже старому стандарті HTML і надають лише підмножину наразі доступних тегів та атрибутів HTML. Чимало з них нині створює нерекомендовану чи нестандартну розмітку. На додачу до цього, ці методи виконують просте склеювання рядків, без жодних валідації й очищення, що робить їх потенційною загрозою безпеці, коли безпосередньо вставляти їх результат за допомогою [`innerHTML`](/uk/docs/Web/API/Element/innerHTML). Натомість слід використовувати [DOM API](/uk/docs/Web/API/Document_Object_Model), як то [`document.createElement()`](/uk/docs/Web/API/Document/createElement).
 
-- {{jsxref("String.prototype.anchor()")}} (якір) {{Deprecated_Inline}}
+- {{jsxref("String.prototype.anchor()")}} (якір) {{deprecated_inline}}
   - : [`<a name="name">`](/uk/docs/Web/HTML/Element/a#name) (ціль для гіперпосилань)
-- {{jsxref("String.prototype.big()")}} (великий) {{Deprecated_Inline}}
+- {{jsxref("String.prototype.big()")}} (великий) {{deprecated_inline}}
   - : {{HTMLElement("big")}}
-- {{jsxref("String.prototype.blink()")}} (блимання) {{Deprecated_Inline}}
+- {{jsxref("String.prototype.blink()")}} (блимання) {{deprecated_inline}}
   - : `<blink>`
-- {{jsxref("String.prototype.bold()")}} (грубий) {{Deprecated_Inline}}
+- {{jsxref("String.prototype.bold()")}} (грубий) {{deprecated_inline}}
   - : {{HTMLElement("b")}}
-- {{jsxref("String.prototype.fixed()")}} (фіксований) {{Deprecated_Inline}}
+- {{jsxref("String.prototype.fixed()")}} (фіксований) {{deprecated_inline}}
   - : {{HTMLElement("tt")}}
-- {{jsxref("String.prototype.fontcolor()")}} (колір шрифту) {{Deprecated_Inline}}
+- {{jsxref("String.prototype.fontcolor()")}} (колір шрифту) {{deprecated_inline}}
   - : [`<font color="color">`](/uk/docs/Web/HTML/Element/font#color)
-- {{jsxref("String.prototype.fontsize()")}} (розмір шрифту) {{Deprecated_Inline}}
+- {{jsxref("String.prototype.fontsize()")}} (розмір шрифту) {{deprecated_inline}}
   - : [`<font size="size">`](/uk/docs/Web/HTML/Element/font#size)
-- {{jsxref("String.prototype.italics()")}} (курсив) {{Deprecated_Inline}}
+- {{jsxref("String.prototype.italics()")}} (курсив) {{deprecated_inline}}
   - : {{HTMLElement("i")}}
-- {{jsxref("String.prototype.link()")}} (посилання) {{Deprecated_Inline}}
+- {{jsxref("String.prototype.link()")}} (посилання) {{deprecated_inline}}
   - : [`<a href="url">`](/uk/docs/Web/HTML/Element/a#href) (посилання на URL)
-- {{jsxref("String.prototype.small()")}} (дрібний) {{Deprecated_Inline}}
+- {{jsxref("String.prototype.small()")}} (дрібний) {{deprecated_inline}}
   - : {{HTMLElement("small")}}
-- {{jsxref("String.prototype.strike()")}} (викреслений) {{Deprecated_Inline}}
+- {{jsxref("String.prototype.strike()")}} (викреслений) {{deprecated_inline}}
   - : {{HTMLElement("strike")}}
-- {{jsxref("String.prototype.sub()")}} (підрядковий) {{Deprecated_Inline}}
+- {{jsxref("String.prototype.sub()")}} (підрядковий) {{deprecated_inline}}
   - : {{HTMLElement("sub")}}
-- {{jsxref("String.prototype.sup()")}} (надрядковий) {{Deprecated_Inline}}
+- {{jsxref("String.prototype.sup()")}} (надрядковий) {{deprecated_inline}}
   - : {{HTMLElement("sup")}}
 
 Зверніть увагу, що ці методи не перевіряють, чи містить сам рядок теги HTML, тож можливо створити недійсний HTML:
@@ -365,5 +365,5 @@ String(undefinedVar); // "undefined"
 
 ## Дивіться також
 
-- [Настанови з JavaScript — форматування тексту](/uk/docs/Web/JavaScript/Guide/Text_formatting)
+- Посібник [Форматування тексту](/uk/docs/Web/JavaScript/Guide/Text_formatting)
 - {{jsxref("RegExp")}}

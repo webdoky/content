@@ -10,7 +10,7 @@ browser-compat: css.types.-moz-image-rect
 
 {{CSSRef}}{{Non-standard_Header}}{{SeeCompatTable}}
 
-Властивість [CSS](/uk/docs/Web/CSS) **`-moz-image-rect`** для {{CSSxRef("background-image")}} дає змогу використовувати частину більшого зображення як тло.
+Властивість [CSS](/uk/docs/Web/CSS) **`-moz-image-rect`** (Mozilla – прямокутник зображення) для {{CSSxRef("background-image")}} дає змогу використовувати частину більшого зображення як тло.
 
 ## Синтаксис
 
@@ -157,4 +157,4 @@ function rotate() {
 ## Дивіться також
 
 - [Розширення CSS від Mozilla](/uk/docs/Web/CSS/Mozilla_Extensions)
-- [Модуль CSS тла та меж](/uk/docs/Web/CSS/CSS_Backgrounds_and_Borders)
+- [Модуль CSS тла та меж](/uk/docs/Web/CSS/CSS_backgrounds_and_borders)

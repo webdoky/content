@@ -2,14 +2,6 @@
 title: <angle>
 slug: Web/CSS/angle
 page-type: css-type
-tags:
-  - CSS
-  - CSS Data Type
-  - Data Type
-  - Layout
-  - Reference
-  - Web
-  - angle
 browser-compat: css.types.angle
 ---
 
@@ -95,6 +87,6 @@ browser-compat: css.types.angle
 - [Типи даних CSS](/uk/docs/Web/CSS/CSS_Types)
 - Тип [`<gradient>`](/uk/docs/Web/CSS/gradient)
 - Перетворення обертання CSS: [`rotate()`](/uk/docs/Web/CSS/transform-function/rotate), [`rotate3d()`](/uk/docs/Web/CSS/transform-function/rotate3d), [`rotateX()`](/uk/docs/Web/CSS/transform-function/rotateX), [`rotateY()`](/uk/docs/Web/CSS/transform-function/rotateY) і [`rotateZ()`](/uk/docs/Web/CSS/transform-function/rotateZ)
-- [Перетворення CSS](/uk/docs/Web/CSS/CSS_Transforms)
-- [Застосування перетворень CSS](/uk/docs/Web/CSS/CSS_Transforms/Using_CSS_transforms)
-- [Застосування градієнтів CSS](/uk/docs/Web/CSS/CSS_Images/Using_CSS_gradients)
+- [Перетворення CSS](/uk/docs/Web/CSS/CSS_transforms)
+- [Застосування перетворень CSS](/uk/docs/Web/CSS/CSS_transforms/Using_CSS_transforms)
+- [Застосування градієнтів CSS](/uk/docs/Web/CSS/CSS_images/Using_CSS_gradients)
