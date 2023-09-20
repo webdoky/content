@@ -30,7 +30,7 @@ indexOf(searchElement, fromIndex)
 
 ### Повернене значення
 
-Перший індекс елемента в масиві; `-1`, якщо нічого не знайдено.
+Перший індекс `searchElement` в масиві; `-1`, якщо нічого не знайдено.
 
 ## Опис
 
@@ -139,7 +139,7 @@ console.log(Array.prototype.indexOf.call(arrayLike, 5));
 ## Дивіться також
 
 - [Поліфіл `Array.prototype.indexOf` у `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
-- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
 - {{jsxref("Array.prototype.findIndex()")}}
 - {{jsxref("Array.prototype.findLastIndex()")}}

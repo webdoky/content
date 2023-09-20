@@ -1,102 +1,122 @@
 ┌──────────────────┬────────┐
 │     (index)      │ Values │
 ├──────────────────┼────────┤
-│    CSS Pages     │  1033  │
+│    CSS Pages     │  1031  │
 │    HTML Pages    │  230   │
 │ JavaScript Pages │  966   │
 │    SVG Pages     │  361   │
 │      Guides      │   29   │
-│     Glossary     │  567   │
+│     Glossary     │  570   │
 │   Other Pages    │   1    │
 └──────────────────┴────────┘
 Initial registry is ready, expanding macros:
+/uk/docs/Glossary/User_agent: got 1 failed macros
+1 failed GlossarySidebar macros, the last expression was: {{GlossarySidebar}}, message: Macro missing
+/uk/docs/Glossary/Baseline/Typography: got 2 failed macros
+1 failed GlossarySidebar macros, the last expression was: {{GlossarySidebar}}, message: Macro missing
+1 failed GlossaryDisambiguation macros, the last expression was: {{GlossaryDisambiguation}}, message: Macro missing
+/uk/docs/Web/CSS/computed_value: got 1 failed macros
+1 failed Specifications macros, the last expression was: {{Specifications}}, message: No query provided
 /uk/docs/Web/CSS/CSS_cascading_variables: got 1 failed macros
 1 failed Specifications macros, the last expression was: {{Specifications}}, message: No query provided
-/uk/docs/Web/CSS/Specificity: got 1 failed macros
+/uk/docs/Web/CSS/initial_value: got 1 failed macros
 1 failed Specifications macros, the last expression was: {{Specifications}}, message: No query provided
+/uk/docs/Web/CSS/Reference: got 1 failed macros
+1 failed CSS_Ref macros, the last expression was: {{CSS_Ref}}, message: Macro missing
 /uk/docs/Web/CSS/used_value: got 1 failed macros
 1 failed Specifications macros, the last expression was: {{Specifications}}, message: No query provided
 /uk/docs/Web/CSS/Value_definition_syntax: got 1 failed macros
 1 failed Specifications macros, the last expression was: {{Specifications}}, message: No query provided
+/uk/docs/Web/CSS/CSS_nesting: got 1 failed macros
+1 failed Specifications macros, the last expression was: {{Specifications}}, message: No query provided
 /uk/docs/Web/CSS/CSS_transitions/Using_CSS_transitions: got 1 failed macros
+1 failed Specifications macros, the last expression was: {{Specifications}}, message: No query provided
+/uk/docs/Web/HTML: got 1 failed macros
+1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
+/uk/docs/Web/HTML/Content_categories: got 1 failed macros
+1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
+/uk/docs/Web/HTML/Viewport_meta_tag: got 2 failed macros
+1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
 1 failed Specifications macros, the last expression was: {{Specifications}}, message: No query provided
 /uk/docs/Web/HTML/Global_attributes/class: got 1 failed macros
 1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar("Global_attributes")}}, message: Macro missing
-/uk/docs/Web/HTML/Attributes/step: got 1 failed macros
+/uk/docs/Web/HTML/Attributes/required: got 1 failed macros
 1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
-/uk/docs/Web/HTML/Element/a: got 1 failed macros
+/uk/docs/Web/HTML/Attributes/step: got 1 failed macros
 1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
 /uk/docs/Web/HTML/Element: got 1 failed macros
 1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar("HTML_Elements")}}, message: Macro missing
+/uk/docs/Web/HTML/Element/a: got 1 failed macros
+1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
+/uk/docs/Web/HTML/Element/br: got 1 failed macros
+1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
 /uk/docs/Web/HTML/Element/button: got 1 failed macros
 1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
 /uk/docs/Web/HTML/Element/div: got 1 failed macros
 1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
 /uk/docs/Web/HTML/Element/form: got 1 failed macros
 1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
-/uk/docs/Web/HTML/Element/hr: got 1 failed macros
-1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
 /uk/docs/Web/HTML/Element/Heading_Elements: got 1 failed macros
 1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
+/uk/docs/Web/HTML/Element/hr: got 1 failed macros
+1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
 /uk/docs/Web/HTML/Element/iframe: got 1 failed macros
+1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
+/uk/docs/Web/HTML/Element/label: got 1 failed macros
 1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
 /uk/docs/Web/HTML/Element/link: got 2 failed macros
 1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
 1 failed secureContext_inline macros, the last expression was: {{secureContext_inline}}, message: Macro missing
-/uk/docs/Web/HTML/Element/label: got 1 failed macros
+/uk/docs/Web/HTML/Element/option: got 1 failed macros
 1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
 /uk/docs/Web/HTML/Element/progress: got 2 failed macros
 1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
 1 failed EmbedLiveSample macros, the last expression was: {{EmbedLiveSample('pidpysuvannia)}}, message: Cannot read properties of undefined (reading 'toLowerCase')
-/uk/docs/Web/HTML/Element/span: got 1 failed macros
-1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
 /uk/docs/Web/HTML/Element/select: got 1 failed macros
+1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
+/uk/docs/Web/HTML/Element/span: got 1 failed macros
 1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
 /uk/docs/Web/HTML/Element/textarea: got 1 failed macros
 1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
 /uk/docs/Web/HTML/Element/ul: got 1 failed macros
 1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
-/uk/docs/Web/HTML/Element/input: got 1 failed macros
-1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
 /uk/docs/Web/HTML/Element/video: got 1 failed macros
+1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
+/uk/docs/Web/HTML/Element/input: got 1 failed macros
 1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
 /uk/docs/Web/HTML/Element/input/button: got 1 failed macros
 1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
-/uk/docs/Web/HTML/Element/input/datetime-local: got 1 failed macros
-1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
 /uk/docs/Web/HTML/Element/input/color: got 1 failed macros
-1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
-/uk/docs/Web/HTML/Element/input/hidden: got 1 failed macros
 1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
 /uk/docs/Web/HTML/Element/input/checkbox: got 1 failed macros
 1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
+/uk/docs/Web/HTML/Element/input/datetime-local: got 1 failed macros
+1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
 /uk/docs/Web/HTML/Element/input/file: got 1 failed macros
 1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
-/uk/docs/Web/HTML/Element/input/range: got 1 failed macros
+/uk/docs/Web/HTML/Element/input/hidden: got 1 failed macros
+1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
+/uk/docs/Web/HTML/Element/input/search: got 1 failed macros
 1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
 /uk/docs/Web/HTML/Element/input/radio: got 1 failed macros
 1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
-/uk/docs/Web/JavaScript/Reference/Iteration_protocols: got 1 failed macros
-1 failed Specifications macros, the last expression was: {{Specifications}}, message: No query provided
-/uk/docs/Web/SVG: got 1 failed macros
-1 failed SVGRef macros, the last expression was: {{SVGRef}}, message: Macro missing
-/uk/docs/Glossary/Falsy: got 1 failed macros
+/uk/docs/Web/HTML/Element/input/range: got 1 failed macros
+1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
+/uk/docs/Web/HTML/Element/script: got 1 failed macros
+1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
+/uk/docs/Glossary: got 1 failed macros
 1 failed GlossarySidebar macros, the last expression was: {{GlossarySidebar}}, message: Macro missing
 /uk/docs/Glossary/Render_blocking: got 1 failed macros
 1 failed GlossarySidebar macros, the last expression was: {{GlossarySidebar}}, message: Macro missing
+/uk/docs/Glossary/Falsy: got 1 failed macros
+1 failed GlossarySidebar macros, the last expression was: {{GlossarySidebar}}, message: Macro missing
+/uk/docs/Glossary/Block-level_content: got 1 failed macros
+1 failed GlossarySidebar macros, the last expression was: {{GlossarySidebar}}, message: Macro missing
 /uk/docs/Glossary/Repaint: got 1 failed macros
 1 failed GlossarySidebar macros, the last expression was: {{GlossarySidebar}}, message: Macro missing
-/uk/docs/Glossary/Baseline/Typography: got 1 failed macros
-1 failed GlossaryDisambiguation macros, the last expression was: {{GlossaryDisambiguation}}, message: Macro missing
-/uk/docs/Web/CSS/computed_value: got 1 failed macros
-1 failed Specifications macros, the last expression was: {{Specifications}}, message: No query provided
-/uk/docs/Web/CSS/initial_value: got 1 failed macros
-1 failed Specifications macros, the last expression was: {{Specifications}}, message: No query provided
-/uk/docs/Web/CSS/Reference: got 1 failed macros
-1 failed CSS_Ref macros, the last expression was: {{CSS_Ref}}, message: Macro missing
-/uk/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing: got 1 failed macros
-1 failed Specifications macros, the last expression was: {{Specifications}}, message: No query provided
-/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model: got 1 failed macros
+/uk/docs/Glossary/Truthy: got 1 failed macros
+1 failed GlossarySidebar macros, the last expression was: {{GlossarySidebar}}, message: Macro missing
+/uk/docs/Web/CSS/Specificity: got 1 failed macros
 1 failed Specifications macros, the last expression was: {{Specifications}}, message: No query provided
 /uk/docs/Web/CSS/CSS_Flexible_Box_Layout: got 1 failed macros
 1 failed Specifications macros, the last expression was: {{Specifications}}, message: No query provided
@@ -104,15 +124,6 @@ Initial registry is ready, expanding macros:
 1 failed Specifications macros, the last expression was: {{Specifications}}, message: No query provided
 /uk/docs/Web/CSS/CSS_selectors: got 1 failed macros
 1 failed Specifications macros, the last expression was: {{Specifications}}, message: No query provided
-/uk/docs/Web/HTML/Content_categories: got 1 failed macros
-1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
-/uk/docs/Web/HTML/Element/br: got 1 failed macros
-1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
-/uk/docs/Web/HTML/Viewport_meta_tag: got 2 failed macros
-1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
-1 failed Specifications macros, the last expression was: {{Specifications}}, message: No query provided
-/uk/docs/Web/HTML/Attributes/required: got 1 failed macros
-1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
 /uk/docs/Web/HTML/Global_attributes: got 1 failed macros
 1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar("Global_attributes")}}, message: Macro missing
 /uk/docs/Web/HTML/Element/img: got 2 failed macros
@@ -130,52 +141,57 @@ Initial registry is ready, expanding macros:
 1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
 /uk/docs/Web/HTML/Element/input/number: got 1 failed macros
 1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
-/uk/docs/Web/HTML/Element/input/tel: got 1 failed macros
+/uk/docs/Web/HTML/Element/input/submit: got 1 failed macros
 1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
 /uk/docs/Web/HTML/Element/input/text: got 1 failed macros
 1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
-/uk/docs/Web/HTML/Element/input/submit: got 1 failed macros
+/uk/docs/Web/HTML/Element/input/tel: got 1 failed macros
 1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
 /uk/docs/Web/HTML/Element/input/url: got 1 failed macros
 1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
-/uk/docs/Web/HTML/Element/script: got 1 failed macros
-1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
 /uk/docs/Web/JavaScript/Guide/Modules: got 1 failed macros
 1 failed Compat macros, the last expression was: {{Compat}}, message: query.split is not a function or its return value is not iterable
-/uk/docs/Glossary: got 1 failed macros
-1 failed ListSubpagesForSidebar macros, the last expression was: {{ListSubpagesForSidebar("/uk/docs/Glossary", 1)}}, message: Macro missing
+/uk/docs/Web/JavaScript/Reference/Iteration_protocols: got 1 failed macros
+1 failed Specifications macros, the last expression was: {{Specifications}}, message: No query provided
+/uk/docs/Web: got 1 failed macros
+1 failed ListSubpages macros, the last expression was: {{ListSubpages("", 1, 0, 1)}}, message: Macro missing
 /uk/docs/Glossary/Shallow_copy: got 1 failed macros
 1 failed MDNSidebar macros, the last expression was: {{MDNSidebar}}, message: Macro missing
-/uk/docs/Web/HTML: got 1 failed macros
-1 failed HTMLSidebar macros, the last expression was: {{HTMLSidebar}}, message: Macro missing
-Done with macros, 3187 processed.
+/uk/docs/Web/SVG: got 1 failed macros
+1 failed SVGRef macros, the last expression was: {{SVGRef}}, message: Macro missing
+Done with macros, 3188 processed.
 Rendering pages:
 Missing live sample content for dodavannia-do-knopok-modyfikatsii-klavish, on Web/HTML/Element/input/button page
 Missing live sample content for zadannia-ustalenoho-kolioru, on Web/HTML/Element/input/color page
 Missing live sample content for zbyrannia-vsioho-dokupy, on Web/HTML/Element/input/range page
 Missing live sample content for proste-pole-elektronnoii-poshty, on Web/HTML/Element/input/email page
 Missing live sample content for pryimannia-kilkokh-adres-elektronnoii-poshty, on Web/HTML/Element/input/email page
-Missing live sample content for examples, on Web/CSS/-moz-orient page
-Initial registry is ready, 3187 pages processed
-Content has been rendered, 358 pages with content processed
+Initial registry is ready, 3188 pages processed
+Content has been rendered, 363 pages with content processed
 removing cache
 cache directory created
 warn - found fixable reference: /uk/docs/Web/CSS/color_value/#imenovani-kolory on page /uk/docs/Web/CSS/backdrop-filter
 warn - found fixable reference: /uk/docs/Web/CSS/color_value/#systemni-kolory on page /uk/docs/Web/CSS/backdrop-filter
 warn - found fixable reference: /uk/docs/Web/CSS/color_value/#imenovani-kolory on page /uk/docs/Web/CSS/background
 warn - found fixable reference: /uk/docs/Web/CSS/color_value/#systemni-kolory on page /uk/docs/Web/CSS/background
-warn - found fixable reference: /uk/docs/Web/CSS/color_value/#imenovani-kolory on page /uk/docs/Web/CSS/background-image
-warn - found fixable reference: /uk/docs/Web/CSS/color_value/#systemni-kolory on page /uk/docs/Web/CSS/background-image
 warn - found fixable reference: /uk/docs/Web/CSS/color_value/#imenovani-kolory on page /uk/docs/Web/CSS/background-color
 warn - found fixable reference: /uk/docs/Web/CSS/color_value/#systemni-kolory on page /uk/docs/Web/CSS/background-color
+warn - found fixable reference: /uk/docs/Web/CSS/color_value/#imenovani-kolory on page /uk/docs/Web/CSS/background-image
+warn - found fixable reference: /uk/docs/Web/CSS/color_value/#systemni-kolory on page /uk/docs/Web/CSS/background-image
+warn - found fixable reference: /uk/docs/Web/CSS/color_value/#imenovani-kolory on page /uk/docs/Web/CSS/border
+warn - found fixable reference: /uk/docs/Web/CSS/color_value/#systemni-kolory on page /uk/docs/Web/CSS/border
 warn - found fixable reference: /uk/docs/Web/CSS/length/#vidnosni-odynytsi-dovzhyny on page /uk/docs/Web/CSS/calc
 warn - found fixable reference: /uk/docs/Web/CSS/color_value/#imenovani-kolory on page /uk/docs/Web/CSS/color
 warn - found fixable reference: /uk/docs/Web/CSS/color_value/#systemni-kolory on page /uk/docs/Web/CSS/color
 warn - found fixable reference: /uk/docs/Web/CSS/text-align/#string on page /uk/docs/Web/CSS/text-align
+warn - found fixable reference: /uk/docs/Web/CSS/color_value/#imenovani-kolory on page /uk/docs/Web/CSS/image
+warn - found fixable reference: /uk/docs/Web/CSS/color_value/#systemni-kolory on page /uk/docs/Web/CSS/image
 warn - found fixable reference: /uk/docs/Web/HTML/Element/a/#shape on page /uk/docs/Web/HTML/Element/a
 warn - found fixable reference: /uk/docs/Web/HTML/Element/button/#autocomplete on page /uk/docs/Web/HTML/Element/button
 warn - found fixable reference: /uk/docs/Web/HTML/Element/link/#sizes on page /uk/docs/Web/HTML/Element/link
+warn - found fixable reference: /uk/docs/Web/HTML/Element/select/#multiple on page /uk/docs/Web/HTML/Element/option
 warn - found fixable reference: /uk/docs/Web/HTML/Element/ul/#compact on page /uk/docs/Web/HTML/Element/ul
+warn - found fixable reference: /uk/docs/Web/HTML/Element/video/#disablepictureinpicture on page /uk/docs/Web/HTML/Element/video
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#autocapitalize on page /uk/docs/Web/HTML/Element/input
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#autocorrect on page /uk/docs/Web/HTML/Element/input
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#incremental on page /uk/docs/Web/HTML/Element/input
@@ -183,12 +199,18 @@ warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#orient on page 
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#results on page /uk/docs/Web/HTML/Element/input
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#webkitdirectory on page /uk/docs/Web/HTML/Element/input
 warn - found fixable reference: /uk/docs/Web/HTML/Element/label/#attr-for on page /uk/docs/Web/HTML/Element/input
-warn - found fixable reference: /uk/docs/Web/HTML/Element/video/#disablepictureinpicture on page /uk/docs/Web/HTML/Element/video
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#value on page /uk/docs/Web/HTML/Element/input/button
 warn - found fixable reference: /uk/docs/Web/HTML/Element/button/#autocomplete on page /uk/docs/Web/HTML/Element/input/button
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/button/#value on page /uk/docs/Web/HTML/Element/input/button
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#type on page /uk/docs/Web/HTML/Element/input/button
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#value on page /uk/docs/Web/HTML/Element/input/button
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#value on page /uk/docs/Web/HTML/Element/input/color
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#value on page /uk/docs/Web/HTML/Element/input/color
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#value on page /uk/docs/Web/HTML/Element/input/color
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/color/#value on page /uk/docs/Web/HTML/Element/input/color
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#list on page /uk/docs/Web/HTML/Element/input/color
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#required on page /uk/docs/Web/HTML/Element/input/checkbox
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/checkbox/#indeterminate on page /uk/docs/Web/HTML/Element/input/checkbox
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#value on page /uk/docs/Web/HTML/Element/input/datetime-local
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#value on page /uk/docs/Web/HTML/Element/input/datetime-local
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#value on page /uk/docs/Web/HTML/Element/input/datetime-local
@@ -202,16 +224,26 @@ warn - found fixable reference: /uk/docs/Web/HTML/Element/input/datetime-local/#
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#list on page /uk/docs/Web/HTML/Element/input/datetime-local
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#readonly on page /uk/docs/Web/HTML/Element/input/datetime-local
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#step on page /uk/docs/Web/HTML/Element/input/datetime-local
-warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#value on page /uk/docs/Web/HTML/Element/input/color
-warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#value on page /uk/docs/Web/HTML/Element/input/color
-warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#value on page /uk/docs/Web/HTML/Element/input/color
-warn - found fixable reference: /uk/docs/Web/HTML/Element/input/color/#value on page /uk/docs/Web/HTML/Element/input/color
-warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#list on page /uk/docs/Web/HTML/Element/input/color
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#value on page /uk/docs/Web/HTML/Element/input/hidden
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#name on page /uk/docs/Web/HTML/Element/input/hidden
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/hidden/#value on page /uk/docs/Web/HTML/Element/input/hidden
-warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#required on page /uk/docs/Web/HTML/Element/input/checkbox
-warn - found fixable reference: /uk/docs/Web/HTML/Element/input/checkbox/#indeterminate on page /uk/docs/Web/HTML/Element/input/checkbox
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#value on page /uk/docs/Web/HTML/Element/input/search
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#type on page /uk/docs/Web/HTML/Element/input/search
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#value on page /uk/docs/Web/HTML/Element/input/search
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#title on page /uk/docs/Web/HTML/Element/input/search
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#labels on page /uk/docs/Web/HTML/Element/input/search
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#name on page /uk/docs/Web/HTML/Element/input/search
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#size on page /uk/docs/Web/HTML/Element/input/search
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#required on page /uk/docs/Web/HTML/Element/input/search
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#minlength on page /uk/docs/Web/HTML/Element/input/search
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#maxlength on page /uk/docs/Web/HTML/Element/input/search
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#pattern on page /uk/docs/Web/HTML/Element/input/search
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#list on page /uk/docs/Web/HTML/Element/input/search
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#maxlength on page /uk/docs/Web/HTML/Element/input/search
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#minlength on page /uk/docs/Web/HTML/Element/input/search
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#pattern on page /uk/docs/Web/HTML/Element/input/search
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#required on page /uk/docs/Web/HTML/Element/input/search
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#size on page /uk/docs/Web/HTML/Element/input/search
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#value on page /uk/docs/Web/HTML/Element/input/range
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#min on page /uk/docs/Web/HTML/Element/input/range
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#max on page /uk/docs/Web/HTML/Element/input/range
@@ -231,7 +263,6 @@ warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#min on page /uk
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#step on page /uk/docs/Web/HTML/Element/input/range
 warn - found fixable reference: /uk/docs/Web/JavaScript/Reference/Operators/Object_initializer/#seter-prototypu on page /uk/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
 warn - found fixable reference: /uk/docs/Web/JavaScript/Guide/Expressions_and_operators/#vidnosni-operatory on page /uk/docs/Web/JavaScript/Guide/Expressions_and_operators
-warn - found fixable reference: /uk/docs/Web/JavaScript/Reference/Lexical_grammar/#chyslovi-rozdilnyky on page /uk/docs/Web/JavaScript/Reference/Global_Objects/parseInt
 warn - found fixable reference: /uk/docs/Web/JavaScript/Reference/Global_Objects/Number/#zvedennia-do-chyslovoho on page /uk/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf
 warn - found fixable reference: /uk/docs/Web/JavaScript/Reference/Global_Objects/Set/#set.prototype.size on page /uk/docs/Web/JavaScript/Reference/Global_Objects/Set
 warn - found fixable reference: /uk/docs/Web/JavaScript/Reference/Global_Objects/Set/#set.prototype.entries on page /uk/docs/Web/JavaScript/Reference/Global_Objects/Set
@@ -243,13 +274,10 @@ warn - found fixable reference: /uk/docs/Web/JavaScript/Reference/Global_Objects
 warn - found fixable reference: /uk/docs/Web/JavaScript/Reference/Global_Objects/Set/#set.prototype.clear on page /uk/docs/Web/JavaScript/Reference/Global_Objects/Set
 warn - found fixable reference: /uk/docs/Web/JavaScript/Reference/Global_Objects/Set/#set.prototype.delete on page /uk/docs/Web/JavaScript/Reference/Global_Objects/Set
 warn - found fixable reference: /uk/docs/Web/JavaScript/Reference/Global_Objects/Set/#set.prototype.add on page /uk/docs/Web/JavaScript/Reference/Global_Objects/Set
-warn - found fixable reference: /uk/docs/Web/JavaScript/Reference/Operators/Property_accessors/#kvadratni-duzhky on page /uk/docs/Web/JavaScript/Reference/Global_Objects/String/charAt
 warn - found fixable reference: /uk/docs/Web/HTML/Element/a/#name on page /uk/docs/Web/JavaScript/Reference/Global_Objects/String
-warn - found fixable reference: /uk/docs/Web/CSS/color_value/#imenovani-kolory on page /uk/docs/Web/CSS/border
-warn - found fixable reference: /uk/docs/Web/CSS/color_value/#systemni-kolory on page /uk/docs/Web/CSS/border
+warn - found fixable reference: /uk/docs/Web/JavaScript/Reference/Operators/Property_accessors/#kvadratni-duzhky on page /uk/docs/Web/JavaScript/Reference/Global_Objects/String/charAt
 warn - found fixable reference: /uk/docs/Web/CSS/color_value/#imenovani-kolory on page /uk/docs/Web/CSS/box-shadow
 warn - found fixable reference: /uk/docs/Web/CSS/color_value/#systemni-kolory on page /uk/docs/Web/CSS/box-shadow
-warn - found fixable reference: /uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model/#vidmezhovana-oblast on page /uk/docs/Web/CSS/width
 warn - found fixable reference: /uk/docs/Web/CSS/CSS_media_queries/Using_media_queries/#oznaky-media on page /uk/docs/Web/CSS/@media/prefers-reduced-transparency
 warn - found fixable reference: /uk/docs/Web/CSS/color_value/#imenovani-kolory on page /uk/docs/Web/CSS/gradient/linear-gradient
 warn - found fixable reference: /uk/docs/Web/CSS/color_value/#systemni-kolory on page /uk/docs/Web/CSS/gradient/linear-gradient
@@ -335,6 +363,30 @@ warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#attr-autocomple
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#attr-list on page /uk/docs/Web/HTML/Element/input/number
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#attr-placeholder on page /uk/docs/Web/HTML/Element/input/number
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#attr-readonly on page /uk/docs/Web/HTML/Element/input/number
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#value on page /uk/docs/Web/HTML/Element/input/submit
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#type on page /uk/docs/Web/HTML/Element/input/submit
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/button/#disabling_and_enabling_a_button on page /uk/docs/Web/HTML/Element/input/submit
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#type on page /uk/docs/Web/HTML/Element/input/submit
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#value on page /uk/docs/Web/HTML/Element/input/submit
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#value on page /uk/docs/Web/HTML/Element/input/text
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#type on page /uk/docs/Web/HTML/Element/input/text
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#value on page /uk/docs/Web/HTML/Element/input/text
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#title on page /uk/docs/Web/HTML/Element/input/text
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#labels on page /uk/docs/Web/HTML/Element/input/text
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#name on page /uk/docs/Web/HTML/Element/input/text
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#size on page /uk/docs/Web/HTML/Element/input/text
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#required on page /uk/docs/Web/HTML/Element/input/text
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#minlength on page /uk/docs/Web/HTML/Element/input/text
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#maxlength on page /uk/docs/Web/HTML/Element/input/text
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#pattern on page /uk/docs/Web/HTML/Element/input/text
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#list on page /uk/docs/Web/HTML/Element/input/text
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#maxlength on page /uk/docs/Web/HTML/Element/input/text
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#minlength on page /uk/docs/Web/HTML/Element/input/text
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#pattern on page /uk/docs/Web/HTML/Element/input/text
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#readonly on page /uk/docs/Web/HTML/Element/input/text
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#required on page /uk/docs/Web/HTML/Element/input/text
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#size on page /uk/docs/Web/HTML/Element/input/text
+warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#list on page /uk/docs/Web/HTML/Element/input/text
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#value on page /uk/docs/Web/HTML/Element/input/tel
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#type on page /uk/docs/Web/HTML/Element/input/tel
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#value on page /uk/docs/Web/HTML/Element/input/tel
@@ -355,30 +407,6 @@ warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#minlength on pa
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#pattern on page /uk/docs/Web/HTML/Element/input/tel
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#readonly on page /uk/docs/Web/HTML/Element/input/tel
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#size on page /uk/docs/Web/HTML/Element/input/tel
-warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#value on page /uk/docs/Web/HTML/Element/input/text
-warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#type on page /uk/docs/Web/HTML/Element/input/text
-warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#value on page /uk/docs/Web/HTML/Element/input/text
-warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#title on page /uk/docs/Web/HTML/Element/input/text
-warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#labels on page /uk/docs/Web/HTML/Element/input/text
-warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#name on page /uk/docs/Web/HTML/Element/input/text
-warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#size on page /uk/docs/Web/HTML/Element/input/text
-warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#required on page /uk/docs/Web/HTML/Element/input/text
-warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#minlength on page /uk/docs/Web/HTML/Element/input/text
-warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#maxlength on page /uk/docs/Web/HTML/Element/input/text
-warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#pattern on page /uk/docs/Web/HTML/Element/input/text
-warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#list on page /uk/docs/Web/HTML/Element/input/text
-warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#maxlength on page /uk/docs/Web/HTML/Element/input/text
-warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#minlength on page /uk/docs/Web/HTML/Element/input/text
-warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#pattern on page /uk/docs/Web/HTML/Element/input/text
-warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#readonly on page /uk/docs/Web/HTML/Element/input/text
-warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#required on page /uk/docs/Web/HTML/Element/input/text
-warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#size on page /uk/docs/Web/HTML/Element/input/text
-warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#list on page /uk/docs/Web/HTML/Element/input/text
-warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#value on page /uk/docs/Web/HTML/Element/input/submit
-warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#type on page /uk/docs/Web/HTML/Element/input/submit
-warn - found fixable reference: /uk/docs/Web/HTML/Element/input/button/#disabling_and_enabling_a_button on page /uk/docs/Web/HTML/Element/input/submit
-warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#type on page /uk/docs/Web/HTML/Element/input/submit
-warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#value on page /uk/docs/Web/HTML/Element/input/submit
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/url/#validatsiia on page /uk/docs/Web/HTML/Element/input/url
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#value on page /uk/docs/Web/HTML/Element/input/url
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#required on page /uk/docs/Web/HTML/Element/input/url
@@ -388,121 +416,114 @@ warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#maxlength on pa
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/url/#validatsiia on page /uk/docs/Web/HTML/Element/input/url
 warn - found fixable reference: /uk/docs/Web/HTML/Element/input/#pattern on page /uk/docs/Web/HTML/Element/input/url
 warn - found fixable reference: /uk/docs/Web/HTML/Global_attributes/#title-zaholovok on page /uk/docs/Web/HTML/Element/input/url
-warn - found fixable reference: /uk/docs/Web/JavaScript/Reference/Operators/Object_initializer/#imena-obchysliuvanykh-vlastyvostei on page /uk/docs/Web/JavaScript/Reference/Lexical_grammar
-warn - found fixable reference: /uk/docs/Web/JavaScript/Reference/Operators/Object_initializer/#dubliuvannia-imen-vlastyvostei on page /uk/docs/Web/JavaScript/Reference/Classes
 warn - found fixable reference: /uk/docs/Web/JavaScript/Reference/Statements/#riznytsia-mizh-instruktsiiamy-ta-oholoshenniamy on page /uk/docs/Web/JavaScript/Reference/Statements/const
 warn - found fixable reference: /uk/docs/Web/JavaScript/Reference/Operators/Object_initializer/#computed_property_names on page /uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
 warn - found fixable reference: /uk/docs/Web/JavaScript/Reference/Operators/Object_initializer/#seter-prototypa on page /uk/docs/Web/JavaScript/Reference/Operators/Object_initializer
 warn - found fixable reference: /uk/docs/Web/JavaScript/Reference/Lexical_grammar/#klichovi-slova on page /uk/docs/Web/JavaScript/Reference/Operators/Property_accessors
-warn - found fixable reference: /uk/docs/Web/JavaScript/Reference/Operators/Property_accessors/#zapys-kvadratnykh-duzhok on page /uk/docs/Web/JavaScript/Reference/Operators/Optional_chaining
 warn - found fixable reference: /uk/docs/Web/JavaScript/Reference/Operators/this/#zvorotnii-vyklyk on page /uk/docs/Web/JavaScript/Reference/Operators/this
 warn - found fixable reference: /uk/docs/Web/JavaScript/Reference/Operators/this/#this-u-kontektstualnykh-obrobnykakh-podii on page /uk/docs/Web/JavaScript/Reference/Operators/this
 warn - found fixable reference: /uk/docs/Web/JavaScript/Guide/Using_promises/#komponuvannia on page /uk/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
-warn - found fixable reference: /uk/docs/Web/JavaScript/Reference/Operators/Object_initializer/#syntaksys-literala-obiekta-i-json on page /uk/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
 warn - found fixable reference: /uk/docs/Web/JavaScript/Reference/Operators/Object_initializer/#vstanovliuvach-prototypu on page /uk/docs/Web/JavaScript/Reference/Global_Objects/Object/create
 warn - found fixable reference: /uk/docs/Web/JavaScript/Guide/Loops_and_iteration/#for...of_statement on page /uk/docs/Web/JavaScript/Reference/Global_Objects/String/codePointAt
-warn - found fixable reference: /uk/docs/Web/HTML/Element/img/#attr-alt on page /uk/docs/Web/CSS/-moz-force-broken-image-icon
-warn - found fixable reference: /uk/docs/Web/CSS/color_value/#imenovani-kolory on page /uk/docs/Web/CSS/image
-warn - found fixable reference: /uk/docs/Web/CSS/color_value/#systemni-kolory on page /uk/docs/Web/CSS/image
-found 244 fixable orphaned references
-Summary: 1731 orphaned URLs found, showing top 100 of them
- №1. /uk/docs/Web/CSS/inheritance/ – 51
- №2. /uk/docs/Web/API/HTMLInputElement/ – 45
- №3. /uk/docs/Web/HTML/Element/datalist/ – 33
- №4. /uk/docs/Web/HTML/Constraint_validation/ – 32
- №5. /uk/docs/Web/HTML/Element/option/ – 23
- №6. /uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model/ – 21
- №7. /uk/docs/Web/JavaScript/Reference/Strict_mode/ – 21
- №8. /uk/docs/Web/API/HTMLElement/change_event/ – 20
- №9. /uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable/ – 19
- №10. /uk/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor/ – 19
- №11. /uk/docs/Web/API/HTMLElement/input_event/ – 18
- №12. /uk/docs/Web/HTML/Element/heading_elements/ – 18
- №13. /uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls/ – 17
- №14. /uk/docs/Web/JavaScript/Reference/Statements/var/ – 17
+found 255 fixable orphaned references
+Summary: 1734 orphaned URLs found, showing top 100 of them
+ №1. /uk/docs/Web/API/HTMLInputElement/ – 50
+ №2. /uk/docs/Web/CSS/inheritance/ – 46
+ №3. /uk/docs/Web/HTML/Element/datalist/ – 38
+ №4. /uk/docs/Web/HTML/Constraint_validation/ – 35
+ №5. /uk/docs/Web/API/HTMLElement/change_event/ – 21
+ №6. /uk/docs/Web/JavaScript/Reference/Strict_mode/ – 21
+ №7. /uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable/ – 19
+ №8. /uk/docs/Web/API/HTMLElement/input_event/ – 19
+ №9. /uk/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor/ – 19
+ №10. \'/ – 18
+ №11. /uk/docs/Web/HTML/Element/heading_elements/ – 18
+ №12. /uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls/ – 18
+ №13. /uk/docs/Web/CSS/:invalid/ – 17
+ №14. /uk/docs/Web/API/HTMLInputElement/select/ – 17
  №15. /uk/docs/Web/JavaScript/Guide/Grammar_and_types/ – 17
- №16. /uk/docs/Web/CSS/:invalid/ – 16
- №17. /uk/docs/Web/API/HTMLInputElement/select/ – 16
- №18. /uk/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwn/ – 16
- №19. \'/ – 16
- №20. /uk/docs/Web/CSS/At-rule/ – 15
+ №16. /uk/docs/Web/JavaScript/Reference/Statements/var/ – 17
+ №17. /uk/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwn/ – 16
+ №18. /uk/docs/Learn/Forms/ – 15
+ №19. /uk/docs/Web/CSS/At-rule/ – 15
+ №20. /uk/docs/Web/CSS/font/ – 15
  №21. /uk/docs/Web/HTML/Element/canvas/ – 15
  №22. /uk/docs/Web/CSS/Syntax/ – 14
- №23. /uk/docs/Web/CSS/font/ – 14
- №24. /uk/docs/Web/HTML/Element/audio/ – 14
- №25. /uk/docs/Web/HTML/Attributes/rel/ – 14
- №26. /uk/docs/Web/JavaScript/Reference/Global_Objects/encodeURI/ – 14
- №27. /uk/docs/Web/JavaScript/Guide/Using_classes/ – 14
- №28. /uk/docs/Web/CSS/actual_value/ – 13
- №29. /uk/docs/Web/CSS/string/ – 13
- №30. /uk/docs/Web/CSS/border-color/ – 13
- №31. /uk/docs/Web/CSS/Visual_formatting_model/ – 13
- №32. /uk/docs/Glossary/user_agent/ – 13
- №33. /uk/docs/Web/HTML/Element/object/ – 13
- №34. /uk/docs/Web/HTML/Element/meter/ – 13
- №35. /uk/docs/Learn/Forms/ – 13
- №36. /uk/docs/Web/HTML/Element/input/image/ – 13
- №37. /uk/docs/Web/Accessibility/ARIA/Roles/combobox_role/ – 13
- №38. /uk/docs/Web/JavaScript/Reference/Global_Objects/Function/ – 13
- №39. /uk/docs/Web/API/Document_Object_Model/ – 13
- №40. /uk/docs/Web/JavaScript/Reference/Global_Objects/globalThis/ – 13
- №41. /uk/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError/ – 13
- №42. /uk/docs/Glossary/Primitive/ – 13
- №43. /uk/docs/Web/CSS/url/ – 12
- №44. /uk/docs/Web/CSS/integer/ – 12
- №45. /uk/docs/Web/CSS/Comments/ – 12
- №46. /uk/docs/Web/CSS/Layout_mode/ – 12
- №47. /uk/docs/Web/Media/Formats/Image_types/ – 12
- №48. /uk/docs/Web/HTML/Element/fieldset/ – 12
- №49. /uk/docs/Web/CSS/:valid/ – 12
- №50. /uk/docs/Web/JavaScript/Reference/Global_Objects/eval/ – 12
- №51. /uk/docs/Web/JavaScript/Reference/Operators/instanceof/ – 12
- №52. /uk/docs/Web/JavaScript/Reference/Operators/Addition/ – 12
- №53. /uk/docs/Web/JavaScript/Reference/Functions/arguments/ – 12
- №54. /uk/docs/Web/JavaScript/Guide/Iterators_and_generators/ – 12
- №55. /uk/docs/Web/JavaScript/Guide/Regular_expressions/Groups_and_backreferences/ – 12
- №56. /uk/docs/Web/JavaScript/Reference/Global_Objects/RangeError/ – 12
+ №23. /uk/docs/Web/HTML/Element/audio/ – 14
+ №24. /uk/docs/Web/HTML/Element/meter/ – 14
+ №25. /uk/docs/Web/Accessibility/ARIA/Roles/combobox_role/ – 14
+ №26. /uk/docs/Web/HTML/Attributes/rel/ – 14
+ №27. /uk/docs/Web/JavaScript/Reference/Global_Objects/encodeURI/ – 14
+ №28. /uk/docs/Web/JavaScript/Guide/Using_classes/ – 14
+ №29. /uk/docs/Web/CSS/actual_value/ – 13
+ №30. /uk/docs/Web/CSS/string/ – 13
+ №31. /uk/docs/Web/CSS/border-color/ – 13
+ №32. /uk/docs/Web/CSS/Visual_formatting_model/ – 13
+ №33. /uk/docs/Glossary/user_agent/ – 13
+ №34. /uk/docs/Web/HTML/Element/object/ – 13
+ №35. /uk/docs/Web/HTML/Element/fieldset/ – 13
+ №36. /uk/docs/Web/HTML/Element/optgroup/ – 13
+ №37. /uk/docs/Web/HTML/Element/input/image/ – 13
+ №38. /uk/docs/Web/CSS/:valid/ – 13
+ №39. /uk/docs/Web/JavaScript/Reference/Global_Objects/Function/ – 13
+ №40. /uk/docs/Web/API/Document_Object_Model/ – 13
+ №41. /uk/docs/Web/JavaScript/Reference/Global_Objects/globalThis/ – 13
+ №42. /uk/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError/ – 13
+ №43. /uk/docs/Web/CSS/integer/ – 12
+ №44. /uk/docs/Web/CSS/url/ – 12
+ №45. /uk/docs/Web/CSS/Pseudo-classes/ – 12
+ №46. /uk/docs/Web/CSS/Comments/ – 12
+ №47. /uk/docs/Web/CSS/Layout_mode/ – 12
+ №48. /uk/docs/Web/HTML/Element/output/ – 12
+ №49. /uk/docs/Web/Media/Formats/Image_types/ – 12
+ №50. /uk/docs/Web/JavaScript/Reference/Operators/Addition/ – 12
+ №51. /uk/docs/Web/JavaScript/Reference/Global_Objects/eval/ – 12
+ №52. /uk/docs/Web/JavaScript/Reference/Functions/arguments/ – 12
+ №53. /uk/docs/Web/JavaScript/Guide/Iterators_and_generators/ – 12
+ №54. /uk/docs/Web/JavaScript/Reference/Statements/for/ – 12
+ №55. /uk/docs/Web/JavaScript/Reference/Operators/instanceof/ – 12
+ №56. /uk/docs/Web/JavaScript/Guide/Regular_expressions/Groups_and_backreferences/ – 12
  №57. /uk/docs/Web/JavaScript/Reference/Statements/export/ – 12
- №58. /uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag/ – 12
- №59. /uk/docs/Web/HTML/Element/ol/ – 11
- №60. /uk/docs/Web/HTTP/Headers/Referer/ – 11
- №61. /uk/docs/Web/Accessibility/ARIA/Roles/button_role/ – 11
- №62. /uk/docs/Web/HTML/Element/output/ – 11
- №63. /uk/docs/Web/JavaScript/Reference/Functions/ – 11
+ №58. /uk/docs/Glossary/Primitive/ – 12
+ №59. /uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag/ – 12
+ №60. /uk/docs/Web/HTML/Element/ol/ – 11
+ №61. /uk/docs/Web/CSS/transform-function/ – 11
+ №62. /uk/docs/Web/HTTP/Headers/Referer/ – 11
+ №63. /uk/docs/Web/Accessibility/ARIA/Roles/button_role/ – 11
  №64. /uk/docs/Web/JavaScript/Reference/Classes/Private_class_fields/ – 11
- №65. /uk/docs/Web/JavaScript/Reference/Global_Objects/Object/propertyIsEnumerable/ – 11
- №66. /uk/docs/Web/JavaScript/Reference/Operators/in/ – 11
- №67. /uk/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf/ – 11
- №68. /uk/docs/Web/JavaScript/Reference/Global_Objects/Object/proto/ – 11
- №69. /uk/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER/ – 11
- №70. /uk/docs/Web/JavaScript/Reference/Operators/Equality/ – 11
- №71. /uk/docs/Web/JavaScript/Reference/Global_Objects/Function/call/ – 11
- №72. /uk/docs/Web/JavaScript/Reference/Operators/super/ – 11
- №73. /uk/docs/Web/JavaScript/Guide/Text_formatting/ – 11
- №74. /uk/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError/ – 11
- №75. /uk/docs/Web/JavaScript/Reference/Global_Objects/Promise/Promise/ – 11
- №76. /uk/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing/ – 10
- №77. /uk/docs/Web/CSS/Pseudo-classes/ – 10
+ №65. /uk/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER/ – 11
+ №66. /uk/docs/Web/JavaScript/Reference/Operators/Equality/ – 11
+ №67. /uk/docs/Web/JavaScript/Reference/Functions/ – 11
+ №68. /uk/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf/ – 11
+ №69. /uk/docs/Web/JavaScript/Reference/Global_Objects/Object/proto/ – 11
+ №70. /uk/docs/Web/JavaScript/Reference/Global_Objects/Function/call/ – 11
+ №71. /uk/docs/Web/JavaScript/Reference/Operators/super/ – 11
+ №72. /uk/docs/Web/JavaScript/Guide/Text_formatting/ – 11
+ №73. /uk/docs/Web/JavaScript/Reference/Operators/in/ – 11
+ №74. /uk/docs/Web/JavaScript/Reference/Global_Objects/Promise/Promise/ – 11
+ №75. /uk/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError/ – 11
+ №76. /uk/docs/Web/JavaScript/Reference/Global_Objects/RangeError/ – 11
+ №77. /uk/docs/Web/JavaScript/Reference/Global_Objects/Object/propertyIsEnumerable/ – 11
  №78. /uk/docs/Web/HTML/Element/body/ – 10
- №79. /uk/docs/Web/JavaScript/Equality_comparisons_and_sameness/ – 10
+ №79. /uk/docs/Web/JavaScript/Reference/Statements/while/ – 10
  №80. /uk/docs/Web/JavaScript/Reference/Statements/return/ – 10
  №81. /uk/docs/Web/JavaScript/Reference/Operators/Strict_equality/ – 10
  №82. /uk/docs/Web/JavaScript/Reference/Functions/set/ – 10
  №83. /uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive/ – 10
  №84. /uk/docs/Web/JavaScript/Reference/Global_Objects/Function/apply/ – 10
  №85. /uk/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap/ – 10
- №86. /uk/docs/Web/JavaScript/Reference/Statements/class/ – 10
- №87. /uk/docs/Web/JavaScript/Reference/Statements/for/ – 10
- №88. /uk/docs/Web/CSS/Cascade/ – 9
- №89. /uk/docs/Web/Guide/CSS/Block_formatting_context/ – 9
- №90. /uk/docs/Web/CSS/position_value/ – 9
+ №86. /uk/docs/Web/JavaScript/Reference/Operators/Operator_precedence/ – 10
+ №87. /uk/docs/Web/JavaScript/Equality_comparisons_and_sameness/ – 10
+ №88. /uk/docs/Web/JavaScript/Reference/Statements/class/ – 10
+ №89. /uk/docs/Web/CSS/Cascade/ – 9
+ №90. /uk/docs/Web/Guide/CSS/Block_formatting_context/ – 9
  №91. /uk/docs/Web/CSS/gradient/ – 9
- №92. /uk/docs/Web/CSS/flex-basis/ – 9
- №93. /uk/docs/Web/CSS/object-position/ – 9
- №94. /uk/docs/Web/CSS/gap/ – 9
- №95. /uk/docs/Web/CSS/@media/ – 9
- №96. /uk/docs/Glossary/CSS/ – 9
- №97. /uk/docs/Web/Accessibility/ARIA/Roles/textbox_role/ – 9
- №98. /uk/docs/Web/JavaScript/Reference/Statements/while/ – 9
- №99. /uk/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/ – 9
- №100. /uk/docs/Web/JavaScript/Reference/Global_Objects/WeakSet/ – 9
+ №92. /uk/docs/Web/CSS/position_value/ – 9
+ №93. /uk/docs/Web/CSS/flex-basis/ – 9
+ №94. /uk/docs/Web/CSS/object-position/ – 9
+ №95. /uk/docs/Web/CSS/gap/ – 9
+ №96. /uk/docs/Web/CSS/@media/ – 9
+ №97. /uk/docs/Glossary/CSS/ – 9
+ №98. /uk/docs/Web/Accessibility/ARIA/Roles/textbox_role/ – 9
+ №99. /uk/docs/Web/API/Element/id/ – 9
+ №100. /uk/docs/Glossary/binding/ – 9
