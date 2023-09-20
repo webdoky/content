@@ -88,6 +88,8 @@ console.log(`nullProtoObj – це ${nullProtoObj}`); // виводить "nullP
 
 На відміну від звичайних об'єктів, котрі мають `toString()` на своєму прототипі, у цьому випадку `toString()` є власною властивістю `nullProtoObj`. Це пов'язано з тим, що `nullProtoObj` не має прототипу (має прототип `null`).
 
+null-прототипний об'єкт можна знову зробити звичайним об'єктом: [`Object.setPrototypeOf(nullProtoObj, Object.prototype)`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf).
+
 На практиці об'єкти з прототипом `null` зазвичай використовуються як дешевий замінник [відображень](/uk/docs/Web/JavaScript/Reference/Global_Objects/Map). Присутність властивостей `Object.prototype` призводить до певних проблем:
 
 ```js
