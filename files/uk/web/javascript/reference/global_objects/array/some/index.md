@@ -33,7 +33,7 @@ some(callbackFn, thisArg)
 
 ### Повернене значення
 
-`true`, якщо функція зворотного виклику поверне {{Glossary("truthy", "істинне")}} значення принаймні для одного елемента масиву. Інакше – `false`.
+`false`, якщо `callbackFn` не поверне {{Glossary("truthy", "істинне")}} значення для одного з елементів масиву, – в цьому випадку негайно повертається `true`.
 
 ## Опис
 
@@ -147,7 +147,7 @@ console.log(Array.prototype.some.call(arrayLike, (x) => typeof x === "number"));
 ## Дивіться також
 
 - [Поліфіл `Array.prototype.some` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
-- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
 - {{jsxref("Array.prototype.every()")}}
 - {{jsxref("Array.prototype.forEach()")}}

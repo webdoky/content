@@ -9,7 +9,7 @@ browser-compat: javascript.builtins.Array.filter
 
 Метод **`filter()`** (фільтрувати) примірників {{jsxref("Array")}} створює [поверхневу копію](/uk/docs/Glossary/Shallow_copy) частини даного масиву, відфільтрованого до тих елементів даного масиву, що проходять перевірку, реалізовану в переданій функції.
 
-{{EmbedInteractiveExample("pages/js/array-filter.html","shorter")}}
+{{EmbedInteractiveExample("pages/js/array-filter.html", "shorter")}}
 
 ## Синтаксис
 
@@ -33,7 +33,7 @@ filter(callbackFn, thisArg)
 
 ### Повернене значення
 
-[Поверхнева копія](/uk/docs/Glossary/Shallow_copy) частини даного масиву, відфільтрована до елементів даного масиву, що проходять перевірку, реалізовану в переданій функції. Якщо жодний елемент не пройшов перевірку, повертається порожній масив.
+[Поверхнева копія](/uk/docs/Glossary/Shallow_copy) переданого масиву, що містить лише ті елементи, котрі проходять перевірку. Якщо жоден елемент не проходить перевірку, то повертається порожній масив.
 
 ## Опис
 
@@ -263,7 +263,7 @@ console.log(deleteWords);
 ## Дивіться також
 
 - [Поліфіл методу `Array.prototype.filter` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
-- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
 - {{jsxref("Array.prototype.forEach()")}}
 - {{jsxref("Array.prototype.every()")}}
