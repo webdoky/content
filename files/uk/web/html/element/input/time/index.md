@@ -45,9 +45,7 @@ browser-compat: html.elements.input.type_time
 
 ### Задання атрибута value
 
-You can set a default value for the input by including a valid time in the [`value`](/uk/docs/Web/HTML/Element/input#value) attribute when creating the `<input>` element, like so:
-
-Усталене значення поля можна задати шляхом включення при створенні елемента `<input>` в атрибут [`value`](/uk/docs/Web/HTML/Element/input#value) дійсного часу, наприклад:
+Усталене значення поля можна задати при створенні елемента `<input>` шляхом включення в атрибут [`value`](/uk/docs/Web/HTML/Element/input#value) дійсного часу, наприклад:
 
 ```html
 <label for="appt-time">Виберіть час запису: </label>
@@ -69,9 +67,9 @@ timeControl.value = "15:30";
 
 Значення поля `time` завжди має 24-годинний формат, що включає нулі на початку: `hh:mm`, незалежно від формату введення, який, ймовірно, вибирається на основі локалі користувача (або з боку користувацького агента). Якщо час включає секунди (дивіться [Використання атрибута step](#vykorystannia-atrybuta-step)), то формат завжди має вигляд `hh:mm:ss`. Дізнатися більше про формат значення часу, який використовується цим типом поля вводу, можна у розділі [Рядків часу](/uk/docs/Web/HTML/Date_and_time_formats#riadky-chasu).
 
-У цьому прикладі можна побачити значення поля часу, ввівши час та побачивши, як це значення змінюється.
+У цьому прикладі можна побачити значення поля часу, увівши час та побачивши, як це значення змінюється.
 
-По-перше, погляд на HTML. Він досить простий, з підписом та полем введення, що вже бачено раніше, але з додаванням елемента {{HTMLElement("p")}} зі {{HTMLElement("span")}}, щоб відображати значення поля `time`:
+По-перше, погляньмо на HTML. Він досить простий, з підписом та полем введення, що вже бачено раніше, але з додаванням елемента {{HTMLElement("p")}} зі {{HTMLElement("span")}}, щоб відображати значення поля `time`:
 
 ```html
 <form>
@@ -100,7 +98,7 @@ startTime.addEventListener(
 
 {{EmbedLiveSample("format-znachennia-chasu", 600, 80)}}
 
-Коли подається форма, що містить поле `time`, то його значення перед додаванням до даних форми – кодується. Запис у даних форми для поля часу завжди має форму `name=hh%3Amm`, або`name=hh%3Amm%3Ass`, якщо включено секунди (дивіться [Використання атрибута step](#vykorystannia-atrybuta-step)).
+Коли подається форма, що містить поле `time`, то його значення перед додаванням до даних форми – кодується. Запис у дані форми для поля часу завжди має форму `name=hh%3Amm`, або`name=hh%3Amm%3Ass`, якщо включено секунди (дивіться [Використання атрибута step](#vykorystannia-atrybuta-step)).
 
 ## Додаткові атрибути
 
@@ -238,8 +236,6 @@ input:valid + span::after {
 
 #### min і max по два боки від півночі
 
-By setting a [`min`](/uk/docs/Web/HTML/Element/input#min) attribute greater than the [`max`](/uk/docs/Web/HTML/Element/input#max) attribute, the valid time range will wrap around midnight to produce a valid time range which crosses midnight. This functionality is not supported by any other input types. While this feature is [in the HTML spec](https://html.spec.whatwg.org/multipage/input.html#has-a-reversed-range), it is not yet universally supported. Chrome-based browsers support it starting in version 82 and Firefox added it in version 76. Safari as of version 14.1 does not support this. Be prepared for this situation to arise:
-
 Якщо задати атрибут [`min`](/uk/docs/Web/HTML/Element/input#min) зі значенням, що більше за значення атрибута [`max`](/uk/docs/Web/HTML/Element/input#max), то отриманий діапазон загорнеться через північ, і вийде дійсний діапазон, що перетинає північ. Така функціональність не підтримується жодними іншими типами полів. Хоча ця функція [передбачена в специфікації HTML](https://html.spec.whatwg.org/multipage/input.html#has-a-reversed-range), вона ще не підтримується у всіх браузерах. Браузери на основі Chrome підтримують її починаючи з версії 82, а Firefox додав її у версії 76. Safari на момент написання цієї статті (версія 14.1) не підтримує цю функцію. Будьте готові до такої ситуації:
 
 ```js
@@ -291,9 +287,7 @@ if (input.validity.valid && input.type === "time") {
 
 ## Робота з браузерною підтримкою
 
-As mentioned, older versions of Safari and a few other, less common, browsers don't support time inputs natively. In general, otherwise, support is good — especially on mobile platforms, which tend to have very nice user interfaces for specifying a time value. For example, the `time` picker on Chrome for Android looks like this:
-
-Як зазначалося, старі версії Safari та деякі інші, менш поширені, браузери не підтримують нативно поля часу. В цілому, підтримка досить хороша — особливо на мобільних платформах, де зазвичай дуже гарні користувацькі інтерфейси для задання часових значень. Наприклад, вибір часу в Chrome для Android має такий вигляд:
+Як зазначалося, старі версії Safari та деякі інші, менш поширені браузери не підтримують нативно поля часу. В цілому, підтримка досить хороша — особливо на мобільних платформах, де зазвичай дуже гарні користувацькі інтерфейси для задання часових значень. Наприклад, вибір часу в Chrome для Android має такий вигляд:
 
 ![Екран телефону, що показує модальне віконце з 10:21 у заголовку. 10 – повністю непрозоре. 21 — ні. Основна область має коло з цифрами 1 - 12 на зовнішньому кільці, і цифрами 13 -24 на внутрішньому. Цифра 10 виділена синім кружком. Кнопки внизу — clear (очистити), cancel (скасувати) і set (задати).](chrome-android-time.png)
 
