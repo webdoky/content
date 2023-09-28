@@ -11,7 +11,7 @@ browser-compat: javascript.builtins.String
 
 ## Опис
 
-Рядки корисні для зберігання тих даних, які можна представити в текстовій формі. Серед найуживаніших операцій з рядками: визначення їхньої {{jsxref("String/length", "довжини")}}, збирання і зчеплення їх докупи за допомогою [рядкових операторів + та +=](/uk/docs/Web/JavaScript/Guide/Expressions_and_operators#riadkovi-operatory), перевірку наявності чи знаходження позиції підрядка за допомогою методу {{jsxref("String.prototype.indexOf()", "indexOf()")}} та витягання певних підрядків за допомогою методу {{jsxref("String.prototype.substring()", "substring()")}}.
+Рядки корисні для зберігання тих даних, які можна представити в текстовій формі. Серед найуживаніших операцій з рядками: визначення їхньої {{jsxref("String/length", "довжини")}}, збирання і зчеплення їх докупи за допомогою [рядкових операторів `+` та `+=`](/uk/docs/Web/JavaScript/Guide/Expressions_and_operators#riadkovi-operatory), перевірку наявності чи знаходження позиції підрядка за допомогою методу {{jsxref("String/indexOf", "indexOf()")}} та витягання певних підрядків за допомогою методу {{jsxref("String/substring", "substring()")}}.
 
 ### Створення рядків
 
@@ -34,7 +34,7 @@ const string4 = new String("Об'єкт рядка");
 
 ### Доступ до окремих символів
 
-Існують два способи доступитися до окремого символу рядка. Перший — це метод {{jsxref("String.prototype.charAt()", "charAt()")}}:
+Існують два способи доступитися до окремого символу рядка. Перший — це метод {{jsxref("String/charAt", "charAt()")}}:
 
 ```js
 "cat".charAt(1); // дає значення "a"
@@ -97,7 +97,7 @@ areEqual("ı", "I", "tr"); // true
 
 ### Рядки-примітиви і рядки-об'єкти
 
-Зауважте, що JavaScript розрізняє об'єкти `String` та {{Glossary("Primitive", "примітивні значення рядків")}}. (Це справедливо також для {{jsxref("Boolean", "булевих значень")}} і {{jsxref("Global_Objects/Number", "чисел")}}.)
+Зауважте, що JavaScript розрізняє об'єкти `String` та {{Glossary("Primitive", "примітивні значення рядків")}}. (Це справедливо також для {{jsxref("Boolean", "булевих значень")}} і {{jsxref("Number", "чисел")}}.)
 
 Рядкові літерали (виділені одинарними або подвійними лапками), а також рядки, повернуті з викликів `String` без контексту конструктора (тобто викликів, виконаних без ключового слова {{jsxref("Operators/new", "new")}}), є рядками-примітивами. Коли відбувається спроба викликати метод чи звернутися до властивості примітивного рядка, JavaScript автоматично обгортає примітив у виклик конструктора, і вже потім – на об'єкті-обгортці звертається до методу чи властивості.
 
@@ -126,7 +126,7 @@ console.log(eval(s2)); // повертає рядок "2 + 2"
 
 Таким чином, код може ламатись в місцях, де очікується примітивний рядок, але натомість приходить об'єкт `String`. Хоча у більшості випадків про цю різницю хвилюватись не варто.
 
-Об'єкт `String` можна завжди перетворити на його примітивний відповідник, використавши метод {{jsxref("String.prototype.valueOf()", "valueOf()")}}.
+Об'єкт `String` можна завжди перетворити на його примітивний відповідник, використавши метод {{jsxref("String/valueOf", "valueOf()")}}.
 
 ```js
 console.log(eval(s2.valueOf())); // повертає число 4
@@ -267,13 +267,13 @@ console.log(eval(s2.valueOf())); // повертає число 4
 
   - : Повертає символи з початкового рядка, переведені в нижній регістр з урахуванням поточної активної локалі.
 
-    Для більшості мов результат виконання цієї функції буде ідентичним до {{jsxref("String.prototype.toLowerCase()", "toLowerCase()")}}.
+    Для більшості мов результат виконання цієї функції буде ідентичним до {{jsxref("String/toLowerCase", "toLowerCase()")}}.
 
 - {{jsxref("String.prototype.toLocaleUpperCase()")}} (до верхнього регістру згідно з локаллю)
 
   - : Повертає символи з початкового рядка, переведені в верхній регістр з урахуванням поточної активної локалі.
 
-    Для більшості мов результат виконання цієї функції буде ідентичним до {{jsxref("String.prototype.toUpperCase()", "toUpperCase()")}}.
+    Для більшості мов результат виконання цієї функції буде ідентичним до {{jsxref("String/toUpperCase", "toUpperCase()")}}.
 
 - {{jsxref("String.prototype.toLowerCase()")}} (до нижнього регістру)
   - : Повертає значення рядка, на якому було викликано метод, переведене у нижній регістр.
@@ -343,15 +343,17 @@ console.log(eval(s2.valueOf())); // повертає число 4
 
 ### Перетворення рядків
 
-`String` можна використовувати як більш надійну альтернативу методу {{jsxref("String.prototype.toString()", "toString()")}}, оскільки це працює навіть під час використання зі значеннями [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) та {{jsxref("undefined")}}. Наприклад:
+Функція `String()` – це надійніший спосіб перетворення значень на рядки, ніж виклик метода `toString()` на цільовому значенні, адже перший варіант працює щодо [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) і {{jsxref("undefined")}}. Наприклад:
 
 ```js
+// Звернутися до властивостей на null або undefined не вийде
+
 const nullVar = null;
-nullVar.toString(); // TypeError: nullVar is null
+nullVar.toString(); // TypeError: Cannot read properties of null
 String(nullVar); // "null"
 
 const undefinedVar = undefined;
-undefinedVar.toString(); // TypeError: undefinedVar is undefined
+undefinedVar.toString(); // TypeError: Cannot read properties of undefined
 String(undefinedVar); // "undefined"
 ```
 
