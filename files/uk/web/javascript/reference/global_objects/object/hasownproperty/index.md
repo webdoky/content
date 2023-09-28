@@ -40,7 +40,7 @@ fruits.hasOwnProperty(3); // true ('Апельсин')
 fruits.hasOwnProperty(4); // false - не визначено
 ```
 
-Цей метод не буде доступним на об'єктах, в котрих ця логіка заміщена, або на об'єктах, створених за допомогою `Object.create(null)` (адже вони не успадковують від `Object.prototype`). Приклади таких випадків надані нижче.
+Цей метод не буде доступним на об'єктах, в котрих ця логіка заміщена, або на [`null`-прототипних об'єктах](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#null-prototypni-obiekty) (адже вони не успадковують від `Object.prototype`). Приклади таких випадків надані нижче.
 
 ## Приклади
 
@@ -136,7 +136,7 @@ Object.prototype.hasOwnProperty.call(foo, "bar"); // true
 
 ### Об'єкти, створені за допомогою Object.create(null)
 
-Об'єкти, створені за допомогою {{jsxref("Object.create()", "Object.create(null)")}}, не успадковують від `Object.prototype`, а отже – `hasOwnProperty()` – недоступний.
+[`null`-прототипні об'єкти](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#null-prototypni-obiekty) не успадковують від `Object.prototype`, а отже – `hasOwnProperty()` – недоступний.
 
 ```js
 const foo = Object.create(null);
