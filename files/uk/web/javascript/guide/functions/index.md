@@ -702,31 +702,4 @@ function Person() {
 const p = new Person();
 ```
 
-## Наперед визначені функції
-
-JavaScript має декілька вбудованих функцій верхнього рівня:
-
-- {{jsxref("Global_Objects/eval", "eval()")}}
-  - : Метод **`eval()`** виконує код JavaScript, представлений в рядку.
-- {{jsxref("Global_Objects/isFinite", "isFinite()")}}
-  - : Глобальна функція **`isFinite()`** з'ясовує, чи є передане значення дійсним числом. Якщо це необхідно, то параметр спершу перетворюється на число.
-- {{jsxref("Global_Objects/isNaN", "isNaN()")}}
-  - : Функція **`isNaN()`** з'ясовує, чи є значення {{jsxref("Global_Objects/NaN", "NaN")}}. Примітка: зведення типів усередині функції `isNaN` має [цікаві](/uk/docs/Web/JavaScript/Reference/Global_Objects/isNaN#opys) правила; інший варіант – використати {{jsxref("Number.isNaN()")}} для з'ясування, чи є значення нечислом.
-- {{jsxref("Global_Objects/parseFloat", "parseFloat()")}}
-  - : Функція **`parseFloat()`** розбирає рядковий аргумент і повертає число з рухомою комою.
-- {{jsxref("Global_Objects/parseInt", "parseInt()")}}
-  - : Функція **`parseInt()`** розбирає рядковий аргумент і повертає ціле число за вказаною основою числення.
-- {{jsxref("Global_Objects/decodeURI", "decodeURI()")}}
-  - : Функція **`decodeURI()`** розкодовує уніфікований ідентифікатор ресурсів (URI), до того створений {{jsxref("Global_Objects/encodeURI", "encodeURI")}} чи іншою подібною процедурою.
-- {{jsxref("Global_Objects/decodeURIComponent", "decodeURIComponent()")}}
-  - : Метод **`decodeURIComponent()`** розкодовує компонент уніфікованого ідентифікатора ресурсів (URI), до того створений {{jsxref("Global_Objects/encodeURIComponent", "encodeURIComponent")}} чи іншою подібною процедурою.
-- {{jsxref("Global_Objects/encodeURI", "encodeURI()")}}
-  - : Метод **`encodeURI()`** закодовує уніфікований ідентифікатор ресурсів (URI) шляхом заміни кожного входження певних символів одинарними, подвійними, потрійними чи четверними послідовностями екранування, що представляють кодування символу в UTF-8 (четверна послідовність екранування буде лише для символів, що складаються з двох "сурогатних" символів).
-- {{jsxref("Global_Objects/encodeURIComponent", "encodeURIComponent()")}}
-  - : Метод **`encodeURIComponent()`** закодовує компонент уніфікованого ідентифікатора ресурсів (URI) шляхом заміни кожного входження певних символів одинарними, подвійними, потрійними чи четверними послідовностями екранування, що представляють кодування символу в UTF-8 (четверна послідовність екранування буде лише для символів, що складаються з двох "сурогатних" символів).
-- {{jsxref("Global_Objects/escape", "escape()")}} {{deprecated_inline}}
-  - : Метод **`escape()`** обчислює новий рядок, в котрому певні символи замінені шістнадцятковими послідовностями екранування. Він нерекомендований; натомість слід використовувати {{jsxref("Global_Objects/encodeURI", "encodeURI()")}} чи {{jsxref("Global_Objects/encodeURIComponent", "encodeURIComponent()")}}.
-- {{jsxref("Global_Objects/unescape", "unescape()")}} {{deprecated_inline}}
-  - : Метод **`unescape()`** обчислює новий рядок, в котрому шістнадцяткові послідовності екранування замінені тими символами, котрі вони представляють. Послідовності екранування можуть бути утворені функцією штибу {{jsxref("Global_Objects/escape", "escape()")}}. Цей метод нерекомендований; слід натомість використовувати {{jsxref("Global_Objects/decodeURI", "decodeURI()")}} чи {{jsxref("Global_Objects/decodeURIComponent", "decodeURIComponent()")}}.
-
 {{PreviousNext("Web/JavaScript/Guide/Loops_and_iteration", "Web/JavaScript/Guide/Expressions_and_operators")}}
