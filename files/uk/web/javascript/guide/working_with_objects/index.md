@@ -260,8 +260,8 @@ myCar.nonexistentProperty; // undefined
 Є три нативні способи перерахувати чи обійти властивості об'єкта:
 
 - Цикл [`for...in`](/uk/docs/Web/JavaScript/Reference/Statements/for...in). Цей метод обходить усі перелічувані рядкові властивості об'єкта, а також його ланцюжка прототипів.
-- {{jsxref("Object.keys", "Object.keys(myObj)")}}. Цей метод повертає масив, що містить лише перелічувані власні рядкові імена властивостей ("ключі") об'єкта `myObj`, але не ключі з його ланцюжка прототипів.
-- {{jsxref("Object.getOwnPropertyNames", "Object.getOwnPropertyNames(myObj)")}}. Цей метод повертає масив, що містить усі власні рядкові імена властивостей об'єкта `myObj`, незалежно від їхньої перелічуваності.
+- {{jsxref("Object.keys()")}}. Цей метод повертає масив, що містить лише перелічувані власні рядкові імена властивостей ("ключі") об'єкта `myObj`, але не ключі з його ланцюжка прототипів.
+- {{jsxref("Object.getOwnPropertyNames()")}}. Цей метод повертає масив, що містить усі власні рядкові імена властивостей об'єкта `myObj`, незалежно від їхньої перелічуваності.
 
 Можна використати запис квадратних дужок вкупі з [`for...in`](/uk/docs/Web/JavaScript/Reference/Statements/for...in) для ітерування всіх перелічуваних властивостей об'єкта. Для ілюстрування того, як це працює, наступна функція демонструє властивості об'єкта, коли передати їй об'єкт та його ім'я як аргументи:
 
@@ -503,7 +503,7 @@ console.log(fruitbear); // { name: "grape" }; не { name: "apple" }
 
 ## Дивіться також
 
-- Для заглиблення в тему прочитайте про [Успадкування та ланцюжок прототипів](/uk/docs/Web/JavaScript/Inheritance_and_the_prototype_chain).
-- Більше інформації про класи (інший спосіб створення об'єктів) є в довіднику [Класи JavaScript](/uk/docs/Web/JavaScript/Reference/Classes).
+- [Успадкування та ланцюжок прототипів](/uk/docs/Web/JavaScript/Inheritance_and_the_prototype_chain).
+- [Класи](/uk/docs/Web/JavaScript/Reference/Classes)
 
 {{PreviousNext("Web/JavaScript/Guide/Regular_expressions", "Web/JavaScript/Guide/Using_classes")}}
