@@ -30,7 +30,7 @@ browser-compat: javascript.builtins.Error
 - {{jsxref("TypeError")}}
   - : Створює примірник, що представляє помилку, котра трапляється, коли змінна або параметр має невідповідний тип.
 - {{jsxref("URIError")}}
-  - : Створює примірник, що представляє помилку, котра трапляється, коли в {{jsxref("encodeURI", "encodeURI()")}} або {{jsxref("decodeURI", "decodeURI()")}} передано невідповідні параметри.
+  - : Створює примірник, що представляє помилку, котра трапляється, коли в {{jsxref("encodeURI()")}} або {{jsxref("decodeURI()")}} передано невідповідні параметри.
 - {{jsxref("AggregateError")}}
   - : Створює примірник, що представляє кілька помилок, загорнутих в одну помилку, коли операція потребує звітування про декілька помилок, наприклад, {{jsxref("Promise.any()")}}.
 - {{jsxref("InternalError")}} {{non-standard_inline}}
@@ -44,7 +44,7 @@ browser-compat: javascript.builtins.Error
 ## Статичні методи
 
 - `Error.captureStackTrace()` {{non-standard_inline}}
-  - : Нестандартна функція V8, що створює на примірнику Error властивість {{jsxref("Error.prototype.stack", "stack")}}.
+  - : Нестандартна функція V8, що створює на примірнику Error властивість {{jsxref("Error/stack", "stack")}}.
 - `Error.stackTraceLimit` {{non-standard_inline}}
   - : Нестандартна числова властивість V8, що обмежує те, скільки фреймів стека включається в трасування стека помилки.
 - `Error.prepareStackTrace()` {{non-standard_inline}} {{optional_inline}}
@@ -96,7 +96,7 @@ try {
 
 ### Обробка помилок конкретного типу
 
-Обробляти помилки лише певного типу можна шляхом перевірки типу помилки на основі її властивості {{jsxref("Object.prototype.constructor", "constructor")}}, або, якщо використовуються сучасні рушії JavaScript, ключового слова {{jsxref("Operators/instanceof", "instanceof")}}:
+Обробляти помилки лише певного типу можна шляхом перевірки типу помилки за допомогою ключового слова {{jsxref("Operators/instanceof", "instanceof")}}:
 
 ```js
 try {
