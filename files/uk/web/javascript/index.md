@@ -63,7 +63,7 @@ page-type: landing-page
 - [Структури даних у JavaScript](/uk/docs/Web/JavaScript/Data_structures)
   - : Огляд наявних структур даних у JavaScript.
 - [Порівняння на схожість і однаковість](/uk/docs/Web/JavaScript/Equality_comparisons_and_sameness)
-  - : JavaScript надає три різних способи для порівняння значень: строга рівність через використання `===`, вільна рівність з `==` та метод {{jsxref("Global_Objects/Object/is", "Object.is()")}}.
+  - : JavaScript надає три різних способи для порівняння значень: строга рівність через використання `===`, вільна рівність з `==` та метод {{jsxref("Object.is()")}}.
 - [Перелічуваність і власність властивостей](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties)
   - : Те, як різні методи, котрі одну за одною обробляють властивості об'єктів, обробляють перелічуваність та власність властивостей.
 - [Замикання](/uk/docs/Web/JavaScript/Closures)
