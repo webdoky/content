@@ -92,7 +92,7 @@ str.matchAll(regexp);
 // TypeError
 ```
 
-Метод `matchAll` для своїх потреб створює клон глобального об'єкта `RegExp`. Тому, на відміну від використання методу {{jsxref("Global_Objects/RegExp/exec", "regexp.exec()")}}, властивість `lastIndex` об'єкта `RegExp` не змінюється під час сканування рядка.
+Метод `matchAll` для своїх потреб створює клон глобального об'єкта `RegExp`. Тому, на відміну від використання методу {{jsxref("RegExp/exec", "regexp.exec()")}}, властивість `lastIndex` об'єкта `RegExp` не змінюється під час сканування рядка.
 
 ```js
 const regexp = /[a-c]/g;
@@ -108,7 +108,7 @@ Array.from(str.matchAll(regexp), (m) => `${regexp.lastIndex} ${m[0]}`);
 
 Іншою привабливою причиною використати `matchAll` є покращений доступ до груп захоплення.
 
-Під час застосування {{jsxref("Global_Objects/String/match", "match()")}} з прапорцем глобального пошуку `g` групи захоплення ігноруються:
+Під час застосування {{jsxref("String/match", "match()")}} з прапорцем глобального пошуку `g` групи захоплення ігноруються:
 
 ```js
 const regexp = /t(e)(st(\d?))/g;
