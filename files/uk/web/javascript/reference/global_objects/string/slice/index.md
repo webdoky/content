@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.String.slice
 
 {{JSRef}}
 
-Метод **`slice()`** (викраяти, вирізати скибку) витягає частину рядка і повертає її новим рядком, не змінюючи початковий.
+Метод **`slice()`** (викраяти, вирізати скибку) значень {{jsxref("String")}} витягає частину свого рядка і повертає її новим рядком, не змінюючи початковий.
 
 {{EmbedInteractiveExample("pages/js/string-slice.html", "taller")}}
 
@@ -37,8 +37,8 @@ slice(indexStart, indexEnd)
 
 - Якщо `indexStart >= str.length`, то повертається порожній рядок.
 - Якщо `indexStart < 0`, то індекс рахується з кінця рядка. Більш формально висловлюючись, в цьому випадку підрядок починається від `max(indexStart + str.length, 0)`.
-- Якщо `indexStart` опущено, невизначений або не може бути перетворений на число (за допомогою {{jsxref('Number', 'Number(indexStart)')}}), то він вважається еквівалентним `0`.
-- Якщо `indexEnd` опущено, невизначений або не може бути перетворений на число (за допомогою {{jsxref('Number', 'Number(indexEnd)')}}), або якщо `indexEnd >= str.length`, то `slice()` вибирає символи до самого кінця рядка.
+- Якщо `indexStart` опущено, невизначений або не може бути [перетворений на число](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#zvedennia-do-chysla), то він вважається еквівалентним `0`.
+- Якщо `indexEnd` опущено, невизначений або не може бути [перетворений на число](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#zvedennia-do-chysla), або якщо `indexEnd >= str.length`, то `slice()` вибирає символи до самого кінця рядка.
 - Якщо `indexEnd < 0`, то індекс рахується від кінця рядка. Більш формально висловлюючись, в цьому випадку підрядок закінчується на `max(indexEnd + str.length, 0)`.
 - Якщо після нормалізації від'ємних значень `indexEnd <= indexStart` (наприклад, `indexEnd` вказує на символ, що стоїть перед `indexStart`), то повертається порожній рядок.
 

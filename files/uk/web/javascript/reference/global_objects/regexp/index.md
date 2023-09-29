@@ -54,7 +54,7 @@ const re = new RegExp("\\w+");
 
 > **Примітка:** Для перевірки того, чи є щось "регулярним виразом", може бути застосована [качина типізація](https://uk.wikipedia.org/wiki/%D0%9A%D0%B0%D1%87%D0%B8%D0%BD%D0%B0_%D1%82%D0%B8%D0%BF%D1%96%D0%B7%D0%B0%D1%86%D1%96%D1%8F). Такий об'єкт не зобов'язаний бути `RegExp`!
 
-Частина вбудованих методів обробляє регулярні вирази по-особливому. Вони вирішують, чи є `x` регулярним виразом, за [кілька кроків (англ.)](https://tc39.es/ecma262/#sec-isregexp):
+Частина вбудованих методів обробляє регулярні вирази по-особливому. Вони вирішують, чи є `x` регулярним виразом, за [кілька кроків](https://tc39.es/ecma262/multipage/abstract-operations.html#sec-isregexp):
 
 1. `x` мусить бути об'єктом (не примітивом).
 2. Якщо [`x[Symbol.match]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/match) – не `undefined`, то треба перевірити цю властивість на [істинність](/uk/docs/Glossary/Truthy).
@@ -99,17 +99,17 @@ re.exec("bar"); // [ 'bar', index: 0, input: 'bar', groups: undefined ]
 
 ## Статичні властивості
 
-- {{jsxref("RegExp/n", "RegExp.$1, …, RegExp.$9")}} {{Deprecated_Inline}}
+- {{jsxref("RegExp/n", "RegExp.$1, …, RegExp.$9")}} {{deprecated_inline}}
   - : Статичні властивості лише для зчитування, що містять збіги підрядків у дужках.
-- {{jsxref("RegExp.input", "RegExp.input ($_)")}} {{Deprecated_Inline}}
+- {{jsxref("RegExp/input", "RegExp.input ($_)")}} {{deprecated_inline}}
   - : Статична властивість лише для зчитування, що містить останній рядок, щодо якого відбувся успішний збіг.
-- {{jsxref("RegExp.lastMatch", "RegExp.lastMatch ($&)")}} {{Deprecated_Inline}}
+- {{jsxref("RegExp/lastMatch", "RegExp.lastMatch ($&)")}} {{deprecated_inline}}
   - : Статична властивість лише для зчитування, що містить останній підрядок, з яким трапився збіг.
-- {{jsxref("RegExp.lastParen", "RegExp.lastParen ($+)")}} {{Deprecated_Inline}}
+- {{jsxref("RegExp/lastParen", "RegExp.lastParen ($+)")}} {{deprecated_inline}}
   - : Статична властивість лише для зчитування, що містить останній збіг підрядку в дужках.
-- {{jsxref("RegExp.leftContext", "RegExp.leftContext ($`)")}} {{Deprecated_Inline}}
+- {{jsxref("RegExp/leftContext", "RegExp.leftContext ($`)")}} {{deprecated_inline}}
   - : Статична властивість лише для зчитування, що містить підрядок, котрий передував останньому збігові.
-- {{jsxref("RegExp.rightContext", "RegExp.rightContext ($')")}} {{Deprecated_Inline}}
+- {{jsxref("RegExp/rightContext", "RegExp.rightContext ($')")}} {{deprecated_inline}}
   - : Статична властивість лише для зчитування, що містить підрядок, котрий стояв після останнього збігу.
 - {{jsxref("RegExp/@@species", "RegExp[@@species]")}}
   - : Функція-конструктор, що використовується для створення похідних об'єктів.
@@ -138,6 +138,8 @@ re.exec("bar"); // [ 'bar', index: 0, input: 'bar', groups: undefined ]
   - : Чи є пошук липким.
 - {{jsxref("RegExp.prototype.unicode")}}
   - : Чи ввімкнені можливості Unicode.
+- {{jsxref("RegExp.prototype.unicodeSets")}}
+  - : Чи додана позначка `v`, оновлена версія режиму `u`, чи ні.
 
 Ці властивості є власними властивостями кожного окремого примірника `RegExp`.
 
@@ -146,7 +148,7 @@ re.exec("bar"); // [ 'bar', index: 0, input: 'bar', groups: undefined ]
 
 ## Методи примірника
 
-- {{jsxref("RegExp.prototype.compile()")}} (компілювати) {{Deprecated_Inline}}
+- {{jsxref("RegExp.prototype.compile()")}} (компілювати) {{deprecated_inline}}
   - : (Повторно) компілює регулярний вираз під час виконання сценарію.
 - {{jsxref("RegExp.prototype.exec()")}} (виконати)
   - : Виконує пошук збігу у своєму рядковому параметрі.
@@ -169,7 +171,7 @@ re.exec("bar"); // [ 'bar', index: 0, input: 'bar', groups: undefined ]
 
 ### Використання регулярного виразу для зміни формату даних
 
-Наступний сценарій застосовує метод {{jsxref("String.prototype.replace()", "replace()")}} примірника {{jsxref("Global_Objects/String", "String")}}, щоб знайти ім'я в форматі _ім'я прізвище_ й вивести його в форматі _прізвище, ім'я_.
+Наступний сценарій застосовує метод {{jsxref("String.prototype.replace()")}}, щоб знайти ім'я в форматі _ім'я прізвище_ й вивести його в форматі _прізвище, ім'я_.
 
 В тексті заміни сценарій використовує `$1` і `$2`, аби вказати на результати відповідних дужок збігу в патерні регулярного виразу
 
@@ -208,7 +210,7 @@ s.match(/yes[^]*day/);
 
 ### Застосування регулярного виразу з позначкою липкості
 
-Позначка {{jsxref("Global_Objects/RegExp/sticky", "липкості")}} вказує на те, що регулярний вираз виконує в цільовому рядку липкий пошук збігу, намагаючись почати пошук від {{jsxref("RegExp.prototype.lastIndex")}}.
+Позначка {{jsxref("RegExp/sticky", "липкості")}} вказує на те, що регулярний вираз виконує в цільовому рядку липкий пошук збігу, намагаючись почати пошук від {{jsxref("RegExp.prototype.lastIndex")}}.
 
 ```js
 const str = "#foo#";
@@ -315,8 +317,8 @@ order.match(new RegExp(`\\b(${breakfasts.join("|")})\\b`, "g"));
 ## Дивіться також
 
 - [Поліфіл багатьох сучасних можливостей `RegExp` (позначки `dotAll`, `sticky`, іменовані групи захоплення тощо) у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
-- [Посібник з регулярних виразів](/uk/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [Довідка з регулярних виразів](/uk/docs/Web/JavaScript/Reference/Regular_expressions)
+- Посібник [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Регулярні вирази](/uk/docs/Web/JavaScript/Reference/Regular_expressions)
 - {{jsxref("String.prototype.match()")}}
 - {{jsxref("String.prototype.replace()")}}
 - {{jsxref("String.prototype.split()")}}

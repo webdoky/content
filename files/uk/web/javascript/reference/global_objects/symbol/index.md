@@ -2,12 +2,6 @@
 title: Symbol
 slug: Web/JavaScript/Reference/Global_Objects/Symbol
 page-type: javascript-class
-tags:
-  - Class
-  - ECMAScript 2015
-  - JavaScript
-  - Symbol
-  - Polyfill
 browser-compat: javascript.builtins.Symbol
 ---
 
@@ -35,7 +29,7 @@ Symbol("foo") === Symbol("foo"); // false
 
 Наступний код, з оператором {{jsxref("Operators/new", "new")}}, викине {{jsxref("TypeError")}}:
 
-```js
+```js example-bad
 const sym = new Symbol(); // TypeError
 ```
 
@@ -50,6 +44,8 @@ const symObj = Object(sym);
 typeof symObj; // "object"
 ```
 
+Через те, що символи – єдиний примітивний тип даних, що має ідентичність за посиланням (тобто не можна створити той самий символ двічі), вони у певному розумінні поводяться як об'єкти. Наприклад, щодо них працює збирач сміття, а тому вони можуть зберігатися в об'єктах {{jsxref("WeakMap")}}, {{jsxref("WeakSet")}}, {{jsxref("WeakRef")}} і {{jsxref("FinalizationRegistry")}}.
+
 ### Спільні символи у глобальному реєстрі символів
 
 Код вище, застосовуючи функцію `Symbol()`, створює символ, чиє значення залишається унікальним протягом всього часу роботи програми. Для створення символів, доступних у різних файлах і навіть різних царинах (кожна з яких має власну глобальну область видимості), слід застосовувати методи {{jsxref("Symbol.for()")}} і {{jsxref("Symbol.keyFor()")}} – для задання та отримання символів з глобального реєстру символів.
@@ -62,11 +58,17 @@ typeof symObj; // "object"
 Symbol.keyFor(Symbol.for("tokenString")) === "tokenString"; // true
 ```
 
+Через те, що реєстрові символи можуть бути створені будь-де, вони поводяться майже точно так само, як рядки, котрі вони обгортають. Тому такі символи не гарантовано унікальні та не підлягають збиранню сміття. Унаслідок цього реєстрові символи заборонені в об'єктах {{jsxref("WeakMap")}}, {{jsxref("WeakSet")}}, {{jsxref("WeakRef")}} і {{jsxref("FinalizationRegistry")}}.
+
 ### Загальновідомі символи
 
 Усі статичні властивості конструктора `Symbol` самі є символами, чиї значення – сталі для всіх царин. Вони відомі як _загальновідомі символи_, і їхнє призначення – служити "протоколами" для певних вбудованих операцій JavaScript, даючи користувачам змогу налаштувати поведінку мови. Наприклад, якщо функція-конструктор має метод з іменем {{jsxref("Symbol.hasInstance")}}, то такий метод міститиме логіку для оператора {{jsxref("Operators/instanceof", "instanceof")}}.
 
 До появи загальновідомих символів JavaScript, для реалізації певних вбудованих операцій, використовував звичайні властивості. Наприклад, функція [`JSON.stringify`](/uk/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) намагається викликати на кожному об'єкті метод `toJSON()`, а функція [`String`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/String) викликає на об'єкті методи `toString()` і `valueOf()`. Проте, із доданням до мови більшої кількості операцій, виділення кожній з них "магічної властивості" могло зламати зворотну сумісність й ускладнити роботу з логікою мови. Загальновідомі символи дають кастомізаціям змогу бути "невидимими" для звичайного коду, котрий зазвичай зчитує лише рядкові властивості.
+
+На MDN та інших джерелах загальновідомі символьні значення стилізовані за допомогою префікса `@@`. Наприклад, {{jsxref("Symbol.hasInstance")}} записується як `@@hasInstance`. Це тому, що символи не мають фактичних літеральних форматів, а використання `Symbol.hasInstance` не відображає можливість використання інших псевдонімів для посилання на той самий символ. Це схоже на різницю між `Function.name` та `"Function"`.
+
+Загальновідомі символи не мають концепції збирання збирачем сміття, тому що вони входять до фіксованого набору і є унікальними протягом усього життя програми, подібно до вбудованих об'єктів, як то `Array.prototype`, тож вони також дозволені в об'єктах {{jsxref("WeakMap")}}, {{jsxref("WeakSet")}}, {{jsxref("WeakRef")}} і {{jsxref("FinalizationRegistry")}}.
 
 ### Пошук на об'єктах символьних властивостей
 
@@ -74,7 +76,7 @@ Symbol.keyFor(Symbol.for("tokenString")) === "tokenString"; // true
 
 ## Конструктор
 
-- [`Symbol()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/Symbol)
+- {{jsxref("Symbol/Symbol", "Symbol()")}}
   - : Створює новий об'єкт `Symbol`. Це не конструктор в традиційному розумінні, тому що він може бути викликаний лише як функція, але не конструюватися за допомогою `new Symbol()`.
 
 ## Статичні властивості
@@ -97,10 +99,10 @@ Symbol.keyFor(Symbol.for("tokenString")) === "tokenString"; // true
   - : Метод, котрий замінює підрядки збігу в рядку. Використовується методом {{jsxref("String.prototype.replace()")}}.
 - {{jsxref("Symbol.search")}}
   - : Метод, котрий повертає індекс всередині рядка, який дає збіг з регулярним виразом. Використовується методом {{jsxref("String.prototype.search()")}}.
-- {{jsxref("Symbol.split")}}
-  - : Метод, котрий розбиває рядок за індексами, що дають збіг з регулярним виразом. Використовується методом {{jsxref("String.prototype.split()")}}.
 - {{jsxref("Symbol.species")}}
   - : Функція-конструктор, котра використовується для створення похідних об'єктів.
+- {{jsxref("Symbol.split")}}
+  - : Метод, котрий розбиває рядок за індексами, що дають збіг з регулярним виразом. Використовується методом {{jsxref("String.prototype.split()")}}.
 - {{jsxref("Symbol.toPrimitive")}}
   - : Метод, котрий перетворює об'єкт на примітивне значення.
 - {{jsxref("Symbol.toStringTag")}}
@@ -110,17 +112,21 @@ Symbol.keyFor(Symbol.for("tokenString")) === "tokenString"; // true
 
 ## Статичні методи
 
-- {{jsxref("Symbol.for()", "Symbol.for(key)")}}
+- {{jsxref("Symbol.for()")}}
   - : Шукає наявні символи з переданим ключем `key` і повертає, якщо знайдено. Інакше – в глобальному реєстрі символів створюється новий символ із заданим ключем `key`.
-- {{jsxref("Symbol.keyFor", "Symbol.keyFor(sym)")}}
+- {{jsxref("Symbol.keyFor()")}}
   - : Дістає зі глобального реєстру символів спільний символьний ключ для переданого символу.
 
 ## Властивості примірника
 
-- `Symbol.prototype[@@toStringTag]`
-  - : Початкове значення властивості [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"Symbol"`. Ця властивість використовується в методі {{jsxref("Object.prototype.toString()")}}. Проте через те, що `Symbol` має власний метод [`toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toString), то ця властивість не використовується, якщо не викликати [`Object.prototype.toString.call()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/call) з символьним значенням як `thisArg`.
+Ці властивості означені на `Symbol.prototype` і спільні для всіх примірник `Symbol`.
+
+- {{jsxref("Object/constructor", "Symbol.prototype.constructor")}}
+  - : Функція-конструктор, що створила об'єкт-примірник. Для примірників `Symbol` початковим значенням є конструктор {{jsxref("Symbol/Symbol", "Symbol")}}.
 - {{jsxref("Symbol.prototype.description")}}
   - : Рядок лише для зчитування, що містить опис символу.
+- `Symbol.prototype[@@toStringTag]`
+  - : Початкове значення властивості [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"Symbol"`. Ця властивість використовується в методі {{jsxref("Object.prototype.toString()")}}. Проте через те, що `Symbol` має власний метод [`toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toString), то ця властивість не використовується, якщо не викликати [`Object.prototype.toString.call()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/call) з символьним значенням як `thisArg`.
 
 ## Методи примірника
 
@@ -128,7 +134,7 @@ Symbol.keyFor(Symbol.for("tokenString")) === "tokenString"; // true
   - : Повертає рядок, що містить опис символу. Заміщає метод {{jsxref("Object.prototype.toString()")}}.
 - {{jsxref("Symbol.prototype.valueOf()")}}
   - : Повертає той же символ. Заміщає метод {{jsxref("Object.prototype.valueOf()")}}.
-- {{jsxref("Symbol.prototype.@@toPrimitive()", "Symbol.prototype[@@toPrimitive]()")}}
+- [`Symbol.prototype[@@toPrimitive]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/@@toPrimitive)
   - : Повертає той же символ.
 
 ## Приклади
@@ -205,5 +211,5 @@ obj[Object(sym)]; // все одно 1
 
 - [Поліфіл `Symbol` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-symbol)
 - {{jsxref("Operators/typeof", "typeof")}}
-- [Типи даних і структури даних](/uk/docs/Web/JavaScript/Data_structures)
-- ["Заглиблення в ES6: Символи" на hacks.mozilla.org](https://hacks.mozilla.org/2015/06/es6-in-depth-symbols/)
+- [Типи даних і структури даних JavaScript](/uk/docs/Web/JavaScript/Data_structures)
+- [Заглиблення в ES6: Символи](https://hacks.mozilla.org/2015/06/es6-in-depth-symbols/) на hacks.mozilla.org (2015)

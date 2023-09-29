@@ -1,38 +1,37 @@
 ---
 title: String.prototype.trimStart()
 slug: Web/JavaScript/Reference/Global_Objects/String/trimStart
-tags:
-  - JavaScript
-  - Method
-  - Prototype
-  - Reference
-  - String
-  - Polyfill
+page-type: javascript-instance-method
 browser-compat: javascript.builtins.String.trimStart
 ---
+
 {{JSRef}}
 
-Метод **`trimStart()`** видаляє пробільні символи з кінця рядка. Для цього методу також існує псевдонім `trimLeft()`.
+Метод **`trimStart()`** (обітнути початок) значень {{jsxref("String")}} прибирає пробіли з початку свого рядка та повертає новий рядок, не змінюючи вихідний. Метод `trimLeft()` є його псевдонімом.
 
 {{EmbedInteractiveExample("pages/js/string-trimstart.html")}}
 
 ## Синтаксис
 
-```js
+```js-nolint
 trimStart()
 
 trimLeft()
 ```
 
+### Параметри
+
+Жодних.
+
 ### Повернене значення
 
-Новий рядок, що містить значення початкового рядка `str`, у якого пробільні символи спочатку (з лівого боку) — обрізані.
+Новий рядок, що містить значення початкового рядка `str`, у якого пробільні символи спочатку (з лівого боку) — обрізані. Пробіли визначені як символи [пробілів](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#probily) плюс [символи кінця рядка](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#symvoly-kintsia-riadka).
 
-Якщо початок рядка `str` не містить пробільних символів, однаково повертається новий рядок (практично — копія рядка `str`), без викидання жодних винятків.
+Якщо початок рядка `str` не містить пробільних символів, однаково повертається новий рядок (практично — копія рядка `str`).
 
 ### Вживання псевдонімів
 
-Для одноманітності з функціями, подібними до {{jsxref("String.prototype.padStart")}}, функція має стандартизоване ім'я `trimStart`. Щоправда, з міркувань сумісності вебу, метод `trimLeft` залишається псевдонімом для `trimStart`. В деяких рушіях це буквально означає:
+Після стандартизації {{jsxref("String/trim", "trim()")}}, рушії також реалізували нестандартний метод `trimLeft`. Проте заради узгодженості з {{jsxref("String/padStart", "padStart()")}}, коли цей метод був стандартизований, за його назву було обрано `trimStart`. У зв'язку з міркуваннями сумісності у Вебі `trimLeft` залишається псевдонімом `trimStart`, і може вказувати на той самий об'єкт-функцію. В деяких рушіях це буквально означає:
 
 ```js
 String.prototype.trimLeft.name === "trimStart";
@@ -42,53 +41,16 @@ String.prototype.trimLeft.name === "trimStart";
 
 ### Застосування trimStart()
 
-Наступний приклад виводить рядок `'foo '` в нижньому регістрі:
+Наступний приклад обтинає пробіли з початку `str`, але не з кінця.
 
 ```js
-var str = '   foo  ';
+let str = "   foo  ";
 
 console.log(str.length); // 8
 
 str = str.trimStart();
 console.log(str.length); // 5
-console.log(str);        // 'foo  '
-```
-
-## Поліфіл
-
-```js
-//https://github.com/FabioVergani/js-Polyfill_String-trimStart
-
-(function(w){
-    var String=w.String, Proto=String.prototype;
-
-    (function(o,p){
-        if(p in o?o[p]?false:true:true){
-            var r=/^\s+/;
-            o[p]=o.trimLeft||function(){
-                return this.replace(r,'')
-            }
-        }
-    })(Proto,'trimStart');
-
-})(window);
-
-/*
-ES6:
-(w=>{
-    const String=w.String, Proto=String.prototype;
-
-    ((o,p)=>{
-        if(p in o?o[p]?false:true:true){
-            const r=/^\s+/;
-            o[p]=o.trimLeft||function(){
-                return this.replace(r,'')
-            }
-        }
-    })(Proto,'trimStart');
-
-})(window);
-*/
+console.log(str); // 'foo  '
 ```
 
 ## Специфікації

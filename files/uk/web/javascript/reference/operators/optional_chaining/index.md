@@ -5,7 +5,7 @@ page-type: javascript-operator
 browser-compat: javascript.operators.optional_chaining
 ---
 
-{{JSSidebar("Operators")}}
+{{jsSidebar("Operators")}}
 
 **Оператор необов'язкового ланцюжка (`?.`)** звертається до властивості об'єкта або викликає функцію. Якщо об'єкт, до якого відбувається звертання, або функція, що викликається за допомогою цього оператора, – {{jsxref("undefined")}} або [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null), то замість викидання помилки – вираз закорочується й обчислюється в {{jsxref("undefined")}}.
 
@@ -21,7 +21,7 @@ obj.func?.(args)
 
 ## Опис
 
-Оператор `?.` – подібний до оператора ланцюжка `.`, окрім того, що замість спричинення помилки, коли посилання є [порожнім](/uk/docs/Glossary/Nullish) ([`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) чи {{JSxRef("undefined")}}), то вираз закорочується з поверненим значенням `undefined`. Бувши застосованим до виклику функції, оператор повертає `undefined`, якщо дана функція не існує.
+Оператор `?.` – подібний до оператора ланцюжка `.`, окрім того, що замість спричинення помилки, коли посилання є [порожнім](/uk/docs/Glossary/Nullish) ([`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) чи {{jsxref("undefined")}}), то вираз закорочується з поверненим значенням `undefined`. Бувши застосованим до виклику функції, оператор повертає `undefined`, якщо дана функція не існує.
 
 Це призводить до коротших і простіших виразів при звертанні до ланцюжків властивостей, коли існує ймовірність того, що якесь посилання відсутнє. Також це може бути корисним при дослідженні вмісту об'єкта, коли немає гарантій того, які властивості в ньому є обов'язковими.
 
@@ -33,7 +33,7 @@ const nestedProp = obj.first && obj.first.second;
 
 Значення `obj.first` перевірено на нерівність `null` (і `undefined`) перед звертанням до значення `obj.first.second`. Такий код запобігає помилці, що трапилась би, якби відбулось звертання напряму до `obj.first.second`, без перевірки `obj.first`.
 
-Це ідіоматичний патерн у JavaScript, але такий запис стає громіздким, коли ланцюжок – довгий, і це не є безпечним підходом. Наприклад, якщо `obj.first` – {{glossary("Falsy", "хибне")}} значення, що не є `null` чи `undefined`, наприклад, `0`, то це все одно призведе до закорочення і змусить `nestedProp` стати `0`, що може не бути бажаним результатом.
+Це ідіоматичний патерн у JavaScript, але такий запис стає громіздким, коли ланцюжок – довгий, і це не є безпечним підходом. Наприклад, якщо `obj.first` – {{Glossary("Falsy", "хибне")}} значення, що не є `null` чи `undefined`, наприклад, `0`, то це все одно призведе до закорочення і змусить `nestedProp` стати `0`, що може не бути бажаним результатом.
 
 Проте з оператором необов'язкового ланцюжка (`?.`) немає потреби явно перевіряти й закорочувати на основі стану `obj.first` перед спробою звернутися до `obj.first.second`:
 
@@ -67,15 +67,15 @@ undeclaredVar?.prop; // ReferenceError: undeclaredVar is not defined
 const result = someInterface.customMethod?.();
 ```
 
-Проте якщо властивість з таким іменем є, але вона не є функцією, то `?.` все одно призведе до винесення винятку {{JSxRef("TypeError")}} (`someInterface.customMethod is not a function`).
+Проте якщо властивість з таким іменем є, але вона не є функцією, то `?.` все одно призведе до винесення винятку {{jsxref("TypeError")}} (`someInterface.customMethod is not a function`).
 
-> **Примітка:** Якщо сам `someInterface` є `null` чи `undefined`, все ж буде винесений виняток {{JSxRef("TypeError")}} (`someInterface is null`). Якщо очікується, що сам `someInterface` може бути `null` чи `undefined`, слід використовувати `?.` також на іншій позиції: `someInterface?.customMethod?.()`.
+> **Примітка:** Якщо сам `someInterface` є `null` чи `undefined`, все ж буде винесений виняток {{jsxref("TypeError")}} (`someInterface is null`). Якщо очікується, що сам `someInterface` може бути `null` чи `undefined`, слід використовувати `?.` також на іншій позиції: `someInterface?.customMethod?.()`.
 
 `eval?.()` – найстисліший спосіб ввійти у режим [_непрямого обчислення_](/uk/docs/Web/JavaScript/Reference/Global_Objects/eval#priame-ta-nepriame-obchyslennia).
 
 ### Необов'язковий ланцюжок з виразами
 
-Також оператор необов'язкового ланцюжка можна використовувати вкупі з [записом квадратних дужок](/uk/docs/Web/JavaScript/Reference/Operators/Property_accessors#zapys-kvadratnykh-duzhok), котрий дає змогу передати як ім'я властивості – вираз:
+Також оператор необов'язкового ланцюжка можна використовувати вкупі з [записом квадратних дужок](/uk/docs/Web/JavaScript/Reference/Operators/Property_accessors#duzhkova-notatsiia), котрий дає змогу передати як ім'я властивості – вираз:
 
 ```js
 const nestedProp = obj?.["prop" + "Name"];
@@ -95,7 +95,7 @@ printMagicIndex(); // undefined; якби не ?., тут викинуло б п
 
 Не можна намагатися присвоїти результат виразові необов'язкового ланцюжка:
 
-```js example-bad
+```js-nolint example-bad
 const object = {};
 object?.property = 1; // SyntaxError: Invalid left-hand side in assignment
 ```
@@ -238,4 +238,4 @@ printCustomerCity({
 
 ## Дивіться також
 
-- [Оператор null-злиття](/uk/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing)
+- [Оператор null-злиття (`??`)](/uk/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing)

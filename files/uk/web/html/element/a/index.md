@@ -25,7 +25,7 @@ browser-compat: html.elements.a
 
       - Заголовка HTTP {{HTTPHeader("Content-Disposition")}}
       - Останнього сегмента [шляху](/uk/docs/Web/API/URL/pathname) URL
-      - {{Glossary("MIME_type", "Типу медіаданих")}} (із заголовка {{HTTPHeader("Content-Type")}}, початку [URL `data:`](/uk/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) чи {{domxref("Blob.type")}} в [URL `blob:`](/uk/docs/Web/API/URL/createObjectURL))
+      - {{Glossary("MIME_type", "Типу медіаданих")}} (із заголовка {{HTTPHeader("Content-Type")}}, початку [URL `data:`](/uk/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) чи {{domxref("Blob.type")}} в [URL `blob:`](/uk/docs/Web/API/URL/createObjectURL_static))
 
     - `filename`: якщо значення задане, то воно буде запропоновано як назва файлу. Символи `/` і `\` перетворюються на підкреслення (`_`). Файлові системи можуть забороняти інші символи в іменах файлів, тож браузери підлаштовуватимуть запропоноване ім'я, якщо це необхідно.
 
@@ -47,6 +47,7 @@ browser-compat: html.elements.a
     - Шматочки медіафайлів – за допомогою фрагментів медіа
     - Номери телефонів – за допомогою URL `tel:`
     - Адреси електронної пошти – за допомогою URL `mailto:`
+    - Текстові повідомлення SMS – за допомогою URL `sms:`
     - Хоч веббраузери можуть не підтримувати інші схеми URL, вебсайти можуть їх підтримувати за допомогою [`registerProtocolHandler()`](/uk/docs/Web/API/Navigator/registerProtocolHandler)
 
 - `hreflang`
@@ -113,7 +114,7 @@ browser-compat: html.elements.a
 #### HTML
 
 ```html
-<a href="https://www.mozilla.com">Mozilla </a>
+<a href="https://www.mozilla.com">Mozilla</a>
 ```
 
 #### Результат
@@ -232,6 +233,7 @@ a {
 const canvas = document.querySelector("canvas");
 const c = canvas.getContext("2d");
 c.fillStyle = "hotpink";
+let isDrawing;
 
 function draw(x, y) {
   if (isDrawing) {
@@ -243,7 +245,7 @@ function draw(x, y) {
 }
 
 canvas.addEventListener("mousemove", (event) =>
-  draw(event.offsetX, event.offsetY)
+  draw(event.offsetX, event.offsetY),
 );
 canvas.addEventListener("mousedown", () => (isDrawing = true));
 canvas.addEventListener("mouseup", () => (isDrawing = false));
@@ -252,7 +254,7 @@ document
   .querySelector("a")
   .addEventListener(
     "click",
-    (event) => (event.target.href = canvas.toDataURL())
+    (event) => (event.target.href = canvas.toDataURL()),
   );
 ```
 
@@ -327,7 +329,7 @@ document
 #### Посилання на не-HTML ресурс
 
 ```html
-<a href="2017-annual-report.ppt">2017 Річний звіт (PowerPoint) </a>
+<a href="2017-annual-report.ppt">2017 Річний звіт (PowerPoint)</a>
 ```
 
 Якщо призначення посилання позначено іконкою, слід пересвідчитись, що ця іконка має [_текстову альтернативу_](/uk/docs/Web/HTML/Element/img#alt):
