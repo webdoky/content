@@ -230,7 +230,7 @@ YYYY-MM-DDTHH:mm:ss.sssZ
 - {{jsxref("Date.prototype.getUTCSeconds()")}} (отримати секунди відповідно до всесвітнього часу)
   - : Повертає секунди (`0` – `59`) вказаної дати, відповідно до всесвітнього часу.
 - {{jsxref("Date.prototype.getYear()")}} (отримати рік) {{deprecated_inline}}
-  - : Повертає рік (зазвичай 2–3 цифри) вказаної дати, відповідно до локального часу. Замість цієї функції рекомендується застосовувати {{jsxref("Date.prototype.getFullYear()", "getFullYear()")}}.
+  - : Повертає рік (зазвичай 2–3 цифри) вказаної дати, відповідно до локального часу. Замість цієї функції рекомендується застосовувати {{jsxref("Date/getFullYear", "getFullYear()")}}.
 - {{jsxref("Date.prototype.setDate()")}} (встановити дату)
   - : Встановлює день місяця для вказаної дати, відповідно до локального часу.
 - {{jsxref("Date.prototype.setFullYear()")}} (встановити повний рік)
@@ -262,13 +262,13 @@ YYYY-MM-DDTHH:mm:ss.sssZ
 - {{jsxref("Date.prototype.setUTCSeconds()")}} (встановити секунди відповідно до всесвітнього часу)
   - : Встановлює секунди для вказаної дати, відповідно до всесвітнього часу.
 - {{jsxref("Date.prototype.setYear()")}} (встановити рік відповідно до всесвітнього часу) {{deprecated_inline}}
-  - : Встановлює рік (зазвичай 2–3 цифри) для вказаної дати, відповідно до локального часу. Замість цієї функції рекомендується застосовувати {{jsxref("Date.prototype.setFullYear()", "setFullYear()")}}.
+  - : Встановлює рік (зазвичай 2–3 цифри) для вказаної дати, відповідно до локального часу. Замість цієї функції рекомендується застосовувати {{jsxref("Date/setFullYear", "setFullYear()")}}.
 - {{jsxref("Date.prototype.toDateString()")}} (до рядка дати)
   - : Повертає частину {{jsxref("Date")}}, яка стосується дати, як зрозумілий людині рядок, як от `'Thu Apr 12 2018'`.
 - {{jsxref("Date.prototype.toISOString()")}} (до рядка у форматі ISO)
   - : Перетворює дату на рядок відповідно до формату ISO 8601 Extended Format.
 - {{jsxref("Date.prototype.toJSON()")}} (до JSON)
-  - : Повертає рядок, що відповідає даті в {{jsxref("Date")}}, сформований за допомогою {{jsxref("Date.prototype.toISOString()", "toISOString()")}}. Призначений для використання функцією {{jsxref("JSON.stringify()")}}.
+  - : Повертає рядок, що відповідає даті в {{jsxref("Date")}}, сформований за допомогою {{jsxref("Date/toISOString", "toISOString()")}}. Призначений для використання функцією {{jsxref("JSON.stringify()")}}.
 - {{jsxref("Date.prototype.toLocaleDateString()")}} (до місцевого рядка дати)
   - : Повертає порцію об'єкта `Date`, що містить дату, як рядок, оформлений з урахуванням локально специфічних деталей на основі системних налаштувань.
 - {{jsxref("Date.prototype.toLocaleString()")}} (до місцевого рядка)
@@ -356,7 +356,7 @@ date.setYear(22);
 date.toString(); // Wed Feb 01 1922 00:00:00 GMT+0000 (GMT)
 ```
 
-Таким чином, щоб створити й отримати дати між роками `0` і `99`, натомість слід використовувати методи {{jsxref("Date.prototype.setFullYear()", "setFullYear()")}} та {{jsxref("Date.prototype.getFullYear()", "getFullYear()")}}.
+Таким чином, щоб створити й отримати дати між роками `0` і `99`, натомість слід використовувати методи {{jsxref("Date/setFullYear", "setFullYear()")}} та {{jsxref("Date/getFullYear", "getFullYear()")}}.
 
 ```js
 // Бажаний спосіб; ніколи не сприймає значення як відносні,
