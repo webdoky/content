@@ -101,15 +101,15 @@ re.exec("bar"); // [ 'bar', index: 0, input: 'bar', groups: undefined ]
 
 - {{jsxref("RegExp/n", "RegExp.$1, …, RegExp.$9")}} {{deprecated_inline}}
   - : Статичні властивості лише для зчитування, що містять збіги підрядків у дужках.
-- {{jsxref("RegExp.input", "RegExp.input ($_)")}} {{deprecated_inline}}
+- {{jsxref("RegExp/input", "RegExp.input ($_)")}} {{deprecated_inline}}
   - : Статична властивість лише для зчитування, що містить останній рядок, щодо якого відбувся успішний збіг.
-- {{jsxref("RegExp.lastMatch", "RegExp.lastMatch ($&)")}} {{deprecated_inline}}
+- {{jsxref("RegExp/lastMatch", "RegExp.lastMatch ($&)")}} {{deprecated_inline}}
   - : Статична властивість лише для зчитування, що містить останній підрядок, з яким трапився збіг.
-- {{jsxref("RegExp.lastParen", "RegExp.lastParen ($+)")}} {{deprecated_inline}}
+- {{jsxref("RegExp/lastParen", "RegExp.lastParen ($+)")}} {{deprecated_inline}}
   - : Статична властивість лише для зчитування, що містить останній збіг підрядку в дужках.
-- {{jsxref("RegExp.leftContext", "RegExp.leftContext ($`)")}} {{deprecated_inline}}
+- {{jsxref("RegExp/leftContext", "RegExp.leftContext ($`)")}} {{deprecated_inline}}
   - : Статична властивість лише для зчитування, що містить підрядок, котрий передував останньому збігові.
-- {{jsxref("RegExp.rightContext", "RegExp.rightContext ($')")}} {{deprecated_inline}}
+- {{jsxref("RegExp/rightContext", "RegExp.rightContext ($')")}} {{deprecated_inline}}
   - : Статична властивість лише для зчитування, що містить підрядок, котрий стояв після останнього збігу.
 - {{jsxref("RegExp/@@species", "RegExp[@@species]")}}
   - : Функція-конструктор, що використовується для створення похідних об'єктів.
@@ -171,7 +171,7 @@ re.exec("bar"); // [ 'bar', index: 0, input: 'bar', groups: undefined ]
 
 ### Використання регулярного виразу для зміни формату даних
 
-Наступний сценарій застосовує метод {{jsxref("String.prototype.replace()", "replace()")}} примірника {{jsxref("Global_Objects/String", "String")}}, щоб знайти ім'я в форматі _ім'я прізвище_ й вивести його в форматі _прізвище, ім'я_.
+Наступний сценарій застосовує метод {{jsxref("String.prototype.replace()")}}, щоб знайти ім'я в форматі _ім'я прізвище_ й вивести його в форматі _прізвище, ім'я_.
 
 В тексті заміни сценарій використовує `$1` і `$2`, аби вказати на результати відповідних дужок збігу в патерні регулярного виразу
 
@@ -210,7 +210,7 @@ s.match(/yes[^]*day/);
 
 ### Застосування регулярного виразу з позначкою липкості
 
-Позначка {{jsxref("Global_Objects/RegExp/sticky", "липкості")}} вказує на те, що регулярний вираз виконує в цільовому рядку липкий пошук збігу, намагаючись почати пошук від {{jsxref("RegExp.prototype.lastIndex")}}.
+Позначка {{jsxref("RegExp/sticky", "липкості")}} вказує на те, що регулярний вираз виконує в цільовому рядку липкий пошук збігу, намагаючись почати пошук від {{jsxref("RegExp.prototype.lastIndex")}}.
 
 ```js
 const str = "#foo#";
