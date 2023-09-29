@@ -71,8 +71,8 @@ for (variable in object)
 
 В разі, якщо необхідно розглянути лише ті властивості, які приєднані до самого об'єкта, без урахування його прототипів, можна застосувати один із наступних підходів:
 
-- {{jsxref("Object.keys", "Object.keys(myObject)")}}
-- {{jsxref("Object.getOwnPropertyNames", "Object.getOwnPropertyNames(myObject)")}}
+- {{jsxref("Object.keys()")}}
+- {{jsxref("Object.getOwnPropertyNames()")}}
 
 `Object.keys` поверне список власних перелічуваних властивостей із рядковими ключами, а от `Object.getOwnPropertyNames` також міститиме неперелічувані властивості.
 
@@ -99,7 +99,7 @@ for (const prop in obj) {
 
 ### Перебирання власних властивостей об'єкта
 
-Наступна функція демонструє використання методу {{jsxref("Object.hasOwn", "Object.hasOwn()")}}: успадковані властивості не виводяться.
+Наступна функція демонструє використання методу {{jsxref("Object.hasOwn()")}}: успадковані властивості не виводяться.
 
 ```js
 const triangle = { a: 1, b: 2, c: 3 };
