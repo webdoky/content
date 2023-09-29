@@ -176,11 +176,11 @@ parseInt(1e21, 10); // 1
 
 ## Дивіться також
 
-- {{jsxref("Global_Objects/parseFloat", "parseFloat()")}}
+- {{jsxref("parseFloat()")}}
 - [Конструктор `Number()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number/Number)
 - {{jsxref("Number.parseFloat()")}}
 - {{jsxref("Number.parseInt()")}}
-- {{jsxref("Global_Objects/isNaN", "isNaN()")}}
+- {{jsxref("isNaN()")}}
 - {{jsxref("Number.prototype.toString()")}}
 - {{jsxref("Object.prototype.valueOf()")}}
 - [Конструктор `BigInt()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/BigInt)
