@@ -19,6 +19,10 @@ browser-compat: javascript.builtins.Array.reverse
 reverse()
 ```
 
+### Параметри
+
+Жодних.
+
 ### Повернене значення
 
 Посилання на вихідний масив, уже розвернутий. Зверніть увагу на те, що масив розвертається _[на місці](https://en.wikipedia.org/wiki/In-place_algorithm)_, і копіювання не виконується.
@@ -104,7 +108,7 @@ console.log(Array.prototype.reverse.call(arrayLike));
 ## Дивіться також
 
 - [Поліфіл `Array.prototype.reverse` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
-- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
 - {{jsxref("Array.prototype.join()")}}
 - {{jsxref("Array.prototype.sort()")}}
