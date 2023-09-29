@@ -21,7 +21,7 @@ browser-compat: javascript.operators
   - : Ключове слово `this` посилається на спеціальну властивість контексту виконання.
 - [Літерали](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#literaly)
   - : Базові літерали `null`, булевих значень, чисел та рядків.
-- {{jsxref("Global_Objects/Array", "[]")}}
+- {{jsxref("Array", "[]")}}
   - : Синтаксис ініціалізаторів, чи літералів, масивів.
 - {{jsxref("Operators/Object_initializer", "{}")}}
   - : Синтаксис об'єктних ініціалізаторів – літералів.
@@ -35,7 +35,7 @@ browser-compat: javascript.operators
   - : `async function` оголошує вираз асинхронної функції.
 - {{jsxref("Operators/async_function*", "async function*")}}
   - : Ключові слова `async function*` оголошують вираз асинхронної функції-генератора.
-- {{jsxref("Global_Objects/RegExp", "/ab+c/i")}}
+- {{jsxref("RegExp", "/ab+c/i")}}
   - : Літеральний синтаксис регулярного виразу.
 - {{jsxref("Template_literals", "`string`")}}
   - : Синтаксис шаблонних літералів.
