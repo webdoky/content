@@ -147,9 +147,9 @@ new Uint8Array([257, -257]); // Uint8Array(2) [ 1, 255 ]
 - {{jsxref("Number.isSafeInteger()")}}
   - : З'ясовує, чи є передане значення безпечним цілим (числом в діапазоні від -(2<sup>53</sup> - 1) до 2<sup>53</sup> - 1).
 - {{jsxref("Number.parseFloat()")}}
-  - : Те саме, що й глобальна функція {{jsxref("parseFloat", "parseFloat()")}}.
+  - : Те саме, що й глобальна функція {{jsxref("parseFloat()")}}.
 - {{jsxref("Number.parseInt()")}}
-  - : Те саме, що й глобальна функція {{jsxref("parseInt", "parseInt()")}}.
+  - : Те саме, що й глобальна функція {{jsxref("parseInt()")}}.
 
 ## Властивості примірника
 
