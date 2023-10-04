@@ -59,7 +59,7 @@ Math.expm1(Infinity); // Infinity
 
 ## Дивіться також
 
-- [Polyfill of `Math.expm1` in `core-js`](https://github.com/zloirock/core-js#ecmascript-math)
+- [Поліфіл `Math.expm1` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-math)
 - {{jsxref("Math.E")}}
 - {{jsxref("Math.exp()")}}
 - {{jsxref("Math.log()")}}
