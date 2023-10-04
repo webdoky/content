@@ -45,8 +45,6 @@ document.body.innerHTML = contentString.sup();
 <sup>Привіт, світе</sup>
 ```
 
-Instead of using `sup()` and creating HTML text directly, you should use DOM APIs such as [`document.createElement()`](/uk/docs/Web/API/Document/createElement). For example:
-
 Замість використання `sup()` і безпосереднього створення тексту HTML варто використовувати API DOM, як от [`document.createElement()`](/uk/docs/Web/API/Document/createElement). Наприклад:
 
 ```js
