@@ -12,7 +12,7 @@ browser-compat: javascript.builtins.Array.findIndex
 
 Дивіться також метод {{jsxref("Array/find", "find()")}}, котрий повертає перший елемент, що задовольняє перевіркову функцію (а не його індекс).
 
-{{EmbedInteractiveExample("pages/js/array-findindex.html","shorter")}}
+{{EmbedInteractiveExample("pages/js/array-findindex.html", "shorter")}}
 
 ## Синтаксис
 
@@ -113,7 +113,7 @@ console.log(
 ## Дивіться також
 
 - [Поліфіл `Array.prototype.findIndex` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
-- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
 - {{jsxref("Array.prototype.find()")}}
 - {{jsxref("Array.prototype.findLast()")}}
