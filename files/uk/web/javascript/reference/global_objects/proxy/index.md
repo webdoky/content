@@ -325,7 +325,7 @@ const view = new Proxy(
       // Повідомити про успіх
       return true;
     },
-  }
+  },
 );
 
 const item1 = document.getElementById("item-1");
@@ -384,7 +384,7 @@ const products = new Proxy(
       // Повідомити про успіх
       return true;
     },
-  }
+  },
 );
 
 console.log(products.browsers);
@@ -475,5 +475,4 @@ console.log(docCookies.myCookie1);
 
 ## Дивіться також
 
-- [Презентація Брендана Айка на JSConf "Заступники – чудові"](https://www.youtube.com/watch?v=sClk6aB_CPk) ([слайди](https://www.slideshare.net/BrendanEich/metaprog-5303821))
-- [Підручник із заступників](https://web.archive.org/web/20171007221059/https://soft.vub.ac.be/~tvcutsem/proxies/)
+- Презентація [Заступники – чудові](https://youtu.be/sClk6aB_CPk) від Брендана Айка на JSConf (2014)

@@ -58,7 +58,7 @@ spec-urls: https://drafts.csswg.org/selectors/
 - {{CSSXref(":last-of-type")}}
 - {{CSSXref(":link")}}
 - {{CSSXref(":local-link")}}
-- `:matches()` (застарілий історичний селектор-псевдонім для {{CSSXref( ":is", ":is()")}})
+- `:matches()` (застарілий історичний селектор-псевдонім для {{CSSXref(":is", ":is()")}})
 - {{CSSXref(":modal")}}
 - {{CSSXref(":muted")}}
 - {{CSSXref(":not", ":not()")}}
@@ -145,14 +145,14 @@ spec-urls: https://drafts.csswg.org/selectors/
 
 - Псевдоклас {{CSSXref(":popover-open")}}
 
-- Модуль контексту CSS
+- Модуль [Контексту CSS](/uk/docs/Web/CSS/CSS_scoping)
 
   - Псевдоклас {{CSSXref(":host")}}
   - Псевдоклас {{CSSXref(":host_function", ":host()")}}
   - Псевдоклас {{cssxref(":host-context", ":host-context()")}}
   - Псевдоелемент {{CSSXref("::slotted")}}
 
-- [Модуль псевдоелементів CSS](/uk/docs/Web/CSS/CSS_pseudo) (представляє сутності, не включені в HTML)
+- [Модуль псевдоелементів CSS](/uk/docs/Web/CSS/CSS_pseudo-elements) (представляє сутності, не включені в HTML)
 
   - {{CSSXref("::after")}}
   - {{CSSXref("::before")}}
@@ -195,6 +195,7 @@ spec-urls: https://drafts.csswg.org/selectors/
 
 ## Дивіться також
 
-- [Модуль псевдоелементів CSS](/uk/docs/Web/CSS/CSS_pseudo)
+- [Модуль псевдоелементів CSS](/uk/docs/Web/CSS/CSS_pseudo-elements)
 - [Модуль каскаду та успадкування CSS](/uk/docs/Web/CSS/CSS_cascade)
+- [Модуль Вкладеності CSS](/uk/docs/Web/CSS/CSS_nesting)
 - [Застосування тіньового DOM](/uk/docs/Web/API/Web_components/Using_shadow_DOM)

@@ -14,6 +14,7 @@ browser-compat: javascript.builtins.String.fromCodePoint
 ## Синтаксис
 
 ```js-nolint
+String.fromCodePoint()
 String.fromCodePoint(num1)
 String.fromCodePoint(num1, num2)
 String.fromCodePoint(num1, num2, /* …, */ numN)
@@ -21,7 +22,7 @@ String.fromCodePoint(num1, num2, /* …, */ numN)
 
 ### Параметри
 
-- `numN`
+- `num1`, …, `numN`
   - : Ціле число між `0` і `0x10FFFF` (включно), що відповідає кодовій точці Unicode.
 
 ### Повернене значення
