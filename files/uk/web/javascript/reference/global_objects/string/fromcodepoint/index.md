@@ -9,7 +9,7 @@ browser-compat: javascript.builtins.String.fromCodePoint
 
 Статичний метод **`String.fromCodePoint()`** (із кодової точки) повертає рядок, створений зі вказаного набору кодів.
 
-{{EmbedInteractiveExample("pages/js/string-fromcodepoint.html","shorter")}}
+{{EmbedInteractiveExample("pages/js/string-fromcodepoint.html", "shorter")}}
 
 ## Синтаксис
 
