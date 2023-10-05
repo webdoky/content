@@ -30,7 +30,7 @@ spec-urls: https://drafts.csswg.org/selectors/#specificity-rules
 - Без значення
   - : Універсальний селектор ({{CSSxRef("Universal_selectors", "*")}}) та псевдоклас {{CSSxRef(":where", ":where()")}} і їх параметри – не враховуються при підрахунку ваги, тож їхнє значення – 0-0-0, хоч вони й дають збіг з певними елементами. Ці селектори не впливають на значення ваги специфічності.
 
-Комбінатори, наприклад, {{CSSxRef("Adjacent_sibling_combinator", "+")}}, {{CSSxRef("Child_combinator", "&gt;")}}, {{CSSxRef("General_sibling_combinator", "~")}}, [" "](/uk/docs/Web/CSS/Descendant_combinator) і {{CSSxRef("Column_combinator", "||")}}, можуть зробити селектор більш специфічним щодо того, що йому відповідає, але не додають жодного значення до ваги специфічності.
+Комбінатори, наприклад, {{CSSxRef("Next-sibling_combinator", "+")}}, {{CSSxRef("Child_combinator", "&gt;")}}, {{CSSxRef("Subsequent-sibling_combinator", "~")}}, [" "](/uk/docs/Web/CSS/Descendant_combinator) і {{CSSxRef("Column_combinator", "||")}}, можуть зробити селектор більш специфічним щодо того, що йому відповідає, але не додають жодного значення до ваги специфічності.
 
 Комбінатор вкладеності `&` не додає ваги специфічності, а вкладені правила навпаки – додають. Щодо специфічності та функціональності, то вкладеність вельми подібна до псевдокласу {{CSSxRef(":is", ":is()")}}.
 
