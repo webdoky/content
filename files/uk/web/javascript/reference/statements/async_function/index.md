@@ -7,7 +7,7 @@ browser-compat: javascript.statements.async_function
 
 {{jsSidebar("Statements")}}
 
-Оголошення **`async function`** створює {{glossary("binding", "зв'язування")}} нової асинхронної функції з її новою назвою. Всередині її тіла дозволене вживання ключового слова `await`, що дає змогу записувати асинхронну (засновану на промісах) поведінку в чистішому стилі та уникати необхідності явно задавати ланцюжки промісів.
+Оголошення **`async function`** створює {{Glossary("binding", "зв'язування")}} нової асинхронної функції з її новою назвою. Всередині її тіла дозволене вживання ключового слова `await`, що дає змогу записувати асинхронну (засновану на промісах) поведінку в чистішому стилі та уникати необхідності явно задавати ланцюжки промісів.
 
 Асинхронні функції також можна оголошувати за допомогою [виразів `async function`](/uk/docs/Web/JavaScript/Reference/Operators/async_function).
 
@@ -301,7 +301,14 @@ async function getProcessedData(url) {
 
 ## Дивіться також
 
-- {{jsxref("Operators/async_function", "Вираз асинхронної функції", "", 1)}}
-- Об'єкт {{jsxref("AsyncFunction")}}
+- Посібник [Функції](/uk/docs/Web/JavaScript/Guide/Functions)
+- Посібник [Використання промісів](/uk/docs/Web/JavaScript/Guide/Using_promises)
+- [Функції](/uk/docs/Web/JavaScript/Reference/Functions)
+- {{jsxref("AsyncFunction")}}
+- [Вираз `async function`](/uk/docs/Web/JavaScript/Reference/Operators/async_function)
+- {{jsxref("Statements/function", "function")}}
+- {{jsxref("Statements/function*", "function*")}}
+- {{jsxref("Statements/async_function*", "async function*")}}
 - {{jsxref("Operators/await", "await")}}
+- {{jsxref("Promise")}}
 - [Декорування асинхронних функцій у JavaScript](https://innolitics.com/10x/javascript-decorators-for-promise-returning-functions/) на innolitics.com (2016)
