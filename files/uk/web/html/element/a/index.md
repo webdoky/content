@@ -365,8 +365,8 @@ document
 
   <header>…</header>
 
-  <main id="content"></main>
   <!-- Стрибкове посилання приводить сюди -->
+  <main id="content"></main>
 </body>
 ```
 
