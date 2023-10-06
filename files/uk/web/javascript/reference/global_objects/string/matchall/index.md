@@ -92,7 +92,7 @@ str.matchAll(regexp);
 // TypeError
 ```
 
-Метод `matchAll` для своїх потреб створює клон глобального об'єкта `RegExp`. Тому, на відміну від використання методу {{jsxref("Global_Objects/RegExp/exec", "regexp.exec()")}}, властивість `lastIndex` об'єкта `RegExp` не змінюється під час сканування рядка.
+Метод `matchAll` для своїх потреб створює клон глобального об'єкта `RegExp`. Тому, на відміну від використання методу {{jsxref("RegExp/exec", "regexp.exec()")}}, властивість `lastIndex` об'єкта `RegExp` не змінюється під час сканування рядка.
 
 ```js
 const regexp = /[a-c]/g;
@@ -108,7 +108,7 @@ Array.from(str.matchAll(regexp), (m) => `${regexp.lastIndex} ${m[0]}`);
 
 Іншою привабливою причиною використати `matchAll` є покращений доступ до груп захоплення.
 
-Під час застосування {{jsxref("Global_Objects/String/match", "match()")}} з прапорцем глобального пошуку `g` групи захоплення ігноруються:
+Під час застосування {{jsxref("String/match", "match()")}} з прапорцем глобального пошуку `g` групи захоплення ігноруються:
 
 ```js
 const regexp = /t(e)(st(\d?))/g;
@@ -153,8 +153,8 @@ str.matchAll({
 
 - Поліфіл методу `String.prototype.matchAll` доступний у [`core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
 - {{jsxref("String.prototype.match()")}}
-- [Застосування регулярних виразів у JavaScript](/uk/docs/Web/JavaScript/Guide/Regular_expressions)
-- [Групи захоплення](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Groups_and_backreferences)
+- Посібник [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_expressions)
+- Посібник [Групи та зворотні посилання](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Groups_and_backreferences)
 - {{jsxref("RegExp")}}
 - {{jsxref("RegExp.prototype.exec()")}}
 - {{jsxref("RegExp.prototype.test()")}}

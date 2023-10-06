@@ -9,7 +9,7 @@ browser-compat: javascript.functions.arrow_functions
 
 **Вираз стрілкової функції** — це компактна альтернатива традиційному [виразові функції](/uk/docs/Web/JavaScript/Reference/Operators/function), що має певні семантичні відмінності й свідомі обмеження у використанні:
 
-- Стрілкові функції не мають власних {{glossary("binding", "зв'язувань")}} [`this`](/uk/docs/Web/JavaScript/Reference/Operators/this), [`arguments`](/uk/docs/Web/JavaScript/Reference/Functions/arguments) та [`super`](/uk/docs/Web/JavaScript/Reference/Operators/super), і їх не слід використовувати як [методи](/uk/docs/Glossary/Method).
+- Стрілкові функції не мають власних {{Glossary("binding", "зв'язувань")}} [`this`](/uk/docs/Web/JavaScript/Reference/Operators/this), [`arguments`](/uk/docs/Web/JavaScript/Reference/Functions/arguments) та [`super`](/uk/docs/Web/JavaScript/Reference/Operators/super), і їх не слід використовувати як [методи](/uk/docs/Glossary/Method).
 - Стрілкові функції не можуть використовуватися як [конструктори](/uk/docs/Glossary/Constructor). Виклик їх з [`new`](/uk/docs/Web/JavaScript/Reference/Operators/new) викидає {{jsxref("TypeError")}}. Крім цього, вони не мають доступу до ключового слова [`new.target`](/uk/docs/Web/JavaScript/Reference/Operators/new.target)
 - Стрілкові функції не можуть використовувати у своєму тілі [`yield`](/uk/docs/Web/JavaScript/Reference/Operators/yield) і не можуть створюватися як генераторні функції.
 
@@ -138,20 +138,20 @@ const bob2 = (a) => a + 100;
 
 ### Тіло функції
 
-Стрілкові функції можуть мати або _стисле тіло_, або звичайне _блокове тіло_.
+Стрілкові функції можуть мати або _тіло-вираз_, або звичайне _блокове тіло_.
 
-У стислому тілі задається лише один вираз, котрий стає неявно поверненим значенням. У блоковому тілі слід використовувати явну інструкцію `return`.
+У тілі-виразі задається лише один вираз, котрий стає неявно поверненим значенням. У блоковому тілі слід використовувати явну інструкцію `return`.
 
 ```js
 const func = (x) => x * x;
-// синтаксис стислого тіла, неявний "return"
+// синтаксис тіла-виразу, неявний "return"
 const func2 = (x, y) => {
   return x + y;
 };
 // у блоковому тілі потрібен явний "return"
 ```
 
-Повертання літералів об'єктів за допомогою синтаксису стислого тіла `(params) => { object: literal }` не працює так, як очікувано.
+Повертання літералів об'єктів за допомогою синтаксису тіла-виразу `(params) => { object: literal }` не працює так, як очікувано.
 
 ```js-nolint example-bad
 const func = () => { foo: 1 };
@@ -162,7 +162,7 @@ const func3 = () => { foo() {} };
 // SyntaxError: Unexpected token '{'
 ```
 
-Так відбувається через те, що JavaScript впізнає стрілкову функцію як таку, що має стисле тіло, лише якщо знак після стрілки не є лівою фігурною дужкою, тож код всередині фігурних дужок обробляється як послідовність інструкцій, у якій `foo` є [міткою](/uk/docs/Web/JavaScript/Reference/Statements/label), а не ключем літерала об'єкта.
+Так відбувається через те, що JavaScript впізнає стрілкову функцію як таку, що має тіло-вираз, лише якщо знак після стрілки не є лівою фігурною дужкою, тож код всередині фігурних дужок обробляється як послідовність інструкцій, у якій `foo` є [міткою](/uk/docs/Web/JavaScript/Reference/Statements/label), а не ключем літерала об'єкта.
 
 Аби це виправити, слід загорнути літерал об'єкта в дужки:
 
@@ -457,7 +457,7 @@ obj.doSomethingLater(); // виводить 11
 
 ## Дивіться також
 
-- [Посібник з функцій](/uk/docs/Web/JavaScript/Guide/Functions)
+- Посібник [Функції](/uk/docs/Web/JavaScript/Guide/Functions)
 - [Функції](/uk/docs/Web/JavaScript/Reference/Functions)
 - {{jsxref("Statements/function", "function")}}
 - [Вираз `function`](/uk/docs/Web/JavaScript/Reference/Operators/function)

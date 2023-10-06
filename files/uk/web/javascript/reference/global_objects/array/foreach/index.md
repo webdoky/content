@@ -37,7 +37,7 @@ forEach(callbackFn, thisArg)
 
 ## Опис
 
-Метод `forEach()` є [ітеративним методом](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#iteratyvni-metody). Він викликає передану функцію `callbackFn` на кожному елементі масиву, в порядку зростання індексів. На відміну від {{jsxref("Array.prototype.map()", "map()")}}, `forEach()` завжди повертає {{jsxref("undefined")}} і не може бути проміжною ланкою ланцюжка. Типове його використання – для виконання побічних ефектів у кінці ланцюжка.
+Метод `forEach()` є [ітеративним методом](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#iteratyvni-metody). Він викликає передану функцію `callbackFn` на кожному елементі масиву, в порядку зростання індексів. На відміну від {{jsxref("Array/map", "map()")}}, `forEach()` завжди повертає {{jsxref("undefined")}} і не може бути проміжною ланкою ланцюжка. Типове його використання – для виконання побічних ефектів у кінці ланцюжка.
 
 `callbackFn` закликається лише для тих індексів масиву, що мають присвоєні значення. Вона не закликається для порожніх комірок у [розріджених масивах](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy).
 
@@ -258,7 +258,7 @@ Array.prototype.forEach.call(arrayLike, (x) => console.log(x));
 ## Дивіться також
 
 - [Поліфіл для `Array.prototype.forEach` у `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
-- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
 - {{jsxref("Array.prototype.find()")}}
 - {{jsxref("Array.prototype.map()")}}

@@ -78,7 +78,7 @@ browser-compat: html.elements.link
 
 - `as`
 
-  - : Цей атрибут є обов'язковим, коли елемент `<link>` має [`rel="preload"`](/uk/docs/Web/HTML/Attributes/rel/preload), необов'язковим, якщо він має [`rel="modulepreload"`](/uk/docs/Web/HTML/Attributes/rel/preload), а інакше – не повинен застосовуватися.
+  - : Цей атрибут є обов'язковим, коли елемент `<link>` має [`rel="preload"`](/uk/docs/Web/HTML/Attributes/rel/preload), необов'язковим, якщо він має [`rel="modulepreload"`](/uk/docs/Web/HTML/Attributes/rel/modulepreload), а інакше – не повинен застосовуватися.
     Він задає тип вмісту, що завантажується `<link>`, що необхідно для зіставлення запитів, застосування коректної [політики безпеки вмісту](/uk/docs/Web/HTTP/CSP) та задання коректного заголовка {{HTTPHeader("Accept")}}.
 
     Понад те, `rel="preload"` використовує `as` як сигнал для формування пріоритетів запитів.
@@ -111,7 +111,7 @@ browser-compat: html.elements.link
             <div class="notecard note">
               <p>
                 <strong>Примітка:</strong> Це значення на додачу вимагає,
-                щоб <code>&#x3C;link></code> містив атрибут crossorigin.
+                щоб <code>&#x3C;link></code> містив атрибут crossorigin; дивіться <a href="/uk/docs/Web/HTML/Attributes/rel/preload#otrymannia-z-cors">Отримання з CORS</a>.
               </p>
             </div>
           </td>
@@ -218,8 +218,6 @@ browser-compat: html.elements.link
     >   HTML5 розширив це до [медіазапитів](/uk/docs/Web/CSS/CSS_media_queries) будь-якого роду, що є надмножиною щодо дозволених в HTML 4 значень.
     > - Браузери, котрі не підтримують [Медіазапити CSS](/uk/docs/Web/CSS/CSS_media_queries), не обов'язково адекватно впізнають зв'язок; не слід забувати задавати запасні зв'язки з медіазапитами, визначеними в HTML 4.
 
-- `prefetch` {{secureContext_inline}} {{experimental_inline}}
-  - : Задає ресурс, що може бути потрібним при переході на наступну сторінку і котрий користувацький агент повинен отримати. Це дає користувацькому агентові швидше реагувати, коли ресурс необхідний у майбутньому.
 - `referrerpolicy`
 
   - : Рядок, що вказує, якого посилача слід використовувати при отриманні ресурсу:
@@ -439,3 +437,4 @@ browser-compat: html.elements.link
 ## Дивіться також
 
 - Заголовок HTTP {{HTTPHeader("Link")}}
+- [Атрибут `integrity`](https://150daysofhtml.com/book/day010/) на 150daysofhtml.com (2021)

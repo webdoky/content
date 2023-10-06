@@ -17,10 +17,10 @@ spec-urls: https://drafts.csswg.org/selectors/
 
 ### Комбінатори та розділювачі
 
-- `+` ([Комбінатор суміжних чи наступних сестринських елементів](/uk/docs/Web/CSS/Adjacent_sibling_combinator))
+- `+` ([Комбінатор наступної сестри](/uk/docs/Web/CSS/Next-sibling_combinator))
 - `>` ([Дочірній комбінатор](/uk/docs/Web/CSS/Child_combinator))
 - `||` ([Колонковий комбінатор](/uk/docs/Web/CSS/Column_combinator)) {{Experimental_Inline}}
-- `~` ([Комбінатор загальних чи подальших сестринських елементів](/uk/docs/Web/CSS/General_sibling_combinator))
+- `~` ([Комбінатор подальших сестер](/uk/docs/Web/CSS/Subsequent-sibling_combinator))
 - " " ([Комбінатор нащадків](/uk/docs/Web/CSS/Descendant_combinator))
 - `|` ([Розділювач областей імен](/uk/docs/Web/CSS/Namespace_separator))
 
@@ -63,9 +63,8 @@ spec-urls: https://drafts.csswg.org/selectors/
 - {{CSSXref(":muted")}}
 - {{CSSXref(":not", ":not()")}}
 - {{CSSXref(":nth-child", ":nth-child()")}}
-- {{CSSXref(":nth-col", ":nth-col()")}}
+- {{CSSXref(":nth-of-type", ":nth-of-type()")}}
 - {{CSSXref(":nth-last-child", ":nth-last-child()")}}
-- {{CSSXref(":nth-last-col", ":nth-last-col()")}}
 - {{CSSXref(":nth-last-of-type", ":nth-last-of-type()")}}
 - {{CSSXref(":nth-of-type", ":nth-of-type()")}}
 - {{CSSXref(":only-child")}}
@@ -197,4 +196,5 @@ spec-urls: https://drafts.csswg.org/selectors/
 
 - [Модуль псевдоелементів CSS](/uk/docs/Web/CSS/CSS_pseudo-elements)
 - [Модуль каскаду та успадкування CSS](/uk/docs/Web/CSS/CSS_cascade)
+- [Модуль Вкладеності CSS](/uk/docs/Web/CSS/CSS_nesting)
 - [Застосування тіньового DOM](/uk/docs/Web/API/Web_components/Using_shadow_DOM)

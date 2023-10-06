@@ -82,7 +82,7 @@ const result = re.exec("The Quick Brown Fox Jumps Over The Lazy Dog");
 
 ### Пошук послідовних збігів
 
-Коли регулярний вираз застосовує позначку [`g`](/uk/docs/Web/JavaScript/Guide/Regular_expressions#pohlyblenyi-poshuk-z-poznachkamy), можна використовувати метод `exec()` багато разів для отримання послідовних збігів у тому самому рядку. У такому випадку пошук починається від підрядка `str`, заданого властивістю регулярного виразу {{jsxref("RegExp/lastIndex", "lastIndex")}} ({{jsxref("RegExp.prototype.test()", "test()")}} також посуває властивість {{jsxref("RegExp/lastIndex", "lastIndex")}}). Зверніть увагу, що властивість {{jsxref("RegExp/lastIndex", "lastIndex")}} не скидається при пошуку в іншому рядку, а почне пошук згідно з наявним значенням {{jsxref("RegExp/lastIndex", "lastIndex")}}.
+Коли регулярний вираз застосовує позначку [`g`](/uk/docs/Web/JavaScript/Guide/Regular_expressions#pohlyblenyi-poshuk-z-poznachkamy), можна використовувати метод `exec()` багато разів для отримання послідовних збігів у тому самому рядку. У такому випадку пошук починається від підрядка `str`, заданого властивістю регулярного виразу {{jsxref("RegExp/lastIndex", "lastIndex")}} ({{jsxref("RegExp/test", "test()")}} також посуває властивість {{jsxref("RegExp/lastIndex", "lastIndex")}}). Зверніть увагу, що властивість {{jsxref("RegExp/lastIndex", "lastIndex")}} не скидається при пошуку в іншому рядку, а почне пошук згідно з наявним значенням {{jsxref("RegExp/lastIndex", "lastIndex")}}.
 
 Наприклад, припустімо, є такий сценарій:
 
@@ -133,5 +133,5 @@ console.log(matches[1]);
 
 ## Дивіться також
 
-- [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_expressions)
+- Посібник [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_expressions)
 - {{jsxref("RegExp")}}

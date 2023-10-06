@@ -67,7 +67,7 @@ vegetables.push(...moreVegs);
 console.log(vegetables); // ['пастернак', 'картопля', 'селера', 'буряк']
 ```
 
-Об'єднання двох масивів також можна зробити за допомогою методу {{jsxref("Array.prototype.concat()", "concat()")}}.
+Об'єднання двох масивів також можна зробити за допомогою методу {{jsxref("Array/concat", "concat()")}}.
 
 ### Виклик push() на об'єктах-немасивах
 
@@ -125,7 +125,7 @@ console.log(obj.length); // 2
 ## Дивіться також
 
 - [Поліфіл `Array.prototype.push` доступний у складі `core-js`, з виправленнями для цього метода](https://github.com/zloirock/core-js#ecmascript-array)
-- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
 - {{jsxref("Array.prototype.pop()")}}
 - {{jsxref("Array.prototype.shift()")}}

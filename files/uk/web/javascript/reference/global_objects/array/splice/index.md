@@ -9,7 +9,7 @@ browser-compat: javascript.builtins.Array.splice
 
 Метод **`splice()`** (зростити) примірників {{jsxref("Array")}} змінює вміст масиву шляхом видалення чи заміни наявних елементів чи додавання нових [на місці](https://en.wikipedia.org/wiki/In-place_algorithm).
 
-Щоб створити новий масив, в якому частина видалена чи замінена, не змінюючи вихідний масив, слід скористатися {{jsxref("Array/toSpliced", "toSpliced()")}}. Щоб отримати доступ до частини масиву без його зміни, дивіться {{jsxref("Array.prototype.slice()", "slice()")}}.
+Щоб створити новий масив, в якому частина видалена чи замінена, не змінюючи вихідний масив, слід скористатися {{jsxref("Array/toSpliced", "toSpliced()")}}. Щоб отримати доступ до частини масиву без його зміни, дивіться {{jsxref("Array/slice", "slice()")}}.
 
 {{EmbedInteractiveExample("pages/js/array-splice.html")}}
 
@@ -180,7 +180,7 @@ console.log(arrayLike);
 
 ## Дивіться також
 
-- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
 - {{jsxref("Array.prototype.concat()")}}
 - {{jsxref("Array.prototype.push()")}}
