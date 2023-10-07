@@ -629,10 +629,9 @@ browser-compat: html.elements.input
       </td>
     </tr>
     <tr>
-      <td><code>mozactionhint</code></td>
+      <td><code>mozactionhint</code> {{deprecated_inline}}</td>
       <td>
-        <p>Рядок, що вказує тип дії, котра буде виконана, коли користувач натисне клавішу <kbd>Enter</kbd> або <kbd>Return</kbd> при редагуванні поля. Використовується для визначення підпису такої кнопки на віртуальній клавіатурі.</p>
-        <p><strong>Нерекомендований: використовуйте натомість <a href="/uk/docs/Web/HTML/Global_attributes/enterkeyhint"><code>enterkeyhint</code></a>.</strong></p>
+        <p>Рядок, що вказує тип дії, котра буде виконана, коли користувач натисне клавішу <kbd>Enter</kbd> або <kbd>Return</kbd> при редагуванні поля. Використовується для визначення підпису такої кнопки на віртуальній клавіатурі. Оскільки цей атрибут нерекомендований, замість нього слід використовувати <a href="/uk/docs/Web/HTML/Global_attributes/enterkeyhint"><code>enterkeyhint</code></a>.</strong></p>
       </td>
     </tr>
     <tr>
