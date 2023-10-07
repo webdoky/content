@@ -629,10 +629,9 @@ browser-compat: html.elements.input
       </td>
     </tr>
     <tr>
-      <td><code>mozactionhint</code></td>
+      <td><code>mozactionhint</code> {{deprecated_inline}}</td>
       <td>
-        <p>Рядок, що вказує тип дії, котра буде виконана, коли користувач натисне клавішу <kbd>Enter</kbd> або <kbd>Return</kbd> при редагуванні поля. Використовується для визначення підпису такої кнопки на віртуальній клавіатурі.</p>
-        <p><strong>Нерекомендований: використовуйте натомість <a href="/uk/docs/Web/HTML/Global_attributes/enterkeyhint"><code>enterkeyhint</code></a>.</strong></p>
+        <p>Рядок, що вказує тип дії, котра буде виконана, коли користувач натисне клавішу <kbd>Enter</kbd> або <kbd>Return</kbd> при редагуванні поля. Використовується для визначення підпису такої кнопки на віртуальній клавіатурі. Оскільки цей атрибут нерекомендований, замість нього слід використовувати <a href="/uk/docs/Web/HTML/Global_attributes/enterkeyhint"><code>enterkeyhint</code></a>.</strong></p>
       </td>
     </tr>
     <tr>
@@ -720,6 +719,8 @@ browser-compat: html.elements.input
   - : Встановлює вміст вказаного відрізка символів у полі введення у вказаний рядок. Параметр `selectMode` дає змогу керувати тим, як це впливає на присутній вміст.
 - {{domxref("HTMLInputElement.setSelectionRange", "setSelectionRange()")}} (встановити діапазон вибору)
   - : Обирає вказаний відрізок символів всередині текстового поля введення. Нічого не робить для полів введення, що не представлені текстовими полями.
+- {{domxref("HTMLInputElement.showPicker", "showPicker()")}}
+  - : Виводить інтерфейс вибору елемента поля, що за звичайних умов виводиться, коли елемент стає вибраним, але викликається натисканням кнопки чи іншою користувацькою взаємодією.
 - {{domxref("HTMLInputElement.stepDown", "stepDown()")}} (крок униз)
   - : Зменшує значення числового поля введення на один (усталено) або на вказане число одиниць.
 - {{domxref("HTMLInputElement.stepUp", "stepUp()")}} (крок угору)
