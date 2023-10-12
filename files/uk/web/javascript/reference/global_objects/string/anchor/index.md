@@ -7,11 +7,11 @@ status:
 browser-compat: javascript.builtins.String.anchor
 ---
 
-{{JSRef}} {{deprecated_header}}
+{{JSRef}} {{Deprecated_Header}}
 
 Метод **`anchor()`** (якір) значень {{jsxref("String")}} створює рядок, що вбудовує рядок цього метода в елемент {{HTMLElement("a")}} з іменем (`<a name="...">str</a>`).
 
-> **Примітка:** Всі [Методи для обгортання HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html) – нерекомендовані, вони стандартизовані лише для потреб сумісності. Замість них слід використовувати [API DOM](/uk/docs/Web/API/Document_Object_Model), наприклад, [`document.createElement()`](/uk/docs/Web/API/Document/createElement).
+> **Примітка:** Всі [Методи для обгортання в HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html) – нерекомендовані, вони стандартизовані лише для потреб сумісності. Замість них слід використовувати [API DOM](/uk/docs/Web/API/Document_Object_Model), наприклад, [`document.createElement()`](/uk/docs/Web/API/Document/createElement).
 >
 > Специфікація HTML більше не дозволяє елементам {{HTMLElement("a")}} мати атрибут `name`, тож цей метод навіть не породжує дійсну розмітку.
 
@@ -34,16 +34,28 @@ anchor(name)
 
 ### Застосування методу anchor()
 
-```js
-const myString = "Зміст";
+Код нижче створює рядок HTML, а тоді замінює цим рядком тіло документа:
 
-document.body.innerHTML = myString.anchor("contents_anchor");
+```js
+const contentString = "Привіт, світе";
+
+document.body.innerHTML = contentString.anchor("hello");
 ```
 
-виведе наступний HTML:
+Це породжує наступний HTML:
 
 ```html
-<a name="contents_anchor">Зміст</a>
+<a name="hello">Привіт, світе</a>
+```
+
+> **Застереження:** Ця розмітка є некоректною, тому що `name` більше не є дійсним атрибутом елемента {{HTMLElement("a")}}.
+> Замість використання `anchor()` та безпосереднього створення розмітки HTML слід використовувати API DOM, як то [`document.createElement()`](/uk/docs/Web/API/Document/createElement). Наприклад:
+
+```js
+const contentString = "Привіт, світе";
+const elem = document.createElement("a");
+elem.innerText = contentString;
+document.body.appendChild(elem);
 ```
 
 ## Специфікації
@@ -57,4 +69,5 @@ document.body.innerHTML = myString.anchor("contents_anchor");
 ## Дивіться також
 
 - [Поліфіл `String.prototype.anchor` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
-- {{jsxref("String.prototype.link()")}}
+- [Методи для обгортання в HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html)
+- {{HTMLElement("a")}}
