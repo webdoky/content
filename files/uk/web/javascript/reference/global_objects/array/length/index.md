@@ -125,5 +125,8 @@ numbers.push(5); // // TypeError: Cannot assign to read only property 'length' o
 
 ## Дивіться також
 
+- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
+- [`TypedArray`: `length`](/uk/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/length)
+- [`String`: `length`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/length)
 - [RangeError: invalid array length](/uk/docs/Web/JavaScript/Reference/Errors/Invalid_array_length)

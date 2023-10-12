@@ -1,5 +1,5 @@
 ---
-title: Object (Об'єкт)
+title: Object
 slug: Web/JavaScript/Reference/Global_Objects/Object
 page-type: javascript-class
 browser-compat: javascript.builtins.Object
@@ -17,7 +17,7 @@ browser-compat: javascript.builtins.Object
 
 ### Властивості прототипу об'єкта
 
-Слід уникати виклику будь-яких методів `Object.prototype`, особливо тих, котрі не створені поліморфними (тобто лише їхня початкова логіка має зміст, і жодний об'єкт-нащадок не зможе перевизначити їх у змістовний спосіб). Усі об'єкти, що походять від `Object.prototype`, можуть визначати власні властивості, що мають ідентичні імена, але з геть інакшою семантикою, ніж та, на котру ви очікуєте. Понад те, ці властивості не успадковуються [`null`-прототипними об'єктами](#null-prototypni-obiekty). Усі сучасні службові засоби JavaScript для роботи з об'єктами є [статичними](#statychni-metody). Конкретніше:
+Слід уникати виклику будь-яких методів `Object.prototype` безпосередньо з примірника, особливо тих, котрі не створені поліморфними (тобто лише їхня початкова логіка має зміст, і жодний об'єкт-нащадок не зможе перевизначити їх у змістовний спосіб). Усі об'єкти, що походять від `Object.prototype`, можуть визначати власні властивості, що мають ідентичні імена, але з геть інакшою семантикою, ніж та, на котру ви очікуєте. Понад те, ці властивості не успадковуються [`null`-прототипними об'єктами](#null-prototypni-obiekty). Усі сучасні службові засоби JavaScript для роботи з об'єктами є [статичними](#statychni-metody). Конкретніше:
 
 - [`valueOf()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf), [`toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/toString) і [`toLocaleString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/toLocaleString) існують заради поліморфності, і слід очікувати, що об'єкт визначає власну реалізацію з доцільною логікою, тож їх можна викликати як методи примірника. Проте `valueOf()` і `toString()` зазвичай неявно викликаються під час [перетворення типів](/uk/docs/Web/JavaScript/Data_structures#zvedennia-typiv), і їх немає потреби самотужки викликати у своєму коді.
 - [`__defineGetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineGetter__), [`__defineSetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__), [`__lookupGetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupGetter__) і [`__lookupSetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupSetter__) – нерекомендовані до використання. Натомість слід використовувати статичні альтернативи {{jsxref("Object.defineProperty()")}} і {{jsxref("Object.getOwnPropertyDescriptor()")}}.
@@ -87,6 +87,8 @@ console.log(`nullProtoObj – це ${nullProtoObj}`); // виводить "nullP
 ```
 
 На відміну від звичайних об'єктів, котрі мають `toString()` на своєму прототипі, у цьому випадку `toString()` є власною властивістю `nullProtoObj`. Це пов'язано з тим, що `nullProtoObj` не має прототипу (має прототип `null`).
+
+null-прототипний об'єкт можна знову зробити звичайним об'єктом: [`Object.setPrototypeOf(nullProtoObj, Object.prototype)`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf).
 
 На практиці об'єкти з прототипом `null` зазвичай використовуються як дешевий замінник [відображень](/uk/docs/Web/JavaScript/Reference/Global_Objects/Map). Присутність властивостей `Object.prototype` призводить до певних проблем:
 
@@ -188,7 +190,7 @@ JavaScript також має вбудовані API, що виробляють `
   - : Повертає масив усіх символьних властивостей, знайдених безпосередньо у переданому об'єкті.
 - {{jsxref("Object.getPrototypeOf()")}} (взяти прототип від)
   - : Повертає прототип (внутрішню властивість `[[Prototype]]`) вказаного об'єкта.
-- {{jsxref("Object.groupBy()")}} {{Experimental_Inline}}
+- {{jsxref("Object.groupBy()")}}
   - : Групує елементи даного ітерованого об'єкта згідно з рядковими значеннями, поверненими переданою функцією зворотного виклику. Повернений об'єкт має окремі властивості для кожної групи, що містять масиви з елементами відповідних груп.
 - {{jsxref("Object.hasOwn()")}}
   - : Повертає `true`, якщо заданий об'єкт має вказану властивість як свою _власну_ властивість, або `false`, якщо властивість є успадкованою або не існує.
@@ -215,20 +217,20 @@ JavaScript також має вбудовані API, що виробляють `
 
 Ці властивості означені на `Object.prototype` і є спільними для всіх примірників `Object`.
 
-- [`Object.prototype.__proto__`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/proto) {{Deprecated_Inline}}
+- [`Object.prototype.__proto__`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/proto) {{deprecated_inline}}
   - : Вказує на об'єкт, який було використано як прототип під час створення примірника цього об'єкта.
 - {{jsxref("Object.prototype.constructor")}} (конструктор)
   - : Функція-конструктор, що створила об'єкт-примірник. Для простих примірників `Object` початковим значенням є конструктор {{jsxref("Object/Object", "Object")}}. Кожний з примірників інших конструкторів успадковує властивість `constructor` від відповідного об'єкта `Constructor.prototype`.
 
 ## Методи примірника
 
-- [`Object.prototype.__defineGetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineGetter__) (означити гетер) {{Deprecated_Inline}}
+- [`Object.prototype.__defineGetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineGetter__) (означити гетер) {{deprecated_inline}}
   - : Пов'язує функцію з властивістю так, що під час спроби доступитися до властивості вона викликає цю функцію та повертає її результат.
-- [`Object.prototype.__defineSetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__) (означити сетер) {{Deprecated_Inline}}
+- [`Object.prototype.__defineSetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__) (означити сетер) {{deprecated_inline}}
   - : Пов'язує функцію з властивістю так, що під час спроби встановлення її значення викликається ця функція, яка і змінює властивість.
-- [`Object.prototype.__lookupGetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupGetter__) (шукати гетер) {{Deprecated_Inline}}
+- [`Object.prototype.__lookupGetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupGetter__) (шукати гетер) {{deprecated_inline}}
   - : Повертає функцію, прив'язану до вказаної властивості як гетер.
-- [`Object.prototype.__lookupSetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupSetter__) (шукати сетер) {{Deprecated_Inline}}
+- [`Object.prototype.__lookupSetter__()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupSetter__) (шукати сетер) {{deprecated_inline}}
   - : Повертає функцію, прив'язану до вказаної властивості як сетер.
 - {{jsxref("Object.prototype.hasOwnProperty()")}} (має власну властивість)
   - : Повертає булеве значення, яке вказує на те, що об'єкт містить вказану властивість прямо в собі, а не успадковує її через прототипний ланцюжок.
@@ -255,18 +257,20 @@ const o2 = new Object(undefined);
 const o3 = new Object(null);
 ```
 
-### Застосування `Object` для створення булевих об'єктів
+### Застосування конструктора Object() для перетворення примітивів на Object відповідних типів
 
-В наступному прикладі у змінній `o` зберігається {{jsxref("Boolean", "булевий")}} об'єкт:
+Конструктор {{jsxref("Object/Object", "Object()")}} можна використовувати для створення об'єктних обгорток примітивних значень.
 
-```js
-// еквіваленто виразу const o = new Boolean(true)
-const o = new Object(true);
-```
+Наступні приклади створюють змінні `o1` і `o2`, що є об'єктами, котрі вміщають значення {{jsxref("Boolean")}} і {{jsxref("BigInt")}}:
 
 ```js
-// еквіваленто виразу const o = new Boolean(false)
-const o = new Object(Boolean());
+// Рівносильно інструкції const o1 = new Boolean(true)
+const o1 = new Object(true);
+
+// Немає відповідника, тому що BigInt() не можна викликати
+//  як конструктор, а виклик BigInt() як звичайної функції
+// не створює об'єкт
+const o2 = new Object(1n);
 ```
 
 ### Прототипи об'єктів

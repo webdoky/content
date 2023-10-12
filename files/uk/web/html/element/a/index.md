@@ -47,6 +47,7 @@ browser-compat: html.elements.a
     - Шматочки медіафайлів – за допомогою фрагментів медіа
     - Номери телефонів – за допомогою URL `tel:`
     - Адреси електронної пошти – за допомогою URL `mailto:`
+    - Текстові повідомлення SMS – за допомогою URL `sms:`
     - Хоч веббраузери можуть не підтримувати інші схеми URL, вебсайти можуть їх підтримувати за допомогою [`registerProtocolHandler()`](/uk/docs/Web/API/Navigator/registerProtocolHandler)
 
 - `hreflang`
@@ -364,8 +365,8 @@ document
 
   <header>…</header>
 
-  <main id="content"></main>
   <!-- Стрибкове посилання приводить сюди -->
+  <main id="content"></main>
 </body>
 ```
 

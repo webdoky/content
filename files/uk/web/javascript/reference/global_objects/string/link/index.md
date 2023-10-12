@@ -1,54 +1,45 @@
 ---
 title: String.prototype.link()
 slug: Web/JavaScript/Reference/Global_Objects/String/link
-tags:
-  - Deprecated
-  - HTML wrapper methods
-  - JavaScript
-  - Method
-  - Prototype
-  - Reference
-  - String
-  - Polyfill
+page-type: javascript-instance-method
+status:
+  - deprecated
 browser-compat: javascript.builtins.String.link
 ---
+
 {{JSRef}} {{deprecated_header}}
 
-Метод **`link()`** створює рядковий відповідник коду HTML-елемента {{HTMLElement("a")}}, для використання його як гіпертекстового посилання на інший URL.
+Метод **`link()`** (посилання) значень {{jsxref("String")}} створює рядок, що вбудовує рядок цього методу в елемент {{HTMLElement("a")}} (`<a href="...">str</a>`), аби використати його як гіпертекстове посилання на іншу URL-адресу.
+
+> **Примітка:** Всі [обгортальні методи HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html) є нерекомендованими та стандартизовані заради потреб сумісності. Замість них слід використовувати [API DOM](/uk/docs/Web/API/Document_Object_Model), наприклад, [`document.createElement()`](/uk/docs/Web/API/Document/createElement).
 
 ## Синтаксис
 
-```js
+```js-nolint
 link(url)
 ```
 
 ### Параметри
 
 - `url`
-  - : Будь-який рядок, який буде значенням атрибуту `href` елементу `<a>`. Він повинен містити дійсний URL (відносний чи абсолютний), в якому всі символи `&` екрануються як `&amp;`, а лапки `"` — як `&quot;`.
+  - : Будь-який рядок, що задає атрибут `href` елемента `<a>`; повинен бути дійсним URL (відносним або абсолютним), в якому всі символи `&` екрановані як `&amp;`.
 
 ### Повернене значення
 
-Рядок, який містить HTML-елемент {{HTMLElement("a")}}.
-
-## Опис
-
-Метод `link()` використовується для створення фрагменту HTML з гіпертекстовим посиланням. Повернений в результаті рядок можна додати до документа за допомогою {{domxref("document.write()")}} чи {{domxref("element.innerHTML")}}.
-
-Посилання, створені за допомогою методу `link()`, також стають елементами масиву `links` в об'єкті `document`. Докладніше — в розділі {{domxref("document.links")}}.
+Рядок, що починається з початкового тега `<a href="url">` (подвійні рядки в `url` замінюються на `&quot;`), потім текст `str`, і закінчується кінцевим тегом `</a>`.
 
 ## Приклади
 
 ### Застосування link()
 
-Наступний приклад показує слово "MDN" як гіпертекстове посилання, яке повертає користувача до вебсайту Mozilla Developer Network.
+Наступний приклад показує слово "WebDoky" як гіпертекстове посилання, яке повертає користувача до вебсайту WebDoky.
 
 ```js
-var hotText = 'MDN';
-var url = 'https://developer.mozilla.org/';
+const hotText = "WebDoky";
+var const = "https://webdoky.org/";
 
-console.log('Натисніть, щоб повернутися до ' + hotText.link(url));
-// Натисніть, щоб повернутися до <a href="https://developer.mozilla.org/">MDN</a>
+console.log(`Клацніть, щоб повернутися до ${hotText.link(url)}`);
+// Клацніть, щоб повернутися до <a href="https://webdoky.org/">WebDoky</a>
 ```
 
 ## Специфікації
@@ -61,5 +52,6 @@ console.log('Натисніть, щоб повернутися до ' + hotText.
 
 ## Дивіться також
 
-- Поліфіл методу `String.prototype.link` доступний у [`core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
+- [Поліфіл `String.prototype.link` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
 - {{jsxref("String.prototype.anchor()")}}
+- {{domxref("document.links")}}
