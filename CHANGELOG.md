@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2023-10-06 - 2023-10-13]
+
+* **Оновлення перекладу(HTML):** web/html/element/input/search (#2361) ([db66d892](https://github.com/webdoky/content/commit/db66d8928d7a9ab28af6a5a91d052e46af5be114))
+* **Оновлення перекладу(HTML):** web/html/element/input/email (#2360) ([fa2dc77c](https://github.com/webdoky/content/commit/fa2dc77c217006f3cc4e4894bfca6bc9fa3c164c))
+* **Оновлення перекладу(HTML):** web/html/element/script (#2359) ([eba11555](https://github.com/webdoky/content/commit/eba11555bde09def97a741fe071d4ff4a8074f8e))
+* **Оновлення перекладу(JS):** web/javascript/guide/using_promises (#2358) ([a40b978a](https://github.com/webdoky/content/commit/a40b978aa7478f3f07543a95b2f45269d8bdf61d))
+* **Оновлення перекладу(HTML):** web/html/element/link (#2356) ([b7291581](https://github.com/webdoky/content/commit/b729158133a46efe324c9048d59bd344c4da1691))
+* **Оновлення перекладу(JS):** web/javascript/closures (#2350) ([b24f1801](https://github.com/webdoky/content/commit/b24f1801e00937487561ed3726fdea4ee73efa98))
+* **Оновлення перекладу(HTML):** web/html/element/input (#2339) ([04116786](https://github.com/webdoky/content/commit/04116786da84b5e307f6ea9bb5a7e814a46d4e67))
+
 ## [2023-09-29 - 2023-10-06]
 
 * **Переклад(JS):** web/javascript/reference/regular_expressions (#1738) ([4f4e3ea1](https://github.com/webdoky/content/commit/4f4e3ea13376d8ebf4ecb50e47de8d68992e9d64))
