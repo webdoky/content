@@ -176,7 +176,7 @@ function resolveAfter1Second() {
 async function sequentialStart() {
   console.log("== sequentialStart починається ==");
 
-  // 1. Запустити таймер, вивести, коли він добіжить кінця
+  // 1. Запустити таймер, вивести у консоль, коли він добіжить кінця
   const slow = resolveAfter2Seconds();
   console.log(await slow);
 
