@@ -7,7 +7,7 @@ status:
 browser-compat: javascript.builtins.String.sub
 ---
 
-{{JSRef}} {{deprecated_header}}
+{{JSRef}} {{Deprecated_Header}}
 
 Метод **`sub()`** (під) значень {{jsxref("String")}} створює рядок, що включає рядок цього методу в елемент {{HTMLElement("sub")}} (`<sub>str</sub>`), завдяки чому цей рядок виводиться як підрядковий текст.
 
@@ -29,19 +29,23 @@ sub()
 
 ## Приклади
 
-### Застосування методів sub() та sup()
+### Застосування методу sub()
 
-Наступний приклад використовує методи `sub()` та {{jsxref("String/sup", "sup()")}} для форматування рядка:
+The code below creates an HTML string and then replaces the document's body with it:
 
 ```js
-const superText = "надрядковий";
-const subText = "підрядковий";
+const contentString = "Привіт, світе";
 
-console.log(`Отакий вигляд має ${superText.sup()} текст.`);
-// "Отакий вигляд має <sup>надрядковий</sup> текст."
+document.body.innerHTML = contentString.sub();
+```
 
-console.log(`Отакий вигляд має ${subText.sub()} текст.`);
-// "Отакий вигляд має <sub>підрядковий</sub> текст."
+Замість використання `sub()` і безпосереднього створення тексту HTML слід використовувати API DOM, як то [`document.createElement()`](/uk/docs/Web/API/Document/createElement). Наприклад:
+
+```js
+const contentString = "Привіт, світе";
+const elem = document.createElement("sub");
+elem.innerText = contentString;
+document.body.appendChild(elem);
 ```
 
 ## Специфікації
@@ -55,4 +59,5 @@ console.log(`Отакий вигляд має ${subText.sub()} текст.`);
 ## Дивіться також
 
 - Поліфіл методу `String.prototype.sub` наявний у [`core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
-- {{jsxref("String.prototype.sup()")}}
+- [Методи для обгортання в HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html)
+- {{HTMLElement("sub")}}
