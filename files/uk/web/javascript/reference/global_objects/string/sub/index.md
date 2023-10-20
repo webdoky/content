@@ -31,7 +31,7 @@ sub()
 
 ### Застосування методу sub()
 
-The code below creates an HTML string and then replaces the document's body with it:
+Код нижче створює рядок HTML, а тоді замінює ним тіло документа:
 
 ```js
 const contentString = "Привіт, світе";
