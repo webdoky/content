@@ -477,9 +477,7 @@ document
       <th scope="row">Неявна роль ARIA</th>
       <td>
         <a href="/uk/docs/Web/Accessibility/ARIA/Roles/link_role"><code>link</code></a>, коли присутній атрибут <code>href</code>, інакше –
-        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"
-          >жодної відповідної ролі</a
-        >
+        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/generic_role"><code>generic</code></a>
       </td>
     </tr>
     <tr>
