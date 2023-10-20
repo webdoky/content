@@ -75,4 +75,4 @@ String(sym); // "Symbol(приклад)"
 
 ## Дивіться також
 
-- [Настанови з JavaScript щодо форматування тексту](/uk/docs/Web/JavaScript/Guide/Text_formatting)
+- Посібник [Форматування тексту](/uk/docs/Web/JavaScript/Guide/Text_formatting)
