@@ -1,19 +1,18 @@
 ---
-title: '-moz-float-edge'
+title: "-moz-float-edge"
 slug: Web/CSS/-moz-float-edge
-tags:
-  - CSS
-  - CSS Property
-  - CSS:Mozilla Extensions
-  - Layout
-  - NeedsCompatTable
-  - Non-standard
-  - recipe:css-property
+page-type: css-property
+status:
+  - deprecated
+  - non-standard
 browser-compat: css.properties.-moz-float-edge
 ---
-{{CSSRef}}{{Non-standard_header}}
+
+{{CSSRef}}{{Non-standard_header}}{{Deprecated_Header}}
 
 Нестандартна властивість **`-moz-float-edge`** [CSS](/uk/docs/Web/CSS) вказує, чи включають властивості висоти та ширини зовнішні відступи, межі та товщину внутрішніх відступів.
+
+## Синтаксис
 
 ```css
 /* Ключові значення */
@@ -27,8 +26,6 @@ browser-compat: css.properties.-moz-float-edge
 -moz-float-edge: initial;
 -moz-float-edge: unset;
 ```
-
-## Синтаксис
 
 ### Значення
 
@@ -47,7 +44,10 @@ browser-compat: css.properties.-moz-float-edge
 
 ## Формальний синтаксис
 
-{{csssyntax}}
+```plain
+-moz-float-edge =
+  border-box | content-box | margin-box | padding-box
+```
 
 ## Приклади
 
@@ -74,7 +74,7 @@ browser-compat: css.properties.-moz-float-edge
 
 ### Результат
 
-{{ EmbedLiveSample('Examples') }}
+{{EmbedLiveSample('pryklady')}}
 
 ## Специфікації
 
@@ -86,4 +86,4 @@ browser-compat: css.properties.-moz-float-edge
 
 ## Дивіться також
 
-- {{bug(432891)}}
+- [Вада Firefox 432891](https://bugzil.la/432891)

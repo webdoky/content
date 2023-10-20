@@ -22,7 +22,7 @@ Object.create(proto, propertiesObject)
 
 - `proto`
   - : Об'єкт, який буде прототипом новоствореного об'єкта.
-- `propertiesObject` {{Optional_inline}}
+- `propertiesObject` {{optional_inline}}
   - : Якщо цей параметр вказано, і він не дорівнює {{jsxref("undefined")}}, — то це має бути об'єкт, чиї [власні перелічувані властивості](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties) позначають дескриптори властивостей, які, з відповідними іменами, буде додано до новоствореного об'єкта. Формат цих властивостей відповідає другому аргументові методу {{jsxref("Object.defineProperties()")}}.
 
 ### Повернене значення
@@ -76,7 +76,7 @@ const rect = new Rectangle();
 
 console.log(
   "Чи є `rect` примірником класу Rectangle?",
-  rect instanceof Rectangle
+  rect instanceof Rectangle,
 ); // true
 console.log("Чи є `rect` примірником класу Shape?", rect instanceof Shape); // true
 rect.move(1, 1); // Друкує 'Фігуру переміщено.'
@@ -153,7 +153,7 @@ o2 = Object.create(
       enumerable: true,
       configurable: true,
     },
-  }
+  },
 );
 // Це не еквівалентно виразові:
 // o2 = Object.create({ p: 42 })
@@ -186,4 +186,4 @@ o = Object.create(Constructor.prototype);
 - {{jsxref("Object.defineProperties()")}}
 - {{jsxref("Object.prototype.isPrototypeOf()")}}
 - {{jsxref("Reflect.construct()")}}
-- Допис Джона Резіга про [getPrototypeOf()](https://johnresig.com/blog/objectgetprototypeof/) (англ.)
+- [Object.getPrototypeOf](https://johnresig.com/blog/objectgetprototypeof/) від Джона Резіга (2008)

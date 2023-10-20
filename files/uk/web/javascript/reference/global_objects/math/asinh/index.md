@@ -1,45 +1,22 @@
 ---
 title: Math.asinh()
 slug: Web/JavaScript/Reference/Global_Objects/Math/asinh
-tags:
-  - JavaScript
-  - Math
-  - Method
-  - Reference
-  - Polyfill
+page-type: javascript-static-method
 browser-compat: javascript.builtins.Math.asinh
 ---
+
 {{JSRef}}
 
-Функція **`Math.asinh()`** повертає гіперболічний арксинус числа, а саме:
+Статичний метод **`Math.asinh()`** (арксинус гіперболічний) повертає гіперболічний арксинус числа. А саме,
 
-<math display="block"><semantics><mrow><mstyle mathvariant="monospace"><mrow><mo lspace="0em" rspace="thinmathspace">Math.asinh</mo>
-<mo stretchy="false">(</mo>
-<mi>x</mi>
-<mo stretchy="false">)</mo>
-</mrow></mstyle><mo>=</mo>
-<mo lspace="0em" rspace="thinmathspace">arsinh</mo>
-<mo stretchy="false">(</mo>
-<mi>x</mi>
-<mo stretchy="false">)</mo>
-<mo>=</mo>
-<mtext>такий унікальний </mtext><mspace width="thickmathspace"></mspace><mi>y</mi>
-<mspace width="thickmathspace"></mspace><mtext>, для якого</mtext>
-<mspace width="thickmathspace"></mspace><mo lspace="0em" rspace="0em">sinh</mo>
-<mo stretchy="false">(</mo>
-<mi>y</mi>
-<mo stretchy="false">)</mo>
-<mo>=</mo>
-<mi>x</mi>
-</mrow><annotation encoding="TeX">\mathtt{\operatorname{Math.asinh}(x)} =
-\operatorname{arsinh}(x) = \text{ the unique } \; y \; \text{such that} \;
-\sinh(y) = x</annotation></semantics></math>
+<math display="block"><semantics><mtable columnalign="right left right left right left right left right left" columnspacing="0em" displaystyle="true"><mtr><mtd><mrow><mo lspace="0em" rspace="0.16666666666666666em">𝙼𝚊𝚝𝚑.𝚊𝚜𝚒𝚗𝚑</mo><mo stretchy="false">(</mo><mi>𝚡</mi><mo stretchy="false">)</mo></mrow></mtd><mtd><mo>=</mo><mo lspace="0em" rspace="0.16666666666666666em">arsinh</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mtext>унікальний&nbsp;</mtext><mi>y</mi><mtext>&nbsp;для якого&nbsp;</mtext><mo lspace="0em" rspace="0em">sinh</mo><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo><mo>=</mo><mi>x</mi></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo><mo lspace="0em" rspace="0em">ln</mo><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><msqrt><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow></msqrt></mrow><mo>)</mo></mrow></mtd></mtr></mtable><annotation encoding="TeX">\begin{aligned}\mathtt{\operatorname{Math.asinh}(x)} &amp;= \operatorname{arsinh}(x) = \text{унікальний } y \text{ для якого } \sinh(y) = x \\&amp;= \ln\left(x + \sqrt{x^2 + 1}\right)\end{aligned}
+</annotation></semantics></math>
 
 {{EmbedInteractiveExample("pages/js/math-asinh.html")}}
 
 ## Синтаксис
 
-```js
+```js-nolint
 Math.asinh(x)
 ```
 
@@ -50,7 +27,7 @@ Math.asinh(x)
 
 ### Повернене значення
 
-Гіперболічний арксинус переданого числа.
+Гіперболічний арксинус числа `x`.
 
 ## Опис
 
@@ -61,31 +38,13 @@ Math.asinh(x)
 ### Застосування Math.asinh()
 
 ```js
-Math.asinh(1);  // 0.881373587019543
-Math.asinh(0);  // 0
+Math.asinh(-Infinity); // -Infinity
+Math.asinh(-1); // -0.881373587019543
+Math.asinh(-0); // -0
+Math.asinh(0); // 0
+Math.asinh(1); // 0.881373587019543
+Math.asinh(Infinity); // Infinity
 ```
-
-## Поліфіл
-
-Можна відтворити метод `Math.asinh` за допомогою наступної функції:
-
-```js
-if (!Math.asinh) Math.asinh = function(x) {
-    var absX = Math.abs(x), w
-    if (absX < 3.725290298461914e-9) // |x| < 2^-28
-        return x
-    if (absX > 268435456) // |x| > 2^28
-        w = Math.log(absX) + Math.LN2
-    else if (absX > 2) // 2^28 >= |x| > 2
-        w = Math.log(2 * absX + 1 / (Math.sqrt(x * x + 1) + absX))
-    else
-        var t = x * x, w = Math.log1p(absX + t / (1 + Math.sqrt(1 + t)))
-
-    return x > 0 ? w : -w
-}
-```
-
-Для методу `Math.log1p` теж можна зробити поліфіл; дивіться деталі на сторінці [Math.log1p](/uk/docs/Web/JavaScript/Reference/Global_Objects/Math/log1p).
 
 ## Специфікації
 
@@ -97,7 +56,7 @@ if (!Math.asinh) Math.asinh = function(x) {
 
 ## Дивіться також
 
-- Поліфіл для `Math.asinh` доступний у [`core-js`](https://github.com/zloirock/core-js#ecmascript-math)
+- [Поліфіл `Math.atanh` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-math)
 - {{jsxref("Math.acosh()")}}
 - {{jsxref("Math.atanh()")}}
 - {{jsxref("Math.cosh()")}}
