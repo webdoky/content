@@ -7,7 +7,9 @@ browser-compat: javascript.builtins.Array.reverse
 
 {{JSRef}}
 
-Метод **`reverse()`** (розвернути) розвертає масив _[на місці](https://en.wikipedia.org/wiki/In-place_algorithm)_ й повертає посилання на той самий масив, причому перший елемент стає останнім, а останній – першим. Інакше кажучи, порядок елементів у масиві стає повною протилежністю вихідного.
+Метод **`reverse()`** (розвернути) примірників {{jsxref("Array")}} розвертає масив _[на місці](https://uk.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%20%D0%B7%20%D0%B2%D0%B8%D0%BA%D0%BE%D0%BD%D0%B0%D0%BD%D0%BD%D1%8F%D0%BC%20%D0%BD%D0%B0%20%D0%BC%D1%96%D1%81%D1%86%D1%96)_ й повертає посилання на той самий масив, причому перший елемент стає останнім, а останній – першим. Інакше кажучи, порядок елементів у масиві стає повною протилежністю вихідного.
+
+Щоб розвернути елементи в масиві, не змінюючи вихідний масив, слід використати {{jsxref("Array/toReversed", "toReversed()")}}.
 
 {{EmbedInteractiveExample("pages/js/array-reverse.html")}}
 
@@ -16,6 +18,10 @@ browser-compat: javascript.builtins.Array.reverse
 ```js-nolint
 reverse()
 ```
+
+### Параметри
+
+Жодних.
 
 ### Повернене значення
 
@@ -55,7 +61,7 @@ reversed[0] = 5;
 console.log(numbers[0]); // 5
 ```
 
-Коли треба, щоб `reverse()` не вніс зміни до вихідного масиву, а повернув [поверхнево скопійований](/uk/docs/Glossary/Shallow_copy) масив, подібно до інших методів (наприклад, [`map()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/map)), можна виконати поверхневе копіювання до виклику `reverse()`, за допомогою [синтаксису розгортання](/uk/docs/Web/JavaScript/Reference/Operators/Spread_syntax) або [`Array.from()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/from).
+Коли треба, щоб `reverse()` не вніс зміни до вихідного масиву, а повернув [поверхнево скопійований](/uk/docs/Glossary/Shallow_copy) масив, подібно до інших методів (наприклад, [`map()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/map)), слід використати метод {{jsxref("Array/toReversed", "toReversed()")}}. Інший варіант: можна виконати поверхневе копіювання до виклику `reverse()`, за допомогою [синтаксису розгортання](/uk/docs/Web/JavaScript/Reference/Operators/Spread_syntax) або [`Array.from()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/from).
 
 ```js
 const numbers = [3, 2, 4, 1, 5];
@@ -76,17 +82,19 @@ console.log([1, , 3, 4].reverse()); // [4, 3, порожньо, 1]
 
 ### Виклик reverse() на об'єктах-немасивах
 
-Метод `reverse()` зчитує властивість `length` із `this`. Потім він обробляє кожний індекс від `0` до `length / 2` і міняє місцями пари відповідних індексів з обох кінців, [видаляючи](/uk/docs/Web/JavaScript/Reference/Operators/delete) властивості, якщо це необхідно.
+Метод `reverse()` зчитує властивість `length` із `this`. Потім він обробляє кожну властивість, що має ключ – ціле число, від `0` до `length / 2` і міняє місцями пари відповідних індексів з обох кінців, [видаляючи](/uk/docs/Web/JavaScript/Reference/Operators/delete) усі цільові властивості, для яких не існують відповідні вихідні властивості.
 
 ```js
 const arrayLike = {
   length: 3,
   unrelated: "foo",
   2: 4,
+  3: 33, // ігнорується reverse(), оскільки length – 3
 };
 console.log(Array.prototype.reverse.call(arrayLike));
-// { '0': 4, length: 3, unrelated: 'foo' }
-// Індекс '2' видаляється, бо індексу '0' спершу не було
+// { 0: 4, 3: 33, length: 3, unrelated: 'foo' }
+// Індекс 2 – видаляється, оскільки спершу індекса 0 не було
+// Індекс 3 лишається без змін, оскільки length – 3
 ```
 
 ## Специфікації
@@ -99,6 +107,10 @@ console.log(Array.prototype.reverse.call(arrayLike));
 
 ## Дивіться також
 
+- [Поліфіл `Array.prototype.reverse` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- {{jsxref("Array")}}
 - {{jsxref("Array.prototype.join()")}}
 - {{jsxref("Array.prototype.sort()")}}
+- {{jsxref("Array.prototype.toReversed()")}}
 - {{jsxref("TypedArray.prototype.reverse()")}}

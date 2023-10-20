@@ -42,7 +42,7 @@ try {
 
 На відміну від інших конструкцій, як то [`if`](/uk/docs/Web/JavaScript/Reference/Statements/if...else) чи [`for`](/uk/docs/Web/JavaScript/Reference/Statements/for), блоки `try`, `catch` і `finally` мусять бути _блоками_, а не одиничними інструкціями.
 
-```js example-bad
+```js-nolint example-bad
 try doSomething(); // SyntaxError
 catch (e) console.log(e);
 ```
@@ -57,7 +57,7 @@ catch (e) console.log(e);
 
 ### Зв'язування catch
 
-Коли в блоку `try` викидається виняток, то `exceptionVar` (тобто `e` в `catch (e)`) містить значення цього винятку. Це {{glossary("binding", "зв'язування")}} можна використовувати для отримання інформації про викинутий виняток. Воно доступне лише в {{Glossary("Scope", "області видимості")}} блоку `catch`.
+Коли в блоку `try` викидається виняток, то `exceptionVar` (тобто `e` в `catch (e)`) містить значення цього винятку. Це {{Glossary("binding", "зв'язування")}} можна використовувати для отримання інформації про викинутий виняток. Воно доступне лише в {{Glossary("Scope", "області видимості")}} блоку `catch`.
 
 Це не обов'язково повинен бути один ідентифікатор. Для присвоєння кількох ідентифікаторів за раз можна використовувати [патерн деструктурування](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
 
@@ -72,12 +72,12 @@ try {
 
 Зв'язування, створені положенням `catch`, живуть в тій же області видимості, що й сам блок `catch`, тож всі змінні, оголошені в блоці `catch`, не можуть мати назв, що збігаються з назвами зв'язувань, створених положенням `catch`. (Існує [один виняток з цього правила](/uk/docs/Web/JavaScript/Reference/Deprecated_and_obsolete_features#instruktsii), але такий запис – нерекомендований.)
 
-```js example-bad
+```js-nolint example-bad
 try {
-  throw new TypeError("oops");
+  throw new TypeError("ой");
 } catch ({ name, message }) {
   var name; // SyntaxError: Identifier 'name' has already been declared
-  let message; // SyntaxError: Identifier 'name' has already been declared
+  let message; // SyntaxError: Identifier 'message' has already been declared
 }
 ```
 
@@ -111,8 +111,8 @@ function isValidJSON(text) {
 
 Блок `finally` містить інструкції, що будуть виконані після виконання блоку `try` та блоку (чи блоків) `catch`, але до інструкцій, що стоять після блоку `try...catch...finally`. Потік виконання обов'язково зайде до блоку `finally`, що може відбутися в один з наступних способів:
 
-- Безпосередньо перед нормальним завершенням виконання блоку `try` (винятків викинуто не було);
-- Безпосередньо перед нормальним завершенням виконання блоку `catch`;
+- Безпосередньо після нормального завершення виконання блоку `try` (винятків викинуто не було);
+- Безпосередньо після нормального завершення виконання блоку `catch`;
 - Безпосередньо перед виконанням інструкції контролю потоку виконання (`return`, `throw`, `break`, `continue`) в блоку `try` чи блоку `catch`.
 
 Якщо виняток викидається з блоку `try`, то навіть якщо немає блоку `catch` для обробки винятку, блок `finally` все одно виконується, у випадку чого виняток все одно викидається негайно після закінчення виконання блоку `finally`.
