@@ -9,7 +9,7 @@ browser-compat: javascript.builtins.Array.concat
 
 Метод **`concat()`** (зчепити) використовується для злиття двох і більше масивів. Він не змінює наявні масиви, а повертає новий.
 
-{{EmbedInteractiveExample("pages/js/array-concat.html","shorter")}}
+{{EmbedInteractiveExample("pages/js/array-concat.html", "shorter")}}
 
 ## Синтаксис
 
@@ -150,7 +150,7 @@ console.log(Array.prototype.concat.call(arrayLike, 3, 4)); // [1, 2, 3, 4]
 ## Дивіться також
 
 - [Поліфіл для `Array.prototype.concat` доступний в складі `core-js`, разом з виправленнями й реалізацією сучасної логіки типу підтримки `Symbol.isConcatSpreadable`](https://github.com/zloirock/core-js#ecmascript-array)
-- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
 - {{jsxref("Array.prototype.push()")}}
 - {{jsxref("Array.prototype.unshift()")}}
