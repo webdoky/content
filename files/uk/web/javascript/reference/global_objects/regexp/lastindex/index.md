@@ -19,7 +19,7 @@ browser-compat: javascript.builtins.RegExp.lastIndex
 
 ## Опис
 
-Ця властивість задається тільки якщо примірник регулярного виразу має позначку `g` – на позначення глобального пошуку, або `y` – на позначення липкого пошуку. Коли на заданому введенні викликається {{jsxref("RegExp.prototype.exec()", "exec()")}}, застосовуються наступні правила:
+Ця властивість задається тільки якщо примірник регулярного виразу має позначку `g` – на позначення глобального пошуку, або `y` – на позначення липкого пошуку. Коли на заданому введенні викликається {{jsxref("RegExp/exec", "exec()")}}, застосовуються наступні правила:
 
 - Якщо `lastIndex` – більше за довжину введення, то `exec()` не знайде збігу, і `lastIndex` отримає значення 0.
 - Якщо `lastIndex` дорівнює або менше за довжину введення, то `exec()` спробує знайти збіг зі введенням, починаючи від `lastIndex`.
@@ -183,11 +183,11 @@ console.log(matchFoo("foo baz", 0)[0]); // "foo"
 
 ## Дивіться також
 
-- {{JSxRef("RegExp.prototype.dotAll")}}
-- {{JSxRef("RegExp.prototype.global")}}
-- {{JSxRef("RegExp.prototype.hasIndices")}}
-- {{JSxRef("RegExp.prototype.ignoreCase")}}
-- {{JSxRef("RegExp.prototype.multiline")}}
-- {{JSxRef("RegExp.prototype.source")}}
-- {{JSxRef("RegExp.prototype.sticky")}}
-- {{JSxRef("RegExp.prototype.unicode")}}
+- {{jsxref("RegExp.prototype.dotAll")}}
+- {{jsxref("RegExp.prototype.global")}}
+- {{jsxref("RegExp.prototype.hasIndices")}}
+- {{jsxref("RegExp.prototype.ignoreCase")}}
+- {{jsxref("RegExp.prototype.multiline")}}
+- {{jsxref("RegExp.prototype.source")}}
+- {{jsxref("RegExp.prototype.sticky")}}
+- {{jsxref("RegExp.prototype.unicode")}}
