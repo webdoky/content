@@ -135,15 +135,18 @@ browser-compat: html.elements.script
       - : Вказує на те, що сценарій є "класичним сценарієм" і містить код мовою JavaScript.
         Розробників заохочують опускати атрибут, якщо сценарій вказує на код мовою JavaScript, а не задавати тип MIME.
         Типи MIME JavaScript – [перелічені в специфікації типів медіа IANA](/uk/docs/Web/HTTP/Basics_of_HTTP/MIME_types#textjavascript)
+    - [`importmap`](/uk/docs/Web/HTML/Element/script/type/importmap)
+      - : Це значення вказує на те, що тіло елемента вміщає карту імпортування.
+        Карта імпортування – об'єкт JSON, котрий розробники можуть використовувати для контролю того, як браузер розв'язує модульні специфікатори при імпортуванні [модулів JavaScript](/uk/docs/Web/JavaScript/Guide/Modules#import-moduliv-za-dopomohoiu-kart-importuvannia).
     - `module`
       - : Це значення призводить до розгляду коду як модуля JavaScript.
         Обробка вмісту сценарію – відкладається.
         Атрибути `charset` і `defer` – не діють.
         Про застосування `module` – дивіться наш посібник [Модулі JavaScript](/uk/docs/Web/JavaScript/Guide/Modules).
         На відміну від класичних, модульні сценарії вимагають, для отримання з іншого походження, використання протоколу CORS.
-    - [`importmap`](/uk/docs/Web/HTML/Element/script/type/importmap)
-      - : Це значення вказує на те, що тіло елемента вміщає карту імпортування.
-        Карта імпортування – об'єкт JSON, котрий розробники можуть використовувати для контролю того, як браузер розв'язує модульні специфікатори при імпорті [модулів JavaScript](/uk/docs/Web/JavaScript/Guide/Modules#import-moduliv-za-dopomohoiu-kart-importuvannia).
+    - [`speculationrules`](/uk/docs/Web/HTML/Element/script/type/speculationrules) {{experimental_inline}}
+      - : Це значення вказує на те, що тіло елемента містить правила спекуляції.
+        Правила спекуляції приймають форму об'єкта JSON, що визначає, які ресурси повинні бути отримані наперед або візуалізовані наперед браузером. Це частина [API правил спекуляції](/uk/docs/Web/Performance/Speculative_loading#api-pravyl-spekuliatsii).
     - **Будь-яке інше значення**
       - : Вміст всередині розглядається як масив даних і не обробляється самим браузером.
         Розробники повинні використовувати для позначення масивів даних дійсні типи MIME, котрі не є типами MIME JavaScript.
