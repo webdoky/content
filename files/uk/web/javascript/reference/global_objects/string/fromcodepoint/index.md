@@ -9,7 +9,7 @@ browser-compat: javascript.builtins.String.fromCodePoint
 
 Статичний метод **`String.fromCodePoint()`** (із кодової точки) повертає рядок, створений зі вказаного набору кодів.
 
-{{EmbedInteractiveExample("pages/js/string-fromcodepoint.html","shorter")}}
+{{EmbedInteractiveExample("pages/js/string-fromcodepoint.html", "shorter")}}
 
 ## Синтаксис
 
@@ -22,7 +22,7 @@ String.fromCodePoint(num1, num2, /* …, */ numN)
 
 ### Параметри
 
-- `numN`
+- `num1`, …, `numN`
   - : Ціле число між `0` і `0x10FFFF` (включно), що відповідає кодовій точці Unicode.
 
 ### Повернене значення
