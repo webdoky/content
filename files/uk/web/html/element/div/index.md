@@ -118,8 +118,10 @@ browser-compat: html.elements.div
     <tr>
       <th scope="row">Неявна роль ARIA</th>
       <td>
-        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"
-          >Немає відповідної ролі</a
+        <code
+          ><a href="/uk/docs/Web/Accessibility/ARIA/Roles/generic_role"
+            >generic</a
+          ></code
         >
       </td>
     </tr>
