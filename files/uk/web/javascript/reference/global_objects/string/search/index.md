@@ -38,7 +38,7 @@ search(regexp)
 Коли треба знати, чи був знайдений патерн, а _також_ індекс збігу в рядку, слід використовувати `search()`.
 
 - Якщо треба знати лише те, чи збіг існує, слід використовувати метод {{jsxref("RegExp.prototype.test()", "test()")}}, який повертає булеве значення.
-- Якщо потрібен сам текст, що дає збіг, слід використовувати {{jsxref("String.prototype.match()", "match()")}} або {{jsxref("RegExp.prototype.exec()")}}.
+- Якщо потрібен сам текст, що дає збіг, слід використовувати {{jsxref("String.prototype.match()")}} або {{jsxref("RegExp.prototype.exec()")}}.
 
 ## Приклади
 
@@ -65,7 +65,7 @@ console.log(str.search(reDot)); // повертає -1 — не може зна�
 ## Дивіться також
 
 - [Поліфіл `String.prototype.search` у складі `core-js`, з виправленнями та реалізацією сучасної логіки штибу підтримки `Symbol.search`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
-- [Застосування регулярних виразів у JavaScript](/uk/docs/Web/JavaScript/Guide/Regular_expressions)
+- Посібник [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_expressions)
 - {{jsxref("String.prototype.match()")}}
 - {{jsxref("RegExp.prototype.exec()")}}
 - [`RegExp.prototype[@@search]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@search)
