@@ -9,7 +9,7 @@ browser-compat: javascript.builtins.Array.concat
 
 Метод **`concat()`** (зчепити) використовується для злиття двох і більше масивів. Він не змінює наявні масиви, а повертає новий.
 
-{{EmbedInteractiveExample("pages/js/array-concat.html","shorter")}}
+{{EmbedInteractiveExample("pages/js/array-concat.html", "shorter")}}
 
 ## Синтаксис
 
