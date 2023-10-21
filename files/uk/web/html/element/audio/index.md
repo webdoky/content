@@ -11,7 +11,7 @@ browser-compat: html.elements.audio
 
 {{EmbedInteractiveExample("pages/tabbed/audio.html","tabbed-standard")}}
 
-Приклад вище демонструє просте використання елемента **`<audio>`**. Подібно до елемента {{htmlelement("img")}}, шлях до медіа для вбудування включається в атрибут `src`; можна включити інші атрибути, щоб задати інформацію штибу того, чи потрібно, щоб звук автоматично відтворювався і повторювався, чи потрібно показати типові елементи керування аудіо від браузера тощо.
+Приклад вище демонструє просте використання елемента **`<audio>`**. Подібно до елемента {{htmlelement("img")}}, шлях до медіа для вбудування включається в атрибут `src`; можна включити й інші атрибути, щоб задати інформацію штибу того, чи потрібно, щоб звук автоматично відтворювався і повторювався, чи потрібно показати типові елементи керування аудіо від браузера тощо.
 
 Вміст між початковим та кінцевим тегами `<audio></audio>` виводиться як запасний варіант у тих браузерах, що не підтримують цей елемент.
 
@@ -228,8 +228,6 @@ browser-compat: html.elements.audio
 
 ## Примітки щодо застосування
 
-Browsers don't all support the same [file types](/uk/docs/Web/Media/Formats/Containers) and [audio codecs](/uk/docs/Web/Media/Formats/Audio_codecs); you can provide multiple sources inside nested {{htmlelement("source")}} elements, and the browser will then use the first one it understands:
-
 Не всі браузери підтримують одній й ті самі [типи файлів](/uk/docs/Web/Media/Formats/Containers) та [кодеки аудіо](/uk/docs/Web/Media/Formats/Audio_codecs); можна надати декілька джерел у вкладених елементах {{htmlelement("source")}}, і браузер використає перше, яке зрозуміє:
 
 ```html
@@ -274,9 +272,9 @@ Browsers don't all support the same [file types](/uk/docs/Web/Media/Formats/Cont
 - {{domxref("HTMLMediaElement.audioTracks")}}
   - : Об'єкт {{domxref("AudioTrackList")}}, що містить всі доріжки аудіо елемента медіа. Можна додати до цього об'єкта слухач `addtrack`, щоб отримати звістку про додавання до елемента нових доріжок аудіо.
 - {{domxref("HTMLMediaElement.videoTracks")}}
-  - : Додайте до цього об'єкта {{domxref("VideoTrackList")}} слухач `addtrack`, щоб отримати звістку про додавання до елемента доріжок відео.
+  - : Додайте до об'єкта {{domxref("VideoTrackList")}} слухач `addtrack`, щоб отримати звістку про додавання до елемента доріжок відео.
 - {{domxref("HTMLMediaElement.textTracks")}}
-  - : Додайте до цього об'єкта {{domxref("TextTrackList")}} слухач подій `addtrack`, щоб отримати звістку про додавання до елемента нових текстових доріжок.
+  - : Додайте до об'єкта {{domxref("TextTrackList")}} слухач подій `addtrack`, щоб отримати звістку про додавання до елемента нових текстових доріжок.
 
 > **Примітка:** Навіть попри те, що це елемент `<audio>`, він все одно має списки відео та текстових доріжок, і насправді може використовуватися для відтворення відео, хоч наслідки для користувацького інтерфейсу можуть бути дивними.
 
@@ -307,7 +305,7 @@ elem.audioTrackList.onremovetrack = (event) => {
 ```html
 <!-- Просте відтворення аудіо -->
 <audio src="AudioTest.ogg" autoplay>
-  <a href="AudioTest.ogg">Стягнути аудіо OGG</a>.
+  <a href="AudioTest.ogg">Стягнути аудіо у форматі OGG</a>.
 </audio>
 ```
 
@@ -320,7 +318,7 @@ elem.audioTrackList.onremovetrack = (event) => {
 ```html
 <audio controls>
   <source src="foo.wav" type="audio/wav" />
-  <a href="foo.wav">Стягнути аудіо WAV</a>.
+  <a href="foo.wav">Стягнути аудіо у форматі WAV</a>.
 </audio>
 ```
 
@@ -367,7 +365,7 @@ elem.audioTrackList.onremovetrack = (event) => {
   <source src="myAudio.mp3" type="audio/mpeg" />
   <source src="myAudio.ogg" type="audio/ogg" />
   <p>
-    Стягнути аудіо <a href="myAudio.mp3">MP3</a> або
+    Стягнути аудіо у форматах <a href="myAudio.mp3">MP3</a> або
     <a href="myAudio.ogg">OGG</a>.
   </p>
 </audio>
