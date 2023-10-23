@@ -1,50 +1,57 @@
 ---
 title: String.prototype.sup()
 slug: Web/JavaScript/Reference/Global_Objects/String/sup
-tags:
-  - Deprecated
-  - HTML wrapper methods
-  - JavaScript
-  - Method
-  - Prototype
-  - Reference
-  - String
-  - Polyfill
+page-type: javascript-instance-method
+status:
+  - deprecated
 browser-compat: javascript.builtins.String.sup
 ---
-{{JSRef}} {{deprecated_header}}
 
-Метод **`sup()`** створює HTML-елемент {{HTMLElement("sup")}}, який змушує рядок зображатись як надрядковий текст.
+{{JSRef}} {{Deprecated_Header}}
+
+Метод **`sup()`** (над) значень {{jsxref("String")}} створює рядок, що включає рядок цього методу в елемент {{HTMLElement("sup")}} (`<sup>str</sup>`), завдяки чому цей рядок виводиться як надрядковий текст.
+
+> **Примітка:** Всі [обгортальні методи HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html) є нерекомендованими та стандартизовані лише заради потреб сумісності. Замість них слід використовувати [API DOM](/uk/docs/Web/API/Document_Object_Model), наприклад, [`document.createElement()`](/uk/docs/Web/API/Document/createElement).
 
 ## Синтаксис
 
-```js
+```js-nolint
 sup()
 ```
 
+### Параметри
+
+Жодних.
+
 ### Повернене значення
 
-Рядок, що містить HTML-елемент {{HTMLElement("sup")}}.
-
-## Опис
-
-Метод `sup()` вписує рядок тексту в елемент `<sup>`: "`<sup>str</sup>`".
+Рядок, що починається з початкового тега `<sup>`, потім текст `str`, а потім кінцевий тег `</sup>`.
 
 ## Приклади
 
-### Застосування методів sub() та sup()
+### Застосування sup()
 
-Наступний приклад використовує методи `sup()` та {{jsxref("String.prototype.sub()", "sub()")}} для форматування рядка:
+Код нижче створює рядок HTML, а потім замінює ним тіло документа:
 
 ```js
-var superText = 'надрядковий';
-var subText = 'підрядковий';
+const contentString = "Привіт, світе";
 
-console.log('Отакий вигляд має ' + superText.sup() + ' текст.');
-// "Отакий вигляд має <sup>надрядковий</sup> текст."
+document.body.innerHTML = contentString.sup();
+```
 
-console.log('Отакий вигляд має ' + subText.sub() + ' текст.');
-// "Отакий вигляд має <sub>підрядковий</sub> текст."
+Це породить наступний HTML:
+
+```html
+<sup>Привіт, світе</sup>
+```
+
+Замість використання `sup()` і безпосереднього створення тексту HTML варто використовувати API DOM, як от [`document.createElement()`](/uk/docs/Web/API/Document/createElement). Наприклад:
+
+```js
+const contentString = "Привіт, світе";
+const elem = document.createElement("sup");
+elem.innerText = contentString;
+document.body.appendChild(elem);
 ```
 
 ## Специфікації
@@ -58,4 +65,5 @@ console.log('Отакий вигляд має ' + subText.sub() + ' текст.'
 ## Дивіться також
 
 - Поліфіл методу `String.prototype.sup` наявний у [`core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
-- {{jsxref("String.prototype.sub()")}}
+- [Методи для обгортання в HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html)
+- {{HTMLElement("sup")}}

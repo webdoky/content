@@ -87,7 +87,11 @@ browser-compat: html.elements.table
     - `center`: таблиця виводиться в центрі документа;
     - `right`: таблиця виводиться з правого боку документа.
 
-    Щоб отримати подібний до атрибута align ефект, слід задати {{cssxref("margin-left")}} і {{cssxref("margin-right")}} зі значенням `auto` або {{cssxref("margin")}} зі значенням `0 auto`.
+    Щоб отримати подібний до атрибута align ефект, слід задати {{cssxref("margin-left")}} і {{cssxref("margin-right")}}:
+
+    - `left`: `margin-right: auto; margin-left: 0;`
+    - `center`: `margin-right: auto; margin-left: auto;`
+    - `right`: `margin-right: 0; margin-left: auto;`
 
 - `bgcolor` {{Deprecated_inline}}
 
@@ -135,6 +139,8 @@ browser-compat: html.elements.table
   - : Цей атрибут визначає альтернативний текст, що резюмує вміст таблиці. Замість нього слід використовувати елемент {{htmlelement("caption")}}.
 - `width` {{Deprecated_inline}}
   - : Цей атрибут визначає ширину таблиці. Замість нього слід використовувати властивість {{cssxref("width")}}.
+
+> **Примітка:** Хоч жодна специфікація HTML не включає `height` як атрибут `<table>`, частина браузерів підтримують нестандартне тлумачення `height`. Значення без одиниць вимірювання задає мінімальну абсолютну висоту в пікселях. Якщо задати його як відсоткове значення, то мінімальна висота таблиці буде відносною щодо висоти батьківського контейнера.
 
 ## Приклади
 

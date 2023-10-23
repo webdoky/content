@@ -7,15 +7,13 @@ browser-compat: css.properties.display
 
 {{CSSRef}}
 
-Властивість [CSS](/uk/docs/Web/CSS) **`display`** (зображувати) встановлює, як розглядається елемент: як [блокова чи рядкова рамка](/uk/docs/Web/CSS/CSS_Flow_Layout), і яке компонування буде застосовано до його нащадків: [потокове](/uk/docs/Web/CSS/CSS_Flow_Layout), [сіткове](/uk/docs/Web/CSS/CSS_Grid_Layout) чи [гнучке](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout).
+Властивість [CSS](/uk/docs/Web/CSS) **`display`** (зображувати) встановлює, як розглядається елемент: як [блокова чи рядкова рамка](/uk/docs/Web/CSS/CSS_flow_layout), і яке компонування буде застосовано до його нащадків: [потокове](/uk/docs/Web/CSS/CSS_flow_layout), [сіткове](/uk/docs/Web/CSS/CSS_grid_layout) чи [гнучке](/uk/docs/Web/CSS/CSS_flexible_box_layout).
 
-Формально кажучи, властивість **`display`** встановлює для елемента внутрішній та зовнішній _типи відображення_. Зовнішній тип визначає участь елемента у [потоковому компонуванні](/uk/docs/Web/CSS/CSS_Flow_Layout); внутрішній тип визначає компонування нащадків. Деякі значення `display` повністю описані у власних специфікаціях; до прикладу, деталі того, що відбувається при встановленні `display: flex` визначено у специфікації Гнучкої блокової моделі CSS.
+Формально кажучи, властивість **`display`** встановлює для елемента внутрішній та зовнішній _типи відображення_. Зовнішній тип визначає участь елемента у [потоковому компонуванні](/uk/docs/Web/CSS/CSS_flow_layout); внутрішній тип визначає компонування нащадків. Деякі значення `display` повністю описані у власних специфікаціях; до прикладу, деталі того, що відбувається при встановленні `display: flex` визначено у специфікації Гнучкої блокової моделі CSS.
 
 {{EmbedInteractiveExample("pages/css/display.html")}}
 
 ## Синтаксис
-
-Властивість CSS `display` вказується за допомогою ключових слів.
 
 ```css
 /* складені значення */
@@ -55,6 +53,8 @@ display: revert-layer;
 display: unset;
 ```
 
+Властивість CSS `display` задається за допомогою ключових слів.
+
 ## Згруповані значення
 
 Ключові значення можуть бути згруповані у шість категорій значень.
@@ -90,9 +90,9 @@ display: unset;
     - `table`
       - : Такі елементи поводяться неначе HTML-елементи {{HTMLElement("table")}}. Вони визначають рамки блокового рівня.
     - `flex`
-      - : Елемент поводиться як елемент блокового рівня, і розкладає свій вміст згідно з [моделлю flexbox](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout).
+      - : Елемент поводиться як елемент блокового рівня, і розкладає свій вміст згідно з [моделлю flexbox](/uk/docs/Web/CSS/CSS_flexible_box_layout).
     - `grid`
-      - : Елемент поводиться як елемент блокового рівня, і розглядає свій вміст згідно з [сітковою моделлю](/uk/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout)
+      - : Елемент поводиться як елемент блокового рівня, і розглядає свій вміст згідно з [сітковою моделлю](/uk/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout)
     - `ruby` {{Experimental_Inline}}
       - : Елемент поводиться як елемент рядкового рівня, і розкладає свій вміст згідно з моделлю форматування рубі. Він поводиться як відповідний елемент HTML {{HTMLElement("ruby")}}.
 
@@ -220,35 +220,35 @@ display: unset;
 
 ### Потокове компонування CSS (display: block, display: inline)
 
-- [Блокове та рядкове компонування у звичайному потоці](/uk/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow)
-- [Потокове компонування та переповнення](/uk/docs/Web/CSS/CSS_Flow_Layout/Flow_Layout_and_Overflow)
-- [Потокове компонування та режими письма](/uk/docs/Web/CSS/CSS_Flow_Layout/Flow_Layout_and_Writing_Modes)
-- [Контексти форматування: пояснення](/uk/docs/Web/CSS/CSS_Flow_Layout/Intro_to_formatting_contexts)
-- [В потоці та поза потоком](/uk/docs/Web/CSS/CSS_Flow_Layout/In_Flow_and_Out_of_Flow)
+- [Блокове та рядкове компонування у звичайному потоці](/uk/docs/Web/CSS/CSS_flow_layout/Block_and_inline_layout_in_normal_flow)
+- [Потокове компонування та переповнення](/uk/docs/Web/CSS/CSS_flow_layout/Flow_layout_and_overflow)
+- [Потокове компонування та режими письма](/uk/docs/Web/CSS/CSS_flow_layout/Flow_layout_and_writing_modes)
+- [Контексти форматування: пояснення](/uk/docs/Web/CSS/CSS_flow_layout/Introduction_to_formatting_contexts)
+- [В потоці та поза потоком](/uk/docs/Web/CSS/CSS_flow_layout/In_flow_and_out_of_flow)
 
 ### display: flex
 
-- [Засади Flexbox](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)
-- [Шикування елементів у гнучкому контейнері](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container)
-- [Контроль за пропорціями гнучких елементів за основною віссю](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Controlling_Ratios_of_Flex_Items_Along_the_Main_Ax)
-- [Опанування перенесення гнучких елементів](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Mastering_Wrapping_of_Flex_Items)
-- [Порядок гнучких елементів](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Ordering_Flex_Items)
-- [Взаємини Flexbox та інших способів компонування](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Relationship_of_Flexbox_to_Other_Layout_Methods)
-- [Типові випадки використання Flexbox](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Typical_Use_Cases_of_Flexbox)
+- [Засади Flexbox](/uk/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox)
+- [Шикування елементів у гнучкому контейнері](/uk/docs/Web/CSS/CSS_flexible_box_layout/Aligning_items_in_a_flex_container)
+- [Контроль за пропорціями гнучких елементів за основною віссю](/uk/docs/Web/CSS/CSS_flexible_box_layout/Controlling_ratios_of_flex_items_along_the_main_axis)
+- [Опанування перенесення гнучких елементів](/uk/docs/Web/CSS/CSS_flexible_box_layout/Mastering_wrapping_of_flex_items)
+- [Порядок гнучких елементів](/uk/docs/Web/CSS/CSS_flexible_box_layout/Ordering_flex_items)
+- [Взаємини Flexbox та інших способів компонування](/uk/docs/Web/CSS/CSS_flexible_box_layout/Relationship_of_flexbox_to_other_layout_methods)
+- [Типові випадки використання Flexbox](/uk/docs/Web/CSS/CSS_flexible_box_layout/Typical_use_cases_of_flexbox)
 
 ### display: grid
 
-- [Засади сіткового компонування](/uk/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout)
-- [Взаємини з іншими способами компонування](/uk/docs/Web/CSS/CSS_Grid_Layout/Relationship_of_Grid_Layout)
-- [Розташування за grid-лініями](/uk/docs/Web/CSS/CSS_Grid_Layout/Line-based_Placement_with_CSS_Grid)
-- [Шаблонні зони в сітках](/uk/docs/Web/CSS/CSS_Grid_Layout/Grid_Template_Areas)
-- [Компонування з використанням іменованих grid-ліній](/uk/docs/Web/CSS/CSS_Grid_Layout/Layout_using_Named_Grid_Lines)
-- [Автоматичне розташування у сітковому компонуванні](/uk/docs/Web/CSS/CSS_Grid_Layout/Auto-placement_in_CSS_Grid_Layout)
-- [Шикування блоків у сітковому компонуванні](/uk/docs/Web/CSS/CSS_Grid_Layout/Box_Alignment_in_CSS_Grid_Layout)
-- [Сітки, логічні значення та режими письма](/uk/docs/Web/CSS/CSS_Grid_Layout/CSS_Grid_Logical_Values_and_Writing_Modes)
-- [Сіткове компонування CSS та доступність](/uk/docs/Web/CSS/CSS_Grid_Layout/CSS_Grid_Layout_and_Accessibility)
-- [Сіткове компонування CSS та поступове поліпшення підтримки](/uk/docs/Web/CSS/CSS_Grid_Layout/CSS_Grid_and_Progressive_Enhancement)
-- [Втілення звичних макетів за допомогою сіток](/uk/docs/Web/CSS/CSS_Grid_Layout/Realizing_common_layouts_using_CSS_Grid_Layout)
+- [Засади сіткового компонування](/uk/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout)
+- [Взаємини з іншими способами компонування](/uk/docs/Web/CSS/CSS_grid_layout/Relationship_of_grid_layout_with_other_layout_methods)
+- [Розташування за grid-лініями](/uk/docs/Web/CSS/CSS_grid_layout/Grid_layout_using_line-based_placement)
+- [Шаблонні зони в сітках](/uk/docs/Web/CSS/CSS_grid_layout/Grid_template_areas)
+- [Компонування з використанням іменованих grid-ліній](/uk/docs/Web/CSS/CSS_grid_layout/Grid_layout_using_named_grid_lines)
+- [Автоматичне розташування у сітковому компонуванні](/uk/docs/Web/CSS/CSS_grid_layout/Auto-placement_in_grid_layout)
+- [Шикування блоків у сітковому компонуванні](/uk/docs/Web/CSS/CSS_grid_layout/Box_alignment_in_grid_layout)
+- [Сітки, логічні значення та режими письма](/uk/docs/Web/CSS/CSS_grid_layout/Grids_logical_values_and_writing_modes)
+- [Сіткове компонування CSS та доступність](/uk/docs/Web/CSS/CSS_grid_layout/Grid_layout_and_accessibility)
+- [Сіткове компонування CSS та поступове поліпшення підтримки](/uk/docs/Web/CSS/CSS_grid_layout/Grid_layout_and_progressive_enhancement)
+- [Втілення звичних макетів за допомогою сіток](/uk/docs/Web/CSS/CSS_grid_layout/Realizing_common_layouts_using_grids)
 
 ## Занепокоєння щодо доступності
 
@@ -388,7 +388,7 @@ updateDisplay();
 
 ## Дивіться також
 
-- [Блокове та рядкове компонування у звичайному потоці](/uk/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow)
-- [Вступ до контекстів форматування](/uk/docs/Web/CSS/CSS_Flow_Layout/Intro_to_formatting_contexts)
+- [Блокове та рядкове компонування у звичайному потоці](/uk/docs/Web/CSS/CSS_flow_layout/Block_and_inline_layout_in_normal_flow)
+- [Вступ до контекстів форматування](/uk/docs/Web/CSS/CSS_flow_layout/Introduction_to_formatting_contexts)
 - {{CSSxRef("visibility")}}, {{CSSxRef("float")}}, {{CSSxRef("position")}}
 - {{CSSxRef("grid")}}, {{CSSxRef("flex")}}

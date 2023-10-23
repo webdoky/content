@@ -6,7 +6,7 @@ browser-compat: javascript.builtins.Date.toLocaleString
 
 {{JSRef}}
 
-Метод **`toLocaleString()`** (до рядка згідно з локаллю) повертає рядок з чутливим до мови представленням дати. У реалізаціях без підтримки [API `Intl.DateTimeFormat`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat) цей метод просто викликає `Intl.DateTimeFormat`.
+Метод **`toLocaleString()`** (до рядка згідно з локаллю) примірників {{jsxref("Date")}} повертає рядок з чутливим до мови представленням дати. У реалізаціях без підтримки [API `Intl.DateTimeFormat`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat) цей метод просто викликає `Intl.DateTimeFormat`.
 
 {{EmbedInteractiveExample("pages/js/date-tolocalestring.html")}}
 
@@ -61,19 +61,17 @@ console.log(date.toLocaleDateString());
 // "12/11/2012, 7:00:00 PM", якщо виконано в локалі en-US та часовому поясі America/Los_Angeles
 ```
 
-### Перевірка підтримки аргументів locales та options
+### Перевірка підтримки параметрів locales та options
 
-Аргументи `locales` та `options` підтримуються поки не у всіх браузерах.
-Для перевірки, чи якась реалізація їх підтримує, можна скористатися перевіркою виконання вимоги відхиляти недійсні позначення мови із викиданням винятку {{jsxref("RangeError")}}:
+Параметри `locales` та `options` можуть підтримуватися не у всіх реалізаціях, оскільки підтримка API інтернаціоналізації є необов'язковою, і деякі системи можуть не мати необхідних даних. У реалізаціях без підтримки інтернаціоналізації `toLocaleString()` завжди використовує локаль системи, що може не відповідати вашим потребам. Оскільки будь-яка реалізація, що підтримує параметри `locales` та `options`, повинна підтримувати API {{jsxref("Intl")}}, ви можете перевірити його наявність для підтримки:
 
 ```js
 function toLocaleStringSupportsLocales() {
-  try {
-    new Date().toLocaleString("i");
-  } catch (e) {
-    return e.name === "RangeError";
-  }
-  return false;
+  return (
+    typeof Intl === "object" &&
+    !!Intl &&
+    typeof Intl.DateTimeFormat === "function"
+  );
 }
 ```
 
@@ -153,7 +151,7 @@ console.log(date.toLocaleString("en-US", { hour12: false }));
 
 ## Дивіться також
 
-- {{jsxref("Global_Objects/Intl/DateTimeFormat", "Intl.DateTimeFormat")}}
+- {{jsxref("Intl.DateTimeFormat")}}
 - {{jsxref("Date.prototype.toLocaleDateString()")}}
 - {{jsxref("Date.prototype.toLocaleTimeString()")}}
 - {{jsxref("Date.prototype.toString()")}}
