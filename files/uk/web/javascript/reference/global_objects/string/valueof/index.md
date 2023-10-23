@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.String.valueOf
 
 {{JSRef}}
 
-Метод **`valueOf()`** повертає примітивне значення об'єкта {{jsxref("String")}}.
+Метод **`valueOf()`** (значення) значень {{jsxref("String")}} повертає рядкове значення, з якого був викликаний.
 
 {{EmbedInteractiveExample("pages/js/string-valueof.html")}}
 
@@ -16,6 +16,10 @@ browser-compat: javascript.builtins.String.valueOf
 ```js-nolint
 valueOf()
 ```
+
+### Параметри
+
+Жодних.
 
 ### Повернене значення
 

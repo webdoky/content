@@ -1,22 +1,19 @@
 ---
 title: Math.atan2()
 slug: Web/JavaScript/Reference/Global_Objects/Math/atan2
-tags:
-  - JavaScript
-  - Math
-  - Method
-  - Reference
+page-type: javascript-static-method
 browser-compat: javascript.builtins.Math.atan2
 ---
+
 {{JSRef}}
 
-Функція **`Math.atan2()`** повертає плоский кут (в радіанах) між додатним напрямком осі Ox, і променем з точки (0,0) до точки (x,y), для переданих аргументів `Math.atan2(y,x)`.
+Статичний метод **`Math.atan2()`** повертає плоский кут (в радіанах) між додатним напрямком осі Ox, і променем з точки (0,0) до точки (x,y), для переданих аргументів `Math.atan2(y,x)`.
 
 {{EmbedInteractiveExample("pages/js/math-atan2.html")}}
 
 ## Синтаксис
 
-```js
+```js-nolint
 Math.atan2(y, x)
 ```
 
@@ -29,24 +26,34 @@ Math.atan2(y, x)
 
 ### Повернене значення
 
-Кут в радіанах (значення з проміжку <math><semantics><mrow><mo stretchy="false">[</mo>
-<mo>-</mo>
-<mi>π</mi>
-<mo>,</mo>
-<mi>π</mi>
-<mo stretchy="false">]</mo>
-</mrow><annotation encoding="TeX">[-\pi, \pi]</annotation>
-</semantics></math>) між додатним напрямком осі Ox та променем з точки (0,0) до точки (x,y).
+Кут у радіанах (від -π до π включно) між додатним напрямком осі Ox і променем від точки (0,0) до точки (x,y).
 
 ## Опис
 
-Метод `Math.atan2()` повертає числове значення між -π та π, що відповідає куту θ (тета) точки `(x, y)`. Це кут, виміряний в радіанах проти годинникової стрілки, між додатним напрямком осі Ox та точкою `(x, y)`. Зауважте, що аргументи цієї функції передають координату `y` першою, а `x` — другою.
+Метод `Math.atan2()` вимірює кут проти годинникової стрілки θ, в радіанах, між додатним напрямком осі Ox і точкою `(x, y)`. Зверніть увагу, що аргументи цієї функції – спочатку координата y, а потім координата x.
 
 ![Проста діаграма, яка показує кут, повернений atan2(y, x)](atan2.png)
 
-До `Math.atan2()` передаються окремо аргументи `x` та `y`, тоді як `Math.atan()` приймає відношення цих аргументів.
+`Math.atan2()` передають аргументи `x` та `y` окремо, а [`Math.atan()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Math/atan) передають співвідношення між цими двома аргументами. `Math.atan2(y, x)` відрізняється від `Math.atan(y / x)` у наступних випадках:
 
-Оскільки `atan2()` — це статичний метод об'єкта `Math`, його потрібно завжди використовувати через `Math.atan2()`. Не слід звертатись до нього, як до методу власноруч створеного екземпляра `Math` (`Math` не є конструктором).
+| `x`                  | `y`         | `Math.atan2(y, x)` | `Math.atan(y / x)` |
+| -------------------- | ----------- | ------------------ | ------------------ |
+| `Infinity`           | `Infinity`  | π / 4              | `NaN`              |
+| `Infinity`           | `-Infinity` | -π / 4             | `NaN`              |
+| `-Infinity`          | `Infinity`  | 3π / 4             | `NaN`              |
+| `-Infinity`          | `-Infinity` | -3π / 4            | `NaN`              |
+| 0                    | 0           | 0                  | `NaN`              |
+| 0                    | -0          | -0                 | `NaN`              |
+| < 0 (включно з `-0`) | 0           | π                  | 0                  |
+| < 0 (включно з `-0`) | -0          | -π                 | 0                  |
+| `-Infinity`          | > 0         | π                  | -0                 |
+| -0                   | > 0         | π / 2              | -π / 2             |
+| `-Infinity`          | < 0         | -π                 | 0                  |
+| -0                   | < 0         | -π / 2             | π / 2              |
+
+На додачу до цього, для точок у другому та третьому квадрантах (`x < 0`) `Math.atan2()` видає кут, менший за <math><semantics><mrow><mo>-</mo><mfrac><mi>π</mi><mn>2</mn></mfrac></mrow><annotation encoding="TeX">-\frac{\pi}{2}</annotation></semantics></math> або більший за <math><semantics><mfrac><mi>π</mi><mn>2</mn></mfrac><annotation encoding="TeX">\frac{\pi}{2}</annotation></semantics></math>.
+
+Оскільки `atan2()` – це статичний метод об'єкта `Math`, його потрібно завжди використовувати у вигляді `Math.atan2()`, а не як метод власноруч створеного об'єкта `Math` (`Math` не є конструктором).
 
 ## Приклади
 
@@ -55,18 +62,76 @@ Math.atan2(y, x)
 ```js
 Math.atan2(90, 15); // 1.4056476493802699
 Math.atan2(15, 90); // 0.16514867741462683
+```
 
-Math.atan2(±0, -0);               // ±PI.
-Math.atan2(±0, +0);               // ±0.
-Math.atan2(±0, -x);               // ±PI for x > 0.
-Math.atan2(±0, x);                // ±0 for x > 0.
-Math.atan2(-y, ±0);               // -PI/2 for y > 0.
-Math.atan2(y, ±0);                // PI/2 for y > 0.
-Math.atan2(±y, -Infinity);        // ±PI for finite y > 0.
-Math.atan2(±y, +Infinity);        // ±0 for finite y > 0.
-Math.atan2(±Infinity, x);         // ±PI/2 for finite x.
-Math.atan2(±Infinity, -Infinity); // ±3*PI/4.
-Math.atan2(±Infinity, +Infinity); // ±PI/4.
+### Різниця між Math.atan2(y, x) і Math.atan(y / x)
+
+Наступний сценарій друкує всі вихідні дані, що видають різні значення, бувши переданими в `Math.atan2(y, x)` та `Math.atan(y / x)`.
+
+```js
+const formattedNumbers = new Map([
+  [-Math.PI, "-π"],
+  [(-3 * Math.PI) / 4, "-3π/4"],
+  [-Math.PI / 2, "-π/2"],
+  [-Math.PI / 4, "-π/4"],
+  [Math.PI / 4, "π/4"],
+  [Math.PI / 2, "π/2"],
+  [(3 * Math.PI) / 4, "3π/4"],
+  [Math.PI, "π"],
+  [-Infinity, "-∞"],
+  [Infinity, "∞"],
+]);
+function format(template, ...args) {
+  return String.raw(
+    { raw: template },
+    ...args.map((num) =>
+      (Object.is(num, -0)
+        ? "-0"
+        : formattedNumbers.get(num) ?? String(num)
+      ).padEnd(5),
+    ),
+  );
+}
+console.log(`| x     | y     | atan2 | atan  |
+|-------|-------|-------|-------|`);
+for (const x of [-Infinity, -1, -0, 0, 1, Infinity]) {
+  for (const y of [-Infinity, -1, -0, 0, 1, Infinity]) {
+    const atan2 = Math.atan2(y, x);
+    const atan = Math.atan(y / x);
+    if (!Object.is(atan2, atan)) {
+      console.log(format`| ${x} | ${y} | ${atan2} | ${atan} |`);
+    }
+  }
+}
+```
+
+Вивід – такий:
+
+```plain
+| x     | y     | atan2 | atan  |
+|-------|-------|-------|-------|
+| -∞    | -∞    | -3π/4 | NaN   |
+| -∞    | -1    | -π    | 0     |
+| -∞    | -0    | -π    | 0     |
+| -∞    | 0     | π     | -0    |
+| -∞    | 1     | π     | -0    |
+| -∞    | ∞     | 3π/4  | NaN   |
+| -1    | -∞    | -π/2  | π/2   |
+| -1    | -1    | -3π/4 | π/4   |
+| -1    | -0    | -π    | 0     |
+| -1    | 0     | π     | -0    |
+| -1    | 1     | 3π/4  | -π/4  |
+| -1    | ∞     | π/2   | -π/2  |
+| -0    | -∞    | -π/2  | π/2   |
+| -0    | -1    | -π/2  | π/2   |
+| -0    | -0    | -π    | NaN   |
+| -0    | 0     | π     | NaN   |
+| -0    | 1     | π/2   | -π/2  |
+| -0    | ∞     | π/2   | -π/2  |
+| 0     | -0    | -0    | NaN   |
+| 0     | 0     | 0     | NaN   |
+| ∞     | -∞    | -π/4  | NaN   |
+| ∞     | ∞     | π/4   | NaN   |
 ```
 
 ## Специфікації

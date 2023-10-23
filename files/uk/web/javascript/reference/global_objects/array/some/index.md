@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.Array.some
 
 {{JSRef}}
 
-Метод **`some()`** (якийсь) перевіряє, чи проходить хоча б один елемент масиву тест, реалізований у переданій функції. Цей метод повертає істинність, якщо знаходить в масиві елемент, для якого надана функція повертає істинність, інакше – хибність. Він не змінює масив.
+Метод **`some()`** (якийсь) примірників {{jsxref("Array")}} перевіряє, чи проходить хоча б один елемент масиву тест, реалізований у переданій функції. Цей метод повертає істинність, якщо знаходить в масиві елемент, для якого надана функція повертає істинність, інакше – хибність. Він не змінює масив.
 
 {{EmbedInteractiveExample("pages/js/array-some.html")}}
 
@@ -33,7 +33,7 @@ some(callbackFn, thisArg)
 
 ### Повернене значення
 
-`true`, якщо функція зворотного виклику поверне {{Glossary("truthy", "істинне")}} значення принаймні для одного елемента масиву. Інакше – `false`.
+`false`, якщо `callbackFn` не поверне {{Glossary("truthy", "істинне")}} значення для одного з елементів масиву, – в цьому випадку негайно повертається `true`.
 
 ## Опис
 
@@ -123,7 +123,7 @@ console.log([1, undefined, 1].some((x) => x !== 1)); // true
 
 ### Виклик some() на об'єктах-немасивах
 
-Метод `some()` зчитує з `this` властивість `length`, а потім звертається до кожної цілочислової властивості.
+Метод `some()` зчитує з `this` властивість `length`, а потім звертається до кожної властивості, чий ключ є невід'ємним цілим числом, меншим за `length`, поки не будуть перебрані вони всі або `callbackFn` не поверне `true`.
 
 ```js
 const arrayLike = {
@@ -131,6 +131,7 @@ const arrayLike = {
   0: "a",
   1: "b",
   2: "c",
+  3: 3, // ігнорується some(), оскільки length – 3
 };
 console.log(Array.prototype.some.call(arrayLike, (x) => typeof x === "number")); // false
 ```
@@ -146,7 +147,7 @@ console.log(Array.prototype.some.call(arrayLike, (x) => typeof x === "number"));
 ## Дивіться також
 
 - [Поліфіл `Array.prototype.some` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
-- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
 - {{jsxref("Array.prototype.every()")}}
 - {{jsxref("Array.prototype.forEach()")}}

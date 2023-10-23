@@ -1,22 +1,25 @@
 ---
 title: Math.SQRT2
 slug: Web/JavaScript/Reference/Global_Objects/Math/SQRT2
-tags:
-  - JavaScript
-  - Math
-  - Property
-  - Reference
+page-type: javascript-static-data-property
 browser-compat: javascript.builtins.Math.SQRT2
 ---
+
 {{JSRef}}
 
-Властивість **`Math.SQRT2`** позначає квадратний корінь з 2, що приблизно дорівнює 1.414:
+Статична властивість даних **`Math.SQRT2`** позначає квадратний корінь з 2, що приблизно дорівнює 1.414.
 
-<math display="block"><semantics><mrow><mstyle mathvariant="monospace"><mi>Math.SQRT2</mi></mstyle><mo>=</mo><msqrt><mn>2</mn></msqrt><mo>≈</mo><mn>1.414</mn></mrow><annotation encoding="TeX">\mathtt{\mi{Math.SQRT2}} = \sqrt{2} \approx 1.414</annotation></semantics></math>
+{{EmbedInteractiveExample("pages/js/math-sqrt2.html", "shorter")}}
 
-{{EmbedInteractiveExample("pages/js/math-sqrt2.html", "shorter")}}{{js_property_attributes(0, 0, 0)}}
+## Значення
+
+<math display="block"><semantics><mrow><mi>𝙼𝚊𝚝𝚑.𝚂𝚀𝚁𝚃𝟸</mi><mo>=</mo><msqrt><mn>2</mn></msqrt><mo>≈</mo><mn>1.414</mn></mrow><annotation encoding="TeX">\mathtt{\mi{Math.SQRT2}} = \sqrt{2} \approx 1.414</annotation></semantics></math>
+
+{{js_property_attributes(0, 0, 0)}}
 
 ## Опис
+
+`Math.SQRT2` - це стала та більш ефективна альтернатива для [`Math.sqrt(2)`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Math/sqrt).
 
 Оскільки `SQRT2` — це статична властивість об'єкта `Math`, її потрібно використовувати через `Math.SQRT2`. Не слід звертатись до неї як до властивості власноруч створеного екземпляра `Math` (`Math` не є конструктором).
 

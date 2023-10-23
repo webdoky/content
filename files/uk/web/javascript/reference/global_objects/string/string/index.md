@@ -1,28 +1,35 @@
 ---
-title: String() constructor
+title: Конструктор String()
 slug: Web/JavaScript/Reference/Global_Objects/String/String
-tags:
-  - Constructor
-  - JavaScript
-  - Reference
-  - String
+page-type: javascript-constructor
 browser-compat: javascript.builtins.String.String
 ---
+
 {{JSRef}}
 
-Конструктор **`String`** використовується для створення нових об'єктів {{jsxref("String")}}. Викликаний як функція, він виконує приведення типу аргументу до {{Glossary("string", "примітивного рядка")}}, що, зазвичай, корисніше.
+Конструктор **`String()`** (рядок) створює об'єкти {{jsxref("String")}}. Коли він викликається як функція, то повертає примітивні значення типу String.
 
 ## Синтаксис
 
-```js
+```js-nolint
 new String(thing)
 String(thing)
 ```
+
+> **Примітка:** `String()` можна викликати як з, так і без [`new`](/uk/docs/Web/JavaScript/Reference/Operators/new), але з різним результатом. Дивіться [Повернене значення](#povernene-znachennia).
 
 ### Параметри
 
 - `thing`
   - : Що завгодно, що може бути перетворено на рядок.
+
+### Повернене значення
+
+Коли `String` викликається як конструктор (з `new`), то він створює об'єкт {{jsxref("String")}}, що **не** є примітивом.
+
+Коли `String` викликається як функція, вона зводить свій параметр до рядкового примітиву. Значення [Symbol](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol) перетворюються на `"Symbol(опис)"`, де `опис` – це [опис](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/description) значення Symbol, без викидання помилки.
+
+> **Застереження:** `String` рідко доводиться використовувати як конструктор.
 
 ## Приклади
 
@@ -31,12 +38,32 @@ String(thing)
 Конструктор String та функція String повертають різні результати:
 
 ```js
-typeof String('Привіт, світе!'); // string
-typeof new String('Привіт, світе!'); // object
+const a = new String("Привіт, світе"); // a === "Привіт, світе" – це хиба
+const b = String("Привіт, світе"); // b === "Привіт, світе" – це істина
+a instanceof String; // істина
+b instanceof String; // хиба
+typeof a; // "object"
+typeof b; // "string"
 ```
 
 Як наведено вище, функція повертає рядок ({{Glossary("primitive", "примітивний")}} тип), як і очікувалось.
-Однак конструктор повертає екземпляр об'єкту типу String (об'єктну обгортку), і саме тому дуже рідко виникає потреба використовувати конструктор String.
+Однак конструктор повертає екземпляр об'єкта типу String (об'єктну обгортку), і саме тому дуже рідко виникає потреба використовувати конструктор String.
+
+### Використання String() для рядкування символу
+
+`String()` – це єдиний випадок, при якому символ може бути перетворений на рядок без викидання помилки, оскільки ця операція – украй очевидна.
+
+```js example-bad
+const sym = Symbol("приклад");
+`${sym}`; // TypeError: Cannot convert a Symbol value to a string
+"" + sym; // TypeError: Cannot convert a Symbol value to a string
+"".concat(sym); // TypeError: Cannot convert a Symbol value to a string
+```
+
+```js example-good
+const sym = Symbol("приклад");
+String(sym); // "Symbol(приклад)"
+```
 
 ## Специфікації
 
@@ -48,4 +75,4 @@ typeof new String('Привіт, світе!'); // object
 
 ## Дивіться також
 
-- [Настанови з JavaScript щодо форматування тексту](/uk/docs/Web/JavaScript/Guide/Text_formatting)
+- Посібник [Форматування тексту](/uk/docs/Web/JavaScript/Guide/Text_formatting)
