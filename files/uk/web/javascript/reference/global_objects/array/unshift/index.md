@@ -15,14 +15,14 @@ browser-compat: javascript.builtins.Array.unshift
 
 ```js-nolint
 unshift()
-unshift(елемент0)
-unshift(елемент0, елемент1)
-unshift(елемент0, елемент1, /* … ,*/ елементN)
+unshift(element1)
+unshift(element1, element2)
+unshift(element1, element2, /* …, */ elementN)
 ```
 
 ### Параметри
 
-- `елементN`
+- `element1`, …, `elementN`
   - : Елементи, які потрібно додати на початок масиву.
 
 ### Повернене значення
@@ -110,7 +110,7 @@ console.log(plainObj);
 ## Дивіться також
 
 - [Поліфіл `Array.prototype.unshift` у складі `core-js` з виправленнями цього методу](https://github.com/zloirock/core-js#ecmascript-array)
-- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
 - {{jsxref("Array.prototype.push()")}}
 - {{jsxref("Array.prototype.pop()")}}
