@@ -65,7 +65,7 @@ lastIndexOf(searchString, position)
 
 ### Застосування методів indexOf() та lastIndexOf()
 
-Наступні приклади використовують {{jsxref("String.prototype.indexOf()", "indexOf()")}} та `lastIndexOf()` для визначення розташування значень у рядку `"Прекрасний, Прекрасний Новий Світ"`.
+Наступні приклади використовують {{jsxref("String/indexOf", "indexOf()")}} і `lastIndexOf()` для визначення розташування значень у рядку `"Прекрасний, Прекрасний Новий Світ"`.
 
 ```js
 const anyString = "Прекрасний, Прекрасний Новий Світ";
