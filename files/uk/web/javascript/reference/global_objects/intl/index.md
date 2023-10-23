@@ -126,6 +126,24 @@ log("de-DE"); // 24.5.2012 26.254,39
 log("uk-UA"); // 24.05.2012 26 254,39
 ```
 
+### Використання мови з налаштувань браузера
+
+Замість передачі в методи `Intl` жорстко закодованої назви локалі можна скористатися вибраною користувачем мовою, доступною в {{domxref("navigator.language")}}:
+
+```js
+const date = new Date("2012-05-24");
+
+const formattedDate = new Intl.DateTimeFormat(navigator.language).format(date);
+```
+
+Інший варіант: властивість {{domxref("navigator.languages")}} надає список мов, обраних користувачем. Цей список можна передавати безпосередньо в конструктори `Intl`, щоб реалізувати запасний набір локалей на основі налаштувань користувача. Дивіться процес [впізнання та зіставлення локалей](#vpiznannia-ta-zistavlennia-lokalei), який використовується для вибору найбільш доречної доступної локалі:
+
+```js
+const count = 26254.39;
+
+const formattedCount = new Intl.NumberFormat(navigator.languages).format(count);
+```
+
 ## Специфікації
 
 {{Specifications}}
@@ -141,4 +159,6 @@ log("uk-UA"); // 24.05.2012 26 254,39
 - {{jsxref("Date.prototype.toLocaleString()")}}
 - {{jsxref("Date.prototype.toLocaleDateString()")}}
 - {{jsxref("Date.prototype.toLocaleTimeString()")}}
+- {{domxref("navigator.language")}}
+- {{domxref("navigator.languages")}}
 - [API інтернаціоналізації ECMAScript](https://norbertlindenberg.com/2012/12/ecmascript-internationalization-api/index.html) від Норберта Лінденберга (2012)
