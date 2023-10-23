@@ -4,7 +4,7 @@ slug: Web/JavaScript/Enumerability_and_ownership_of_properties
 page-type: guide
 ---
 
-{{JsSidebar("More")}}
+{{jsSidebar("More")}}
 
 Кожна властивість об'єктів у JavaScript може бути класифікована за трьома критеріями:
 
@@ -67,7 +67,7 @@ const SimplePropertyRetriever = {
       obj,
       true,
       false,
-      this._enumerableAndNotEnumerable
+      this._enumerableAndNotEnumerable,
     );
     // Або просто використайте: return Object.getOwnPropertyNames(obj);
   },
@@ -82,7 +82,7 @@ const SimplePropertyRetriever = {
       obj,
       false,
       true,
-      this._enumerableAndNotEnumerable
+      this._enumerableAndNotEnumerable,
     );
   },
   getOwnAndPrototypeEnumerables(obj) {
@@ -97,7 +97,7 @@ const SimplePropertyRetriever = {
       obj,
       true,
       true,
-      this._enumerableAndNotEnumerable
+      this._enumerableAndNotEnumerable,
     );
   },
   // Функції зворотного виклику для перевірки приватних статичних властивостей
