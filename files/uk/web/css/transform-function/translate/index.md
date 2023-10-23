@@ -11,7 +11,7 @@ browser-compat: css.types.transform-function.translate
 
 {{EmbedInteractiveExample("pages/css/function-translate.html")}}
 
-Таке перетворення характеризується двовимірним вектором. Його координати визначають те, наскільки елемент пересувається за кожною з осей координат.
+Таке перетворення характеризується двовимірним вектором [tx, ty]. Його координати визначають те, наскільки елемент пересувається за кожною з осей координат.
 
 ## Синтаксис
 
@@ -30,18 +30,18 @@ transform: translate(30%, 50%);
 ### Значення
 
 - Одинарне значення `<length-percentage>`
-  - : Таке значення – {{cssxref("&lt;length&gt;")}} чи {{cssxref("&lt;percentage&gt;")}}, що представляє координату за віссю абсцис (по горизонталі, осі X) вектора перекладу. Ордината (значення по вертикалі, осі Y) вектора перекладу вважатиметься `0`. Наприклад, `translate(2px)` рівносильно `translate(2px, 0)`. Відсоткове значення береться від ширини референтної рамки, визначеної властивістю {{cssxref("transform-box")}}.
+  - : Таке значення – {{cssxref("&lt;length&gt;")}} чи {{cssxref("&lt;percentage&gt;")}}, що представляє координату за віссю абсцис (по горизонталі, компонента X) вектора перекладу. Ордината (значення по вертикалі, компонента Y) вектора перекладу вважатиметься `0`. Наприклад, `translate(2px)` рівносильно `translate(2px, 0)`. Відсоткове значення береться від ширини референтної рамки, визначеної властивістю {{cssxref("transform-box")}}.
 - Подвійне значення `<length-percentage>`
-  - : Таке значення описує два значення {{cssxref("&lt;length&gt;")}} чи {{cssxref("&lt;percentage&gt;")}}, що представляють і абсцису (координату X), і ординату (координату Y) вектора перекладу. Відсоткове значення на першій позиції береться від ширини, а на другій – від висоти референтної рамки, визначеної властивістю {{cssxref("transform-box")}}.
+  - : Таке значення описує два значення {{cssxref("&lt;length&gt;")}} чи {{cssxref("&lt;percentage&gt;")}}, що представляють і абсцису (по горизонталі, компонента X), і ординату (по вертикалі, компонента Y) вектора перекладу [tx, ty]. Відсоткове значення на першій позиції береться від ширини, а на другій – від висоти референтної рамки, визначеної властивістю {{cssxref("transform-box")}}.
 
 <table class="standard-table">
    <thead>
       <tr>
-         <th scope="col">Декартові координати на ℝ^2</th>
-         <th scope="col">Однорідні координати на ℝℙ^2</th>
-         <th scope="col">Декартові координати на ℝ^3</th>
-         <th scope="col">Однорідні координати на ℝℙ^3</th>
-      </tr>
+      <th scope="col"><a href="/uk/docs/Web/CSS/transform-function#dekartovi-koordynaty">Декартові координати</a> на <a href="https://en.wikipedia.org/wiki/Real_coordinate_space">ℝ^2</a></th>
+      <th scope="col"><a href="https://uk.wikipedia.org/wiki/%D0%9E%D0%B4%D0%BD%D0%BE%D1%80%D1%96%D0%B4%D0%BD%D1%96_%D0%BA%D0%BE%D0%BE%D1%80%D0%B4%D0%B8%D0%BD%D0%B0%D1%82%D0%B8">Однорідні координати</a> на <a href="https://uk.wikipedia.org/wiki/%D0%94%D1%96%D0%B9%D1%81%D0%BD%D0%B0_%D0%BF%D1%80%D0%BE%D1%94%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%B0_%D0%BF%D0%BB%D0%BE%D1%89%D0%B8%D0%BD%D0%B0">ℝℙ^2</a></th>
+      <th scope="col">Декартові координати на <a href="https://en.wikipedia.org/wiki/Real_coordinate_space">ℝ^3</a></th>
+      <th scope="col">Однорідні координати на <a href="https://en.wikipedia.org/wiki/Real_projective_space">ℝℙ^3</a></th>
+    </tr>
    </thead>
    <tbody>
       <tr>

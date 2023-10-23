@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.Array.indexOf
 
 {{JSRef}}
 
-Метод **`indexOf()`** (індекс (значення)) повертає перший індекс, за яким даний елемент можна знайти в масиві, або `-1` – якщо його немає.
+Метод **`indexOf()`** (індекс (значення)) примірників {{jsxref("Array")}} повертає перший індекс, за яким даний елемент можна знайти в масиві, або `-1` – якщо його немає.
 
 {{EmbedInteractiveExample("pages/js/array-indexof.html")}}
 
@@ -30,7 +30,7 @@ indexOf(searchElement, fromIndex)
 
 ### Повернене значення
 
-Перший індекс елемента в масиві; **-1**, якщо нічого не знайдено.
+Перший індекс `searchElement` в масиві; `-1`, якщо нічого не знайдено.
 
 ## Опис
 
@@ -112,7 +112,7 @@ console.log([1, , 3].indexOf(undefined)); // -1
 
 ### Виклик indexOf() на об'єктах-немасивах
 
-Метод `indexOf()` зчитує з `this` властивість `length`, а потім звертається до кожної цілочислової властивості.
+Метод `indexOf()` зчитує з `this` властивість `length`, а потім звертається до кожної властивості, чий ключ є невід'ємним цілим числом, меншим за `length`.
 
 ```js
 const arrayLike = {
@@ -120,6 +120,7 @@ const arrayLike = {
   0: 2,
   1: 3,
   2: 4,
+  3: 5, // ігнорується indexOf(), оскільки length – 3
 };
 console.log(Array.prototype.indexOf.call(arrayLike, 2));
 // 0
@@ -138,7 +139,7 @@ console.log(Array.prototype.indexOf.call(arrayLike, 5));
 ## Дивіться також
 
 - [Поліфіл `Array.prototype.indexOf` у `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
-- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
 - {{jsxref("Array.prototype.findIndex()")}}
 - {{jsxref("Array.prototype.findLastIndex()")}}

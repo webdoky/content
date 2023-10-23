@@ -252,7 +252,7 @@ const proxy = new Proxy(aSecret, {
 console.log(proxy.x());
 ```
 
-Частина нативних об'єктів JavaScript має властивості, що звуться _[внутрішніми комірками](https://tc39.es/ecma262/#sec-object-internal-methods-and-internal-slots)_ й не є доступними з коду на JavaScript. Наприклад, об'єкти [`Map`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Map) мають приховану комірку, що зветься `[[MapData]]`, в котрій зберігаються пари ключ-значення відображення. Таким чином, не можна тривіально створити заступник перенаправлення для відображення:
+Частина нативних об'єктів JavaScript має властивості, що звуться _[внутрішніми комірками](https://tc39.es/ecma262/multipage/ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots)_ й не є доступними з коду на JavaScript. Наприклад, об'єкти [`Map`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Map) мають приховану комірку, що зветься `[[MapData]]`, в котрій зберігаються пари ключ-значення відображення. Таким чином, не можна тривіально створити заступник перенаправлення для відображення:
 
 ```js
 const proxy = new Proxy(new Map(), {});
@@ -325,7 +325,7 @@ const view = new Proxy(
       // Повідомити про успіх
       return true;
     },
-  }
+  },
 );
 
 const item1 = document.getElementById("item-1");
@@ -384,7 +384,7 @@ const products = new Proxy(
       // Повідомити про успіх
       return true;
     },
-  }
+  },
 );
 
 console.log(products.browsers);
@@ -475,5 +475,4 @@ console.log(docCookies.myCookie1);
 
 ## Дивіться також
 
-- [Презентація Брендана Айка на JSConf "Заступники – чудові"](https://www.youtube.com/watch?v=sClk6aB_CPk) ([слайди](https://www.slideshare.net/BrendanEich/metaprog-5303821))
-- [Підручник із заступників](https://web.archive.org/web/20171007221059/https://soft.vub.ac.be/~tvcutsem/proxies/)
+- Презентація [Заступники – чудові](https://youtu.be/sClk6aB_CPk) від Брендана Айка на JSConf (2014)

@@ -6,7 +6,7 @@ browser-compat: javascript.builtins.Date.toLocaleDateString
 
 {{JSRef}}
 
-Метод **`toLocaleDateString()`** повертає рядок із чутливим до мови відображенням тієї частини вказаної дати, яка містить лише календарну дату, в часовому поясі користувацького агента. В тих реалізаціях, що мають підтримку [API `Intl.DateTimeFormat`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat), цей метод просто викликає `Intl.DateTimeFormat`.
+Метод **`toLocaleDateString()`** (до рядка дати згідно з локаллю) примірників {{jsxref("Date")}} повертає рядок із чутливим до мови відображенням тієї частини вказаної дати, яка містить лише календарну дату, в часовій зоні користувацького агента. В тих реалізаціях, що мають підтримку [API `Intl.DateTimeFormat`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat), цей метод просто викликає `Intl.DateTimeFormat`.
 
 Під час форматування великої кількості дат, краще створити окремий об'єкт {{jsxref("Intl.DateTimeFormat")}}, і використовувати його метод {{jsxref("Intl/DateTimeFormat/format", "format()")}}.
 
@@ -42,7 +42,7 @@ toLocaleDateString(locales, options)
 
 ### Повернене значення
 
-Рядок, що позначає ту частку переданого примірника {{jsxref("Global_Objects/Date", "Date")}}, яка містить дату, сформований згідно із притаманними мові правилами.
+Рядок, що позначає ту частку переданого примірника {{jsxref("Date")}}, яка містить дату, сформований згідно із притаманними мові правилами.
 
 В реалізаціях, що містять `Intl.DateTimeFormat`, це еквівалентно викликові `new Intl.DateTimeFormat(locales, options).format(date)`, де параметр `options` нормалізовано так, як описано вище.
 

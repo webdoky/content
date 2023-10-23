@@ -2,19 +2,12 @@
 title: RegExp.prototype.exec()
 slug: Web/JavaScript/Reference/Global_Objects/RegExp/exec
 page-type: javascript-instance-method
-tags:
-  - JavaScript
-  - Method
-  - Prototype
-  - Reference
-  - RegExp
-  - Regular Expressions
 browser-compat: javascript.builtins.RegExp.exec
 ---
 
 {{JSRef}}
 
-Метод **`exec()`** (виконати) виконує пошук збігу в заданому рядку й повертає результівний масив або [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null).
+Метод **`exec()`** (виконати) примірників {{jsxref("RegExp")}} виконує пошук збігу свого регулярного виразу в заданому рядку й повертає результівний масив або [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null).
 
 {{EmbedInteractiveExample("pages/js/regexp-prototype-exec.html")}}
 
@@ -27,7 +20,7 @@ exec(str)
 ### Параметри
 
 - `str`
-  - : Рядок, з котрим зіставляється регулярний вираз.
+  - : Рядок, з котрим зіставляється регулярний вираз. Будь-які значення [зводяться до рядків](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka), тож пропуск цього параметра або передача в ньому `undefined` змусить `exec()` шукати рядок `"undefined"`, а це рідко саме те, що необхідно.
 
 ### Повернене значення
 
@@ -40,12 +33,12 @@ exec(str)
 - `input`
   - : Вихідний рядок, з котрим відбувалось зіставлення.
 - `groups`
-  - : [Об'єкт з прототипом `null`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#null-prototype_objects) іменованих груп захоплення, чиї ключі – імена цих груп, а значення – самі групи, або {{jsxref("undefined")}}, якщо не була визначена жодна іменована група захоплення. Дивіться більше інформації на сторінці [груп захоплення](/uk/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Backreferences).
+  - : [Об'єкт з прототипом `null`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#null-prototypni-obiekty) іменованих груп захоплення, чиї ключі – імена цих груп, а значення – самі групи, або {{jsxref("undefined")}}, якщо не була визначена жодна іменована група захоплення. Дивіться більше інформації на сторінці [груп захоплення](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Groups_and_backreferences).
 - `indices` {{optional_inline}}
 
   - : Ця властивість присутня лише тоді, коли задана позначка [`d`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/hasIndices). Це масив, кожен елемент якого представляє межі збігу підрядка. Індекс кожного елемента цього масиву відповідає індексові в масиві, поверненому `exec()`, відповідного збігу підрядка. Інакше кажучи, перший запис `indices` представляє ввесь збіг, другий – першу групу захоплення, і так далі. Кожний запис сам по собі є двоелементним масивом, у якого перше число представляє індекс початку збігу, а друге – індекс кінця.
 
-    Крім цього, масив `indices` має властивість `groups`, котра зберігає [об'єкт з прототипом `null`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#null-prototype_objects), що містить усі іменовані групи захоплення. Його ключі – імена цих груп, а значення – масиви з двох елементів, у яких перше число – індекс початку, а друге – індекс кінця групи захоплення. Якщо регулярний вираз не містить жодних іменованих груп захоплення, то `groups` отримує значення `undefined`.
+    Крім цього, масив `indices` має властивість `groups`, котра зберігає [об'єкт з прототипом `null`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#null-prototypni-obiekty), що містить усі іменовані групи захоплення. Його ключі – імена цих груп, а значення – масиви з двох елементів, у яких перше число – індекс початку, а друге – індекс кінця групи захоплення. Якщо регулярний вираз не містить жодних іменованих груп захоплення, то `groups` отримує значення `undefined`.
 
 ## Опис
 
@@ -89,7 +82,7 @@ const result = re.exec("The Quick Brown Fox Jumps Over The Lazy Dog");
 
 ### Пошук послідовних збігів
 
-Коли регулярний вираз застосовує позначку [`g`](/uk/docs/Web/JavaScript/Guide/Regular_Expressions#prosunutyi-poshuk-iz-poznachkamy), можна використовувати метод `exec()` багато разів для отримання послідовних збігів у тому самому рядку. У такому випадку пошук починається від підрядка `str`, заданого властивістю регулярного виразу {{jsxref("RegExp/lastIndex", "lastIndex")}} ({{jsxref("RegExp.prototype.test()", "test()")}} також посуває властивість {{jsxref("RegExp/lastIndex", "lastIndex")}}). Зверніть увагу, що властивість {{jsxref("RegExp/lastIndex", "lastIndex")}} не скидається при пошуку в іншому рядку, а почне пошук згідно з наявним значенням {{jsxref("RegExp/lastIndex", "lastIndex")}}.
+Коли регулярний вираз застосовує позначку [`g`](/uk/docs/Web/JavaScript/Guide/Regular_expressions#pohlyblenyi-poshuk-z-poznachkamy), можна використовувати метод `exec()` багато разів для отримання послідовних збігів у тому самому рядку. У такому випадку пошук починається від підрядка `str`, заданого властивістю регулярного виразу {{jsxref("RegExp/lastIndex", "lastIndex")}} ({{jsxref("RegExp/test", "test()")}} також посуває властивість {{jsxref("RegExp/lastIndex", "lastIndex")}}). Зверніть увагу, що властивість {{jsxref("RegExp/lastIndex", "lastIndex")}} не скидається при пошуку в іншому рядку, а почне пошук згідно з наявним значенням {{jsxref("RegExp/lastIndex", "lastIndex")}}.
 
 Наприклад, припустімо, є такий сценарій:
 
@@ -106,7 +99,7 @@ while ((myArray = myRe.exec(str)) !== null) {
 
 Цей сценарій виведе наступний текст:
 
-```
+```plain
 Знайдено abb. Наступне зіставлення починається від 3
 Знайдено ab. Наступне зіставлення починається від 9
 ```
@@ -114,7 +107,7 @@ while ((myArray = myRe.exec(str)) !== null) {
 > **Застереження:** Є чимало підводних каменів, котрі можуть привести цю функціональність до нескінченного циклу!
 >
 > - Ніколи _не_ ставте літерал регулярного виразу (або конструктор {{jsxref("RegExp")}}) всередину умови `while`: це буде створювати регулярний вираз заново для кожної ітерації та скидати {{jsxref("RegExp/lastIndex", "lastIndex")}}.
-> - Перевірте, що заданий [прапорець глобальності (`g`)](/uk/docs/Web/JavaScript/Guide/Regular_Expressions#prosunutyi-poshuk-iz-poznachkamy), інакше `lastIndex` ніколи не буде посунуто.
+> - Перевірте, що заданий [прапорець глобальності (`g`)](/uk/docs/Web/JavaScript/Guide/Regular_expressions#pohlyblenyi-poshuk-z-poznachkamy), інакше `lastIndex` ніколи не буде посунуто.
 > - Якщо регулярний вираз може дати збіг з символами нульової довжини (наприклад, `/^/gm`), збільшуйте його {{jsxref("RegExp/lastIndex", "lastIndex")}} щоразу вручну, інакше застрягнете в одному місці.
 
 Зазвичай код такого роду можна замінити {{jsxref("String.prototype.matchAll()")}}, аби зробити його надійнішим.
@@ -140,5 +133,5 @@ console.log(matches[1]);
 
 ## Дивіться також
 
-- Розділ [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_Expressions) [Посібника з JavaScript](/uk/docs/Web/JavaScript/Guide)
+- Посібник [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_expressions)
 - {{jsxref("RegExp")}}

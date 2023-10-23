@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.String.normalize
 
 {{JSRef}}
 
-Метод **`normalize()`** повертає нормалізовану форму Unicode рядка.
+Метод **`normalize()`** (нормалізувати, привести до норми) значень повертає нормалізовану форму Unicode свого рядка.
 
 {{EmbedInteractiveExample("pages/js/string-normalize.html", "taller")}}
 
@@ -39,10 +39,10 @@ normalize(form)
 
 Рядок, що містить нормалізовану форму Unicode переданого рядка.
 
-### Викинуті помилки
+### Винятки
 
 - {{jsxref("RangeError")}}
-  - : Викидається помилка {{jsxref("RangeError")}}, якщо аргумент `form` містить значення, відмінне від вказаних вище.
+  - : Викидається, якщо аргумент `form` містить значення, відмінне від вказаних вище.
 
 ## Опис
 
@@ -197,4 +197,4 @@ str.normalize("NFKD"); // '\u0073\u0323\u0307'
 ## Дивіться також
 
 - [Стандарт Unicode, додаток #15, Форми нормалізації Unicode (англ.)](https://www.unicode.org/reports/tr15/)
-- [Еквівалентність за Unicode](https://en.wikipedia.org/wiki/Unicode_equivalence)
+- [Еквівалентність за Unicode](https://en.wikipedia.org/wiki/Unicode_equivalence) на Wikipedia

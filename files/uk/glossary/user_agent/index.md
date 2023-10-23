@@ -2,16 +2,9 @@
 title: Користувацький агент
 slug: Glossary/User_agent
 page-type: glossary-definition
-tags:
-  - Browser
-  - UA
-  - User-agent
-  - Web Browser
-  - WebMechanics
-  - agent
-  - user agent
-  - userAgent
 ---
+
+{{GlossarySidebar}}
 
 Користувацький агент – комп'ютерна програма, що представляє особу, в контексті {{Glossary("World Wide Web", "Вебу")}} – {{Glossary("Browser","браузер")}}.
 
