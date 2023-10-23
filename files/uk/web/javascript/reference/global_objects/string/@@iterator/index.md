@@ -80,6 +80,6 @@ console.log(strIter.next().value); // "\uD835\uDC68"
 ## Дивіться також
 
 - [Поліфіл `String.prototype[@@iterator]` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
-- [Форматування тексту](/uk/docs/Web/JavaScript/Guide/Text_formatting)
+- Посібник Форматування тексту](/uk/docs/Web/JavaScript/Guide/Text_formatting)
 - {{jsxref("Symbol.iterator")}}
 - [Протоколи ітерування](/uk/docs/Web/JavaScript/Reference/Iteration_protocols)
