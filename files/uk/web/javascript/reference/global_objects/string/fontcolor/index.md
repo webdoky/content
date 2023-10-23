@@ -7,11 +7,11 @@ status:
 browser-compat: javascript.builtins.String.fontcolor
 ---
 
-{{JSRef}} {{deprecated_header}}
+{{JSRef}} {{Deprecated_Header}}
 
 Метод **`fontcolor()`** (колір шрифту) значень {{jsxref("String")}} створює рядок, що вбудовує рядок цього методу в елемент {{HTMLElement("font")}} (`<font color="...">str</font>`), завдяки якому цей рядок виводиться з заданим кольором шрифту.
 
-> **Примітка:** Всі [обгортальні методи HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html) є нерекомендованими та стандартизовані лише для потреб сумісності. У випадку `fontcolor()`, сам елемент `<font>` було вилучено в [HTML5](/uk/docs/Glossary/HTML5), і його більше не слід використовувати. Замість цього веброзробники повинні використовувати властивості [CSS](/uk/docs/Web/CSS).
+> **Примітка:** Всі [обгортальні методи HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html) є нерекомендованими та стандартизовані лише для потреб сумісності. У випадку `fontcolor()`, сам елемент `<font>` було вилучено зі специфікації HTML, і його більше не слід використовувати. Замість цього веброзробники повинні використовувати властивості [CSS](/uk/docs/Web/CSS).
 
 ## Синтаксис
 
@@ -36,23 +36,22 @@ fontcolor(color)
 
 ### Застосування методу fontcolor()
 
-Наступний приклад використовує метод `fontcolor()` для зміни кольору тексту шляхом створення рядка з HTML-елементом `<font>`.
+Код нижче створює рядок HTML, а потім замінює ним тіло документа:
 
 ```js
-const worldString = "Привіт, світе!";
+const contentString = "Привіт, світе";
 
-console.log(`${worldString.fontcolor("red")} в цьому рядку — червоний`);
-// '<font color="red">Привіт, світе!</font> в цьому рядку — червоний'
-
-console.log(
-  `${worldString.fontcolor(
-    "FF00",
-  )} в цьому рядку — теж червоний, але шістнадцятковим значенням`,
-);
-// '<font color="FF00">Привіт, світе!</font> в цьому рядку — теж червоний, але шістнадцятковим значенням'
+document.body.innerHTML = contentString.fontcolor("red");
 ```
 
-За допомогою об'єкта {{domxref("HTMLElement/style", "element.style")}} можна отримати атрибут `style` елементу і більш загально ним маніпулювати, як от, наприклад:
+Це створить наступний HTML:
+
+```html
+<font color="red">Привіт, світе</font>
+```
+
+> **Застереження:** Ця розмітка є недійсною, оскільки `font` більше не є дійсним елементом.
+> Замість використання `fontcolor()` і безпосереднього створення тексту HTML слід використовувати для роботи зі шрифтами CSS. Наприклад, можна змінити {{cssxref("color")}} через атрибут {{domxref("HTMLElement/style", "element.style")}}:
 
 ```js
 document.getElementById("yourElemId").style.color = "red";
@@ -69,4 +68,5 @@ document.getElementById("yourElemId").style.color = "red";
 ## Дивіться також
 
 - [Поліфіл `String.prototype.fontcolor` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
-- {{jsxref("String.prototype.fontsize()")}}
+- [Методи для обгортання в HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html)
+- {{HTMLElement("font")}}
