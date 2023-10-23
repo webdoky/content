@@ -6,7 +6,7 @@ page-type: glossary-definition
 
 {{GlossarySidebar}}
 
-**Істинне** значення в {{Glossary("JavaScript")}} – це значення, яке вважається `true`, коли зустрічається в {{Glossary("Boolean", "булевому")}} контексті. Всі значення є істинними, якщо не визначені як {{Glossary("Falsy", "хибні")}}. Тобто _істинними_ є всі значення, окрім `false`, `0`, `-0`, `0n`, `""`, `null`, `undefined` і `NaN`.
+**Істинне** значення в {{Glossary("JavaScript")}} – це значення, яке вважається `true`, коли зустрічається в {{Glossary("Boolean", "булевому")}} контексті. Всі значення є істинними, якщо не визначені як {{Glossary("Falsy", "хибні")}}. Тобто _істинними_ є всі значення, окрім `false`, `0`, `-0`, `0n`, `""`, `null`, `undefined`, `NaN` і {{domxref("document.all")}}.
 
 {{Glossary("JavaScript")}} використовує в булевих контекстах {{Glossary("Type_Coercion", "зведення типів")}}.
 
