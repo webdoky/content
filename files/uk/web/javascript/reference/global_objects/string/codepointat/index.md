@@ -9,7 +9,7 @@ browser-compat: javascript.builtins.String.codePointAt
 
 Метод **`codePointAt()`** (кодова точка на позиції) значень {{jsxref("String")}} повертає невід'ємне число, що відповідає значенню кодової точки Unicode символу, що починається за вказаним індексом. Зверніть увагу на те, що індекс – все одно заснований на кодових одиницях UTF-16, а не кодових точках Unicode.
 
-{{EmbedInteractiveExample("pages/js/string-codepointat.html","shorter")}}
+{{EmbedInteractiveExample("pages/js/string-codepointat.html", "shorter")}}
 
 ## Синтаксис
 
