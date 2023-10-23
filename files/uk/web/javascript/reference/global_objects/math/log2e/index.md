@@ -9,7 +9,7 @@ browser-compat: javascript.builtins.Math.LOG2E
 
 Статична властивість даних **`Math.LOG2E`** відображає логарифм [e](/uk/docs/Web/JavaScript/Reference/Global_Objects/Math/E) за основою 2, що наближено дорівнює 1.442.
 
-{{EmbedInteractiveExample("pages/js/math-log2e.html","shorter")}}
+{{EmbedInteractiveExample("pages/js/math-log2e.html", "shorter")}}
 
 ## Значення
 
