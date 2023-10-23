@@ -17,7 +17,7 @@ browser-compat: html.elements.input.type_tel
 
 ## Значення
 
-Атрибут [`value`](/uk/docs/Web/HTML/Element/input#value) елемента {{HTMLElement("input")}} містить рядок, що або представляє номер телефону, або є порожнім (`""`).
+Атрибут [`value`](/uk/docs/Web/HTML/Element/input#value-znachennia) елемента {{HTMLElement("input")}} містить рядок, що або представляє номер телефону, або є порожнім (`""`).
 
 ## Додаткові атрибути
 
@@ -25,7 +25,7 @@ browser-compat: html.elements.input.type_tel
 
 ### list
 
-Значення атрибута list – це {{domxref("Element.id", "id")}} елемента {{HTMLElement("datalist")}}, розташованого в тому самому документі. {{HTMLElement("datalist")}} надає список наперед визначених значень, що пропонуються користувачам для поля. Всі значення в списку, несумісні з [`type`](/uk/docs/Web/HTML/Element/input#type), не включаються в список запропонованих варіантів. Ці значення подаються як пропозиції, а не вимога: користувачі можуть як обирати зі списку, так і ввести інше значення.
+Значення атрибута list – це {{domxref("Element.id", "id")}} елемента {{HTMLElement("datalist")}}, розташованого в тому самому документі. Елемент{{HTMLElement("datalist")}} надає список наперед визначених значень, що пропонуються користувачам для поля. Всі значення в списку, несумісні з [`type`](/uk/docs/Web/HTML/Element/input#type-typ), не включаються в список запропонованих варіантів. Ці значення подаються як пропозиції, а не вимога: користувачі можуть як обирати зі списку, так і ввести інше значення.
 
 ### maxlength
 
@@ -41,11 +41,11 @@ browser-compat: html.elements.input.type_tel
 
 ### pattern
 
-Атрибут `pattern`, коли заданий, є регулярним виразом, котрому повинно відповідати [`value`](/uk/docs/Web/HTML/Element/input#value), щоб пройти [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation). Це повинен бути дійсний регулярний вираз JavaScript, подібний до тих, що використовуються типом {{jsxref("RegExp")}}, і що задокументовані в нашому [посібнику з регулярних виразів](/uk/docs/Web/JavaScript/Guide/Regular_expressions); при компіляції регулярного виразу задається позначка `'u'`, тож патерн обробляється як послідовність кодових точок Unicode, а не як ASCII. На кінцях тексту патерну не повинно бути скісних рисок.
+Атрибут `pattern`, коли заданий, є регулярним виразом, котрому повинно відповідати [`value`](/uk/docs/Web/HTML/Element/input#value-znachennia), щоб пройти [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation). Це повинен бути дійсний регулярний вираз JavaScript, подібний до тих, що використовуються типом {{jsxref("RegExp")}}, і що задокументовані в нашому [посібнику з регулярних виразів](/uk/docs/Web/JavaScript/Guide/Regular_expressions); при компіляції регулярного виразу задається позначка `'u'`, тож патерн обробляється як послідовність кодових точок Unicode, а не як {{Glossary("ASCII")}}. На кінцях тексту патерну не повинно бути скісних рисок.
 
 Якщо заданий патерн – не заданий або недійсний, то регулярний вираз не застосовується, і цей атрибут цілком ігнорується.
 
-> **Примітка:** Слід використовувати атрибут [`title`](/uk/docs/Web/HTML/Element/input#title), щоб задати текст, котрий більшість браузерів показує як підказку для пояснення того, яким вимогам повинен відповідати текст, аби відповідати патерну. Також слід додати інший пояснювальний текст поруч.
+> **Примітка:** Слід використовувати атрибут [`title`](/uk/docs/Web/HTML/Element/input#title-zaholovok), щоб задати текст, котрий більшість браузерів показує як підказку для пояснення того, яким вимогам повинен відповідати текст, аби відповідати патерну. Також слід додати інший пояснювальний текст поруч.
 
 Дивіться деталі та приклад у розділі [Валідація за патерном](#validatsiia-za-paternom).
 
@@ -55,7 +55,7 @@ browser-compat: html.elements.input.type_tel
 
 Якщо вміст контрольного елемента має один напрям письма ({{Glossary("LTR", "зліва направо")}} або {{Glossary("RTL", "справа наліво")}}), а заповнювач треба показати в іншому напрямі, то можна використати в заповнювачі символи двонапрямленого алгоритму форматування Unicode; більше інформації у статті [Як використовувати контрольні символи Unicode у двонапрямленому тексті](https://www.w3.org/International/questions/qa-bidi-unicode-controls).
 
-> **Примітка:** Уникайте використання атрибута `placeholder`, якщо це можливо. Він є менш семантично корисним, ніж інші способи пояснення форми, і може призводити до неочікуваних технічних проблем зі вмістом. Більше інформації в [підписах `<input>`](/uk/docs/Web/HTML/Element/input#labels).
+> **Примітка:** Уникайте використання атрибута `placeholder`, якщо це можливо. Він є менш семантично корисним, ніж інші способи пояснення форми, і може призводити до неочікуваних технічних проблем зі вмістом. Більше інформації в [підписах `<input>`](/uk/docs/Web/HTML/Element/input#pidpysy).
 
 ### readonly
 
@@ -82,11 +82,11 @@ browser-compat: html.elements.input.type_tel
 - `off`
   - : Вимкнути автоматичне виправлення та текстові заміни.
 
-### mozactionhint
+### mozactionhint {{deprecated_inline}}
 
 Розширення Mozilla, котре надає підказку, наприклад, про те, якого роду дія буде виконана, якщо користувач натисне під час редагування поля клавішу <kbd>Enter</kbd> або <kbd>Return</kbd>.
 
-Цей атрибут став нерекомендованим – натомість слід використовувати глобальний атрибут [`enterkeyhint`](/uk/docs/Web/HTML/Global_attributes#enterkeyhint).
+<strong>Нерекомендовано: Натомість слід використовувати [`enterkeyhint`](/uk/docs/Web/HTML/Global_attributes#enterkeyhint).</strong>
 
 ## Застосування телефонних полів
 
@@ -133,7 +133,7 @@ browser-compat: html.elements.input.type_tel
 
 #### Фізичний розмір елемента поля
 
-Фізичний розмір поля введення можна контролювати за допомогою атрибута [`size`](/uk/docs/Web/HTML/Element/input#size) – задаючи число символів, котре поле може показувати водночас. У цьому прикладі поле редагування `tel` – 20 символів завширшки:
+Фізичний розмір поля введення можна контролювати за допомогою атрибута [`size`](/uk/docs/Web/HTML/Element/input#size-rozmir) – задаючи число символів, котре поле може показувати водночас. У цьому прикладі поле редагування `tel` – 20 символів завширшки:
 
 ```html
 <input id="telNo" name="telNo" type="tel" size="20" />
@@ -143,7 +143,7 @@ browser-compat: html.elements.input.type_tel
 
 #### Довжина значення елемента
 
-Атрибут `size` працює окремо від обмежень довжини введеного номера телефону. Мінімальну довжину такого номера в символах можна задати за допомогою атрибута [`minlength`](/uk/docs/Web/HTML/Element/input#minlength); аналогічно, для задання максимальної довжини – [`maxlength`](/uk/docs/Web/HTML/Element/input#maxlength).
+Атрибут `size` працює окремо від обмежень довжини введеного номера телефону. Мінімальну довжину такого номера в символах можна задати за допомогою атрибута [`minlength`](/uk/docs/Web/HTML/Element/input#minlength-minimalna-dovzhyna); аналогічно, для задання максимальної довжини – [`maxlength`](/uk/docs/Web/HTML/Element/input#maxlength-maksymalna-dovzhyna).
 
 Приклад нижче створює поле введення номера телефону 20 символів завширшки, що вимагає, аби вміст не був коротшим за 9 символів або довшим за 14 символів.
 
@@ -165,7 +165,7 @@ browser-compat: html.elements.input.type_tel
 
 #### Задання одного усталеного за допомогою атрибута value
 
-Як завжди, можна задати усталене значення для поля `tel` – шляхом задання його атрибута [`value`](/uk/docs/Web/HTML/Element/input#value):
+Як завжди, можна задати усталене значення для поля `tel` – шляхом задання його атрибута [`value`](/uk/docs/Web/HTML/Element/input#value-znachennia):
 
 ```html
 <input id="telNo" name="telNo" type="tel" value="333-4444-4444" />
@@ -175,7 +175,7 @@ browser-compat: html.elements.input.type_tel
 
 #### Пропонування значень
 
-Іще краще: можна запропонувати список з усталених значень номерів телефонів, серед яких користувач може обрати. Щоб таке реалізувати, слід застосувати атрибут [`list`](/uk/docs/Web/HTML/Element/input#list). Це не обмежує користувача такими варіантами, а й так само дозволяє їм обрати найчастіше вживані номери телефонів швидше. Також це надає підказку для [`autocomplete`](/uk/docs/Web/HTML/Element/input#autocomplete). Атрибут `list` задає ідентифікатор елемента {{HTMLElement("datalist")}}, котрий своєю чергою містить по одному елементу {{HTMLElement("option")}} на пропоноване значення; `value` кожного `option` є відповідним пропонованим значенням для поля номера телефону.
+Іще краще: можна запропонувати список з усталених значень номерів телефонів, серед яких користувач може обрати. Щоб таке реалізувати, слід застосувати атрибут [`list`](/uk/docs/Web/HTML/Element/input#list-spysok). Це не обмежує користувача такими варіантами, а й так само дозволяє їм обрати найчастіше вживані номери телефонів швидше. Також це надає підказку для [`autocomplete`](/uk/docs/Web/HTML/Element/input#autocomplete-avtozapovnennia). Атрибут `list` задає ідентифікатор елемента {{HTMLElement("datalist")}}, котрий своєю чергою містить по одному елементу {{HTMLElement("option")}} на пропоноване значення; `value` кожного `option` є відповідним пропонованим значенням для поля номера телефону.
 
 ```html
 <label for="telNo">Номер телефону: </label>
@@ -205,7 +205,7 @@ browser-compat: html.elements.input.type_tel
 
 ### Обов'язковість телефонних номерів
 
-Зробити, щоб порожнє поле вважалось недійсним і не подавалось на сервер, можна за допомогою атрибута [`required`](/uk/docs/Web/HTML/Element/input#required). Наприклад, використаймо такий HTML:
+Зробити, щоб порожнє поле вважалось недійсним і не подавалось на сервер, можна за допомогою атрибута [`required`](/uk/docs/Web/HTML/Element/input#required-oboviazkovyi). Наприклад, використаймо такий HTML:
 
 ```html
 <form>
@@ -257,7 +257,7 @@ input:valid + span::after {
 
 ### Валідація за патерном
 
-За потреби іще сильніше обмежити введені номери, щоб вони відповідали конкретному патерну, можна використати атрибут [`pattern`](/uk/docs/Web/HTML/Element/input#pattern), котрий приймає за значення {{Glossary("regular expression", "регулярний вираз")}}, котрому повинні відповідати введені значення.
+За потреби іще сильніше обмежити введені номери, щоб вони відповідали конкретному патерну, можна використати атрибут [`pattern`](/uk/docs/Web/HTML/Element/input#pattern-patern), котрий приймає за значення {{Glossary("regular expression", "регулярний вираз")}}, котрому повинні відповідати введені значення.
 
 У цьому прикладі використовується такий же CSS, як вище, а HTML змінений наступним чином:
 
@@ -316,7 +316,7 @@ input:valid + span::after {
 
 У цьому прикладі виводиться простий інтерфейс з елементом {{htmlelement("select")}}, що дає користувачам змогу вибрати те, в якій вони країні перебувають, і набір з елементів `<input type="tel">`, що дають змогу вводити окремі частини номерів телефонів; немає жодних перешкод щодо того, щоб мати декілька полів `tel`.
 
-Кожне поле має атрибути [`placeholder`](/uk/docs/Web/HTML/Element/input#placeholder), для виведення для зрячих користувачів підказку щодо того, що в таке поле вводити, [`pattern`](/uk/docs/Web/HTML/Element/input#pattern) – щоб змушувати вводити як відповідну частину конкретну кількість символів, і атрибут [`aria-label`](/uk/docs/Web/Accessibility/ARIA/Attributes/aria-label) – щоб вміщати підказку про те, що вводити, котра буде озвучена користувачам читачів з екрана.
+Кожне поле має атрибути [`placeholder`](/uk/docs/Web/HTML/Element/input#placeholder-zapovniuvach), для виведення для зрячих користувачів підказку щодо того, що в таке поле вводити, [`pattern`](/uk/docs/Web/HTML/Element/input#pattern-patern) – щоб змушувати вводити як відповідну частину конкретну кількість символів, і атрибут [`aria-label`](/uk/docs/Web/Accessibility/ARIA/Attributes/aria-label) – щоб вміщати підказку про те, що вводити, котра буде озвучена користувачам читачів з екрана.
 
 ```html
 <form>
@@ -477,14 +477,14 @@ input:valid + span::after {
     <tr>
       <td><strong>Доступні спільні атрибути</strong></td>
       <td>
-        <a href="/uk/docs/Web/HTML/Element/input#autocomplete"><code>autocomplete</code></a>,
-        <a href="/uk/docs/Web/HTML/Element/input#list"><code>list</code></a>,
-        <a href="/uk/docs/Web/HTML/Element/input#maxlength"><code>maxlength</code></a>,
-        <a href="/uk/docs/Web/HTML/Element/input#minlength"><code>minlength</code></a>,
-        <a href="/uk/docs/Web/HTML/Element/input#pattern"><code>pattern</code></a>,
-        <a href="/uk/docs/Web/HTML/Element/input#placeholder"><code>placeholder</code></a>,
-        <a href="/uk/docs/Web/HTML/Element/input#readonly"><code>readonly</code></a> і
-        <a href="/uk/docs/Web/HTML/Element/input#size"><code>size</code></a>
+        <a href="/uk/docs/Web/HTML/Element/input#autocomplete-avtozapovnennia"><code>autocomplete</code></a>,
+        <a href="/uk/docs/Web/HTML/Element/input#list-spysok"><code>list</code></a>,
+        <a href="/uk/docs/Web/HTML/Element/input#maxlength-maksymalna-dovzhyna"><code>maxlength</code></a>,
+        <a href="/uk/docs/Web/HTML/Element/input#minlength-minimalna-dovzhyna"><code>minlength</code></a>,
+        <a href="/uk/docs/Web/HTML/Element/input#pattern-patern"><code>pattern</code></a>,
+        <a href="/uk/docs/Web/HTML/Element/input#placeholder-zapovniuvach"><code>placeholder</code></a>,
+        <a href="/uk/docs/Web/HTML/Element/input#readonly-lyshe-dlia-chytannia"><code>readonly</code></a> і
+        <a href="/uk/docs/Web/HTML/Element/input#size-rozmir"><code>size</code></a>
       </td>
     </tr>
     <tr>
