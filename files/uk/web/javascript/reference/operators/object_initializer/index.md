@@ -5,7 +5,7 @@ page-type: javascript-language-feature
 browser-compat: javascript.operators.object_initializer
 ---
 
-{{JsSidebar("Operators")}}
+{{jsSidebar("Operators")}}
 
 **Об'єктний ініціалізатор** – це розділений список з нуля або більше пар назв властивостей та відповідних їм значень в об'єкті, оточений фігурними дужками (`{}`). Також об'єкти можуть бути ініціалізовані за допомогою [`Object.create()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/create) або [шляхом виклику функції-конструктора](/uk/docs/Web/JavaScript/Guide/Working_with_objects#zastosuvannia-funktsii-konstruktora) з оператором [`new`](/uk/docs/Web/JavaScript/Reference/Operators/new).
 
@@ -231,7 +231,7 @@ const mergedObj = { ...obj1, ...obj2 };
 
 > **Застереження:** Зверніть увагу на те, що {{jsxref("Object.assign()")}} запускає [сетери](/uk/docs/Web/JavaScript/Reference/Functions/set), а запис розгортання – ні!
 
-### Сетер властивості
+### Сетер прототипа
 
 Означення властивості в формі `__proto__: value` або `"__proto__": value` не створює властивості з назвою `__proto__`. Натомість якщо задане значення є об'єктом або [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null), то така властивість спрямовує `[[Prototype]]` створеного об'єкта на це значення. (Якщо значення не є об'єктом або `null`, то об'єкт не змінюється).
 
@@ -302,6 +302,7 @@ const obj7 =  {
 ## Дивіться також
 
 - [Аксесори властивостей](/uk/docs/Web/JavaScript/Reference/Operators/Property_accessors)
-- [`get`](/uk/docs/Web/JavaScript/Reference/Functions/get) і [`set`](/uk/docs/Web/JavaScript/Reference/Functions/set)
+- [`get`](/uk/docs/Web/JavaScript/Reference/Functions/get)
+- [`set`](/uk/docs/Web/JavaScript/Reference/Functions/set)
 - [Означення методів](/uk/docs/Web/JavaScript/Reference/Functions/Method_definitions)
 - [Лексична граматика](/uk/docs/Web/JavaScript/Reference/Lexical_grammar)
