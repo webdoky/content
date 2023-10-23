@@ -7,11 +7,11 @@ status:
 browser-compat: javascript.builtins.String.fixed
 ---
 
-{{JSRef}} {{deprecated_header}}
+{{JSRef}} {{Deprecated_Header}}
 
-Метод **`fixed()`** (фіксований) значень {{jsxref("String")}} створює рядок, що вбудовує рядок цього методу в елемент {{HTMLElement("tt")}} (`<tt>str</tt>`), завдяки чому цей рядок виводиться моноширинним шрифтом.
+Метод **`fixed()`** (фіксований) значень {{jsxref("String")}} створює рядок, що вбудовує рядок цього методу в елемент {{HTMLElement("tt")}} (`<tt>str</tt>`), завдяки чому цей рядок виводиться шрифтом фіксованої ширини.
 
-> **Примітка:** Всі [обгортальні методи HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html) є нерекомендованими та стандартизовані заради потреб сумісності. Замість них слід використовувати [API DOM](/uk/docs/Web/API/Document_Object_Model), наприклад, [`document.createElement()`](/uk/docs/Web/API/Document/createElement).
+> **Примітка:** Всі [обгортальні методи HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html) є нерекомендованими та стандартизовані заради потреб сумісності. У випадку `fixed()`, сам елемент `<tt>` був вилучений зі специфікації HTML, і його більше не варто використовувати. Веброзробники повинні використовувати замість нього властивості [CSS](/uk/docs/Web/CSS).
 
 ## Синтаксис
 
@@ -31,11 +31,25 @@ fixed()
 
 ### Застосування методу fixed()
 
-Наступний приклад використовує метод `fixed` для зміни форматування рядка:
+Код нижче створює рядок HTML, а потім замінює ним тіло документа:
 
 ```js
-const worldString = "Привіт, світе!";
-console.log(worldString.fixed()); // "<tt>Привіт, світе!</tt>"
+const contentString = "Привіт, світе";
+
+document.body.innerHTML = contentString.fixed();
+```
+
+Це створює наступний HTML:
+
+```html
+<tt>Привіт, світе</tt>
+```
+
+> **Застереження:** Ця розмітка є недійсною, оскільки `tt` більше не є дійсним елементом.
+> Замість використання `fixed()` і безпосереднього створення тексту HTML слід використовувати для роботи зі шрифтами CSS. Наприклад, можна змінити {{cssxref("font-family")}} через атрибут {{domxref("HTMLElement/style", "element.style")}}:
+
+```js
+document.getElementById("yourElemId").style.fontFamily = "monospace";
 ```
 
 ## Специфікації
@@ -49,6 +63,5 @@ console.log(worldString.fixed()); // "<tt>Привіт, світе!</tt>"
 ## Дивіться також
 
 - [Поліфіл `String.prototype.fixed` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
-- {{jsxref("String.prototype.bold()")}}
-- {{jsxref("String.prototype.italics()")}}
-- {{jsxref("String.prototype.strike()")}}
+- [Методи для обгортання в HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html)
+- {{HTMLElement("tt")}}
