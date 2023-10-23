@@ -7,11 +7,11 @@ status:
 browser-compat: javascript.builtins.String.fontsize
 ---
 
-{{JSRef}} {{deprecated_header}}
+{{JSRef}} {{Deprecated_Header}}
 
 Метод **`fontsize()`** (розмір шрифту) значень {{jsxref("String")}} створює рядок, що вбудовує рядок цього методу в елемент {{HTMLElement("font")}} (`<font size="...">str</font>`), завдяки чому цей текст виводиться з заданим розміром шрифту.
 
-> **Примітка:** Всі [обгортальні методи HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html) є нерекомендованими та стандартизовані лише для потреб сумісності. У випадку `fontsize()`, сам елемент `<font>` було вилучено в [HTML5](/uk/docs/Glossary/HTML5), і його більше не слід використовувати. Замість цього веброзробники повинні використовувати властивості [CSS](/uk/docs/Web/CSS).
+> **Примітка:** Всі [обгортальні методи HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html) є нерекомендованими та стандартизовані лише для потреб сумісності. У випадку `fontsize()`, сам елемент `<font>` було вилучено зі специфікації HTML, і його більше не слід використовувати. Замість цього веброзробники повинні використовувати властивості [CSS](/uk/docs/Web/CSS).
 
 ## Синтаксис
 
@@ -36,20 +36,26 @@ fontsize(size)
 
 ### Застосування fontsize()
 
-Наступний приклад використовує методи рядка для зміни його розміру:
+Код нижче створює рядок HTML, а потім замінює ним тіло документа:
 
 ```js
-const worldString = "Привіт, світе!";
+const contentString = "Привіт, світе";
 
-console.log(worldString.small()); // <small>Привіт, світе!</small>
-console.log(worldString.big()); // <big>Привіт, світе!</big>
-console.log(worldString.fontsize(7)); // <font size="7">Привіт, світе!</font>
+document.body.innerHTML = contentString.fontsize(7);
 ```
 
-За допомогою об'єкта {{domxref("HTMLElement/style", "element.style")}} можна отримати доступ до атрибута `style` елемента і більш загально ним маніпулювати, як от:
+Це створить наступний HTML:
+
+```html
+<font size="7">Привіт, світе</font>
+```
+
+> **Застереження:** Ця розмітка є недійсною, оскільки `font` більше не є дійсним елементом.
+
+Замість використання `fontsize()` і безпосереднього створення тексту HTML слід використовувати для роботи зі шрифтами CSS. Наприклад, можна змінити {{cssxref("font-size")}} через атрибут {{domxref("HTMLElement/style", "element.style")}}:
 
 ```js
-document.getElementById("yourElemId").style.fontSize = "0.7em";
+document.getElementById("yourElemId").style.fontSize = "7pt";
 ```
 
 ## Специфікації
@@ -63,5 +69,5 @@ document.getElementById("yourElemId").style.fontSize = "0.7em";
 ## Дивіться також
 
 - [Поліфіл `String.prototype.fontsize` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
-- {{jsxref("String.prototype.big()")}}
-- {{jsxref("String.prototype.small()")}}
+- [Методи для обгортання в HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html)
+- {{HTMLElement("font")}}
