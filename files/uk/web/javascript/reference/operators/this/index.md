@@ -502,7 +502,7 @@ bird.sayBye(); // Бувай. Феррарі
 >
 > ```js example-bad
 > const carSayHi = car.sayHi;
-> carSayHi(); // TypeError, тому що метод 'sayHi' намагаєтья звернутися до 'this.name', а 'this' у суворому режимі має значення undefined.
+> carSayHi(); // TypeError, тому що метод 'sayHi' намагається звернутися до 'this.name', а 'this' у суворому режимі має значення undefined.
 > ```
 
 Проте зверніть увагу, що автоматично зв'язані методи страждають від тієї ж проблеми, що й [використання стрілкових функцій для класових властивостей](/uk/docs/Web/JavaScript/Reference/Functions/Arrow_functions#ne-mozhut-vykorystovuvatysia-yak-metody): кожний примірник класу матиме власну копію метода, що збільшує використання пам'яті. Їх слід використовувати лише тоді, коли це абсолютно необхідно. Також можна зімітувати реалізацію [`Intl.NumberFormat.prototype.format()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/format#vykorystannia-format-vkupi-z-map): визначити властивість як гетер, що повертає зв'язану функцію при звертанні до неї та зберігає її, щоб функція створювалася лише один раз і лише тоді, коли це необхідно.
