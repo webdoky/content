@@ -11,7 +11,7 @@ browser-compat: html.elements.datalist
 
 {{EmbedInteractiveExample("pages/tabbed/datalist.html", "tabbed-standard")}}
 
-Щоб зв'язати елемент `<datalist>` з контрольним елементом, йому задається унікальний ідентифікатор в атрибуті [`id`](/uk/docs/Web/HTML/Global_attributes/id), а потім до елемента {{HTMLElement("input")}}додається атрибут [`list`](/uk/docs/Web/HTML/Element/input#list-spysok) з таким же ідентифікатором як своїм значенням.
+Щоб зв'язати елемент `<datalist>` з контрольним елементом, йому задається унікальний ідентифікатор в атрибуті [`id`](/uk/docs/Web/HTML/Global_attributes/id), а потім до елемента {{HTMLElement("input")}}додається атрибут [`list`](/uk/docs/Web/HTML/Element/input#list-spysok) зі значенням того ж ідентифікатора.
 Лише певні типи {{HTMLElement("input")}} підтримують таку логіку, а ще ця логіка може відрізнятися в різних браузерах.
 
 > **Примітка:** Елемент `<option>` може зберігати певні значення як усередині себе, так і в атрибутах `value` і `label`. Який з них буде видно у спадному меню, залежить від браузера, але коли варіант клацають, вміст, введений у контрольне поле, завжди береться з атрибута `value`.
