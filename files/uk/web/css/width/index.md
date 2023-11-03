@@ -29,6 +29,7 @@ width: 75%;
 /* Значення – ключові слова */
 width: max-content;
 width: min-content;
+width: fit-content;
 width: fit-content(20em);
 width: auto;
 
@@ -52,7 +53,9 @@ width: unset;
   - : Внутрішньо бажана ширина.
 - `min-content` (мінімальний вміст)
   - : Внутрішньо найменша можлива ширина.
-- `fit-content({{cssxref("&lt;length-percentage&gt;")}})` (припасувати вміст)
+- `fit-content`
+  - : Використовує доступний простір, але не більше, ніж [max-content](/uk/docs/Web/CSS/max-content), тобто `min(max-content, max(min-content, stretch))`.
+- `fit-content({{cssxref("&lt;length-percentage&gt;")}})` {{Experimental_Inline}}
   - : Використовує формулу fit-content щодо доступного простору, заміненого вказаним аргументом, тобто `min(max-content, max(min-content, <length-percentage>))`.
 
 ## Занепокоєння щодо доступності
