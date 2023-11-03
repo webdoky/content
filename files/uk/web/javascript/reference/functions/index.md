@@ -262,7 +262,6 @@ function myFunc({ a, b }, c = 1, ...rest) {
 
 ### Функції-гетери та функції-сетери
 
-You can define accessor properties on any standard built-in object or user-defined object that supports the addition of new properties. Within [object literals](/uk/docs/Web/JavaScript/Reference/Operators/Object_initializer) and [classes](/uk/docs/Web/JavaScript/Reference/Classes), you can use special syntaxes to define the getter and setter of an accessor property.
 На будь-якому стандартному вбудованому або визначеному користувачем об'єкті, що підтримує додавання нових властивостей, можна визначити аксесорні властивості. У [літералах об'єктів](/uk/docs/Web/JavaScript/Reference/Operators/Object_initializer) та [класах](/uk/docs/Web/JavaScript/Reference/Classes) можна використовувати спеціальні синтаксиси для визначення гетера та сетера аксесорної властивості.
 
 - [get](/uk/docs/Web/JavaScript/Reference/Functions/get)
