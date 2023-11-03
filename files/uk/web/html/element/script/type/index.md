@@ -11,7 +11,7 @@ browser-compat: html.elements.script.type
 
 ## Значення
 
-The value of this attribute indicates the type of data represented by the script, and will be one of the following:
+Значення цього атрибута вказує тип даних, представленим сценарієм, і може бути одним з-поміж наведених нижче:
 
 - **Атрибут не заданий (усталено), порожній рядок або MIME-тип JavaScript**
   - : Вказує на те, що цей сценарій є "класичним сценарієм", що вміщає код JavaScript.
