@@ -5,7 +5,7 @@ page-type: javascript-language-feature
 browser-compat: javascript.regular_expressions.character_class_escape
 ---
 
-{{JsSidebar}}
+{{jsSidebar}}
 
 **Екранування класу символів** – це екранувальна послідовність, що представляє набір символів.
 
@@ -62,8 +62,8 @@ Look  how they\tshine for you`);
 
 ## Дивіться також
 
-- [Класи символів](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Character_classes)
-- [Довідник з регулярних виразів](/uk/docs/Web/JavaScript/Reference/Regular_expressions)
+- Посібник [Класи символів](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Character_classes)
+- [Регулярні вирази](/uk/docs/Web/JavaScript/Reference/Regular_expressions)
 - [Класи символів: `[...]`, `[^...]`](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Character_class)
 - [Екранування класів символів Unicode: `\p{...}`, `\P{...}`](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Unicode_character_class_escape)
 - [Екранування символів: `\n`, `\u{...}`](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Character_escape)
