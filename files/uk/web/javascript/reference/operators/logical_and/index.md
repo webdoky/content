@@ -90,9 +90,6 @@ true && (false || false); // false
 
 ### Застосування І
 
-The following code shows examples of the `&&` (logical AND)
-operator.
-
 Наступний код демонструє приклади з оператором `&&` (логічне І).
 
 ```js
