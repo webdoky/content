@@ -7,7 +7,7 @@ browser-compat:
   - javascript.statements.export
 ---
 
-{{JSSidebar("JavaScript Guide")}}{{Previous("Web/JavaScript/Guide/Meta_programming")}}
+{{jsSidebar("JavaScript Guide")}}{{Previous("Web/JavaScript/Guide/Meta_programming")}}
 
 Цей посібник дає всі необхідні знання, аби почати використовувати синтаксис модулів JavaScript.
 
@@ -19,7 +19,7 @@ browser-compat:
 
 Добрі новини полягають в тому, що сучасні браузери почали підтримувати функціональність модулів нативно, і це те, про що розповідає вся ця стаття. Це може бути лише доброю штукою: браузери можуть оптимізувати завантаження модулів, роблячи його більш ефективним, ніж потреба використати бібліотеку й виконувати всю надлишкову обробку на клієнтському боці й зайві ходки в мережу.
 
-Використання нативних модулів JavaScript залежить від інструкцій {{JSxRef("Statements/import", "import")}} і {{JSxRef("Statements/export", "export")}}; їх підтримка в браузері показана в таблиці сумісності нижче.
+Використання нативних модулів JavaScript залежить від інструкцій {{jsxref("Statements/import", "import")}} і {{jsxref("Statements/export", "export")}}; їх підтримка в браузері показана в таблиці сумісності нижче.
 
 ## Сумісність із браузерами
 
@@ -83,7 +83,7 @@ modules/
 
 ## Експорт можливостей модуля
 
-Перше, що слід зробити для отримання доступу до можливостей модуля, – експортувати їх. Це робиться за допомогою інструкції {{JSxRef("Statements/export", "export")}}.
+Перше, що слід зробити для отримання доступу до можливостей модуля, – експортувати їх. Це робиться за допомогою інструкції {{jsxref("Statements/export", "export")}}.
 
 Найлегший спосіб її застосувати – розташувати перед будь-якими сутностями, котрі хочеться експортувати з модуля, наприклад:
 
@@ -114,7 +114,7 @@ export { name, draw, reportArea, reportPerimeter };
 import { name, draw, reportArea, reportPerimeter } from "./modules/square.js";
 ```
 
-Спершу інструкція {{JSxRef("Statements/import", "import")}}, далі – розділений комами список можливостей до імпорту, загорнутий в фігурні дужки, далі – ключове слово `from`, потім – _модульний специфікатор_.
+Спершу інструкція {{jsxref("Statements/import", "import")}}, далі – розділений комами список можливостей до імпорту, загорнутий в фігурні дужки, далі – ключове слово `from`, потім – _модульний специфікатор_.
 
 _Модульний специфікатор_ містить рядок, котрий середовище JavaScript може перетворити на шлях до файлу модуля.
 У браузері це може бути шлях, відносний щодо кореня сайту, котрий для нашого прикладу `basic-modules` був би `/js-examples/module-examples/basic-modules`.
@@ -171,8 +171,8 @@ import { name as circleName } from "https://example.com/shapes/circle.js";
     "imports": {
       "shapes": "./shapes/square.js",
       "shapes/square": "./modules/shapes/square.js",
-      "https://example.com/shapes/": "/shapes/square/",
       "https://example.com/shapes/square.js": "./shapes/square.js",
+      "https://example.com/shapes/": "/shapes/square/",
       "../shapes/square": "./shapes/square.js"
     }
   }
@@ -191,7 +191,7 @@ import { name as circleName } from "https://example.com/shapes/circle.js";
 import { name as squareNameOne } from "shapes";
 import { name as squareNameTwo } from "shapes/square";
 // Перенаправлення URL на іншу URL
-import { name as squareNameThree } from "https://example.com/shapes/moduleshapes/square.js";
+import { name as squareNameThree } from "https://example.com/shapes/square.js";
 ```
 
 Якщо модульний специфікатор містить пряму скісну риску в кінці, то відповідне йому значення також повинно мати таку риску, і такий ключ дає збіг як "префікс шляху".
@@ -199,7 +199,7 @@ import { name as squareNameThree } from "https://example.com/shapes/moduleshapes
 
 ```js
 // Перенаправлення URL за допомогою префіксу ( https://example.com/shapes/)
-import { name as squareNameFour } from "https://example.com/shapes/square.js";
+import { name as squareNameFour } from "https://example.com/shapes/moduleshapes/square.js";
 ```
 
 Декілька ключів карти імпортування можуть давати дійсний збіг для одного модульного специфікатора.
@@ -215,7 +215,7 @@ import { name as squareNameFour } from "https://example.com/shapes/square.js";
 
 ### Перевірка можливостей
 
-Підтримку карт імпортування можна перевірити за допомогою статичного методу [`HTMLScriptElement.supports()`](/uk/docs/Web/API/HTMLScriptElement/supports) (котрий сам має широку підтримку):
+Підтримку карт імпортування можна перевірити за допомогою статичного методу [`HTMLScriptElement.supports()`](/uk/docs/Web/API/HTMLScriptElement/supports_static) (котрий сам має широку підтримку):
 
 ```js
 if (HTMLScriptElement.supports?.("importmap")) {
@@ -373,10 +373,13 @@ import fp from "lodash/fp.js";
 
 Інструкції `import` і `export` можна використовувати лише в модулях, але не у звичайних сценаріях.
 
+> **Примітка:** Модулі та їхні залежності можуть бути завантажені наперед шляхом задання їх в елементах [`<link>`](/uk/docs/Web/HTML/Element/link) з атрибутом [`rel="modulepreloaded"`](/uk/docs/Web/HTML/Attributes/rel/modulepreload).
+> Це може суттєво знизити час завантаження, коли ці модулі використовуються.
+
 ## Інші відмінності між модулями й звичайними сценаріями
 
 - Слід звернути увагу на локальне тестування: якщо спробувати завантажити файл HTML локально (тобто з URL `file://`), то трапляться помилки CORS, у зв'язку з вимогами безпеки модулів JavaScript. Тестування треба проводити за допомогою сервера.
-- Крім того, зверніть увагу, що поведінка частин сценарію, визначених всередині модулів, коли порівняти зі звичайними сценаріями, може відрізнятися. Це пов'язано з тим, що модулі автоматично застосовують {{JSxRef("Strict_mode", "суворий режим", "", 1)}}.
+- Крім того, зверніть увагу, що поведінка частин сценарію, визначених всередині модулів, коли порівняти зі звичайними сценаріями, може відрізнятися. Це пов'язано з тим, що модулі автоматично застосовують {{jsxref("Strict_mode", "суворий режим", "", 1)}}.
 - Немає потреби застосовувати атрибут `defer` (дивіться [`<script>` attributes](/uk/docs/Web/HTML/Element/script#atrybuty)) при завантаженні модульного сценарію; завантаження модулів автоматично відкладається.
 - Модулі виконуються лише раз, навіть якщо до них звертаються декілька тегів `<script>`.
 - І останнє, але не менш важливе, слід прояснити: можливості модулів імпортуються в область видимості одного сценарію – вони не доступні в глобальній області. Таким чином, імпортовані можливості доступні лише в тому сценарії, в котрий імпортовані, і не вийде звернутися до них з консолі JavaScript, наприклад. Синтаксичні помилки виводитимуться в DevTools, але не вийде застосувати певні методики зневадження, котрі могло б хотітися.
@@ -384,7 +387,7 @@ import fp from "lodash/fp.js";
 Визначені в модулі змінні обмежені модулем, якщо явно не прикріплені до глобального об'єкта. З іншого боку, глобально описані змінні доступні всередині модуля. Наприклад, в наступному коді:
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-US">
   <head>
     <meta charset="UTF-8" />
@@ -682,13 +685,18 @@ import { Square, Circle, Triangle } from "./modules/shapes.js";
 
 Нещодавнє оновлення функціональності модулів JavaScript – динамічне завантаження модулів. Воно дає змогу динамічно завантажувати модулі лише тоді, коли вони потрібні, без потреби завантажувати все одразу. Це дає певні очевидні переваги щодо ефективності; далі – пояснення того, як це працює.
 
-Ця нова функціональність дозволяє викликати [`import()`](/uk/docs/Web/JavaScript/Reference/Operators/import) як функцію, передавши їй шлях до модуля як параметр. Такий виклик поверне {{JSxRef("Promise")}}, котрий сповнюється об'єктом модуля (дивіться [Створення об'єкта модуля](#stvorennia-obiekta-modulia)), котрий дає доступ до експорту цього об'єкта. Наприклад:
+Ця нова функціональність дозволяє викликати [`import()`](/uk/docs/Web/JavaScript/Reference/Operators/import) як функцію, передавши їй шлях до модуля як параметр. Такий виклик поверне {{jsxref("Promise")}}, котрий сповнюється об'єктом модуля (дивіться [Створення об'єкта модуля](#stvorennia-obiekta-modulia)), котрий дає доступ до експорту цього об'єкта. Наприклад:
 
 ```js
 import("./modules/myModule.js").then((module) => {
   // Певні дії з модулем.
 });
 ```
+
+> **Примітка:** Динамічний імпорт дозволений у головному потоці браузера, а також у спільних та виділених воркерах.
+> Проте `import()` викине помилку, якщо буде викликана в сервісному воркері або ворклеті.
+
+<!-- https://whatpr.org/html/6395/webappapis.html#hostimportmoduledynamically(referencingscriptormodule,-specifier,-promisecapability) -->
 
 Погляньмо на приклад. В директорії [dynamic-module-imports](https://github.com/mdn/js-examples/tree/master/module-examples/dynamic-module-imports) є іще один приклад на основі прикладу з класами. Проте цього разу при завантаженні прикладу на полотні нічого не малюється. Натомість включені три кнопки – "Circle", "Square" і "Triangle", котрі, бувши натисненими, динамічно завантажують необхідний модуль, а потім використовують його для малювання відповідної фігури.
 
@@ -711,7 +719,7 @@ squareBtn.addEventListener("click", () => {
       50,
       50,
       100,
-      "blue"
+      "blue",
     );
     square1.draw();
     square1.reportArea();
@@ -786,7 +794,7 @@ const square1 = new Module.Square(
   50,
   50,
   100,
-  colors.blue
+  colors.blue,
 );
 
 const circle1 = new Module.Circle(
@@ -795,7 +803,7 @@ const circle1 = new Module.Circle(
   75,
   200,
   100,
-  colors.green
+  colors.green,
 );
 
 const triangle1 = new Module.Triangle(
@@ -804,11 +812,99 @@ const triangle1 = new Module.Triangle(
   100,
   75,
   190,
-  colors.yellow
+  colors.yellow,
 );
 ```
 
 Це корисно, бо код у [`main.js`](https://github.com/mdn/js-examples/blob/master/module-examples/top-level-await/main.js) не виконається, поки не завершиться код у [`getColors.js`](https://github.com/mdn/js-examples/blob/master/module-examples/top-level-await/modules/getColors.js). Проте це не завадить завантаженню інших модулів. Наприклад, модуль [`canvas.js`](https://github.com/mdn/js-examples/blob/master/module-examples/top-level-await/modules/canvas.js) завантажуватиметься далі, поки виконується отримання `colors`.
+
+## Оголошення імпорту піднімаються
+
+Оголошення імпорту – [піднімаються](/uk/docs/Glossary/Hoisting). В цьому випадку це означає, що імпортовані значення доступні в коді модуля навіть до місця, в якому оголошені, і що побічні ефекти імпортованого модуля виробляються до запуску решти коду поточного модуля.
+Тож, наприклад, у `main.js`, імпортування `Canvas` в середині коду все одно працюватиме:
+
+```js
+// …
+const myCanvas = new Canvas("myCanvas", document.body, 480, 320);
+myCanvas.create();
+import { Canvas } from "./modules/canvas.js";
+myCanvas.createReportList();
+// …
+```
+
+І все ж, вважається доброю практикою ставити всі свої імпорти на початок коду, що полегшує аналіз залежностей.
+
+## Циклічні імпорти
+
+Модулі можуть імпортувати інші модулі, ті модулі можуть імпортувати інші модулі, і так далі. Це формує [орієнтований граф](https://uk.wikipedia.org/wiki/%D0%9E%D1%80%D1%96%D1%94%D0%BD%D1%82%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B9_%D0%B3%D1%80%D0%B0%D1%84), що зветься «графом залежностей». У досконалому світі цей граф є [ациклічним](https://uk.wikipedia.org/wiki/%D0%A1%D0%BF%D1%80%D1%8F%D0%BC%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B9_%D0%B0%D1%86%D0%B8%D0%BA%D0%BB%D1%96%D1%87%D0%BD%D0%B8%D0%B9_%D0%B3%D1%80%D0%B0%D1%84). У такому випадку його можна оцінити за допомогою обходу в глибину.
+Проте цикли іноді є неминучими. Циклічний імпорт виникає, якщо модуль `a` імпортує модуль `b`, але `b` безпосередньо або опосередковано залежить від `a`. Наприклад:
+
+```js
+// -- a.js --
+import { b } from "./b.js";
+// -- b.js --
+import { a } from "./a.js";
+// Цикл:
+// a.js ───> b.js
+//  ^         │
+//  └─────────┘
+```
+
+Циклічні імпорти не завжди призводять до помилки. Значення імпортованої змінної отримується лише тоді, коли вона фактично використовується (саме тому можливі [живі зв'язки](/uk/docs/Web/JavaScript/Reference/Statements/import#importovani-znachennia-mozhut-modyfikuvatysia-lyshe-eksporterom)), і лише якщо змінна залишається неініціалізованою під час використання, то викидається [`ReferenceError`](/uk/docs/Web/JavaScript/Reference/Errors/Cant_access_lexical_declaration_before_init).
+
+````js
+
+```js
+// -- a.js --
+import { b } from "./b.js";
+setTimeout(() => {
+  console.log(b); // 1
+}, 10);
+export const a = 2;
+// -- b.js --
+import { a } from "./a.js";
+setTimeout(() => {
+  console.log(a); // 2
+}, 10);
+export const b = 1;
+````
+
+У цьому прикладі як `a`, так і `b` – використовуються асинхронно. Тому, коли модуль виконується, ні `b`, ні `a` фактично не зчитуються, тому решта коду виконується як зазвичай, і два оператори `export` надають значення `a` і `b`. Потім, після тайм-ауту, як `a`, так і `b` – доступні, тому дві інструкції `console.log` також виконуються як зазвичай.
+Якщо змінити цей код так, щоб `a` використовувалась синхронно, то виконання модуля не вдасться:
+
+```js
+// -- a.js (модуль входу) --
+import { b } from "./b.js";
+export const a = 2;
+// -- b.js --
+import { a } from "./a.js";
+console.log(a); // ReferenceError: Cannot access 'a' before initialization
+export const b = 1;
+```
+
+Так відбувається через те, що коли JavaScript виконує `a.js`, то необхідно спершу виконати `b.js`, залежність `a.js`. Однак `b.js` використовує змінну `a`, яка ще не доступна.
+З іншого боку, якщо змінити цей код так, щоб `b` використовувалась синхронно, а `a` – асинхронно, то виконання модуля вдасться:
+
+```js
+// -- a.js (модуль входу) --
+import { b } from "./b.js";
+console.log(b); // 1
+export const a = 2;
+// -- b.js --
+import { a } from "./a.js";
+setTimeout(() => {
+  console.log(a); // 2
+}, 10);
+export const b = 1;
+```
+
+Так відбувається через те, що виконання `b.js` завершується нормально, тож значення `b` доступне, коли виконується `a.js`.
+Зазвичай слід уникати циклічних імпортів у своїх проєктах, оскільки вони роблять код більш схильним до помилок. Деякі поширені техніки усунення циклів:
+
+- Злити два модулі в один.
+- Перемістити спільний код у третій модуль.
+- Перемістити частину коду з одного модуля до іншого.
+  Проте також циклічні імпорти можуть виникати, якщо бібліотеки залежать одна від одної, а це важче виправити.
 
 ## Написання "ізоморфних" модулів
 

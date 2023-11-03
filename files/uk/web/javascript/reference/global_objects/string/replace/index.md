@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.String.replace
 
 {{JSRef}}
 
-Метод **`replace()`** (замінити) повертає новий рядок, в якому один, деякі чи всі збіги з переданим патерном заміщені переданою заміною. Патерн може бути рядком або {{jsxref("RegExp", "регулярним виразом")}}, а заміна може бути як рядком, так і функцією, яка буде викликана для кожного збігу. Якщо патерн — рядок, то заміняється лише перший збіг. Початковий рядок залишається незмінним.
+Метод **`replace()`** (замінити) примірників {{jsxref("String")}} повертає новий рядок, в якому один, деякі чи всі збіги з переданим патерном заміщені переданою заміною. Патерн може бути рядком або {{jsxref("RegExp", "регулярним виразом")}}, а заміна може бути як рядком, так і функцією, яка буде викликана для кожного збігу. Якщо патерн — рядок, то заміняється лише перший збіг. Початковий рядок залишається незмінним.
 
 {{EmbedInteractiveExample("pages/js/string-replace.html")}}
 
@@ -173,7 +173,7 @@ function styleHyphenFormat(propertyName) {
 
 Для `styleHyphenFormat('borderTop')` це поверне `'border-top'`.
 
-Оскільки в цьому випадку потрібно додатково змінити _знайдений збіг_ перед остаточною заміною, то слід вжити функцію. Це змушує програму спершу знайти збіг, тобто до виконання методу {{jsxref("String.prototype.toLowerCase()", "toLowerCase()")}}. Якщо спробувати зробити заміну без функції, то метод {{jsxref("String.prototype.toLowerCase()", "toLowerCase()")}} не матиме ефекту.
+Оскільки в цьому випадку потрібно додатково змінити _знайдений збіг_ перед остаточною заміною, то слід вжити функцію. Це змушує програму спершу знайти збіг, тобто до виконання методу {{jsxref("String/toLowerCase", "toLowerCase()")}}. Якщо спробувати зробити заміну без функції, то метод {{jsxref("String.prototype.toLowerCase()", "toLowerCase()")}} не матиме ефекту.
 
 ```js example-bad
 // так не працює
@@ -244,9 +244,9 @@ console.log("abcd".replace(/(?<group>bc)/, addOffset)); // "abc (1) d"
 ## Дивіться також
 
 - [Поліфіл `String.prototype.replace` у складі `core-js`, з виправленнями й реалізацією сучасної логіки, як то підтримки `Symbol.replace`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
-- {{jsxref("String.prototype.replaceAll", "String.prototype.replaceAll()")}}
-- {{jsxref("String.prototype.match", "String.prototype.match()")}}
-- {{jsxref("RegExp.prototype.exec", "RegExp.prototype.exec()")}}
-- {{jsxref("RegExp.prototype.test", "RegExp.prototype.test()")}}
+- {{jsxref("String.prototype.replaceAll()")}}
+- {{jsxref("String.prototype.match()")}}
+- {{jsxref("RegExp.prototype.exec()")}}
+- {{jsxref("RegExp.prototype.test()")}}
 - [`Symbol.replace`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/replace)
 - [`RegExp.prototype[@@replace]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@replace)

@@ -21,16 +21,25 @@ browser-compat: javascript.builtins.Intl.NumberFormat
 - {{jsxref("Intl/NumberFormat/supportedLocalesOf", "Intl.NumberFormat.supportedLocalesOf()")}}
   - : Повертає масив, що містить ті з переданих локалей, котрі підтримуються без потреби відступати до усталеної локалі середовища виконання.
 
+## Властивості примірника
+
+Ці властивості означені на `Intl.NumberFormat.prototype` і спільні для всіх примірників `Intl.NumberFormat`.
+
+- {{jsxref("Object/constructor", "Intl.NumberFormat.prototype.constructor")}}
+  - : Функція-конструктор, котра створила цей об'єкт-примірник. Для примірників `Intl.NumberFormat` початковим значенням є конструктор {{jsxref("Intl/NumberFormat/NumberFormat", "Intl.NumberFormat")}}.
+- `Intl.NumberFormat.prototype[@@toStringTag]`
+  - : Початковим значенням властивості [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) є рядок `"Intl.NumberFormat"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}.
+
 ## Методи примірника
 
 - {{jsxref("Intl/NumberFormat/format", "Intl.NumberFormat.prototype.format()")}}
   - : Функція-гетер, котра форматує число згідно з локаллю та опціями форматування цього об'єкта {{jsxref("Intl.NumberFormat")}}.
-- {{jsxref("Intl/NumberFormat/formatToParts", "Intl.NumberFormat.prototype.formatToParts()")}}
-  - : Повертає {{jsxref("Array")}} з об'єктів, котрі представляють числовий рядок у вигляді частин, що може використовуватися для виконання власного форматування з урахуванням локалі.
 - {{jsxref("Intl/NumberFormat/formatRange", "Intl.NumberFormat.prototype.formatRange()")}}
   - : Функція-гетер, котра форматує діапазон чисел згідно з локаллю та опціями форматування об'єкта {{jsxref("Intl.NumberFormat")}}, з якого цей метод викликано.
 - {{jsxref("Intl/NumberFormat/formatRangeToParts", "Intl.NumberFormat.prototype.formatRangeToParts()")}}
   - : Повертає {{jsxref("Array")}} з об'єктів, що представляють діапазон числових рядків у вигляді частин, що можуть бути використані для виконання власного форматування з урахуванням локалі.
+- {{jsxref("Intl/NumberFormat/formatToParts", "Intl.NumberFormat.prototype.formatToParts()")}}
+  - : Повертає {{jsxref("Array")}} з об'єктів, котрі представляють числовий рядок у вигляді частин, що може використовуватися для виконання власного форматування з урахуванням локалі.
 - {{jsxref("Intl/NumberFormat/resolvedOptions", "Intl.NumberFormat.prototype.resolvedOptions()")}}
   - : Повертає новий об'єкт з властивостями, що відбивають локаль та опції порівняння, обчислені під час ініціалізації цього об'єкта.
 
@@ -86,22 +95,24 @@ const number = 123456.789;
 // задання формату валюти
 console.log(
   new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(
-    number
-  )
+    number,
+  ),
 );
 // 123.456,79 €
 
 // Японська єна не використовує дробових значень
 console.log(
   new Intl.NumberFormat("ja-JP", { style: "currency", currency: "JPY" }).format(
-    number
-  )
+    number,
+  ),
 );
 // ￥123,457
 
 // обмеження до трьох знаків після коми
 console.log(
-  new Intl.NumberFormat("en-IN", { maximumSignificantDigits: 3 }).format(number)
+  new Intl.NumberFormat("en-IN", { maximumSignificantDigits: 3 }).format(
+    number,
+  ),
 );
 // 1,23,000
 
@@ -110,7 +121,7 @@ console.log(
   new Intl.NumberFormat("pt-PT", {
     style: "unit",
     unit: "kilometer-per-hour",
-  }).format(50)
+  }).format(50),
 );
 // 50 km/h
 
@@ -119,7 +130,7 @@ console.log(
     style: "unit",
     unit: "liter",
     unitDisplay: "long",
-  })
+  }),
 );
 // 16 litres
 ```
@@ -136,5 +147,5 @@ console.log(
 
 ## Дивіться також
 
-- {{jsxref("Intl")}}
 - [Поліфіл `Intl.NumberFormat` у складі FormatJS](https://formatjs.io/docs/polyfills/intl-numberformat/)
+- {{jsxref("Intl")}}

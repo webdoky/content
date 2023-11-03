@@ -7,15 +7,19 @@ browser-compat: javascript.builtins.String.toLowerCase
 
 {{JSRef}}
 
-Метод **`toLowerCase()`** повертає значення рядка, на якому викликається, переведене у нижній регістр.
+Метод **`toLowerCase()`** (до нижнього регістру) значень {{jsxref("String")}} повертає значення свого рядка, переведене у нижній регістр.
 
-{{EmbedInteractiveExample("pages/js/string-tolowercase.html","shorter")}}
+{{EmbedInteractiveExample("pages/js/string-tolowercase.html", "shorter")}}
 
 ## Синтаксис
 
 ```js-nolint
 toLowerCase()
 ```
+
+### Параметри
+
+Жодних.
 
 ### Повернене значення
 

@@ -54,13 +54,14 @@ const s = Boolean(myString); // початкове значення – true
 
 ### Зведення до булевого
 
-Чимало вбудованих операцій, що очікують на булеві значення, зводять свої аргументи до булевих. [Ця операція](https://tc39.es/ecma262/#sec-tostring) може бути підсумована отак:
+Чимало вбудованих операцій, що очікують на булеві значення, зводять свої аргументи до булевих. [Ця операція](https://tc39.es/ecma262/multipage/abstract-operations.html#sec-toboolean) може бути підсумована отак:
 
 - Булеві значення повертаються як є.
 - [`undefined`](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined) стає `false`.
 - [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) стає `false`.
 - `0`, `-0` і `NaN` стають `false`, а решта чисел – `true`.
 - `0n` стає `false`, а решта значень [BigInt](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt) – `true`.
+- Порожній рядок `""` стає `false`, а інші рядки – `true`.
 - [Символи](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol) стають `true`.
 - Усі об'єкти – стають `true`.
 
@@ -150,4 +151,4 @@ const bObjProto = new Boolean({});
 
 - [Булеве значення](/uk/docs/Glossary/Boolean)
 - [Булеві примітиви](/uk/docs/Web/JavaScript/Data_structures#typ-boolean)
-- [Логічний тип даних (Вікіпедія)](https://uk.wikipedia.org/wiki/%D0%9B%D0%BE%D0%B3%D1%96%D1%87%D0%BD%D0%B8%D0%B9_%D1%82%D0%B8%D0%BF_%D0%B4%D0%B0%D0%BD%D0%B8%D1%85)
+- [Логічний тип даних](https://uk.wikipedia.org/wiki/%D0%9B%D0%BE%D0%B3%D1%96%D1%87%D0%BD%D0%B8%D0%B9_%D1%82%D0%B8%D0%BF_%D0%B4%D0%B0%D0%BD%D0%B8%D1%85) на Вікіпедії

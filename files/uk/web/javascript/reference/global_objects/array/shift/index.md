@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.Array.shift
 
 {{JSRef}}
 
-Метод **`shift()`** (зсунути) прибирає з масиву **перший** елемент – і повертає прибраний елемент. Цей метод змінює довжину масиву.
+Метод **`shift()`** (зсунути) примірників {{jsxref("Array")}} прибирає з масиву **перший** елемент – і повертає прибраний елемент. Цей метод змінює довжину масиву.
 
 {{EmbedInteractiveExample("pages/js/array-shift.html")}}
 
@@ -16,6 +16,10 @@ browser-compat: javascript.builtins.Array.shift
 ```js-nolint
 shift()
 ```
+
+### Параметри
+
+Жодних.
 
 ### Повернене значення
 
@@ -28,7 +32,7 @@ shift()
 
 Метод {{jsxref("Array/pop", "pop()")}} має подібну до `shift()` логіку, але застосовану до останнього елемента масиву.
 
-Метод `shift()` – метод, що змінює масив: змінює довжину й вміст `this`. Коли треба не внести зміни до `this`, а повернути новий масив без першого елемента, можна натомість застосувати [`arr.slice(1)`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/slice).
+Метод `shift()` – це [змінювальний метод](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#kopiiuvalni-ta-zminiuvalni-metody): змінює довжину й вміст `this`. Коли треба не внести зміни до `this`, а повернути новий масив без першого елемента, можна натомість застосувати [`arr.slice(1)`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/slice).
 
 Метод `shift()` є [узагальненим](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#uzahalneni-metody-masyvu). Він лишень очікує, що значення `this` матиме властивість `length`, а також цілочислові властивості. Попри те, що рядки також є масивоподібними значеннями, цей метод не підходить для застосування до них, адже рядки є незмінними.
 
@@ -41,7 +45,7 @@ shift()
 ```js
 const myFish = ["янгол", "клоун", "мандаринка", "осетер"];
 
-console.log("myFish до:", JSON.stringify(myFish));
+console.log("myFish до:", myFish);
 // myFish до: ['янгол', 'клоун', 'мандаринка', 'осетер'];
 
 const shifted = myFish.shift();
@@ -97,7 +101,10 @@ console.log(plainObj);
 
 ## Дивіться також
 
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- {{jsxref("Array")}}
 - {{jsxref("Array.prototype.push()")}}
 - {{jsxref("Array.prototype.pop()")}}
 - {{jsxref("Array.prototype.unshift()")}}
 - {{jsxref("Array.prototype.concat()")}}
+- {{jsxref("Array.prototype.splice()")}}

@@ -114,4 +114,4 @@ Math.pow(1, NaN); // NaN
 - {{jsxref("Math.exp()")}}
 - {{jsxref("Math.log()")}}
 - {{jsxref("Math.sqrt()")}}
-- [Оператор піднесення до степеня](/uk/docs/Web/JavaScript/Reference/Operators/Exponentiation)
+- [Піднесення до степеня (`**`)](/uk/docs/Web/JavaScript/Reference/Operators/Exponentiation)

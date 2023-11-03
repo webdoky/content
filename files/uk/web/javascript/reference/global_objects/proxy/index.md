@@ -55,7 +55,7 @@ const handler2 = {
 const proxy2 = new Proxy(target, handler2);
 ```
 
-Тут задана реалізація обробника {{jsxref("Global_Objects/Proxy/Proxy/get", "get()")}}, котра перехоплює спроби звернутися до властивостей цілі.
+Тут задана реалізація обробника {{jsxref("Proxy/Proxy/get", "get()")}}, котра перехоплює спроби звернутися до властивостей цілі.
 
 Функції-обробники іноді називають _пастками_ – здогадно, через те, що вони вловлюють виклики до цільового об'єкта. Вкрай проста пастка у `handler2` вище перевизначає усі аксесори властивостей:
 
@@ -145,7 +145,7 @@ console.log(proxy3.message2); // світе
 
 ## Конструктор
 
-- {{jsxref("Global_Objects/Proxy/Proxy", "Proxy()")}}
+- {{jsxref("Proxy/Proxy", "Proxy()")}}
   - : Створює новий об'єкт `Proxy`.
 
 > **Примітка:** Властивості `Proxy.prototype` немає, тож примірники `Proxy` не мають жодних особливих властивостей або методів.
@@ -159,7 +159,7 @@ console.log(proxy3.message2); // світе
 
 ### Базовий приклад
 
-У цьому простому прикладі число `37` повертається як усталене значення, коли імені властивості немає в об'єкті. Він використовує обробник {{jsxref("Global_Objects/Proxy/Proxy/get", "get()")}}.
+У цьому простому прикладі число `37` повертається як усталене значення, коли імені властивості немає в об'єкті. Він використовує обробник {{jsxref("Proxy/Proxy/get", "get()")}}.
 
 ```js
 const handler = {
@@ -252,7 +252,7 @@ const proxy = new Proxy(aSecret, {
 console.log(proxy.x());
 ```
 
-Частина нативних об'єктів JavaScript має властивості, що звуться _[внутрішніми комірками](https://tc39.es/ecma262/#sec-object-internal-methods-and-internal-slots)_ й не є доступними з коду на JavaScript. Наприклад, об'єкти [`Map`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Map) мають приховану комірку, що зветься `[[MapData]]`, в котрій зберігаються пари ключ-значення відображення. Таким чином, не можна тривіально створити заступник перенаправлення для відображення:
+Частина нативних об'єктів JavaScript має властивості, що звуться _[внутрішніми комірками](https://tc39.es/ecma262/multipage/ecmascript-data-types-and-values.html#sec-object-internal-methods-and-internal-slots)_ й не є доступними з коду на JavaScript. Наприклад, об'єкти [`Map`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Map) мають приховану комірку, що зветься `[[MapData]]`, в котрій зберігаються пари ключ-значення відображення. Таким чином, не можна тривіально створити заступник перенаправлення для відображення:
 
 ```js
 const proxy = new Proxy(new Map(), {});
@@ -263,7 +263,7 @@ console.log(proxy.size); // TypeError: get size method called on incompatible Pr
 
 ### Валідація
 
-За допомогою `Proxy` можна легко перевірити на чинність передане об'єктові значення. Цей приклад використовує обробник {{jsxref("Global_Objects/Proxy/Proxy/set", "set()")}}.
+За допомогою `Proxy` можна легко перевірити на чинність передане об'єктові значення. Цей приклад використовує обробник {{jsxref("Proxy/Proxy/set", "set()")}}.
 
 ```js
 const validator = {
@@ -325,7 +325,7 @@ const view = new Proxy(
       // Повідомити про успіх
       return true;
     },
-  }
+  },
 );
 
 const item1 = document.getElementById("item-1");
@@ -384,7 +384,7 @@ const products = new Proxy(
       // Повідомити про успіх
       return true;
     },
-  }
+  },
 );
 
 console.log(products.browsers);
@@ -403,71 +403,6 @@ console.log(products.browsers);
 
 console.log(products.latestBrowser);
 //  'Edge'
-```
-
-### Знаходження об'єкта – елемента масиву – за його властивістю
-
-Цей заступник розширює масив кількома корисними можливостями. Як бачите, можна гнучко "визначати" властивості, без використання {{jsxref("Object.defineProperties", "Object.defineProperties()")}}. Цей приклад може бути пристосований для пошуку ряду таблиці за її коміркою. В такому випадку ціллю буде {{domxref("HTMLTableElement/rows", "table.rows")}}.
-
-```js
-const products = new Proxy(
-  [
-    { name: "Firefox", type: "browser" },
-    { name: "SeaMonkey", type: "browser" },
-    { name: "Thunderbird", type: "mailer" },
-  ],
-  {
-    get(obj, prop) {
-      // Усталена логіка з повернення значення; властивість зазвичай є цілим числом
-      if (prop in obj) {
-        return obj[prop];
-      }
-
-      // Отримання числа продуктів; псевдонім для products.length
-      if (prop === "number") {
-        return obj.length;
-      }
-
-      let result;
-      const types = {};
-
-      for (const product of obj) {
-        if (product.name === prop) {
-          result = product;
-        }
-        if (types[product.type]) {
-          types[product.type].push(product);
-        } else {
-          types[product.type] = [product];
-        }
-      }
-
-      // Отримання продукта за назвою
-      if (result) {
-        return result;
-      }
-
-      // Отримання продуктів за типом
-      if (prop in types) {
-        return types[prop];
-      }
-
-      // Отримання типів продуктів
-      if (prop === "types") {
-        return Object.keys(types);
-      }
-
-      return undefined;
-    },
-  }
-);
-
-console.log(products[0]); // { name: 'Firefox', type: 'browser' }
-console.log(products["Firefox"]); // { name: 'Firefox', type: 'browser' }
-console.log(products["Chrome"]); // undefined
-console.log(products.browser); // [{ name: 'Firefox', type: 'browser' }, { name: 'SeaMonkey', type: 'browser' }]
-console.log(products.types); // ['browser', 'mailer']
-console.log(products.number); // 3
 ```
 
 ### Приклад з повним списком пасток
@@ -540,5 +475,4 @@ console.log(docCookies.myCookie1);
 
 ## Дивіться також
 
-- [Презентація Брендана Айка на JSConf "Заступники – чудові"](https://www.youtube.com/watch?v=sClk6aB_CPk) ([слайди](https://www.slideshare.net/BrendanEich/metaprog-5303821))
-- [Підручник із заступників](https://web.archive.org/web/20171007221059/https://soft.vub.ac.be/~tvcutsem/proxies/)
+- Презентація [Заступники – чудові](https://youtu.be/sClk6aB_CPk) від Брендана Айка на JSConf (2014)

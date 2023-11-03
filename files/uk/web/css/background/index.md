@@ -145,5 +145,5 @@ background: repeat scroll 0% 0% / auto padding-box border-box none transparent;
 ## Дивіться також
 
 - {{cssxref("box-decoration-break")}} (оздоблення розривів рамок)
-- [Використання градієнтів](/uk/docs/Web/CSS/CSS_Images/Using_CSS_gradients)
-- [Використання кількох фонів](/uk/docs/Web/CSS/CSS_Backgrounds_and_Borders/Using_multiple_backgrounds)
+- [Використання градієнтів](/uk/docs/Web/CSS/CSS_images/Using_CSS_gradients)
+- [Використання кількох фонів](/uk/docs/Web/CSS/CSS_backgrounds_and_borders/Using_multiple_backgrounds)

@@ -5,7 +5,7 @@ page-type: javascript-operator
 browser-compat: javascript.operators.typeof
 ---
 
-{{JSSidebar("Operators")}}
+{{jsSidebar("Operators")}}
 
 Оператор **`typeof`** ("тип ...") повертає рядок, який вказує на тип значення операнда.
 
@@ -132,7 +132,7 @@ typeof func; // 'function'
 
 ### Потреба в дужках в синтаксисі
 
-Оператор `typeof` має вищий [пріоритет](/uk/docs/Web/JavaScript/Reference/Operators/Operator_Precedence), ніж бінарні оператори типу оператора додавання (`+`). Таким чином, для обчислення типу результату додавання необхідні дужки.
+Оператор `typeof` має вищий [пріоритет](/uk/docs/Web/JavaScript/Reference/Operators/Operator_precedence), ніж бінарні оператори типу оператора додавання (`+`). Таким чином, для обчислення типу результату додавання необхідні дужки.
 
 ```js
 // За допомогою дужок можна визначати тип даних цілих виразів.
@@ -150,7 +150,7 @@ typeof (someData + " Wisen"); // 'string'
 typeof undeclaredVariable; // "undefined"
 ```
 
-Проте застосування `typeof` на лексичних оголошеннях ({{JSxRef("Statements/let", "let")}} {{JSxRef("Statements/const", "const")}} і [`class`](/uk/docs/Web/JavaScript/Reference/Statements/class)), в одному блоці перед рядком оголошення, викине {{JSxRef("ReferenceError")}}. Змінні блокової видимості перебувають у _[темпоральній мертвій зоні](/uk/docs/Web/JavaScript/Reference/Statements/let#temporalna-mertva-zona-tmz)_ від початку блока до обробки ініціалізації, протягом чого така змінна викине помилку, якщо спробувати до неї звернутися.
+Проте застосування `typeof` на лексичних оголошеннях ({{jsxref("Statements/let", "let")}} {{jsxref("Statements/const", "const")}} і [`class`](/uk/docs/Web/JavaScript/Reference/Statements/class)), в тому ж блоці перед місцем оголошення, викине {{jsxref("ReferenceError")}}. Змінні блокової видимості перебувають у _[темпоральній мертвій зоні](/uk/docs/Web/JavaScript/Reference/Statements/let#temporalna-mertva-zona-tdz)_ від початку блока до обробки ініціалізації, протягом чого така змінна викине помилку, якщо спробувати до неї звернутися.
 
 ```js example-bad
 typeof newLetVariable; // ReferenceError
@@ -214,7 +214,7 @@ function type(value) {
 }
 ```
 
-Для перевірки недійсних змінних, які в іншому випадку викинули б {{JSxRef("ReferenceError")}}, слід застосовувати `typeof nonExistentVar === 'undefined'`, адже таку поведінку неможливо імітувати за допомогою самописного коду.
+Для перевірки недійсних змінних, які в іншому випадку викинули б {{jsxref("ReferenceError")}}, слід застосовувати `typeof nonExistentVar === 'undefined'`, адже таку поведінку неможливо імітувати за допомогою самописного коду.
 
 ## Специфікації
 
@@ -226,5 +226,5 @@ function type(value) {
 
 ## Дивіться також
 
-- {{JSxRef("Operators/instanceof", "instanceof")}}
+- {{jsxref("Operators/instanceof", "instanceof")}}
 - [`document.all` — навмисне порушення стандарту (англ.)](https://github.com/tc39/ecma262/issues/668)

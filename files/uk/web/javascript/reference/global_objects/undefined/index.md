@@ -1,32 +1,27 @@
 ---
 title: undefined
 slug: Web/JavaScript/Reference/Global_Objects/undefined
-tags:
-  - JavaScript
-  - Language feature
-  - Reference
+page-type: javascript-global-property
 browser-compat: javascript.builtins.undefined
 ---
 
 {{jsSidebar("Objects")}}
 
-Глобальна властивість **`undefined`** (невизначене) представляє примітивне значення `{{Glossary("Undefined", "undefined")}}`. Це один з {{Glossary("Primitive", "примітивних типів")}} JavaScript.
-
-{{js_property_attributes(0,0,0)}}
+Глобальна властивість **`undefined`** (невизначене) представляє примітивне значення [`undefined`](/uk/docs/Web/JavaScript/Data_structures#typ-undefined). Це один з {{Glossary("Primitive", "примітивних типів")}} JavaScript.
 
 {{EmbedInteractiveExample("pages/js/globalprops-undefined.html")}}
 
-## Синтаксис
+## Значення
 
-```js-nolint
-undefined
-```
+Примітивне значення [`undefined`](/uk/docs/Web/JavaScript/Data_structures#typ-undefined).
+
+{{js_property_attributes(0, 0, 0)}}
 
 ## Опис
 
-`undefined` – властивість _глобального об'єкта_. Тобто це змінна у глобальній області видимості. Початкове значення `undefined` – примітивне значення `{{Glossary("Undefined", "undefined")}}`.
+`undefined` – властивість _глобального об'єкта_. Тобто це змінна у глобальній області видимості.
 
-У всіх незастарілих браузерах `undefined` є неналаштовною властивістю, недоступною для запису. (Навіть тоді, коли це не так, слід уникати її перевизначення.)
+У всіх незастарілих браузерах `undefined` є неналаштовною властивістю, недоступною для запису. Навіть тоді, коли це не так, слід уникати її перевизначення.
 
 Змінна, котрій не було присвоєно значення, має тип `undefined`. Крім цього, метод чи інструкція повертає `undefined`, якщо обчислювана змінна не має присвоєного значення. Функція повертає `undefined` якщо не було {{jsxref("Statements/return", "повернено")}} жодне значення.
 
@@ -125,5 +120,5 @@ if (y === void 0) {
 
 ## Дивіться також
 
-- {{Glossary("Primitive", "Примітивні типи")}} JavaScript
+- [Типи даних і структури даних JavaScript](/uk/docs/Web/JavaScript/Data_structures)
 - [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null)

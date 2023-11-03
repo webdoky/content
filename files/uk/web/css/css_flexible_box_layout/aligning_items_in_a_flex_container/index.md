@@ -1,6 +1,6 @@
 ---
 title: Шикування елементів у гнучкому контейнері
-slug: Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container
+slug: Web/CSS/CSS_flexible_box_layout/Aligning_items_in_a_flex_container
 page-type: guide
 ---
 
@@ -179,12 +179,12 @@ page-type: guide
 
 ## Утворення розривів між елементами
 
-Щоб створити розрив між гнучкими елементами, слід використати властивості {{cssxref("gap")}}, {{cssxref("column-gap")}} та {{cssxref("row-gap")}}. Властивість {{cssxref("column-gap")}} утворює розриви між елементами на головній осі. Властивість {{cssxref("row-gap")}} утворює розриви між гнучкими рядами, коли властивість {{cssxref("flex-wrap")}} має значення `wrap`. Властивість {{cssxref("gap")}} – скорочений спосіб вказати обидві вищезгадані властивості разом.
+Щоб створити розрив між гнучкими елементами, слід використати властивості {{cssxref("gap")}}, {{cssxref("column-gap")}} та {{cssxref("row-gap")}}. Властивість {{cssxref("column-gap")}} утворює розриви між елементами в ряду. Властивість {{cssxref("row-gap")}} утворює розриви між гнучкими рядами, коли властивість {{cssxref("flex-wrap")}} має значення `wrap`. Властивість {{cssxref("gap")}} – скорочений спосіб вказати обидві вищезгадані властивості разом.
 
 {{EmbedGHLiveSample("css-examples/box-alignment/flexbox/gap.html", '100%', 700)}}
 
 ## Дивіться також
 
-- [Шикування елементів](/uk/docs/Web/CSS/CSS_Box_Alignment)
-- [Шикування елементів у Флексбоксі](/uk/docs/Web/CSS/CSS_Box_Alignment/Box_Alignment_in_Flexbox)
-- [Шикування елементів при сітковій розкладці](/uk/docs/Web/CSS/CSS_Box_Alignment/Box_Alignment_In_Grid_Layout)
+- [Шикування елементів](/uk/docs/Web/CSS/CSS_box_alignment)
+- [Шикування елементів у Флексбоксі](/uk/docs/Web/CSS/CSS_box_alignment/Box_alignment_in_flexbox)
+- [Шикування елементів при сітковій розкладці](/uk/docs/Web/CSS/CSS_box_alignment/Box_alignment_in_grid_layout)

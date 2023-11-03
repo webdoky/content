@@ -7,9 +7,9 @@ browser-compat: javascript.builtins.Array.filter
 
 {{JSRef}}
 
-Метод **`filter()`** (фільтрувати) створює [поверхневу копію](/uk/docs/Glossary/Shallow_copy) частини даного масиву, відфільтрованого до тих елементів даного масиву, що проходять перевірку, реалізовану в переданій функції.
+Метод **`filter()`** (фільтрувати) примірників {{jsxref("Array")}} створює [поверхневу копію](/uk/docs/Glossary/Shallow_copy) частини даного масиву, відфільтрованого до тих елементів даного масиву, що проходять перевірку, реалізовану в переданій функції.
 
-{{EmbedInteractiveExample("pages/js/array-filter.html","shorter")}}
+{{EmbedInteractiveExample("pages/js/array-filter.html", "shorter")}}
 
 ## Синтаксис
 
@@ -33,7 +33,7 @@ filter(callbackFn, thisArg)
 
 ### Повернене значення
 
-[Поверхнева копія](/uk/docs/Glossary/Shallow_copy) частини даного масиву, відфільтрована до елементів даного масиву, що проходять перевірку, реалізовану в переданій функції. Якщо жодний елемент не пройшов перевірку, повертається порожній масив.
+[Поверхнева копія](/uk/docs/Glossary/Shallow_copy) переданого масиву, що містить лише ті елементи, котрі проходять перевірку. Якщо жоден елемент не проходить перевірку, то повертається порожній масив.
 
 ## Опис
 
@@ -103,7 +103,7 @@ if (!Array.prototype.filter) {
 
 ### Відфільтровування малих значень
 
-Наступний приклад за допомогою `filter()` створює масив відфільтрованих значень, до якого не потраплять числа, менші за `10`.
+Наступний приклад за допомогою `filter()` створює масив відфільтрованих значень, до якого не потраплять числа, менші за 10.
 
 ```js
 function isBigEnough(value) {
@@ -197,9 +197,9 @@ console.log([1, , undefined].filter((x) => x === undefined)); // [undefined]
 console.log([1, , undefined].filter((x) => x !== 2)); // [1, undefined]
 ```
 
-### Виклик filter() на масивоподібних об'єктах
+### Виклик filter() на об'єктах-немасивах
 
-Метод `filter()` зчитує з `this` властивість `length`, а потім звертається до кожного цілочислового індексу.
+Метод `filter()` зчитує з `this` властивість `length`, а потім звертається до кожної властивості, чий ключ – невід'ємне ціле число, менше за `length`.
 
 ```js
 const arrayLike = {
@@ -207,6 +207,7 @@ const arrayLike = {
   0: "a",
   1: "b",
   2: "c",
+  3: "a", // ігнорується filter(), оскільки length – 3
 };
 console.log(Array.prototype.filter.call(arrayLike, (x) => x <= "b")); // [ 'a', 'b' ]
 ```
@@ -262,7 +263,7 @@ console.log(deleteWords);
 ## Дивіться також
 
 - [Поліфіл методу `Array.prototype.filter` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
-- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
 - {{jsxref("Array.prototype.forEach()")}}
 - {{jsxref("Array.prototype.every()")}}

@@ -14,14 +14,16 @@ browser-compat: javascript.builtins.Object.assign
 ## Синтаксис
 
 ```js-nolint
-Object.assign(target, ...sources)
+Object.assign(target, source1)
+Object.assign(target, source1, source2)
+Object.assign(target, source1, source2, /* …, */ sourceN)
 ```
 
 ### Параметри
 
-- `target` (ціль)
+- `target`
   - : Цільовий об'єкт — об'єкт, на який буде перенесено властивості з донорів, і який буде повернено після змін.
-- `sources` (джерела)
+- `sourceN`
   - : Донорські об'єкти — об'єкти, що містять властивості, які потрібно скопіювати.
 
 ### Повернене значення
@@ -54,9 +56,9 @@ console.log(copy); // { a: 1 }
 
 ### Застереження щодо глибинного клонування
 
-Для [глибокого клонування](/uk/docs/Glossary/Deep_copy) необхідно використовувати альтернативи, оскільки `Object.assign()` копіює значення властивостей.
+Для [глибокого клонування](/uk/docs/Glossary/Deep_copy) необхідно використовувати альтернативи штибу [`structuredClone()`](/uk/docs/Web/API/structuredClone), оскільки `Object.assign()` копіює значення властивостей.
 
-Якщо значення в донорі містить посилання на об'єкт, він скопіює лише це посилання.
+Якщо значення в донорі містить посилання на об'єкт, `Object.assign()` скопіює лише це посилання.
 
 ```js
 const obj1 = { a: 0, b: { c: 0 } };
@@ -73,7 +75,7 @@ console.log(obj1); // { a: 1, b: { c: 3 } }
 console.log(obj2); // { a: 2, b: { c: 3 } }
 // Глибоке клонування
 const obj3 = { a: 0, b: { c: 0 } };
-const obj4 = JSON.parse(JSON.stringify(obj3));
+const obj4 = structuredClone(obj3);
 obj3.a = 4;
 obj3.b.c = 4;
 console.log(obj4); // { a: 0, b: { c: 0 } }
@@ -129,7 +131,7 @@ const obj = Object.create(
       value: 3,
       enumerable: true, // baz є власною перелічуваною властивістю.
     },
-  }
+  },
 );
 
 const copy = Object.assign({}, obj);

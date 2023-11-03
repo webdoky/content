@@ -7,7 +7,7 @@ browser-compat: css.properties.backdrop-filter
 
 {{CSSRef}}
 
-Властивість [CSS](/uk/docs/Web/CSS) **`backdrop-filter`** (фільтр задника) дає змогу застосувати графічні ефекти, як то розмиття чи зсув кольору, до області під елементом. Через те, що вона застосовується до всього _під_ елементом, для того, аби помітити її ефект, необхідно зробити елемент чи його тло принаймні частково прозорим.
+Властивість [CSS](/uk/docs/Web/CSS) **`backdrop-filter`** (фільтр задника) дає змогу застосувати графічні ефекти, як то розмиття чи зсув кольору, до області під елементом. Через те, що вона застосовується до всього _під_ елементом, для того, аби помітити її ефект, елемент повинен бути повністю або частково прозорим.
 
 {{EmbedInteractiveExample("pages/css/backdrop-filter.html")}}
 
@@ -125,5 +125,5 @@ body {
 - {{cssxref("filter")}}
 - {{cssxref("&lt;filter-function&gt;")}}
 - {{cssxref("background-blend-mode")}}, {{cssxref("mix-blend-mode")}}
-- [Фільтрувальні ефекти CSS](/uk/docs/Web/CSS/filter_effects/)
-- [Компонування та накладання в CSS](/uk/docs/Web/CSS/Compositing_and_Blending)
+- [Фільтрувальні ефекти CSS](/uk/docs/Web/CSS/CSS_filter_effects)
+- [Компонування та накладання в CSS](/uk/docs/Web/CSS/CSS_compositing_and_blending)

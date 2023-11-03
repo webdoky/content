@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.Array.flat
 
 {{JSRef}}
 
-Метод **`flat()`** (площина, плоский) створює новий масив шляхом рекурсивного зчеплення, до заданої глибини, всіх підмасивів докупи.
+Метод **`flat()`** (площина, плоский) примірників {{jsxref("Array")}} створює новий масив шляхом рекурсивного зчеплення, до заданої глибини, всіх підмасивів докупи.
 
 {{EmbedInteractiveExample("pages/js/array-flat.html")}}
 
@@ -76,7 +76,7 @@ console.log(array2.flat(2)); // [ 1, 3, "a", "d", "e"]
 
 ### Виклик flat() на об'єктах-немасивах
 
-Метод `flat()` зчитує з `this` властивість `length`, а тоді звертається до кожного цілочислового індексу. Якщо елемент не є масивом, то він безпосередньо додається в кінець результату. Якщо елемент є масивом, то він сплощується згідно з параметром `depth`.
+Метод `flat()` зчитує з `this` властивість `length`, а тоді звертається до кожної властивості, чий ключ – невід'ємне ціле число, менше за `length`. Якщо елемент не є масивом, то він безпосередньо додається в кінець результату. Якщо елемент є масивом, то він сплощується згідно з параметром `depth`.
 
 ```js
 const arrayLike = {
@@ -85,6 +85,7 @@ const arrayLike = {
   // Масивоподібні об'єкти не сплощуються
   1: { length: 2, 0: 3, 1: 4 },
   2: 5,
+  3: 3, // ігнорується flat(), оскільки length – 3
 };
 console.log(Array.prototype.flat.call(arrayLike));
 // [ 1, 2, { '0': 3, '1': 4, length: 2 }, 5 ]
@@ -101,7 +102,7 @@ console.log(Array.prototype.flat.call(arrayLike));
 ## Дивіться також
 
 - [Поліфіл `Array.prototype.flat` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
-- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
 - {{jsxref("Array.prototype.concat()")}}
 - {{jsxref("Array.prototype.flatMap()")}}
