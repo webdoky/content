@@ -9,8 +9,6 @@ browser-compat: html.elements.script.type.speculationrules
 
 Значення **`speculationrules`** (правила спекуляції) атрибута [`type`](/uk/docs/Web/HTML/Element/script/type) [елемента `<script>`](/uk/docs/Web/HTML/Element/script) вказує на те, що тіло цього елемента містить правила спекуляції.
 
-Speculation rules take the form of a JSON structure that determine what resources should be prefetched or prerendered by the browser. This is part of the [Speculation Rules API](/uk/docs/Web/API/Speculation_Rules_API).
-
 Правила спекуляції приймають форму структури JSON, що визначає те, які браузеру слід отримати наперед або візуалізувати наперед. Це частина [API правил спекуляції](/uk/docs/Web/API/Speculation_Rules_API).
 
 ## Синтаксис
@@ -99,7 +97,7 @@ Speculation rules take the form of a JSON structure that determine what resource
 - `"referrer_policy"` {{optional_inline}}
   - : Рядок, що представляє конкретний рядок політики посилача, який використовуватиметься, коли відбувається запит одного з URL, заданого в правилі – дивіться можливі значення на сторінці [`Referrer-Policy`](/uk/docs/Web/HTTP/Headers/Referrer-Policy). Мета цього значення полягає в тому, щоб дозволити сторінці-посилачу задати суворішу політику саме для спекулятивного запиту, ніж політика, яка вже задана на сторінці (або усталено, або за допомогою `Referrer-Policy`). М'якіша політика, задана в правилах спекуляції, не переможе суворішу політику, задану на сторінці-посилачі.
 
-> **Примітка:** Оскільки правила спекуляції використовують елемент `<script>`, їх потрібно явно дозволити в директиві [`script-src`](/uk/docs/Web/HTTP/Headers/Content-Security-Policy/script-src) [`Content-Security-Policy`](/uk/docs/Web/HTTP/Headers/Content-Security-Policy), якщо вона є на сайті. Це робиться шляхом додавання значення `"inline-speculation-rules"` вкупі з джерелом-хешем або джерелом-одноразом.
+> **Примітка:** Оскільки правила спекуляції використовують елемент `<script>`, їх потрібно явно дозволити в директиві [`script-src`](/uk/docs/Web/HTTP/Headers/Content-Security-Policy/script-src) [`Content-Security-Policy`](/uk/docs/Web/HTTP/Headers/Content-Security-Policy), якщо вона є на сайті. Це робиться шляхом додавання значення `"inline-speculation-rules"` вкупі з хешем або числом-одноразом джерела.
 
 ### Додаткові приклади
 
