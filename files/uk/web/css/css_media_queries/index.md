@@ -47,7 +47,6 @@ spec-urls:
 
 - [Застосування медіазапитів](/uk/docs/Web/CSS/CSS_media_queries/Using_media_queries)
   - : Знайомить з медіазапитом, їхнім синтаксисом, а також операторами та можливостями медіа, що використовуються для конструювання виразів медіазапитів.
-- [Testing media queries programmatically](/uk/docs/Web/CSS/CSS_media_queries/Testing_media_queries)
 - [Перевірка медіазапитів програмно](/uk/docs/Web/CSS/CSS_media_queries/Testing_media_queries)
   - : Описує, як використовувати медіазапити в коді JavaScript, щоб з'ясовувати стан пристрою, а також задавати слухачів, що сповіщають код, коли результати медіазапитів змінюються (наприклад, коли користувач обертає екран або змінює розмір вікна браузера).
 - [Використання медіазапитів заради доступності](/uk/docs/Web/CSS/CSS_media_queries/Using_media_queries_for_accessibility)
