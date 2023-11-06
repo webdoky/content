@@ -1,6 +1,0 @@
-# Зміст
-
-- [Глосарій](./glossary/index.md)
-  - [Базова лінія (типографія)](./glossary/baseline/typography/index.md)
-  - [Вміст блокового рівня](./glossary/block-level_content/index.md)
-- [Веб](./web/index.md)
