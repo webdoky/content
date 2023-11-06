@@ -57,8 +57,6 @@ flex-grow: unset;
 
 ### Задання множника зростання гнучкого елемента
 
-In this example, there is a total of 8 growth factors distributed among the 6 flex items, meaning each growth factor is 12.5% of the remaining space.
-
 У цьому прикладі сумарний множник зростання 8 розподіляється між 6 гнучкими елементами, що означає, що кожен множник зростання становить 12,5% від вільного простору.
 
 #### HTML
@@ -101,8 +99,6 @@ In this example, there is a total of 8 growth factors distributed among the 6 fl
 #### Результат
 
 {{EmbedLiveSample('zadannia-mnozhnyka-zrostannia-hnuchkoho-elementa')}}
-
-When the six flex items are distributed along the container's main axis, if the sum of the main content of those flex items is less than the size of the container's main axis, the extra space is distributed among the size flex items, with A, B, C, and F, each getting 12.5% of the remaining space and D and E each getting 25% of the extra space.
 
 Коли шість гнучких елементів розподіляються вздовж головної осі контейнера, то якщо сума головного вмісту цих гнучких елементів менша за довжину головної осі контейнера, то надлишковий простір розподіляється між гнучкими елементами, причому А, Б, В і Г отримують по 12,5% вільного простору, а Ґ і Д – по 25%.
 
