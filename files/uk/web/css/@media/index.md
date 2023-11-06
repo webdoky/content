@@ -182,8 +182,6 @@ _Логічні оператори_ `not`, `and`, `only` і `or` можуть в
 
 Оскільки медіазапити надають інформацію про можливості – і, відповідно, про функції та дизайн – пристрою, з яким працює користувач, існує потенціал їхнього зловживання для створення ["відбитку"](/uk/docs/Glossary/Fingerprinting), який ідентифікує пристрій, або принаймні категоризує його до певної міри деталізації, що може бути небажаним для користувачів.
 
-Because of this potential, a browser may opt to fudge the returned values in some manner in order to prevent them from being used to precisely identify a computer. A browser might also offer additional measures in this area; for example, if Firefox's "Resist Fingerprinting" setting is enabled, many media queries report default values rather than values representing the actual device state.
-
 У зв'язку з цим потенціалом браузер може вирішити якось викривити повернені значення, щоб запобігти їх використанню для точного ідентифікування комп'ютера. Браузер може також пропонувати додаткові заходи в цій галузі; наприклад, якщо ввімкнено налаштування Firefox "Опиратися відстеженню за відбитком", то чимало медіазапитів віддає усталені значення, а не значення, що представляють реальний стан пристрою.
 
 ## Формальний синтаксис
