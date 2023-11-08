@@ -330,7 +330,7 @@ page-type: landing-page
 
 - {{jsxref("Classes/Constructor", "constructor")}}
 - {{jsxref("Classes/extends", "extends")}}
-- [Приватні властивості класів](/uk/docs/Web/JavaScript/Reference/Classes/Private_class_fields)
+- [Приватні властивості](/uk/docs/Web/JavaScript/Reference/Classes/Private_properties)
 - [Публічні поля класів](/uk/docs/Web/JavaScript/Reference/Classes/Public_class_fields)
 - {{jsxref("Classes/static", "static")}}
 - [Блоки статичної ініціалізації](/uk/docs/Web/JavaScript/Reference/Classes/Static_initialization_blocks)
