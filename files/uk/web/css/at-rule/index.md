@@ -61,6 +61,10 @@ spec-urls:
 
 Оскільки кожна умовна група може містити вкладені інструкції, то може бути невизначена кількість вкладень.
 
+## Вкладення @layer при вкладеному CSS
+
+[Каскадні шари](/uk/docs/Web/CSS/@layer) можна вкладати одне в одного, щоб [створювати вкладені шари](/uk/docs/Web/CSS/@layer#vkladeni-shary). Це робиться за допомогою `.` (крапки). Це також можна зробити за допомогою [вкладення CSS](/uk/docs/Web/CSS/CSS_nesting/Nesting_at-rules#vkladennia-kaskadnykh-shariv-layer).
+
 ## Покажчик
 
 - {{cssxref("@charset")}}
@@ -103,3 +107,4 @@ spec-urls:
   - [Синтаксис визначення значень](/uk/docs/Web/CSS/Value_definition_syntax)
   - [Властивості-скорочення](/uk/docs/Web/CSS/Shorthand_properties)
   - [Заміщені елементи](/uk/docs/Web/CSS/Replaced_element)
+  - [Модуль Вкладеності CSS](/uk/docs/Web/CSS/CSS_nesting)
