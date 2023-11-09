@@ -7,9 +7,7 @@ browser-compat: css.selectors.read-write
 
 {{CSSRef}}
 
-The **`:read-write`** [CSS](/uk/docs/Web/CSS) [pseudo-class](/uk/docs/Web/CSS/Pseudo-classes) represents an element (such as `input` or `textarea`) that is editable by the user.
-
-[Псевдоклас](/uk/docs/Web/CSS/Pseudo-classes)
+[CSS](/uk/docs/Web/CSS) [псевдоклас](/uk/docs/Web/CSS/Pseudo-classes) **`:read-write`** вказує на елемент (на кшталт `input` чи `textarea`), який може редагуватися користувачем.
 
 {{EmbedInteractiveExample("pages/tabbed/pseudo-class-read-write.html", "tabbed-shorter")}}
 
