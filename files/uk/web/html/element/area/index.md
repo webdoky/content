@@ -43,9 +43,6 @@ browser-compat: html.elements.area
   - : Ціль гіперпосилання області.
     Значення – дійсний URL.
     Цей атрибут можна пропустити; якщо він пропущений, то цей елемент `<area>` не представляє гіперпосилання.
-- `hreflang` {{Deprecated_Inline}}
-  - : Позначає мову сполученого ресурсу. Дозволені значення визначені в {{RFC(5646, "Тегах для визначення мов (також відомих як BCP 47)")}}.
-    Цей атрибут слід використовувати лише тоді, коли присутній атрибут [`href`](#href).
 - `ping`
   - : Вміщає розділений комами список URL, до яких, коли гіперпосилання використано, браузер відправить (в фоновому режимі) запити {{HTTPMethod("POST")}} з тілом `PING`.
     Зазвичай використовується для відстеження.
@@ -85,16 +82,6 @@ browser-compat: html.elements.area
     Цей атрибут слід використовувати лише тоді, коли присутній атрибут [`href`](#href).
 
     > **Примітка:** Задання на елементах `<area>` `target="_blank"` неявно задає таку ж логіку `rel`, як задання [`rel="noopener"`](/uk/docs/Web/HTML/Attributes/rel/noopener), який не задає `window.opener`. Дивіться статус підтримки у [Сумісності з браузерами](#sumisnist-iz-brauzeramy).
-
-### Нерекомендовані атрибути
-
-- `name` {{deprecated_inline}}
-  - : Визначає назви для області клацання, щоб її могли обробляти сценарії в старих браузерах.
-- `nohref` {{deprecated_inline}}
-
-  - : Позначає, що для пов'язаної області не існує гіперпосилання.
-
-    > **Примітка:** В атрибуті `nohref` немає потреби, адже достатньо пропустити атрибут `href`.
 
 ## Приклади
 
@@ -151,7 +138,7 @@ browser-compat: html.elements.area
     <tr>
       <th scope="row">Неявна роль ARIA</th>
       <td>
-        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/link_role"><code>link</code></a>, коли є атрибут <a href="/uk/docs/Web/HTML/Element/area#href"><code>href</code></a>, інакше – <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role">немає відповідної ролі</a>
+       <a href="/uk/docs/Web/Accessibility/ARIA/Roles/link_role"><code>link</code></a>, якщо присутній атрибут <a href="/uk/docs/Web/HTML/Element/area#href"><code>href</code></a>, інакше – <a href="/uk/docs/Web/Accessibility/ARIA/Roles/generic_role"><code>generic</code></a>
       </td>
     </tr>
     <tr>
