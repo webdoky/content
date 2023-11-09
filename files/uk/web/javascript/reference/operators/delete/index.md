@@ -47,7 +47,7 @@ delete identifier;
 delete object.#privateProperty;
 ```
 
-Завдяки тому, що [класи](/uk/docs/Web/JavaScript/Reference/Classes) автоматично отримують суворий режим, а [приватні властивості](/uk/docs/Web/JavaScript/Reference/Classes/Private_class_fields) можна правомірно використовувати лише в тілах класів, приватні властивості ніколи не можуть бути видалені. Попри те, що `delete identifier` [може спрацювати](#vydalennia-hlobalnykh-vlastyvostei), якщо `identifier` вказує на налаштовну властивість глобального об'єкта, цієї форми слід уникати, ставлячи натомість перед ідентифікатором [`globalThis`](/uk/docs/Web/JavaScript/Reference/Global_Objects/globalThis).
+Завдяки тому, що [класи](/uk/docs/Web/JavaScript/Reference/Classes) автоматично отримують суворий режим, а [приватні властивості](/uk/docs/Web/JavaScript/Reference/Classes/Private_properties) можна правомірно використовувати лише в тілах класів, приватні властивості ніколи не можуть бути видалені. Попри те, що `delete identifier` [може спрацювати](#vydalennia-hlobalnykh-vlastyvostei), якщо `identifier` вказує на налаштовну властивість глобального об'єкта, цієї форми слід уникати, ставлячи натомість перед ідентифікатором [`globalThis`](/uk/docs/Web/JavaScript/Reference/Global_Objects/globalThis).
 
 Попри те, що інакші вирази – приймаються, вони не дають змістовних результатів:
 

@@ -7,7 +7,7 @@ status:
 browser-compat: javascript.builtins.String.link
 ---
 
-{{JSRef}} {{deprecated_header}}
+{{JSRef}} {{Deprecated_Header}}
 
 Метод **`link()`** (посилання) значень {{jsxref("String")}} створює рядок, що вбудовує рядок цього методу в елемент {{HTMLElement("a")}} (`<a href="...">str</a>`), аби використати його як гіпертекстове посилання на іншу URL-адресу.
 
@@ -32,14 +32,28 @@ link(url)
 
 ### Застосування link()
 
-Наступний приклад показує слово "WebDoky" як гіпертекстове посилання, яке повертає користувача до вебсайту WebDoky.
+Код нижче створює рядок HTML, а потім замінює ним тіло документа:
 
 ```js
-const hotText = "WebDoky";
-var const = "https://webdoky.org/";
+const contentString = "ВебДоки";
 
-console.log(`Клацніть, щоб повернутися до ${hotText.link(url)}`);
-// Клацніть, щоб повернутися до <a href="https://webdoky.org/">WebDoky</a>
+document.body.innerHTML = contentString.link("https://webdoky.org/");
+```
+
+Це створить наступний HTML:
+
+```html
+<a href="https://webdoky.org/">ВебДоки</a>
+```
+
+Замість використання `link()` і безпосереднього створення тексту HTML слід використовувати API DOM, такі як [`document.createElement()`](/uk/docs/Web/API/Document/createElement). Наприклад:
+
+```js
+const contentString = "ВебДоки";
+const elem = document.createElement("a");
+elem.href = "https://webdoky.org/";
+elem.innerText = contentString;
+document.body.appendChild(elem);
 ```
 
 ## Специфікації
@@ -53,5 +67,5 @@ console.log(`Клацніть, щоб повернутися до ${hotText.link
 ## Дивіться також
 
 - [Поліфіл `String.prototype.link` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
-- {{jsxref("String.prototype.anchor()")}}
-- {{domxref("document.links")}}
+- [Методи для обгортання в HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html)
+- {{HTMLElement("a")}}

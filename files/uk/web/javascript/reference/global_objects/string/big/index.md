@@ -7,11 +7,11 @@ status:
 browser-compat: javascript.builtins.String.big
 ---
 
-{{JSRef}} {{deprecated_header}}
+{{JSRef}} {{Deprecated_Header}}
 
 Метод **`big()`** (великий) значень {{jsxref("String")}} створює рядок, що вбудовує рядок цього методу в елемент {{HTMLElement("big")}} (`<big>str</big>`), завдяки якому текст виводиться великим шрифтом.
 
-> **Примітка:** Всі [обгортальні методи HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html) є нерекомендованими та стандартизовані лише для потреб сумісності. У випадку `big()`, сам елемент `<big>` було вилучено в [HTML5](/uk/docs/Glossary/HTML5), і його більше не слід використовувати. Замість цього веброзробники повинні використовувати властивості [CSS](/uk/docs/Web/CSS).
+> **Примітка:** Всі [обгортальні методи HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html) є нерекомендованими та стандартизовані лише для потреб сумісності. У випадку `big()`, сам елемент `<big>` було вилучено зі специфікації HTML, і його більше не слід використовувати. Замість цього веброзробники повинні використовувати властивості [CSS](/uk/docs/Web/CSS).
 
 ## Синтаксис
 
@@ -31,17 +31,22 @@ big()
 
 ### Застосування методу big()
 
-Наступний приклад використовує методи рядка для зміни його розміру:
+Код нижче створює рядок HTML, а потім замінює цим рядком тіло документа:
 
 ```js
-const worldString = "Привіт, світе!";
+const contentString = "Привіт, світе";
 
-console.log(worldString.small()); // <small>Привіт, світе!</small>
-console.log(worldString.big()); // <big>Привіт, світе!</big>
-console.log(worldString.fontsize(7)); // <font size="7">Привіт, світе!</font>
+document.body.innerHTML = contentString.big();
 ```
 
-Використавши об'єкт {{domxref("HTMLElement/style", "element.style")}}, можна дістатися до атрибута `style` елемента, і маніпулювати розміром більш загально, наприклад:
+Це створить наступний HTML:
+
+```html
+<big>Привіт, світе</big>
+```
+
+> **Застереження:** Ця розмітка – недійсна, оскільки `big` більше не є дійсним елементом.
+> Замість використання `big()` і безпосереднього створення тексту HTML слід використати для роботи зі шрифтами CSS. Наприклад, можна змінити {{cssxref("font-size")}} через атрибут {{domxref("HTMLElement/style", "element.style")}}:
 
 ```js
 document.getElementById("yourElemId").style.fontSize = "2em";
@@ -58,5 +63,5 @@ document.getElementById("yourElemId").style.fontSize = "2em";
 ## Дивіться також
 
 - [Поліфіл `String.prototype.big` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
-- {{jsxref("String.prototype.fontsize()")}}
-- {{jsxref("String.prototype.small()")}}
+- [Методи для обгортання в HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html)
+- {{HTMLElement("big")}}

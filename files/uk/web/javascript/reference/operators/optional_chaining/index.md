@@ -88,7 +88,7 @@ function printMagicIndex(arr) {
   console.log(arr?.[42]);
 }
 printMagicIndex([0, 1, 2, 3, 4, 5]); // undefined
-printMagicIndex(); // undefined; якби не ?., тут викинуло б помилку
+printMagicIndex(); // undefined; якби не ?., тут викинуло б помилку "Cannot read properties of undefined (reading '42')"
 ```
 
 ### Необов'язковий ланцюжок недійсний на лівому боці присвоєння

@@ -27,6 +27,7 @@ height: 75%;
 /* Значення – ключові слова */
 height: max-content;
 height: min-content;
+height: fit-content;
 height: fit-content(20em);
 height: auto;
 
@@ -51,8 +52,8 @@ height: unset;
 - `min-content` (мінімальний вміст)
   - : Внутрішньо найменша можлива ширина.
 - `fit-content` (припасувати вміст)
-  - : Рамки використають доступний простір, але ні в якому разі не вийдуть за межі `max-content`
-- `fit-content({{cssxref("&lt;length-percentage&gt;")}})`
+  - : Використовує доступний простір, але не більше, ніж [max-content](/uk/docs/Web/CSS/max-content), тобто `min(max-content, max(min-content, stretch))`.
+- `fit-content({{cssxref("&lt;length-percentage&gt;")}})` {{Experimental_Inline}}
   - : Використовує формулу fit-content щодо доступного простору, заміненого вказаним аргументом, тобто `min(max-content, max(min-content, <length-percentage>))`.
 - {{cssxref("clamp", "clamp()")}}
   - : Дає змогу вибрати середнє значення з діапазону значень між заданими мінімумом та максимумом.

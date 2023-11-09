@@ -7,7 +7,7 @@ status:
 browser-compat: javascript.builtins.String.substr
 ---
 
-{{JSRef}} {{deprecated_header}}
+{{JSRef}} {{Deprecated_Header}}
 
 Метод **`substr()`** (підрядок) значень {{jsxref("String")}} повертає порцію рядка, яка починається за вказаним індексом і продовжується протягом заданої кількості символів.
 

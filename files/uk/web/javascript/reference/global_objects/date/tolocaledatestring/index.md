@@ -10,7 +10,7 @@ browser-compat: javascript.builtins.Date.toLocaleDateString
 
 Під час форматування великої кількості дат, краще створити окремий об'єкт {{jsxref("Intl.DateTimeFormat")}}, і використовувати його метод {{jsxref("Intl/DateTimeFormat/format", "format()")}}.
 
-{{EmbedInteractiveExample("pages/js/date-tolocaledatestring.html")}}
+{{EmbedInteractiveExample("pages/js/date-tolocaledatestring.html", "taller")}}
 
 ## Синтаксис
 

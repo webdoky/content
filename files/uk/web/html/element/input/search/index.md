@@ -13,7 +13,7 @@ browser-compat: html.elements.input.type_search
 
 ## Значення
 
-Атрибут [`value`](/uk/docs/Web/HTML/Element/input#value) містить рядок, що представляє значення, вміщене в пошуковому полі. Його можна отримати в JavaScript за допомогою властивості [`HTMLInputElement.value`](/uk/docs/Web/API/HTMLInputElement#value).
+Атрибут [`value`](/uk/docs/Web/HTML/Element/input#value-znachennia) містить рядок, що представляє значення, вміщене в пошуковому полі. Його можна отримати в JavaScript за допомогою властивості [`HTMLInputElement.value`](/uk/docs/Web/API/HTMLInputElement#value-znachennia).
 
 ```js
 searchTerms = mySearch.value;
@@ -27,7 +27,7 @@ searchTerms = mySearch.value;
 
 ### list
 
-Значення атрибута list – це {{domxref("Element.id", "id")}} елемента {{HTMLElement("datalist")}}, розташованого в тому самому документі. {{HTMLElement("datalist")}} надає список наперед визначених значень, що пропонуються користувачам для поля. Всі значення в списку, несумісні з [`type`](/uk/docs/Web/HTML/Element/input#type), не включаються в список запропонованих варіантів. Ці значення подаються як пропозиції, а не вимога: користувачі можуть як обирати зі списку, так і ввести щось своє.
+Значення атрибута list – це {{domxref("Element.id", "id")}} елемента {{HTMLElement("datalist")}}, розташованого в тому самому документі. {{HTMLElement("datalist")}} надає список наперед визначених значень, що пропонуються користувачам для поля. Всі значення в списку, несумісні з [`type`](/uk/docs/Web/HTML/Element/input#type-typ), не включаються в список запропонованих варіантів. Ці значення подаються як пропозиції, а не вимога: користувачі можуть як обирати зі списку, так і ввести щось своє.
 
 ### maxlength
 
@@ -43,11 +43,11 @@ searchTerms = mySearch.value;
 
 ### pattern
 
-Атрибут `pattern`, коли заданий, є регулярним виразом, котрому повинно відповідати [`value`](/uk/docs/Web/HTML/Element/input#value), щоб пройти [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation). Це повинен бути дійсний регулярний вираз JavaScript, подібний до тих, що використовуються типом {{jsxref("RegExp")}}, і що задокументовані в нашому [посібнику з регулярних виразів](/uk/docs/Web/JavaScript/Guide/Regular_expressions); при компіляції регулярного виразу задається позначка `'u'`, тож патерн обробляється як послідовність кодових точок Unicode, а не як {{Glossary("ASCII")}}. На кінцях тексту патерну не повинно бути скісних рисок.
+Атрибут `pattern`, коли заданий, є регулярним виразом, котрому повинно відповідати [`value`](/uk/docs/Web/HTML/Element/input#value-znachennia), щоб пройти [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation). Це повинен бути дійсний регулярний вираз JavaScript, подібний до тих, що використовуються типом {{jsxref("RegExp")}}, і що задокументовані в нашому [посібнику з регулярних виразів](/uk/docs/Web/JavaScript/Guide/Regular_expressions); при компіляції регулярного виразу задається позначка `'u'`, тож патерн обробляється як послідовність кодових точок Unicode, а не як {{Glossary("ASCII")}}. На кінцях тексту патерну не повинно бути скісних рисок.
 
 Якщо заданий патерн – не заданий або недійсний, то регулярний вираз не застосовується, і цей атрибут цілком ігнорується.
 
-> **Примітка:** Слід використовувати атрибут [`title`](/uk/docs/Web/HTML/Element/input#title), щоб задати текст, котрий більшість браузерів показує як підказку для пояснення того, яким вимогам повинен відповідати текст, аби відповідати патерну. Також слід додати інший пояснювальний текст поруч.
+> **Примітка:** Слід використовувати атрибут [`title`](/uk/docs/Web/HTML/Element/input#title-zaholovok), щоб задати текст, котрий більшість браузерів показує як підказку для пояснення того, яким вимогам повинен відповідати текст, аби відповідати патерну. Також слід додати інший пояснювальний текст поруч.
 
 Дивіться деталі та приклад у розділі [Задання патерну](#zadannia-paternu).
 
@@ -57,7 +57,7 @@ searchTerms = mySearch.value;
 
 Якщо вміст контрольного елемента має один напрям письма ({{Glossary("LTR", "зліва направо")}} або {{Glossary("RTL", "справа наліво")}}), а заповнювач треба показати в іншому напрямі, то можна використати в заповнювачі символи двонапрямленого алгоритму форматування Unicode; більше інформації у статті [Як використовувати контрольні символи Unicode у двонапрямленому тексті](https://www.w3.org/International/questions/qa-bidi-unicode-controls).
 
-> **Примітка:** Уникайте використання атрибута `placeholder`, якщо це можливо. Він є менш семантично корисним, ніж інші способи пояснення форми, і може призводити до неочікуваних технічних проблем зі вмістом. Більше інформації в [підписах `<input>`](/uk/docs/Web/HTML/Element/input#labels).
+> **Примітка:** Уникайте використання атрибута `placeholder`, якщо це можливо. Він є менш семантично корисним, ніж інші способи пояснення форми, і може призводити до неочікуваних технічних проблем зі вмістом. Більше інформації в [підписах `<input>`](/uk/docs/Web/HTML/Element/input#pidpysy).
 
 ### readonly
 
@@ -69,7 +69,7 @@ searchTerms = mySearch.value;
 
 Атрибут `size` – це числове значення, що вказує на те, якої ширини в символах повинно бути поле введення. Значення цього атрибута повинно бути числом, більшим за нуль, а усталене значення – 20. Оскільки розмір символів буває різний, така ширина може бути, а може й не бути точною, і на її розмірність не варто покладатися; результівне поле може бути вужчим або ширшим за задану кількість символів, залежно від самих цих символів та шрифту (застосованих налаштувань {{cssxref("font")}}).
 
-Це _не_ задає обмеження того, скільки символів користувач може ввести в поле. Це лише приблизно задає те, скільки символів водночас буде видно. Аби задати верхню межу довжини введених даних, слід використовувати атрибут [`maxlength`](#maxlength).
+Це _не_ задає обмеження того, скільки символів користувач може ввести в поле. Це лише приблизно задає те, скільки символів водночас буде видно. Аби задати верхню межу довжини введених даних, слід використовувати атрибут [`maxlength`](#maxlength-maksymalna-dovzhyna).
 
 ### spellcheck
 
@@ -107,11 +107,11 @@ searchTerms = mySearch.value;
 
 Подія `search` обмежена в частоті, тож вона не надсилається частіше за визначений реалізацією інтервал.
 
-### mozactionhint
+### mozactionhint {{deprecated_inline}}
 
 Розширення Mozilla, котре надає підказку, наприклад, про те, якого роду дія буде виконана, якщо користувач натисне під час редагування поля клавішу <kbd>Enter</kbd> або <kbd>Return</kbd>.
 
-Цей атрибут став нерекомендованим – натомість слід використовувати глобальний атрибут [`enterkeyhint`](/uk/docs/Web/HTML/Global_attributes#enterkeyhint).
+<strong>Нерекомендовано: Натомість слід використовувати [`enterkeyhint`](/uk/docs/Web/HTML/Global_attributes#enterkeyhint).</strong>
 
 ### results
 
@@ -140,7 +140,7 @@ searchTerms = mySearch.value;
 
 `q` – найпоширеніше значення атрибута `name`, що дається пошуковим полям, хоч це й не вимагається. При поданні пара ім'я-значення, що надсилається на сервер, має вигляд `q=шукане`.
 
-> **Примітка:** Не слід забувати задавати своїм полям [`name`](/uk/docs/Web/HTML/Element/input#name), бо інакше – нічого не буде надіслано.
+> **Примітка:** Не слід забувати задавати своїм полям [`name`](/uk/docs/Web/HTML/Element/input#name-imia), бо інакше – нічого не буде надіслано.
 
 ### Різниця між пошуковим та текстовим типами поля
 
@@ -154,7 +154,7 @@ searchTerms = mySearch.value;
 
 ### Задання заповнювачів
 
-Всередині пошукового поля можна дати змістовний заповнювач, котрий служитиме підказкою щодо того, що робити з полем, за допомогою атрибута [`placeholder`](/uk/docs/Web/HTML/Element/input#placeholder). Погляньте на наступний приклад:
+Всередині пошукового поля можна дати змістовний заповнювач, котрий служитиме підказкою щодо того, що робити з полем, за допомогою атрибута [`placeholder`](/uk/docs/Web/HTML/Element/input#placeholder-zapovniuvach). Погляньте на наступний приклад:
 
 ```html
 <form>
@@ -208,7 +208,7 @@ searchTerms = mySearch.value;
 
 ### Фізичний розмір елемента введення
 
-Фізичний розмір поля введення можна контролювати за допомогою атрибута [`size`](/uk/docs/Web/HTML/Element/input#size). Так можна задавати число символів, котре водночас може показувати поле. У цьому прикладі, скажімо, пошукове поле – 30 символів завширшки:
+Фізичний розмір поля введення можна контролювати за допомогою атрибута [`size`](/uk/docs/Web/HTML/Element/input#size-rozmir). Так можна задавати число символів, котре водночас може показувати поле. У цьому прикладі, скажімо, пошукове поле – 30 символів завширшки:
 
 ```html
 <form>
@@ -256,7 +256,7 @@ input:valid ~ span::after {
 
 ### Обов'язковість заповнення поля
 
-Атрибут [`required`](/uk/docs/Web/HTML/Element/input#required) можна використати як легкий спосіб зробити введення значення в поле обов'язковим перед дозволом на подання:
+Атрибут [`required`](/uk/docs/Web/HTML/Element/input#required-oboviazkovyi) можна використати як легкий спосіб зробити введення значення в поле обов'язковим перед дозволом на подання:
 
 ```html
 <form>
@@ -303,7 +303,7 @@ input:valid ~ span::after {
 
 ### Довжина значення поля
 
-Мінімальну довжину в символах уведеного значення можна задати за допомогою атрибута [`minlength`](/uk/docs/Web/HTML/Element/input#minlength); подібно до цього – є [`maxlength`](/uk/docs/Web/HTML/Element/input#maxlength) для задання максимальної довжини.
+Мінімальну довжину в символах уведеного значення можна задати за допомогою атрибута [`minlength`](/uk/docs/Web/HTML/Element/input#minlength-minimalna-dovzhyna); подібно до цього – є [`maxlength`](/uk/docs/Web/HTML/Element/input#maxlength-maksymalna-dovzhyna) для задання максимальної довжини.
 
 Приклад нижче вимагає, щоб уведене значення було 4-8 символів завдовжки.
 
@@ -352,7 +352,7 @@ input:valid ~ span::after {
 
 ### Задання патерну
 
-Для задання регулярного виразу, котрому повинно відповідати введене значення, аби вважатися дійсним, можна використати атрибут [`pattern`](/uk/docs/Web/HTML/Element/input#pattern) (дивіться простий експрес-курс у [Валідуванні за регулярним виразом](/uk/docs/Learn/Forms/Form_validation#validuvannia-za-rehuliarnym-vyrazom)).
+Для задання регулярного виразу, котрому повинно відповідати введене значення, аби вважатися дійсним, можна використати атрибут [`pattern`](/uk/docs/Web/HTML/Element/input#pattern-patern) (дивіться простий експрес-курс у [Валідуванні за регулярним виразом](/uk/docs/Learn/Forms/Form_validation#validuvannia-za-rehuliarnym-vyrazom)).
 
 Погляньмо на приклад. Скажімо, що необхідно створити пошукову форму для ідентифікаторів продуктів, а всі ідентифікатори починаються з двох літер, після яких – чотири цифри. Наступний приклад таке покриває:
 
@@ -421,13 +421,13 @@ input:valid ~ span::after {
       <td><strong>Доступні загальні атрибути</strong></td>
       <td>
         <a href="/uk/docs/Web/HTML/Element/input#autocomplete"><code>autocomplete</code></a>,
-        <a href="/uk/docs/Web/HTML/Element/input#list"><code>list</code></a>,
-        <a href="/uk/docs/Web/HTML/Element/input#maxlength"><code>maxlength</code></a>,
-        <a href="/uk/docs/Web/HTML/Element/input#minlength"><code>minlength</code></a>,
-        <a href="/uk/docs/Web/HTML/Element/input#pattern"><code>pattern</code></a>,
-        <a href="/uk/docs/Web/HTML/Element/input#placeholder"><code>placeholder</code></a>,
-        <a href="/uk/docs/Web/HTML/Element/input#required"><code>required</code></a>,
-        <a href="/uk/docs/Web/HTML/Element/input#size"><code>size</code></a>.
+        <a href="/uk/docs/Web/HTML/Element/input#list-spysok"><code>list</code></a>,
+        <a href="/uk/docs/Web/HTML/Element/input#maxlength-maksymalna-dovzhyna"><code>maxlength</code></a>,
+        <a href="/uk/docs/Web/HTML/Element/input#minlength-minimalna-dovzhyna"><code>minlength</code></a>,
+        <a href="/uk/docs/Web/HTML/Element/input#pattern-patern"><code>pattern</code></a>,
+        <a href="/uk/docs/Web/HTML/Element/input#placeholder-zapovniuvach"><code>placeholder</code></a>,
+        <a href="/uk/docs/Web/HTML/Element/input#required-oboviazkovyi"><code>required</code></a>,
+        <a href="/uk/docs/Web/HTML/Element/input#size-rozmir"><code>size</code></a>.
       </td>
     </tr>
     <tr>

@@ -7,7 +7,7 @@ status:
 browser-compat: javascript.builtins.String.bold
 ---
 
-{{JSRef}} {{deprecated_header}}
+{{JSRef}} {{Deprecated_Header}}
 
 Метод **`bold()`** (грубий) значень {{jsxref("String")}} створює рядок, що вбудовує рядок цього методу в елемент {{HTMLElement("b")}} (`<b>рядок</b>`), що призводить до виведення цього рядка грубим шрифтом.
 
@@ -31,15 +31,27 @@ bold()
 
 ### Застосування bold()
 
-Наступний приклад демонструє, як змінити форматування рядка за допомогою нерекомендованих методів самого рядка:
+Код нижче створює рядок HTML, а потім замінює цим рядком тіло документа:
 
 ```js
-const worldString = "Привіт, світе!";
+const contentString = "Привіт, світе";
 
-console.log(worldString.blink()); // <blink>Привіт, світе!</blink>
-console.log(worldString.bold()); // <b>Привіт, світе!</b>
-console.log(worldString.italics()); // <i>Привіт, світе!</i>
-console.log(worldString.strike()); // <strike>Привіт, світе!</strike>
+document.body.innerHTML = contentString.bold();
+```
+
+Це створить наступний HTML:
+
+```html
+<b>Привіт, світе</b>
+```
+
+Замість використання `bold()` і безпосереднього створення тексту HTML слід використовувати API DOM, як то [`document.createElement()`](/uk/docs/Web/API/Document/createElement). Наприклад:
+
+```js
+const contentString = "Привіт, світе";
+const elem = document.createElement("b");
+elem.innerText = contentString;
+document.body.appendChild(elem);
 ```
 
 ## Специфікації
@@ -53,6 +65,5 @@ console.log(worldString.strike()); // <strike>Привіт, світе!</strike>
 ## Дивіться також
 
 - [Поліфіл `String.prototype.bold` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
-- {{jsxref("String.prototype.blink()")}}
-- {{jsxref("String.prototype.italics()")}}
-- {{jsxref("String.prototype.strike()")}}
+- [Методи для обгортання в HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html)
+- {{HTMLElement("b")}}

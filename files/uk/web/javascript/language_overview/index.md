@@ -76,8 +76,8 @@ const circumference = 2 * Math.PI * r;
 
 Є три способи перетворити рядок на число:
 
-- {{jsxref("Global_Objects/parseInt", "parseInt()")}}, тобто розбір рядка як цілого числа.
-- {{jsxref("Global_Objects/parseFloat", "parseFloat()")}}, тобто розбір рядка як дробового числа.
+- {{jsxref("parseInt()")}} тобто розбір рядка як цілого числа.
+- {{jsxref("parseFloat()")}}, тобто розбір рядка як дробового числа.
 - Функція [`Number()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number/Number), котра розбирає рядок так, ніби він є числовим літералом, і підтримує чимало різних представлень чисел.
 
 Також як скорочення `Number()` можна використовувати [унарний плюс `+`](/uk/docs/Web/JavaScript/Reference/Operators/Unary_plus).

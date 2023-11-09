@@ -557,7 +557,7 @@ tag`string text ${expression} string text`
 - [`do...while`](/uk/docs/Web/JavaScript/Reference/Statements/do...while)
 - [`continue`](/uk/docs/Web/JavaScript/Reference/Statements/continue), [`break`](/uk/docs/Web/JavaScript/Reference/Statements/break), [`return`](/uk/docs/Web/JavaScript/Reference/Statements/return), [`throw`](/uk/docs/Web/JavaScript/Reference/Statements/throw)
 - [`debugger`](/uk/docs/Web/JavaScript/Reference/Statements/debugger)
-- Оголошення полів класів ([публічних](/uk/docs/Web/JavaScript/Reference/Classes/Public_class_fields) та [приватних](/uk/docs/Web/JavaScript/Reference/Classes/Private_class_fields))
+- Оголошення полів класів ([публічних](/uk/docs/Web/JavaScript/Reference/Classes/Public_class_fields) та [приватних](/uk/docs/Web/JavaScript/Reference/Classes/Private_properties))
 - [`import`](/uk/docs/Web/JavaScript/Reference/Statements/import), [`export`](/uk/docs/Web/JavaScript/Reference/Statements/export)
 
 Проте для того, щоб мова JavaScript була доступнішою та зрозумілішою, JavaScript автоматично вставляє крапки з комою, коли захоплює потік лексем, тож частина недійсних послідовностей лексем може бути "виправлена" до дійсного синтаксису. Цей крок відбувається після того, як текст програми розбирається на лексеми згідно з лексичною граматикою. Є три випадки, за яких автоматично вставляються крапки з комою:
