@@ -31,7 +31,7 @@ browser-compat: javascript.regular_expressions.character_class
 - `operand1`, `operand2`
   - : Може бути одним символом, іще одним класом символів, загорнутим у квадратні дужки, [екрануванням класу символів](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Character_class_escape), [екрануванням класу символів Unicode](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Unicode_character_class_escape) або рядком з використанням запису `\q`.
 - `substring`
-  - : Буквальний рядок.
+  - : Рядок, буквально.
 
 ## Опис
 
