@@ -20,7 +20,7 @@ codePointAt(index)
 ### Параметри
 
 - `index`
-  - : Індекс від нуля символу, що повинен бути повернений. [Перетворюється на ціле число](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#peretvorennia-na-tsile) — `undefined` перекидається на 0.
+  - : Індекс від нуля символу, що повинен бути повернений. [Перетворюючись на ціле число](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#peretvorennia-na-tsile) — `undefined` перекидається на 0.
 
 ### Повернене значення
 
