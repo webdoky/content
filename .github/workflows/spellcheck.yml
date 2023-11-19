@@ -1,5 +1,5 @@
 name: spellcheck
-on: [pull_request]
+on: [pull_request_target]
 jobs:
   languagetool:
     name: runner / languagetool
