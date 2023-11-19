@@ -1,11 +1,17 @@
 name: spellcheck
-on: [pull_request_target]
+on: [pull_request]
 jobs:
   languagetool:
     name: runner / languagetool
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: get all changed files
+        id: all-changes
+        uses: tj-actions/changed-files@v40
+      - run: |
+          echo "All changed files:"
+          echo "${{ steps.all-changes.outputs.files }}"
       - name: Get all changed markdown files
         id: translation-changes
         uses: tj-actions/changed-files@v40
