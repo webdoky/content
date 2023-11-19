@@ -10,8 +10,7 @@ jobs:
         id: translation-changes
         uses: tj-actions/changed-files@v40
         with:
-          files: |
-            **/*.md
+          files: "**/*.md"
       - name: Check number of translation changes
         # Error if number of changes is not 1 or empty
         run: |
