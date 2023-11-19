@@ -1,0 +1,27 @@
+name: spellcheck
+on: [pull_request]
+jobs:
+  languagetool:
+    name: runner / languagetool
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get all changed markdown files
+        id: translation-changes
+        uses: tj-actions/changed-files@v40
+        with:
+          files: |
+            **.md
+      - name: Check number of translation changes
+        # Error if number of changes is not 1
+        run: |
+          if [ $(echo "${{ steps.translation-changes.outputs.files }}" | wc -l) -ne 1 ]; then
+            echo "Number of changed files is not 1"
+            exit 1
+          fi
+      - uses: reviewdog/action-languagetool@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          language: uk
+          level: info
+          patterns: ${{ steps.translation-changes.outputs.files[0] }}
