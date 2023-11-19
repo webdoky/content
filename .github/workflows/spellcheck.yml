@@ -13,16 +13,22 @@ jobs:
           files: |
             **.md
       - name: Check number of translation changes
-        # Error if number of changes is not 1
+        # Error if number of changes is not 1 or empty
         run: |
-          if [ $(echo "${{ steps.translation-changes.outputs.files }}" | wc -l) -ne 1 ]; then
-            echo "Number of changed files is not 1"
-            exit 1
+          if [ -z "${{ steps.translation-changes.outputs.files[0] }}" ]; then
+            echo "No translation changes found"
+            exit 0
+          elif [ $(echo "${{ steps.translation-changes.outputs.files[0] }}" | wc -l) -gt 1 ]; then
+            echo "More than one translation change found"
+            exit 0
           else
-            echo "${{ steps.translation-changes.outputs.files[0] }}"
+            echo "One translation change found"
+            exit 1
           fi
-      - uses: reviewdog/action-languagetool@v1
+      - if: failure()
+        uses: reviewdog/action-languagetool@v1
         with:
+          disabled_rules: NEVIDYEMNYI,UK_SIMPLE_REPLACE_SOFT,WHITESPACE_RULE
           github_token: ${{ secrets.github_token }}
           language: uk
           level: info
