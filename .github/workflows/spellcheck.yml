@@ -15,18 +15,25 @@ jobs:
           if [ -z "$changed_files" ]; then
             echo "No files changed"
             exit 0
-          elif [ $(echo "$changed_files" | grep -E ".*\.md$" | wc -l) -gt 1 ]; then
-            echo "More than one markdown file changed"
-            exit 0
           else
-            echo "{translation=${echo "$changed_files" | grep -E ".*\.md$"}}" >> "$GITHUB_OUTPUT"
-            exit 1
-          fi
+            translation_files=$(echo "$changed_files" | grep -E "translations/.*\.md")
+            if [ -z "$translation_files" ]; then
+              echo "No translation files changed"
+              exit 0
+            else
+              if [ $(echo "$translation_files" | wc -l) -gt 1 ]; then
+                echo "More than one translation file changed"
+                exit 0
+              else
+                echo "{translation}={translation_files}" >> $GITHUB_OUTPUT
+                exit 1
+              fi
+            fi
       - if: failure()
         uses: reviewdog/action-languagetool@v1
         with:
-          disabled_rules: NEVIDYEMNYI,UK_SIMPLE_REPLACE_SOFT,WHITESPACE_RULE
+          disabled_rules: "NEVIDYEMNYI,UK_SIMPLE_REPLACE_SOFT,WHITESPACE_RULE"
           github_token: ${{ secrets.github_token }}
-          language: uk
-          level: info
-          patterns: ${{ steps.translation-changes.outputs.translation }}
+          language: "uk"
+          level: "info"
+          patterns: "${{ steps.translation-changes.outputs.translation }}"
