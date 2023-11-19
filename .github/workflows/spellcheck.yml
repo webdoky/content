@@ -6,28 +6,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: get all changed files
-        id: all-changes
-        uses: tj-actions/changed-files@v40
-      - run: |
-          echo "All changed files:"
-          echo "${{ steps.all-changes.outputs.files }}"
-      - name: Get all changed markdown files
+      - name: Check translation
+        # Check there is only one translation change
+        # If there are more than one, the workflow will fail
         id: translation-changes
-        uses: tj-actions/changed-files@v40
-        with:
-          files: "**/index.md"
-      - name: Check number of translation changes
-        # Error if number of changes is not 1 or empty
         run: |
-          if [ -z "${{ steps.translation-changes.outputs.files[0] }}" ]; then
-            echo "No translation changes found"
+          changed_files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }})
+          if [ -z "$changed_files" ]; then
+            echo "No files changed"
             exit 0
-          elif [ $(echo "${{ steps.translation-changes.outputs.files[0] }}" | wc -l) -gt 1 ]; then
-            echo "More than one translation change found"
+          elif [ $(echo "$changed_files" | grep -E ".*\.md$" | wc -l) -gt 1 ]; then
+            echo "More than one markdown file changed"
             exit 0
           else
-            echo "One translation change found"
+            echo "{translation=${echo "$changed_files" | grep -E ".*\.md$"}}" >> "$GITHUB_OUTPUT"
             exit 1
           fi
       - if: failure()
@@ -37,4 +29,4 @@ jobs:
           github_token: ${{ secrets.github_token }}
           language: uk
           level: info
-          patterns: ${{ steps.translation-changes.outputs.files[0] }}
+          patterns: ${{ steps.translation-changes.outputs.translation }}
