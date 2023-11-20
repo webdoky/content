@@ -44,6 +44,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Remove code blocks
+        run: |
+          file=${{ needs.prepare-translation.outputs.translation }}
+          sed -i '/```/,/```/d' $file
       # Strip all macros
       # - id: strip-macros
       #   run: |
