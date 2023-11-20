@@ -13,6 +13,7 @@ jobs:
         id: translation-changes
         run: |
           changed_files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }})
+          echo "$changed_files"
           if [ -z "$changed_files" ]; then
             echo "No files changed"
           else
