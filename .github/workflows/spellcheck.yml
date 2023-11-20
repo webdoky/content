@@ -66,7 +66,7 @@ jobs:
           pandoc -f markdown -t plain -o $newFileName $file
           echo "translation=$newFileName" >> $GITHUB_OUTPUT
           cat $newFileName
-      - uses: reviewdog/action-languagetool@v1
+      - uses: reviewdog/action-languagetool@latest
         with:
           # disabled_rules: "NEVIDYEMNYI,UK_SIMPLE_REPLACE_SOFT,WHITESPACE_RULE"
           # github_token: ${{ secrets.github_token }}
