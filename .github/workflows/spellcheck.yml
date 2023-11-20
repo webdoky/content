@@ -43,7 +43,7 @@ jobs:
     if: ${{ needs.prepare-translation.outputs.translation != '' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: download-artifact@v2
+      - uses: actions/download-artifact@v2
         with:
           name: translation
           path: translation.md
