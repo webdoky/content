@@ -57,6 +57,7 @@ jobs:
           # Replace macros with more than two arguments
           sed -i 's/{{[[:alnum:]_-]*(\("[[:alnum:]_-]*"\), \("[[:alnum:]_-]*"\), \("[[:alnum:]_-]*"\))}}/\2/g' $file
       # Reduce markdown to plain text
+      - run: sudo apt install pandoc -y
       - id: md2txt
         run: |
           file=${{ needs.prepare-translation.outputs.translation }}
