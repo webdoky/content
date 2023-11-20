@@ -26,7 +26,7 @@ jobs:
                 echo "More than one translation file changed"
                 exit 0
               else
-                echo "{translation}={translation_files}" >> $GITHUB_OUTPUT
+                echo "translation=$translation_files" >> $GITHUB_OUTPUT
                 exit 1
               fi
             fi
@@ -36,10 +36,11 @@ jobs:
         with:
           name: translation
           path: ${{ steps.translation-changes.outputs.translation }}
+      - run: echo "translation=${{ steps.translation-changes.outputs.translation }}" >> $GITHUB_OUTPUT
   languagetool:
-    if: needs.prepare-translation.outputs.translation != ''
     name: runner / languagetool
     needs: [prepare-translation]
+    if: ${{ needs.prepare-translation.outputs.translation != '' }}
     runs-on: ubuntu-latest
     steps:
       - uses: download-artifact@v2
