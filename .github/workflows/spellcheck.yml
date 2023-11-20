@@ -1,46 +1,46 @@
 name: spellcheck
 on: [pull_request]
 jobs:
-  # prepare-translation:
-  #   outputs:
-  #     translation: ${{ steps.translation-changes.outputs.translation }}
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #       with:
-  #         fetch-depth: 0
-  #     - name: Check translation
-  #       # Check there is only one translation change
-  #       # If there are more than one, the workflow will fail
-  #       id: translation-changes
-  #       run: |
-  #         changed_files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }})
-  #         echo "$changed_files"
-  #         if [ -z "$changed_files" ]; then
-  #           echo "No files changed"
-  #         else
-  #           translation_files=$(echo "$changed_files" | grep -E ".*\.md")
-  #           echo "$translation_files"
-  #           if [ -z "$translation_files" ]; then
-  #             echo "No translation files changed"
-  #           else
-  #             if [ $(echo "$translation_files" | wc -l) -gt 1 ]; then
-  #               echo "More than one translation file changed"
-  #             else
-  #               echo "translation=$translation_files" >> $GITHUB_OUTPUT
-  #             fi
-  #           fi
-  #         fi
-  #     - if: steps.translation-changes.outputs.translation != ''
-  #       uses: actions/upload-artifact@v3
-  #       with:
-  #         name: translation
-  #         path: ${{ steps.translation-changes.outputs.translation }}
-  #     # - run: echo "translation=${{ steps.translation-changes.outputs.translation }}" >> $GITHUB_OUTPUT
+  prepare-translation:
+    outputs:
+      translation: ${{ steps.translation-changes.outputs.translation }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Check translation
+        # Check there is only one translation change
+        # If there are more than one, the workflow will fail
+        id: translation-changes
+        run: |
+          changed_files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }})
+          echo "$changed_files"
+          if [ -z "$changed_files" ]; then
+            echo "No files changed"
+          else
+            translation_files=$(echo "$changed_files" | grep -E ".*\.md")
+            echo "$translation_files"
+            if [ -z "$translation_files" ]; then
+              echo "No translation files changed"
+            else
+              if [ $(echo "$translation_files" | wc -l) -gt 1 ]; then
+                echo "More than one translation file changed"
+              else
+                echo "translation=$translation_files" >> $GITHUB_OUTPUT
+              fi
+            fi
+          fi
+      # - if: steps.translation-changes.outputs.translation != ''
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: translation
+      #     path: ${{ steps.translation-changes.outputs.translation }}
+      # # - run: echo "translation=${{ steps.translation-changes.outputs.translation }}" >> $GITHUB_OUTPUT
   languagetool:
     name: runner / languagetool
-    # needs: [prepare-translation]
-    # if: ${{ needs.prepare-translation.outputs.translation != '' }}
+    needs: [prepare-translation]
+    if: ${{ needs.prepare-translation.outputs.translation != '' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -56,5 +56,5 @@ jobs:
           github_token: ${{ secrets.github_token }}
           language: "uk"
           level: "info"
-          # patterns: "translation.md"
-          patterns: "**/*.md"
+          patterns: ${{ needs.prepare-translation.outputs.translation }}
+          # patterns: "files/**/*.md"
