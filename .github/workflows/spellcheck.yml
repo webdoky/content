@@ -17,14 +17,14 @@ jobs:
           if [ -z "$changed_files" ]; then
             echo "No files changed"
           else
-            translation_files=$(echo "$changed_files" | grep -E "translations/.*\.md")
+            translation_files=$(echo "$changed_files" | grep -E ".*\.md")
+            echo "$translation_files"
             if [ -z "$translation_files" ]; then
               echo "No translation files changed"
             else
               if [ $(echo "$translation_files" | wc -l) -gt 1 ]; then
                 echo "More than one translation file changed"
               else
-                echo "$translation_files"
                 echo "translation=$translation_files" >> $GITHUB_OUTPUT
               fi
             fi
