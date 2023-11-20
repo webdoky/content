@@ -45,7 +45,7 @@ browser-compat: html.global_attributes.enterkeyhint
     <tr>
       <td><code>enterkeyhint="go"</code></td>
       <td>
-        Зазвичай означає, що користувач буде переведений до цілі тексту, котрий надруковано.
+        Зазвичай означає, що користувач буде переведений до місця призначення тексту, котрий надруковано.
       </td>
       <td><kbd>Open</kbd></td>
     </tr>
