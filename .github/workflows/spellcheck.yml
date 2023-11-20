@@ -2,6 +2,8 @@ name: spellcheck
 on: [pull_request]
 jobs:
   prepare-translation:
+    outputs:
+      translation: ${{ steps.translation-changes.outputs.translation }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -34,7 +36,7 @@ jobs:
         with:
           name: translation
           path: ${{ steps.translation-changes.outputs.translation }}
-      - run: echo "translation=${{ toJSON(steps.translation-changes.outputs.translation) }}" >> $GITHUB_OUTPUT
+      # - run: echo "translation=${{ steps.translation-changes.outputs.translation }}" >> $GITHUB_OUTPUT
   languagetool:
     name: runner / languagetool
     needs: [prepare-translation]
