@@ -69,7 +69,7 @@ jobs:
           newFileName=$(echo $file | sed 's/\.md/\.txt/')
           pandoc -f markdown -t plain -o $newFileName $file
           echo "translation=$newFileName" >> $GITHUB_OUTPUT
-          cat $newFileName
+          echo $newFileName
       # Error if translation file is not found
       - if: steps.md2txt.outputs.translation == ''
         run: echo "No translation file found" && exit 1
