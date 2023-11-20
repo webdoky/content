@@ -45,20 +45,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       # Strip all macros
-      - id: strip-macros
-        run: |
-          file=${{ needs.prepare-translation.outputs.translation }}
-          # Remove all macros with no arguments
-          sed -i 's/{{[[:alnum:]_-]*}}//g' $file
-          # Replace macros with one argument
-          sed -i 's/{{[[:alnum:]_-]*(\("[[:alnum:]_-]*"\))}}/\1/g' $file
-          # Replace macros with two arguments
-          sed -i 's/{{[[:alnum:]_-]*(\("[[:alnum:]_-]*"\), \("[[:alnum:]_-]*"\))}}/\2/g' $file
-          # Replace macros with more than two arguments
-          sed -i 's/{{[[:alnum:]_-]*(\("[[:alnum:]_-]*"\), \("[[:alnum:]_-]*"\), \("[[:alnum:]_-]*"\))}}/\2/g' $file
+      # - id: strip-macros
+      #   run: |
+      #     file=${{ needs.prepare-translation.outputs.translation }}
+      #     # Remove all macros with no arguments
+      #     sed -i 's/{{[a-zA-Z_-]*}}//' $file
+      #     # Replace macros with one argument
+      #     sed -i 's/{{[[:alnum:]_-]*(\("[[:alnum:]_-]*"\))}}/\1/g' $file
+      #     # Replace macros with two arguments
+      #     sed -i 's/{{[[:alnum:]_-]*(\("[[:alnum:]_-]*"\), \("[[:alnum:]_-]*"\))}}/\2/g' $file
+      #     # Replace macros with more than two arguments
+      #     sed -i 's/{{[[:alnum:]_-]*(\("[[:alnum:]_-]*"\), \("[[:alnum:]_-]*"\), \("[[:alnum:]_-]*"\))}}/\2/g' $file
       # Reduce markdown to plain text
       - run: sudo apt install pandoc -y
       - id: md2txt
+        name: Convert markdown to plain text
         run: |
           file=${{ needs.prepare-translation.outputs.translation }}
           newFileName=$(echo $file | sed 's/\.md/\.txt/')
