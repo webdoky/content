@@ -30,18 +30,18 @@ jobs:
             fi
           fi
       - if: steps.translation-changes.outputs.translation != ''
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: translation
           path: ${{ steps.translation-changes.outputs.translation }}
-      - run: echo "translation=${{ steps.translation-changes.outputs.translation }}" >> $GITHUB_OUTPUT
+      - run: echo "translation=${{ toJSON(steps.translation-changes.outputs.translation) }}" >> $GITHUB_OUTPUT
   languagetool:
     name: runner / languagetool
     needs: [prepare-translation]
     if: ${{ needs.prepare-translation.outputs.translation != '' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
         with:
           name: translation
           path: translation.md
