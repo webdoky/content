@@ -44,12 +44,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        # with:
-        #   fetch-depth: 0
-      # - uses: actions/download-artifact@v3
-      #   with:
-      #     name: translation
-      #     path: translation.md
+      # Strip all macros
+      - id: strip-macros
+        run: |
+          file=${{ needs.prepare-translation.outputs.translation }}
+          # Remove all macros with no arguments
+          sed -i 's/{{[[:alnum:]_-]*}}//g' $file
+          # Replace macros with one argument
+          sed -i 's/{{[[:alnum:]_-]*(\("[[:alnum:]_-]*"\))}}/\1/g' $file
+          # Replace macros with two arguments
+          sed -i 's/{{[[:alnum:]_-]*(\("[[:alnum:]_-]*"\), \("[[:alnum:]_-]*"\))}}/\2/g' $file
+          # Replace macros with more than two arguments
+          sed -i 's/{{[[:alnum:]_-]*(\("[[:alnum:]_-]*"\), \("[[:alnum:]_-]*"\), \("[[:alnum:]_-]*"\))}}/\2/g' $file
+      # Reduce markdown to plain text
+      - id: md2txt
+        run: |
+          file=${{ needs.prepare-translation.outputs.translation }}
+          newFileName=$(echo $file | sed 's/\.md/\.txt/')
+          pandoc -f markdown -t plain -o $newFileName $file
+          echo "translation=$newFileName" >> $GITHUB_OUTPUT
       - uses: reviewdog/action-setup@v1
       - run: reviewdog -version
       - uses: reviewdog/action-languagetool@v1
@@ -58,5 +71,5 @@ jobs:
           github_token: ${{ secrets.github_token }}
           language: "uk"
           level: "info"
-          patterns: ${{ needs.prepare-translation.outputs.translation }}
+          patterns: ${{ steps.md2txt.outputs.translation }}
           # patterns: "files/**/*.md"
