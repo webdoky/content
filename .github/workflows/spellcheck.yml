@@ -15,19 +15,16 @@ jobs:
           changed_files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }})
           if [ -z "$changed_files" ]; then
             echo "No files changed"
-            exit 0
           else
             translation_files=$(echo "$changed_files" | grep -E "translations/.*\.md")
             if [ -z "$translation_files" ]; then
               echo "No translation files changed"
-              exit 0
             else
               if [ $(echo "$translation_files" | wc -l) -gt 1 ]; then
                 echo "More than one translation file changed"
-                exit 0
               else
+                echo "$translation_files"
                 echo "translation=$translation_files" >> $GITHUB_OUTPUT
-                exit 0
               fi
             fi
           fi
