@@ -82,4 +82,5 @@ jobs:
           language: "uk-UA"
           level: info
           patterns: ${{ steps.md2txt.outputs.translation }}
+          wait_server_startup_duration: 10
           # patterns: "files/**/*.md"
