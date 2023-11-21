@@ -1,26 +1,23 @@
 {{ range $_, $m := . -}}
   {{- /* <message><rule> */ -}}
   {{ $m.message }}
-  ({{ $m.rule.id }}{{ if $m.rule.subId }}[{{ $m.rule.subId }}]{{end}}){{- nl -}}
+  ({{ $m.rule.id }}{{ if $m.rule.subId }}[{{ $m.rule.subId }}]{{end}})
 
   {{- /* Suggestions */ -}}
   {{ if ne (len $m.replacements) 0 -}}
     Пропозиції: {{ range $i, $r := $m.replacements -}}{{ if ne $i 0 }},{{end}}`{{ $r.value }}`{{ end -}}
-    {{- nl -}}
   {{ end }}
 
   {{- /* URLs */ -}}
   {{ if $m.rule.urls }}{{ if ne (len $m.rule.urls) 0 -}}
     URL: {{ range $_, $u := $m.rule.urls -}}{{ $u.value }}{{- end -}}
-    {{- nl -}}
   {{ end }}{{ end }}
 
   {{- /* Rule URL */ -}}
   Правило: https://community.languagetool.org/rule/show/{{ $m.rule.id }}?lang=uk
-  {{- if $m.rule.subId }}&subId={{ $m.rule.subId }}{{end}}{{- nl -}}
+  {{- if $m.rule.subId }}&subId={{ $m.rule.subId }}{{end}}
 
   {{- /* Категорія */ -}}
   Категорія: {{ $m.rule.category.id }}
 
-  {{- nl -}}
 {{- end -}}
