@@ -88,10 +88,7 @@ jobs:
           disabled_rules=$(cat disabled_rules.txt | tr '\n' ',')
           cd LanguageTool-6.3
           java -jar languagetool-commandline.jar -d ${disabled_rules} -l uk --json ../${{ steps.md2txt.outputs.translation }} > ../result.json
-      - uses: actions/upload-artifact@v2
-        with:
-          name: result
-          path: result.json
+          echo "result=$(cat result.json | jq -r '.matches')" >> $GITHUB_OUTPUT
   report-spelling:
     if: ${{ needs.languagetool.outputs.result != '[]'  }}
     name: Report spelling
