@@ -44,40 +44,40 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      # - name: Remove code blocks
-      #   run: |
-      #     file=${{ needs.prepare-translation.outputs.translation }}
-      #     sed -i '/```/,/```/d' $file
+      - name: Remove code blocks
+        run: |
+          file=${{ needs.prepare-translation.outputs.translation }}
+          sed -i '/```/,/```/d' $file
       # Strip all macros
-      # - id: strip-macros
-      #   run: |
-      #     file=${{ needs.prepare-translation.outputs.translation }}
-      #     # Remove all macros with no arguments
-      #     sed -i 's/{{[a-zA-Z_-]*}}//' $file
-      #     # Replace macros with one argument
-      #     sed -i 's/{{[[:alnum:]_-]*(\("[[:alnum:]_-]*"\))}}/\1/g' $file
-      #     # Replace macros with two arguments
-      #     sed -i 's/{{[[:alnum:]_-]*(\("[[:alnum:]_-]*"\), \("[[:alnum:]_-]*"\))}}/\2/g' $file
-      #     # Replace macros with more than two arguments
-      #     sed -i 's/{{[[:alnum:]_-]*(\("[[:alnum:]_-]*"\), \("[[:alnum:]_-]*"\), \("[[:alnum:]_-]*"\))}}/\2/g' $file
+      - id: strip-macros
+        run: |
+          file=${{ needs.prepare-translation.outputs.translation }}
+          # Remove all macros with no arguments
+          sed -i 's/{{[a-zA-Z_-]*}}//' $file
+          # Replace macros with one argument
+          sed -i 's/{{[[:alnum:]_-]*(\("[[:alnum:]_-]*"\))}}/\1/g' $file
+          # Replace macros with two arguments
+          sed -i 's/{{[[:alnum:]_-]*(\("[[:alnum:]_-]*"\), \("[[:alnum:]_-]*"\))}}/\2/g' $file
+          # Replace macros with more than two arguments
+          sed -i 's/{{[[:alnum:]_-]*(\("[[:alnum:]_-]*"\), \("[[:alnum:]_-]*"\), \("[[:alnum:]_-]*"\))}}/\2/g' $file
       # Reduce markdown to plain text
-      # - run: sudo apt install pandoc -y
-      # - id: md2txt
-      #   name: Convert markdown to plain text
-      #   run: |
-      #     file=${{ needs.prepare-translation.outputs.translation }}
-      #     newFileName=$(echo $file | sed 's/\.md/\.txt/')
-      #     pandoc -f markdown -t plain -o $newFileName $file
-      #     echo "translation=$newFileName" >> $GITHUB_OUTPUT
-      #     echo $newFileName
+      - run: sudo apt install pandoc -y
+      - id: md2txt
+        name: Convert markdown to plain text
+        run: |
+          file=${{ needs.prepare-translation.outputs.translation }}
+          newFileName=$(echo $file | sed 's/\.md/\.txt/')
+          pandoc -f markdown -t plain -o $newFileName $file
+          echo "translation=$newFileName" >> $GITHUB_OUTPUT
+          echo $newFileName
       # Error if translation file is not found
-      # - if: steps.md2txt.outputs.translation == ''
-      #   name: Check translation is found
-      #   run: echo "No translation file found" && exit 1
+      - if: steps.md2txt.outputs.translation == ''
+        name: Check translation is found
+        run: echo "No translation file found" && exit 1
       # Check if the translation file exists
       # - name: Check translation exists
       #   run: if test -f ${{ steps.md2txt.outputs.translation }}; then echo "File exists."; else exit 1; fi
-      - uses: reviewdog/action-languagetool@master
+      - uses: webdoky/action-languagetool@master
         with:
           disabled_rules: "NEVIDYEMNYI,UK_SIMPLE_REPLACE_SOFT,WHITESPACE_RULE"
           # github_token: ${{ secrets.github_token }}
