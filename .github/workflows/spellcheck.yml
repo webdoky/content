@@ -114,10 +114,10 @@ jobs:
       - name: Install yq
         run: |
           VERSION=v4.40.2
-          wget https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY} -O /usr/bin/yq &&\
-          chmod +x /usr/bin/yq
+          wget https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY} -O ./bin/yq &&\
+          chmod +x ./bin/yq
       - name: Convert result into YAML
-        run: echo "${{ needs.languagetool.outputs.result }}" | /bin/yq -P > result.yml
+        run: echo "${{ needs.languagetool.outputs.result }}" | ./bin/yq -P > result.yml
       - name: Install Mustache
         run: |
           GO_MUSTACHE_VERSION=1.4.0
