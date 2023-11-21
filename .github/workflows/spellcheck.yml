@@ -133,8 +133,7 @@ jobs:
         name: Create message
         run: |
           echo "message=$(./bin/mustache result.json langtool.mustache)" >> $GITHUB_OUTPUT
-      - name: Install reviewdog
-        run: curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s
+      - uses: reviewdog/action-setup@v1
       - name: Send results
         run: |
           export REVIEWDOG_GITHUB_API_TOKEN=${{ secrets.GITHUB_TOKEN }}
