@@ -95,7 +95,7 @@ jobs:
           java -jar languagetool-commandline.jar -d ${{steps.disabled-rules.outputs.disabled_rules}} -l uk --json ../${{ steps.md2txt.outputs.translation }} > ../result.json
           EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
           echo "result<<$EOF" >> $GITHUB_OUTPUT
-          echo "$(cat ../result.json" >> $GITHUB_OUTPUT
+          echo "$(cat ../result.json)" >> $GITHUB_OUTPUT
           echo "$EOF" >> $GITHUB_OUTPUT
           matches=$(cat ../result.json | jq '.matches')
           # Check if matches equal []
@@ -111,15 +111,25 @@ jobs:
           fetch-depth: 0
       - name: Install reviewdog
         run: curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s
-      - name: Install Go
-        uses: actions/setup-go@v4
-        with:
-          go-version: 1.16
-      - name: Install tmpl
-        run: go get github.com/benbjohnson/tmpl
+      - name: Install yq
+        run: |
+          VERSION=v4.40.2
+          wget https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY} -O /usr/bin/yq &&\
+          chmod +x /usr/bin/yq
+      - name: Convert result into YAML
+        run: echo "${{ needs.languagetool.outputs.result }}" | /bin/yq -P > result.yml
+      - name: Install Mustache
+        run: |
+          GO_MUSTACHE_VERSION=1.4.0
+          curl -s -L -o /tmp/mustache.tgz https://github.com/cbroglie/mustache/releases/download/v${GO_MUSTACHE_VERSION}/mustache_${GO_MUSTACHE_VERSION}_linux_amd64.tar.gz
+          tar xvf /tmp/mustache.tgz -C /bin
+      - id: create-message
+        name: Create message
+        run: |
+          echo "message=$(/bin/mustache result.yml langtool.mustache" >> $GITHUB_OUTPUT
       - name: Send results
         run: |
-          message=$(tmpl -data "${{ needs.languagetool.outputs.result }}" ./langtool.tmpl)
+          message=$(tmpl -data "${{ steps.create-message.outputs.message }}" ./langtool.tmpl)
           export REVIEWDOG_GITHUB_API_TOKEN=${{ secrets.GITHUB_TOKEN }}
           echo "$message" | /bin/reviewdog -efm="%A%f:%l:%c: %m" -efm="%C %m" -name="LanguageTool" -level=info
       - name: Exit with error

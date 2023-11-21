@@ -1,0 +1,15 @@
+{{#matches}}
+  {{message}} ({{rule.id}}{{#rule.subId}}[{{rule.subId}}]{{/rule.subId}})
+
+  {{#replacements}}
+    {{#replacements.0}}, {{/replacements.0}}`{{value}}`
+  {{/replacements}}
+
+  {{#rule.urls}}
+    URL: {{.}}
+  {{/rule.urls}}
+
+  Правило: https://community.languagetool.org/rule/show/{{rule.id}}?lang=uk{{#rule.subId}}&subId={{rule.subId}}{{/rule.subId}}
+
+  Категорія: {{rule.category.id}}
+{{/matches}}
