@@ -111,8 +111,8 @@ jobs:
         run: sudo apt install -y tmpl
       - name: Send results
         run: |
-          message=$(echo "${{ needs.languagetool.outputs.result }}" | tmpl ./langtool.tmpl)
+          message=$(tmpl -data "${{ needs.languagetool.outputs.result }}" ./langtool.tmpl)
           export REVIEWDOG_GITHUB_API_TOKEN=${{ secrets.GITHUB_TOKEN }}
-          echo $message | reviewdog -efm="%A%f:%l:%c: %m" -efm="%C %m" -name="LanguageTool" -level=info
+          echo "$message" | /bin/reviewdog -efm="%A%f:%l:%c: %m" -efm="%C %m" -name="LanguageTool" -level=info
       - name: Exit with error
-        run: echo "Spelling errors found" && echo ${{ needs.languagetool.outputs.result }} && exit 1
+        run: echo "Spelling errors found" && echo "${{ needs.languagetool.outputs.result }}"" && exit 1
