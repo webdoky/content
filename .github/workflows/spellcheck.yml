@@ -96,7 +96,7 @@ jobs:
           # Check if matches equal []
           echo "has_matches=$(if [ "$matches" == "[]" ]; then echo "false"; else echo "true"; fi)" >> $GITHUB_OUTPUT
       - name: Upload result.json
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: result
           path: result.json
@@ -113,9 +113,10 @@ jobs:
         run: |
           BINARY=yq_linux_amd64
           VERSION=v4.40.2
+          mkdir -p ./bin
           wget https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY} -O ./bin/yq &&\
           chmod +x ./bin/yq
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
         with:
           name: result
           path: result.json
