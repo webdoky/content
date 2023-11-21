@@ -40,6 +40,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Remove code blocks
         run: |
           file=${{ needs.prepare-translation.outputs.translation }}
@@ -88,13 +90,16 @@ jobs:
           disabled_rules=$(cat disabled_rules.txt | tr '\n' ',')
           cd LanguageTool-6.3
           java -jar languagetool-commandline.jar -d ${disabled_rules} -l uk --json ../${{ steps.md2txt.outputs.translation }} > ../result.json
-          echo "result=$(cat result.json | jq -r '.matches')" >> $GITHUB_OUTPUT
+          echo "result=$(cat ../result.json | jq -r '.matches')" >> $GITHUB_OUTPUT
   report-spelling:
     if: ${{ needs.languagetool.outputs.result != '[]'  }}
     name: Report spelling
     needs: [languagetool]
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Install reviewdog
         run: curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s
       - name: Install tmpl
