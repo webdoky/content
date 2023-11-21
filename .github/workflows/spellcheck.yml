@@ -83,5 +83,4 @@ jobs:
           # github_token: ${{ secrets.github_token }}
           language: uk
           level: info
-          # patterns: ${{ steps.md2txt.outputs.translation }}
-          patterns: "files/**/*.md"
+          patterns: "files/**/*.txt"
