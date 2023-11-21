@@ -31,16 +31,12 @@ jobs:
               fi
             fi
           fi
-      # - if: steps.translation-changes.outputs.translation != ''
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: translation
-      #     path: ${{ steps.translation-changes.outputs.translation }}
-      # # - run: echo "translation=${{ steps.translation-changes.outputs.translation }}" >> $GITHUB_OUTPUT
   languagetool:
+    if: ${{ needs.prepare-translation.outputs.translation != '' }}
     name: runner / languagetool
     needs: [prepare-translation]
-    if: ${{ needs.prepare-translation.outputs.translation != '' }}
+    outputs:
+      result: ${{ steps.check-spelling.outputs.result }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -74,18 +70,6 @@ jobs:
       - if: steps.md2txt.outputs.translation == ''
         name: Check translation is found
         run: echo "No translation file found" && exit 1
-      # Check if the translation file exists
-      # - name: Check translation exists
-      #   run: if test -f ${{ steps.md2txt.outputs.translation }}; then echo "File exists."; else exit 1; fi
-      # - uses: webdoky/action-languagetool@master
-      #   with:
-      #     disabled_rules: "NEVIDYEMNYI,UK_SIMPLE_REPLACE_SOFT,WHITESPACE_RULE"
-      #     # github_token: ${{ secrets.github_token }}
-      #     language: uk-UA
-      #     level: info
-      #     # patterns: ${{ needs.prepare-translation.outputs.translation }}
-      #     patterns: ${{ steps.md2txt.outputs.translation }}
-      #     # patterns: "**/*.txt"
       - uses: actions/setup-java@v2
         with:
           distribution: "temurin"
@@ -103,18 +87,23 @@ jobs:
         run: |
           disabled_rules=$(cat disabled_rules.txt | tr '\n' ',')
           cd LanguageTool-6.3
-          result=$(java -jar languagetool-commandline.jar -d ${disabled_rules} -l uk --json ../${{ steps.md2txt.outputs.translation }})
-          result=$(echo $result | jq '.matches')
-          echo "result=$result" >> $GITHUB_OUTPUT
-      - if: steps.check-spelling.outputs.result != '[]'
-        name: Check spelling
-        run: echo "Spelling errors found" && echo ${{ steps.check-spelling.outputs.result }} && exit 1
-      - if: steps.check-spelling.outputs.result != '[]'
-        name: Install reviewdog
+          java -jar languagetool-commandline.jar -d ${disabled_rules} -l uk --json ../${{ steps.md2txt.outputs.translation }} > ../result.json
+      - uses: actions/upload-artifact@v2
+        with:
+          name: result
+          path: result.json
+  report-spelling:
+    if: ${{ needs.languagetool.outputs.result != '[]'  }}
+    name: Report spelling
+    needs: [languagetool]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install reviewdog
         run: wget -O - -q https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s [vX.Y.Z]
-      - if: steps.check-spelling.outputs.result != '[]'
-        name: Send results
+      - name: Send results
         run: |
-          message=$(echo "${{ steps.check-spelling.outputs.result }}" | tmpl ./langtool.tmpl)
+          message=$(echo "${{ needs.languagetool.outputs.result }}" | tmpl ./langtool.tmpl)
           export REVIEWDOG_GITHUB_API_TOKEN=${{ secrets.GITHUB_TOKEN }}
           echo $message | reviewdog -efm="%A%f:%l:%c: %m" -efm="%C %m" -name="LanguageTool" -level=info
+      - name: Exit with error
+        run: echo "Spelling errors found" && echo ${{ needs.languagetool.outputs.result }} && exit 1
