@@ -250,6 +250,26 @@ display: unset;
 - [Сіткове компонування CSS та поступове поліпшення підтримки](/uk/docs/Web/CSS/CSS_grid_layout/Grid_layout_and_progressive_enhancement)
 - [Втілення звичних макетів за допомогою сіток](/uk/docs/Web/CSS/CSS_grid_layout/Realizing_common_layouts_using_grids)
 
+### Animating display
+
+[Браузери, що це підтримують](#sumisnist-iz-brauzeramy), анімують `display` із [дискретним типом анімації](/uk/docs/Web/CSS/CSS_animated_properties#dyskretni). Загалом це означає, що властивість буде змінюється між двома значеннями на 50% анімації між ними.
+
+Є виняток, а саме – при анімації до чи від `display: none`. У цьому випадку браузер перемикається між двома значеннями так, щоб анімований вміст був видимим протягом усієї тривалості анімації. Отже, наприклад:
+
+- Коли `display` анімується від `none` до `block` (чи іншого видимого значення `display`), значення перемикається на `block` на `0%` тривалості анімації, щоб воно було видимим протягом усієї анімації.
+- Коли `display` анімується від `block` (чи іншого видимого значення `display`) до `none`, значення перемикається на `none` на `100%` тривалості анімації, щоб воно було видимим протягом усієї анімації.
+
+Така поведінка корисна для створення анімацій входу-виходу, коли хочеться, наприклад, вилучити контейнер із DOM із `display: none`, але зробити його зникнення плавним за допомогою [`opacity`](/uk/docs/Web/CSS/opacity), а не миттєвим.
+
+Коли `display` анімується за допомогою [Анімацій CSS](/uk/docs/Web/CSS/CSS_animations), потрібно вказати початкове значення `display` у явному ключовому кадрі (наприклад, використовуючи `0%` чи `from`). Дивіться приклад у [Застосуванні Анімацій CSS](/uk/docs/Web/CSS/CSS_animations/Using_CSS_animations).
+
+Коли `display` анімується за допомогою [Переходів CSS](/uk/docs/Web/CSS/CSS_transitions), необхідні дві додаткові речі:
+
+- Директива [`@starting-style`](/uk/docs/Web/CSS/@starting-style) задає стартові значення для властивостей, від яких повинен відбуватися перехід, коли анімований елемент уперше показується. Це необхідно для уникнення неочікуваної поведінки. Усталено Переходи CSS не запускаються при першому оновленні стилю елемента чи тоді, коли тип `display` змінюється з `none` на інший.
+- На оголошенні {{cssxref("transition-property")}} (або скороченні {{cssxref("transition")}}) повинен бути заданий стиль [`transition-behavior: allow-discrete`](/uk/docs/Web/CSS/transition-behavior), щоб увімкнути переходи `display`.
+
+Приклади переходів за властивістю `display` дивіться на сторінках [`@starting-style`](/uk/docs/Web/CSS/@starting-style#pryklady) і [`transition-behavior`](/uk/docs/Web/CSS/transition-behavior#pryklady).
+
 ## Занепокоєння щодо доступності
 
 ### display: none
