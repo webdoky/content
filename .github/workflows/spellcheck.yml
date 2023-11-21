@@ -36,8 +36,7 @@ jobs:
     name: runner / languagetool
     needs: [prepare-translation]
     outputs:
-      has_matches: ${{ steps.check-spelling.outputs.has_matches }}}
-      result: ${{ steps.check-spelling.outputs.result }}
+      has_matches: ${{ steps.check-spelling.outputs.has_matches }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -93,13 +92,14 @@ jobs:
         run: |
           cd LanguageTool-6.3
           java -jar languagetool-commandline.jar -d ${{steps.disabled-rules.outputs.disabled_rules}} -l uk --json ../${{ steps.md2txt.outputs.translation }} > ../result.json
-          EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
-          echo "result<<$EOF" >> $GITHUB_OUTPUT
-          echo "$(cat ../result.json)" >> $GITHUB_OUTPUT
-          echo "$EOF" >> $GITHUB_OUTPUT
           matches=$(cat ../result.json | jq '.matches')
           # Check if matches equal []
           echo "has_matches=$(if [ "$matches" == "[]" ]; then echo "false"; else echo "true"; fi)" >> $GITHUB_OUTPUT
+      - name: Upload result.json
+        uses: actions/upload-artifact@v2
+        with:
+          name: result
+          path: result.json
   report-spelling:
     if: ${{ needs.languagetool.outputs.has_matches != 'false'  }}
     name: Report spelling
@@ -109,17 +109,18 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Install reviewdog
-        run: curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s
       - name: Install yq
         run: |
           BINARY=yq_linux_amd64
           VERSION=v4.40.2
           wget https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY} -O ./bin/yq &&\
           chmod +x ./bin/yq
+      - uses: actions/download-artifact@v2
+        with:
+          name: result
+          path: result.json
       - name: Convert result into YAML
         run: |
-          echo "${{ needs.languagetool.outputs.result }}" > result.json
           ./bin/yq -Poy result.json > result.yml
       - name: Install Mustache
         run: |
@@ -130,9 +131,11 @@ jobs:
         name: Create message
         run: |
           echo "message=$(/bin/mustache result.yml langtool.mustache)" >> $GITHUB_OUTPUT
+      - name: Install reviewdog
+        run: curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s
       - name: Send results
         run: |
           export REVIEWDOG_GITHUB_API_TOKEN=${{ secrets.GITHUB_TOKEN }}
           echo "$${{ steps.create-message.outputs.message }}" | /bin/reviewdog -efm="%A%f:%l:%c: %m" -efm="%C %m" -reporter=github-pr-review -name="LanguageTool" -level=info
       - name: Exit with error
-        run: echo "Spelling errors found" && echo "${{ needs.languagetool.outputs.result }}" && exit 1
+        run: echo "Spelling errors found" && cat result.json && exit 1
