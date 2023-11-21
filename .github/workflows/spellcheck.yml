@@ -86,6 +86,10 @@ jobs:
       #     # patterns: ${{ needs.prepare-translation.outputs.translation }}
       #     patterns: ${{ steps.md2txt.outputs.translation }}
       #     # patterns: "**/*.txt"
+      - uses: actions/setup-java@v2
+        with:
+          distribution: "temurin"
+          java-version: "8"
       - name: Check spelling
         run: |
           wget https://repo.maven.apache.org/maven2/org/languagetool/languagetool-server/6.3/languagetool-server-6.3.jar
