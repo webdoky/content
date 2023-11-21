@@ -118,7 +118,9 @@ jobs:
           wget https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY} -O ./bin/yq &&\
           chmod +x ./bin/yq
       - name: Convert result into YAML
-        run: echo "${{ needs.languagetool.outputs.result }}" | ./bin/yq -Poy > result.yml
+        run: |
+          echo "${{ needs.languagetool.outputs.result }}" > result.json
+          ./bin/yq -Poy result.json > result.yml
       - name: Install Mustache
         run: |
           GO_MUSTACHE_VERSION=1.4.0
@@ -127,11 +129,10 @@ jobs:
       - id: create-message
         name: Create message
         run: |
-          echo "message=$(/bin/mustache result.yml langtool.mustache" >> $GITHUB_OUTPUT
+          echo "message=$(/bin/mustache result.yml langtool.mustache)" >> $GITHUB_OUTPUT
       - name: Send results
         run: |
-          message=$(tmpl -data "${{ steps.create-message.outputs.message }}" ./langtool.tmpl)
           export REVIEWDOG_GITHUB_API_TOKEN=${{ secrets.GITHUB_TOKEN }}
-          echo "$message" | /bin/reviewdog -efm="%A%f:%l:%c: %m" -efm="%C %m" -name="LanguageTool" -level=info
+          echo "$${{ steps.create-message.outputs.message }}" | /bin/reviewdog -efm="%A%f:%l:%c: %m" -efm="%C %m" -reporter=github-pr-review -name="LanguageTool" -level=info
       - name: Exit with error
         run: echo "Spelling errors found" && echo "${{ needs.languagetool.outputs.result }}" && exit 1
