@@ -122,6 +122,7 @@ jobs:
           path: result.json
       - name: Convert result into YAML
         run: |
+          cat result.json
           ./bin/yq -P -o=yml result.json > result.yml
       - name: Install Mustache
         run: |
