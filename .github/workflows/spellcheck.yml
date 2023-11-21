@@ -98,9 +98,10 @@ jobs:
           echo "$(cat ../result.json" >> $GITHUB_OUTPUT
           echo "$EOF" >> $GITHUB_OUTPUT
           matches=$(cat ../result.json | jq '.matches')
-          echo "has_matches=$(echo $matches | jq 'length')" >> $GITHUB_OUTPUT
+          # Check if matches equal []
+          echo "has_matches=$(if [ "$matches" == "[]" ]; then echo "false"; else echo "true"; fi)" >> $GITHUB_OUTPUT
   report-spelling:
-    if: ${{ needs.languagetool.outputs.has_matches  }}
+    if: ${{ needs.languagetool.outputs.has_matches != 'false'  }}
     name: Report spelling
     needs: [languagetool]
     runs-on: ubuntu-latest
