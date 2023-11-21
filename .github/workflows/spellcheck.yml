@@ -36,6 +36,7 @@ jobs:
     name: runner / languagetool
     needs: [prepare-translation]
     outputs:
+      has_matches: ${{ steps.check-spelling.outputs.has_matches }}}
       result: ${{ steps.check-spelling.outputs.result }}
     runs-on: ubuntu-latest
     steps:
@@ -94,10 +95,12 @@ jobs:
           java -jar languagetool-commandline.jar -d ${{steps.disabled-rules.outputs.disabled_rules}} -l uk --json ../${{ steps.md2txt.outputs.translation }} > ../result.json
           EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
           echo "result<<$EOF" >> $GITHUB_OUTPUT
-          echo "$(cat ../result.json | jq -r '.matches')" >> $GITHUB_OUTPUT
+          echo "$(cat ../result.json" >> $GITHUB_OUTPUT
           echo "$EOF" >> $GITHUB_OUTPUT
+          matches=$(cat ../result.json | jq '.matches')
+          echo "has_matches=$(echo $matches | jq 'length')" >> $GITHUB_OUTPUT
   report-spelling:
-    if: ${{ needs.languagetool.outputs.result != '[]'  }}
+    if: ${{ needs.languagetool.outputs.has_matches  }}
     name: Report spelling
     needs: [languagetool]
     runs-on: ubuntu-latest
@@ -119,4 +122,4 @@ jobs:
           export REVIEWDOG_GITHUB_API_TOKEN=${{ secrets.GITHUB_TOKEN }}
           echo "$message" | /bin/reviewdog -efm="%A%f:%l:%c: %m" -efm="%C %m" -name="LanguageTool" -level=info
       - name: Exit with error
-        run: echo "Spelling errors found" && echo "${{ needs.languagetool.outputs.result }}"" && exit 1
+        run: echo "Spelling errors found" && echo "${{ needs.languagetool.outputs.result }}" && exit 1

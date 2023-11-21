@@ -1,4 +1,4 @@
-{{ range $_, $m := . -}}
+{{ range $_, $m := .matches -}}
   {{- /* <message><rule> */ -}}
   {{ $m.message }}
   {{- sp}}({{ $m.rule.id }}{{ if $m.rule.subId }}[{{ $m.rule.subId }}]{{end}}){{- nl -}}
