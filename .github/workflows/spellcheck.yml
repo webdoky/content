@@ -77,12 +77,26 @@ jobs:
       # Check if the translation file exists
       # - name: Check translation exists
       #   run: if test -f ${{ steps.md2txt.outputs.translation }}; then echo "File exists."; else exit 1; fi
-      - uses: webdoky/action-languagetool@master
-        with:
-          disabled_rules: "NEVIDYEMNYI,UK_SIMPLE_REPLACE_SOFT,WHITESPACE_RULE"
-          # github_token: ${{ secrets.github_token }}
-          language: uk-UA
-          level: info
-          # patterns: ${{ needs.prepare-translation.outputs.translation }}
-          patterns: ${{ steps.md2txt.outputs.translation }}
-          # patterns: "**/*.txt"
+      # - uses: webdoky/action-languagetool@master
+      #   with:
+      #     disabled_rules: "NEVIDYEMNYI,UK_SIMPLE_REPLACE_SOFT,WHITESPACE_RULE"
+      #     # github_token: ${{ secrets.github_token }}
+      #     language: uk-UA
+      #     level: info
+      #     # patterns: ${{ needs.prepare-translation.outputs.translation }}
+      #     patterns: ${{ steps.md2txt.outputs.translation }}
+      #     # patterns: "**/*.txt"
+      - name: Check spelling
+        run: |
+          wget https://repo.maven.apache.org/maven2/org/languagetool/languagetool-server/6.3/languagetool-server-6.3.jar
+          java -cp languagetool-server-6.3.jar org.languagetool.server.HTTPServer --port 8081 &
+          sleep 3
+          result=$(curl -X POST --data-binary @$GITHUB_WORKSPACE/${{ steps.md2txt.outputs.translation }} http://localhost:8081/v2/check?language=uk-UA&disabledRules=NEVIDYEMNYI,UK_SIMPLE_REPLACE_SOFT,WHITESPACE_RULE)
+          echo $result
+          if [ "$result" == "[]" ]; then
+            echo "No spelling errors found"
+          else
+            echo "Spelling errors found"
+            echo $result
+            exit 1
+          fi
