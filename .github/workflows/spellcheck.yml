@@ -90,13 +90,18 @@ jobs:
         with:
           distribution: "temurin"
           java-version: "8"
+      - name: Download LanguageTool
+        run: wget https://languagetool.org/download/LanguageTool-6.3.zip
+      - name: Unzip LanguageTool
+        run: unzip -qq LanguageTool-6.3.zip
+      - name: Add spelling additions
+        run: |
+          cat uk_spelling_additions.txt >> ./LanguageTool-6.3/org/languagetool/resource/uk/hunspell/spelling.txt
+          cat uk_ignore_additions.txt >> ./LanguageTool-6.3/org/languagetool/resource/uk/hunspell/ignore.txt
       - name: Check spelling
         run: |
           disabled_rules=$(cat disabled_rules.txt | tr '\n' ',')
-          wget https://languagetool.org/download/LanguageTool-6.3.zip
-          unzip -qq LanguageTool-6.3.zip && cd LanguageTool-6.3
-          cat ../uk_spelling_additions.txt >> ./org/languagetool/resource/uk/hunspell/spelling.txt
-          cat ../uk_ignore_additions.txt >> ./org/languagetool/resource/uk/hunspell/ignore.txt
+          cd LanguageTool-6.3
           result=$(java -jar languagetool-commandline.jar -d ${disabled_rules} -l uk --json ${{ steps.md2txt.outputs.translation }})
           if [ "$result" == "[]" ]; then
             echo "No spelling errors found"
