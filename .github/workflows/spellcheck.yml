@@ -79,9 +79,8 @@ jobs:
         with:
           disabled_rules: "NEVIDYEMNYI,UK_SIMPLE_REPLACE_SOFT,WHITESPACE_RULE"
           # github_token: ${{ secrets.github_token }}
-          language: "uk-UA"
+          language: uk
           level: info
           patterns: ${{ steps.md2txt.outputs.translation }}
-          reporter: github-pr-review
-          wait_server_startup_duration: 10
+          wait_server_startup_duration: 1
           # patterns: "files/**/*.md"
