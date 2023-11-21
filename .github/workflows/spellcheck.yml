@@ -94,7 +94,7 @@ jobs:
         run: |
           disabled_rules=$(cat disabled_rules.txt | tr '\n' ',')
           wget https://languagetool.org/download/LanguageTool-stable.zip
-          unzip LanguageTool-stable.zip && cd LanguageTool-stable
+          unzip -q LanguageTool-stable.zip && cd LanguageTool-stable
           cat ../uk_spelling_additions.txt >> org/languagetool/resource/uk/hunspell/spelling.txt
           cat ../uk_ignore_additions.txt >> org/languagetool/resource/uk/hunspell/ignore.txt
           cat ../uk_prohibited_additions.txt >> org/languagetool/resource/uk/hunspell/prohibited.txt
