@@ -109,31 +109,31 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Install yq
-        run: |
-          BINARY=yq_linux_amd64
-          VERSION=v4.40.2
-          mkdir -p ./bin
-          wget https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY} -O ./bin/yq &&\
-          chmod +x ./bin/yq
+      # - name: Install yq
+      #   run: |
+      #     BINARY=yq_linux_amd64
+      #     VERSION=v4.40.2
+      #     mkdir -p ./bin
+      #     wget https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY} -O ./bin/yq &&\
+      #     chmod +x ./bin/yq
       - uses: actions/download-artifact@v3
         with:
           name: result
-          path: result.json
-      - name: Convert result into YAML
-        run: |
-          cat result.json
-          ./bin/yq -P -o=yml result.json > result.yml
+          path: .
+      # - name: Convert result into YAML
+      #   run: |
+      #     cat result.json
+      #     ./bin/yq -P -o=yml result.json > result.yml
       - name: Install Mustache
         run: |
           GO_MUSTACHE_VERSION=1.4.0
-          # mkdir -p ./bin
+          mkdir -p ./bin
           curl -s -L -o /tmp/mustache.tgz https://github.com/cbroglie/mustache/releases/download/v${GO_MUSTACHE_VERSION}/mustache_${GO_MUSTACHE_VERSION}_linux_amd64.tar.gz
           tar xvf /tmp/mustache.tgz -C ./bin
       - id: create-message
         name: Create message
         run: |
-          echo "message=$(./bin/mustache result.yml langtool.mustache)" >> $GITHUB_OUTPUT
+          echo "message=$(./bin/mustache result.json langtool.mustache)" >> $GITHUB_OUTPUT
       - uses: reviewdog/action-setup@v1
       - name: Send results
         run: |
