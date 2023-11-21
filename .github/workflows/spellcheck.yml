@@ -100,6 +100,8 @@ jobs:
     steps:
       - name: Install reviewdog
         run: curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s
+      - name: Install tmpl
+        run: sudo apt install -y tmpl
       - name: Send results
         run: |
           message=$(echo "${{ needs.languagetool.outputs.result }}" | tmpl ./langtool.tmpl)
