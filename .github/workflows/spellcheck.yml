@@ -91,7 +91,7 @@ jobs:
           distribution: "temurin"
           java-version: "8"
       - name: Download LanguageTool
-        run: wget https://languagetool.org/download/LanguageTool-6.3.zip
+        run: wget -q https://languagetool.org/download/LanguageTool-6.3.zip
       - name: Unzip LanguageTool
         run: unzip -qq LanguageTool-6.3.zip
       - name: Add spelling additions
@@ -102,7 +102,7 @@ jobs:
         run: |
           disabled_rules=$(cat disabled_rules.txt | tr '\n' ',')
           cd LanguageTool-6.3
-          result=$(java -jar languagetool-commandline.jar -d ${disabled_rules} -l uk --json ${{ steps.md2txt.outputs.translation }})
+          result=$(java -jar languagetool-commandline.jar -d ${disabled_rules} -l uk --json ../${{ steps.md2txt.outputs.translation }})
           if [ "$result" == "[]" ]; then
             echo "No spelling errors found"
           else
