@@ -92,11 +92,11 @@ jobs:
           java-version: "8"
       - name: Check spelling
         run: |
-          wget https://repo.maven.apache.org/maven2/org/languagetool/languagetool-server/6.3/languagetool-server-6.3.jar
-          java -cp languagetool-server-6.3.jar org.languagetool.server.HTTPServer --port 8081 &
-          sleep 3
+          wget https://languagetool.org/download/LanguageTool-stable.zip
+          unzip LanguageTool-stable.zip
+          java -cp LanguageTool-stable/languagetool-server.jar org.languagetool.server.HTTPServer --port 8081 &
+          sleep 10
           result=$(curl -X POST --data-binary @$GITHUB_WORKSPACE/${{ steps.md2txt.outputs.translation }} http://localhost:8081/v2/check?language=uk-UA&disabledRules=NEVIDYEMNYI,UK_SIMPLE_REPLACE_SOFT,WHITESPACE_RULE)
-          echo $result
           if [ "$result" == "[]" ]; then
             echo "No spelling errors found"
           else
