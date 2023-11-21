@@ -118,7 +118,7 @@ jobs:
           wget https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY} -O ./bin/yq &&\
           chmod +x ./bin/yq
       - name: Convert result into YAML
-        run: echo "${{ needs.languagetool.outputs.result }}" | ./bin/yq -P > result.yml
+        run: echo "${{ needs.languagetool.outputs.result }}" | ./bin/yq -Poy > result.yml
       - name: Install Mustache
         run: |
           GO_MUSTACHE_VERSION=1.4.0
