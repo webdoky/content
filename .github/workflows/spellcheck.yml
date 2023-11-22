@@ -141,6 +141,6 @@ jobs:
       - name: Send results
         uses: mshick/add-pr-comment@v2
         with:
-          message_path: ./message.txt
+          message-path: ./message.txt
       - name: Exit with error
         run: echo "Spelling errors found" && cat result.json && exit 1
