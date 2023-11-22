@@ -7,9 +7,9 @@ status:
 browser-compat: javascript.builtins.String.substr
 ---
 
-{{JSRef}} {{deprecated_header}}
+{{JSRef}} {{Deprecated_Header}}
 
-Метод **`substr()`** (підрядок) повертає порцію рядка, яка починається за вказаним індексом і продовжується протягом заданої кількості символів.
+Метод **`substr()`** (підрядок) значень {{jsxref("String")}} повертає порцію рядка, яка починається за вказаним індексом і продовжується протягом заданої кількості символів.
 
 > **Примітка:** `substr` не є частиною специфікації ECMAScript: він означений в [Додатку B: Додаткових можливостях ECMAScript для веббраузерів](https://tc39.es/ecma262/multipage/additional-ecmascript-features-for-web-browsers.html), котрий є нормативним необов'язковим для небраузерних платформ. Таким чином, краще користуватися замість нього стандартними методами [`String.prototype.substring()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/substring) і [`String.prototype.slice()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/slice), аби код виходив якнайкраще кросплатформовим. [Сторінка `String.prototype.substring()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/substring#riznytsia-mizh-metodamy-substring-ta-substr) містить порівняння цих трьох методів.
 

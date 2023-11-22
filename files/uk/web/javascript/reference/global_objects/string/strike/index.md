@@ -1,47 +1,58 @@
 ---
 title: String.prototype.strike()
 slug: Web/JavaScript/Reference/Global_Objects/String/strike
-tags:
-  - Deprecated
-  - HTML wrapper methods
-  - JavaScript
-  - Method
-  - Prototype
-  - String
-  - Polyfill
+page-type: javascript-instance-method
+status:
+  - deprecated
 browser-compat: javascript.builtins.String.strike
 ---
-{{JSRef}} {{deprecated_header}}
 
-Метод **`strike()`** створює HTML-елемент {{HTMLElement("strike")}}, який змушує рядок зображатися як закреслений текст.
+{{JSRef}} {{Deprecated_Header}}
+
+Метод **`strike()`** (перекреслений) значень {{jsxref("String")}} створює рядок, що вбудовує рядок цього методу в елемент {{HTMLElement("strike")}} (`<strike>str</strike>`), завдяки якому цей рядок виводиться перекресленим текстом.
+
+> **Примітка:** Всі [обгортальні методи HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html) є нерекомендованими та стандартизовані лише заради потреб сумісності. У випадку `strike()`, сам елемент `<strike>` був вилучений зі Специфікації HTML і більше не повинен використовуватися. Веброзробники повинні використовувати {{HTMLElement("del")}} для видаленого вмісту та {{HTMLElement("s")}} для вмісту, який більше не є точним або актуальним.
 
 ## Синтаксис
 
-```js
-strike()
+```js-nolint
+strike();
 ```
+
+### Параметри
+
+Жодних.
 
 ### Повернене значення
 
-Рядок, що містить HTML-елемент {{HTMLElement("strike")}}.
-
-## Опис
-
-Метод `strike()` вписує рядок тексту в елемент `<strike>`: "`<strike>текст</strike>`".
+Рядок, що починається з початкового тега `<strike>`, потім текст `str`, а потім кінцевий тег `</strike>`.
 
 ## Приклади
 
 ### Застосування strike()
 
-Наступний приклад використовує методи рядка для зміни форматування тексту:
+Код нижче створює рядок HTML, а потім замінює тіло документа цим рядком:
 
 ```js
-var worldString = 'Привіт, світе';
+const contentString = "Привіт, світе";
 
-console.log(worldString.blink()); // <blink>Привіт, світе</blink>
-console.log(worldString.bold()); // <b>Привіт, світе</b>
-console.log(worldString.italics()); // <i>Привіт, світе</i>
-console.log(worldString.strike()); // <strike>Привіт, світе</strike>
+document.body.innerHTML = contentString.strike();
+```
+
+Це породжує наступний HTML:
+
+```html
+<strike>Привіт, світе</strike>
+```
+
+> **Застереження:** Ця розмітка є недійсною, адже `strike` більше не є дійсним елементом.
+> Замість використання `strike()` і безпосереднього створення тексту HTML слід використовувати API DOM штибу [`document.createElement()`](/uk/docs/Web/API/Document/createElement). Наприклад:
+
+```js
+const contentString = "Привіт, світе";
+const elem = document.createElement("s");
+elem.innerText = contentString;
+document.body.appendChild(elem);
 ```
 
 ## Специфікації
@@ -55,6 +66,5 @@ console.log(worldString.strike()); // <strike>Привіт, світе</strike>
 ## Дивіться також
 
 - Поліфіл методу `String.prototype.strike` наявний у [`core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
-- {{jsxref("String.prototype.blink()")}}
-- {{jsxref("String.prototype.bold()")}}
-- {{jsxref("String.prototype.italics()")}}
+- [Методи для обгортання в HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html)
+- {{HTMLElement("strike")}}

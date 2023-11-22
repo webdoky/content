@@ -7,9 +7,9 @@ browser-compat: javascript.builtins.String.repeat
 
 {{JSRef}}
 
-Метод **`repeat()`** збирає і повертає новий рядок, який містить вказану кількість копій рядка, на якому його було викликано, з'єднаних докупи.
+Метод **`repeat()`** (повторювати) значень {{jsxref("String")}} збирає і повертає новий рядок, який містить вказану кількість копій свого рядка, зчеплену докупи.
 
-{{EmbedInteractiveExample("pages/js/string-repeat.html","shorter")}}
+{{EmbedInteractiveExample("pages/js/string-repeat.html", "shorter")}}
 
 ## Синтаксис
 
@@ -20,7 +20,7 @@ repeat(count)
 ### Параметри
 
 - `count`
-  - : Ціле число в діапазоні між `0` та {{jsxref("Global_Objects/Number/POSITIVE_INFINITY", "+Infinity")}}, яке позначає те, скільки разів слід повторити початковий рядок.
+  - : Ціле число в діапазоні між `0` та {{jsxref("Number/POSITIVE_INFINITY", "+Infinity")}}, яке позначає те, скільки разів слід повторити початковий рядок.
 
 ### Повернене значення
 
