@@ -87,3 +87,5 @@ async function dataUrlToBytes(dataUrl) {
 await bytesToBase64DataUrl(new Uint8Array([0, 1, 2])); // "data:application/octet-stream;base64,AAEC"
 await dataUrlToBytes("data:application/octet-stream;base64,AAEC"); // Uint8Array [0, 1, 2]
 ```
+
+Іще один тестовий тест.
