@@ -10,21 +10,13 @@ jobs:
         with:
           fetch-depth: 0
       - id: changed-files
-        run: |
-          EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
-          echo "changed_files<<$EOF" >> $GITHUB_OUTPUT
-          git diff --diff-filter=d --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} >> $GITHUB_OUTPUT
-          echo "$EOF" >> $GITHUB_OUTPUT
+        run: git diff --diff-filter=d --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} > ./changed_files.txt
       - name: Check translation
         # Check there is only one translation change
         # If there are more than one, the workflow will fail
         id: translation-changes
         run: |
-          EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
-          changed_files=$(cat <<- $EOF
-            ${{steps.changed-files.outputs.changed_files}}
-          $EOF
-          )
+          changed_files=$(cat ./changed_files.txt)
           if [ -z "$changed_files" ]; then
             echo "No files changed"
           else
