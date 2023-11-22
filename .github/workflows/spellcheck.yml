@@ -24,8 +24,7 @@ jobs:
             echo "$translation_files"
             echo "$translation_files" > ./translation_files.txt
           fi
-      - if: ${{ steps.translation-changes.outputs.translation_files != '' }}
-        id: translation-check
+      - id: translation-check
         run: |
           translation_files=$(cat ./translation_files.txt)
           if [ -z "$translation_files" ]; then
