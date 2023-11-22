@@ -1,20 +1,21 @@
 ---
 title: Math.E
 slug: Web/JavaScript/Reference/Global_Objects/Math/E
-tags:
-  - JavaScript
-  - Math
-  - Property
-  - Reference
+page-type: javascript-static-data-property
 browser-compat: javascript.builtins.Math.E
 ---
+
 {{JSRef}}
 
-Властивість **`Math.E`** відображає число Ейлера `e` — основу натуральних логарифмів — яке наближено дорівнює 2.718.
+Статична властивість даних **`Math.E`** представляє число Ейлера `e` — основу натуральних логарифмів — яке наближено дорівнює 2.718.
 
-<math display="block"><semantics><mrow><mstyle mathvariant="monospace"><mi>Math.E</mi></mstyle><mo>=</mo><mi>e</mi><mo>≈</mo><mn>2.718</mn></mrow><annotation encoding="TeX">\mathtt{\mi{Math.E}} = e \approx 2.718</annotation></semantics></math>
+{{EmbedInteractiveExample("pages/js/math-e.html")}}
 
-{{EmbedInteractiveExample("pages/js/math-e.html")}}{{js_property_attributes(0, 0, 0)}}
+## Значення
+
+<math display="block"><semantics><mrow><mi>𝙼𝚊𝚝𝚑.𝙴</mi><mo>=</mo><mi>e</mi><mo>≈</mo><mn>2.718</mn></mrow><annotation encoding="TeX">\mathtt{\mi{Math.E}} = e \approx 2.718</annotation></semantics></math>
+
+{{js_property_attributes(0, 0, 0)}}
 
 ## Опис
 

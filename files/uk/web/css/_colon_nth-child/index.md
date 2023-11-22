@@ -7,7 +7,7 @@ browser-compat: css.selectors.nth-child
 
 {{CSSRef}}
 
-[Псевдоклас](/uk/docs/Web/CSS/Pseudo-classes) [CSS](/uk/docs/Web/CSS) **`:nth-child()`** (дочірній номер N) дає збіг з елементами на основі їх позицій серед групи сестринських елементів.
+[Псевдоклас](/uk/docs/Web/CSS/Pseudo-classes) [CSS](/uk/docs/Web/CSS) **`:nth-child()`** (дочірній номер N) дає збіг з елементами на основі їхніх індексів у списку дочірніх елементів їхніх батьківських елементів. Інакше кажучи, селектор `:nth-child()` вибирає дочірні елементи згідно з їхніми позиціями серед усіх сестринських елементів у батьківському елементі.
 
 {{EmbedInteractiveExample("pages/tabbed/pseudo-class-nth-child.html", "tabbed-shorter")}}
 
@@ -45,7 +45,7 @@ browser-compat: css.selectors.nth-child
 Шляхом передачі селектора як аргументу можна вибрати **nth** (n-ний) елемент, що відповідає цьому селектору. Наприклад, наступний селектор відповідає першим трьом елементам списку, які мають `class="important"`.
 
 ```css
-:nth-child(-n+3 of li.important) ;
+:nth-child(-n+3 of li.important);
 ```
 
 Це відрізняється від переміщення селектора за межі функції, як у наступному прикладі:
@@ -410,5 +410,8 @@ td {
 
 ## Дивіться також
 
-- {{Cssxref(":nth-of-type")}}
-- {{Cssxref(":nth-last-child")}}
+- {{Cssxref(":nth-of-type", ":nth-of-type()")}}
+- {{Cssxref(":nth-last-child", ":nth-last-child()")}}
+- {{Cssxref(":has", ":has()")}} – псевдоклас для вибору батьківського елемента
+- [Деревно-структурні псевдокласи](/uk/docs/Web/CSS/Pseudo-classes#derevno-strukturni-psevdoklasy)
+- Модуль [Селекторів CSS](/uk/docs/Web/CSS/CSS_selectors)

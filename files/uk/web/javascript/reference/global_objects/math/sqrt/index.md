@@ -1,69 +1,34 @@
 ---
 title: Math.sqrt()
 slug: Web/JavaScript/Reference/Global_Objects/Math/sqrt
-tags:
-  - JavaScript
-  - Math
-  - Method
-  - Reference
+page-type: javascript-static-method
 browser-compat: javascript.builtins.Math.sqrt
 ---
+
 {{JSRef}}
 
-Функція **`Math.sqrt()`** повертає квадратний корінь числа, а саме:
+Статичний метод **`Math.sqrt()`** повертає квадратний корінь числа. А саме
 
-<math display="block"><semantics><mrow><mo>∀</mo>
-<mi>x</mi>
-<mo>≥</mo>
-<mn>0</mn>
-<mo>,</mo>
-<mstyle mathvariant="monospace"><mrow><mi>M</mi>
-<mi>a</mi>
-<mi>t</mi>
-<mi>h</mi>
-<mo>.</mo>
-<mi>s</mi>
-<mi>q</mi>
-<mi>r</mi>
-<mi>t</mi>
-<mo stretchy="false">(</mo>
-<mi>x</mi>
-<mo stretchy="false">)</mo>
-</mrow></mstyle><mo>=</mo>
-<msqrt><mi>x</mi>
-</msqrt><mo>=</mo>
-<mtext>такий унікальний</mtext>
-<mspace width="thickmathspace"></mspace><mi>y</mi>
-<mo>≥</mo>
-<mn>0</mn>
-<mspace width="thickmathspace"></mspace><mtext>, для якого</mtext>
-<mspace width="thickmathspace"></mspace><msup><mi>y</mi>
-<mn>2</mn>
-</msup><mo>=</mo>
-<mi>x</mi>
-</mrow><annotation encoding="TeX">\forall x \geq 0, \mathtt{Math.sqrt(x)} = \sqrt{x} =
-\text{the unique} \; y \geq 0 \; \text{such that} \; y^2 = x</annotation></semantics></math>
+<math display="block"><semantics><mrow><mo>∀</mo><mi>x</mi><mo>≥</mo><mn>0</mn><mo>,</mo><mspace width="0.2777777777777778em"></mspace><mrow><mo lspace="0em" rspace="0.16666666666666666em">𝙼𝚊𝚝𝚑.𝚜𝚚𝚛𝚝</mo><mo stretchy="false">(</mo><mi>𝚡</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><msqrt><mi>x</mi></msqrt><mo>=</mo><mtext>такий унікальний&nbsp;</mtext><mi>y</mi><mo>≥</mo><mn>0</mn><mtext>&nbsp;, для якого&nbsp;</mtext><msup><mi>y</mi><mn>2</mn></msup><mo>=</mo><mi>x</mi></mrow><annotation encoding="TeX">\forall x \geq 0,\;\mathtt{\operatorname{Math.sqrt}(x)} = \sqrt{x} = \text{такий унікальний } y \geq 0 \text{ , для якого } y^2 = x</annotation></semantics></math>
 
 {{EmbedInteractiveExample("pages/js/math-sqrt.html")}}
 
 ## Синтаксис
 
-```js
+```js-nolint
 Math.sqrt(x)
 ```
 
 ### Параметри
 
 - `x`
-  - : Число.
+  - : Число, котре більше або дорівнює нулю.
 
 ### Повернене значення
 
-Квадратний корінь переданого числа. Якщо число від'ємне, буде повернено {{jsxref("NaN")}}.
+Квадратний корінь `x`, невід'ємне число. Якщо `x < 0`, то повертається {{jsxref("NaN")}}.
 
 ## Опис
-
-Якщо значення `x` — від'ємне, `Math.sqrt()` поверне {{jsxref("NaN")}}.
 
 Оскільки `sqrt()` — це статичний метод об'єкта `Math`, його потрібно завжди використовувати через `Math.sqrt()`. Не слід звертатись до нього, як до методу власноруч створеного екземпляра `Math` (`Math` не є конструктором).
 
@@ -72,13 +37,13 @@ Math.sqrt(x)
 ### Застосування Math.sqrt()
 
 ```js
-Math.sqrt(9); // 3
-Math.sqrt(2); // 1.414213562373095
-
-Math.sqrt(1);  // 1
-Math.sqrt(0);  // 0
 Math.sqrt(-1); // NaN
 Math.sqrt(-0); // -0
+Math.sqrt(0); // 0
+Math.sqrt(1); // 1
+Math.sqrt(2); // 1.414213562373095
+Math.sqrt(9); // 3
+Math.sqrt(Infinity); // Infinity
 ```
 
 ## Специфікації

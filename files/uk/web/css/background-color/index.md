@@ -117,7 +117,7 @@ background-color: unset;
 
 ## Дивіться також
 
-- [Множинні фони](/uk/docs/Web/CSS/CSS_Backgrounds_and_Borders/Using_multiple_backgrounds)
+- [Множинні фони](/uk/docs/Web/CSS/CSS_backgrounds_and_borders/Using_multiple_backgrounds)
 - Тип даних {{cssxref("&lt;color&gt;")}}
 - Інші властивості, пов'язані з кольором: {{cssxref("color")}}, {{cssxref("border-color")}}, {{cssxref("outline-color")}}, {{cssxref("text-decoration-color")}}, {{cssxref("text-emphasis-color")}}, {{cssxref("text-shadow")}}, {{cssxref("caret-color")}} та {{cssxref("column-rule-color")}}
-- [Застосування кольору до елементів HTML за допомогою CSS](/uk/docs/Web/CSS/CSS_Colors/Applying_color)
+- [Застосування кольору до елементів HTML за допомогою CSS](/uk/docs/Web/CSS/CSS_colors/Applying_color)

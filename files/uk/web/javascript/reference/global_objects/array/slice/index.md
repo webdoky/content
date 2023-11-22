@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.Array.slice
 
 {{JSRef}}
 
-Метод **`slice()`** (вирізати скибку, зріз) повертає [поверхневу копію (зріз)](/uk/docs/Glossary/Shallow_copy) певної частини масиву, взяту від елемента за індексом `start` (включно) до елемента за індексом `end` (не включно), у вигляді нового масиву. Початковий масив не змінюється.
+Метод **`slice()`** (вирізати скибку, зріз) примірників {{jsxref("Array")}} повертає [поверхневу копію (зріз)](/uk/docs/Glossary/Shallow_copy) певної частини масиву, взяту від елемента за індексом `start` (включно) до елемента за індексом `end` (не включно), у вигляді нового масиву. Початковий масив не змінюється.
 
 {{EmbedInteractiveExample("pages/js/array-slice.html", "taller")}}
 
@@ -89,7 +89,7 @@ console.log("newCar[0].color =", newCar[0].color);
 
 Скрипт надрукує такий текст:
 
-```
+```plain
 myCar = [
   {color: 'червоний', wheels: 4, engine: {cylinders: 4, size: 2.2 } },
   2,
@@ -121,7 +121,7 @@ console.log(Array.prototype.slice.call(arrayLike, 1, 3));
 
 ### Використання slice() для перетворення масивоподібних об'єктів на масиви
 
-Метод `slice()` нерідко використовується вкупі з {{jsxref("Function.prototype.bind", "bind()")}} і {{jsxref("Function.prototype.call", "call()")}} для створення допоміжного методу, що перетворює масивоподібний об'єкт на масив.
+Метод `slice()` нерідко використовується вкупі з {{jsxref("Function/bind", "bind()")}} і {{jsxref("Function/call", "call()")}} для створення допоміжного методу, що перетворює масивоподібний об'єкт на масив.
 
 ```js
 // slice() викликається з `this`, переданим як перший аргумент
@@ -153,7 +153,7 @@ console.log([1, 2, , 4, 5].slice(1, 4)); // [2, порожньо, 4]
 ## Дивіться також
 
 - [Поліфіл `Array.prototype.slice` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
-- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
 - {{jsxref("Array.prototype.pop()")}}
 - {{jsxref("Array.prototype.shift()")}}

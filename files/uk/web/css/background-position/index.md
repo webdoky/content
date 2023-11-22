@@ -30,7 +30,9 @@ background-position: 1cm 2cm;
 background-position: 10ch 8em;
 
 /* Декілька зображень */
-background-position: 0 0, center;
+background-position:
+  0 0,
+  center;
 
 /* Значення відступів країв */
 background-position: bottom 10px right 20px;
@@ -85,20 +87,20 @@ background-position: unset;
 
 Те, що відбувається, по суті є _відніманням_ розміру зображення тла від розміру відповідного контейнера, а далі частка результівного значення використовується як безпосередній відступ від лівого (або верхнього) краю.
 
-```
+```plain
 (ширина контейнера - ширина зображення) * (положення x%) = (значення відступу x)
 (висота контейнера - висота зображення) * (положення y%) = (значення відступу y)
 ```
 
 Наприклад, для осі X, скажімо, що є зображення 300px завширшки, котре використовується в контейнері, котрий має 100px завширшки та значення background-size – auto:
 
-```
+```plain
 100px - 300px = -200px (різниця між контейнером і зображенням)
 ```
 
 Тож з відсотковими положеннями -25%, 0%, 50%, 100%, 125%, вийдуть такі значення відступів країв зображення-контейнер:
 
-```
+```plain
 -200px * -25% = 50px
 -200px * 0% = 0px
 -200px * 50% = -100px
@@ -162,7 +164,9 @@ div {
    відповідну йому позицію, від першої до останньої. */
 .examplethree {
   background-image: url("startransparent.gif"), url("catfront.png");
-  background-position: 0px 0px, right 3em bottom 2em;
+  background-position:
+    0px 0px,
+    right 3em bottom 2em;
 }
 ```
 
@@ -182,5 +186,5 @@ div {
 
 - {{cssxref("background-position-x")}}
 - {{cssxref("background-position-y")}}
-- [Використання кількох фонів](/uk/docs/Web/CSS/CSS_Backgrounds_and_Borders/Using_multiple_backgrounds)
+- [Використання кількох фонів](/uk/docs/Web/CSS/CSS_backgrounds_and_borders/Using_multiple_backgrounds)
 - {{cssxref("transform-origin")}}

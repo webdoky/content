@@ -14,14 +14,16 @@ browser-compat: javascript.builtins.Object.assign
 ## Синтаксис
 
 ```js-nolint
-Object.assign(target, ...sources)
+Object.assign(target, source1)
+Object.assign(target, source1, source2)
+Object.assign(target, source1, source2, /* …, */ sourceN)
 ```
 
 ### Параметри
 
-- `target` (ціль)
+- `target`
   - : Цільовий об'єкт — об'єкт, на який буде перенесено властивості з донорів, і який буде повернено після змін.
-- `sources` (джерела)
+- `sourceN`
   - : Донорські об'єкти — об'єкти, що містять властивості, які потрібно скопіювати.
 
 ### Повернене значення
@@ -129,7 +131,7 @@ const obj = Object.create(
       value: 3,
       enumerable: true, // baz є власною перелічуваною властивістю.
     },
-  }
+  },
 );
 
 const copy = Object.assign({}, obj);

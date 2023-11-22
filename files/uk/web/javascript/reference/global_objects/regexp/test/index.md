@@ -2,19 +2,12 @@
 title: RegExp.prototype.test()
 slug: Web/JavaScript/Reference/Global_Objects/RegExp/test
 page-type: javascript-instance-method
-tags:
-  - JavaScript
-  - Method
-  - Prototype
-  - Reference
-  - RegExp
-  - Regular Expressions
 browser-compat: javascript.builtins.RegExp.test
 ---
 
 {{JSRef}}
 
-Метод **`test()`** (перевірити) виконує пошук збігу між регулярним виразом і заданим рядком. Повертає `true` або `false`.
+Метод **`test()`** (перевірити) примірників {{jsxref("RegExp")}} виконує пошук збігу між своїм регулярним виразом і заданим рядком. Повертає `true` або `false`.
 
 Об'єкти {{jsxref("RegExp")}} JavaScript **мають стан**, коли мають позначку {{jsxref("RegExp/global", "глобальності")}} чи {{jsxref("RegExp/sticky", "липкості")}} (наприклад, `/foo/g` або `/foo/y`). Вони зберігають {{jsxref("RegExp/lastIndex", "lastIndex")}} від попереднього збігу. Потайки використовуючи цю властивість, `test()` може використовуватись для ітерації по багатьох збігах в одному рядку тексту (з групами захоплення).
 
@@ -29,7 +22,7 @@ test(str)
 ### Параметри
 
 - `str`
-  - : Рядок, в якому буде виконуватись пошук збігу з регулярним виразом.
+  - : Рядок, в якому буде виконуватись пошук збігу з регулярним виразом. Будь-які значення [зводяться до рядка](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka), тож пропуск цього параметра чи передача `undefined` змусить `test()` шукати рядок `"undefined"`, а це рідко саме те, що необхідно.
 
 ### Повертає
 
@@ -39,7 +32,7 @@ test(str)
 
 Слід використовувати `test()` щоразу, коли необхідно знати, чи є відповідність патернові у рядку. `test()` повертає булеве значення, на відміну від методу {{jsxref("String.prototype.search()")}} (котрий повертає індекс збігу, або `-1`, якщо збігу не знайдено).
 
-Щоб отримати більше інформації (але з повільнішим виконанням), слід використовувати метод {{jsxref("RegExp.prototype.exec()", "exec()")}}. (Він подібний до методу {{jsxref("String.prototype.match()")}}.)
+Щоб отримати більше інформації (але з повільнішим виконанням), слід використовувати метод {{jsxref("RegExp/exec", "exec()")}}. (Він подібний до методу {{jsxref("String.prototype.match()")}}.)
 
 Як і в випадку `exec()` (або в поєднанні з ним), `test()`, викликаний декілька разів на тому самому примірнику глобального регулярного виразу, виконає пошук далі по рядку, після попереднього збігу.
 
@@ -115,5 +108,5 @@ regex.test("foobarfoo"); // false
 
 ## Дивіться також
 
-- Розділ [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_Expressions) у [Посібнику з JavaScript](/uk/docs/Web/JavaScript/Guide)
+- Посібник [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_expressions)
 - {{jsxref("RegExp")}}
