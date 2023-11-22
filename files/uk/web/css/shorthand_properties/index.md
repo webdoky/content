@@ -209,10 +209,13 @@ CSS має універсальну властивість-скорочення,
   - {{cssxref("border-width")}}
   - {{cssxref("column-rule")}}
   - {{cssxref("columns")}}
+  - {{cssxref("container")}}
   - {{cssxref("contain-intrinsic-size")}}
   - {{cssxref("flex")}}
   - {{cssxref("flex-flow")}}
   - {{cssxref("font")}}
+  - {{cssxref("font-synthesis")}}
+  - {{cssxref("font-variant")}}
   - {{cssxref("gap")}}
   - {{cssxref("grid")}}
   - {{cssxref("grid-area")}}

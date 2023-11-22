@@ -109,7 +109,7 @@ function checkValue(a, b) {
 }
 ```
 
-Не слід плутати примітивні значення Boolean `true` і `false` з істинністю або хибністю об'єкта {{jsxref("Global_Objects/Boolean", "Boolean")}}. Усі значення, окрім `false`, `undefined`, `null`, `0`, `-0`, `NaN` і порожнього рядка (`""`), в тому числі будь-які об'єкти, серед яких об'єкти Boolean зі значенням `false`, вважаються {{Glossary("truthy", "істинними")}}, бувши використані як умова. Наприклад:
+Не слід плутати примітивні значення Boolean `true` і `false` з істинністю або хибністю об'єкта {{jsxref("Boolean")}}. Усі значення, окрім `false`, `undefined`, `null`, `0`, `-0`, `NaN` і порожнього рядка (`""`), в тому числі будь-які об'єкти, серед яких об'єкти Boolean зі значенням `false`, вважаються {{Glossary("truthy", "істинними")}}, бувши використані як умова. Наприклад:
 
 ```js
 const b = new Boolean(false);
@@ -149,13 +149,22 @@ if (x > 50) {
 
 Майже ніколи не повинно бути `if...else` з присвоєнням виду `x = y` як умовою:
 
-```js-nolint example-bad
-if (x = y) {
-  // якісь дії
+```js example-bad
+if ((x = y)) {
+  // …
 }
 ```
 
-Проте на той рідкісний випадок, коли захочеться зробити щось подібне, документація [`while`](/uk/docs/Web/JavaScript/Reference/Statements/while) містить розділ [Використання присвоєння як умови](/uk/docs/Web/JavaScript/Reference/Statements/while#vykorystannia-prysvoiennia-yak-umovy), з прикладом, що демонструє, загалом, синтаксис найкращої практики, про яку варто знати і якої варто дотримуватися.
+Оскільки на відміну від циклів {{jsxref("Statements/while", "while")}} умова тут обчислюється лише раз, то присвоєння виконується лише раз. Код вище рівносильний щодо:
+
+```js example-good
+x = y;
+if (x) {
+  // …
+}
+```
+
+Що набагато ясніше. Проте на той рідкісний випадок, коли захочеться зробити щось подібне, документація [`while`](/uk/docs/Web/JavaScript/Reference/Statements/while) містить розділ [Використання присвоєння як умови](/uk/docs/Web/JavaScript/Reference/Statements/while#vykorystannia-prysvoiennia-yak-umovy), який вміщає наші рекомендації.
 
 ## Специфікації
 
@@ -169,4 +178,4 @@ if (x = y) {
 
 - {{jsxref("Statements/block", "block")}}
 - {{jsxref("Statements/switch", "switch")}}
-- [Умовний оператор](/uk/docs/Web/JavaScript/Reference/Operators/Conditional_operator)
+- [Умовний (тернарний) оператор](/uk/docs/Web/JavaScript/Reference/Operators/Conditional_operator)

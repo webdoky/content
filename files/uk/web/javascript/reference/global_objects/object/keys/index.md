@@ -58,7 +58,7 @@ const myObj = Object.create(
         return this.foo;
       },
     },
-  }
+  },
 );
 myObj.foo = 1;
 console.log(Object.keys(myObj)); // ['foo']
@@ -68,12 +68,12 @@ console.log(Object.keys(myObj)); // ['foo']
 
 ### Застосування Object.keys() на примітивах
 
-Необ'єктні аргументи [зводяться до об'єктів](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#zvedennia-do-obiekta). Лише рядки можуть мати власні перелічувані властивості, коли решта примітивів повертають порожній масив.
+Необ'єктні аргументи [зводяться до об'єктів](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#zvedennia-do-obiekta). Значення [`undefined`](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined) і [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) не можуть бути зведення до об'єкта та зразу викидають {{jsxref("TypeError")}}. Лише рядки можуть мати власні перелічувані властивості, коли решта примітивів повертають порожній масив.
 
 ```js
 // Рядки мають власні перелічувані властивості у вигляді індексів
 console.log(Object.keys("foo")); // ['0', '1', '2']
-// Решта примітивів не має власних властивостей
+// Решта примітивів, крім undefined і null, не має власних властивостей
 console.log(Object.keys(100)); // []
 ```
 
