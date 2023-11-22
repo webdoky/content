@@ -33,12 +33,7 @@ function convertOffsetToLineAndColumn(offset) {
 
 // eslint-disable-next-line no-restricted-syntax
 for (const match of results.matches) {
-  const {
-    offset,
-    message,
-    // rule: { id: type },
-    sentence,
-  } = match;
+  const { context, message, offset, replacements, rule, sentence } = match;
   let { length } = match;
   let endOffset = offset + length;
   const start = Number.parseInt(mapping[offset], 10);
@@ -61,6 +56,27 @@ for (const match of results.matches) {
     console.error(startColumn, endColumn);
     throw new Error(`Column not found in source file: ${sentence}`);
   }
-  const errorformatLine = `${markdownFile}:${startLine}:${startColumn}:${endLine}:${endColumn}: ${message}`;
-  console.log(errorformatLine);
+  // const errorformatLine = `${markdownFile}:${startLine}:${startColumn}:${endLine}:${endColumn}: ${message}`;
+  // console.log(errorformatLine);
+  console.log(`## ${message}\n`);
+  console.log(`${markdownFile}:${startLine}:${startColumn}\n`);
+  console.log(
+    `${rule.description}: ${context.text.slice(
+      0,
+      context.offset,
+    )}**${context.text.slice(
+      context.offset,
+      context.offset + context.length,
+    )}**${context.text.slice(context.offset + context.length)}`,
+  );
+  console.log("\n");
+  console.log("Варіанти заміни:\n");
+  if (replacements.length > 0) {
+    // eslint-disable-next-line no-restricted-syntax
+    for (const replacement of replacements) {
+      console.log(`- ${replacement.value}`);
+    }
+  } else {
+    console.log("Немає");
+  }
 }
