@@ -33,6 +33,7 @@ jobs:
           else
             if [ $(echo "$translation_files" | wc -l) -gt 1 ]; then
               echo "More than one translation file changed"
+              exit 1
             else
               echo "translation=$translation_files" >> $GITHUB_OUTPUT
             fi
