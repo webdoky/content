@@ -10,7 +10,11 @@ jobs:
         with:
           fetch-depth: 0
       - id: changed-files
-        run: echo "changed_files<<EOF$(git diff --diff-filter=d --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }})EOF" >> $GITHUB_OUTPUT
+        run: |
+          EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
+          echo "changed_files<<$EOF" >> $GITHUB_OUTPUT
+          git diff --diff-filter=d --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} >> $GITHUB_OUTPUT
+          echo "$EOF" >> $GITHUB_OUTPUT
       - name: Check translation
         # Check there is only one translation change
         # If there are more than one, the workflow will fail
