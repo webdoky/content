@@ -151,4 +151,4 @@ const bObjProto = new Boolean({});
 
 - [Булеве значення](/uk/docs/Glossary/Boolean)
 - [Булеві примітиви](/uk/docs/Web/JavaScript/Data_structures#typ-boolean)
-- [Логічний тип даних (Вікіпедія)](https://uk.wikipedia.org/wiki/%D0%9B%D0%BE%D0%B3%D1%96%D1%87%D0%BD%D0%B8%D0%B9_%D1%82%D0%B8%D0%BF_%D0%B4%D0%B0%D0%BD%D0%B8%D1%85)
+- [Логічний тип даних](https://uk.wikipedia.org/wiki/%D0%9B%D0%BE%D0%B3%D1%96%D1%87%D0%BD%D0%B8%D0%B9_%D1%82%D0%B8%D0%BF_%D0%B4%D0%B0%D0%BD%D0%B8%D1%85) на Вікіпедії

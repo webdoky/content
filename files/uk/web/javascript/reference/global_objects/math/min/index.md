@@ -15,9 +15,9 @@ browser-compat: javascript.builtins.Math.min
 
 ```js-nolint
 Math.min()
-Math.min(value0)
-Math.min(value0, value1)
-Math.min(value0, value1, /* … ,*/ valueN)
+Math.min(value1)
+Math.min(value1, value2)
+Math.min(value1, value2, /* …, */ valueN)
 ```
 
 ### Параметри

@@ -58,7 +58,7 @@ const myObj = Object.create(
         return this.foo;
       },
     },
-  }
+  },
 );
 myObj.foo = "bar";
 console.log(Object.values(myObj)); // ['bar']
@@ -66,12 +66,12 @@ console.log(Object.values(myObj)); // ['bar']
 
 ### Застосування Object.values() на примітивах
 
-Необ'єктні аргументи [зводяться до об'єктів](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#zvedennia-do-obiekta). Лише рядки можуть мати власні перелічувані властивості, решта ж примітивів – повертає порожній масив.
+Необ'єктні аргументи [зводяться до об'єктів](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#zvedennia-do-obiekta). Значення [`undefined`](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined) і [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) не можуть бути зведення до об'єкта та зразу викидають {{jsxref("TypeError")}}. Лише рядки можуть мати власні перелічувані властивості, решта ж примітивів – повертає порожній масив.
 
 ```js
 // Рядки мають індекси за власні перелічувані властивості
 console.log(Object.values("foo")); // ['f', 'o', 'o']
-// Решта примітивів не має власних властивостей
+// Решта примітивів, крім undefined і null, не має власних властивостей
 console.log(Object.values(100)); // []
 ```
 
