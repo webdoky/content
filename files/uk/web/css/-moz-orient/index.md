@@ -1,17 +1,15 @@
 ---
-title: '-moz-orient'
+title: "-moz-orient"
 slug: Web/CSS/-moz-orient
-tags:
-  - CSS
-  - CSS Property
-  - Non-standard
-  - Reference
-  - recipe:css-property
+page-type: css-property
+status:
+  - non-standard
 browser-compat: css.properties.-moz-orient
 ---
+
 {{CSSRef}}{{Non-standard_header}}
 
-Властивість [CSS](/uk/docs/Web/CSS) **`-moz-orient`** вказує орієнтацію елемента, до котрого застосована.
+Властивість [CSS](/uk/docs/Web/CSS) **`-moz-orient`** (Mozilla – орієнтація) задає орієнтацію елемента, до котрого застосована.
 
 ## Синтаксис
 
@@ -34,23 +32,20 @@ browser-compat: css.properties.-moz-orient
 
 ## Формальний синтаксис
 
-{{csssyntax}}
+```plain
+-moz-orient =
+  inline | block | horizontal | vertical
+```
 
 ## Приклади
 
 ### HTML
 
 ```html
-<p>
-  Наступний індикатор виконання &mdash;
-  горизонтальний (як усталено):
-</p>
+<p>Наступний індикатор виконання – горизонтальний (як усталено):</p>
 <progress max="100" value="75"></progress>
 
-<p>
- Наступний індикатор виконання &mdash;
- вертикальний:
-</p>
+<p>Наступний індикатор виконання – вертикальний:</p>
 <progress class="vert" max="100" value="75"></progress>
 ```
 
@@ -66,7 +61,7 @@ browser-compat: css.properties.-moz-orient
 
 ### Результат
 
-{{EmbedLiveSample("Examples","200","360")}}
+{{EmbedLiveSample("pryklady","200","360")}}
 
 ## Специфікації
 

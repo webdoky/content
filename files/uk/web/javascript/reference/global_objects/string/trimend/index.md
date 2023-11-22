@@ -19,6 +19,10 @@ trimEnd()
 trimRight()
 ```
 
+### Параметри
+
+Жодних.
+
 ### Повернене значення
 
 Новий рядок, що містить значення початкового рядка `str`, у якого пробільні символи в кінці (з правого боку) — обрізані. Пробільні символи визначені як символи-[пробіли](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#probily) плюс [символи кінця рядка](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#symvoly-kintsia-riadka).

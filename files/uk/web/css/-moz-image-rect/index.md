@@ -3,14 +3,14 @@ title: "-moz-image-rect"
 slug: Web/CSS/-moz-image-rect
 page-type: css-function
 status:
-  - experimental
+  - deprecated
   - non-standard
 browser-compat: css.types.-moz-image-rect
 ---
 
-{{CSSRef}}{{Non-standard_Header}}{{SeeCompatTable}}
+{{CSSRef}}{{Non-standard_Header}}{{Deprecated_Header}}
 
-Властивість [CSS](/uk/docs/Web/CSS) **`-moz-image-rect`** для {{CSSxRef("background-image")}} дає змогу використовувати частину більшого зображення як тло.
+Властивість [CSS](/uk/docs/Web/CSS) **`-moz-image-rect`** (Mozilla – прямокутник зображення) для {{CSSxRef("background-image")}} дає змогу використовувати частину більшого зображення як тло.
 
 ## Синтаксис
 
@@ -157,4 +157,4 @@ function rotate() {
 ## Дивіться також
 
 - [Розширення CSS від Mozilla](/uk/docs/Web/CSS/Mozilla_Extensions)
-- [Модуль CSS тла та меж](/uk/docs/Web/CSS/CSS_Backgrounds_and_Borders)
+- [Модуль CSS тла та меж](/uk/docs/Web/CSS/CSS_backgrounds_and_borders)

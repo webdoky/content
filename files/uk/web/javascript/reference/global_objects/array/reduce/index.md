@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.Array.reduce
 
 {{JSRef}}
 
-Метод **`reduce()`** (редукувати, згорнути) виконує передану користувачем функцію зворотного виклику на кожному з елементів масиву, підряд, передаючи в неї повернене значення від обробки попереднього елементу.
+Метод **`reduce()`** (редукувати, згорнути) примірників {{jsxref("Array")}} виконує передану користувачем функцію зворотного виклику на кожному з елементів масиву, підряд, передаючи в неї повернене значення від обробки попереднього елементу.
 Кінцевим результатом обробки всіх елементів масиву функцією `reduce()` стає єдине фінальне значення.
 
 Під час першого виконання функції зворотного виклику "результату виконання попереднього кроку" іще не існує. Замість нього може бути використано початкове значення (аргумент `initialValue`), якщо його було передано. Інакше — функція використає замість нього елемент за індексом 0, і почне виконання з наступного (з індексу 1 замість 0).
@@ -29,13 +29,13 @@ reduce(callbackFn, initialValue)
 
 - `callbackFn`
   - : Функція для виконання на кожному елементі масиву. Її повернене значення стає значенням параметра `accumulator` при наступному заклику `callbackFn`. При останньому заклику повернене значення стане поверненим значенням `reduce()`. Ця функція викликається з наступними аргументами:
-    - _accumulator_
-      - : Результат виконання попереднього виклику `callbackFn`. Під час першого виклику, якщо заданий аргумент `initialValue`, то приймає його значення, інакше – `array[0]`.
-    - _currentValue_:
-      - : Значення поточного елемента. Під час першого виклику, якщо заданий аргумент `initialValue`, то приймає значення `array[0]`, інакше – `array[1]`.
-    - _currentIndex_:
-      - : Індекс поточного елемента. Під час першого виклику, якщо заданий аргумент `initialValue`, то приймає значення `0`, інакше – `1`.
-    - _array_:
+    - `accumulator`
+      - : Результат виконання попереднього виклику `callbackFn`. При першому виклику цим значенням є `initialValue`, якщо воно задане; інакше це значення – `array[0]`.
+    - `currentValue`:
+      - : Значення поточного елемента. При першому виклику цим значенням є `array[0]`, якщо `initialValue` задано; інакше це значення – `array[1]`.
+    - `currentIndex`:
+      - : Позиція-індекс `currentValue` в масиві. При першому виклику це значення – 0, якщо `initialValue` задано; інакше це значення – 1.
+    - `array`:
       - : Масив, на якому було викликано `reduce()`.
 - `initialValue` {{optional_inline}}
   - : Значення, яким ініціалізується `accumulator` під час першого виконання функції зворотного виклику.
@@ -109,7 +109,7 @@ const array = [15, 16, 17, 18, 19];
 function reducer(accumulator, currentValue, index) {
   const returns = accumulator + currentValue;
   console.log(
-    `accumulator: ${accumulator}, currentValue: ${currentValue}, index: ${index}, returns: ${returns}`
+    `accumulator: ${accumulator}, currentValue: ${currentValue}, index: ${index}, returns: ${returns}`,
   );
   return returns;
 }
@@ -135,7 +135,7 @@ array.reduce(reducer);
 ```js
 [15, 16, 17, 18, 19].reduce(
   (accumulator, currentValue) => accumulator + currentValue,
-  10
+  10,
 );
 ```
 
@@ -159,7 +159,7 @@ array.reduce(reducer);
 const objects = [{ x: 1 }, { x: 2 }, { x: 3 }];
 const sum = objects.reduce(
   (accumulator, currentValue) => accumulator + currentValue.x,
-  0
+  0,
 );
 
 console.log(sum); // 6
@@ -192,7 +192,7 @@ multiply24(10); // 240
 
 ### Почерговий запуск промісів
 
-[Послідовне виконання промісів](/uk/docs/Web/JavaScript/Guide/Using_promises#komponuvannia) – це по суті той самий конвеєр функцій, показаний в попередньому розділі, але виконаний асинхронно.
+[Послідовне виконання промісів](/uk/docs/Web/JavaScript/Guide/Using_promises#kompozytsiia) – це по суті той самий конвеєр функцій, показаний в попередньому розділі, але виконаний асинхронно.
 
 ```js
 // Порівняйте це з конвеєром: fn(acc) змінено на acc.then(fn),
@@ -310,7 +310,7 @@ for (const name of names) {
   const flattened = array.flat();
   ```
 
-- Групування об'єктів за властивістю. Краще використати {{jsxref("Array/group", "group()")}}.
+- Групування об'єктів за властивістю. Краще використати {{jsxref("Object.groupBy()")}}.
 
   ```js example-bad
   const groups = array.reduce((acc, obj) => {
@@ -321,7 +321,7 @@ for (const name of names) {
   ```
 
   ```js example-good
-  const groups = array.group((obj) => obj.name);
+  const groups = Object.groupBy(array, (obj) => obj.name);
   ```
 
 - Зчеплення масивів, що містяться в масиві об'єктів. Краще використати {{jsxref("Array/flatMap", "flatMap()")}}.
@@ -347,7 +347,7 @@ for (const name of names) {
   ```js example-bad
   const uniqArray = array.reduce(
     (acc, cur) => (acc.includes(cur) ? acc : [...acc, cur]),
-    []
+    [],
   );
   ```
 
@@ -401,12 +401,12 @@ for (const name of names) {
 ## Дивіться також
 
 - [Поліфіл для `Array.prototype.reduce` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
-- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
-- {{jsxref("Array.prototype.group()")}}
-- {{jsxref("Array.prototype.groupToMap()")}}
 - {{jsxref("Array.prototype.map()")}}
 - {{jsxref("Array.prototype.flat()")}}
 - {{jsxref("Array.prototype.flatMap()")}}
 - {{jsxref("Array.prototype.reduceRight()")}}
 - {{jsxref("TypedArray.prototype.reduce()")}}
+- {{jsxref("Object.groupBy()")}}
+- {{jsxref("Map.groupBy()")}}

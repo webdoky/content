@@ -7,7 +7,7 @@ browser-compat: css.properties.margin
 
 {{CSSRef}}
 
-Скорочення [CSS](/uk/docs/Web/CSS) **`margin`** (берег) задає [область зовнішніх відступів](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model#oblast-zovnishnikh-vidstupiv) з усіх чотирьох боків елемента.
+Скорочення [CSS](/uk/docs/Web/CSS) **`margin`** (берег) задає [область зовнішніх відступів](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model#oblast-zovnishnikh-vidstupiv) з усіх чотирьох боків елемента.
 
 {{EmbedInteractiveExample("pages/css/margin.html")}}
 
@@ -74,7 +74,7 @@ margin: unset;
 
 ### Стягування зовнішніх відступів
 
-Верхній та нижній зовнішні відступи елементів іноді стягуються в один відступ, рівний більшому з двох відступів. Більше подробиць – у розділі [Опанування явища складання берегів](/uk/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing).
+Верхній та нижній зовнішні відступи елементів іноді стягуються в один відступ, рівний більшому з двох відступів. Більше подробиць – у розділі [Опанування явища складання берегів](/uk/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing).
 
 ## Формальне визначення
 
@@ -150,7 +150,7 @@ margin: auto; /* згори та знизу: 0 відступу     */
 
 ## Дивіться також
 
-- [Вступ до Базової рамкової моделі CSS](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
-- [Опанування явища складання берегів](/uk/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
+- [Вступ до Базової рамкової моделі CSS](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
+- [Опанування явища складання берегів](/uk/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
 - {{cssxref("margin-top")}}, {{cssxref("margin-right")}}, {{cssxref("margin-bottom")}} і {{cssxref("margin-left")}}
 - Відповідні логічні властивості: {{cssxref("margin-block-start")}}, {{cssxref("margin-block-end")}}, {{cssxref("margin-inline-start")}} і {{cssxref("margin-inline-end")}}, а також скорочення {{cssxref("margin-block")}} і {{cssxref("margin-inline")}}

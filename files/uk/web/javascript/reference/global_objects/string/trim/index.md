@@ -7,9 +7,9 @@ browser-compat: javascript.builtins.String.trim
 
 {{JSRef}}
 
-Метод **`trim()`** (підрізати, привести до ладу) видаляє пробільні символи з обох кінців рядка і повертає результат як новий рядок, без внесення змін в початковий рядок.
+Метод **`trim()`** (підрізати, привести до ладу) значень {{jsxref("String")}} видаляє пробільні символи з обох кінців свого рядка і повертає результат як новий рядок, без внесення змін в початковий.
 
-Аби отримати новий рядок, в якому пробільні символи обрізані лише з одного кінця, слід використати методи {{jsxref("String.prototype.trimStart()", "trimStart()")}} чи {{jsxref("String.prototype.trimEnd()", "trimEnd()")}}.
+Аби отримати новий рядок, в якому пробільні символи обрізані лише з одного кінця, слід використати методи {{jsxref("String/trimStart", "trimStart()")}} чи {{jsxref("String/trimEnd", "trimEnd()")}}.
 
 {{EmbedInteractiveExample("pages/js/string-trim.html")}}
 
@@ -18,6 +18,10 @@ browser-compat: javascript.builtins.String.trim
 ```js-nolint
 trim()
 ```
+
+### Параметри
+
+Жодних.
 
 ### Повернене значення
 

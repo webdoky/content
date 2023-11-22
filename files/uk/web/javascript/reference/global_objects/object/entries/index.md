@@ -40,13 +40,11 @@ Object.entries(obj)
 const obj = { foo: "bar", baz: 42 };
 console.log(Object.entries(obj)); // [ ['foo', 'bar'], ['baz', 42] ]
 
-// Масивоподібний об'єкт
-const obj = { 0: "a", 1: "b", 2: "c" };
-console.log(Object.entries(obj)); // [ ['0', 'a'], ['1', 'b'], ['2', 'c'] ]
+const arrayLike = { 0: "a", 1: "b", 2: "c" };
+console.log(Object.entries(arrayLike)); // [ ['0', 'a'], ['1', 'b'], ['2', 'c'] ]
 
-// Масивоподібний об'єкт з випадковим порядком ключів
-const anObj = { 100: "a", 2: "b", 7: "c" };
-console.log(Object.entries(anObj)); // [ ['2', 'b'], ['7', 'c'], ['100', 'a'] ]
+const randomKeyOrder = { 100: "a", 2: "b", 7: "c" };
+console.log(Object.entries(randomKeyOrder)); // [ ['2', 'b'], ['7', 'c'], ['100', 'a'] ]
 
 // getFoo – неперелічувана властивість
 const myObj = Object.create(
@@ -57,7 +55,7 @@ const myObj = Object.create(
         return this.foo;
       },
     },
-  }
+  },
 );
 myObj.foo = "bar";
 console.log(Object.entries(myObj)); // [ ['foo', 'bar'] ]
@@ -65,12 +63,12 @@ console.log(Object.entries(myObj)); // [ ['foo', 'bar'] ]
 
 ### Застосування Object.entries() на примітивах
 
-Необ'єктні аргументи [зводяться до об'єктів](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#zvedennia-do-obiekta). Лише рядки можуть мати власні перелічувані властивості, тим часом решта примітивів повертає порожній масив.
+Необ'єктні аргументи [зводяться до об'єктів](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#zvedennia-do-obiekta). Значення [`undefined`](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined) і [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) не можуть бути зведення до об'єкта та зразу викидають {{jsxref("TypeError")}}. Лише рядки можуть мати власні перелічувані властивості, тим часом решта примітивів повертає порожній масив.
 
 ```js
 // Рядки мають перелічувані властивості у вигляді індексів
 console.log(Object.entries("foo")); // [ ['0', 'f'], ['1', 'o'], ['2', 'o'] ]
-// Решта примітивів не має власних властивостей
+// Решта примітивів, крім undefined і null, не має власних властивостей
 console.log(Object.entries(100)); // []
 ```
 

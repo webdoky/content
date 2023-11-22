@@ -2,14 +2,7 @@
 title: Протоколи ітерування
 slug: Web/JavaScript/Reference/Iteration_protocols
 page-type: guide
-tags:
-  - ECMAScript 2015
-  - Guide
-  - Intermediate
-  - Iterable
-  - Iterator
-  - JavaScript
-  - Protocols
+spec-urls: https://tc39.es/ecma262/multipage/control-abstraction-objects.html#sec-iteration
 ---
 
 {{jsSidebar("More")}}
@@ -101,6 +94,8 @@ console.log(aGeneratorObject[Symbol.iterator]() === aGeneratorObject);
 // true: метод @@iterator повертає сам об'єкт (сам ітератор), тож це ітерований ітератор
 ```
 
+Усі вбудовані ітератори мають в ланцюжку прототипів об'єкт {{jsxref("Iterator", "Iterator.prototype")}}, котрий має реалізацію методу `[@@iterator]()`, що повертає `this`, тож вбудовані ітератори також є ітерованими об'єктами.
+
 А проте, коли це можливо, краще, щоб `iterable[Symbol.iterator]` повертав різні ітератори, що завжди починаються спочатку, як це робить [`Set.prototype[@@iterator]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Set/@@iterator).
 
 ## Асинхронний ітератор і протокол асинхронного ітерованого об'єкта
@@ -127,13 +122,15 @@ console.log(aGeneratorObject[Symbol.iterator]() === aGeneratorObject);
 
 ### Вбудовані ітеровані об'єкти
 
-{{jsxref("String")}}, {{jsxref("Array")}}, {{jsxref("TypedArray")}}, {{jsxref("Map")}}, {{jsxref("Set")}} і [`Segments`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter/segment/Segments) (повернений з [`Intl.Segmenter.prototype.segment()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter/segment)) є вбудованими ітерованими об'єктами, адже кожний з їхніх об'єктів `prototype` має реалізацію метода `@@iterator`. На додачу, об'єкт [`arguments`](/uk/docs/Web/JavaScript/Reference/Functions/arguments) і частина типів колекцій DOM, як то {{domxref("NodeList")}}, так само є ітерованими об'єктами. Вбудованих асинхронних ітерованих об'єктів наразі немає.
+{{jsxref("String")}}, {{jsxref("Array")}}, {{jsxref("TypedArray")}}, {{jsxref("Map")}}, {{jsxref("Set")}} і [`Segments`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter/segment/Segments) (повернений з [`Intl.Segmenter.prototype.segment()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter/segment)) є вбудованими ітерованими об'єктами, адже кожний з їхніх об'єктів `prototype` має реалізацію метода `@@iterator`. На додачу, об'єкт [`arguments`](/uk/docs/Web/JavaScript/Reference/Functions/arguments) і частина типів колекцій DOM, як то {{domxref("NodeList")}}, так само є ітерованими об'єктами.
+
+[`ReadableStream`](/uk/docs/Web/API/ReadableStream) – єдиний вбудований асинхронно ітерований об'єкт на час написання цих слів.
 
 [Генераторні функції](/uk/docs/Web/JavaScript/Reference/Statements/function*) повертають [генераторні об'єкти](/uk/docs/Web/JavaScript/Reference/Global_Objects/Generator), котрі є ітерованими ітераторами. [Асинхронні генераторні функції](/uk/docs/Web/JavaScript/Reference/Statements/async_function*) повертають [асинхронні генераторні об'єкти](/uk/docs/Web/JavaScript/Reference/Global_Objects/AsyncGenerator), котрі є асинхронними ітерованими ітераторами.
 
-Ітератори, повернені зі вбудованих ітерованих об'єктів, успадковують від спільного класу (наразі прихованого), котрий має реалізацію вищезгаданого методу `[Symbol.iterator]() { return this; }`, що робить їх всіх ітерованими ітераторами. У майбутньому ці вбудовані ітератори можуть отримати додаткові [допоміжні методи](https://github.com/tc39/proposal-iterator-helpers), на додачу до методу `next()`, котрий вимагається протоколом ітератора. Ланцюжок прототипів ітератора можна дослідити шляхом виведення його в графічну консоль.
+Ітератори, повернені зі вбудованих ітерованих об'єктів, успадковують від спільного класу {{jsxref("Iterator")}} (наразі прихованого), котрий має реалізацію вищезгаданого методу `[Symbol.iterator]() { return this; }`, що робить їх всіх ітерованими ітераторами. У майбутньому ці вбудовані ітератори можуть отримати додаткові [допоміжні методи](https://github.com/tc39/proposal-iterator-helpers), на додачу до методу `next()`, котрий вимагається протоколом ітератора. Ланцюжок прототипів ітератора можна дослідити шляхом виведення його в графічну консоль.
 
-```
+```plain
 console.log([][Symbol.iterator]());
 
 Array Iterator {}
@@ -158,6 +155,8 @@ Array Iterator {}
 - {{jsxref("Promise.race()")}}
 - {{jsxref("Promise.any()")}}
 - {{jsxref("Array.from()")}}
+- {{jsxref("Object.groupBy()")}}
+- {{jsxref("Map.groupBy()")}}
 
 ```js
 const myObj = {};
@@ -167,7 +166,7 @@ new WeakSet(
     yield {};
     yield myObj;
     yield {};
-  })()
+  })(),
 ).has(myObj); // true
 ```
 
@@ -216,11 +215,11 @@ const obj = {
   },
 };
 
-const [b] = obj;
+const [a] = obj;
 // Повернення 1
 // Закривання
 
-const [a, b, c] = obj;
+const [b, c, d] = obj;
 // Повернення 1
 // Повернення 2
 // Повернення 3
@@ -350,7 +349,7 @@ console.log(it.next().value); // 2
 
 ### Означення ітерованого об'єкта за допомогою класу
 
-Інкапсуляція стану можлива також за допомогою [приватних властивостей](/uk/docs/Web/JavaScript/Reference/Classes/Private_class_fields).
+Інкапсуляція стану можлива також за допомогою [приватних властивостей](/uk/docs/Web/JavaScript/Reference/Classes/Private_properties).
 
 ```js
 class SimpleClass {
@@ -433,7 +432,13 @@ console.log([...someString]); // ["bye"]
 console.log(`${someString}`); // "hi"
 ```
 
+## Специфікації
+
+{{Specifications}}
+
 ## Дивіться також
 
-- [Оголошення `function*`](/uk/docs/Web/JavaScript/Reference/Statements/function*)
-- [Ітерування в Специфікації ECMAScript](https://tc39.es/ecma262/#sec-iteration)
+- Посібник [Ітератори та генератори](/uk/docs/Web/JavaScript/Guide/Iterators_and_generators)
+- {{jsxref("Statements/function*", "function*")}}
+- {{jsxref("Symbol.iterator")}}
+- {{jsxref("Iterator")}}
