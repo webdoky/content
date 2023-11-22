@@ -126,7 +126,7 @@ jobs:
           name: text
           path: .
       - name: Create mapping
-        run: node scripts/create-file-mapping.js ${{ needs.prepare-translation.outputs.translation }} ./index.txt > ./mapping.json && cat ./mapping.json
+        run: node scripts/create-file-mapping.js ./index.txt ${{ needs.prepare-translation.outputs.translation }} > ./mapping.json && cat ./mapping.json
       - id: create-message
         name: Create message
         run: node scripts/create-message.js ${{ needs.prepare-translation.outputs.translation }} > message.txt
