@@ -103,41 +103,28 @@ jobs:
   report-spelling:
     if: ${{ needs.languagetool.outputs.has_matches != 'false'  }}
     name: Report spelling
-    needs: [languagetool]
+    needs: [prepare-translation, languagetool]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      # - name: Install yq
-      #   run: |
-      #     BINARY=yq_linux_amd64
-      #     VERSION=v4.40.2
-      #     mkdir -p ./bin
-      #     wget https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY} -O ./bin/yq &&\
-      #     chmod +x ./bin/yq
       - uses: actions/download-artifact@v3
         with:
           name: result
           path: .
-      # - name: Convert result into YAML
-      #   run: |
-      #     cat result.json
-      #     ./bin/yq -P -o=yml result.json > result.yml
-      - name: Install Mustache
-        run: |
-          GO_MUSTACHE_VERSION=1.4.0
-          mkdir -p ./bin
-          curl -s -L -o /tmp/mustache.tgz https://github.com/cbroglie/mustache/releases/download/v${GO_MUSTACHE_VERSION}/mustache_${GO_MUSTACHE_VERSION}_linux_amd64.tar.gz
-          tar xvf /tmp/mustache.tgz -C ./bin
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "16"
+      - name: Create mapping
+        run: node scripts/create-file-mapping.js ${{ needs.prepare-translation.outputs.translation }} ./result.json > ./mapping.json
       - id: create-message
         name: Create message
-        run: |
-          echo ./bin/mustache result.json langtool.mustache > ./message.txt
+        run: node scripts/create-message.js ${{ needs.prepare-translation.outputs.translation }} > message.txt
       - uses: reviewdog/action-setup@v1
       - name: Send results
         run: |
           export REVIEWDOG_GITHUB_API_TOKEN=${{ secrets.GITHUB_TOKEN }}
-          cat ./message.txt | reviewdog -efm="%A%f:%l:%c: %m" -efm="%C %m" -reporter=github-pr-review -name="LanguageTool" -level=info
+          cat ./message.txt | reviewdog -efm="%A%f:%l:%c:%e:%k: %m%Z" -reporter=github-pr-review -name="LanguageTool" -level=info
       - name: Exit with error
         run: echo "Spelling errors found" && cat result.json && exit 1
