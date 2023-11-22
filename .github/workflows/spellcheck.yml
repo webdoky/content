@@ -117,7 +117,7 @@ jobs:
         with:
           node-version: "16"
       - name: Create mapping
-        run: node scripts/create-file-mapping.js ${{ needs.prepare-translation.outputs.translation }} ./result.json > ./mapping.json
+        run: node scripts/create-file-mapping.js ${{ needs.prepare-translation.outputs.translation }} ./result.json > ./mapping.json && cat ./mapping.json
       - id: create-message
         name: Create message
         run: node scripts/create-message.js ${{ needs.prepare-translation.outputs.translation }} > message.txt

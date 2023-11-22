@@ -25,7 +25,7 @@ for (const [index, rune] of textRunes.entries()) {
   if (!WHITESPACE_REGEXP.test(rune)) {
     const indexInMarkdown = markdown.indexOf(rune, markdownIndex);
     if (indexInMarkdown === -1) {
-      console.log(
+      console.error(
         `Could not find rune "${rune}" in markdown file "${markdownFile}"`,
       );
     } else {
