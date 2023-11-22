@@ -7,7 +7,7 @@ browser-compat: javascript.statements.import
 
 {{jsSidebar("Statements")}}
 
-Оголошення статичного імпорту **`import`** застосовуються для імпорту незмінних живих {{glossary("binding", "зв'язувань")}}, які, своєю чергою, [експортуються](/uk/docs/Web/JavaScript/Reference/Statements/export) іншим модулем. Імпортовані зв'язування називаються _живими_, оскільки вони оновлюються модулем, який їх експортує, проте їм не можуть бути присвоєні значення в модулі, що їх імпортує.
+Оголошення статичного імпорту **`import`** застосовуються для імпорту незмінних живих {{Glossary("binding", "зв'язувань")}}, які, своєю чергою, [експортуються](/uk/docs/Web/JavaScript/Reference/Statements/export) іншим модулем. Імпортовані зв'язування називаються _живими_, оскільки вони оновлюються модулем, який їх експортує, проте їм не можуть бути присвоєні значення в модулі, що їх імпортує.
 
 Для того, аби отримати змогу вжити оголошення `import` у файлі з вихідним кодом, цей файл повинен бути інтерпретований середовищем виконання як [модуль](/uk/docs/Web/JavaScript/Guide/Modules). В HTML цього можна досягти шляхом додавання `type="module"` до тега {{HTMLElement("script")}}. Модулі автоматично інтерпретуються в [суворому режимі](/uk/docs/Web/JavaScript/Reference/Strict_mode).
 
@@ -48,6 +48,8 @@ import "module-name";
 
 Оголошення `import` сконструйовані таким чином, щоб бути синтаксично жорсткими (зокрема: допускаються лише літеральні рядкові вказівники, і лише на верхньому рівні — адже всі зв'язування є ідентифікаторами). Це дає можливість статично аналізувати модулі та синхронно їх компонувати, іще до їхнього виконання. Це — ключова особливість, необхідна аби зробити модулі асинхронними за природою, що дає змогу працювати функціональності штибу [`await` верхнього рівня](/uk/docs/Web/JavaScript/Guide/Modules#await-verkhnoho-rivnia).
 
+### Форми оголошень імпорту
+
 Існує чотири форми оголошень `import`:
 
 - [Іменований імпорт](#imenovanyi-import): `import { export1, export2 } from "module-name";`
@@ -57,7 +59,7 @@ import "module-name";
 
 Нижче наведено приклади для пояснення синтаксису.
 
-### Іменований імпорт
+#### Іменований імпорт
 
 Нехай дано певне значення під назвою `myExport`, експортоване з модуля `my-module` або явно за допомогою інструкції {{jsxref("Statements/export", "export")}}, або неявно – як `export * from "another.js"`. Такий код додасть значення `myExport` у поточну область.
 
@@ -91,7 +93,7 @@ import { "a-b" as a } from "/modules/my-module.js";
 
 > **Примітка:** Інструкція `import { x, y } from "mod"` не є еквівалентною до `import defaultExport from "mod"` і потім деструктурування `x` та `y` із `defaultExport`. Усталений та іменований імпорт — це різні синтаксичні конструкції модулів JavaScript.
 
-### Усталений імпорт
+#### Усталений імпорт
 
 Усталений експорт слід імпортувати за допомогою відповідного йому синтаксису усталеного імпорту. Найпростіший варіант безпосередньо імпортує усталене значення:
 
@@ -120,7 +122,7 @@ import myDefault, { foo, bar } from "/modules/my-module.js";
 import { default as myDefault } from "/modules/my-module.js";
 ```
 
-### Імпорт простору імен
+#### Імпорт простору імен
 
 Наступний код вставляє `myModule`, який містить всі значення, експортовані з модуля `/modules/my-module.js`, у поточну область.
 
@@ -138,7 +140,7 @@ myModule.doAllTheAmazingThings();
 
 > **Примітка:** JavaScript не підтримує довільні імпорти, як от `import * from "module-name"`, через високу ймовірність конфліктів імен.
 
-### Імпортування модуля лише заради його побічних ефектів
+#### Імпортування модуля лише заради його побічних ефектів
 
 Імпорт цілого модуля лише заради його побічних ефектів, без імпортування чогось конкретного. Це запускає глобальний код модуля, проте не імпортує жодних значень.
 
@@ -147,6 +149,16 @@ import "/modules/my-module.js";
 ```
 
 Такий підхід часто використовується для [поліфілів](/uk/docs/Glossary/Polyfill), які модифікують глобальні змінні.
+
+### Підняття
+
+Оголошення імпорту – [піднімаються](/uk/docs/Glossary/Hoisting). В цьому випадку це означає, що імпортовані значення доступні в коді модуля навіть до рядка, що їх оголошує, і що побічні ефекти імпортованого модуля виробляються до запуску решти коду поточного модуля.
+
+```js
+myModule.doAllTheAmazingThings(); // myModule.doAllTheAmazingThings імпортується на наступному рядку
+
+import * as myModule from "/modules/my-module.js";
+```
 
 ## Приклади
 
@@ -221,12 +233,11 @@ setTimeout(() => {
 
 ## Дивіться також
 
-- {{JSxRef("Statements/export", "export")}}
-- [Динамічні імпорти](/uk/docs/Web/JavaScript/Reference/Operators/import)
+- {{jsxref("Statements/export", "export")}}
+- [`import()`](/uk/docs/Web/JavaScript/Reference/Operators/import)
 - [`import.meta`](/uk/docs/Web/JavaScript/Reference/Operators/import.meta)
-- Лімін Зу, Браян Терлсон і команда Microsoft Edge:
-  [Попередній огляд модулів ES6 та інше, з ES2015, ES2016 і далі (англ.)](https://blogs.windows.com/msedgedev/2016/05/17/es6-modules-and-beyond/)
-- Допис із хаками від Джейсона Орендорффа: [Поглиблено про ES6: Модулі (англ.)](https://hacks.mozilla.org/2015/08/es6-in-depth-modules/)
-- Допис із хаками від Лін Кларк: [Модулі ES: поглиблено і з малюнками (англ.)](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/)
-- Книга Акселя Раушмаєра: ["Дослідження JS: Модулі" (англ.)](https://exploringjs.com/es6/ch_modules.html)
-- Сучасний підручник з JavaScript (uk.javascript.info): [Експорт та імпорт](https://uk.javascript.info/import-export)
+- [Попередній огляд модулів ES6 та інше, з ES2015, ES2016 і далі](https://blogs.windows.com/msedgedev/2016/05/17/es6-modules-and-beyond/) на blogs.windows.com (2016)
+- [Заглиблення в ES6: Модулі](https://hacks.mozilla.org/2015/08/es6-in-depth-modules/) на hacks.mozilla.org (2015)
+- [Модулі ES: Занурення в малюнках](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/) на hacks.mozilla.org (2018)
+- [Дослідження JS, Г. 16: Модулі](https://exploringjs.com/es6/ch_modules.html) від доктора Акселя Раушмаєра
+- [Експорт та імпорт](https://uk.javascript.info/import-export) на uk.javascript.info
