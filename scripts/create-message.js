@@ -41,21 +41,20 @@ for (const match of results.matches) {
   } = match;
   let { length } = match;
   let endOffset = offset + length;
-  const start = mapping[offset];
+  const start = Number.parseInt(mapping[offset], 10);
   let end;
   endOffset -= 1;
+  length -= 1;
   while (!end) {
     endOffset += 1;
     length += 1;
-    end = mapping[endOffset];
+    end = Number.parseInt(mapping[endOffset], 10);
   }
   const [startLine, startColumn] = convertOffsetToLineAndColumn(start);
   const [endLine, endColumn] = convertOffsetToLineAndColumn(end);
   if (endLine <= startLine) {
+    console.error(startLine, endLine);
     throw new Error(`Line not found in source file: ${sentence}`);
-  }
-  if (endColumn <= startColumn) {
-    throw new Error(`Column not found in source file: ${sentence}`);
   }
   const errorformatLine = `${markdownFile}:${startLine}:${startColumn}:${endLine}:${endColumn}: ${message}`;
   console.log(errorformatLine);
