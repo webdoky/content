@@ -110,6 +110,7 @@ jobs:
     name: Report spelling
     needs: [prepare-translation, languagetool]
     permissions:
+      contents: read
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
