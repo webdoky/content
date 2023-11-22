@@ -20,7 +20,7 @@ jobs:
           if [ -z "$changed_files" ]; then
             echo "No files changed"
           else
-            translation_files=$(echo "$changed_files" | grep -E ".*\.md" | "")
+            translation_files=$(echo "$changed_files" | grep -E ".*\.md" || :)
             echo "$translation_files"
             echo "translation_files=<<$EOF" >> $GITHUB_OUTPUT
             echo "$translation_files" >> $GITHUB_OUTPUT
