@@ -27,6 +27,7 @@ jobs:
       - if: ${{ steps.translation-changes.outputs.translation_files != '' }}
         id: translation-check
         run: |
+          translation_files=${{ steps.translation-changes.outputs.translation_files }}
           if [ -z "$translation_files" ]; then
             echo "No translation files changed"
           else
