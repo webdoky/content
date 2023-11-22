@@ -9,13 +9,14 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - id: changed-files
+        run: echo "changed_files=$(git diff --diff-filter=d --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }})" >> $GITHUB_OUTPUT
       - name: Check translation
         # Check there is only one translation change
         # If there are more than one, the workflow will fail
         id: translation-changes
         run: |
-          changed_files=$(git diff --diff-filter=d --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }})
-          echo "$changed_files"
+          changed_files="${{steps.changed-files.outputs.changed_files}}"
           if [ -z "$changed_files" ]; then
             echo "No files changed"
           else
