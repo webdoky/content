@@ -22,12 +22,12 @@ jobs:
           else
             translation_files=$(echo "$changed_files" | grep -E ".*\.md" || ./pass.sh)
             echo "$translation_files"
-            echo "translation_files=\"$translation_files\"" >> $GITHUB_OUTPUT
+            echo "$translation_files" > ./translation_files.txt
           fi
       - if: ${{ steps.translation-changes.outputs.translation_files != '' }}
         id: translation-check
         run: |
-          translation_files=${{ steps.translation-changes.outputs.translation_files }}
+          translation_files=$(cat ./translation_files.txt)
           if [ -z "$translation_files" ]; then
             echo "No translation files changed"
           else
