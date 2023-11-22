@@ -134,6 +134,6 @@ jobs:
       - name: Send results
         run: |
           export REVIEWDOG_GITHUB_API_TOKEN=${{ secrets.GITHUB_TOKEN }}
-          cat ./message.txt | reviewdog -efm="%A%f:%l:%c:%e:%k: %m%Z" -fail-on-error -name="LanguageTool" -level=info
+          cat ./message.txt | reviewdog -efm="%A%f:%l:%c:%e:%k: %m%Z" -fail-on-error -filter-mode=nofilter -name="LanguageTool" -level=info
       - name: Exit with error
         run: echo "Spelling errors found" && cat result.json && exit 1
