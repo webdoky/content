@@ -2,10 +2,12 @@
 title: light-dark()
 slug: Web/CSS/color_value/light-dark
 page-type: css-function
+status:
+  - experimental
 browser-compat: css.types.color.light-dark
 ---
 
-{{CSSRef}}
+{{CSSRef}}{{SeeCompatTable}}
 
 [Функція `<color>`](/uk/docs/Web/CSS/CSS_Functions#funktsii-color) [CSS](/uk/docs/Web/CSS) **`light-dark()`** (світла-темна) дає змогу задавати властивості два кольори, з яких один буде повернений залежно від того, обрав розробник світлу чи темну палітру, або чи попросив користувач використовувати світлу, чи темну колірну тему – без необхідності обгортати кольори теми в запит [можливості медіа](/uk/docs/Web/CSS/CSS_media_queries/Using_media_queries#natsilennia-na-mozhlyvosti-media) [`prefers-color-scheme`](/uk/docs/Web/CSS/@media/prefers-color-scheme).
 Користувачі можуть сповіщати про свої побажання щодо колірної палітри за допомогою своїх системних налаштувань (наприклад, світлого чи темного режиму) або налаштувань користувацького агента. Функція `light-dark()` дає змогу надавати два значення кольору там, де приймається будь-яке значення `<color>`. Колірна функція CSS `light-dark()` повертає перше значення, якщо користувацьке налаштування задано як `light` або не задано, і друге значення, якщо користувацьке налаштування задано як `dark`.
