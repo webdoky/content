@@ -22,9 +22,7 @@ jobs:
           else
             translation_files=$(echo "$changed_files" | grep -E ".*\.md" || :)
             echo "$translation_files"
-            echo "translation_files=<<$EOF" >> $GITHUB_OUTPUT
-            echo "$translation_files" >> $GITHUB_OUTPUT
-            echo "$EOF" >> $GITHUB_OUTPUT
+            echo "translation_files=\"$translation_files\"" >> $GITHUB_OUTPUT
           fi
       - if: ${{ steps.translation-changes.outputs.translation_files != '' }}
         id: translation-check
