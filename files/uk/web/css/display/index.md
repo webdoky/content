@@ -250,7 +250,7 @@ display: unset;
 - [Сіткове компонування CSS та поступове поліпшення підтримки](/uk/docs/Web/CSS/CSS_grid_layout/Grid_layout_and_progressive_enhancement)
 - [Втілення звичних макетів за допомогою сіток](/uk/docs/Web/CSS/CSS_grid_layout/Realizing_common_layouts_using_grids)
 
-### Animating display
+### Анімування display
 
 [Браузери, що це підтримують](#sumisnist-iz-brauzeramy), анімують `display` із [дискретним типом анімації](/uk/docs/Web/CSS/CSS_animated_properties#dyskretni). Загалом це означає, що властивість буде змінюється між двома значеннями на 50% анімації між ними.
 
