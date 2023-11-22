@@ -67,10 +67,10 @@ browser-compat: html.global_attributes.autocomplete
   - : Назва компанії або організації, наприклад "ПАТ Еліт сервіс" або "ГО Теплі серця".
 - "`street-address`"
   - : Адреса на вулиці. Значення може мати кілька рядків тексту і повинно цілком ідентифікувати місце адреси в межах другого адміністративного рівня (зазвичай міста або містечка), але не повинно вміщати назву міста, поштовий індекс та назву країни.
-  - "`shipping`"
-    - : Адреса на вулиці для надсилання товару. Може бути поєднана з іншими лексемами, наприклад, "`shipping street-address`" чи "`shipping address-level2`".
-  - "`billing`"
-    - : Адреса на вулиці для зв'язування з використаною формою оплати. Може бути поєднана з іншими лексемами, наприклад, "`billing street-address`" чи "`billing address-level2`".
+    - "`shipping`"
+      - : Адреса на вулиці для надсилання товару. Може бути поєднана з іншими лексемами, наприклад, "`shipping street-address`" чи "`shipping address-level2`".
+    - "`billing`"
+      - : Адреса на вулиці для зв'язування з використаною формою оплати. Може бути поєднана з іншими лексемами, наприклад, "`billing street-address`" чи "`billing address-level2`".
 - "`address-line1`", "`address-line2`", "`address-line3`"
   - : Кожен окремий рядок адреси на вулиці. Такі поля повинні з'являтися лише тоді, коли "`street-address`" відсутнє.
 - "`address-level4`"
@@ -145,7 +145,7 @@ browser-compat: html.global_attributes.autocomplete
 - "`photo`"
   - : URL зображення, що представляє особу, компанію або контактну інформацію, вказану в інших полях форми.
 - "`webauthn`"
-  - : Ключі, згенеровані за допомогою [API Вебавтентифікації](/uk/docs/Web/API/Web_Authentication_API), які запитуються за допомогою умовного виклику {{domxref("CredentialsContainer.get()", "navigator.credentials.get()")}} (тобто того, який включає `mediation: 'conditional'`). Більше інформації в [Увійти за допомогою ключа через автозаповнення форми](https://web.dev/passkey-form-autofill/).
+  - : Ключі, згенеровані за допомогою [API Вебавтентифікації](/uk/docs/Web/API/Web_Authentication_API), які запитуються за допомогою умовного виклику {{domxref("CredentialsContainer.get()", "navigator.credentials.get()")}} (тобто того, який включає `mediation: 'conditional'`). Більше інформації у [Вході за допомогою ключа через автозаповнення форми](https://web.dev/articles/passkey-form-autofill).
 
 Детальніша інформація – у [стандарті WHATWG](https://html.spec.whatwg.org/multipage/forms.html#autofill).
 
