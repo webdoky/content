@@ -129,11 +129,11 @@ jobs:
         run: node scripts/create-file-mapping.js ./index.txt ${{ needs.prepare-translation.outputs.translation }} > ./mapping.json && cat ./mapping.json
       - id: create-message
         name: Create message
-        run: node scripts/create-message.js ${{ needs.prepare-translation.outputs.translation }} > message.txt
+        run: node scripts/create-message.js ${{ needs.prepare-translation.outputs.translation }} > message.txt && cat ./message.txt
       - uses: reviewdog/action-setup@v1
       - name: Send results
         run: |
           export REVIEWDOG_GITHUB_API_TOKEN=${{ secrets.GITHUB_TOKEN }}
-          cat ./message.txt | reviewdog -efm="%A%f:%l:%c:%e:%k: %m%Z" -reporter=github-pr-review -name="LanguageTool" -level=info
+          cat ./message.txt | reviewdog -efm="%A%f:%l:%c:%e:%k: %m%Z" -fail-on-error -reporter=github-pr-review -name="LanguageTool" -level=info
       - name: Exit with error
         run: echo "Spelling errors found" && cat result.json && exit 1
