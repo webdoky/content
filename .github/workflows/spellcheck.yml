@@ -1,5 +1,5 @@
 name: spellcheck
-on: [pull_request_target]
+on: [pull_request]
 jobs:
   prepare-translation:
     outputs:
@@ -134,6 +134,6 @@ jobs:
       - name: Send results
         run: |
           export REVIEWDOG_GITHUB_API_TOKEN=${{ secrets.GITHUB_TOKEN }}
-          cat ./message.txt | reviewdog -efm="%A%f:%l:%c:%e:%k: %m%Z" -fail-on-error -reporter=github-pr-review -name="LanguageTool" -level=info
+          cat ./message.txt | reviewdog -efm="%A%f:%l:%c:%e:%k: %m%Z" -fail-on-error -name="LanguageTool" -level=info
       - name: Exit with error
         run: echo "Spelling errors found" && cat result.json && exit 1
