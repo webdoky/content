@@ -50,11 +50,16 @@ for (const match of results.matches) {
     length += 1;
     end = Number.parseInt(mapping[endOffset], 10);
   }
+  console.error(start, end);
   const [startLine, startColumn] = convertOffsetToLineAndColumn(start);
   const [endLine, endColumn] = convertOffsetToLineAndColumn(end);
-  if (endLine <= startLine) {
+  if (endLine < startLine) {
     console.error(startLine, endLine);
     throw new Error(`Line not found in source file: ${sentence}`);
+  }
+  if (endLine === startLine && endColumn < startColumn) {
+    console.error(startColumn, endColumn);
+    throw new Error(`Column not found in source file: ${sentence}`);
   }
   const errorformatLine = `${markdownFile}:${startLine}:${startColumn}:${endLine}:${endColumn}: ${message}`;
   console.log(errorformatLine);
