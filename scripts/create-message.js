@@ -3,15 +3,16 @@
 // and print an errorformat message for each error
 // to stdout.
 
-const fs = require("fs");
+import { readFileSync } from "fs";
 
-const results = JSON.parse(fs.readFileSync("./results.json"));
+const results = JSON.parse(readFileSync("./results.json"));
+const MARKDOWN_FILE_ARG_INDEX = 2;
 /**
  * @type {Record<number, number>}
  */
-const mapping = JSON.parse(fs.readFileSync("./mapping.json"));
-const markdownFile = process.argv[2];
-const markdown = fs.readFileSync(markdownFile, "utf8");
+const mapping = JSON.parse(readFileSync("./mapping.json"));
+const markdownFile = process.argv[MARKDOWN_FILE_ARG_INDEX];
+const markdown = readFileSync(markdownFile, "utf8");
 
 const markdownRunes = Array.from(markdown);
 

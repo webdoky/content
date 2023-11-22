@@ -1,9 +1,11 @@
 // This script creates a mapping from a text file to a markdown file it was created from.
 
-const fs = require("fs");
+import { readFileSync } from "fs";
 
-const textFile = process.argv[2];
-const markdownFile = process.argv[3];
+const TEXT_FILE_ARG_INDEX = 2;
+const MARKDOWN_FILE_ARG_INDEX = 3;
+const textFile = process.argv[TEXT_FILE_ARG_INDEX];
+const markdownFile = process.argv[MARKDOWN_FILE_ARG_INDEX];
 
 if (!textFile || !markdownFile) {
   console.log(
@@ -12,8 +14,8 @@ if (!textFile || !markdownFile) {
   process.exit(1);
 }
 const mapping = {};
-const text = fs.readFileSync(textFile, "utf8");
-const markdown = fs.readFileSync(markdownFile, "utf8");
+const text = readFileSync(textFile, "utf8");
+const markdown = readFileSync(markdownFile, "utf8");
 const WHITESPACE_REGEXP = /\s/;
 // Iterate text by Unicode runes
 let markdownIndex = 0;
