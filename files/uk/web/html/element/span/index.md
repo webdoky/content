@@ -7,7 +7,7 @@ browser-compat: html.elements.span
 
 {{HTMLSidebar}}
 
-Елемент [HTML](/uk/docs/Web/HTML) **`<span>`** (розмах, відрізок, проліт, інтервал) – це узагальнений рядковий контейнер для оповідального вмісту, котрий по суті нічого не представляє. Він може застосовуватися для групування елементів для потреб оформлення (за допомогою атрибутів [`class`](/uk/docs/Web/HTML/Global_attributes#class) і [`id`](/uk/docs/Web/HTML/Global_attributes#id)), або через те, що вони поділяють значення атрибутів, як то [`lang`](/uk/docs/Web/HTML/Global_attributes#lang). Повинен застосовуватися лише тоді, коли жодний семантичний елемент не є доречним. `<span>` вельми подібний до елемента {{HTMLElement("div")}}, крім того, що {{HTMLElement("div")}} є [елементом блокового рівня](/uk/docs/Web/HTML/Block-level_elements), а `<span>` – [рядковий елемент](/uk/docs/Web/HTML/Inline_elements).
+Елемент [HTML](/uk/docs/Web/HTML) **`<span>`** (розмах, відрізок, проліт, інтервал) – це узагальнений рядковий контейнер для оповідального вмісту, котрий по суті нічого не представляє. Він може застосовуватися для групування елементів для потреб оформлення (за допомогою атрибутів [`class`](/uk/docs/Web/HTML/Global_attributes#class) і [`id`](/uk/docs/Web/HTML/Global_attributes#id)), або через те, що вони поділяють значення атрибутів, як то [`lang`](/uk/docs/Web/HTML/Global_attributes#lang). Повинен застосовуватися лише тоді, коли жодний семантичний елемент не є доречним. `<span>` вельми подібний до елемента {{HTMLElement("div")}}, крім того, що {{HTMLElement("div")}} є [елементом блокового рівня](/uk/docs/Glossary/Block-level_content), а `<span>` – [елементом рядкового](/uk/docs/Glossary/Inline-level_content).
 
 {{EmbedInteractiveExample("pages/tabbed/span.html", "tabbed-shorter")}}
 

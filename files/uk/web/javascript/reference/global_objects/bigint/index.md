@@ -11,7 +11,7 @@ browser-compat: javascript.builtins.BigInt
 
 ## Опис
 
-**Значення BigInt**, також іноді зване просто **BigInt**, є {{Glossary("Primitive", "примітивом")}} `bigint`, створеним шляхом додавання в кінець літерала цілого числа `n`, або ж викликом функції {{jsxref("Global_Objects/BigInt/BigInt", "BigInt()")}} (без оператора `new`) із передачею їй цілого числа або рядка.
+**Значення BigInt**, також іноді зване просто **BigInt**, є {{Glossary("Primitive", "примітивом")}} `bigint`, створеним шляхом додавання в кінець літерала цілого числа `n`, або ж викликом функції {{jsxref("BigInt/BigInt", "BigInt()")}} (без оператора `new`) із передачею їй цілого числа або рядка.
 
 ```js
 const previouslyMaxSafeInteger = 9007199254740991n;
@@ -53,50 +53,39 @@ typeof Object(1n) === "object"; // true
 
 ### Оператори
 
-Наступні оператори можуть використовуватися зі значеннями BigInt (як примітивними, так і загорнутими в об'єкти):
+Більшість операторів підтримує BigInt, проте також більшість не дозволяє змішувати операнди різних типів – BigInt мають бути або обидва, або жоден:
 
-```plain
-+ * - % **
-```
+- [Арифметичні оператори](/uk/docs/Web/JavaScript/Reference/Operators#aryfmetychni-operatory): `+`, `-`, `*`, `/`, `%`, `**`
+- [Бітові оператори](/uk/docs/Web/JavaScript/Reference/Operators#operatory-pobitovoho-zsuvu): `>>`, `<<`, `&`, `|`, `^`, `~`
+- [Унарне заперечення (`-`)](/uk/docs/Web/JavaScript/Reference/Operators/Unary_negation)
+- [Збільшення та зменшення на одиницю](/uk/docs/Web/JavaScript/Reference/Operators#zbilshennia-ta-zmenshennia-na-odynytsiu): `++`, `--`
 
-[Побітові оператори](/uk/docs/Web/JavaScript/Reference/Operators) також підтримуються, окрім `>>>` (зсуву вправо з заповненням нулями), адже всі значення BigInt мають знак.
+Оператори, що повертають булеві значення, дозволяють змішувати операнди-числа та BigInt:
 
-Також підтримується унарний оператор (`+`), [щоб не ламати asm.js](https://github.com/tc39/proposal-bigint/blob/master/ADVANCED.md#dont-break-asmjs).
+- [Оператори відношення](/uk/docs/Web/JavaScript/Reference/Operators#operatory-vidnoshennia) та [оператори рівності](/uk/docs/Web/JavaScript/Reference/Operators#operatory-rivnosti): `>`, `<`, `>=`, `<=`, `==`, `!=`, `===`, `!==`
+- [Логічні оператори](/uk/docs/Web/JavaScript/Reference/Operators#binarni-lohichni-operatory) покладаються лише на [істинність](/uk/docs/Glossary/Truthy) операндів
 
-```js
-const previousMaxSafe = BigInt(Number.MAX_SAFE_INTEGER);
-// 9007199254740991n
+Два оператори взагалі не підтримують BigInt:
 
-const maxPlusOne = previousMaxSafe + 1n;
-// 9007199254740992n
+- [Унарний плюс (`+`)](/uk/docs/Web/JavaScript/Reference/Operators/Unary_plus) не може їх підтримувати у зв'язку з конфліктом використання в asm.js, тож його пропустили, [щоб не ламати asm.js](https://github.com/tc39/proposal-bigint/blob/master/ADVANCED.md#dont-break-asmjs).
+- [Беззнаковий зсув управо (`>>>`)](/uk/docs/Web/JavaScript/Reference/Operators/Unsigned_right_shift) – єдиний бітовий оператор, що не підтримує BigInt, адже кожне значення BigInt має знак.
 
-const theFuture = previousMaxSafe + 2n;
-// 9007199254740993n, це тепер працює!
+Особливі випадки:
 
-const multi = previousMaxSafe * 2n;
-// 18014398509481982n
-
-const subtr = multi - 10n;
-// 18014398509481972n
-
-const mod = multi % 10n;
-// 2n
-
-const bigN = 2n ** 54n;
-// 18014398509481984n
-
-bigN * -1n;
-// -18014398509481984n
-```
-
-Оператор `/` також працює з цілими числами як очікується – проте результати операцій з дробовими результатами обрізаються при використанні зі значеннями BigInt: не буде жодної дробової частини.
+- Додавання (`+`) рядка та BigInt повертає рядок.
+- Ділення (`/`) відкидає дробові частини в бік до нуля, оскільки BigInt не може представляти дробові кількості.
 
 ```js
-const expected = 4n / 2n;
-// 2n
-
-const truncated = 5n / 2n;
-// 2n, а не 2.5n
+const previousMaxSafe = BigInt(Number.MAX_SAFE_INTEGER); // 9007199254740991n
+const maxPlusOne = previousMaxSafe + 1n; // 9007199254740992n
+const theFuture = previousMaxSafe + 2n; // 9007199254740993n, тепер це працює!
+const multi = previousMaxSafe * 2n; // 18014398509481982n
+const subtr = multi - 10n; // 18014398509481972n
+const mod = multi % 10n; // 2n
+const bigN = 2n ** 54n; // 18014398509481984n
+bigN * -1n; // -18014398509481984n
+const expected = 4n / 2n; // 2n
+const truncated = 5n / 2n; // 2n, а не 2.5n
 ```
 
 ### Порівняння
