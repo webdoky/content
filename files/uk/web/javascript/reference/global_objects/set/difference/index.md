@@ -2,10 +2,12 @@
 title: Set.prototype.difference()
 slug: Web/JavaScript/Reference/Global_Objects/Set/difference
 page-type: javascript-instance-method
+status:
+  - experimental
 browser-compat: javascript.builtins.Set.difference
 ---
 
-{{JSRef}}
+{{JSRef}}{{SeeCompatTable}}
 
 Метод **`difference()`** (різниця) примірників {{jsxref("Set")}} приймає іншу множину та повертає нову множину, що вміщає елементи поточної множини, не присутні в переданій множині.
 
