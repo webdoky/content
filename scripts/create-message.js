@@ -60,11 +60,9 @@ for (const match of results.matches) {
   // console.log(errorformatLine);
   console.log(`## ${message}\n`);
   console.log(`\`${markdownFile}:${startLine}:${startColumn}\n\``);
+  console.log(`${rule.description}:\n`);
   console.log(
-    `_${rule.description}: ${context.text.slice(
-      0,
-      context.offset,
-    )}**${context.text.slice(
+    `> ${context.text.slice(0, context.offset)}**${context.text.slice(
       context.offset,
       context.offset + context.length,
     )}**${context.text.slice(context.offset + context.length)}_`,
