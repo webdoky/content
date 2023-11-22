@@ -37,7 +37,7 @@ Object.hasOwn(obj, prop)
 Цей метод повертає `false`, якщо така властивість успадкована або не була оголошена взагалі.
 На відміну від оператора {{jsxref("Operators/in", "in")}}, цей метод не перевіряє на вказану властивість ланцюжок прототипів об'єкта.
 
-Рекомендовано віддавати перевагу цьому методові замість {{jsxref("Object.prototype.hasOwnProperty()")}}, оскільки він працює для об'єктів, створених за допомогою `Object.create(null)`, і для об'єктів, які перевизначили успадкований метод `hasOwnProperty()`. Хоча можливо обійти ці проблеми, викликавши `Object.prototype.hasOwnProperty()` на зовнішньому об'єкті, `Object.hasOwn()` є більш інтуїтивно зрозумілим.
+Рекомендовано віддавати перевагу цьому методові замість {{jsxref("Object.prototype.hasOwnProperty()")}}, оскільки він працює для [`null`-прототипних об'єктів](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#null-prototypni-obiekty), і для об'єктів, які перевизначили успадкований метод `hasOwnProperty()`. Хоча можливо обійти ці проблеми, викликавши `Object.prototype.hasOwnProperty()` на зовнішньому об'єкті, `Object.hasOwn()` є більш інтуїтивно зрозумілим.
 
 ## Приклади
 
@@ -127,7 +127,7 @@ if (Object.hasOwn(foo, "bar")) {
 }
 ```
 
-Також його можна використовувати для перевірки об'єктів, створених за допомогою {{jsxref("Object.create()","Object.create(null)")}}. Вони не успадковують властивості від `Object.prototype`, тож `hasOwnProperty()` недоступний.
+Також його можна використовувати щодо [`null`-прототипних об'єктів](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#null-prototypni-obiekty). Вони не успадковують властивості від `Object.prototype`, тож `hasOwnProperty()` недоступний.
 
 ```js
 const foo = Object.create(null);
@@ -153,4 +153,4 @@ if (Object.hasOwn(foo, "prop")) {
 - {{jsxref("Object.getOwnPropertyNames()")}}
 - {{jsxref("Statements/for...in", "for...in")}}
 - {{jsxref("Operators/in", "in")}}
-- [Посібник JavaScript – Повторний розгляд успадкування](/uk/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
+- [Успадкування та ланцюжок прототипів](/uk/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
