@@ -13,5 +13,3 @@ page-type: glossary-disambiguation
 ## Дивіться також
 
 - [Baseline](https://en.wikipedia.org/wiki/Baseline) на Wikipedia
-
-Іще одні тестові зміни
