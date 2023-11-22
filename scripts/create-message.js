@@ -59,18 +59,17 @@ for (const match of results.matches) {
   // const errorformatLine = `${markdownFile}:${startLine}:${startColumn}:${endLine}:${endColumn}: ${message}`;
   // console.log(errorformatLine);
   console.log(`## ${message}\n`);
-  console.log(`${markdownFile}:${startLine}:${startColumn}\n`);
+  console.log(`\`${markdownFile}:${startLine}:${startColumn}\n\``);
   console.log(
-    `${rule.description}: ${context.text.slice(
+    `_${rule.description}: ${context.text.slice(
       0,
       context.offset,
     )}**${context.text.slice(
       context.offset,
       context.offset + context.length,
-    )}**${context.text.slice(context.offset + context.length)}`,
+    )}**${context.text.slice(context.offset + context.length)}_`,
   );
-  console.log("\n");
-  console.log("Варіанти заміни:\n");
+  console.log("Варіанти заміни:");
   if (replacements.length > 0) {
     // eslint-disable-next-line no-restricted-syntax
     for (const replacement of replacements) {
@@ -79,4 +78,5 @@ for (const match of results.matches) {
   } else {
     console.log("Немає");
   }
+  console.log("\n");
 }

@@ -141,6 +141,8 @@ jobs:
       - name: Send results
         uses: mshick/add-pr-comment@v2
         with:
+          message-id: ${{ needs.prepare-translation.outputs.translation }}
           message-path: ./message.txt
+          refresh-message-position: true
       - name: Exit with error
         run: echo "Spelling errors found" && cat result.json && exit 1
