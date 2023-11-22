@@ -35,15 +35,28 @@ function convertOffsetToLineAndColumn(offset) {
 for (const match of results.matches) {
   const {
     offset,
-    length,
     message,
     // rule: { id: type },
+    sentence,
   } = match;
-  const endOffset = offset + length;
+  let { length } = match;
+  let endOffset = offset + length;
   const start = mapping[offset];
-  const end = mapping[endOffset];
+  let end;
+  endOffset -= 1;
+  while (!end) {
+    endOffset += 1;
+    length += 1;
+    end = mapping[endOffset];
+  }
   const [startLine, startColumn] = convertOffsetToLineAndColumn(start);
   const [endLine, endColumn] = convertOffsetToLineAndColumn(end);
+  if (endLine <= startLine) {
+    throw new Error(`Line not found in source file: ${sentence}`);
+  }
+  if (endColumn <= startColumn) {
+    throw new Error(`Column not found in source file: ${sentence}`);
+  }
   const errorformatLine = `${markdownFile}:${startLine}:${startColumn}:${endLine}:${endColumn}: ${message}`;
   console.log(errorformatLine);
 }
