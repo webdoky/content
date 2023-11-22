@@ -100,6 +100,11 @@ jobs:
         with:
           name: result
           path: result.json
+      - name: Upload text file
+        uses: actions/upload-artifact@v3
+        with:
+          name: text
+          path: ${{ steps.md2txt.outputs.translation }}
   report-spelling:
     if: ${{ needs.languagetool.outputs.has_matches != 'false'  }}
     name: Report spelling
@@ -116,8 +121,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "16"
+      - uses: actions/download-artifact@v3
+        with:
+          name: text
+          path: .
       - name: Create mapping
-        run: node scripts/create-file-mapping.js ${{ needs.prepare-translation.outputs.translation }} ./result.json > ./mapping.json && cat ./mapping.json
+        run: node scripts/create-file-mapping.js ${{ needs.prepare-translation.outputs.translation }} ./index.txt > ./mapping.json && cat ./mapping.json
       - id: create-message
         name: Create message
         run: node scripts/create-message.js ${{ needs.prepare-translation.outputs.translation }} > message.txt
