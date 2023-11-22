@@ -5,7 +5,7 @@
 
 import { readFileSync } from "fs";
 
-const results = JSON.parse(readFileSync("./results.json"));
+const results = JSON.parse(readFileSync("./result.json"));
 const MARKDOWN_FILE_ARG_INDEX = 2;
 /**
  * @type {Record<number, number>}
