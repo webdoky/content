@@ -11,7 +11,7 @@ browser-compat: javascript.builtins.String
 
 ## Опис
 
-Рядки корисні для зберігання тих даних, які можна представити в текстовій формі. Серед найуживаніших операцій з рядками: визначення їхньої {{jsxref("String/length", "довжини")}}, збирання і зчеплення їх докупи за допомогою [рядкових операторів + та +=](/uk/docs/Web/JavaScript/Guide/Expressions_and_operators#riadkovi-operatory), перевірку наявності чи знаходження позиції підрядка за допомогою методу {{jsxref("String.prototype.indexOf()", "indexOf()")}} та витягання певних підрядків за допомогою методу {{jsxref("String.prototype.substring()", "substring()")}}.
+Рядки корисні для зберігання тих даних, які можна представити в текстовій формі. Серед найуживаніших операцій з рядками: визначення їхньої {{jsxref("String/length", "довжини")}}, збирання і зчеплення їх докупи за допомогою [рядкових операторів `+` та `+=`](/uk/docs/Web/JavaScript/Guide/Expressions_and_operators#riadkovi-operatory), перевірку наявності чи знаходження позиції підрядка за допомогою методу {{jsxref("String/indexOf", "indexOf()")}} та витягання певних підрядків за допомогою методу {{jsxref("String/substring", "substring()")}}.
 
 ### Створення рядків
 
@@ -34,7 +34,7 @@ const string4 = new String("Об'єкт рядка");
 
 ### Доступ до окремих символів
 
-Існують два способи доступитися до окремого символу рядка. Перший — це метод {{jsxref("String.prototype.charAt()", "charAt()")}}:
+Існують два способи доступитися до окремого символу рядка. Перший — це метод {{jsxref("String/charAt", "charAt()")}}:
 
 ```js
 "cat".charAt(1); // дає значення "a"
@@ -97,7 +97,7 @@ areEqual("ı", "I", "tr"); // true
 
 ### Рядки-примітиви і рядки-об'єкти
 
-Зауважте, що JavaScript розрізняє об'єкти `String` та {{Glossary("Primitive", "примітивні значення рядків")}}. (Це справедливо також для {{jsxref("Boolean", "булевих значень")}} і {{jsxref("Global_Objects/Number", "чисел")}}.)
+Зауважте, що JavaScript розрізняє об'єкти `String` та {{Glossary("Primitive", "примітивні значення рядків")}}. (Це справедливо також для {{jsxref("Boolean", "булевих значень")}} і {{jsxref("Number", "чисел")}}.)
 
 Рядкові літерали (виділені одинарними або подвійними лапками), а також рядки, повернуті з викликів `String` без контексту конструктора (тобто викликів, виконаних без ключового слова {{jsxref("Operators/new", "new")}}), є рядками-примітивами. Коли відбувається спроба викликати метод чи звернутися до властивості примітивного рядка, JavaScript автоматично обгортає примітив у виклик конструктора, і вже потім – на об'єкті-обгортці звертається до методу чи властивості.
 
@@ -126,7 +126,7 @@ console.log(eval(s2)); // повертає рядок "2 + 2"
 
 Таким чином, код може ламатись в місцях, де очікується примітивний рядок, але натомість приходить об'єкт `String`. Хоча у більшості випадків про цю різницю хвилюватись не варто.
 
-Об'єкт `String` можна завжди перетворити на його примітивний відповідник, використавши метод {{jsxref("String.prototype.valueOf()", "valueOf()")}}.
+Об'єкт `String` можна завжди перетворити на його примітивний відповідник, використавши метод {{jsxref("String/valueOf", "valueOf()")}}.
 
 ```js
 console.log(eval(s2.valueOf())); // повертає число 4
@@ -157,12 +157,12 @@ console.log(eval(s2.valueOf())); // повертає число 4
 
 Рядки у своїй основі представлені як послідовності [кодових точок UTF-16](https://uk.wikipedia.org/wiki/UTF-16). У кодуванні UTF-16 кожна кодова точка – рівно 16 бітів завдовжки. Це означає, що є щонайбільше 2<sup>16</sup>, тобто 65536, можливих символів, котрі можна представити у вигляді кодової точки UTF-16. Цей набір символів зветься [багатомовною площиною 0](<https://uk.wikipedia.org/wiki/%D0%91%D0%B0%D0%B3%D0%B0%D1%82%D0%BE%D0%BC%D0%BE%D0%B2%D0%BD%D0%B0_%D0%BF%D0%BB%D0%BE%D1%89%D0%B8%D0%BD%D0%B0_(%D0%AE%D0%BD%D1%96%D0%BA%D0%BE%D0%B4)>) (або БМП) і містить більшість поширених символів типу латинської, грецької, кириличної абеток, а також чимало східноазійських символів. Кожна кодова точка може бути записана як рядок, де на початку стоїть `\u`, а далі – рівно чотири шістнадцяткові цифри.
 
-Проте увесь набір символів Unicode є набагато, набагато більшим за 65536. Додаткові символи зберігаються в UTF-16 як _сурогатні пари_, котрі є парами 16-бітових кодових одиниць, кожна з яких представляє єдиний символ. Для уникнення неоднозначності дві частини пари мусять лежати між `0xD800` та `0xDFFF`, і ці кодові одиниці не використовуються для кодування символів з однієї кодової одиниці. (Якщо точніше, то старші сурогати мають значення від `0xD800` до `0xDBFF` включно, а молодші – від `0xDC00` до `0xDFFF` включно.) Кожен символ Unicode, що складається з однієї чи двох кодових одиниць UTF-16, також зветься _кодовою точкою Unicode_. Кожна кодова точка Unicode може бути записана в рядок як `\u{xxxxxx}`, де `xxxxxx` – від однієї до 6 шістнадцяткових цифр.
+Проте увесь набір символів Unicode є набагато, набагато більшим за 65536. Додаткові символи зберігаються в UTF-16 як _сурогатні пари_, котрі є парами 16-бітових кодових одиниць, кожна з яких представляє єдиний символ. Для уникнення неоднозначності дві частини пари мусять лежати між `0xD800` та `0xDFFF`, і ці кодові одиниці не використовуються для кодування символів з однієї кодової одиниці. (Якщо точніше, то початкові сурогати, котрі також звуться високосурогатними кодовими одиницями, мають значення від `0xD800` до `0xDBFF` включно, а кінцеві, також відомі як низькосурогатні кодові одиниці, – від `0xDC00` до `0xDFFF` включно.) Кожен символ Unicode, що складається з однієї чи двох кодових одиниць UTF-16, також зветься _кодовою точкою Unicode_. Кожна кодова точка Unicode може бути записана в рядок як `\u{xxxxxx}`, де `xxxxxx` – від однієї до 6 шістнадцяткових цифр.
 
 "Самотній сурогат" – це 16-бітова кодова одиниця, яка відповідає одному з описів нижче:
 
-- Перебуває в діапазоні `0xD800`–`0xDBFF` включно (тобто є старшим сурогатом), але також є останньою кодовою одиницею в рядку, або наступна кодова одиниця не є молодшим сурогатом.
-- Перебуває в діапазоні `0xDC00`–`0xDFFF` включно (тобто є молодшим сурогатом), але є першою кодовою одиницею в рядку, або попередня кодова одиниця не є старшим сурогатом.
+- Перебуває в діапазоні `0xD800`-`0xDBFF` включно (тобто є початковим сурогатом), але також є останньою кодовою одиницею в рядку, або наступна кодова одиниця не є кінцевим сурогатом.
+- Перебуває в діапазоні `0xDC00`-`0xDFFF` включно (тобто є кінцевим сурогатом), але є першою кодовою одиницею в рядку, або попередня кодова одиниця не є початковим сурогатом.
 
 Самотні сурогати не представляють жодних символів Unicode. Хоча більшість вбудованих методів JavaScript обробляє їх правильно, оскільки всі вони працюють на основі кодових одиниць UTF-16, самотні сурогати нерідко бувають недопустимими значеннями при взаємодії з іншими системами – наприклад, [`encodeURI()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/encodeURI) викидає на самотніх сурогатах {{jsxref("URIError")}}, оскільки кодування URI використовує кодування UTF-8, котре не має кодування для самотніх сурогатів. Рядки, що не містять жодних самотніх сурогатів, називаються _добре сформованими_ рядками і є безпечними для використання з функціями, котрі не працюють з UTF-16 (такими як `encodeURI()` або {{domxref("TextEncoder")}}). Перевірити, чи є рядок добре формованим, можна за допомогою методу {{jsxref("String/isWellFormed", "isWellFormed()")}}, а також можна вичистити самотні сурогати – за допомогою методу {{jsxref("String/toWellFormed", "toWellFormed()")}}.
 
@@ -259,7 +259,7 @@ console.log(eval(s2.valueOf())); // повертає число 4
   - : Повертає масив рядків, отриманих розділенням початкового рядка в усіх точках входження підрядка `sep`.
 - {{jsxref("String.prototype.startsWith()")}} (починається (підрядком))
   - : Визначає, чи рядок, на якому було викликано метод, починається послідовністю символів `searchString`.
-- {{jsxref("String.prototype.substr()")}} (підрядок) {{Deprecated_Inline}}
+- {{jsxref("String.prototype.substr()")}} (підрядок) {{deprecated_inline}}
   - : Повертає підрядок, починаючи з вказаного індексу, і продовжуючи вказану кількість символів.
 - {{jsxref("String.prototype.substring()")}} (підрядок)
   - : Повертає новий рядок, що містить символи початкового рядка, взятих починаючи з вказаного індексу (або з-поміж індексів, якщо було вказано обидва).
@@ -267,13 +267,13 @@ console.log(eval(s2.valueOf())); // повертає число 4
 
   - : Повертає символи з початкового рядка, переведені в нижній регістр з урахуванням поточної активної локалі.
 
-    Для більшості мов результат виконання цієї функції буде ідентичним до {{jsxref("String.prototype.toLowerCase()", "toLowerCase()")}}.
+    Для більшості мов результат виконання цієї функції буде ідентичним до {{jsxref("String/toLowerCase", "toLowerCase()")}}.
 
 - {{jsxref("String.prototype.toLocaleUpperCase()")}} (до верхнього регістру згідно з локаллю)
 
   - : Повертає символи з початкового рядка, переведені в верхній регістр з урахуванням поточної активної локалі.
 
-    Для більшості мов результат виконання цієї функції буде ідентичним до {{jsxref("String.prototype.toUpperCase()", "toUpperCase()")}}.
+    Для більшості мов результат виконання цієї функції буде ідентичним до {{jsxref("String/toUpperCase", "toUpperCase()")}}.
 
 - {{jsxref("String.prototype.toLowerCase()")}} (до нижнього регістру)
   - : Повертає значення рядка, на якому було викликано метод, переведене у нижній регістр.
@@ -300,31 +300,31 @@ console.log(eval(s2.valueOf())); // повертає число 4
 >
 > Вони мають обмежене застосування, оскільки засновані на дуже старому стандарті HTML і надають лише підмножину наразі доступних тегів та атрибутів HTML. Чимало з них нині створює нерекомендовану чи нестандартну розмітку. На додачу до цього, ці методи виконують просте склеювання рядків, без жодних валідації й очищення, що робить їх потенційною загрозою безпеці, коли безпосередньо вставляти їх результат за допомогою [`innerHTML`](/uk/docs/Web/API/Element/innerHTML). Натомість слід використовувати [DOM API](/uk/docs/Web/API/Document_Object_Model), як то [`document.createElement()`](/uk/docs/Web/API/Document/createElement).
 
-- {{jsxref("String.prototype.anchor()")}} (якір) {{Deprecated_Inline}}
+- {{jsxref("String.prototype.anchor()")}} (якір) {{deprecated_inline}}
   - : [`<a name="name">`](/uk/docs/Web/HTML/Element/a#name) (ціль для гіперпосилань)
-- {{jsxref("String.prototype.big()")}} (великий) {{Deprecated_Inline}}
+- {{jsxref("String.prototype.big()")}} (великий) {{deprecated_inline}}
   - : {{HTMLElement("big")}}
-- {{jsxref("String.prototype.blink()")}} (блимання) {{Deprecated_Inline}}
+- {{jsxref("String.prototype.blink()")}} (блимання) {{deprecated_inline}}
   - : `<blink>`
-- {{jsxref("String.prototype.bold()")}} (грубий) {{Deprecated_Inline}}
+- {{jsxref("String.prototype.bold()")}} (грубий) {{deprecated_inline}}
   - : {{HTMLElement("b")}}
-- {{jsxref("String.prototype.fixed()")}} (фіксований) {{Deprecated_Inline}}
+- {{jsxref("String.prototype.fixed()")}} (фіксований) {{deprecated_inline}}
   - : {{HTMLElement("tt")}}
-- {{jsxref("String.prototype.fontcolor()")}} (колір шрифту) {{Deprecated_Inline}}
+- {{jsxref("String.prototype.fontcolor()")}} (колір шрифту) {{deprecated_inline}}
   - : [`<font color="color">`](/uk/docs/Web/HTML/Element/font#color)
-- {{jsxref("String.prototype.fontsize()")}} (розмір шрифту) {{Deprecated_Inline}}
+- {{jsxref("String.prototype.fontsize()")}} (розмір шрифту) {{deprecated_inline}}
   - : [`<font size="size">`](/uk/docs/Web/HTML/Element/font#size)
-- {{jsxref("String.prototype.italics()")}} (курсив) {{Deprecated_Inline}}
+- {{jsxref("String.prototype.italics()")}} (курсив) {{deprecated_inline}}
   - : {{HTMLElement("i")}}
-- {{jsxref("String.prototype.link()")}} (посилання) {{Deprecated_Inline}}
+- {{jsxref("String.prototype.link()")}} (посилання) {{deprecated_inline}}
   - : [`<a href="url">`](/uk/docs/Web/HTML/Element/a#href) (посилання на URL)
-- {{jsxref("String.prototype.small()")}} (дрібний) {{Deprecated_Inline}}
+- {{jsxref("String.prototype.small()")}} (дрібний) {{deprecated_inline}}
   - : {{HTMLElement("small")}}
-- {{jsxref("String.prototype.strike()")}} (викреслений) {{Deprecated_Inline}}
+- {{jsxref("String.prototype.strike()")}} (викреслений) {{deprecated_inline}}
   - : {{HTMLElement("strike")}}
-- {{jsxref("String.prototype.sub()")}} (підрядковий) {{Deprecated_Inline}}
+- {{jsxref("String.prototype.sub()")}} (підрядковий) {{deprecated_inline}}
   - : {{HTMLElement("sub")}}
-- {{jsxref("String.prototype.sup()")}} (надрядковий) {{Deprecated_Inline}}
+- {{jsxref("String.prototype.sup()")}} (надрядковий) {{deprecated_inline}}
   - : {{HTMLElement("sup")}}
 
 Зверніть увагу, що ці методи не перевіряють, чи містить сам рядок теги HTML, тож можливо створити недійсний HTML:
@@ -343,15 +343,17 @@ console.log(eval(s2.valueOf())); // повертає число 4
 
 ### Перетворення рядків
 
-`String` можна використовувати як більш надійну альтернативу методу {{jsxref("String.prototype.toString()", "toString()")}}, оскільки це працює навіть під час використання зі значеннями [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) та {{jsxref("undefined")}}. Наприклад:
+Функція `String()` – це надійніший спосіб перетворення значень на рядки, ніж виклик метода `toString()` на цільовому значенні, адже перший варіант працює щодо [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) і {{jsxref("undefined")}}. Наприклад:
 
 ```js
+// Звернутися до властивостей на null або undefined не вийде
+
 const nullVar = null;
-nullVar.toString(); // TypeError: nullVar is null
+nullVar.toString(); // TypeError: Cannot read properties of null
 String(nullVar); // "null"
 
 const undefinedVar = undefined;
-undefinedVar.toString(); // TypeError: undefinedVar is undefined
+undefinedVar.toString(); // TypeError: Cannot read properties of undefined
 String(undefinedVar); // "undefined"
 ```
 
@@ -365,5 +367,5 @@ String(undefinedVar); // "undefined"
 
 ## Дивіться також
 
-- [Настанови з JavaScript — форматування тексту](/uk/docs/Web/JavaScript/Guide/Text_formatting)
+- Посібник [Форматування тексту](/uk/docs/Web/JavaScript/Guide/Text_formatting)
 - {{jsxref("RegExp")}}

@@ -15,14 +15,14 @@ browser-compat: javascript.builtins.Math.max
 
 ```js-nolint
 Math.max()
-Math.max(value0)
-Math.max(value0, value1)
-Math.max(value0, value1, /* … ,*/ valueN)
+Math.max(value1)
+Math.max(value1, value2)
+Math.max(value1, value2, /* …, */ valueN)
 ```
 
 ### Параметри
 
-- `value1`, `value2`, … , `valueN`
+- `value1`, …, `valueN`
   - : Нуль чи більше чисел, найбільше з яких буде знайдено і повернено.
 
 ### Повернене значення

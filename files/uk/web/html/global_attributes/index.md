@@ -1,11 +1,7 @@
 ---
 title: Глобальні атрибути
 slug: Web/HTML/Global_attributes
-tags:
-  - Attribute
-  - HTML
-  - Reference
-  - Web
+page-type: landing-page
 browser-compat: html.global_attributes
 ---
 
@@ -17,7 +13,7 @@ browser-compat: html.global_attributes
 
 На додачу до базових глобальних атрибутів HTML, існують також наступні глобальні атрибути:
 
-- {{HTMLAttrDef("xml:lang")}} і {{HTMLAttrDef("xml:base")}} — успадковані від специфікацій XHTML і нерекомендовані, але збережені для потреб сумісності.
+- `xml:lang` і `xml:base` — успадковані від специфікацій XHTML і нерекомендовані, але збережені для потреб сумісності.
 - Атрибут ARIA [`role`](/uk/docs/Web/Accessibility/ARIA/Roles) і декілька станів і властивостей [`aria-*`](/uk/docs/Web/Accessibility/ARIA/Attributes), використовуються для надійної доступності.
 - Атрибути [обробників подій](/uk/docs/Web/HTML/Attributes#atrybuty-obrobnykiv-podii): `onabort`, `onautocomplete`, `onautocompleteerror`, `onblur`, `oncancel`, `oncanplay`, `oncanplaythrough`, `onchange`, `onclick`, `onclose`, `oncontextmenu`, `oncuechange`, `ondblclick`, `ondrag`, `ondragend`, `ondragenter`, `ondragleave`, `ondragover`, `ondragstart`, `ondrop`, `ondurationchange`, `onemptied`, `onended`, `onerror`, `onfocus`, `oninput`, `oninvalid`, `onkeydown`, `onkeypress`, `onkeyup`, `onload`, `onloadeddata`, `onloadedmetadata`, `onloadstart`, `onmousedown`, `onmouseenter`, `onmouseleave`, `onmousemove`, `onmouseout`, `onmouseover`, `onmouseup`, `onmousewheel`, `onpause`, `onplay`, `onplaying`, `onprogress`, `onratechange`, `onreset`, `onresize`, `onscroll`, `onseeked`, `onseeking`, `onselect`, `onshow`, `onsort`, `onstalled`, `onsubmit`, `onsuspend`, `ontimeupdate`, `ontoggle`, `onvolumechange`, `onwaiting`.
 
@@ -69,13 +65,15 @@ browser-compat: html.global_attributes
 - [`exportparts`](/uk/docs/Web/HTML/Global_attributes/exportparts) {{Experimental_Inline}}
   - : Використовується для транзитивного експорту тіньових частин зі вкладеного тіньового дерева до контейнерного світлого дерева.
 - [`hidden`](/uk/docs/Web/HTML/Global_attributes/hidden)
-  - : Булів атрибут, що вказує, що елемент поки що, чи уже, не є _доречним_. Наприклад, може застосовуватися для приховування елементів сторінки, що не можуть використовуватися, поки не завершено процес автентифікації. Браузер не виведе такі елементи. Цей атрибут не повинен використовуватися для приховування вмісту, що може бути правомірно показаний.
+  - : Перелічений атрибут, що вказує, що елемент поки що, чи уже, не є _доречним_. Наприклад, може застосовуватися для приховування елементів сторінки, що не можуть використовуватися, поки не завершено процес автентифікації. Браузер не виведе такі елементи. Цей атрибут не повинен використовуватися для приховування вмісту, що може бути правомірно показаний.
 - [`id`](/uk/docs/Web/HTML/Global_attributes/id)
   - : Визначає унікальний ідентифікатор (ID), що мусить бути унікальним у всьому документі. Його призначення – ідентифікувати елемент у посиланнях (за допомогою фрагмента ідентифікатора), для сценаріїв чи оформлення (засобами CSS).
+- [`inert`](/uk/docs/Web/HTML/Global_attributes/inert)
+  - : Булеве значення, котре змушує браузер зневажати на елементі події введення користувача. Корисно, коли присутні події клацання.
 - [`inputmode`](/uk/docs/Web/HTML/Global_attributes/inputmode)
-  - : Надає браузерам підказку щодо того, який тип віртуальної клавіатури використовувати при редагуванні цього елемента чи його вмісту. Використовується перш за все на елементах {{HTMLElement("input")}}, але є застосовним до будь-якого елементу, поки він перебуває в режимі {{HTMLAttrxRef("contenteditable")}}.
+  - : Надає браузерам підказку щодо того, який тип віртуальної клавіатури використовувати при редагуванні цього елемента чи його вмісту. Використовується перш за все на елементах {{HTMLElement("input")}}, але є застосовним до будь-якого елементу, поки він перебуває в режимі [`contenteditable`](#contenteditable).
 - [`is`](/uk/docs/Web/HTML/Global_attributes/is)
-  - : Дає змогу вказати, що стандартний елемент HTML повинен поводитись як зареєстрований користувацький вбудований елемент (подробиці у [Використанні користувацьких елементів](/uk/docs/Web/Web_Components/Using_custom_elements)).
+  - : Дає змогу вказати, що стандартний елемент HTML повинен поводитись як зареєстрований користувацький вбудований елемент (подробиці у [Використанні користувацьких елементів](/uk/docs/Web/API/Web_components/Using_custom_elements)).
 
 > **Примітка:** Атрибути `item*` є частиною [Функціональності мікроданих HTML WHATWG (англ.)](https://html.spec.whatwg.org/multipage/microdata.html#microdata).
 
@@ -90,15 +88,17 @@ browser-compat: html.global_attributes
 - [`itemtype`](/uk/docs/Web/HTML/Global_attributes/itemtype)
   - : Задає URL словника, що буде використаний для визначення `itemprop` (властивостей елемента даних) у структурі даних. [`itemscope`](/uk/docs/Web/HTML/Global_attributes/itemscope) використовується для задання області дії, в межах котрої діятиме структура даних, задана словником з `itemtype`.
 - [`lang`](/uk/docs/Web/HTML/Global_attributes/lang)
-  - : Допомагає з'ясувати мову елемента: мова нередагованих елементів або мова, котрою користувач повинен заповнити редаговані елементи. Атрибут містить один "тег мови" (зроблений з розділених дефісами "підтегів мови") у форматі, визначеному в {{RFC(5646, "Тегах для визначення мов (також відомому як BCP 47)")}}. [**xml:lang**](#attr-xml:lang) має пріоритет над цим тегом.
+  - : Допомагає з'ясувати мову елемента: мова нередагованих елементів або мова, котрою користувач повинен заповнити редаговані елементи. Атрибут містить один "тег мови" (зроблений з розділених дефісами "підтегів мови") у форматі, визначеному в {{RFC(5646, "Тегах для визначення мов (також відомому як BCP 47)")}}. `xml:lang` має пріоритет над цим тегом.
 - [`nonce`](/uk/docs/Web/HTML/Global_attributes/nonce)
   - : Криптографічний однораз ("одноразове число"), що може бути використаний [Політикою безпеки вмісту](/uk/docs/Web/HTTP/CSP) для визначення того, чи буде даному запитові дозволено відбутися.
 - [`part`](/uk/docs/Web/HTML/Global_attributes/part)
   - : Розділений пробілами список імен частин елемента. Імена частин дають CSS змогу вибирати й оформлювати конкретні елементи в тіньовому дереві за допомогою псевдоелемента {{CSSxRef("::part")}}.
+- [`popover`](/uk/docs/Web/HTML/Global_attributes/popover)
+  - : Використовується для позначення елемента як спливного (дивіться {{domxref("Popover API", "Popover API", "", "nocode")}}). Спливні елементи приховані за допомогою `display: none`, поки не будуть відкриті за допомогою заклично-контрольного елемента (тобто `<button>` або `<input type="button">` з атрибутом [`popovertarget`](/uk/docs/Web/HTML/Element/button#popovertarget)) або виклику {{domxref("HTMLElement.showPopover()")}}.
 - [`role`](/uk/docs/Web/Accessibility/ARIA/Roles)
   - : Ролі визначають семантичне значення вмісту, даючи читачам з екрана та іншим інструментам представляти й підтримувати взаємодію з об'єктом у спосіб, що узгоджений з очікуваннями користувача щодо об'єкта такого типу. `role` додаються до елементів HTML за допомогою `role="role_type"`, де `role_type` – ім'я ролі в специфікації ARIA.
 - [`slot`](/uk/docs/Web/HTML/Global_attributes/slot)
-  - : Присвоює елементові гніздо в тіньовому дереві [тіньового DOM](/uk/docs/Web/Web_Components/Using_shadow_DOM): елемент з атрибутом `slot` призначається в гніздо, утворене елементом {{HTMLElement("slot")}}, значення чийого атрибута {{HTMLAttrxRef("name", "slot")}} збігається зі значенням атрибута `slot` поточного елемента.
+  - : Присвоює елементові гніздо в тіньовому дереві [тіньового DOM](/uk/docs/Web/API/Web_components/Using_shadow_DOM): елемент з атрибутом `slot` призначається в гніздо, утворене елементом {{HTMLElement("slot")}}, значення чийого атрибута [`name`](/uk/docs/Web/HTML/Element/slot#name) збігається зі значенням атрибута `slot` поточного елемента.
 - [`spellcheck`](/uk/docs/Web/HTML/Global_attributes/spellcheck)
 
   - : Атрибут, що визначає, чи повинен елемент бути перевірений на помилки правопису. Може мати наступні значення:
@@ -124,6 +124,13 @@ browser-compat: html.global_attributes
 
     - порожній рядок чи `yes`, що означає, що елемент буде перекладений.
     - `no`, що означає, що елемент не буде перекладений.
+
+- [`virtualkeyboardpolicy`](/uk/docs/Web/HTML/Global_attributes/virtualkeyboardpolicy)
+
+  - : [Перелічений](/uk/docs/Glossary/Enumerated) атрибут, що використовується для контролю поведінки екранної віртуальної клавіатури на пристроях штибу планшетів, мобільних телефонів та інших, на яких апаратної клавіатури може не бути, для елементів, котрі також підтримують атрибут [`contenteditable`](#contenteditable).
+
+    - `auto` або _порожній рядок_ – коли на елемент перевели фокус або торкнулися його, автоматично виводиться віртуальна клавіатура.
+    - `manual` – фокус і дотик елемента відв'язані від стану віртуальної клавіатури.
 
 ## Специфікації
 

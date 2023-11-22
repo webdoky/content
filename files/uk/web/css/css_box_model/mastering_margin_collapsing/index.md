@@ -1,6 +1,6 @@
 ---
 title: Опанування перекриття зовнішніх полів
-slug: Web/CSS/CSS_Box_Model/Mastering_margin_collapsing
+slug: Web/CSS/CSS_box_model/Mastering_margin_collapsing
 page-type: guide
 spec-urls: https://www.w3.org/TR/CSS22/box.html#collapsing-margins
 ---
@@ -70,10 +70,6 @@ p {
 
 {{EmbedLiveSample('pryklady', 'auto', 350)}}
 
-## Специфікації
-
-{{Specifications}}
-
 ## Дивіться також
 
 - Ключові концепції CSS:
@@ -82,7 +78,7 @@ p {
   - [Коментарі](/uk/docs/Web/CSS/Comments)
   - [Специфічність](/uk/docs/Web/CSS/Specificity)
   - [Успадкування](/uk/docs/Web/CSS/Inheritance)
-  - [Рамкова модель](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+  - [Рамкова модель](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
   - [Режими компонування](/uk/docs/Web/CSS/Layout_mode)
   - [Моделі візуального форматування](/uk/docs/Web/CSS/Visual_formatting_model)
   - Значення
