@@ -136,19 +136,11 @@ jobs:
           path: .
       - name: Create mapping
         run: node scripts/create-file-mapping.js ./index.txt ${{ needs.prepare-translation.outputs.translation }} > ./mapping.json && cat ./mapping.json
-      - id: create-message
-        name: Create message
-        run: node scripts/create-message.js ${{ needs.prepare-translation.outputs.translation }} > message.txt && cat ./message.txt
-      # - uses: reviewdog/action-setup@v1
-      # - name: Send results
-      #   run: |
-      #     export REVIEWDOG_GITHUB_API_TOKEN=${{ secrets.GITHUB_TOKEN }}
-      #     cat ./message.txt | reviewdog -efm="%A%f:%l:%c:%e:%k: %m%Z" -fail-on-error -reporter=github-pr-review -filter-mode=nofilter -name="LanguageTool" -level=info
-      - name: Send results
-        uses: mshick/add-pr-comment@v2
-        with:
-          message-id: ${{ needs.prepare-translation.outputs.translation }}
-          message-path: ./message.txt
-          refresh-message-position: true
+      - env:
+          COMMIT_ID: ${{ github.event.pull_request.head.sha }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        name: Send results
+        run: node scripts/send-comments.js ${{ needs.prepare-translation.outputs.translation }}
       - name: Exit with error
         run: echo "Spelling errors found" && cat result.json && exit 1
