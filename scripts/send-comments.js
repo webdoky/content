@@ -12,6 +12,12 @@ const markdown = readFileSync(markdownFile, "utf8");
 
 const markdownRunes = Array.from(markdown);
 
+const MARKDOWN_ESCAPE_REGEX = /([!#()*+.[\\\]_`{}-])/g;
+
+function escapeTextForMarkdown(text) {
+  return text.replaceAll(MARKDOWN_ESCAPE_REGEX, "\\$1");
+}
+
 function convertOffsetToLineAndColumn(offset) {
   let line = 1;
   let column = 1;
@@ -53,18 +59,23 @@ for (const match of results.matches) {
     throw new Error(`Column not found in source file: ${sentence}`);
   }
   // const errorformatLine = `${markdownFile}:${startLine}:${startColumn}:${endLine}:${endColumn}: ${message}`;
-  let comment = `### ${message}\n${rule.description}\n${rule.category.id}/${rule.id}: ${rule.description}\n`;
+  let comment = `### ${message}\n${escapeTextForMarkdown(rule.description)}\n${
+    rule.category.id
+  }/${rule.id}: ${escapeTextForMarkdown(rule.description)}\n`;
   // console.log(`\`${markdownFile}:${startLine}:${startColumn}\n\``);
-  comment += `> ${context.text.slice(0, context.offset)}**${context.text.slice(
-    context.offset,
-    context.offset + context.length,
-  )}**${context.text.slice(context.offset + context.length)}`;
+  comment += `> ${escapeTextForMarkdown(
+    context.text.slice(0, context.offset),
+  )}**${escapeTextForMarkdown(
+    context.text.slice(context.offset, context.offset + context.length),
+  )}**${escapeTextForMarkdown(
+    context.text.slice(context.offset + context.length),
+  )}`;
   if (replacements?.length) {
     comment += "\n\n#### Варіанти заміни\n";
     // eslint-disable-next-line no-restricted-syntax
     for (const replacement of replacements) {
       // console.log(`- ${replacement.value}`);
-      comment += `- ${replacement.value}\n`;
+      comment += `- ${escapeTextForMarkdown(replacement.value)}\n`;
     }
   }
   const parameters = {
