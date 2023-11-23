@@ -5,7 +5,7 @@ page-type: guide
 browser-compat: javascript.classes
 ---
 
-{{JsSidebar("Classes")}}
+{{jsSidebar("Classes")}}
 
 Класи — це зразки, за якими створюються нові об'єкти. Вони інкапсулюють дані й код, який працює з цими даними. Класи в JS побудовані на [прототипах](/uk/docs/Web/JavaScript/Inheritance_and_the_prototype_chain), хоча й містять певні унікальні синтаксичні та семантичні особливості.
 
@@ -69,10 +69,10 @@ const Rectangle = class Rectangle2 {
   - : Публічне поле примірника
 - [`static`](/uk/docs/Web/JavaScript/Reference/Classes/static)
   - : Публічний статичний метод, гетер, сетер чи поле
-- [Приватні можливості класів](/uk/docs/Web/JavaScript/Reference/Classes/Private_class_fields)
+- [Приватні властивості](/uk/docs/Web/JavaScript/Reference/Classes/Private_properties)
   - : Усе, що приватно
 
-> **Примітка:** Приватні можливості мають таке обмеження, що всі імена властивостей, оголошені в одному класі, повинні бути неповторними. Інші, публічні властивості – не мають такого обмеження: можна мати декілька публічних властивостей з одним іменем, і остання серед них замінить всі попередні. Так само це працює в [об'єктних ініціалізаторах](/uk/docs/Web/JavaScript/Reference/Operators/Object_initializer#dubliuvannia-imen-vlastyvostei).
+> **Примітка:** Приватні можливості мають таке обмеження, що всі імена властивостей, оголошені в одному класі, повинні бути неповторними. Інші, публічні властивості – не мають такого обмеження: можна мати декілька публічних властивостей з одним іменем, і остання серед них замінить всі попередні. Так само це працює в [об'єктних ініціалізаторах](/uk/docs/Web/JavaScript/Reference/Operators/Object_initializer#dubliuvannia-nazv-vlastyvostei).
 
 На додачу до цього, є два особливі записи елементів класу: [`constructor`](#konstruktor) і [блоки статичної ініціалізації](#bloky-statychnoi-initsializatsii), котрі мають власні довідкові матеріали.
 
@@ -183,7 +183,7 @@ class Rectangle {
 
 Більше інформації – на сторінці [публічних полів класів](/uk/docs/Web/JavaScript/Reference/Classes/Public_class_fields).
 
-#### Приватні можливості класів
+#### Приватні властивості
 
 Вищезазначений опис класу можна переробити у такий спосіб, застосувавши приватні поля:
 
@@ -202,7 +202,7 @@ class Rectangle {
 
 Приватні поля можна оголошувати лише заздалегідь, під час опису полів. Їх не можна створювати пізніше шляхом присвоєння їм значень, так, як це можна робити зі звичайними властивостями.
 
-Додаткову інформацію можна знайти в розділі [приватних можливостей класів](/uk/docs/Web/JavaScript/Reference/Classes/Private_class_fields).
+Додаткову інформацію можна знайти в розділі [приватних властивостей](/uk/docs/Web/JavaScript/Reference/Classes/Private_properties).
 
 ### Успадкування
 
@@ -280,7 +280,7 @@ l.speak();
 
 ### Зв'язування this із примірником і статичні методи
 
-Коли статичний метод або метод примірника викликається без значення {{jsxref("Operators/this", "this")}}, наприклад, шляхом присвоєння методу змінній, а потім виклику його через змінну, то всередині такого методу `this` матиме значення `undefined`. Така логіка діє навіть тоді, коли не задана директива {{jsxref("Strict_mode", "\"use strict\"")}}, адже код всередині тіла `class` завжди виконується в суворому режимі.
+Коли статичний метод або метод примірника викликається без значення {{jsxref("Operators/this", "this")}}, наприклад, шляхом присвоєння методу змінній, а потім виклику його через змінну, то всередині такого методу `this` матиме значення `undefined`. Така логіка діє навіть тоді, коли не задана директива [`"use strict"`](/uk/docs/Web/JavaScript/Reference/Strict_mode), адже код всередині тіла `class` завжди виконується в суворому режимі.
 
 ```js
 class Animal {
@@ -327,8 +327,8 @@ eat(); // глобальний об'єкт (у несуворому режимі
 
 ## Дивіться також
 
-- [Застосування класів](/uk/docs/Web/JavaScript/Guide/Using_classes)
+- Посібник [Застосування класів](/uk/docs/Web/JavaScript/Guide/Using_classes)
 - [`class`](/uk/docs/Web/JavaScript/Reference/Statements/class)
 - [Вираз `class`](/uk/docs/Web/JavaScript/Reference/Operators/class)
 - [Функції](/uk/docs/Web/JavaScript/Reference/Functions)
-- [Заглиблення в ES6: Класи](https://hacks.mozilla.org/2015/07/es6-in-depth-classes/) на hacks.mozilla.org (22 липня 2015 року)
+- [Заглиблення в ES6: Класи](https://hacks.mozilla.org/2015/07/es6-in-depth-classes/) на hacks.mozilla.org (2015)

@@ -4,9 +4,9 @@ slug: Web/JavaScript
 page-type: landing-page
 ---
 
-{{JsSidebar}}
+{{jsSidebar}}
 
-**JavaScript** (**JS**) – це невибаглива до ресурсів мова програмування з {{Glossary("First-class Function", "функціями першого класу")}}, код якої інтерпретується, або компілюється ["на льоту"](https://uk.wikipedia.org/wiki/JIT-%D0%BA%D0%BE%D0%BC%D0%BF%D1%96%D0%BB%D1%8F%D1%86%D1%96%D1%8F). Хоча JavaScript насамперед відома як скриптова мова для вебсторінок, вона також використовується у [багатьох небраузерних середовищах](https://uk.wikipedia.org/wiki/JavaScript#%D0%97%D0%B0%D1%81%D1%82%D0%BE%D1%81%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F), як от: {{Glossary("Node.js")}}, [Apache CouchDB](https://couchdb.apache.org/) та [Adobe Acrobat](https://opensource.adobe.com/dc-acrobat-sdk-docs/acrobatsdk/). JavaScript — це [прототипна](/uk/docs/Glossary/Prototype-based_programming), [однопотокова](/uk/docs/Glossary/Thread) [динамічна](/uk/docs/Glossary/Dynamic_typing) мова, що має декілька парадигм та підтримує об'єктноорієнтований та декларативні (зокрема функційне програмування) стилі.
+**JavaScript** (**JS**) – це невибаглива до ресурсів мова програмування з {{Glossary("First-class Function", "функціями першого класу")}}, код якої інтерпретується (або компілюється ["на льоту"](https://uk.wikipedia.org/wiki/JIT-%D0%BA%D0%BE%D0%BC%D0%BF%D1%96%D0%BB%D1%8F%D1%86%D1%96%D1%8F)). Хоча JavaScript насамперед відома як скриптова мова для вебсторінок, вона також використовується у [багатьох небраузерних середовищах](https://uk.wikipedia.org/wiki/JavaScript#%D0%97%D0%B0%D1%81%D1%82%D0%BE%D1%81%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F), як от: {{Glossary("Node.js")}}, [Apache CouchDB](https://couchdb.apache.org/) та [Adobe Acrobat](https://opensource.adobe.com/dc-acrobat-sdk-docs/acrobatsdk/). JavaScript — це [прототипна](/uk/docs/Glossary/Prototype-based_programming), [однопотокова](/uk/docs/Glossary/Thread) [динамічна](/uk/docs/Glossary/Dynamic_typing) мова, що має декілька парадигм та підтримує об'єктноорієнтований та декларативні (зокрема функційне програмування) стилі.
 
 Серед динамічних можливостей JavaScript – конструювання об'єктів під час виконання, змінні списки параметрів, змінні-функції, динамічне створення сценаріїв (за допомогою [`eval`](/uk/docs/Web/JavaScript/Reference/Global_Objects/eval)), інтроспекція об'єктів (за допомогою [`for...in`](/uk/docs/Web/JavaScript/Reference/Statements/for...in) і [допоміжних засобів `Object`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#statychni-metody)) і відновлення вихідного коду (функції JavaScript зберігають текст свого коду, його можна отримати за допомогою [`toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/toString)).
 
@@ -63,7 +63,7 @@ page-type: landing-page
 - [Структури даних у JavaScript](/uk/docs/Web/JavaScript/Data_structures)
   - : Огляд наявних структур даних у JavaScript.
 - [Порівняння на схожість і однаковість](/uk/docs/Web/JavaScript/Equality_comparisons_and_sameness)
-  - : JavaScript надає три різних способи для порівняння значень: строга рівність через використання `===`, вільна рівність з `==` та метод {{jsxref("Global_Objects/Object/is", "Object.is()")}}.
+  - : JavaScript надає три різних способи для порівняння значень: строга рівність через використання `===`, вільна рівність з `==` та метод {{jsxref("Object.is()")}}.
 - [Перелічуваність і власність властивостей](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties)
   - : Те, як різні методи, котрі одну за одною обробляють властивості об'єктів, обробляють перелічуваність та власність властивостей.
 - [Замикання](/uk/docs/Web/JavaScript/Closures)
@@ -75,8 +75,8 @@ page-type: landing-page
   - : Роз'яснення прототипного наслідування (яке часто недооцінюють та невірно розуміють).
 - [Керування пам'яттю](/uk/docs/Web/JavaScript/Memory_management)
   - : Життєвий цикл пам'яті та збирання сміття у JavaScript.
-- [Модель багатопотоковості та цикл подій](/uk/docs/Web/JavaScript/Event_loop)
-  - : JavaScript має модель багатопотоковості, засновану на "циклі подій".
+- [Цикл подій](/uk/docs/Web/JavaScript/Event_loop)
+  - : JavaScript має модель середовища виконання, засновану на "циклі подій".
 
 ## Довідник
 

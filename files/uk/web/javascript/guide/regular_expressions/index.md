@@ -49,16 +49,14 @@ page-type: guide
 
 Наступні сторінки містять списки різних спеціальних символів, розбитих на категорії, з описами та прикладами.
 
-- [Перевірки](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Assertions)
+- Посібник [Перевірки](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Assertions)
   - : Перевірки включають межі, які позначають початки й закінчення слів та рядків, та інші патерни, котрі якимось чином вказують, що збіг можливий (включно з випереджувальними, ретроспективними та умовними виразами).
-- [Класи символів](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Character_classes)
+- Посібник [Класи символів](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Character_classes)
   - : Розрізняють різні типи символів. Наприклад, розрізнення літер та цифр.
-- [Групи й зворотні посилання](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Groups_and_backreferences)
+- Посібник [Групи й зворотні посилання](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Groups_and_backreferences)
   - : Групи групують декілька патернів як єдине ціле, а групи захоплення надають додаткову інформацію вкладеного збігу, коли патерн регулярного виразу зіставляється з рядком. Зворотні посилання посилаються на попередньо захоплену групу в тому самому регулярному виразі.
-- [Квантори](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Quantifiers)
+- Посібник [Квантори](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Quantifiers)
   - : Вказують кількість символів чи виразів для збігу.
-- [Екранування юнікодних полів](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Unicode_property_escapes)
-  - : Розрізнення, засноване на властивостях символів Unicode. Наприклад, літери верхнього та нижнього регістру, математичні та розділові знаки.
 
 Нижче наведено єдину таблицю всіх спеціальних символів, які можна використовувати в регулярних виразах:
 
@@ -136,18 +134,6 @@ page-type: guide
         </p>
       </td>
     </tr>
-    <tr>
-      <td>
-        <code>\p{<em>UnicodeProperty</em>}</code>,
-        <code>\P{<em>UnicodeProperty</em>}</code>
-      </td>
-      <td>
-        <a
-          href="/uk/docs/Web/JavaScript/Guide/Regular_expressions/Unicode_property_escapes"
-          >Екранування поля Unicode</a
-        >
-      </td>
-    </tr>
   </tbody>
 </table>
 
@@ -166,7 +152,7 @@ page-type: guide
 
 Використовуючи конструктор `RegExp` з рядковим літералом, пам'ятайте, що зворотний скіс — це екранувальний символ в рядкових літералах. І щоб застосувати його в регулярному виразі, слід спершу його екранувати на рівні рядкового літерала. `/a\*b/` та `new RegExp("a\\*b")` створюють один і той самий вираз, який шукатиме літеру "a" з символом за нею "\*" і літерою "b" після них.
 
-Якщо екранувальні рядки ще не входять в готовий патерн, їх можна додати за допомогою {{jsxref('String.prototype.replace()')}}:
+Якщо екранувальні рядки ще не входять в готовий патерн, їх можна додати за допомогою {{jsxref("String.prototype.replace()")}}:
 
 ```js
 function escapeRegExp(string) {
@@ -307,15 +293,16 @@ console.log("Поле lastIndex має значення " + /d(b+)d/g.lastIndex)
 
 Регулярні вирази мають необов'язкові опції, що дає змогу використовувати таку функціональність, як глобальний пошук чи пошук без врахування регістру літер. Ці опції можна використовувати окремо або разом, у будь-якому порядку, і вони входять в сам регулярний вираз.
 
-| Позначка | Опис                                                                                  | Відповідна властивість                        |
-| -------- | ------------------------------------------------------------------------------------- | --------------------------------------------- |
-| `d`      | Згенерувати індекси для збігів підрядків.                                             | {{jsxref("RegExp/hasIndices", "hasIndices")}} |
-| `g`      | Глобальний пошук.                                                                     | {{jsxref("RegExp/global", "global")}}         |
-| `i`      | Пошук, нечутливий до регістру.                                                        | {{jsxref("RegExp/ignoreCase", "ignoreCase")}} |
-| `m`      | Дозволяє `^` та `$` давати збіг з символами нового рядка.                             | {{jsxref("RegExp/multiline", "multiline")}}   |
-| `s`      | Дозволяє символові `.` давати збіг з символами нового рядка.                          | {{jsxref("RegExp/dotAll", "dotAll")}}         |
-| `u`      | "Unicode"; сприймає патерн як послідовність кодових точок Unicode.                    | {{jsxref("RegExp/unicode", "unicode")}}       |
-| `y`      | Виконує «липкий» пошук, який починає пошук збігів з поточної позиції цільового рядка. | {{jsxref("RegExp/sticky", "sticky")}}         |
+| Позначка | Опис                                                                                  | Відповідна властивість                          |
+| -------- | ------------------------------------------------------------------------------------- | ----------------------------------------------- |
+| `d`      | Згенерувати індекси для збігів підрядків.                                             | {{jsxref("RegExp/hasIndices", "hasIndices")}}   |
+| `g`      | Глобальний пошук.                                                                     | {{jsxref("RegExp/global", "global")}}           |
+| `i`      | Пошук, нечутливий до регістру.                                                        | {{jsxref("RegExp/ignoreCase", "ignoreCase")}}   |
+| `m`      | Дозволяє `^` та `$` давати збіг з символами нового рядка.                             | {{jsxref("RegExp/multiline", "multiline")}}     |
+| `s`      | Дозволяє символові `.` давати збіг з символами нового рядка.                          | {{jsxref("RegExp/dotAll", "dotAll")}}           |
+| `u`      | "Unicode"; сприймає патерн як послідовність кодових точок Unicode.                    | {{jsxref("RegExp/unicode", "unicode")}}         |
+| `v`      | Оновлена версія режиму `u`, з більшою кількістю можливостей Unicode.                  | {{jsxref("RegExp/unicodeSets", "unicodeSets")}} |
+| `y`      | Виконує «липкий» пошук, який починає пошук збігів з поточної позиції цільового рядка. | {{jsxref("RegExp/sticky", "sticky")}}           |
 
 Щоб включити позначку в регулярний вираз, використовується такий синтаксис:
 
@@ -379,19 +366,11 @@ console.log(str.match(re)); // ["fee ", "fi ", "fo "]
 
 #### Використання юнікодних регулярних виразів
 
-Прапорець "u" використовується для створення "юнікодних" регулярних виразів; це такі регулярні вирази, котрі підтримують пошук збігів у юнікодному тексті. Це здебільшого досягнуто шляхом використання [екранування юнікодних властивостей](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Unicode_property_escapes), котрі підтримуються лише в "юнікодних" регулярних виразах.
-
-Наприклад, наступний регулярний вираз може застосовуватися для пошуку збігу в довільному юнікодному "слові":
+Прапорець "u" використовується для створення "юнікодних" регулярних виразів; це такі регулярні вирази, котрі підтримують пошук збігів у юнікодному тексті. Це здебільшого досягнуто шляхом використання [екранування юнікодних властивостей](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Unicode_character_class_escape). Наприклад, наступний регулярний вираз може застосовуватися для пошуку збігу в довільному юнікодному "слові":
 
 ```js
 /\p{L}*/u;
 ```
-
-Є низка інших відмінностей між юнікодними та неюнікодними регулярними виразами, про котрі слід пам'ятати:
-
-- Юнікодні регулярні вирази не підтримують так звані "ідентичні екранування", тобто такі патерни, де зворотна скісна риска екранування не потрібна та фактично ігнорується. Наприклад, `/\a/` – дійсний регулярний вираз, що має збіг із літерою 'a', натомість `/\a/u` – ні.
-- Фігурні дужки повинні бути екрановані, коли використовуються не як [квантори](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Quantifiers). Наприклад, `/{/` – дійсний регулярний вираз, що має збіг з фігурною дужкою '{', а `/{/u` – ні: натомість фігурна дужка повинна бути екранована, слід використовувати `/\\{/u`.
-- Символ `-` в класах символів інтерпретується інакше. А саме – в регулярних виразах Unicode `-` інтерпретується як літерал `-` (а не частина діапазону) лише коли зустрічається на початку чи кінці патерну. Наприклад, `/[\w-:]/` – дійсний регулярний вираз, що має збіг із символом слова, `-` чи `:`, однак `/\w-:/u` – недійсний регулярний вираз, адже діапазон символів від `\w` до `:` не є однозначно визначеним.
 
 Регулярні вирази Unicode також мають інакшу логіку виконання. Стаття [`RegExp.prototype.unicode`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/unicode) містить подробиці на цю тему.
 
@@ -400,7 +379,7 @@ console.log(str.match(re)); // ["fee ", "fi ", "fo "]
 > **Примітка:** Декілька прикладів також доступні:
 >
 > - На довідникових сторінках для {{jsxref("RegExp/exec", "exec()")}}, {{jsxref("RegExp/test", "test()")}}, {{jsxref("String/match", "match()")}}, {{jsxref("String/matchAll", "matchAll()")}}, {{jsxref("String/search", "search()")}}, {{jsxref("String/replace", "replace()")}}, {{jsxref("String/split", "split()")}}
-> - Статті настанов: [класи символів](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Character_classes), [перевірки](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Assertions), [групи та зворотні посилання](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Groups_and_backreferences), [квантори](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Quantifiers), [екранування полів Unicode](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Unicode_property_escapes)
+> - У статтях посібника: [класи символів](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Character_classes), [перевірки](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Assertions), [групи та зворотні посилання](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Groups_and_backreferences), [квантори](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Quantifiers)
 
 ### Застосування спеціальних символів для перевірки вводу
 
@@ -457,7 +436,7 @@ form.addEventListener("submit", (event) => {
 
 #### Результат
 
-{{EmbedLiveSample('zastosuvannia-spetsialnykh-symvoliv-dlia-perevirky-vvodu')}}
+{{EmbedLiveSample("zastosuvannia-spetsialnykh-symvoliv-dlia-perevirky-vvodu")}}
 
 ## Інструменти
 

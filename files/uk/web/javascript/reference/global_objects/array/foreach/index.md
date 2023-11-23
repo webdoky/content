@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.Array.forEach
 
 {{JSRef}}
 
-Метод **`forEach()`** ("для кожного") виконує дану функцію один раз для кожного елементу масиву.
+Метод **`forEach()`** ("для кожного") примірників {{jsxref("Array")}} виконує передану функцію один раз для кожного елементу масиву.
 
 {{EmbedInteractiveExample("pages/js/array-foreach.html")}}
 
@@ -31,13 +31,13 @@ forEach(callbackFn, thisArg)
 - `thisArg` {{optional_inline}}
   - : Значення для використання за `this` при виконанні `callbackFn`. Докладніше про це в [ітеративних методах](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#iteratyvni-metody).
 
-### Результат
+### Повернене значення
 
-`undefined`.
+Жодного ({{jsxref("undefined")}}).
 
 ## Опис
 
-Метод `forEach()` є [ітеративним методом](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#iteratyvni-metody). Він викликає передану функцію `callbackFn` на кожному елементі масиву, в порядку зростання індексів. На відміну від {{jsxref("Array.prototype.map()", "map()")}}, `forEach()` завжди повертає {{jsxref("undefined")}} і не може бути проміжною ланкою ланцюжка. Типове його використання – для виконання побічних ефектів у кінці ланцюжка.
+Метод `forEach()` є [ітеративним методом](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#iteratyvni-metody). Він викликає передану функцію `callbackFn` на кожному елементі масиву, в порядку зростання індексів. На відміну від {{jsxref("Array/map", "map()")}}, `forEach()` завжди повертає {{jsxref("undefined")}} і не може бути проміжною ланкою ланцюжка. Типове його використання – для виконання побічних ефектів у кінці ланцюжка.
 
 `callbackFn` закликається лише для тих індексів масиву, що мають присвоєні значення. Вона не закликається для порожніх комірок у [розріджених масивах](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy).
 
@@ -231,7 +231,7 @@ console.log(flatten(nested)); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 ### Виклик forEach() на об'єктах-немасивах
 
-Метод `forEach()` зчитує з `this` властивість `length`, а потім звертається до кожної цілочислової властивості.
+Метод `forEach()` зчитує з `this` властивість `length`, а потім звертається до кожної властивості, чий ключ – невід'ємне ціле число, менше за `length`.
 
 ```js
 const arrayLike = {
@@ -239,6 +239,7 @@ const arrayLike = {
   0: 2,
   1: 3,
   2: 4,
+  3: 5, // ігнорується forEach(), оскільки length – 3
 };
 Array.prototype.forEach.call(arrayLike, (x) => console.log(x));
 // 2
@@ -257,7 +258,7 @@ Array.prototype.forEach.call(arrayLike, (x) => console.log(x));
 ## Дивіться також
 
 - [Поліфіл для `Array.prototype.forEach` у `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
-- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
 - {{jsxref("Array.prototype.find()")}}
 - {{jsxref("Array.prototype.map()")}}

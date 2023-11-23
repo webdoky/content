@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.String.replaceAll
 
 {{JSRef}}
 
-Метод **`replaceAll()`** (замінити все) повертає новий рядок, в якому всі збіги з патерном `pattern` замінені переданим значенням `replacement`. Значенням `pattern` може бути як рядок, так і {{jsxref("RegExp")}}, а `replacement` може бути рядком або функцією, яка буде викликана для кожного знайденого збігу.Початковий рядок залишається незмінним.
+Метод **`replaceAll()`** (замінити все) значень {{jsxref("String")}} повертає новий рядок, в якому всі збіги з патерном `pattern` замінені переданим значенням `replacement`. Значенням `pattern` може бути як рядок, так і {{jsxref("RegExp")}}, а `replacement` може бути рядком або функцією, яка буде викликана для кожного знайденого збігу.Початковий рядок залишається незмінним.
 
 {{EmbedInteractiveExample("pages/js/string-replaceall.html")}}
 
@@ -23,7 +23,7 @@ replaceAll(pattern, replacement)
 
   - : може бути рядком чи об'єктом з методом [`Symbol.replace`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/replace) – типовим зразком чого є [регулярні вирази](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp). Будь-яке значення, котре не має метода `Symbol.replace`, буде зведено до рядка.
 
-    Якщо `pattern` [є регулярним виразом](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/includes), то він мусить мати позначку глобальності (`g`), інакше – буде викинуто {{jsxref("TypeError")}}.
+    Якщо `pattern` [є регулярним виразом](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp#osoblyva-obrobka-rehuliarnykh-vyraziv), то він мусить мати позначку глобальності (`g`), інакше – буде викинуто {{jsxref("TypeError")}}.
 
 - `replacement` (заміна)
   - : Може бути рядком чи функцією. Заміна має таку само семантику, як для [`String.prototype.replace()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/replace).
@@ -103,7 +103,7 @@ console.log(safeRedactName(report, "ха.*ер")); // "Хакер на ім'я [
 ## Дивіться також
 
 - Поліфіл методу `String.prototype.replaceAll` доступний у [`core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
-- {{jsxref("String.prototype.replace", "String.prototype.replace()")}}
-- {{jsxref("String.prototype.match", "String.prototype.match()")}}
-- {{jsxref("RegExp.prototype.exec", "RegExp.prototype.exec()")}}
-- {{jsxref("RegExp.prototype.test", "RegExp.prototype.test()")}}
+- {{jsxref("String.prototype.replace()")}}
+- {{jsxref("String.prototype.match()")}}
+- {{jsxref("RegExp.prototype.exec()")}}
+- {{jsxref("RegExp.prototype.test()")}}

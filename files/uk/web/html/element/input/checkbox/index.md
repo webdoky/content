@@ -2,15 +2,6 @@
 title: <input type="checkbox">
 slug: Web/HTML/Element/input/checkbox
 page-type: html-element
-tags:
-  - Element
-  - HTML
-  - HTML forms
-  - Input
-  - Input Types
-  - Reference
-  - checkbox
-  - form
 browser-compat: html.elements.input.type_checkbox
 ---
 
@@ -20,7 +11,7 @@ browser-compat: html.elements.input.type_checkbox
 
 {{EmbedInteractiveExample("pages/tabbed/input-checkbox.html", "tabbed-standard")}}
 
-> **Примітка:** [Радіокнопки](/uk/docs/Web/HTML/Element/input/radio) схожі на поля позначок, але мають важливу відмінність: радіокнопки групуються так, щоб лише одна радіокнопка була водночас обрана, натомість поля для галочки дають змогу включати й виключати окремі означення. Коли існують декілька контрольних елементів, радіокнопки дозволяють лише одній з них бути ввімкненою, а поля для галочки дозволяють вибір декількох значень.
+> **Примітка:** [Радіокнопки](/uk/docs/Web/HTML/Element/input/radio) схожі на поля позначок, але мають важливу відмінність: [однойменні радіокнопки](/uk/docs/Web/HTML/Element/input/radio#okreslennia-radiohrupy) групуються так, щоб лише одна радіокнопка була водночас обрана, натомість поля для галочки дають змогу включати й виключати окремі означення. Коли існують декілька однойменних контрольних елементів, радіокнопки дозволяють лише одній з них бути ввімкненою, а поля для галочки дозволяють вибір декількох значень.
 
 ## Значення
 
@@ -46,19 +37,19 @@ browser-compat: html.elements.input.type_checkbox
 
 Якщо атрибут `value` опущений, то усталеним значенням поля буде `on`, тож подані дані в такому випадку будуть `subscribe=on`.
 
-> **Примітка:** Якщо поле для галочки пусте при подачі форми, то жодне значення, що відображає відсутність галочки, не буде подано на сервер (наприклад, `value=unchecked`); значення не подається на сервер узагалі. При потребі подати усталене значення поля для галочки, коли воно пусте, можна включити у форму {{HTMLElement("input/hidden", '&lt;input type="hidden"&gt;')}} з такими самими `name` і `value`, згенероване, мабуть, JavaScript.
+> **Примітка:** Якщо поле для галочки пусте при подачі форми, то на сервер не подаються ані назва, ані значення. Не існує суто HTML метода для подавання непозначеного стану поля для галочки (виду `value=unchecked`). При потребі подати усталене значення поля, коли воно пусте, можна використати JavaScript для створення всередині форми {{HTMLElement("input/hidden", '&lt;input type="hidden"&gt;')}} зі значенням, що позначає пустий стан.
 
 ## Додаткові атрибути
 
 На додачу до загальних атрибутів, котрі поділяють всі елементи {{HTMLElement("input")}}, поля "`checkbox`" підтримують наступні:
 
-- `checked` (перевірений)
+- `checked`
 
-  - : Булів атрибут, що вказує, чи має поле галочку спочатку (при завантаженні сторінки). Воно _не_ вказує, чи є поле порожнім наразі: якщо стан поля зміниться, цей атрибут вмісту не відобразить змін. (Оновиться лише IDL атрибут {{domxref("HTMLInputElement")}}'а `checked`ʼ.)
-    > **Примітка:** На відміну від інших полів введення, значення поля для галочки включається у дані подання лише якщо поле позначено (`checked`). Якщо воно таким є, то значення атрибута `value` стає значенням поля у формі.
-    > На відміну від інших браузерів, Firefox усталено [зберігає динамічний стан галочки (англ.)](https://stackoverflow.com/questions/5985839/bug-with-firefox-disabled-attribute-of-input-not-resetting-when-refreshing) поля між завантаженнями сторінки. Використовуйте для контролю цього функціоналу атрибут {{htmlattrxref("autocomplete","input")}}.
+  - : Це [булів](/uk/docs/Glossary/Boolean/HTML) атрибут, що вказує, чи має поле галочку спочатку (при завантаженні сторінки). Воно _не_ вказує, чи є поле порожнім наразі: якщо стан поля зміниться, цей атрибут вмісту не відобразить змін. (Оновиться лише IDL атрибут {{domxref("HTMLInputElement")}}'а `checked`ʼ.)
+    > **Примітка:** На відміну від інших полів введення, значення поля для галочки включається у дані подання лише якщо поле позначено (`checked`). Якщо воно таким є, то значення атрибута `value` стає значенням поля у формі, а якщо цього атрибута немає – значенням стає `on`.
+    > На відміну від інших браузерів, Firefox усталено [зберігає динамічний стан галочки (англ.)](https://stackoverflow.com/questions/5985839/bug-with-firefox-disabled-attribute-of-input-not-resetting-when-refreshing) поля між завантаженнями сторінки. Використовуйте для контролю цього функціоналу атрибут [`autocomplete`](/uk/docs/Web/HTML/Element/input#autocomplete).
 
-- `value` (значення)
+- `value`
 
   - : Атрибут `value` поділяють всі {{HTMLElement("input", "елементи введення")}}; проте у полів типу `checkbox` він має особливе призначення: коли форма подається, то лише ті поля для галочки, котрі на той час мають галочку, подаються на сервер, і відповідним їх значенням є значення атрибута `value`. Якщо атрибут `value` не вказаний, то він вважається рівним рядкові `on`. Це показано у розділі [Значення](#znachennia) вище.
 
@@ -175,11 +166,11 @@ function updateDisplay() {
 
 ## Валідація
 
-Поля для галочки підтримують [валідацію](/uk/docs/Web/HTML/Constraint_validation) (доступну всім елементам {{HTMLElement("input")}}). Втім, більшість значень {{domxref("ValidityState")}} завжди буде `false`. Якщо таке поле має атрибут {{htmlattrxref("required", "input")}}, але не має галочки, то {{domxref("ValidityState.valueMissing")}} буде `true`.
+Поля для галочки підтримують [валідацію](/uk/docs/Web/HTML/Constraint_validation) (доступну всім елементам {{HTMLElement("input")}}). Втім, більшість значень {{domxref("ValidityState")}} завжди буде `false`. Якщо таке поле має атрибут [`required`](/uk/docs/Web/HTML/Element/input#required), але не має галочки, то {{domxref("ValidityState.valueMissing")}} буде `true`.
 
 ## Приклади
 
-Наступний приклад – розширена версія наведеного вище прикладу "декількох полів для галочки": має більше стандартних варіантів, а на додачу – поле "інше", котре, отримуючи галочку, призводить до появи текстового поля для введення "іншого" варіанту. Це досягнуто за допомогою звичайного блоку коду на JavaScript. Приклад також включає трохи CSS для покращення оформлення.
+Наступний приклад – розширена версія наведеного вище прикладу "декількох полів для галочки": має більше стандартних варіантів, а на додачу – поле "інше", котре, отримуючи галочку, призводить до появи текстового поля для введення "іншого" варіанту. Це досягнуто за допомогою звичайного блоку коду на JavaScript. Цей приклад також включає неявні підписи, тобто `<input>` розташовані безпосередньо всередині `<label>`. Текстове поле, що не має видимого підпису, має атрибут [`aria-label`](/uk/docs/Web/Accessibility/ARIA/Attributes/aria-label), що містить доступну назву поля. Також приклад містить трохи CSS для покращення оформлення.
 
 ### HTML
 
@@ -188,29 +179,45 @@ function updateDisplay() {
   <fieldset>
     <legend>Оберіть свої інтереси</legend>
     <div>
-      <input type="checkbox" id="coding" name="interest" value="coding" />
-      <label for="coding">Програмування</label>
+      <label>
+        <input type="checkbox" id="coding" name="interest" value="coding" />
+        Програмування
+      </label>
     </div>
     <div>
-      <input type="checkbox" id="music" name="interest" value="music" />
-      <label for="music">Музика</label>
+      <label>
+        <input type="checkbox" id="music" name="interest" value="music" />
+        Музика
+      </label>
     </div>
     <div>
-      <input type="checkbox" id="art" name="interest" value="art" />
-      <label for="art">Мистецтво</label>
+      <label>
+        <input type="checkbox" id="art" name="interest" value="art" />
+        Мистецтво
+      </label>
     </div>
     <div>
-      <input type="checkbox" id="sports" name="interest" value="sports" />
-      <label for="sports">Спорт</label>
+      <label>
+        <input type="checkbox" id="sports" name="interest" value="sports" />
+        Спорт
+      </label>
     </div>
     <div>
-      <input type="checkbox" id="cooking" name="interest" value="cooking" />
-      <label for="cooking">Куховарство</label>
+      <label>
+        <input type="checkbox" id="cooking" name="interest" value="cooking" />
+        Куховарство
+      </label>
     </div>
     <div>
-      <input type="checkbox" id="other" name="interest" value="other" />
-      <label for="other">Інше</label>
-      <input type="text" id="otherValue" name="other" />
+      <label>
+        <input type="checkbox" id="other" name="interest" value="other" />
+        Інше
+      </label>
+      <input
+        type="text"
+        id="otherValue"
+        name="other"
+        aria-label="Інші інтереси" />
     </div>
     <div>
       <button type="submit">Подати форму</button>
@@ -319,6 +326,6 @@ otherCheckbox.addEventListener("change", () => {
 
 ## Дивіться також
 
-- {{HTMLElement("input")}} й інтерфейс {{domxref("HTMLInputElement")}}, що його реалізовує.
-- Селектори CSS {{cssxref(":checked")}} та {{cssxref(":indeterminate")}} дають змогу оформляти поля для галочки на основі їх поточного стану
-- [Сумісність властивостей CSS](/uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls)
+- {{cssxref(":checked")}}, {{cssxref(":indeterminate")}} – селектори CSS, що дають змогу оформлювати поля для галочки на основі їхнього поточного стану
+- {{domxref("HTMLInputElement")}} – API DOM HTML, що реалізовує елемент `<input>`
+- [Таблиця сумісності властивостей CSS з контрольними елементами форм](/uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls)

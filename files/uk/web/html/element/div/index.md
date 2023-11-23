@@ -7,7 +7,7 @@ browser-compat: html.elements.div
 
 {{HTMLSidebar}}
 
-Елемент [HTML](/uk/docs/Web/HTML) **`<div>`** (розд.) – узагальнений контейнер для потокового вмісту. Він не впливає на свої зміст та верстання, поки не отримує певного оформлення засобами {{glossary("CSS")}} (наприклад, певних стилів для себе та певної моделі верстання типу [флексбоксу](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout), застосованої до свого предка).
+Елемент [HTML](/uk/docs/Web/HTML) **`<div>`** (розд.) – узагальнений контейнер для потокового вмісту. Він не впливає на свої зміст та верстання, поки не отримує певного оформлення засобами {{glossary("CSS")}} (наприклад, певних стилів для себе та певної моделі верстання типу [флексбоксу](/uk/docs/Web/CSS/CSS_flexible_box_layout), застосованої до свого предка).
 
 {{EmbedInteractiveExample("pages/tabbed/div.html","tabbed-standard")}}
 
@@ -118,8 +118,10 @@ browser-compat: html.elements.div
     <tr>
       <th scope="row">Неявна роль ARIA</th>
       <td>
-        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"
-          >Немає відповідної ролі</a
+        <code
+          ><a href="/uk/docs/Web/Accessibility/ARIA/Roles/generic_role"
+            >generic</a
+          ></code
         >
       </td>
     </tr>

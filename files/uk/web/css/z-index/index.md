@@ -7,13 +7,13 @@ browser-compat: css.properties.z-index
 
 {{CSSRef}}
 
-Властивість CSS **`z-index`** (індекс за аплікатою) задає аплікатний порядок [позиціонованого](/uk/docs/Web/CSS/position) елемента та його нащадків або гнучких елементів. Накладання елементів з більшим значенням z-index закриває елементи з меншим значенням цієї властивості.
+Властивість CSS **`z-index`** (індекс за аплікатою) задає аплікатний порядок [позиціонованого](/uk/docs/Web/CSS/position) елемента та його нащадків або гнучких і сіткових елементів. Накладання елементів з більшим значенням z-index закриває елементи з меншим значенням цієї властивості.
 
 {{EmbedInteractiveExample("pages/css/z-index.html")}}
 
 Для позиціонованої рамки (тобто такої, що має `position` зі значенням, відмінним від `static`) властивість `z-index` задає:
 
-1. Рівень накладання рамки в поточному [контексті нагромадження](/uk/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context).
+1. Рівень накладання рамки в поточному [контексті нагромадження](/uk/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context).
 2. Те, чи утворює рамка локальний контекст нагромадження.
 
 ## Синтаксис
@@ -104,7 +104,7 @@ z-index: unset;
 
 #### Результат
 
-{{EmbedLiveSample('vizualne-nasharuvannia-elementiv', '550', '200', '')}}
+{{EmbedLiveSample('vizualne-nasharuvannia-elementiv', '550', '200')}}
 
 ## Специфікації
 
@@ -117,4 +117,4 @@ z-index: unset;
 ## Дивіться також
 
 - Властивість CSS {{Cssxref("position")}}
-- [Розуміння z-index CSS](/uk/docs/Web/CSS/CSS_Positioning/Understanding_z_index)
+- [Розуміння z-index CSS](/uk/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index)

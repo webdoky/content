@@ -1,35 +1,21 @@
 ---
 title: Math.cosh()
 slug: Web/JavaScript/Reference/Global_Objects/Math/cosh
-tags:
-  - JavaScript
-  - Math
-  - Method
-  - Reference
-  - Polyfill
+page-type: javascript-static-method
 browser-compat: javascript.builtins.Math.cosh
 ---
+
 {{JSRef}}
 
-Функція **`Math.cosh()`** повертає гіперболічний косинус числа, який можна виразити за допомогою {{jsxref("Math.E", "сталої «e»", "", 1)}}:
+Статичний метод **`Math.cosh()`** (косинус гіперболічний) повертає гіперболічний косинус числа. А саме,
 
-<math display="block"><semantics><mrow><mstyle mathvariant="monospace"><mo lspace="0em" rspace="thinmathspace">Math.cosh(x)</mo>
-</mstyle><mo>=</mo>
-<mfrac><mrow><msup><mi>e</mi>
-<mi>x</mi>
-</msup><mo>+</mo>
-<msup><mi>e</mi>
-<mrow><mo>-</mo>
-<mi>x</mi>
-</mrow></msup></mrow><mn>2</mn>
-</mfrac></mrow><annotation encoding="TeX">\mathtt{\operatorname{Math.cosh(x)}} = \frac{e^x +
-e^{-x}}{2}</annotation></semantics></math>
+<math display="block"><semantics><mrow><mrow><mo lspace="0em" rspace="0.16666666666666666em">𝙼𝚊𝚝𝚑.𝚌𝚘𝚜𝚑</mo><mo stretchy="false">(</mo><mi>𝚡</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><mo lspace="0em" rspace="0em">cosh</mo><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mrow><msup><mi mathvariant="normal">e</mi><mi>x</mi></msup><mo>+</mo><msup><mi mathvariant="normal">e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup></mrow><mn>2</mn></mfrac></mrow><annotation encoding="TeX">\mathtt{\operatorname{Math.cosh}(x)} = \cosh(x) = \frac{\mathrm{e}^x + \mathrm{e}^{-x}}{2}</annotation></semantics></math>
 
 {{EmbedInteractiveExample("pages/js/math-cosh.html")}}
 
 ## Синтаксис
 
-```js
+```js-nolint
 Math.cosh(x)
 ```
 
@@ -40,7 +26,7 @@ Math.cosh(x)
 
 ### Повернене значення
 
-Гіперболічний косинус переданого числа.
+Гіперболічний косинус `x`.
 
 ## Опис
 
@@ -51,28 +37,12 @@ Math.cosh(x)
 ### Застосування Math.cosh()
 
 ```js
-Math.cosh(0);  // 1
-Math.cosh(1);  // 1.5430806348152437
+Math.cosh(-Infinity); // Infinity
 Math.cosh(-1); // 1.5430806348152437
-```
-
-## Поліфіл
-
-Цю функцію можна відтворити за допомогою методу {{jsxref("Math.exp()")}}:
-
-```js
-Math.cosh = Math.cosh || function(x) {
-  return (Math.exp(x) + Math.exp(-x)) / 2;
-}
-```
-
-або навіть з одним викликом функції {{jsxref("Math.exp()")}}:
-
-```js
-Math.cosh = Math.cosh || function(x) {
-  var y = Math.exp(x);
-  return (y + 1 / y) / 2;
-};
+Math.cosh(-0); // 1
+Math.cosh(0); // 1
+Math.cosh(1); // 1.5430806348152437
+Math.cosh(Infinity); // Infinity
 ```
 
 ## Специфікації
@@ -85,7 +55,7 @@ Math.cosh = Math.cosh || function(x) {
 
 ## Дивіться також
 
-- Поліфіл для `Math.cosh` доступний у [`core-js`](https://github.com/zloirock/core-js#ecmascript-math)
+- [Поліфіл `Math.cosh` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-math)
 - {{jsxref("Math.acosh()")}}
 - {{jsxref("Math.asinh()")}}
 - {{jsxref("Math.atanh()")}}

@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.Array.pop
 
 {{JSRef}}
 
-Метод **`pop()`** (висунути) прибирає **останній** елемент з масиву – і повертає цей елемент. Цей метод змінює довжину масиву.
+Метод **`pop()`** (висунути) примірників {{jsxref("Array")}} прибирає **останній** елемент з масиву – і повертає цей елемент. Цей метод змінює довжину масиву.
 
 {{EmbedInteractiveExample("pages/js/array-pop.html")}}
 
@@ -16,6 +16,10 @@ browser-compat: javascript.builtins.Array.pop
 ```js-nolint
 pop()
 ```
+
+### Параметри
+
+Жодних.
 
 ### Повернене значення
 
@@ -111,6 +115,8 @@ console.log(collection.length); // 2
 
 ## Дивіться також
 
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- {{jsxref("Array")}}
 - {{jsxref("Array.prototype.push()")}}
 - {{jsxref("Array.prototype.shift()")}}
 - {{jsxref("Array.prototype.unshift()")}}
