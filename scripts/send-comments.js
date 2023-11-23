@@ -35,7 +35,8 @@ function convertOffsetToLineAndColumn(offset) {
 
 // eslint-disable-next-line no-restricted-syntax
 for (const match of results.matches) {
-  const { context, message, replacements, rule, sentence } = match;
+  const { context, message, replacements, rule, sentence, shortMessage } =
+    match;
   let { length, offset } = match;
   let start;
   length += 1;
@@ -65,9 +66,15 @@ for (const match of results.matches) {
     throw new Error(`Column not found in source file: ${sentence}`);
   }
   // const errorformatLine = `${markdownFile}:${startLine}:${startColumn}:${endLine}:${endColumn}: ${message}`;
-  let comment = `### ${message}\n${escapeTextForMarkdown(rule.description)}\n${
-    rule.category.id
-  }/${rule.id}: ${escapeTextForMarkdown(rule.description)}\n`;
+  let comment = "";
+  if (shortMessage || rule.description) {
+    comment += `### ${escapeTextForMarkdown(
+      shortMessage || rule.description,
+    )}\n`;
+  }
+  comment = `${escapeTextForMarkdown(rule.description)}\n${rule.category.id}/${
+    rule.id
+  }: ${escapeTextForMarkdown(rule.description)}\n`;
   // console.log(`\`${markdownFile}:${startLine}:${startColumn}\n\``);
   comment += `> ${escapeTextForMarkdown(
     context.text.slice(0, context.offset),
