@@ -71,9 +71,13 @@ jobs:
         run: |
           file=${{ needs.prepare-translation.outputs.translation }}
           newFileName=$(echo $file | sed 's/\.md/\.txt/')
-          pandoc -f markdown -t plain -o $newFileName $file
+          pandoc -f markdown -t plain+pipe_tables -o $newFileName $file
           echo "translation=$newFileName" >> $GITHUB_OUTPUT
           echo $newFileName
+      # - name: Remove tables from plain text file
+      #   run: |
+      #     file=${{ steps.md2txt.outputs.translation }}
+      #     sed -i '/\|/d' $file
       # Error if translation file is not found
       - if: steps.md2txt.outputs.translation == ''
         name: Check translation is found
