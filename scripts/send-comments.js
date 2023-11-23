@@ -111,7 +111,7 @@ for (const match of results.matches) {
         : ` -f ${key}="${value}"`;
   }
   console.log(command);
-  command = command.replaceAll("\n", "\\\n");
+  // command = command.replaceAll("\n", "\\\n");
   console.log(`GH_TOKEN=${process.env.GH_TOKEN} ${command}`);
   execSync(command, { stdio: "inherit" });
 }
