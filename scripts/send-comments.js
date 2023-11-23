@@ -34,7 +34,7 @@ function convertOffsetToLineAndColumn(offset) {
 
 // eslint-disable-next-line no-restricted-syntax
 for (const match of results.matches) {
-  const { message, offset, replacements, rule, sentence } = match;
+  const { context, message, offset, replacements, rule, sentence } = match;
   let { length } = match;
   let endOffset = offset + length;
   const start = Number.parseInt(mapping[offset], 10);
@@ -59,18 +59,19 @@ for (const match of results.matches) {
   }
   // const errorformatLine = `${markdownFile}:${startLine}:${startColumn}:${endLine}:${endColumn}: ${message}`;
   // console.log(errorformatLine);
-  let comment = `### ${message}\n${rule.description}\n`;
+  let comment = `### ${message}\n${rule.description}\n${rule.category.id}/${rule.id}: ${rule.description}\n`;
   // console.log(`\`${markdownFile}:${startLine}:${startColumn}\n\``);
-  // console.log(
-  //   `> ${context.text.slice(0, context.offset)}**${context.text.slice(
-  //     context.offset,
-  //     context.offset + context.length,
-  //   )}**${context.text.slice(context.offset + context.length)}_`,
-  // );
-  // eslint-disable-next-line no-restricted-syntax
-  for (const replacement of replacements) {
-    // console.log(`- ${replacement.value}`);
-    comment += `\`\`\`suggestion\n${replacement.value}\n\`\`\`\n`;
+  comment += `> ${context.text.slice(0, context.offset)}**${context.text.slice(
+    context.offset,
+    context.offset + context.length,
+  )}**${context.text.slice(context.offset + context.length)}`;
+  if (replacements?.length) {
+    comment += "\n\n#### Варіанти заміни\n";
+    // eslint-disable-next-line no-restricted-syntax
+    for (const replacement of replacements) {
+      // console.log(`- ${replacement.value}`);
+      comment += `- ${replacement.value}\n`;
+    }
   }
   const parameters = {
     body: comment,
