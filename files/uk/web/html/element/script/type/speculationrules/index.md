@@ -2,10 +2,12 @@
 title: <script type="speculationrules">
 slug: Web/HTML/Element/script/type/speculationrules
 page-type: html-attribute-value
+status:
+  - experimental
 browser-compat: html.elements.script.type.speculationrules
 ---
 
-{{HTMLSidebar}}
+{{HTMLSidebar}}{{SeeCompatTable}}
 
 Значення **`speculationrules`** (правила спекуляції) атрибута [`type`](/uk/docs/Web/HTML/Element/script/type) [елемента `<script>`](/uk/docs/Web/HTML/Element/script) вказує на те, що тіло цього елемента містить правила спекуляції.
 
@@ -62,9 +64,9 @@ browser-compat: html.elements.script.type.speculationrules
 
 Ця структура JSON вміщає одне або більше полів на вищому рівні, кожне з яких представляє одну дію, для якої визначено правила спекуляції. Наразі підтримуються такі дії:
 
-- `"prefetch"` {{optional_inline}}
+- `"prefetch"` {{optional_inline}} {{experimental_inline}}
   - : Правила для потенційних майбутніх переходів, тіла відповідей відповідних документів яких повинні бути завантажені, що призводить до суттєвого покращення ефективності, коли до таких документів відбувається перехід. Зверніть увагу, що жоден з підресурсів, на які посилається сторінка, не завантажується.
-- `"prerender"` {{optional_inline}}
+- `"prerender"` {{optional_inline}} {{experimental_inline}}
   - : Правила для потенційних майбутніх переходів, відповідні документи яких повинні бути повністю завантажені, візуалізовані та завантажені в невидиму вкладку. Це включає завантаження всіх підресурсів, виконання всього JavaScript, і навіть завантаження підресурсів і виконання отримання даних, запущених JavaScript. Коли до такого документа відбувається перехід, він є миттєвим, що призводить до значного покращення ефективності.
 
 > **Примітка:** Ознайомтеся з основною сторінкою [API правил спекуляції](/uk/docs/Web/API/Speculation_Rules_API) для отримання повної інформації про те, як ефективно використовувати попереднє отримання та попередню візуалізацію.
@@ -79,7 +81,7 @@ browser-compat: html.elements.script.type.speculationrules
       - : Зазначає, що всі URL будуть отримані з конкретного списку.
 - `"urls"`
   - : Масив рядків, що представляє список URL, до яких застосовується правило. Вони можуть бути абсолютними або відносними URL. Відносні URL будуть розібрані відносно базового URL документа (якщо вбудовано в документ) або відносно URL зовнішнього ресурсу (якщо вони отримані зовнішньо).
-- `"requires"` {{optional_inline}}
+- `"requires"` {{optional_inline}} {{experimental_inline}}
 
   - : Масив рядків, що представляють можливості браузера, що розбирає правило, які повинні бути доступні, щоб правило було застосовано до заданих URL.
 
@@ -94,7 +96,7 @@ browser-compat: html.elements.script.type.speculationrules
         - Майбутня реалізація Safari, можливо, використовуватиме щось на зразок [iCloud Private Relay](https://support.apple.com/en-us/102602).
         - Майбутня реалізація Firefox, можливо, використовуватиме щось на основі продукту [Mozilla VPN](https://www.mozilla.org/en-US/products/vpn/).
 
-- `"referrer_policy"` {{optional_inline}}
+- `"referrer_policy"` {{optional_inline}} {{experimental_inline}}
   - : Рядок, що представляє конкретний рядок політики посилача, який використовуватиметься, коли відбувається запит одного з URL, заданого в правилі – дивіться можливі значення на сторінці [`Referrer-Policy`](/uk/docs/Web/HTTP/Headers/Referrer-Policy). Мета цього значення полягає в тому, щоб дозволити сторінці-посилачу задати суворішу політику саме для спекулятивного запиту, ніж політика, яка вже задана на сторінці (або усталено, або за допомогою `Referrer-Policy`). М'якіша політика, задана в правилах спекуляції, не переможе суворішу політику, задану на сторінці-посилачі.
 
 > **Примітка:** Оскільки правила спекуляції використовують елемент `<script>`, їх потрібно явно дозволити в директиві [`script-src`](/uk/docs/Web/HTTP/Headers/Content-Security-Policy/script-src) [`Content-Security-Policy`](/uk/docs/Web/HTTP/Headers/Content-Security-Policy), якщо вона є на сайті. Це робиться шляхом додавання значення `"inline-speculation-rules"` вкупі з хешем або числом-одноразом джерела.

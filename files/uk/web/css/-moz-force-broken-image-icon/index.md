@@ -68,4 +68,4 @@ img {
 
 ## Дивіться також
 
-- [Вада Webkit 58646](https://bugzil.la/58646)
+- [Вада Firefox 58646](https://bugzil.la/58646)
