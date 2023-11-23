@@ -113,5 +113,5 @@ for (const match of results.matches) {
   console.log(command);
   // command = command.replaceAll("\n", "\\\n");
   console.log(`GH_TOKEN=${process.env.GH_TOKEN} ${command}`);
-  execSync(command, { stdio: "inherit" });
+  execSync(command, { stdio: "inherit", timeout: 60_000 });
 }
