@@ -12,7 +12,7 @@ const markdown = readFileSync(markdownFile, "utf8");
 
 const markdownRunes = Array.from(markdown);
 
-const MARKDOWN_ESCAPE_REGEX = /([!#()*+.[\\\]_`{}-])/g;
+const MARKDOWN_ESCAPE_REGEX = /([!"#'()*+.[\\\]_`{}-])/g;
 
 function escapeTextForMarkdown(text) {
   return text.replaceAll(MARKDOWN_ESCAPE_REGEX, "\\$1");
