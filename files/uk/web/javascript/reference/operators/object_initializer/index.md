@@ -132,7 +132,7 @@ const a = { x: 1, x: 2 };
 console.log(a); // {x: 2}
 ```
 
-Починаючи від ES2015 дублювання назв властивостей дозволено всюди, в тому числі в [суворому режимі](/uk/docs/Web/JavaScript/Reference/Strict_mode#dubliuvannia-nazv-vlastyvostei). Також дублікати назв властивостей можуть зустрічатися у [класах](/uk/docs/Web/JavaScript/Reference/Classes). Єдиний виняток – [приватні властивості](/uk/docs/Web/JavaScript/Reference/Classes/Private_class_fields): вони повинні бути унікальні в межах тіла класу.
+Починаючи від ES2015 дублювання назв властивостей дозволено всюди, в тому числі в [суворому режимі](/uk/docs/Web/JavaScript/Reference/Strict_mode#dubliuvannia-nazv-vlastyvostei). Також дублікати назв властивостей можуть зустрічатися у [класах](/uk/docs/Web/JavaScript/Reference/Classes). Єдиний виняток – [приватні властивості](/uk/docs/Web/JavaScript/Reference/Classes/Private_properties): вони повинні бути унікальні в межах тіла класу.
 
 ### Оголошення методів
 

@@ -3,6 +3,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2023-11-10 - 2023-11-17]
+
+* **Оновлення перекладу(JS):** web/javascript/inheritance_and_the_prototype_chain (#2496) ([bd139d45](https://github.com/webdoky/content/commit/bd139d4560c0ab83a7d7f9a1b2c8f24ff7725679))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/parseint (#2493) ([470bad50](https://github.com/webdoky/content/commit/470bad5066f1263e64cbea2771a0ac7b5eef8e60))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/set (#2489) ([d0282b03](https://github.com/webdoky/content/commit/d0282b038dbd5bfc3099f5d780df8afd0205d9b2))
+* **Оновлення перекладу(CSS):** web/css/length (#2495) ([82fe163b](https://github.com/webdoky/content/commit/82fe163b6c0701a6ea35b0b1cf22454e6db60423))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/split (#2487) ([354af5d3](https://github.com/webdoky/content/commit/354af5d3e2dd945eca190a798591b67ec647ab5d))
+* **Переклад(HTML):** web/html/attributes/readonly (#1769) ([59f309d8](https://github.com/webdoky/content/commit/59f309d80654adfaa9b4cc44bc1c6ed11839e276))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/tosource (#2494) ([28d757cc](https://github.com/webdoky/content/commit/28d757ccdad1277e25b6a01461661b9435a6380e))
+* **Оновлення перекладу(JS):** web/javascript/reference/statements/switch (#2490) ([6e7e6fd4](https://github.com/webdoky/content/commit/6e7e6fd4227c3e58c2f936fe2f050954e8199df6))
+* **Оновлення перекладу(HTML):** web/html/element/input/checkbox (#2492) ([e05e01b8](https://github.com/webdoky/content/commit/e05e01b887bd88f56fd550d92a53c76f6e4c2afa))
+* **Оновлення перекладу(CSS):** web/css/align-items (#2491) ([d9291aac](https://github.com/webdoky/content/commit/d9291aac8c5ced69517c5dbadd9bbd1132be92a2))
+* **Оновлення перекладу(HTML):** web/html/element/link (#2488) ([84d2736f](https://github.com/webdoky/content/commit/84d2736f1f48eb0767ccb3d963e421417e3d71fd))
+
 ## [2023-11-03 - 2023-11-10]
 
 * **Переклад(JS):** web/javascript/reference/regular_expressions/character_class (#1809) ([86e4fd4d](https://github.com/webdoky/content/commit/86e4fd4d1d9bff60f80cb21bec59245bfc137547))
