@@ -72,7 +72,26 @@ for (const match of results.matches) {
     // console.log(`- ${replacement.value}`);
     comment += `\`\`\`suggestion\n${replacement.value}\n\`\`\`\n`;
   }
-  const command = `gh api repos/${process.env.GITHUB_REPOSITORY}/pulls/${process.env.PR_NUMBER}/comments -f body="${comment}" -f commit_id="${process.env.COMMIT_ID}" -f path="${markdownFile}" -f start_side="RIGHT" -f side="RIGHT" -F start_line="${startLine}" -F line="${endLine}" `;
+  const parameters = {
+    body: comment,
+    commit_id: process.env.COMMIT_ID,
+    line: endLine,
+    path: markdownFile,
+    side: "RIGHT",
+  };
+  if (startLine !== endLine) {
+    parameters.start_line = startLine;
+    parameters.start_side = "RIGHT";
+  }
+  let command = `gh api repos/${process.env.GITHUB_REPOSITORY}/pulls/${process.env.PR_NUMBER}/comments`;
+  // eslint-disable-next-line no-restricted-syntax
+  for (const [key, value] of Object.entries(parameters)) {
+    command +=
+      typeof value === "number"
+        ? ` -F ${key}=${value}`
+        : ` -f ${key}="${value}"`;
+  }
+  console.log(command);
   console.log(`GH_TOKEN=${process.env.GH_TOKEN} ${command}`);
   execSync(command, { stdio: "inherit" });
 }
