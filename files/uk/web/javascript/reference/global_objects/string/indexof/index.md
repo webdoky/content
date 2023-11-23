@@ -9,7 +9,7 @@ browser-compat: javascript.builtins.String.indexOf
 
 Метод **`indexOf`** (індекс елемента) значень {{jsxref("String")}} шукає в поточному рядку та повертає індекс першого входження заданого підрядка. Він приймає необов'язкову стартову позицію та повертає перше входження заданого підрядка за індексом, що більший або дорівнює заданому числу.
 
-{{EmbedInteractiveExample("pages/js/string-indexof.html")}}
+{{EmbedInteractiveExample("pages/js/string-indexof.html", "taller")}}
 
 > **Примітка:** Інформація про однойменний метод масиву знаходиться за посиланням {{jsxref("Array.prototype.indexOf()")}}.
 

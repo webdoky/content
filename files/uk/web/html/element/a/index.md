@@ -47,6 +47,7 @@ browser-compat: html.elements.a
     - Шматочки медіафайлів – за допомогою фрагментів медіа
     - Номери телефонів – за допомогою URL `tel:`
     - Адреси електронної пошти – за допомогою URL `mailto:`
+    - Текстові повідомлення SMS – за допомогою URL `sms:`
     - Хоч веббраузери можуть не підтримувати інші схеми URL, вебсайти можуть їх підтримувати за допомогою [`registerProtocolHandler()`](/uk/docs/Web/API/Navigator/registerProtocolHandler)
 
 - `hreflang`
@@ -113,7 +114,7 @@ browser-compat: html.elements.a
 #### HTML
 
 ```html
-<a href="https://www.mozilla.com">Mozilla </a>
+<a href="https://www.mozilla.com">Mozilla</a>
 ```
 
 #### Результат
@@ -328,7 +329,7 @@ document
 #### Посилання на не-HTML ресурс
 
 ```html
-<a href="2017-annual-report.ppt">2017 Річний звіт (PowerPoint) </a>
+<a href="2017-annual-report.ppt">2017 Річний звіт (PowerPoint)</a>
 ```
 
 Якщо призначення посилання позначено іконкою, слід пересвідчитись, що ця іконка має [_текстову альтернативу_](/uk/docs/Web/HTML/Element/img#alt):
@@ -364,8 +365,8 @@ document
 
   <header>…</header>
 
-  <main id="content"></main>
   <!-- Стрибкове посилання приводить сюди -->
+  <main id="content"></main>
 </body>
 ```
 
@@ -476,9 +477,7 @@ document
       <th scope="row">Неявна роль ARIA</th>
       <td>
         <a href="/uk/docs/Web/Accessibility/ARIA/Roles/link_role"><code>link</code></a>, коли присутній атрибут <code>href</code>, інакше –
-        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"
-          >жодної відповідної ролі</a
-        >
+        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/generic_role"><code>generic</code></a>
       </td>
     </tr>
     <tr>

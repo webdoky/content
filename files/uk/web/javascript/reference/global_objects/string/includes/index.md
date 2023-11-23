@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.String.includes
 
 {{JSRef}}
 
-Метод **`includes()`** (включає) виконує чутливий до регістру пошук для визначення, чи можна один рядок знайти всередині іншого, повертаючи `true` або `false` відповідно.
+Метод **`includes()`** (включає) значень {{jsxref("String")}} виконує чутливий до регістру пошук для визначення, чи можна переданий рядок знайти всередині поточного, повертаючи `true` або `false` відповідно.
 
 {{EmbedInteractiveExample("pages/js/string-includes.html", "shorter")}}
 

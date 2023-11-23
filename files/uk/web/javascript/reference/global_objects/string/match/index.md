@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.String.match
 
 {{JSRef}}
 
-Метод **`match()`** (парувати, шукати збіг) отримує результат зіставлення рядка з [регулярним виразом](/uk/docs/Web/JavaScript/Guide/Regular_expressions).
+Метод **`match()`** (парувати, шукати збіг) значень {{jsxref("String")}} отримує результат зіставлення свого рядка з [регулярним виразом](/uk/docs/Web/JavaScript/Guide/Regular_expressions).
 
 {{EmbedInteractiveExample("pages/js/string-match.html", "shorter")}}
 

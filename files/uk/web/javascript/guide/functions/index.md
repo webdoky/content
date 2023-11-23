@@ -28,11 +28,7 @@ function square(number) {
 }
 ```
 
-Функція `square` приймає один параметр, що зветься `number`. Вона складається з однієї інструкції, котра каже повернути параметр функції (тобто `number`), помножений на себе. Інструкція [`return`](/uk/docs/Web/JavaScript/Reference/Statements/return) задає значення, повернене функцією:
-
-```js
-return number * number;
-```
+Функція `square` приймає один параметр, що зветься `number`. Вона складається з однієї інструкції, котра каже повернути параметр функції (тобто `number`), помножений на себе. Інструкція [`return`](/uk/docs/Web/JavaScript/Reference/Statements/return) задає значення, повернене функцією, тобто `number * number`.
 
 Параметри по суті передаються до функцій **за значенням** — тож якщо код всередині тіла функції присвоює параметрові, переданому в функцію, геть нове значення, то **такі зміни не поширюються глобально чи в коді, котрий викликав цю функцію**.
 
@@ -573,7 +569,7 @@ console.log(myConcat("; ", "слон", "жирафа", "лев", "гепард")
 // "слон; жирафа; лев; гепард; "
 
 console.log(
-  myConcat(". ", "шавлія", "базилік", "орегано", "перець", "петрушка")
+  myConcat(". ", "шавлія", "базилік", "орегано", "перець", "петрушка"),
 );
 // "шавлія. базилік. орегано. перець. петрушка. "
 ```
@@ -705,32 +701,5 @@ function Person() {
 
 const p = new Person();
 ```
-
-## Наперед визначені функції
-
-JavaScript має декілька вбудованих функцій верхнього рівня:
-
-- {{jsxref("Global_Objects/eval", "eval()")}}
-  - : Метод **`eval()`** виконує код JavaScript, представлений в рядку.
-- {{jsxref("Global_Objects/isFinite", "isFinite()")}}
-  - : Глобальна функція **`isFinite()`** з'ясовує, чи є передане значення дійсним числом. Якщо це необхідно, то параметр спершу перетворюється на число.
-- {{jsxref("Global_Objects/isNaN", "isNaN()")}}
-  - : Функція **`isNaN()`** з'ясовує, чи є значення {{jsxref("Global_Objects/NaN", "NaN")}}. Примітка: зведення типів усередині функції `isNaN` має [цікаві](/uk/docs/Web/JavaScript/Reference/Global_Objects/isNaN#opys) правила; інший варіант – використати {{jsxref("Number.isNaN()")}} для з'ясування, чи є значення нечислом.
-- {{jsxref("Global_Objects/parseFloat", "parseFloat()")}}
-  - : Функція **`parseFloat()`** розбирає рядковий аргумент і повертає число з рухомою комою.
-- {{jsxref("Global_Objects/parseInt", "parseInt()")}}
-  - : Функція **`parseInt()`** розбирає рядковий аргумент і повертає ціле число за вказаною основою числення.
-- {{jsxref("Global_Objects/decodeURI", "decodeURI()")}}
-  - : Функція **`decodeURI()`** розкодовує уніфікований ідентифікатор ресурсів (URI), до того створений {{jsxref("Global_Objects/encodeURI", "encodeURI")}} чи іншою подібною процедурою.
-- {{jsxref("Global_Objects/decodeURIComponent", "decodeURIComponent()")}}
-  - : Метод **`decodeURIComponent()`** розкодовує компонент уніфікованого ідентифікатора ресурсів (URI), до того створений {{jsxref("Global_Objects/encodeURIComponent", "encodeURIComponent")}} чи іншою подібною процедурою.
-- {{jsxref("Global_Objects/encodeURI", "encodeURI()")}}
-  - : Метод **`encodeURI()`** закодовує уніфікований ідентифікатор ресурсів (URI) шляхом заміни кожного входження певних символів одинарними, подвійними, потрійними чи четверними послідовностями екранування, що представляють кодування символу в UTF-8 (четверна послідовність екранування буде лише для символів, що складаються з двох "сурогатних" символів).
-- {{jsxref("Global_Objects/encodeURIComponent", "encodeURIComponent()")}}
-  - : Метод **`encodeURIComponent()`** закодовує компонент уніфікованого ідентифікатора ресурсів (URI) шляхом заміни кожного входження певних символів одинарними, подвійними, потрійними чи четверними послідовностями екранування, що представляють кодування символу в UTF-8 (четверна послідовність екранування буде лише для символів, що складаються з двох "сурогатних" символів).
-- {{jsxref("Global_Objects/escape", "escape()")}}
-  - : Нерекомендований метод **`escape()`** обчислює новий рядок, в котрому певні символи замінені шістнадцятковими послідовностями екранування. Натомість слід використовувати {{jsxref("Global_Objects/encodeURI", "encodeURI")}} чи {{jsxref("Global_Objects/encodeURIComponent", "encodeURIComponent")}}.
-- {{jsxref("Global_Objects/unescape", "unescape()")}}
-  - : Нерекомендований метод **`unescape()`** обчислює новий рядок, в котрому шістнадцяткові послідовності екранування замінені тими символами, котрі вони представляють. Послідовності екранування можуть бути утворені функцією штибу {{jsxref("Global_Objects/escape", "escape")}}. Через те, що `unescape()` є нерекомендованою, слід натомість використовувати {{jsxref("Global_Objects/decodeURI", "decodeURI()")}} чи {{jsxref("Global_Objects/decodeURIComponent", "decodeURIComponent")}}.
 
 {{PreviousNext("Web/JavaScript/Guide/Loops_and_iteration", "Web/JavaScript/Guide/Expressions_and_operators")}}
