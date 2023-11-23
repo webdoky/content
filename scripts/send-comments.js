@@ -1,8 +1,3 @@
-// Read LanguageTool output from ./results.json
-// and txt-to-markdown mapping from ./mapping.json
-// and print an errorformat message for each error
-// to stdout.
-
 import { execSync } from "child_process";
 import { readFileSync } from "fs";
 
@@ -58,7 +53,6 @@ for (const match of results.matches) {
     throw new Error(`Column not found in source file: ${sentence}`);
   }
   // const errorformatLine = `${markdownFile}:${startLine}:${startColumn}:${endLine}:${endColumn}: ${message}`;
-  // console.log(errorformatLine);
   let comment = `### ${message}\n${rule.description}\n${rule.category.id}/${rule.id}: ${rule.description}\n`;
   // console.log(`\`${markdownFile}:${startLine}:${startColumn}\n\``);
   comment += `> ${context.text.slice(0, context.offset)}**${context.text.slice(
