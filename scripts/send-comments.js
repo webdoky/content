@@ -36,6 +36,7 @@ try {
   const timeout = setTimeout(() => {
     throw new Error("Timeout");
   }, TOTAL_TIMEOUT);
+  const mappingMaxOffset = Math.max(...Object.keys(mapping));
 
   // eslint-disable-next-line no-restricted-syntax
   for (const match of results.matches) {
@@ -44,7 +45,7 @@ try {
     let { length, offset } = match;
     let start;
     length += 1;
-    while (!start) {
+    while (!start && offset <= mappingMaxOffset) {
       offset += 1;
       length -= 1;
       start = Number.parseInt(mapping[offset], 10);
@@ -53,7 +54,7 @@ try {
     let end;
     endOffset -= 1;
     length -= 1;
-    while (!end) {
+    while (!end && endOffset <= mappingMaxOffset) {
       endOffset += 1;
       length += 1;
       end = Number.parseInt(mapping[endOffset], 10);
