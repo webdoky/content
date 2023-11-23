@@ -349,7 +349,7 @@ console.log(it.next().value); // 2
 
 ### Означення ітерованого об'єкта за допомогою класу
 
-Інкапсуляція стану можлива також за допомогою [приватних властивостей](/uk/docs/Web/JavaScript/Reference/Classes/Private_class_fields).
+Інкапсуляція стану можлива також за допомогою [приватних властивостей](/uk/docs/Web/JavaScript/Reference/Classes/Private_properties).
 
 ```js
 class SimpleClass {

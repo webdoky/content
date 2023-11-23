@@ -19,6 +19,10 @@ spec-urls: https://drafts.csswg.org/css-transitions/
 - {{cssxref("transition-property")}}
 - {{cssxref("transition-timing-function")}}
 
+### Директиви
+
+- {{cssxref("@starting-style")}}
+
 ## Посібники
 
 - [Застосування Переходів CSS](/uk/docs/Web/CSS/CSS_transitions/Using_CSS_transitions)
