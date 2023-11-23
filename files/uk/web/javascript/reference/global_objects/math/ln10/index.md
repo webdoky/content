@@ -9,7 +9,7 @@ browser-compat: javascript.builtins.Math.LN10
 
 Статична властивість даних **`Math.LN10`** відображає натуральний логарифм 10, що наближено дорівнює 2.302.
 
-{{EmbedInteractiveExample("pages/js/math-ln10.html","shorter")}}
+{{EmbedInteractiveExample("pages/js/math-ln10.html", "shorter")}}
 
 ## Значення
 

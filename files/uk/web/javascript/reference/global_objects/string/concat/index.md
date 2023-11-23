@@ -1,31 +1,28 @@
 ---
 title: String.prototype.concat()
 slug: Web/JavaScript/Reference/Global_Objects/String/concat
-tags:
-  - JavaScript
-  - Method
-  - Prototype
-  - Reference
-  - String
+page-type: javascript-instance-method
 browser-compat: javascript.builtins.String.concat
 ---
+
 {{JSRef}}
 
-Метод **`concat()`** (конкатенація) приєднує рядкові аргументи до рядка, на якому викликається, і повертає результат як новий рядок.
+Метод **`concat()`** (зчепити) значень {{jsxref("String")}} приєднує рядкові аргументи до свого рядка, і повертає результат як новий рядок.
 
 {{EmbedInteractiveExample("pages/js/string-concat.html")}}
 
 ## Синтаксис
 
-```js
+```js-nolint
+concat()
 concat(str1)
 concat(str1, str2)
-concat(str1, str2, ... , strN)
+concat(str1, str2, /* …, */ strN)
 ```
 
 ### Параметри
 
-- `strN`
+- `str1`, …, `strN`
   - : Один чи більше рядків, які слід приєднати до початкового рядка `str`.
 
 ### Повернене значення
@@ -38,9 +35,7 @@ concat(str1, str2, ... , strN)
 
 Якщо передані аргументи не є рядками, їх буде зведено до рядкового типу безпосередньо перед конкатенацією.
 
-## Швидкодія
-
-Наполегливо рекомендується вживати {{jsxref("Operators/Assignment_Operators", "оператори присвоєння", "", 1)}} (`+`, `+=`) замість методу `concat()`.
+Метод `concat` вельми подібний до операторів [додавання та зчеплення рядків](/uk/docs/Web/JavaScript/Reference/Operators/Addition) (`+`, `+=`), за винятком того, що `concat()` [зводить свої аргументи безпосередньо до рядків](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka), натомість додавання перш за все зводить свої операнди до примітивів. Для отримання додаткової інформації дивіться довідкову сторінку [оператора `+`](/uk/docs/Web/JavaScript/Reference/Operators/Addition).
 
 ## Приклади
 
@@ -49,18 +44,18 @@ concat(str1, str2, ... , strN)
 Наступний приклад поєднує два рядки в один новий.
 
 ```js
-let hello = 'Привіт, '
-console.log(hello.concat('Кевіне', '. Гарного дня.'))
+const hello = "Привіт, ";
+console.log(hello.concat("Кевіне", ". Гарного дня."));
 // Привіт, Кевіне. Гарного дня.
 
-let greetList = ['Привіт', ' ', 'Венкате', '!']
-"".concat(...greetList)  // "Привіт Венкате!"
+const greetList = ["Привіт", " ", "Венкате", "!"];
+"".concat(...greetList); // "Привіт Венкате!"
 
-"".concat({})    // [object Object]
-"".concat([])    // ""
-"".concat(null)  // "null"
-"".concat(true)  // "true"
-"".concat(4, 5)  // "45"
+"".concat({}); // "[object Object]"
+"".concat([]); // ""
+"".concat(null); // "null"
+"".concat(true); // "true"
+"".concat(4, 5); // "45"
 ```
 
 ## Специфікації
@@ -74,4 +69,4 @@ let greetList = ['Привіт', ' ', 'Венкате', '!']
 ## Дивіться також
 
 - {{jsxref("Array.prototype.concat()")}}
-- {{jsxref("Operators/Assignment_Operators", "Оператори присвоєння", "", 1)}}
+- [Додавання (`+`)](/uk/docs/Web/JavaScript/Reference/Operators/Addition)

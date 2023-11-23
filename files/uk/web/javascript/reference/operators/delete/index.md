@@ -1,5 +1,5 @@
 ---
-title: Оператор delete
+title: delete
 slug: Web/JavaScript/Reference/Operators/delete
 page-type: javascript-operator
 browser-compat: javascript.operators.delete
@@ -40,14 +40,14 @@ delete object[property]
 
 ## Опис
 
-Оператор `delete` має такий само [пріоритет](/uk/docs/Web/JavaScript/Reference/Operators/Operator_Precedence), як інші унарні оператори, як то [`typeof`](/uk/docs/Web/JavaScript/Reference/Operators/typeof). Таким чином, він приймає будь-які вирази, сформовані операторами вищого пріоритету. Проте форми, показані нижче, в [суворому режимі](/uk/docs/Web/JavaScript/Reference/Strict_mode) зразу призведуть до синтаксичних помилок:
+Оператор `delete` має такий само [пріоритет](/uk/docs/Web/JavaScript/Reference/Operators/Operator_precedence), як інші унарні оператори, як то [`typeof`](/uk/docs/Web/JavaScript/Reference/Operators/typeof). Таким чином, він приймає будь-які вирази, сформовані операторами вищого пріоритету. Проте форми, показані нижче, в [суворому режимі](/uk/docs/Web/JavaScript/Reference/Strict_mode) зразу призведуть до синтаксичних помилок:
 
-```js example-bad
+```js-nolint example-bad
 delete identifier;
 delete object.#privateProperty;
 ```
 
-Завдяки тому, що [класи](/uk/docs/Web/JavaScript/Reference/Classes) автоматично отримують суворий режим, а [приватні властивості](/uk/docs/Web/JavaScript/Reference/Classes/Private_class_fields) можна правомірно використовувати лише в тілах класів, приватні властивості ніколи не можуть бути видалені. Попри те, що `delete identifier` [може спрацювати](#vydalennia-hlobalnykh-vlastyvostei), якщо `identifier` вказує на налаштовну властивість глобального об'єкта, цієї форми слід уникати, ставлячи натомість перед ідентифікатором [`globalThis`](/uk/docs/Web/JavaScript/Reference/Global_Objects/globalThis).
+Завдяки тому, що [класи](/uk/docs/Web/JavaScript/Reference/Classes) автоматично отримують суворий режим, а [приватні властивості](/uk/docs/Web/JavaScript/Reference/Classes/Private_properties) можна правомірно використовувати лише в тілах класів, приватні властивості ніколи не можуть бути видалені. Попри те, що `delete identifier` [може спрацювати](#vydalennia-hlobalnykh-vlastyvostei), якщо `identifier` вказує на налаштовну властивість глобального об'єкта, цієї форми слід уникати, ставлячи натомість перед ідентифікатором [`globalThis`](/uk/docs/Web/JavaScript/Reference/Global_Objects/globalThis).
 
 Попри те, що інакші вирази – приймаються, вони не дають змістовних результатів:
 
@@ -56,7 +56,7 @@ delete console.log(1);
 // Виводить 1, повертає true, але нічого не видалено
 ```
 
-Оператор `delete` прибирає з об'єкта задану властивість. У випадку успішного видалення – повертає `true`, інакше – `false`. Всупереч поширеному уявленню (мабуть, пов'язаному з іншими мовами програмування, як то [delete у C++](https://docs.microsoft.com/cpp/cpp/delete-operator-cpp?view=msvc-170)), оператор `delete` **не має** стосунку до безпосереднього звільнення пам'яті. Керування пам'яттю виконується в непрямий спосіб, шляхом розриву посилань. Дивіться подробиці на сторінці [керування пам'яттю](/uk/docs/Web/JavaScript/Memory_Management).
+Оператор `delete` прибирає з об'єкта задану властивість. У випадку успішного видалення – повертає `true`, інакше – `false`. Всупереч поширеному уявленню (мабуть, пов'язаному з іншими мовами програмування, як то [delete у C++](https://docs.microsoft.com/cpp/cpp/delete-operator-cpp?view=msvc-170)), оператор `delete` **не має** стосунку до безпосереднього звільнення пам'яті. Керування пам'яттю виконується в непрямий спосіб, шляхом розриву посилань. Дивіться подробиці на сторінці [керування пам'яттю](/uk/docs/Web/JavaScript/Memory_management).
 
 Важливо враховувати наступні варіанти:
 
@@ -65,7 +65,7 @@ delete console.log(1);
 - Неналаштовні властивості не можуть бути прибрані. Серед них – властивості вбудованих об'єктів, як то {{jsxref("Math")}}, {{jsxref("Array")}}, {{jsxref("Object")}}, а також властивості, створені як неналаштовні за допомогою методів штибу {{jsxref("Object.defineProperty()")}}.
 - Видалення змінних, включно з параметрами функцій, ніколи не спрацює. `delete variable` в суворому режимі викине {{jsxref("SyntaxError")}}, а в несуворому – ніяк не подіє.
   - Змінні, оголошені за допомогою {{jsxref("Statements/var", "var")}}, не можуть бути видалені з глобальної області видимості, чи області функції, адже хоч вони могли бути прикріплені до [глобального об'єкта](/uk/docs/Glossary/Global_object), та не є налаштовними.
-  - Змінні, оголошені за допомогою {{jsxref("Statements/let","let")}} або {{jsxref("Statements/const","const")}}, не можуть бути видалені з області видимості, у котрій були визначені, адже не є прикріпленими до об'єкта.
+  - Змінні, оголошені за допомогою {{jsxref("Statements/let", "let")}} або {{jsxref("Statements/const", "const")}}, не можуть бути видалені з області видимості, у котрій були визначені, адже не є прикріпленими до об'єкта.
 
 ## Приклади
 
@@ -78,7 +78,7 @@ delete console.log(1);
 // Оскільки використовується var, вона буде позначена як неналаштовна.
 var empCount = 43;
 
-// Створення в глобальній видимості властивості adminName.
+// Створення в глобальній видимості властивості EmployeeDetails.
 // Оскільки var не використовується, вона буде позначена як налаштовна.
 EmployeeDetails = {
   name: "xyz",
@@ -184,7 +184,7 @@ Object.defineProperty(Employee, "name", { configurable: false });
 console.log(delete Employee.name); // повертає false
 ```
 
-{{jsxref("Statements/var","var")}} створює неналаштовні властивості, котрі не можна видалити оператором `delete`:
+{{jsxref("Statements/var", "var")}} створює неналаштовні властивості, котрі не можна видалити оператором `delete`:
 
 ```js
 // Оскільки "nameOther" додано за допомогою
