@@ -70,8 +70,10 @@ jobs:
         name: Convert markdown to plain text
         run: |
           file=${{ needs.prepare-translation.outputs.translation }}
+          tmpHtmlFile=$(echo $file | sed 's/\.md/\.html/')
+          pandoc -f markdown -t html -o $tmpHtmlFile $file
           newFileName=$(echo $file | sed 's/\.md/\.txt/')
-          pandoc -f markdown -t plain+pipe_tables -o $newFileName $file
+          pandoc -f html -t plain -o $newFileName $tmpHtmlFile
           echo "translation=$newFileName" >> $GITHUB_OUTPUT
           echo $newFileName
       # - name: Remove tables from plain text file
