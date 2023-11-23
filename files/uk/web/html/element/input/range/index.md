@@ -334,7 +334,7 @@ input[type="range"][orient="vertical"] {
 }
 ```
 
-{{EmbedLiveSample("zbyrannia-vsioho-dokupy", 200, 200)}}
+{{EmbedLiveSample("zbyrannia-vsoho-dokupy", 200, 200)}}
 
 ## Технічний підсумок
 

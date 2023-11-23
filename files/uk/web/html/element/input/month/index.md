@@ -142,7 +142,7 @@ monthControl.value = "2001-06";
 </form>
 ```
 
-{{EmbedLiveSample('zadannia-maksymalnoii-ta-minimalnoii-dat', 600, 40)}}
+{{EmbedLiveSample('zadannia-maksymalnoi-ta-minimalnoi-dat', 600, 40)}}
 
 Результатом тут є наступне:
 
