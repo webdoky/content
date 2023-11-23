@@ -70,15 +70,16 @@ jobs:
         name: Convert markdown to plain text
         run: |
           file=${{ needs.prepare-translation.outputs.translation }}
+          tmpHtmlFile=$(echo $file | sed 's/\.md/\.html/')
+          pandoc -f markdown -t html -o $tmpHtmlFile $file
           newFileName=$(echo $file | sed 's/\.md/\.txt/')
-          pandoc -f markdown -t plain -o $newFileName $file
+          pandoc -f html -t plain -o $newFileName $tmpHtmlFile
           echo "translation=$newFileName" >> $GITHUB_OUTPUT
           echo $newFileName
-      # Error if translation file is not found
       - if: steps.md2txt.outputs.translation == ''
         name: Check translation is found
         run: echo "No translation file found" && exit 1
-      - uses: actions/setup-java@v2
+      - uses: actions/setup-java@v3
         with:
           distribution: "temurin"
           java-version: "8"
@@ -98,6 +99,7 @@ jobs:
         run: |
           cd LanguageTool-6.3
           java -jar languagetool-commandline.jar -d ${{steps.disabled-rules.outputs.disabled_rules}} -l uk --json ../${{ steps.md2txt.outputs.translation }} > ../result.json
+          cat ../result.json
           matches=$(cat ../result.json | jq '.matches')
           # Check if matches equal []
           echo "has_matches=$(if [ "$matches" == "[]" ]; then echo "false"; else echo "true"; fi)" >> $GITHUB_OUTPUT
@@ -136,19 +138,12 @@ jobs:
           path: .
       - name: Create mapping
         run: node scripts/create-file-mapping.js ./index.txt ${{ needs.prepare-translation.outputs.translation }} > ./mapping.json && cat ./mapping.json
-      - id: create-message
-        name: Create message
-        run: node scripts/create-message.js ${{ needs.prepare-translation.outputs.translation }} > message.txt && cat ./message.txt
-      # - uses: reviewdog/action-setup@v1
-      # - name: Send results
-      #   run: |
-      #     export REVIEWDOG_GITHUB_API_TOKEN=${{ secrets.GITHUB_TOKEN }}
-      #     cat ./message.txt | reviewdog -efm="%A%f:%l:%c:%e:%k: %m%Z" -fail-on-error -reporter=github-pr-review -filter-mode=nofilter -name="LanguageTool" -level=info
-      - name: Send results
-        uses: mshick/add-pr-comment@v2
-        with:
-          message-id: ${{ needs.prepare-translation.outputs.translation }}
-          message-path: ./message.txt
-          refresh-message-position: true
+      - env:
+          COMMIT_ID: ${{ github.event.pull_request.head.sha }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        name: Send results
+        run: node scripts/send-comments.js ${{ needs.prepare-translation.outputs.translation }}
+        timeout-minutes: 5
       - name: Exit with error
         run: echo "Spelling errors found" && cat result.json && exit 1
