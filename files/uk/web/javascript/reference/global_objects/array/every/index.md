@@ -7,9 +7,9 @@ browser-compat: javascript.builtins.Array.every
 
 {{JSRef}}
 
-Метод **`every()`** (кожний) перевіряє, чи всі елементи масиву проходять перевірку, реалізовану наданою функцією. Повертає булеве значення.
+Метод **`every()`** (кожний) примірників {{jsxref("Array")}} перевіряє, чи всі елементи масиву проходять перевірку, реалізовану наданою функцією. Повертає булеве значення.
 
-{{EmbedInteractiveExample("pages/js/array-every.html","shorter")}}
+{{EmbedInteractiveExample("pages/js/array-every.html", "shorter")}}
 
 ## Синтаксис
 
@@ -33,7 +33,7 @@ every(callbackFn, thisArg)
 
 ### Повернене значення
 
-`true`, якщо `callbackFn` повертає значення {{Glossary("truthy", "істинності")}} для кожного елемента масиву. Інакше – `false`.
+`true`, якщо `callbackFn` не повертає {{Glossary("falsy", "хибне")}} значення для одного з елементів масиву, – в цьому випадку негайно повертається `false`
 
 ## Опис
 
@@ -57,7 +57,7 @@ every(callbackFn, thisArg)
 
 ### Перевірка розміру всіх елементів масиву
 
-Наступний приклад перевіряє, чи всі елементи масиву більші за 10.
+Наступний приклад перевіряє, чи всі елементи масиву не менші за 10.
 
 ```js
 function isBigEnough(element, index, array) {
@@ -145,7 +145,7 @@ arr.every((elem, index, arr) => {
 
 ### Виклик every() на об'єктах-немасивах
 
-Метод `every()` зчитує з `this` властивість `length`, а потім звертається до кожної цілочислової властивості, поки не буде досягнено кінця або `callbackFn` не поверне `false`.
+Метод `every()` зчитує з `this` властивість `length`, а потім звертається до кожної властивості, чий ключ є невід'ємним цілим числом, меншим за `length`, поки не будуть перебрані вони всі або `callbackFn` не поверне `false`.
 
 ```js
 const arrayLike = {
@@ -153,9 +153,10 @@ const arrayLike = {
   0: "a",
   1: "b",
   2: "c",
+  3: 345, // ігнорується every(), оскільки length – 3
 };
 console.log(
-  Array.prototype.every.call(arrayLike, (x) => typeof x === "string")
+  Array.prototype.every.call(arrayLike, (x) => typeof x === "string"),
 ); // true
 ```
 
@@ -170,7 +171,7 @@ console.log(
 ## Дивіться також
 
 - [Поліфіл `Array.prototype.every` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
-- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
 - {{jsxref("Array.prototype.forEach()")}}
 - {{jsxref("Array.prototype.some()")}}

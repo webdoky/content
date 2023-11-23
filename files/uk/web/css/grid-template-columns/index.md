@@ -87,9 +87,9 @@ grid-template-columns: unset;
 
 - {{cssxref("repeat", "repeat( [ &lt;positive-integer&gt; | auto-fill | auto-fit ] , &lt;track-list&gt; )")}}
   - : Представляє повторюваний фрагмент списку доріжки й дає змогу визначити багато колонок, що утворюють циклічний патерн, у більш компактному вигляді.
-- [`masonry`](/uk/docs/Web/CSS/CSS_Grid_Layout/Masonry_Layout) {{Experimental_Inline}}
+- [`masonry`](/uk/docs/Web/CSS/CSS_grid_layout/Masonry_layout) {{Experimental_Inline}}
   - : Значення masonry вказує на те, що ця вісь повинна компонуватися згідно з алгоритмом кладки.
-- [`subgrid`](/uk/docs/Web/CSS/CSS_Grid_Layout/Subgrid)
+- [`subgrid`](/uk/docs/Web/CSS/CSS_grid_layout/Subgrid)
   - : Значення `subgrid` вказує на те, що сітка займе за цією віссю розширену частку своєї батьківської сітки. Замість явного задання, розміри рядів і колонок сітки будуть взяті з означення батьківської сітки.
 
 > **Застереження:** Значення `masonry` походить із Рівня 3 Специфікації сітки й наразі має лише експериментальну реалізацію в Firefox, приховану за прапорцем.
@@ -150,6 +150,6 @@ grid-template-columns: unset;
 ## Дивіться також
 
 - Пов'язані властивості CSS: {{cssxref("grid-template-rows")}}, {{cssxref("grid-template-areas")}}, {{cssxref("grid-template")}}
-- Посібник з сіткового компонування: _[Базові концепції сіткового компонування – сіткові доріжки](/uk/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout#sitkovi-dorizhky)_
+- Посібник з сіткового компонування: _[Базові концепції сіткового компонування – сіткові доріжки](/uk/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout#sitkovi-dorizhky)_
 - Відеоурок: _[Визначення сітки (англ.)](https://gridbyexample.com/video/series-define-a-grid/)_
-- [Subgrid](/uk/docs/Web/CSS/CSS_Grid_Layout/Subgrid)
+- [Subgrid](/uk/docs/Web/CSS/CSS_grid_layout/Subgrid)

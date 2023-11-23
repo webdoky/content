@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.Array.map
 
 {{JSRef}}
 
-Метод **`map()`** (відобразити) **створює новий масив**, наповнений результатами виклику переданої функції на кожному з елементів початкового масиву.
+Метод **`map()`** (відобразити) примірників {{jsxref("Array")}} створює новий масив, наповнений результатами виклику переданої функції на кожному з елементів початкового масиву.
 
 {{EmbedInteractiveExample("pages/js/array-map.html")}}
 
@@ -100,9 +100,62 @@ console.log(doubles); // [2, 8, 18]
 console.log(numbers); // [1, 4, 9]
 ```
 
+### Відображення з побічними ефектами
+
+Функція зворотного виклику може мати побічні ефекти.
+
+```js
+const cart = [5, 15, 25];
+let total = 0;
+const withTax = cart.map((cost) => {
+  total += cost;
+  return cost * 1.2;
+});
+console.log(withTax); // [6, 18, 30]
+console.log(total); // 45
+```
+
+Це не рекомендовано, адже копіювальні методи найкраще використовувати вкупі з чистими функціями. У цьому випадку – можемо захотіти пройтися масивом двічі.
+
+```js
+const cart = [5, 15, 25];
+const total = cart.reduce((acc, cost) => acc + cost, 0);
+const withTax = cart.map((cost) => cost * 1.2);
+```
+
+Іноді цей патерн доходить до крайнощів, і _єдиною_ корисною річчю, котру робить `map()`, виявляються побічні ефекти.
+
+```js
+const products = [
+  { name: "спортивна автівка" },
+  { name: "ноутбук" },
+  { name: "телефон" },
+];
+
+products.map((product) => {
+  product.price = 100;
+});
+```
+
+Як згадувалось вище, це є антипатерном. Якщо повернене значення `map()` не використовується, краще натомість використати `forEach()` або цикл `for...of`.
+
+```js
+products.forEach((product) => {
+  product.price = 100;
+});
+```
+
+Або, якщо необхідно створити новий масив:
+
+```js
+const productsWithPrice = products.map((product) => {
+  return { ...product, price: 100 };
+});
+```
+
 ### Виклик map() на об'єктах-немасивах
 
-Метод `map()` зчитує з `this` властивість `length`, а потім зчитує кожну цілочислову властивість.
+Метод `map()` зчитує з `this` властивість `length`, а потім звертається до кожної властивості, чий ключ є невід'ємним цілим числом, меншим за `length`.
 
 ```js
 const arrayLike = {
@@ -110,6 +163,7 @@ const arrayLike = {
   0: 2,
   1: 3,
   2: 4,
+  3: 5, // ігнорується map(), оскільки length – 3
 };
 console.log(Array.prototype.map.call(arrayLike, (x) => x ** 2));
 // [ 4, 9, 16 ]
@@ -137,7 +191,7 @@ console.log(
   [1, , 3].map((x, index) => {
     console.log(`Відвідини ${index}`);
     return x * 2;
-  })
+  }),
 );
 // Відвідини 0
 // Відвідини 2
@@ -242,7 +296,7 @@ const filteredNumbers = numbers.map((num, index) => {
 ## Дивіться також
 
 - [Поліфіл `Array.prototype.map` у `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
-- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
 - {{jsxref("Array.prototype.forEach()")}}
 - {{jsxref("Array.from()")}}

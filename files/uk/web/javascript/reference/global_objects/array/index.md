@@ -13,22 +13,22 @@ browser-compat: javascript.builtins.Array
 
 У мові JavaScript масиви не є [примітивами](/uk/docs/Glossary/Primitive), а натомість є об'єктами класу `Array`, із наступними ключовими характеристиками:
 
-- **Масиви JavaScript можуть змінювати розмір** і **можуть містить суміш різних [типів даних](/uk/docs/Web/JavaScript/Data_structures)**. (Коли ці характеристики є небажаними, слід натомість використовувати [типізовані масиви](/uk/docs/Web/JavaScript/Typed_arrays).)
+- **Масиви JavaScript можуть змінювати розмір** і **можуть містить суміш різних [типів даних](/uk/docs/Web/JavaScript/Data_structures)**. (Коли ці характеристики є небажаними, слід натомість використовувати [типізовані масиви](/uk/docs/Web/JavaScript/Guide/Typed_arrays).)
 - **Масиви JavaScript не є асоціативними**, а отже – елементи масиву не можуть бути отримані з використанням рядків замість індексів, індекси масиву – лише цілі числа.
-- **Масиви JavaScript [нумеруються від нуля (англ.)](https://en.wikipedia.org/wiki/Zero-based_numbering)**: перший елемент масиву знаходиться за індексом `0`, другий – за індексом `1`, і так далі; останній же елемент знаходиться за індексом, рівним значенню властивості масиву {{jsxref("Array/length", "length")}} мінус `1`.
+- **Масиви JavaScript [нумеруються від нуля](https://uk.wikipedia.org/wiki/%D0%9D%D1%83%D0%BC%D0%B5%D1%80%D0%B0%D1%86%D1%96%D1%8F_%D0%B2%D1%96%D0%B4_%D0%BD%D1%83%D0%BB%D1%8F)**: перший елемент масиву знаходиться за індексом `0`, другий – за індексом `1`, і так далі; останній же елемент знаходиться за індексом, рівним значенню властивості масиву {{jsxref("Array/length", "length")}} мінус `1`.
 - **[Операції копіювання масиву](#kopiiuvannia-masyvu) створюють [поверхневі копії](/uk/docs/Glossary/Shallow_copy)**. (Усі стандартні вбудовані операції копіювання _будь-яких_ об'єктів JavaScript створюють поверхневі, а не [глибинні копії](/uk/docs/Glossary/Deep_copy)).
 
 ### Індекси масиву
 
-Об'єкти `Array` не можуть використовувати як індекси елементів рядки (як це буває в [асоціативному масиві](https://uk.wikipedia.org/wiki/%D0%90%D1%81%D0%BE%D1%86%D1%96%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D0%B8%D0%B9_%D0%BC%D0%B0%D1%81%D0%B8%D0%B2)), а мусять використовувати цілі числа (або відповідну їм рядкову форму). Встановлення чи отримання значень за ключами, що не є цілими числами, не встановить і не отримає елементів самого списку елементів масиву, але встановить чи отримає змінну, пов'язану з [колекцією властивостей об'єкта](/uk/docs/Web/JavaScript/Data_structures#vlastyvosti) масиву. Об'єктні властивості масиву та список елементів масиву – окремі одне від одного, і [операції перебору та зміни](/uk/docs/Web/JavaScript/Guide/Indexed_collections#metody-masyvu) не можуть застосовуватись до таких іменованих властивостей.
+Об'єкти `Array` не можуть використовувати як індекси елементів рядки (як це буває в [асоціативному масиві](https://uk.wikipedia.org/wiki/%D0%90%D1%81%D0%BE%D1%86%D1%96%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D0%B8%D0%B9_%D0%BC%D0%B0%D1%81%D0%B8%D0%B2)), а мусять використовувати цілі числа (або відповідну їм рядкову форму). Встановлення чи отримання значень за ключами, що не є цілими числами, не встановить і не отримає елементів самого списку елементів масиву, але встановить чи отримає змінну, пов'язану з [колекцією властивостей об'єкта](/uk/docs/Web/JavaScript/Data_structures#vlastyvosti) масиву. Об'єктні властивості масиву та список елементів масиву – окремі одне від одного, і [операції перебору та зміни](/uk/docs/Web/JavaScript/Guide/Indexed_collections#metody-masyviv) не можуть застосовуватись до таких іменованих властивостей.
 
 Елементи масиву є властивостями об'єкта так само, як `toString` (для точності, втім, слід нагадати, що `toString()` є методом). Попри це, спроба отримати елемент масиву у наступний спосіб призведе до синтаксичної помилки, адже таке ім'я властивості є недійсним:
 
-```js example-bad
-console.log(arr.0); // синтаксична помилка
+```js-nolint example-bad
+arr.0; // синтаксична помилка
 ```
 
-Синтаксис JavaScript вимагає, аби до властивостей, що починаються з цифри, зверталися за допомогою [запису квадратних дужок](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#obiekty-ta-vlastyvosti), а не [запису крапки](/uk/docs/Web/JavaScript/Reference/Operators/Property_Accessors). Крім цього, можна брати в лапки індекси масивів (наприклад, `years['2']` замість `years[2]`), хоч зазвичай для цього немає потреби.
+Синтаксис JavaScript вимагає, аби до властивостей, що починаються з цифри, зверталися за допомогою [запису квадратних дужок](/uk/docs/Web/JavaScript/Guide/Working_with_objects#obiekty-i-vlastyvosti), а не [запису крапки](/uk/docs/Web/JavaScript/Reference/Operators/Property_accessors). Крім цього, можна брати в лапки індекси масивів (наприклад, `years['2']` замість `years[2]`), хоч зазвичай для цього немає потреби.
 
 `2` в записі `years[2]` зводиться до рядка рушієм JavaScript шляхом неявного перетворення `toString`. Як наслідок, `'2'` і `'02'` вказують на дві різні комірки в об'єкті `years`, і результатом роботи наступного прикладу може бути `true`:
 
@@ -61,7 +61,7 @@ console.log(Object.keys(fruits)); // ['0', '1', '2', '5']
 console.log(fruits.length); // 6
 ```
 
-Збільшення властивості {{jsxref("Array/length", "length")}}.
+Збільшення властивості {{jsxref("Array/length", "length")}} спричиняє розширення масиву шляхом додавання порожніх комірок, без додавання жодних нових елементів – навіть `undefined`.
 
 ```js
 fruits.length = 10;
@@ -79,7 +79,7 @@ console.log(Object.keys(fruits)); // ['0', '1']
 console.log(fruits.length); // 2
 ```
 
-Така поведінка докладніше пояснена на сторінці {{jsxref("Array/length")}}.
+Така поведінка докладніше пояснена на сторінці {{jsxref("Array/length", "length")}}.
 
 ### Методи масиву й порожні комірки
 
@@ -115,8 +115,6 @@ console.log(fruits.length); // 2
 - {{jsxref("Array/findIndex", "findIndex()")}}
 - {{jsxref("Array/findLast", "findLast()")}}
 - {{jsxref("Array/findLastIndex", "findLastIndex()")}}
-- {{jsxref("Array/group", "group()")}} {{Experimental_Inline}}
-- {{jsxref("Array/groupToMap", "groupToMap()")}} {{Experimental_Inline}}
 - {{jsxref("Array/includes", "includes()")}}
 - {{jsxref("Array/join", "join()")}}
 - {{jsxref("Array/keys", "keys()")}}
@@ -125,14 +123,14 @@ console.log(fruits.length); // 2
 
 ### Копіювальні та змінювальні методи
 
-Частина методів не змінює наявний масив, на котрому викликали метод, а повертає новий масив. Це робиться шляхом виклику спершу [`this.constructor[Symbol.species]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/@@species), аби з'ясувати, який конструктор використовувати для нового масиву. Новостворений масив після цього заповнюється елементами. Копіювання завжди відбувається [_поверхнево_](/uk/docs/Glossary/Shallow_copy): метод ніколи не копіює нічого поза початково створеним масивом. Елементи вихідного масиву (чи масивів) копіюються в новий масив так:
+Частина методів не змінює наявний масив, на котрому викликали метод, а повертає новий масив. Це робиться спершу створенням нового масиву, а потім – заповненням його елементами. Копіювання завжди відбувається [_поверхнево_](/uk/docs/Glossary/Shallow_copy): метод ніколи не копіює нічого поза початково створеним масивом. Елементи вихідного масиву (чи масивів) копіюються в новий масив так:
 
-- Об'єкти: посилання на об'єкт копіюється в новий масив. І вихідний, і новий масиви посилаються на один об'єкт. Тобто якщо змінити цей об'єкт, то зміни будуть помітні і в новому, і у вихідному масиві.
-- Примітивні типи, як то рядки, числа й булеві значення (не об'єкти {{jsxref("Global_Objects/String", "String")}}, {{jsxref("Global_Objects/Number", "Number")}} і {{jsxref("Global_Objects/Boolean", "Boolean")}}): їхні значення копіюються в новий масив.
+- Об'єкти: посилання на об'єкт копіюється в новий масив. І вихідний, і новий масиви посилаються на один об'єкт. Тобто якщо змінити цей об'єкт, то зміни будуть помітні як у новому, так і в вихідному масиві.
+- Примітивні типи, як то рядки, числа й булеві значення (не об'єкти {{jsxref("String")}}, {{jsxref("Number")}} і {{jsxref("Boolean")}}): їхні значення копіюються в новий масив.
 
 Решта методів змінює масив, на котрому викликано метод, у випадку чого їхнє повернене значення відрізняється залежно від методу: іноді це посилання на той самий масив, іноді – довжина нового масиву.
 
-Наступні методи створюють нові масиви за допомогою `@@species`:
+Наступні методи створюють нові масиви шляхом звертання до [`this.constructor[Symbol.species]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/@@species) для визначення конструктора, який буде використаний:
 
 - {{jsxref("Array/concat", "concat()")}}
 - {{jsxref("Array/filter", "filter()")}}
@@ -142,19 +140,34 @@ console.log(fruits.length); // 2
 - {{jsxref("Array/slice", "slice()")}}
 - {{jsxref("Array/splice", "splice()")}} (для створення поверненого масиву прибраних елементів)
 
-Зверніть увагу, що {{jsxref("Array/group", "group()")}} і {{jsxref("Array/groupToMap", "groupToMap()")}} не застосовують `@@species` для створення нових масивів кожного запису групи, а завжди використовують простий конструктор `Array`. Задумано так, що вони не є копіювальними методами.
+Наступні методи завжди створюють нові масиви з базовим конструктором `Array`:
 
-Наступні методи змінюють вихідний масив:
+- {{jsxref("Array/toReversed", "toReversed()")}}
+- {{jsxref("Array/toSorted", "toSorted()")}}
+- {{jsxref("Array/toSpliced", "toSpliced()")}}
+- {{jsxref("Array/with", "with()")}}
 
-- {{jsxref("Array/copyWithin", "copyWithin()")}}
-- {{jsxref("Array/fill", "fill()")}}
-- {{jsxref("Array/pop", "pop()")}}
-- {{jsxref("Array/push", "push()")}}
-- {{jsxref("Array/reverse", "reverse()")}}
-- {{jsxref("Array/shift", "shift()")}}
-- {{jsxref("Array/sort", "sort()")}}
-- {{jsxref("Array/splice", "splice()")}}
-- {{jsxref("Array/unshift", "unshift()")}}
+Наступна таблиця перераховує методи, які змінюють вихідний масив, і відповідні їм незмінювальні альтернативи:
+
+| Змінювальний метод                             | Незмінювальна альтернатива                               |
+| ---------------------------------------------- | -------------------------------------------------------- |
+| {{jsxref("Array/copyWithin", "copyWithin()")}} | Немає альтернативи одним методом                         |
+| {{jsxref("Array/fill", "fill()")}}             | Немає альтернативи одним методом                         |
+| {{jsxref("Array/pop", "pop()")}}               | {{jsxref("Array/slice", "slice(0, -1)")}}                |
+| {{jsxref("Array/push", "push(v1, v2)")}}       | {{jsxref("Array/concat", "concat([v1, v2])")}}           |
+| {{jsxref("Array/reverse", "reverse()")}}       | {{jsxref("Array/toReversed", "toReversed()")}}           |
+| {{jsxref("Array/shift", "shift()")}}           | {{jsxref("Array/slice", "slice(1)")}}                    |
+| {{jsxref("Array/sort", "sort()")}}             | {{jsxref("Array/toSorted", "toSorted()")}}               |
+| {{jsxref("Array/splice", "splice()")}}         | {{jsxref("Array/toSpliced", "toSpliced()")}}             |
+| {{jsxref("Array/unshift", "unshift(v1, v2)")}} | {{jsxref("Array/toSpliced", "toSpliced(0, 0, v1, v2)")}} |
+
+Легкий спосіб замінити змінювальний метод на незмінювальний альтернативний – використати [синтаксис розгортання](/uk/docs/Web/JavaScript/Reference/Operators/Spread_syntax) або {{jsxref("Array/slice", "slice()")}}, щоб спершу створити копію:
+
+```js-nolint
+arr.copyWithin(0, 1, 2); // змінює arr
+const arr2 = arr.slice().copyWithin(0, 1, 2); // не змінює arr
+const arr3 = [...arr].copyWithin(0, 1, 2); // не змінює arr
+```
 
 ### Ітеративні методи
 
@@ -175,7 +188,7 @@ method(callbackFn, thisArg)
 
 Те, що має повернути `callbackFn`, залежить від викликаного метода масиву.
 
-Аргумент `thisArg` (чиє усталене значення – `undefined`) використовуватиметься як значення `this` при виклику `callbackFn`. Значення `this`, отримане функцією `callbackFn`, визначається згідно зі [звичними правилами](/uk/docs/Web/JavaScript/Reference/Operators/this): якщо `callbackFn` є [несуворою](/uk/docs/Web/JavaScript/Reference/Strict_mode#bez-zaminy-this) функцією, то примітивні значення `this` загортаються в об'єкти, а `undefined` і `null` – замінюються на [`globalThis`](/uk/docs/Web/JavaScript/Reference/Global_Objects/globalThis). Аргумент `thisArg` є беззмістовним для будь-якої `callbackFn`, визначеною у вигляді [стрілкової функції](/uk/docs/Web/JavaScript/Reference/Functions/Arrow_functions), адже такі функції не мають власного зв'язування `this`.
+Аргумент `thisArg` (чиє усталене значення – `undefined`) використовуватиметься як значення `this` при виклику `callbackFn`. Значення `this`, отримане функцією `callbackFn`, визначається згідно зі [звичними правилами](/uk/docs/Web/JavaScript/Reference/Operators/this): якщо `callbackFn` є [несуворою](/uk/docs/Web/JavaScript/Reference/Strict_mode#bez-zaminy-this) функцією, то примітивні значення `this` загортаються в об'єкти, а `undefined` і `null` – замінюються на [`globalThis`](/uk/docs/Web/JavaScript/Reference/Global_Objects/globalThis). Аргумент `thisArg` є беззмістовним для будь-якої `callbackFn`, визначеною у вигляді [стрілкової функції](/uk/docs/Web/JavaScript/Reference/Functions/Arrow_functions), адже такі функції не мають власного {{Glossary("binding", "зв'язування")}} `this`.
 
 Усі ітеративні методи є [копіювальними](#kopiiuvalni-ta-zminiuvalni-metody) та [узагальненими](#uzahalneni-metody-masyvu), хоч вони по-різному поводяться з [порожніми комірками](#metody-masyvu-y-porozhni-komirky).
 
@@ -189,8 +202,6 @@ method(callbackFn, thisArg)
 - {{jsxref("Array/findLastIndex", "findLastIndex()")}}
 - {{jsxref("Array/flatMap", "flatMap()")}}
 - {{jsxref("Array/forEach", "forEach()")}}
-- {{jsxref("Array/group", "group()")}}
-- {{jsxref("Array/groupToMap", "groupToMap()")}}
 - {{jsxref("Array/map", "map()")}}
 - {{jsxref("Array/some", "some()")}}
 
@@ -220,6 +231,8 @@ console.log(Array.prototype.join.call(arrayLike, "+")); // 'a+b'
 
 Властивість `length` [перетворюється на ціле число](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#peretvorennia-na-tsile), а потім обрізається до діапазону між 0 і 2<sup>53</sup> - 1. `NaN` стає `0`, тож навіть тоді, коли `length` немає або в ній `undefined`, це працює так, ніби довжина дорівнює `0`.
 
+Мова JavaScript уникає задання `length` зі значенням [небезпечного цілого числа](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER). Всі вбудовані методи викидають {{jsxref("TypeError")}}, коли `length` задається з числом, більшим за 2<sup>53</sup> - 1. Однак оскільки властивість масивів {{jsxref("Array/length", "length")}} завжди викидає помилку, коли отримує значення, більше за 2<sup>32</sup> - 1, то зазвичай поріг небезпечних цілих чисел не досягається, якщо метод не викликається на об'єкті, що не є масивом.
+
 ```js
 Array.prototype.flat.call({}); // []
 ```
@@ -234,7 +247,7 @@ console.log(a.length); // 0
 
 #### Масивоподібні об'єкти
 
-Термін [_масивоподібний об'єкт_](/uk/docs/Web/JavaScript/Guide/Indexed_collections#robota-z-masyvopodibnymy-obiektamy) позначає будь-який об'єкт, що не викидає помилки при процесі перетворення `length`, описаному вище. На практиці очікується, що такий об'єкт має властивість `length`, а також індексовані елементи в діапазоні від `0` до `length - 1`. (Якщо він має не всі індекси, то це на практиці буде рівносильно [розрідженому масивові](#metody-masyvu-y-porozhni-komirky).)
+Термін [_масивоподібний об'єкт_](/uk/docs/Web/JavaScript/Guide/Indexed_collections#robota-z-masyvopodibnymy-obiektamy) позначає будь-який об'єкт, що не викидає помилки при процесі перетворення `length`, описаному вище. На практиці очікується, що такий об'єкт має властивість `length`, а також індексовані елементи в діапазоні від `0` до `length - 1`. (Якщо він має не всі індекси, то це на практиці буде рівносильно [розрідженому масивові](#metody-masyvu-y-porozhni-komirky).) Усі індекси - цілі числа, менші за нуль або більші за `length - 1`, ігноруються, коли метод масиву працює над масивоподібним об'єктом.
 
 Масивоподібними є чимало об'єктів DOM – наприклад, [`NodeList`](/uk/docs/Web/API/NodeList) і [`HTMLCollection`](/uk/docs/Web/API/HTMLCollection). Об'єкт [`arguments`](/uk/docs/Web/JavaScript/Reference/Functions/arguments) так само є масивоподібним. На них можна викликати методи масиву, навіть якщо вони самі цих методів не мають.
 
@@ -252,13 +265,15 @@ f("a", "b"); // 'a+b'
 
 ## Статичні властивості
 
-- {{jsxref("Array/@@species", "get Array[@@species]")}} ("вид")
+- {{jsxref("Array/@@species", "Array[@@species]")}} ("вид")
   - : Повертає конструктор `Array`.
 
 ## Статичні методи
 
 - {{jsxref("Array.from()")}} ("від")
-  - : Створює на основі будь-якого масивоподібного чи ітерованого об'єкта новий примірник `Array`.
+  - : Створює новий примірник `Array` на основі ітерованого або масивоподібного об'єкта.
+- {{jsxref("Array.fromAsync()")}}
+  - : Створює новий примірник `Array` на основі асинхронного ітератора, ітерованого або масивоподібного об'єкта.
 - {{jsxref("Array.isArray()")}} ("чи є масивом")
   - : Повертає `true`, якщо аргумент є масивом, інакше – `false`.
 - {{jsxref("Array.of()")}}
@@ -287,7 +302,7 @@ f("a", "b"); // 'a+b'
 - {{jsxref("Array.prototype.copyWithin()")}} ("копіювати в межах")
   - : Копіює послідовність елементів масиву в інше місце в межах того самого масиву.
 - {{jsxref("Array.prototype.entries()")}} ("записи")
-  - : Повертає новий об'єкт [_ітератора масиву_](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators), що містить пари ключ-значення для кожного індексу масиву.
+  - : Повертає новий об'єкт [_ітератора масиву_](/uk/docs/Web/JavaScript/Guide/Iterators_and_generators), що містить пари ключ-значення для кожного індексу масиву.
 - {{jsxref("Array.prototype.every()")}} ("кожен")
   - : Повертає `true`, якщо кожен елемент поточного масиву задовольняє перевіркову функцію.
 - {{jsxref("Array.prototype.fill()")}} ("заповнити")
@@ -308,10 +323,6 @@ f("a", "b"); // 'a+b'
   - : Повертає новий масив, утворений застосуванням переданої функції зворотного виклику до кожного елемента поточного масиву, а тоді – сплощенням результату на один рівень.
 - {{jsxref("Array.prototype.forEach()")}} ("для кожного")
   - : Викликає функцію для кожного елемента поточного масиву.
-- {{jsxref("Array.prototype.group()")}} ("групувати") {{Experimental_Inline}}
-  - : Групує елементи масиву згідно з рядками, поверненими перевірковою функцією.
-- {{jsxref("Array.prototype.groupToMap()")}} ("групувати в Map") {{Experimental_Inline}}
-  - : Групує елементи масиву в Map згідно зі значеннями, поверненими перевірковою функцією.
 - {{jsxref("Array.prototype.includes()")}} ("включає")
   - : Визначає, чи містить поточний масив певне значення, повертаючи `true` чи `false` відповідно.
 - {{jsxref("Array.prototype.indexOf()")}} ("індекс")
@@ -319,7 +330,7 @@ f("a", "b"); // 'a+b'
 - {{jsxref("Array.prototype.join()")}} ("об'єднати")
   - : Об'єднує усі елементи масиву в рядок.
 - {{jsxref("Array.prototype.keys()")}} ("ключі")
-  - : Повертає новий [_ітератор масиву_](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators), що містить кожен індекс поточного масиву.
+  - : Повертає новий [_ітератор масиву_](/uk/docs/Web/JavaScript/Guide/Iterators_and_generators), що містить кожен індекс поточного масиву.
 - {{jsxref("Array.prototype.lastIndexOf()")}} ("останній індекс")
   - : Повертає останній (якнайбільший) індекс, за яким переданий елемент може бути знайдений у поточному масиві, або `-1`, якщо такого індексу не знайдено.
 - {{jsxref("Array.prototype.map()")}} ("відобразити")
@@ -346,12 +357,20 @@ f("a", "b"); // 'a+b'
   - : Додає чи прибирає елементи масиву.
 - {{jsxref("Array.prototype.toLocaleString()")}} ("до рядка за регіональними стандартами")
   - : Повертає локалізований рядок, що представляє поточний масив та його елементи. Заміщає метод {{jsxref("Object.prototype.toLocaleString()")}}.
+- {{jsxref("Array.prototype.toReversed()")}} ("до оберненого")
+  - : Повертає новий масив з елементами у зворотному порядку, не змінюючи вихідний масив.
+- {{jsxref("Array.prototype.toSorted()")}} ("до сортованого")
+  - : Повертає новий масив з елементами, відсортованими в порядку зростання, не змінюючи вихідний масив.
+- {{jsxref("Array.prototype.toSpliced()")}} ("до зрізаного")
+  - : Повертає новий масив, в якому прибрані чи замінені певні елементи за певним індексом, не змінюючи вихідний масив.
 - {{jsxref("Array.prototype.toString()")}} ("до рядка")
   - : Повертає рядок, що представляє поточний масив та його елементи. Заміщає метод {{jsxref("Object.prototype.toString()")}}.
 - {{jsxref("Array.prototype.unshift()")}} ("відсунути")
   - : Додає один чи більше елементів у початок масиву й повертає значення `length` масиву.
 - {{jsxref("Array.prototype.values()")}} ("значення")
-  - : Повертає новий об'єкт [_ітератора масиву_](/uk/docs/Web/JavaScript/Guide/Iterators_and_Generators), що містить значення за кожним індексом цього масиву.
+  - : Повертає новий об'єкт [_ітератора масиву_](/uk/docs/Web/JavaScript/Guide/Iterators_and_generators), що містить значення за кожним індексом цього масиву.
+- {{jsxref("Array.prototype.with()")}} ("зі значенням")
+  - : Повертає новий масив, у якому елемент за певним індексом замінений заданим значенням, не змінюючи вихідний масив.
 - [`Array.prototype[@@iterator]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/@@iterator) ("ітератор")
   - : Усталено є псевдонімом функції [`values()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/values).
 
@@ -677,40 +696,6 @@ console.log(fruitsAlias);
 // ['Яблуко', 'Банан', 'Полуниця', 'Манго']
 ```
 
-### Групування елементів масиву
-
-Метод {{jsxref("Array.prototype.group()")}} може використовуватись для групування елементів масиву за допомогою перевіркової функції, що повертає рядок, котрий вказує на відповідну групу для поточного елемента.
-
-Нижче – простий інвентарний масив, що включає об'єкти "їжі", котрі мають поля `name` (ім'я) та `type` (тип).
-
-```js
-const inventory = [
-  { name: "холодок", type: "vegetables" },
-  { name: "банани", type: "fruit" },
-  { name: "коза", type: "meat" },
-  { name: "вишні", type: "fruit" },
-  { name: "риба", type: "meat" },
-];
-```
-
-Для використання `group()` передається функція зворотного виклику, котра викликається із поточним елементом та (необов'язково) поточним індексом і всім масивом – та повертає рядок, котрий позначає групу для елемента.
-
-Код нижче використовує для повернення значення поля `type` кожного елемента масиву стрілкову функцію (вона використовує для розпакування із переданого об'єкта значення поля `type` [синтаксис деструктуризації об'єкта для аргументів функції](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#rozpakovuvannia-vlastyvostei-obiekta-peredanoho-parametrom-funktsii)).
-Результатом є об'єкт, котрий має властивості, названі відповідно до унікальних рядків, повернених функцією зворотного виклику.
-Кожній властивості присвоєний масив, що містить елементи групи.
-
-```js
-const result = inventory.group(({ type }) => type);
-console.log(result.vegetables);
-// [{ name: "холодок", type: "vegetables" }]
-```
-
-Зверніть увагу, що повернений об'єкт посилається на _ті самі_ елементи, що й вихідний масив (не створюються {{glossary("deep copy","глибокі копії")}}).
-Зміна внутрішньої структури цих елементів отримає відображення як на вихідному масиві, так на поверненому об'єкті.
-
-Якщо не підходить використання рядка як ключа, – наприклад, якщо інформація, за якою необхідне групування, асоційована з об'єктом, котрий може змінюватися, – то натомість можна використати метод {{jsxref("Array.prototype.groupToMap()")}}.
-Він вельми подібний до `group`, але групує елементи масиву в {{jsxref("Map")}}, що може використовувати як ключі довільні ({{Glossary("object","об'єктні")}} чи {{Glossary("primitive","примітивні")}}) значення.
-
 ### Створення двовимірного масиву
 
 Створюється шахова дошка у вигляді двовимірного масиву рядків. Перший хід виконується копіюванням `'p'` із `board[6][4]` на `board[4][4]`. Стара позиція, на `[6][4]`, очищується.
@@ -813,10 +798,6 @@ console.log(execResult); // [ "dbBd", "bB", "d" ]
 
 ## Дивіться також
 
-- З настанов із JavaScript:
-
-  - [Звертання до властивостей](/uk/docs/Web/JavaScript/Guide/Working_with_Objects#zvertannia-do-vlastyvostei)
-  - [Індексовані колекції](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
-
-- [Типізовані масиви](/uk/docs/Web/JavaScript/Typed_arrays)
-- [RangeError: invalid array length](/uk/docs/Web/JavaScript/Reference/Errors/Invalid_array_length)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- {{jsxref("TypedArray")}}
+- {{jsxref("ArrayBuffer")}}

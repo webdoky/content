@@ -19,21 +19,21 @@ browser-compat: javascript.builtins.Error
 
 Окрім узагальненого конструктора `Error`, ядро JavaScript містить інші конструктори помилок. Про помилки клієнтського боку читайте [Інструкції обробки винятків](/uk/docs/Web/JavaScript/Guide/Control_flow_and_error_handling#instruktsii-obrobky-vyniatkiv).
 
-- {{JSxRef("EvalError")}}
-  - : Створює примірник, що представляє помилку, котра трапляється відносно глобальної функції {{JSxRef("Global_Objects/eval", "eval()")}}.
-- {{JSxRef("RangeError")}}
+- {{jsxref("EvalError")}}
+  - : Створює примірник, що представляє помилку, котра трапляється відносно глобальної функції {{jsxref("Global_Objects/eval", "eval()")}}.
+- {{jsxref("RangeError")}}
   - : Створює примірник, що представляє помилку, котра трапляється, коли числова змінна або параметр знаходяться поза своїм допустимим діапазоном.
-- {{JSxRef("ReferenceError")}}
+- {{jsxref("ReferenceError")}}
   - : Створює примірник, що представляє помилку, котра трапляється при звертанні за недійсним посиланням.
-- {{JSxRef("SyntaxError")}}
+- {{jsxref("SyntaxError")}}
   - : Створює примірник, що представляє помилку синтаксису.
-- {{JSxRef("TypeError")}}
+- {{jsxref("TypeError")}}
   - : Створює примірник, що представляє помилку, котра трапляється, коли змінна або параметр має невідповідний тип.
-- {{JSxRef("URIError")}}
-  - : Створює примірник, що представляє помилку, котра трапляється, коли в {{JSxRef("encodeURI", "encodeURI()")}} або {{JSxRef("decodeURI", "decodeURI()")}} передано невідповідні параметри.
-- {{JSxRef("AggregateError")}}
-  - : Створює примірник, що представляє кілька помилок, загорнутих в одну помилку, коли операція потребує звітування про декілька помилок, наприклад, {{JSxRef("Promise.any()")}}.
-- {{JSxRef("InternalError")}} {{Non-standard_Inline}}
+- {{jsxref("URIError")}}
+  - : Створює примірник, що представляє помилку, котра трапляється, коли в {{jsxref("encodeURI()")}} або {{jsxref("decodeURI()")}} передано невідповідні параметри.
+- {{jsxref("AggregateError")}}
+  - : Створює примірник, що представляє кілька помилок, загорнутих в одну помилку, коли операція потребує звітування про декілька помилок, наприклад, {{jsxref("Promise.any()")}}.
+- {{jsxref("InternalError")}} {{non-standard_inline}}
   - : Створює примірник, що представляє помилку, котра трапляється тоді, коли викидається внутрішня помилка рушія JavaScript. Наприклад, "забагато рекурсії".
 
 ## Конструктор
@@ -43,11 +43,11 @@ browser-compat: javascript.builtins.Error
 
 ## Статичні методи
 
-- `Error.captureStackTrace()` {{Non-standard_Inline}}
-  - : Нестандартна функція V8, що створює на примірнику Error властивість {{JSxRef("Error.prototype.stack", "stack")}}.
-- `Error.stackTraceLimit` {{Non-standard_Inline}}
+- `Error.captureStackTrace()` {{non-standard_inline}}
+  - : Нестандартна функція V8, що створює на примірнику Error властивість {{jsxref("Error/stack", "stack")}}.
+- `Error.stackTraceLimit` {{non-standard_inline}}
   - : Нестандартна числова властивість V8, що обмежує те, скільки фреймів стека включається в трасування стека помилки.
-- `Error.prepareStackTrace()` {{Non-standard_Inline}} {{Optional_Inline}}
+- `Error.prepareStackTrace()` {{non-standard_inline}} {{optional_inline}}
   - : Нестандартна функція V8, котра, якщо задана користувацьким кодом, викликається рушієм V8 для викинутих винятків, даючи користувачеві змогу задавати власне форматування трасувань стека.
 
 ## Властивості примірника
@@ -58,18 +58,18 @@ browser-compat: javascript.builtins.Error
   - : Функція-конструктор, що створила об'єкт-примірник. Для примірників `Error` початковим значенням є конструктор {{jsxref("Error/Error", "Error")}}.
 - {{jsxref("Error.prototype.name")}}
   - : Представляє назву типу помилки. Для `Error.prototype.name` початковим значенням є `"Error"`. Підкласи, наприклад, {{jsxref("TypeError")}} і {{jsxref("SyntaxError")}}, мають власні властивості `name`.
-- {{jsxref("Error.prototype.stack")}} {{Non-standard_Inline}}
+- {{jsxref("Error.prototype.stack")}} {{non-standard_inline}}
   - : Нестандартна властивість для трасування стека.
 
 Ці властивості є власними властивостями кожного окремого примірника `Error`.
 
 - {{jsxref("Error/cause", "cause")}}
   - : Причина помилки, що вказує на причину викидання помилки – зазвичай інша, перехоплена помилка. Для створених користувачем об'єктів `Error`, це значення, що задається властивістю `cause` другого аргументу конструктора.
-- {{jsxref("Error/columnNumber", "columnNumber")}} {{Non-standard_Inline}}
+- {{jsxref("Error/columnNumber", "columnNumber")}} {{non-standard_inline}}
   - : Нестандартна властивість Mozilla для номера колонки в рядку, що спричинила помилку.
-- {{jsxref("Error/fileName", "fileName")}} {{Non-standard_Inline}}
+- {{jsxref("Error/fileName", "fileName")}} {{non-standard_inline}}
   - : Нестандартна властивість Mozilla для шляху до файлу, що спричинив помилку.
-- {{jsxref("Error/lineNumber", "lineNumber")}} {{Non-standard_Inline}}
+- {{jsxref("Error/lineNumber", "lineNumber")}} {{non-standard_inline}}
   - : Нестандартна властивість Mozilla для номера рядка у файлі, що спричинив помилку.
 - {{jsxref("Error/message", "message")}}
   - : Повідомлення помилки. Для створених користувачем об'єктів `Error` це рядок, заданий як перший аргумент конструктора.
@@ -83,8 +83,8 @@ browser-compat: javascript.builtins.Error
 
 ### Викидання узагальненої помилки
 
-Зазвичай об'єкт `Error` створюють з наміром викинути його за допомогою ключового слова {{JSxRef("Statements/throw", "throw")}}.
-Обробити помилку можна за допомогою конструкції {{JSxRef("Statements/try...catch", "try...catch")}}:
+Зазвичай об'єкт `Error` створюють з наміром викинути його за допомогою ключового слова {{jsxref("Statements/throw", "throw")}}.
+Обробити помилку можна за допомогою конструкції {{jsxref("Statements/try...catch", "try...catch")}}:
 
 ```js
 try {
@@ -96,7 +96,7 @@ try {
 
 ### Обробка помилок конкретного типу
 
-Обробляти помилки лише певного типу можна шляхом перевірки типу помилки на основі її властивості {{JSxRef("Object.prototype.constructor", "constructor")}}, або, якщо використовуються сучасні рушії JavaScript, ключового слова {{JSxRef("Operators/instanceof", "instanceof")}}:
+Обробляти помилки лише певного типу можна шляхом перевірки типу помилки за допомогою ключового слова {{jsxref("Operators/instanceof", "instanceof")}}:
 
 ```js
 try {
@@ -154,7 +154,7 @@ try {
 
 > **Примітка:** При написанні бібліотеки краще використовувати причину помилки для розрізнення різних помилок, що породжуються, а не просити користувачів бібліотеки розбирати повідомлення помилок. Шукайте приклад на [сторінці причини помилки](/uk/docs/Web/JavaScript/Reference/Global_Objects/Error/cause#nadannia-strukturovanykh-danykh-yak-prychyny-pomylky).
 
-[Власні типи помилок](#vlasni-typy-pomylok) також можуть використовувати властивість [`cause`](#error.prototype.cause), за умови, що конструктор підкласів передає параметр `options` при виклику `super()`. Конструктор базового класу `Error()` зчитає `options.cause` та означить на новому примірнику помилки властивість `cause`.
+[Власні типи помилок](#vlasni-typy-pomylok) також можуть використовувати властивість `cause`, за умови, що конструктор підкласів передає параметр `options` при виклику `super()`. Конструктор базового класу `Error()` зчитає `options.cause` та означить на новому примірнику помилки властивість `cause`.
 
 ```js
 class MyError extends Error {
@@ -216,7 +216,7 @@ try {
 
 ## Дивіться також
 
-- [Поліфіл `Error`](https://github.com/zloirock/core-js#ecmascript-error) з сучасною логікою штибу підтримки `cause` – доступний у складі [`core-js`](https://github.com/zloirock/core-js)
-- {{JSxRef("Statements/throw", "throw")}}
-- {{JSxRef("Statements/try...catch", "try...catch")}}
-- [Документація V8](https://v8.dev/docs/stack-trace-api) для `Error.captureStackTrace()`, `Error.stackTraceLimit` і `Error.prepareStackTrace()`.
+- [Поліфіл `Error` з підтримкою `cause` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-error)
+- {{jsxref("Statements/throw", "throw")}}
+- {{jsxref("Statements/try...catch", "try...catch")}}
+- [API трасування стека](https://v8.dev/docs/stack-trace-api) в документації V8

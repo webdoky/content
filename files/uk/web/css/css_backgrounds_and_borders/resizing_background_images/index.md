@@ -1,6 +1,6 @@
 ---
 title: Зміни розмірів зображень тла за допомогою background-size
-slug: Web/CSS/CSS_Backgrounds_and_Borders/Resizing_background_images
+slug: Web/CSS/CSS_backgrounds_and_borders/Resizing_background_images
 page-type: guide
 ---
 
@@ -37,7 +37,7 @@ page-type: guide
 
 ## Розтягування зображення
 
-Також можна задати і горизонтальний, і вертикальний розміри зображення, отак:
+Також можна задати як горизонтальний, так і вертикальний розміри зображення, отак:
 
 ```css
 background-size: 300px 150px;
@@ -45,7 +45,7 @@ background-size: 300px 150px;
 
 Результат має наступний вигляд:
 
-![Розтягнений новий логотип Firefox](stretched_firefox_logo.png)
+![Розтягнений логотип Firefox](stretched_firefox_logo.png)
 
 ## Масштабування зображення в бік збільшення
 
@@ -67,11 +67,11 @@ background-size: 300px 150px;
 
 Як можна спостерігати, CSS насправді по суті ідентичний, окрім імені файлу зображення.
 
-## Особливі значення: "contain" і "cover"
+## Особливі значення: `contain` і `cover`
 
-Окрім значень {{cssxref("&lt;length&gt;")}}, властивість CSS {{cssxref("background-size")}} пропонує два особливі значення розміру, `contain` і `cover`. Погляньмо на них.
+На додачу до значень {{cssxref("&lt;length&gt;")}}, властивість CSS {{cssxref("background-size")}} пропонує два особливі значення розміру, `contain` і `cover`. Погляньмо на них.
 
-### contain
+### `contain`
 
 Значення `contain` задає те, що, незалежно від розміру контейнерного блока, зображення тла повинно масштабуватися так, щоб кожна сторона була настільки великою, наскільки це можливо, але не більшою за довжину відповідної сторони контейнера. Спробуйте змінити розміри прикладу нижче, аби побачити це в дії.
 
@@ -92,7 +92,6 @@ background-size: 300px 150px;
   width: 160px;
   height: 160px;
   border: 2px solid;
-  color: pink;
   resize: both;
   overflow: scroll;
 }
@@ -102,7 +101,7 @@ background-size: 300px 150px;
 
 {{EmbedLiveSample('contain', 250, 250)}}
 
-### cover
+### `cover`
 
 Значення `cover` задає те, що зображення тла повинно калібруватися так, щоб воно було настільки малим, наскільки можливо, щоб при цьому обидва розміри були більшими чи рівними розмірам відповідних сторін контейнера. Спробуйте змінити розміри прикладу нижче, аби побачити це в дії.
 
@@ -123,7 +122,6 @@ background-size: 300px 150px;
   width: 160px;
   height: 160px;
   border: 2px solid;
-  color: pink;
   resize: both;
   overflow: scroll;
 }

@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.String.localeCompare
 
 {{JSRef}}
 
-Метод **`localeCompare()`** повертає число, яке вказує, чи переданий рядок під час сортування повинен стояти перед, після, або є еквівалентним до початкового рядка. В реалізаціях, що підтримують [API `Intl.Collator`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator), цей метод просто викликає `Intl.Collator`.
+Метод **`localeCompare()`** (порівняти за локаллю) значень {{jsxref("String")}} повертає число, яке вказує, чи переданий рядок під час сортування повинен стояти перед, після, або є еквівалентним до поточного рядка. В реалізаціях, що підтримують [API `Intl.Collator`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator), цей метод просто викликає `Intl.Collator`.
 
 Для порівняння великої кількості рядків (наприклад, під час сортування великих масивів) краще створити окремий об'єкт {{jsxref("Intl.Collator")}} і застосувати функцію, яка надається його методом {{jsxref("Intl/Collator/compare", "compare()")}}.
 

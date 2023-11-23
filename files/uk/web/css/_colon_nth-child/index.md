@@ -7,11 +7,11 @@ browser-compat: css.selectors.nth-child
 
 {{CSSRef}}
 
-[Псевдоклас](/uk/docs/Web/CSS/Pseudo-classes) [CSS](/uk/docs/Web/CSS) **`:nth-child()`** (дочірній номер N) дає збіг з елементами на основі їх позицій серед групи сестринських елементів.
+[Псевдоклас](/uk/docs/Web/CSS/Pseudo-classes) [CSS](/uk/docs/Web/CSS) **`:nth-child()`** (дочірній номер N) дає збіг з елементами на основі їхніх індексів у списку дочірніх елементів їхніх батьківських елементів. Інакше кажучи, селектор `:nth-child()` вибирає дочірні елементи згідно з їхніми позиціями серед усіх сестринських елементів у батьківському елементі.
 
 {{EmbedInteractiveExample("pages/tabbed/pseudo-class-nth-child.html", "tabbed-shorter")}}
 
-Слід зауважити, що в синтаксисі `element:nth-child()` підрахунок дочірніх елементів включає елементи усіх типів; проте збіг вважається збігом лише тоді, коли елемент _на відповідній дочірній позиції_ належить до заданого типу елемента.
+> **Примітка:** В записі `element:nth-child()` підрахунок дочірніх елементів включає дочірні елементи усіх типів; проте збіг вважається збігом лише тоді, коли елемент _на відповідній дочірній позиції_ дає збіг з рештою компонент селектора.
 
 ## Синтаксис
 
@@ -39,6 +39,23 @@ browser-compat: css.selectors.nth-child
     - `n` – всі невід'ємні цілі числа, починаючи від 0.
 
     Такий запис можна читати так: елемент списку номер `An+B`. І `A`, і `B` – мусять мати значення типу {{cssxref("&lt;integer&gt;")}}.
+
+### Запис `of <selector>`
+
+Шляхом передачі селектора як аргументу можна вибрати **nth** (n-ний) елемент, що відповідає цьому селектору. Наприклад, наступний селектор відповідає першим трьом елементам списку, які мають `class="important"`.
+
+```css
+:nth-child(-n+3 of li.important);
+```
+
+Це відрізняється від переміщення селектора за межі функції, як у наступному прикладі:
+
+```css
+li.important:nth-child(-n + 3) {
+}
+```
+
+Цей селектор вибирає елементи списку, якщо вони є серед перших трьох дочірніх елементів і відповідають селектору `li.important`.
 
 ## Приклади
 
@@ -134,29 +151,254 @@ browser-compat: css.selectors.nth-child
 
 #### CSS
 
-```css
-html {
+```css hidden
+* {
   font-family: sans-serif;
 }
 
 span,
 div em {
   padding: 5px;
-  border: 1px solid green;
+  border: 1px solid tomato;
   display: inline-block;
   margin-bottom: 3px;
 }
+```
 
+```css
 .first span:nth-child(2n + 1),
 .second span:nth-child(2n + 1),
 .third span:nth-of-type(2n + 1) {
-  background-color: lime;
+  background-color: tomato;
 }
 ```
 
 #### Результат
 
 {{EmbedLiveSample('rozghornutyi-pryklad', 550, 550)}}
+
+### Застосування 'of &lt;selector&gt;'
+
+У цьому прикладі присутній невпорядкований список імен, деякі з яких були позначені (**noted**) за допомогою `class="noted"`. Вони були виділені товстою нижньою межею.
+
+#### HTML
+
+```html
+<ul>
+  <li class="noted">Найден</li>
+  <li>Домінік</li>
+  <li class="noted">Щастибог</li>
+  <li>Арсена</li>
+  <li>Наслава</li>
+  <li>Йовілла</li>
+  <li class="noted">Колодара</li>
+  <li>Держислав</li>
+  <li>Орест</li>
+  <li class="noted">Віталія</li>
+  <li>Георгій</li>
+  <li>Уличан</li>
+  <li>Феодосія</li>
+  <li class="noted">Барбара</li>
+  <li>Ілля</li>
+  <li>Осипа</li>
+  <li class="noted">Трояна</li>
+  <li>Царук</li>
+  <li>Колодій</li>
+  <li class="noted">Ядвіга</li>
+</ul>
+```
+
+#### CSS
+
+```css hidden
+* {
+  font-family: sans-serif;
+}
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  font-size: 1.2rem;
+  padding-left: 0;
+}
+li {
+  margin: 0.125rem;
+  padding: 0.25rem;
+}
+li {
+  border: 1px solid tomato;
+}
+.noted {
+  border-bottom: 5px solid tomato;
+}
+```
+
+В наступному CSS обираються **парні** елементи списку, які мають `class="noted"`.
+
+```css
+li:nth-child(even of .noted) {
+  background-color: tomato;
+  border-bottom-color: seagreen;
+}
+```
+
+#### Результат
+
+Елементи з `class="noted"` мають товсту нижню межу, а елементи 3, 10 і 17 мають суцільний фон, оскільки вони є _парними_ елементами списку з `class="noted"`.
+
+{{EmbedLiveSample('zastosuvannia-of-selector', 550, 120)}}
+
+### Запис of selector і запис selector nth-child
+
+У цьому прикладі присутні два невпорядковані списки імен. Перший показує дію `li:nth-child(-n + 3 of .noted)`, а другий – дію `li.noted:nth-child(-n + 3)`.
+
+#### HTML
+
+```html
+<ul class="one">
+  <li class="noted">Найден</li>
+  <li>Домінік</li>
+  <li class="noted">Щастибог</li>
+  <li>Арсена</li>
+  <li>Наслава</li>
+  <li>Йовілла</li>
+  <li class="noted">Колодара</li>
+  <li>Держислав</li>
+  <li>Орест</li>
+  <li class="noted">Віталія</li>
+</ul>
+<ul class="two">
+  <li class="noted">Найден</li>
+  <li>Домінік</li>
+  <li class="noted">Щастибог</li>
+  <li>Арсена</li>
+  <li>Наслава</li>
+  <li>Йовілла</li>
+  <li class="noted">Колодара</li>
+  <li>Держислав</li>
+  <li>Орест</li>
+  <li class="noted">Віталія</li>
+</ul>
+```
+
+#### CSS
+
+```css hidden
+* {
+  font-family: sans-serif;
+}
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  font-size: 1.2rem;
+  padding-left: 0;
+}
+li {
+  margin: 0.125rem;
+  padding: 0.25rem;
+}
+li {
+  border: 1px solid tomato;
+}
+.noted {
+  border-bottom: 5px solid tomato;
+}
+```
+
+```css
+ul.one > li:nth-child(-n + 3 of .noted) {
+  background-color: tomato;
+  border-bottom-color: seagreen;
+}
+ul.two > li.noted:nth-child(-n + 3) {
+  background-color: tomato;
+  border-bottom-color: seagreen;
+}
+```
+
+#### Результат
+
+Перший список застосовує стиль до перших трьох елементів списку, що мають `class="noted"`, незалежно від того, чи є вони першими трьома елементами списку загалом.
+
+Другий список – застосовує стиль до елементів з `class="noted"`, якщо вони є серед перших трьох елементів списку.
+
+{{EmbedLiveSample('zapys-of-selector-i-zapys-selector-nth-child', 550, 150)}}
+
+### Використання of selector для виправлення смугастих таблиць
+
+Звичайною практикою для таблиць є використання _зебрових смуг_ – чергування світлих і темних кольорів фону для рядків, що полегшує читання таблиць і робить їх більш доступними. Якщо рядок прихований, смуги зливаються – і ефект псується. У цьому прикладі показано дві таблиці з прихованим (`hidden`) рядком. Друга з них використовує `of :not([hidden])` для обробки прихованих рядків.
+
+#### HTML
+
+```html-nolint hidden
+<div class="wrapper">
+```
+
+```html-nolint
+<table class="broken">
+  <thead>
+    <tr><th>Ім'я</th><th>Вік</th><th>Країна</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Зофія</td><td>23</td><td>Польща</td></tr>
+    <tr><td>Олівія</td><td>48</td><td>США</td></tr>
+    <tr hidden><td>Ноа</td><td>36</td><td>Великобританія</td></tr>
+    <tr><td>Ноюс</td><td>27</td><td>Литва</td></tr>
+    <tr><td>Амелія</td><td>55</td><td>Канада</td></tr>
+    <tr><td>Лео</td><td>66</td><td>Фінляндія</td></tr>
+  </tbody>
+</table>
+<table class="fixed">
+  <thead>
+    <tr><th>Ім'я</th><th>Вік</th><th>Країна</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Зофія</td><td>23</td><td>Польща</td></tr>
+    <tr><td>Олівія</td><td>48</td><td>США</td></tr>
+    <tr hidden><td>Ноа</td><td>36</td><td>Великобританія</td></tr>
+    <tr><td>Ноюс</td><td>27</td><td>Литва</td></tr>
+    <tr><td>Амелія</td><td>55</td><td>Канада</td></tr>
+    <tr><td>Лео</td><td>66</td><td>Фінляндія</td></tr>
+  </tbody>
+</table>
+```
+
+```html hidden
+</div>
+```
+
+#### CSS
+
+```css hidden
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+td {
+  padding: 0.125rem 0.5rem;
+}
+```
+
+```css
+.broken > tbody > tr:nth-child(even) {
+  background-color: silver;
+}
+```
+
+```css
+.fixed > tbody > tr:nth-child(even of :not([hidden])) {
+  background-color: silver;
+}
+```
+
+#### Результат
+
+У першій таблиці просто використовується `:nth-child(even)`. Третій рядок має атрибут `hidden`. Тому в цьому випадку третій рядок не видно, а другий і четвертий рядки вважаються парними, хоча візуально це не так.
+
+У другій таблиці для вибору лише тих `tr`, які **не** приховані за допомогою `:nth-child(even of :not([hidden]))`, використовується _запис of_.
+
+{{EmbedLiveSample('vykorystannia-of-selector-dlia-vypravlennia-smuhastykh-tablyts', 550, 180)}}
 
 ## Специфікації
 
@@ -168,4 +410,8 @@ div em {
 
 ## Дивіться також
 
-- {{Cssxref(":nth-of-type")}}, {{Cssxref(":nth-last-child")}}
+- {{Cssxref(":nth-of-type", ":nth-of-type()")}}
+- {{Cssxref(":nth-last-child", ":nth-last-child()")}}
+- {{Cssxref(":has", ":has()")}} – псевдоклас для вибору батьківського елемента
+- [Деревно-структурні псевдокласи](/uk/docs/Web/CSS/Pseudo-classes#derevno-strukturni-psevdoklasy)
+- Модуль [Селекторів CSS](/uk/docs/Web/CSS/CSS_selectors)

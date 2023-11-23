@@ -137,5 +137,6 @@ flex-direction: unset;
 
 ## Дивіться також
 
-- Посібник Флексбоксу CSS: _[Базові концепції Флексбоксу](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)_
-- Посібник Флексбоксу CSS: _[Порядок гнучких елементів](/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Ordering_Flex_Items)_
+- Властивість-скорочення CSS {{CSSXRef("flex-flow")}} для властивостей CSS `flex-direction` і {{CSSXRef("flex-wrap")}}.
+- Посібник Флексбоксу CSS: _[Базові концепції Флексбоксу](/uk/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox)_
+- Посібник Флексбоксу CSS: _[Порядок гнучких елементів](/uk/docs/Web/CSS/CSS_flexible_box_layout/Ordering_flex_items)_
