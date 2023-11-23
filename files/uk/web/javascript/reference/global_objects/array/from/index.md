@@ -9,7 +9,7 @@ browser-compat: javascript.builtins.Array.from
 
 Статичний метод **`Array.from()`** (із) створює новий, поверхнево скопійований примірник `Array` на основі [ітерованого](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#protokol-iterovanoho-obiekta) або [масивоподібного](/uk/docs/Web/JavaScript/Guide/Indexed_collections#robota-z-masyvopodibnymy-obiektamy) об'єкта.
 
-{{EmbedInteractiveExample("pages/js/array-from.html","shorter")}}
+{{EmbedInteractiveExample("pages/js/array-from.html", "shorter")}}
 
 ## Синтаксис
 
@@ -47,7 +47,7 @@ Array.from(arrayLike, mapFn, thisArg)
 
 `Array.from()` ніколи не породжує розріджених масивів. Якщо об'єкт `arrayLike` не має частини властивостей-індексів, то такі пропущені індекси отримують `undefined` у новому масиві.
 
-`Array.from()` має необов'язковий параметр `mapFn`, котрий дає змогу виконувати функцію на кожному елементі масиву, що створюється, подібно до {{jsxref("Array.prototype.map()", "map()")}}. Ясніше висловлюючись, `Array.from(obj, mapFn, thisArg)` дає такий само результат, як `Array.from(obj).map(mapFn, thisArg)`, окрім того, що не створює проміжний масив, і `mapFn` отримує лише два аргументи (`element`, `index`), без передачі всього масиву, тому що масив іще в процесі створення.
+`Array.from()` має необов'язковий параметр `mapFn`, котрий дає змогу виконувати функцію на кожному елементі масиву, що створюється, подібно до {{jsxref("Array/map", "map()")}}. Ясніше висловлюючись, `Array.from(obj, mapFn, thisArg)` дає такий само результат, як `Array.from(obj).map(mapFn, thisArg)`, окрім того, що не створює проміжний масив, і `mapFn` отримує лише два аргументи (`element`, `index`), без передачі всього масиву, тому що масив іще в процесі створення.
 
 > **Примітка:** Така логіка – більш важлива для [типізованих масивів](/uk/docs/Web/JavaScript/Guide/Typed_arrays), адже проміжний масив обов'язково містив би значення, що вписувались би у відповідний тип. `Array.from()` реалізований так, щоб мати таку ж сигнатуру, як {{jsxref("TypedArray.from()")}}.
 
@@ -145,7 +145,7 @@ range(1, 10, 2);
 
 // Згенерувати за допомогою Array.from алфавіт, користуючись тим, що він має послідовний порядок
 range("A".charCodeAt(0), "Z".charCodeAt(0), 1).map((x) =>
-  String.fromCharCode(x)
+  String.fromCharCode(x),
 );
 // ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 ```
@@ -185,7 +185,7 @@ console.log(Array.from.call({}, { length: 1, 0: "foo" })); // [ 'foo' ]
 ## Дивіться також
 
 - [Поліфіл `Array.from` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
-- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
 - {{jsxref("Array/Array", "Array()")}}
 - {{jsxref("Array.of()")}}

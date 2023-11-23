@@ -4,7 +4,7 @@ slug: Web/JavaScript/Reference
 page-type: landing-page
 ---
 
-{{JsSidebar}}
+{{jsSidebar}}
 
 Довідник JavaScript служить вмістилищем фактів про мову JavaScript. Тут докладно описана вся мова. При написанні коду на JavaScript саме до цих сторінок доведеться найчастіше звертатися.
 
@@ -18,124 +18,124 @@ page-type: landing-page
 
 ### Властивості-значення
 
-- {{JSxRef("globalThis")}}
-- {{JSxRef("Infinity")}}
-- {{JSxRef("NaN")}}
-- {{JSxRef("undefined")}}
+- {{jsxref("globalThis")}}
+- {{jsxref("Infinity")}}
+- {{jsxref("NaN")}}
+- {{jsxref("undefined")}}
 
 ### Властивості-функції
 
-- {{JSxRef("Global_Objects/eval", "eval()")}}
-- {{JSxRef("Global_Objects/isFinite", "isFinite()")}}
-- {{JSxRef("Global_Objects/isNaN", "isNaN()")}}
-- {{JSxRef("Global_Objects/parseFloat", "parseFloat()")}}
-- {{JSxRef("Global_Objects/parseInt", "parseInt()")}}
-- {{JSxRef("Global_Objects/decodeURI", "decodeURI()")}}
-- {{JSxRef("Global_Objects/decodeURIComponent", "decodeURIComponent()")}}
-- {{JSxRef("Global_Objects/encodeURI", "encodeURI()")}}
-- {{JSxRef("Global_Objects/encodeURIComponent", "encodeURIComponent()")}}
-- {{JSxRef("Global_Objects/escape", "escape()")}} {{Deprecated_Inline}}
-- {{JSxRef("Global_Objects/unescape", "unescape()")}} {{Deprecated_Inline}}
+- {{jsxref("Global_Objects/eval", "eval()")}}
+- {{jsxref("isFinite()")}}
+- {{jsxref("isNaN()")}}
+- {{jsxref("parseFloat()")}}
+- {{jsxref("parseInt()")}}
+- {{jsxref("decodeURI()")}}
+- {{jsxref("decodeURIComponent()")}}
+- {{jsxref("encodeURI()")}}
+- {{jsxref("encodeURIComponent()")}}
+- {{jsxref("escape()")}} {{deprecated_inline}}
+- {{jsxref("unescape()")}} {{deprecated_inline}}
 
 ### Корінні об'єкти
 
-- {{JSxRef("Object")}}
-- {{JSxRef("Function")}}
-- {{JSxRef("Boolean")}}
-- {{JSxRef("Symbol")}}
+- {{jsxref("Object")}}
+- {{jsxref("Function")}}
+- {{jsxref("Boolean")}}
+- {{jsxref("Symbol")}}
 
 ### Об'єкти помилок
 
-- {{JSxRef("Error")}}
-- {{JSxRef("AggregateError")}}
-- {{JSxRef("EvalError")}}
-- {{JSxRef("RangeError")}}
-- {{JSxRef("ReferenceError")}}
-- {{JSxRef("SyntaxError")}}
-- {{JSxRef("TypeError")}}
-- {{JSxRef("URIError")}}
-- {{JSxRef("InternalError")}} {{Non-Standard_Inline}}
+- {{jsxref("Error")}}
+- {{jsxref("AggregateError")}}
+- {{jsxref("EvalError")}}
+- {{jsxref("RangeError")}}
+- {{jsxref("ReferenceError")}}
+- {{jsxref("SyntaxError")}}
+- {{jsxref("TypeError")}}
+- {{jsxref("URIError")}}
+- {{jsxref("InternalError")}} {{non-standard_inline}}
 
 ### Числа та дати
 
-- {{JSxRef("Number")}}
-- {{JSxRef("BigInt")}}
-- {{JSxRef("Math")}}
-- {{JSxRef("Date")}}
+- {{jsxref("Number")}}
+- {{jsxref("BigInt")}}
+- {{jsxref("Math")}}
+- {{jsxref("Date")}}
 
 ### Робота з текстом
 
-- {{JSxRef("String")}}
-- {{JSxRef("RegExp")}}
+- {{jsxref("String")}}
+- {{jsxref("RegExp")}}
 
 ### Колекції з індексами
 
-- {{JSxRef("Array")}}
-- {{JSxRef("Int8Array")}}
-- {{JSxRef("Uint8Array")}}
-- {{JSxRef("Uint8ClampedArray")}}
-- {{JSxRef("Int16Array")}}
-- {{JSxRef("Uint16Array")}}
-- {{JSxRef("Int32Array")}}
-- {{JSxRef("Uint32Array")}}
-- {{JSxRef("BigInt64Array")}}
-- {{JSxRef("BigUint64Array")}}
-- {{JSxRef("Float32Array")}}
-- {{JSxRef("Float64Array")}}
+- {{jsxref("Array")}}
+- {{jsxref("Int8Array")}}
+- {{jsxref("Uint8Array")}}
+- {{jsxref("Uint8ClampedArray")}}
+- {{jsxref("Int16Array")}}
+- {{jsxref("Uint16Array")}}
+- {{jsxref("Int32Array")}}
+- {{jsxref("Uint32Array")}}
+- {{jsxref("BigInt64Array")}}
+- {{jsxref("BigUint64Array")}}
+- {{jsxref("Float32Array")}}
+- {{jsxref("Float64Array")}}
 
 ### Колекції з ключами
 
-- {{JSxRef("Map")}}
-- {{JSxRef("Set")}}
-- {{JSxRef("WeakMap")}}
-- {{JSxRef("WeakSet")}}
+- {{jsxref("Map")}}
+- {{jsxref("Set")}}
+- {{jsxref("WeakMap")}}
+- {{jsxref("WeakSet")}}
 
 ### Структуровані дані
 
-- {{JSxRef("ArrayBuffer")}}
-- {{JSxRef("SharedArrayBuffer")}}
-- {{JSxRef("DataView")}}
-- {{JSxRef("Atomics")}}
-- {{JSxRef("JSON")}}
+- {{jsxref("ArrayBuffer")}}
+- {{jsxref("SharedArrayBuffer")}}
+- {{jsxref("DataView")}}
+- {{jsxref("Atomics")}}
+- {{jsxref("JSON")}}
 
 ### Керування пам'яттю
 
-- {{JSxRef("WeakRef")}}
-- {{JSxRef("FinalizationRegistry")}}
+- {{jsxref("WeakRef")}}
+- {{jsxref("FinalizationRegistry")}}
 
 ### Об'єкти абстракцій контролю
 
-- {{JSxRef("Iterator")}}
-- {{JSxRef("AsyncIterator")}}
-- {{JSxRef("Promise")}}
-- {{JSxRef("GeneratorFunction")}}
-- {{JSxRef("AsyncGeneratorFunction")}}
-- {{JSxRef("Generator")}}
-- {{JSxRef("AsyncGenerator")}}
-- {{JSxRef("AsyncFunction")}}
+- {{jsxref("Iterator")}}
+- {{jsxref("AsyncIterator")}}
+- {{jsxref("Promise")}}
+- {{jsxref("GeneratorFunction")}}
+- {{jsxref("AsyncGeneratorFunction")}}
+- {{jsxref("Generator")}}
+- {{jsxref("AsyncGenerator")}}
+- {{jsxref("AsyncFunction")}}
 
 ### Рефлексія
 
-- {{JSxRef("Reflect")}}
-- {{JSxRef("Proxy")}}
+- {{jsxref("Reflect")}}
+- {{jsxref("Proxy")}}
 
 ### Інтернаціоналізація
 
-- {{JSxRef("Intl")}}
-- {{JSxRef("Intl.Collator")}}
-- {{JSxRef("Intl.DateTimeFormat")}}
-- {{JSxRef("Intl.DisplayNames")}}
-- {{JSxRef("Intl.DurationFormat")}}
-- {{JSxRef("Intl.ListFormat")}}
-- {{JSxRef("Intl.Locale")}}
-- {{JSxRef("Intl.NumberFormat")}}
-- {{JSxRef("Intl.PluralRules")}}
-- {{JSxRef("Intl.RelativeTimeFormat")}}
-- {{JSxRef("Intl.Segmenter")}}
+- {{jsxref("Intl")}}
+- {{jsxref("Intl.Collator")}}
+- {{jsxref("Intl.DateTimeFormat")}}
+- {{jsxref("Intl.DisplayNames")}}
+- {{jsxref("Intl.DurationFormat")}}
+- {{jsxref("Intl.ListFormat")}}
+- {{jsxref("Intl.Locale")}}
+- {{jsxref("Intl.NumberFormat")}}
+- {{jsxref("Intl.PluralRules")}}
+- {{jsxref("Intl.RelativeTimeFormat")}}
+- {{jsxref("Intl.Segmenter")}}
 
 ### Інші
 
-- {{JSxRef("Functions/arguments", "arguments")}}
+- {{jsxref("Functions/arguments", "arguments")}}
 
 ## Інструкції
 
@@ -183,7 +183,7 @@ page-type: landing-page
 - {{jsxref("Statements/export", "export")}}
 - {{jsxref("Statements/import", "import")}}
 - {{jsxref("Statements/label", "label", "", 1)}}
-- {{jsxref("Statements/with", "with")}} {{Deprecated_Inline}}
+- {{jsxref("Statements/with", "with")}} {{deprecated_inline}}
 
 ## Вирази та оператори
 
@@ -191,156 +191,156 @@ page-type: landing-page
 
 ### Основні вирази
 
-- {{JSxRef("Operators/this", "this")}}
-- [Literals](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#literaly)
-- {{JSxRef("Global_Objects/Array", "[]")}}
-- {{JSxRef("Operators/Object_initializer", "{}")}}
-- {{JSxRef("Operators/function", "function")}}
-- {{JSxRef("Operators/class", "class")}}
-- {{JSxRef("Operators/function*", "function*")}}
-- {{JSxRef("Operators/async_function", "async function")}}
-- {{JSxRef("Operators/async_function*", "async function*")}}
-- {{JSxRef("Global_Objects/RegExp", "/ab+c/i")}}
-- {{JSxRef("Template_literals", "`string`")}}
-- {{JSxRef("Operators/Grouping", "( )")}}
+- {{jsxref("Operators/this", "this")}}
+- [Літерали](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#literaly)
+- {{jsxref("Array", "[]")}}
+- {{jsxref("Operators/Object_initializer", "{}")}}
+- {{jsxref("Operators/function", "function")}}
+- {{jsxref("Operators/class", "class")}}
+- {{jsxref("Operators/function*", "function*")}}
+- {{jsxref("Operators/async_function", "async function")}}
+- {{jsxref("Operators/async_function*", "async function*")}}
+- {{jsxref("RegExp", "/ab+c/i")}}
+- {{jsxref("Template_literals", "`string`")}}
+- {{jsxref("Operators/Grouping", "( )")}}
 
 ### Вирази лівої сторони
 
-- {{JSxRef("Operators/Property_accessors", "Доступ до властивостей", "", 1)}}
-- {{JSxRef("Operators/Optional_chaining", "?.")}}
-- {{JSxRef("Operators/new", "new")}}
-- {{JSxRef("Operators/new%2Etarget", "new.target")}}
-- {{JSxRef("Operators/import%2Emeta", "import.meta")}}
-- {{JSxRef("Operators/super", "super")}}
-- {{JSxRef("Operators/import", "import()")}}
+- {{jsxref("Operators/Property_accessors", "Доступ до властивостей", "", 1)}}
+- {{jsxref("Operators/Optional_chaining", "?.")}}
+- {{jsxref("Operators/new", "new")}}
+- {{jsxref("Operators/new%2Etarget", "new.target")}}
+- {{jsxref("Operators/import%2Emeta", "import.meta")}}
+- {{jsxref("Operators/super", "super")}}
+- {{jsxref("Operators/import", "import()")}}
 
 ### Інкремент та декремент
 
-- {{JSxRef("Operators/Increment", "A++")}}
-- {{JSxRef("Operators/Decrement", "A--")}}
-- {{JSxRef("Operators/Increment", "++A")}}
-- {{JSxRef("Operators/Decrement", "--A")}}
+- {{jsxref("Operators/Increment", "A++")}}
+- {{jsxref("Operators/Decrement", "A--")}}
+- {{jsxref("Operators/Increment", "++A")}}
+- {{jsxref("Operators/Decrement", "--A")}}
 
 ### Унарні оператори
 
-- {{JSxRef("Operators/delete", "delete")}}
-- {{JSxRef("Operators/void", "void")}}
-- {{JSxRef("Operators/typeof", "typeof")}}
-- {{JSxRef("Operators/Unary_plus", "+")}}
-- {{JSxRef("Operators/Unary_negation", "-")}}
-- {{JSxRef("Operators/Bitwise_NOT", "~")}}
-- {{JSxRef("Operators/Logical_NOT", "!")}}
-- {{JSxRef("Operators/await", "await")}}
+- {{jsxref("Operators/delete", "delete")}}
+- {{jsxref("Operators/void", "void")}}
+- {{jsxref("Operators/typeof", "typeof")}}
+- {{jsxref("Operators/Unary_plus", "+")}}
+- {{jsxref("Operators/Unary_negation", "-")}}
+- {{jsxref("Operators/Bitwise_NOT", "~")}}
+- {{jsxref("Operators/Logical_NOT", "!")}}
+- {{jsxref("Operators/await", "await")}}
 
 ### Арифметичні оператори
 
-- {{JSxRef("Operators/Exponentiation", "**")}}
-- {{JSxRef("Operators/Multiplication", "*")}}
-- {{JSxRef("Operators/Division", "/")}}
-- {{JSxRef("Operators/Remainder", "%")}}
-- {{JSxRef("Operators/Addition", "+")}} (Плюс)
-- {{JSxRef("Operators/Subtraction", "-")}}
+- {{jsxref("Operators/Exponentiation", "**")}}
+- {{jsxref("Operators/Multiplication", "*")}}
+- {{jsxref("Operators/Division", "/")}}
+- {{jsxref("Operators/Remainder", "%")}}
+- {{jsxref("Operators/Addition", "+")}} (Плюс)
+- {{jsxref("Operators/Subtraction", "-")}}
 
 ### Реляційні оператори
 
-- {{JSxRef("Operators/Less_than", "&lt;")}} (Менше)
-- {{JSxRef("Operators/Greater_than", "&gt;")}} (Більше)
-- {{JSxRef("Operators/Less_than_or_equal", "&lt;=")}}
-- {{JSxRef("Operators/Greater_than_or_equal", "&gt;=")}}
-- {{JSxRef("Operators/instanceof", "instanceof")}}
-- {{JSxRef("Operators/in", "in")}}
+- {{jsxref("Operators/Less_than", "&lt;")}} (Менше)
+- {{jsxref("Operators/Greater_than", "&gt;")}} (Більше)
+- {{jsxref("Operators/Less_than_or_equal", "&lt;=")}}
+- {{jsxref("Operators/Greater_than_or_equal", "&gt;=")}}
+- {{jsxref("Operators/instanceof", "instanceof")}}
+- {{jsxref("Operators/in", "in")}}
 
 ### Оператори рівності
 
-- {{JSxRef("Operators/Equality", "==")}}
-- {{JSxRef("Operators/Inequality", "!=")}}
-- {{JSxRef("Operators/Strict_equality", "===")}}
-- {{JSxRef("Operators/Strict_inequality", "!==")}}
+- {{jsxref("Operators/Equality", "==")}}
+- {{jsxref("Operators/Inequality", "!=")}}
+- {{jsxref("Operators/Strict_equality", "===")}}
+- {{jsxref("Operators/Strict_inequality", "!==")}}
 
 ### Оператори побітового зсуву
 
-- {{JSxRef("Operators/Left_shift", "&lt;&lt;")}}
-- {{JSxRef("Operators/Right_shift", "&gt;&gt;")}}
-- {{JSxRef("Operators/Unsigned_right_shift", "&gt;&gt;&gt;")}}
+- {{jsxref("Operators/Left_shift", "&lt;&lt;")}}
+- {{jsxref("Operators/Right_shift", "&gt;&gt;")}}
+- {{jsxref("Operators/Unsigned_right_shift", "&gt;&gt;&gt;")}}
 
 ### Бінарні оператори для бітової логіки
 
-- {{JSxRef("Operators/Bitwise_AND", "&amp;")}}
-- {{JSxRef("Operators/Bitwise_OR", "|")}}
-- {{JSxRef("Operators/Bitwise_XOR", "^")}}
+- {{jsxref("Operators/Bitwise_AND", "&amp;")}}
+- {{jsxref("Operators/Bitwise_OR", "|")}}
+- {{jsxref("Operators/Bitwise_XOR", "^")}}
 
 ### Бінарні логічні оператори
 
-- {{JSxRef("Operators/Logical_AND", "&amp;&amp;")}}
-- {{JSxRef("Operators/Logical_OR", "||")}}
-- {{JSxRef("Operators/Nullish_coalescing", "??")}}
+- {{jsxref("Operators/Logical_AND", "&amp;&amp;")}}
+- {{jsxref("Operators/Logical_OR", "||")}}
+- {{jsxref("Operators/Nullish_coalescing", "??")}}
 
 ### Умовний (тернарний) оператор
 
-- {{JSxRef("Operators/Conditional_operator", "(condition ? ifTrue : ifFalse)")}}
+- {{jsxref("Operators/Conditional_operator", "(condition ? ifTrue : ifFalse)")}}
 
 ### Оператори присвоєння
 
-- {{JSxRef("Operators/Assignment", "=")}}
-- {{JSxRef("Operators/Multiplication_assignment", "*=")}}
-- {{JSxRef("Operators/Division_assignment", "/=")}}
-- {{JSxRef("Operators/Remainder_assignment", "%=")}}
-- {{JSxRef("Operators/Addition_assignment", "+=")}}
-- {{JSxRef("Operators/Subtraction_assignment", "-=")}}
-- {{JSxRef("Operators/Left_shift_assignment", "&lt;&lt;=")}}
-- {{JSxRef("Operators/Right_shift_assignment", "&gt;&gt;=")}}
-- {{JSxRef("Operators/Unsigned_right_shift_assignment", "&gt;&gt;&gt;=")}}
-- {{JSxRef("Operators/Bitwise_AND_assignment", "&amp;=")}}
-- {{JSxRef("Operators/Bitwise_XOR_assignment", "^=")}}
-- {{JSxRef("Operators/Bitwise_OR_assignment", "|=")}}
-- {{JSxRef("Operators/Exponentiation_assignment", "**=")}}
-- {{JSxRef("Operators/Logical_AND_assignment", "&amp;&amp;=")}}
-- {{JSxRef("Operators/Logical_OR_assignment", "||=")}}
-- {{JSxRef("Operators/Nullish_coalescing_assignment", "??=")}}
+- {{jsxref("Operators/Assignment", "=")}}
+- {{jsxref("Operators/Multiplication_assignment", "*=")}}
+- {{jsxref("Operators/Division_assignment", "/=")}}
+- {{jsxref("Operators/Remainder_assignment", "%=")}}
+- {{jsxref("Operators/Addition_assignment", "+=")}}
+- {{jsxref("Operators/Subtraction_assignment", "-=")}}
+- {{jsxref("Operators/Left_shift_assignment", "&lt;&lt;=")}}
+- {{jsxref("Operators/Right_shift_assignment", "&gt;&gt;=")}}
+- {{jsxref("Operators/Unsigned_right_shift_assignment", "&gt;&gt;&gt;=")}}
+- {{jsxref("Operators/Bitwise_AND_assignment", "&amp;=")}}
+- {{jsxref("Operators/Bitwise_XOR_assignment", "^=")}}
+- {{jsxref("Operators/Bitwise_OR_assignment", "|=")}}
+- {{jsxref("Operators/Exponentiation_assignment", "**=")}}
+- {{jsxref("Operators/Logical_AND_assignment", "&amp;&amp;=")}}
+- {{jsxref("Operators/Logical_OR_assignment", "||=")}}
+- {{jsxref("Operators/Nullish_coalescing_assignment", "??=")}}
 - [`[a, b] = arr`, `{ a, b } = obj`](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 
 ### Оператори видачі
 
-- {{JSxRef("Operators/yield", "yield")}}
-- {{JSxRef("Operators/yield*", "yield*")}}
+- {{jsxref("Operators/yield", "yield")}}
+- {{jsxref("Operators/yield*", "yield*")}}
 
 ### Синтаксис розгортання
 
-- {{JSxRef("Operators/Spread_syntax", "...obj")}}
+- {{jsxref("Operators/Spread_syntax", "...obj")}}
 
 ### Оператор коми
 
-- {{JSxRef("Operators/Comma_operator", ",")}}
+- {{jsxref("Operators/Comma_operator", ",")}}
 
 ## Функції
 
 [Функції у JavaScript.](/uk/docs/Web/JavaScript/Reference/Functions)
 
-- {{JSXRef("Functions/Arrow_functions", "Стрілкові функції", "", 1)}}
-- {{JSxRef("Functions/Default_parameters", "Усталені параметри", "", 1)}}
-- {{JSxRef("Functions/rest_parameters", "Решта параметрів", "", 1)}}
-- {{JSxRef("Functions/arguments", "arguments")}}
-- {{JSxRef("Functions/Method_definitions", "Опис методів", "", 1)}}
-- {{JSxRef("Functions/get", "гетер", "", 1)}}
-- {{JSxRef("Functions/set", "сетер", "", 1)}}
+- {{jsxref("Functions/Arrow_functions", "Стрілкові функції", "", 1)}}
+- {{jsxref("Functions/Default_parameters", "Усталені параметри", "", 1)}}
+- {{jsxref("Functions/rest_parameters", "Решта параметрів", "", 1)}}
+- {{jsxref("Functions/arguments", "arguments")}}
+- {{jsxref("Functions/Method_definitions", "Опис методів", "", 1)}}
+- {{jsxref("Functions/get", "гетер", "", 1)}}
+- {{jsxref("Functions/set", "сетер", "", 1)}}
 
 ## Класи
 
 [Класи в JavaScript.](/uk/docs/Web/JavaScript/Reference/Classes)
 
-- {{JSxRef("Classes/Constructor", "constructor")}}
-- {{JSxRef("Classes/extends", "extends")}}
-- [Приватні властивості класів](/uk/docs/Web/JavaScript/Reference/Classes/Private_class_fields)
+- {{jsxref("Classes/Constructor", "constructor")}}
+- {{jsxref("Classes/extends", "extends")}}
+- [Приватні властивості](/uk/docs/Web/JavaScript/Reference/Classes/Private_properties)
 - [Публічні поля класів](/uk/docs/Web/JavaScript/Reference/Classes/Public_class_fields)
-- {{JSxRef("Classes/static", "static")}}
+- {{jsxref("Classes/static", "static")}}
 - [Блоки статичної ініціалізації](/uk/docs/Web/JavaScript/Reference/Classes/Static_initialization_blocks)
 
 ## Додаткові довідкові сторінки
 
-- {{JSxRef("Lexical_grammar", "Лексична граматика", "", 1)}}
+- {{jsxref("Lexical_grammar", "Лексична граматика", "", 1)}}
 - [Типи та структури даних](/uk/docs/Web/JavaScript/Data_structures)
 - [Протоколи ітерування](/uk/docs/Web/JavaScript/Reference/Iteration_protocols)
 - [Прикінцеві коми](/uk/docs/Web/JavaScript/Reference/Trailing_commas)
 - [Помилки](/uk/docs/Web/JavaScript/Reference/Errors)
-- {{JSxRef("Strict_mode", "Суворий режим", "", 1)}}
-- {{JSxRef("Deprecated_and_obsolete_features", "Нерекомендовані можливості", "", 1)}}
+- {{jsxref("Strict_mode", "Суворий режим", "", 1)}}
+- {{jsxref("Deprecated_and_obsolete_features", "Нерекомендовані можливості", "", 1)}}

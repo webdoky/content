@@ -28,7 +28,7 @@ const result = foo + "1"; // JavaScript зводить foo до рядка, що
 console.log(result); // 421
 ```
 
-Неявне зведення типів - це дуже зручно, але може призводити до пострілів у ногу, коли розробники не мають на меті зведення, або мають на меті зведення в іншому напрямку (наприклад, рядків до чисел, а не чисел до рядків). Для [символів](#typ-symbol) та [BigInt](#typ-bigint) JavaScript свідомо забороняє певні неявні перетворення типів.
+Неявне зведення типів – це дуже зручно, але воно може призводити до неочевидних вад, коли перетворення відбуваються там, де не очікуються, або там, де повинні були б відбутися в протилежному напрямку (наприклад, рядків до чисел, а не чисел до рядків). Для [символів](#typ-symbol) та [BigInt](#typ-bigint) JavaScript свідомо забороняє певні неявні перетворення типів.
 
 ## Примітивні значення
 
@@ -269,7 +269,5 @@ Neither `{}` nor `[]` has a `[@@toPrimitive]()` method. Both `{}` and `[]` inher
 
 ## Дивіться також
 
-- [Структури даних і алгоритми JavaScript від Олексія Трехлеба](https://github.com/trekhleb/javascript-algorithms)
-- [Колекція загальновживаних структур даних та алгоритмів у JavaScript від Ніколаса Закаса](https://github.com/humanwhocodes/computer-science-in-javascript)
-- [Реалізація дерев пошуку на JavaScript](https://github.com/monmohan/dsjslib)
-- [Типи даних і значення в специфікації ECMAScript](https://tc39.es/ecma262/multipage/ecmascript-data-types-and-values.html)
+- [Структури даних та алгоритми JavaScript](https://github.com/trekhleb/javascript-algorithms) від Олексія Трехлеба
+- [Інформатика в JavaScript](https://github.com/humanwhocodes/computer-science-in-javascript) від Ніколаса Закаса
