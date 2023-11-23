@@ -72,7 +72,7 @@ for (const match of results.matches) {
     // console.log(`- ${replacement.value}`);
     comment += `\`\`\`suggestion\n${replacement.value}\n\`\`\`\n`;
   }
-  const command = `gh api repos/${process.env.GITHUB_REPOSITORY}/pulls/${process.env.PR_NUMBER}/comments -f body="${comment}" -f commit_id="${process.env.COMMIT_ID}" -F line="${endLine}" -f path="${markdownFile}" -f side="RIGHT" -F start_line="${startLine}" -f start_side="RIGHT" `;
+  const command = `gh api repos/${process.env.GITHUB_REPOSITORY}/pulls/${process.env.PR_NUMBER}/comments -f body="${comment}" -f commit_id="${process.env.COMMIT_ID}" -f path="${markdownFile}" -f start_side="RIGHT" -f side="RIGHT" -F start_line="${startLine}" -F line="${endLine}" `;
   console.log(`GH_TOKEN=${process.env.GH_TOKEN} ${command}`);
   execSync(command, { stdio: "inherit" });
 }
