@@ -167,17 +167,7 @@ browser-compat: html.elements.form
     <tr>
       <th scope="row">Неявна роль ARIA</th>
       <td>
-        <code
-          ><a href="/uk/docs/Web/Accessibility/ARIA/Roles/form_role"
-            >form</a
-          ></code
-        >, якщо форма має
-        <a href="https://www.w3.org/TR/accname-1.1/#dfn-accessible-name"
-          >доступне ім'я</a
-        >, інакше –
-        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"
-          >відповідної ролі немає</a
-        >
+        <code><a href="/uk/docs/Web/Accessibility/ARIA/Roles/form_role">form</a></code>
       </td>
     </tr>
     <tr>

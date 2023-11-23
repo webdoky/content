@@ -11,7 +11,7 @@ browser-compat: html.elements.input.type_submit
 
 ## Значення
 
-Атрибут [`value`](/uk/docs/Web/HTML/Element/input#value) елемента `<input type="submit">` містить рядок, що виводиться як підпис кнопки. Без нього кнопка не матиме фактичного значення.
+Атрибут [`value`](/uk/docs/Web/HTML/Element/input#value-znachennia) елемента `<input type="submit">` містить рядок, що виводиться як підпис кнопки. Без нього кнопка не матиме фактичного значення.
 
 ### Задання атрибута value
 
@@ -48,7 +48,7 @@ browser-compat: html.elements.input.type_submit
 - `application/x-www-form-urlencoded`
   - : Це усталене значення, котре надсилає дані форми як рядок після [відсоткового кодування](https://uk.wikipedia.org/wiki/%D0%92%D1%96%D0%B4%D1%81%D0%BE%D1%82%D0%BA%D0%BE%D0%B2%D0%B5_%D0%BA%D0%BE%D0%B4%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F) тексту за допомогою алгоритму штибу {{jsxref("encodeURI", "encodeURI()")}}.
 - `multipart/form-data`
-  - : Використовує для керування даними API {{domxref("FormData")}}, даючи змогу подавати на сервер файли. Цей тип кодування _повинен_ використовуватися, якщо форма містить елементи {{HTMLElement("input")}} з [`type`](/uk/docs/Web/HTML/Element/input#type) `file` ([`<input type="file">`](/uk/docs/Web/HTML/Element/input/file)).
+  - : Використовує для керування даними API {{domxref("FormData")}}, даючи змогу подавати на сервер файли. Цей тип кодування _повинен_ використовуватися, якщо форма містить елементи {{HTMLElement("input")}} з [`type`](/uk/docs/Web/HTML/Element/input#type-typ) `file` ([`<input type="file">`](/uk/docs/Web/HTML/Element/input/file)).
 - `text/plain`
   - : Простий текст; найкорисніше лише для зневадження, щоб можна було легко бачити дані до подання.
 
@@ -61,7 +61,7 @@ browser-compat: html.elements.input.type_submit
 Рядок, що вказує метод HTTP, що використовується при поданні даних форми; це значення заміщає атрибут [`method`](/uk/docs/Web/HTML/Element/form#method), заданий на формі-власнику. Дозволені значення:
 
 - `get`
-  - : URL формується, починаючи від URL, заданої атрибутом `formaction` або [`action`](/uk/docs/Web/HTML/Element/form#action), далі додається символ знаку питання ("?"), після чого додаються дані форми, закодовані так, як описано в `formenctype` або атрибуті [`enctype`](/uk/docs/Web/HTML/Element/form#enctype) форми. Потім цей URL надсилається на сервер за допомогою запиту HTTP {{HTTPMethod("get")}}. Цей метод добре працює для простих форм, що містять лише символи ASCII та не мають побічних ефектів. Це усталене значення.
+  - : URL формується, починаючи від URL, заданої атрибутом `formaction` або [`action`](/uk/docs/Web/HTML/Element/form#action), далі додається символ знаку питання ("?"), після чого додаються дані форми, закодовані так, як описано в `formenctype` або атрибуті [`enctype`](/uk/docs/Web/HTML/Element/form#enctype) форми. Потім цей URL надсилається на сервер за допомогою запиту HTTP {{HTTPMethod("get")}}. Цей метод добре працює для простих форм, що містять лише символи {{Glossary("ASCII")}} та не мають побічних ефектів. Це усталене значення.
 - `post`
   - : Дані форми включаються в тіло запиту, що надсилається за URL, заданою атрибутом `formaction` або [`action`](/uk/docs/Web/HTML/Element/form#action) за допомогою запиту HTTP {{HTTPMethod("post")}}. Цей метод підтримує складні дані та файлові прикріплення.
 - `dialog`
@@ -86,9 +86,9 @@ browser-compat: html.elements.input.type_submit
 - `_blank`
   - : Завантажує відповідь у новий, безіменний контекст перегляду. Здебільшого це нова вкладка в тому самому вікні, що й поточний документ, але може бути й не так, залежно від налаштувань {{Glossary("User agent", "користувацького агента")}}.
 - `_parent`
-  - : Завантажує відповідь у батьківський контекст перегляду щодо поточного. Якщо такого контексту немає, то спрацьовує так само, як `_self`.
+  - : Завантажує відповідь у батьківський контекст перегляду щодо поточного. Якщо такого контексту немає, то спрацьовує так само як `_self`.
 - `_top`
-  - : Завантажує відповідь у контекст перегляду найвищого рівня; це контекст перегляду, що є найстаршим предком поточного. Якщо поточний контекст є найвищим, то спрацьовує так само, як `_self`.
+  - : Завантажує відповідь у контекст перегляду найвищого рівня; це контекст перегляду, що є найстаршим предком поточного. Якщо поточний контекст є найвищим, то спрацьовує так само як `_self`.
 
 Також цей атрибут доступний на елементах [`<input type="image">`](/uk/docs/Web/HTML/Element/input/submit) і {{HTMLElement("button")}}.
 
@@ -158,7 +158,7 @@ browser-compat: html.elements.input.type_submit
 
 На ходу вмикати та вимикати кнопки можна шляхом присвоєння `disabled` зі значенням `true` або `false`; у JavaScript це має вигляд `btn.disabled = true` або `btn.disabled = false`.
 
-> **Примітка:** Більше ідей щодо вмикання та вимикання кнопок дивіться на сторінці [`<input type="button">`](/uk/docs/Web/HTML/Element/input/button#disabling_and_enabling_a_button).
+> **Примітка:** Більше ідей щодо вмикання та вимикання кнопок дивіться на сторінці [`<input type="button">`](/uk/docs/Web/HTML/Element/input/button#vymknennia-ta-vmykannia-knopky).
 
 ## Валідація
 
@@ -183,8 +183,8 @@ browser-compat: html.elements.input.type_submit
     <tr>
       <td><strong>Доступні спільні атрибути</strong></td>
       <td>
-        <a href="/uk/docs/Web/HTML/Element/input#type"><code>type</code></a> і
-        <a href="/uk/docs/Web/HTML/Element/input#value"><code>value</code></a>
+        <a href="/uk/docs/Web/HTML/Element/input#type-typ"><code>type</code></a> і
+        <a href="/uk/docs/Web/HTML/Element/input#value-znachennia"><code>value</code></a>
       </td>
     </tr>
     <tr>

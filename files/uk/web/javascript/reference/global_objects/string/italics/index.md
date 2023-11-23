@@ -7,7 +7,7 @@ status:
 browser-compat: javascript.builtins.String.italics
 ---
 
-{{JSRef}} {{deprecated_header}}
+{{JSRef}} {{Deprecated_Header}}
 
 Метод **`italics()`** (курсив) значень {{jsxref("String")}} створює рядок, що вбудовує рядок цього методу в елемент {{HTMLElement("i")}} (`<i>str</i>`), завдяки чому цей рядок виводиться курсивом.
 
@@ -31,14 +31,27 @@ italics()
 
 ### Застосування методу italics()
 
-Наступний приклад використовує нерекомендовані методи рядка для зміни його форматування:
+Код нижче створює рядок HTML, а потім замінює ним тіло документа:
 
 ```js
-const worldString = "Привіт, світе!";
-console.log(worldString.blink()); // <blink>Привіт, світе!</blink>
-console.log(worldString.bold()); // <b>Привіт, світе!</b>
-console.log(worldString.italics()); // <i>Привіт, світе!</i>
-console.log(worldString.strike()); // <strike>Привіт, світе!</strike>
+const contentString = "Привіт, світе";
+
+document.body.innerHTML = contentString.italics();
+```
+
+Це створить наступний HTML:
+
+```html
+<i>Привіт, світе</i>
+```
+
+Замість використання `italics()` і безпосереднього створення тексту HTML слід використовувати для роботи зі шрифтами CSS. Наприклад, можна змінити {{cssxref("font-style")}} через атрибут {{domxref("HTMLElement/style", "element.style")}}:
+
+```js
+const contentString = "Привіт, світе";
+const elem = document.createElement("i");
+elem.innerText = contentString;
+document.body.appendChild(elem);
 ```
 
 ## Специфікації
@@ -52,6 +65,5 @@ console.log(worldString.strike()); // <strike>Привіт, світе!</strike>
 ## Дивіться також
 
 - [Поліфіл `String.prototype.italics` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
-- {{jsxref("String.prototype.blink()")}}
-- {{jsxref("String.prototype.bold()")}}
-- {{jsxref("String.prototype.strike()")}}
+- [Методи для обгортання HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html)
+- {{HTMLElement("i")}}

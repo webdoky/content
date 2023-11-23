@@ -9,7 +9,7 @@ browser-compat: javascript.builtins.Array.length
 
 Властивість даних **`length`** (довжина) примірника {{jsxref("Array")}}, що представляє число елементів у такому масиві. Значення є беззнаковим 32-бітовим цілим числом, котре завжди більше за найбільший індекс елемента масиву.
 
-{{EmbedInteractiveExample("pages/js/array-length.html","shorter")}}
+{{EmbedInteractiveExample("pages/js/array-length.html", "shorter")}}
 
 ## Значення
 
@@ -127,6 +127,6 @@ numbers.push(5); // // TypeError: Cannot assign to read only property 'length' o
 
 - [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
-- [`TypedArray`: `length`](/uk/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/length)
+- [`TypedArray.prototype.length`](/uk/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/length)
 - [`String`: `length`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/length)
 - [RangeError: invalid array length](/uk/docs/Web/JavaScript/Reference/Errors/Invalid_array_length)

@@ -17,6 +17,10 @@ browser-compat: javascript.builtins.Array.pop
 pop()
 ```
 
+### Параметри
+
+Жодних.
+
 ### Повернене значення
 
 Усунутий з масиву елемент; {{jsxref("undefined")}}, якщо масив порожній.
@@ -111,7 +115,7 @@ console.log(collection.length); // 2
 
 ## Дивіться також
 
-- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
 - {{jsxref("Array.prototype.push()")}}
 - {{jsxref("Array.prototype.shift()")}}
