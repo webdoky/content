@@ -55,7 +55,7 @@ CSS визначає _конкретний розмір_ об'єкта на ос
 
 Браузери не надають допоміжним технологіям жодної конкретної інформації про зображення тла. Це важливо перш за все для читачів з екрана, адже читач з екрана не оголосить присутність такого зображення, а отже – нічого не донесе користувачеві. Якщо зображення містить інформацію, котра є критичною для розуміння загального призначення сторінки, краще описати її в документі семантично.
 
-- [Розуміння WCAG, пояснення Настанови 1.1](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#guideline_1.1_%e2%80%94_providing_text_alternatives_for_non-text_content)
+- [Розуміння WCAG, пояснення Настанови 1.1](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#guideline_1.1_—_providing_text_alternatives_for_non-text_content)
 - [Розуміння критерію успіху 1.1.1 | W3C Розуміння WCAG 2.0](https://www.w3.org/TR/2016/NOTE-UNDERSTANDING-WCAG20-20161007/text-equiv-all.html)
 
 ## Формальний синтаксис

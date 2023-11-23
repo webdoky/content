@@ -52,7 +52,7 @@ Promise.resolve("Успіх").then(
   },
   (reason) => {
     // не викликається
-  }
+  },
 );
 ```
 
@@ -101,36 +101,33 @@ p1.then(
   },
   (e) => {
     // не викликається
-  }
+  },
 );
 
-// Очікуваний об'єкт викидає помилку до зворотного виклику
+// Очікуваний об'єкт викидає помилку
 // Проміс відхиляється
-const thenable = {
-  then(onFulfilled) {
+const p2 = Promise.resolve({
+  then() {
     throw new TypeError("Викидаємо");
-    onFulfilled("Вирішуємо");
   },
-};
-
-const p2 = Promise.resolve(thenable);
+});
 p2.then(
   (v) => {
     // не викликається
   },
   (e) => {
     console.error(e); // TypeError: Викидаємо
-  }
+  },
 );
 
 // Очікуваний об'єкт викидає помилку після зворотного виклику
 // Проміс вирішується
-const thenable = {
+const p3 = Promise.resolve({
   then(onFulfilled) {
     onFulfilled("Вирішуємо");
     throw new TypeError("Викидаємо");
   },
-};
+});
 
 const p3 = Promise.resolve(thenable);
 p3.then(
@@ -139,7 +136,7 @@ p3.then(
   },
   (e) => {
     // не викликається
-  }
+  },
 );
 ```
 
@@ -185,7 +182,7 @@ class NotPromise {
     // в нативних промісів, але Promise.resolve() усе одно їх викликає.
     executor(
       (value) => console.log("Вирішено", value),
-      (reason) => console.log("Відхилено", reason)
+      (reason) => console.log("Відхилено", reason),
     );
   }
 }
