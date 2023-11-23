@@ -17,6 +17,10 @@ const MARKDOWN_ESCAPE_REGEX = /([!"#'()*+.[\\\]_`{}-])/g;
 function escapeTextForMarkdown(text) {
   return text.replaceAll(MARKDOWN_ESCAPE_REGEX, "\\$1");
 }
+const TOTAL_TIMEOUT = 180_000;
+const timeout = setTimeout(() => {
+  throw new Error("Timeout");
+}, TOTAL_TIMEOUT);
 
 function convertOffsetToLineAndColumn(offset) {
   let line = 1;
@@ -115,7 +119,7 @@ for (const match of results.matches) {
   console.log(`GH_TOKEN=${process.env.GH_TOKEN} ${command}`);
   execSync(command, { stdio: "inherit", timeout: 60_000 });
 }
-
+clearTimeout(timeout);
 process.on("unhandledRejection", (error) => {
   console.error(error);
   process.exit(1);
