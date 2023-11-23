@@ -1,51 +1,52 @@
 ---
 title: String.prototype.blink()
 slug: Web/JavaScript/Reference/Global_Objects/String/blink
-tags:
-  - Deprecated
-  - HTML wrapper methods
-  - JavaScript
-  - Method
-  - Prototype
-  - Reference
-  - String
-  - Polyfill
+page-type: javascript-instance-method
+status:
+  - deprecated
 browser-compat: javascript.builtins.String.blink
 ---
-{{JSRef}} {{deprecated_header}}
 
-Метод **`blink()`** створює HTML-елемент {{HTMLElement("blink")}}, який змушує мерехтіти рядок тексту.
+{{JSRef}} {{Deprecated_Header}}
 
-> **Застереження:** Декілька стандартів доступності не схвалюють мерехтливий текст. Сам елемент `<blink>` не входить до стандарту і не рекомендується до використання.
+Метод **`blink()`** (блимати) значень {{jsxref("String")}} створює рядок, що вбудовує рядок цього методу в елемент `<blink>` (`<blink>str</blink>`), що в старих браузерах змушувало результівний рядок блимати.
+
+> **Примітка:** Всі [методи для обгортання HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html) – нерекомендовані, вони стандартизовані лише для потреб сумісності. У випадку `blink()` – сам елемент `<blink>` прибраний з сучасних браузерів, і декілька стандартів доступності не схвалюють мерехтливий текст. Уникайте застосування цього елемента за будь-яких умов.
 
 ## Синтаксис
 
-```js
+```js-nolint
 blink()
 ```
 
+### Параметри
+
+Жодних.
+
 ### Повернене значення
 
-Рядок, що містить HTML-елемент {{HTMLElement("blink")}}.
-
-## Опис
-
-Метод `blink()` вбудовує рядок тексту всередину елемента `<blink>`: "`<blink>рядок тексту</blink>`".
+Рядок, що на початку має початковий тег `<blink>`, потім текст `str`, і в кінці – кінцевий тег `</blink>`.
 
 ## Приклади
 
 ### Застосування методу blink()
 
-Наступний приклад демонструє, як змінити форматування рядка за допомогою різних методів самого рядка:
+Код нижче створює рядок HTML, а потім замінює тіло документа цим рядком:
 
 ```js
-var worldString = 'Привіт, світе!';
+const contentString = "Привіт, світе";
 
-console.log(worldString.blink());   // <blink>Привіт, світе!</blink>
-console.log(worldString.bold());    // <b>Привіт, світе!</b>
-console.log(worldString.italics()); // <i>Привіт, світе!</i>
-console.log(worldString.strike());  // <strike>Привіт, світе!</strike>
+document.body.innerHTML = contentString.blink();
 ```
+
+Це породжує наступний HTML:
+
+```html
+<blink>Привіт, світе</blink>
+```
+
+> **Застереження:** Така розмітка є недійсною, адже `blink` більше не є дійсним елементом.
+> Елементів, що блимають, слід взагалі уникати.
 
 ## Специфікації
 
@@ -57,7 +58,5 @@ console.log(worldString.strike());  // <strike>Привіт, світе!</strike
 
 ## Дивіться також
 
-- Поліфіл методу `String.prototype.blink` наявний у [`core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
-- {{jsxref("String.prototype.bold()")}}
-- {{jsxref("String.prototype.italics()")}}
-- {{jsxref("String.prototype.strike()")}}
+- [Поліфіл `String.prototype.blink` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
+- [Методи для обгортання в HTML](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#metody-dlia-obhortannia-v-html)

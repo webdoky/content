@@ -9,20 +9,20 @@ browser-compat: javascript.builtins.Array.concat
 
 Метод **`concat()`** (зчепити) використовується для злиття двох і більше масивів. Він не змінює наявні масиви, а повертає новий.
 
-{{EmbedInteractiveExample("pages/js/array-concat.html","shorter")}}
+{{EmbedInteractiveExample("pages/js/array-concat.html", "shorter")}}
 
 ## Синтаксис
 
 ```js-nolint
 concat()
-concat(value0)
-concat(value0, value1)
-concat(value0, value1, /* … ,*/ valueN)
+concat(value1)
+concat(value1, value2)
+concat(value1, value2, /* …, */ valueN)
 ```
 
 ### Параметри
 
-- `valueN` (значення № N) {{optional_inline}}
+- `value1`, …, `valueN` {{optional_inline}}
   - : Масиви та (або) значення, котрі слід злити в новий масив. Якщо всі параметри опущені, то `valueN`, `concat` повертає [поверхневу копію](/uk/docs/Glossary/Shallow_copy) наявного масиву, на котрому його викликали.
 
 ### Повернене значення
@@ -129,7 +129,13 @@ console.log([1, 2].concat([3, , 5])); // [1, 2, 3, порожньо, 5]
 ```js
 console.log(Array.prototype.concat.call({}, 1, 2, 3)); // [{}, 1, 2, 3]
 console.log(Array.prototype.concat.call(1, 2, 3)); // [ [Number: 1], 2, 3 ]
-const arrayLike = { [Symbol.isConcatSpreadable]: true, length: 2, 0: 1, 1: 2 };
+const arrayLike = {
+  [Symbol.isConcatSpreadable]: true,
+  length: 2,
+  0: 1,
+  1: 2,
+  2: 99, // ігнорується concat(), оскільки length – 2
+};
 console.log(Array.prototype.concat.call(arrayLike, 3, 4)); // [1, 2, 3, 4]
 ```
 
@@ -144,7 +150,7 @@ console.log(Array.prototype.concat.call(arrayLike, 3, 4)); // [1, 2, 3, 4]
 ## Дивіться також
 
 - [Поліфіл для `Array.prototype.concat` доступний в складі `core-js`, разом з виправленнями й реалізацією сучасної логіки типу підтримки `Symbol.isConcatSpreadable`](https://github.com/zloirock/core-js#ecmascript-array)
-- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
 - {{jsxref("Array.prototype.push()")}}
 - {{jsxref("Array.prototype.unshift()")}}

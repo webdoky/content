@@ -9,7 +9,7 @@ browser-compat: javascript.builtins.String.lastIndexOf
 
 Метод значень {{jsxref("String")}} **`lastIndexOf()`** (останній індекс елемента) шукає в поточному рядку та повертає індекс останнього входження заданого підрядка. Він приймає необов'язкову початкову позицію і повертає останнє входження заданого підрядка за індексом, меншим або рівним заданому числу.
 
-{{EmbedInteractiveExample("pages/js/string-lastindexof.html", "shorter")}}
+{{EmbedInteractiveExample("pages/js/string-lastindexof.html")}}
 
 ## Синтаксис
 
@@ -65,7 +65,7 @@ lastIndexOf(searchString, position)
 
 ### Застосування методів indexOf() та lastIndexOf()
 
-Наступні приклади використовують {{jsxref("String.prototype.indexOf()", "indexOf()")}} та `lastIndexOf()` для визначення розташування значень у рядку `"Прекрасний, Прекрасний Новий Світ"`.
+Наступні приклади використовують {{jsxref("String/indexOf", "indexOf()")}} і `lastIndexOf()` для визначення розташування значень у рядку `"Прекрасний, Прекрасний Новий Світ"`.
 
 ```js
 const anyString = "Прекрасний, Прекрасний Новий Світ";

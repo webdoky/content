@@ -1,13 +1,7 @@
 ---
 title: Вступ до базової рамкової моделі CSS
-slug: Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model
+slug: Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model
 page-type: guide
-tags:
-  - CSS
-  - CSS Box Model
-  - Guide
-  - Layout
-spec-urls: https://drafts.csswg.org/css-box/#intro
 ---
 
 {{CSSRef}}
@@ -16,7 +10,7 @@ spec-urls: https://drafts.csswg.org/css-box/#intro
 
 Кожна рамка складається з чотирьох частин (або _областей_), визначених власними краями: _краями вмісту_, _краями внутрішніх відступів_, _краями меж_ та _краями зовнішніх відступів_.
 
-![Рамкова модель CSS](<boxmodel-(3).png>)
+![Рамкова модель CSS](boxmodel.png)
 
 ## Область вмісту
 
@@ -40,13 +34,9 @@ spec-urls: https://drafts.csswg.org/css-box/#intro
 
 **Область зовнішніх відступів**, обмежена краями зовнішніх відступів, розширює область меж для включення порожньої області, котра використовується для відділення елемента від його сусідів. Її розміри – _ширина рамки зовнішніх відступів_ і _висота рамки зовнішніх відступів_.
 
-Розміри області зовнішніх відступів задаються властивостями {{cssxref("margin-top")}}, {{cssxref("margin-right")}}, {{cssxref("margin-bottom")}}, {{cssxref("margin-left")}} і скороченням {{cssxref("margin")}}. Коли трапляється [перекривання зовнішніх відступів](/uk/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing), то область зовнішніх відступів не має чіткого визначення, адже зовнішні відступи поділяються кількома рамками.
+Розміри області зовнішніх відступів задаються властивостями {{cssxref("margin-top")}}, {{cssxref("margin-right")}}, {{cssxref("margin-bottom")}}, {{cssxref("margin-left")}} і скороченням {{cssxref("margin")}}. Коли трапляється [перекривання зовнішніх відступів](/uk/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing), то область зовнішніх відступів не має чіткого визначення, адже зовнішні відступи поділяються кількома рамками.
 
 Врешті решт, слід мати на увазі, що для незаміщених рядкових елементів кількість зайнятого ними простору (вклад у висоту рядка) визначається властивістю {{cssxref('line-height')}}, навіть попри те, що навколо вмісту все ж виводяться межі та внутрішні відступи.
-
-## Специфікації
-
-{{Specifications}}
 
 ## Дивіться також
 
@@ -58,10 +48,10 @@ spec-urls: https://drafts.csswg.org/css-box/#intro
   - [Директиви](/uk/docs/Web/CSS/At-rule)
   - [Коментарі](/uk/docs/Web/CSS/Comments)
   - [Специфічність](/uk/docs/Web/CSS/Specificity)
-  - [Успадкування](/uk/docs/Web/CSS/inheritance)
+  - [Успадкування](/uk/docs/Web/CSS/Inheritance)
   - [Способи компонування](/uk/docs/Web/CSS/Layout_mode)
   - [Моделі візуального форматування](/uk/docs/Web/CSS/Visual_formatting_model)
-  - [Перекривання зовнішніх відступів](/uk/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
+  - [Перекривання зовнішніх відступів](/uk/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
   - Значення
     - [Початкові значення](/uk/docs/Web/CSS/initial_value)
     - [Обчислені значення](/uk/docs/Web/CSS/computed_value)

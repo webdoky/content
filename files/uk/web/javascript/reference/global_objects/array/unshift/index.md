@@ -7,8 +7,7 @@ browser-compat: javascript.builtins.Array.unshift
 
 {{JSRef}}
 
-Метод **`unshift()`** (відсунути) додає вказані елементи на
-початок масиву та повертає нову довжину масиву.
+Метод **`unshift()`** (відсунути) примірників {{jsxref("Array")}} додає передані елементи на початок масиву та повертає нову довжину масиву.
 
 {{EmbedInteractiveExample("pages/js/array-unshift.html")}}
 
@@ -16,20 +15,19 @@ browser-compat: javascript.builtins.Array.unshift
 
 ```js-nolint
 unshift()
-unshift(елемент0)
-unshift(елемент0, елемент1)
-unshift(елемент0, елемент1, /* … ,*/ елементN)
+unshift(element1)
+unshift(element1, element2)
+unshift(element1, element2, /* …, */ elementN)
 ```
 
 ### Параметри
 
-- `елементN`
+- `element1`, …, `elementN`
   - : Елементи, які потрібно додати на початок масиву.
 
 ### Повернене значення
 
-Нова властивість {{jsxref("Array/length", "length")}} об'єкта, на якому
-викликано метод.
+Нова властивість {{jsxref("Array/length", "length")}} об'єкта, на якому викликано метод.
 
 ## Опис
 
@@ -37,10 +35,7 @@ unshift(елемент0, елемент1, /* … ,*/ елементN)
 
 {{jsxref("Array.prototype.push()")}} має подібну поведінку до `unshift()`, але застосовується до кінця масиву.
 
-Зауважте: якщо кілька елементів передаються як параметри, вони додаються
-на початок об'єкта в тому самому порядку, в якому були передані. Отже, виклик `unshift()` з `n`
-аргументами **за раз** і виклик `n` разів за допомогою
-**1** аргументу (наприклад, із циклом), не дають однакових результатів.
+Зауважте: якщо кілька елементів передаються як параметри, вони додаються на початок об'єкта в тому самому порядку, в якому були передані. Отже, виклик `unshift()` з `n` аргументами **за раз** і виклик `n` разів за допомогою **1** аргументу (наприклад, із циклом), не дають однакових результатів.
 
 Наприклад:
 
@@ -114,8 +109,8 @@ console.log(plainObj);
 
 ## Дивіться також
 
-- [Поліфіл `Array.prototype.unshift` у `core-js` з виправленнями цього методу](https://github.com/zloirock/core-js#ecmascript-array)
-- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- [Поліфіл `Array.prototype.unshift` у складі `core-js` з виправленнями цього методу](https://github.com/zloirock/core-js#ecmascript-array)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
 - {{jsxref("Array.prototype.push()")}}
 - {{jsxref("Array.prototype.pop()")}}

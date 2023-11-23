@@ -9,7 +9,7 @@ browser-compat: javascript.builtins.Math.LN2
 
 Статична властивість даних **`Math.LN2`** відображає натуральний логарифм 2, що наближено дорівнює 0.693:
 
-{{EmbedInteractiveExample("pages/js/math-ln2.html","shorter")}}
+{{EmbedInteractiveExample("pages/js/math-ln2.html", "shorter")}}
 
 ## Значення
 

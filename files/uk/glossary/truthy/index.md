@@ -2,12 +2,11 @@
 title: Істинні значення
 slug: Glossary/Truthy
 page-type: glossary-definition
-tags:
-  - CodingScripting
-  - JavaScript
 ---
 
-**Істинне** значення в {{Glossary("JavaScript")}} – це значення, яке вважається `true`, коли зустрічається в {{Glossary("Boolean", "булевому")}} контексті. Всі значення є істинними, якщо не визначені як {{Glossary("Falsy", "хибні")}}. Тобто _істинними_ є всі значення, окрім `false`, `0`, `-0`, `0n`, `""`, `null`, `undefined` і `NaN`.
+{{GlossarySidebar}}
+
+**Істинне** значення в {{Glossary("JavaScript")}} – це значення, яке вважається `true`, коли зустрічається в {{Glossary("Boolean", "булевому")}} контексті. Всі значення є істинними, якщо не визначені як {{Glossary("Falsy", "хибні")}}. Тобто _істинними_ є всі значення, окрім `false`, `0`, `-0`, `0n`, `""`, `null`, `undefined`, `NaN` і {{domxref("document.all")}}.
 
 {{Glossary("JavaScript")}} використовує в булевих контекстах {{Glossary("Type_Coercion", "зведення типів")}}.
 
@@ -31,7 +30,7 @@ if (-Infinity)
 
 ### Логічний оператор І, &&
 
-Якщо перший об'єкт є істинним, то [логічний оператор І](/uk/docs/Web/JavaScript/Reference/Operators/Logical_AND) повертає другий операнд:
+Якщо перший операнд є істинним, то [логічний оператор І](/uk/docs/Web/JavaScript/Reference/Operators/Logical_AND) повертає другий операнд:
 
 ```js
 true && "пес"

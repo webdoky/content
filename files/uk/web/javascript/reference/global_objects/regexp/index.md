@@ -99,17 +99,17 @@ re.exec("bar"); // [ 'bar', index: 0, input: 'bar', groups: undefined ]
 
 ## Статичні властивості
 
-- {{jsxref("RegExp/n", "RegExp.$1, …, RegExp.$9")}} {{Deprecated_Inline}}
+- {{jsxref("RegExp/n", "RegExp.$1, …, RegExp.$9")}} {{deprecated_inline}}
   - : Статичні властивості лише для зчитування, що містять збіги підрядків у дужках.
-- {{jsxref("RegExp.input", "RegExp.input ($_)")}} {{Deprecated_Inline}}
+- {{jsxref("RegExp/input", "RegExp.input ($_)")}} {{deprecated_inline}}
   - : Статична властивість лише для зчитування, що містить останній рядок, щодо якого відбувся успішний збіг.
-- {{jsxref("RegExp.lastMatch", "RegExp.lastMatch ($&)")}} {{Deprecated_Inline}}
+- {{jsxref("RegExp/lastMatch", "RegExp.lastMatch ($&)")}} {{deprecated_inline}}
   - : Статична властивість лише для зчитування, що містить останній підрядок, з яким трапився збіг.
-- {{jsxref("RegExp.lastParen", "RegExp.lastParen ($+)")}} {{Deprecated_Inline}}
+- {{jsxref("RegExp/lastParen", "RegExp.lastParen ($+)")}} {{deprecated_inline}}
   - : Статична властивість лише для зчитування, що містить останній збіг підрядку в дужках.
-- {{jsxref("RegExp.leftContext", "RegExp.leftContext ($`)")}} {{Deprecated_Inline}}
+- {{jsxref("RegExp/leftContext", "RegExp.leftContext ($`)")}} {{deprecated_inline}}
   - : Статична властивість лише для зчитування, що містить підрядок, котрий передував останньому збігові.
-- {{jsxref("RegExp.rightContext", "RegExp.rightContext ($')")}} {{Deprecated_Inline}}
+- {{jsxref("RegExp/rightContext", "RegExp.rightContext ($')")}} {{deprecated_inline}}
   - : Статична властивість лише для зчитування, що містить підрядок, котрий стояв після останнього збігу.
 - {{jsxref("RegExp/@@species", "RegExp[@@species]")}}
   - : Функція-конструктор, що використовується для створення похідних об'єктів.
@@ -148,7 +148,7 @@ re.exec("bar"); // [ 'bar', index: 0, input: 'bar', groups: undefined ]
 
 ## Методи примірника
 
-- {{jsxref("RegExp.prototype.compile()")}} (компілювати) {{Deprecated_Inline}}
+- {{jsxref("RegExp.prototype.compile()")}} (компілювати) {{deprecated_inline}}
   - : (Повторно) компілює регулярний вираз під час виконання сценарію.
 - {{jsxref("RegExp.prototype.exec()")}} (виконати)
   - : Виконує пошук збігу у своєму рядковому параметрі.
@@ -171,7 +171,7 @@ re.exec("bar"); // [ 'bar', index: 0, input: 'bar', groups: undefined ]
 
 ### Використання регулярного виразу для зміни формату даних
 
-Наступний сценарій застосовує метод {{jsxref("String.prototype.replace()", "replace()")}} примірника {{jsxref("Global_Objects/String", "String")}}, щоб знайти ім'я в форматі _ім'я прізвище_ й вивести його в форматі _прізвище, ім'я_.
+Наступний сценарій застосовує метод {{jsxref("String.prototype.replace()")}}, щоб знайти ім'я в форматі _ім'я прізвище_ й вивести його в форматі _прізвище, ім'я_.
 
 В тексті заміни сценарій використовує `$1` і `$2`, аби вказати на результати відповідних дужок збігу в патерні регулярного виразу
 
@@ -210,7 +210,7 @@ s.match(/yes[^]*day/);
 
 ### Застосування регулярного виразу з позначкою липкості
 
-Позначка {{jsxref("Global_Objects/RegExp/sticky", "липкості")}} вказує на те, що регулярний вираз виконує в цільовому рядку липкий пошук збігу, намагаючись почати пошук від {{jsxref("RegExp.prototype.lastIndex")}}.
+Позначка {{jsxref("RegExp/sticky", "липкості")}} вказує на те, що регулярний вираз виконує в цільовому рядку липкий пошук збігу, намагаючись почати пошук від {{jsxref("RegExp.prototype.lastIndex")}}.
 
 ```js
 const str = "#foo#";
@@ -317,8 +317,8 @@ order.match(new RegExp(`\\b(${breakfasts.join("|")})\\b`, "g"));
 ## Дивіться також
 
 - [Поліфіл багатьох сучасних можливостей `RegExp` (позначки `dotAll`, `sticky`, іменовані групи захоплення тощо) у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
-- [Посібник з регулярних виразів](/uk/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [Довідка з регулярних виразів](/uk/docs/Web/JavaScript/Reference/Regular_expressions)
+- Посібник [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Регулярні вирази](/uk/docs/Web/JavaScript/Reference/Regular_expressions)
 - {{jsxref("String.prototype.match()")}}
 - {{jsxref("String.prototype.replace()")}}
 - {{jsxref("String.prototype.split()")}}
