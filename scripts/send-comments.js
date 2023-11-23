@@ -35,10 +35,16 @@ function convertOffsetToLineAndColumn(offset) {
 
 // eslint-disable-next-line no-restricted-syntax
 for (const match of results.matches) {
-  const { context, message, offset, replacements, rule, sentence } = match;
-  let { length } = match;
+  const { context, message, replacements, rule, sentence } = match;
+  let { length, offset } = match;
+  let start;
+  length += 1;
+  while (!start) {
+    offset += 1;
+    length -= 1;
+    start = Number.parseInt(mapping[offset], 10);
+  }
   let endOffset = offset + length;
-  const start = Number.parseInt(mapping[offset], 10);
   let end;
   endOffset -= 1;
   length -= 1;
