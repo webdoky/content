@@ -2,10 +2,6 @@
 title: Обчислене значення
 slug: Web/CSS/computed_value
 page-type: guide
-tags:
-  - CSS
-  - Guide
-  - Reference
 spec-urls: https://www.w3.org/TR/CSS22/cascade.html#computed-value
 ---
 
@@ -20,7 +16,7 @@ spec-urls: https://www.w3.org/TR/CSS22/cascade.html#computed-value
 
 Проте для частини властивостей (тих, чиї відсотки відносні щодо чогось, що може потребувати макета для визначення, як то `width`, `margin-right`, `text-indent` і `top`) задані відсоткові значення перетворюються на обчислені відсоткові значення. Крім цього, безрозмірні числа, задані у властивості `line-height`, стають обчисленим значенням, як задано. Відносні величини, що залишаються в обчисленому значенні, стають абсолютними, коли з'ясовується [застосоване значення](/uk/docs/Web/CSS/used_value)
 
-> **Примітка:** API DOM {{domxref("Window.getComputedStyle", "getComputedStyle()")}} повертає [вирішене значення](/uk/docs/Web/CSS/resolved_value), котре може бути як [обчисленим значенням](/uk/docs/Web/CSS/computed_value), так і [застосованим значенням](/uk/docs/Web/CSS/used_value), залежно від конкретної властивості.
+> **Примітка:** API DOM {{domxref("Window.getComputedStyle", "getComputedStyle()")}} повертає [вирішене значення](/uk/docs/Web/CSS/resolved_value), котре може бути як обчисленим значенням, так і [застосованим значенням](/uk/docs/Web/CSS/used_value), залежно від конкретної властивості.
 
 ## Специфікації
 
@@ -34,11 +30,11 @@ spec-urls: https://www.w3.org/TR/CSS22/cascade.html#computed-value
   - [Директиви](/uk/docs/Web/CSS/At-rule)
   - [Коментарі](/uk/docs/Web/CSS/Comments)
   - [Специфічність](/uk/docs/Web/CSS/Specificity)
-  - [Успадкування](/uk/docs/Web/CSS/inheritance)
-  - [Рамкова модель](/uk/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+  - [Успадкування](/uk/docs/Web/CSS/Inheritance)
+  - [Рамкова модель](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
   - [Режими компонування](/uk/docs/Web/CSS/Layout_mode)
   - [Моделі візуального форматування](/uk/docs/Web/CSS/Visual_formatting_model)
-  - [Перекриття зовнішніх відступів](/uk/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
+  - [Перекриття зовнішніх відступів](/uk/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
   - Значення
     - [Початкові значення](/uk/docs/Web/CSS/initial_value)
     - [Застосовані значення](/uk/docs/Web/CSS/used_value)

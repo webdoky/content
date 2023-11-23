@@ -9,11 +9,12 @@ browser-compat: javascript.builtins.String.fromCharCode
 
 Статичний метод **`String.fromCharCode()`** (із коду символу) повертає рядок, сформований з вказаної послідовності кодових одиниць UTF-16.
 
-{{EmbedInteractiveExample("pages/js/string-fromcharcode.html","shorter")}}
+{{EmbedInteractiveExample("pages/js/string-fromcharcode.html", "shorter")}}
 
 ## Синтаксис
 
 ```js-nolint
+String.fromCharCode()
 String.fromCharCode(num1)
 String.fromCharCode(num1, num2)
 String.fromCharCode(num1, num2, /* …, */ numN)
@@ -21,7 +22,7 @@ String.fromCharCode(num1, num2, /* …, */ numN)
 
 ### Параметри
 
-- `numN`
+- `num1`, …, `numN`
   - : Число між `0` і `65535` (`0xFFFF`), що відповідає кодовій одиниці UTF-16. Числа, більші за `0xFFFF`, обрізаються до останніх 16 бітів. Перевірка на коректність не виконується.
 
 ### Повернене значення

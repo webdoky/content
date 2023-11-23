@@ -2,6 +2,7 @@ import { execSync } from "child_process";
 
 import compact from "lodash/compact";
 import includes from "lodash/includes";
+import last from "lodash/last";
 import toString from "lodash/toString";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
@@ -37,7 +38,7 @@ try {
   // List changes for index.md files
   changedTranslations = execSync(
     'git status --porcelain | grep "files/.*/\\(index.md\\)\\?$"',
-    { encoding: "utf8" }
+    { encoding: "utf8" },
   )
     .trim()
     .split("\n");
@@ -47,19 +48,19 @@ try {
 }
 const numberOfTranslations = changedTranslations.length;
 
-if (changedTranslations < requiredTranslationNumber) {
+if (numberOfTranslations < requiredTranslationNumber) {
   console.error("Translations not found.");
   process.exit(1);
 }
 
 if (numberOfTranslations > requiredTranslationNumber) {
   console.error(
-    "You have more than one unstaged translation -- it's unclear what you want to do. Pls commit & push it manually."
+    "You have more than one unstaged translation -- it's unclear what you want to do. Pls commit & push it manually.",
   );
   process.exit(1);
 }
 
-const [actionMarker, translation] = compact(changedTranslations[0].split(" "));
+let [actionMarker, translation] = compact(changedTranslations[0].split(" "));
 let action;
 switch (actionMarker) {
   case "??":
@@ -67,6 +68,10 @@ switch (actionMarker) {
   case "A": {
     action = "translation";
     break;
+  }
+  case "R": {
+    translation = last(changedTranslations[0].split(" -> "));
+    // intentionally no break here
   }
   case "M": {
     action = "update";
@@ -137,7 +142,7 @@ if (!(update && currentBranchName.endsWith(targetBranchName))) {
     if (!update) {
       if (doesGitBranchExistOnRemote(targetBranchName)) {
         console.warn(
-          `Branch ${targetBranchName} already exists on remote. Use --update to update it, or check if there is a PR from it already.`
+          `Branch ${targetBranchName} already exists on remote. Use --update to update it, or check if there is a PR from it already.`,
         );
         process.exit(1);
       }
@@ -172,8 +177,11 @@ if (!(update && currentBranchName.endsWith(targetBranchName))) {
 }
 
 console.log("Staging the translation");
-// Folder must be added, not single file: the folder may contain misc files
-execSync(`git add ${translationFolder}`, { stdio: "inherit" });
+// In case of rename, the folder must be added manually beforehands
+if (actionMarker !== 'R') {
+  // Folder must be added, not single file: the folder may contain misc files
+  execSync(`git add ${translationFolder}`, { stdio: "inherit" });
+}
 let section = translationSlugParts[0];
 if (section === "web") {
   [, section] = translationSlugParts;

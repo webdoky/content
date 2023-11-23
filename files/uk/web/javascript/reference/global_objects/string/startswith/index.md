@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.String.startsWith
 
 {{JSRef}}
 
-Метод **`startsWith()`** визначає, чи починається рядок символами з рядка-параметра, повертаючи `true` або `false` відповідно.
+Метод **`startsWith()`** (починається з підрядка) значень {{jsxref("String")}} визначає, чи починається його рядок символами з рядка-параметра, повертаючи `true` або `false` відповідно.
 
 {{EmbedInteractiveExample("pages/js/string-startswith.html")}}
 
