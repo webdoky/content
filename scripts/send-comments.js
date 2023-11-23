@@ -70,9 +70,9 @@ for (const match of results.matches) {
   if (shortMessage || rule.description) {
     comment += `### ${escapeTextForMarkdown(
       shortMessage || rule.description,
-    )}\n`;
+    )}\n\n`;
   }
-  comment = `${escapeTextForMarkdown(rule.description)}\n${rule.category.id}/${
+  comment += `${escapeTextForMarkdown(message)}\n${rule.category.id}/${
     rule.id
   }: ${escapeTextForMarkdown(rule.description)}\n`;
   // console.log(`\`${markdownFile}:${startLine}:${startColumn}\n\``);
