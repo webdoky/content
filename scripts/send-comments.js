@@ -115,3 +115,8 @@ for (const match of results.matches) {
   console.log(`GH_TOKEN=${process.env.GH_TOKEN} ${command}`);
   execSync(command, { stdio: "inherit", timeout: 60_000 });
 }
+
+process.on("unhandledRejection", (error) => {
+  console.error(error);
+  process.exit(1);
+});
