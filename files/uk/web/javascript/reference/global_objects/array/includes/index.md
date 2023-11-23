@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.Array.includes
 
 {{JSRef}}
 
-Метод **`includes()`** (включає) визначає, чи містить масив вказане значення серед своїх елементів, і повертає `true` чи `false` відповідно до результату.
+Метод **`includes()`** (включає) примірників {{jsxref("Array")}} визначає, чи містить масив вказане значення серед своїх елементів, і повертає `true` чи `false` відповідно до результату.
 
 {{EmbedInteractiveExample("pages/js/array-includes.html")}}
 
@@ -118,7 +118,7 @@ console.log(Array.prototype.includes.call(arrayLike, 1));
 ## Дивіться також
 
 - [Поліфіл для `Array.prototype.includes` у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-array)
-- [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
+- Посібник [Колекції з індексами](/uk/docs/Web/JavaScript/Guide/Indexed_collections)
 - {{jsxref("Array")}}
 - {{jsxref("Array.prototype.indexOf()")}}
 - {{jsxref("Array.prototype.find()")}}
