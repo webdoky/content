@@ -1,8 +1,4 @@
-// Read LanguageTool output from ./results.json
-// and txt-to-markdown mapping from ./mapping.json
-// and print an errorformat message for each error
-// to stdout.
-
+import { execSync } from "child_process";
 import { readFileSync } from "fs";
 
 const results = JSON.parse(readFileSync("./result.json"));
@@ -57,24 +53,40 @@ for (const match of results.matches) {
     throw new Error(`Column not found in source file: ${sentence}`);
   }
   // const errorformatLine = `${markdownFile}:${startLine}:${startColumn}:${endLine}:${endColumn}: ${message}`;
-  // console.log(errorformatLine);
-  console.log(`## ${message}\n`);
-  console.log(`\`${markdownFile}:${startLine}:${startColumn}\n\``);
-  console.log(`${rule.description}:\n`);
-  console.log(
-    `> ${context.text.slice(0, context.offset)}**${context.text.slice(
-      context.offset,
-      context.offset + context.length,
-    )}**${context.text.slice(context.offset + context.length)}_`,
-  );
-  console.log("Варіанти заміни:");
-  if (replacements.length > 0) {
+  let comment = `### ${message}\n${rule.description}\n${rule.category.id}/${rule.id}: ${rule.description}\n`;
+  // console.log(`\`${markdownFile}:${startLine}:${startColumn}\n\``);
+  comment += `> ${context.text.slice(0, context.offset)}**${context.text.slice(
+    context.offset,
+    context.offset + context.length,
+  )}**${context.text.slice(context.offset + context.length)}`;
+  if (replacements?.length) {
+    comment += "\n\n#### Варіанти заміни\n";
     // eslint-disable-next-line no-restricted-syntax
     for (const replacement of replacements) {
-      console.log(`- ${replacement.value}`);
+      // console.log(`- ${replacement.value}`);
+      comment += `- ${replacement.value}\n`;
     }
-  } else {
-    console.log("Немає");
   }
-  console.log("\n");
+  const parameters = {
+    body: comment,
+    commit_id: process.env.COMMIT_ID,
+    line: endLine,
+    path: markdownFile,
+    side: "RIGHT",
+  };
+  if (startLine !== endLine) {
+    parameters.start_line = startLine;
+    parameters.start_side = "RIGHT";
+  }
+  let command = `gh api repos/${process.env.GITHUB_REPOSITORY}/pulls/${process.env.PR_NUMBER}/comments`;
+  // eslint-disable-next-line no-restricted-syntax
+  for (const [key, value] of Object.entries(parameters)) {
+    command +=
+      typeof value === "number"
+        ? ` -F ${key}=${value}`
+        : ` -f ${key}="${value}"`;
+  }
+  console.log(command);
+  console.log(`GH_TOKEN=${process.env.GH_TOKEN} ${command}`);
+  execSync(command, { stdio: "inherit" });
 }
