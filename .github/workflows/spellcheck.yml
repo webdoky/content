@@ -82,7 +82,7 @@ jobs:
       - if: steps.md2txt.outputs.translation == ''
         name: Check translation is found
         run: echo "No translation file found" && exit 1
-      - uses: actions/setup-java@v2
+      - uses: actions/setup-java@v3
         with:
           distribution: "temurin"
           java-version: "8"
@@ -147,5 +147,6 @@ jobs:
           PR_NUMBER: ${{ github.event.pull_request.number }}
         name: Send results
         run: node scripts/send-comments.js ${{ needs.prepare-translation.outputs.translation }}
+        timeout-minutes: 5
       - name: Exit with error
         run: echo "Spelling errors found" && cat result.json && exit 1
