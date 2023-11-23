@@ -102,6 +102,7 @@ jobs:
         run: |
           cd LanguageTool-6.3
           java -jar languagetool-commandline.jar -d ${{steps.disabled-rules.outputs.disabled_rules}} -l uk --json ../${{ steps.md2txt.outputs.translation }} > ../result.json
+          cat result.json
           matches=$(cat ../result.json | jq '.matches')
           # Check if matches equal []
           echo "has_matches=$(if [ "$matches" == "[]" ]; then echo "false"; else echo "true"; fi)" >> $GITHUB_OUTPUT
