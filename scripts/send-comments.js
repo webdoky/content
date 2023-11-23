@@ -3,6 +3,7 @@
 // and print an errorformat message for each error
 // to stdout.
 
+import { execSync } from "child_process";
 import { readFileSync } from "fs";
 
 const results = JSON.parse(readFileSync("./result.json"));
@@ -33,7 +34,7 @@ function convertOffsetToLineAndColumn(offset) {
 
 // eslint-disable-next-line no-restricted-syntax
 for (const match of results.matches) {
-  const { context, message, offset, replacements, rule, sentence } = match;
+  const { message, offset, replacements, rule, sentence } = match;
   let { length } = match;
   let endOffset = offset + length;
   const start = Number.parseInt(mapping[offset], 10);
@@ -58,23 +59,30 @@ for (const match of results.matches) {
   }
   // const errorformatLine = `${markdownFile}:${startLine}:${startColumn}:${endLine}:${endColumn}: ${message}`;
   // console.log(errorformatLine);
-  console.log(`## ${message}\n`);
-  console.log(`\`${markdownFile}:${startLine}:${startColumn}\n\``);
-  console.log(`${rule.description}:\n`);
-  console.log(
-    `> ${context.text.slice(0, context.offset)}**${context.text.slice(
-      context.offset,
-      context.offset + context.length,
-    )}**${context.text.slice(context.offset + context.length)}_`,
-  );
-  console.log("Варіанти заміни:");
-  if (replacements.length > 0) {
-    // eslint-disable-next-line no-restricted-syntax
-    for (const replacement of replacements) {
-      console.log(`- ${replacement.value}`);
-    }
-  } else {
-    console.log("Немає");
+  let comment = `### ${message}\n${rule.description}\n`;
+  // console.log(`\`${markdownFile}:${startLine}:${startColumn}\n\``);
+  // console.log(
+  //   `> ${context.text.slice(0, context.offset)}**${context.text.slice(
+  //     context.offset,
+  //     context.offset + context.length,
+  //   )}**${context.text.slice(context.offset + context.length)}_`,
+  // );
+  // eslint-disable-next-line no-restricted-syntax
+  for (const replacement of replacements) {
+    // console.log(`- ${replacement.value}`);
+    comment += `\`\`\`suggestion\n${replacement.value}\n\`\`\`\n`;
   }
-  console.log("\n");
+  const command = `gh api repos/${process.env.GITHUB_REPOSITORY}/pulls/${process.env.PR_NUMBER}/comments \
+  -f body="${comment}" \
+  -F column="${endColumn}" \
+  -f commit_id="${process.env.COMMIT_ID}"
+  -F line="${endLine}" \
+  -f path="${markdownFile}" \
+  -f side="RIGHT" \
+  -F start_column="${startColumn}" \
+  -F start_line="${startLine}" \
+  -f start_side="RIGHT" \
+`;
+  console.log(`GH_TOKEN=${process.env.GH_TOKEN} ${command}`);
+  execSync(command, { stdio: "inherit" });
 }
