@@ -124,7 +124,25 @@ try {
     console.log(command);
     // command = command.replaceAll("\n", "\\\n");
     console.log(`GH_TOKEN=${process.env.GH_TOKEN} ${command}`);
-    execSync(command, { stdio: "inherit", timeout: 60_000 });
+    try {
+      execSync(command, { stdio: "inherit", timeout: 60_000 });
+    } catch (error) {
+      console.error(error);
+      // Try to send non-line comment
+      let genericCommentCommand = `gh api repos/${process.env.GITHUB_REPOSITORY}/issues/${process.env.PR_NUMBER}/comments`;
+      delete parameters.start_line;
+      delete parameters.start_side;
+      delete parameters.line;
+      delete parameters.side;
+      // eslint-disable-next-line no-restricted-syntax
+      for (const [key, value] of Object.entries(parameters)) {
+        genericCommentCommand +=
+          typeof value === "number"
+            ? ` -F ${key}=${value}`
+            : ` -f ${key}="${value}"`;
+      }
+      execSync(genericCommentCommand, { stdio: "inherit", timeout: 60_000 });
+    }
   }
   clearTimeout(timeout);
 } catch (error) {
