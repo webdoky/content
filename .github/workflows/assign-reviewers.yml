@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: ohnogumi/assign-reviewers@v0.0.5
+      - uses: ohnogumi/auto-reviewers@v0.0.5
         with:
           token: "${{ secrets.GITHUB_TOKEN }}"
