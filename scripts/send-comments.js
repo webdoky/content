@@ -129,7 +129,7 @@ try {
     } catch (error) {
       console.error(error);
       // Try to send non-line comment
-      let genericCommentCommand = `gh api repos/${process.env.GITHUB_REPOSITORY}/pulls/${process.env.PR_NUMBER}/comments`;
+      let genericCommentCommand = `gh api repos/${process.env.GITHUB_REPOSITORY}/issues/${process.env.PR_NUMBER}/comments`;
       delete parameters.start_line;
       delete parameters.start_side;
       delete parameters.line;
