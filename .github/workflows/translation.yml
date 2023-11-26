@@ -184,7 +184,7 @@ jobs:
       - run: |
           gh pr edit ${{ github.event.pull_request.number }} --title "${{ needs.prepare.outputs.status }}(${{ steps.determine.outputs.section }}): ${{ steps.determine.outputs.slug }})"
   set-translation-body:
-    if: ${{ needs.prepare.outputs.translation != '' }} && ${{ needs.prepare.outputs.status == 'translation' }}
+    if: ${{ needs.prepare.outputs.translation != '' && needs.prepare.outputs.status == 'translation' }}
     name: Set translation body
     needs: [prepare]
     runs-on: ubuntu-latest
@@ -207,8 +207,8 @@ jobs:
       - run: |
           gh pr edit ${{ github.event.pull_request.number }} --body "${{ steps.create-body.outputs.body }}"
   set-update-body:
-    if: ${{ needs.prepare.outputs.translation != '' }} && ${{ needs.prepare.outputs.status == 'update' }}
-    name: Set translation body
+    if: ${{ needs.prepare.outputs.translation != '' && needs.prepare.outputs.status == 'update' }}
+    name: Set update body
     needs: [prepare]
     runs-on: ubuntu-latest
     steps:
