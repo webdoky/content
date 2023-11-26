@@ -158,6 +158,7 @@ jobs:
     needs: [prepare]
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - id: determine
         run: |
           translation=${{ needs.prepare.outputs.translation }}
@@ -181,7 +182,9 @@ jobs:
           # otherwise, just capitalize the first letter
           section=$(echo $section | sed 's/\b\(.\)/\u\1/g')
           echo "section=$section" >> $GITHUB_OUTPUT
-      - run: |
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
           gh pr edit ${{ github.event.pull_request.number }} --title "${{ needs.prepare.outputs.status }}(${{ steps.determine.outputs.section }}): ${{ steps.determine.outputs.slug }})"
   set-translation-body:
     if: ${{ needs.prepare.outputs.translation != '' && needs.prepare.outputs.status == 'translation' }}
@@ -189,6 +192,7 @@ jobs:
     needs: [prepare]
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       # set the last section of slug as name
       - id: create-body
         run: |
