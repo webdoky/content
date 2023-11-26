@@ -11,7 +11,7 @@ jobs:
         with:
           fetch-depth: 0
       - id: changed-files
-        run: git diff files/ --diff-filter=d --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} > ./changed_files.txt
+        run: git diff --diff-filter=d --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} > ./changed_files.txt
       - name: Check translation
         # Check there is only one translation change
         # If there are more than one, the workflow will fail
@@ -22,6 +22,8 @@ jobs:
             echo "No files changed"
           else
             translation_files=$(echo "$changed_files" | grep -E ".*\.md" || ./pass.sh)
+            # Filter out files not in "files/uk" folder
+            translation_files=$(echo "$translation_files" | grep -E "^files/uk/.*\.md" || ./pass.sh)
             echo "$translation_files"
             echo "$translation_files" > ./translation_files.txt
           fi
