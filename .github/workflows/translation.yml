@@ -262,7 +262,7 @@ jobs:
             body=$(
               cat <<EOF
               $body
-              - [$(cd original && git log -1 --format=%s $commit)](https://github.com/mdn/content/commit/$commit)
+              - [$(cd original && git log -1 --format=%s $commit)]\(https://github.com/mdn/content/commit/$commit\)
               EOF
             )
           done
