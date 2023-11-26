@@ -248,25 +248,17 @@ jobs:
           # replace "/uk/" with "/en-us/" in translation
           original=$(echo $translation | sed 's/\/uk\//\/en-us\//')
           body="Оригінальний вміст: [$title@MDN]\(https://developer.mozilla.org/en-us/docs/$slug\), [сирці $title@GitHub]\(https://github.com/mdn/content/blob/main/$original\)"
-          body=$(
-            cat <<EOF
-            $body
-
-            Нові зміни:
-            EOF
-          )
+          body="$body\n\nНові зміни:"
           # Add commits from ./new_commits.txt to body as links
           commits=$(cat ./new_commits.txt)
           for commit in $commits
           do
-            body=$(
-              cat <<EOF
-              $body
-              - [$(cd original && git log -1 --format=%s $commit)]\(https://github.com/mdn/content/commit/$commit\)
-              EOF
-            )
+            body="$body\n- [$(cd original && git log -1 --format=%s $commit)]\(https://github.com/mdn/content/commit/$commit\)"
           done
           echo $body
+          body="${body//'%'/'%25'}"
+          body="${body//$'\n'/'%0A'}"
+          body="${body//$'\r'/'%0D'}"
           echo "body=$body" >> $GITHUB_OUTPUT
 
       - env:
