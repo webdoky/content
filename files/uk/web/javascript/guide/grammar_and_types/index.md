@@ -157,7 +157,7 @@ var x = 3;
 })();
 ```
 
-Приклади вище тлумачаться так само, як:
+Приклади вище тлумачаться ідентично щодо:
 
 ```js
 var x;
@@ -495,7 +495,7 @@ console.log(unusualPropertyNames.'');   // SyntaxError: Unexpected string
 console.log(unusualPropertyNames.!);    // SyntaxError: Unexpected token !
 ```
 
-Натомість, до них слід звертатися за допомогою квадратних дужок (`[]`).
+Натомість до них слід звертатися за допомогою квадратних дужок (`[]`).
 
 ```js example-good
 console.log(unusualPropertyNames[""]); // Порожній рядок
