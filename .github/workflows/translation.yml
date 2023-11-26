@@ -220,6 +220,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # We need latest commit in master, not PR commit
+          ref: master
       - id: get-latest-commit-time
         name: Get latest commit time
         run: |
