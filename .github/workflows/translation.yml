@@ -167,10 +167,10 @@ jobs:
           # Trim index.md from the end of the path
           translation=${translation%/index.md}
           echo "slug=$translation" >> $GITHUB_OUTPUT
-          # Trim Web/ from the beginning of the path, if exists
-          translation=${translation#Web/}
           # Set the topmost folder as a section
           section=$(echo $translation | cut -d'/' -f1)
+          # if section is "web", switch to the second folder
+          section=$(if [ "$section" == "web" ]; then echo $(echo $translation | cut -d'/' -f2); else echo "$section"; fi)
           # if section is "javascript", set it to "JS"
           section=$(if [ "$section" == "javascript" ]; then echo "JS"; else echo "$section"; fi)
           # if section is "css", set it to "CSS"
@@ -185,7 +185,7 @@ jobs:
       - env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh pr edit ${{ github.event.pull_request.number }} --title "${{ needs.prepare.outputs.status }}(${{ steps.determine.outputs.section }}): ${{ steps.determine.outputs.slug }})"
+          gh pr edit ${{ github.event.pull_request.number }} --title "${{ needs.prepare.outputs.status }}(${{ steps.determine.outputs.section }}): ${{ steps.determine.outputs.slug }}"
   set-translation-body:
     if: ${{ needs.prepare.outputs.translation != '' && needs.prepare.outputs.status == 'translation' }}
     name: Set translation body
