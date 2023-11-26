@@ -204,7 +204,9 @@ jobs:
           original=$(echo $translation | sed 's/\/uk\//\/en-us\//')
           body="Оригінальний вміст: [$title@MDN](https://developer.mozilla.org/en-us/docs/$slug), [сирці $title@GitHub](https://github.com/mdn/content/blob/main/$original)"
           echo "body=$body" >> $GITHUB_OUTPUT
-      - run: |
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
           gh pr edit ${{ github.event.pull_request.number }} --body "${{ steps.create-body.outputs.body }}"
   set-update-body:
     if: ${{ needs.prepare.outputs.translation != '' && needs.prepare.outputs.status == 'update' }}
@@ -249,5 +251,8 @@ jobs:
             body="$body\n- [$(cd original && git log -1 --format=%s $commit)](https://github.com/mdn/content/commit/$commit)"
           done
           echo "body=$body" >> $GITHUB_OUTPUT
-      - run: |
+
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
           gh pr edit ${{ github.event.pull_request.number }} --body "${{ steps.create-body.outputs.body }}"
