@@ -496,5 +496,3 @@ daySelect.onchange = () => {
 - [Настанови з віджетів вибору дати й часу](/uk/docs/Learn/Forms/HTML5_input_types#date_and_time_pickers)
 - [Вживані в HTML формати дати й часу](/uk/docs/Web/HTML/Date_and_time_formats)
 - [Сумісність властивостей CSS](/uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls)
-
-Тестові зміни.
