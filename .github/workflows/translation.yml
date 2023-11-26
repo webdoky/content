@@ -1,0 +1,251 @@
+name: spellcheck
+on: [pull_request]
+jobs:
+  prepare:
+    outputs:
+      status: ${{ steps.translation-check.outputs.status }}
+      translation: ${{ steps.translation-check.outputs.translation }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - id: changed-files
+        run: git diff --diff-filter=d --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} > ./changed_files.txt
+      - name: Check translation
+        # Check there is only one translation change
+        # If there are more than one, the workflow will fail
+        id: translation-changes
+        run: |
+          changed_files=$(cat ./changed_files.txt)
+          if [ -z "$changed_files" ]; then
+            echo "No files changed"
+          else
+            translation_files=$(echo "$changed_files" | grep -E ".*\.md" || ./pass.sh)
+            echo "$translation_files"
+            echo "$translation_files" > ./translation_files.txt
+          fi
+      - id: translation-check
+        run: |
+          translation_files=$(cat ./translation_files.txt)
+          if [ -z "$translation_files" ]; then
+            echo "No translation files changed"
+          else
+            if [ $(echo "$translation_files" | wc -l) -gt 1 ]; then
+              echo "More than one translation file changed"
+              exit 1
+            else
+              echo "translation=$translation_files" >> $GITHUB_OUTPUT
+              # is it a new file?
+              if [ $(echo "$translation_files" | wc -l) -eq 1 ]; then
+                echo "status=translation" >> $GITHUB_OUTPUT
+              else
+                echo "status=update" >> $GITHUB_OUTPUT
+              fi
+            fi
+          fi
+  languagetool:
+    if: ${{ needs.prepare.outputs.translation != '' }}
+    name: runner / languagetool
+    needs: [prepare]
+    outputs:
+      has_mistakes: ${{ steps.check-spelling.outputs.has_mistakes }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Remove code blocks
+        run: |
+          file=${{ needs.prepare.outputs.translation }}
+          sed -i '/```/,/```/d' $file
+      # Strip all macros
+      - id: strip-macros
+        run: |
+          file=${{ needs.prepare.outputs.translation }}
+          # Remove all macros with no arguments
+          sed -i 's/{{[a-zA-Z_-]*}}//' $file
+          # Replace macros with one argument
+          sed -i 's/{{[[:alnum:]_-]*(\("[[:alnum:]_-]*"\))}}/\1/g' $file
+          # Replace macros with two arguments
+          sed -i 's/{{[[:alnum:]_-]*(\("[[:alnum:]_-]*"\), \("[[:alnum:]_-]*"\))}}/\2/g' $file
+          # Replace macros with more than two arguments
+          sed -i 's/{{[[:alnum:]_-]*(\("[[:alnum:]_-]*"\), \("[[:alnum:]_-]*"\), \("[[:alnum:]_-]*"\))}}/\2/g' $file
+      # Reduce markdown to plain text
+      - run: sudo apt install pandoc -y
+      - id: md2txt
+        name: Convert markdown to plain text
+        run: |
+          file=${{ needs.prepare.outputs.translation }}
+          tmpHtmlFile=$(echo $file | sed 's/\.md/\.html/')
+          pandoc -f markdown -t html -o $tmpHtmlFile $file
+          newFileName=$(echo $file | sed 's/\.md/\.txt/')
+          pandoc -f html -t plain -o $newFileName $tmpHtmlFile
+          echo "translation=$newFileName" >> $GITHUB_OUTPUT
+          echo $newFileName
+      - if: steps.md2txt.outputs.translation == ''
+        name: Check translation is found
+        run: echo "No translation file found" && exit 1
+      - uses: actions/setup-java@v3
+        with:
+          distribution: "temurin"
+          java-version: "8"
+      - name: Download LanguageTool
+        run: wget -q https://languagetool.org/download/LanguageTool-6.3.zip
+      - name: Unzip LanguageTool
+        run: unzip -qq LanguageTool-6.3.zip
+      - name: Add spelling additions
+        run: |
+          cat uk_spelling_additions.txt >> ./LanguageTool-6.3/org/languagetool/resource/uk/hunspell/spelling.txt
+          cat uk_ignore_additions.txt >> ./LanguageTool-6.3/org/languagetool/resource/uk/hunspell/ignore.txt
+      - id: disabled-rules
+        name: Determine disabled rules
+        run: echo "disabled_rules=$(cat disabled_rules.txt | tr '\n' ',')" >> $GITHUB_OUTPUT
+      - id: check-spelling
+        name: Check spelling
+        run: |
+          cd LanguageTool-6.3
+          java -jar languagetool-commandline.jar -d ${{steps.disabled-rules.outputs.disabled_rules}} -l uk --json ../${{ steps.md2txt.outputs.translation }} > ../result.json
+          cat ../result.json
+          matches=$(cat ../result.json | jq '.matches')
+          # Check if matches equal []
+          echo "has_mistakes=$(if [ "$matches" == "[]" ]; then echo "false"; else echo "true"; fi)" >> $GITHUB_OUTPUT
+      - name: Upload result.json
+        uses: actions/upload-artifact@v3
+        with:
+          name: result
+          path: result.json
+      - name: Upload text file
+        uses: actions/upload-artifact@v3
+        with:
+          name: text
+          path: ${{ steps.md2txt.outputs.translation }}
+  report-spelling:
+    if: ${{ needs.languagetool.outputs.has_mistakes != 'false'  }}
+    name: Report spelling
+    needs: [prepare, languagetool]
+    permissions:
+      contents: read
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v3
+        with:
+          name: result
+          path: .
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "16"
+      - uses: actions/download-artifact@v3
+        with:
+          name: text
+          path: .
+      - name: Create mapping
+        run: node scripts/create-file-mapping.js ./index.txt ${{ needs.prepare.outputs.translation }} > ./mapping.json && cat ./mapping.json
+      - env:
+          COMMIT_ID: ${{ github.event.pull_request.head.sha }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        name: Send results
+        run: node scripts/send-comments.js ${{ needs.prepare.outputs.translation }}
+        timeout-minutes: 5
+      - name: Exit with error
+        run: echo "Spelling errors found" && cat result.json && exit 1
+  set-title:
+    if: ${{ needs.prepare.outputs.translation != '' }}
+    name: Set title
+    needs: [prepare]
+    runs-on: ubuntu-latest
+    steps:
+      - id: determine
+        run: |
+          translation=${{ needs.prepare.outputs.translation }}
+          # Trim files/uk/ from the beginning of the path
+          translation=${translation#files/uk/}
+          # Trim index.md from the end of the path
+          translation=${translation%/index.md}
+          echo "slug=$translation" >> $GITHUB_OUTPUT
+          # Trim Web/ from the beginning of the path, if exists
+          translation=${translation#Web/}
+          # Set the topmost folder as a section
+          section=$(echo $translation | cut -d'/' -f1)
+          # if section is "javascript", set it to "JS"
+          section=$(if [ "$section" == "javascript" ]; then echo "JS"; else echo "$section"; fi)
+          # if section is "css", set it to "CSS"
+          section=$(if [ "$section" == "css" ]; then echo "CSS"; else echo "$section"; fi)
+          # if section is "html", set it to "HTML"
+          section=$(if [ "$section" == "html" ]; then echo "HTML"; else echo "$section"; fi)
+          # if section is "svg", set it to "SVG"
+          section=$(if [ "$section" == "svg" ]; then echo "SVG"; else echo "$section"; fi)
+          # otherwise, just capitalize the first letter
+          section=$(echo $section | sed 's/\b\(.\)/\u\1/g')
+          echo "section=$section" >> $GITHUB_OUTPUT
+      - run: |
+          gh pr edit ${{ github.event.pull_request.number }} --title "${{ needs.prepare.outputs.status }}(${{ steps.determine.outputs.section }}): ${{ steps.determine.outputs.slug }})"
+  set-translation-body:
+    if: ${{ needs.prepare.outputs.translation != '' }} && ${{ needs.prepare.outputs.status == 'translation' }}
+    name: Set translation body
+    needs: [prepare]
+    runs-on: ubuntu-latest
+    steps:
+      # set the last section of slug as name
+      - id: create-body
+        run: |
+          translation=${{ needs.prepare.outputs.translation }}
+          # get "slug" frontmatter value
+          slug=$(cat $translation | grep -E "^slug: " | sed 's/slug: //')
+          # get "title" frontmatter value
+          title=$(cat $translation | grep -E "^title: " | sed 's/title: //')
+          # escape HTML entities from title
+          title=$(echo $title | sed 's/</\&lt;/g')
+          title=$(echo $title | sed 's/>/\&gt;/g')
+          # replace "/uk/" with "/en-us/" in translation
+          original=$(echo $translation | sed 's/\/uk\//\/en-us\//')
+          body="Оригінальний вміст: [$title@MDN](https://developer.mozilla.org/en-us/docs/$slug), [сирці $title@GitHub](https://github.com/mdn/content/blob/main/$original)"
+          echo "body=$body" >> $GITHUB_OUTPUT
+      - run: |
+          gh pr edit ${{ github.event.pull_request.number }} --body "${{ steps.create-body.outputs.body }}"
+  set-update-body:
+    if: ${{ needs.prepare.outputs.translation != '' }} && ${{ needs.prepare.outputs.status == 'update' }}
+    name: Set translation body
+    needs: [prepare]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - id: get-latest-commit-time
+        run: |
+          cd original
+          latest_commit_time=$(git log -1 --format=%ct)
+          echo "latest_commit_time=$latest_commit_time" >> $GITHUB_OUTPUT
+      - uses: actions/checkout@v4
+        with:
+          repository: mdn/content
+          path: original
+          fetch-depth: 0
+      - id: get-new-commits
+        # Get new commits sha
+        run: |
+          cd original
+          git log --format=%H --since=$latest_commit_time > ../new_commits.txt
+      - id: create-body
+        run: |
+          translation=${{ needs.prepare.outputs.translation }}
+          # get "slug" frontmatter value
+          slug=$(cat $translation | grep -E "^slug: " | sed 's/slug: //')
+          # get "title" frontmatter value
+          title=$(cat $translation | grep -E "^title: " | sed 's/title: //')
+          # escape HTML entities from title
+          title=$(echo $title | sed 's/</\&lt;/g')
+          title=$(echo $title | sed 's/>/\&gt;/g')
+          # replace "/uk/" with "/en-us/" in translation
+          original=$(echo $translation | sed 's/\/uk\//\/en-us\//')
+          body="Оригінальний вміст: [$title@MDN](https://developer.mozilla.org/en-us/docs/$slug), [сирці $title>@GitHub](https://github.com/mdn/content/blob/main/$original)"
+          body="$body\n\nНові зміни:\n"
+          # Add commits from ./new_commits.txt to body as links
+          commits=$(cat ./new_commits.txt)
+          for commit in $commits
+          do
+            body="$body\n- [$(cd original && git log -1 --format=%s $commit)](https://github.com/mdn/content/commit/$commit)"
+          done
+          echo "body=$body" >> $GITHUB_OUTPUT
+      - run: |
+          gh pr edit ${{ github.event.pull_request.number }} --body "${{ steps.create-body.outputs.body }}"
