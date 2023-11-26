@@ -38,8 +38,8 @@ jobs:
               exit 1
             else
               echo "translation=$translation_files" >> $GITHUB_OUTPUT
-              # Does this file exist in the commit ${{ github.event.pull_request.head.sha }}?
-              if $(git show ${{ github.event.pull_request.head.sha }}:$translation_files > /dev/null 2>&1); then
+              # Does this file exist in the commit ${{ github.event.pull_request.base.sha }}?
+              if $(git show ${{ github.event.pull_request.base.sha }}:$translation_files > /dev/null 2>&1); then
                 echo "status=update" >> $GITHUB_OUTPUT
               else
                 echo "status=translation" >> $GITHUB_OUTPUT
