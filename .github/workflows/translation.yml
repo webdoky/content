@@ -221,6 +221,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          fetch-depth: 0
           # We need latest commit in master, not PR commit
           ref: master
       - id: get-latest-commit-time
