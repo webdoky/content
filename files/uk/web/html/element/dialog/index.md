@@ -204,7 +204,7 @@ confirmBtn.addEventListener("click", (event) => {
 
 ### Анімування діалогів
 
-Елементи `<dialog>` отримують `display: none;`, коли приховані, і `display: block;`, коли показані, а також вилучаються чи додаються до {{glossary("top layer", "вищого шару")}} та [дерева доступності](/uk/docs/Web/Performance/How_browsers_work#vybudovuvannia-dereva-dostupnosti). Тому для анімування елементів `<dialog>` властивість {{cssxref("display")}} повинна бути придатною для анімування. [Браузери, що це підтримують](/uk/docs/Web/CSS/display#sumisnist-iz-brauzeramy), анімують `display` з варіацією на [дискретному типі анімації](/uk/docs/Web/CSS/CSS_animated_properties#dyskretni). А саме, браузер перемикається між `none` і іншим значенням `display` так, щоб анімований вміст був видимим протягом усієї тривалості анімації.
+Елементи `<dialog>` отримують `display: none;`, коли приховані, і `display: block;`, коли показані, а також вилучаються чи додаються до {{glossary("top layer", "вищого шару")}} та [дерева доступності](/uk/docs/Web/Performance/How_browsers_work#vybudovuvannia-dereva-dostupnosti). Тому для анімування елементів `<dialog>` властивість {{cssxref("display")}} повинна бути придатною для анімування. [Браузери, що це підтримують](/uk/docs/Web/CSS/display#sumisnist-iz-brauzeramy), анімують `display` з варіацією на [дискретному типі анімації](/uk/docs/Web/CSS/CSS_animated_properties#dyskretni). А саме, браузер перемикається між `none` та іншим значенням `display` так, щоб анімований вміст був видимим протягом усієї тривалості анімації.
 
 Отже, наприклад:
 
