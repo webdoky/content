@@ -38,8 +38,8 @@ jobs:
               exit 1
             else
               echo "translation=$translation_files" >> $GITHUB_OUTPUT
-              # Does this file exist in the commit ${{ github.event.pull_request.head.sha }}?
-              if $(git show ${{ github.event.pull_request.head.sha }}:$translation_files > /dev/null 2>&1); then
+              # Does this file exist in the commit ${{ github.event.pull_request.base.sha }}?
+              if $(git show ${{ github.event.pull_request.base.sha }}:$translation_files > /dev/null 2>&1); then
                 echo "status=update" >> $GITHUB_OUTPUT
               else
                 echo "status=translation" >> $GITHUB_OUTPUT
@@ -208,11 +208,11 @@ jobs:
           original=$(echo $translation | sed 's/\/uk\//\/en-us\//')
           body="Оригінальний вміст: [$title@MDN](https://developer.mozilla.org/en-us/docs/$slug), [сирці $title@GitHub](https://github.com/mdn/content/blob/main/$original)"
           echo $body
-          echo "body=$body" >> $GITHUB_OUTPUT
+          echo $body > ./body.md
       - env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh pr edit ${{ github.event.pull_request.number }} --body "${{ steps.create-body.outputs.body }}"
+          gh pr edit ${{ github.event.pull_request.number }} --body "$(cat ./body.md)"
   set-update-body:
     if: ${{ needs.prepare.outputs.translation != '' && needs.prepare.outputs.status == 'update' }}
     name: Set update body
