@@ -83,7 +83,7 @@ spec-urls: https://drafts.csswg.org/css-backgrounds/
 
 ### Типи даних
 
-- Перелічений тип {{cssxref("line-type")}}
+- Перелічений тип {{cssxref("line-style")}}
 
 ## Посібники
 

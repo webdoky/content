@@ -3,6 +3,46 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2023-11-17 - 2023-11-24]
+
+* **Виправлення:** remove unnecessary full git pulls ([ff1aadde](https://github.com/webdoky/content/commit/ff1aadde2bce0ad9a5bec0df4ecbefef4f554b39))
+* **Виправлення:** try to run generic comment add on error ([d83e261f](https://github.com/webdoky/content/commit/d83e261f51e97942c6f8c0aa12571173287f6fa2))
+* **Виправлення:** loop exit cond ([9c8a25b6](https://github.com/webdoky/content/commit/9c8a25b61350011f69ef58fe4cc34e93841a427d))
+* **Виправлення:** better comment template ([4e3c9546](https://github.com/webdoky/content/commit/4e3c9546915d10b847ce132372257f7ded9d6398))
+* **Оновлення перекладу(HTML):** web/html/element/iframe (#2527) ([69ef1c28](https://github.com/webdoky/content/commit/69ef1c285e662a66af47c35e6c51f7c229ca8533))
+* **Оновлення перекладу(HTML):** web/html/element/input/file (#2528) ([59e374fa](https://github.com/webdoky/content/commit/59e374fab494f8b3e48c313248384711c3128485))
+* **Оновлення перекладу(CSS):** web/css/css_transitions (#2524) ([50673fa3](https://github.com/webdoky/content/commit/50673fa3fc0ee8c08dfd5bd725056b463d2a29aa))
+* **Оновлення перекладу(glossary):** glossary/internationalization (#2521) ([c667814b](https://github.com/webdoky/content/commit/c667814bea207e5e81684f1bbc2e4643641aad39))
+* **Оновлення перекладу(guide):** web/guide (#2520) ([d88e885a](https://github.com/webdoky/content/commit/d88e885a5bd9d4739b05449ce930c3be50dc4059))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/proxy (#2519) ([f8a3c7cb](https://github.com/webdoky/content/commit/f8a3c7cbd5d12d1341ff2e816e2c96e1abbe66a8))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/lastindexof (#2518) ([061da851](https://github.com/webdoky/content/commit/061da851f9d8b1c113d31064e3cdaddebe7e2c8e))
+* **Оновлення перекладу(JS):** web/javascript/reference/operators/this (#2517) ([69f6c635](https://github.com/webdoky/content/commit/69f6c6350989b703b6f72f65629119e7da64de3a))
+* **Оновлення перекладу(JS):** web/javascript/reference/operators/object_initializer (#2516) ([c4e6c4d8](https://github.com/webdoky/content/commit/c4e6c4d8ab1f83a1c609514845639af77b662965))
+* **Оновлення перекладу(JS):** web/javascript/reference/iteration_protocols (#2515) ([d6b8df52](https://github.com/webdoky/content/commit/d6b8df52215204c67fc1f1be22da29c2236c1ddf))
+* **Оновлення перекладу(HTML):** web/html/element/script/type/speculationrules (#2514) ([8e7afd6b](https://github.com/webdoky/content/commit/8e7afd6b0ecab39852b31c5f12a4f090261b0c47))
+* **Оновлення перекладу(CSS):** web/css/css_backgrounds_and_borders (#2512) ([342dd90c](https://github.com/webdoky/content/commit/342dd90c42c55e2bfeb276dbc4325175269888a1))
+* **Оновлення перекладу(CSS):** web/css/-moz-image-region (#2510) ([01282909](https://github.com/webdoky/content/commit/01282909c7d5704f7a35d0e1b461c5cf39a27e55))
+* **Оновлення перекладу(CSS):** web/css/-moz-force-broken-image-icon (#2509) ([72d3c141](https://github.com/webdoky/content/commit/72d3c141f4c2feed8620fea06a1fa9539506e8f9))
+* **Оновлення перекладу(CSS):** web/css/-moz-image-rect (#2508) ([1563fbe4](https://github.com/webdoky/content/commit/1563fbe42a8eccb40761b6f3e1cd36c4d7a09b38))
+* **Переклад(HTML):** web/html/global_attributes/enterkeyhint (#1828) ([af04f09f](https://github.com/webdoky/content/commit/af04f09f3b6d4cb7f3ee8b8e26f4f6eed55d1466))
+* **Переклад(JS):** web/javascript/guide/using_classes (#1996) ([bc1a8956](https://github.com/webdoky/content/commit/bc1a895695ba59e5bda54e2b911d33fa233182e2))
+* **Оновлення перекладу(JS):** web/javascript/language_overview (#2505) ([67ff4084](https://github.com/webdoky/content/commit/67ff40840d94632751defc479b741142f7b6f126))
+* **Переклад(JSONdata):** L10n-common (#2498) ([4ca93960](https://github.com/webdoky/content/commit/4ca9396050f836f0033b3edeef3bdea61aff347d))
+
+## [2023-11-10 - 2023-11-17]
+
+* **Оновлення перекладу(JS):** web/javascript/inheritance_and_the_prototype_chain (#2496) ([bd139d45](https://github.com/webdoky/content/commit/bd139d4560c0ab83a7d7f9a1b2c8f24ff7725679))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/parseint (#2493) ([470bad50](https://github.com/webdoky/content/commit/470bad5066f1263e64cbea2771a0ac7b5eef8e60))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/set (#2489) ([d0282b03](https://github.com/webdoky/content/commit/d0282b038dbd5bfc3099f5d780df8afd0205d9b2))
+* **Оновлення перекладу(CSS):** web/css/length (#2495) ([82fe163b](https://github.com/webdoky/content/commit/82fe163b6c0701a6ea35b0b1cf22454e6db60423))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/split (#2487) ([354af5d3](https://github.com/webdoky/content/commit/354af5d3e2dd945eca190a798591b67ec647ab5d))
+* **Переклад(HTML):** web/html/attributes/readonly (#1769) ([59f309d8](https://github.com/webdoky/content/commit/59f309d80654adfaa9b4cc44bc1c6ed11839e276))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/tosource (#2494) ([28d757cc](https://github.com/webdoky/content/commit/28d757ccdad1277e25b6a01461661b9435a6380e))
+* **Оновлення перекладу(JS):** web/javascript/reference/statements/switch (#2490) ([6e7e6fd4](https://github.com/webdoky/content/commit/6e7e6fd4227c3e58c2f936fe2f050954e8199df6))
+* **Оновлення перекладу(HTML):** web/html/element/input/checkbox (#2492) ([e05e01b8](https://github.com/webdoky/content/commit/e05e01b887bd88f56fd550d92a53c76f6e4c2afa))
+* **Оновлення перекладу(CSS):** web/css/align-items (#2491) ([d9291aac](https://github.com/webdoky/content/commit/d9291aac8c5ced69517c5dbadd9bbd1132be92a2))
+* **Оновлення перекладу(HTML):** web/html/element/link (#2488) ([84d2736f](https://github.com/webdoky/content/commit/84d2736f1f48eb0767ccb3d963e421417e3d71fd))
+
 ## [2023-11-03 - 2023-11-10]
 
 * **Переклад(JS):** web/javascript/reference/regular_expressions/character_class (#1809) ([86e4fd4d](https://github.com/webdoky/content/commit/86e4fd4d1d9bff60f80cb21bec59245bfc137547))
