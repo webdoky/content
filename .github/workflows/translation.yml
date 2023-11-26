@@ -221,22 +221,25 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - id: get-latest-commit-time
+        name: Get latest commit time
         run: |
-          original=${{ needs.prepare.outputs.translation }}
-          # replace /uk/ with /en-us/ in original
-          original=$(echo $original | sed 's/\/uk\//\/en-us\//')
-          latest_commit_time=$(git log -1 --format=%ct -- $original)
+          latest_commit_time=$(git log -1 --format=%ct -- ${{ needs.prepare.outputs.translation }})
           echo "latest_commit_time=$latest_commit_time" >> $GITHUB_OUTPUT
-      - uses: actions/checkout@v4
+      - name: Checkout original content
+        uses: actions/checkout@v4
         with:
           repository: mdn/content
           path: original
           fetch-depth: 0
       - id: get-new-commits
+        name: Get new commits
         # Get new commits sha for $translation file
         run: |
-          cd original
-          git log --pretty=format:"%H" --since=${{steps.get-latest-commit-time.outputs.latest_commit_time}} -- ${{ needs.prepare.outputs.translation }} > ../new_commits.txt
+          original=${{ needs.prepare.outputs.translation }}
+          # replace /uk/ with /en-us/ in original
+          original=$(echo $original | sed 's/\/uk\//\/en-us\//')
+          cd ./original
+          git log --pretty=format:"%H" --since=${{steps.get-latest-commit-time.outputs.latest_commit_time}} -- $original > ../new_commits.txt
           cat ../new_commits.txt
       - id: create-body
         run: |
@@ -250,21 +253,18 @@ jobs:
           title=$(echo $title | sed 's/>/\&gt;/g')
           # replace "/uk/" with "/en-us/" in translation
           original=$(echo $translation | sed 's/\/uk\//\/en-us\//')
-          body="Оригінальний вміст: [$title@MDN](https://developer.mozilla.org/en-us/docs/$slug), [сирці $title@GitHub](https://github.com/mdn/content/blob/main/$original)"
-          body="$body\n\nНові зміни:"
+          echo "Оригінальний вміст: [$title@MDN](https://developer.mozilla.org/en-us/docs/$slug), [сирці $title@GitHub](https://github.com/mdn/content/blob/main/$original)" > ./body.md
+          echo "" >> ./body.md
+          echo "Нові зміни:" >> ./body.md
           # Add commits from ./new_commits.txt to body as links
           commits=$(cat ./new_commits.txt)
           for commit in $commits
           do
-            body="$body\n- [$(cd original && git log -1 --format=%s $commit)](https://github.com/mdn/content/commit/$commit)"
+            echo "- [$(cd ./original && git log -1 --format=%s $commit)](https://github.com/mdn/content/commit/$commit)" >> ./body.md
           done
-          echo $body
-          body="${body//'%'/'%25'}"
-          body="${body//$'\n'/'%0A'}"
-          body="${body//$'\r'/'%0D'}"
-          echo "body=$body" >> $GITHUB_OUTPUT
+          cat ./body.md
 
       - env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh pr edit ${{ github.event.pull_request.number }} --body "${{ steps.create-body.outputs.body }}"
+          gh pr edit ${{ github.event.pull_request.number }} --body "cat ./body.md"
