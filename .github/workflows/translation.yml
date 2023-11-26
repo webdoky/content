@@ -206,7 +206,7 @@ jobs:
           title=$(echo $title | sed 's/>/\&gt;/g')
           # replace "/uk/" with "/en-us/" in translation
           original=$(echo $translation | sed 's/\/uk\//\/en-us\//')
-          body="Оригінальний вміст: [$title@MDN]\(https://developer.mozilla.org/en-us/docs/$slug\), [сирці $title@GitHub]\(https://github.com/mdn/content/blob/main/$original\)"
+          body="Оригінальний вміст: [$title@MDN](https://developer.mozilla.org/en-us/docs/$slug), [сирці $title@GitHub](https://github.com/mdn/content/blob/main/$original)"
           echo $body
           echo "body=$body" >> $GITHUB_OUTPUT
       - env:
@@ -247,7 +247,7 @@ jobs:
           title=$(echo $title | sed 's/>/\&gt;/g')
           # replace "/uk/" with "/en-us/" in translation
           original=$(echo $translation | sed 's/\/uk\//\/en-us\//')
-          body="Оригінальний вміст: [$title@MDN]\(https://developer.mozilla.org/en-us/docs/$slug\), [сирці $title@GitHub]\(https://github.com/mdn/content/blob/main/$original\)"
+          body="Оригінальний вміст: [$title@MDN](https://developer.mozilla.org/en-us/docs/$slug), [сирці $title@GitHub](https://github.com/mdn/content/blob/main/$original)"
           body="$body\n\nНові зміни:"
           # Add commits from ./new_commits.txt to body as links
           commits=$(cat ./new_commits.txt)
