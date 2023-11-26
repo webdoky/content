@@ -222,7 +222,7 @@ jobs:
       - uses: actions/checkout@v4
       - id: get-latest-commit-time
         run: |
-          latest_commit_time=$(git log -1 --format=%ct)
+          latest_commit_time=$(git log -1 --format=%ct -- ${{ needs.prepare.outputs.translation }})
           echo "latest_commit_time=$latest_commit_time" >> $GITHUB_OUTPUT
       - uses: actions/checkout@v4
         with:
