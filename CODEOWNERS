@@ -1,3 +1,4 @@
 * @webdoky/developers
 
 /files/ @webdoky/translators
+/\*.txt @webdoky/translators
