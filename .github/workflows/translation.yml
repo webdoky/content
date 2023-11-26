@@ -233,7 +233,7 @@ jobs:
         # Get new commits sha for $translation file
         run: |
           cd original
-          git log --pretty=format:"%H" --since=$latest_commit_time -- ${{ needs.prepare.outputs.translation }} > ../new_commits.txt
+          git log --pretty=format:"%H" --since=${{steps.get-latest-commit-time.outputs.latest_commit_time}} -- ${{ needs.prepare.outputs.translation }} > ../new_commits.txt
           cat ../new_commits.txt
       - id: create-body
         run: |
@@ -248,12 +248,23 @@ jobs:
           # replace "/uk/" with "/en-us/" in translation
           original=$(echo $translation | sed 's/\/uk\//\/en-us\//')
           body="Оригінальний вміст: [$title@MDN](https://developer.mozilla.org/en-us/docs/$slug), [сирці $title@GitHub](https://github.com/mdn/content/blob/main/$original)"
-          body="$body\n\nНові зміни:\n"
+          body=$(
+            cat <<EOF
+            $body
+
+            Нові зміни:
+            EOF
+          )
           # Add commits from ./new_commits.txt to body as links
           commits=$(cat ./new_commits.txt)
           for commit in $commits
           do
-            body="$body\n- [$(cd original && git log -1 --format=%s $commit)](https://github.com/mdn/content/commit/$commit)"
+            body=$(
+              cat <<EOF
+              $body
+              - [$(cd original && git log -1 --format=%s $commit)](https://github.com/mdn/content/commit/$commit)
+              EOF
+            )
           done
           echo $body
           echo "body=$body" >> $GITHUB_OUTPUT
