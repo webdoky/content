@@ -465,11 +465,8 @@ document
       <th scope="row">Дозволені батьківські елементи</th>
       <td>
         Будь-який елемент, що приймає
-        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
-          >оповідальний вміст</a
-        >, або будь-який елемент, що приймає
         <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
-          >потоковий елемент</a
+          >потоковий вміст</a
         >, але не інший елемент <code>&#x3C;a></code>.
       </td>
     </tr>
