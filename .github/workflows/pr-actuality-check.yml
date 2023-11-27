@@ -66,8 +66,13 @@ jobs:
           # Get commits after ${{ steps.latest-commit.outputs.latest_commit_timestamp }} timestamp
           git log --format=%H --since="${{ steps.latest-commit.outputs.latest_commit_timestamp }}" > ../fresh_commits.txt
           cat ../fresh_commits.txt
-          echo "has_fresh_commits=$(cat ../fresh_commits.txt | wc -l)" >> $GITHUB_OUTPUT
-      - if: ${{ steps.get-fresh-commits.outputs.has_fresh_commits }}
+          # has_fresh_commits is true when there are fresh commits, otherwise false
+          if [ -s ../fresh_commits.txt ]; then
+            echo "has_fresh_commits=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_fresh_commits=false" >> $GITHUB_OUTPUT
+          fi
+      - if: ${{ steps.get-fresh-commits.outputs.has_fresh_commits == 'true' }}
         name: Create body
         run: |
           echo "Потрібно оновлення. Свіжі зміни:" > body.md
@@ -81,7 +86,7 @@ jobs:
           echo "" >> ../body.md
       - env:
           GH_TOKEN: ${{ github.token }}
-        if: ${{ steps.get-fresh-commits.outputs.has_fresh_commits }}
+        if: ${{ steps.get-fresh-commits.outputs.has_fresh_commits == 'true' }}
         name: Send comment
         run: |
           gh api \
