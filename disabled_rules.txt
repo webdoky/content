@@ -6,3 +6,4 @@ UK_MIXED_ALPHABETS
 PRY_PORIVNYANNI
 UPPERCASE_SENTENCE_START
 no_comma_tak_samo_yak
+comma_tomuscho
