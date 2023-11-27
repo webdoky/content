@@ -170,6 +170,26 @@ div {
 
 У зв'язку з цим слід пересвідчитися, що атрибут `accept` доповнений відповідною валідацією на боці сервера.
 
+### Відстеження скасувань
+
+Подія `cancel` спрацьовує тоді, коли користувач не змінює свого вибору, повторно вибираючи раніше вибрані файли. Також вона спрацьовує, коли діалог вибору файлу закривається чи скасовується за допомогою кнопки "скасувати" або клавіші <kbd>escape</kbd>.
+
+Наприклад, наступний код виведе повідомлення в консоль, якщо користувач закриє спливне вікно, не вибравши файл:
+
+```js
+const elem = document.createElement("input");
+elem.type = "file";
+elem.addEventListener("cancel", () => {
+  console.log("Скасовано.");
+});
+elem.addEventListener("change", () => {
+  if (elem.files.length == 1) {
+    console.log("Вибрано файл: ", elem.files[0]);
+  }
+});
+elem.click();
+```
+
 ### Примітки
 
 1. Не можна встановити значення файлового поля зі сценарію, – код типу того, що нижче, не подіє:
@@ -397,7 +417,7 @@ function returnFileSize(number) {
     <tr>
       <td><strong>Події</strong></td>
       <td>
-        {{domxref("HTMLElement/change_event", "change")}} та {{domxref("HTMLElement/input_event", "input")}}
+        {{domxref("HTMLElement/change_event", "change")}}, {{domxref("HTMLElement/input_event", "input")}} і {{domxref("HTMLElement/cancel_event", "cancel")}}
       </td>
     </tr>
     <tr>
