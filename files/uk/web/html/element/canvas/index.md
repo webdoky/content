@@ -166,7 +166,7 @@ ctx.fillRect(10, 10, 100, 100);
 
 - [API полотен](/uk/docs/Web/API/Canvas_API)
 - [Підручник з полотен](/uk/docs/Web/API/Canvas_API/Tutorial)
-- [Кілька демо на тему полотен](/uk/docs/Web/Demos#canvas)
+- [Кілька демонстрацій на тему полотен](/uk/docs/Web/Demos#canvas)
 - [OffscreenCanvas](/uk/docs/Web/API/OffscreenCanvas)
 - [Шпаргалка з полотен](https://simon.html5.org/dump/html5-canvas-cheat-sheet.html) (2009)
 - [Шпаргалка з полотен](https://websitesetup.org/wp-content/uploads/2015/11/Infopgraphic-CanvasCheatSheet-Final2.pdf) (pdf) (2015)
