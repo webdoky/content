@@ -45,6 +45,7 @@ jobs:
             fi
           fi
   check-actuality:
+    if: ${{ needs.prepare.outputs.translation != '' }}
     needs: [prepare]
     runs-on: ubuntu-latest
     steps:
