@@ -75,7 +75,7 @@ jobs:
           # replace '/uk/' with '/en-us/' in $original
           original=${original/\/uk\//\/en-us\/}
           # Get commits for ${{ needs.prepare.outputs.translation }} after ${{ steps.latest-commit.outputs.latest_commit_timestamp }} timestamp
-          git log --format=%H --since=${{ steps.latest-commit.outputs.latest_commit_timestamp }} -- ${{ needs.prepare.outputs.translation }} > ../fresh_commits.txt
+          git log --format=%H --since=${{ steps.latest-commit.outputs.latest_commit_timestamp }} -- $original > ../fresh_commits.txt
           cat ../fresh_commits.txt
           # has_fresh_commits is true when there are fresh commits, otherwise false
           if [ -s ../fresh_commits.txt ]; then
