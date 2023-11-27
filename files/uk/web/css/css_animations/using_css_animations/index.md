@@ -36,6 +36,8 @@ page-type: guide
   - : Задає ім'я директиви {{cssxref("@keyframes")}}, котра описує ключові кадри анімації.
 - {{cssxref("animation-play-state")}}
   - : Задає паузу чи відновлення анімації.
+- {{cssxref("animation-timeline")}} {{experimental_inline}}
+  - : Задає часову шкалу, що використовується для контролю прогресу анімації CSS.
 - {{cssxref("animation-timing-function")}}
   - : Задає те, як анімація переходить між ключовими кадрами, шляхом встановлення кривих прискорення.
 
@@ -376,6 +378,128 @@ function listener(event) {
 > **Примітка:** Аби побачити анімацію – перезавантажте сторінку.
 
 {{EmbedLiveSample('vykorystannia-podii-animatsii', '600', '300')}}
+
+### Анімування display та content-visibility
+
+Цей приклад демонструє те, як можна анімувати властивості {{cssxref("display")}} та {{cssxref("content-visibility")}}. Це корисно для створення анімацій входу-виходу, де, наприклад, треба вилучити контейнер із DOM за допомогою `display: none`, але зробити його зникнення плавним за допомогою {{cssxref("opacity")}}, а не миттєвим.
+
+Браузери, що це підтримують, анімують `display` та `content-visibility` за допомогою варіації на [дискретному типі анімації](/uk/docs/Web/CSS/CSS_animated_properties#dyskretni). Це, як правило, означає, що властивість перемикається між двома значеннями на 50% шляху анімації між ними.
+
+Проте є виняток, а саме – коли анімується `display: none` чи `content-visibility: hidden` до значення видимості. У цьому випадку браузер перемикається між двома значеннями так, щоб анімований вміст був видимим протягом усієї тривалості анімації.
+
+Отже, наприклад:
+
+- Коли `display` анімується від `none` до `block` (чи іншого видимого значення `display`), значення перемикається на `block` на `0%` тривалості анімації, щоб воно було видимим протягом усієї анімації.
+- Коли `display` анімується від `block` (чи іншого видимого значення `display`) до `none`, значення перемикається на `none` на `100%` тривалості анімації, щоб воно було видимим протягом усієї анімації.
+
+#### HTML
+
+HTML тут містить два елементи {{htmlelement("p")}} з {{htmlelement("div")}} між ними, котрий ми анімуємо від `display` `none` до `block`.
+
+```html
+<p>
+  Клацніть десь на екрані чи натисніть будь-яку клавішу, щоб перемкнути
+  <code>&lt;div&gt;</code> між прихованістю та показом.
+</p>
+
+<div>
+  Це елемент <code>&lt;div&gt;</code>, що анімується між
+  <code>display: none; opacity: 0</code> та
+  <code>display: block; opacity: 1</code>. Цікаво, чи не так?
+</div>
+
+<p>
+  Це інший абзац, потрібний для того, щоб показати, що
+  <code>display: none; </code> застосовується й вилучається до вищезазначеного
+  <code>&lt;div&gt; </code>. Якби змінювалася лише його <code>opacity</code>,
+  він завжди займав би місце в DOM.
+</p>
+```
+
+#### CSS
+
+```css
+html {
+  height: 100vh;
+}
+
+div {
+  font-size: 1.6rem;
+  padding: 20px;
+  border: 3px solid red;
+  border-radius: 20px;
+  width: 480px;
+  opacity: 0;
+  display: none;
+}
+
+/* Класи анімації */
+
+div.fade-in {
+  display: block;
+  animation: fade-in 0.7s ease-in forwards;
+}
+
+div.fade-out {
+  animation: fade-out 0.7s ease-out forwards;
+}
+
+/* Ключові кадри анімації */
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    display: none;
+  }
+
+  100% {
+    opacity: 1;
+    display: block;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    display: block;
+  }
+
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+```
+
+Зверніть увагу на присутність в анімаціях ключових кадрів властивості `display`.
+
+#### JavaScript
+
+Врешті-решт, додаймо трохи JavaScript, щоб налаштувати слухачі подій, які запускатимуть анімації. А саме – додаймо `<div>` клас `fade-in`, коли хочемо, щоб він з'явився, і `fade-out`, коли хочемо, щоб він зник.
+
+```js
+const divElem = document.querySelector("div");
+const htmlElem = document.querySelector(":root");
+
+htmlElem.addEventListener("click", showHide);
+document.addEventListener("keydown", showHide);
+
+function showHide() {
+  if (divElem.classList[0] === "fade-in") {
+    divElem.classList.remove("fade-in");
+    divElem.classList.add("fade-out");
+  } else {
+    divElem.classList.remove("fade-out");
+    divElem.classList.add("fade-in");
+  }
+}
+```
+
+#### Результат
+
+Цей код візуалізується так:
+
+{{EmbedLiveSample("animuvannia-display-ta-content-visibility", "100%", "350")}}
 
 ## Дивіться також
 
