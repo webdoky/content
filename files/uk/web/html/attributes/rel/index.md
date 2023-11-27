@@ -137,7 +137,7 @@ browser-compat:
     > **Примітка:** Атрибут [`crossorigin`](/uk/docs/Web/HTML/Attributes/crossorigin) не підтримується для `rel="icon"` у браузерах на основі Chromium. Дивіться [відкриту проблему Chromium](https://crbug.com/1121645).
 
     > **Примітка:** Apple iOS не використовує для вибору піктограми вебсторінки для Web Clip чи стартового заповнювача ані цей тип зв'язку, ані атрибут [`sizes`](/uk/docs/Web/HTML/Element/link#sizes), як це роблять інші браузери.
-    > Замість цього використовується нестандартні можливості [`apple-touch-icon`](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html#//apple_ref/doc/uid/TP40002051-CH3-SW4) і [`apple-touch-startup-image`](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html#//apple_ref/doc/uid/TP40002051-CH3-SW6), відповідно.
+    > Замість цього використовуються нестандартні можливості [`apple-touch-icon`](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html#//apple_ref/doc/uid/TP40002051-CH3-SW4) і [`apple-touch-startup-image`](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html#//apple_ref/doc/uid/TP40002051-CH3-SW6), відповідно.
 
     > **Примітка:** Нерідко перед `icon` спостерігається тип зв'язку `shortcut`, але він є невідповідним, ігнорованим, і **веброзробники більше не повинні його використовувати**.
 
