@@ -79,7 +79,9 @@ jobs:
           echo "" >> ../body.md
           echo "Перевірте, будь ласка, чи вони впливають на переклад." >> ../body.md
           echo "" >> ../body.md
-      - if: ${{ steps.get-fresh-commits.outputs.has_fresh_commits }}
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        if: ${{ steps.get-fresh-commits.outputs.has_fresh_commits }}
         name: Send comment
         run: |
           gh api \
