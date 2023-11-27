@@ -55,7 +55,12 @@ jobs:
       - id: latest-commit
         name: Get latest commit timestamp
         run: |
-          latest_commit_timestamp=$(git log --no-merges --grep ${{ needs.prepare.outputs.translation }} --format=%ct -1)
+          translation=${{ needs.prepare.outputs.translation }}
+          # Remove "files/uk/" prefix from $translation
+          translation=${translation/files\/uk\//}
+          # Remove "/index.md" suffix from $translation
+          translation=${translation/\/index.md/}
+          latest_commit_timestamp=$(git log --no-merges --grep $translation --format=%ct -1)
           if [ -z "$latest_commit_timestamp" ]; then
             echo 'Failed to find latest commit timestamp'
             exit 1
