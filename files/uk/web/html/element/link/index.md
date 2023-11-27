@@ -377,7 +377,12 @@ browser-compat: html.elements.link
 В атрибуті `blocking` можна задати лексему `render`; тоді візуалізація сторінки буде заблокована, поки ресурс не отримано. Наприклад:
 
 ```html
-<link blocking="render" href="critical-font.woff2" as="font" />
+<link
+  blocking="render"
+  rel="preload"
+  href="critical-font.woff2"
+  as="font"
+  crossorigin />
 ```
 
 ## Технічний підсумок
