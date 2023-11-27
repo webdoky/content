@@ -54,7 +54,7 @@ jobs:
           fetch-depth: 0
       - id: latest-commit
         name: Get latest commit timestamp
-        run: echo "latest_commit_timestamp=$(git log --no-merges --grep "${{ needs.prepare.outputs.translation }}" --format=%ct -1)"
+        run: echo "latest_commit_timestamp=$(git log --no-merges --grep ${{ needs.prepare.outputs.translation }} --format=%ct -1)"
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
