@@ -57,9 +57,9 @@ jobs:
         run: |
           translation=${{ needs.prepare.outputs.translation }}
           # Remove "files/uk/" prefix from $translation
-          translation=${translation/\/files\/uk\//\/}
+          translation=${translation/files\/uk\//}
           # Remove "/index.md" suffix from $translation
-          translation=${translation/\/index.md/\/}
+          translation=${translation/\/index.md/}
           latest_commit_timestamp=$(git log --no-merges --grep $translation --format=%ct -1)
           if [ -z "$latest_commit_timestamp" ]; then
             echo 'Failed to find latest commit timestamp'
