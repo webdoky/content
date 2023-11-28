@@ -54,7 +54,7 @@ reduce(callbackFn, initialValue)
 
 ## Опис
 
-Метод `reduce()` є [ітеративним методом](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#iteratyvni-metody). Він запускає функцію зворотного виклику – "редуктор" на всіх елементах масиву, в порядку зростання індексів, та підсумовує їх до єдиного значення. Повернене значення `callbackFn` щоразу передається в `callbackFn` при наступному заклику як `accumulator`. Кінцеве значення `accumulator` (те, котре повернено з `callbackFn` при завершальній ітерації масиву) стає поверненим значенням `reduce()`.
+Метод `reduce()` є [ітеративним методом](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#iteratyvni-metody). Він запускає функцію зворотного виклику – "редуктор" на всіх елементах масиву, в порядку зростання індексів, та підсумовує їх до єдиного значення. Повернене значення `callbackFn` щоразу передається в `callbackFn` при наступному заклику як `accumulator`. Кінцеве значення `accumulator` (те, котре повернено з `callbackFn` при завершальній ітерації масиву) стає поверненим значенням `reduce()`. Більше про те, як загалом працюють такі методи, читайте в розділі [ітеративних методів](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#iteratyvni-metody).
 
 `callbackFn` закликається лише для тих індексів масиву, що мають присвоєні значення. Вона не закликається для порожніх комірок у [розріджених масивах](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy).
 
