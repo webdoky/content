@@ -77,7 +77,7 @@ color: light-dark(var(--light), var(--dark));
 </section>
 <section class="dark">
   <h2>Темна</h2>
-  <p>Цей розділ буде світлим завдяки <code>color-scheme: dark;</code>.</p>
+  <p>Цей розділ буде темним завдяки <code>color-scheme: dark;</code>.</p>
 </section>
 ```
 
