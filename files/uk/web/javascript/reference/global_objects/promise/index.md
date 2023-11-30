@@ -379,7 +379,7 @@ btn.addEventListener("click", testPromise);
 
 ### Завантаження зображення за допомогою XHR
 
-Ще один простий приклад використання `Promise`, цього разу з завантаженням зображення за допомогою {{domxref("XMLHttpRequest")}}, доступний на GitHub-репозиторії MDN [js-examples](https://github.com/mdn/js-examples/tree/master/promises-test). Також можна [побачити його в дії](https://mdn.github.io/js-examples/promises-test/). Кожний крок прокоментовано, що дає змогу докладно розглянути архітектуру промісів та XHR.
+Ще один простий приклад використання `Promise`, цього разу з завантаженням зображення за допомогою {{domxref("XMLHttpRequest")}}, доступний на GitHub-репозиторії MDN [js-examples](https://github.com/mdn/js-examples/tree/main/promises-test). Також можна [побачити його в дії](https://mdn.github.io/js-examples/promises-test/). Кожний крок прокоментовано, що дає змогу докладно розглянути архітектуру промісів та XHR.
 
 ### Відстежування поточного установчого об'єкта
 
