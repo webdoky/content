@@ -105,7 +105,7 @@ browser-compat: html.elements.meter
 
 #### Результат
 
-{{EmbedLiveSample("prystyi-pryklad", 300, 60)}}
+{{EmbedLiveSample("prostyi-pryklad", 300, 60)}}
 
 У Google Chrome результівний лічильник має такий вигляд:
 

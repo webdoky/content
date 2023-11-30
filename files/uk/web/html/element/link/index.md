@@ -237,7 +237,7 @@ browser-compat: html.elements.link
 
 - `rel`
   - : Цей атрибут дає ім'я взаєминам між пов'язаним та поточним документами. Він повинен бути розділеним пробілами списком [значень типів посилань](/uk/docs/Web/HTML/Attributes/rel).
-- `sizes` {{Experimental_Inline}}
+- `sizes`
 
   - : Цей атрибут визначає розміри піктограм для візуальних медіа, що містяться в ресурсі.
     Повинен бути присутній лише тоді, коли [`rel`](#rel) містить значення `icon` чи нестандартний тип, як то `apple-touch-icon` Apple.
@@ -377,7 +377,12 @@ browser-compat: html.elements.link
 В атрибуті `blocking` можна задати лексему `render`; тоді візуалізація сторінки буде заблокована, поки ресурс не отримано. Наприклад:
 
 ```html
-<link blocking="render" href="critical-font.woff2" as="font" />
+<link
+  blocking="render"
+  rel="preload"
+  href="critical-font.woff2"
+  as="font"
+  crossorigin />
 ```
 
 ## Технічний підсумок

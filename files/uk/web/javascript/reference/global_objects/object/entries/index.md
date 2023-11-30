@@ -63,12 +63,12 @@ console.log(Object.entries(myObj)); // [ ['foo', 'bar'] ]
 
 ### Застосування Object.entries() на примітивах
 
-Необ'єктні аргументи [зводяться до об'єктів](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#zvedennia-do-obiekta). Лише рядки можуть мати власні перелічувані властивості, тим часом решта примітивів повертає порожній масив.
+Необ'єктні аргументи [зводяться до об'єктів](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#zvedennia-do-obiekta). Значення [`undefined`](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined) і [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) не можуть бути зведення до об'єкта та зразу викидають {{jsxref("TypeError")}}. Лише рядки можуть мати власні перелічувані властивості, тим часом решта примітивів повертає порожній масив.
 
 ```js
 // Рядки мають перелічувані властивості у вигляді індексів
 console.log(Object.entries("foo")); // [ ['0', 'f'], ['1', 'o'], ['2', 'o'] ]
-// Решта примітивів не має власних властивостей
+// Решта примітивів, крім undefined і null, не має власних властивостей
 console.log(Object.entries(100)); // []
 ```
 

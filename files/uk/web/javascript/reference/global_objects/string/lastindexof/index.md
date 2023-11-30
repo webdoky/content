@@ -9,7 +9,7 @@ browser-compat: javascript.builtins.String.lastIndexOf
 
 Метод значень {{jsxref("String")}} **`lastIndexOf()`** (останній індекс елемента) шукає в поточному рядку та повертає індекс останнього входження заданого підрядка. Він приймає необов'язкову початкову позицію і повертає останнє входження заданого підрядка за індексом, меншим або рівним заданому числу.
 
-{{EmbedInteractiveExample("pages/js/string-lastindexof.html", "shorter")}}
+{{EmbedInteractiveExample("pages/js/string-lastindexof.html")}}
 
 ## Синтаксис
 
