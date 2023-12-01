@@ -61,7 +61,7 @@ page-type: guide
 - {{HTMLElement("figure")}}
 - {{HTMLElement("footer")}}
 - {{HTMLElement("form")}}
-- {{HTMLElement("Heading_Elements", "&lt;h1&gt;-&lt;h6&gt;")}}
+- {{HTMLElement("Heading_Elements", "<code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code>")}}
 - {{HTMLElement("header")}}
 - {{HTMLElement("hgroup")}}
 - {{HTMLElement("hr")}}
@@ -130,7 +130,7 @@ page-type: guide
 
 Заголовковий вміст, підмножина потокового вмісту, визначає заголовок розділу. Це визначення застосовується як до розділів, позначених явним елементом [розділового вмісту](#rozdilovyi-vmist), так і до неявно визначених самим заголовковим вмістом.
 
-Елементи, що належать до цієї категорії – {{HTMLElement("Heading_Elements", "&lt;h1&gt;-&lt;h6&gt;")}} і {{HTMLElement("hgroup")}}.
+Елементи, що належать до цієї категорії – {{HTMLElement("Heading_Elements", "<code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code>")}} і {{HTMLElement("hgroup")}}.
 
 > **Примітка:** Хоч елемент {{HTMLElement("header")}} з високою ймовірністю міститиме заголовковий вміст, сам він не є заголовковим вмістом.
 
