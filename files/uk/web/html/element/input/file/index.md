@@ -237,7 +237,6 @@ html {
 }
 
 form {
-  width: 580px;
   background: #ccc;
   margin: 0 auto;
   padding: 20px;
@@ -350,6 +349,7 @@ function updateImageDisplay() {
         }, розмір файлу – ${returnFileSize(file.size)}.`;
         const image = document.createElement("img");
         image.src = URL.createObjectURL(file);
+        image.alt = image.title = file.name;
 
         listItem.appendChild(image);
         listItem.appendChild(para);
@@ -398,6 +398,16 @@ function returnFileSize(number) {
     return `${(number / 1048576).toFixed(1)} MB`;
   }
 }
+```
+
+```js hidden
+const button = document.querySelector("form button");
+button.addEventListener("click", (e) => {
+  e.preventDefault();
+  const para = document.createElement("p");
+  para.append("Зображення завантажене!");
+  preview.replaceChildren(para);
+});
 ```
 
 Приклад має наступний вигляд; пограйтеся:
