@@ -14,9 +14,11 @@ browser-compat: css.at-rules.font-face
 ```css
 @font-face {
   font-family: "Trickster";
-  src: local("Trickster"),
-    url("trickster-COLRv1.otf") format("opentype") tech(color-COLRv1), url("trickster-outline.otf")
-      format("opentype"), url("trickster-outline.woff") format("woff");
+  src:
+    local("Trickster"),
+    url("trickster-COLRv1.otf") format("opentype") tech(color-COLRv1),
+    url("trickster-outline.otf") format("opentype"),
+    url("trickster-outline.woff") format("woff");
 }
 ```
 
@@ -104,7 +106,7 @@ browser-compat: css.at-rules.font-face
 Цей приклад задає використання віддаленого шрифту, застосовуючи його до всього тіла документа:
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
   <head>
     <meta charset="utf-8" />
@@ -154,7 +156,7 @@ browser-compat: css.at-rules.font-face
 
 ## Дивіться також
 
-- [Про WOFF](/uk/docs/Web/Guide/WOFF)
+- [Про WOFF](/uk/docs/Web/CSS/CSS_fonts/WOFF)
 - [Генератор @font-face – FontSquirrel](https://www.fontsquirrel.com/tools/webfont-generator)
 - [Прекрасні шрифти з допомогою @font-face](https://hacks.mozilla.org/2009/06/beautiful-fonts-with-font-face/)
 - [Бібліотека шрифтів](https://fontlibrary.org/)

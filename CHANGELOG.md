@@ -3,6 +3,37 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2023-11-24 - 2023-12-01]
+
+* **Оновлення перекладу(CSS):** web/css/@font-face (#2570) ([dd560e22](https://github.com/webdoky/content/commit/dd560e22718225f4fdc462b756c42f4e4eb00d40))
+* **Оновлення перекладу(JS):** web/javascript/guide/regular_expressions (#2566) ([f2df8636](https://github.com/webdoky/content/commit/f2df86365db059fdd726a8ae5dc5faf712d6e36a))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/indexof (#2567) ([57019c44](https://github.com/webdoky/content/commit/57019c44d6869f88ba046f6f10aa6c5e490a210c))
+* **Оновлення перекладу(HTML):** web/html/element/input (#2565) ([8ca11262](https://github.com/webdoky/content/commit/8ca1126211ad0ab971b11ef658bb8b73780295a2))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/date/now (#2568) ([8d758f5c](https://github.com/webdoky/content/commit/8d758f5c3563a33820bda133fd38a3e0297466ce))
+* **Оновлення перекладу(JS):** web/javascript/guide/modules (#2563) ([62fccff5](https://github.com/webdoky/content/commit/62fccff55e3e8ff24e8565ab9d3ca3543d425064))
+* **Виправлення:** don't exit on LT error ([fc7bf2eb](https://github.com/webdoky/content/commit/fc7bf2ebbd2d3285e51d166b2ccb07ec2f197c76))
+* **Оновлення перекладу(CSS):** web/css/css_selectors (#2551) ([92c66bb3](https://github.com/webdoky/content/commit/92c66bb3cf7ed5f99aa82093998b19117cbded09))
+* **Виправлення:** adjust translation slug ([ed525007](https://github.com/webdoky/content/commit/ed5250073de8b5edb59bbb80642e530674323d70))
+* **Виправлення:** correct english path ([b5a83a4e](https://github.com/webdoky/content/commit/b5a83a4e33efdd1e6e31c621d34d1810c46b4ef9))
+* **Виправлення:** correct path to file in original repo ([5813ef1b](https://github.com/webdoky/content/commit/5813ef1b59934f2a50c92751be23613f999048a2))
+* **Виправлення:** limit fresh commits by file ([4815b647](https://github.com/webdoky/content/commit/4815b64745c378a76f5f9fad164a08e2c8c3b99b))
+* **Виправлення:** latest_commit_timestamp output ([a8f10715](https://github.com/webdoky/content/commit/a8f10715e15b02dd29cd22e6616d6368ef7aae28))
+* **Виправлення:** doublequotes ([5e4eaa7d](https://github.com/webdoky/content/commit/5e4eaa7d64085f4bc378ca80589d07c34b1a8dbb))
+* **Виправлення:** check-actuality not run without an actual translation change ([ee15e772](https://github.com/webdoky/content/commit/ee15e772e07f90b9d0363a6143b0e5ec6bb7a3bf))
+* **Виправлення:** correct exit condition ([699914a1](https://github.com/webdoky/content/commit/699914a182042534ca6bd9306e3c49ba0f31b5d4))
+* **Виправлення:** correct has_fresh_commits value ([0351d995](https://github.com/webdoky/content/commit/0351d995ee853fefa075690c0c9b21c954478565))
+* **Виправлення:** set GH_TOKEN ([d1d151a8](https://github.com/webdoky/content/commit/d1d151a81c677d8ff54601a1a4ca263bb192bf58))
+* **Оновлення перекладу(CSS):** web/css/display (#2526) ([5c398fac](https://github.com/webdoky/content/commit/5c398facf60b311162604c042f97d48eae2bd996))
+* **Оновлення перекладу(CSS):** web/css/css_transitions/using_css_transitions (#2525) ([6ae12d86](https://github.com/webdoky/content/commit/6ae12d8662ae170baa3b0c97ecaae0cee9a07438))
+* **Оновлення перекладу(CSS):** web/css/css_animations/using_css_animations (#2523) ([8e02dec4](https://github.com/webdoky/content/commit/8e02dec475fbf85329c89758c84de36349174485))
+* **Виправлення:** disable no_comma_tak_samo_yak ([91edf733](https://github.com/webdoky/content/commit/91edf733f4b43a210d92a14a3c5bf60f5217e803))
+* **Виправлення:** save body in file ([68cc6094](https://github.com/webdoky/content/commit/68cc60947f80cafdaa423e8be73e6b80f7b6146c))
+* **Оновлення перекладу(guide):** web/guide (#2546) ([13e9ef36](https://github.com/webdoky/content/commit/13e9ef3697b787b241526654e29c6fb690e97b50))
+* **Оновлення перекладу(HTML):** web/html/element/a (#2537) ([eb95af00](https://github.com/webdoky/content/commit/eb95af002413744597baf4d9973800f7fd65da3b))
+* **Виправлення:** CODEOWNERS ([740948e0](https://github.com/webdoky/content/commit/740948e0de094304628eeac9e85c3b659eee8b6d))
+* **Виправлення:** disable rules producting too many false events ([4ba2ce28](https://github.com/webdoky/content/commit/4ba2ce28f70ca62420ce114752d681326c873522))
+* **Оновлення перекладу(HTML):** web/html/element/link (#2538) ([1f8e0f84](https://github.com/webdoky/content/commit/1f8e0f842432c224021168b53c120e089146e3f5))
+
 ## [2023-11-17 - 2023-11-24]
 
 * **Виправлення:** remove unnecessary full git pulls ([ff1aadde](https://github.com/webdoky/content/commit/ff1aadde2bce0ad9a5bec0df4ecbefef4f554b39))

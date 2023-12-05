@@ -50,7 +50,7 @@ browser-compat: html.elements.audio
 
   - : Булів атрибут, що використовується для відключення можливості віддаленого відтворення на пристроях, що підключені за допомогою дротових (HDMI, DVI тощо) і бездротових технологій (Miracast, Chromecast, DLNA, AirPlay тощо). Більше інформації – у [цій запропонованій специфікації](https://www.w3.org/TR/remote-playback/#the-disableremoteplayback-attribute).
 
-    > **Примітка:** У Safari можна використовувати запасний варіант[`x-webkit-airplay="deny"`](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/AirPlayGuide/OptingInorOutofAirPlay/OptingInorOutofAirPlay.html).
+    > **Примітка:** У Safari можна використовувати запасний варіант [`x-webkit-airplay="deny"`](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/AirPlayGuide/OptingInorOutofAirPlay/OptingInorOutofAirPlay.html).
 
 - `loop`
   - : Булів атрибут: коли він заданий, то аудіопрогравач автоматично перейде на початок, коли досягне кінця аудіофайлу.
@@ -263,7 +263,7 @@ browser-compat: html.elements.audio
 
 Щоб отримати сталі вигляд і відчуття в різних браузерах, необхідно створити власні елементи керування; їх можна розмітити та оформити будь-яким зручним способом, а потім за допомогою JavaScript та API {{domxref("HTMLMediaElement")}} підключити їхню функціональність.
 
-Посібник [Основи стилізації плеєра відео](/uk/docs/Web/Guide/Audio_and_video_delivery/Video_player_styling_basics) надає деякі корисні способи стилізації – він написаний у контексті `<video>`, але більшість способів так само застосовні до `<audio>`.
+Посібник [Основи стилізації плеєра відео](/uk/docs/Web/Media/Audio_and_video_delivery/Video_player_styling_basics) надає деякі корисні способи стилізації – він написаний у контексті `<video>`, але більшість способів так само застосовні до `<audio>`.
 
 ### Відстеження додавання та видалення доріжок
 
@@ -447,4 +447,4 @@ elem.audioTrackList.onremovetrack = (event) => {
 - {{htmlelement("source")}}
 - {{htmlelement("video")}}
 - [Зона навчання – Аудіо та відео вміст](/uk/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content)
-- [Кросбраузерні основи аудіо](/uk/docs/Web/Guide/Audio_and_video_delivery/Cross-browser_audio_basics)
+- [Кросбраузерні основи аудіо](/uk/docs/Web/Media/Audio_and_video_delivery/Cross-browser_audio_basics)
