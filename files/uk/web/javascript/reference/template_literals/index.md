@@ -112,8 +112,8 @@ let classes = "header";
 classes += isLargeScreen()
   ? ""
   : item.isCollapsed
-  ? " icon-expander"
-  : " icon-collapser";
+    ? " icon-expander"
+    : " icon-collapser";
 ```
 
 Із шаблонним літералом, але без вкладання, можна було б зробити таким чином:
@@ -151,7 +151,7 @@ function myTag(strings, personExp, ageExp) {
   const str1 = strings[1]; // " — "
   const str2 = strings[2]; // "."
 
-  const ageStr = ageExp > 99 ? "довгожитель" : "юнак";
+  const ageStr = ageExp < 100 ? "юнак" : "довгожитель";
 
   // Можна повертати навіть рядок, сформований за допомогою шаблонного літерала
   return `${str0}${personExp}${str1}${ageStr}${str2}`;
@@ -250,7 +250,7 @@ console.log(callHistory[0] === callHistory[1]); // true; всі обчислен
 
 ### Необроблені рядки
 
-Особлива властивість `raw`, наявна в першому аргументі тегової функції, дає змогу доступитися до необроблених рядків в тому вигляді, в якому їх було введено, без обробки [екранованих послідовностей](/uk/docs/Web/JavaScript/Guide/Grammar_and_types#using_special_characters_in_strings).
+Особлива властивість `raw`, наявна в першому аргументі тегової функції, дає змогу доступитися до необроблених рядків в тому вигляді, в якому їх було введено, без обробки [екранованих послідовностей](/uk/docs/Web/JavaScript/Guide/Grammar_and_types#vykorystannia-v-riadkakh-spetsialnykh-symvoliv).
 
 ```js
 function tag(strings) {
