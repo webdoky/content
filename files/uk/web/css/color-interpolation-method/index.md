@@ -15,9 +15,9 @@ spec-urls: https://drafts.csswg.org/css-color/#interpolation-space
 
 {{CSSRef}}
 
-[Тип даних](/uk/docs/Web/CSS/CSS_Types) [CSS](/uk/docs/Web/CSS) **`<color-interpolation-method>`** (метод інтерполяції кольору) представляє колірний простір, що вживається для інтерполяції між значеннями {{CSSXref("&lt;color&gt;")}}. Він може використовуватися для перевизначення колірного усталеного колірного простору інтерполяції для функційних записів, пов'язаних з кольором, наприклад, {{CSSXref("color_value/color-mix", "color-mix()")}} і {{CSSXref("gradient/linear-gradient", "linear-gradient()")}}.
+[Тип даних](/uk/docs/Web/CSS/CSS_Types) [CSS](/uk/docs/Web/CSS) **`<color-interpolation-method>`** (метод інтерполяції кольору) представляє колірний простір, що вживається для інтерполяції між значеннями {{CSSXref("&lt;color&gt;")}}. Він може використовуватися для перевизначення усталеного колірного простору інтерполяції для функційних записів, пов'язаних з кольором, наприклад, {{CSSXref("color_value/color-mix", "color-mix()")}} і {{CSSXref("gradient/linear-gradient", "linear-gradient()")}}.
 
-При інтерполяції значень `<color>` як колірний простір інтерполяції усталено використовується Oklab.
+При інтерполяції значень `<color>` усталено використовується колірний простір інтерполяції Oklab.
 
 ## Синтаксис
 
