@@ -50,7 +50,7 @@ browser-compat: html.elements.audio
 
   - : Булів атрибут, що використовується для відключення можливості віддаленого відтворення на пристроях, що підключені за допомогою дротових (HDMI, DVI тощо) і бездротових технологій (Miracast, Chromecast, DLNA, AirPlay тощо). Більше інформації – у [цій запропонованій специфікації](https://www.w3.org/TR/remote-playback/#the-disableremoteplayback-attribute).
 
-    > **Примітка:** У Safari можна використовувати запасний варіант[`x-webkit-airplay="deny"`](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/AirPlayGuide/OptingInorOutofAirPlay/OptingInorOutofAirPlay.html).
+    > **Примітка:** У Safari можна використовувати запасний варіант [`x-webkit-airplay="deny"`](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/AirPlayGuide/OptingInorOutofAirPlay/OptingInorOutofAirPlay.html).
 
 - `loop`
   - : Булів атрибут: коли він заданий, то аудіопрогравач автоматично перейде на початок, коли досягне кінця аудіофайлу.
