@@ -111,7 +111,7 @@ SVG залишається рекомендованим форматом для 
 
   - : Позначає зображення для відстеження з боку API {{domxref("PerformanceElementTiming")}}. Задане значення стає ідентифікатором відстежуваного елемента зображення. Дивіться також сторінку атрибута [`elementtiming`](/uk/docs/Web/HTML/Attributes/elementtiming).
 
-- `fetchpriority` {{experimental_inline}}
+- `fetchpriority`
 
   - : Надає підказку щодо відносного пріоритету при отриманні зображення. Дозволені значення:
 
