@@ -18,7 +18,7 @@ browser-compat: html.elements.textarea
 - Атрибути `rows` і `cols`, що дають змогу задати точний розмір, котрий займе `<textarea>`. Задавати їх – добре для сталості, адже усталена логіка браузера може відрізнятися.
 - Усталений вміст, введений між початковим і кінцевим тегами. `<textarea>` не підтримує атрибут `value`.
 
-Крім цього, елемент `<textarea>` підтримує декілька атрибутів, спільних з `<input>` форм, як то `autocapitalize`, `autocomplete`, `autofocus`, `disabled`, `placeholder`, `readonly` та `required`.
+Крім цього, елемент `<textarea>` підтримує декілька атрибутів, спільних з елементом `<input>`, як то `autocapitalize`, `autocomplete`, `autofocus`, `disabled`, `placeholder`, `readonly` та `required`.
 
 ## Атрибути
 
