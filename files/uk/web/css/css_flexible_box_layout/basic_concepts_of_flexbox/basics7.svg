@@ -20,9 +20,9 @@
     <use xlink:href="#a" fill-rule="evenodd" />
   </mask>
   <use xlink:href="#a" fill="none" stroke="#000" stroke-dasharray="8" stroke-linecap="butt" stroke-width="6" mask="url(#b)" /><text font-family="Helvetica" font-size="48" transform="translate(439.708 21.625)">
-    <tspan x="40.301" y="47" textLength="519">Ширина контейнера = 500px</tspan>
+    <tspan x="0" y="47">Ширина контейнера = 500px</tspan>
   </text><text font-family="Helvetica" font-size="48" transform="translate(919.391 501.307)">
-    <tspan x="110.086" y="47" textLength="379.43">Доступно = 200px</tspan>
+    <tspan x="-70" y="47">Доступний простір = 200px</tspan>
   </text>
   <path fill="none" stroke="#000" stroke-linecap="butt" stroke-width="5" d="M1441.5 99.934H57.493" />
   <path d="m61.868 99.934 13.125-17.5-35 17.5 35 17.5zM1437.12 99.934l-13.12 17.5 35-17.5-35-17.5z" />
