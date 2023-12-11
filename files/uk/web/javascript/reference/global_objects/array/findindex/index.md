@@ -83,7 +83,7 @@ const firstTrough = numbers
     if (idx < arr.length - 1 && num >= arr[idx + 1]) return false;
     return true;
   });
-console.log(firstTrough); // 2
+console.log(firstTrough); // 1
 ```
 
 ### Використання findIndex() на розріджених масивах
