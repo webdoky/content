@@ -1,5 +1,5 @@
 ---
-title: "<link>: Елемент підключення зовнішнього ресурсу"
+title: "<link> – елемент підключення зовнішнього ресурсу"
 slug: Web/HTML/Element/link
 page-type: html-element
 browser-compat: html.elements.link
@@ -118,7 +118,14 @@ browser-compat: html.elements.link
         </tr>
         <tr>
           <td>font</td>
-          <td>CSS @font-face</td>
+          <td>
+            <p>@font-face CSS</p>
+            <div class="notecard note">
+              <p>
+                <strong>Примітка:</strong> Це значення на додачу вимагає, щоб <code>&#x3C;link></code> містив атрибут crossorigin; дивіться <a href="/uk/docs/Web/HTML/Attributes/rel/preload#otrymannia-z-cors">Отримання з CORS</a>.
+              </p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td>image</td>
