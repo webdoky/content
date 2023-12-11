@@ -109,7 +109,7 @@ browser-compat: html.global_attributes.autocomplete
 - "`transaction-currency`"
   - : Валюта, в якій буде проведена транзакція.
 - "`transaction-amount`"
-  - : Сума, вказана в валюті, вказаній у "`transaction-currency`", транзакції для платіжної форми.
+  - : Сума, вказана в валюті, котра зі свого боку - у "`transaction-currency`", транзакції для платіжної форми.
 - "`language`"
   - : Бажана мова, задана у вигляді дійсного [тегу мови BCP 47](https://en.wikipedia.org/wiki/IETF_language_tag).
 - "`bday`"
