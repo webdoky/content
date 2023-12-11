@@ -1,5 +1,5 @@
 ---
-title: "<video>: Елемент вбудованого відео"
+title: "<video> – елемент вбудованого відео"
 slug: Web/HTML/Element/video
 page-type: html-element
 browser-compat: html.elements.video
@@ -52,7 +52,7 @@ browser-compat: html.elements.video
 
 - `disablepictureinpicture` {{experimental_inline}}
   - : Запобігає тому, щоб браузер пропонував контекстне меню картинки-в-картинці чи, у певних випадках, автоматично запитував картинку-в-картинці.
-- `disableremoteplayback` {{experimental_inline}}
+- `disableremoteplayback`
 
   - : Булів атрибут, що використовується для вимкнення можливості віддаленого відтворення на пристроях, що під'єднані за допомогою провідних (HDMI, DVI тощо) та безпровідних технологій (Miracast, Chromecast, DLNA, AirPlay тощо).
 
