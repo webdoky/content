@@ -1,5 +1,5 @@
 ---
-title: "<audio>: The Embed Audio element"
+title: "<audio> – елемент вбудованого аудіо"
 slug: Web/HTML/Element/audio
 page-type: html-element
 browser-compat: html.elements.audio
@@ -46,11 +46,11 @@ browser-compat: html.elements.audio
 
     Коли цього атрибута немає, то ресурс отримується без CORS-запиту (тобто без надсилання заголовка HTTP `Origin:`), що запобігає його неославленому використанню в елементах {{HTMLElement('canvas')}}. Якщо значення недійсне, то воно обробляється так, ніби було використано перелічене ключове слово **anonymous**. Більше про це – в [Атрибутах налаштування CORS](/uk/docs/Web/HTML/Attributes/crossorigin).
 
-- `disableremoteplayback` {{experimental_inline}}
+- `disableremoteplayback`
 
   - : Булів атрибут, що використовується для відключення можливості віддаленого відтворення на пристроях, що підключені за допомогою дротових (HDMI, DVI тощо) і бездротових технологій (Miracast, Chromecast, DLNA, AirPlay тощо). Більше інформації – у [цій запропонованій специфікації](https://www.w3.org/TR/remote-playback/#the-disableremoteplayback-attribute).
 
-    > **Примітка:** У Safari можна використовувати запасний варіант [`x-webkit-airplay="deny"`](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/AirPlayGuide/OptingInorOutofAirPlay/OptingInorOutofAirPlay.html).
+    У Safari можна використовувати запасний варіант [`x-webkit-airplay="deny"`](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/AirPlayGuide/OptingInorOutofAirPlay/OptingInorOutofAirPlay.html).
 
 - `loop`
   - : Булів атрибут: коли він заданий, то аудіопрогравач автоматично перейде на початок, коли досягне кінця аудіофайлу.
