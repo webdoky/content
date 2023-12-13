@@ -57,7 +57,7 @@ appearance: checkbox;
 - `<compat-auto>`
 
   - : Можливі значення: `button`, `checkbox`, `listbox`, `menulist`, `meter`, `progress-bar`, `push-button`, `radio`, `searchfield`, `slider-horizontal`, `square-button` і `textarea`.
-    Клюочві слова, що рівносильні `auto` заради збереження сумісності зі старими браузерами.
+    Ключові слова, що рівносильні `auto` заради збереження сумісності зі старими браузерами.
 
 #### Нестандартні значення
 
