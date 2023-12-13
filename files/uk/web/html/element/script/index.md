@@ -1,5 +1,5 @@
 ---
-title: "<script>: Елемент сценарію"
+title: "<script> – елемент сценарію"
 slug: Web/HTML/Element/script
 page-type: html-element
 browser-compat: html.elements.script
@@ -146,7 +146,7 @@ browser-compat: html.elements.script
         На відміну від класичних, модульні сценарії вимагають, для отримання з іншого походження, використання протоколу CORS.
     - [`speculationrules`](/uk/docs/Web/HTML/Element/script/type/speculationrules) {{experimental_inline}}
       - : Це значення вказує на те, що тіло елемента містить правила спекуляції.
-        Правила спекуляції приймають форму об'єкта JSON, що визначає, які ресурси повинні бути отримані наперед або візуалізовані наперед браузером. Це частина [API правил спекуляції](/uk/docs/Web/Performance/Speculative_loading#api-pravyl-spekuliatsii).
+        Правила спекуляції приймають форму об'єкта JSON, що визначає, які ресурси повинні бути отримані наперед або візуалізовані наперед браузером. Це частина {{domxref("Speculation Rules API", "API правил спекуляції", "", "nocode")}}.
     - **Будь-яке інше значення**
       - : Вміст всередині розглядається як масив даних і не обробляється самим браузером.
         Розробники повинні використовувати для позначення масивів даних дійсні типи MIME, котрі не є типами MIME JavaScript.
