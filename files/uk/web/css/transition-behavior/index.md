@@ -168,7 +168,6 @@ html {
 
 > **Примітка:** Оскільки спливні віконця змінюються від `display: none` до `display: block` кожного разу, коли показуються, то спливне віконце переходить від стилів `@starting-style` до стилів `[popover]:popover-open` кожного разу, коли відбувається перехід входу. Коли спливне віконце закривається, то воно переходить від свого стану `[popover]:popover-open` до усталеного стану `[popover]`.
 >
-> It is possible for the style transition on entry and exit to be different in such cases. See our [Demonstration of when starting styles are used](/uk/docs/Web/CSS/@starting-style#demonstration_of_when_starting_styles_are_used) example for a proof of this.
 > В таких випадках перехід стилів при вході та виході може бути різним. Дивіться доказ цього в нашому прикладі [Демонстрація того, як використовуються стартові стилі](/uk/docs/Web/CSS/@starting-style#demonstratsiia-toho-koly-zastosovuiutsia-startovi-styli).
 
 ## Специфікації
