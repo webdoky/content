@@ -166,9 +166,12 @@ ctx.fillRect(10, 10, 100, 100);
 
 - [API полотен](/uk/docs/Web/API/Canvas_API)
 - [Підручник з полотен](/uk/docs/Web/API/Canvas_API/Tutorial)
-- [Кілька демонстрацій на тему полотен](/uk/docs/Web/Demos#canvas)
 - [OffscreenCanvas](/uk/docs/Web/API/OffscreenCanvas)
 - [Шпаргалка з полотен](https://simon.html5.org/dump/html5-canvas-cheat-sheet.html) (2009)
 - [Шпаргалка з полотен](https://websitesetup.org/wp-content/uploads/2015/11/Infopgraphic-CanvasCheatSheet-Final2.pdf) (pdf) (2015)
-- [Шпаргалка з полотен](https://www.coding-dude.com/wp/wp-content/uploads/2020/09/HTML5-canvas-cheat-sheet.pdf) (pdf) (2020)
-- [Знайомство з полотнами від Apple](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/HTML-canvas-guide/Introduction/Introduction.html) (2013)
+- [Посібник з полотен HTML у Safari](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/HTML-canvas-guide/Introduction/Introduction.html) від Apple (2013)
+- [Двовимірний контекст малювання `CanvasRenderingContext2D` для елемента полотна](https://developer.apple.com/documentation/webkitjs/canvasrenderingcontext2d) від Apple.com
+- API [WebGL](/uk/docs/Web/API/WebGL_API)
+- {{HTMLElement("img")}}
+- [SVG](/uk/docs/Web/SVG)
+- [Використання аудіо та відео HTML](/uk/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content)
