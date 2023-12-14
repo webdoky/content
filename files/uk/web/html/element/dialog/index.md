@@ -202,6 +202,65 @@ confirmBtn.addEventListener("click", (event) => {
 
 Важливо надавати механізм закриття в кожному елементі `dialog`. Клавіша <kbd>Esc</kbd> усталено не закриває немодальні діалоги, і не можна виходити з того, що користувач взагалі має доступ до фізичної клавіатури (наприклад, це може бути користувач пристрою з сенсорним екраном, без доступу до клавіатури).
 
+### Закриття діалогу з обов'язковим полем форми
+
+Коли форма всередині діалогу має обов'язкове поле, браузер дозволяє закрити такий діалог лише після введення значення для такого поля. Щоб закрити такий діалог, використовуйте або атрибут [`formnovalidate`](/uk/docs/Web/HTML/Element/input#formnovalidate-nevaliduvannia-formy) на кнопці закриття, або викликайте метод `close()` на об'єкті діалогу, коли клацають кнопку закриття.
+
+```html
+<dialog id="dialog">
+  <form method="dialog">
+    <p>
+      <label>
+        Улюблена тварина:
+        <input type="text" required />
+      </label>
+    </p>
+    <div>
+      <input type="submit" id="normal-close" value="Закрити – нормально" />
+      <input
+        type="submit"
+        id="novalidate-close"
+        value="Закрити – novalidate"
+        formnovalidate />
+      <input type="submit" id="js-close" value="Закрити – JS" />
+    </div>
+  </form>
+</dialog>
+<p>
+  <button id="show-dialog">Показати діалог</button>
+</p>
+<output></output>
+```
+
+```css hidden
+[type="submit"] {
+  margin-right: 1rem;
+}
+```
+
+#### JavaScript
+
+```js
+const showBtn = document.getElementById("show-dialog");
+const dialog = document.getElementById("dialog");
+const jsCloseBtn = dialog.querySelector("#js-close");
+
+showBtn.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+jsCloseBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  dialog.close();
+});
+```
+
+#### Результат
+
+{{EmbedLiveSample("zakryttia-dialohu-z-oboviazkovym-polem-formy", "100%", 300)}}
+
+Судячи з результату, неможливо закрити діалог за допомогою кнопки _Закрити – нормально_. Проте його можна закрити, якщо обійти валідацію форми за допомогою атрибута `formnovalidate` на кнопці _Скасувати_. Програмно – `dialog.close()` також закриває такий діалог.
+
 ### Анімування діалогів
 
 Елементи `<dialog>` отримують `display: none;`, коли приховані, і `display: block;`, коли показані, а також вилучаються чи додаються до {{glossary("top layer", "вищого шару")}} та [дерева доступності](/uk/docs/Web/Performance/How_browsers_work#vybudovuvannia-dereva-dostupnosti). Тому для анімування елементів `<dialog>` властивість {{cssxref("display")}} повинна бути придатною для анімування. [Браузери, що це підтримують](/uk/docs/Web/CSS/display#sumisnist-iz-brauzeramy), анімують `display` з варіацією на [дискретному типі анімації](/uk/docs/Web/CSS/CSS_animated_properties#dyskretni). А саме, браузер перемикається між `none` та іншим значенням `display` так, щоб анімований вміст був видимим протягом усієї тривалості анімації.
