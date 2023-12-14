@@ -25,7 +25,7 @@ page-type: guide
 
   Тип є необов'язковим (усталено вважається рівним `all`), крім випадків використання логічних операторів `not` або `only`.
 
-- [Ознаки медіа](/uk/docs/Web/CSS/@media#oznaky-media) описують певну характеристику {{glossary("user agent", "користувацького агента")}}, пристрою виведення чи середовища:
+- [Ознаки медіа](/uk/docs/Web/CSS/@media#mozhlyvosti-media) описують певну характеристику {{glossary("user agent", "користувацького агента")}}, пристрою виведення чи середовища:
 
   - {{cssxref("@media/any-hover", "any-hover")}}
   - {{cssxref("@media/any-pointer", "any-pointer")}}
@@ -134,7 +134,7 @@ page-type: guide
 }
 ```
 
-Для отримання більшої кількості прикладів медіазапитів з [ознаками медіа](/uk/docs/Web/CSS/@media#oznaky-media), дивіться довідкові сторінки відповідних ознак.
+Для отримання більшої кількості прикладів медіазапитів з [ознаками медіа](/uk/docs/Web/CSS/@media#mozhlyvosti-media), дивіться довідкові сторінки відповідних ознак.
 
 ## Створення складних медіазапитів
 
@@ -305,4 +305,4 @@ _Це не має ефекту в сучасних браузерах._
 - [Програмна перевірка медіазапитів](/uk/docs/Web/CSS/CSS_media_queries/Testing_media_queries)
 - [Анімації CSS між медіазапитами (англ.)](http://davidwalsh.name/animate-media-queries)
 - [Розширені ознаки медіа від Mozilla](/uk/docs/Web/CSS/Mozilla_Extensions#Media_features)
-- [Розширені ознаки медіа в WebKit](/uk/docs/Web/CSS/WebKit_Extensions#oznaky-media)
+- [Розширені ознаки медіа в WebKit](/uk/docs/Web/CSS/WebKit_Extensions#mozhlyvosti-media)
