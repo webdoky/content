@@ -171,7 +171,7 @@ _Чому це не вбудовано всередину JavaScript?_ Існу�
 
 ## Застосування регулярних виразів у JavaScript
 
-Регулярні вирази з методами об'єкта {{jsxref("RegExp")}}, наприклад, {{jsxref("RegExp/test", "test()")}} і {{jsxref("RegExp/exec", "exec()")}}, а також із методами {{jsxref("String")}}: {{jsxref("String/match", "match()")}}, {{jsxref("String/replace", "replace()")}}, {{jsxref("String/search", "search()")}} і {{jsxref("String/split", "split()")}}.
+Регулярні вирази з методами об'єкта {{jsxref("RegExp")}}, наприклад, {{jsxref("RegExp/test", "test()")}} і {{jsxref("RegExp/exec", "exec()")}}, а також із методами {{jsxref("String")}}: {{jsxref("String/match", "match()")}}, {{jsxref("String/matchAll", "matchAll()")}}, {{jsxref("String/replace", "replace()")}}, {{jsxref("String/replaceAll", "replaceAll()")}}, {{jsxref("String/search", "search()")}} і {{jsxref("String/split", "split()")}}.
 
 | Метод                                           | Опис                                                                                                                |
 | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |

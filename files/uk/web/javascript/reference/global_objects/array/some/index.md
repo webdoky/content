@@ -37,7 +37,7 @@ some(callbackFn, thisArg)
 
 ## Опис
 
-Метод `some()` є [ітеративним методом](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#iteratyvni-metody). Він викликає надану функцію `callbackFn` один раз для кожного елемента масиву, поки `callbackFn` не поверне значення [істинності](/uk/docs/Glossary/Truthy). Якщо такий елемент знайдено, то `some()` негайно повертає `true` і припиняє ітерування масиву. Інакше, якщо `callbackFn` повертає значення [хибності](/uk/docs/Glossary/Falsy) для всіх елементів, то `some()` повертає `false`.
+Метод `some()` є [ітеративним методом](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#iteratyvni-metody). Він викликає надану функцію `callbackFn` один раз для кожного елемента масиву, поки `callbackFn` не поверне значення [істинності](/uk/docs/Glossary/Truthy). Якщо такий елемент знайдено, то `some()` негайно повертає `true` і припиняє ітерування масиву. Інакше, якщо `callbackFn` повертає значення [хибності](/uk/docs/Glossary/Falsy) для всіх елементів, то `some()` повертає `false`. Більше про те, як загалом працюють такі методи, читайте в розділі [ітеративних методів](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#iteratyvni-metody).
 
 `some()` діє подібно до квантора існування в математиці. Наприклад, для порожнього масиву він повертає `false` для будь-якої умови.
 
@@ -109,6 +109,23 @@ getBoolean(false); // false
 getBoolean("false"); // false
 getBoolean(1); // true
 getBoolean("true"); // true
+```
+
+### Використання третього аргументу `callbackFn`
+
+Аргумент `array` корисний тоді, коли є потреба звернутися до іншого елемента масиву, особливо коли немає змінної, що посилається на цей масив. У наступному прикладі спочатку застосовується `filter()` для видобування додатних значень, а потім – `some()` для перевірки, чи відсортований масив у порядку зростання.
+
+```js
+const numbers = [3, -1, 1, 4, 1, 5];
+const isIncreasing = !numbers
+  .filter((num) => num > 0)
+  .some((num, idx, arr) => {
+    // Без аргументу arr немає способу легко отримати доступ до
+    // проміжного масиву без збереження його в змінній.
+    if (idx === 0) return false;
+    return num <= arr[idx - 1];
+  });
+console.log(isIncreasing); // false
 ```
 
 ### Використання some() на розріджених масивах

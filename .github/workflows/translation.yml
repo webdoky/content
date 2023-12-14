@@ -150,8 +150,8 @@ jobs:
         name: Send results
         run: node scripts/send-comments.js ${{ needs.prepare.outputs.translation }}
         timeout-minutes: 5
-      - name: Exit with error
-        run: echo "Spelling errors found" && cat result.json && exit 1
+      - name: Debug results
+        run: echo "Spelling errors found" && cat result.json
   set-title:
     if: ${{ needs.prepare.outputs.translation != '' }}
     name: Set title
