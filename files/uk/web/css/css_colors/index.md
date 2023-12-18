@@ -109,8 +109,8 @@ spec-urls:
   - [`stop-color`](/uk/docs/Web/SVG/Attribute/stop-color)
   - [`stroke`](/uk/docs/Web/SVG/Attribute/stroke)
 - Атрибут SVG [`color`](/uk/docs/Web/SVG/Attribute/color)
-- Термін глосарію {{glossary("Color wheel", "Колірне коло")}}
-- Термін глосарію {{glossary("Interpolation", "Інтерполяція")}}
+- Термін глосарія {{glossary("Color wheel", "Колірне коло")}}
+- Термін глосарія {{glossary("Interpolation", "Інтерполяція")}}
 - Директива [`@font-palette-values`](/uk/docs/Web/CSS/@font-palette-values) дескриптор [`override-colors`](/uk/docs/Web/CSS/@font-palette-values/override-colors)
 - Директива [`@color-profile`](/uk/docs/Web/CSS/@color-profile)
 - Можливість @media [`color-gamut`](/uk/docs/Web/CSS/@media/color-gamut)
