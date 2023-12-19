@@ -24,10 +24,6 @@ text-align: justify;
 text-align: justify-all;
 text-align: match-parent;
 
-/* Посимвольне шикування в колонці таблиці */
-text-align: ".";
-text-align: "." center;
-
 /* Значення блокового шикування (нестандартний синтаксис) */
 text-align: -moz-center;
 text-align: -webkit-center;
@@ -64,8 +60,6 @@ text-align: unset;
   - : Те саме, що `justify`, але, крім того, рівномірно розподіляє останній рядок.
 - `match-parent`
   - : Подібне до `inherit`, але значення `start` і `end` обчислюються згідно з {{cssxref("direction")}} батьківського елемента і замінюються відповідним значенням – `left` чи `right`.
-- {{cssxref("&lt;string&gt;")}} {{experimental_inline}}
-  - : Бувши застосованим до комірки таблиці, таке значення задає символ шикування, навколо якого шикуватиметься вміст комірки.
 
 ## Занепокоєння щодо доступності
 
