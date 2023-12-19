@@ -540,5 +540,6 @@ element.style.setProperty("--my-var", jsVar + 4);
 
 - [Синтаксис користувацьких властивостей](/uk/docs/Web/CSS/--*)
 - Директива {{cssxref("@property")}}
-- [API властивостей і значень CSS](/uk/docs/Web/API/CSS_Properties_and_Values_API)
 - [`var()`](/uk/docs/Web/CSS/var)
+- [API властивостей і значень CSS](/uk/docs/Web/API/CSS_Properties_and_Values_API)
+- Модуль [Кастомних властивостей як каскадних змінних CSS](/uk/docs/Web/CSS/CSS_cascading_variables)
