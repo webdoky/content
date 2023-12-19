@@ -80,6 +80,7 @@ browser-compat: css.properties.custom-property
 
 ## Дивіться також
 
-- [Використання змінних CSS](/uk/docs/Web/CSS/Using_CSS_custom_properties)
 - Функція {{cssxref("var", "var()")}}
 - Директива {{cssxref("@property")}}
+- Посібник [Використання кастомних властивостей (змінних) CSS](/uk/docs/Web/CSS/Using_CSS_custom_properties)
+- Модуль [Кастомних властивостей як каскадних змінних CSS](/uk/docs/Web/CSS/CSS_cascading_variables)
