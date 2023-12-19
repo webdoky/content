@@ -83,43 +83,44 @@ console.log(fruits.length); // 2
 
 ### Методи масиву й порожні комірки
 
-Порожні комірки [розріджених масивів](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy) поводяться в методах масиву по-різному. Загалом, старші методи пропускають порожні комірки, а новіші – обробляють їх як `undefined`.
+Методи масивів поводяться по-різному, зустрічаючи порожні комірки в [розріджених масивах](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy). Загалом, давніші методи (наприклад, `forEach`) обробляють порожні комірки не так, як індекси, що містять `undefined`.
 
-Серед методів, що ітерують багато елементів, перелічені нижче – виконують перед звертанням до індексу перевірку [`in`](/uk/docs/Web/JavaScript/Reference/Operators/in) і не зводять порожні комірки до `undefined`:
+Серед методів, що по-особливому обробляють порожні рядки: {{jsxref("Array/concat", "concat()")}}, {{jsxref("Array/copyWithin", "copyWithin()")}}, {{jsxref("Array/every", "every()")}}, {{jsxref("Array/filter", "filter()")}}, {{jsxref("Array/flat", "flat()")}}, {{jsxref("Array/flatMap", "flatMap()")}}, {{jsxref("Array/forEach", "forEach()")}}, {{jsxref("Array/indexOf", "indexOf()")}}, {{jsxref("Array/lastIndexOf", "lastIndexOf()")}}, {{jsxref("Array/map", "map()")}}, {{jsxref("Array/reduce", "reduce()")}}, {{jsxref("Array/reduceRight", "reduceRight()")}}, {{jsxref("Array/reverse", "reverse()")}}, {{jsxref("Array/slice", "slice()")}}, {{jsxref("Array/some", "some()")}}, {{jsxref("Array/sort", "sort()")}} і {{jsxref("Array/splice", "splice()")}}. Ітеративні методи, такі як `forEach`, взагалі не обробляють порожні комірки. Інші методи, такі як `concat`, `copyWithin` тощо, зберігають порожні комірки під час копіювання, тож після обробки масив залишається розрідженим.
 
-- {{jsxref("Array/concat", "concat()")}}
-- {{jsxref("Array/copyWithin", "copyWithin()")}}
-- {{jsxref("Array/every", "every()")}}
-- {{jsxref("Array/filter", "filter()")}}
-- {{jsxref("Array/flat", "flat()")}}
-- {{jsxref("Array/flatMap", "flatMap()")}}
-- {{jsxref("Array/forEach", "forEach()")}}
-- {{jsxref("Array/indexOf", "indexOf()")}}
-- {{jsxref("Array/lastIndexOf", "lastIndexOf()")}}
-- {{jsxref("Array/map", "map()")}}
-- {{jsxref("Array/reduce", "reduce()")}}
-- {{jsxref("Array/reduceRight", "reduceRight()")}}
-- {{jsxref("Array/reverse", "reverse()")}}
-- {{jsxref("Array/slice", "slice()")}}
-- {{jsxref("Array/some", "some()")}}
-- {{jsxref("Array/sort", "sort()")}}
-- {{jsxref("Array/splice", "splice()")}}
+```js
+const colors = ["червоний", "жовтий", "синій"];
+colors[5] = "фіолетовий";
+colors.forEach((item, index) => {
+  console.log(`${index}: ${item}`);
+});
+// Вивід:
+// 0: червоний
+// 1: жовтий
+// 2: синій
+// 5: фіолетовий
 
-Щодо того, як саме вони обробляють порожні комірки, дивіться на їх власних сторінках.
+colors.reverse(); // ['фіолетовий', порожньо × 2, 'синій', 'жовтий', 'червоний']
+```
 
-Ці методи обробляють порожні комірки так, ніби в них `undefined`:
+Новіші методи (наприклад, `keys`) не обробляють порожні комірки по-особливому, а вважають їх елементами зі значенням `undefined`. Серед методів, що не відрізняють порожні комірки від елементів `undefined`, наступні: {{jsxref("Array/entries", "entries()")}}, {{jsxref("Array/fill", "fill()")}}, {{jsxref("Array/find", "find()")}}, {{jsxref("Array/findIndex", "findIndex()")}}, {{jsxref("Array/findLast", "findLast()")}}, {{jsxref("Array/findLastIndex", "findLastIndex()")}}, {{jsxref("Array/includes", "includes()")}}, {{jsxref("Array/join", "join()")}}, {{jsxref("Array/keys", "keys()")}}, {{jsxref("Array/toLocaleString", "toLocaleString()")}}, {{jsxref("Array/toReversed", "toReversed()")}}, {{jsxref("Array/toSorted", "toSorted()")}}, {{jsxref("Array/toSpliced", "toSpliced()")}}, {{jsxref("Array/values", "values()")}} і {{jsxref("Array/with", "with()")}}.
 
-- {{jsxref("Array/entries", "entries()")}}
-- {{jsxref("Array/fill", "fill()")}}
-- {{jsxref("Array/find", "find()")}}
-- {{jsxref("Array/findIndex", "findIndex()")}}
-- {{jsxref("Array/findLast", "findLast()")}}
-- {{jsxref("Array/findLastIndex", "findLastIndex()")}}
-- {{jsxref("Array/includes", "includes()")}}
-- {{jsxref("Array/join", "join()")}}
-- {{jsxref("Array/keys", "keys()")}}
-- {{jsxref("Array/toLocaleString", "toLocaleString()")}}
-- {{jsxref("Array/values", "values()")}}
+```js
+const colors = ["червоний", "жовтий", "синій"];
+colors[5] = "фіолетовий";
+const iterator = colors.keys();
+for (const key of iterator) {
+  console.log(`${key}: ${colors[key]}`);
+}
+// Вивід
+// 0: червоний
+// 1: жовтий
+// 2: синій
+// 3: undefined
+// 4: undefined
+// 5: фіолетовий
+
+const newColors = colors.toReversed(); // ['фіолетовий', undefined, undefined, 'синій', 'жовтий', 'червоний']
+```
 
 ### Копіювальні та змінювальні методи
 
@@ -130,22 +131,9 @@ console.log(fruits.length); // 2
 
 Решта методів змінює масив, на котрому викликано метод, у випадку чого їхнє повернене значення відрізняється залежно від методу: іноді це посилання на той самий масив, іноді – довжина нового масиву.
 
-Наступні методи створюють нові масиви шляхом звертання до [`this.constructor[Symbol.species]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/@@species) для визначення конструктора, який буде використаний:
+Наступні методи створюють нові масиви шляхом звертання до [`this.constructor[Symbol.species]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/@@species) для визначення конструктора, який буде використаний: {{jsxref("Array/concat", "concat()")}}, {{jsxref("Array/filter", "filter()")}}, {{jsxref("Array/flat", "flat()")}}, {{jsxref("Array/flatMap", "flatMap()")}}, {{jsxref("Array/map", "map()")}}, {{jsxref("Array/slice", "slice()")}} і {{jsxref("Array/splice", "splice()")}} (для створення масиву вилучених елементів, що повертається).
 
-- {{jsxref("Array/concat", "concat()")}}
-- {{jsxref("Array/filter", "filter()")}}
-- {{jsxref("Array/flat", "flat()")}}
-- {{jsxref("Array/flatMap", "flatMap()")}}
-- {{jsxref("Array/map", "map()")}}
-- {{jsxref("Array/slice", "slice()")}}
-- {{jsxref("Array/splice", "splice()")}} (для створення поверненого масиву прибраних елементів)
-
-Наступні методи завжди створюють нові масиви з базовим конструктором `Array`:
-
-- {{jsxref("Array/toReversed", "toReversed()")}}
-- {{jsxref("Array/toSorted", "toSorted()")}}
-- {{jsxref("Array/toSpliced", "toSpliced()")}}
-- {{jsxref("Array/with", "with()")}}
+Наступні методи завжди створюють нові масиви за допомогою базового конструктора `Array`: {{jsxref("Array/toReversed", "toReversed()")}}, {{jsxref("Array/toSorted", "toSorted()")}}, {{jsxref("Array/toSpliced", "toSpliced()")}} і {{jsxref("Array/with", "with()")}}.
 
 Наступна таблиця перераховує методи, які змінюють вихідний масив, і відповідні їм незмінювальні альтернативи:
 
@@ -194,25 +182,11 @@ method(callbackFn, thisArg)
 
 Усі ітеративні методи є [копіювальними](#kopiiuvalni-ta-zminiuvalni-metody) та [узагальненими](#uzahalneni-metody-masyvu), хоч вони по-різному поводяться з [порожніми комірками](#metody-masyvu-y-porozhni-komirky).
 
-Наступні методи - ітеративні:
-
-- {{jsxref("Array/every", "every()")}}
-- {{jsxref("Array/filter", "filter()")}}
-- {{jsxref("Array/find", "find()")}}
-- {{jsxref("Array/findIndex", "findIndex()")}}
-- {{jsxref("Array/findLast", "findLast()")}}
-- {{jsxref("Array/findLastIndex", "findLastIndex()")}}
-- {{jsxref("Array/flatMap", "flatMap()")}}
-- {{jsxref("Array/forEach", "forEach()")}}
-- {{jsxref("Array/map", "map()")}}
-- {{jsxref("Array/some", "some()")}}
+Наступні методи - ітеративні: {{jsxref("Array/every", "every()")}}, {{jsxref("Array/filter", "filter()")}}, {{jsxref("Array/find", "find()")}}, {{jsxref("Array/findIndex", "findIndex()")}}, {{jsxref("Array/findLast", "findLast()")}}, {{jsxref("Array/findLastIndex", "findLastIndex()")}}, {{jsxref("Array/flatMap", "flatMap()")}}, {{jsxref("Array/forEach", "forEach()")}}, {{jsxref("Array/map", "map()")}} і {{jsxref("Array/some", "some()")}}.
 
 А саме – {{jsxref("Array/every", "every()")}}, {{jsxref("Array/find", "find()")}}, {{jsxref("Array/findIndex", "findIndex()")}}, {{jsxref("Array/findLast", "findLast()")}}, {{jsxref("Array/findLastIndex", "findLastIndex()")}} і {{jsxref("Array/some", "some()")}} не завжди закликають `callbackFn` на кожному елементі: вони зупиняють ітерування, щойно повернене значення визначено.
 
-Є два інші методи, що приймають функцію зворотного виклику й запускають її щонайбільше раз для кожного елементу в масиві, але мають дещо інакші сигнатури, ніж типові ітеративні методи (до прикладу, вони не приймають `thisArg`):
-
-- {{jsxref("Array/reduce", "reduce()")}}
-- {{jsxref("Array/reduceRight", "reduceRight()")}}
+Методи {{jsxref("Array/reduce", "reduce()")}} і {{jsxref("Array/reduceRight", "reduceRight()")}} також приймають функцію зворотного виклику та запускають її щонайбільше раз для кожного елементу в масиві, але мають дещо інакші сигнатури, ніж типові ітеративні методи (до прикладу, вони не приймають `thisArg`).
 
 Метод {{jsxref("Array/sort", "sort()")}} також приймає функцію зворотного виклику, але не є ітеративним методом. Він змінює масив на місці, не приймає `thisArg` і може закликати функцію зворотного виклику кілька разів на кожному індексі.
 
