@@ -115,7 +115,7 @@ class Counter {
     this.count = 0;
   }
   add(array) {
-    // Лише вирази функцій матимуть власне зв'язування this
+    // Лише вирази функцій мають власні зв'язування this.
     array.forEach(function countEntry(entry) {
       this.sum += entry;
       ++this.count;
