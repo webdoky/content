@@ -179,7 +179,7 @@ color(display-p3 0.7 0.5 none)
    oklch(63.612% 0.1522 78.748)
    ```
 
-## Міркування щодо доступності
+## Занепокоєння щодо доступності
 
 Частина людей має проблеми з розрізненням кольорів. Рекомендація [WCAG 2.2](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable/Use_of_color) наполегливо радить не використовувати колір як єдиний засіб донесення певного повідомлення, дії чи результату. Дивіться подробиці в [кольорі та колірному контрасті](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable/Color_contrast).
 
