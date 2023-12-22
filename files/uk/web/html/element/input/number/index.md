@@ -150,7 +150,7 @@ browser-compat: html.elements.input.type_number
 
 ### Контроль розміру поля
 
-Елементи {{HTMLElement("input")}} типу `number` не підтримують атрибути розмірів, як то [`size`](/uk/docs/Web/HTML/Element/input#size). Щоб змінити розміри таких контрольних елементів, треба вдатися до [CSS](/uk/docs/Web/CSS).
+Елементи {{HTMLElement("input")}} типу `number` не підтримують атрибути розмірів, як то [`size`](/uk/docs/Web/HTML/Element/input#size-rozmir). Щоб змінити розміри таких контрольних елементів, треба вдатися до [CSS](/uk/docs/Web/CSS).
 
 Наприклад, щоб прилаштувати ширину поля, аби вона була лиш настільки широкою, наскільки це потрібно, щоб вводити трицифрове значення, може змінити HTML, додавши [`id`](/uk/docs/Web/HTML/Global_attributes#id) і скоротивши заповнювач, оскільки поле буде завузьким, аби вмістити текст, що застосовувався раніше:
 
@@ -392,7 +392,7 @@ switchBtn.addEventListener("click", () => {
 >
 > Якби це не було зроблено, довелось би вводити фути й дюйми **та** метри, аби мати змогу подати форму!
 
-## Доступність
+## Занепокоєння щодо доступності
 
 Неявна [роль](/uk/docs/Web/Accessibility/ARIA/Roles) елемента `<input type="number">` – [`spinbutton`](/uk/docs/Web/Accessibility/ARIA/Roles/spinbutton_role) (лічильник). Якщо лічильник не є важливою особливістю контрольного елемента, слід розглянути варіант _не_ використовувати `type="number"`. Натомість варто застосувати [`inputmode="numeric"`](/uk/docs/Web/HTML/Global_attributes/inputmode) вкупі з атрибутом [`pattern`](/uk/docs/Web/HTML/Attributes/pattern), котрий обмежить символи числами й пов'язаними символами. При використанні `<input type="number">` присутній ризик того, що користувачі випадково збільшать число, поки намагаються зробити щось інше. Крім того, якщо користувачі намагаються ввести щось, що не є числом, то не має явного пояснення того, що саме вони роблять не так.
 
@@ -416,7 +416,7 @@ switchBtn.addEventListener("click", () => {
     <tr>
       <td><strong>Підтримувані загальні атрибути</strong></td>
       <td>
-        <a href="/uk/docs/Web/HTML/Element/input#autocomplete-avtozapovnennia"><code>autocomplete</code></a>,
+        <a href="/uk/docs/Web/HTML/Element/input#autocomplete"><code>autocomplete</code></a>,
          <a href="/uk/docs/Web/HTML/Element/input#list-spysok"><code>list</code></a>,
          <a href="/uk/docs/Web/HTML/Element/input#placeholder-zapovniuvach"><code>placeholder</code></a>,
          <a href="/uk/docs/Web/HTML/Element/input#readonly-lyshe-dlia-chytannia"><code>readonly</code></a>
