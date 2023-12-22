@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2023-12-15 - 2023-12-22]
+
+* **Оновлення перекладу(HTML):** web/html/element/input/number (#2630) ([3c87e092](https://github.com/webdoky/content/commit/3c87e092f15686a6636248e0d30432d50129b648))
+* **Оновлення перекладу(JS):** web/javascript/data_structures (#2628) ([c77c28a6](https://github.com/webdoky/content/commit/c77c28a61b9d00ae5863c0c6eaa68813c4589a73))
+* **Оновлення перекладу(guide):** web/guide (#2629) ([1b22cb3e](https://github.com/webdoky/content/commit/1b22cb3e9b84cb07000414a4e815d76686fdf9ab))
+* **Оновлення перекладу(HTML):** web/html/element/a (#2627) ([e3b360db](https://github.com/webdoky/content/commit/e3b360db736f40dc2f2c9b83230bc01eb4051c18))
+* **Оновлення перекладу(HTML):** web/html/element/img (#2626) ([2ee52ab5](https://github.com/webdoky/content/commit/2ee52ab5536255edddffd0ea75d5de2daf497fbd))
+* **Оновлення перекладу(CSS):** web/css/text-align (#2620) ([5b7c05fb](https://github.com/webdoky/content/commit/5b7c05fbf40bf41def725ac0c9643ad250e74aa9))
+
 ## [2023-12-08 - 2023-12-15]
 
 * **Переклад(HTML):** web/html/attributes/autocomplete (#1747) ([9e5eb10a](https://github.com/webdoky/content/commit/9e5eb10a9a8fa2ac4518d6cb10e44eff0a2e6216))
