@@ -17,7 +17,7 @@ browser-compat: html.elements.select
 
 Елемент `<select>` має певні унікальні атрибути для контролю над собою, наприклад, `multiple` для задання можливості (чи неможливості) вибору кількох варіантів та `size` з кількістю варіантів, котру можна обрати водночас. Також він приймає більшість звичних атрибутів полів вводу, наприклад, `required`, `disabled`, `autofocus` тощо.
 
-Можна вкладати елементи `<option>` в елементи {{htmlelement("optgroup")}}, щоб створити розмежовані групи варіантів всередині спадного списку.
+Можна вкладати елементи {{HTMLElement("option")}} в елементи {{HTMLElement("optgroup")}}, щоб створити розмежовані групи варіантів всередині спадного списку. Також можна додавати елементи {{HTMLElement("hr")}}, щоб утворювати розділювачі, що служать візуальними розривами між варіантами.
 
 Інші приклади використання доступні за посиланням: [Нативні віджети форми: Вміст спадного списку](/uk/docs/Learn/Forms/Other_form_controls#spadni-kontrolni-elementy).
 
@@ -152,6 +152,48 @@ browser-compat: html.elements.select
 #### Результат
 
 {{EmbedLiveSample("prostyi-select", "", "100")}}
+
+### Select з групуванням варіантів
+
+Наступний приклад створює спадне меню з групуванням за допомогою {{HTMLElement("optgroup")}} і {{HTMLElement("hr")}}, щоб користувачу було легше зрозуміти вміст цього спадного меню.
+
+```html
+<label for="hr-select">Ваша улюблена їжа</label> <br />
+
+<select name="foods" id="hr-select">
+  <option value="">Оберіть їжу</option>
+  <hr />
+  <optgroup label="Фрукти">
+    <option value="apple">Яблука</option>
+    <option value="banana">Банани</option>
+    <option value="cherry">Вишні</option>
+    <option value="damson">Сливи</option>
+  </optgroup>
+  <hr />
+  <optgroup label="Овочі">
+    <option value="artichoke">Артишоки</option>
+    <option value="broccoli">Броколі</option>
+    <option value="cabbage">Капуста</option>
+  </optgroup>
+  <hr />
+  <optgroup label="М'ясо">
+    <option value="beef">Яловичина</option>
+    <option value="chicken">Курка</option>
+    <option value="pork">Свинина</option>
+  </optgroup>
+  <hr />
+  <optgroup label="Риба">
+    <option value="cod">Тріска</option>
+    <option value="haddock">Пікша</option>
+    <option value="salmon">Лосось</option>
+    <option value="turbot">Калкан</option>
+  </optgroup>
+</select>
+```
+
+#### Результат
+
+{{EmbedLiveSample("select-z-hrupuvanniam-variantiv", "", "100")}}
 
 ### Поглиблений приклад select з використанням багатьох можливостей
 
@@ -539,6 +581,10 @@ document.forms[0].onsubmit = (e) => {
 
 {{EmbedGHLiveSample("html-examples/custom-select", '100%', 300)}}
 
+## Занепокоєння щодо доступності
+
+Елемент `<hr>` усередині `<select>` слід розглядати як суто декоративний, оскільки він наразі не відображається у дереві доступності, а отже – не видається допоміжним технологіям.
+
 ## Технічний підсумок
 
 <table class="properties">
@@ -580,8 +626,8 @@ document.forms[0].onsubmit = (e) => {
     <tr>
       <th scope="row">Дозволений вміст</th>
       <td>
-        Нуль чи більше елементів {{HTMLElement("option")}} або
-        {{HTMLElement("optgroup")}}.
+        Нуль чи більше елементів {{HTMLElement("option")}},
+        {{HTMLElement("optgroup")}} або {{HTMLElement("hr")}}.
       </td>
     </tr>
     <tr>
