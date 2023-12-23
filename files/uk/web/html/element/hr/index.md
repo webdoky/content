@@ -111,3 +111,4 @@ browser-compat: html.elements.hr
 ## Дивіться також
 
 - {{HTMLElement('p')}}
+- [`<hr>` усередині `<select>`](/uk/docs/Web/HTML/Element/select#hr-useredyni-select)
