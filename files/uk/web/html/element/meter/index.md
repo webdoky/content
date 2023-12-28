@@ -142,3 +142,4 @@ browser-compat: html.elements.meter
 ## Дивіться також
 
 - {{HTMLElement("progress")}}
+- {{cssxref("::-webkit-meter-bar")}}, {{cssxref("::-webkit-meter-inner-element")}}, {{cssxref("::-webkit-meter-even-less-good-value")}}, {{cssxref("::-webkit-meter-optimum-value")}}, {{cssxref("::-webkit-meter-suboptimum-value")}} – нестандартні псевдоелементи
