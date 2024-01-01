@@ -31,7 +31,7 @@ browser-compat: html.elements.iframe
 
     > **Примітка:** Цей атрибут вважається застарілим, він був перевизначений як `allow="fullscreen"`.
 
-- `allowpaymentrequest` {{Experimental_Inline}}
+- `allowpaymentrequest` {{deprecated_inline}} {{non-standard_inline}}
 
   - : Слід надати цьому атрибутові значення `true`, якщо `<iframe>` до іншого походження треба дозволити викликати [API запитів платежів](/uk/docs/Web/API/Payment_Request_API).
 
