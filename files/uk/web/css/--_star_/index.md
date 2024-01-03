@@ -18,7 +18,7 @@ browser-compat: css.properties.custom-property
 ```css
 --somekeyword: left;
 --somecolor: #0000ff;
---somecomplexvalue: 3px 6px rgb(20, 32, 54);
+--somecomplexvalue: 3px 6px rgb(20 32 54);
 ```
 
 - `<declaration-value>`
