@@ -100,7 +100,7 @@ This produces the following output:
 
 Незалежно від пристрою чи операційної системи користувача, файлове поле надає кнопку, що відкриває діалог вибору файлу, котрий дає користувачеві змогу вибрати файл.
 
-Включення атрибута [`multiple`](#multiple), як показано вище, вказує, що водночас можуть бути обрані декілька файлів. Користувач може обрати декілька файлів у будь-який спосіб, котрий пропонує його платформа (наприклад, утримуючи натисненою клавішу<kbd>Shift</kbd> або <kbd>Control</kbd>, а потім клацаючи). Якщо необхідно, щоб користувач міг обрати лише один файл в одному `<input>`, слід упустити атрибут `multiple`.
+Включення атрибута [`multiple`](#multiple), як показано вище, вказує, що водночас можуть бути обрані декілька файлів. Користувач може обрати декілька файлів у будь-який спосіб, котрий пропонує його платформа (наприклад, утримуючи натисненою клавішу <kbd>Shift</kbd> або <kbd>Control</kbd>, а потім клацаючи). Якщо необхідно, щоб користувач міг обрати лише один файл в одному `<input>`, слід упустити атрибут `multiple`.
 
 ### Отримання інформації про вибрані файли
 
@@ -237,7 +237,6 @@ html {
 }
 
 form {
-  width: 580px;
   background: #ccc;
   margin: 0 auto;
   padding: 20px;
@@ -350,6 +349,7 @@ function updateImageDisplay() {
         }, розмір файлу – ${returnFileSize(file.size)}.`;
         const image = document.createElement("img");
         image.src = URL.createObjectURL(file);
+        image.alt = image.title = file.name;
 
         listItem.appendChild(image);
         listItem.appendChild(para);
@@ -398,6 +398,16 @@ function returnFileSize(number) {
     return `${(number / 1048576).toFixed(1)} MB`;
   }
 }
+```
+
+```js hidden
+const button = document.querySelector("form button");
+button.addEventListener("click", (e) => {
+  e.preventDefault();
+  const para = document.createElement("p");
+  para.append("Зображення завантажене!");
+  preview.replaceChildren(para);
+});
 ```
 
 Приклад має наступний вигляд; пограйтеся:

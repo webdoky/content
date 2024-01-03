@@ -186,7 +186,7 @@ browser-compat: html.elements.link
 
     Додавання в DOM властивості `disabled` призводить до того, що таблиця стилів прибирається зі списку документа {{domxref("Document.styleSheets")}}.
 
-- `fetchpriority` {{Experimental_Inline}}
+- `fetchpriority`
 
   - : Надає підказку щодо відносного пріоритету стягування ресурсу наперед. Дозволені значення:
 

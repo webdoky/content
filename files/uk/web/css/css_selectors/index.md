@@ -66,7 +66,6 @@ spec-urls: https://drafts.csswg.org/selectors/
 - {{CSSXref(":nth-of-type", ":nth-of-type()")}}
 - {{CSSXref(":nth-last-child", ":nth-last-child()")}}
 - {{CSSXref(":nth-last-of-type", ":nth-last-of-type()")}}
-- {{CSSXref(":nth-of-type", ":nth-of-type()")}}
 - {{CSSXref(":only-child")}}
 - {{CSSXref(":only-of-type")}}
 - {{CSSXref(":optional")}}

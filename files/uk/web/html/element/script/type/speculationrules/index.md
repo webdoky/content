@@ -11,7 +11,7 @@ browser-compat: html.elements.script.type.speculationrules
 
 Значення **`speculationrules`** (правила спекуляції) атрибута [`type`](/uk/docs/Web/HTML/Element/script/type) [елемента `<script>`](/uk/docs/Web/HTML/Element/script) вказує на те, що тіло цього елемента містить правила спекуляції.
 
-Правила спекуляції приймають форму структури JSON, що визначає те, які браузеру слід отримати наперед або візуалізувати наперед. Це частина [API правил спекуляції](/uk/docs/Web/API/Speculation_Rules_API).
+Правила спекуляції приймають форму структури JSON, що визначає те, які браузеру слід отримати наперед або візуалізувати наперед. Це частина {{domxref("Speculation Rules API", "API правил спекуляції", "", "nocode")}}.
 
 ## Синтаксис
 
