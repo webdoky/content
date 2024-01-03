@@ -57,7 +57,7 @@ browser-compat: html.global_attributes
 
 - [`enterkeyhint`](/uk/docs/Web/HTML/Global_attributes/enterkeyhint)
   - : Підказує, який підпис дії (чи піктограму) показувати на клавіші введення віртуальних клавіатур.
-- [`exportparts`](/uk/docs/Web/HTML/Global_attributes/exportparts) {{Experimental_Inline}}
+- [`exportparts`](/uk/docs/Web/HTML/Global_attributes/exportparts)
   - : Використовується для транзитивного експорту тіньових частин зі вкладеного тіньового дерева до контейнерного світлого дерева.
 - [`hidden`](/uk/docs/Web/HTML/Global_attributes/hidden)
   - : Перелічений атрибут, що вказує, що елемент поки що, чи уже, не є _доречним_. Наприклад, може застосовуватися для приховування елементів сторінки, що не можуть використовуватися, поки не завершено процес автентифікації. Браузер не виведе такі елементи. Цей атрибут не повинен використовуватися для приховування вмісту, що може бути правомірно показаний.
@@ -120,7 +120,7 @@ browser-compat: html.global_attributes
     - порожній рядок чи `yes`, що означає, що елемент буде перекладений.
     - `no`, що означає, що елемент не буде перекладений.
 
-- [`virtualkeyboardpolicy`](/uk/docs/Web/HTML/Global_attributes/virtualkeyboardpolicy)
+- [`virtualkeyboardpolicy`](/uk/docs/Web/HTML/Global_attributes/virtualkeyboardpolicy) {{Experimental_Inline}}
 
   - : [Перелічений](/uk/docs/Glossary/Enumerated) атрибут, що використовується для контролю поведінки екранної віртуальної клавіатури на пристроях штибу планшетів, мобільних телефонів та інших, на яких апаратної клавіатури може не бути, для елементів, котрі також підтримують атрибут [`contenteditable`](#contenteditable).
 
