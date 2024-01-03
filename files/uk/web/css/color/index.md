@@ -71,7 +71,7 @@ color: unset;
 - {{cssxref("&lt;color&gt;")}}
   - : Задає колір текстових і оздобних частин елемента.
 - [`currentcolor`](/uk/docs/Web/CSS/color_value#kliuchove-slovo-currentcolor)
-  - : Задає колір як значення властивості `color` елемента. Проте якщо це значення вжито як значення `color` то `currentcolor` обробляється як `inherit`.
+  - : Задає колір як значення властивості `color` елемента. Проте якщо це значення вжито як значення `color`, то `currentcolor` обробляється як `inherit`.
 
 ## Занепокоєння щодо доступності
 
