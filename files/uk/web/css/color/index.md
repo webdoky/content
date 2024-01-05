@@ -71,7 +71,7 @@ color: unset;
 - {{cssxref("&lt;color&gt;")}}
   - : Задає колір текстових і оздобних частин елемента.
 - [`currentcolor`](/uk/docs/Web/CSS/color_value#kliuchove-slovo-currentcolor)
-  - : Задає колір як значення властивості `color` елемента. Проте якщо це значення вжито як значення `color` то `currentcolor` обробляється як `inherit`.
+  - : Задає колір як значення властивості `color` елемента. Проте якщо це значення вжито як значення `color`, то `currentcolor` обробляється як `inherit`.
 
 ## Занепокоєння щодо доступності
 
@@ -108,13 +108,13 @@ p {
   color: #ff0000;
 }
 p {
-  color: rgb(255, 0, 0);
+  color: rgb(255 0 0);
 }
 p {
-  color: rgb(100%, 0%, 0%);
+  color: rgb(100% 0% 0%);
 }
 p {
-  color: hsl(0, 100%, 50%);
+  color: hsl(0 100% 50%);
 }
 
 /* 50% прозорості */
@@ -122,10 +122,10 @@ p {
   color: #ff000080;
 }
 p {
-  color: rgba(255, 0, 0, 0.5);
+  color: rgb(255 0 0 / 50%);
 }
 p {
-  color: hsla(0, 100%, 50%, 0.5);
+  color: hsl(0 100% 50% / 50%);
 }
 ```
 

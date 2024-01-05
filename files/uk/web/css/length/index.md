@@ -125,7 +125,7 @@ browser-compat: css.types.length
 
   - : Представляє відсотки від розміру початкового [контейнерного блоку](/uk/docs/Web/CSS/Containing_block), в напрямку [рядкової осі](/uk/docs/Web/CSS/CSS_logical_properties_and_values#blokovi-ta-riadkovi) кореневого елемента.
 
-    Для малих, великих та динамічних розмірів області перегляду відповідними одиницями відсотків від області видимості є `svi`, `lvi` і `dvi` відповідно.
+    Для малих, великих та динамічних розмірів області перегляду відповідними одиницями відсотків від області видимості є `svi`, `lvi` та `dvi` відповідно.
     `vi` представляє одиницю, засновану на усталеному розмірі області перегляду.
 
 ### Одиниці вимірювання довжини для контейнерних запитів
@@ -229,15 +229,15 @@ html {
   height: 50px;
   background-color: #999;
   box-shadow:
-    inset 3px 3px 5px rgb(255 255 255 / 0.5),
-    inset -3px -3px 5px rgb(0 0 0 / 0.5);
+    inset 3px 3px 5px rgb(255 255 255 / 50%),
+    inset -3px -3px 5px rgb(0 0 0 / 50%);
 }
 
 .result {
   height: 20px;
   box-shadow:
-    inset 3px 3px 5px rgba(255 255 255 / 0.5),
-    inset -3px -3px 5px rgb(0 0 0 / 0.5);
+    inset 3px 3px 5px rgb(255 255 255 / 50%),
+    inset -3px -3px 5px rgb(0 0 0 / 50%);
   background-color: orange;
   display: flex;
   align-items: center;

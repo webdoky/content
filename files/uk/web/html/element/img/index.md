@@ -39,7 +39,7 @@ browser-compat: html.elements.img
 - [SVG (масштабована векторна графіка)](/uk/docs/Web/Media/Formats/Image_types#svg-masshtabovana-vektorna-hrafika) — Векторний формат зображень. Його слід використовувати для зображень, що повинні бути точно відтворені в різних розмірах.
 - [WebP (формат вебзображень)](/uk/docs/Web/Media/Formats/Image_types#zobrazhennia-webp) — Чудовий варіант як для простих, так і анімованих зображень
 
-Формати штибу [WebP](/uk/docs/Web/Media/Formats/Image_types#zobrazhennia-webp) та [AVIF](/uk/docs/Web/Media/Formats/Image_types#zobrazhennia-avif) є рекомендованими, адже вони мають набагато кращу ефективність, ніж PNG, JPEG, GIF, як для нерухомих, так для анімованих зображень. WebP має широку підтримку, натомість AVIF не має підтримки в Edge.
+Формати штибу [WebP](/uk/docs/Web/Media/Formats/Image_types#zobrazhennia-webp) та [AVIF](/uk/docs/Web/Media/Formats/Image_types#zobrazhennia-avif) є рекомендованими, адже вони мають набагато кращу ефективність, ніж PNG, JPEG, GIF, як для нерухомих, так для анімованих зображень.
 
 SVG залишається рекомендованим форматом для зображень, що повинні бути точно відтворені в різних розмірах.
 

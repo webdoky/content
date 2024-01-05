@@ -61,8 +61,6 @@ transform: unset;
 
 Властивість `transform` може бути задана або як ключове слово `none`, або як одне чи більше значень `<transform-function>`.
 
-Якщо одним з кількох функційних значень є {{cssxref("transform-function/perspective", "perspective()")}}, то воно повинно стояти першим.
-
 ### Значення
 
 - {{cssxref("&lt;transform-function&gt;")}}
