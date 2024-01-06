@@ -18,7 +18,7 @@ browser-compat: css.properties.custom-property
 ```css
 --somekeyword: left;
 --somecolor: #0000ff;
---somecomplexvalue: 3px 6px rgb(20, 32, 54);
+--somecomplexvalue: 3px 6px rgb(20 32 54);
 ```
 
 - `<declaration-value>`
@@ -80,6 +80,7 @@ browser-compat: css.properties.custom-property
 
 ## Дивіться також
 
-- [Використання змінних CSS](/uk/docs/Web/CSS/Using_CSS_custom_properties)
 - Функція {{cssxref("var", "var()")}}
 - Директива {{cssxref("@property")}}
+- Посібник [Використання кастомних властивостей (змінних) CSS](/uk/docs/Web/CSS/Using_CSS_custom_properties)
+- Модуль [Кастомних властивостей як каскадних змінних CSS](/uk/docs/Web/CSS/CSS_cascading_variables)
