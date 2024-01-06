@@ -1,5 +1,5 @@
 ---
-title: "<link>: Елемент підключення зовнішнього ресурсу"
+title: "<link> – елемент підключення зовнішнього ресурсу"
 slug: Web/HTML/Element/link
 page-type: html-element
 browser-compat: html.elements.link
@@ -118,7 +118,14 @@ browser-compat: html.elements.link
         </tr>
         <tr>
           <td>font</td>
-          <td>CSS @font-face</td>
+          <td>
+            <p>@font-face CSS</p>
+            <div class="notecard note">
+              <p>
+                <strong>Примітка:</strong> Це значення на додачу вимагає, щоб <code>&#x3C;link></code> містив атрибут crossorigin; дивіться <a href="/uk/docs/Web/HTML/Attributes/rel/preload#otrymannia-z-cors">Отримання з CORS</a>.
+              </p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td>image</td>
@@ -216,12 +223,6 @@ browser-compat: html.elements.link
 
   - : Цей атрибут задає медіа, до якого застосовується пов'язаний ресурс. Значення повинно бути медіатипом або [медіазапитом](/uk/docs/Web/CSS/CSS_media_queries).
     Цей атрибут перш за все є корисним при підключенні зовнішніх таблиць стилів: він дає змогу користувацькому агентові обрати найкраще адаптовану для поточного пристрою таблицю.
-
-    > **Примітка:**
-    >
-    > - В HTML 4 це може бути лише простий розділений пробілами список літералів медіаописів, тобто [медіатипів і медіагруп](/uk/docs/Web/CSS/@media), котрі визначені й дозволені як значення цього атрибута, як то `print`, `screen`, `aural`, `braille`.
-    >   HTML5 розширив це до [медіазапитів](/uk/docs/Web/CSS/CSS_media_queries) будь-якого роду, що є надмножиною щодо дозволених в HTML 4 значень.
-    > - Браузери, котрі не підтримують [Медіазапити CSS](/uk/docs/Web/CSS/CSS_media_queries), не обов'язково адекватно впізнають зв'язок; не слід забувати задавати запасні зв'язки з медіазапитами, визначеними в HTML 4.
 
 - `referrerpolicy`
 
