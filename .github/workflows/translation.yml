@@ -264,7 +264,11 @@ jobs:
           commits=$(cat ./new_commits.txt)
           for commit in $commits
           do
-            echo "- [$(cd ./original && git log -1 --format=%s $commit)](https://github.com/mdn/content/commit/$commit)" >> ./body.md
+            changes=$(cd ./original && git log -1 --format=%s $commit)
+            # escape HTML entities
+            changes=$(echo $changes | sed 's/</\&lt;/g')
+            changes=$(echo $changes | sed 's/>/\&gt;/g')
+            echo "- [$changes](https://github.com/mdn/content/commit/$commit)" >> ./body.md
           done
           cat ./body.md
 

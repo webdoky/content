@@ -87,12 +87,12 @@ flex-grow: unset;
 
 .small {
   flex-grow: 1;
-  border: 3px solid rgba(0, 0, 0, 0.2);
+  border: 3px solid rgb(0 0 0 / 20%);
 }
 
 .double {
   flex-grow: 2;
-  border: 3px solid rgba(0, 0, 0, 0.2);
+  border: 3px solid rgb(0 0 0 / 20%);
 }
 ```
 

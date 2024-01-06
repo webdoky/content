@@ -151,6 +151,8 @@ spec-urls: https://drafts.csswg.org/css-grid/
   - [Вісь сітки](/uk/docs/Glossary/Grid_Axis)
   - [Ряд сітки](/uk/docs/Glossary/Grid_Row)
   - [Колонка сітки](/uk/docs/Glossary/Grid_Column)
+- Модуль [Компонування гнучкої рамки CSS](/uk/docs/Web/CSS/CSS_flexible_box_layout)
+- Модуль [Відображення CSS](/uk/docs/Web/CSS/CSS_display)
 - [Сітка за прикладом](https://gridbyexample.com/) - Колекція прикладів застосування та відеоуроків
 - [Довідка сітки CSS - Codrops (англ.)](https://tympanus.net/codrops/css_reference/grid/)
 - [Інспектор сітки CSS - Firefox DevTools (англ.)](https://firefox-source-docs.mozilla.org/devtools-user/page_inspector/how_to/examine_grid_layouts/index.html)
