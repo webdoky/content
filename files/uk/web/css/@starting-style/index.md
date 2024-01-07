@@ -264,7 +264,7 @@ html {
 
 /* Перехід для задника спливного віконця */
 [popover]::backdrop {
-  background-color: rgb(0 0 0 / 0);
+  background-color: rgb(0 0 0 / 0%);
   transition:
     display 0.7s allow-discrete,
     overlay 0.7s allow-discrete,
@@ -274,14 +274,14 @@ html {
 }
 
 [popover]:popover-open::backdrop {
-  background-color: rgb(0 0 0 / 0.25);
+  background-color: rgb(0 0 0 / 25%);
 }
 
 /* Вкладеність (&) не підтримується для псевдоелементів,
 тому задати самостійний блок starting-style. */
 @starting-style {
   [popover]:popover-open::backdrop {
-    background-color: rgb(0 0 0 / 0);
+    background-color: rgb(0 0 0 / 0%);
   }
 }
 ```
@@ -363,7 +363,7 @@ When the "Create new column" button is clicked, the `createColumn()` function is
 Потім за допомогою {{domxref("EventTarget.addEventListener", "addEventListener")}} до кнопки закриття додається слухач подій. Клацання цієї кнопки робить дві речі:
 
 - Додає `<div>` клас `fade-out`. Додання цього класу викликає задану для нього анімацію виходу.
-- Вилучає цей `<div>` після затримки 1000 мс. Функція {{domxref("setTimeout")}} затримує вилучення `<div>` з DOM (за допомогою {{domxref("Element.remove()")}}) до закінчення анімації.
+- Вилучає цей `<div>` після затримки 1000 мс. Функція {{domxref("setTimeout()")}} затримує вилучення `<div>` з DOM (за допомогою {{domxref("Element.remove()")}}) до закінчення анімації.
 
 #### CSS
 
@@ -402,8 +402,8 @@ div {
   position: relative;
   background: linear-gradient(
     to right,
-    rgb(255 255 255 / 0),
-    rgb(255 255 255 / 0.5)
+    rgb(255 255 255 / 0%),
+    rgb(255 255 255 / 50%)
   );
   opacity: 1;
   scale: 1 1;
