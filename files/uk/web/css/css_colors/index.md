@@ -111,7 +111,7 @@ spec-urls:
 - Атрибут SVG [`color`](/uk/docs/Web/SVG/Attribute/color)
 - Термін глосарія {{glossary("Color wheel", "Колірне коло")}}
 - Термін глосарія {{glossary("Interpolation", "Інтерполяція")}}
-- Директива [`@font-palette-values`](/uk/docs/Web/CSS/@font-palette-values) дескриптор [`override-colors`](/uk/docs/Web/CSS/@font-palette-values/override-colors)
+- Дескриптор [`override-colors`](/uk/docs/Web/CSS/@font-palette-values/override-colors) директиви [`@font-palette-values`](/uk/docs/Web/CSS/@font-palette-values)
 - Директива [`@color-profile`](/uk/docs/Web/CSS/@color-profile)
 - Можливість @media [`color-gamut`](/uk/docs/Web/CSS/@media/color-gamut)
 - Можливість @media [`forced-colors`](/uk/docs/Web/CSS/@media/forced-colors)
