@@ -105,7 +105,7 @@ html {
 /* Перехід для задника спливного віконця */
 
 [popover]::backdrop {
-  background-color: rgb(0 0 0 / 0);
+  background-color: rgb(0 0 0 / 0%);
   transition:
     display 0.7s allow-discrete,
     overlay 0.7s allow-discrete,
@@ -115,7 +115,7 @@ html {
 }
 
 [popover]:popover-open::backdrop {
-  background-color: rgb(0 0 0 / 0.25);
+  background-color: rgb(0 0 0 / 25%);
 }
 
 /* Вкладені селектори (&) не можуть представляти псевдоелементи, тому це
@@ -123,7 +123,7 @@ html {
 
 @starting-style {
   [popover]:popover-open::backdrop {
-    background-color: rgb(0 0 0 / 0);
+    background-color: rgb(0 0 0 / 0%);
   }
 }
 ```
