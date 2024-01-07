@@ -172,7 +172,7 @@ textarea {
 
 ## Використання псевдокласу :root
 
-Для деяких оголошень CSS можна оголосити значення вище за каскадом, щоб успадкування CSS розв'язало цю проблему. Для нетривіальних проєктів це не завжди можливо. Оголошуючи користувацьку властивість на псевдокласі {{cssxref(":root")}} і використовуючи її в документі, автор CSS коду може зменшити потребу повторень:
+Для деяких оголошень CSS можна оголосити значення вище за каскадом, щоб успадкування CSS розв'язало цю проблему. Для нетривіальних проєктів це не завжди можливо. Оголошуючи користувацьку властивість на псевдокласі {{cssxref(":root")}} і використовуючи її в документі, автор CSS коду може зменшити потребу в повторенні:
 
 ```css
 /* Визначити --main-bg-color тут */
@@ -342,7 +342,6 @@ div {
 
 ### Визначення запасних варіантів у функції `var()`
 
-Using the [`var()`](/uk/docs/Web/CSS/var) function, you can define multiple **fallback values** when the given variable is not yet defined; this can be useful when working with [Custom Elements](/uk/docs/Web/API/Web_components/Using_custom_elements) and [Shadow DOM](/uk/docs/Web/API/Web_components/Using_shadow_DOM).
 
 Використовуючи функцію [`var()`](/uk/docs/Web/CSS/var), можна визначити кілька **запасних значень**, коли задана змінна ще не визначена; це може бути корисно при роботі з [користувацькими елементами](/uk/docs/Web/API/Web_components/Using_custom_elements) та [тіньовим DOM](/uk/docs/Web/API/Web_components/Using_shadow_DOM).
 
