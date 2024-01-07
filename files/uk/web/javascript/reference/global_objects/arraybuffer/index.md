@@ -57,7 +57,7 @@ browser-compat: javascript.builtins.ArrayBuffer
   - : Розмір, у байтах, цього `ArrayBuffer`. Це значення задається, коли цей масив конструюється, і може бути змінено лише за допомогою методу {{jsxref("ArrayBuffer.prototype.resize()")}}, якщо `ArrayBuffer` має змінний розмір.
 - {{jsxref("Object/constructor", "ArrayBuffer.prototype.constructor")}}
   - : Функція-конструктор, що створила цей екземпляр об'єкта. Для екземплярів `ArrayBuffer` початковим значенням є функція-конструктор {{jsxref("ArrayBuffer/ArrayBuffer", "ArrayBuffer")}}.
-- {{jsxref("ArrayBuffer.prototype.detached")}} {{experimental_inline}}
+- {{jsxref("ArrayBuffer.prototype.detached")}}
   - : Лише для зчитування. Повертає `true`, якщо цей `ArrayBuffer` був від'єднаний (переданий), або `false` – якщо ні.
 - {{jsxref("ArrayBuffer.prototype.maxByteLength")}}
   - : Доступна лише для зчитування максимальна довжина, в байтах, до якої може бути змінений розмір `ArrayBuffer`. Це значення задається, коли цей масив конструюється, і не може бути змінене.
@@ -72,9 +72,9 @@ browser-compat: javascript.builtins.ArrayBuffer
   - : Змінює розмір цього `ArrayBuffer` на вказаний розмір, у байтах.
 - {{jsxref("ArrayBuffer.prototype.slice()")}}
   - : Повертає новий `ArrayBuffer`, вміст якого – копія байтів цього `ArrayBuffer` від `begin` (включно) до `end` (не включно). Якщо `begin` або `end` – від'ємні, вони вказують на індекс з кінця масиву, а не з початку.
-- {{jsxref("ArrayBuffer.prototype.transfer()")}} {{experimental_inline}}
+- {{jsxref("ArrayBuffer.prototype.transfer()")}}
   - : Створює новий `ArrayBuffer` з тим самим байтовим вмістом, що й цей буфер, а потім від'єднує поточний буфер.
-- {{jsxref("ArrayBuffer.prototype.transferToFixedLength()")}} {{experimental_inline}}
+- {{jsxref("ArrayBuffer.prototype.transferToFixedLength()")}}
   - : Створює новий `ArrayBuffer` з незмінним розміром і тим же байтовим вмістом, що й цей буфер, а тоді від'єднує поточний буфер.
 
 ## Приклади
