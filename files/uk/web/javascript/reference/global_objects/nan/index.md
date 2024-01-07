@@ -96,13 +96,23 @@ const f2b = (x) => new Uint8Array(new Float64Array([x]).buffer);
 const b2f = (x) => new Float64Array(x.buffer)[0];
 // Отримання байтового представлення NaN
 const n = f2b(NaN);
-// Змінити перший біт, котрий є бітом знаку і не грає ролі для NaN
-n[0] = 1;
+const m = f2b(NaN);
+// Змінити біт знаку, який не має значення для NaN
+n[7] += 2 ** 7;
+// n[0] += 2**7; для тупокінцевих процесорів
 const nan2 = b2f(n);
 console.log(nan2); // NaN
 console.log(Object.is(nan2, NaN)); // true
 console.log(f2b(NaN)); // Uint8Array(8) [0, 0, 0, 0, 0, 0, 248, 127]
-console.log(f2b(nan2)); // Uint8Array(8) [1, 0, 0, 0, 0, 0, 248, 127]
+console.log(f2b(nan2)); // Uint8Array(8) [0, 0, 0, 0, 0, 0, 248, 255]
+// Змінити перший біт, який є найменш значущим бітом мантиси і не має значення для NaN
+m[0] = 1;
+// m[7] = 1; для тупокінцевих процесорів
+const nan3 = b2f(m);
+console.log(nan3); // NaN
+console.log(Object.is(nan3, NaN)); // true
+console.log(f2b(NaN)); // Uint8Array(8) [0, 0, 0, 0, 0, 0, 248, 127]
+console.log(f2b(nan3)); // Uint8Array(8) [1, 0, 0, 0, 0, 0, 248, 127]
 ```
 
 ### Тихе екранування NaN

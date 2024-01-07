@@ -41,9 +41,11 @@ browser-compat:
 | [`preload`](/uk/docs/Web/HTML/Attributes/rel/preload)             | Задає те, що користувацький агент повинен наперед стягнути та відкласти цільовий ресурс для поточної навігації, згідно з потенційним напрямком, заданим атрибутом [`as`](/uk/docs/Web/HTML/Element/link#as) (а також пріоритетом, пов'язаним з відповідним напрямком). | Зовнішній ресурс        | Не дозволено                                   | Не дозволено            |
 | [`prerender`](/uk/docs/Web/HTML/Attributes/rel/prerender)         | Задає те, що користувацький агент повинен наперед стягнути цільовий ресурс та обробити його в спосіб, що допоможе надати швидшу відповідь у майбутньому.                                                                                                               | Зовнішній ресурс        | Не дозволено                                   | Не дозволено            |
 | [`prev`](#prev)                                                   | Позначає те, що поточний документ є частиною серії та те, що попередній документ серії – пов'язаний документ.                                                                                                                                                          | Посилання               | Посилання                                      | Посилання               |
+| [`privacy-policy`](#privacy-policy)                               | Надає посилання до інформації про збір і практики використання даних, що застосовуються до поточного документа.                                                                                                                                                        | Посилання               | Посилання                                      | Не дозволено            |
 | [`search`](#search)                                               | Надає посилання на ресурс, що може використовуватися для пошуку по поточному документу та пов'язаним з ним сторінках.                                                                                                                                                  | Посилання               | Посилання                                      | Посилання               |
 | [`stylesheet`](#stylesheet)                                       | Імпортує список стилів.                                                                                                                                                                                                                                                | Зовнішній ресурс        | Не дозволено                                   | Не дозволено            |
 | [`tag`](#tag)                                                     | Надає бирку (ідентифіковану поточною адресою), що застосовується до поточного документа.                                                                                                                                                                               | Не дозволено            | Посилання                                      | Не дозволено            |
+| [`terms-of-service`](#terms-of-service)                           | Посилання на угоду, або умови надання послуг, між надавачем документа та користувачами, які бажають цим документом скористатися.                                                                                                                                       | Посилання               | Посилання                                      | Не дозволено            |
 
 Атрибут `rel` має зміст для елементів {{htmlelement('link')}}, {{htmlelement('a')}}, {{htmlelement('area')}} та {{htmlelement('form')}}, але деякі значення мають зміст лише для їх підмножини. Як і всі значення атрибутів ключових слів HTML, ці значення нечутливі до регістру.
 
@@ -135,7 +137,7 @@ browser-compat:
     > **Примітка:** Атрибут [`crossorigin`](/uk/docs/Web/HTML/Attributes/crossorigin) не підтримується для `rel="icon"` у браузерах на основі Chromium. Дивіться [відкриту проблему Chromium](https://crbug.com/1121645).
 
     > **Примітка:** Apple iOS не використовує для вибору піктограми вебсторінки для Web Clip чи стартового заповнювача ані цей тип зв'язку, ані атрибут [`sizes`](/uk/docs/Web/HTML/Element/link#sizes), як це роблять інші браузери.
-    > Замість цього використовується нестандартні можливості [`apple-touch-icon`](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html#//apple_ref/doc/uid/TP40002051-CH3-SW4) і [`apple-touch-startup-image`](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html#//apple_ref/doc/uid/TP40002051-CH3-SW6), відповідно.
+    > Замість цього використовуються нестандартні можливості [`apple-touch-icon`](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html#//apple_ref/doc/uid/TP40002051-CH3-SW4) і [`apple-touch-startup-image`](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html#//apple_ref/doc/uid/TP40002051-CH3-SW6), відповідно.
 
     > **Примітка:** Нерідко перед `icon` спостерігається тип зв'язку `shortcut`, але він є невідповідним, ігнорованим, і **веброзробники більше не повинні його використовувати**.
 
@@ -184,6 +186,10 @@ browser-compat:
 
     Примітка: Синонім `previous` є неправильним і не повинен використовуватися.
 
+- `privacy-policy`
+
+  - : Значення `privacy-policy`, дійсне для елементів {{HTMLElement("a")}}, {{HTMLElement("area")}}, {{HTMLElement("form")}}, {{HTMLElement("link")}}, позначає те, що гіперпосилання веде до документа, який описує практики збору та використання даних, що застосовуються до поточного документа.
+
 - `search`
 
   - : Ключове слово `search` відноситься до {{htmlelement('form')}}, {{htmlelement('link')}}, {{htmlelement('a')}} та {{htmlelement('area')}} і позначає те, що гіперпосилання вказує на документ, чий інтерфейс розроблений саме для пошуку в поточному документі, на сайті, в пов'язаних ресурсах, надаючи посилання на ресурс, що може бути використаний для пошуку.
@@ -203,7 +209,12 @@ browser-compat:
     Вимагає використання протоколу CORS для стягнення зовнішніх ресурсів з іншого походження.
 
 - `tag`
+
   - : Це значення, дійсне для елементів {{htmlelement('a')}} та {{htmlelement('area')}}, задає бирку (ідентифіковану заданою адресою), що застосовується до поточного документа. Значення бирки позначає те, що зв'язок вказує на документ, що описує бирку, застосовану до документа, в якому вона розташована. Такий тип зв'язку не призначений для бирок всередині хмари бирок, оскільки такі бирки застосовуються до групи сторінок, а значення `tag` атрибута `rel` – призначене для одного документа.
+
+- `terms-of-service`
+
+  - : Значення `terms-of-service`, дійсне для елементів {{HTMLElement("a")}}, {{HTMLElement("area")}} і {{HTMLElement("link")}}, позначає те, що гіперпосилання веде до документа, який є Умовами надання послуг, які описують домовленості між надавачем поточного документа та користувачами, які бажають скористатися цим документом.
 
 ### Нестандартні значення
 

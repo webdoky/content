@@ -298,7 +298,7 @@ console.log("Поле lastIndex має значення " + /d(b+)d/g.lastIndex)
 | `d`      | Згенерувати індекси для збігів підрядків.                                             | {{jsxref("RegExp/hasIndices", "hasIndices")}}   |
 | `g`      | Глобальний пошук.                                                                     | {{jsxref("RegExp/global", "global")}}           |
 | `i`      | Пошук, нечутливий до регістру.                                                        | {{jsxref("RegExp/ignoreCase", "ignoreCase")}}   |
-| `m`      | Дозволяє `^` та `$` давати збіг з символами нового рядка.                             | {{jsxref("RegExp/multiline", "multiline")}}     |
+| `m`      | Дозволяє `^` та `$` давати збіг поруч з символами нового рядка.                       | {{jsxref("RegExp/multiline", "multiline")}}     |
 | `s`      | Дозволяє символові `.` давати збіг з символами нового рядка.                          | {{jsxref("RegExp/dotAll", "dotAll")}}           |
 | `u`      | "Unicode"; сприймає патерн як послідовність кодових точок Unicode.                    | {{jsxref("RegExp/unicode", "unicode")}}         |
 | `v`      | Оновлена версія режиму `u`, з більшою кількістю можливостей Unicode.                  | {{jsxref("RegExp/unicodeSets", "unicodeSets")}} |
