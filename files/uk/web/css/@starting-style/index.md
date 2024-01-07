@@ -356,9 +356,7 @@ function createColumn() {
 }
 ```
 
-When the "Create new column" button is clicked, the `createColumn()` function is called. This creates a {{htmlelement("div")}} element with a randomly generated background color and a {{htmlelement("button")}} element to close the `<div>`. It then appends the `<button>` to the `<div>` and the `<div>` to the `<section>` container.
-
-Коли клацають кнопка закриття, виконується функція, яка додає клас `fade-out` до `<div>`. Додавання класу викликає анімацію виходу, задану для цього класу. Після тайм-ауту вилучається `<div>` з DOM (за допомогою {{domxref("Element.remove()")}}) після закінчення анімації.
+Коли клацають кнопку  "Створити нову колонку", викликається функція `createColumn()`. Це породжує новий елемент {{htmlelement("div")}} з випадково згенерованим кольором тла і елементом {{htmlelement("button")}} для закриття цього `<div>`. Потім вона додає `<button>` до `<div>`, а `<div>` — до контейнера `<section>`.
 
 Потім за допомогою {{domxref("EventTarget.addEventListener", "addEventListener")}} до кнопки закриття додається слухач подій. Клацання цієї кнопки робить дві речі:
 
