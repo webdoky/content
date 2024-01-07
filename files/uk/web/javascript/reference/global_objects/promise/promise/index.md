@@ -47,8 +47,6 @@ readFile("./data.txt", (error, result) => {
 
 > **Примітка:** Якщо ваша задача вже заснована на промісах, вам, ймовірно, не потрібен конструктор `Promise()`.
 
-The `executor` is custom code that ties an outcome in a callback to a promise. You, the programmer, write the `executor`. Its signature is expected to be:
-
 Функція `executor` – це клієнтський код, що зв'язує результат виклику функції зворотного виклику з промісом. Ви, програміст, пишете функцію `executor`. Очікується, що її сигнатура буде такою:
 
 ```js
