@@ -50,8 +50,6 @@ page-type: landing-page
 - {{SVGAttr("color-interpolation-filters")}}
 - {{SVGAttr("color-profile")}}
 - {{SVGAttr("color-rendering")}}
-- {{SVGAttr("contentScriptType")}}
-- {{SVGAttr("contentStyleType")}}
 - {{SVGAttr("crossorigin")}}
 - {{SVGAttr("cursor")}}
 - {{SVGAttr("cx")}}
@@ -85,7 +83,6 @@ page-type: landing-page
 - {{SVGAttr("fill-opacity")}}
 - {{SVGAttr("fill-rule")}}
 - {{SVGAttr("filter")}}
-- {{SVGAttr("filterRes")}}
 - {{SVGAttr("filterUnits")}}
 - {{SVGAttr("flood-color")}}
 - {{SVGAttr("flood-opacity")}}
@@ -301,7 +298,6 @@ page-type: landing-page
 - {{SVGAttr("vert-origin-x")}}
 - {{SVGAttr("vert-origin-y")}}
 - {{SVGAttr("viewBox")}}
-- {{SVGAttr("viewTarget")}}
 - {{SVGAttr("visibility")}}
 
 ### W
