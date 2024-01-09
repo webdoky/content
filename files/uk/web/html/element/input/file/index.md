@@ -427,7 +427,7 @@ button.addEventListener("click", (e) => {
     <tr>
       <td><strong>Події</strong></td>
       <td>
-        {{domxref("HTMLElement/change_event", "change")}}, {{domxref("HTMLElement/input_event", "input")}} і {{domxref("HTMLElement/cancel_event", "cancel")}}
+        {{domxref("HTMLElement/change_event", "change")}}, {{domxref("Element/input_event", "input")}} і {{domxref("HTMLElement/cancel_event", "cancel")}}
       </td>
     </tr>
     <tr>
