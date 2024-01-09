@@ -8,7 +8,7 @@ page-type: glossary-disambiguation
 
 У комп'ютерних науках **Булеві значення** – це логічний тип даних, який може мати лише значення `true` або `false`.
 
-Наприклад, у JavaScript Булеві умови нерідко використовуються для прийняття рішень щодо того, які частини коду виконувати (наприклад, у [інструкціях if](/uk/docs/Web/JavaScript/Reference/Statements/if...else)) або повторювати (наприклад, у [циклах for](/uk/docs/Web/JavaScript/Reference/Statements/for)).
+Наприклад, у JavaScript Булеві умови нерідко використовуються для прийняття рішень щодо того, які частини коду виконувати (наприклад, в [інструкціях if](/uk/docs/Web/JavaScript/Reference/Statements/if...else)) або повторювати (наприклад, у [циклах for](/uk/docs/Web/JavaScript/Reference/Statements/for)).
 
 Нижче – трохи псевдокоду JavaScript (цей код насправді не можна виконати), що ілюструє цю концепцію.
 
