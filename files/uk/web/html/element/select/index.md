@@ -672,6 +672,6 @@ document.forms[0].onsubmit = (e) => {
 
 ## Дивіться також
 
-- Події, що їх викидає `<select>`: {{domxref("HTMLElement/change_event", "change")}}, {{domxref("HTMLElement/input_event", "input")}}
+- Події, що їх викидає `<select>`: {{domxref("HTMLElement/change_event", "change")}}, {{domxref("Element/input_event", "input")}}
 - Елемент {{HTMLElement("option")}}
 - Елемент {{HTMLElement("optgroup")}}
