@@ -77,7 +77,7 @@ browser-compat: html.elements.input.type_email
 
 Атрибут `size` – це числове значення, що вказує на те, якої ширини в символах повинно бути поле введення. Значення цього атрибута повинно бути числом, більшим за нуль, а усталене значення – 20. Оскільки розмір символів буває різний, така ширина може бути, а може й не бути точною, і на її розмірність не варто покладатися; результівне поле може бути вужчим або ширшим за задану кількість символів, залежно від самих цих символів та шрифту (застосованих налаштувань {{cssxref("font")}}).
 
-Це _не_ задає обмеження того, скільки символів користувач може ввести в поле. Це лише приблизно задає те, скільки символів водночас буде видно. Аби задати верхню межу довжини введених даних, слід використовувати атрибут [`maxlength`](#maxlength-maksymalna-dovzhyna).
+Це _не_ задає обмеження того, скільки символів користувач може ввести в поле. Це лише приблизно задає те, скільки символів водночас буде видно. Аби задати верхню межу довжини введених даних, слід використовувати атрибут [`maxlength`](#maxlength).
 
 ## Застосування полів електронної пошти
 
@@ -338,7 +338,7 @@ label::after {
       <td><strong>Події</strong></td>
       <td>
         {{domxref("HTMLElement/change_event", "change")}} і
-        {{domxref("HTMLElement/input_event", "input")}}
+        {{domxref("Element/input_event", "input")}}
       </td>
     </tr>
     <tr>
@@ -349,7 +349,7 @@ label::after {
         <a href="/uk/docs/Web/HTML/Element/input#maxlength-maksymalna-dovzhyna"><code>maxlength</code></a>,
         <a href="/uk/docs/Web/HTML/Element/input#minlength-minimalna-dovzhyna"><code>minlength</code></a>,
         <a href="/uk/docs/Web/HTML/Element/input#multiple-kilka"><code>multiple</code></a>,
-        <a href="/uk/docs/Web/HTML/Element/input#name"><code>name</code></a>,
+        <a href="/uk/docs/Web/HTML/Element/input#name-imia"><code>name</code></a>,
         <a href="/uk/docs/Web/HTML/Element/input#pattern-patern"><code>pattern</code></a>,
         <a href="/uk/docs/Web/HTML/Element/input#placeholder"><code>placeholder</code></a>,
         <a href="/uk/docs/Web/HTML/Element/input#readonly-lyshe-dlia-chytannia"><code>readonly</code></a>,
