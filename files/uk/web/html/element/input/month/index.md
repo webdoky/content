@@ -30,7 +30,7 @@ browser-compat: html.elements.input.type_month
 
 ### Задання усталеного значення
 
-Усталене значення контрольного елемента можна задати в атрибуті [`value`](/uk/docs/Web/HTML/Element/input#value), отак:
+Усталене значення контрольного елемента можна задати в атрибуті [`value`](/uk/docs/Web/HTML/Element/input#value-znachennia), отак:
 
 ```html
 <label for="bday-month">В якому місяці ви народилися?</label>
@@ -67,13 +67,13 @@ monthControl.value = "2001-06";
 
 Значення атрибута list – це {{domxref("Element.id", "id")}} елемента {{HTMLElement("datalist")}}, розташованого в тому самому документі.
 {{HTMLElement("datalist")}} надає список наперед визначених значень, що пропонуються користувачеві як значення для цього поля.
-Будь-які значення в списку, несумісні з [`type`](/uk/docs/Web/HTML/Element/input#type), не виводяться як запропоновані варіанти.
+Будь-які значення в списку, несумісні з [`type`](/uk/docs/Web/HTML/Element/input#type-typ), не виводяться як запропоновані варіанти.
 Надані значення пропонуються, а не вимагаються: користувач може як обрати з такого наперед визначеного списку, так і ввести інше значення.
 
 ### max
 
 Найпізніші рік з місяцем, що приймаються, у форматі рядка, описаному в розділі [Значення](#znachennia) вище.
-Якщо введене в елемент [`value`](/uk/docs/Web/HTML/Element/input#value) перевищує це значення, то елемент не проходить [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation).
+Якщо введене в елемент [`value`](/uk/docs/Web/HTML/Element/input#value-znachennia) перевищує це значення, то елемент не проходить [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation).
 Якщо значення атрибута `max` не є дійсним рядком у форматі "`yyyy-MM`", то елемент не має максимального значення.
 
 Це значення повинно задавати пару року та місяця, що є пізнішою або рівною парі, заданій в атрибуті `min`.
@@ -81,7 +81,7 @@ monthControl.value = "2001-06";
 ### min
 
 Найраніші рік з місяцем, в тому самому форматі "`yyyy-MM`", описаному вище.
-Якщо [`value`](/uk/docs/Web/HTML/Element/input#value) елемента менше за це значення, то такий елемент не проходить [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation).
+Якщо [`value`](/uk/docs/Web/HTML/Element/input#value-znachennia) елемента менше за це значення, то такий елемент не проходить [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation).
 Якщо значення, задане для `min`, не є дійсним рядком року та місяця, то поле не має мінімального значення.
 
 Це значення повинно бути парою року та місяця, що є ранішою або рівною парі, заданій в атрибуті `max`.
@@ -96,7 +96,7 @@ monthControl.value = "2001-06";
 ### step
 
 Атрибут `step` – це число, що задає гранулярність, котрої повинно дотримуватись значення, або особливе значення `any`, описане нижче.
-Лише значення, що відповідають основі крокування ([`min`](#min), якщо цей атрибут задано, а інакше – [`value`](/uk/docs/Web/HTML/Element/input#value), або відповідне усталене значення, якщо ці атрибути не задані), вважаються дійсними.
+Лише значення, що відповідають основі крокування ([`min`](#min), якщо цей атрибут задано, а інакше – [`value`](/uk/docs/Web/HTML/Element/input#value-znachennia), або відповідне усталене значення, якщо ці атрибути не задані), вважаються дійсними.
 
 Рядкове значення `any` означає, що крокування не накладається, і приймається будь-яке значення (з урахуванням інших обмежень, як то [`min`](#min) і [`max`](#max)).
 
@@ -127,7 +127,7 @@ monthControl.value = "2001-06";
 
 ### Задання максимальної та мінімальної дат
 
-Атрибути [`min`](/uk/docs/Web/HTML/Element/input#min) і [`max`](/uk/docs/Web/HTML/Element/input#max) можна використовувати для обмеження діапазону дат, з котрого може обирати користувач.
+Атрибути [`min`](/uk/docs/Web/HTML/Element/input#min-minimum) і [`max`](/uk/docs/Web/HTML/Element/input#max-maksymum) можна використовувати для обмеження діапазону дат, з котрого може обирати користувач.
 В наступному прикладі задано мінімальний місяць `1900-01` і максимальний – `2013-12`:
 
 ```html
@@ -151,14 +151,14 @@ monthControl.value = "2001-06";
 
 ### Контроль розміру поля
 
-`<input type="month">` не підтримує атрибутів розміру форм, наприклад, [`size`](/uk/docs/Web/HTML/Element/input#size).
+`<input type="month">` не підтримує атрибутів розміру форм, наприклад, [`size`](/uk/docs/Web/HTML/Element/input#size-rozmir).
 Для задання його розміру доведеться вдатися до [CSS](/uk/docs/Web/CSS).
 
 ## Валідація
 
 Усталено `<input type="month">` не застосовує до введених значень жодної валідації. Загалом реалізації користувацького інтерфейсу не дозволяють вводити нічого, що не є датою, що корисно, але все одно можна подати форму, в якій поле `month` буде порожнім, або ввести недійсну дату (наприклад, 32 квітня).
 
-Щоб цього уникнути, можна використати [`min`](/uk/docs/Web/HTML/Element/input#min) і [`max`](/uk/docs/Web/HTML/Element/input#max) – для обмеження доступних даних (дивіться [Задання максимальної та мінімальної дат](#zadannia-maksymalnoii-ta-minimalnoii-dat)), і на додачу – застосувати атрибут [`required`](/uk/docs/Web/HTML/Element/input#required), аби зробити введення дати обов'язковим.
+Щоб цього уникнути, можна використати [`min`](/uk/docs/Web/HTML/Element/input#min-minimum) і [`max`](/uk/docs/Web/HTML/Element/input#max-maksymum) – для обмеження доступних даних (дивіться [Задання максимальної та мінімальної дат](#zadannia-maksymalnoi-ta-minimalnoi-dat)), і на додачу – застосувати атрибут [`required`](/uk/docs/Web/HTML/Element/input#required-oboviazkovyi), аби зробити введення дати обов'язковим.
 Як наслідок, браузери, що це підтримують, покажуть помилку, якщо спробувати подати дату, що лежить поза заданими межами, або порожнє поле.
 
 Погляньмо на приклад; тут задано мінімальну та максимальну дати, а також поле зроблено обов'язковим:
@@ -249,7 +249,7 @@ input:valid + span::after {
 - `Місяць yyyy` (Липень 2022)
 - і так далі…
 
-Один зі способів це обійти – додати полю `month` атрибут [`pattern`](/uk/docs/Web/HTML/Element/input#pattern).
+Один зі способів це обійти – додати полю `month` атрибут [`pattern`](/uk/docs/Web/HTML/Element/input#pattern-patern).
 Попри те, що поле `month` його не використовує, якщо браузер відступить до обробки його як поля `text`, то такий патерн буде застосований.
 Наприклад, спробуйте переглянути наступне демо в браузері, що не підтримує поля `month`:
 
@@ -466,16 +466,16 @@ function populateYears() {
       <td><strong>Події</strong></td>
       <td>
         {{domxref("HTMLElement/change_event", "change")}} і
-        {{domxref("HTMLElement/input_event", "input")}}
+        {{domxref("Element/input_event", "input")}}
       </td>
     </tr>
     <tr>
       <td><strong>Доступні спільні атрибути</strong></td>
       <td>
         <a href="/uk/docs/Web/HTML/Element/input#autocomplete"><code>autocomplete</code></a>,
-        <a href="/uk/docs/Web/HTML/Element/input#list"><code>list</code></a>,
-        <a href="/uk/docs/Web/HTML/Element/input#readonly"><code>readonly</code></a> і
-        <a href="/uk/docs/Web/HTML/Element/input#step"><code>step</code></a>.
+        <a href="/uk/docs/Web/HTML/Element/input#list-spysok"><code>list</code></a>,
+        <a href="/uk/docs/Web/HTML/Element/input#readonly-lyshe-dlia-chytannia"><code>readonly</code></a> і
+        <a href="/uk/docs/Web/HTML/Element/input#step-krok"><code>step</code></a>.
       </td>
     </tr>
     <tr>
