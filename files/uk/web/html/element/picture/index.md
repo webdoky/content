@@ -110,8 +110,6 @@ browser-compat: html.elements.picture
 
 Атрибут [srcset](/uk/docs/Web/HTML/Element/source#srcset) використовується для пропонування списку можливих зображень на основі розміру або щільності пікселів дисплея.
 
-It is composed of a comma-separated list of image descriptors. Each image descriptor is composed of a URL of the image, and _either_:
-
 Він складається з розділеного комами списку дескрипторів зображень. Кожен дескриптор зображення складається з URL зображення, а також _або_:
 
 - _дескриптора ширини_, за яким слідує `w` (наприклад, `300w`);
