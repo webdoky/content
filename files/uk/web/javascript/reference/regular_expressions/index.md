@@ -49,7 +49,7 @@ const regex2 = new RegExp("ab+c", "g");
 | `d`      | Генерувати індекси для збігів-підрядків.                                                     | {{jsxref("RegExp/hasIndices", "hasIndices")}}   |
 | `g`      | Глобальний пошук.                                                                            | {{jsxref("RegExp/global", "global")}}           |
 | `i`      | Чутливий до регістру пошук.                                                                  | {{jsxref("RegExp/ignoreCase", "ignoreCase")}}   |
-| `m`      | Дозволяє `^` та `$` давати збіг з символами нового рядка.                                    | {{jsxref("RegExp/multiline", "multiline")}}     |
+| `m`      | Дозволяє `^` та `$` давати збіг поруч з символами нового рядка.                              | {{jsxref("RegExp/multiline", "multiline")}}     |
 | `s`      | Дозволяє `.` давати збіг з символами нового рядка.                                           | {{jsxref("RegExp/dotAll", "dotAll")}}           |
 | `u`      | "Unicode"; розглядати патерн як послідовність кодових точок Unicode.                         | {{jsxref("RegExp/unicode", "unicode")}}         |
 | `v`      | Покращена версія режиму `u` з більшою кількістю можливостей Unicode.                         | {{jsxref("RegExp/unicodeSets", "unicodeSets")}} |

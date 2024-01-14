@@ -29,7 +29,7 @@ rgb(255 0 153 / 80%)
 
 /* HSL (Hue, Saturation, Lightness – барва, насиченість, світлість) */
 hsl(150 30% 60%)
-hsl(150 30% 60% / 0.8)
+hsl(150 30% 60% / 80%)
 
 /* HWB (Hue, Whiteness, Blackness – барва, білизна, чорнота) */
 hwb(12 50% 0%)
@@ -50,6 +50,10 @@ oklab(59% 0.1 0.1 / 0.5)
 /* Oklch (Lightness, Chroma, Hue – світлість, інтенсивність, барва) */
 oklch(60% 0.15 50)
 oklch(60% 0.15 50 / 0.5)
+
+/* light-dark */
+light-dark(white, black)
+light-dark(rgb(255 255 255), rgb(0 0 0))
 ```
 
 Значення `<color>` можна задати за допомогою одного з методів, перелічених нижче:
@@ -62,6 +66,7 @@ oklch(60% 0.15 50 / 0.5)
   - Колірного простору [Oklab](https://bottosson.github.io/posts/oklab/): {{CSSXref("color_value/oklab", "oklab()")}}, {{CSSXref("color_value/oklch", "oklch()")}};
   - Інших колірних просторів: {{CSSXref("color_value/color", "color()")}}.
 - Шляхом змішування двох кольорів: {{CSSXref("color_value/color-mix", "color-mix()")}}.
+- Шляхом задання двох кольорів, перший з яких використовується для світлих колірних палітр, а другий – для темних: {{CSSXref("color_value/light-dark", "light-dark()")}}.
 
 ### Ключове слово currentcolor
 
@@ -133,7 +138,7 @@ color-mix(in oklch, oklch(60% 0.2 10), oklch(60% 0.2 30))
 Наприклад:
 
 - `X` (`0.2`) у `color(xyz 0.2 0.1 0.6)` – аналогічна щодо `R` (`50%`) у `rgb(50% 70% 30%)`.
-- `H` (`0deg`) у `hsl(0deg 100% 80%)` – аналогічна щодо `H` (`140`) у `oklch(80% 0.1 140)`.
+- `H` (`0deg`) у `hsl(0deg 100% 80%)` – аналогічна щодо `H` (`140`) в `oklch(80% 0.1 140)`.
 
 Використання Oklch як колірного простору інтерполяції та два кольори нижче - як приклад:
 
@@ -174,7 +179,7 @@ color(display-p3 0.7 0.5 none)
    oklch(63.612% 0.1522 78.748)
    ```
 
-## Міркування щодо доступності
+## Занепокоєння щодо доступності
 
 Частина людей має проблеми з розрізненням кольорів. Рекомендація [WCAG 2.2](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable/Use_of_color) наполегливо радить не використовувати колір як єдиний засіб донесення певного повідомлення, дії чи результату. Дивіться подробиці в [кольорі та колірному контрасті](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable/Color_contrast).
 
