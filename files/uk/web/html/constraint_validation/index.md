@@ -34,8 +34,6 @@ page-type: guide
 
 ### Атрибути, що стосуються валідації
 
-In addition to the `type` attribute described above, the following attributes are used to describe basic constraints:
-
 На додачу до атрибута `type`, описаного вище, для опису базових обмежень використовуються наступні атрибути:
 
 <table class="standard-table">
@@ -252,11 +250,11 @@ In addition to the `type` attribute described above, the following attributes ar
 
 Валідація обмежень виконується за допомогою API валідації обмежень – або на окремому елементі форми, або на рівні всієї форми, на самому елементі {{HTMLElement("form")}}. Валідація обмежень виконується такими способами:
 
-- Шляхом виклику методу `checkValidity()` або `reportValidity()` на пов'язаному з DOM інтерфейсі ([`HTMLInputElement`](/uk/docs/Web/API/HTMLInputElement), [`HTMLSelectElement`](/uk/docs/Web/API/HTMLSelectElement), [`HTMLButtonElement`](/uk/docs/Web/API/HTMLButtonElement), [`HTMLOutputElement`](/uk/docs/Web/API/HTMLOutputElement) або [`HTMLTextAreaElement`](/uk/docs/Web/API/HTMLTextAreaElement)), що обчислює обмеження лише на відповідному елементі, даючи сценарію змогу отримати цю інформацію. Метод `checkValidity()` повертає булеве значення, що вказує, чи пройшло значення елемента його обмеження. (Це, як правило, робиться користувацьким агентом при визначенні того, який з псевдокласів CSS, {{Cssxref(":valid")}} або {{Cssxref(":invalid")}}, застосовується.) На противагу йому, метод `reportValidity()` повідомляє користувачу про будь-які порушення обмежень.
+- Шляхом виклику методу `checkValidity()` або `reportValidity()` на пов'язаному з формою інтерфейсі DOM ([`HTMLInputElement`](/uk/docs/Web/API/HTMLInputElement), [`HTMLSelectElement`](/uk/docs/Web/API/HTMLSelectElement), [`HTMLButtonElement`](/uk/docs/Web/API/HTMLButtonElement), [`HTMLOutputElement`](/uk/docs/Web/API/HTMLOutputElement) або [`HTMLTextAreaElement`](/uk/docs/Web/API/HTMLTextAreaElement)), що обчислює обмеження лише на відповідному елементі, даючи сценарію змогу отримати цю інформацію. Метод `checkValidity()` повертає булеве значення, що вказує, чи пройшло значення елемента його обмеження. (Це, як правило, робиться користувацьким агентом при визначенні того, який з псевдокласів CSS, {{Cssxref(":valid")}} або {{Cssxref(":invalid")}}, застосовується.) На противагу йому, метод `reportValidity()` повідомляє користувачу про будь-які порушення обмежень.
 - Шляхом виклику методу `checkValidity()` або `reportValidity()` на інтерфейсі [`HTMLFormElement`](/uk/docs/Web/API/HTMLFormElement).
 - Шляхом подання всієї форми.
 
-Метод `checkValidity()` викликається _статично_ при валідації обмежень, а метод `reportValidity()` або подання форми викликаються _інтерактивно_ при валідації обмежень.
+Виклик `checkValidity()` називається _статичною_ валідацією обмежень, а виклик `reportValidity()` або подання форми називається _інтерактивною_ валідацією обмежень.
 
 > **Примітка:**
 >
@@ -420,7 +418,6 @@ window.onload = () => {
 
 - Метод `setCustomValidity(message)` на наступних елементах:
 
-  - {{HTMLElement("fieldset")}}. Note: Setting a custom validity message on fieldset elements will not prevent form submission in most browsers.
   - {{HTMLElement("fieldset")}}. Примітка: Задання власного повідомлення про валідність на елементах fieldset в більшості браузерів не запобігає поданню форми.
   - {{HTMLElement("input")}}
   - {{HTMLElement("output")}}
