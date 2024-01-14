@@ -166,7 +166,7 @@ function updateDisplay() {
 
 ## Валідація
 
-Поля для галочки підтримують [валідацію](/uk/docs/Web/HTML/Constraint_validation) (доступну всім елементам {{HTMLElement("input")}}). Втім, більшість значень {{domxref("ValidityState")}} завжди буде `false`. Якщо таке поле має атрибут [`required`](/uk/docs/Web/HTML/Element/input#required), але не має галочки, то {{domxref("ValidityState.valueMissing")}} буде `true`.
+Поля для галочки підтримують [валідацію](/uk/docs/Web/HTML/Constraint_validation) (доступну всім елементам {{HTMLElement("input")}}). Втім, більшість значень {{domxref("ValidityState")}} завжди буде `false`. Якщо таке поле має атрибут [`required`](/uk/docs/Web/HTML/Element/input#required-oboviazkovyi), але не має галочки, то {{domxref("ValidityState.valueMissing")}} буде `true`.
 
 ## Приклади
 
@@ -285,7 +285,7 @@ otherCheckbox.addEventListener("change", () => {
     </tr>
     <tr>
       <td><strong>Події</strong></td>
-      <td>{{domxref("HTMLElement/change_event", "change")}} та {{domxref("HTMLElement/input_event", "input")}}</td>
+      <td>{{domxref("HTMLElement/change_event", "change")}} та {{domxref("Element/input_event", "input")}}</td>
     </tr>
     <tr>
       <td><strong>Підтримувані загальні атрибути</strong></td>

@@ -1,5 +1,5 @@
 ---
-title: "<form>: Елемент форми"
+title: "<form> – елемент форми"
 slug: Web/HTML/Element/form
 page-type: html-element
 browser-compat: html.elements.form
@@ -15,7 +15,7 @@ browser-compat: html.elements.form
 
 ## Атрибути
 
-Цей елемент включає [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
+Цей елемент приймає [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
 
 - `accept` {{deprecated_inline}}
 
@@ -23,21 +23,18 @@ browser-compat: html.elements.form
 
     > **Примітка:** **Цей атрибут тепер нерекомендований, його не слід використовувати.** Натомість слід використовувати атрибут [`accept`](/uk/docs/Web/HTML/Element/input#accept-pryimannia) на елементах `<input type=file>`.
 
-- {{htmlattrdef("accept-charset")}}
+- `accept-charset`
+
   - : Розділені пробілами {{Glossary("character encoding", "кодування символів")}}, котрі приймає сервер. Браузер використає їх в порядку, в якому вони вказані. Усталене значення – [таке саме кодування, яке має сторінка](/uk/docs/Web/HTTP/Headers/Content-Encoding).
     (У попередніх версіях HTML кодування символів також могли бути розділені комами.)
-- `autocapitalize` {{non-standard_inline}}
 
-  - : Нестандартний атрибут, що використовується iOS Safari для контролю того, як текстові елементи форми повинні автоматично отримувати великі літери. Атрибути `autocapitalize` на елементах форми відкидають такі атрибути на `<form>`. Можливі значення:
+- `autocapitalize`
 
-    - `none`: Без автоматичного додавання великих літер.
-    - `sentences` (усталено): Велика літера на початку кожного речення.
-    - `words`: Велика літера на початку кожного слова.
-    - `characters`: Усі літери великі – тобто верхній регістр.
+- : Контролює те, чи додаються великі літери до тексту, введеного у поля вводу, а також, якщо так — то яким чином. Шукайте більше інформації на сторінці глобального атрибута [`autocapitalize`](/uk/docs/Web/HTML/Global_attributes/autocapitalize).
 
 - `autocomplete`
 
-  - : Показує, чи можуть поля введення усталено автоматично заповнюватись браузером. Атрибути `autocomplete` елементів форми відкидають такий атрибут на `<form>`. Можливі значення:
+  - : Позначає те, чи можуть поля введення усталено автоматично заповнюватись браузером. Атрибути `autocomplete` на елементах форми відкидають такий атрибут на `<form>`. Можливі значення:
 
     - `off`: Браузер може не заповнювати автоматично поля. (Браузери мають тенденцію ігнорувати це там, де підозрюють форми автентифікації; дивіться [Атрибут autocomplete і поля автентифікації](/uk/docs/Web/Security/Securing_your_site/Turning_off_form_autocompletion#atrybut-autocomplete-i-polia-avtentyfikatsii).)
     - `on`: Браузер може заповнювати поля автоматично.
@@ -47,7 +44,7 @@ browser-compat: html.elements.form
   - : Ім'я форми. Значення мусить не бути порожнім рядком, і бути унікальним серед елементів `form` у колекції форм, в котрій лежить форма, якщо така є.
 
 - `rel`
-  - : Контролює анотації й те, якого роду посилання породжує форма. Серед анотацій: [`external`](/uk/docs/Web/HTML/Attributes/rel#external), [`nofollow`](/uk/docs/Web/HTML/Attributes/rel#nofollow), [`opener`](/uk/docs/Web/HTML/Attributes/rel#opener), [`noopener`](/uk/docs/Web/HTML/Attributes/rel#noopener і [`noreferrer`](/uk/docs/Web/HTML/Attributes/rel#noreferrer). Серед різновидів посилань: [`help`](/uk/docs/Web/HTML/Attributes/rel#help), [`prev`](/uk/docs/Web/HTML/Attributes/rel#prev), [`next`](/uk/docs/Web/HTML/Attributes/rel#next), [`search`](/uk/docs/Web/HTML/Attributes/rel#search) і [`license`](/uk/docs/Web/HTML/Attributes/rel#license). Значення [`rel`](/uk/docs/Web/HTML/Attributes/rel) є розділеним пробілами списком таких значень.
+  - : Контролює анотації й те, якого роду посилання породжує форма. Серед анотацій: [`external`](/uk/docs/Web/HTML/Attributes/rel#external), [`nofollow`](/uk/docs/Web/HTML/Attributes/rel#nofollow), [`opener`](/uk/docs/Web/HTML/Attributes/rel#opener), [`noopener`](/uk/docs/Web/HTML/Attributes/rel#noopener) і [`noreferrer`](/uk/docs/Web/HTML/Attributes/rel#noreferrer). Серед різновидів посилань: [`help`](/uk/docs/Web/HTML/Attributes/rel#help), [`prev`](/uk/docs/Web/HTML/Attributes/rel#prev), [`next`](/uk/docs/Web/HTML/Attributes/rel#next), [`search`](/uk/docs/Web/HTML/Attributes/rel#search) і [`license`](/uk/docs/Web/HTML/Attributes/rel#license). Значення [`rel`](/uk/docs/Web/HTML/Attributes/rel) є розділеним пробілами списком таких значень.
 
 ### Атрибути для подання форми
 
@@ -77,10 +74,10 @@ browser-compat: html.elements.form
     Це значення відкидається атрибутами [`formmethod`](/uk/docs/Web/HTML/Element/button#formmethod) на елементах {{HTMLElement("button")}}, [`<input type="submit">`](/uk/docs/Web/HTML/Element/input/submit) чи [`<input type="image">`](/uk/docs/Web/HTML/Element/input/image).
 
 - `novalidate`
-  - : Цей булів атрибут указує, що форма не повинна затверджуватися при поданні. Якщо цей атрибут не заданий (а отже – форма **_має_** затвердження), це може бути відкинуто атрибутом [`formnovalidate`](/uk/docs/Web/HTML/Element/button#formnovalidate) на елементі {{HTMLElement("button")}}, [`<input type="submit">`](/uk/docs/Web/HTML/Element/input/submit) чи [`<input type="image">`](/uk/docs/Web/HTML/Element/input/image), що належить формі.
+  - : Цей булів атрибут позначає те, що форма не повинна валідуватися при поданні. Якщо цей атрибут не заданий (а отже – форма **_має_** валідування), це може бути відкинуто атрибутом [`formnovalidate`](/uk/docs/Web/HTML/Element/button#formnovalidate) на елементі {{HTMLElement("button")}}, [`<input type="submit">`](/uk/docs/Web/HTML/Element/input/submit) чи [`<input type="image">`](/uk/docs/Web/HTML/Element/input/image), що належить цій формі.
 - `target`
 
-  - : Вказує, де виводити відповідь після поданні форми. Це ім'я чи ключове слово на позначення _контексту перегляду_ (наприклад, вкладки, вікна чи iframe). Наступні ключові слова мають особливі значення:
+  - : Вказує, де виводити відповідь після поданні форми. Це ім'я чи ключове слово на позначення _контексту перегляду_ (наприклад, вкладки, вікна чи вбудованого фрейму). Наступні ключові слова мають особливі значення:
 
     - `_self` (усталене): Завантажувати в поточний контекст перегляду.
     - `_blank`: Завантажувати в новий безіменний контекст перегляду. Це додає такої ж логіки, як задання [`rel="noopener"`](#rel), тобто відсутність заповнення [`window.opener`](/uk/docs/Web/API/Window/opener).
@@ -94,8 +91,8 @@ browser-compat: html.elements.form
 ```html
 <!-- Форма, котра пошле запит GET на поточний URL -->
 <form method="get">
-  <label
-    >Ім'я:
+  <label>
+    Ім'я:
     <input name="submitted-name" autocomplete="name" />
   </label>
   <button>Зберегти</button>
@@ -103,8 +100,8 @@ browser-compat: html.elements.form
 
 <!-- Форма, котра пошле запит POST на поточний URL -->
 <form method="post">
-  <label
-    >Ім'я:
+  <label>
+    Ім'я:
     <input name="submitted-name" autocomplete="name" />
   </label>
   <button>Зберегти</button>
@@ -130,38 +127,28 @@ browser-compat: html.elements.form
   <tbody>
     <tr>
       <th scope="row">
-        <a href="/uk/docs/Web/HTML/Content_categories"
-          >Категорії вмісту</a
-        >
+        <a href="/uk/docs/Web/HTML/Content_categories">Категорії вмісту</a>
       </th>
       <td>
-        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
-          >Потоковий вміст</a
-        >,
-        <a href="/uk/docs/Web/HTML/Content_categories#vidchutnyi-vmist"
-          >відчутний вміст</a
-        >
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist">Потоковий вміст</a>,
+        <a href="/uk/docs/Web/HTML/Content_categories#vidchutnyi-vmist">відчутний вміст</a>
       </td>
     </tr>
     <tr>
       <th scope="row">Дозволений вміст</th>
       <td>
-        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
-          >Потоковий вміст</a
-        >, але жодних елементів <code>&#x3C;form></code>
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist">Потоковий вміст</a>, але жодних елементів <code>&#x3C;form></code>
       </td>
     </tr>
     <tr>
-      <th scope="row">Упускання тега</th>
+      <th scope="row">Пропуск тега</th>
       <td>{{no_tag_omission}}</td>
     </tr>
     <tr>
       <th scope="row">Дозволені батьківські елементи</th>
       <td>
         Всі елементи, що приймають
-        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
-          >потоковий вміст</a
-        >
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist">потоковий вміст</a>
       </td>
     </tr>
     <tr>
@@ -173,11 +160,9 @@ browser-compat: html.elements.form
     <tr>
       <th scope="row">Дозволені ролі ARIA</th>
       <td>
-        <code
-          ><a href="/uk/docs/Web/Accessibility/ARIA/Roles/search_role"
-            >search</a
-          ></code
-        >, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/none_role"><code>none</code></a> або <a href="/uk/docs/Web/Accessibility/ARIA/Roles/presentation_role"><code>presentation</code></a>
+        <code><a href="/uk/docs/Web/Accessibility/ARIA/Roles/search_role">search</a></code>,
+        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/none_role"><code>none</code></a>
+         або <a href="/uk/docs/Web/Accessibility/ARIA/Roles/presentation_role"><code>presentation</code></a>
       </td>
     </tr>
     <tr>
@@ -200,5 +185,5 @@ browser-compat: html.elements.form
 - [Посібник форм HTML](/uk/docs/Learn/Forms)
 - Інші елементи, що використовуються при створенні форм: {{HTMLElement("button")}}, {{HTMLElement("datalist")}}, {{HTMLElement("fieldset")}}, {{HTMLElement("input")}}, {{HTMLElement("label")}}, {{HTMLElement("legend")}}, {{HTMLElement("meter")}}, {{HTMLElement("optgroup")}}, {{HTMLElement("option")}}, {{HTMLElement("output")}}, {{HTMLElement("progress")}}, {{HTMLElement("select")}}, {{HTMLElement("textarea")}}.
 - Отримання списку елементів у формі: {{domxref("HTMLFormElement.elements")}}
-- [ARIA: Роль form](/uk/docs/Web/Accessibility/ARIA/Roles/form_role)
-- [ARIA: Роль search](/uk/docs/Web/Accessibility/ARIA/Roles/search_role)
+- [ARIA – роль form](/uk/docs/Web/Accessibility/ARIA/Roles/form_role)
+- [ARIA – роль search](/uk/docs/Web/Accessibility/ARIA/Roles/search_role)
