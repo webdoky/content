@@ -94,7 +94,7 @@ browser-compat: css.at-rules.layer
 }
 ```
 
-Щоб додати правила до шару `layout` всередині `framework`, необіхдно об'єднати дві назви `.`.
+Щоб додати правила до шару `layout` всередині `framework`, необхідно об'єднати дві назви `.`.
 
 ```css
 @layer framework.layout {
