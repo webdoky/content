@@ -17,7 +17,7 @@ browser-compat: html.elements.input.type_button
 
 ### Кнопка зі значенням
 
-Атрибут [`value`](/uk/docs/Web/HTML/Element/input#value) елементів `<input type="button">` містить рядок, що використовується як підпис кнопки.
+Атрибут [`value`](/uk/docs/Web/HTML/Element/input#value-znachennia) елементів `<input type="button">` містить рядок, що використовується як підпис кнопки.
 
 ```html
 <input type="button" value="Клацни мене" />
@@ -233,7 +233,7 @@ const width = (canvas.width = window.innerWidth);
 const height = (canvas.height = window.innerHeight - 85);
 const ctx = canvas.getContext("2d");
 
-ctx.fillStyle = "rgb(0,0,0)";
+ctx.fillStyle = "rgb(0 0 0)";
 ctx.fillRect(0, 0, width, height);
 
 const colorPicker = document.querySelector('input[type="color"]');
@@ -272,7 +272,7 @@ canvas.onmouseup = () => {
 };
 
 clearBtn.onclick = () => {
-  ctx.fillStyle = "rgb(0,0,0)";
+  ctx.fillStyle = "rgb(0 0 0)";
   ctx.fillRect(0, 0, width, height);
 };
 
@@ -286,7 +286,7 @@ function draw() {
       sizePicker.value,
       degToRad(0),
       degToRad(360),
-      false
+      false,
     );
     ctx.fill();
   }
@@ -304,7 +304,7 @@ draw();
 <table class="properties">
   <tbody>
     <tr>
-      <td><strong><a href="#value">Значення</a></strong></td>
+      <td><strong><a href="#znachennia">Значення</a></strong></td>
       <td>Рядок, що використовується як підпис кнопки</td>
     </tr>
     <tr>
@@ -314,8 +314,8 @@ draw();
     <tr>
       <td><strong>Підтримувані спільні атрибути</strong></td>
       <td>
-        <a href="/uk/docs/Web/HTML/Element/input#type"><code>type</code></a> і
-        <a href="/uk/docs/Web/HTML/Element/input#value"><code>value</code></a>
+        <a href="/uk/docs/Web/HTML/Element/input#type-typ"><code>type</code></a> і
+        <a href="/uk/docs/Web/HTML/Element/input#value-znachennia"><code>value</code></a>
       </td>
     </tr>
     <tr>
