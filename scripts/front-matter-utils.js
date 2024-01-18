@@ -1,12 +1,12 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 
+import { betterAjvErrors } from "@apideck/better-ajv-errors";
+import AJV from "ajv";
+import addFormats from "ajv-formats";
+import grayMatter from "gray-matter";
 import YAML from "js-yaml";
 import * as prettier from "prettier";
-import AJV from "ajv";
-import grayMatter from "gray-matter";
-import addFormats from "ajv-formats";
-import { betterAjvErrors } from "@apideck/better-ajv-errors";
 
 export function getRelativePath(filePath) {
   return path.relative(process.cwd(), filePath);
@@ -19,40 +19,43 @@ export function getAjvValidator(schema) {
 }
 
 function areAttributesInOrder(frontMatter, order) {
-  const attrs = Object.keys(frontMatter).filter((item) => order.includes(item));
-  const orderedAttrs = order.filter((item) => frontMatter[item]);
-  return orderedAttrs.every((item, index) => item === attrs[index]);
+  const attributes = Object.keys(frontMatter).filter((item) =>
+    order.includes(item),
+  );
+  const orderedAttributes = order.filter((item) => frontMatter[item]);
+  return orderedAttributes.every((item, index) => item === attributes[index]);
 }
 
 export async function checkFrontMatter(filePath, options) {
-  let content = await fs.readFile(filePath, "utf-8");
+  let content = await fs.readFile(filePath, "utf8");
   const document = grayMatter(content);
   const fmObject = document.data;
   const order = options.config["attribute-order"];
 
   // validate and collect errors
-  const validator = options.validator;
+  const { validator } = options;
   const valid = validator(fmObject);
   const validationErrors = betterAjvErrors({
     schema: validator.schema,
     data: fmObject,
     errors: validator.errors,
   });
-  const errors = [];
+  let errors = [];
   if (!valid) {
-    for (const error of validationErrors) {
+    errors = validationErrors.map((error) => {
       let message = error.message.replace("{base}", "Front matter");
       if (error.context.allowedValues) {
         message += `:\n\t${error.context.allowedValues.join(", ")}`;
       }
-      errors.push(message);
-    }
+      return message;
+    });
   }
 
   const isInOrder = areAttributesInOrder(fmObject, order);
   let fixableError = null;
+  const { config, fix } = options;
 
-  if (!options.fix && !isInOrder) {
+  if (!fix && !isInOrder) {
     fixableError = `${getRelativePath(
       filePath,
     )}\n\t Front matter attributes are not in required order: ${order.join(
@@ -61,31 +64,35 @@ export async function checkFrontMatter(filePath, options) {
   }
 
   //  if --fix option is true, then fix the order and prettify
-  if (options.fix) {
+  if (fix) {
     const fmOrdered = {};
-    for (const attr of options.config["attribute-order"]) {
-      const value = fmObject[attr];
+    config["attribute-order"].forEach((attribute) => {
+      const value = fmObject[attribute];
       if (value) {
-        if (attr === "status" && Array.isArray(value) && value.length) {
-          fmOrdered[attr] = value.sort();
-        } else if (attr === "browser-compat" || attr === "spec-urls") {
-          if (Array.isArray(value) && value.length === 1) {
-            fmOrdered[attr] = value[0];
-          } else {
-            fmOrdered[attr] = value;
-          }
+        if (
+          attribute === "status" &&
+          Array.isArray(value) &&
+          value.length > 0
+        ) {
+          fmOrdered[attribute] = value.sort();
+        } else if (
+          attribute === "browser-compat" ||
+          attribute === "spec-urls"
+        ) {
+          fmOrdered[attribute] =
+            Array.isArray(value) && value.length === 1 ? value[0] : value;
         } else {
-          fmOrdered[attr] = value;
+          fmOrdered[attribute] = value;
         }
       }
-    }
+    });
 
     let yml = YAML.dump(fmOrdered, {
       skipInvalid: true,
-      lineWidth: options.config.lineWidth,
+      lineWidth: config.lineWidth,
       quotingType: '"',
     });
-    yml = yml.replace(/[\s\n]+$/g, "");
+    yml = yml.replaceAll(/\s+$/g, "");
     yml = await prettier.format(yml, { parser: "yaml" });
     content = `---\n${yml}---\n${document.content}`;
   } else {
@@ -93,7 +100,7 @@ export async function checkFrontMatter(filePath, options) {
   }
 
   return [
-    errors.length
+    errors.length > 0
       ? `Error: ${getRelativePath(filePath)}\n${errors.join("\n")}`
       : null,
     fixableError,
