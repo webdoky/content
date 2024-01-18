@@ -35,9 +35,7 @@
   "ignoreRegExpList": [
     // macros
     "{{\\s?\\w*\\(",
-    "{{EmbedInteractiveExample\\(.*\\)}}",
-    "{{EmbedLiveSample\\(.*\\)}}",
-    "{{EmbedYouTube\\(\"[\\w-]*\"\\)}}",
+    "{{\\w+\\([\"']*[^\"']*[\"']*",
     // TODO - add some details what these match
     "\\(#\\w*\\)",
     "\\]\\(\\S*\\)",
@@ -63,7 +61,10 @@
     "lang=\".*\">.*</",
     "src=\"(?:[^\\\"]+|\\.)*\"",
     "url\\(\"data\\:image/svg\\+xml.*\"\\)[,;]",
-    "Urls"
+    "Urls",
+    "data:application\\/octet-stream;base64,[^\"']+",
+    "]\\(http[^\\)]+\\)",
+    "#[\\w-)]+\\)"
   ],
   "allowCompoundWords": true,
   "dictionaryDefinitions": [

@@ -43,6 +43,8 @@
   "type": "module",
   "version": "1.0.0",
   "devDependencies": {
+    "@cspell/dict-uk-ua": "^4.0.0",
+    "cspell": "^8.3.2",
     "eslint": "^8.56.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.1.0",
