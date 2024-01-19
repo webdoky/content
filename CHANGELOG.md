@@ -3,6 +3,36 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2024-01-12 - 2024-01-19]
+
+* **Оновлення перекладу(HTML):** web/html/element/input/button (#2729) ([0c94f661](https://github.com/webdoky/content/commit/0c94f6617074411f047f6c8ebb749fb8f36b1842))
+* **Оновлення перекладу(CSS):** web/css/color (#2728) ([5653144c](https://github.com/webdoky/content/commit/5653144c9f564e89bb4fce0ca267ef445beebb00))
+* **Оновлення перекладу(CSS):** web/css/_doublecolon_first-line (#2727) ([c1a08857](https://github.com/webdoky/content/commit/c1a08857ac93cef75e9791416d26f59e31e9410b))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/object/freeze (#2719) ([4e423ce8](https://github.com/webdoky/content/commit/4e423ce82d18173c268ab70bc56ffb143a104df2))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/splice (#2718) ([12dac6c4](https://github.com/webdoky/content/commit/12dac6c4ac6c7905c74850dcc6790a9b5a34b01f))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/object/hasownproperty (#2717) ([a9a7870e](https://github.com/webdoky/content/commit/a9a7870e326eeb3412a2c460237468ca1c32f81f))
+* **Оновлення перекладу(HTML):** web/html/element/input/color (#2716) ([5cbea74b](https://github.com/webdoky/content/commit/5cbea74b881fe7aff7a2547f1b2bf055656ea939))
+* **Переклад(CSS):** web/css/class_selectors (#2713) ([26376bc9](https://github.com/webdoky/content/commit/26376bc9f4c985e571140a1c385dcd80cad05b23))
+* **Оновлення перекладу(CSS):** web/css/_colon_read-only (#2720) ([6ae16744](https://github.com/webdoky/content/commit/6ae167440de965af7d8dca2c1542d1785fc8c7b4))
+* **Оновлення перекладу(HTML):** web/html/element/table (#2715) ([5776a80b](https://github.com/webdoky/content/commit/5776a80b7971204611590ea2f0bb11b3319a6386))
+* **Переклад(CSS):** web/css/id_selectors (#2710) ([ba3768e4](https://github.com/webdoky/content/commit/ba3768e4e3d73641df5d449b28741dfa849338c0))
+* **Переклад(HTML):** web/html/element/optgroup (#2703) ([ccbdbb57](https://github.com/webdoky/content/commit/ccbdbb57bf3ddd0c55822418d75e2304b0f37f5a))
+* **Переклад(CSS):** web/css/css_syntax/error_handling (#2667) ([16f464a7](https://github.com/webdoky/content/commit/16f464a7ec0f9c2ce8bff7a46d5084078d5a197d))
+* **Переклад(CSS):** web/css/animation-range (#1856) ([664b4814](https://github.com/webdoky/content/commit/664b4814942c4c19016cebde9c7092d4debffb89))
+* **Переклад(Glossary):** glossary/first-class_function (#2687) ([27892267](https://github.com/webdoky/content/commit/27892267034fe8eaa061b3c5177f9951b3447010))
+* **Переклад(CSS):** web/css/border-color (#2686) ([996a467b](https://github.com/webdoky/content/commit/996a467bdf2c822bb0baefc85f97fb15351835c8))
+* **Переклад(HTML):** web/html/element/ol (#2669) ([2005b272](https://github.com/webdoky/content/commit/2005b27289936803508cf2a405c4142d33c69146))
+* **Переклад(CSS):** web/css/css_syntax ([1e73c793](https://github.com/webdoky/content/commit/1e73c793ea4fb3e6dc1704ea2a64983ee00a6b92))
+* **Переклад(Glossary):** glossary/void_element (#2666) ([bec888d5](https://github.com/webdoky/content/commit/bec888d554cc07dae7d945f4bf745c6e3944dc9b))
+* **Переклад(CSS):** web/css/@starting-style (#2529) ([ea61465b](https://github.com/webdoky/content/commit/ea61465ba02173f3099b804b0d358b62eba5d37d))
+* **Переклад(CSS):** web/css/_doublecolon_placeholder (#2503) ([e31f8651](https://github.com/webdoky/content/commit/e31f8651c85fef8920bc0671d8aedc5c81998c74))
+* **Переклад(JS):** web/javascript/reference/global_objects/set/difference (#2484) ([a12d7ae5](https://github.com/webdoky/content/commit/a12d7ae58bd370147cee1b0db4d9a79522388d1c))
+* **Переклад(JS):** web/javascript/reference/global_objects/arraybuffer (#2482) ([5f33800f](https://github.com/webdoky/content/commit/5f33800faa333d08d9557075c979bd1c3314e5e5))
+* **Переклад(CSS):** web/css/css_pseudo-elements (#1973) ([1d5174cf](https://github.com/webdoky/content/commit/1d5174cf89f0a1a5fa960f4aaa0cb598bf7cc710))
+* **Оновлення перекладу(CSS):** web/css/using_css_custom_properties (#2534) ([486c9cfc](https://github.com/webdoky/content/commit/486c9cfcbf4f53093451875b7bff436e1c498826))
+* **Оновлення перекладу(JS):** web/javascript/guide/using_promises (#2541) ([6a50c592](https://github.com/webdoky/content/commit/6a50c592ee287e8d667f445cbdc84d59918816d8))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/matchall ([93ae3ca1](https://github.com/webdoky/content/commit/93ae3ca11eba7de8b64a6fac700bfd7d0e987389))
+
 ## [2024-01-05 - 2024-01-12]
 
 * **Оновлення перекладу(guide):** web/guide (#2698) ([58563af7](https://github.com/webdoky/content/commit/58563af790fd02fe319a43d94ec1125fb6e2cc45))
