@@ -7,7 +7,7 @@ browser-compat: css.selectors.indeterminate
 
 {{CSSRef}}
 
-[Псевдоклас](/uk/docs/Web/CSS/Pseudo-classes) [CSS](/uk/docs/Web/CSS) **`:indeterminate`** (невизначене) представляє будь-який елемент форми, чий стан – невизначений, наприклад, поля для галочки, які мають атрибут HTML [`indeterminate`](/uk/docs/Web/HTML/Element/input/checkbox#indeterminate_state_checkboxes) зі значенням `true`, кнопки-перемикачі, які є членами групи, в якій всі кнопки-перемикачі не вибрані, та елементи {{HTMLElement("progress")}} в невизначеному стані.
+[Псевдоклас](/uk/docs/Web/CSS/Pseudo-classes) [CSS](/uk/docs/Web/CSS) **`:indeterminate`** (невизначене) представляє будь-який елемент форми, чий стан – невизначений, наприклад, поля для галочки, які мають стан [`indeterminate`](/uk/docs/Web/HTML/Element/input/checkbox#polia-dlia-halochok-z-nevyznachenym-stanom), заданий за допомогою JavaScript, кнопки-перемикачі, які є членами групи, в якій всі кнопки-перемикачі не вибрані, та елементи {{HTMLElement("progress")}} без атрибута `value`.
 
 ```css
 /* Вибирає всі елементи <input>, стан яких є невизначеним */
