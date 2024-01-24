@@ -5,7 +5,7 @@ page-type: css-shorthand-property
 browser-compat: css.properties.background
 ---
 
-{{CSSRef("CSS Background")}}
+{{CSSRef}}
 
 Властивість-[скорочення](/uk/docs/Web/CSS/Shorthand_properties) [CSS](/uk/docs/Web/CSS) **`background`** ("тло", "фон") встановлює усі властивості стилю тла за раз: колір, зображення, вихідне положення, розмір, метод повторення. Властивості-складові, не задані у складі скорочення `background`, отримують свої усталені значення.
 
