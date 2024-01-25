@@ -253,6 +253,12 @@
         "message": "Missng closing bracket ')'",
         "searchPattern": "/(\\[[^\\]]*?\\]\\(([^\\)\\n]|\\([^\\)\\n]\\)|\\s[\"'])+?)(\\n|\\s|[,:][\\s\\n])/gm",
         "searchScope": "text"
+      },
+      {
+        "message": "Don't wrap macros in backticks",
+        "name": "backticks-wrapped-macro",
+        "replace": "$1",
+        "searchPattern": "/`({{[^{}]+?}})`/gm"
       }
     ]
   }
