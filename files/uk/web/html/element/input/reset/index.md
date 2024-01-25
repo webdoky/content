@@ -15,7 +15,7 @@ browser-compat: html.elements.input.type_reset
 
 ## Значення
 
-Атрибут [`value`](/uk/docs/Web/HTML/Element/input#value) елемента `<input type="reset">` містить рядок, що використовується як підпис кнопки. Кнопки штибу `reset` не мають інших значень.
+Атрибут [`value`](/uk/docs/Web/HTML/Element/input#value) елемента `<input type="reset">` містить рядок, що використовується як підпис кнопки, забезпечуючи тим самим кнопці {{glossary("accessible description", "доступний опис")}}. Кнопки штибу `reset` не мають інших значень.
 
 ### Задання атрибута value
 
