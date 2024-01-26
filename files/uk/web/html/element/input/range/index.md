@@ -353,7 +353,7 @@ input[type="range"][orient="vertical"] {
       <td><strong>Події</strong></td>
       <td>
         {{domxref("HTMLElement/change_event", "change")}} і
-        {{domxref("HTMLElement/input_event", "input")}}
+        {{domxref("Element/input_event", "input")}}
       </td>
     </tr>
     <tr>
