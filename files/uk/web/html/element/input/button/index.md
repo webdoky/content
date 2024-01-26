@@ -17,7 +17,7 @@ browser-compat: html.elements.input.type_button
 
 ### Кнопка зі значенням
 
-Атрибут [`value`](/uk/docs/Web/HTML/Element/input#value-znachennia) елементів `<input type="button">` містить рядок, що використовується як підпис кнопки.
+Атрибут [`value`](/uk/docs/Web/HTML/Element/input#value-znachennia) елементів `<input type="button">` містить рядок, що використовується як підпис кнопки. Цей атрибут забезпечує кнопці {{glossary("accessible description", "доступний опис")}}.
 
 ```html
 <input type="button" value="Клацни мене" />
