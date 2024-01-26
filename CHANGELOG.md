@@ -3,6 +3,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2024-01-19 - 2024-01-26]
+
+* **Оновлення перекладу(HTML):** web/html/element/input/submit (#2757) ([145920b6](https://github.com/webdoky/content/commit/145920b60609b29a6c8d7eb86fc4f90a24be8299))
+* **Оновлення перекладу(HTML):** web/html/element/input/button (#2756) ([dac60591](https://github.com/webdoky/content/commit/dac6059141da68f87d7520b433cb038bfe7f9a3d))
+* **Оновлення перекладу(HTML):** web/html/attributes/required (#2755) ([44cc5634](https://github.com/webdoky/content/commit/44cc5634a4d5a8259345c75f1a50dae1edfdc397))
+* **Оновлення перекладу(HTML):** web/html/element/input/reset (#2754) ([3852373a](https://github.com/webdoky/content/commit/3852373a49a92c10547c5d06078fbd44183ff359))
+* **Оновлення перекладу(CSS):** web/css/box-shadow (#2753) ([3517fb69](https://github.com/webdoky/content/commit/3517fb69fec30b5b3feee36f4de71663d6c4173d))
+* **Виправлення:** disallow wrapping macros in backticks (#2758) ([cade8c51](https://github.com/webdoky/content/commit/cade8c51bc3347912a60bfd21567879e678d9768))
+* **Переклад(CSS):** web/css/css_colors/applying_color (#2618) ([bff9c271](https://github.com/webdoky/content/commit/bff9c27199733ee7d8525850a5c9a8faf2538704))
+* **Оновлення перекладу(HTML):** web/html/element/button (#2751) ([a0a51c98](https://github.com/webdoky/content/commit/a0a51c9846b1466996b0d90ebc06909c39bbdb0f))
+* **Оновлення перекладу(HTML):** web/html/element/input/checkbox (#2750) ([8933d083](https://github.com/webdoky/content/commit/8933d083d97395e8dfe6eeb6ff0b0ed7bf74a3cb))
+* **Оновлення перекладу(CSS):** web/css/background (#2749) ([a6c2ae70](https://github.com/webdoky/content/commit/a6c2ae705fab3d36faf5420eac64ada666bb8b0b))
+* **Оновлення перекладу(CSS):** web/css/border (#2748) ([d3312498](https://github.com/webdoky/content/commit/d3312498d96d620db509c482448bb02ee6a97eb5))
+
 ## [2024-01-12 - 2024-01-19]
 
 * **Оновлення перекладу(HTML):** web/html/element/input/button (#2729) ([0c94f661](https://github.com/webdoky/content/commit/0c94f6617074411f047f6c8ebb749fb8f36b1842))
