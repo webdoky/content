@@ -74,7 +74,7 @@ spec-urls:
 
 ### Терміни глосарія
 
-- [медія](/uk/docs/Glossary/Media/CSS)
+- [медіа](/uk/docs/Glossary/Media/CSS)
 - [медійний запит](/uk/docs/Glossary/Media_query)
 
 ## Посібники
