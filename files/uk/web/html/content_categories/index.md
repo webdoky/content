@@ -122,7 +122,7 @@ page-type: guide
 
 ### Розділовий вміст
 
-Розділовий вміст, підмножина потокового вмісту, утворює [розділ у поточному плані](/uk/docs/Web/HTML/Element/Heading_Elements), визначаючи область дії елементів {{HTMLElement("header")}}, {{HTMLElement("footer")}} і [заголовкового вмісту](#zaholovkovyi-vmist).
+Розділовий вміст, підмножина потокового вмісту, утворює [розділ у поточному плані](/uk/docs/Web/HTML/Element/Heading_Elements), визначаючи область дії елементів {{HTMLElement("header")}} і {{HTMLElement("footer")}}.
 
 Елементи, що належать до цієї категорії: {{HTMLElement("article")}}, {{HTMLElement("aside")}}, {{HTMLElement("nav")}} і {{HTMLElement("section")}}.
 
