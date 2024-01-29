@@ -55,9 +55,9 @@ function getRandomArbitrary(min, max) {
 
 ```js
 function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min) + min); // Включно з мінімальним та невключно з максимальним значенням
+  const minCeiled = Math.ceil(min);
+  const maxFloored = Math.floor(max);
+  return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); // Включно з мінімальним та невключно з максимальним значенням
 }
 ```
 
@@ -69,9 +69,9 @@ function getRandomInt(min, max) {
 
 ```js
 function getRandomIntInclusive(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1) + min); // Включно з мінімальним та максимальним значеннями
+  const minCeiled = Math.ceil(min);
+  const maxFloored = Math.floor(max);
+  return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); // Включно з мінімальним та максимальним значеннями
 }
 ```
 
