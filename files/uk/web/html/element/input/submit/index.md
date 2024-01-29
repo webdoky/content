@@ -11,7 +11,7 @@ browser-compat: html.elements.input.type_submit
 
 ## Значення
 
-Атрибут [`value`](/uk/docs/Web/HTML/Element/input#value-znachennia) елемента `<input type="submit">` містить рядок, що виводиться як підпис кнопки. Без нього кнопка не матиме фактичного значення.
+Атрибут [`value`](/uk/docs/Web/HTML/Element/input#value-znachennia) елемента `<input type="submit">` містить рядок, що виводиться як підпис кнопки. Без нього кнопка не матиме фактичного значення. Цей атрибут забезпечує кнопку {{glossary("accessible description", "доступним описом")}}.
 
 ### Задання атрибута value
 

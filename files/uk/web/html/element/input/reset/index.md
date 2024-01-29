@@ -15,7 +15,7 @@ browser-compat: html.elements.input.type_reset
 
 ## Значення
 
-Атрибут [`value`](/uk/docs/Web/HTML/Element/input#value) елемента `<input type="reset">` містить рядок, що використовується як підпис кнопки. Кнопки штибу `reset` не мають інших значень.
+Атрибут [`value`](/uk/docs/Web/HTML/Element/input#value-znachennia) елемента `<input type="reset">` містить рядок, що використовується як підпис кнопки, забезпечуючи тим самим кнопці {{glossary("accessible description", "доступний опис")}}. Кнопки штибу `reset` не мають інших значень.
 
 ### Задання атрибута value
 
@@ -27,7 +27,7 @@ browser-compat: html.elements.input.type_reset
 
 ### Пропускання атрибута value
 
-Якщо не задати `value`, то вийде кнопка з усталеним підписом (зазвичай "Reset," але може бути й щось інше, залежно від {{Glossary("User agent", "користувацького агента")}}):
+Якщо не задати `value`, то вийде кнопка з усталеним підписом (зазвичай "Reset", але може бути й щось інше, залежно від {{Glossary("User agent", "користувацького агента")}}):
 
 ```html
 <input type="reset" />
@@ -85,7 +85,7 @@ browser-compat: html.elements.input.type_reset
 
 ### Вимикання та вмикання кнопки скидання
 
-Щоб вимкнути кнопку скидання, слід задати на ній атрибут [`disabled`](/uk/docs/Web/HTML/Element/input#disabled), отак:
+Щоб вимкнути кнопку скидання, слід задати на ній атрибут [`disabled`](/uk/docs/Web/HTML/Element/input#disabled-vymknene), отак:
 
 ```html
 <input type="reset" value="Вимкнено" disabled />
@@ -93,7 +93,7 @@ browser-compat: html.elements.input.type_reset
 
 На ходу вмикати та вимикати кнопки можна шляхом присвоєння `disabled` зі значенням `true` або `false`; у JavaScript це має вигляд `btn.disabled = true` або `btn.disabled = false`.
 
-> **Примітка:** Більше ідей щодо вмикання та вимикання кнопок дивіться на сторінці [`<input type="button">`](/uk/docs/Web/HTML/Element/input/button#disabling_and_enabling_a_button).
+> **Примітка:** Більше ідей щодо вмикання та вимикання кнопок дивіться на сторінці [`<input type="button">`](/uk/docs/Web/HTML/Element/input/button#vymknennia-ta-vmykannia-knopky).
 
 ## Валідація
 
@@ -118,8 +118,8 @@ browser-compat: html.elements.input.type_reset
     <tr>
       <td><strong>Доступні спільні атрибути</strong></td>
       <td>
-        <a href="/uk/docs/Web/HTML/Element/input#type"><code>type</code></a> і
-        <a href="/uk/docs/Web/HTML/Element/input#value"><code>value</code></a>
+        <a href="/uk/docs/Web/HTML/Element/input#type-typ"><code>type</code></a> і
+        <a href="/uk/docs/Web/HTML/Element/input#value-znachennia"><code>value</code></a>
       </td>
     </tr>
     <tr>
