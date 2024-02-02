@@ -3,6 +3,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2024-01-26 - 2024-02-02]
+
+* **Переклад(CSS):** web/css/css_nesting/nesting_and_specificity (#2733) ([37f28afd](https://github.com/webdoky/content/commit/37f28afd45f0df09133b9281eb794220e0f38060))
+* **Оновлення перекладу(HTML):** web/html/attributes/step (#2772) ([0743789b](https://github.com/webdoky/content/commit/0743789b9bd0a7094e44df3a6f30c49313793722))
+* **Оновлення перекладу(CSS):** web/css/css_syntax/error_handling (#2770) ([783cd384](https://github.com/webdoky/content/commit/783cd384f6e876d340eb430ddb942617b13c23dc))
+* **Оновлення перекладу(JS):** web/javascript/guide/expressions_and_operators (#2773) ([0078c53a](https://github.com/webdoky/content/commit/0078c53aa740abc36c52ad49cbe09c233957a50d))
+* **Оновлення перекладу(HTML):** web/html/content_categories (#2771) ([9c76b462](https://github.com/webdoky/content/commit/9c76b462634a4f209267253ed48ac24486a929b7))
+* **Оновлення перекладу(CSS):** web/css/css_selectors (#2769) ([8a8612c4](https://github.com/webdoky/content/commit/8a8612c428b06d30ad357d818574cb7dd79ab958))
+* **Оновлення перекладу(CSS):** web/css/css_colors/applying_color (#2766) ([85efbbd0](https://github.com/webdoky/content/commit/85efbbd07d67f1c9207397a4ea1efa4f07fade88))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/math/random (#2765) ([2ddc4496](https://github.com/webdoky/content/commit/2ddc4496eaee18fcf3da076fbf115ef9f843f4ea))
+* **Оновлення перекладу(HTML):** web/html/element/progress (#2764) ([ffc3a497](https://github.com/webdoky/content/commit/ffc3a497374fae24a864d7c8b5d8963ffbced687))
+* **Оновлення перекладу(HTML):** web/html/element/audio (#2763) ([fb8c0d73](https://github.com/webdoky/content/commit/fb8c0d73788795503ecebcab7e9ae3e51f81509a))
+* **Переклад(CSS):** web/css/type_selectors (#2724) ([cf130a44](https://github.com/webdoky/content/commit/cf130a44932894241c818913b6fe9d4cff038b60))
+* **Оновлення перекладу(CSS):** web/css/@media (#2760) ([9a1a77d4](https://github.com/webdoky/content/commit/9a1a77d4fc981f51963edabb7aed496fd3a1f8e7))
+* **Оновлення перекладу(HTML):** web/html/element/video (#2761) ([64bf7ce4](https://github.com/webdoky/content/commit/64bf7ce4c33a5f42dd09f2009d54468c730e516e))
+
 ## [2024-01-19 - 2024-01-26]
 
 * **Оновлення перекладу(HTML):** web/html/element/input/submit (#2757) ([145920b6](https://github.com/webdoky/content/commit/145920b60609b29a6c8d7eb86fc4f90a24be8299))
