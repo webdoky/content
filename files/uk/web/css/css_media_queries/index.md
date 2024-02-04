@@ -18,7 +18,7 @@ spec-urls:
 
 У [CSS](/uk/docs/Web/CSS) можна скористатися [директивою](/uk/docs/Web/CSS/At-rule) {{cssxref("@media")}}, щоб умовно застосувати частину списку стилів на основі результату медіазапиту. Щоб умовно застосувати весь список стилів, краще скористатися директивою {{cssxref("@import")}}.
 
-При розробці компонентів HTML для багаторазового використання також можна скористатися [контейнерними запитами](/uk/docs/Web/CSS/CSS_container_queries), які дають змогу застосовувати стилі на основі розміру контейнерного елемента, а не області перегляду чи інших характеристик пристрою.
+При розробці компонентів HTML для багаторазового використання також можна скористатися [контейнерними запитами](/uk/docs/Web/CSS/CSS_containment/Container_queries), які дають змогу застосовувати стилі на основі розміру контейнерного елемента, а не області перегляду чи інших характеристик пристрою.
 
 ## Довідка
 
@@ -107,8 +107,8 @@ spec-urls:
 
 - Модуль [Утримання CSS](/uk/docs/Web/CSS/CSS_containment)
   - Директива {{cssxref("@container")}}
-  - [Застосування контейнерних запитів](/uk/docs/Web/CSS/CSS_container_queries)
-- Модуль [Умовні правила CSS](/uk/docs/Web/CSS/CSS_container_queries)
+  - [Застосування контейнерних запитів](/uk/docs/Web/CSS/CSS_containment/Container_queries)
+- Модуль [Умовні правила CSS](/uk/docs/Web/CSS/CSS_conditional_rules)
   - Директива {{cssxref("@supports")}}
   - [Застосування запитів можливостей](/uk/docs/Web/CSS/CSS_conditional_rules/Using_feature_queries)
 - Модуль [Сторінкових медій CSS](/uk/docs/Web/CSS/CSS_paged_media) module
@@ -133,7 +133,7 @@ spec-urls:
 
 ## Дивіться також
 
+- [Контейнерні запити](/uk/docs/Web/CSS/CSS_containment/Container_queries)
 - [Використання атрибутів `srcset` і `sizes`](/uk/docs/Web/HTML/Element/img#vykorystannia-atrybutiv-srcset-i-sizes)
-- [Контейнерні запити](/uk/docs/Web/CSS/CSS_container_queries)
 - [Сторінкові медії CSS](/uk/docs/Web/CSS/CSS_paged_media)
 - Використовуйте {{cssxref("@supports")}}, щоб застосовувати стилі, що залежать від браузерної підтримки різних технологій CSS.
