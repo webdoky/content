@@ -3,6 +3,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2024-02-02 - 2024-02-09]
+
+* **Переклад(Glossary):** glossary/request_header (#2742) ([9aa212e8](https://github.com/webdoky/content/commit/9aa212e8f57fd7f2c7c29b52f3aa52ebc2c90e84))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/set/difference (#2787) ([f3d11c3a](https://github.com/webdoky/content/commit/f3d11c3a3ebaac6a5d6eecf84ad81b21dde76edf))
+* **Переклад(Glossary):** glossary/hoisting (#2738) ([056f76ac](https://github.com/webdoky/content/commit/056f76ac7e4eb14b8583c9841ef21526b0407268))
+* **Переклад(Glossary):** glossary/iife (#2739) ([65c79ef6](https://github.com/webdoky/content/commit/65c79ef6536c0f1e2eb2cc4ba15745c1708804d6))
+* **Переклад(glossary):** glossary/preflight_request (#2740) ([6308e519](https://github.com/webdoky/content/commit/6308e5196510b722788965759b37b90bd01c49ae))
+* **Оновлення перекладу(CSS):** web/css/css_box_model/mastering_margin_collapsing (#2786) ([8e967109](https://github.com/webdoky/content/commit/8e9671099db40b0c1a6457d094a32d1f9df51be5))
+* **Оновлення перекладу(HTML):** web/html/element/fieldset (#2783) ([2156ddbe](https://github.com/webdoky/content/commit/2156ddbe4992d91bef00e8d82b40cb236c6e4a65))
+* **Оновлення перекладу(CSS):** web/css/overflow (#2779) ([d9e0c856](https://github.com/webdoky/content/commit/d9e0c856569ddaabefacf20aed9afec16d079291))
+* **Оновлення перекладу(CSS):** web/css/position (#2777) ([36bccf5b](https://github.com/webdoky/content/commit/36bccf5bec257860ad155cb2d551a40dde1558af))
+* **Оновлення перекладу(CSS):** web/css/display (#2776) ([da89780f](https://github.com/webdoky/content/commit/da89780f86c4f524ee0429cc75a868298c5dc107))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/set (#2785) ([9e7c6c8d](https://github.com/webdoky/content/commit/9e7c6c8dc09057a877ce626d70c1df30438a37cc))
+* **Оновлення перекладу(HTML):** web/html/attributes (#2782) ([f260d697](https://github.com/webdoky/content/commit/f260d69725d3c5336fd6ec0d15a7f48e8ff6393e))
+* **Оновлення перекладу(glossary):** glossary/block-level_content (#2788) ([f121e906](https://github.com/webdoky/content/commit/f121e906eedeeba1b32d924c82988b932f47026d))
+* **Оновлення перекладу(HTML):** web/html/attributes/rel (#2784) ([6edb42e6](https://github.com/webdoky/content/commit/6edb42e658caf5869e3e66b45c847ac3f68d6dac))
+* **Оновлення перекладу(CSS):** web/css/reference (#2780) ([fb1befa2](https://github.com/webdoky/content/commit/fb1befa2938272fe35bb4b98ae2bc43ee43ed126))
+
 ## [2024-01-26 - 2024-02-02]
 
 * **Переклад(CSS):** web/css/css_nesting/nesting_and_specificity (#2733) ([37f28afd](https://github.com/webdoky/content/commit/37f28afd45f0df09133b9281eb794220e0f38060))
