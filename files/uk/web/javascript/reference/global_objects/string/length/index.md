@@ -27,6 +27,16 @@ browser-compat: javascript.builtins.String.length
 - У Firefox найбільша можлива довжина – 2<sup>30</sup> - 2 (\~2GiB). До Firefox 65 ця межа дорівнювала 2<sup>28</sup> - 1 (\~512MiB).
 - У Safari найбільша можлива довжина – 2<sup>31</sup> - 1 (\~4GiB).
 
+При роботі з великими рядками в інших кодуваннях (наприклад, файлами або згустками у кодуванні UTF-8) слід пам'ятати, що при завантаженні даних у рядок JS кодуванням завжди стає UTF-16. Розмір рядка може відрізнятися від розміру вихідного файлу.
+
+```js
+const str1 = "a".repeat(2 ** 29 - 24); // Успіх
+const str2 = "a".repeat(2 ** 29 - 23); // RangeError: Invalid string length
+
+const buffer = new Uint8Array(2 ** 29 - 24).fill("a".codePointAt(0)); // Цей буфер має розмір 512МіБ
+const str = new TextDecoder().decode(buffer); // Цей рядок має розмір 1ГіБ
+```
+
 В порожнього рядка довжина `length` дорівнює 0.
 
 Статична властивість `String.length` не має жодного відношення до довжин рядків. Це [арність](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/length) функції `String` (в широкому розумінні — число формальних аргументів функції), яка дорівнює 1.
