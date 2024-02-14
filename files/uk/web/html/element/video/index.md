@@ -272,7 +272,7 @@ browser-compat: html.elements.video
   <source src="myVideo.mp4" type="video/mp4" />
   <p>
     Ваш браузер не підтримує відео HTML. Ось натомість
-    <a href="myVideo.mp4">посилання на відео</a>.
+    <a href="myVideo.mp4" download="myVideo.mp4">посилання на відео</a>.
   </p>
 </video>
 ```
@@ -401,9 +401,11 @@ AddType video/webm .webm
 
   Вибачте, Ваш браузер не підтримує вбудованих відео, але не переймайтесь: Ви
   можете
-  <a href="https://archive.org/download/ElephantsDream/ed_1024_512kb.mp4"
-    >стягнути файл MP4</a
-  >
+  <a
+    href="https://archive.org/download/ElephantsDream/ed_1024_512kb.mp4"
+    download="ed_1024_512kb.mp4">
+    стягнути файл MP4
+  </a>
   і переглянути його в своєму улюбленому програвачі відео!
 </video>
 ```
