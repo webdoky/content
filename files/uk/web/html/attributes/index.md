@@ -97,6 +97,15 @@ page-type: landing-page
     </tr>
     <tr>
       <td>
+        <code><a href="/uk/docs/Web/HTML/Element/link#as">as</a></code>
+      </td>
+      <td>
+        {{HTMLElement("link")}}
+      </td>
+      <td>Задає тип вмісту, який завантажується зв'язком.</td>
+    </tr>
+    <tr>
+      <td>
         <code><a href="/uk/docs/Web/HTML/Element/script#async">async</a></code>
       </td>
       <td>{{HTMLElement("script")}}</td>
