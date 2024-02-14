@@ -43,7 +43,7 @@ const Rectangle = class Rectangle2 {
 };
 ```
 
-Подібно до виразів функцій, вирази класів можуть бути анонімними, а ще можуть мати назву, котра відрізняється від назви змінної, котрій такий клас присвоюється. Проте на відміну від оголошень функцій, оголошення класів мають такі ж обмеження [темпоральної мертвої зони](/uk/docs/Web/JavaScript/Reference/Statements/let#temporalna-mertva-zona-tdz), що й `let` і `const`, і поводяться так, ніби [не підіймаються](/uk/docs/Web/JavaScript/Guide/Using_classes#pidniattia-oholoshen-klasiv).
+Подібно до виразів функцій, вирази класів можуть бути анонімними, а ще можуть мати назву, котра відрізняється від назви змінної, котрій такий клас присвоюється. Проте на відміну від оголошень функцій, оголошення класів мають такі ж обмеження [темпоральної мертвої зони](/uk/docs/Web/JavaScript/Reference/Statements/let#temporalna-mertva-zona-tdz), що й `let` і `const`, і поводяться так, ніби [не підіймаються](/uk/docs/Web/JavaScript/Guide/Using_classes#pidniattia-oholoshennia-klasu).
 
 ### Тіло класу
 
