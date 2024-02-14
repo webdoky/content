@@ -137,6 +137,6 @@ progress:indeterminate {
 
 - [Вебформи – Робота з користувацькими даними](/uk/docs/Learn/Forms)
 - [Оформлення вебформ](/uk/docs/Learn/Forms/Styling_web_forms)
-- Атрибут [`indeterminate`](/uk/docs/Web/HTML/Element/input/checkbox#polia-dlia-halochok-z-nevyznachenym-stanom) елемента [`<input type="checkbox">`](/uk/docs/Web/HTML/Element/input/checkbox)
+- Властивість [`indeterminate`](/uk/docs/Web/HTML/Element/input/checkbox#polia-dlia-halochok-z-nevyznachenym-stanom) елемента [`<input type="checkbox">`](/uk/docs/Web/HTML/Element/input/checkbox)
 - Елемент {{HTMLElement("input")}} і інтерфейс {{domxref("HTMLInputElement")}}, який його реалізує.
 - Селектор CSS {{cssxref(":checked")}} дає змогу оформлювати поля для галочок на основі того, чи є вони вибраними, чи ні
