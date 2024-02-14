@@ -39,7 +39,7 @@ browser-compat: html.elements.object
   - : Повідомлення, яке браузер може показати під час завантаження реалізації та даних об'єкта.
 - `type`
   - : [Тип вмісту](/uk/docs/Glossary/MIME_type) ресурсу, заданого **data**. Як мінімум один з атрибутів **data** і **type** має бути заданий.
-- `usemap`
+- `usemap` {{deprecated_inline}}
   - : Хеш-ім'я посилання на елемент {{HTMLElement("map")}}; тобто символ '#', після якого стоїть [`name`](/uk/docs/Web/HTML/Element/map#name) елемента карти.
 - `width`
   - : Ширина виведеного ресурсу, в [пікселях CSS](https://drafts.csswg.org/css-values/#px). – (Тільки абсолютні значення. [ЖОДНИХ відсотків](https://html.spec.whatwg.org/multipage/embedded-content.html#dimension-attributes))
