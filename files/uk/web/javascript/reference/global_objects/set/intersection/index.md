@@ -2,12 +2,10 @@
 title: Set.prototype.intersection()
 slug: Web/JavaScript/Reference/Global_Objects/Set/intersection
 page-type: javascript-instance-method
-status:
-  - experimental
 browser-compat: javascript.builtins.Set.intersection
 ---
 
-{{JSRef}}{{SeeCompatTable}}
+{{JSRef}}
 
 Метод **`intersection()`** (перетин) примірників {{jsxref("Set")}} приймає множину і повертає нову множину, що містить елементи, присутні як у поточній множині, так і в переданій.
 
