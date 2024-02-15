@@ -2,12 +2,10 @@
 title: Set.prototype.isSubsetOf()
 slug: Web/JavaScript/Reference/Global_Objects/Set/isSubsetOf
 page-type: javascript-instance-method
-status:
-  - experimental
 browser-compat: javascript.builtins.Set.isSubsetOf
 ---
 
-{{JSRef}}{{SeeCompatTable}}
+{{JSRef}}
 
 Метод **`isSubsetOf()`** (є підмножиною щодо) примірників {{jsxref("Set")}} приймає множину і повертає булеве значення, що вказує, чи всі елементи поточної множини присутні в переданій множині.
 
