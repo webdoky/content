@@ -41,7 +41,7 @@ browser-compat: html.elements.input.type_checkbox
 
 ## Додаткові атрибути
 
-На додачу до загальних атрибутів, котрі поділяють всі елементи {{HTMLElement("input")}}, поля "`checkbox`" підтримують наступні:
+На додачу до [загальних атрибутів](/uk/docs/Web/HTML/Element/input#atrybuty), котрі поділяють всі елементи {{HTMLElement("input")}}, поля "`checkbox`" підтримують наступні:
 
 - `checked`
 

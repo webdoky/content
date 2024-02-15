@@ -29,7 +29,7 @@ browser-compat: html.elements.audio
 
   - : Якщо цей атрибут присутній, то браузер надасть елементи керування, що дозволять користувачу керувати відтворенням аудіо, включно з гучністю, перемотуванням та паузою й продовженням відтворення.
 
-- `controlslist` {{experimental_inline}}{{non-standard_inline}}
+- `controlslist`
 
   - : Атрибут [`controlslist`](https://wicg.github.io/controls-list/explainer.html), коли заданий, допомагає браузерові обрати, які елементи керування показувати для елемента `audio`, коли браузер показує свій власний набір елементів керування (тобто коли заданий атрибут `controls`).
 
@@ -235,8 +235,9 @@ browser-compat: html.elements.audio
   <source src="myAudio.mp3" type="audio/mpeg" />
   <source src="myAudio.ogg" type="audio/ogg" />
   <p>
-    Стягнути аудіо в форматі <a href="myAudio.mp3">MP3</a> або
-    <a href="myAudio.ogg">OGG</a>.
+    Стягнути аудіо в форматі
+    <a href="myAudio.mp3" download="myAudio.mp3">MP3</a> або
+    <a href="myAudio.ogg" download="myAudio.ogg">OGG</a>.
   </p>
 </audio>
 ```
@@ -305,7 +306,9 @@ elem.audioTrackList.onremovetrack = (event) => {
 ```html
 <!-- Просте відтворення аудіо -->
 <audio src="AudioTest.ogg" autoplay>
-  <a href="AudioTest.ogg">Стягнути аудіо у форматі OGG</a>.
+  <a href="AudioTest.ogg" download="AudioTest.ogg"
+    >Стягнути аудіо у форматі OGG</a
+  >.
 </audio>
 ```
 
@@ -318,7 +321,7 @@ elem.audioTrackList.onremovetrack = (event) => {
 ```html
 <audio controls>
   <source src="foo.wav" type="audio/wav" />
-  <a href="foo.wav">Стягнути аудіо у форматі WAV</a>.
+  <a href="foo.wav" download="foo.wav">Стягнути аудіо у форматі WAV</a>.
 </audio>
 ```
 
@@ -366,13 +369,13 @@ elem.audioTrackList.onremovetrack = (event) => {
   <source src="myAudio.ogg" type="audio/ogg" />
   <p>
     Стягнути аудіо у форматах <a href="myAudio.mp3">MP3</a> або
-    <a href="myAudio.ogg">OGG</a>.
+    <a href="myAudio.ogg" download="myAudio.ogg">OGG</a>.
   </p>
 </audio>
 ```
 
 - [Формат текстових доріжок вебвідео (WebVTT)](/uk/docs/Web/API/WebVTT_API)
-- [WebAIM – Субтитри, стенограми та описи аудіо](https://webaim.org/techniques/captions/
+- [WebAIM – Субтитри, стенограми та описи аудіо](https://webaim.org/techniques/captions/)
 - [MDN Розуміння WCAG, пояснення Настанови 1.2](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#nastanova-1-2-nadannia-tekstovykh-alternatyv-chasozalezhnym-nosiiam)
 - [Розуміння критерію успіху 1.2.1 | W3C Розуміння WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/media-equiv-av-only-alt.html)
 - [Розуміння критерію успіху 1.2.2 | W3C Розуміння WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/media-equiv-captions.html)

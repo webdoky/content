@@ -172,7 +172,7 @@ interface GPUSupportedFeatures {
   - : Усуває з об'єкта `Set` всі значення.
 - {{jsxref("Set.prototype.delete()")}} (видалити)
   - : Усуває елемент, пов'язаний із `value`, та повертає булеве значення, що вказує, чи був елемент успішно усунутий. Після цього `Set.prototype.has(value)` поверне `false`.
-- {{jsxref("Set.prototype.difference()")}} {{experimental_inline}}
+- {{jsxref("Set.prototype.difference()")}}
   - : Приймає множину та повертає нову множину, що містить елементи, присутні в поточній множині, але відсутні в переданій.
 - {{jsxref("Set.prototype.entries()")}} (записи)
   - : Повертає новий об'єкт-ітератор, що містить **масив із `[value, value]`** для кожного елемента в об'єкті `Set`, у порядку їх додання. Це подібно до об'єкта {{jsxref("Map")}}, якби _ключ_ кожного запису був би водночас власним _значенням_.
@@ -180,19 +180,19 @@ interface GPUSupportedFeatures {
   - : Один раз викликає `callbackFn` для кожного значення, присутнього в об'єкті `Set`, у порядку їх додання. Якщо наданий параметр `thisArg`, то він використовуватиметься при кожному виклику `callbackFn` як значення `this`.
 - {{jsxref("Set.prototype.has()")}} (має)
   - : Повертає булеве значення, що вказує, чи є елемент із даним значенням в об'єкті `Set`.
-- {{jsxref("Set.prototype.intersection()")}} {{experimental_inline}}
+- {{jsxref("Set.prototype.intersection()")}}
   - : Приймає множину та повертає нову множину, що вміщає елементи, присутні як у поточній множині, так і в переданій.
-- {{jsxref("Set.prototype.isDisjointFrom()")}} {{experimental_inline}}
+- {{jsxref("Set.prototype.isDisjointFrom()")}}
   - : Приймає множину та повертає булеве значення, яке вказує на те, чи відсутні в поточної та переданої множини спільні елементи.
-- {{jsxref("Set.prototype.isSubsetOf()")}} {{experimental_inline}}
+- {{jsxref("Set.prototype.isSubsetOf()")}}
   - : Приймає множину та повертає булеве значення, яке вказує на те, чи всі елементи поточної множини присутні в переданій.
-- {{jsxref("Set.prototype.isSupersetOf()")}} {{experimental_inline}}
+- {{jsxref("Set.prototype.isSupersetOf()")}}
   - : Приймає множину та повертає булеве значення, яке вказує на те, чи всі елементи переданої множини присутні в поточній.
 - {{jsxref("Set.prototype.keys()")}} (ключі)
   - : Псевдонім для {{jsxref("Set.prototype.values()")}}.
-- {{jsxref("Set.prototype.symmetricDifference()")}} {{experimental_inline}}
+- {{jsxref("Set.prototype.symmetricDifference()")}}
   - : Приймає множину та повертає нову множину, що вміщає елементи, присутні в поточній множині або в переданій, але не в них обох.
-- {{jsxref("Set.prototype.union()")}} {{experimental_inline}}
+- {{jsxref("Set.prototype.union()")}}
   - : Приймає множину та повертає нову множину, що вміщає елементи, присутні в одній з множин або в них обох.
 - {{jsxref("Set.prototype.values()")}} (значення)
   - : Повертає новий об'єкт-ітератор, що видає **значення** для кожного елемента в об'єкті `Set`, у порядку їх додання.

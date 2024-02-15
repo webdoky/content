@@ -31,7 +31,7 @@ browser-compat: html.elements.fieldset
 
 Є декілька особливих міркувань щодо оформлення елемента `<fieldset>`.
 
-Значенням його властивості {{cssxref("display")}} усталено є `block`, і це породжує [блоковий контекст форматування](/uk/docs/Web/Guide/CSS/Block_formatting_context). Якщо елемент `<fieldset>` оформлений значенням властивості `display` рядного рівня, то він буде поводитися як `inline-block`, а інакше – як `block`. Усталено навколо вмісту присутня межа `2px` `groove`, а також невеликий внутрішній відступ. Усталено цей елемент має {{cssxref("min-inline-size", "min-inline-size: min-content")}}.
+Значенням його властивості {{cssxref("display")}} усталено є `block`, і це породжує [контекст блокового форматування](/uk/docs/Web/CSS/CSS_display/Block_formatting_context). Якщо елемент `<fieldset>` оформлений значенням властивості `display` рядного рівня, то він буде поводитися як `inline-block`, а інакше – як `block`. Усталено навколо вмісту присутня межа `2px` `groove`, а також невеликий внутрішній відступ. Усталено цей елемент має {{cssxref("min-inline-size", "min-inline-size: min-content")}}.
 
 Якщо присутній елемент {{HTMLElement("legend")}}, то він розміщується над межею `block-start`. Елемент {{HTMLElement("legend")}} звужується до розміру свого вмісту, а також утворює контекст форматування. Значенням властивості `display` перетворюється на блокове. (Наприклад, `display: inline` поводиться як `block`.)
 
@@ -104,7 +104,7 @@ browser-compat: html.elements.fieldset
           >перелічений</a
         >,
         <a
-          href="/uk/docs/Web/HTML/Content_categories#formovi"
+          href="/uk/docs/Web/HTML/Content_categories#formovyi-vmist"
           >формовий</a
         >
         елемент, відчутний вміст.

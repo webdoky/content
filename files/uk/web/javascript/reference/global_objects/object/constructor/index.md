@@ -45,6 +45,8 @@ n.constructor === Number; // true
 ```js
 const o = new TypeError(); // Успадкування: TypeError -> Error -> Object
 const proto = Object.getPrototypeOf;
+
+Object.hasOwn(o, "constructor"); // false
 proto(o).constructor === TypeError; // true
 proto(proto(o)).constructor === Error; // true
 proto(proto(proto(o))).constructor === Object; // true
