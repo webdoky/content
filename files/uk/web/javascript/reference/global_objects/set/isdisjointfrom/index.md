@@ -2,12 +2,10 @@
 title: Set.prototype.isDisjointFrom()
 slug: Web/JavaScript/Reference/Global_Objects/Set/isDisjointFrom
 page-type: javascript-instance-method
-status:
-  - experimental
 browser-compat: javascript.builtins.Set.isDisjointFrom
 ---
 
-{{JSRef}}{{SeeCompatTable}}
+{{JSRef}}
 
 Метод **`isDisjointFrom()`** (не перетинається з) примірників {{jsxref("Set")}} приймає множину та повертає булеве значення, яке вказує, чи не має поточна множина спільних елементів із заданою множиною.
 
