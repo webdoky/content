@@ -57,7 +57,7 @@ CSS.registerProperty({
 <div class="box"><p>Linear gradient with transition</p></div>
 ```
 
-{{EmbedLiveSample("",600,120)}}
+{{EmbedLiveSample("api-vlastyvostei-i-znachen-v-dii",600,120)}}
 
 Ця рамка має [тло](/uk/docs/Web/CSS/background), що складається з [лінійного градієнта](/uk/docs/Web/CSS/gradient/linear-gradient) від `--stop-color` (кастомна властивість) до [`lavenderblush`](/uk/docs/Web/CSS/named-color).
 Значенням `--stop-color` спершу задано `cornflowerblue`, але коли навести курсор на рамку, `--stop-color` [переходить](/uk/docs/Web/CSS/transition) до `aquamarine` за дві секунди (`linear-gradient(to right, aquamarine, lavenderblush)`).
@@ -84,7 +84,7 @@ CSS.registerProperty({
 
   - : Пояснює, як зареєструвати кастомні властивості в CSS і JavaScript, зі вказівками щодо того, як працювати з невизначеними та недійсними значеннями, резервними варіантами та успадкуванням.
 
-- [Гудіні CSS](/uk/docs/Web/API/Houdini)
+- [API Гудіні](/uk/docs/Web/API/Houdini_APIs)
   - : Пояснює, що таке Гудіні CSS і які в нього переваги, разом зі списком доступних API та їх статусами.
 
 ## Споріднені концепції
