@@ -66,7 +66,6 @@ spec-urls: https://drafts.csswg.org/selectors/
 - {{CSSXref(":nth-of-type", ":nth-of-type()")}}
 - {{CSSXref(":nth-last-child", ":nth-last-child()")}}
 - {{CSSXref(":nth-last-of-type", ":nth-last-of-type()")}}
-- {{CSSXref(":nth-of-type", ":nth-of-type()")}}
 - {{CSSXref(":only-child")}}
 - {{CSSXref(":only-of-type")}}
 - {{CSSXref(":optional")}}
@@ -103,10 +102,10 @@ spec-urls: https://drafts.csswg.org/selectors/
 - Термін глосарія {{glossary("Pseudo-class", "псевдоклас")}}
 - [Функційні псевдокласи](/uk/docs/Web/CSS/Pseudo-classes#funktsiini-psevdoklasy)
 - [Комбінатори](/uk/docs/Web/CSS/CSS_selectors/Selectors_and_combinators#kombinatory)
-- [Простий селектор](/uk/docs/Web/CSS/CSS_selectors/Selectors_and_combinators#prostyi-selektor)
-- [Складений селектор](/uk/docs/Web/CSS/CSS_selectors/Selectors_and_combinators#skladenyi-selektor)
-- [Складний селектор](/uk/docs/Web/CSS/CSS_selectors/Selectors_and_combinators#skladnyi-selektor)
-- [Відносний селектор](/uk/docs/Web/CSS/CSS_selectors/Selectors_and_combinators#vidnosnyi-selektor)
+- [Простий селектор](/uk/docs/Web/CSS/CSS_selectors/Selector_structure#prostyi-selektor)
+- [Складений селектор](/uk/docs/Web/CSS/CSS_selectors/Selector_structure#skladenyi-selektor)
+- [Складний селектор](/uk/docs/Web/CSS/CSS_selectors/Selector_structure#skladnyi-selektor)
+- [Відносний селектор](/uk/docs/Web/CSS/CSS_selectors/Selector_structure#vidnosnyi-selektor)
 - [Список селекторів](/uk/docs/Web/CSS/Selector_list)
 - [Специфічність](/uk/docs/Web/CSS/Specificity)
 

@@ -83,43 +83,44 @@ console.log(fruits.length); // 2
 
 ### Методи масиву й порожні комірки
 
-Порожні комірки [розріджених масивів](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy) поводяться в методах масиву по-різному. Загалом, старші методи пропускають порожні комірки, а новіші – обробляють їх як `undefined`.
+Методи масивів поводяться по-різному, зустрічаючи порожні комірки в [розріджених масивах](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy). Загалом, давніші методи (наприклад, `forEach`) обробляють порожні комірки не так, як індекси, що містять `undefined`.
 
-Серед методів, що ітерують багато елементів, перелічені нижче – виконують перед звертанням до індексу перевірку [`in`](/uk/docs/Web/JavaScript/Reference/Operators/in) і не зводять порожні комірки до `undefined`:
+Серед методів, що по-особливому обробляють порожні рядки: {{jsxref("Array/concat", "concat()")}}, {{jsxref("Array/copyWithin", "copyWithin()")}}, {{jsxref("Array/every", "every()")}}, {{jsxref("Array/filter", "filter()")}}, {{jsxref("Array/flat", "flat()")}}, {{jsxref("Array/flatMap", "flatMap()")}}, {{jsxref("Array/forEach", "forEach()")}}, {{jsxref("Array/indexOf", "indexOf()")}}, {{jsxref("Array/lastIndexOf", "lastIndexOf()")}}, {{jsxref("Array/map", "map()")}}, {{jsxref("Array/reduce", "reduce()")}}, {{jsxref("Array/reduceRight", "reduceRight()")}}, {{jsxref("Array/reverse", "reverse()")}}, {{jsxref("Array/slice", "slice()")}}, {{jsxref("Array/some", "some()")}}, {{jsxref("Array/sort", "sort()")}} і {{jsxref("Array/splice", "splice()")}}. Ітеративні методи, такі як `forEach`, взагалі не обробляють порожні комірки. Інші методи, такі як `concat`, `copyWithin` тощо, зберігають порожні комірки під час копіювання, тож після обробки масив залишається розрідженим.
 
-- {{jsxref("Array/concat", "concat()")}}
-- {{jsxref("Array/copyWithin", "copyWithin()")}}
-- {{jsxref("Array/every", "every()")}}
-- {{jsxref("Array/filter", "filter()")}}
-- {{jsxref("Array/flat", "flat()")}}
-- {{jsxref("Array/flatMap", "flatMap()")}}
-- {{jsxref("Array/forEach", "forEach()")}}
-- {{jsxref("Array/indexOf", "indexOf()")}}
-- {{jsxref("Array/lastIndexOf", "lastIndexOf()")}}
-- {{jsxref("Array/map", "map()")}}
-- {{jsxref("Array/reduce", "reduce()")}}
-- {{jsxref("Array/reduceRight", "reduceRight()")}}
-- {{jsxref("Array/reverse", "reverse()")}}
-- {{jsxref("Array/slice", "slice()")}}
-- {{jsxref("Array/some", "some()")}}
-- {{jsxref("Array/sort", "sort()")}}
-- {{jsxref("Array/splice", "splice()")}}
+```js
+const colors = ["червоний", "жовтий", "синій"];
+colors[5] = "фіолетовий";
+colors.forEach((item, index) => {
+  console.log(`${index}: ${item}`);
+});
+// Вивід:
+// 0: червоний
+// 1: жовтий
+// 2: синій
+// 5: фіолетовий
 
-Щодо того, як саме вони обробляють порожні комірки, дивіться на їх власних сторінках.
+colors.reverse(); // ['фіолетовий', порожньо × 2, 'синій', 'жовтий', 'червоний']
+```
 
-Ці методи обробляють порожні комірки так, ніби в них `undefined`:
+Новіші методи (наприклад, `keys`) не обробляють порожні комірки по-особливому, а вважають їх елементами зі значенням `undefined`. Серед методів, що не відрізняють порожні комірки від елементів `undefined`, наступні: {{jsxref("Array/entries", "entries()")}}, {{jsxref("Array/fill", "fill()")}}, {{jsxref("Array/find", "find()")}}, {{jsxref("Array/findIndex", "findIndex()")}}, {{jsxref("Array/findLast", "findLast()")}}, {{jsxref("Array/findLastIndex", "findLastIndex()")}}, {{jsxref("Array/includes", "includes()")}}, {{jsxref("Array/join", "join()")}}, {{jsxref("Array/keys", "keys()")}}, {{jsxref("Array/toLocaleString", "toLocaleString()")}}, {{jsxref("Array/toReversed", "toReversed()")}}, {{jsxref("Array/toSorted", "toSorted()")}}, {{jsxref("Array/toSpliced", "toSpliced()")}}, {{jsxref("Array/values", "values()")}} і {{jsxref("Array/with", "with()")}}.
 
-- {{jsxref("Array/entries", "entries()")}}
-- {{jsxref("Array/fill", "fill()")}}
-- {{jsxref("Array/find", "find()")}}
-- {{jsxref("Array/findIndex", "findIndex()")}}
-- {{jsxref("Array/findLast", "findLast()")}}
-- {{jsxref("Array/findLastIndex", "findLastIndex()")}}
-- {{jsxref("Array/includes", "includes()")}}
-- {{jsxref("Array/join", "join()")}}
-- {{jsxref("Array/keys", "keys()")}}
-- {{jsxref("Array/toLocaleString", "toLocaleString()")}}
-- {{jsxref("Array/values", "values()")}}
+```js
+const colors = ["червоний", "жовтий", "синій"];
+colors[5] = "фіолетовий";
+const iterator = colors.keys();
+for (const key of iterator) {
+  console.log(`${key}: ${colors[key]}`);
+}
+// Вивід
+// 0: червоний
+// 1: жовтий
+// 2: синій
+// 3: undefined
+// 4: undefined
+// 5: фіолетовий
+
+const newColors = colors.toReversed(); // ['фіолетовий', undefined, undefined, 'синій', 'жовтий', 'червоний']
+```
 
 ### Копіювальні та змінювальні методи
 
@@ -130,22 +131,9 @@ console.log(fruits.length); // 2
 
 Решта методів змінює масив, на котрому викликано метод, у випадку чого їхнє повернене значення відрізняється залежно від методу: іноді це посилання на той самий масив, іноді – довжина нового масиву.
 
-Наступні методи створюють нові масиви шляхом звертання до [`this.constructor[Symbol.species]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/@@species) для визначення конструктора, який буде використаний:
+Наступні методи створюють нові масиви шляхом звертання до [`this.constructor[Symbol.species]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/@@species) для визначення конструктора, який буде використаний: {{jsxref("Array/concat", "concat()")}}, {{jsxref("Array/filter", "filter()")}}, {{jsxref("Array/flat", "flat()")}}, {{jsxref("Array/flatMap", "flatMap()")}}, {{jsxref("Array/map", "map()")}}, {{jsxref("Array/slice", "slice()")}} і {{jsxref("Array/splice", "splice()")}} (для створення масиву вилучених елементів, що повертається).
 
-- {{jsxref("Array/concat", "concat()")}}
-- {{jsxref("Array/filter", "filter()")}}
-- {{jsxref("Array/flat", "flat()")}}
-- {{jsxref("Array/flatMap", "flatMap()")}}
-- {{jsxref("Array/map", "map()")}}
-- {{jsxref("Array/slice", "slice()")}}
-- {{jsxref("Array/splice", "splice()")}} (для створення поверненого масиву прибраних елементів)
-
-Наступні методи завжди створюють нові масиви з базовим конструктором `Array`:
-
-- {{jsxref("Array/toReversed", "toReversed()")}}
-- {{jsxref("Array/toSorted", "toSorted()")}}
-- {{jsxref("Array/toSpliced", "toSpliced()")}}
-- {{jsxref("Array/with", "with()")}}
+Наступні методи завжди створюють нові масиви за допомогою базового конструктора `Array`: {{jsxref("Array/toReversed", "toReversed()")}}, {{jsxref("Array/toSorted", "toSorted()")}}, {{jsxref("Array/toSpliced", "toSpliced()")}} і {{jsxref("Array/with", "with()")}}.
 
 Наступна таблиця перераховує методи, які змінюють вихідний масив, і відповідні їм незмінювальні альтернативи:
 
@@ -190,29 +178,39 @@ method(callbackFn, thisArg)
 
 Аргумент `thisArg` (чиє усталене значення – `undefined`) використовуватиметься як значення `this` при виклику `callbackFn`. Значення `this`, отримане функцією `callbackFn`, визначається згідно зі [звичними правилами](/uk/docs/Web/JavaScript/Reference/Operators/this): якщо `callbackFn` є [несуворою](/uk/docs/Web/JavaScript/Reference/Strict_mode#bez-zaminy-this) функцією, то примітивні значення `this` загортаються в об'єкти, а `undefined` і `null` – замінюються на [`globalThis`](/uk/docs/Web/JavaScript/Reference/Global_Objects/globalThis). Аргумент `thisArg` є беззмістовним для будь-якої `callbackFn`, визначеною у вигляді [стрілкової функції](/uk/docs/Web/JavaScript/Reference/Functions/Arrow_functions), адже такі функції не мають власного {{Glossary("binding", "зв'язування")}} `this`.
 
+Аргумент `array`, що передається до `callbackFn`, найкорисніший тоді, коли є потреба зчитати під час ітерування інший індекс, тому що не завжди може бути присутня змінна, що посилається на поточний масив. Загалом, не слід змінювати масив під час ітерування (див. [внесення змін до вихідного масиву в ітеративних методах](#vnesennia-zmin-do-vykhidnoho-masyvu-v-iteratyvnykh-metodakh)), але для цього все ж можна використовувати цей аргумент. Аргумент `array` _не_ є масивом, що створюється, у випадку методів штибу `map()`, `filter()` і `flatMap()` – немає способу отримати доступ до масиву, що створюється, з функції зворотного виклику.
+
 Усі ітеративні методи є [копіювальними](#kopiiuvalni-ta-zminiuvalni-metody) та [узагальненими](#uzahalneni-metody-masyvu), хоч вони по-різному поводяться з [порожніми комірками](#metody-masyvu-y-porozhni-komirky).
 
-Наступні методи - ітеративні:
-
-- {{jsxref("Array/every", "every()")}}
-- {{jsxref("Array/filter", "filter()")}}
-- {{jsxref("Array/find", "find()")}}
-- {{jsxref("Array/findIndex", "findIndex()")}}
-- {{jsxref("Array/findLast", "findLast()")}}
-- {{jsxref("Array/findLastIndex", "findLastIndex()")}}
-- {{jsxref("Array/flatMap", "flatMap()")}}
-- {{jsxref("Array/forEach", "forEach()")}}
-- {{jsxref("Array/map", "map()")}}
-- {{jsxref("Array/some", "some()")}}
+Наступні методи - ітеративні: {{jsxref("Array/every", "every()")}}, {{jsxref("Array/filter", "filter()")}}, {{jsxref("Array/find", "find()")}}, {{jsxref("Array/findIndex", "findIndex()")}}, {{jsxref("Array/findLast", "findLast()")}}, {{jsxref("Array/findLastIndex", "findLastIndex()")}}, {{jsxref("Array/flatMap", "flatMap()")}}, {{jsxref("Array/forEach", "forEach()")}}, {{jsxref("Array/map", "map()")}} і {{jsxref("Array/some", "some()")}}.
 
 А саме – {{jsxref("Array/every", "every()")}}, {{jsxref("Array/find", "find()")}}, {{jsxref("Array/findIndex", "findIndex()")}}, {{jsxref("Array/findLast", "findLast()")}}, {{jsxref("Array/findLastIndex", "findLastIndex()")}} і {{jsxref("Array/some", "some()")}} не завжди закликають `callbackFn` на кожному елементі: вони зупиняють ітерування, щойно повернене значення визначено.
 
-Є два інші методи, що приймають функцію зворотного виклику й запускають її щонайбільше раз для кожного елементу в масиві, але мають дещо інакші сигнатури, ніж типові ітеративні методи (до прикладу, вони не приймають `thisArg`):
-
-- {{jsxref("Array/reduce", "reduce()")}}
-- {{jsxref("Array/reduceRight", "reduceRight()")}}
+Методи {{jsxref("Array/reduce", "reduce()")}} і {{jsxref("Array/reduceRight", "reduceRight()")}} також приймають функцію зворотного виклику та запускають її щонайбільше раз для кожного елементу в масиві, але мають дещо інакші сигнатури, ніж типові ітеративні методи (до прикладу, вони не приймають `thisArg`).
 
 Метод {{jsxref("Array/sort", "sort()")}} також приймає функцію зворотного виклику, але не є ітеративним методом. Він змінює масив на місці, не приймає `thisArg` і може закликати функцію зворотного виклику кілька разів на кожному індексі.
+
+Ітеративні методи ітерують масив так, як показано нижче (чимало технічних подробиць пропущено):
+
+```js
+function method(callbackFn, thisArg) {
+  const length = this.length;
+  for (let i = 0; i < length; i++) {
+    if (i in this) {
+      const result = callbackFn.call(thisArg, this[i], i, this);
+      // Певні дії над результатом; можливо, раннє повернення
+    }
+  }
+}
+```
+
+Зверніть увагу на наступне:
+
+1. Не всі методи виконують перевірку `i in this`. Методи `find`, `findIndex`, `findLast` і `findLastIndex` цього не роблять, а інші – роблять.
+2. Значення `length` запам'ятовується перед початком циклу. Це впливає на те, як обробляються вставляння та видалення (дивіться [внесення змін до вихідного масиву в ітеративних методах](#vnesennia-zmin-do-vykhidnoho-masyvu-v-iteratyvnykh-metodakh)).
+3. Метод не запам'ятовує вміст масиву, тож якщо який-небудь індекс змінюється під час ітерування - може бути оброблено нове значення.
+4. Код вище ітерує масив у порядку зростання індексів. Частина методів ітерує в порядку спадання індексів (`for (let i = length - 1; i >= 0; i--)`): `reduceRight()`, `findLast()` і `findLastIndex()`.
+5. Методи `reduce` і `reduceRight` мають трохи різні сигнатури й не завжди починають ітерування з першого або останнього елемента.
 
 ### Узагальнені методи масиву
 
@@ -787,6 +785,144 @@ console.log(execResult); // [ "dbBd", "bB", "d" ]
 ```
 
 Більше інформації про результат збігу – на сторінках {{jsxref("RegExp.prototype.exec()")}} і {{jsxref("String.prototype.match()")}}.
+
+### Внесення змін до вихідного масиву в ітеративних методах
+
+[Ітеративні методи](#iteratyvni-metody) не вносять змін до масиву, на якому їх викликають, проте це може робити функція, передана як `callbackFn`. Ключовий принцип – пам'ятати, що обробляються лише індекси лише від 0 до `arrayLength - 1`, де `arrayLength` – довжина масиву на мить самого виклику методу масиву, але елемент, переданий у функцію зворотного виклику, – значення на мить обробки індексу. Таким чином:
+
+- `callbackFn` не обробить жодних елементів, доданих поза вихідною довжиною масиву, актуальною на час початку виклику ітеративного методу.
+- Зміни до вже оброблених індексів не призводять до повторного заклику на них `callbackFn`.
+- Якщо наявний, але ще не оброблений елемент масиву змінює `callbackFn`, то значення, передане у `callbackFn`, буде значенням на мить обробки цього елемента. Вилучені елементи не обробляються.
+
+> **Застереження:** Рівночасне внесення змін такого роду, як описані вище, часто призводить до важкозрозумілого коду, і загалом цього варто уникати (за винятком особливих випадків).
+> Наступні приклади використовують метод `forEach` як приклад, але інші методи, що обробляють індекси у порядку зростання, працюють так само. Спочатку визначається допоміжна функція:
+
+```js
+function testSideEffect(effect) {
+  const arr = ["e1", "e2", "e3", "e4"];
+  arr.forEach((elem, index, arr) => {
+    console.log(
+      `масив: [${arr.join(", ")}], індекс: ${index}, елемент: ${elem}`,
+    );
+    effect(arr, index);
+  });
+  console.log(`Остаточний масив: [${arr.join(", ")}]`);
+}
+```
+
+Зміни за ще не обробленими індексами будуть помітні, як тільки ітерування дійде до відповідного індексу:
+
+```js
+testSideEffect((arr, index) => {
+  if (index + 1 < arr.length) arr[index + 1] += "*";
+});
+// масив: [e1, e2, e3, e4], індекс: 0, елемент: e1
+// масив: [e1, e2*, e3, e4], індекс: 1, елемент: e2*
+// масив: [e1, e2*, e3*, e4], індекс: 2, елемент: e3*
+// масив: [e1, e2*, e3*, e4*], індекс: 3, елемент: e4*
+// Остаточний масив: [e1, e2*, e3*, e4*]
+```
+
+Внесення змін за вже обробленими індексами не змінює поведінку ітерації, хоча масив буде іншим після цього:
+
+```js
+testSideEffect((arr, index) => {
+  if (index > 0) arr[index - 1] += "*";
+});
+// масив: [e1, e2, e3, e4], індекс: 0, елемент: e1
+// масив: [e1, e2, e3, e4], індекс: 1, елемент: e2
+// масив: [e1*, e2, e3, e4], індекс: 2, елемент: e3
+// масив: [e1*, e2*, e3, e4], індекс: 3, елемент: e4
+// Остаточний масив: [e1*, e2*, e3*, e4]
+```
+
+Вставляння _n_ елементів за ще необробленими індексами, що менші за початкову довжину масиву, призведе до того, що вони будуть оброблені. Останні _n_ елементів вихідного масиву, що відтак матимуть індекси, більші за початкову довжину масиву, не будуть оброблені:
+
+```js
+testSideEffect((arr, index) => {
+  if (index === 1) arr.splice(2, 0, "новий");
+});
+// масив: [e1, e2, e3, e4], індекс: 0, елемент: e1
+// масив: [e1, e2, e3, e4], індекс: 1, елемент: e2
+// масив: [e1, e2, новий, e3, e4], індекс: 2, елемент: новий
+// масив: [e1, e2, новий, e3, e4], індекс: 3, елемент: e3
+// Остаточний масив: [e1, e2, новий, e3, e4]
+// e4 не обробляється, бо тепер має індекс 4
+```
+
+Вставляння _n_ елементів з індексами, більшими за довжину вихідного масиву, не призведе до того, що вони будуть оброблені:
+
+```js
+testSideEffect((arr) => arr.push("новий"));
+// масив: [e1, e2, e3, e4], індекс: 0, елемент: e1
+// масив: [e1, e2, e3, e4, новий], індекс: 1, елемент: e2
+// масив: [e1, e2, e3, e4, новий, новий], індекс: 2, елемент: e3
+// масив: [e1, e2, e3, e4, новий, новий, новий], індекс: 3, елемент: e4
+// Остаточний масив: [e1, e2, e3, e4, новий, новий, новий, новий]
+```
+
+Вставляння _n_ елементів за індексами, що вже були оброблені, не призведе до того, що вони будуть оброблені, але зсуне решту елементів на _n_ назад, тож поточний індекс і _n - 1_ елементів перед ним будуть оброблені знову:
+
+```js
+testSideEffect((arr, index) => arr.splice(index, 0, "new"));
+// масив: [e1, e2, e3, e4], індекс: 0, елемент: e1
+// масив: [новий, e1, e2, e3, e4], індекс: 1, елемент: e1
+// масив: [новий, новий, e1, e2, e3, e4], індекс: 2, елемент: e1
+// масив: [новий, новий, новий, e1, e2, e3, e4], індекс: 3, елемент: e1
+// Остаточний масив: [новий, новий, новий, новий, e1, e2, e3, e4]
+// e1 обробляється знову, бо він зсувається назад
+```
+
+Видалення _n_ елементів за необробленими індексами призведе до того, що їх більше не буде оброблено. Оскільки масив скорочується, то останні _n_ ітерацій оброблятимуть індекси, що виходять за межі масиву. Якщо метод ігнорує відсутні індекси (дивіться [методи масиву й порожні комірки](#metody-masyvu-y-porozhni-komirky)), то останні _n_ ітерацій будуть пропущені; інакше вони отримають значення `undefined`:
+
+```js
+testSideEffect((arr, index) => {
+  if (index === 1) arr.splice(2, 1);
+});
+// масив: [e1, e2, e3, e4], індекс: 0, елемент: e1
+// масив: [e1, e2, e3, e4], індекс: 1, елемент: e2
+// масив: [e1, e2, e4], індекс: 2, елемент: e4
+// Остаточний масив: [e1, e2, e4]
+// Індекс 3 не обробляється, бо він за межами масиву
+
+// Порівняйте це з find(), який обробляє відсутні індекси як undefined:
+const arr2 = ["e1", "e2", "e3", "e4"];
+arr2.find((elem, index, arr) => {
+  console.log(`масив: [${arr.join(", ")}], індекс: ${index}, елемент: ${elem}`);
+  if (index === 1) arr.splice(2, 1);
+  return false;
+});
+// масив: [e1, e2, e3, e4], індекс: 0, елемент: e1
+// масив: [e1, e2, e3, e4], індекс: 1, елемент: e2
+// масив: [e1, e2, e4], індекс: 2, елемент: e4
+// масив: [e1, e2, e4], індекс: 3, елемент: undefined
+```
+
+Видалення _n_ елементів за вже обробленими індексами не змінює факту того, що вони були оброблені до свого видалення. Оскільки масив скоротився, то наступні _n_ елементів після поточного індексу пропускаються. Якщо метод ігнорує відсутні індекси, то останні _n_ ітерацій будуть пропущені; інакше вони отримають значення `undefined`:
+
+```js
+testSideEffect((arr, index) => arr.splice(index, 1));
+// масив: [e1, e2, e3, e4], індекс: 0, елемент: e1
+// Не обробляє e2, тому що тепер e2 має індекс 0, який вже був оброблений
+// масив: [e2, e3, e4], індекс: 1, елемент: e3
+// Не обробляє e4, тому що тепер e4 має індекс 1, який вже був оброблений
+// Остаточний масив: [e2, e4]
+// Індекс 2 за межами масиву, тому не обробляється
+
+// Порівняйте це з find(), який обробляє відсутні індекси як undefined:
+const arr2 = ["e1", "e2", "e3", "e4"];
+arr2.find((elem, index, arr) => {
+  console.log(`масив: [${arr.join(", ")}], індекс: ${index}, елемент: ${elem}`);
+  arr.splice(index, 1);
+  return false;
+});
+// масив: [e1, e2, e3, e4], індекс: 0, елемент: e1
+// масив: [e2, e3, e4], індекс: 1, елемент: e3
+// масив: [e2, e4], індекс: 2, елемент: undefined
+// масив: [e2, e4], індекс: 3, елемент: undefined
+```
+
+Щодо методів, які ітерують в порядку спадання індексів, то вставляння призводить до пропускання елементів, а видалення – до їх багаторазової обробки. Спробуйте самі змінити код вище, щоб побачити такі ефекти.
 
 ## Специфікації
 

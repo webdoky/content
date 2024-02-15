@@ -102,7 +102,7 @@ browser-compat: html.elements.progress
 
 #### Результат
 
-{{EmbedLiveSample('pidpysuvannia)}}
+{{EmbedLiveSample('pidpysuvannia')}}
 
 ### Описування певного регіону
 

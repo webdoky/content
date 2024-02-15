@@ -77,10 +77,10 @@ browser-compat: html.elements.hr
     <tr>
       <th scope="row">Дозволені батьківські елементи</th>
       <td>
-        Усі елементи, що приймають
-        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
-          >потоковий вміст</a
-        >.
+        <ul>
+          <li>Усі елементи, що приймають <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist">потоковий вміст</a></li>
+          <li>Елемент <a href="/uk/docs/Web/HTML/Element/select"><code>&lt;select></code></a></li>
+        </ul>
       </td>
     </tr>
     <tr>
@@ -111,3 +111,4 @@ browser-compat: html.elements.hr
 ## Дивіться також
 
 - {{HTMLElement('p')}}
+- [`<hr>` усередині `<select>`](/uk/docs/Web/HTML/Element/select#hr-useredyni-select)

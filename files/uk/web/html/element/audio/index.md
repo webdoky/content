@@ -1,5 +1,5 @@
 ---
-title: "<audio>: The Embed Audio element"
+title: "<audio> – елемент вбудованого аудіо"
 slug: Web/HTML/Element/audio
 page-type: html-element
 browser-compat: html.elements.audio
@@ -29,7 +29,7 @@ browser-compat: html.elements.audio
 
   - : Якщо цей атрибут присутній, то браузер надасть елементи керування, що дозволять користувачу керувати відтворенням аудіо, включно з гучністю, перемотуванням та паузою й продовженням відтворення.
 
-- `controlslist` {{experimental_inline}}{{non-standard_inline}}
+- `controlslist`
 
   - : Атрибут [`controlslist`](https://wicg.github.io/controls-list/explainer.html), коли заданий, допомагає браузерові обрати, які елементи керування показувати для елемента `audio`, коли браузер показує свій власний набір елементів керування (тобто коли заданий атрибут `controls`).
 
@@ -46,11 +46,11 @@ browser-compat: html.elements.audio
 
     Коли цього атрибута немає, то ресурс отримується без CORS-запиту (тобто без надсилання заголовка HTTP `Origin:`), що запобігає його неославленому використанню в елементах {{HTMLElement('canvas')}}. Якщо значення недійсне, то воно обробляється так, ніби було використано перелічене ключове слово **anonymous**. Більше про це – в [Атрибутах налаштування CORS](/uk/docs/Web/HTML/Attributes/crossorigin).
 
-- `disableremoteplayback` {{experimental_inline}}
+- `disableremoteplayback`
 
   - : Булів атрибут, що використовується для відключення можливості віддаленого відтворення на пристроях, що підключені за допомогою дротових (HDMI, DVI тощо) і бездротових технологій (Miracast, Chromecast, DLNA, AirPlay тощо). Більше інформації – у [цій запропонованій специфікації](https://www.w3.org/TR/remote-playback/#the-disableremoteplayback-attribute).
 
-    > **Примітка:** У Safari можна використовувати запасний варіант[`x-webkit-airplay="deny"`](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/AirPlayGuide/OptingInorOutofAirPlay/OptingInorOutofAirPlay.html).
+    У Safari можна використовувати запасний варіант [`x-webkit-airplay="deny"`](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/AirPlayGuide/OptingInorOutofAirPlay/OptingInorOutofAirPlay.html).
 
 - `loop`
   - : Булів атрибут: коли він заданий, то аудіопрогравач автоматично перейде на початок, коли досягне кінця аудіофайлу.
@@ -235,8 +235,9 @@ browser-compat: html.elements.audio
   <source src="myAudio.mp3" type="audio/mpeg" />
   <source src="myAudio.ogg" type="audio/ogg" />
   <p>
-    Стягнути аудіо в форматі <a href="myAudio.mp3">MP3</a> або
-    <a href="myAudio.ogg">OGG</a>.
+    Стягнути аудіо в форматі
+    <a href="myAudio.mp3" download="myAudio.mp3">MP3</a> або
+    <a href="myAudio.ogg" download="myAudio.ogg">OGG</a>.
   </p>
 </audio>
 ```
@@ -263,7 +264,7 @@ browser-compat: html.elements.audio
 
 Щоб отримати сталі вигляд і відчуття в різних браузерах, необхідно створити власні елементи керування; їх можна розмітити та оформити будь-яким зручним способом, а потім за допомогою JavaScript та API {{domxref("HTMLMediaElement")}} підключити їхню функціональність.
 
-Посібник [Основи стилізації плеєра відео](/uk/docs/Web/Guide/Audio_and_video_delivery/Video_player_styling_basics) надає деякі корисні способи стилізації – він написаний у контексті `<video>`, але більшість способів так само застосовні до `<audio>`.
+Посібник [Основи стилізації плеєра відео](/uk/docs/Web/Media/Audio_and_video_delivery/Video_player_styling_basics) надає деякі корисні способи стилізації – він написаний у контексті `<video>`, але більшість способів так само застосовні до `<audio>`.
 
 ### Відстеження додавання та видалення доріжок
 
@@ -305,7 +306,9 @@ elem.audioTrackList.onremovetrack = (event) => {
 ```html
 <!-- Просте відтворення аудіо -->
 <audio src="AudioTest.ogg" autoplay>
-  <a href="AudioTest.ogg">Стягнути аудіо у форматі OGG</a>.
+  <a href="AudioTest.ogg" download="AudioTest.ogg"
+    >Стягнути аудіо у форматі OGG</a
+  >.
 </audio>
 ```
 
@@ -318,7 +321,7 @@ elem.audioTrackList.onremovetrack = (event) => {
 ```html
 <audio controls>
   <source src="foo.wav" type="audio/wav" />
-  <a href="foo.wav">Стягнути аудіо у форматі WAV</a>.
+  <a href="foo.wav" download="foo.wav">Стягнути аудіо у форматі WAV</a>.
 </audio>
 ```
 
@@ -366,13 +369,13 @@ elem.audioTrackList.onremovetrack = (event) => {
   <source src="myAudio.ogg" type="audio/ogg" />
   <p>
     Стягнути аудіо у форматах <a href="myAudio.mp3">MP3</a> або
-    <a href="myAudio.ogg">OGG</a>.
+    <a href="myAudio.ogg" download="myAudio.ogg">OGG</a>.
   </p>
 </audio>
 ```
 
 - [Формат текстових доріжок вебвідео (WebVTT)](/uk/docs/Web/API/WebVTT_API)
-- [WebAIM – Субтитри, стенограми та описи аудіо](https://webaim.org/techniques/captions/
+- [WebAIM – Субтитри, стенограми та описи аудіо](https://webaim.org/techniques/captions/)
 - [MDN Розуміння WCAG, пояснення Настанови 1.2](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#nastanova-1-2-nadannia-tekstovykh-alternatyv-chasozalezhnym-nosiiam)
 - [Розуміння критерію успіху 1.2.1 | W3C Розуміння WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/media-equiv-av-only-alt.html)
 - [Розуміння критерію успіху 1.2.2 | W3C Розуміння WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/media-equiv-captions.html)
@@ -447,4 +450,4 @@ elem.audioTrackList.onremovetrack = (event) => {
 - {{htmlelement("source")}}
 - {{htmlelement("video")}}
 - [Зона навчання – Аудіо та відео вміст](/uk/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content)
-- [Кросбраузерні основи аудіо](/uk/docs/Web/Guide/Audio_and_video_delivery/Cross-browser_audio_basics)
+- [Кросбраузерні основи аудіо](/uk/docs/Web/Media/Audio_and_video_delivery/Cross-browser_audio_basics)
