@@ -2,12 +2,10 @@
 title: ArrayBuffer.prototype.detached
 slug: Web/JavaScript/Reference/Global_Objects/ArrayBuffer/detached
 page-type: javascript-instance-accessor-property
-status:
-  - experimental
 browser-compat: javascript.builtins.ArrayBuffer.detached
 ---
 
-{{JSRef}} {{SeeCompatTable}}
+{{JSRef}}
 
 Аксесорна властивість **`detached`** (від'єднаний) примірників {{jsxref("ArrayBuffer")}} повертає булеве значення, котре вказує на те, чи був цей буфер від'єднаний (кудись переданий), чи ні.
 
@@ -37,6 +35,7 @@ console.log(newBuffer.detached); // false
 
 ## Дивіться також
 
+- [Поліфіл `ArrayBuffer.prototype.detached` у складі `core-js`](https://github.com/zloirock/core-js#arraybufferprototypetransfer-and-friends)
 - {{jsxref("ArrayBuffer")}}
 - {{jsxref("ArrayBuffer.prototype.transfer()")}}
 - {{jsxref("ArrayBuffer.prototype.transferToFixedLength()")}}

@@ -268,7 +268,7 @@ document
 
 Використання `target="_blank"` без [`rel="noreferrer"`](/uk/docs/Web/HTML/Attributes/rel/noreferrer) і [`rel="noopener"`](/uk/docs/Web/HTML/Attributes/rel/noopener) робить вебсайт вразливим то атак експлуатації API {{domxref("window.opener")}}; втім, майте на увазі, що в новіших версіях браузерів встановлення `target="_blank"` неявно додає такий само захист, як встановлення `rel="noopener"`. Дивіться [сумісність із браузерами](#sumisnist-iz-brauzeramy) для отримання деталей.
 
-## Доступність
+## Занепокоєння щодо доступності
 
 ### Виразний текст посилання
 

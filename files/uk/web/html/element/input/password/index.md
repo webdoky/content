@@ -92,7 +92,7 @@ browser-compat: html.elements.input.type_password
 
 ### Дозвіл на самозаповнення
 
-Щоб дозволити менеджерові паролів користувача автоматично ввести пароль, слід задати атрибут [`autocomplete`](/uk/docs/Web/HTML/Element/input#autocomplete-avtozapovnennia). Для паролів значенням повинно бути щось із наступного:
+Щоб дозволити менеджерові паролів користувача автоматично ввести пароль, слід задати атрибут [`autocomplete`](/uk/docs/Web/HTML/Element/input#autocomplete). Для паролів значенням повинно бути щось із наступного:
 
 - `on`
   - : Дозволити браузерові або менеджерові паролів автоматично вписати пароль. Це не так інформативно, як використання `current-password` або `new-password`.
@@ -124,7 +124,7 @@ browser-compat: html.elements.input.type_password
 
 ### Задання режиму введення
 
-Якщо для ваших бажаних (або обов'язкових) правил синтаксису паролів краще підійшов би альтернативний інтерфейс введення тексту, ніж стандартна клавіатура, то можна використати для запиту на такий спосіб атрибут [`inputmode`](/uk/docs/Web/HTML/Element/input#inputmode-rezhym-vvedennia). Найочевидніша ситуація для його використання – пароль, що повинен бути числовим (наприклад, як PIN-код). Мобільні пристрої з віртуальними клавіатурами, наприклад, можуть вирішити перейти на цифрову клавіатуру замість повної, аби зробити введення пароля легшим. Якщо PIN-код є одноразовим, задайте атрибут [`autocomplete`](/uk/docs/Web/HTML/Element/input#autocomplete-avtozapovnennia) зі значенням `off` або `one-time-code`, щоб його збереження не відбувалося.
+Якщо для ваших бажаних (або обов'язкових) правил синтаксису паролів краще підійшов би альтернативний інтерфейс введення тексту, ніж стандартна клавіатура, то можна використати для запиту на такий спосіб атрибут [`inputmode`](/uk/docs/Web/HTML/Element/input#inputmode-rezhym-vvedennia). Найочевидніша ситуація для його використання – пароль, що повинен бути числовим (наприклад, як PIN-код). Мобільні пристрої з віртуальними клавіатурами, наприклад, можуть вирішити перейти на цифрову клавіатуру замість повної, аби зробити введення пароля легшим. Якщо PIN-код є одноразовим, задайте атрибут [`autocomplete`](/uk/docs/Web/HTML/Element/input#autocomplete) зі значенням `off` або `one-time-code`, щоб його збереження не відбувалося.
 
 ```html
 <label for="pin">PIN-код: </label>
@@ -135,7 +135,7 @@ browser-compat: html.elements.input.type_password
 
 ### Задання вимог щодо довжини
 
-Як зазвичай, можна використати для задання мінімальної та максимальної прийнятних довжин пароля атрибути [`minlength`](/uk/docs/Web/HTML/Element/input#minlength-minimalna-dovzhyna) і [`maxlength`](/uk/docs/Web/HTML/Element/input#maxlength-maksymalna-dovzhyna). Цей приклад розширює попередній, додавши, що PIN-код користувача повинен містити щонайменше чотири й не більше восьми цифр. Атрибут [`size`](/uk/docs/Web/HTML/Element/input#size) використовується, щоб пересвідчитися, що контрольний елемент для введення пароля – вісім символів завширшки.
+Як зазвичай, можна використати для задання мінімальної та максимальної прийнятних довжин пароля атрибути [`minlength`](/uk/docs/Web/HTML/Element/input#minlength-minimalna-dovzhyna) і [`maxlength`](/uk/docs/Web/HTML/Element/input#maxlength-maksymalna-dovzhyna). Цей приклад розширює попередній, додавши, що PIN-код користувача повинен містити щонайменше чотири й не більше восьми цифр. Атрибут [`size`](/uk/docs/Web/HTML/Element/input#size-rozmir) використовується, щоб пересвідчитися, що контрольний елемент для введення пароля – вісім символів завширшки.
 
 ```html
 <label for="pin">PIN-код:</label>
@@ -220,7 +220,7 @@ document.getElementById("selectAll").onclick = () => {
 
 Цей приклад використовує [`pattern`](/uk/docs/Web/HTML/Element/input#pattern-patern), що обмежує введене значення рядками, що представляють прийнятні номери Соціального страхування. Очевидно, що цей регулярний вираз не гарантує дійсного SSN (адже немає доступу до бази даних Адміністрації Соціального страхування), але він перевіряє, що введене число може бути SSN; загалом це запобігає значенням, що не можуть бути дійсними. Крім цього, він дозволяє, щоб три групи цифр були розділені пробілами, дефісами ("-"), або взагалі нічим.
 
-Атрибут [`inputmode`](/uk/docs/Web/HTML/Element/input#inputmode-rezhym-vvedennia) має значення `numeric`, аби заохочувати пристрої з віртуальними клавіатурами до переходу на цифровий варіант, для легшого введення. Атрибути [`minlength`](/uk/docs/Web/HTML/Element/input#minlength-minimalna-dovzhyna) і [`maxlength`](/uk/docs/Web/HTML/Element/input#maxlength-maksymalna-dovzhyna) мають значення 9 і 12 відповідно, щоб вимагати, аби значення було щонайменше 9 і щонайбільше 12 символів завдовжки (перше значення – для випадку без розділювачів груп цифр, і друге – з ними). Атрибут [`required`](/uk/docs/Web/HTML/Element/input#required-oboviazkovyi) використовується для позначення того, що цей контрольний елемент повинен мати значення. Врешті-решт, [`autocomplete`](/uk/docs/Web/HTML/Element/input#autocomplete-avtozapovnennia) має значення `off`, аби не дати менеджерам паролів та функціональності відновлення сесії намагатися вписати значення, адже це значення – взагалі не пароль.
+Атрибут [`inputmode`](/uk/docs/Web/HTML/Element/input#inputmode-rezhym-vvedennia) має значення `numeric`, аби заохочувати пристрої з віртуальними клавіатурами до переходу на цифровий варіант, для легшого введення. Атрибути [`minlength`](/uk/docs/Web/HTML/Element/input#minlength-minimalna-dovzhyna) і [`maxlength`](/uk/docs/Web/HTML/Element/input#maxlength-maksymalna-dovzhyna) мають значення 9 і 12 відповідно, щоб вимагати, аби значення було щонайменше 9 і щонайбільше 12 символів завдовжки (перше значення – для випадку без розділювачів груп цифр, і друге – з ними). Атрибут [`required`](/uk/docs/Web/HTML/Element/input#required-oboviazkovyi) використовується для позначення того, що цей контрольний елемент повинен мати значення. Врешті-решт, [`autocomplete`](/uk/docs/Web/HTML/Element/input#autocomplete) має значення `off`, аби не дати менеджерам паролів та функціональності відновлення сесії намагатися вписати значення, адже це значення – взагалі не пароль.
 
 #### JavaScript
 
@@ -253,13 +253,13 @@ ssn.oninput = (event) => {
       <td><strong>Події</strong></td>
       <td>
         {{domxref("HTMLElement/change_event", "change")}} і
-        {{domxref("HTMLElement/input_event", "input")}}
+        {{domxref("Element/input_event", "input")}}
       </td>
     </tr>
     <tr>
       <td><strong>Підтримувані спільні атрибути</strong></td>
       <td>
-         <a href="/uk/docs/Web/HTML/Element/input#autocomplete-avtozapovnennia"><code>autocomplete</code></a>,
+         <a href="/uk/docs/Web/HTML/Element/input#autocomplete"><code>autocomplete</code></a>,
          <a href="/uk/docs/Web/HTML/Element/input#inputmode-rezhym-vvedennia"><code>inputmode</code></a>,
          <a href="/uk/docs/Web/HTML/Element/input#maxlength-maksymalna-dovzhyna"><code>maxlength</code></a>,
          <a href="/uk/docs/Web/HTML/Element/input#minlength-minimalna-dovzhyna"><code>minlength</code></a>,
