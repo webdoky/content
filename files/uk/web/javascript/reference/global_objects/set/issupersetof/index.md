@@ -2,12 +2,10 @@
 title: Set.prototype.isSupersetOf()
 slug: Web/JavaScript/Reference/Global_Objects/Set/isSupersetOf
 page-type: javascript-instance-method
-status:
-  - experimental
 browser-compat: javascript.builtins.Set.isSupersetOf
 ---
 
-{{JSRef}}{{SeeCompatTable}}
+{{JSRef}}
 
 Метод **`isSupersetOf()`** (є надмножиною щодо) примірників {{jsxref("Set")}} приймає множину і повертає булеве значення, що вказує, чи всі елементи заданої множини є в поточній множині.
 
