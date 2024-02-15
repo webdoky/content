@@ -2,12 +2,10 @@
 title: transition-behavior
 slug: Web/CSS/transition-behavior
 page-type: css-property
-status:
-  - experimental
 browser-compat: css.properties.transition-behavior
 ---
 
-{{CSSRef}}{{SeeCompatTable}}
+{{CSSRef}}
 
 Властивість [CSS](/uk/docs/Web/CSS) **`transition-behavior`** (логіка переходу) задає те, чи починаються переходи для властивостей, чия логіка анімації є [дискретною](/uk/docs/Web/CSS/CSS_animated_properties#discrete).
 
