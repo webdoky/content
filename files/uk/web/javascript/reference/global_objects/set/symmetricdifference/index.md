@@ -2,12 +2,10 @@
 title: Set.prototype.symmetricDifference()
 slug: Web/JavaScript/Reference/Global_Objects/Set/symmetricDifference
 page-type: javascript-instance-method
-status:
-  - experimental
 browser-compat: javascript.builtins.Set.symmetricDifference
 ---
 
-{{JSRef}}{{SeeCompatTable}}
+{{JSRef}}
 
 Метод **`symmetricDifference()`** (симетрична різниця) примірників {{jsxref("Set")}} приймає множину і повертає нову множину, що містить елементи, які є в поточній множині або в переданій, але не в них обох.
 
