@@ -373,7 +373,7 @@ div {
 
 Крім використання `var()`, як механізм запасних варіантів можна використовувати налаштування `initial-value` директиви `@property`.
 
-Фактично ми це вже бачили в розділі [Успадкування з `@property`](#vykorystannia-property-dlia-kontrolu-uspadkuvannia).
+Фактично ми це вже бачили в розділі [Успадкування з `@property`](#vykorystannia-property-dlia-keruvannia-uspadkuvanniam).
 
 Наступний приклад за допомогою правила `@property` задає початкове значення `--box-color` як `cornflowerblue`.
 У наборі правил, що стоїть після директиви, хотілося задати `--box-color` як `aquamarine`, але в назві значення є хибодрук.
