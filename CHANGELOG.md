@@ -3,6 +3,32 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2024-02-09 - 2024-02-16]
+
+* **Оновлення перекладу(CSS):** web/css/css_cascading_variables (#2813) ([a43f8097](https://github.com/webdoky/content/commit/a43f80971bed3709ec884b6d3b186b585e5efcff))
+* **Оновлення перекладу(HTML):** web/html/content_categories (#2814) ([d795626e](https://github.com/webdoky/content/commit/d795626e3ad51f1046a386af47244324a7e6702b))
+* **Оновлення перекладу(HTML):** web/html/element/object (#2810) ([165805d5](https://github.com/webdoky/content/commit/165805d5c28db895fe8c47b8458923f2253000df))
+* **Оновлення перекладу(CSS):** web/css/css_selectors (#2809) ([10a6a73a](https://github.com/webdoky/content/commit/10a6a73adf54311c6fb681fefdc467b5cd8e528f))
+* **Оновлення перекладу(CSS):** web/css/color_value/light-dark (#2808) ([ac62513e](https://github.com/webdoky/content/commit/ac62513ea114c36ab46c6910e638ec83f32963e4))
+* **Оновлення перекладу(glossary):** glossary/preflight_request (#2807) ([998ac72d](https://github.com/webdoky/content/commit/998ac72d129195a268ba4876cba2c33c7594e741))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/object/constructor (#2806) ([16371c71](https://github.com/webdoky/content/commit/16371c715d982bcf9af21550a1e2c970df5d2ddc))
+* **Оновлення перекладу(CSS):** web/css/containing_block (#2803) ([7bf893c5](https://github.com/webdoky/content/commit/7bf893c55a898c8688617ba01221e1b66342eee6))
+* **Оновлення перекладу(HTML):** web/html/element/audio (#2801) ([a7843d1a](https://github.com/webdoky/content/commit/a7843d1a687821f309c6a021a25aa39ddaff8ada))
+* **Оновлення перекладу(HTML):** web/html/element/iframe (#2798) ([383d5322](https://github.com/webdoky/content/commit/383d532268a69ec05d2328b7dabaa39b670feb0d))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/join (#2797) ([8a9f4c0d](https://github.com/webdoky/content/commit/8a9f4c0d1330c14858dbef977da7e67610ccd702))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/indexof (#2796) ([b92f69e7](https://github.com/webdoky/content/commit/b92f69e734fbb54c8852dafc385f8b8950c66803))
+* **Оновлення перекладу(JS):** web/javascript/reference/classes (#2795) ([fbce79ce](https://github.com/webdoky/content/commit/fbce79ce802af993349ffeab0e3c8a13e48043e4))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/includes (#2794) ([da2c3453](https://github.com/webdoky/content/commit/da2c3453bc26e015824271d42b8ec25260af085d))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/splice (#2793) ([bf126d69](https://github.com/webdoky/content/commit/bf126d69fffbeb2499cc32f88a7c022cad776a91))
+* **Оновлення перекладу(HTML):** web/html/element/video (#2791) ([070e2e6d](https://github.com/webdoky/content/commit/070e2e6deb4537ef07b317ba54d81eb11f713860))
+* **Оновлення перекладу(HTML):** web/html/element/img (#2752) ([00ea1030](https://github.com/webdoky/content/commit/00ea103088180b1605f06c2f108b404d471cc39c))
+* **Переклад(Glossary):** glossary/semantics (#2744) ([dc086838](https://github.com/webdoky/content/commit/dc086838123445219645901428ecb80ec81d0a4e))
+* **Переклад(Glossary):** glossary/deep_copy (#2746) ([fa6323be](https://github.com/webdoky/content/commit/fa6323bed3a7af14891495b829d477ff14e2cf5f))
+* **Переклад(Glossary):** glossary/world_wide_web (#2745) ([6a9fcd43](https://github.com/webdoky/content/commit/6a9fcd439b94b68855b3b0f7f5f32da59207026b))
+* **Переклад(Glossary):** glossary/media_query (#2736) ([6f42dc5e](https://github.com/webdoky/content/commit/6f42dc5e7c9b340f54b2c6ea0b78ebd2cffa961c))
+* **Переклад(Glossary):** glossary/primitive (#2741) ([80382377](https://github.com/webdoky/content/commit/8038237728e5699804ec52339108d009f0d3cb68))
+* **Переклад(Glossary):** glossary/callback_function (#2737) ([90d0cc1f](https://github.com/webdoky/content/commit/90d0cc1f41c33acdd2a38ad02a1dfddf2756a77a))
+
 ## [2024-02-02 - 2024-02-09]
 
 * **Переклад(Glossary):** glossary/request_header (#2742) ([9aa212e8](https://github.com/webdoky/content/commit/9aa212e8f57fd7f2c7c29b52f3aa52ebc2c90e84))
