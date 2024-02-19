@@ -43,7 +43,7 @@ browser-compat: html.elements.source
 
 - `media`
 
-  - : Задає [медійний запит](/uk/docs/Web/CSS/CSS_media_queries) для бажаного медіа ресурсу.
+  - : Задає [медійний запит](/uk/docs/Web/CSS/CSS_media_queries) для бажаного медійного ресурсу.
 
 - `height`
 
