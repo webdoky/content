@@ -23,6 +23,8 @@ browser-compat: html.elements.iframe
 
   - : Задає [політику дозволів](/uk/docs/Web/HTTP/Permissions_Policy) для `<iframe>`. Політика визначає те, які можливості доступні `<iframe>` (наприклад, доступ до мікрофона, камери, батареї, поширення в Інтернеті тощо), залежно від походження запиту.
 
+    Дивіться приклади в [супутніх фреймах](/uk/docs/Web/HTTP/Headers/Permissions-Policy#suputni-freimy) на сторінці `Permissions-Policy`.
+
     > **Примітка:** Політика дозволів, задана атрибутом `allow`, реалізовує додаткові обмеження, поверх політики, заданої в заголовку {{httpheader("Permissions-Policy")}}. Перша не замінює другу.
 
 - `allowfullscreen`
