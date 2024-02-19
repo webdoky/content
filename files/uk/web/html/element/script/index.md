@@ -9,53 +9,6 @@ browser-compat: html.elements.script
 
 Елемент [HTML](/uk/docs/Web/HTML) **`<script>`** (сценарій) застосовується для вбудовування виконуваного коду чи даних; зазвичай це використовується для вбудовування чи посилання на код JavaScript. Елемент `<script>` також може застосовуватися з іншими мовами, як то GLSL – мовою програмування шейдерів [WebGL](/uk/docs/Web/API/WebGL_API), та [JSON](/uk/docs/Glossary/JSON).
 
-<table class="properties">
-  <tbody>
-    <tr>
-      <th scope="row">
-        <a href="/uk/docs/Web/HTML/Content_categories"
-          >Категорії вмісту</a
-        >
-      </th>
-      <td>
-        <a href="/uk/docs/Web/HTML/Content_categories#vmist-metadanykh">Вміст метаданих</a>,
-        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist">потоковий вміст</a>,
-        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist">оповідальний вміст</a>.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволений вміст</th>
-      <td>Динамічний сценарій, як то <code>text/javascript</code>.</td>
-    </tr>
-    <tr>
-      <th scope="row">Упускання тегів</th>
-      <td>{{no_tag_omission}}</td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені батьківські елементи</th>
-      <td>
-        Будь-який елемент, що приймає
-        <a href="/uk/docs/Web/HTML/Content_categories#vmist-metadanykh">вміст метаданих</a>, або ж будь-який елемент, що приймає
-        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist">оповідальний вміст</a>.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Неявна роль ARIA</th>
-      <td>
-        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role">Відповідної ролі немає</a>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені ролі ARIA</th>
-      <td>Дозволених ролей немає</td>
-    </tr>
-    <tr>
-      <th scope="row">Інтерфейс DOM</th>
-      <td>{{domxref("HTMLScriptElement")}}</td>
-    </tr>
-  </tbody>
-</table>
-
 ## Атрибути
 
 Цей елемент приймає [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
@@ -255,6 +208,55 @@ import { name as circleName } from "circle";
 ```html
 <script blocking="render" async src="async-script.js"></script>
 ```
+
+## Технічний підсумок
+
+<table class="properties">
+  <tbody>
+    <tr>
+      <th scope="row">
+        <a href="/uk/docs/Web/HTML/Content_categories"
+          >Категорії вмісту</a
+        >
+      </th>
+      <td>
+        <a href="/uk/docs/Web/HTML/Content_categories#vmist-metadanykh">Вміст метаданих</a>,
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist">потоковий вміст</a>,
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist">оповідальний вміст</a>.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволений вміст</th>
+      <td>Динамічний сценарій, наприклад, <code>text/javascript</code>.</td>
+    </tr>
+    <tr>
+      <th scope="row">Упускання тегів</th>
+      <td>{{no_tag_omission}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені батьківські елементи</th>
+      <td>
+        Будь-який елемент, що приймає
+        <a href="/uk/docs/Web/HTML/Content_categories#vmist-metadanykh">вміст метаданих</a>, або ж будь-який елемент, що приймає
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist">оповідальний вміст</a>.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Неявна роль ARIA</th>
+      <td>
+        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role">Відповідної ролі немає</a>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені ролі ARIA</th>
+      <td>Дозволених ролей немає</td>
+    </tr>
+    <tr>
+      <th scope="row">Інтерфейс DOM</th>
+      <td>{{domxref("HTMLScriptElement")}}</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Специфікації
 
