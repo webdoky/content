@@ -9,72 +9,6 @@ browser-compat: html.elements.canvas
 
 **Елемент HTML `<canvas>`** (полотно) слід використовувати для малювання графіки та анімацій, або вкупі з [API сценаріїв полотна](/uk/docs/Web/API/Canvas_API), або з [API WebGL](/uk/docs/Web/API/WebGL_API).
 
-<table class="properties">
-  <tbody>
-    <tr>
-      <th scope="row">
-        <a href="/uk/docs/Web/HTML/Content_categories"
-          >Категорії вмісту</a
-        >
-      </th>
-      <td>
-        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
-          >Потоковий вміст</a
-        >,
-        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
-          >оповідальний вміст</a
-        >,
-        <a href="/uk/docs/Web/HTML/Content_categories#vbudovanyi-vmist"
-          >вбудований вміст</a
-        >, відчутний вміст.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволений вміст</th>
-      <td>
-        Прозорий вміст, але жодних нащадків
-        <a
-          href="/uk/docs/Web/HTML/Content_categories#interaktyvnyi-vmist"
-          >інтерактивного вмісту</a
-        >, окрім елементів {{HTMLElement("a")}},
-        елементів {{HTMLElement("button")}},
-        елементів {{HTMLElement("input")}}, чий атрибут
-        <a href="/uk/docs/Web/HTML/Element/input#type-typ"><code>type</code></a> має значення
-        <code>checkbox</code>, <code>radio</code> або <code>button</code>.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Пропуск тега</th>
-      <td>{{no_tag_omission}}</td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені батьківські елементи</th>
-      <td>
-        Всі елементи, що приймають
-        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
-          >оповідальний вміст</a
-        >.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Неявна роль ARIA</th>
-      <td>
-        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"
-          >Немає відповідної ролі</a
-        >
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені ролі ARIA</th>
-      <td>Усі</td>
-    </tr>
-    <tr>
-      <th scope="row">Інтерфейс DOM</th>
-      <td>{{domxref("HTMLCanvasElement")}}</td>
-    </tr>
-  </tbody>
-</table>
-
 ## Атрибути
 
 Цей елемент, крім перелічених нижче, приймає [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
@@ -153,6 +87,74 @@ ctx.fillRect(10, 10, 100, 100);
 - [Проблеми доступності елемента полотна](https://www.w3.org/html/wg/wiki/AddedElementCanvas)
 - [Доступність полотна HTML у Firefox 13 – від Стіва Фолкнера](https://www.tpgi.com/html5-canvas-accessibility-in-firefox-13/)
 - [Найкращі практики інтерактивних елементів полотна](https://html.spec.whatwg.org/multipage/scripting.html#best-practices)
+
+## Технічний підсумок
+
+<table class="properties">
+  <tbody>
+    <tr>
+      <th scope="row">
+        <a href="/uk/docs/Web/HTML/Content_categories"
+          >Категорії вмісту</a
+        >
+      </th>
+      <td>
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
+          >Потоковий вміст</a
+        >,
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
+          >оповідальний вміст</a
+        >,
+        <a href="/uk/docs/Web/HTML/Content_categories#vbudovanyi-vmist"
+          >вбудований вміст</a
+        >, відчутний вміст.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволений вміст</th>
+      <td>
+        Прозорий вміст, але жодних нащадків
+        <a
+          href="/uk/docs/Web/HTML/Content_categories#interaktyvnyi-vmist"
+          >інтерактивного вмісту</a
+        >, окрім елементів {{HTMLElement("a")}},
+        елементів {{HTMLElement("button")}},
+        елементів {{HTMLElement("input")}}, чий атрибут
+        <a href="/uk/docs/Web/HTML/Element/input#type-typ"><code>type</code></a> має значення
+        <code>checkbox</code>, <code>radio</code> або <code>button</code>.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Пропуск тега</th>
+      <td>{{no_tag_omission}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені батьківські елементи</th>
+      <td>
+        Всі елементи, що приймають
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
+          >оповідальний вміст</a
+        >.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Неявна роль ARIA</th>
+      <td>
+        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"
+          >Немає відповідної ролі</a
+        >
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені ролі ARIA</th>
+      <td>Усі</td>
+    </tr>
+    <tr>
+      <th scope="row">Інтерфейс DOM</th>
+      <td>{{domxref("HTMLCanvasElement")}}</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Специфікації
 
