@@ -3,6 +3,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2024-02-16 - 2024-02-23]
+
+* **Оновлення перекладу(HTML):** web/html/element/source (#2824) ([ef60e77c](https://github.com/webdoky/content/commit/ef60e77c7247ea04d22ddcbab4a641f1ce5939a2))
+* **Оновлення перекладу(HTML):** web/html/element/progress (#2823) ([409618c6](https://github.com/webdoky/content/commit/409618c6caf4e3b5ba4c35faa9745e5deb4ab1c4))
+* **Оновлення перекладу(HTML):** web/html/element/object (#2826) ([8812edde](https://github.com/webdoky/content/commit/8812edde3c842467b199fb00d697c0adab17dcd8))
+* **Оновлення перекладу(HTML):** web/html/element/meter (#2825) ([8f4b3940](https://github.com/webdoky/content/commit/8f4b3940a4ce79b13b89a7b841e782955bd7d8fc))
+* **Оновлення перекладу(HTML):** web/html/element/canvas (#2822) ([0981226b](https://github.com/webdoky/content/commit/0981226b19cf70c9d0b4ab5439ea1a246188c9a6))
+* **Оновлення перекладу(HTML):** web/html/element/datalist (#2821) ([7f0d6949](https://github.com/webdoky/content/commit/7f0d694977f79025d1f59e43d78ef2e516561a3b))
+* **Оновлення перекладу(HTML):** web/html/element/heading_elements (#2820) ([3f1bf62e](https://github.com/webdoky/content/commit/3f1bf62e2e441156faf4dcc884dd902a15f6c4a8))
+* **Оновлення перекладу(HTML):** web/html/element/script (#2819) ([5df09e64](https://github.com/webdoky/content/commit/5df09e64bba6215b21967406241a74ae5dda4ebb))
+* **Оновлення перекладу(HTML):** web/html/element/div (#2818) ([5dec7b54](https://github.com/webdoky/content/commit/5dec7b54c88a1a539929380f986696b0a3bbe73a))
+* **Оновлення перекладу(HTML):** web/html/element/iframe (#2817) ([cc9a968f](https://github.com/webdoky/content/commit/cc9a968f173573772d0e1f004c3eddaab353861c))
+* **Оновлення перекладу(HTML):** web/html/element/p (#2816) ([802883a9](https://github.com/webdoky/content/commit/802883a94f8188a4c3714f3a16e87889a6527bb7))
+* **Переклад(CSS):** web/css/universal_selectors (#2730) ([205eff69](https://github.com/webdoky/content/commit/205eff693f184293b12db5f5f8baa5c31ace3746))
+
 ## [2024-02-09 - 2024-02-16]
 
 * **Оновлення перекладу(CSS):** web/css/css_cascading_variables (#2813) ([a43f8097](https://github.com/webdoky/content/commit/a43f80971bed3709ec884b6d3b186b585e5efcff))
