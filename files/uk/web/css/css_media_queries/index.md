@@ -108,6 +108,7 @@ spec-urls:
 - Модуль [Утримання CSS](/uk/docs/Web/CSS/CSS_containment)
   - Директива {{cssxref("@container")}}
   - [Застосування контейнерних запитів](/uk/docs/Web/CSS/CSS_containment/Container_queries)
+  - [Застосування контейнерних запитів розміру та стилю](/uk/docs/Web/CSS/CSS_containment/Container_size_and_style_queries)
 - Модуль [Умовні правила CSS](/uk/docs/Web/CSS/CSS_conditional_rules)
   - Директива {{cssxref("@supports")}}
   - [Застосування запитів можливостей](/uk/docs/Web/CSS/CSS_conditional_rules/Using_feature_queries)
