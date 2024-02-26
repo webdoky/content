@@ -190,11 +190,11 @@ td {
 
 ### Задання відносин між комірками таблиці
 
-Before moving on to extend the table in more advanced ways, it's advisable to improve {{Glossary("accessibility", "accessibility")}} by defining relationships between the header and data cells ({{HTMLElement("th")}} and {{HTMLElement("td")}} elements).
+Перш ніж переходити до розширення таблиці в складніший спосіб, рекомендується покращити {{Glossary("accessibility", "доступність")}} за допомогою визначення відносин між комірками-заголовками та комірками-даними (елементами {{HTMLElement("th")}} і {{HTMLElement("td")}}).
 
 #### HTML
 
-This is accomplished by introducing the [`scope`](/uk/docs/Web/HTML/Element/th#scope) attribute on the {{HTMLElement("th")}} elements and setting the values to the corresponding `col` (column) or `row` value.
+Цього можна досягнути шляхом додавання атрибута [`scope`](/uk/docs/Web/HTML/Element/th#scope) на елементах {{HTMLElement("th")}} з відповідним значенням: `col` (стовпець) або `row` (ряд).
 
 ```html
 <table>
