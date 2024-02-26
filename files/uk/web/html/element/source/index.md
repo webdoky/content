@@ -11,59 +11,6 @@ browser-compat: html.elements.source
 
 {{EmbedInteractiveExample("pages/tabbed/source.html", "tabbed-standard")}}
 
-<table class="properties">
-  <tbody>
-    <tr>
-      <th scope="row">
-        <a href="/uk/docs/Web/HTML/Content_categories"
-          >Категорії вмісту</a
-        >
-      </th>
-      <td>Жодних.</td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволений вміст</th>
-      <td>Жодного; це {{Glossary("void element", "пустий елемент")}}.</td>
-    </tr>
-    <tr>
-      <th scope="row">Пропуск тега</th>
-      <td>Повинен мати початковий тег, але не мати кінцевого.</td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені батьківські елементи</th>
-      <td>
-        <div>
-          Медійний елемент – {{HTMLElement("audio")}} або
-          {{HTMLElement("video")}} – і він повинен бути розміщений перед
-          <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
-            >потоковим вмістом</a
-          >
-          або елементом {{HTMLElement("track")}}.
-        </div>
-        <div>
-          Елемент {{HTMLElement("picture")}}, і він повинен бути розміщений перед елементом {{HTMLElement("img")}}.
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Відповідна роль ARIA</th>
-      <td>
-        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"
-          >Немає відповідної ролі</a
-        >
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені ролі ARIA</th>
-      <td>Жодної дозволеної ролі</td>
-    </tr>
-    <tr>
-      <th scope="row">Інтерфейс DOM</th>
-      <td>{{domxref("HTMLSourceElement")}}</td>
-    </tr>
-  </tbody>
-</table>
-
 ## Атрибути
 
 Цей елемент підтримує всі [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes). Крім того, на ньому можна використовувати наступні атрибути:
@@ -96,7 +43,7 @@ browser-compat: html.elements.source
 
 - `media`
 
-  - : Задає [медійний запит](/uk/docs/Web/CSS/CSS_media_queries) для бажаного медіа ресурсу.
+  - : Задає [медійний запит](/uk/docs/Web/CSS/CSS_media_queries) для бажаного медійного ресурсу.
 
 - `height`
 
@@ -198,6 +145,61 @@ browser-compat: html.elements.source
     height="400" />
 </picture>
 ```
+
+## Технічний підсумок
+
+<table class="properties">
+  <tbody>
+    <tr>
+      <th scope="row">
+        <a href="/uk/docs/Web/HTML/Content_categories"
+          >Категорії вмісту</a
+        >
+      </th>
+      <td>Жодних.</td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволений вміст</th>
+      <td>Жодного; це {{Glossary("void element", "пустий елемент")}}.</td>
+    </tr>
+    <tr>
+      <th scope="row">Пропуск тега</th>
+      <td>Повинен мати початковий тег, але не мати кінцевого.</td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені батьківські елементи</th>
+      <td>
+        <div>
+          Медійний елемент – {{HTMLElement("audio")}} або
+          {{HTMLElement("video")}} – і він повинен бути розміщений перед
+          <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
+            >потоковим вмістом</a
+          >
+          або елементом {{HTMLElement("track")}}.
+        </div>
+        <div>
+          Елемент {{HTMLElement("picture")}}, і він повинен бути розміщений перед елементом {{HTMLElement("img")}}.
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Відповідна роль ARIA</th>
+      <td>
+        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"
+          >Немає відповідної ролі</a
+        >
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені ролі ARIA</th>
+      <td>Жодної дозволеної ролі</td>
+    </tr>
+    <tr>
+      <th scope="row">Інтерфейс DOM</th>
+      <td>{{domxref("HTMLSourceElement")}}</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Специфікації
 

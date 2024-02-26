@@ -130,7 +130,7 @@ div.menu-bar li:hover > ul {
 
 ### Компонування
 
-- [Контекст блокового форматування](/uk/docs/Web/Guide/CSS/Block_formatting_context)
+- [Блоковий контекст форматування](/uk/docs/Web/CSS/CSS_display/Block_formatting_context)
 - [Рамкова модель](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
 - [Контейнерний блок](/uk/docs/Web/CSS/Containing_block)
 - [Спосіб компонування](/uk/docs/Web/CSS/Layout_mode)
