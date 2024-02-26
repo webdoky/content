@@ -58,6 +58,8 @@ Date.parse("2019-01-01T00:00:00");
 
 Реалізації зазвичай використовують місцеву часову зону як усталену, коли рядок дати є нестандартним. З метою узгодженості ми будемо припускати, що код використовує часову зону В.К.Ч..
 
+> **Примітка:** Зміщення місцевої часової зони походить від системних налаштувань пристрою та застосовується до дати, що розбирається. [Також на це може впливати літній час (DST) місцевої часової зони](/uk/docs/Web/JavaScript/Reference/Global_Objects/Date/getTimezoneOffset#rizni-rezultaty-v-rehionakh-z-litnim-chasom-dst).
+
 ```js
 Date.parse("Jan 1, 1970"); // 0 у всіх реалізаціях
 
@@ -75,24 +77,26 @@ Date.parse("Thu, 01 Jan 1970 00:00:00 GMT+0300");
 
 // Одне число
 Date.parse("0");
-// 946684800000 у Chrome (Sat Jan 01 2000 00:00:00 GMT+0000);
-// NaN у Firefox;
-// -62167219200000 у Safari (Sat Jan 01 0000 00:00:00 GMT+0000)
+// NaN у Firefox ≤122
+// 946684800000 у Chrome and Firefox ≥123  (Sat Jan 01 2000 00:00:00 GMT+0200 (Eastern European Standard Time));
+// -62167219200000 у Safari (Sat Jan 01 0000 02:02:04 GMT+0202 (Eastern European Standard Time))
 
 // Двоцифрове число, котре може бути місяцем
-Date.parse("28"); // NaN у всіх реалізаціях
+Date.parse("28");
+// NaN у Chrome і Firefox
+// -61283606400000 у Safari (Sat Jan 01 0028 02:02:04 GMT+0202 (Eastern European Standard Time))
 
 // Двоцифровий рік
 Date.parse("70/01/01"); // 0 у всіх реалізаціях
 
-// Out-of-bounds date components
+// Компоненти дати поза межами допустимих значень
 Date.parse("2014-25-23"); // NaN у всіх реалізаціях
 Date.parse("Mar 32, 2014"); // NaN у всіх реалізаціях
 Date.parse("2014/25/23"); // NaN у всіх реалізаціях
 
 Date.parse("2014-02-30");
-// NaN у Safari і Firefox;
-// 1393718400000 у Chrome (Sun Mar 02 2014 00:00:00 GMT+0000)
+// NaN у Safari
+// 1393718400000 у Chrome і Firefox (Sun Mar 02 2014 02:00:00 GMT+0200 (Eastern European Standard Time))
 Date.parse("02/30/2014"); // 1393718400000 у всіх реалізаціях
 
 // Chrome, Safari та Firefox від 122 версії розбирають лише перші три літери місяця.
