@@ -3,14 +3,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: echo ${GITHUB_REF}
-      - run: echo ${GITHUB_REF##*/}
       - env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         name: Create Pull Request
         # Creates a PR from current branch to master
         run: |
-          gh pr create --base master --head ${GITHUB_REF##*/} --fill
+          gh pr create --base master --head ${GITHUB_REF#refs/heads/} --fill
 name: Create Pull Request
 on:
   push:
