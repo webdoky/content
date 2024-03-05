@@ -8,7 +8,7 @@ jobs:
         name: Create Pull Request
         # Creates a PR from current branch to master
         run: |
-          gh pr create --base master --head ${GITHUB_REF#refs/heads/} --fill
+          gh pr create --base master --head ${GITHUB_REF} --fill
 name: Create Pull Request
 on:
   push:
