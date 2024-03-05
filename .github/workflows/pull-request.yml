@@ -6,7 +6,7 @@ jobs:
       - name: Fetch master
         run: git fetch origin master
       - env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.CONTENT_GITHUB_TOKEN }}
         name: Create Pull Request
         # Creates a PR from current branch to master
         run: |
