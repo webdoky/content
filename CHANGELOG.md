@@ -3,6 +3,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2024-03-01 - 2024-03-08]
+
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/json (#2874) ([a7016c17](https://github.com/webdoky/content/commit/a7016c17509ee99b9110c970704f06f6bb248a3b))
+* **Оновлення перекладу(JS):** web/javascript (#2873) ([52d83c00](https://github.com/webdoky/content/commit/52d83c00814f7d2e63c844905fb13777db44875d))
+* **Оновлення перекладу(HTML):** web/html/element/link (#2871) ([8176bf40](https://github.com/webdoky/content/commit/8176bf4092af839ca76e910f081bf656502db24a))
+* **Оновлення перекладу(HTML):** web/html (#2869) ([47598315](https://github.com/webdoky/content/commit/475983156d58d7c14ab1b68f3365b414cb90dd42))
+* **Виправлення:** fetch master (#2868) ([2cd933e8](https://github.com/webdoky/content/commit/2cd933e8292b1d75f774f2c07e65067b47e5f0b2))
+* **Оновлення перекладу(Glossary):** glossary/base64 (#2867) ([7cde144f](https://github.com/webdoky/content/commit/7cde144f1a810bdd1194114127f9edae46e5a471))
+* **Оновлення перекладу(HTML):** web/html/element/script/type/speculationrules (#2866) ([5c6c03e1](https://github.com/webdoky/content/commit/5c6c03e11d394697455a027399e3879eaa873619))
+* **Оновлення перекладу(SVG):** web/svg/attribute (#2865) ([96141211](https://github.com/webdoky/content/commit/96141211b1fa05ab5b790779c8aafef119c966a1))
+* **Оновлення перекладу(CSS):** web/css/reference (#2863) ([641d7f3a](https://github.com/webdoky/content/commit/641d7f3a342b114e2e80c79c1b01dbbaaa040e2b))
+* **Оновлення перекладу(CSS):** web/css/position (#2861) ([c0e426b2](https://github.com/webdoky/content/commit/c0e426b29d3e854850db3f4a2409506b32501e14))
+
 ## [2024-02-23 - 2024-03-01]
 
 * **Оновлення перекладу(HTML):** web/html/element/ul (#2857) ([82b0beaa](https://github.com/webdoky/content/commit/82b0beaac281a05143d49b7cd2f5ac05762b68f3))
