@@ -123,6 +123,8 @@ _Можливості медіа_ описують конкретні харак
     Додано в Медіазапитах рівня 5.
 - {{cssxref("@media/resolution", "resolution")}}
   - : Піксельна щільність пристрою виведення.
+- {{cssxref("@media/scan", "scan")}}
+  - : Чи має дисплей прогресивну або черезрядкову розгортку.
 - {{cssxref("@media/scripting", "scripting")}}
   - : Визначає, чи доступно використання сценаріїв (тобто JavaScript).
     Додано в Медіазапитах рівня 5.
@@ -246,6 +248,7 @@ _Логічні оператори_ `not`, `and`, `only` й `or` можуть в
 
 ## Дивіться також
 
+- Модуль [Медіазапитів CSS](/uk/docs/Web/CSS/CSS_media_queries)
 - [Застосування медіазапитів](/uk/docs/Web/CSS/CSS_media_queries/Using_media_queries)
 - У JavaScript `@media` можна отримати через інтерфейс об'єктної моделі CSS {{domxref("CSSMediaRule")}}.
 - [Розширені можливості медіа Mozilla](/uk/docs/Web/CSS/Mozilla_Extensions#mozhlyvosti-media)

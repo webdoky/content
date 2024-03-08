@@ -16,10 +16,8 @@ browser-compat: css.properties.-moz-float-edge
 
 ```css
 /* Ключові значення */
--moz-float-edge: border-box;
 -moz-float-edge: content-box;
 -moz-float-edge: margin-box;
--moz-float-edge: padding-box;
 
 /* Глобальні значення */
 -moz-float-edge: inherit;
@@ -29,14 +27,10 @@ browser-compat: css.properties.-moz-float-edge
 
 ### Значення
 
-- `border-box`
-  - : Висота та ширина враховують вміст, внутрішні відступи та межі, проте без зовнішніх відступів.
 - `content-box`
   - : Висота та ширина враховують лише вміст, без внутрішніх відступів, меж і зовнішніх відступів.
 - `margin-box`
   - : Висота та ширина враховують і вміст, і внутрішні відступи, і межі, і зовнішні відступи.
-- `padding-box`
-  - : Висота і ширина охоплюють лише вміст та внутрішні відступи, без врахування меж та зовнішніх відступів
 
 ## Формальне визначення
 
@@ -46,7 +40,7 @@ browser-compat: css.properties.-moz-float-edge
 
 ```plain
 -moz-float-edge =
-  border-box | content-box | margin-box | padding-box
+  content-box | margin-box
 ```
 
 ## Приклади

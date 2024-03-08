@@ -1,5 +1,5 @@
 ---
-title: "Елемент <ul> — невпорядкований перелік"
+title: "<ul> — елемент невпорядкованого списку"
 slug: Web/HTML/Element/ul
 page-type: html-element
 browser-compat: html.elements.ul
@@ -15,13 +15,13 @@ browser-compat: html.elements.ul
 
 Цей елемент приймає [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
 
-- `compact` {{Deprecated_inline}} {{Non-standard_Inline}}
+- `compact` {{Deprecated_inline}}
 
   - : Цей булів атрибут вказує на те, що перелік повинний бути виведений у компактному стилі. Інтерпретація цього атрибута залежить від {{glossary("user agent","користувацького агента")}}, і працює не у всіх браузерах.
 
     > **Застереження:** Не слід вживати цей атрибут, бо він є нерекомендованим – замість нього слід використовувати засоби [CSS](/uk/docs/Web/CSS). Для досягнення ефекту, подібного до атрибута `compact`, можна використати властивість CSS {{cssxref("line-height")}} зі значенням `80%`.
 
-- `type` {{Deprecated_inline}} {{Non-standard_Inline}}
+- `type` {{Deprecated_inline}}
 
   - : Цей атрибут задає маркери, які будуть використані у переліку. Значення, визначені в HTML3.2, і перехідній версії HTML 4.0/4.01:
 
@@ -139,8 +139,8 @@ browser-compat: html.elements.ul
       </td>
     </tr>
     <tr>
-      <th scope="row">Упускання тега</th>
-      <td>{{no_tag_omission}}</td>
+      <th scope="row">Пропуск тега</th>
+      <td>Немає; і початковий, і кінцевий теги – обов'язкові.</td>
     </tr>
     <tr>
       <th scope="row">Допустимі батьківські елементи</th>

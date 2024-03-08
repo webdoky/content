@@ -31,7 +31,7 @@ browser-compat: html.elements.video
 
 - `controls`
   - : Якщо присутній цей атрибут, то браузер запропонує користувачеві контрольні засоби для керування відтворенням відео, в тому числі гучністю, перемоткою та паузою-відновленням відтворення.
-- `controlslist` {{experimental_inline}}{{non-standard_inline}}
+- `controlslist`
 
   - : Атрибут [`controlslist` (англ.)](https://wicg.github.io/controls-list/explainer.html), бувши вказаним, допомагає браузеру обрати, які контрольні елементи показати на елементі `video`, коли браузер показує власний набір контрольних елементів (тобто коли вказаний атрибут `controls`).
 
@@ -50,7 +50,7 @@ browser-compat: html.elements.video
 
     Коли цього атрибута немає, ресурс отримується без запиту CORS (тобто без надсилання заголовка HTTP `Origin:`), запобігаючи його неославленому використанню в елементах {{HTMLElement('canvas')}}. Якщо значення недійсне, то це працює так, ніби використано ключове слово `anonymous`. Дивіться [атрибути налаштувань CORS](/uk/docs/Web/HTML/Attributes/crossorigin) для отримання додаткової інформації.
 
-- `disablepictureinpicture` {{experimental_inline}}
+- `disablepictureinpicture`
   - : Запобігає тому, щоб браузер пропонував контекстне меню картинки-в-картинці чи, у певних випадках, автоматично запитував картинку-в-картинці.
 - `disableremoteplayback`
 
@@ -272,7 +272,7 @@ browser-compat: html.elements.video
   <source src="myVideo.mp4" type="video/mp4" />
   <p>
     Ваш браузер не підтримує відео HTML. Ось натомість
-    <a href="myVideo.mp4">посилання на відео</a>.
+    <a href="myVideo.mp4" download="myVideo.mp4">посилання на відео</a>.
   </p>
 </video>
 ```
@@ -401,9 +401,11 @@ AddType video/webm .webm
 
   Вибачте, Ваш браузер не підтримує вбудованих відео, але не переймайтесь: Ви
   можете
-  <a href="https://archive.org/download/ElephantsDream/ed_1024_512kb.mp4"
-    >стягнути файл MP4</a
-  >
+  <a
+    href="https://archive.org/download/ElephantsDream/ed_1024_512kb.mp4"
+    download="ed_1024_512kb.mp4">
+    стягнути файл MP4
+  </a>
   і переглянути його в своєму улюбленому програвачі відео!
 </video>
 ```
@@ -489,8 +491,8 @@ AddType video/webm .webm
       </td>
     </tr>
     <tr>
-      <th scope="row">Упускання тегів</th>
-      <td>{{no_tag_omission}}</td>
+      <th scope="row">Пропуск тега</th>
+      <td>Немає; і початковий, і кінцевий теги – обов'язкові.</td>
     </tr>
     <tr>
       <th scope="row">Дозволені батьківські елементи</th>
