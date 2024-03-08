@@ -52,7 +52,9 @@ function base64ToBytes(base64) {
 }
 
 function bytesToBase64(bytes) {
-  const binString = String.fromCodePoint(...bytes);
+  const binString = Array.from(bytes, (byte) =>
+    String.fromCodePoint(byte),
+  ).join("");
   return btoa(binString);
 }
 
@@ -65,7 +67,7 @@ new TextDecoder().decode(base64ToBytes("YSDEgCDwkICAIOaWhyDwn6aE")); // "a Ā �
 
 Функції `bytesToBase64` та `base64ToBytes` з попереднього розділу можна використовувати безпосередньо для перетворення між рядками Base64 і [`Uint8Array`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array).
 
-Інший варіант: асинхронне перетворення між URL з даними Base64 можливе безпосередньо у вебплатформі за допомогою API [`FileReader`](/uk/docs/Web/API/FileReader) і [`fetch`](/uk/docs/Web/API/Fetch_API):
+Задля кращої швидкодії асинхронне перетворення між URL з даними Base64 можна виконувати безпосередньо у вебплатформі за допомогою API [`FileReader`](/uk/docs/Web/API/FileReader) і [`fetch`](/uk/docs/Web/API/Fetch_API):
 
 ```js
 async function bytesToBase64DataUrl(bytes, type = "application/octet-stream") {
