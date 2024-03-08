@@ -192,19 +192,6 @@ page-type: landing-page
     </tr>
     <tr>
       <td>
-        <code><a href="/uk/docs/Web/HTML/Attributes/buffered">buffered</a></code>
-      </td>
-      <td>
-        {{HTMLElement("audio")}},
-        {{HTMLElement("video")}}
-      </td>
-      <td>
-        Вміщає часовий діапазон вже буферизованих медіаданих.
-      </td>
-      </td>
-    </tr>
-    <tr>
-      <td>
         <code><a href="/uk/docs/Web/HTML/Attributes/capture">capture</a></code>
       </td>
       <td>{{HTMLElement("input")}}</td>
