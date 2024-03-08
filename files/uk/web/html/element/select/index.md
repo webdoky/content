@@ -631,8 +631,8 @@ document.forms[0].onsubmit = (e) => {
       </td>
     </tr>
     <tr>
-      <th scope="row">Упущення тегів</th>
-      <td>{{no_tag_omission}}</td>
+      <th scope="row">Пропуск тега</th>
+      <td>Немає; і початковий, і кінцевий теги – обов'язкові.</td>
     </tr>
     <tr>
       <th scope="row">Дозволені предки</th>

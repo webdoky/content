@@ -26,7 +26,7 @@ browser-compat: html.elements.textarea
 
 - `autocapitalize`
 
-- : Контролює те, чи додаються великі літери до тексту, введеного у поля вводу, а також, якщо так, то яким чином. Шукайте більше інформації на сторінці глобального атрибута [`autocapitalize`](/uk/docs/Web/HTML/Global_attributes/autocapitalize).
+  - : Контролює те, чи додаються великі літери до тексту, введеного у поля вводу, а також, якщо так, то яким чином. Шукайте більше інформації на сторінці глобального атрибута [`autocapitalize`](/uk/docs/Web/HTML/Global_attributes/autocapitalize).
 
 - `autocomplete`
 
@@ -240,8 +240,8 @@ textarea:valid {
       <td>Текст</td>
     </tr>
     <tr>
-      <th scope="row">Упускання тега</th>
-      <td>{{no_tag_omission}}</td>
+      <th scope="row">Пропуск тега</th>
+      <td>Немає; і початковий, і кінцевий теги – обов'язкові.</td>
     </tr>
     <tr>
       <th scope="row">Дозволені батьківські елементи</th>
