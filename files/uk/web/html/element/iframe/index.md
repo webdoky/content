@@ -39,7 +39,7 @@ browser-compat: html.elements.iframe
 
     > **Примітка:** Цей атрибут вважається застарілим, він був перевизначений як `allow="payment"`.
 
-- `browsingtopics` {{Experimental_Inline}}
+- `browsingtopics` {{Experimental_Inline}} {{non-standard_inline}}
 
   - : Булів атрибут, котрий, якщо присутній, задає те, що вибрані теми для поточного користувача мають бути надіслані разом із запитом на походження цього {{htmlelement("iframe")}}. Дивіться подробиці у [Використанні API тем](/uk/docs/Web/API/Topics_API/Using).
 
