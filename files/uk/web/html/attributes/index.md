@@ -312,17 +312,6 @@ page-type: landing-page
     </tr>
     <tr>
       <td>
-        <code><a href="/uk/docs/Web/HTML/Global_attributes/contextmenu">contextmenu</a></code> {{non-standard_inline}} {{deprecated_inline}}
-      </td>
-      <td>
-        <a href="/uk/docs/Web/HTML/Global_attributes">Глобальний атрибут</a>
-      </td>
-      <td>
-        Визначає ідентифікатор елемента {{HTMLElement("menu")}}, який буде служити контекстним меню елемента.
-      </td>
-    </tr>
-    <tr>
-      <td>
         <code><a href="/uk/docs/Web/HTML/Attributes/controls">controls</a></code>
       </td>
       <td>
