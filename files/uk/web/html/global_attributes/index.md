@@ -36,8 +36,6 @@ browser-compat: html.global_attributes
     - `true` чи _порожній рядок_, що вказує, що елемент повинен бути редагованим;
     - `false`, що вказує, що елемент повинен бути не редагованим.
 
-- [`contextmenu`](/uk/docs/Web/HTML/Global_attributes/contextmenu) {{deprecated_inline}} {{non-standard_inline}}
-  - : [**`id`**](#id) елемента {{HTMLElement("menu")}}, котрий повинен використовуватися як контекстне меню цього елемента.
 - [`data-*`](/uk/docs/Web/HTML/Global_attributes/data-*)
   - : Утворює клас атрибутів, що звуться користувацькими атрибутами даних, котрі дають змогу обмінюватись власною інформацією між [HTML](/uk/docs/Web/HTML) та її представленням у {{glossary("DOM")}}, котру можуть використовувати сценарії. Такі користувацькі дані – доступні через інтерфейс {{DOMxRef("HTMLElement")}} елемента, на котрому задано такий атрибут. Доступ до них надає властивість {{DOMxRef("HTMLElement.dataset")}}.
 - [`dir`](/uk/docs/Web/HTML/Global_attributes/dir)
