@@ -16,6 +16,7 @@ browser-compat: javascript.operators.property_accessors
 ```js-nolint
 object.propertyName
 object[expression]
+object.#privateProperty
 ```
 
 ## Опис
@@ -66,6 +67,8 @@ document.createElement("pre");
 77.0.toExponential();
 // тому що 77. === 77.0, немає двозначності
 ```
+
+На додачу до цього, до [приватної властивості](/uk/docs/Web/JavaScript/Reference/Classes/Private_properties) можна звертатися лише за допомогою крапкової нотації всередині класу, який її визначає.
 
 ### Дужкова нотація
 
