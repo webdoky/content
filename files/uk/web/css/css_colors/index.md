@@ -64,8 +64,9 @@ spec-urls:
 - {{cssxref("system-color")}}
 - [`<colorspace-params>`](/uk/docs/Web/CSS/color_value/color#vykorystannia-napered-vyzhachenykh-kolirnykh-prostoriv-vkupi-z-color)
 
-### Ключові слова
+### Терміни глосарія та ключові слова
 
+- {{glossary("color space", "колірний простір")}}
 - [`currentcolor`](/uk/docs/Web/CSS/color_value#kliuchove-slovo-currentcolor)
 - [`transparent`](/uk/docs/Web/CSS/named-color#transparent)
 
