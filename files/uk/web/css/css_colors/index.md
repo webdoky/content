@@ -56,7 +56,7 @@ spec-urls:
 ### Типи даних
 
 - {{cssxref("&lt;color&gt;")}}
-- [`<absolute-color-function>`](#funktsii)
+- [`<color-function>`](#funktsii)
 - {{cssxref("hex-color")}}
 - {{cssxref("named-color")}}
 - {{cssxref("alpha-value")}}
