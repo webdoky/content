@@ -239,4 +239,5 @@ CSS має універсальну властивість-скорочення,
   - {{cssxref("scroll-timeline")}}
   - {{cssxref("text-decoration")}}
   - {{cssxref("text-emphasis")}}
+  - {{cssxref("text-wrap")}}
   - {{cssxref("transition")}}
