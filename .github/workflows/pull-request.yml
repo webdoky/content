@@ -5,8 +5,23 @@ jobs:
       - uses: actions/checkout@v4
       - name: Fetch master
         run: git fetch origin master
+      # Check if PR already exists
       - env:
           GH_TOKEN: ${{ secrets.CONTENT_GITHUB_TOKEN }}
+        id: check-if-pr-exists
+        name: Check if PR exists
+        run: |
+          gh pr list --state open --base master --head ${GITHUB_REF#refs/heads/} | grep -q "No open pull requests"
+          if [ $? -eq 0 ]; then
+            echo "No open pull requests"
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "Open pull requests"
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          fi
+      - env:
+          GH_TOKEN: ${{ secrets.CONTENT_GITHUB_TOKEN }}
+        if: steps.check-if-pr-exists.outputs.skip != 'true'
         name: Create Pull Request
         # Creates a PR from current branch to master
         run: |
