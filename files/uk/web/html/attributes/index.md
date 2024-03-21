@@ -97,6 +97,15 @@ page-type: landing-page
     </tr>
     <tr>
       <td>
+        <code><a href="/uk/docs/Web/HTML/Element/link#as">as</a></code>
+      </td>
+      <td>
+        {{HTMLElement("link")}}
+      </td>
+      <td>Задає тип вмісту, який завантажується зв'язком.</td>
+    </tr>
+    <tr>
+      <td>
         <code><a href="/uk/docs/Web/HTML/Element/script#async">async</a></code>
       </td>
       <td>{{HTMLElement("script")}}</td>
@@ -299,17 +308,6 @@ page-type: landing-page
       </td>
       <td>
         Позначає те, чи доступний вміст елемента для редагування.
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <code><a href="/uk/docs/Web/HTML/Global_attributes/contextmenu">contextmenu</a></code> {{non-standard_inline}} {{deprecated_inline}}
-      </td>
-      <td>
-        <a href="/uk/docs/Web/HTML/Global_attributes">Глобальний атрибут</a>
-      </td>
-      <td>
-        Визначає ідентифікатор елемента {{HTMLElement("menu")}}, який буде служити контекстним меню елемента.
       </td>
     </tr>
     <tr>

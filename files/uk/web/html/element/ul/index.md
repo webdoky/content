@@ -1,5 +1,5 @@
 ---
-title: "Елемент <ul> — невпорядкований перелік"
+title: "<ul> — елемент невпорядкованого списку"
 slug: Web/HTML/Element/ul
 page-type: html-element
 browser-compat: html.elements.ul

@@ -352,8 +352,10 @@ browser-compat: html.elements.link
 Можна з'ясувати, коли таблиця стилів була завантажена, слідкуючи за подією `load`; подібно до цього, можна помітити, що при обробці таблиці стилів сталася помилка, слідкуючи за подією `error`:
 
 ```html
+<link rel="stylesheet" href="mystylesheet.css" id="my-stylesheet" />
+
 <script>
-  const stylesheet = document.querySelector("#my-stylesheet");
+  const stylesheet = document.getElementById("my-stylesheet");
 
   stylesheet.onload = () => {
     // Якісь цікаві дії; таблиця була завантажена
@@ -363,8 +365,6 @@ browser-compat: html.elements.link
     console.log("При завантаженні таблиці стилів сталася помилка!");
   };
 </script>
-
-<link rel="stylesheet" href="mystylesheet.css" id="my-stylesheet" />
 ```
 
 > **Примітка:** Подія `load` спрацьовує, щойно таблиця стилів та ввесь імпортований нею вміст завантажені й розібрані, безпосередньо перед тим, як стилі почнуть застосування до вмісту.
@@ -406,10 +406,8 @@ browser-compat: html.elements.link
       <td>Жодного; це {{Glossary("void element", "пустий елемент")}}.</td>
     </tr>
     <tr>
-      <th>Упускання тега</th>
-      <td>
-        Оскільки це пустий елемент, то початковий тег повинен бути присутній, а кінцевого тега бути не повинно
-      </td>
+      <th>Пропуск тега</th>
+      <td>Повинен починатися з початкового тега та не мати кінцевого.</td>
     </tr>
     <tr>
       <th>Дозволені батьківські елементи</th>
