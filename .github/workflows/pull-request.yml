@@ -15,7 +15,6 @@ jobs:
           --head ${GITHUB_REF#refs/heads/} \
           --base 'master' \
           --json title \
-          --verbose
           --jq 'length') || 0
           echo $prs
           if ((prs > 0)); then
