@@ -11,12 +11,15 @@ jobs:
         id: check-if-pr-exists
         name: Check if PR exists
         run: |
-          gh pr list --state open --base master --head ${GITHUB_REF#refs/heads/} | grep -q "No open pull requests"
-          if [ $? -eq 0 ]; then
-            echo "No open pull requests"
+          prs=$(gh pr list \
+          --head ${GITHUB_REF#refs/heads/} \
+          --base 'master' \
+          --json title \
+          --jq 'length')
+          if ((prs > 0)); then
             echo "skip=false" >> "$GITHUB_OUTPUT"
           else
-            echo "Open pull requests"
+            echo "PR exists"
             echo "skip=true" >> "$GITHUB_OUTPUT"
           fi
       - env:
