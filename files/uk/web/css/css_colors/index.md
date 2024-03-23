@@ -39,7 +39,7 @@ spec-urls:
 
 ### Функції
 
-- Абсолютні функції кольору, серед яких
+- Колірні функції:
   - [`rgb()`](/uk/docs/Web/CSS/color_value/rgb) та її псевдонім `rgba()`
   - [`hsl()`](/uk/docs/Web/CSS/color_value/hsl) та її псевдонім `hsla()`
   - [`hwb()`](/uk/docs/Web/CSS/color_value/hwb)
@@ -78,12 +78,12 @@ spec-urls:
 
 - [Застосування кольору до елементів HTML за допомогою CSS](/uk/docs/Web/CSS/CSS_colors/Applying_color)
   - : Посібник з використання CSS для застосування кольору до різноманітного вмісту. Торкається всіх властивостей CSS, пов'язаних з кольором.
+- [Using relative colors](/uk/docs/Web/CSS/CSS_colors/Relative_colors)
+  - : Ця стаття пояснює синтаксис відносних кольорів CSS, показує, які є варіанти, та розглядає деякі ілюстративні приклади.
 - [Розуміння кольору та світності](/uk/docs/Web/Accessibility/Understanding_Colors_and_Luminance)
   - : Сприйняття кольору та використання кольорів для потреб нечутливих до кольору (колірно-сліпих) користувачів, користувачів зі зниженим зором та користувачів з вестибулярними або іншими неврологічними порушеннями.
 - [WCAG 1.4.1: Колірний контраст](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable/Color_contrast)
   - : Пояснення вимог до контрасту між заднім і переднім планами для забезпечення читабельності.
-- [Інструмент вибору кольору](/uk/docs/Web/CSS/CSS_colors/Color_picker_tool)
-  - : Завдяки цьому інструменту легко створювати, налаштовувати та експериментувати зі власними кольорами.
 
 ## Споріднені концепції
 
@@ -128,3 +128,4 @@ spec-urls:
 - Інтерфейс [`VideoColorSpace`](/uk/docs/Web/API/VideoColorSpace)
 - Елемент SVG [`<feColorMatrix>`](/uk/docs/Web/SVG/Element/feColorMatrix)
 - [API полотна: застосування стилів і кольорів](/uk/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors#kolory)
+- [Інструмент вибору кольору](/uk/docs/Web/CSS/CSS_colors/Color_picker_tool) – Завдяки цьому інструменту легко створювати, налаштовувати та експериментувати зі власними кольорами.
