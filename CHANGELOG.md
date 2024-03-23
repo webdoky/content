@@ -3,6 +3,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2024-03-15 - 2024-03-22]
+
+* **Оновлення перекладу(HTML):** web/html/content_categories (#2904) ([150184be](https://github.com/webdoky/content/commit/150184bee90aaa9fa768b505d0eb1f4f483be427))
+* **Оновлення перекладу(JS):** web/javascript/guide/using_promises (#2903) ([45185439](https://github.com/webdoky/content/commit/4518543963b93ef020396de9a3210f9e8d9aa499))
+* **Оновлення перекладу(HTML):** web/html/element/select (#2902) ([41a30ec9](https://github.com/webdoky/content/commit/41a30ec9cc0ce7d59fe51759899405223a5e57f3))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/json/stringify (#2899) ([bf1adc27](https://github.com/webdoky/content/commit/bf1adc27f9df593452fa78083dc42ff2d9794f7e))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/bigint (#2894) ([f06d6e11](https://github.com/webdoky/content/commit/f06d6e1179996475c95a69fdccd5db52c9656bbb))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/json/parse (#2900) ([99cfcdc8](https://github.com/webdoky/content/commit/99cfcdc8707496729f9fd81e322c93d4febd16e0))
+* **Оновлення перекладу(CSS):** web/css/shorthand_properties (#2898) ([baf00660](https://github.com/webdoky/content/commit/baf00660bf6a1d0b717c90811647dc93ba3adade))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/sort (#2892) ([ab0f7085](https://github.com/webdoky/content/commit/ab0f708586051fc86c9ad9919710a5ba0bf8023a))
+* **Оновлення перекладу(JS):** web/javascript/reference/operators/property_accessors (#2897) ([a401013d](https://github.com/webdoky/content/commit/a401013d2a6c257a7fcb736077dbfc30a2a4e865))
+* **Оновлення перекладу(CSS):** web/css/css_colors (#2895) ([20dafd2c](https://github.com/webdoky/content/commit/20dafd2cde64e30b08e9a5016cb42a2b56f7e17e))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/parseint (#2893) ([62886def](https://github.com/webdoky/content/commit/62886defec4c3396588f93aeb5de87c452276bae))
+* **Оновлення перекладу(HTML):** web/html/element/source (#2891) ([98b56ba0](https://github.com/webdoky/content/commit/98b56ba09588c26d65f2ba537222f681b48f9957))
+* **Оновлення перекладу(HTML):** web/html/element/hr (#2890) ([b7b06206](https://github.com/webdoky/content/commit/b7b06206257a24e28cb03ab0a3c5b85b1651d835))
+* **Оновлення перекладу(HTML):** web/html/element/link (#2889) ([19d8aa4d](https://github.com/webdoky/content/commit/19d8aa4dfae4372a96a203083bbe5764247f5006))
+
 ## [2024-03-08 - 2024-03-15]
 
 * **Переклад(HTML):** web/html/attributes/max (#2827) ([b22994e6](https://github.com/webdoky/content/commit/b22994e66a4f46aeee9413b45db604c22273a3c8))
