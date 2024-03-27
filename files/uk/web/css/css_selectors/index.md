@@ -19,7 +19,7 @@ spec-urls: https://drafts.csswg.org/selectors/
 
 - `+` ([Комбінатор наступної сестри](/uk/docs/Web/CSS/Next-sibling_combinator))
 - `>` ([Дочірній комбінатор](/uk/docs/Web/CSS/Child_combinator))
-- `||` ([Колонковий комбінатор](/uk/docs/Web/CSS/Column_combinator)) {{Experimental_Inline}}
+- `||` ([Колонковий комбінатор](/uk/docs/Web/CSS/Column_combinator))
 - `~` ([Комбінатор подальших сестер](/uk/docs/Web/CSS/Subsequent-sibling_combinator))
 - " " ([Комбінатор нащадків](/uk/docs/Web/CSS/Descendant_combinator))
 - `|` ([Розділювач областей імен](/uk/docs/Web/CSS/Namespace_separator))
