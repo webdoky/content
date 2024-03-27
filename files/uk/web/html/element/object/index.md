@@ -78,7 +78,7 @@ browser-compat: html.elements.object
         <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist">Потоковий вміст</a>;
         <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist">оповідальний вміст</a>;
         <a href="/uk/docs/Web/HTML/Content_categories#vbudovanyi-vmist">вбудований вміст</a>, відчутний вміст; якщо елемент має атрибут
-        <a href="/uk/docs/Web/HTML/Element/object#usemap"><code>usemap</code></a>, то <a href="/uk/docs/Web/HTML/Content_categories#interaktyvnyi-vmist">інтерактивний вміст</a>;
+        <a href="#usemap"><code>usemap</code></a>, то <a href="/uk/docs/Web/HTML/Content_categories#interaktyvnyi-vmist">інтерактивний вміст</a>;
         <a href="/uk/docs/Web/HTML/Content_categories#perelicheni">перелічений</a>,
         <a href="/uk/docs/Web/HTML/Content_categories#podavalni">подавальний</a>
         <a href="/uk/docs/Web/HTML/Content_categories#formovyi-vmist">формовий</a> елемент.
