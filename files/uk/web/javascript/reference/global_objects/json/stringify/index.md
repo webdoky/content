@@ -55,6 +55,7 @@ JSON.stringify(value, replacer, space)
 - Значення {{jsxref("undefined")}}, {{jsxref("Function")}} і {{jsxref("Symbol")}} не є дійсними значеннями JSON. Якщо будь-які такі значення зустрічаються під час перетворення, то вони або упускаються (коли знайдені в об'єкті), або замінюються на [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) (коли знайдені в масиві). `JSON.stringify()` може повернути `undefined`, якщо передати йому "чисті" значення, як то `JSON.stringify(() => {})` чи `JSON.stringify(undefined)`.
 - Числа {{jsxref("Infinity")}} і {{jsxref("NaN")}}, а також значення [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null), – вважаються рівними `null`. (Але на відміну від значення з попереднього пункту, ці значення ніколи не будуть упущені.)
 - Масиви серіалізуються як масиви (оточені квадратними дужками). Лише індекси масиву від 0 і до `length - 1` (включно) серіалізуються; решта властивостей ігноруються.
+- Особливий необроблений об'єкт JSON, створений за допомогою {{jsxref("JSON.rawJSON()")}}, серіалізується як необроблений текст JSON, який у ньому вміщено (за допомогою звертання до його властивості `rawJSON`).
 - Для інших об'єктів:
 
   - Усі властивості з ключами типу {{jsxref("Symbol")}} будуть цілковито проігноровані, навіть коли застосований параметр `replacer`](#parametr-replacer).
@@ -69,7 +70,7 @@ JSON.stringify(value, replacer, space)
 
   - Обробляються лише [власні перелічувані властивості](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties). А отже, {{jsxref("Map")}}, {{jsxref("Set")}} тощо – стануть `"{}"`. Можна застосувати параметр [`replacer`](#parametr-replacer), аби серіалізувати їх у щось більш корисне.
 
-    Властивості обробляються за таким само алгоритмом, як у [`Object.keys()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/keys), що має чітко визначений порядок і є стабільним для різних реалізацій. Наприклад, `JSON.stringify` для одного об'єкта завжди поверне однаковий рядок, а `JSON.parse(JSON.stringify(obj))` поверне об'єкт з таким само порядком ключів, як у вихідного об'єкта (виходячи з припущення, що об'єкт є цілком JSON-серіалізовним).
+    Властивості обробляються за таким само алгоритмом, як в [`Object.keys()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/keys), що має чітко визначений порядок і є стабільним для різних реалізацій. Наприклад, `JSON.stringify` для одного об'єкта завжди поверне однаковий рядок, а `JSON.parse(JSON.stringify(obj))` поверне об'єкт з таким само порядком ключів, як у вихідного об'єкта (виходячи з припущення, що об'єкт є цілком JSON-серіалізовним).
 
 ### Параметр replacer
 
@@ -365,5 +366,6 @@ JSON.stringify("\uD800"); // '"\\ud800"'
 
 ## Дивіться також
 
-- [Поліфіл сучасної поведінки `JSON.stringify` (символи і як слід сформований Unicode) у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-json)
+- [Поліфіл сучасної поведінки `JSON.stringify` (символ, як слід сформований Unicode, необроблений JSON) у складі `core-js`](https://github.com/zloirock/core-js#ecmascript-json)
 - {{jsxref("JSON.parse()")}}
+- {{jsxref("JSON.rawJSON()")}}
