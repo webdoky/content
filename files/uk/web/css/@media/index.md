@@ -73,13 +73,13 @@ _Можливості медіа_ описують конкретні харак
     Додано в Медіазапитах рівня 4.
 - {{cssxref("@media/color-index", "color-index")}}
   - : Число записів у таблиці пошуку кольорів пристрою виведення, або нуль, якщо пристрій не використовує таку таблицю
-- {{cssxref("@media/device-aspect-ratio", "device-aspect-ratio")}} {{deprecated_inline}}
+- {{cssxref("@media/device-aspect-ratio", "device-aspect-ratio")}}
   - : Співвідношення ширини до висоти пристрою виведення.
     Нерекомендований від Медіазапитів рівня 4.
-- {{cssxref("@media/device-height", "device-height")}} {{deprecated_inline}}
+- {{cssxref("@media/device-height", "device-height")}}
   - : Висота поверхні візуалізації пристрою виведення.
     Нерекомендований від Медіазапитів рівня 4.
-- {{cssxref("@media/device-width", "device-width")}} {{deprecated_inline}}
+- {{cssxref("@media/device-width", "device-width")}}
   - : Ширина поверхні візуалізації пристрою виведення. Нерекомендований від Медіазапитів рівня 4.
 - {{cssxref("@media/display-mode", "display-mode")}}
   - : Режим, у якому виводиться застосунок: наприклад, [повноекранний](/uk/docs/Web/API/Fullscreen_API) або [режим зображення в зображенні](/uk/docs/Web/API/Document_Picture-in-Picture_API).
