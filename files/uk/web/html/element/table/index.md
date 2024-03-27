@@ -976,7 +976,7 @@ tr:last-child td {
       <th scope="row">Неявна роль ARIA</th>
       <td>
         <code
-          ><a href="/uk/docs/Web/Accessibility/ARIA/Roles/Table_Role"
+          ><a href="/uk/docs/Web/Accessibility/ARIA/Roles/table_Role"
             >table</a
           ></code
         >
