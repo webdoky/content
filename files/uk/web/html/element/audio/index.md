@@ -394,13 +394,13 @@ elem.audioTrackList.onremovetrack = (event) => {
         <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
           >Потоковий вміст</a
         >, оповідальний вміст, вбудований вміст. Якщо елемент має атрибут
-        <a href="/uk/docs/Web/HTML/Element/audio#controls"><code>controls</code></a> – інтерактивний вміст та відчутний вміст.
+        <a href="#controls"><code>controls</code></a> – інтерактивний вміст та відчутний вміст.
       </td>
     </tr>
     <tr>
       <th scope="row">Дозволений вміст</th>
       <td>
-        Якщо елемент має атрибут <a href="/uk/docs/Web/HTML/Element/audio#src"><code>src</code></a>: нуль або більше елементів {{HTMLElement("track")}}, після яких – прозорий вміст, що не містить елементів медіа {{HTMLElement("audio")}} і {{HTMLElement("video")}}.<br />Інакше – нуль або більше елементів {{HTMLElement("source")}}, після яких – нуль або більше елементів {{HTMLElement("track")}}, після яких – прозорий вміст, що не містить елементів медіа {{HTMLElement("audio")}} і {{HTMLElement("video")}}.
+        Якщо елемент має атрибут <a href="#src"><code>src</code></a>: нуль або більше елементів {{HTMLElement("track")}}, після яких – прозорий вміст, що не містить елементів медіа {{HTMLElement("audio")}} і {{HTMLElement("video")}}.<br />Інакше – нуль або більше елементів {{HTMLElement("source")}}, після яких – нуль або більше елементів {{HTMLElement("track")}}, після яких – прозорий вміст, що не містить елементів медіа {{HTMLElement("audio")}} і {{HTMLElement("video")}}.
       </td>
     </tr>
     <tr>
