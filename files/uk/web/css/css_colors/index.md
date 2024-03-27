@@ -48,10 +48,10 @@ spec-urls:
   - [`oklab()`](/uk/docs/Web/CSS/color_value/oklab)
   - [`oklch()`](/uk/docs/Web/CSS/color_value/oklch)
   - [`color()`](/uk/docs/Web/CSS/color_value/color)
-- [`color-contrast()`](/uk/docs/Web/CSS/color_value/color-contrast) {{Experimental_Inline}}
+- [`color-contrast()`](/uk/docs/Web/CSS/color_value/color-contrast)
 - [`color-mix()`](/uk/docs/Web/CSS/color_value/color-mix)
-- [`device-cmyk()`](/uk/docs/Web/CSS/color_value/device-cmyk) {{Experimental_Inline}}
-- {{CSSXref("color_value/light-dark", "light-dark()")}} {{Experimental_Inline}}
+- [`device-cmyk()`](/uk/docs/Web/CSS/color_value/device-cmyk)
+- {{CSSXref("color_value/light-dark", "light-dark()")}}
 
 ### Типи даних
 
@@ -72,7 +72,7 @@ spec-urls:
 
 ### Інтерфейси
 
-- `CSSColorProfileRule` {{Experimental_Inline}}
+- `CSSColorProfileRule`
 
 ## Посібники
 
