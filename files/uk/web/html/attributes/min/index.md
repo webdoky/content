@@ -81,7 +81,7 @@ browser-compat:
 
 Дивіться докладніше у [Валідації на клієнтському боці](/uk/docs/Web/HTML/Constraint_validation) та {{domxref("ValidityState.rangeUnderflow", "rangeUnderflow")}}.
 
-У випадку елемента {{htmlelement('meter')}} атрибут `min` визначає нижню числову межу вимірюваного діапазону. Це значення повинно бути меншим за мінімальне значення (атрибут [`max`](/uk/docs/Web/HTML/Attributes/max)), якщо воно задане. В обох випадках у випадку відсутності цього атрибута береться усталене значення 1.
+У випадку елемента {{htmlelement('meter')}} атрибут `min` визначає нижню числову межу вимірюваного діапазону. Це значення повинно бути меншим за мінімальне значення (атрибут [`max`](/uk/docs/Web/HTML/Attributes/max)), якщо воно задане. В обох випадках у разі відсутності цього атрибута береться усталене значення 1.
 
 <table class="no-markdown">
   <caption>
@@ -155,4 +155,4 @@ input:invalid {
 - {{domxref('validityState.rangeUnderflow')}}
 - {{cssxref(':out-of-range')}}
 - {{htmlelement('input')}}
-- Типи {{HTMLElement("input/date", "date")}}, {{HTMLElement("input/month", "month")}}, {{HTMLElement("input/week", "week")}}, {{HTMLElement("input/time", "time")}}, {{HTMLElement("input/datetime-local", "datetime-local")}}, {{HTMLElement("input/number", "number")}} and {{HTMLElement("input/range", "range")}}, а також {{htmlelement('meter')}}
+- Типи {{HTMLElement("input/date", "date")}}, {{HTMLElement("input/month", "month")}}, {{HTMLElement("input/week", "week")}}, {{HTMLElement("input/time", "time")}}, {{HTMLElement("input/datetime-local", "datetime-local")}}, {{HTMLElement("input/number", "number")}}, {{HTMLElement("input/range", "range")}}, а також {{htmlelement('meter')}}
