@@ -529,4 +529,4 @@ page-type: landing-page
 
 - [Довідка елементів SVG](/uk/docs/Web/SVG/Element)
 - [Підручник з SVG](/uk/docs/Web/SVG/Tutorial)
-- [Довідка з інтерфейсу SVG](/uk/docs/Web/API/Document_Object_Model#interfeisy-svg)
+- [Довідка з інтерфейсу SVG](/uk/docs/Web/API/SVG_API#interfeisy)
