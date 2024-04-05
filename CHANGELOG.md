@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2024-03-29 - 2024-04-05]
+
+* **Оновлення перекладу(SVG):** web/svg/attribute (#2940) ([345c433d](https://github.com/webdoky/content/commit/345c433de55df940bdd7cf858bd9d168a674b0fd))
+* **Оновлення перекладу(glossary):** glossary/shallow_copy (#2938) ([011f3415](https://github.com/webdoky/content/commit/011f3415648e462e51d67b623d920c64602086ef))
+* **Оновлення перекладу(glossary):** glossary/deep_copy (#2939) ([39f36fcd](https://github.com/webdoky/content/commit/39f36fcd4db96741ded7193aa21b464e677c5136))
+* **Переклад(HTML):** web/html/attributes/min (#2933) ([3ae2f8e7](https://github.com/webdoky/content/commit/3ae2f8e780695ddcc7841d1f439e141628e0d929))
+
 ## [2024-03-22 - 2024-03-29]
 
 * **Оновлення перекладу(HTML):** web/html/element/object (#2931) ([e05e0afd](https://github.com/webdoky/content/commit/e05e0afd27741147985bb1c8275bfaad74cafc93))
