@@ -317,5 +317,5 @@ inputElem.addEventListener("change", () => {
 ## Дивіться також
 
 - [Підручник значень та одиниць вимірювання CSS](/uk/docs/Learn/CSS/Building_blocks/Values_and_units)
-- Модуль [Значень та одиниць вимірювання CSS](/uk/docs/Web/CSS/CSS_values_and_units)
+- Модуль [Значень та одиниць вимірювання CSS](/uk/docs/Web/CSS/CSS_Values_and_Units)
 - [Рамкова модель](/uk/docs/Web/CSS/CSS_box_model)
