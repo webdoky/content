@@ -468,7 +468,7 @@ AddType video/webm .webm
         <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
           >Потоковий вміст</a
         >, оповідальний вміст, вбудований вміст. Якщо має атрибут
-        <a href="/uk/docs/Web/HTML/Element/video#controls"><code>controls</code></a>: інтерактивний
+        <a href="#controls"><code>controls</code></a>: інтерактивний
         вміст і дотиковий вміст.
       </td>
     </tr>
@@ -476,7 +476,7 @@ AddType video/webm .webm
       <th scope="row">Дозволений вміст</th>
       <td>
         <p>
-          Якщо елемент має атрибут <a href="/uk/docs/Web/HTML/Element/video#src"><code>src</code></a>:
+          Якщо елемент має атрибут <a href="#src"><code>src</code></a>:
           нуль чи більше елементів {{HTMLElement("track")}},
           після котрих – прозорий вміст, що не містить мультимедійних елементів, тобто
           жодних {{HTMLElement("audio")}} чи
