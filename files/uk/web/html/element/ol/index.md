@@ -139,7 +139,7 @@ browser-compat: html.elements.ol
 
 #### Результат
 
-{{EmbedLiveSample("nevporyadkovanyi-spysok-useredyni-vporyadkovanoho", 400, 150)}}
+{{EmbedLiveSample("nevporiadkovanyi-spysok-useredyni-vporiadkovanoho", 400, 150)}}
 
 ## Технічний підсумок
 
@@ -163,7 +163,7 @@ browser-compat: html.elements.ol
     </tr>
     <tr>
       <th scope="row">Пропуск тега</th>
-      <td>{{no_tag_omission}}</td>
+      <td>Немає; і початковий, і кінцевий теги – обов'язкові.</td>
     </tr>
     <tr>
       <th scope="row">Дозволені батьківські елементи</th>
@@ -176,7 +176,7 @@ browser-compat: html.elements.ol
       <th scope="row">Неявна роль ARIA</th>
       <td>
         <code>
-          <a href="/uk/docs/Web/Accessibility/ARIA/Roles/List_role">list</a>
+          <a href="/uk/docs/Web/Accessibility/ARIA/Roles/list_role">list</a>
         </code>
       </td>
     </tr>

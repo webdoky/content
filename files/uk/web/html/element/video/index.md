@@ -272,7 +272,7 @@ browser-compat: html.elements.video
   <source src="myVideo.mp4" type="video/mp4" />
   <p>
     Ваш браузер не підтримує відео HTML. Ось натомість
-    <a href="myVideo.mp4">посилання на відео</a>.
+    <a href="myVideo.mp4" download="myVideo.mp4">посилання на відео</a>.
   </p>
 </video>
 ```
@@ -401,9 +401,11 @@ AddType video/webm .webm
 
   Вибачте, Ваш браузер не підтримує вбудованих відео, але не переймайтесь: Ви
   можете
-  <a href="https://archive.org/download/ElephantsDream/ed_1024_512kb.mp4"
-    >стягнути файл MP4</a
-  >
+  <a
+    href="https://archive.org/download/ElephantsDream/ed_1024_512kb.mp4"
+    download="ed_1024_512kb.mp4">
+    стягнути файл MP4
+  </a>
   і переглянути його в своєму улюбленому програвачі відео!
 </video>
 ```
@@ -466,7 +468,7 @@ AddType video/webm .webm
         <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
           >Потоковий вміст</a
         >, оповідальний вміст, вбудований вміст. Якщо має атрибут
-        <a href="/uk/docs/Web/HTML/Element/video#controls"><code>controls</code></a>: інтерактивний
+        <a href="#controls"><code>controls</code></a>: інтерактивний
         вміст і дотиковий вміст.
       </td>
     </tr>
@@ -474,7 +476,7 @@ AddType video/webm .webm
       <th scope="row">Дозволений вміст</th>
       <td>
         <p>
-          Якщо елемент має атрибут <a href="/uk/docs/Web/HTML/Element/video#src"><code>src</code></a>:
+          Якщо елемент має атрибут <a href="#src"><code>src</code></a>:
           нуль чи більше елементів {{HTMLElement("track")}},
           після котрих – прозорий вміст, що не містить мультимедійних елементів, тобто
           жодних {{HTMLElement("audio")}} чи
@@ -489,8 +491,8 @@ AddType video/webm .webm
       </td>
     </tr>
     <tr>
-      <th scope="row">Упускання тегів</th>
-      <td>{{no_tag_omission}}</td>
+      <th scope="row">Пропуск тега</th>
+      <td>Немає; і початковий, і кінцевий теги – обов'язкові.</td>
     </tr>
     <tr>
       <th scope="row">Дозволені батьківські елементи</th>

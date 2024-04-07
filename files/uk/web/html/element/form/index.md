@@ -30,7 +30,7 @@ browser-compat: html.elements.form
 
 - `autocapitalize`
 
-- : Контролює те, чи додаються великі літери до тексту, введеного у поля вводу, а також, якщо так — то яким чином. Шукайте більше інформації на сторінці глобального атрибута [`autocapitalize`](/uk/docs/Web/HTML/Global_attributes/autocapitalize).
+  - : Контролює те, чи додаються великі літери до тексту, введеного у поля вводу, а також, якщо так — то яким чином. Шукайте більше інформації на сторінці глобального атрибута [`autocapitalize`](/uk/docs/Web/HTML/Global_attributes/autocapitalize).
 
 - `autocomplete`
 
@@ -142,7 +142,7 @@ browser-compat: html.elements.form
     </tr>
     <tr>
       <th scope="row">Пропуск тега</th>
-      <td>{{no_tag_omission}}</td>
+      <td>Немає; і початковий, і кінцевий теги – обов'язкові.</td>
     </tr>
     <tr>
       <th scope="row">Дозволені батьківські елементи</th>
