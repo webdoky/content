@@ -312,18 +312,17 @@ textarea {
 
 ## Дивіться також
 
-Інші формові елементи:
-
-- {{HTMLElement("form")}}
-- {{HTMLElement("button")}}
-- {{HTMLElement("datalist")}}
-- {{HTMLElement("legend")}}
-- {{HTMLElement("label")}}
-- {{HTMLElement("select")}}
-- {{HTMLElement("optgroup")}}
-- {{HTMLElement("option")}}
-- {{HTMLElement("input")}}
-- {{HTMLElement("fieldset")}}
-- {{HTMLElement("output")}}
-- {{HTMLElement("progress")}}
-- {{HTMLElement("meter")}}
+- Інші формові елементи:
+  - {{HTMLElement("form")}}
+  - {{HTMLElement("button")}}
+  - {{HTMLElement("datalist")}}
+  - {{HTMLElement("legend")}}
+  - {{HTMLElement("label")}}
+  - {{HTMLElement("select")}}
+  - {{HTMLElement("optgroup")}}
+  - {{HTMLElement("option")}}
+  - {{HTMLElement("input")}}
+  - {{HTMLElement("fieldset")}}
+  - {{HTMLElement("output")}}
+  - {{HTMLElement("progress")}}
+  - {{HTMLElement("meter")}}
