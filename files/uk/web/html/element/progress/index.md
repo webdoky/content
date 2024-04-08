@@ -136,6 +136,7 @@ browser-compat: html.elements.progress
 
 ## Дивіться також
 
+- [Створення вертикальних формових елементів](/uk/docs/Web/CSS/CSS_writing_modes/Vertical_controls)
 - {{htmlelement("meter")}}
 - {{cssxref(":indeterminate")}}
 - {{cssxref("-moz-orient")}}
