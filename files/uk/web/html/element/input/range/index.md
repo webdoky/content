@@ -261,7 +261,7 @@ input[type="range"] {
 }
 ```
 
-Це змушує ковзун візуалізуватися вертикально:
+Це змушує повзун візуалізуватися вертикально:
 
 {{EmbedLiveSample("stvorennia-vertykalnykh-poliv-diapazonu", 200, 200)}}
 
