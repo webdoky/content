@@ -675,7 +675,7 @@ browser-compat: html.elements.input
 
 - `orient` {{non-standard_inline}} (орієнтація)
 
-  - : Подібно до нестандартної CSS властивості -moz-orient, що впливає на елементи {{htmlelement('progress')}} і {{htmlelement('meter')}}, атрибут `orient` встановлює орієнтацію повзуна діапазону. Значення включають `horizontal`, що приводить до горизонтального зображення, та `vertical`, що приводить до вертикального.
+  - : Подібно до нестандартної CSS властивості -moz-orient, що впливає на елементи {{htmlelement('progress')}} і {{htmlelement('meter')}}, атрибут `orient` встановлює орієнтацію повзуна діапазону. Значення включають `horizontal`, що приводить до горизонтального зображення, та `vertical`, що приводить до вертикального. Дивіться сучасний підхід до створення вертикальних формових елементів у [Створенні вертикальних формових елементів](/uk/docs/Web/CSS/CSS_writing_modes/Vertical_controls).
 
 - `results` {{non-standard_inline}} (результати)
 
@@ -1397,3 +1397,4 @@ Firefox використовує наступну евристику для ви
 - [Стилізація форм HTML](/uk/docs/Learn/Forms/Styling_web_forms)
 - [Розширена стилізація для форм HTML](/uk/docs/Learn/Forms/Advanced_form_styling)
 - [Таблиця сумісності властивостей CSS](/uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls)
+- [Створення вертикальних формових елементів](/uk/docs/Web/CSS/CSS_writing_modes/Vertical_controls)
