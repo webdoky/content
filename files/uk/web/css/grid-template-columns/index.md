@@ -81,13 +81,13 @@ grid-template-columns: unset;
 
     > **Примітка:** Розміри доріжок `auto` (і лише розміри доріжок `auto`) можуть бути розтягнені властивостями {{cssxref("align-content")}} і {{cssxref("justify-content")}}. Таким чином, усталено доріжка з розміром `auto` займатиме увесь незайнятий у контейнері сітки простір.
 
-- `{{cssxref("fit-content_function", "fit-content( [ &lt;length&gt; | &lt;percentage&gt; ] )")}}`
+- {{cssxref("fit-content_function", "fit-content( [ &lt;length&gt; | &lt;percentage&gt; ] )")}}
 
   - : Представляє формулу `max(minimum, min(limit, max-content))`, де _minimum_ представляє мінімум `auto` (котрий нерідко, хоч і не завжди, рівний мінімумові {{cssxref("min-content")}}), а _limit_ – функція калібрування доріжки, передана як аргумент у fit-content(). По суті, обчислюється як менше серед `minmax(auto, max-content)` і `minmax(auto, limit)`.
 
 - {{cssxref("repeat", "repeat( [ &lt;positive-integer&gt; | auto-fill | auto-fit ] , &lt;track-list&gt; )")}}
   - : Представляє повторюваний фрагмент списку доріжки й дає змогу визначити багато колонок, що утворюють циклічний патерн, у більш компактному вигляді.
-- [`masonry`](/uk/docs/Web/CSS/CSS_grid_layout/Masonry_layout) {{Experimental_Inline}}
+- [`masonry`](/uk/docs/Web/CSS/CSS_grid_layout/Masonry_layout)
   - : Значення masonry вказує на те, що ця вісь повинна компонуватися згідно з алгоритмом кладки.
 - [`subgrid`](/uk/docs/Web/CSS/CSS_grid_layout/Subgrid)
   - : Значення `subgrid` вказує на те, що сітка займе за цією віссю розширену частку своєї батьківської сітки. Замість явного задання, розміри рядів і колонок сітки будуть взяті з означення батьківської сітки.
