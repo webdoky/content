@@ -101,7 +101,7 @@ text-align: unset;
 
 #### Результат
 
-{{EmbedLiveSample("shykuvannia-start","100%","100%")}}
+{{EmbedLiveSample("shykuvannia-start", "100%", "100%")}}
 
 ### Центрований текст
 
@@ -152,6 +152,62 @@ text-align: unset;
 #### Результат
 
 {{EmbedLiveSample('pryklad-z-vykorystanniam-justify',"100%","100%")}}
+
+### Вирівнювання таблиць
+
+Цей приклад демонструє, як використання `text-align` на елементах {{htmlelement("table")}}, в тому числі рядах {{htmlelement("tr")}} і комірках {{htmlelement("td")}}.
+
+#### HTML
+
+```html
+<table>
+  <tr id="r1">
+    <td id="c11">11</td>
+    <td id="c12">12</td>
+    <td id="c13">13</td>
+  </tr>
+  <tr id="r2">
+    <td id="c21">21</td>
+    <td id="c22">22</td>
+    <td id="c23">23</td>
+  </tr>
+  <tr id="r3">
+    <td id="c31">31</td>
+    <td id="c32">32</td>
+    <td id="c33">33</td>
+  </tr>
+</table>
+```
+
+#### CSS
+
+```css
+table {
+  border-collapse: collapse;
+  border: solid black 1px;
+  width: 250px;
+  height: 150px;
+}
+td {
+  border: solid 1px black;
+}
+#r1 {
+  text-align: right;
+}
+#c12 {
+  text-align: center;
+}
+#r2 {
+  text-align: center;
+}
+#c31 {
+  text-align: right;
+}
+```
+
+#### Результат
+
+{{EmbedLiveSample('vyrivniuvannia-tablyts', "100%", "100%")}}
 
 ## Специфікації
 
