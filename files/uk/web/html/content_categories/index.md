@@ -118,7 +118,6 @@ page-type: guide
 - {{HTMLElement("area")}}, коли є нащадком елемента {{HTMLElement("map")}}
 - {{HTMLElement("link")}}, коли присутній атрибут [itemprop](/uk/docs/Web/HTML/Global_attributes/itemprop)
 - {{HTMLElement("meta")}}, коли присутній атрибут [itemprop](/uk/docs/Web/HTML/Global_attributes/itemprop)
-- {{HTMLElement("style")}}, коли присутній атрибут `scoped` {{deprecated_inline}}
 
 ### Розділовий вміст
 

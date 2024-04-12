@@ -176,7 +176,7 @@ browser-compat: html.elements.ol
       <th scope="row">Неявна роль ARIA</th>
       <td>
         <code>
-          <a href="/uk/docs/Web/Accessibility/ARIA/Roles/List_role">list</a>
+          <a href="/uk/docs/Web/Accessibility/ARIA/Roles/list_role">list</a>
         </code>
       </td>
     </tr>

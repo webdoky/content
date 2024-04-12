@@ -62,7 +62,7 @@ linear-gradient(45deg, red 0 50%, blue 50% 100%)
 - `<linear-color-stop>`
   - : Значення {{CSSxRef("&lt;color&gt;")}} для зупинки кольору, після якого стоять одна чи дві необов'язкові позиції зупинок, (кожна з яких – або {{CSSxRef("&lt;percentage&gt;")}}, або {{CSSxRef("&lt;length&gt;")}} відносно осі градієнта).
 - `<color-hint>`
-  - : Підказка інтерполяції, котра визначає те, як градієнт просувається між зупинками кольору. Довжина визначає те, у якій точці між двома кольоровими зупинками колір градієнта повинен досягнути середньої точки переходу кольору. Якщо цього значення немає, то середнє значення кольору досягається в середній точці між двома зупинками кольору.
+  - : Підказка {{glossary("interpolation", "інтерполяції")}}, котра визначає те, як градієнт просувається між зупинками кольору. Довжина визначає те, у якій точці між двома кольоровими зупинками колір градієнта повинен досягнути середньої точки переходу кольору. Якщо цього значення немає, то середнє значення кольору досягається в середній точці між двома зупинками кольору.
 
 > **Примітка:** Відображення [кольорових зупинок градієнтів CSS](#kompozytsiia-liniinykh-hradiientiv) відповідає тим само правилам, що й кольорові зупинки [градієнтів SVG](/uk/docs/Web/SVG/Tutorial/Gradients).
 
@@ -250,9 +250,4 @@ body {
 - [`<hue-interpolation-method>`](/uk/docs/Web/CSS/hue-interpolation-method)
 - [`<color-interpolation-method>`](/uk/docs/Web/CSS/color-interpolation-method)
 - {{CSSxRef("&lt;image&gt;")}}
-- {{cssxref("element", "element()")}}
-- {{cssxref("image/image","image()")}}
-- {{cssxref("image/image-set","image-set()")}}
-- {{cssxref("cross-fade", "cross-fade()")}}
 - [Модуль зображень CSS](/uk/docs/Web/CSS/CSS_images)
-- [Нові функції, градієнти та барви у Кольорах CSS (Рівень 4)](https://developer.mozilla.org/en-US/blog/css-color-module-level-4/) на блозі MDN (2023)
