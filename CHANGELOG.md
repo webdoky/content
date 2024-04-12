@@ -3,6 +3,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2024-04-05 - 2024-04-12]
+
+* **Оновлення перекладу(CSS):** web/css/_colon_enabled (#2954) ([7af5e306](https://github.com/webdoky/content/commit/7af5e30660fb4f54f5c46d97953376f4fbf4d2db))
+* **Оновлення перекладу(CSS):** web/css/css_colors (#2907) ([7b01726e](https://github.com/webdoky/content/commit/7b01726e470bb08e8c6d983a385a2410fa783231))
+* **Оновлення перекладу(CSS):** web/css/css_colors/applying_color ([346013c0](https://github.com/webdoky/content/commit/346013c025af9d149a185c7e596caa7343a66e8e))
+* **Оновлення перекладу(HTML):** web/html/element/textarea (#2919) ([cc1bb72f](https://github.com/webdoky/content/commit/cc1bb72f7810c346eb5604694434f14636c34a51))
+* **Оновлення перекладу(JS):** web/javascript/reference/operators/this ([143da6f1](https://github.com/webdoky/content/commit/143da6f1614c4dc4005b75c5eef752568ff89cd6))
+* **Оновлення перекладу(SVG):** web/svg ([461d049d](https://github.com/webdoky/content/commit/461d049d9b4226e3321809ca67ad4f4c4971776f))
+* **Оновлення перекладу(HTML):** web/html/element/input/range (#2945) ([ae110913](https://github.com/webdoky/content/commit/ae110913c468ecb3bffef1196b106214357a7cf1))
+* **Оновлення перекладу(HTML):** web/html/element/progress ([100be513](https://github.com/webdoky/content/commit/100be5135e43cee5d9834381c88f522505dbb5bc))
+* **Оновлення перекладу(CSS):** web/css/calc ([8058848a](https://github.com/webdoky/content/commit/8058848a2e486eeded7ad5a12c620f95d7e3b637))
+* **Оновлення перекладу(HTML):** web/html/element/input (#2944) ([0db44e77](https://github.com/webdoky/content/commit/0db44e776f2fff074d84fe9f9f4a6d8c53995cd3))
+* **Оновлення перекладу(HTML):** web/html/element/input/email (#2947) ([e2789993](https://github.com/webdoky/content/commit/e27899936b31d66883f1da6a5b2ebb5f8af65fd2))
+* **Оновлення перекладу(HTML):** web/html/element/input/tel (#2946) ([a389aab9](https://github.com/webdoky/content/commit/a389aab9a7c67c09a2140eee4deae74254c51977))
+* **Оновлення перекладу(CSS):** web/css/gradient/linear-gradient (#2943) ([c592739b](https://github.com/webdoky/content/commit/c592739bb6d83c6c7688803bd30446808b224238))
+
 ## [2024-03-29 - 2024-04-05]
 
 * **Оновлення перекладу(SVG):** web/svg/attribute (#2940) ([345c433d](https://github.com/webdoky/content/commit/345c433de55df940bdd7cf858bd9d168a674b0fd))
