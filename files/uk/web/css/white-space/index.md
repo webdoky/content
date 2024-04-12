@@ -264,6 +264,47 @@ text {
 
 {{EmbedLiveSample("kilka-linii-u-elementi-svg-text", "100%", 150)}}
 
+### Контроль перенесення в таблицях
+
+#### HTML
+
+```html
+<table>
+  <tr>
+    <td></td>
+    <td>Дуже довгий вміст, що розривається</td>
+    <td class="nw">Дуже довгий вміст, що не розривається</td>
+  </tr>
+  <tr>
+    <td class="nw">white-space:</td>
+    <td>normal</td>
+    <td>nowrap</td>
+  </tr>
+</table>
+```
+
+#### CSS
+
+```css
+table {
+  border-collapse: collapse;
+  border: solid black 1px;
+  width: 250px;
+  height: 150px;
+}
+td {
+  border: solid 1px black;
+  text-align: center;
+}
+.nw {
+  white-space: nowrap;
+}
+```
+
+#### Результат
+
+{{EmbedLiveSample('kontrol-perenesennia-v-tablytsiakh', "100%", "100%")}}
+
 ## Специфікації
 
 {{Specifications}}
