@@ -53,6 +53,19 @@ function getCharacterLength(str) {
 console.log(getCharacterLength("А\uD87E\uDC04Я")); // 3
 ```
 
+За потреби порахувати символи за _графемними кластерами_ скористайтесь [`Intl.Segmenter`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter). Можна спершу передати рядок, який необхідно розбити, до методу [`segment()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter/segment), а тоді ітерувати по поверненому об'єкту `Segments`, щоб отримати довжину:
+
+```js
+function getGraphemeCount(str) {
+  const segmenter = new Intl.Segmenter("en-US", { granularity: "grapheme" });
+  // Об'єкт-ітератор Segments, який вжито тут, ітерує по символах у вигляді графемних кластерів,
+  // кожен з яких може складатися з кількох символів Unicode
+  return [...segmenter.segment(str)].length;
+}
+
+console.log(getGraphemeCount("👨‍👩‍👧‍👧")); // 1
+```
+
 ## Приклади
 
 ### Базове застосування
