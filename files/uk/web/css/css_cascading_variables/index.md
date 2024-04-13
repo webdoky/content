@@ -91,7 +91,7 @@ input {
 }
 ```
 
-{{EmbedLiveSample("",600,160)}}
+{{EmbedLiveSample("kastomni-vlastyvosti-v-dii",600,160)}}
 
 У цих колірних зразках значення {{cssxref("background-color")}} задано за допомогою функції {{cssxref("&lt;color&gt;", "кольору")}} {{cssxref("color_value/hsl", "hsl()")}} як `hsl(var(--hue) 50% 50%)`.
 Кожний колірний зразок збільшує значення {{cssxref("hue", "барви")}} на 10 градусів, наприклад, `calc(var(--hue) + 10)`, `calc(var(--hue) + 20)` і так далі.

@@ -78,7 +78,7 @@ parseInt(string, radix)
 parseInt("0xF", 16);
 parseInt("F", 16);
 parseInt("17", 8);
-parseInt("015", 10); // однак `parseInt('015', 8)` поверне 13
+parseInt("015", 10);
 parseInt("15,123", 10);
 parseInt("FXX123", 16);
 parseInt("1111", 2);

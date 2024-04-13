@@ -30,7 +30,7 @@ browser-compat: html.elements.form
 
 - `autocapitalize`
 
-- : Контролює те, чи додаються великі літери до тексту, введеного у поля вводу, а також, якщо так — то яким чином. Шукайте більше інформації на сторінці глобального атрибута [`autocapitalize`](/uk/docs/Web/HTML/Global_attributes/autocapitalize).
+  - : Контролює те, чи додаються великі літери до тексту, введеного у поля вводу, а також, якщо так — то яким чином. Шукайте більше інформації на сторінці глобального атрибута [`autocapitalize`](/uk/docs/Web/HTML/Global_attributes/autocapitalize).
 
 - `autocomplete`
 
@@ -83,6 +83,7 @@ browser-compat: html.elements.form
     - `_blank`: Завантажувати в новий безіменний контекст перегляду. Це додає такої ж логіки, як задання [`rel="noopener"`](#rel), тобто відсутність заповнення [`window.opener`](/uk/docs/Web/API/Window/opener).
     - `_parent`: Завантажувати в батьківський щодо поточного контекст перегляду. Якщо батьківського немає, то діє так само як `_self`.
     - `_top`: Завантажувати в контекст перегляду найвищого рівня (тобто контекст перегляду, що є предком поточного і не має предка). Якщо батьківського контексту немає, то діє так само як `_self`.
+    - `_unfencedTop`: Завантажити відповідь на форму всередині вбудованого [обгородженого фрейму](/uk/docs/Web/API/Fenced_frame_API) в фрейм верхнього рівня (тобто вище кореня обгородженого фрейму, на відміну від решти зарезервованих призначень). Доступно лише всередині обгороджених фреймів.
 
     Це значення може бути відкинуто атрибутом [`formtarget`](/uk/docs/Web/HTML/Element/button#formtarget) на елементі {{HTMLElement("button")}}, [`<input type="submit">`](/uk/docs/Web/HTML/Element/input/submit) чи [`<input type="image">`](/uk/docs/Web/HTML/Element/input/image).
 
@@ -142,7 +143,7 @@ browser-compat: html.elements.form
     </tr>
     <tr>
       <th scope="row">Пропуск тега</th>
-      <td>{{no_tag_omission}}</td>
+      <td>Немає; і початковий, і кінцевий теги – обов'язкові.</td>
     </tr>
     <tr>
       <th scope="row">Дозволені батьківські елементи</th>

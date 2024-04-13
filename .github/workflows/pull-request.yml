@@ -1,0 +1,38 @@
+jobs:
+  pull-request:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch master
+        run: git fetch origin master
+      # Check if PR already exists
+      - env:
+          GH_TOKEN: ${{ secrets.CONTENT_GITHUB_TOKEN }}
+        id: check-if-pr-exists
+        name: Check if PR exists
+        run: |
+          prs=$(gh pr list \
+          --head ${GITHUB_REF#refs/heads/} \
+          --base 'master' \
+          --json title \
+          --jq 'length') || 0
+          echo $prs
+          if ((prs > 0)); then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "PR exists"
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+      - env:
+          GH_TOKEN: ${{ secrets.CONTENT_GITHUB_TOKEN }}
+        if: steps.check-if-pr-exists.outputs.skip != 'true'
+        name: Create Pull Request
+        # Creates a PR from current branch to master
+        run: |
+          gh pr create --base master --head ${GITHUB_REF#refs/heads/} --fill
+name: Create Pull Request
+on:
+  push:
+    branches:
+      - "translation/*"
+      - "update/*"

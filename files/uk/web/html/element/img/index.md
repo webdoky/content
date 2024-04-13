@@ -432,14 +432,14 @@ SVG залишається рекомендованим форматом для 
               <li>
                 <code
                   ><a
-                    href="/uk/docs/Web/Accessibility/ARIA/Roles/Switch_role"
+                    href="/uk/docs/Web/Accessibility/ARIA/Roles/switch_role"
                     >switch</a
                   ></code
                 >
               </li>
               <li>
                 <code
-                  ><a href="/uk/docs/Web/Accessibility/ARIA/Roles/Tab_Role"
+                  ><a href="/uk/docs/Web/Accessibility/ARIA/Roles/tab_Role"
                     >tab</a
                   ></code
                 >
