@@ -449,9 +449,7 @@ document
           href="/uk/docs/Web/HTML/Content_categories#interaktyvnyi-vmist"
           >інтерактивним вмістом</a
         > чи елементом
-        <a href="/uk/docs/Web/HTML/Element/a"
-          >a</a
-        >; крім того, жодний нащадок не може мати атрибута
+        <code>&lt;a&gt;</code>; крім того, жодний нащадок не може мати атрибута
         <a
           href="/uk/docs/Web/HTML/Global_attributes/tabindex"
           >tabindex</a
@@ -468,7 +466,7 @@ document
         Будь-який елемент, що приймає
         <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
           >потоковий вміст</a
-        >, але не інший елемент <code>&#x3C;a></code>.
+        >, але не інший елемент <code>&lt;a&gt;</code>.
       </td>
     </tr>
     <tr>
