@@ -131,8 +131,7 @@ browser-compat: html.elements.select
 
 - [Оформлення HTML-форм](/uk/docs/Learn/Forms/Styling_web_forms)
 - [Поглиблене оформлення HTML-форм](/uk/docs/Learn/Forms/Advanced_form_styling)
-
-Також дивіться приклад "Власні стилі select" нижче: він показує, що можна спробувати зробити шляхом простого оформлення `<select>`.
+- Властивість {{cssxref("field-sizing")}}, яка контролює те, чи отримують елементи `<select>` розмір відповідно до вміщених у них варіантів.
 
 ## Приклади
 
