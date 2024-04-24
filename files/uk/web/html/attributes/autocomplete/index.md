@@ -15,7 +15,14 @@ browser-compat: html.global_attributes.autocomplete
 
 ## Опис
 
-Атрибут `autocomplete` надає користувацькому агенту підказку щодо того, як заповнювати форму наперед, і чи треба взагалі це робити. Значення атрибута може бути ключовим словом `off` або `on`, або списком лексем, розділених пробілами.
+Атрибут `autocomplete` надає користувацькому агенту підказку щодо того, як заповнювати форму наперед, і чи треба взагалі це робити. Значення атрибута може бути ключовим словом `off` або `on`, або впорядкованим списком лексем, розділених пробілами.
+
+```html
+<input autocomplete="off" />
+<input autocomplete="on" />
+<input autocomplete="shipping street-address" />
+<input autocomplete="section-user1 billing postal-code" />
+```
 
 Якщо елемент {{HTMLElement("input")}}, {{HTMLElement("select")}} або {{HTMLElement("textarea")}} не має атрибута `autocomplete`, браузер скористається [атрибутом `autocomplete` **форми-власника** цього елемента](/uk/docs/Web/HTML/Element/form#autocomplete). Форма-власник – це або {{HTMLElement("form")}}, що відповідає `id`, вказаному в атрибуті [`form`](/uk/docs/Web/HTML/Element/input#form) елемента (якщо він присутній), або, що буває частіше, `<form>`, у який вкладений елемент.
 
