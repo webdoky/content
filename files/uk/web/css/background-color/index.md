@@ -75,7 +75,11 @@ background-color: unset;
 
 ## Приклади
 
-### HTML
+### Розфарбування блоків
+
+Цей приклад демонструє застосування до елементів HTML {{HTMLelement("div")}} властивості `background-color` з використанням різних значень CSS {{cssxref("color_value", "&lt;color&gt;")}}.
+
+#### HTML
 
 ```html
 <div class="exampleone">Але щоб ви зрозуміли, звідки</div>
@@ -85,7 +89,7 @@ background-color: unset;
 <div class="examplethree">Але щоб ви зрозуміли, звідки</div>
 ```
 
-### CSS
+#### CSS
 
 ```css
 .exampleone {
@@ -103,9 +107,65 @@ background-color: unset;
 }
 ```
 
-### Результат
+#### Результат
 
-{{EmbedLiveSample("pryklady", 200, 150)}}
+{{EmbedLiveSample("rozfarbuvannia-blokiv", 200, 150)}}
+
+### Розфарбування таблиць
+
+Цей приклад демонструє застосування властивості `background-color` до елементів HTML {{HTMLelement("table")}}, у тому числі рядів {{HTMLelement("tr")}} і комірок {{HTMLelement("td")}}.
+
+#### HTML
+
+```html
+<table>
+  <tr id="r1">
+    <td id="c11">11</td>
+    <td id="c12">12</td>
+    <td id="c13">13</td>
+  </tr>
+  <tr id="r2">
+    <td id="c21">21</td>
+    <td id="c22">22</td>
+    <td id="c23">23</td>
+  </tr>
+  <tr id="r3">
+    <td id="c31">31</td>
+    <td id="c32">32</td>
+    <td id="c33">33</td>
+  </tr>
+</table>
+```
+
+#### CSS
+
+```css
+table {
+  border-collapse: collapse;
+  border: solid black 1px;
+  width: 250px;
+  height: 150px;
+}
+td {
+  border: solid 1px black;
+}
+#r1 {
+  background-color: lightblue;
+}
+#c12 {
+  background-color: cyan;
+}
+#r2 {
+  background-color: grey;
+}
+#r3 {
+  background-color: olive;
+}
+```
+
+#### Результат
+
+{{EmbedLiveSample('rozfarbuvannia-tablyts', "100%", "100%")}}
 
 ## Специфікації
 

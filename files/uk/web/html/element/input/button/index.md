@@ -169,7 +169,7 @@ function disableButton() {
 
 {{EmbedLiveSample("uspadkuvannia-stanu-vymknenosti", 650, 100)}}
 
-> **Примітка:** Firefox, на відміну від решти браузерів, усталено [зберігає динамічний стан вимкненості](https://stackoverflow.com/questions/5985839/bug-with-firefox-disabled-attribute-of-input-not-resetting-when-refreshing) елемента {{HTMLElement("button")}} між окремими завантаженнями сторінки. Для контролю цієї можливості слід використовувати атрибут [`autocomplete`](/uk/docs/Web/HTML/Element/button#autocomplete).
+> **Примітка:** Firefox, на відміну від решти браузерів, зберігає стан `disabled` елемента `<input>` при перезавантаженні сторінки. Щоб це обійти, можна задати атрибут [`autocomplete`](/uk/docs/Web/HTML/Element/button#autocomplete) елемента `<input>` зі значенням `off`. (Дивіться подробиці у [Ваді Firefox 654072](https://bugzil.la/654072).)
 
 ## Валідація
 
