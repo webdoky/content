@@ -151,7 +151,7 @@ text-align: unset;
 
 ### Вирівнювання таблиць
 
-Цей приклад демонструє, як використання `text-align` на елементах {{htmlelement("table")}}, в тому числі рядах {{htmlelement("tr")}} і комірках {{htmlelement("td")}}.
+Цей приклад демонструє, як використовувати `text-align` на елементах {{htmlelement("table")}}, в тому числі рядах {{htmlelement("tr")}} і комірках {{htmlelement("td")}}.
 
 #### HTML
 
