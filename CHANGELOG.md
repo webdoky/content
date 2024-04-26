@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2024-04-19 - 2024-04-26]
+
+* **Оновлення перекладу(HTML):** web/html/element/input/checkbox (#2964) ([7b8ff664](https://github.com/webdoky/content/commit/7b8ff6645412f159504f99efab41ed7925713bfe))
+* **Оновлення перекладу(HTML):** web/html/element/input (#2963) ([30cfad36](https://github.com/webdoky/content/commit/30cfad36bd9bb8d5c7f0a944d9e8b6ab41afd8c6))
+* **Оновлення перекладу(HTML):** web/html/element/script (#2966) ([f9ad70cf](https://github.com/webdoky/content/commit/f9ad70cf30eab10c4303f7c739a5f848a8462eb5))
+* **Оновлення перекладу(HTML):** web/html/attributes/autocomplete (#2967) ([6fb91711](https://github.com/webdoky/content/commit/6fb91711ae637a5b2c11df8463e433ac7952a6a8))
+* **Оновлення перекладу(CSS):** web/css/white-space (#2962) ([349b8e14](https://github.com/webdoky/content/commit/349b8e1477054022b4a163bc0adea5fdb369784b))
+* **Переклад(HTML):** web/html/element/header (#2959) ([05e33152](https://github.com/webdoky/content/commit/05e331527893af4ce6b49348770e337e54f84448))
+
 ## [2024-04-12 - 2024-04-19]
 
 * **Виправлення:** remove bad PR workflow (#2960) ([d0971d74](https://github.com/webdoky/content/commit/d0971d74befae34313dcaac5c8934610fa251287))
