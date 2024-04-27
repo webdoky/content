@@ -13,7 +13,7 @@ browser-compat: css.properties.border-color
 
 Кожен бік можна задати окремо, використовуючи {{CSSxRef("border-top-color")}}, {{CSSxRef("border-right-color")}}, {{CSSxRef("border-bottom-color")}} і {{CSSxRef("border-left-color")}}, або за допомогою властивостей, що враховують напрям письма: {{CSSxRef("border-block-start-color")}}, {{CSSxRef("border-block-end-color")}}, {{CSSxRef("border-inline-start-color")}} і {{CSSxRef("border-inline-end-color")}}.
 
-Більше інформації про кольори меж можна знайти в розділі [Кольорів CSS](/uk/docs/Web/CSS/CSS_colors/Applying_color#mezhi).
+Більше інформації про кольори меж можна знайти в [Застосуванні кольорів до елементів HTML](/uk/docs/Web/CSS/CSS_colors/Applying_color#mezhi).
 
 ## Властивості-складові
 
