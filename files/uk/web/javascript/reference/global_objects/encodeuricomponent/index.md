@@ -106,7 +106,7 @@ encodeURIComponent("\uD800");
 encodeURIComponent("\uDFFF");
 ```
 
-Можна скористатися методом {{jsxref("String.prototype.toWellFormed()")}}, котрий замінює самотні сурогати на символ заміни Unicode (U+FFFD), щоб уникнути цієї помилки. Також можна скористатися методом {{jsxref("String.prototype.isWellFormed()")}}, щоб перевірити, чи містить рядок самотні сурогати, перед тим, як передати його у `encodeURIComponent()`.
+Можна скористатися методом {{jsxref("String.prototype.toWellFormed()")}}, котрий замінює самотні сурогати на символ заміни Unicode (U+FFFD), щоб уникнути цієї помилки. Також можна скористатися методом {{jsxref("String.prototype.isWellFormed()")}}, щоб перевірити, чи містить рядок самотні сурогати, перед тим, як передати його в `encodeURIComponent()`.
 
 ## Специфікації
 
