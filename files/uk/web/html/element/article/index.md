@@ -1,5 +1,5 @@
 ---
-title: "<article> – Вміст статті"
+title: <article> – Вміст статті
 slug: Web/HTML/Element/article
 page-type: html-element
 browser-compat: html.elements.article
@@ -7,7 +7,7 @@ browser-compat: html.elements.article
 
 {{HTMLSidebar}}
 
-Елемент **`<article>`** [HTML](/en-US/docs/Web/HTML) представляє самодостатню сутність у документі, в застосунку, на сторінці або на сайті. Призначений для незалежного розповсюдження або перевикористання (наприклад на інших вебсайтах). Приклади використання: записи на форумі, статті у журналах, газетах або блогах, картки товарів в інтернет-магазинах, коментарі користувачів, інтерактивні віджети або гаджети та інші незалежні одиниці контенту.
+Елемент **`<article>`** [HTML](/uk/docs/Web/HTML) представляє самодостатню сутність у документі, в застосунку, на сторінці або на сайті. Призначений для незалежного розповсюдження або перевикористання (наприклад на інших вебсайтах). Приклади використання: записи на форумі, статті у журналах, газетах або блогах, картки товарів в інтернет-магазинах, коментарі користувачів, інтерактивні віджети або гаджети та інші незалежні одиниці контенту.
 
 {{EmbedInteractiveExample("pages/tabbed/article.html", "tabbed-standard")}}
 
@@ -15,14 +15,14 @@ browser-compat: html.elements.article
 
 ## Атрибути
 
-Цей елемент містить лише [глобальні атрибути](/en-US/docs/Web/HTML/Global_attributes).
+Цей елемент містить лише [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
 
 ## Примітки щодо використання
 
-- Кожен елемент `<article>` повинен бути ідентифікований. Зазвичай включаючи елементи заголовка ([`<h1>` - `<h6>`](/en-US/docs/Web/HTML/Element/Heading_Elements)) як нащадків елемента `<article>`.
+- Кожен елемент `<article>` повинен бути ідентифікований. Зазвичай включаючи елементи заголовка ([`<h1>` - `<h6>`](/uk/docs/Web/HTML/Element/Heading_Elements)) як нащадків елемента `<article>`.
 - Коли елемент `<article>` вкладений, внутрішній елемент репрезентує статтю, що повʼязана з зовнішнім елементом. Наприклад, коментарі до запису в блозі можуть бути елементами `<article>` вкладеними в елемент `<article>`, що відповідає за сам запис.
 - Інформація про автора елемента `<article>` може бути розміщена в елементі {{HTMLElement("address")}}, але він не буде належати до елемента `<article>`.
-- Час та дата публікації елемента `<article>` можуть бути записані у [`datetime`](/en-US/docs/Web/HTML/Element/time#datetime) атрибуті елемента {{HTMLElement("time")}}.
+- Час та дата публікації елемента `<article>` можуть бути записані у [`datetime`](/uk/docs/Web/HTML/Element/time#datetime) атрибуті елемента {{HTMLElement("time")}}.
 
 ## Приклади
 
@@ -78,19 +78,19 @@ browser-compat: html.elements.article
   <tbody>
     <tr>
       <th scope="row">
-        <a href="/en-US/docs/Web/HTML/Content_categories"
+        <a href="/uk/docs/Web/HTML/Content_categories"
           >Вміст категорій</a
         >
       </th>
       <td>
-        <a href="/en-US/docs/Web/HTML/Content_categories#flow_content"
+        <a href="/uk/docs/Web/HTML/Content_categories#flow_content"
           >Потоковий вміст</a
         >,
         <a
-          href="/en-US/docs/Web/HTML/Content_categories#sectioning_content"
+          href="/uk/docs/Web/HTML/Content_categories#sectioning_content"
           >Секційний вміст</a
         >,
-        <a href="/en-US/docs/Web/HTML/Content_categories#palpable_content"
+        <a href="/uk/docs/Web/HTML/Content_categories#palpable_content"
           >відчутний вміст</a
         >
       </td>
@@ -98,7 +98,7 @@ browser-compat: html.elements.article
     <tr>
       <th scope="row">Дозволений вміст</th>
       <td>
-        <a href="/en-US/docs/Web/HTML/Content_categories#flow_content"
+        <a href="/uk/docs/Web/HTML/Content_categories#flow_content"
           >Потоковий вміст</a
         >.
       </td>
@@ -111,7 +111,7 @@ browser-compat: html.elements.article
       <th scope="row">Дозволені предки</th>
       <td>
         Усі елементи, що приймають
-        <a href="/en-US/docs/Web/HTML/Content_categories#flow_content"
+        <a href="/uk/docs/Web/HTML/Content_categories#flow_content"
           >потоковий вміст</a
         >. Зверніть увагу, що елемент <code>&#x3C;article></code> не повинен бути
            нащадком елемента {{HTMLElement("address")}}.
@@ -121,7 +121,7 @@ browser-compat: html.elements.article
       <th scope="row">Неявна роль ARIA</th>
       <td>
         <code
-          ><a href="/en-US/docs/Web/Accessibility/ARIA/Roles/article_role"
+          ><a href="/uk/docs/Web/Accessibility/ARIA/Roles/article_role"
             >article</a
           ></code
         >
@@ -130,10 +130,10 @@ browser-compat: html.elements.article
     <tr>
       <th scope="row">Дозволені ролі ARIA</th>
       <td>
-        <a href="/en-US/docs/Web/Accessibility/ARIA/Roles/application_role"><code>application</code></a>, <a href="/en-US/docs/Web/Accessibility/ARIA/Roles/document_role"><code>document</code></a>,
-        <a href="/en-US/docs/Web/Accessibility/ARIA/Roles/feed_role"><code>feed</code></a>, <a href="/en-US/docs/Web/Accessibility/ARIA/Roles/main_role"><code>main</code></a>,
-        <a href="/en-US/docs/Web/Accessibility/ARIA/Roles/none_role"><code>none</code></a>, <a href="/en-US/docs/Web/Accessibility/ARIA/Roles/presentation_role"><code>presentation</code></a>,
-        <a href="/en-US/docs/Web/Accessibility/ARIA/Roles/region_role"><code>region</code></a>
+        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/application_role"><code>application</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/document_role"><code>document</code></a>,
+        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/feed_role"><code>feed</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/main_role"><code>main</code></a>,
+        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/none_role"><code>none</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/presentation_role"><code>presentation</code></a>,
+        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/region_role"><code>region</code></a>
       </td>
     </tr>
     <tr>
@@ -154,4 +154,4 @@ browser-compat: html.elements.article
 ## Дивіться також
 
 - Інші елементи, що пов'язані з розділовістю: {{HTMLElement("body")}}, {{HTMLElement("nav")}}, {{HTMLElement("section")}}, {{HTMLElement("aside")}}, {{HTMLElement("Heading_Elements", "h1")}}, {{HTMLElement("Heading_Elements", "h2")}}, {{HTMLElement("Heading_Elements", "h3")}}, {{HTMLElement("Heading_Elements", "h4")}}, {{HTMLElement("Heading_Elements", "h5")}}, {{HTMLElement("Heading_Elements", "h6")}}, {{HTMLElement("hgroup")}}, {{HTMLElement("header")}}, {{HTMLElement("footer")}}, {{HTMLElement("address")}}
-- [Використання HTML розділів і контурів](/en-US/docs/Web/HTML/Element/Heading_Elements)
+- [Використання HTML розділів і контурів](/uk/docs/Web/HTML/Element/Heading_Elements)
