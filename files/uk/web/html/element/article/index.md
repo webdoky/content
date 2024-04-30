@@ -11,24 +11,24 @@ browser-compat: html.elements.article
 
 {{EmbedInteractiveExample("pages/tabbed/article.html", "tabbed-standard")}}
 
-Документ можуть мати декілька елементів статей. Наприклад, у блозі, де читачу, що гортає сторінку, по черзі показується текст статей, кожен запис містився б в елементі `<article>`, можливо з одним або декількома елементами `<section>` всередині.
+Документ може містити декілька елементів статей. Наприклад, у блозі, де читачу, що гортає сторінку, по черзі показується текст різних статей, кожен запис містився б в елементі `<article>`, можливо, з одним або декількома елементами `<section>` всередині.
 
 ## Атрибути
 
-Цей елемент містить лише [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
+Цей елемент приймає лише [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
 
 ## Примітки щодо використання
 
-- Кожен елемент `<article>` повинен бути ідентифікований. Зазвичай включаючи елементи заголовка ([`<h1>` - `<h6>`](/uk/docs/Web/HTML/Element/Heading_Elements)) як нащадків елемента `<article>`.
-- Коли елемент `<article>` вкладений, внутрішній елемент репрезентує статтю, що повʼязана з зовнішнім елементом. Наприклад, коментарі до запису в блозі можуть бути елементами `<article>` вкладеними в елемент `<article>`, що відповідає за сам запис.
+- Кожен елемент `<article>` повинен бути ідентифікований. Зазвичай шляхом додавання елементів заголовка ([`<h1>` - `<h6>`](/uk/docs/Web/HTML/Element/Heading_Elements)) як нащадків елемента `<article>`.
+- Коли елемент `<article>` вкладений у інший елемент `<article>`, то внутрішній з них репрезентує статтю, що повʼязана з зовнішнім елементом. Наприклад, коментарі до запису в блозі можуть бути елементами `<article>`, вкладеними в елемент `<article>`, що відповідає за сам запис.
 - Інформація про автора елемента `<article>` може бути розміщена в елементі {{HTMLElement("address")}}, але він не буде належати до елемента `<article>`.
-- Час та дата публікації елемента `<article>` можуть бути записані у [`datetime`](/uk/docs/Web/HTML/Element/time#datetime) атрибуті елемента {{HTMLElement("time")}}.
+- Час та дата публікації елемента `<article>` можуть бути записані в атрибуті [`datetime`](/uk/docs/Web/HTML/Element/time#datetime) елемента {{HTMLElement("time")}}.
 
 ## Приклади
 
 ```html
 <article class="film_review">
-  <h2>Парк Юрського Періоду</h2>
+  <h2>Парк Юрського періоду</h2>
   <section class="main_review">
     <h3>Відгук</h3>
     <p>Динозаври були чудовими!</p>
@@ -37,7 +37,7 @@ browser-compat: html.elements.article
     <h3>Відгуки користувачів</h3>
     <article class="user_review">
       <h4>Занадто страшно</h4>
-      <p>Вони за страшні для мене</p>
+      <p>Вони застрашні для мене</p>
       <footer>
         <p>
           Опубліковано
@@ -70,7 +70,7 @@ browser-compat: html.elements.article
 
 ### Результат
 
-{{EmbedLiveSample('Pryklady','','570')}}
+{{EmbedLiveSample('pryklady','','570')}}
 
 ## Технічний підсумок
 
@@ -79,18 +79,18 @@ browser-compat: html.elements.article
     <tr>
       <th scope="row">
         <a href="/uk/docs/Web/HTML/Content_categories"
-          >Вміст категорій</a
+          >Категорії вмісту</a
         >
       </th>
       <td>
-        <a href="/uk/docs/Web/HTML/Content_categories#flow_content"
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
           >Потоковий вміст</a
         >,
         <a
-          href="/uk/docs/Web/HTML/Content_categories#sectioning_content"
-          >Секційний вміст</a
+          href="/uk/docs/Web/HTML/Content_categories#rozdilovyi-vmist"
+          >Розділовий вміст</a
         >,
-        <a href="/uk/docs/Web/HTML/Content_categories#palpable_content"
+        <a href="/uk/docs/Web/HTML/Content_categories#vidchutnyi-vmist"
           >відчутний вміст</a
         >
       </td>
@@ -98,20 +98,20 @@ browser-compat: html.elements.article
     <tr>
       <th scope="row">Дозволений вміст</th>
       <td>
-        <a href="/uk/docs/Web/HTML/Content_categories#flow_content"
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
           >Потоковий вміст</a
         >.
       </td>
     </tr>
     <tr>
-      <th scope="row">Пропуски тегів</th>
-      <td>Початковий та закривальний тег є обовʼязковим.</td>
+      <th scope="row">Пропуск тега</th>
+      <td>Немає; і початковий, і кінцевий теги – обов'язкові.</td>
     </tr>
     <tr>
-      <th scope="row">Дозволені предки</th>
+      <th scope="row">Дозволені батьківські елементи</th>
       <td>
         Усі елементи, що приймають
-        <a href="/uk/docs/Web/HTML/Content_categories#flow_content"
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
           >потоковий вміст</a
         >. Зверніть увагу, що елемент <code>&#x3C;article></code> не повинен бути
            нащадком елемента {{HTMLElement("address")}}.
@@ -154,4 +154,4 @@ browser-compat: html.elements.article
 ## Дивіться також
 
 - Інші елементи, що пов'язані з розділовістю: {{HTMLElement("body")}}, {{HTMLElement("nav")}}, {{HTMLElement("section")}}, {{HTMLElement("aside")}}, {{HTMLElement("Heading_Elements", "h1")}}, {{HTMLElement("Heading_Elements", "h2")}}, {{HTMLElement("Heading_Elements", "h3")}}, {{HTMLElement("Heading_Elements", "h4")}}, {{HTMLElement("Heading_Elements", "h5")}}, {{HTMLElement("Heading_Elements", "h6")}}, {{HTMLElement("hgroup")}}, {{HTMLElement("header")}}, {{HTMLElement("footer")}}, {{HTMLElement("address")}}
-- [Використання HTML розділів і контурів](/uk/docs/Web/HTML/Element/Heading_Elements)
+- [Використання розділів і планів HTML](/uk/docs/Web/HTML/Element/Heading_Elements)
