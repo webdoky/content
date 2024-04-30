@@ -1,5 +1,5 @@
 ---
-title: <article> – Вміст статті
+title: <article> – Елемент вмісту статті
 slug: Web/HTML/Element/article
 page-type: html-element
 browser-compat: html.elements.article
