@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2024-04-26 - 2024-05-03]
+
+* **Переклад(HTML):** web/html/element/article (#2977) ([c81850e7](https://github.com/webdoky/content/commit/c81850e7cc7e22dae572cccea211db355a230d80))
+* **Оновлення перекладу(HTML):** web/html/element/header (#2978) ([91eb9c01](https://github.com/webdoky/content/commit/91eb9c018953901a42af7f3fa786603cf310e6ed))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/encodeuricomponent (#2972) ([905d3899](https://github.com/webdoky/content/commit/905d389950205a4241f11257cca950bc54f30c37))
+* **Оновлення перекладу(CSS):** web/css/caret-color (#2974) ([d1eb7601](https://github.com/webdoky/content/commit/d1eb76014e60be9bd35b72d1c1cb5bf941db39e7))
+* **Оновлення перекладу(CSS):** web/css/background-color (#2973) ([668f80f8](https://github.com/webdoky/content/commit/668f80f8ee124949fab08f318c110e523df5277a))
+* **Оновлення перекладу(HTML):** web/html (#2971) ([1582e5a6](https://github.com/webdoky/content/commit/1582e5a6c3b32dbf2975b7c6c98fc008ba807c2c))
+* **Оновлення перекладу(CSS):** web/css/border-color (#2970) ([faa4097f](https://github.com/webdoky/content/commit/faa4097f7121481647a26295b9e88ab396750b97))
+
 ## [2024-04-19 - 2024-04-26]
 
 * **Оновлення перекладу(HTML):** web/html/element/input/checkbox (#2964) ([7b8ff664](https://github.com/webdoky/content/commit/7b8ff6645412f159504f99efab41ed7925713bfe))
