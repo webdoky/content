@@ -1,5 +1,5 @@
 ---
-title: "<li>: The List Item element"
+title: "<li>: Елемент списку"
 slug: Web/HTML/Element/li
 page-type: html-element
 browser-compat: html.elements.li
@@ -7,128 +7,128 @@ browser-compat: html.elements.li
 
 {{HTMLSidebar}}
 
-The **`<li>`** [HTML](/en-US/docs/Web/HTML) element is used to represent an item in a list. It must be contained in a parent element: an ordered list ({{HTMLElement("ol")}}), an unordered list ({{HTMLElement("ul")}}), or a menu ({{HTMLElement("menu")}}). In menus and unordered lists, list items are usually displayed using bullet points. In ordered lists, they are usually displayed with an ascending counter on the left, such as a number or letter.
+Елемент **`<li>`** [HTML](/en-US/docs/Web/HTML) використовується для створення елементів списку. Він повинен міститися у батьківських елементах: впорядкований список ({{HTMLElement("ol")}}), невпорядкований список ({{HTMLElement("ul")}}) або меню ({{HTMLElement("menu")}}). У меню та невпорядкованих списках елементи списків зазвичай показується за допомогою маркерів. У впорядкованих списках вони зазвичай показуються ліворуч за допомогою лічильника, що зростає, такими як число або літера.
 
 {{EmbedInteractiveExample("pages/tabbed/li.html", "tabbed-shorter")}}
 
-## Attributes
+## Атрибути
 
-This element includes the [global attributes](/en-US/docs/Web/HTML/Global_attributes).
+Цей елемент приймає лише [глобальні атрибути](/en-US/docs/Web/HTML/Global_attributes).
 
 - `value`
-  - : This integer attribute indicates the current ordinal value of the list item as defined by the {{HTMLElement("ol")}} element. The only allowed value for this attribute is a number, even if the list is displayed with Roman numerals or letters. List items that follow this one continue numbering from the value set. The **value** attribute has no meaning for unordered lists ({{HTMLElement("ul")}}) or for menus ({{HTMLElement("menu")}}).
+  - : Цей цілочисельний атрибут вказує поточне порядкове значення елемента списку, що визначене елементом {{HTMLElement("ol")}}. Даний атрибут може мати лише числове значення навіть якщо список показуватися римськими цифрами або літерами. Елементи списку, що йдуть після, використовують це значення для нумерування. Атрибут **value** не впливає на невпорядковані списки ({{HTMLElement("ul")}}) або меню ({{HTMLElement("menu")}}).
 - `type` {{Deprecated_inline}} {{Non-standard_Inline}}
 
-  - : This character attribute indicates the numbering type:
+  - : Цей символьний атрибут вказує на тип нумерації:
 
-    - `a`: lowercase letters
-    - `A`: uppercase letters
-    - `i`: lowercase Roman numerals
-    - `I`: uppercase Roman numerals
-    - `1`: numbers
+    - `a`: маленькі літери
+    - `A`: великі літери
+    - `i`: маленькі римські числа
+    - `I`: великі римські числа
+    - `1`: числа
 
-    This type overrides the one used by its parent {{HTMLElement("ol")}} element, if any.
+    Цей тип перевизначає тип, який використовується його батьківським елементом <ol>, якщо такий є.
 
-    > **Note:** This attribute has been deprecated; use the CSS {{cssxref("list-style-type")}} property instead.
+    > **Note:** Цей атрибут застарілий; замість нього використовуйте CSS властивість {{cssxref("list-style-type")}}.
 
-## Examples
+## Приклади
 
-For more detailed examples, see the {{htmlelement("ol")}} and {{htmlelement("ul")}} pages.
+Для більш детальних прикладів, дивіться сторінки елементів {{htmlelement("ol")}} та {{htmlelement("ul")}}.
 
-### Ordered list
+### Впорядкований список
 
 ```html
 <ol>
-  <li>first item</li>
-  <li>second item</li>
-  <li>third item</li>
+  <li>перший елемент</li>
+  <li>другий елемент</li>
+  <li>третій елемент</li>
 </ol>
 ```
 
-#### Result
+#### Результат
 
-{{EmbedLiveSample("Ordered_list")}}
+{{EmbedLiveSample("Uporyadkovanii_spysok")}}
 
-### Ordered list with a custom value
+### Упорядкований список із користувацьким значенням
 
 ```html
 <ol type="I">
-  <li value="3">third item</li>
-  <li>fourth item</li>
-  <li>fifth item</li>
+  <li value="3">третій елемент</li>
+  <li>четвертий елемент</li>
+  <li>пʼятий елемент</li>
 </ol>
 ```
 
-#### Result
+#### Результат
 
-{{EmbedLiveSample("Ordered_list_with_a_custom_value")}}
+{{EmbedLiveSample("Uporyadkovanii_spysok_z_korystuvats'kym_znachennyam")}}
 
-### Unordered list
+### Невпорядкований список
 
 ```html
 <ul>
-  <li>first item</li>
-  <li>second item</li>
-  <li>third item</li>
+  <li>перший елемент</li>
+  <li>другий елемент</li>
+  <li>третій елемент</li>
 </ul>
 ```
 
-#### Result
+#### Результат
 
-{{EmbedLiveSample("Unordered_list")}}
+{{EmbedLiveSample("Nevporyadkovanii_spysok")}}
 
-## Technical summary
+## Технічний підсумок
 
 <table class="properties">
   <tbody>
     <tr>
       <th scope="row">
         <a href="/en-US/docs/Web/HTML/Content_categories"
-          >Content categories</a
+          >Категорії вмісту</a
         >
       </th>
-      <td>None.</td>
+      <td>Жодних.</td>
     </tr>
     <tr>
-      <th scope="row">Permitted content</th>
+      <th scope="row">Дозволений вміст</th>
       <td>
         <a href="/en-US/docs/Web/HTML/Content_categories#flow_content"
-          >Flow content</a
+          >Пототовий вміст</a
         >.
       </td>
     </tr>
     <tr>
-      <th scope="row">Tag omission</th>
+      <th scope="row">Пропуск тега</th>
       <td>
-        The end tag can be omitted if the list item is immediately followed by
-        another {{HTMLElement("li")}} element, or if there is no more
-        content in its parent element.
+        Кінцевий тег може бути пропущений, якщо наступний елемент це інший
+        елемент {{HTMLElement("li")}} або якщо більше немає
+        вмісту у його батьківському елементі.
       </td>
     </tr>
     <tr>
-      <th scope="row">Permitted parents</th>
+      <th scope="row">Дозволені батьківські елементи</th>
       <td>
-        An {{HTMLElement("ul")}}, {{HTMLElement("ol")}}, or
-        {{HTMLElement("menu")}} element. Though not a conforming usage,
-        the obsolete {{HTMLElement("dir")}} can also be a parent.
+        Елементи {{HTMLElement("ul")}}, {{HTMLElement("ol")}} або
+        {{HTMLElement("menu")}}. Хоча це не відповідає вимогам,
+        застарілий {{HTMLElement("dir")}} також може бути батьківським елементом.
       </td>
     </tr>
     <tr>
-      <th scope="row">Implicit ARIA role</th>
+      <th scope="row">Неявна роль ARIA</th>
       <td>
         <code
           ><a href="/en-US/docs/Web/Accessibility/ARIA/Roles/listitem_role"
             >listitem</a
           ></code
         >
-        when child of an
+        коли нащадок
         <code><a href="/en-US/docs/Web/HTML/Element/ol">ol</a></code
-        >, <code><a href="/en-US/docs/Web/HTML/Element/ul">ul</a></code> or
+        >, <code><a href="/en-US/docs/Web/HTML/Element/ul">ul</a></code> або
         <code><a href="/en-US/docs/Web/HTML/Element/menu">menu</a></code>
       </td>
     </tr>
     <tr>
-      <th scope="row">Permitted ARIA roles</th>
+      <th scope="row">Дозволені ролі ARIA</th>
       <td>
         <a href="/en-US/docs/Web/Accessibility/ARIA/Roles/menuitem_role"><code>menuitem</code></a>,
         <a href="/en-US/docs/Web/Accessibility/ARIA/Roles/menuitemcheckbox_role"><code>menuitemcheckbox</code></a>,
@@ -139,25 +139,25 @@ For more detailed examples, see the {{htmlelement("ol")}} and {{htmlelement("ul"
       </td>
     </tr>
     <tr>
-      <th scope="row">DOM interface</th>
+      <th scope="row">Інтерфейс DOM</th>
       <td>{{domxref("HTMLLIElement")}}</td>
     </tr>
   </tbody>
 </table>
 
-## Specifications
+## Специфікації
 
 {{Specifications}}
 
-## Browser compatibility
+## Сумісність з браузерами
 
 {{Compat}}
 
-## See also
+## Дивіться також
 
-- Other list-related HTML Elements: {{HTMLElement("ul")}}, {{HTMLElement("ol")}}, {{HTMLElement("menu")}}, and the obsolete {{HTMLElement("dir")}};
-- CSS properties that may be specially useful to style the `<li>` element:
+- Інші HTML елементи, що повʼязані зі списками: {{HTMLElement("ul")}}, {{HTMLElement("ol")}}, {{HTMLElement("menu")}} та застарілий {{HTMLElement("dir")}};
+- Властивості CSS, що можуть бути особливо корисними для надання стилів елементу `<li>`:
 
-  - the {{cssxref("list-style")}} property, to choose the way the ordinal is displayed,
-  - [CSS counters](/en-US/docs/Web/CSS/CSS_counter_styles/Using_CSS_counters), to handle complex nested lists,
-  - the {{cssxref("margin")}} property, to control the indent of the list item.
+  - властивість {{cssxref("list-style")}} – для вибору шляху показу нумерації,
+  - [CSS лічильники](/en-US/docs/Web/CSS/CSS_counter_styles/Using_CSS_counters) – для управління складними вкладеними списками,
+  - властивість {{cssxref("margin")}} – для керування відступом елемента списку.
