@@ -93,7 +93,7 @@ browser-compat: html.elements.li
       <th scope="row">Дозволений вміст</th>
       <td>
         <a href="/en-US/docs/Web/HTML/Content_categories#flow_content"
-          >Пототовий вміст</a
+          >Потоковий вміст</a
         >.
       </td>
     </tr>
