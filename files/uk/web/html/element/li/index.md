@@ -7,7 +7,7 @@ browser-compat: html.elements.li
 
 {{HTMLSidebar}}
 
-Елемент **`<li>`** [HTML](/en-US/docs/Web/HTML) використовується для створення елементів списку. Він повинен міститися у батьківських елементах: впорядкований список ({{HTMLElement("ol")}}), невпорядкований список ({{HTMLElement("ul")}}) або меню ({{HTMLElement("menu")}}). У меню та невпорядкованих списках елементи списків зазвичай показується за допомогою маркерів. У впорядкованих списках вони зазвичай показуються ліворуч за допомогою лічильника, що зростає, такими як число або літера.
+Елемент **`<li>`** [HTML](/en-US/docs/Web/HTML) використовується для створення елементів списку. Він повинен міститися в одному з таких батьківських елементів: впорядкований список ({{HTMLElement("ol")}}), невпорядкований список ({{HTMLElement("ul")}}) або меню ({{HTMLElement("menu")}}). У меню та невпорядкованих списках елементи списків зазвичай позначаються маркерами. У впорядкованих списках маркери здебільшого виводяться ліворуч у вигляді лічильника, що зростає – чисел або літер.
 
 {{EmbedInteractiveExample("pages/tabbed/li.html", "tabbed-shorter")}}
 
@@ -16,7 +16,7 @@ browser-compat: html.elements.li
 Цей елемент приймає лише [глобальні атрибути](/en-US/docs/Web/HTML/Global_attributes).
 
 - `value`
-  - : Цей цілочисельний атрибут вказує поточне порядкове значення елемента списку, що визначене елементом {{HTMLElement("ol")}}. Даний атрибут може мати лише числове значення навіть якщо список показуватися римськими цифрами або літерами. Елементи списку, що йдуть після, використовують це значення для нумерування. Атрибут **value** не впливає на невпорядковані списки ({{HTMLElement("ul")}}) або меню ({{HTMLElement("menu")}}).
+  - : Цей цілочисельний атрибут вказує поточне порядкове значення елемента списку, визначеного елементом {{HTMLElement("ol")}}. Даний атрибут може мати лише числове значення, навіть якщо список оформлений римськими цифрами або літерами. Елементи списку, що йдуть далі, використовують це значення для нумерування. Атрибут **value** не впливає на невпорядковані списки ({{HTMLElement("ul")}}) і меню ({{HTMLElement("menu")}}).
 - `type` {{Deprecated_inline}} {{Non-standard_Inline}}
 
   - : Цей символьний атрибут вказує на тип нумерації:
@@ -27,13 +27,13 @@ browser-compat: html.elements.li
     - `I`: великі римські числа
     - `1`: числа
 
-    Цей тип перевизначає тип, який використовується його батьківським елементом <ol>, якщо такий є.
+    Заданий таким чином тип перевизначає той, який використовується батьківським елементом <ol>, якщо такий є.
 
     > **Note:** Цей атрибут застарілий; замість нього використовуйте CSS властивість {{cssxref("list-style-type")}}.
 
 ## Приклади
 
-Для більш детальних прикладів, дивіться сторінки елементів {{htmlelement("ol")}} та {{htmlelement("ul")}}.
+Докладніші приклади дивіться на сторінках елементів {{htmlelement("ol")}} та {{htmlelement("ul")}}.
 
 ### Впорядкований список
 
@@ -47,9 +47,9 @@ browser-compat: html.elements.li
 
 #### Результат
 
-{{EmbedLiveSample("Uporyadkovanii_spysok")}}
+{{EmbedLiveSample("uporiadkovanyi-spysok")}}
 
-### Упорядкований список із користувацьким значенням
+### Упорядкований список із заданим значенням
 
 ```html
 <ol type="I">
@@ -61,7 +61,7 @@ browser-compat: html.elements.li
 
 #### Результат
 
-{{EmbedLiveSample("Uporyadkovanii_spysok_z_korystuvats'kym_znachennyam")}}
+{{EmbedLiveSample("uporiadkovanyi-spysok-iz-zadanym-znachenniam")}}
 
 ### Невпорядкований список
 
@@ -75,7 +75,7 @@ browser-compat: html.elements.li
 
 #### Результат
 
-{{EmbedLiveSample("Nevporyadkovanii_spysok")}}
+{{EmbedLiveSample("nevporiadkovanyi-spysok")}}
 
 ## Технічний підсумок
 
@@ -92,7 +92,7 @@ browser-compat: html.elements.li
     <tr>
       <th scope="row">Дозволений вміст</th>
       <td>
-        <a href="/en-US/docs/Web/HTML/Content_categories#flow_content"
+        <a href="/en-US/docs/Web/HTML/Content_categories#potokovyi-vmist"
           >Потоковий вміст</a
         >.
       </td>
@@ -100,7 +100,7 @@ browser-compat: html.elements.li
     <tr>
       <th scope="row">Пропуск тега</th>
       <td>
-        Кінцевий тег може бути пропущений, якщо наступний елемент це інший
+        Кінцевий тег може бути пропущений, якщо наступний елемент – ще один
         елемент {{HTMLElement("li")}} або якщо більше немає
         вмісту у його батьківському елементі.
       </td>
@@ -108,7 +108,7 @@ browser-compat: html.elements.li
     <tr>
       <th scope="row">Дозволені батьківські елементи</th>
       <td>
-        Елементи {{HTMLElement("ul")}}, {{HTMLElement("ol")}} або
+        Елементи {{HTMLElement("ul")}}, {{HTMLElement("ol")}} і
         {{HTMLElement("menu")}}. Хоча це не відповідає вимогам,
         застарілий {{HTMLElement("dir")}} також може бути батьківським елементом.
       </td>
@@ -149,7 +149,7 @@ browser-compat: html.elements.li
 
 {{Specifications}}
 
-## Сумісність з браузерами
+## Сумісність із браузерами
 
 {{Compat}}
 
@@ -158,6 +158,6 @@ browser-compat: html.elements.li
 - Інші HTML елементи, що повʼязані зі списками: {{HTMLElement("ul")}}, {{HTMLElement("ol")}}, {{HTMLElement("menu")}} та застарілий {{HTMLElement("dir")}};
 - Властивості CSS, що можуть бути особливо корисними для надання стилів елементу `<li>`:
 
-  - властивість {{cssxref("list-style")}} – для вибору шляху показу нумерації,
-  - [CSS лічильники](/en-US/docs/Web/CSS/CSS_counter_styles/Using_CSS_counters) – для управління складними вкладеними списками,
+  - властивість {{cssxref("list-style")}} – для вибору способу показу нумерації,
+  - [Лічильники CSS](/en-US/docs/Web/CSS/CSS_counter_styles/Using_CSS_counters) – для управління складними вкладеними списками,
   - властивість {{cssxref("margin")}} – для керування відступом елемента списку.
