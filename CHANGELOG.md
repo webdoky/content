@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2024-05-03 - 2024-05-10]
+
+* **Переклад(HTML):** web/html/element/li (#2980) ([9db3327a](https://github.com/webdoky/content/commit/9db3327aaa7e36d4277715723a1c2e9961d7a991))
+
 ## [2024-04-26 - 2024-05-03]
 
 * **Переклад(HTML):** web/html/element/article (#2977) ([c81850e7](https://github.com/webdoky/content/commit/c81850e7cc7e22dae572cccea211db355a230d80))
