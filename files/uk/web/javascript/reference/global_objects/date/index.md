@@ -407,7 +407,7 @@ function printElapsedTime(testFn) {
 const yourFunctionReturn = printElapsedTime(yourFunction);
 ```
 
-> **Примітка:** В браузерах, які мають підтримку {{domxref("performance_property", "Web Performance API", "", 1)}} — вимірів часу високої точності — метод {{domxref("Performance.now()")}} надасть значно точніші й надійніші виміри часу, аніж {{jsxref("Date.now()")}}.
+> **Примітка:** В браузерах, які мають підтримку {{domxref("Performance API", "API швидкодії", "", "nocode")}} — вимірів часу високої точності — метод {{domxref("Performance.now()")}} надасть значно точніші й надійніші виміри часу, аніж {{jsxref("Date.now()")}}.
 
 ### Отримання числа секунд від початку епохи ECMAScript
 
