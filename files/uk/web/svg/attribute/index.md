@@ -1,5 +1,6 @@
 ---
 title: Довідка атрибутів SVG
+short-title: Атрибути
 slug: Web/SVG/Attribute
 page-type: landing-page
 ---
