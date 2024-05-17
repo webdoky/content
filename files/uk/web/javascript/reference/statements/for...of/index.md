@@ -31,7 +31,10 @@ for (variable of iterable)
 
 Коли `for...of` ітерує ітероване, то спершу викликає метод ітерованого [`[@@iterator]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/iterator), котрий повертає [ітератор](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#protokol-iteratora), а потім раз за разом викликає метод результівного ітератора [`next()`](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#protokol-iteratora), аби отримати послідовність значень, що по черзі присвоюються `variable`.
 
-Вихід з циклу `for...of` відбувається, коли завершується ітератор (коли метод ітератора `next()` повертає об'єкт, що містить `done: true`). Також для зміни звичайного ходу виконання можна використовувати інструкції контролю ходу виконання. [`break`](/uk/docs/Web/JavaScript/Reference/Statements/break) спричиняє вихід з циклу і перехід до першої інструкції після тіла циклу, натомість [`continue`](/uk/docs/Web/JavaScript/Reference/Statements/continue) призводить до пропуску решти інструкцій поточної ітерації та переходу до наступної ітерації.
+Вихід з циклу `for...of` відбувається, коли завершується ітератор (коли метод ітератора `next()` повертає об'єкт, що містить `done: true`). Як і у випадку інших інструкцій циклів, всередині `statement` можна користуватися [інструкціями керування плином виконання](/uk/docs/Web/JavaScript/Reference/Statements#keruvannia-plynom-vykonannia):
+
+- {{jsxref("Statements/break", "break")}} зупиняє виконання `statement` і переходить до першої інструкції після циклу.
+- {{jsxref("Statements/continue", "continue")}} зупиняє виконання `statement` і переходить до наступної ітерації циклу.
 
 Якщо з циклу `for...of` відбувається ранній вихід (наприклад, якщо зустрілася інструкція `break` чи була викинута помилка), то викликається метод [`return()`](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#protokol-iteratora), щоб виконати прибирання.
 
