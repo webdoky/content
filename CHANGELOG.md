@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2024-05-17 - 2024-05-24]
+
+...
+
 ## [2024-05-10 - 2024-05-17]
 
 * **Оновлення перекладу(glossary):** glossary/deep_copy (#3008) ([00ff82c4](https://github.com/webdoky/content/commit/00ff82c4dfdbfbaebc5279a24e25658c233a64d0))
