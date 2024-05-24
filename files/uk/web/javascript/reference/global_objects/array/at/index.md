@@ -20,7 +20,7 @@ at(index)
 ### Параметри
 
 - `index`
-  - : Індекс елемента масиву, який повертається від нуля, що [пертворений на ціле число](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number#integer_conversion). Відʼємний індекс починає відлік з кінця масиву, якщо `index < 0` та присутній доступ до `index + array.length`.
+  - : Індекс елемента масиву, який повертається від нуля, що [перетворений на ціле число](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number#integer_conversion). Відʼємний індекс починає відлік з кінця масиву, якщо `index < 0` та присутній доступ до `index + array.length`.
 
 ### Повернене значення
 
