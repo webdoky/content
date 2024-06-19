@@ -378,6 +378,7 @@ function checkFileSize() {
     if (files[0].size > 75 * 1024) {
       // Перевірити умову
       FS.setCustomValidity("Вибраний файл не повинен бути більшим за 75 кБ");
+      FS.reportValidity();
       return;
     }
   }
