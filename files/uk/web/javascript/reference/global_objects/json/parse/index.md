@@ -149,19 +149,35 @@ console.log(map2);
 - "Вгадувати" на основі структури даних (наприклад, масив з масивів двох значень)
 - Якщо форма даних – фіксована, то на основі імені властивості (наприклад, всі властивості, що звуться `registry`, містять об'єкти `Map`).
 
-### JSON.parse() не допускає висячих ком
+### Неприйнятний JSON
+
+Коли `JSON.parse` отримує рядок, що не відповідає граматиці JSON, вона викидає помилку `SyntaxError`.
+
+Масиви та об'єкти у JSON не можуть мати [висячих ком](/uk/docs/Web/JavaScript/Reference/Trailing_commas):
 
 ```js example-bad
-// обидва викинуть SyntaxError
 JSON.parse("[1, 2, 3, 4, ]");
-JSON.parse('{"foo" : 1, }');
+// SyntaxError: Unexpected token ] in JSON at position 13
+
+JSON.parse('{"foo": 1, }');
+// SyntaxError: Unexpected token } in JSON at position 12
 ```
 
-### JSON.parse() не допускає одинарних лапок
+Рядки у JSON повинні бути обмежені подвійними (але не одинарними) лапками:
 
 ```js example-bad
-// викине SyntaxError
 JSON.parse("{'foo': 1}");
+// SyntaxError: Unexpected token ' in JSON at position 1
+
+JSON.parse("'string'");
+// SyntaxError: Unexpected token ' in JSON at position 0
+```
+
+Коли JSON записується всередині рядкового літерала JavaScript, слід або користуватися одинарними лапками для обмеження всього літерала, або екранувати подвійні лапки, що обмежують рядки всередині JSON:
+
+```js-nolint example-good
+JSON.parse('{"foo": 1}'); // OK
+JSON.parse("{\"foo\": 1}"); // OK
 ```
 
 ## Специфікації
