@@ -1,5 +1,5 @@
 ---
-title: "<script>: Елемент сценарію"
+title: "<script> – елемент сценарію"
 slug: Web/HTML/Element/script
 page-type: html-element
 browser-compat: html.elements.script
@@ -8,53 +8,6 @@ browser-compat: html.elements.script
 {{HTMLSidebar}}
 
 Елемент [HTML](/uk/docs/Web/HTML) **`<script>`** (сценарій) застосовується для вбудовування виконуваного коду чи даних; зазвичай це використовується для вбудовування чи посилання на код JavaScript. Елемент `<script>` також може застосовуватися з іншими мовами, як то GLSL – мовою програмування шейдерів [WebGL](/uk/docs/Web/API/WebGL_API), та [JSON](/uk/docs/Glossary/JSON).
-
-<table class="properties">
-  <tbody>
-    <tr>
-      <th scope="row">
-        <a href="/uk/docs/Web/HTML/Content_categories"
-          >Категорії вмісту</a
-        >
-      </th>
-      <td>
-        <a href="/uk/docs/Web/HTML/Content_categories#vmist-metadanykh">Вміст метаданих</a>,
-        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist">потоковий вміст</a>,
-        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist">оповідальний вміст</a>.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволений вміст</th>
-      <td>Динамічний сценарій, як то <code>text/javascript</code>.</td>
-    </tr>
-    <tr>
-      <th scope="row">Упускання тегів</th>
-      <td>{{no_tag_omission}}</td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені батьківські елементи</th>
-      <td>
-        Будь-який елемент, що приймає
-        <a href="/uk/docs/Web/HTML/Content_categories#vmist-metadanykh">вміст метаданих</a>, або ж будь-який елемент, що приймає
-        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist">оповідальний вміст</a>.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Неявна роль ARIA</th>
-      <td>
-        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role">Відповідної ролі немає</a>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені ролі ARIA</th>
-      <td>Дозволених ролей немає</td>
-    </tr>
-    <tr>
-      <th scope="row">Інтерфейс DOM</th>
-      <td>{{domxref("HTMLScriptElement")}}</td>
-    </tr>
-  </tbody>
-</table>
 
 ## Атрибути
 
@@ -93,7 +46,7 @@ browser-compat: html.elements.script
 
     Цей атрибут дає змогу усунути проблему **JavaScript, що блокує розбір сторінки**: браузеру не потрібно завантажувати й виконувати сценарії до продовження розбору. `async` в цьому випадку має подібну дію.
 
-- `fetchpriority` {{Experimental_Inline}}
+- `fetchpriority`
 
   - : Надає рекомендацію щодо відносного пріоритету отримання зовнішнього сценарію. Дозволені значення:
 
@@ -127,7 +80,7 @@ browser-compat: html.elements.script
 
 - `src`
   - : Цей атрибут вказує URI зовнішнього сценарію; може використовуватися як альтернатива вбудовуванню сценарію прямо в документ.
-- [**`type`**](/uk/docs/Web/HTML/Element/script/type)
+- [`type`](/uk/docs/Web/HTML/Element/script/type)
 
   - : Цей атрибут вказує тип сценарію.
     Значення цього атрибута – щось із наступного:
@@ -146,7 +99,7 @@ browser-compat: html.elements.script
         На відміну від класичних, модульні сценарії вимагають, для отримання з іншого походження, використання протоколу CORS.
     - [`speculationrules`](/uk/docs/Web/HTML/Element/script/type/speculationrules) {{experimental_inline}}
       - : Це значення вказує на те, що тіло елемента містить правила спекуляції.
-        Правила спекуляції приймають форму об'єкта JSON, що визначає, які ресурси повинні бути отримані наперед або візуалізовані наперед браузером. Це частина [API правил спекуляції](/uk/docs/Web/Performance/Speculative_loading#api-pravyl-spekuliatsii).
+        Правила спекуляції приймають форму об'єкта JSON, що визначає, які ресурси повинні бути отримані наперед або візуалізовані наперед браузером. Це частина {{domxref("Speculation Rules API", "API правил спекуляції", "", "nocode")}}.
     - **Будь-яке інше значення**
       - : Вміст всередині розглядається як масив даних і не обробляється самим браузером.
         Розробники повинні використовувати для позначення масивів даних дійсні типи MIME, котрі не є типами MIME JavaScript.
@@ -255,6 +208,55 @@ import { name as circleName } from "circle";
 ```html
 <script blocking="render" async src="async-script.js"></script>
 ```
+
+## Технічний підсумок
+
+<table class="properties">
+  <tbody>
+    <tr>
+      <th scope="row">
+        <a href="/uk/docs/Web/HTML/Content_categories"
+          >Категорії вмісту</a
+        >
+      </th>
+      <td>
+        <a href="/uk/docs/Web/HTML/Content_categories#vmist-metadanykh">Вміст метаданих</a>,
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist">потоковий вміст</a>,
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist">оповідальний вміст</a>.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволений вміст</th>
+      <td>Динамічний сценарій, наприклад, <code>text/javascript</code>.</td>
+    </tr>
+    <tr>
+      <th scope="row">Пропуск тега</th>
+      <td>Немає; і початковий, і кінцевий теги – обов'язкові.</td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені батьківські елементи</th>
+      <td>
+        Будь-який елемент, що приймає
+        <a href="/uk/docs/Web/HTML/Content_categories#vmist-metadanykh">вміст метаданих</a>, або ж будь-який елемент, що приймає
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist">оповідальний вміст</a>.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Неявна роль ARIA</th>
+      <td>
+        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role">Відповідної ролі немає</a>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені ролі ARIA</th>
+      <td>Дозволених ролей немає</td>
+    </tr>
+    <tr>
+      <th scope="row">Інтерфейс DOM</th>
+      <td>{{domxref("HTMLScriptElement")}}</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Специфікації
 

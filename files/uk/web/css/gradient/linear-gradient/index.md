@@ -16,27 +16,37 @@ browser-compat: css.types.image.gradient.linear-gradient
 ```css
 /* Градієнт під кутом 45 градусів,
   починається синім і закінчується червоним */
-linear-gradient(45deg, blue, red);
+linear-gradient(45deg, blue, red)
 
 /* Градієнт з нижнього правого кута у верхній лівий кут,
    починається синім і закінчується червоним */
-linear-gradient(to left top, blue, red);
+linear-gradient(to left top, blue, red)
+
+/* Інтерполяція в прямокутному кольоровому просторі */
+linear-gradient(in oklab, blue, red)
+
+/* Інтерполяція в полярному кольоровому просторі */
+linear-gradient(in hsl, blue, red)
+
+/* Інтерполяція в полярному кольоровому просторі
+   з довшим методом інтерполяції відтінку */
+linear-gradient(in hsl longer hue, blue, red)
 
 /* Зупинка кольору: градієнт йде знизу догори,
    починається синім, стає зеленим на 40% своєї довжини,
    і закінчується червоним */
-linear-gradient(0deg, blue, green 40%, red);
+linear-gradient(0deg, blue, green 40%, red)
 
 /* Підказка кольору: градієнт іде зліва направо,
    починається червоним, досягає середнього кольору
    на 10% своєї довжини,
    витрачаючи решту 90% своєї довжини на перехід до синього */
-linear-gradient(.25turn, red, 10%, blue);
+linear-gradient(.25turn, red, 10%, blue)
 
 /* Багатопозиційна зупинка кольору: градієнт під кутом 45 градусів,
    з червоною половиною знизу зліва і синьою половиною згори справа,
    з різкою лінією там, де градієнт переходить від червоного до синього */
-linear-gradient(45deg, red 0 50%, blue 50% 100%);
+linear-gradient(45deg, red 0 50%, blue 50% 100%)
 ```
 
 ### Значення
@@ -52,7 +62,7 @@ linear-gradient(45deg, red 0 50%, blue 50% 100%);
 - `<linear-color-stop>`
   - : Значення {{CSSxRef("&lt;color&gt;")}} для зупинки кольору, після якого стоять одна чи дві необов'язкові позиції зупинок, (кожна з яких – або {{CSSxRef("&lt;percentage&gt;")}}, або {{CSSxRef("&lt;length&gt;")}} відносно осі градієнта).
 - `<color-hint>`
-  - : Підказка інтерполяції, котра визначає те, як градієнт просувається між зупинками кольору. Довжина визначає те, у якій точці між двома кольоровими зупинками колір градієнта повинен досягнути середньої точки переходу кольору. Якщо цього значення немає, то середнє значення кольору досягається в середній точці між двома зупинками кольору.
+  - : Підказка {{glossary("interpolation", "інтерполяції")}}, котра визначає те, як градієнт просувається між зупинками кольору. Довжина визначає те, у якій точці між двома кольоровими зупинками колір градієнта повинен досягнути середньої точки переходу кольору. Якщо цього значення немає, то середнє значення кольору досягається в середній точці між двома зупинками кольору.
 
 > **Примітка:** Відображення [кольорових зупинок градієнтів CSS](#kompozytsiia-liniinykh-hradiientiv) відповідає тим само правилам, що й кольорові зупинки [градієнтів SVG](/uk/docs/Web/SVG/Tutorial/Gradients).
 
@@ -147,6 +157,54 @@ body {
 
 {{EmbedLiveSample("hradiient-shcho-pochynaietsia-na-60-svoiei-linii", 120, 120)}}
 
+### Інтерполяція в прямокутному кольоровому просторі
+
+```css hidden
+body {
+  width: 100vw;
+  height: 100vh;
+}
+```
+
+```css
+body {
+  background: linear-gradient(90deg in oklab, blue, red);
+}
+```
+
+{{EmbedLiveSample("interpoliatsiia-v-pryamokutnomu-kolorovomu-prostori", 120, 120)}}
+
+### Інтерполяція з відтінком
+
+```html hidden
+<div class="shorter">коротший відтінок</div>
+<div class="longer">довший відтінок</div>
+```
+
+```css hidden
+div {
+  height: 50vh;
+  color: white;
+  font-weight: bolder;
+}
+```
+
+У цьому прикладі інтерполяції використовується система кольорів [hsl](/uk/docs/Web/CSS/color_value/hsl), а інтерполюється [відтінок](/uk/docs/Web/CSS/hue).
+
+```css
+.shorter {
+  background: linear-gradient(90deg in hsl shorter hue, red, blue);
+}
+
+.longer {
+  background: linear-gradient(90deg in hsl longer hue, red, blue);
+}
+```
+
+Рамка згори використовує [коротшу інтерполяцію](/uk/docs/Web/CSS/hue-interpolation-method#korotshyi), що означає, що колір йде прямо від червоного до синього, використовуючи коротку дугу на [колірному колесі](/uk/docs/Glossary/Color_wheel). Рамка знизу використовує [довшу інтерполяцію](/uk/docs/Web/CSS/hue-interpolation-method#dovshyi), що означає, що колір йде від червоного до синього, використовуючи довшу дугу, проходячи через зелені, жовті та помаранчеві.
+
+{{EmbedLiveSample("interpoliatsiia-z-vidtinkom", 120, 120)}}
+
 ### Градієнт з колірними зупинками з багатьма положеннями
 
 Цей приклад демонструє колірні зупинки з багатьма положеннями, де сусідні кольори мають однакове значення колірної зупинки, утворюючи ефект смуг.
@@ -189,10 +247,7 @@ body {
 
 - [Використання градієнтів CSS](/uk/docs/Web/CSS/CSS_images/Using_CSS_gradients)
 - Інші функції градієнта: {{cssxref("gradient/repeating-linear-gradient", "repeating-linear-gradient()")}}, {{cssxref("gradient/radial-gradient", "radial-gradient()")}}, {{cssxref("gradient/repeating-radial-gradient", "repeating-radial-gradient()")}}, {{cssxref("gradient/conic-gradient", "conic-gradient()")}}, {{cssxref("gradient/repeating-conic-gradient", "repeating-conic-gradient()")}}
+- [`<hue-interpolation-method>`](/uk/docs/Web/CSS/hue-interpolation-method)
+- [`<color-interpolation-method>`](/uk/docs/Web/CSS/color-interpolation-method)
 - {{CSSxRef("&lt;image&gt;")}}
-- {{cssxref("element", "element()")}}
-- {{cssxref("image/image","image()")}}
-- {{cssxref("image/image-set","image-set()")}}
-- {{cssxref("cross-fade", "cross-fade()")}}
 - [Модуль зображень CSS](/uk/docs/Web/CSS/CSS_images)
-- [Нові функції, градієнти та барви у Кольорах CSS (Рівень 4)](https://developer.mozilla.org/en-US/blog/css-color-module-level-4/) на блозі MDN (2023)

@@ -19,13 +19,9 @@ browser-compat: html.elements.button
 
 - `autofocus`
   - : Цей булів атрибут вказує, що кнопка повинна отримати [фокус](/uk/docs/Web/API/HTMLElement/focus) введення, коли сторінка завантажилась. **Лише один елемент в документі може мати такий атрибут.**
-- `autocomplete` {{non-standard_inline}}
-  - : Цей атрибут {{HTMLElement("button")}} є нестандартним, специфічним для Firefox. На відміну від інших браузерів, [Firefox зберігає динамічний стан вимкненості (англ.)](https://stackoverflow.com/questions/5985839/bug-with-firefox-disabled-attribute-of-input-not-resetting-when-refreshing) елемента {{HTMLElement("button")}} між завантаженнями сторінки. Встановлення на кнопці `autocomplete="off"` вимикає цю функціональність; дивіться [ваду Firefox 654072](https://bugzil.la/654072).
 - `disabled`
 
   - : Цей булів атрибут не дає користувачеві взаємодіяти з кнопкою: вона не може бути натиснута чи отримати фокус.
-
-    Firefox, на відміну від решти браузерів, [зберігає динамічний стан вимкненості](https://stackoverflow.com/questions/5985839/bug-with-firefox-disabled-attribute-of-input-not-resetting-when-refreshing) елемента {{HTMLElement("button")}} між завантаженнями сторінки. Використовуйте атрибут [`autocomplete`](#autocomplete), щоб контролювати цю функціональність.
 
 - `form`
 
@@ -238,8 +234,8 @@ Firefox додасть кнопці, що має фокус, дрібний пу
       </td>
     </tr>
     <tr>
-      <th scope="row">Упускання тегів</th>
-      <td>{{no_tag_omission}}</td>
+      <th scope="row">Пропуск тега</th>
+      <td>Немає; і початковий, і кінцевий теги – обов'язкові.</td>
     </tr>
     <tr>
       <th scope="row">Дозволені батьківські елементи</th>

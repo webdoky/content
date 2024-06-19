@@ -18,11 +18,15 @@ browser-compat: html.elements.textarea
 - Атрибути `rows` і `cols`, що дають змогу задати точний розмір, котрий займе `<textarea>`. Задавати їх – добре для сталості, адже усталена логіка браузера може відрізнятися.
 - Усталений вміст, введений між початковим і кінцевим тегами. `<textarea>` не підтримує атрибут `value`.
 
-Крім цього, елемент `<textarea>` підтримує декілька атрибутів, спільних з `<input>` форми, як то `autocomplete`, `autofocus`, `disabled`, `placeholder`, `readonly` та `required`.
+Крім цього, елемент `<textarea>` підтримує декілька атрибутів, спільних з елементом `<input>`, як то `autocapitalize`, `autocomplete`, `autofocus`, `disabled`, `placeholder`, `readonly` та `required`.
 
 ## Атрибути
 
-Цей елемент включає [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
+Цей елемент приймає [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
+
+- `autocapitalize`
+
+  - : Контролює те, чи додаються великі літери до тексту, введеного у поля вводу, а також, якщо так, то яким чином. Шукайте більше інформації на сторінці глобального атрибута [`autocapitalize`](/uk/docs/Web/HTML/Global_attributes/autocapitalize).
 
 - `autocomplete`
 
@@ -93,7 +97,7 @@ browser-compat: html.elements.textarea
 
 ## Оформлення засобами CSS
 
-`<textarea>` є [заміщеним елементом](/uk/docs/Web/CSS/Replaced_element): він має природні розміри, як растрове зображення. Усталено його значення {{cssxref("display")}} – `inline-block`. У порівнянні з іншими елементами форми його порівняно легко оформлювати, адже його рамкову модель, шрифти, кольорову гаму тощо легко змінити за допомогою звичайного CSS.
+`<textarea>` є [заміщеним елементом](/uk/docs/Web/CSS/Replaced_element): він має природні розміри, як растрове зображення. Усталено його значення {{cssxref("display")}} – `inline-block`. У порівнянні з іншими елементами форми його порівняно легко оформлювати, адже його рамкову модель, шрифти, колірну гаму тощо легко змінити за допомогою звичайного CSS.
 
 [Оформлення форм HTML](/uk/docs/Learn/Forms/Styling_web_forms) пропонує трохи корисних порад щодо оформлення елементів `<textarea>`.
 
@@ -129,15 +133,22 @@ textarea:valid {
 
 ### Базовий приклад
 
-Наступний приклад демонструє дуже просту текстову область з низкою рядів та колонок і певним початковим умістом.
+Наступний приклад демонструє текстову область з заданою кількістю рядів і колонок, певним усталеним вмістом і стилями CSS, що не дають користувачам робити елемент більшим за 500px завширшки та 130px заввишки:
 
 ```html
-<textarea name="textarea" rows="10" cols="50">Напишіть тут щось</textarea>
+<textarea name="textarea" rows="5" cols="15">Напишіть тут щось</textarea>
+```
+
+```css
+textarea {
+  max-height: 130px;
+  max-width: 500px;
+}
 ```
 
 #### Результат
 
-{{EmbedLiveSample('bazovyi-pryklad','600','150')}}
+{{EmbedLiveSample('bazovyi-pryklad')}}
 
 ### Приклад з використанням "minlength" і "maxlength"
 
@@ -149,9 +160,16 @@ textarea:valid {
 </textarea>
 ```
 
+```css
+textarea {
+  max-height: 130px;
+  max-width: 500px;
+}
+```
+
 #### Результат
 
-{{EmbedLiveSample('pryklad-z-vykorystanniam-minlength-i-maxlength','600','80')}}
+{{EmbedLiveSample('pryklad-z-vykorystanniam-minlength-i-maxlength')}}
 
 Зверніть увагу, що `minlength` не заважає користувачеві прибрати символи так, щоб кількість введених перейшла межу мінімуму, але робить значення, введене в `<textarea>`, недійсним. Також зверніть увагу, що навіть коли задано значення `minlength` (наприклад, 3), порожня `<textarea>` все одно вважається дійсною, якщо на додачу немає атрибута `required`.
 
@@ -167,30 +185,45 @@ textarea:valid {
   placeholder="Текст коментаря."></textarea>
 ```
 
-#### Результат
-
-{{EmbedLiveSample('pryklad-z-vykorystanniam-placeholder','600','100')}}
-
-> **Примітка:** Заповнювачі повинні застосовуватися лише для демонстрування типу даних, котрий повинен бути введений у форму; вони _не_ є заміною доброго елемента {{HTMLElement("label")}}, зв'язаного з полем. Дивіться розгорнуте пояснення в [Підписах `<input>`](/uk/docs/Web/HTML/Element/input#pidpysy).
-
-### Disabled і readonly
-
-Цей приклад демонструє два елементи `<textarea>`, один з яких має `disabled`, а інший – `readonly`. Пограйтесь з обома – і побачите різницю в поведінці: елемент `disabled` не можна жодним чином вибрати (а його значення – не подається), натомість елемент `readonly` можна вибрати, а його вміст – скопіювати (а ще – його значення подається); лишень не можна редагувати цей вміст.
-
-> **Примітка:** У браузерах, відмінних від Firefox, як то хромі, вміст текстової області з `disabled` може бути доступним для вибору й копіювання.
-
-```html
-<textarea name="textarea" rows="5" cols="30" disabled>
-Я – вимкнена текстова область.
-</textarea>
-<textarea name="textarea" rows="5" cols="30" readonly>
-Я – текстова область лише для зчитування.
-</textarea>
+```css
+textarea {
+  max-height: 130px;
+  max-width: 500px;
+}
 ```
 
 #### Результат
 
-{{EmbedLiveSample('disabled-i-readonly','600','100')}}
+{{EmbedLiveSample('pryklad-z-vykorystanniam-placeholder')}}
+
+> **Примітка:** Заповнювачі повинні застосовуватися лише для демонстрування типу даних, котрий повинен бути введений у форму; вони _не_ є заміною доброго елемента {{HTMLElement("label")}}, зв'язаного з полем. Дивіться розгорнуте пояснення в [Підписах `<input>`](/uk/docs/Web/HTML/Element/input#pidpysy).
+
+### Текстові області з disabled і readonly
+
+Цей приклад демонструє два елементи `<textarea>`: один з атрибутом [`readonly`](/uk/docs/Web/HTML/Attributes/readonly), а інший – з атрибутом [`disabled`](/uk/docs/Web/HTML/Attributes/disabled).
+Не можна редагувати вміст жодного з них, але елемент з атрибутом `readonly` може отримувати фокус, і його значення подається в формах.
+Значення елемента з атрибутом `disabled` не подається, і він не може отримати фокус.
+
+```html
+<textarea name="textarea" rows="5" cols="30" readonly>
+Я – текстова область лише для зчитування.
+</textarea>
+<textarea name="textarea" rows="5" cols="30" disabled>
+Я – вимкнена текстова область.
+</textarea>
+```
+
+```css
+textarea {
+  display: block;
+  resize: horizontal;
+  max-width: 500px;
+}
+```
+
+#### Результат
+
+{{EmbedLiveSample('tekstovi-oblasti-z-disabled-i-readonly','','230')}}
 
 ## Технічний підсумок
 
@@ -236,8 +269,8 @@ textarea:valid {
       <td>Текст</td>
     </tr>
     <tr>
-      <th scope="row">Упускання тега</th>
-      <td>{{no_tag_omission}}</td>
+      <th scope="row">Пропуск тега</th>
+      <td>Немає; і початковий, і кінцевий теги – обов'язкові.</td>
     </tr>
     <tr>
       <th scope="row">Дозволені батьківські елементи</th>
@@ -279,18 +312,17 @@ textarea:valid {
 
 ## Дивіться також
 
-Інші формові елементи:
-
-- {{HTMLElement("form")}}
-- {{HTMLElement("button")}}
-- {{HTMLElement("datalist")}}
-- {{HTMLElement("legend")}}
-- {{HTMLElement("label")}}
-- {{HTMLElement("select")}}
-- {{HTMLElement("optgroup")}}
-- {{HTMLElement("option")}}
-- {{HTMLElement("input")}}
-- {{HTMLElement("fieldset")}}
-- {{HTMLElement("output")}}
-- {{HTMLElement("progress")}}
-- {{HTMLElement("meter")}}
+- Інші формові елементи:
+  - {{HTMLElement("form")}}
+  - {{HTMLElement("button")}}
+  - {{HTMLElement("datalist")}}
+  - {{HTMLElement("legend")}}
+  - {{HTMLElement("label")}}
+  - {{HTMLElement("select")}}
+  - {{HTMLElement("optgroup")}}
+  - {{HTMLElement("option")}}
+  - {{HTMLElement("input")}}
+  - {{HTMLElement("fieldset")}}
+  - {{HTMLElement("output")}}
+  - {{HTMLElement("progress")}}
+  - {{HTMLElement("meter")}}

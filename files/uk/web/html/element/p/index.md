@@ -13,63 +13,6 @@ browser-compat: html.elements.p
 
 {{EmbedInteractiveExample("pages/tabbed/p.html", "tabbed-standard")}}
 
-<table class="properties">
-  <tbody>
-    <tr>
-      <th scope="row">
-        <a href="/uk/docs/Web/HTML/Content_categories"
-          >Категорії вмісту</a
-        >
-      </th>
-      <td>
-        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
-          >Потоковий вміст</a
-        >, дотиковий вміст.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволений вміст</th>
-      <td>
-        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
-          >Оповідальний вміст</a
-        >.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Пропуск тега</th>
-      <td>
-        Початковий тег – обов'язковий. Кінцевий тег може бути пропущений, якщо після елемента {{HTMLElement("p")}} зразу стоїть елемент
-        {{HTMLElement("address")}}, {{HTMLElement("article")}}, {{HTMLElement("aside")}}, {{HTMLElement("blockquote")}}, {{HTMLElement("details")}}, {{HTMLElement("div")}}, {{HTMLElement("dl")}}, {{HTMLElement("fieldset")}}, {{HTMLElement("figcaption")}}, {{HTMLElement("figure")}}, {{HTMLElement("footer")}}, {{HTMLElement("form")}}, {{HTMLElement("Heading_Elements", "h1")}}, {{HTMLElement("Heading_Elements", "h2")}}, {{HTMLElement("Heading_Elements", "h3")}}, {{HTMLElement("Heading_Elements", "h4")}}, {{HTMLElement("Heading_Elements", "h5")}}, {{HTMLElement("Heading_Elements", "h6")}}, {{HTMLElement("header")}}, {{HTMLElement("hgroup")}}, {{HTMLElement("hr")}}, {{HTMLElement("main")}}, {{HTMLElement("menu")}}, {{HTMLElement("nav")}}, {{HTMLElement("ol")}}, {{HTMLElement("pre")}}, {{HTMLElement("search")}}, {{HTMLElement("section")}}, {{HTMLElement("table")}}, {{HTMLElement("ul")}} чи інший {{HTMLElement("p")}}, або якщо в батьківському елементі немає більше вмісту і батьківський елемент не є елементом {{HTMLElement("a")}}, {{HTMLElement("audio")}}, {{HTMLElement("del")}}, {{HTMLElement("ins")}}, {{HTMLElement("map")}}, {{HTMLElement("noscript")}} або {{HTMLElement("video")}}, або ж автономним своєрідним елементом.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені батьківські елементи</th>
-      <td>
-        Усі елементи, що приймають
-        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
-          >потоковий вміст</a
-        >.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Неявна роль ARIA</th>
-      <td>
-        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/structural_roles"
-          >paragraph</a
-        >
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені ролі ARIA</th>
-      <td>Усі</td>
-    </tr>
-    <tr>
-      <th scope="row">Інтерфейс DOM</th>
-      <td>{{domxref("HTMLParagraphElement")}}</td>
-    </tr>
-  </tbody>
-</table>
-
 ## Атрибути
 
 Цей елемент включає лише [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
@@ -177,6 +120,83 @@ p {
   margin-bottom: 2em; /* збільшити пропуск після абзацу */
 }
 ```
+
+## Технічний підсумок
+
+<table class="properties">
+  <tbody>
+    <tr>
+      <th scope="row">
+        <a href="/uk/docs/Web/HTML/Content_categories"
+          >Категорії вмісту</a
+        >
+      </th>
+      <td>
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
+          >Потоковий вміст</a
+        >, відчутний вміст.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволений вміст</th>
+      <td>
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
+          >Оповідальний вміст</a
+        >.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Пропуск тега</th>
+      <td>
+        The start tag is required. Початковий тег – обов'язковий. Кінцевий тег можна пропустити, якщо після елемента
+        {{HTMLElement("p")}} зразу стоїть елемент
+        {{HTMLElement("address")}},
+        {{HTMLElement("article")}}, {{HTMLElement("aside")}},
+        {{HTMLElement("blockquote")}}, {{HTMLElement("details")}}, {{HTMLElement("div")}},
+        {{HTMLElement("dl")}}, {{HTMLElement("fieldset")}},
+        {{HTMLElement("figcaption")}}, {{HTMLElement("figure")}},
+        {{HTMLElement("footer")}}, {{HTMLElement("form")}},
+        {{HTMLElement("Heading_Elements", "h1")}}, {{HTMLElement("Heading_Elements", "h2")}},
+        {{HTMLElement("Heading_Elements", "h3")}}, {{HTMLElement("Heading_Elements", "h4")}},
+        {{HTMLElement("Heading_Elements", "h5")}}, {{HTMLElement("Heading_Elements", "h6")}},
+        {{HTMLElement("header")}}, {{HTMLElement("hgroup")}}, {{HTMLElement("hr")}},
+        {{HTMLElement("main")}}, {{HTMLElement("menu")}}, {{HTMLElement("nav")}},
+        {{HTMLElement("ol")}}, {{HTMLElement("pre")}}, {{HTMLElement("search")}},
+        {{HTMLElement("section")}}, {{HTMLElement("table")}},
+        {{HTMLElement("ul")}} або ще один {{HTMLElement("p")}},
+        або ж якщо в батьківському елементі більше немає вмісту і цей батьківський елемент не є елементом {{HTMLElement("a")}}, {{HTMLElement("audio")}},
+        {{HTMLElement("del")}}, {{HTMLElement("ins")}}, {{HTMLElement("map")}},
+        {{HTMLElement("noscript")}} або {{HTMLElement("video")}},
+        або автономним кастомним елементом.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені батьківські елементи</th>
+      <td>
+        Всі елементи, що приймають
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist">
+          потоковий вміст
+        </a>.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Неявна роль ARIA</th>
+      <td>
+        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/structural_roles"
+          >paragraph</a
+        >
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені ролі ARIA</th>
+      <td>Усі</td>
+    </tr>
+    <tr>
+      <th scope="row">Інтерфейс DOM</th>
+      <td>{{domxref("HTMLParagraphElement")}}</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Специфікації
 

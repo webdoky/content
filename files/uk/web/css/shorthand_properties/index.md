@@ -226,6 +226,7 @@ CSS має універсальну властивість-скорочення,
   - {{cssxref("list-style")}}
   - {{cssxref("margin")}}
   - {{cssxref("mask")}}
+  - {{cssxref("mask-border")}}
   - {{cssxref("offset")}}
   - {{cssxref("outline")}}
   - {{cssxref("overflow")}}
@@ -238,4 +239,5 @@ CSS має універсальну властивість-скорочення,
   - {{cssxref("scroll-timeline")}}
   - {{cssxref("text-decoration")}}
   - {{cssxref("text-emphasis")}}
+  - {{cssxref("text-wrap")}}
   - {{cssxref("transition")}}

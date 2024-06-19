@@ -1,7 +1,8 @@
 ---
 title: "SVG: масштабована векторна графіка"
+short-title: SVG
 slug: Web/SVG
-page-type: svg-element
+page-type: landing-page
 ---
 
 {{SVGRef}}
@@ -41,5 +42,6 @@ SVG розробляється [Консорціумом Всесвітньог�
 - [Настанови з написання SVG (англ.)](https://jwatt.org/svg/authoring/)
 - [SVG як зображення](/uk/docs/Web/SVG/SVG_as_an_Image)
 - [Анімація SVG за допомогою SMIL](/uk/docs/Web/SVG/SVG_animation_with_SMIL)
+- [Підручник SVG з різдвяним календарем](https://svg-tutorial.com)
 - [Мистецька галерея SVG (англ.)](https://www1.plurib.us/svg_gallery/)
 - [D3](https://d3js.org) (бібліотека JavaScript для візуалізації даних за допомогою HTML, SVG та CSS)

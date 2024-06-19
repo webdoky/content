@@ -5,7 +5,7 @@ page-type: css-shorthand-property
 browser-compat: css.properties.border
 ---
 
-{{CSSRef("CSS Borders")}}
+{{CSSRef}}
 
 [Скорочення](/uk/docs/Web/CSS/Shorthand_properties) [CSS](/uk/docs/Web/CSS) **`border`** ("межі") встановлює межі елемента. Воно задає значення властивостей {{Cssxref("border-width")}}, {{Cssxref("border-style")}} та {{Cssxref("border-color")}}.
 

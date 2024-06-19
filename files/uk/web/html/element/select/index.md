@@ -17,7 +17,7 @@ browser-compat: html.elements.select
 
 Елемент `<select>` має певні унікальні атрибути для контролю над собою, наприклад, `multiple` для задання можливості (чи неможливості) вибору кількох варіантів та `size` з кількістю варіантів, котру можна обрати водночас. Також він приймає більшість звичних атрибутів полів вводу, наприклад, `required`, `disabled`, `autofocus` тощо.
 
-Можна вкладати елементи `<option>` в елементи {{htmlelement("optgroup")}}, щоб створити розмежовані групи варіантів всередині спадного списку.
+Можна вкладати елементи {{HTMLElement("option")}} в елементи {{HTMLElement("optgroup")}}, щоб створити розмежовані групи варіантів всередині спадного списку. Також можна додавати елементи {{HTMLElement("hr")}}, щоб утворювати розділювачі, що служать візуальними розривами між варіантами.
 
 Інші приклади використання доступні за посиланням: [Нативні віджети форми: Вміст спадного списку](/uk/docs/Learn/Forms/Other_form_controls#spadni-kontrolni-elementy).
 
@@ -35,7 +35,7 @@ browser-compat: html.elements.select
 
   - : Елемент {{HTMLElement("form")}}, з котрим елемент `<select>` пов'язаний (його _форма-власник_). Значення цього атрибута мусить відповідати значенню атрибута [`id`](/uk/docs/Web/HTML/Global_attributes#id) елемента `<form>` в тому самому документі. (Якщо цей атрибут не вказаний, то `<select>` пов'язується з елементом `<form>`, котрий є його предком, якщо такий предок є.)
 
-    Цей атрибут дає змогу пов'язати елементи `<select>` із `<form>`'ами будь-де в документі, не поміщаючи їх у відповідний `<form>`. Також така поведінка змушує нехтувати батьківським елементом `<form>`.
+    Цей атрибут дає змогу пов'язувати елементи `<select>` із формами будь-де в документі, не поміщаючи їх у відповідний `<form>`. Також така поведінка змушує нехтувати батьківським елементом `<form>`.
 
 - `multiple` (декілька)
   - : Цей булів атрибут показує, що зі списку можуть бути обрані кілька варіантів. Якщо він не вказаний, то лише один варіант може бути обраним водночас. Коли вказаний `multiple`, більшість браузерів замість однорядкового спадного списку показують віконце списку з прокруткою.
@@ -153,6 +153,48 @@ browser-compat: html.elements.select
 
 {{EmbedLiveSample("prostyi-select", "", "100")}}
 
+### Select з групуванням варіантів
+
+Наступний приклад створює спадне меню з групуванням за допомогою {{HTMLElement("optgroup")}} і {{HTMLElement("hr")}}, щоб користувачу було легше зрозуміти вміст цього спадного меню.
+
+```html
+<label for="hr-select">Ваша улюблена їжа</label> <br />
+
+<select name="foods" id="hr-select">
+  <option value="">Оберіть їжу</option>
+  <hr />
+  <optgroup label="Фрукти">
+    <option value="apple">Яблука</option>
+    <option value="banana">Банани</option>
+    <option value="cherry">Вишні</option>
+    <option value="damson">Сливи</option>
+  </optgroup>
+  <hr />
+  <optgroup label="Овочі">
+    <option value="artichoke">Артишоки</option>
+    <option value="broccoli">Броколі</option>
+    <option value="cabbage">Капуста</option>
+  </optgroup>
+  <hr />
+  <optgroup label="М'ясо">
+    <option value="beef">Яловичина</option>
+    <option value="chicken">Курка</option>
+    <option value="pork">Свинина</option>
+  </optgroup>
+  <hr />
+  <optgroup label="Риба">
+    <option value="cod">Тріска</option>
+    <option value="haddock">Пікша</option>
+    <option value="salmon">Лосось</option>
+    <option value="turbot">Калкан</option>
+  </optgroup>
+</select>
+```
+
+#### Результат
+
+{{EmbedLiveSample("select-z-hrupuvanniam-variantiv", "", "100")}}
+
 ### Поглиблений приклад select з використанням багатьох можливостей
 
 Наступний приклад – складніший, він показує більше можливостей, котрі можна використати з елементом `<select>`:
@@ -190,35 +232,36 @@ browser-compat: html.elements.select
 
 Цей приклад показує, як можна було б використати трохи CSS та JavaScript для більш детального власного оформлення рамки `<select>`.
 
-Цей приклад по суті:
+Сам приклад:
 
 - Клонує контекст `<select>` (елементи [`<option>`](/uk/docs/Web/HTML/Element/option)) в обгортку-предка та наново реалізує стандартну очікувану поведінку за допомогою додаткових елементів HTML та JavaScript. В тому числі базову поведінку табуляції для надання доступності з клавіатури.
 - Відтворює певні стандартні нативні атрибути у вигляді `data-`-атрибутів нових елементів, щоб керувати станом та CSS.
 
-> **Примітка:** Не всі нативні можливості підтримуються, це лишень підтвердження концепції. Реалізація заснована на стандартному HTML, але таких само результатів можна досягти на основі JSON-даних, власного HTML чи інших рішень.
+> **Примітка:** Не всі нативні можливості підтримуються; це лишень підтвердження концепції. Реалізація заснована на стандартному HTML, але таких само результатів можна було б досягти на основі JSON-даних, власного HTML чи інших рішень.
 
 #### HTML
 
 ```html
 <form>
-  <fieldset>
-    <legend>Стандартні контрольні елементи</legend>
-    <select name="1A" id="select" autocomplete="off" required>
+  <section>
+    <label for="select-standard">Стандартні контрольні елементи:</label>
+    <select name="1A" id="select-standard">
       <option>Морква</option>
       <option>Горох</option>
       <option>Квасоля</option>
       <option>Дихлордифенілтрихлорметилметан</option>
     </select>
-  </fieldset>
-  <fieldset id="custom">
-    <legend>Власні контрольні елементи</legend>
-    <select name="2A" id="select" autocomplete="off" required>
+  </section>
+  <hr />
+  <section id="custom">
+    <label for="select-custom">Власні контрольні елементи:</label>
+    <select name="2A" id="select-custom">
       <option>Морква</option>
       <option>Горох</option>
       <option>Квасоля</option>
       <option>Дихлордифенілтрихлорметилметан</option>
     </select>
-  </fieldset>
+  </section>
 </form>
 ```
 
@@ -227,17 +270,26 @@ browser-compat: html.elements.select
 ```css
 body {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  padding: 20px;
+}
+
+hr {
+  margin: 20px 0;
+}
+
+label {
+  margin-right: 10px;
 }
 
 .select:focus {
   border-color: blue;
 }
 
-html body form fieldset#custom div.select[data-multiple] div.header {
+.select[data-multiple] header {
   display: none;
 }
 
-html body form fieldset#custom div.select div.header {
+.select div.header {
   content: "↓";
   display: flex;
   flex: 1;
@@ -252,7 +304,7 @@ html body form fieldset#custom div.select div.header {
   border-radius: inherit;
 }
 
-html body form fieldset#custom div.select div.header::after {
+.select .header::after {
   content: "↓";
   align-self: stretch;
   display: flex;
@@ -263,7 +315,7 @@ html body form fieldset#custom div.select div.header::after {
   padding: 0.5em;
 }
 
-html body form fieldset#custom div.select div.header:hover::after {
+.select .header:hover::after {
   background-color: blue;
 }
 
@@ -277,16 +329,14 @@ html body form fieldset#custom div.select div.header:hover::after {
   flex: 1;
   display: none;
 }
-
 .select .header select optgroup {
   display: none;
 }
-
 .select select div.option {
   display: none;
 }
 
-html body form fieldset#custom div.select {
+.select {
   user-select: none;
   box-sizing: border-box;
   position: relative;
@@ -298,21 +348,21 @@ html body form fieldset#custom div.select {
   display: inline-block;
 }
 
-html body form fieldset#custom div.select:focus,
-html body form fieldset#custom div.select:hover {
+.select:focus,
+.select:hover {
   border-color: blue;
 }
 
-html body form fieldset#custom div.select[data-open] {
+.select[data-open] {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-html body form fieldset#custom div.select[data-open] datalist {
+.select[data-open] datalist {
   display: initial;
 }
 
-html body form fieldset#custom div.select datalist {
+.select datalist {
   appearance: none;
   position: absolute;
   border-style: solid;
@@ -327,7 +377,7 @@ html body form fieldset#custom div.select datalist {
   border-bottom-right-radius: 4px;
 }
 
-html body form fieldset#custom div.select datalist div.option {
+.select datalist .option {
   background-color: white;
   margin-bottom: 1px;
   cursor: pointer;
@@ -335,44 +385,32 @@ html body form fieldset#custom div.select datalist div.option {
   border-width: 0;
 }
 
-html body form fieldset#custom div.select datalist div.option:hover,
-html body form fieldset#custom div.select datalist div.option:focus,
-html body form fieldset#custom div.select datalist div.option:checked {
+.select datalist .option:hover,
+.select datalist .option:focus,
+.select datalist .option:checked {
   background-color: blue;
   color: white;
 }
 
-html
-  body
-  form
-  fieldset#custom
-  div.select
-  div.optgroup
-  div.option[data-disabled] {
+.select .optgroup .option[data-disabled] {
   color: gray;
 }
 
-html
-  body
-  form
-  fieldset#custom
-  div.select
-  div.optgroup
-  div.option[data-checked] {
+.select .optgroup .option[data-checked] {
   background-color: blue;
   color: white;
 }
 
-html body form fieldset#custom div.select div.optgroup div.label {
+.select .optgroup .label {
   font-weight: bold;
 }
 
-html body form fieldset#custom div.select div.optgroup div.option div.label {
+.select .optgroup .option .label {
   font-weight: normal;
   padding: 0.25em;
 }
 
-html body form fieldset#custom div.select div.header span {
+.select .header span {
   flex: 1;
   padding: 0.5em;
 }
@@ -537,7 +575,11 @@ document.forms[0].onsubmit = (e) => {
 
 #### Результат
 
-{{EmbedGHLiveSample("html-examples/custom-select", '100%', 300)}}
+{{EmbedLiveSample("vlasne-oformlennia-select", "100%", "270")}}
+
+## Занепокоєння щодо доступності
+
+Елемент `<hr>` усередині `<select>` слід розглядати як суто декоративний, оскільки він наразі не відображається у дереві доступності, а отже – не видається допоміжним технологіям.
 
 ## Технічний підсумок
 
@@ -580,13 +622,13 @@ document.forms[0].onsubmit = (e) => {
     <tr>
       <th scope="row">Дозволений вміст</th>
       <td>
-        Нуль чи більше елементів {{HTMLElement("option")}} або
-        {{HTMLElement("optgroup")}}.
+        Нуль чи більше елементів {{HTMLElement("option")}},
+        {{HTMLElement("optgroup")}} або {{HTMLElement("hr")}}.
       </td>
     </tr>
     <tr>
-      <th scope="row">Упущення тегів</th>
-      <td>{{no_tag_omission}}</td>
+      <th scope="row">Пропуск тега</th>
+      <td>Немає; і початковий, і кінцевий теги – обов'язкові.</td>
     </tr>
     <tr>
       <th scope="row">Дозволені предки</th>
@@ -626,6 +668,6 @@ document.forms[0].onsubmit = (e) => {
 
 ## Дивіться також
 
-- Події, що їх викидає `<select>`: {{domxref("HTMLElement/change_event", "change")}}, {{domxref("HTMLElement/input_event", "input")}}
+- Події, що їх викидає `<select>`: {{domxref("HTMLElement/change_event", "change")}}, {{domxref("Element/input_event", "input")}}
 - Елемент {{HTMLElement("option")}}
 - Елемент {{HTMLElement("optgroup")}}

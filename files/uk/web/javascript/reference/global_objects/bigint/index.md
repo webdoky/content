@@ -176,7 +176,7 @@ Boolean(12n); // true
 
 ```js
 BigInt.prototype.toJSON = function () {
-  return this.toString();
+  return { $bigint: this.toString() };
 };
 ```
 
@@ -184,14 +184,14 @@ BigInt.prototype.toJSON = function () {
 
 ```js
 console.log(JSON.stringify({ a: 1n }));
-// {"a":"1"}
+// {"a":{"$bigint":"1"}}
 ```
 
 Коли не хочеться вносити зміни до `BigInt.prototype`, можна застосувати для серіалізації значень BigInt параметр `JSON.stringify` [`replacer`](/uk/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#parametr-replacer):
 
 ```js
 const replacer = (key, value) =>
-  typeof value === "bigint" ? value.toString() : value;
+  typeof value === "bigint" ? { $bigint: value.toString() } : value;
 
 const data = {
   number: 1,
@@ -200,22 +200,32 @@ const data = {
 const stringified = JSON.stringify(data, replacer);
 
 console.log(stringified);
-// {"number":1,"big":"18014398509481982"}
+// {"number":1,"big":{"$bigint":"18014398509481982"}}
 ```
 
-Коли є дані JSON, котрі містять значення, про котрі відомо, що там будуть великі цілі числа, то для їх обробки можна використати параметр [`reviver`](/uk/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse#zastosuvannia-parametra-reviver) методу `JSON.parse`:
+Потім для обробки такого значення можна передати параметр [`reviver`](/uk/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse#zastosuvannia-parametra-reviver) методу `JSON.parse`:
 
 ```js
-const reviver = (key, value) => (key === "big" ? BigInt(value) : value);
+const reviver = (key, value) =>
+  value !== null &&
+  typeof value === "object" &&
+  "$bigint" in value &&
+  typeof value.$bigint === "string"
+    ? BigInt(value.$bigint)
+    : value;
 
-const payload = '{"number":1,"big":"18014398509481982"}';
+const payload = '{"number":1,"big":{"$bigint":"18014398509481982"}}';
 const parsed = JSON.parse(payload, reviver);
 
 console.log(parsed);
 // { number: 1, big: 18014398509481982n }
 ```
 
-> **Примітка:** Хоч замінювач для `JSON.stringify()` можна зробити узагальненим, і коректно серіалізувати значення BigInt для всіх можливих об'єктів, та відновлювач для `JSON.parse()` мусить бути конкретним для структури очікуваного корисного навантаження, тому що серіалізація відбувається _зі втратами_: неможливо відрізнити рядок, котрий представляє BigInt, від звичайного рядка.
+> **Примітка:** Хоч замінювач для `JSON.stringify()` можна зробити узагальненим, і коректно серіалізувати значення BigInt для всіх можливих об'єктів, як це показано вище, відновника `JSON.parse()` слід використовувати з обережністю, оскільки серіалізація є _втратною_: неможливо відрізнити об'єкт, котрий, припустімо, просто має властивість з ім'ям `$bigint`, від справжнього BigInt.
+>
+> Крім цього, приклад вище створює цілий об'єкт під час заміни та відновлення, що може мати вплив на продуктивність або використання пам'яті для більших об'єктів, що містять багато BigInt. Якщо форма корисного навантаження відома, може бути краще просто серіалізувати BigInt як рядки та відновлювати їх на основі імен властивостей.
+
+Фактично JSON дозволяє числові літерали довільної довжини; їх просто не можна розібрати з повною точністю в JavaScript. Якщо відбувається комунікація з іншою програмою, написаною на мові, що підтримує довші цілі числа (наприклад, 64-бітові цілі), і необхідно передати BigInt як число JSON, а не рядок JSON, дивіться [Серіалізацію чисел без втрат](/uk/docs/Web/JavaScript/Reference/Global_Objects/JSON#vykorystannia-chysel-json).
 
 ### Зведення до BigInt
 
