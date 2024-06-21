@@ -400,6 +400,63 @@ td {
 
 {{EmbedLiveSample('vykorystannia-of-selector-dlia-vypravlennia-smuhastykh-tablyts', 550, 180)}}
 
+### Стилізація колонки таблиці
+
+При стилізації колонки таблиці не можна задати стиль на елементі {{HTMLElement("col")}}, адже комірки таблиці не є його дочірніми (як це можна робити у випадку елемента ряду, {{HTMLElement("tr")}}). Псевдокласи штибу `:nth-child()` зручні для вибору всіх комірок однієї колонки.
+
+У цьому прикладі задаються різні стилі для кожної з колонок.
+
+#### HTML
+
+```html-nolint
+<table>
+<caption>Список студентів</caption>
+<colgroup>
+  <col/>
+  <col/>
+  <col/>
+</colgroup>
+  <thead>
+    <tr><th>Ім'я</th><th>Вік</th><th>Країна</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Мамітіана</td><td>23</td><td>Мадагаскар</td></tr>
+    <tr><td>Юкі</td><td>48</td><td>Японія</td></tr>
+  </tbody>
+</table>
+```
+
+#### CSS
+
+```css
+td {
+  padding: 0.125rem 0.5rem;
+  height: 3rem;
+  border: 1px solid black;
+}
+
+tr :nth-child(1) {
+  text-align: left;
+  vertical-align: bottom;
+  background-color: silver;
+}
+
+tbody tr :nth-child(2) {
+  text-align: center;
+  vertical-align: middle;
+}
+
+tbody tr :nth-child(3) {
+  text-align: right;
+  vertical-align: top;
+  background-color: tomato;
+}
+```
+
+#### Результат
+
+{{EmbedLiveSample('stylizatsiia-kolonky-tablytsi', 100, 200)}}
+
 ## Специфікації
 
 {{Specifications}}
