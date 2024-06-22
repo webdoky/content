@@ -21,7 +21,7 @@ browser-compat: html.elements.a
 
   - : Задає те, що ви хочете, аби браузер надіслав заголовок {{httpheader("Attribution-Reporting-Eligible")}}. З серверного боку це використовується для пуску надсилання заголовка {{httpheader("Attribution-Reporting-Register-Source")}} у відповіді, щоб зареєструвати [джерело атрибуції на основі навігації](/uk/docs/Web/API/Attribution_Reporting_API/Registering_sources#dzherela-atrybutsii-na-osnovi-navihatsii).
 
-    Браузер зберігає дані про джерело, пов'язані з джерелом атрибуцї, заснованим на навігації (таким, яке задано в заголовку відповіді {{httpheader("Attribution-Reporting-Register-Source")}}), коли користувач клацає посилання. Дивіться подробиці в [API звітування про атрибуцію](/uk/docs/Web/API/Attribution_Reporting_API).
+    Браузер зберігає дані про джерело, пов'язані з джерелом атрибуції, заснованим на навігації (таким, яке задано в заголовку відповіді {{httpheader("Attribution-Reporting-Register-Source")}}), коли користувач клацає посилання. Дивіться подробиці в [API звітування про атрибуцію](/uk/docs/Web/API/Attribution_Reporting_API).
 
     Є дві версії цього атрибуту, які можна задати:
 
