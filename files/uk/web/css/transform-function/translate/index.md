@@ -213,7 +213,7 @@ transform: translate(30%, 50%);
 
 ### Формальний синтаксис
 
-```css
+```plain
 translate({{cssxref("&lt;length-percentage&gt;")}}, {{cssxref("&lt;length-percentage&gt;")}}?)
 ```
 

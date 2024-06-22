@@ -1,7 +1,8 @@
 ---
 title: "SVG: масштабована векторна графіка"
+short-title: SVG
 slug: Web/SVG
-page-type: svg-element
+page-type: landing-page
 ---
 
 {{SVGRef}}
