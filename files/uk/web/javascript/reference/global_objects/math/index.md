@@ -43,7 +43,7 @@ browser-compat: javascript.builtins.Math
 ## Статичні методи
 
 - {{jsxref("Math.abs()")}}
-  - : Повертає модуль вихідного вихідного числа.
+  - : Повертає модуль вихідного числа.
 - {{jsxref("Math.acos()")}}
   - : Повертає арккосинус вихідного числа.
 - {{jsxref("Math.acosh()")}}
