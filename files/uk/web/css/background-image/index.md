@@ -54,6 +54,14 @@ background-image: unset;
 - [MDN Розуміння WCAG, пояснення Настанови 1.1](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#nastanova-1-1-nadannia-tekstovykh-alternatyv-netekstovomu-vmistu)
 - [Розуміння мірила успіху 1.1.1 | W3C Розуміння WCAG 2.0](https://www.w3.org/TR/2016/NOTE-UNDERSTANDING-WCAG20-20161007/text-equiv-all.html)
 
+Крім цього, важливо пересвідчитись, що контрастне співвідношення між зображенням тла та текстом переднього плану достатньо високе, щоб люди зі слабким зором могли читати вміст сторінки.
+
+Співвідношення колірного контрасту визначається шляхом порівняння світності тексту та значень кольору тла. Щоб відповідати вимогам [Настанов з доступності вебвмісту (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/), потрібне співвідношення 4,5:1 для текстового вмісту тіла сторінки та 3:1 для більшого тексту, такого як заголовки. Великий текст визначається як 24px або більше, або [грубий текст](/uk/docs/Web/CSS/font-weight) 18.66px або більше.
+
+- [WebAIM – Інструмент перевірки колірного контрасту](https://webaim.org/resources/contrastchecker/)
+- [MDN розуміння WCAG, пояснення Настанов 1.4](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#guideline_1.4_make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
+- [Розуміння критерію успіху 1.4.3 | W3C Розуміння WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html), W3C (2023)
+
 ## Формальне визначення
 
 {{cssinfo}}
@@ -83,8 +91,10 @@ background-image: unset;
 
 ```css
 p {
+  font-weight: bold;
   font-size: 1.5em;
-  color: #fe7f88;
+  color: white;
+  text-shadow: 0.07em 0.07em 0.05em black;
   background-image: none;
   background-color: transparent;
 }
