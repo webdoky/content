@@ -36,11 +36,7 @@ text-align: revert-layer;
 text-align: unset;
 ```
 
-Властивість `text-align` задається в один з наступних способів:
-
-- За допомогою ключових слів `start`, `end`, `left`, `right`, `center`, `justify`, `justify-all` чи `match-parent`.
-- За допомогою лиш значення `<string>`, у випадку чого решта значень вважаються `right`.
-- За допомогою і ключового слова, і значення [`<string>`](#string).
+Властивість `text-align` задається у вигляді одного ключового слова зі списку нижче.
 
 ### Значення
 
@@ -101,7 +97,7 @@ text-align: unset;
 
 #### Результат
 
-{{EmbedLiveSample("shykuvannia-start","100%","100%")}}
+{{EmbedLiveSample("shykuvannia-start", "100%", "100%")}}
 
 ### Центрований текст
 
@@ -152,6 +148,62 @@ text-align: unset;
 #### Результат
 
 {{EmbedLiveSample('pryklad-z-vykorystanniam-justify',"100%","100%")}}
+
+### Вирівнювання таблиць
+
+Цей приклад демонструє, як використовувати `text-align` на елементах {{htmlelement("table")}}, в тому числі рядах {{htmlelement("tr")}} і комірках {{htmlelement("td")}}.
+
+#### HTML
+
+```html
+<table>
+  <tr id="r1">
+    <td id="c11">11</td>
+    <td id="c12">12</td>
+    <td id="c13">13</td>
+  </tr>
+  <tr id="r2">
+    <td id="c21">21</td>
+    <td id="c22">22</td>
+    <td id="c23">23</td>
+  </tr>
+  <tr id="r3">
+    <td id="c31">31</td>
+    <td id="c32">32</td>
+    <td id="c33">33</td>
+  </tr>
+</table>
+```
+
+#### CSS
+
+```css
+table {
+  border-collapse: collapse;
+  border: solid black 1px;
+  width: 250px;
+  height: 150px;
+}
+td {
+  border: solid 1px black;
+}
+#r1 {
+  text-align: right;
+}
+#c12 {
+  text-align: center;
+}
+#r2 {
+  text-align: center;
+}
+#c31 {
+  text-align: right;
+}
+```
+
+#### Результат
+
+{{EmbedLiveSample('vyrivniuvannia-tablyts', "100%", "100%")}}
 
 ## Специфікації
 
