@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2024-06-21 - 2024-06-28]
+
+* **Оновлення перекладу(JS):** web/javascript/data_structures (#3040) ([e3ba77df](https://github.com/webdoky/content/commit/e3ba77dfee8c1d1597a805081fb41c9317d2abc2))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/number (#3042) ([842a7cc4](https://github.com/webdoky/content/commit/842a7cc467b62cebf8323bb2f0e80a281e4ec2a9))
+* **Оновлення перекладу(JS):** web/javascript/reference/statements/try...catch (#3041) ([ddac0cbf](https://github.com/webdoky/content/commit/ddac0cbf5630986bcf906e87a169de84d5ccbf16))
+* **Оновлення перекладу(CSS):** web/css/grid-template-columns (#3030) ([ea840b52](https://github.com/webdoky/content/commit/ea840b52e3bbd528b47fefddf534e2376e665bc6))
+
 ## [2024-06-14 - 2024-06-21]
 
 * **Оновлення перекладу(JS):** web/javascript/reference/global_objects/date (#3020) ([5e65301c](https://github.com/webdoky/content/commit/5e65301c4e27797de0a5a56dcdc0923e8eb3e2fb))
