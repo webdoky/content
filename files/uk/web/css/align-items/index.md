@@ -29,6 +29,7 @@ align-items: flex-start;
 align-items: flex-end;
 align-items: self-start;
 align-items: self-end;
+align-items: anchor-center;
 
 /* Шикування за базовою лінією */
 align-items: baseline;
@@ -84,6 +85,10 @@ align-items: unset;
 - `stretch`
 
   - : Якщо елементи менші за контейнер шикування, то елементи з автоматичним розміром рівномірно розтягуються, щоб заповнити контейнер, з урахуванням обмежень на ширину та висоту елементів.
+
+- `anchor-center` {{experimental_inline}}
+
+  - : У випадку елементів [з якірним позиціюванням](/uk/docs/Web/CSS/CSS_anchor_positioning) це значення вишиковує елементи біля центру заданого якірного елемента за блоковим напрямком. Дивіться [Центрування на якорі за допомогою `anchor-center`](/uk/docs/Web/CSS/CSS_anchor_positioning/Using#tsentruvannia-na-yakori-za-dopomohoiu-anchor-center).
 
 - `safe`
 
