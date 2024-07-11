@@ -3,6 +3,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2024-06-21 - 2024-06-28]
+
+* **Оновлення перекладу(JS):** web/javascript/data_structures (#3040) ([e3ba77df](https://github.com/webdoky/content/commit/e3ba77dfee8c1d1597a805081fb41c9317d2abc2))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/number (#3042) ([842a7cc4](https://github.com/webdoky/content/commit/842a7cc467b62cebf8323bb2f0e80a281e4ec2a9))
+* **Оновлення перекладу(JS):** web/javascript/reference/statements/try...catch (#3041) ([ddac0cbf](https://github.com/webdoky/content/commit/ddac0cbf5630986bcf906e87a169de84d5ccbf16))
+* **Оновлення перекладу(CSS):** web/css/grid-template-columns (#3030) ([ea840b52](https://github.com/webdoky/content/commit/ea840b52e3bbd528b47fefddf534e2376e665bc6))
+
+## [2024-06-14 - 2024-06-21]
+
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/date (#3020) ([5e65301c](https://github.com/webdoky/content/commit/5e65301c4e27797de0a5a56dcdc0923e8eb3e2fb))
+* **Оновлення перекладу(JS):** web/javascript/reference/functions/arrow_functions (#3024) ([0c879c18](https://github.com/webdoky/content/commit/0c879c18a9a0e58c36fcf2aa912e938f92581cd3))
+* **Оновлення перекладу(CSS):** web/css (#3017) ([1c0cdd4a](https://github.com/webdoky/content/commit/1c0cdd4a00563cb967598ae1ffacff412d13c530))
+* **Оновлення перекладу(JS):** web/javascript/reference (#3016) ([71933476](https://github.com/webdoky/content/commit/719334769c99119b23452390e1e6b743abccb849))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/symbol (#3005) ([f7e3804a](https://github.com/webdoky/content/commit/f7e3804a7a4bc84c7556a7641e44c79fd9196cc3))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects (#3015) ([8d15f998](https://github.com/webdoky/content/commit/8d15f998b77e0331a1c871b0bf8ba3c84196cde0))
+
 ## [2024-05-24 - 2024-05-31]
 
 * **Переклад(JS):** web/javascript/reference/global_objects/array/at (#3010) ([008dc0b3](https://github.com/webdoky/content/commit/008dc0b36e1be9fd3bab96777cf7358eba8b7ea3))
