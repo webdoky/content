@@ -22,11 +22,13 @@ browser-compat: css.properties.background-image
 ## Синтаксис
 
 ```css
-background-image: linear-gradient(
-    to bottom,
-    rgb(255 255 0 / 50%),
-    rgb(0 0 255 / 50%)
-  ), url("catfront.png");
+/* одне зображення */
+background-image: linear-gradient(black, white);
+background-image: url("catfront.png");
+
+/* кілька зображень */
+background-image: radial-gradient(circle, #0000 45%, #000f 48%), radial-gradient(ellipse
+      farthest-corner, #fc1c14 20%, #cf15cf 80%);
 
 /* Глобальні значення */
 background-image: inherit;
@@ -123,9 +125,7 @@ div {
 
 ## Дивіться також
 
-- [Імплементація спрайтових зображень на CSS](/uk/docs/Web/CSS/CSS_Images/Implementing_image_sprites_in_CSS)
 - {{HTMLElement("img")}}
-- Типи даних, пов'язані з зображеннями: {{cssxref("&lt;image&gt;")}}, {{cssxref("&lt;gradient&gt;")}}
 - Функції, пов'язані з зображеннями:
 
   - {{cssxref("cross-fade", "cross-fade()")}}
@@ -138,5 +138,22 @@ div {
   - {{cssxref("gradient/repeating-linear-gradient", "repeating-linear-gradient()")}}
   - {{cssxref("gradient/repeating-radial-gradient", "repeating-radial-gradient()")}}
   - {{cssxref("gradient/repeating-conic-gradient", "repeating-conic-gradient()")}}
-  - {{cssxref("image/paint", "paint()")}}
   - {{cssxref("url", "url()")}}
+
+- [Використання градієнтів CSS](/uk/docs/Web/CSS/CSS_images/Using_CSS_gradients)
+- [Реалізація спрайтових зображень на CSS](/uk/docs/Web/CSS/CSS_images/Implementing_image_sprites_in_CSS)
+- Модуль [Зображень CSS](/uk/docs/Web/CSS/CSS_images)
+
+- Властивості, пов'язані з фонами
+  - {{cssxref("background-attachment")}}
+  - {{cssxref("background-clip")}}
+  - {{cssxref("background-color")}}
+  - {{cssxref("background-origin")}}
+  - {{cssxref("background-position")}}
+  - {{cssxref("background-repeat")}}
+  - {{cssxref("background-size")}}
+  - {{cssxref("background")}} shorthand
+- [Вивчаймо CSS – Фони та межі](/uk/docs/Learn/CSS/Building_blocks/Backgrounds_and_borders)
+- [Застосування кількох фонів](/uk/docs/Web/CSS/CSS_backgrounds_and_borders/Using_multiple_backgrounds)
+- [Зміна розмірів фонових зображень](/uk/docs/Web/CSS/CSS_backgrounds_and_borders/Resizing_background_images)
+- Модуль [Фонів і меж CSS](/uk/docs/Web/CSS/CSS_backgrounds_and_borders)
