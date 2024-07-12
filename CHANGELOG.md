@@ -3,6 +3,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2024-07-05 - 2024-07-12]
+
+* **Оновлення перекладу(HTML):** web/html/element/input/checkbox (#3053) ([1ffd8916](https://github.com/webdoky/content/commit/1ffd89160bbb0e186d01fd51cbee18749c8458c2))
+* **Оновлення перекладу(CSS):** web/css/transform-function/translate (#3052) ([acc6248a](https://github.com/webdoky/content/commit/acc6248a5a1b212862fcfa6ee0746b1919b5158a))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/set (#3051) ([54d00174](https://github.com/webdoky/content/commit/54d0017400dd404b205ab9a4c74fad1304493408))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/slice (#3049) ([2ea4b0e0](https://github.com/webdoky/content/commit/2ea4b0e055d2f28c6e53c6f5027c06bc442b9a88))
+* **Оновлення перекладу(HTML):** web/html/element (#3047) ([da175862](https://github.com/webdoky/content/commit/da175862a49cbe2d77f18ec5ce1ecd8880f7af8c))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/substring (#3038) ([854b1d85](https://github.com/webdoky/content/commit/854b1d8569fa7330e63ce037eebf650069176950))
+* **Оновлення перекладу(CSS):** web/css/align-items (#3043) ([6e13066e](https://github.com/webdoky/content/commit/6e13066ed682b18e4862cf8d12a924c4219a21eb))
+* **Оновлення перекладу(HTML):** web/html/element/button (#3037) ([96d10e3c](https://github.com/webdoky/content/commit/96d10e3cbea33f4fd603a107a091d9a1e3895ca9))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/math (#3039) ([0da8e70b](https://github.com/webdoky/content/commit/0da8e70bd8eb908676cbb22848c426523b31eb5e))
+
 ## [2024-06-21 - 2024-06-28]
 
 * **Оновлення перекладу(JS):** web/javascript/data_structures (#3040) ([e3ba77df](https://github.com/webdoky/content/commit/e3ba77dfee8c1d1597a805081fb41c9317d2abc2))
