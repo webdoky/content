@@ -77,9 +77,9 @@ console.log(result); // 421
 
 ### Тип Number
 
-Тип {{jsxref("Number")}} є [64-бітним значенням двійкового формату IEEE 754 подвійної точності](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#koduvannia-number). Він здатний зберігати додатні числа з рухомою комою між 2<sup>-1074</sup> ({{jsxref("Number.MIN_VALUE")}}) і 2<sup>1024</sup> ({{jsxref("Number.MAX_VALUE")}}), а також від'ємні числа з рухомою комою між -2<sup>-1074</sup> і -2<sup>1024</sup>, але може надійно зберігати цілі числа лише в діапазоні від -(2<sup>53</sup> − 1) ({{jsxref("Number.MIN_SAFE_INTEGER")}}) до 2<sup>53</sup> − 1 ({{jsxref("Number.MAX_SAFE_INTEGER")}}). Поза цим діапазоном JavaScript не може надійно представляти цілі числа; замість цього вони представляються у вигляді наближення з рухомою комою подвійної точності. Перевірити число на попадання в діапазон надійних цілих чисел можна за допомогою {{jsxref("Number.isSafeInteger()")}}.
+Тип {{jsxref("Number")}} є [64-бітним значенням двійкового формату IEEE 754 подвійної точності](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#koduvannia-number). Він здатний зберігати додатні числа з рухомою комою між 2<sup>-1074</sup> ({{jsxref("Number.MIN_VALUE")}}) і 2<sup>1023</sup> × (2 - 2<sup>-52</sup>) ({{jsxref("Number.MAX_VALUE")}}), а також від'ємні числа з рухомою комою аналогічного діапазону, але може надійно зберігати цілі числа лише в діапазоні від -(2<sup>53</sup> − 1) ({{jsxref("Number.MIN_SAFE_INTEGER")}}) до 2<sup>53</sup> − 1 ({{jsxref("Number.MAX_SAFE_INTEGER")}}). Поза цим діапазоном JavaScript не може надійно представляти цілі числа; замість цього вони представляються у вигляді наближення з рухомою комою подвійної точності. Перевірити число на попадання в діапазон надійних цілих чисел можна за допомогою {{jsxref("Number.isSafeInteger()")}}.
 
-Значення поза діапазоном ±(від 2<sup>-1074</sup> до 2<sup>1024</sup>) автоматично перетворюються:
+Значення поза діапазоном, числа якого можна подати з точністю, автоматично перетворюються:
 
 - Додатні значення, більші за {{jsxref("Number.MAX_VALUE")}}, перетворюються на `+Infinity`.
 - Додатні значення, менші за {{jsxref("Number.MIN_VALUE")}}, перетворюються на `+0`.
@@ -237,17 +237,17 @@ JavaScript має стандартну бібліотеку вбудованих
 - Оператор [`+`](/uk/docs/Web/JavaScript/Reference/Operators/Addition): якщо один з операндів є рядком, то виконується зчеплення, інакше – арифметичне додавання.
 - Оператор [`==`](/uk/docs/Web/JavaScript/Reference/Operators/Equality): якщо один з операндів є примітивом, а інший – об'єктом, то об'єкт перетворюється на примітивне значення без преференцій у бік конкретного типу.
 
-Ця операція не виконує жодних перетворень, якщо значення вже є примітивом. Об'єкти перетворюються на примітиви шляхом виклику їх методів [`[@@toPrimitive]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive) (з підказкою `"default"`), `valueOf()` та `toString()` – у такому порядку. Зверніть увагу, що перетворення на примітив викликає `valueOf()` раніше, ніж `toString()`, що подібно до логіки [зведення до числа](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#zvedennia-do-chysla), але відрізняється від [зведення до рядка](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka).
+Ця операція не виконує жодних перетворень, якщо значення вже є примітивом. Об'єкти перетворюються на примітиви шляхом виклику їх методів [`[Symbol.toPrimitive]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive) (з підказкою `"default"`), `valueOf()` та `toString()` – у такому порядку. Зверніть увагу, що перетворення на примітив викликає `valueOf()` раніше, ніж `toString()`, що подібно до логіки [зведення до числа](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#zvedennia-do-chysla), але відрізняється від [зведення до рядка](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka).
 
-Метод `[@@toPrimitive]()`, якщо є, мусить повертати примітив: повернення об'єкта призведе до {{jsxref("TypeError")}}. Що до `valueOf()` і `toString()`, то якщо якийсь із цих методів поверне об'єкт, то таке повернене значення ігнорується, і натомість використовується повернене значення іншого методу. Якщо такого методу немає, або якщо жоден з методів не повернув примітива, то викидається {{jsxref("TypeError")}}. Наприклад, у наступному коді:
+Метод `[Symbol.toPrimitive]()`, якщо є, мусить повертати примітив: повернення об'єкта призведе до {{jsxref("TypeError")}}. Що до `valueOf()` і `toString()`, то якщо якийсь із цих методів поверне об'єкт, то таке повернене значення ігнорується, і натомість використовується повернене значення іншого методу. Якщо такого методу немає, або якщо жоден з методів не повернув примітива, то викидається {{jsxref("TypeError")}}. Наприклад, у наступному коді:
 
 ```js
 console.log({} + []); // "[object Object]"
 ```
 
-Neither `{}` nor `[]` has a `[@@toPrimitive]()` method. Both `{}` and `[]` inherit `valueOf()` from {{jsxref("Object.prototype.valueOf")}}, which returns the object itself. Since the return value is an object, it is ignored. Therefore, `toString()` is called instead. [`{}.toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/toString) returns `"[object Object]"`, while [`[].toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/toString) returns `""`, so the result is their concatenation: `"[object Object]"`.
+Neither `{}` nor `[]` has a `[Symbol.toPrimitive]()` method. Both `{}` and `[]` inherit `valueOf()` from {{jsxref("Object.prototype.valueOf")}}, which returns the object itself. Since the return value is an object, it is ignored. Therefore, `toString()` is called instead. [`{}.toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/toString) returns `"[object Object]"`, while [`[].toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/toString) returns `""`, so the result is their concatenation: `"[object Object]"`.
 
-Метод `[@@toPrimitive]()` завжди має пріоритет над перетворенням на будь-який конкретний примітивний тип. Перетворення на примітив здебільшого працює як перетворення на число, тому що першим викликається `valueOf()`; проте об'єкти з самописними методами `[@@toPrimitive]()` можуть вирішити повернути будь-який примітив. Об'єкти {{jsxref("Date")}} і {{jsxref("Symbol")}} – єдині вбудовані об'єкти, що визначають власні методи `[@@toPrimitive]()`. [`Date.prototype[@@toPrimitive]()`](<(/uk/docs/Web/JavaScript/Reference/Global_Objects/Date/@@toPrimitive)>) обробляє підказку `"default"` як ніби це `"string"`, натомість [`Symbol.prototype[@@toPrimitive]()`](<(/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/@@toPrimitive)>) ігнорує підказку і завжди повертає символ.
+Метод `[Symbol.toPrimitive]()` завжди має пріоритет над перетворенням на будь-який конкретний примітивний тип. Перетворення на примітив здебільшого працює як перетворення на число, тому що першим викликається `valueOf()`; проте об'єкти з самописними методами `[Symbol.toPrimitive]()` можуть вирішити повернути будь-який примітив. Об'єкти {{jsxref("Date")}} і {{jsxref("Symbol")}} – єдині вбудовані об'єкти, що визначають власні методи `[Symbol.toPrimitive]()`. [`Date.prototype[Symbol.toPrimitive]()`](<(/uk/docs/Web/JavaScript/Reference/Global_Objects/Date/Symbol.toPrimitive)>) обробляє підказку `"default"` як ніби це `"string"`, натомість [`Symbol.prototype[Symbol.toPrimitive]()`](<(/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/Symbol.toPrimitive)>) ігнорує підказку і завжди повертає символ.
 
 ### Зведення до числового
 
@@ -261,11 +261,11 @@ Neither `{}` nor `[]` has a `[@@toPrimitive]()` method. Both `{}` and `[]` inher
 
 Як можна було помітити, є три відмінні шляхи, якими об'єкти можуть бути перетворені на примітиви:
 
-- [Зведення до примітива](#zvedennia-do-prymityva): `[@@toPrimitive]("default")` → `valueOf()` → `toString()`
-- [Зведення до числового](#zvedennia-do-chyslovoho), [зведення до числа](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#zvedennia-do-chysla), [зведення до BigInt](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt#zvedennia-do-bigint): `[@@toPrimitive]("number")` → `valueOf()` → `toString()`
-- [Зведення до рядка](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka): `[@@toPrimitive]("string")` → `toString()` → `valueOf()`
+- [Зведення до примітива](#zvedennia-do-prymityva): `[Symbol.toPrimitive]("default")` → `valueOf()` → `toString()`
+- [Зведення до числового](#zvedennia-do-chyslovoho), [зведення до числа](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#zvedennia-do-chysla), [зведення до BigInt](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt#zvedennia-do-bigint): `[Symbol.toPrimitive]("number")` → `valueOf()` → `toString()`
+- [Зведення до рядка](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka): `[Symbol.toPrimitive]("string")` → `toString()` → `valueOf()`
 
-У всіх випадках властивість `[@@toPrimitive]()`, якщо є, мусить бути викличною та повертати примітив, натомість `valueOf` і `toString` ігноруватимуться, якщо не є викличними або повертають об'єкт. У кінці процесу, якщо він успішний, результат гарантовано є примітивом. Після цього результівний примітив підлягає подальшому зведенню, залежно від контексту.
+У всіх випадках властивість `[Symbol.toPrimitive]()`, якщо є, мусить бути викличною та повертати примітив, натомість `valueOf` і `toString` ігноруватимуться, якщо не є викличними або повертають об'єкт. У кінці процесу, якщо він успішний, результат гарантовано є примітивом. Після цього результівний примітив підлягає подальшому зведенню, залежно від контексту.
 
 ## Дивіться також
 
