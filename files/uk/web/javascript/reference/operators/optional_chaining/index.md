@@ -100,6 +100,20 @@ const object = {};
 object?.property = 1; // SyntaxError: Invalid left-hand side in assignment
 ```
 
+[Теги шаблонних літералів](/uk/docs/Web/JavaScript/Reference/Template_literals#tehovani-shablony) не можуть з'являтися в необов'язковому ланцюжку (дивіться [SyntaxError: tagged template cannot be used with optional chain](/uk/docs/Web/JavaScript/Reference/Errors/Bad_optional_template)):
+
+```js-nolint example-bad
+String?.raw`Привіт, світе!`;
+String.raw?.`Привіт, світе!`; // SyntaxError: Invalid tagged template on optional chain
+```
+
+Конструктор виразів {{jsxref("Operators/new", "new")}} не може бути частиною необов'язкового ланцюжка (дивіться [SyntaxError: new keyword cannot be used with an optional chain](/uk/docs/Web/JavaScript/Reference/Errors/Bad_new_optional)):
+
+```js-nolint example-bad
+new Intl?.DateTimeFormat(); // SyntaxError: Invalid optional chain from new expression
+new Map?.();
+```
+
 ### Закорочення
 
 Якщо при використанні необов'язкового ланцюжка з виразами лівий операнд є `null` чи `undefined`, то вираз не буде обчислюватися. Наприклад:
