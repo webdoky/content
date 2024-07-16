@@ -184,7 +184,7 @@ Promise.resolve(aThenable); // Проміс сповнюється значен�
 
 ## Статичні властивості
 
-- {{jsxref("Promise/@@species", "Promise[@@species]")}}
+- [`Promise[Symbol.species]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Promise/Symbol.species)
   - : Повертає конструктор, що використовується для створення значень, повернених з методів промісів.
 
 ## Статичні методи
@@ -210,8 +210,8 @@ Promise.resolve(aThenable); // Проміс сповнюється значен�
 
 - {{jsxref("Object/constructor", "Promise.prototype.constructor")}}
   - : Функція-конструктор, що створила об'єкт-примірник. Для примірників `Promise` початковим значенням є конструктор {{jsxref("Promise/Promise", "Promise")}}.
-- `Promise.prototype[@@toStringTag]`
-  - : Початкове значення властивості [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"Promise"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}.
+- `Promise.prototype[Symbol.toStringTag]`
+  - : Початкове значення властивості [`Symbol.toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"Promise"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}.
 
 ## Методи примірника
 
