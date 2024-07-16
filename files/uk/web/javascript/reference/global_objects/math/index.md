@@ -37,8 +37,8 @@ browser-compat: javascript.builtins.Math
   - : Квадратний корінь з ½. Наближено дорівнює `0.707`.
 - {{jsxref("Math.SQRT2")}}
   - : Квадратний корінь з `2`. Наближено дорівнює `1.414`.
-- `Math[@@toStringTag]`
-  - : Початкове значення властивості [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"Math"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}.
+- `Math[Symbol.toStringTag]`
+  - : Початкове значення властивості [`Symbol.toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"Math"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}.
 
 ## Статичні методи
 
