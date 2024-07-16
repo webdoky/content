@@ -210,7 +210,7 @@ interface GPUSupportedFeatures {
   - : Приймає множину та повертає нову множину, що вміщає елементи, присутні в одній з множин або в них обох.
 - {{jsxref("Set.prototype.values()")}} (значення)
   - : Повертає новий об'єкт-ітератор, що видає **значення** для кожного елемента в об'єкті `Set`, у порядку їх додання.
-- {{jsxref("Set.prototype.Symbol.iterator()", "Set.prototype[Symbol.iterator]()")}}
+- [`Set.prototype[Symbol.iterator]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Set/Symbol.iterator)
   - : Повертає новий об'єкт-ітератор, що видає **значення** для кожного елемента в об'єкті `Set`, у порядку їх додання.
 
 ## Приклади
