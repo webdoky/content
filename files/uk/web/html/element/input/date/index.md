@@ -229,15 +229,14 @@ input:valid + span::after {
       <td>
          <a href="/uk/docs/Web/HTML/Element/input#autocomplete"><code>autocomplete</code></a>,
         <a href="/uk/docs/Web/HTML/Element/input#list-spysok"><code>list</code></a>,
-        <a href="/uk/docs/Web/HTML/Element/input#readonly-lyshe-dlia-chytannia"><code>readonly</code></a> і
+        <a href="/uk/docs/Web/HTML/Element/input#readonly-lyshe-dlia-chytannia"><code>readonly</code></a>,
         <a href="/uk/docs/Web/HTML/Element/input#step-krok"><code>step</code></a>
       </td>
     </tr>
     <tr>
       <td><strong>Атрибути IDL</strong></td>
       <td>
-        <code>list</code>, <code>value</code>, <code>valueAsDate</code>,
-        <code>valueAsNumber</code>.
+        <code>list</code>, <code>value</code>, <code>valueAsDate</code>, <code>valueAsNumber</code>
       </td>
     </tr>
     <tr>
