@@ -27,8 +27,8 @@ background-image: linear-gradient(black, white);
 background-image: url("catfront.png");
 
 /* кілька зображень */
-background-image: radial-gradient(circle, #0000 45%, #000f 48%), radial-gradient(ellipse
-      farthest-corner, #fc1c14 20%, #cf15cf 80%);
+background-image: radial-gradient(circle, #0000 45%, #000f 48%),
+  radial-gradient(ellipse farthest-corner, #fc1c14 20%, #cf15cf 80%);
 
 /* Глобальні значення */
 background-image: inherit;
@@ -127,8 +127,6 @@ div {
 
 - {{HTMLElement("img")}}
 - Функції, пов'язані з зображеннями:
-
-  - {{cssxref("cross-fade", "cross-fade()")}}
   - {{cssxref("element", "element()")}}
   - {{cssxref("image/image", "image()")}}
   - {{cssxref("image/image-set", "image-set()")}}
@@ -139,9 +137,8 @@ div {
   - {{cssxref("gradient/repeating-radial-gradient", "repeating-radial-gradient()")}}
   - {{cssxref("gradient/repeating-conic-gradient", "repeating-conic-gradient()")}}
   - {{cssxref("url", "url()")}}
-
 - [Використання градієнтів CSS](/uk/docs/Web/CSS/CSS_images/Using_CSS_gradients)
-- [Реалізація спрайтових зображень на CSS](/uk/docs/Web/CSS/CSS_images/Implementing_image_sprites_in_CSS)
+- [Реалізація спрайтових зображень за допомогою CSS](/uk/docs/Web/CSS/CSS_images/Implementing_image_sprites_in_CSS)
 - Модуль [Зображень CSS](/uk/docs/Web/CSS/CSS_images)
 
 - Властивості, пов'язані з фонами
@@ -152,7 +149,7 @@ div {
   - {{cssxref("background-position")}}
   - {{cssxref("background-repeat")}}
   - {{cssxref("background-size")}}
-  - {{cssxref("background")}} shorthand
+  - Скорочення {{cssxref("background")}}
 - [Вивчаймо CSS – Фони та межі](/uk/docs/Learn/CSS/Building_blocks/Backgrounds_and_borders)
 - [Застосування кількох фонів](/uk/docs/Web/CSS/CSS_backgrounds_and_borders/Using_multiple_backgrounds)
 - [Зміна розмірів фонових зображень](/uk/docs/Web/CSS/CSS_backgrounds_and_borders/Resizing_background_images)
