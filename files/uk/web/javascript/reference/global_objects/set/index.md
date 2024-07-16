@@ -40,43 +40,57 @@ browser-compat: javascript.builtins.Set
     <tr>
       <td>{{jsxref("Set/difference", "A.difference(B)")}}</td>
       <td><code>Set</code></td>
-      <td><math display="inline"><semantics><mrow><mi>A</mi><mo>∖</mo><mi>B</mi></mrow><annotation encoding="TeX">A\setminus B</annotation></semantics></math></td>
+      <td>
+        <math><semantics><mrow><mi>A</mi><mo>∖</mo><mi>B</mi></mrow><annotation encoding="TeX">A\setminus B</annotation></semantics></math>
+      </td>
       <td style="margin:0;padding:0"><img src="difference/diagram.svg" alt="Діаграма Венна, в якій два кола перетинаються. Різниця між A і B – це та частина A, що не перетинається з B. " style="margin:0;border:0;border-radius:0" width="200" /></td>
     </tr>
     <tr>
       <td>{{jsxref("Set/intersection", "A.intersection(B)")}}</td>
       <td><code>Set</code></td>
-      <td><math display="inline"><semantics><mrow><mi>A</mi><mo>∩</mo><mi>B</mi></mrow><annotation encoding="TeX">A\cap B</annotation></semantics></math></td>
+      <td>
+        <math><semantics><mrow><mi>A</mi><mo>∩</mo><mi>B</mi></mrow><annotation encoding="TeX">A\cap B</annotation></semantics></math>
+      </td>
       <td style="margin:0;padding:0"><img src="intersection/diagram.svg" alt="Діаграма Венна, в якій два кола перетинаються. Перетин між A і B – це та частина, якою вони перетинаються." style="margin:0;border:0;border-radius:0" width="200" /></td>
     </tr>
     <tr>
       <td>{{jsxref("Set/symmetricDifference", "A.symmetricDifference(B)")}}</td>
       <td><code>Set</code></td>
-      <td><math display="inline"><semantics><mrow><mo stretchy="false">(</mo><mi>A</mi><mo>∖</mo><mi>B</mi><mo stretchy="false">)</mo><mo>∪</mo><mo stretchy="false">(</mo><mi>B</mi><mo>∖</mo><mi>A</mi><mo stretchy="false">)</mo></mrow><annotation encoding="TeX">(A\setminus B)\cup(B\setminus A)</annotation></semantics></math></td>
+      <td>
+        <math><semantics><mrow><mo stretchy="false">(</mo><mi>A</mi><mo>∖</mo><mi>B</mi><mo stretchy="false">)</mo><mo>∪</mo><mo stretchy="false">(</mo><mi>B</mi><mo>∖</mo><mi>A</mi><mo stretchy="false">)</mo></mrow><annotation encoding="TeX">(A\setminus B)\cup(B\setminus A)</annotation></semantics></math>
+      </td>
       <td style="margin:0;padding:0"><img src="symmetricDifference/diagram.svg" alt="Діаграма Венна, в якій два кола перетинаються. Симетрична різниця між A і B – це область, охоплена одним з кіл, але не двома." style="margin:0;border:0;border-radius:0" width="200" /></td>
     </tr>
     <tr>
       <td>{{jsxref("Set/union", "A.union(B)")}}</td>
       <td><code>Set</code></td>
-      <td><math display="inline"><semantics><mrow><mi>A</mi><mo>∪</mo><mi>B</mi></mrow><annotation encoding="TeX">A\cup B</annotation></semantics></math></td>
+      <td>
+        <math><semantics><mrow><mi>A</mi><mo>∪</mo><mi>B</mi></mrow><annotation encoding="TeX">A\cup B</annotation></semantics></math>
+      </td>
       <td style="margin:0;padding:0"><img src="union/diagram.svg" alt="Діаграма Венна, в якій два кола перетинаються. Симетрична різниця між A і B – це область, охоплена одним або двома колами." style="margin:0;border:0;border-radius:0" width="200" /></td>
     </tr>
     <tr>
       <td>{{jsxref("Set/isDisjointFrom", "A.isDisjointFrom(B)")}}</td>
       <td><code>Boolean</code></td>
-      <td><math display="inline"><semantics><mrow><mi>A</mi><mo>∩</mo><mi>B</mi><mo>=</mo><mi>∅</mi></mrow><annotation encoding="TeX">A\cap B = \empty</annotation></semantics></math></td>
+      <td>
+        <math><semantics><mrow><mi>A</mi><mo>∩</mo><mi>B</mi><mo>=</mo><mi>∅</mi></mrow><annotation encoding="TeX">A\cap B = \empty</annotation></semantics></math>
+      </td>
       <td style="margin:0;padding:0"><img src="isDisjointFrom/diagram.svg" alt="Діаграма Венна з двома колами. A i B є неперетинними, тому що ці два кола не мають області перетину." style="margin:0;border:0;border-radius:0" width="200" /></td>
     </tr>
     <tr>
       <td>{{jsxref("Set/isSubsetOf", "A.isSubsetOf(B)")}}</td>
       <td><code>Boolean</code></td>
-      <td><math display="inline"><semantics><mrow><mi>A</mi><mo>⊆</mo><mi>B</mi></mrow><annotation encoding="TeX">A\subseteq B</annotation></semantics></math></td>
+      <td>
+        <math><semantics><mrow><mi>A</mi><mo>⊆</mo><mi>B</mi></mrow><annotation encoding="TeX">A\subseteq B</annotation></semantics></math>
+      </td>
       <td style="margin:0;padding:0"><img src="isSubsetOf/diagram.svg" alt="Діаграма Венна з двома колами. A є підмножиною B, тому що A повністю вміщена в B." style="margin:0;border:0;border-radius:0" width="200" /></td>
     </tr>
     <tr>
       <td>{{jsxref("Set/isSupersetOf", "A.isSupersetOf(B)")}}</td>
       <td><code>Boolean</code></td>
-      <td><math display="inline"><semantics><mrow><mi>A</mi><mo>⊇</mo><mi>B</mi></mrow><annotation encoding="TeX">A\supseteq B</annotation></semantics></math></td>
+      <td>
+        <math><semantics><mrow><mi>A</mi><mo>⊇</mo><mi>B</mi></mrow><annotation encoding="TeX">A\supseteq B</annotation></semantics></math>
+      </td>
       <td style="margin:0;padding:0"><img src="isSupersetOf/diagram.svg" alt="Діаграма Венна з двома колами. A є надмножиною B, тому що B повністю вміщена в A." style="margin:0;border:0;border-radius:0" width="200" /></td>
     </tr>
   </tbody>
