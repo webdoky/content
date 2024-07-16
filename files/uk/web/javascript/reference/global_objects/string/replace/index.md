@@ -36,7 +36,7 @@ replace(pattern, replacement)
 
 Рядковий патерн замінюється лише раз. Аби виконати глобальний пошук із заміною, слід застосувати регулярний вираз із позначкою `g` або використати натомість [`replaceAll()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll).
 
-Якщо `pattern` є об'єктом із методом [`Symbol.replace`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/replace) (в т.ч. об'єктом `RegExp`), то такий метод викликається з цільовим рядком і `replacement` як аргументами. Його повернене значення стає поверненим значенням `replace()`. У такому випадку поведінка `replace()` цілком захована у методі `@@replace`: наприклад, будь-які згадки "груп захоплення" в описі нижче насправді є функціональністю, наданою [`RegExp.prototype[@@replace]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@replace).
+Якщо `pattern` є об'єктом із методом [`Symbol.replace`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/replace) (в т.ч. об'єктом `RegExp`), то такий метод викликається з цільовим рядком і `replacement` як аргументами. Його повернене значення стає поверненим значенням `replace()`. У такому випадку поведінка `replace()` цілком захована у методі `Symbol.replace`: наприклад, будь-які згадки "груп захоплення" в описі нижче насправді є функціональністю, наданою [`RegExp.prototype[Symbol.replace]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.replace).
 
 Якщо `pattern` є порожнім рядком, то заміна вставляється в початок вихідного рядка.
 
@@ -44,7 +44,7 @@ replace(pattern, replacement)
 "xxx".replace("", "_"); // "_xxx"
 ```
 
-Регулярний вираз із позначкою `g` є єдиним випадком, коли `replace()` виконує заміну більш ніж раз. Для отримання докладнішої інформації про те, як властивості регулярних виразів (особливо позначка [липкості](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/sticky)) взаємодіють з `replace()` дивіться [`RegExp.prototype[@@replace]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@replace).
+Регулярний вираз із позначкою `g` є єдиним випадком, коли `replace()` виконує заміну більш ніж раз. Для отримання докладнішої інформації про те, як властивості регулярних виразів (особливо позначка [липкості](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/sticky)) взаємодіють з `replace()` дивіться [`RegExp.prototype[Symbol.replace]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.replace).
 
 ### Передача рядка як заміни
 
@@ -249,4 +249,4 @@ console.log("abcd".replace(/(?<group>bc)/, addOffset)); // "abc (1) d"
 - {{jsxref("RegExp.prototype.exec()")}}
 - {{jsxref("RegExp.prototype.test()")}}
 - [`Symbol.replace`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/replace)
-- [`RegExp.prototype[@@replace]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@replace)
+- [`RegExp.prototype[Symbol.replace]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.replace)
