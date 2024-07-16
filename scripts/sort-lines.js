@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync } from "fs";
 import { EOL } from "os";
 
-import uniq from 'lodash/uniq'
+import uniq from "lodash/uniq";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 
