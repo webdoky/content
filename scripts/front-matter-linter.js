@@ -6,7 +6,7 @@ import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 
-import { checkFrontMatter, getAjvValidator } from "./front-matter-utils";
+import { checkFrontMatter, getAjvValidator } from "./front-matter-utils.js";
 
 const { fdir: Fdir } = fdirPkg;
 const { program } = caporal;

@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 import {
   checkFrontMatter,
   getAjvValidator,
-} from "../scripts/front-matter-utils";
+} from "../scripts/front-matter-utils.js";
 
 const SAMPLES_DIRECTORY = new URL("front-matter_test_files/", import.meta.url);
 
