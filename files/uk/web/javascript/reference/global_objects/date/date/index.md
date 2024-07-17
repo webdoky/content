@@ -90,9 +90,9 @@ Date()
 
 ### Знижена точність часу
 
-Для забезпечення захисту від часових атак і [створення цифрових відбитків](/uk/docs/Glossary/Fingerprintin), точні значення `new Date()` можуть заокруглюватись залежно від налаштувань браузера. Наприклад, у Firefox опція `privacy.reduceTimerPrecision` — усталено ввімкнена, і усталено дорівнює 20 мс у Firefox. Також можна увімкнути `privacy.resistFingerprinting`, і в цьому випадку точність дорівнюватиме 100 мс або значенню `privacy.resistFingerprinting.reduceTimerPrecision.microseconds` — залежно від того, яке з цих значень більше.
+Для забезпечення захисту від часових атак і [створення цифрових відбитків](/uk/docs/Glossary/Fingerprintin), точні значення `new Date()` можуть заокруглюватись залежно від налаштувань браузера. Наприклад, у Firefox опція `privacy.reduceTimerPrecision` — усталено ввімкнена й усталено дорівнює 2 мс у Firefox. Також можна увімкнути `privacy.resistFingerprinting`, і в цьому випадку точність дорівнюватиме 100 мс або значенню `privacy.resistFingerprinting.reduceTimerPrecision.microseconds` — залежно від того, яке з цих значень більше.
 
-Наприклад, за зниження точності часу результат `new Date().getTime()` завжди буде кратним 2, або кратним 100 (або `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`), коли ввімкнено `privacy.resistFingerprinting`.
+Наприклад, за зниженої точності значення часу результат `new Date().getTime()` завжди буде кратним 2 та буде кратним 100 (або `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`), коли ввімкнено `privacy.resistFingerprinting`.
 
 ```js
 // знижена точність часу (2мс) у Firefox 60
@@ -103,7 +103,7 @@ new Date().getTime();
 // 1519211811670
 // …
 
-// знижена точність часу із увімкненою опцією `privacy.resistFingerprinting`
+// знижена точність часу з увімкненою опцією `privacy.resistFingerprinting`
 new Date().getTime();
 // Може бути:
 // 1519129853500
