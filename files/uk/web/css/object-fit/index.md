@@ -9,6 +9,9 @@ browser-compat: css.properties.object-fit
 
 Властивість [CSS](/uk/docs/Web/CSS) **`object-fit`** задає те, як вміст [заміщеного елемента](/uk/docs/Web/CSS/Replaced_element), як то {{HTMLElement("img")}} чи {{HTMLElement("video")}}, повинен адаптуватися для вміщення у своєму контейнері.
 
+> [!NOTE]
+> Властивість `object-fit` не діє на елементах {{HTMLElement("iframe")}}, {{HTMLElement("embed")}} і {{HTMLElement("fencedframe")}}.
+
 Шикування об'єкта вмісту заміщеного елемента всередині рамок елемента можна змінити за допомогою властивості {{cssxref("object-position")}}.
 
 {{EmbedInteractiveExample("pages/css/object-fit.html")}}
