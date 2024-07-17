@@ -70,7 +70,7 @@ spec-urls: https://drafts.csswg.org/css-viewport/#viewport-meta
 
 ## Вплив інтерактивних віджетів UI
 
-Інтерактивні віджети UI браузера можуть впливати на розмір області перегляду сторінки. Найпоширеніший з таких віджетів – віртуальна клавіатура. Щоб контролювати логіку зміни розміру, яку повинен використовувати браузер, задайте властивість `interactive-widget`.
+Інтерактивні віджети UI браузера можуть впливати на розмір області перегляду сторінки. Найпоширеніший із таких віджетів – віртуальна клавіатура. Щоб керувати логікою зміни розміру, яку повинен використовувати браузер, задайте властивість `interactive-widget`.
 
 Дозволені значення:
 
@@ -81,7 +81,7 @@ spec-urls: https://drafts.csswg.org/css-viewport/#viewport-meta
 - `overlays-content`
   - : Інтерактивний віджет не змінює ані {{Glossary("viewport", "області перегляду")}}, ані {{Glossary("visual viewport", "візуальної області перегляду")}}.
 
-Коли розмір змінює {{Glossary("viewport", "область перегляду")}}, то початковий [контейнерний блок](/uk/docs/Web/CSS/Containing_block) також змінює розмір, таким чином впливаючи на обраховані величини [одиниць вимірювання на основі області перегляду](/uk/docs/Web/CSS/length#vidnosni-odynytsi-vymiriuvannia-dovzhyny-zasnovani-na-oblasti-perehliadu).
+Коли {{Glossary("viewport", "область перегляду")}} змінює розмір, то початковий [контейнерний блок](/uk/docs/Web/CSS/Containing_block) також змінює розмір, у такий спосіб впливаючи на обчислені величини [одиниць вимірювання на основі області перегляду](/uk/docs/Web/CSS/length#vidnosni-odynytsi-vymiriuvannia-dovzhyny-zasnovani-na-oblasti-perehliadu).
 
 ## Поширені розміри області перегляду для мобільних та планшетних пристроїв
 
@@ -93,4 +93,4 @@ spec-urls: https://drafts.csswg.org/css-viewport/#viewport-meta
 
 ## Дивіться також
 
-- Стаття – [Приготуйтеся до оновлення логіки змін розміру області перегляду, що скоро станеться у Chrome на Android](https://developer.chrome.com/blog/viewport-resize-behavior/)
+- Стаття – [Приготуйтеся до оновлення логіки зміни розміру області перегляду, що скоро станеться у Chrome на Android](https://developer.chrome.com/blog/viewport-resize-behavior/)
