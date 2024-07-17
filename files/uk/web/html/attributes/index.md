@@ -1,5 +1,6 @@
 ---
 title: Довідка атрибутів HTML
+short-title: Атрибути
 slug: Web/HTML/Attributes
 page-type: landing-page
 ---

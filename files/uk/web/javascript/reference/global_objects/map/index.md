@@ -239,7 +239,7 @@ interface RTCStatsReport {
 
 `Map`-подібні об'єкти – це або лише для читання, або для читання та запису (див. ключове слово `readonly` у специфікації IDL вище).
 
-- `Map`-подібні об'єкти лише для читання мають властивість [`size`](#map.prototype.size), а також методи: [`entries()`](#map.prototype.entries), [`forEach()`](#map.prototype.foreach), [`get()`](#map.prototype.get), [`has()`](#map.prototype.has), [`keys()`](#map.prototype.keys), [`values()`](#map.prototype.values) та [`@@iterator`](#map.prototypeiterator).
+- `Map`-подібні об'єкти лише для читання мають властивість [`size`](#map.prototype.size), а також методи: [`entries()`](#map.prototype.entries), [`forEach()`](#map.prototype.foreach), [`get()`](#map.prototype.get), [`has()`](#map.prototype.has), [`keys()`](#map.prototype.keys), [`values()`](#map.prototype.values) та [`Symbol.iterator`](#map.prototypeiterator).
 - Записувані `Map`-подібні об'єкти, на додачу, мають методи: [`clear()`](#map.prototype.clear), [`delete()`](#map.prototype.delete) та [`set()`](#map.prototype.set).
 
 Ці методи та властивості мають таку ж поведінку, як рівносильні сутності в `Map`, окрім обмеження на типи ключів та значень.
@@ -260,7 +260,7 @@ interface RTCStatsReport {
 
 ## Статичні властивості
 
-- {{jsxref("Map/@@species", "Map[@@species]")}}
+- [`Map[Symbol.species]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Map/Symbol.species)
   - : Функція конструктора, що застосовується для створення похідних об'єктів.
 
 ## Статичні методи
@@ -274,12 +274,12 @@ interface RTCStatsReport {
 
 - {{jsxref("Object/constructor", "Map.prototype.constructor")}}
   - : Функція-конструктор, що створила об'єкт-примірник. Для примірників `Map` початковим значенням є конструктор {{jsxref("Map/Map", "Map")}}.
-- `Map.prototype[@@toStringTag]`
-  - : Початкове значення властивості [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"Map"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}.
+- `Map.prototype[Symbol.toStringTag]`
+  - : Початкове значення властивості [`Symbol.toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"Map"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}.
 - {{jsxref("Map.prototype.size")}}
   - : Повертає кількість пар ключ-значення об'єкта `Map`.
-- `Map.prototype[@@toStringTag]`
-  - : Початковим значенням властивості [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) є рядок `"Map"`. Вона використовується в {{jsxref("Object.prototype.toString()")}}.
+- `Map.prototype[Symbol.toStringTag]`
+  - : Початковим значенням властивості [`Symbol.toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) є рядок `"Map"`. Вона використовується в {{jsxref("Object.prototype.toString()")}}.
 
 ## Методи примірника
 
@@ -301,7 +301,7 @@ interface RTCStatsReport {
   - : Призначає значення за переданим ключем в об'єкті `Map`. Повертає об'єкт `Map`.
 - {{jsxref("Map.prototype.values()")}}
   - : Повертає новий об'єкт Iterator, який містить значення кожного елементу об'єкта `Map`, в порядку їх вставки.
-- [`Map.prototype[@@iterator]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Map/@@iterator)
+- [`Map.prototype[Symbol.iterator]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Map/Symbol.iterator)
   - : Повертає новий об'єкт Iterator, що містить масив із двох елементів: `[key, value]`, на кожний елемент об'єкта `Map`, у порядку їх вставки.
 
 ## Приклади

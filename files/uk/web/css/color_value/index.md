@@ -51,6 +51,14 @@ oklab(59% 0.1 0.1 / 0.5)
 oklch(60% 0.15 50)
 oklch(60% 0.15 50 / 0.5)
 
+/* Відносні кольори CSS */
+/* Видозміна барви HSL */
+hsl(from red 240deg s l)
+/* Видозміна альфа-каналу HWB */
+hwb(from green h w b / 0.5)
+/* Видозміна світності LCH */
+lch(from blue calc(l + 20) c h)
+
 /* light-dark */
 light-dark(white, black)
 light-dark(rgb(255 255 255), rgb(0 0 0))
@@ -60,11 +68,12 @@ light-dark(rgb(255 255 255), rgb(0 0 0))
 
 - Ключовими словами: {{CSSXref("&lt;named-color&gt;")}} (such as `blue` or `pink`), {{CSSXref("&lt;system-color&gt;")}} і [`currentcolor`](#kliuchove-slovo-currentcolor).
 - Шістнадцятковим записом: {{CSSXref("&lt;hex-color&gt;")}} (наприклад, `#ff0000`).
-- Параметрами в колірному просторі, за допомогою функційних записів:
+- За допомогою `<color-function>`, з параметрами в {{glossary("color space", "колірному просторі")}}, за допомогою функційних записів:
   - Колірного простору [sRGB](https://uk.wikipedia.org/wiki/SRGB): {{CSSXref("color_value/hsl", "hsl()")}}, {{CSSXref("color_value/hwb", "hwb()")}}, {{CSSXref("color_value/rgb", "rgb()")}};
   - Колірного простору [CIELAB](https://uk.wikipedia.org/wiki/Lab): {{CSSXref("color_value/lab", "lab()")}}, {{CSSXref("color_value/lch", "lch()")}};
   - Колірного простору [Oklab](https://bottosson.github.io/posts/oklab/): {{CSSXref("color_value/oklab", "oklab()")}}, {{CSSXref("color_value/oklch", "oklch()")}};
   - Інших колірних просторів: {{CSSXref("color_value/color", "color()")}}.
+- Шляхом застосування синтаксису [відносного кольору](/uk/docs/Web/CSS/CSS_colors/Relative_colors), щоб вивести новий колір на основі наявного. Кожна з колірних функцій вище може прийняти **початковий колір**, перед яким повинно стояти ключове слово `from`, після якого – визначення значень каналів для нового **результівного кольору**.
 - Шляхом змішування двох кольорів: {{CSSXref("color_value/color-mix", "color-mix()")}}.
 - Шляхом задання двох кольорів, перший з яких використовується для світлих колірних палітр, а другий – для темних: {{CSSXref("color_value/light-dark", "light-dark()")}}.
 
@@ -88,7 +97,7 @@ light-dark(rgb(255 255 255), rgb(0 0 0))
 
 Кожна компонента будь-якої колірної функції CSS, окрім тих, що використовують історичний запис із розділенням комами, може бути задана у вигляді ключового слова `none`, щоб стати відсутньою.
 
-Явне задання відсутніх компонент – корисне при [колірній інтерполяції](#interpoliatsiia-z-vidsutnimy-komponentamy) для випадків, коли потрібно інтерполювати одні колірні компоненти, але не інші. Для всіх решти випадків відсутня компонента по суті має нульове значення з відповідною одиницею: `0`, `0%` або `0deg`. Наприклад, наступні кольори – рівносильні, коли вживаються поза інтерполяцією:
+Явне задання [відсутніх компонент при колірній інтерполяції](#interpoliatsiia-z-vidsutnimy-komponentamy) – корисне для випадків, коли потрібно {{glossary("interpolation", "інтерполювати")}} одні колірні компоненти, але не інші. Для всіх решти випадків відсутня компонента по суті має нульове значення з відповідною одиницею: `0`, `0%` або `0deg`. Наприклад, наступні кольори – рівносильні, коли вживаються поза інтерполяцією:
 
 ```css
 /* Ці кольори рівносильні */
@@ -440,4 +449,5 @@ div:nth-child(6) {
 - {{CSSXref("&lt;hue&gt;")}} тип даних, що представляє кут барви кольору
 - {{CSSXref("color")}}, {{CSSXref("background-color")}}, {{CSSXref("border-color")}}, {{CSSXref("box-shadow")}}, {{CSSXref("outline-color")}}, {{CSSXref("text-shadow")}} – поширені властивості, що використовують `<color>`
 - [Застосування кольору до елементів HTML за допомогою CSS](/uk/docs/Web/CSS/CSS_colors/Applying_color)
+- [Застосування відносних кольорів](/uk/docs/Web/CSS/CSS_colors/Relative_colors)
 - [Нові функції, градієнти та барви у Кольорах CSS (Рівень 4)](https://developer.mozilla.org/en-US/blog/css-color-module-level-4/) на блозі MDN (2023)

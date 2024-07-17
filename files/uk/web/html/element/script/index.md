@@ -80,7 +80,7 @@ browser-compat: html.elements.script
 
 - `src`
   - : Цей атрибут вказує URI зовнішнього сценарію; може використовуватися як альтернатива вбудовуванню сценарію прямо в документ.
-- [**`type`**](/uk/docs/Web/HTML/Element/script/type)
+- [`type`](/uk/docs/Web/HTML/Element/script/type)
 
   - : Цей атрибут вказує тип сценарію.
     Значення цього атрибута – щось із наступного:

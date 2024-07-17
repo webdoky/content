@@ -142,4 +142,8 @@ section {
 
 - {{CSSXref("color-scheme")}}
 - {{CSSXref("&lt;color&gt;")}}
-- Модуль [Колір CSS](/uk/docs/Web/CSS/CSS_colors)
+- Модуль [Кольорів CSS](/uk/docs/Web/CSS/CSS_colors)
+- {{cssxref("@media", "Медійна")}} ознака [`prefers-contrast`](/uk/docs/Web/CSS/@media/prefers-contrast)
+- [`contrast()`](/uk/docs/Web/CSS/filter-function/contrast)
+- [WCAG – колірний контраст](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable/Color_contrast)
+- {{cssxref('--*', 'Кастомні властивості CSS')}} і {{cssxref("var")}}

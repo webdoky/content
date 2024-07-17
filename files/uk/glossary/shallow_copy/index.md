@@ -24,7 +24,7 @@ page-type: glossary-definition
 - Повторне присвоєння властивостей копії найвищого рівня не впливає на вихідний об'єкт.
 - Повторне присвоєння властивостей вкладених у копію об'єктів впливає на вихідний об'єкт.
 
-У JavaScript усі стандартні вбудовані операції копіювання об'єктів ([синтаксис розгортання](/uk/docs/Web/JavaScript/Reference/Operators/Spread_syntax), [`Array.prototype.concat()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/concat), [`Array.prototype.slice()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/slice), [`Array.from()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/from), [`Object.assign()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) і [`Object.create()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/create)) утворюють поверхневі копії, а не глибокі.
+У JavaScript усі стандартні вбудовані операції копіювання об'єктів ([синтаксис розгортання](/uk/docs/Web/JavaScript/Reference/Operators/Spread_syntax), [`Array.prototype.concat()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/concat), [`Array.prototype.slice()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/slice), [`Array.from()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/from) і [`Object.assign()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)) утворюють поверхневі копії, а не глибокі.
 
 Для прикладу – наступний приклад, у якому створюється об'єкт-масив `ingredientsList`, а потім шляхом копіювання цього об'єкта `ingredientsList` створюється об'єкт `ingredientsListCopy`.
 

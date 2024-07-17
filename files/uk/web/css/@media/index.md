@@ -65,7 +65,7 @@ _Можливості медіа_ описують конкретні харак
   - : Чи є який-небудь доступний механізм уведення пристроєм-вказівником, і якщо так, то наскільки він точний?
     Додано в Медіазапитах рівня 4.
 - {{cssxref("@media/aspect-ratio", "aspect-ratio")}}
-  - : Співвідношення ширини до висоти області перегляду
+  - : {{glossary("aspect ratio", "Співвідношення")}} ширини до висоти області перегляду
 - {{cssxref("@media/color", "color")}}
   - : Число біт на колірний компонент пристрою виведення, або нуль, якщо пристрій не кольоровий
 - {{cssxref("@media/color-gamut", "color-gamut")}}
@@ -73,17 +73,17 @@ _Можливості медіа_ описують конкретні харак
     Додано в Медіазапитах рівня 4.
 - {{cssxref("@media/color-index", "color-index")}}
   - : Число записів у таблиці пошуку кольорів пристрою виведення, або нуль, якщо пристрій не використовує таку таблицю
-- {{cssxref("@media/device-aspect-ratio", "device-aspect-ratio")}} {{deprecated_inline}}
+- {{cssxref("@media/device-aspect-ratio", "device-aspect-ratio")}}
   - : Співвідношення ширини до висоти пристрою виведення.
     Нерекомендований від Медіазапитів рівня 4.
-- {{cssxref("@media/device-height", "device-height")}} {{deprecated_inline}}
+- {{cssxref("@media/device-height", "device-height")}}
   - : Висота поверхні візуалізації пристрою виведення.
     Нерекомендований від Медіазапитів рівня 4.
-- {{cssxref("@media/device-width", "device-width")}} {{deprecated_inline}}
+- {{cssxref("@media/device-width", "device-width")}}
   - : Ширина поверхні візуалізації пристрою виведення. Нерекомендований від Медіазапитів рівня 4.
 - {{cssxref("@media/display-mode", "display-mode")}}
-  - : Режим виведення застосунку, як це визначено в полі [`display`](/uk/docs/Web/Manifest#display) маніфесту вебзастосунку.
-    Визначено в [специфікації Маніфесту вебзастосунку](https://w3c.github.io/manifest/#the-display-mode-media-feature).
+  - : Режим, у якому виводиться застосунок: наприклад, [повноекранний](/uk/docs/Web/API/Fullscreen_API) або [режим зображення в зображенні](/uk/docs/Web/API/Document_Picture-in-Picture_API).
+    Додано в Медіазапитах рівня 5.
 - {{cssxref("@media/dynamic-range", "dynamic-range")}}
   - : Поєднання яскравості, контрастності та глибини кольору, які підтримуються користувацьким агентом і пристроєм виведення. Додано в Медіазапитах рівня 5.
 - {{cssxref("@media/forced-colors", "forced-colors")}}

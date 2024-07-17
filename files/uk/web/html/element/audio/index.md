@@ -1,5 +1,5 @@
 ---
-title: "<audio> – елемент вбудованого аудіо"
+title: <audio> – елемент вбудованого аудіо
 slug: Web/HTML/Element/audio
 page-type: html-element
 browser-compat: html.elements.audio
@@ -37,7 +37,7 @@ browser-compat: html.elements.audio
 
 - `crossorigin`
 
-  - : Цей [перелічений](/uk/docs/Glossary/Enumerated) атрибут позначає те, чи потрібно використовувати CORS для отримання пов'язаного аудіофайлу. [Ресурси, що підтримують CORS](/uk/docs/Web/HTML/CORS_enabled_image), можуть бути використані повторно в елементі {{HTMLElement("canvas")}}, не ставши _ославленими_. Дозволені значення:
+  - : Цей {{Glossary("enumerated", "перелічений")}} атрибут позначає те, чи потрібно використовувати CORS для отримання пов'язаного аудіофайлу. [Ресурси, що підтримують CORS](/uk/docs/Web/HTML/CORS_enabled_image), можуть бути використані повторно в елементі {{HTMLElement("canvas")}}, не ставши _ославленими_. Дозволені значення:
 
     - `anonymous`
       - : Надсилає запит до іншого походження без відповідних облікових даних. Іншими словами, він надсилає HTTP-заголовок `Origin:` без реп'яшка, сертифіката X.509 і HTTP-автентифікації. Якщо сервер не надає облікові дані для сайту походження (не задаючи заголовок HTTP `Access-Control-Allow-Origin:`), то ресурс буде _ославленим_, і його використання буде обмеженим.
@@ -394,13 +394,13 @@ elem.audioTrackList.onremovetrack = (event) => {
         <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
           >Потоковий вміст</a
         >, оповідальний вміст, вбудований вміст. Якщо елемент має атрибут
-        <a href="/uk/docs/Web/HTML/Element/audio#controls"><code>controls</code></a> – інтерактивний вміст та відчутний вміст.
+        <a href="#controls"><code>controls</code></a> – інтерактивний вміст та відчутний вміст.
       </td>
     </tr>
     <tr>
       <th scope="row">Дозволений вміст</th>
       <td>
-        Якщо елемент має атрибут <a href="/uk/docs/Web/HTML/Element/audio#src"><code>src</code></a>: нуль або більше елементів {{HTMLElement("track")}}, після яких – прозорий вміст, що не містить елементів медіа {{HTMLElement("audio")}} і {{HTMLElement("video")}}.<br />Інакше – нуль або більше елементів {{HTMLElement("source")}}, після яких – нуль або більше елементів {{HTMLElement("track")}}, після яких – прозорий вміст, що не містить елементів медіа {{HTMLElement("audio")}} і {{HTMLElement("video")}}.
+        Якщо елемент має атрибут <a href="#src"><code>src</code></a>: нуль або більше елементів {{HTMLElement("track")}}, після яких – прозорий вміст, що не містить елементів медіа {{HTMLElement("audio")}} і {{HTMLElement("video")}}.<br />Інакше – нуль або більше елементів {{HTMLElement("source")}}, після яких – нуль або більше елементів {{HTMLElement("track")}}, після яких – прозорий вміст, що не містить елементів медіа {{HTMLElement("audio")}} і {{HTMLElement("video")}}.
       </td>
     </tr>
     <tr>
