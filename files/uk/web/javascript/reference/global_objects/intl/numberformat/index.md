@@ -27,8 +27,8 @@ browser-compat: javascript.builtins.Intl.NumberFormat
 
 - {{jsxref("Object/constructor", "Intl.NumberFormat.prototype.constructor")}}
   - : Функція-конструктор, котра створила цей об'єкт-примірник. Для примірників `Intl.NumberFormat` початковим значенням є конструктор {{jsxref("Intl/NumberFormat/NumberFormat", "Intl.NumberFormat")}}.
-- `Intl.NumberFormat.prototype[@@toStringTag]`
-  - : Початковим значенням властивості [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) є рядок `"Intl.NumberFormat"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}.
+- `Intl.NumberFormat.prototype[Symbol.toStringTag]`
+  - : Початковим значенням властивості [`Symbol.toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) є рядок `"Intl.NumberFormat"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}.
 
 ## Методи примірника
 

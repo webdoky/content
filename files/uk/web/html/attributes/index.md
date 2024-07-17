@@ -1,5 +1,6 @@
 ---
 title: Довідка атрибутів HTML
+short-title: Атрибути
 slug: Web/HTML/Attributes
 page-type: landing-page
 ---
@@ -811,21 +812,6 @@ page-type: landing-page
       </td>
       <td>{{HTMLElement("meter")}}</td>
       <td>Позначає верхню межу нижнього діапазону.</td>
-    </tr>
-    <tr>
-      <td>
-        <code><a href="/uk/docs/Web/HTML/Element/html#manifest">manifest</a></code>
-        {{deprecated_inline}}
-      </td>
-      <td>{{HTMLElement("html")}}</td>
-      <td>
-        Задає URL маніфесту кешу документа.
-        <div class="note">
-          <p>
-            <strong>Примітка:</strong> Цей атрибут застарів, замість нього слід використовувати <a href="/uk/docs/Web/Manifest"><code>&#x3C;link rel="manifest"></code></a>.
-          </p>
-        </div>
-      </td>
     </tr>
     <tr>
       <td>

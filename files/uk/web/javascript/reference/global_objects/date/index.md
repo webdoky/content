@@ -29,7 +29,7 @@ console.log(new Date(8.64e15 + 1).toString()); // "Invalid Date"
 Є різні методи, що дозволяють взаємодіяти з міткою часу, що зберігається в даті:
 
 - Взаємодіяти зі значенням мітки часу безпосередньо можна за допомогою методів {{jsxref("Date/getTime", "getTime()")}} і {{jsxref("Date/setTime", "setTime()")}}.
-- Методи {{jsxref("Date/valueOf", "valueOf()")}} і [`[@@toPrimitive]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Date/@@toPrimitive) (при передачі `"number"`) – котрі автоматично викликаються при [зведенні до числа](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#zvedennia-do-chysla) – повертають мітку часу, що призводить до того, що об'єкти `Date` поводяться як їх мітки часу при використанні в числових контекстах.
+- Методи {{jsxref("Date/valueOf", "valueOf()")}} і [`[Symbol.toPrimitive]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Date/Symbol.toPrimitive) (при передачі `"number"`) – котрі автоматично викликаються при [зведенні до числа](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#zvedennia-do-chysla) – повертають мітку часу, що призводить до того, що об'єкти `Date` поводяться як їх мітки часу при використанні в числових контекстах.
 - Усі статичні методи ({{jsxref("Date.now()")}}, {{jsxref("Date.parse()")}} і {{jsxref("Date.UTC()")}}) повертають мітки часу замість об'єктів `Date`.
 - Конструктор {{jsxref("Date/Date", "Date()")}} може бути викликаний з міткою часу як єдиним аргументом.
 
@@ -164,7 +164,7 @@ YYYY-MM-DDTHH:mm:ss.sssZ
 ### Інші способи форматувати дату
 
 - {{jsxref("Date/toISOString", "toISOString()")}} повертає рядок у форматі `1970-01-01T00:00:00.000Z` (форматі рядка дати та часу, що був введений вище, і який є спрощеним варіантом [ISO 8601](https://uk.wikipedia.org/wiki/ISO_8601)). {{jsxref("Date/toJSON", "toJSON()")}} викликає `toISOString()` і повертає результат.
-- {{jsxref("Date/toString", "toString()")}} повертає рядок у форматі `Thu Jan 01 1970 00:00:00 GMT+0000 (Coordinated Universal Time)`, а {{jsxref("Date/toDateString", "toDateString()")}} та {{jsxref("Date/toTimeString", "toTimeString()")}} повертають, відповідно, частини дати та часу такого рядка. [`[@@toPrimitive]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Date/@@toPrimitive) (коли йому передати `"string"` або `"default"`) викликає `toString()` і повертає результат.
+- {{jsxref("Date/toString", "toString()")}} повертає рядок у форматі `Thu Jan 01 1970 00:00:00 GMT+0000 (Coordinated Universal Time)`, а {{jsxref("Date/toDateString", "toDateString()")}} та {{jsxref("Date/toTimeString", "toTimeString()")}} повертають, відповідно, частини дати та часу такого рядка. [`[Symbol.toPrimitive]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Date/Symbol.toPrimitive) (коли йому передати `"string"` або `"default"`) викликає `toString()` і повертає результат.
 - {{jsxref("Date/toUTCString", "toUTCString()")}} повертає рядок у форматі `Thu, 01 Jan 1970 00:00:00 GMT` (узагальненому {{rfc(7231)}}).
 - {{jsxref("Date/toLocaleDateString", "toLocaleDateString()")}}, {{jsxref("Date/toLocaleTimeString", "toLocaleTimeString()")}} і {{jsxref("Date/toLocaleString", "toLocaleString()")}} використовують специфічні для локалі формати дати та часу, які зазвичай надаються з боку API [`Intl`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl).
 
@@ -178,7 +178,7 @@ YYYY-MM-DDTHH:mm:ss.sssZ
 ## Статичні методи
 
 - {{jsxref("Date.now()")}}
-  - : Повертає числове значення, що відповідає поточному часові: кількість мілісекунд, що сплили від 1 січня 1970 року, 00:00:00 UTC, без врахування високосних секунд.
+  - : Повертає числове значення, що відповідає поточному часові: кількість мілісекунд від 1 січня 1970 року, 00:00:00 UTC, без врахування високосних секунд.
 - {{jsxref("Date.parse()")}}
   - : Розбирає рядок з датою і повертає відповідну кількість мілісекунд від 1 січня 1970 року 00:00:00 UTC, без врахування високосних секунд.
 - {{jsxref("Date.UTC()")}}
@@ -283,7 +283,7 @@ YYYY-MM-DDTHH:mm:ss.sssZ
   - : Перетворює дату на рядок, використовуючи часову зону UTC за основу.
 - {{jsxref("Date.prototype.valueOf()")}} (значення)
   - : Повертає примітивне значення об'єкта {{jsxref("Date")}}. Заміщує метод {{jsxref("Object.prototype.valueOf()")}}.
-- [`Date.prototype[@@toPrimitive]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Date/@@toPrimitive)
+- [`Date.prototype[Symbol.toPrimitive]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Date/Symbol.toPrimitive)
   - : Перетворює цей об'єкт `Date` на примітивне значення.
 
 ## Приклади

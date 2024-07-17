@@ -60,6 +60,7 @@ if (numberOfTranslations > requiredTranslationNumber) {
   process.exit(1);
 }
 
+// eslint-disable-next-line prefer-const
 let [actionMarker, translation] = compact(changedTranslations[0].split(" "));
 let action;
 switch (actionMarker) {
@@ -73,6 +74,7 @@ switch (actionMarker) {
     translation = last(changedTranslations[0].split(" -> "));
     // intentionally no break here
   }
+  // eslint-disable-next-line no-fallthrough
   case "M": {
     action = "update";
     break;
@@ -178,7 +180,7 @@ if (!(update && currentBranchName.endsWith(targetBranchName))) {
 
 console.log("Staging the translation");
 // In case of rename, the folder must be added manually beforehands
-if (actionMarker !== 'R') {
+if (actionMarker !== "R") {
   // Folder must be added, not single file: the folder may contain misc files
   execSync(`git add ${translationFolder}`, { stdio: "inherit" });
 }
