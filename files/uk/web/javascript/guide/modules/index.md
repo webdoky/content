@@ -370,9 +370,18 @@ import fp from "lodash/fp.js";
 </script>
 ```
 
-Сценарій, в котрий імпортуються можливості модуля, по суті діє як модуль верхнього рівня. Якщо це упустити, то Firefox, наприклад, дає помилку "SyntaxError: import declarations may only appear at top level of a module".
+Інструкції `import` і `export` можна використовувати лише всередині модулів, але не в звичайних сценаріях. Викидається помилка, якщо елемент `<script>` не має атрибуту `type="module"` і намагається імпортувати інші модулі. Наприклад:
 
-Інструкції `import` і `export` можна використовувати лише в модулях, але не у звичайних сценаріях.
+```html example-bad
+<script>
+  import _ from "lodash"; // SyntaxError: import declarations may only appear at top level of a module
+  // ...
+</script>
+<script src="a-module-using-import-statements.js"></script>
+<!-- SyntaxError: import declarations may only appear at top level of a module -->
+```
+
+Загалом, слід визначати всі свої модулі в окремих файлах. Модулі, оголошені зразу в HTML, можуть лише імпортувати інші модулі, але нічого з того, що вони експортують, не зможуть використати інші модулі (тому що такий модуль не має URL).
 
 > **Примітка:** Модулі та їхні залежності можуть бути завантажені наперед шляхом задання їх в елементах [`<link>`](/uk/docs/Web/HTML/Element/link) з атрибутом [`rel="modulepreloaded"`](/uk/docs/Web/HTML/Attributes/rel/modulepreload).
 > Це може суттєво знизити час завантаження, коли ці модулі використовуються.
