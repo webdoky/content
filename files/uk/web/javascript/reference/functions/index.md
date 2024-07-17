@@ -247,7 +247,7 @@ function myFunc({ a, b }, c = 1, ...rest) {
 Є певні наслідки, якщо використовується один зі синтаксисів непростих параметрів, наведених вище:
 
 - Не можна застосовувати до тіла функції `"use strict"`: це призводить до [синтаксичної помилки](/uk/docs/Web/JavaScript/Reference/Errors/Strict_non_simple_params).
-- Навіть якщо функція не перебуває в [суворому режимі](/uk/docs/Web/JavaScript/Reference/Strict_mode), об'єкт [`arguments`](/uk/docs/Web/JavaScript/Reference/Functions/arguments) перестає синхронізуватися з іменованими параметрами, а властивість [`arguments.callee`](/uk/docs/Web/JavaScript/Reference/Functions/arguments/callee) викидає помилку, якщо спробувати до неї звернутися.
+- Навіть якщо функція не перебуває в [суворому режимі](/uk/docs/Web/JavaScript/Reference/Strict_mode), застосовуються певні особливості функцій у суворому режимі, в тому числі об'єкт [`arguments`](/uk/docs/Web/JavaScript/Reference/Functions/arguments) перестає синхронізуватися з іменованими параметрами, а властивість [`arguments.callee`](/uk/docs/Web/JavaScript/Reference/Functions/arguments/callee) викидає помилку, якщо спробувати до неї звернутися, а також заборонене дублювання імен параметрів.
 
 ### Об'єкт arguments
 
