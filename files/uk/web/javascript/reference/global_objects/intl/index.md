@@ -91,8 +91,8 @@ browser-compat: javascript.builtins.Intl
   - : Конструктор для об'єктів з мовозалежним форматуванням відносного часу.
 - {{jsxref("Intl.Segmenter")}}
   - : Конструктор для об'єктів, що дозволяють сегментацію тексту, чутливу до мови.
-- `Intl[@@toStringTag]`
-  - : Початкове значення властивості [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"Intl"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}.
+- `Intl[Symbol.toStringTag]`
+  - : Початкове значення властивості [`[Symbol.toStringTag]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"Intl"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}.
 
 ## Статичні методи
 
@@ -159,6 +159,7 @@ const formattedCount = new Intl.NumberFormat(navigator.languages).format(count);
 - {{jsxref("Date.prototype.toLocaleString()")}}
 - {{jsxref("Date.prototype.toLocaleDateString()")}}
 - {{jsxref("Date.prototype.toLocaleTimeString()")}}
+- {{domxref("Keyboard.getLayoutMap()")}}
 - {{domxref("navigator.language")}}
 - {{domxref("navigator.languages")}}
 - [API інтернаціоналізації ECMAScript](https://norbertlindenberg.com/2012/12/ecmascript-internationalization-api/index.html) від Норберта Лінденберга (2012)
