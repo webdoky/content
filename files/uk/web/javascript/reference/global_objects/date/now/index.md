@@ -29,7 +29,7 @@ Date.now()
 
 ### Знижена точність часу
 
-Для забезпечення захисту від часових атак і [створення цифрових відбитків](/uk/docs/Glossary/Fingerprinting), точні значення `Date.now()` можуть заокруглюватись залежно від налаштувань браузера. Наприклад, у Firefox опція `privacy.reduceTimerPrecision` — усталено ввімкнена, і усталено дорівнює 20 мкс у Firefox. Також можна увімкнути `privacy.resistFingerprinting`, і в цьому випадку точність дорівнюватиме 100 мс або значенню `privacy.resistFingerprinting.reduceTimerPrecision.microseconds` — залежно від того, яке з цих значень більше.
+Для забезпечення захисту від часових атак і [створення цифрових відбитків](/uk/docs/Glossary/Fingerprinting), точні значення `Date.now()` можуть заокруглюватись залежно від налаштувань браузера. Наприклад, у Firefox опція `privacy.reduceTimerPrecision` — усталено ввімкнена і усталено дорівнює 2 мс у Firefox. Також можна увімкнути `privacy.resistFingerprinting`, і в цьому випадку точність дорівнюватиме 100 мс або значенню `privacy.resistFingerprinting.reduceTimerPrecision.microseconds` — залежно від того, яке з цих значень більше.
 
 Наприклад, за зниженої точності значення часу результат `Date.now()` завжди буде кратним 2 та буде кратним 100 (або `privacy.resistFingerprinting.reduceTimerPrecision.microseconds`), коли ввімкнено `privacy.resistFingerprinting`.
 
