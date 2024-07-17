@@ -29,12 +29,33 @@ browser-compat: html.elements.script
 
     Дивіться [Сумісність із браузерами](#sumisnist-iz-brauzeramy) для отримання приміток щодо підтримки браузерами. Дивіться також [Асинхронні сценарії для asm.js](/uk/docs/Games/Techniques/Async_scripts).
 
+- `attributionsrc` {{experimental_inline}}
+
+  - : Задає те, що ви хочете, аби браузер надіслав вкупі з запитом на ресурс сценарію заголовок {{httpheader("Attribution-Reporting-Eligible")}}. На серверному боці такий заголовок використовується для запуску надсилання у відповіді заголовка {{httpheader("Attribution-Reporting-Register-Source")}} або {{httpheader("Attribution-Reporting-Register-Trigger")}}, щоб зареєструвати засноване на зображенні [джерело атрибуції](/uk/docs/Web/API/Attribution_Reporting_API/Registering_sources#dzherela-podii-na-osnovi-html) або [пускача атрибуції](/uk/docs/Web/API/Attribution_Reporting_API/Registering_triggers#puskach-atrybutsii-na-osnovi-html), відповідно. Те, який заголовок відповіді слід надсилати у відповідь, залежить від значення заголовка `Attribution-Reporting-Eligible`, що спричинив реєстрацію.
+
+    > **Примітка:** Інший варіант: на основі JavaScript можна реєструвати джерела та пускачі, надсилаючи запит {{domxref("fetch()")}}, що вміщає варіант `attributionReporting` (або заданий безпосередньо на виклику `fetch()`, або на об'єкті {{domxref("Request")}}, переданому до виклику `fetch()`), або шляхом надсилання {{domxref("XMLHttpRequest")}} вкупі з закликанням {{domxref("XMLHttpRequest.setAttributionReporting", "setAttributionReporting()")}} на об'єкті запиту.
+    > Можна задати одну з двох версій цього атрибуту:
+
+    - Булева, тобто просто запис `attributionsrc`. Це задає те, щоб тому самому серверу, що й сервер, на який посилається атрибут `src`, надсилався заголовок {{httpheader("Attribution-Reporting-Eligible")}}. Це годиться, коли джерело атрибуції чи реєстрація пускача обробляється на тому самому сервері. При реєстрації пускача атрибуції ця властивість необов'язкова, і за її опущення використовується булеве значення.
+    - Значення, що вміщає один або кілька URL, наприклад:
+
+      ```html
+      <script src="myscript.js"
+              attributionsrc="https://a.example/register-source https://b.example/register-source"
+      >
+      ```
+
+      Це корисно в тих випадках, коли запитаний ресурс не перебуває на сервері під вашим контролем, або просто хочеться обробляти реєстрацію джерела атрибуції на іншому сервері. У такому випадку можна задати один або більше URL як значення `attributionsrc`. Коли трапляється запит на ресурс, заголовок {{httpheader("Attribution-Reporting-Eligible")}} надсилається на URL, задані в `attributionSrc`, а не лише за походженням ресурсу. Ці URL потім можуть відповісти заголовком {{httpheader("Attribution-Reporting-Register-Source")}} або {{httpheader("Attribution-Reporting-Register-Trigger")}}, як доречно, для завершення реєстрації.
+
+      > **Примітка:** Задання кількох URL означає те, що на одну можливість можна зареєструвати кілька джерел атрибуції. Можна, наприклад, мати різні кампанії, успішність яких вимірюється, що включає генерування різних звітів щодо різних даних.
+      > Дивіться подробиці в [API звітування атрибуції](/uk/docs/Web/API/Attribution_Reporting_API).
+
 - `blocking` {{Experimental_Inline}}
 
   - : Цей атрибут явно вказує, що певні операції повинні бути заблоковані отриманням такого сценарію. Операції до блокування повинні бути розділеним пробілами списком лексем блокування, перелічених нижче.
     - `render`: Візуалізація вмісту на екрані – заблокована.
 
-- `crossorigin`
+- [`crossorigin`](/uk/docs/Web/HTML/Attributes/crossorigin)
   - : Звичайні елементи `script` передають {{domxref('Window.error_event', 'window.onerror')}} украй обмежену інформацію щодо сценаріїв, що не проходять стандартних перевірок {{Glossary("CORS")}}. Щоб дозволити логування помилок для сайтів, котрі використовують окремий домен для статичних мультимедійних файлів, слід використовувати цей атрибут. Дивіться [Атрибути налаштувань CORS](/uk/docs/Web/HTML/Attributes/crossorigin) для отримання більш докладного пояснення його дійсних аргументів.
 - `defer`
 
