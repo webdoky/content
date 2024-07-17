@@ -7,7 +7,7 @@ browser-compat: css.properties.white-space
 
 {{CSSRef}}
 
-Властивість CSS **`white-space`** (пробіл) задає те, як обробляються {{Glossary("whitespace", "пробіли")}} всередині елемента.
+Властивість [CSS](/uk/docs/Web/CSS) **`white-space`** (пробіл) задає те, як обробляються {{Glossary("whitespace", "пробіли")}} всередині елемента.
 
 {{EmbedInteractiveExample("pages/css/white-space.html")}}
 
