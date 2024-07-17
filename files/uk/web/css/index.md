@@ -1,5 +1,5 @@
 ---
-title: "CSS – Каскадні списки стилів"
+title: CSS – Каскадні списки стилів
 slug: Web/CSS
 page-type: landing-page
 ---
@@ -75,6 +75,5 @@ CSS належить до ключових мов **відкритого веб�
 
 ## Дивіться також
 
-- [CSS демо](/uk/docs/Web/Demos#css): Отримайте творчий заряд від перегляду прикладів свіжих CSS технологій у дії.
 - веб мови, до яких часто застосовують CSS: [HTML](/uk/docs/Web/HTML), [SVG](/uk/docs/Web/SVG), [MathML](/uk/docs/Web/MathML), {{Glossary("XHTML")}} та [XML](/uk/docs/Web/XML/XML_introduction).
 - [Питання про CSS на Stack Overflow](https://stackoverflow.com/questions/tagged/css)
