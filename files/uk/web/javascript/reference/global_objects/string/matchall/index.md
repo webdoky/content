@@ -38,7 +38,7 @@ matchAll(regexp)
 
 ## Опис
 
-Реалізація `String.prototype.matchAll` сама по собі є дуже простою: цей метод просто викликає метод `Symbol.matchAll` свого аргументу з вихідним рядком як першим параметром (коли не рахувати додаткової валідації вихідних даних на предмет того, що регулярний вираз є глобальним). Фактична реалізація надходить із [`RegExp.prototype[@@matchAll]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@matchAll).
+Реалізація `String.prototype.matchAll` сама по собі є дуже простою: цей метод просто викликає метод `Symbol.matchAll` свого аргументу з вихідним рядком як першим параметром (коли не рахувати додаткової валідації вихідних даних на предмет того, що регулярний вираз є глобальним). Фактична реалізація надходить із [`RegExp.prototype[Symbol.matchAll]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.matchAll).
 
 ## Приклади
 
@@ -128,7 +128,7 @@ array[1];
 // ['test2', 'e', 'st2', '2', index: 5, input: 'test1test2', length: 4]
 ```
 
-### Застосування matchAll() вкупі з об'єктом, що не є RegExp, але має реалізацію @@matchAll
+### Застосування matchAll() вкупі з об'єктом, що не є RegExp, але має реалізацію `[Symbol.matchAll]()`
 
 Якщо об'єкт має метод `Symbol.matchAll`, то він може використовуватися як власний шукач збігів. Повернене значення `Symbol.matchAll` стає поверненим значенням `matchAll()`.
 
@@ -158,4 +158,4 @@ str.matchAll({
 - {{jsxref("RegExp")}}
 - {{jsxref("RegExp.prototype.exec()")}}
 - {{jsxref("RegExp.prototype.test()")}}
-- [`RegExp.prototype[@@matchAll]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@matchAll)
+- [`RegExp.prototype[Symbol.matchAll]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.matchAll)
