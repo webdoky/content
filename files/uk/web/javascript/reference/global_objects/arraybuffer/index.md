@@ -41,7 +41,7 @@ browser-compat: javascript.builtins.ArrayBuffer
 
 ## Статичні властивості
 
-- {{jsxref("ArrayBuffer/@@species", "ArrayBuffer[@@species]")}}
+- {{jsxref("ArrayBuffer/Symbol.species", "ArrayBuffer[Symbol.species]")}}
   - : Функція-конструктор, що використовується для створення похідних об'єктів.
 
 ## Статичні методи
@@ -63,8 +63,8 @@ browser-compat: javascript.builtins.ArrayBuffer
   - : Доступна лише для зчитування максимальна довжина, в байтах, до якої може бути змінений розмір `ArrayBuffer`. Це значення задається, коли цей масив конструюється, і не може бути змінене.
 - {{jsxref("ArrayBuffer.prototype.resizable")}}
   - : Лише для зчитування. Повертає `true`, якщо розмір цього `ArrayBuffer` може бути змінений, або `false` – якщо ні.
-- `ArrayBuffer.prototype[@@toStringTag]`
-  - : Початковим значенням властивості [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) є рядок `"ArrayBuffer"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}.
+- `ArrayBuffer.prototype[Symbol.toStringTag]`
+  - : Початковим значенням властивості [`[Symbol.toStringTag]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) є рядок `"ArrayBuffer"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}.
 
 ## Методи примірників
 
