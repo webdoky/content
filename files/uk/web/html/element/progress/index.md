@@ -1,5 +1,5 @@
 ---
-title: "<progress>: Елемент – індикатор прогресу"
+title: <progress> – Елемент – індикатор прогресу
 slug: Web/HTML/Element/progress
 page-type: html-element
 browser-compat: html.elements.progress
