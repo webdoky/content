@@ -263,6 +263,6 @@ p {
 - [Блоковий контекст форматування](/uk/docs/Web/CSS/CSS_display/Block_formatting_context)
 - [Контекст нагромадження](/uk/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context)
 - [Перекриття зовнішніх полів](/uk/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
-- [Початкові](/uk/docs/Web/CSS/initial_value), [обраховані](/uk/docs/Web/CSS/computed_value), [вжиті](/uk/docs/Web/CSS/used_value) та [фактичні](/uk/docs/Web/CSS/actual_value) значення
+- [Початкові](/uk/docs/Web/CSS/initial_value), [обчислені](/uk/docs/Web/CSS/computed_value), [вжиті](/uk/docs/Web/CSS/used_value) та [фактичні](/uk/docs/Web/CSS/actual_value) значення
 - [Заміщені елементи](/uk/docs/Web/CSS/Replaced_element)
 - {{glossary("Intrinsic size", "Природний розмір")}}
