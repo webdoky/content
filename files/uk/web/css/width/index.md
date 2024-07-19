@@ -55,7 +55,7 @@ width: unset;
   - : Внутрішньо найменша можлива ширина.
 - `fit-content`
   - : Використовує доступний простір, але не більше, ніж [max-content](/uk/docs/Web/CSS/max-content), тобто `min(max-content, max(min-content, stretch))`.
-- `fit-content({{cssxref("&lt;length-percentage&gt;")}})` {{Experimental_Inline}}
+- `fit-content({{cssxref("&lt;length-percentage&gt;")}})`
   - : Використовує формулу fit-content щодо доступного простору, заміненого вказаним аргументом, тобто `min(max-content, max(min-content, <length-percentage>))`.
 
 ## Занепокоєння щодо доступності

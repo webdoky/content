@@ -390,15 +390,17 @@ function validFileType(file) {
 
 ```js
 function returnFileSize(number) {
-  if (number < 1024) {
+  if (number < 1e3) {
     return `${number} bytes`;
-  } else if (number >= 1024 && number < 1048576) {
-    return `${(number / 1024).toFixed(1)} KB`;
-  } else if (number >= 1048576) {
-    return `${(number / 1048576).toFixed(1)} MB`;
+  } else if (number >= 1e3 && number < 1e6) {
+    return `${(number / 1e3).toFixed(1)} кБ`;
+  } else {
+    return `${(number / 1e6).toFixed(1)} МБ`;
   }
 }
 ```
+
+> **Примітка:** Одиниці вимірювання "кБ" і "МБ" тут використовують прийняті [префікси міжнародної системи числення (SI)](https://uk.wikipedia.org/wiki/%D0%94%D0%B2%D1%96%D0%B9%D0%BA%D0%BE%D0%B2%D1%96_%D0%BF%D1%80%D0%B5%D1%84%D1%96%D0%BA%D1%81%D0%B8): 1 кБ = 1000 Б, подібно до того, як це працює в macOS. Інші системи представляють розміри файлів інакше: наприклад, Ubuntu користується префіксами Міжнародної електротехнічної комісії (IEC), в яких 1 КіБ = 1024 Б, а специфікації RAM нерідко використовують префікси SI для представлення степенів двійки (1 кБ = 1024 Б). У зв'язку з цим тут використовуються `1e3` (`1000`) і `1e6` (`100000`), а не `1024` і `1048576`. У власному застосунку вам слід чітко роз'яснити систему одиниць вимірювання користувачам, якщо важливий точний розмір.
 
 ```js hidden
 const button = document.querySelector("form button");

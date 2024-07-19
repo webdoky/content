@@ -82,7 +82,7 @@ function encodeRFC5987ValueChars(str) {
 
 ### Кодування для RFC3986
 
-Новіший стандарт [RFC3986](https://datatracker.ietf.org/doc/html/rfc3986) резервує !, ', (, ) і \*, навіть попри те, що ці символи не мають формалізованого використання як обмежувачі в URI. Наступна функція кодує рядок у сумісному з RFC3986 форматі компонента URL. Також вона кодує [ і ], котрі є частиною синтаксису URI {{Glossary("IPv6")}}. Сумісна з RFC3986 реалізація `encodeURI` їх екранувати не повинна, що продемонстровано в [прикладі `encodeURI()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/encodeURI#koduvannia-dlia-rfc3986).
+Новіший стандарт [RFC3986](https://datatracker.ietf.org/doc/html/rfc3986) резервує `!`, `'`, `(`, `)` і `*`, навіть попри те, що ці символи не мають формалізованого використання як обмежувачі в URI. Наступна функція кодує рядок у сумісному з RFC3986 форматі компонента URL. Також вона кодує `[` і `]`, котрі є частиною синтаксису URI {{Glossary("IPv6")}}. Сумісна з RFC3986 реалізація `encodeURI` їх екранувати не повинна, що продемонстровано в [прикладі `encodeURI()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/encodeURI#koduvannia-dlia-rfc3986).
 
 ```js
 function encodeRFC3986URIComponent(str) {
@@ -106,7 +106,7 @@ encodeURIComponent("\uD800");
 encodeURIComponent("\uDFFF");
 ```
 
-Можна скористатися методом {{jsxref("String.prototype.toWellFormed()")}}, котрий замінює самотні сурогати на символ заміни Unicode (U+FFFD), щоб уникнути цієї помилки. Також можна скористатися методом {{jsxref("String.prototype.isWellFormed()")}}, щоб перевірити, чи містить рядок самотні сурогати, перед тим, як передати його у `encodeURIComponent()`.
+Можна скористатися методом {{jsxref("String.prototype.toWellFormed()")}}, котрий замінює самотні сурогати на символ заміни Unicode (U+FFFD), щоб уникнути цієї помилки. Також можна скористатися методом {{jsxref("String.prototype.isWellFormed()")}}, щоб перевірити, чи містить рядок самотні сурогати, перед тим, як передати його в `encodeURIComponent()`.
 
 ## Специфікації
 
