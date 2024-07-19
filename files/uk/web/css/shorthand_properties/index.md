@@ -254,5 +254,5 @@ CSS має універсальну властивість-скорочення,
 - [Вивчаймо – Каскадні шари](/uk/docs/Learn/CSS/Building_blocks/Cascade_layers)
 - Модуль [Каскадності та успадкування CSS](/uk/docs/Web/CSS/CSS_cascade)
 - [Моделі візуального форматування](/uk/docs/Web/CSS/Visual_formatting_model)
-- [Початкові](/uk/docs/Web/CSS/initial_value), [обраховані](/uk/docs/Web/CSS/computed_value), [вжиті](/uk/docs/Web/CSS/used_value) та [фактичні](/uk/docs/Web/CSS/actual_value) значення
+- [Початкові](/uk/docs/Web/CSS/initial_value), [обчислені](/uk/docs/Web/CSS/computed_value), [вжиті](/uk/docs/Web/CSS/used_value) та [фактичні](/uk/docs/Web/CSS/actual_value) значення
 - [Синтаксис визначення значень](/uk/docs/Web/CSS/Value_definition_syntax)
