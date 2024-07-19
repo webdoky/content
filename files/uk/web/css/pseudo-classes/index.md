@@ -171,7 +171,7 @@ button:hover {
 
 ## Функційні псевдокласи
 
-Ці псевдокласи приймають як параметр [список селекторів](/uk/docs/Web/CSS/Selector_list#spysok-selektoriv) або [поблажливий список селекторів](/uk/docs/Web/CSS/Selector_list#poblazhlyvyi-spysok-selektoriv).
+Ці псевдокласи приймають як параметр [список селекторів](/uk/docs/Web/CSS/Selector_list) або [поблажливий список селекторів](/uk/docs/Web/CSS/Selector_list#poblazhlyvyi-spysok-selektoriv).
 
 - [`:is()`](/uk/docs/Web/CSS/:is)
   - : Псевдоклас збігу-з-чим-небудь дає збіг з усіма елементами, що дають збіг щонайменше з одним селектором з переданого списку. Цей список є поблажливим.
