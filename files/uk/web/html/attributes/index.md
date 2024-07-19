@@ -1,5 +1,6 @@
 ---
 title: Довідка атрибутів HTML
+short-title: Атрибути
 slug: Web/HTML/Attributes
 page-type: landing-page
 ---
@@ -94,6 +95,15 @@ page-type: landing-page
       <td>
       Альтернативний текст на випадок того, що зображення не може бути показане.
       </td>
+    </tr>
+    <tr>
+      <td>
+        <code><a href="/uk/docs/Web/HTML/Element/link#as">as</a></code>
+      </td>
+      <td>
+        {{HTMLElement("link")}}
+      </td>
+      <td>Задає тип вмісту, який завантажується зв'язком.</td>
     </tr>
     <tr>
       <td>
@@ -299,17 +309,6 @@ page-type: landing-page
       </td>
       <td>
         Позначає те, чи доступний вміст елемента для редагування.
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <code><a href="/uk/docs/Web/HTML/Global_attributes/contextmenu">contextmenu</a></code> {{non-standard_inline}} {{deprecated_inline}}
-      </td>
-      <td>
-        <a href="/uk/docs/Web/HTML/Global_attributes">Глобальний атрибут</a>
-      </td>
-      <td>
-        Визначає ідентифікатор елемента {{HTMLElement("menu")}}, який буде служити контекстним меню елемента.
       </td>
     </tr>
     <tr>
@@ -813,21 +812,6 @@ page-type: landing-page
       </td>
       <td>{{HTMLElement("meter")}}</td>
       <td>Позначає верхню межу нижнього діапазону.</td>
-    </tr>
-    <tr>
-      <td>
-        <code><a href="/uk/docs/Web/HTML/Element/html#manifest">manifest</a></code>
-        {{deprecated_inline}}
-      </td>
-      <td>{{HTMLElement("html")}}</td>
-      <td>
-        Задає URL маніфесту кешу документа.
-        <div class="note">
-          <p>
-            <strong>Примітка:</strong> Цей атрибут застарів, замість нього слід використовувати <a href="/uk/docs/Web/Manifest"><code>&#x3C;link rel="manifest"></code></a>.
-          </p>
-        </div>
-      </td>
     </tr>
     <tr>
       <td>

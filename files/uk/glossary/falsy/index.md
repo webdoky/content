@@ -78,7 +78,8 @@ console.log(0 && "пес");
 
 ## Дивіться також
 
-- {{Glossary("Truthy", "Істинні значення")}}
-- {{Glossary("Type_coercion", "Зведення типів")}}
-- {{Glossary("Boolean", "Булеве значення")}}
+- Споріднені терміни глосарія:
+  - {{Glossary("Truthy", "Істинні значення")}}
+  - {{Glossary("Type_coercion", "Зведення типів")}}
+  - {{Glossary("Boolean", "Булеве значення")}}
 - [Зведення до булевого](/uk/docs/Web/JavaScript/Reference/Global_Objects/Boolean#zvedennia-do-bulevoho)

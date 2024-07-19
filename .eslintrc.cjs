@@ -58,6 +58,12 @@ module.exports = {
         "no-magic-numbers": "off",
       },
     },
+    {
+      files: ["**/front-matter-*"],
+      rules: {
+        "import/extensions": ["error", "ignorePackages"],
+      },
+    },
   ],
   parserOptions: {
     ecmaVersion: 2021,

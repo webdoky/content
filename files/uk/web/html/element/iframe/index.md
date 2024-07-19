@@ -23,6 +23,8 @@ browser-compat: html.elements.iframe
 
   - : Задає [політику дозволів](/uk/docs/Web/HTTP/Permissions_Policy) для `<iframe>`. Політика визначає те, які можливості доступні `<iframe>` (наприклад, доступ до мікрофона, камери, батареї, поширення в Інтернеті тощо), залежно від походження запиту.
 
+    Дивіться приклади в [супутніх фреймах](/uk/docs/Web/HTTP/Headers/Permissions-Policy#suputni-freimy) на сторінці `Permissions-Policy`.
+
     > **Примітка:** Політика дозволів, задана атрибутом `allow`, реалізовує додаткові обмеження, поверх політики, заданої в заголовку {{httpheader("Permissions-Policy")}}. Перша не замінює другу.
 
 - `allowfullscreen`
@@ -36,6 +38,10 @@ browser-compat: html.elements.iframe
   - : Слід надати цьому атрибутові значення `true`, якщо `<iframe>` до іншого походження треба дозволити викликати [API запитів платежів](/uk/docs/Web/API/Payment_Request_API).
 
     > **Примітка:** Цей атрибут вважається застарілим, він був перевизначений як `allow="payment"`.
+
+- `browsingtopics` {{Experimental_Inline}} {{non-standard_inline}}
+
+  - : Булів атрибут, котрий, якщо присутній, задає те, що вибрані теми для поточного користувача мають бути надіслані разом із запитом на походження цього {{htmlelement("iframe")}}. Дивіться подробиці у [Використанні API тем](/uk/docs/Web/API/Topics_API/Using).
 
 - `credentialless` {{Experimental_Inline}}
 
@@ -230,8 +236,8 @@ browser-compat: html.elements.iframe
       <td>Жодного.</td>
     </tr>
     <tr>
-      <th scope="row">Упускання тегу</th>
-      <td>{{no_tag_omission}}</td>
+      <th scope="row">Пропуск тега</th>
+      <td>Немає; і початковий, і кінцевий теги – обов'язкові.</td>
     </tr>
     <tr>
       <th scope="row">Дозволені батьківські елементи</th>

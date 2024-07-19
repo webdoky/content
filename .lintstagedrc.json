@@ -1,0 +1,12 @@
+{
+  "*.js": ["eslint --quiet --fix"],
+  "*.md": [
+    "node scripts/markdownlint.js",
+    "node scripts/front-matter-linter.js --fix true",
+    "prettier --write --ignore-unknown"
+  ],
+  "tests/**/*.*": "yarn test:front-matter-linter",
+  "*_additions.txt": [
+    "node --experimental-specifier-resolution=node ./scripts/sort-lines.js"
+  ]
+}
