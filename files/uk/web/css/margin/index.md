@@ -68,9 +68,9 @@ margin: unset;
 
 ### Горизонтальне центрування
 
-Центрувати елемент по горизонталі в межах його батьківського елемента можна, задавши йому `margin: 0 auto;`.
+Центрувати елемент за горизонталлю в межах його батьківського елемента можна, задавши йому `margin: 0 auto;`.
 
-Поширеніший метод центрування елемента по горизонталі – задання на контейнері `display: flex;` і [`justify-content: center;`](/uk/docs/Web/CSS/justify-content), таким чином [центруючи його гнучкі елементи](/uk/docs/Web/CSS/CSS_flexible_box_layout/Aligning_items_in_a_flex_container).
+Поширеніший метод центрування елемента за горизонталлю – задання контейнеру `display: flex;` і [`justify-content: center;`](/uk/docs/Web/CSS/justify-content), у такий спосіб [центруючи його гнучкі дочірні елементи](/uk/docs/Web/CSS/CSS_flexible_box_layout/Aligning_items_in_a_flex_container).
 
 ### Стягування зовнішніх відступів
 
