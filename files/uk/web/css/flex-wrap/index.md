@@ -11,7 +11,7 @@ browser-compat: css.properties.flex-wrap
 
 {{EmbedInteractiveExample("pages/css/flex-wrap.html")}}
 
-Властивість-скорочення {{cssxref("flex-flow")}} може вживатися для задання водночас властивостей {{CSSXRef("flex-direction")}} і `flex-wrap`, таким чином задаючи головну та перехресну осі гнучкого контейнера.
+Властивість-скорочення {{cssxref("flex-flow")}} може вживатися для задання водночас властивостей {{CSSXRef("flex-direction")}} і `flex-wrap`, у такий спосіб визначаючи головну та поперечну осі гнучкого контейнера.
 
 ## Синтаксис
 
@@ -33,7 +33,7 @@ flex-wrap: unset;
 Властивість `flex-wrap` задається у вигляді єдиного ключового слова, вибраного серед значень нижче:
 
 - `nowrap`
-  - : Гнучкі елементи розкладаються на єдиній лінії, що може призвести до переповнення гнучкого контейнера. Точка **cross-start** – рівносильна [inline-start або block-start](/uk/docs/Glossary/Flow_relative_values), залежно від значення {{cssxref("flex-direction")}}. Це значення – усталене.
+  - : Гнучкі елементи розкладаються на єдиній лінії, що може призвести до переповнення гнучкого контейнера. Точка **cross-start** – рівносильна [inline-start або block-start](/uk/docs/Glossary/Flow_relative_values) залежно від значення {{cssxref("flex-direction")}}. Це значення – усталене.
 - `wrap`
   - : Гнучкі елементи розриваються на декілька ліній. Точка **cross-start** – рівносильна [inline-start або block-start](/uk/docs/Glossary/Flow_relative_values), залежно від поточного [напрямку письма](/uk/docs/Web/CSS/CSS_writing_modes), а також значення {{cssxref("flex-direction")}}.
 - `wrap-reverse`
