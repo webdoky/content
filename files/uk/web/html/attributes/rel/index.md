@@ -125,7 +125,7 @@ browser-compat:
 - `expect` {{experimental_inline}}
 
   - : Дозволяє сторінці бути [візуалізаційно заблокованою](/uk/docs/Glossary/Render_blocking), поки не розібрано ключові частини документа, щоб візуалізація була послідовною. Зверніть увагу на те, що візуалізаційне блокування трапляється лише тоді, коли на нього також вказує атрибут [`blocking="render"`](/uk/docs/Web/HTML/Element/link#blocking).
-  - > **Примітка:** Більше інформацію про його застосування дивіться в [Стабілізації стану сторінки для формування послідовності міждокументних переходів](/uk/docs/Web/API/View_Transitions_API/Using#stabilizatsiia-stanu-storinky-dlia-formuvannia-poslidovnosti-mizhdokumentnykh-perekhodiv).
+  - > **Примітка:** Більше інформації про його застосування дивіться в [Стабілізації стану сторінки для формування послідовності міждокументних переходів](/uk/docs/Web/API/View_Transitions_API/Using#stabilizatsiia-stanu-storinky-dlia-formuvannia-poslidovnosti-mizhdokumentnykh-perekhodiv).
 
 - `help`
   - : Ключове слово `help` має зміст для {{htmlelement('form')}}, {{htmlelement('link')}}, {{htmlelement('a')}} та {{htmlelement('area')}} і позначає те, що пов'язаний вміст надає чутливу до контексту допомогу, вміщаючи інформацію про батьківський елемент щодо елемента, що визначає гіперпосилання, та його дочірні елементи. Коли використовується всередині `<link>`, така допомога стосується всього документа. Коли використовується з {{htmlelement('a')}} та {{htmlelement('area')}} і підтримується, то типовий {{cssxref('cursor')}} буде `help`, а не `pointer`.
