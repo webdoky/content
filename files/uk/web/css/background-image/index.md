@@ -22,11 +22,13 @@ browser-compat: css.properties.background-image
 ## Синтаксис
 
 ```css
-background-image: linear-gradient(
-    to bottom,
-    rgb(255 255 0 / 50%),
-    rgb(0 0 255 / 50%)
-  ), url("catfront.png");
+/* одне зображення */
+background-image: linear-gradient(black, white);
+background-image: url("catfront.png");
+
+/* кілька зображень */
+background-image: radial-gradient(circle, #0000 45%, #000f 48%),
+  radial-gradient(ellipse farthest-corner, #fc1c14 20%, #cf15cf 80%);
 
 /* Глобальні значення */
 background-image: inherit;
@@ -53,6 +55,14 @@ background-image: unset;
 
 - [MDN Розуміння WCAG, пояснення Настанови 1.1](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#nastanova-1-1-nadannia-tekstovykh-alternatyv-netekstovomu-vmistu)
 - [Розуміння мірила успіху 1.1.1 | W3C Розуміння WCAG 2.0](https://www.w3.org/TR/2016/NOTE-UNDERSTANDING-WCAG20-20161007/text-equiv-all.html)
+
+Крім цього, важливо пересвідчитись, що контрастне співвідношення між зображенням тла та текстом переднього плану достатньо високе, щоб люди зі слабким зором могли читати вміст сторінки.
+
+Співвідношення колірного контрасту визначається шляхом порівняння яскравості (luminance) значень кольорів тексту і тла. Щоб відповідати вимогам [Настанов із доступності вебвмісту (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/), потрібне співвідношення 4,5:1 для текстового вмісту тіла сторінки та 3:1 для більшого тексту, як-от заголовки. Великий текст визначається як 24px або більше, або [жирний текст](/uk/docs/Web/CSS/font-weight) 18.66px або більше.
+
+- [WebAIM – Інструмент перевірки колірного контрасту](https://webaim.org/resources/contrastchecker/)
+- [MDN розуміння WCAG, пояснення Настанов 1.4](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#guideline_1.4_make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
+- [Розуміння критерію успіху 1.4.3 | W3C Розуміння WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html), W3C (2023)
 
 ## Формальне визначення
 
@@ -83,8 +93,10 @@ background-image: unset;
 
 ```css
 p {
+  font-weight: bold;
   font-size: 1.5em;
-  color: #fe7f88;
+  color: white;
+  text-shadow: 0.07em 0.07em 0.05em black;
   background-image: none;
   background-color: transparent;
 }
@@ -113,20 +125,29 @@ div {
 
 ## Дивіться також
 
-- [Імплементація спрайтових зображень на CSS](/uk/docs/Web/CSS/CSS_Images/Implementing_image_sprites_in_CSS)
 - {{HTMLElement("img")}}
-- Типи даних, пов'язані з зображеннями: {{cssxref("&lt;image&gt;")}}, {{cssxref("&lt;gradient&gt;")}}
 - Функції, пов'язані з зображеннями:
-
-  - {{cssxref("cross-fade", "cross-fade()")}}
-  - {{cssxref("element", "element()")}}
-  - {{cssxref("image/image", "image()")}}
-  - {{cssxref("image/image-set", "image-set()")}}
   - {{cssxref("gradient/linear-gradient", "linear-gradient()")}}
   - {{cssxref("gradient/radial-gradient", "radial-gradient()")}}
   - {{cssxref("gradient/conic-gradient", "conic-gradient()")}}
   - {{cssxref("gradient/repeating-linear-gradient", "repeating-linear-gradient()")}}
   - {{cssxref("gradient/repeating-radial-gradient", "repeating-radial-gradient()")}}
   - {{cssxref("gradient/repeating-conic-gradient", "repeating-conic-gradient()")}}
-  - {{cssxref("image/paint", "paint()")}}
   - {{cssxref("url", "url()")}}
+- [Використання градієнтів CSS](/uk/docs/Web/CSS/CSS_images/Using_CSS_gradients)
+- [Реалізація спрайтових зображень за допомогою CSS](/uk/docs/Web/CSS/CSS_images/Implementing_image_sprites_in_CSS)
+- Модуль [Зображень CSS](/uk/docs/Web/CSS/CSS_images)
+
+- Властивості, пов'язані з фонами
+  - {{cssxref("background-attachment")}}
+  - {{cssxref("background-clip")}}
+  - {{cssxref("background-color")}}
+  - {{cssxref("background-origin")}}
+  - {{cssxref("background-position")}}
+  - {{cssxref("background-repeat")}}
+  - {{cssxref("background-size")}}
+  - Скорочення {{cssxref("background")}}
+- [Вивчаймо CSS – Фони та межі](/uk/docs/Learn/CSS/Building_blocks/Backgrounds_and_borders)
+- [Застосування кількох фонів](/uk/docs/Web/CSS/CSS_backgrounds_and_borders/Using_multiple_backgrounds)
+- [Зміна розмірів фонових зображень](/uk/docs/Web/CSS/CSS_backgrounds_and_borders/Resizing_background_images)
+- Модуль [Фонів і меж CSS](/uk/docs/Web/CSS/CSS_backgrounds_and_borders)

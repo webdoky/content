@@ -79,7 +79,11 @@ spec-urls:
 ## Посібники
 
 - [Застосування кольору до елементів HTML за допомогою CSS](/uk/docs/Web/CSS/CSS_colors/Applying_color)
-  - : Посібник з використання CSS для застосування кольору до різноманітного вмісту. Торкається всіх властивостей CSS, пов'язаних з кольором.
+  - : Посібник з використання CSS для застосування кольору до різноманітного вмісту; містить усі властивості CSS, що приймають `<color>` як значення.
+- [Колірні значення CSS](/uk/docs/Web/CSS/CSS_colors/Color_values)
+  - : Огляд колірних просторів і різних функційних записів `<color>`, доступних у CSS.
+- [Мудре використання кольорів](/uk/docs/Web/CSS/CSS_colors/Using_color_wisely)
+  - : Колірна теорія та ресурси, включно з пошуком доречних кольорів для створення доступної колірної палітри, контрастом і кольоровим друком.
 - [Застосування відносних кольорів](/uk/docs/Web/CSS/CSS_colors/Relative_colors)
   - : Ця стаття пояснює синтаксис відносних кольорів CSS, показує, які є варіанти, та розглядає деякі ілюстративні приклади.
 - [Розуміння кольору та світності](/uk/docs/Web/Accessibility/Understanding_Colors_and_Luminance)
@@ -130,4 +134,3 @@ spec-urls:
 - Інтерфейс [`VideoColorSpace`](/uk/docs/Web/API/VideoColorSpace)
 - Елемент SVG [`<feColorMatrix>`](/uk/docs/Web/SVG/Element/feColorMatrix)
 - [API полотна: застосування стилів і кольорів](/uk/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors#kolory)
-- [Інструмент вибору кольору](/uk/docs/Web/CSS/CSS_colors/Color_picker_tool) – Завдяки цьому інструменту легко створювати, налаштовувати та експериментувати зі власними кольорами.
