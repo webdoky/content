@@ -131,7 +131,7 @@ const newColors = colors.toReversed(); // ['фіолетовий', undefined, un
 
 Решта методів змінює масив, на котрому викликано метод, у випадку чого їхнє повернене значення відрізняється залежно від методу: іноді це посилання на той самий масив, іноді – довжина нового масиву.
 
-Наступні методи створюють нові масиви шляхом звертання до [`this.constructor[Symbol.species]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/@@species) для визначення конструктора, який буде використаний: {{jsxref("Array/concat", "concat()")}}, {{jsxref("Array/filter", "filter()")}}, {{jsxref("Array/flat", "flat()")}}, {{jsxref("Array/flatMap", "flatMap()")}}, {{jsxref("Array/map", "map()")}}, {{jsxref("Array/slice", "slice()")}} і {{jsxref("Array/splice", "splice()")}} (для створення масиву вилучених елементів, що повертається).
+Наступні методи створюють нові масиви шляхом звертання до [`this.constructor[Symbol.species]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/Symbol.species) для визначення конструктора, який буде використаний: {{jsxref("Array/concat", "concat()")}}, {{jsxref("Array/filter", "filter()")}}, {{jsxref("Array/flat", "flat()")}}, {{jsxref("Array/flatMap", "flatMap()")}}, {{jsxref("Array/map", "map()")}}, {{jsxref("Array/slice", "slice()")}} і {{jsxref("Array/splice", "splice()")}} (для створення масиву вилучених елементів, що повертається).
 
 Наступні методи завжди створюють нові масиви за допомогою базового конструктора `Array`: {{jsxref("Array/toReversed", "toReversed()")}}, {{jsxref("Array/toSorted", "toSorted()")}}, {{jsxref("Array/toSpliced", "toSpliced()")}} і {{jsxref("Array/with", "with()")}}.
 
@@ -263,7 +263,7 @@ f("a", "b"); // 'a+b'
 
 ## Статичні властивості
 
-- {{jsxref("Array/@@species", "Array[@@species]")}} ("вид")
+- [`Array[Symbol.species]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/Symbol.species) ("вид")
   - : Повертає конструктор `Array`.
 
 ## Статичні методи
@@ -283,7 +283,7 @@ f("a", "b"); // 'a+b'
 
 - {{jsxref("Object/constructor", "Array.prototype.constructor")}}
   - : Функція-конструктор, котра створила об'єкт-примірник. Для примірників `Array` початковим значенням цієї властивості є конструктор {{jsxref("Array/Array", "Array")}}.
-- {{jsxref("Array/@@unscopables", "Array.prototype[@@unscopables]")}} ("недоступні для огляду")
+- [`Array.prototype[Symbol.unscopables]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/Symbol.unscopables) ("недоступні для огляду")
   - : Містить імена властивостей, котрі не були включені до стандарту ECMAScript до версії ES2015 та є ігнорованими інструкцією прив'язування [`with`](/uk/docs/Web/JavaScript/Reference/Statements/with).
 
 Ці властивості є власними властивостями кожного примірника `Array`.
@@ -369,7 +369,7 @@ f("a", "b"); // 'a+b'
   - : Повертає новий об'єкт [_ітератора масиву_](/uk/docs/Web/JavaScript/Guide/Iterators_and_generators), що містить значення за кожним індексом цього масиву.
 - {{jsxref("Array.prototype.with()")}} ("зі значенням")
   - : Повертає новий масив, у якому елемент за певним індексом замінений заданим значенням, не змінюючи вихідний масив.
-- [`Array.prototype[@@iterator]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/@@iterator) ("ітератор")
+- [`Array.prototype[Symbol.iterator]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/Symbol.iterator) ("ітератор")
   - : Усталено є псевдонімом функції [`values()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/values).
 
 ## Приклади

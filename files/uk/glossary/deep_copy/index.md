@@ -52,5 +52,6 @@ API Вебу [`structuredClone()`](/uk/docs/Web/API/structuredClone) також 
 
 ## Дивіться також
 
-- [Поверхнева копія](/uk/docs/Glossary/Shallow_copy)
+- Споріднені терміни глосарія:
+  - {{glossary("Shallow copy", "Поверхневе копіювання")}}
 - [`window.structuredClone()`](/uk/docs/Web/API/structuredClone)
