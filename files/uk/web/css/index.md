@@ -50,7 +50,7 @@ CSS належить до ключових мов **відкритого веб�
 
 - [Синтаксис та форми мови](/uk/docs/Web/CSS/Syntax)
 - [Специфічність](/uk/docs/Web/CSS/Specificity), [успадкування](/uk/docs/Web/CSS/Inheritance) та [каскадність](/uk/docs/Web/CSS/Cascade)
-- [Селектори CSS](/uk/docs/Web/CSS/CSS_selectors), в тому числі [псевдоелементи](/uk/docs/Web/CSS/CSS_pseudo-elements), [вкладеність](/uk/docs/Web/CSS/CSS_nesting), [контекстність](/uk/docs/Web/CSS/CSS_scoping) і [тіньові частини](/uk/docs/Web/CSS/CSS_shadow_parts)
+- [Селектори CSS](/uk/docs/Web/CSS/CSS_selectors), включно з [псевдоелементами](/uk/docs/Web/CSS/CSS_pseudo-elements), [вкладеністю](/uk/docs/Web/CSS/CSS_nesting), [контекстністю](/uk/docs/Web/CSS/CSS_scoping) і [тіньовими частинами](/uk/docs/Web/CSS/CSS_shadow_parts)
 - [Директиви CSS](/uk/docs/Web/CSS/At-rule), у тому числі [медійні](/uk/docs/Web/CSS/CSS_media_queries) та [контейнерні](/uk/docs/Web/CSS/CSS_containment) запити
 - [Одиниці вимірювання та значення CSS](/uk/docs/Web/CSS/CSS_Values_and_Units) і [функційні записи](/uk/docs/Web/CSS/CSS_Functions)
 - [Рамкова модель](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model) і [перекриття зовнішніх полів](/uk/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
