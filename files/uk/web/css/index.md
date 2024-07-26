@@ -59,7 +59,7 @@ CSS належить до ключових мов **відкритого веб�
 - [Початкові](/uk/docs/Web/CSS/initial_value), [обчислені](/uk/docs/Web/CSS/computed_value), [вжиті](/uk/docs/Web/CSS/used_value) та [фактичні](/uk/docs/Web/CSS/actual_value) значення
 - [Властивості-скорочення CSS](/uk/docs/Web/CSS/Shorthand_properties)
 - [Гнучка рамка CSS](/uk/docs/Web/CSS/CSS_flexible_box_layout), [багатоколонкове](/uk/docs/Web/CSS/CSS_multicol_layout) та [сіткове](/uk/docs/Web/CSS/CSS_grid_layout) компонування
-- [Анімація](/uk/docs/Web/CSS/CSS_animation), [переходи](/uk/docs/Web/CSS/CSS_transitions) та [перетворення](/uk/docs/Web/CSS/CSS_transforms)
+- [Анімація](/uk/docs/Web/CSS/CSS_animations), [переходи](/uk/docs/Web/CSS/CSS_transitions) та [перетворення](/uk/docs/Web/CSS/CSS_transforms)
 
 ## Книга рецептів
 
