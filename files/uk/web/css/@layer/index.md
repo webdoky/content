@@ -36,7 +36,7 @@ browser-compat: css.at-rules.layer
 
 Наступна діаграма показує пріоритетність шарів, причому шари оголошені послідовно, 1, 2, ..., N.
 
-![Діаграма, що показує пріоритетність каскадних шарів](https://mdn.github.io/shared-assets/images/diagrams/css/at-rules/layer-cascade.svg)
+![Діаграма, що показує пріоритетність каскадних шарів](https://webdoky.github.io/shared-assets/images/diagrams/css/at-rules/layer-cascade.svg)
 
 Порядок оголошення – важливий. Перший оголошений шар отримує найнижчий пріоритет, а останній – найвищий. Проте така пріоритетність перекидається на зворотну, коли вживається позначка [`!important`](/uk/docs/Web/CSS/important).
 
