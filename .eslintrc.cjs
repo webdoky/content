@@ -45,6 +45,7 @@ module.exports = {
         "no-magic-numbers": "off",
         "node/no-extraneous-import": "off",
         "jest/require-hook": "error",
+        "node/no-unpublished-import": "off",
       },
     },
     {
@@ -115,13 +116,17 @@ module.exports = {
           // eslint-disable-next-line global-require
           [`^(?:node:)?(${require("module").builtinModules.join("|")})(/|$)`],
           // Packages.
-          ["^@?(\\w|.)[^./]"],
+          [String.raw`^@?(\w|.)[^./]`],
           // Side effect imports.
-          ["^\\u0000"],
+          [String.raw`^\u0000`],
           // Parent imports. Put `..` last.
-          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+          [String.raw`^\.\.(?!/?$)`, String.raw`^\.\./?$`],
           // Other relative imports. Put same-folder imports and `.` last.
-          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+          [
+            String.raw`^\./(?=.*/)(?!/?$)`,
+            String.raw`^\.(?!/?$)`,
+            String.raw`^\./?$`,
+          ],
         ],
       },
     ],

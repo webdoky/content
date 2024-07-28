@@ -34,7 +34,7 @@ let changedTranslations;
 try {
   // List changes for index.md files
   changedTranslations = execSync(
-    'git status --porcelain | grep "files/.*/\\(index.md\\)\\?$"',
+    String.raw`git status --porcelain | grep "files/.*/\(index.md\)\?$"`,
     { encoding: "utf8" },
   )
     .trim()
