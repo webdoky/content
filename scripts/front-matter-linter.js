@@ -7,7 +7,7 @@ import { eachLimit } from "async";
 import cliProgress from "cli-progress";
 import fdirPkg from "fdir";
 
-import { checkFrontMatter, getAjvValidator } from "./front-matter-utils";
+import { checkFrontMatter, getAjvValidator } from "./front-matter-utils.js";
 
 const { fdir: Fdir } = fdirPkg;
 const { program } = caporal;
@@ -62,8 +62,12 @@ async function lintFrontMatter(filesAndDirectories, options) {
       if (content) {
         fs.writeFile(file, content);
       }
-      if (error) errors.push(error);
-      if (fixableError) fixableErrors.push(fixableError);
+      if (error) {
+        errors.push(error);
+      }
+      if (fixableError) {
+        fixableErrors.push(fixableError);
+      }
     } catch (error) {
       errors.push(`${error}\n ${error.stack}`);
     } finally {
@@ -117,6 +121,7 @@ program
         logger.info("No files to lint.");
         return null;
       }
+      // eslint-disable-next-line consistent-return
       return lintFrontMatter(files, options);
     }),
   );

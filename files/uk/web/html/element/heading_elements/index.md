@@ -11,63 +11,6 @@ browser-compat: html.elements.h1
 
 {{EmbedInteractiveExample("pages/tabbed/h1-h6.html", "tabbed-standard")}}
 
-<table class="properties">
-  <tbody>
-    <tr>
-      <th scope="row">
-        <a href="/uk/docs/Web/HTML/Content_categories"
-          >Категорії вмісту</a
-        >
-      </th>
-      <td>
-        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
-          >Потоковий вміст</a
-        >, заголовковий вміст, дотиковий вміст.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволений вміст</th>
-      <td>
-        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
-          >Оповідальний вміст</a
-        >.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Упускання тегів</th>
-      <td>{{no_tag_omission}}</td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені батьківські елементи</th>
-      <td>
-        Будь-який елемент, що приймає
-        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
-          >потоковий вміст</a
-        >.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Неявна роль ARIA</th>
-      <td>
-        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/heading_role"
-          >heading</a
-        >
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені ролі ARIA</th>
-      <td>
-        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/tab_role"><code>tab</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/presentation_role"><code>presentation</code></a> і
-        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/none_role"><code>none</code></a>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Інтерфейс DOM</th>
-      <td>{{domxref("HTMLHeadingElement")}}</td>
-    </tr>
-  </tbody>
-</table>
-
 ## Атрибути
 
 Ці елементи приймають лише [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
@@ -86,46 +29,7 @@ browser-compat: html.elements.h1
 
 Краще використовувати лише один `<h1>` на сторінку і [вкладати заголовки одне в одного](#vkladenist), не перестрибуючи рівні.
 
-## Приклади
-
-### Всі заголовки
-
-Наступний код показує застосування заголовків усіх рівнів.
-
-```html
-<h1>Заголовок рівня 1</h1>
-<h2>Заголовок рівня 2</h2>
-<h3>Заголовок рівня 3</h3>
-<h4>Заголовок рівня 4</h4>
-<h5>Заголовок рівня 5</h5>
-<h6>Заголовок рівня 6</h6>
-```
-
-{{EmbedLiveSample('vsi-zaholovky', '280', '300')}}
-
-### Сторінка-приклад
-
-Наступний код демонструє кілька заголовків з певним вмістом під ними.
-
-```html
-<h1>Елементи заголовків</h1>
-<h2>Підсумок</h2>
-<p>Певний текст отут…</p>
-
-<h2>Приклади</h2>
-<h3>Приклад 1</h3>
-<p>Певний текст отут…</p>
-
-<h3>Приклад 2</h3>
-<p>Певний текст отут…</p>
-
-<h2>Дивіться також</h2>
-<p>Певний текст отут…</p>
-```
-
-{{EmbedLiveSample('storinka-pryklad', '280', '480')}}
-
-## Занепокоєння щодо доступності
+## Доступність
 
 ### Орієнтування
 
@@ -219,6 +123,104 @@ browser-compat: html.elements.h1
 
 - [Застосування атрибута aria-labelledby](/uk/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby)
 - [Підписування областей • Структура сторінки • Підручники з вебдоступності W3C WAI (англ.)](https://www.w3.org/WAI/tutorials/page-structure/labels/#using-aria-labelledby)
+
+## Приклади
+
+### Всі заголовки
+
+Наступний код показує застосування заголовків усіх рівнів.
+
+```html
+<h1>Заголовок рівня 1</h1>
+<h2>Заголовок рівня 2</h2>
+<h3>Заголовок рівня 3</h3>
+<h4>Заголовок рівня 4</h4>
+<h5>Заголовок рівня 5</h5>
+<h6>Заголовок рівня 6</h6>
+```
+
+{{EmbedLiveSample('vsi-zaholovky', '280', '300')}}
+
+### Сторінка-приклад
+
+Наступний код демонструє кілька заголовків з певним вмістом під ними.
+
+```html
+<h1>Елементи заголовків</h1>
+<h2>Підсумок</h2>
+<p>Певний текст отут…</p>
+
+<h2>Приклади</h2>
+<h3>Приклад 1</h3>
+<p>Певний текст отут…</p>
+
+<h3>Приклад 2</h3>
+<p>Певний текст отут…</p>
+
+<h2>Дивіться також</h2>
+<p>Певний текст отут…</p>
+```
+
+{{EmbedLiveSample('storinka-pryklad', '280', '480')}}
+
+## Технічний підсумок
+
+<table class="properties">
+  <tbody>
+    <tr>
+      <th scope="row">
+        <a href="/uk/docs/Web/HTML/Content_categories"
+          >Категорії вмісту</a
+        >
+      </th>
+      <td>
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
+          >Потоковий вміст</a
+        >, заголовковий вміст, дотиковий вміст.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволений вміст</th>
+      <td>
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
+          >Оповідальний вміст</a
+        >.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Пропуск тега</th>
+      <td>Немає; і початковий, і кінцевий теги – обов'язкові.</td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені батьківські елементи</th>
+      <td>
+        Будь-який елемент, що приймає
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
+          >потоковий вміст</a
+        >.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Неявна роль ARIA</th>
+      <td>
+        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/heading_role"
+          >heading</a
+        >
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені ролі ARIA</th>
+      <td>
+        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/tab_role"><code>tab</code></a>, <a href="/uk/docs/Web/Accessibility/ARIA/Roles/presentation_role"><code>presentation</code></a> і
+        <a href="/uk/docs/Web/Accessibility/ARIA/Roles/none_role"><code>none</code></a>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Інтерфейс DOM</th>
+      <td>{{domxref("HTMLHeadingElement")}}</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Специфікації
 

@@ -7,7 +7,7 @@ browser-compat: css.properties.white-space
 
 {{CSSRef}}
 
-Властивість CSS **`white-space`** (пробіл) задає те, як обробляються {{Glossary("whitespace", "пробіли")}} всередині елемента.
+Властивість [CSS](/uk/docs/Web/CSS) **`white-space`** (пробіл) задає те, як обробляються {{Glossary("whitespace", "пробіли")}} всередині елемента.
 
 {{EmbedInteractiveExample("pages/css/white-space.html")}}
 
@@ -63,7 +63,7 @@ white-space: unset;
 
     - Пробіли підряд завжди займають місце, в тому числі в кінці шеренги.
     - Точка розриву шеренги стоїть після кожного збереженого символу пробілу, в тому числі між двома символами пробілу.
-    - Такі збережені проміжки займають простір і не повисають, чим впливають на природний розмір рамки (розміри min-content і max-content).
+    - Такі збережені проміжки займають простір і не повисають, чим впливають на природний розмір рамки (розміри {{cssxref("min-content")}} і {{cssxref("max-content")}}).
 
 Наступна таблиця підсумовує логіку різних значень `white-space` – ключових слів:
 
@@ -230,6 +230,80 @@ select.addEventListener("change", (e) => {
 ```
 
 {{EmbedLiveSample("u-dii", "100%", 500)}}
+
+### Кілька ліній у елементі SVG text
+
+Властивість CSS {{CSSXRef("white-space")}} може бути використана для створення кількох рядків у елементі {{SVGElement("text")}}, який усталено не має перенесення тексту.
+
+> **Примітка:** На час написання цих рядків ця можливість має [обмежену підтримку](#sumisnist-iz-brauzeramy).
+
+#### HTML
+
+Текст всередині елемента `<text>` потрібно розбити на кілька рядків, щоб були виявлені символи нового рядка. Після першого рядка решта не повинні мати пробілів.
+
+```html-nolint
+<svg viewBox="0 0 320 150">
+  <text y="20" x="10">Це абзац українською мовою,
+який розбитий на кілька ліній
+у вихідному коді, щоб його було
+легше читати та редагувати
+у текстовому редакторі.</text>
+  </text>
+</svg>
+```
+
+#### CSS
+
+```css
+text {
+  white-space: break-spaces;
+}
+```
+
+#### Результат
+
+{{EmbedLiveSample("kilka-linii-u-elementi-svg-text", "100%", 150)}}
+
+### Контроль перенесення в таблицях
+
+#### HTML
+
+```html
+<table>
+  <tr>
+    <td></td>
+    <td>Дуже довгий вміст, що розривається</td>
+    <td class="nw">Дуже довгий вміст, що не розривається</td>
+  </tr>
+  <tr>
+    <td class="nw">white-space:</td>
+    <td>normal</td>
+    <td>nowrap</td>
+  </tr>
+</table>
+```
+
+#### CSS
+
+```css
+table {
+  border-collapse: collapse;
+  border: solid black 1px;
+  width: 250px;
+  height: 150px;
+}
+td {
+  border: solid 1px black;
+  text-align: center;
+}
+.nw {
+  white-space: nowrap;
+}
+```
+
+#### Результат
+
+{{EmbedLiveSample('kontrol-perenesennia-v-tablytsiakh', "100%", "100%")}}
 
 ## Специфікації
 

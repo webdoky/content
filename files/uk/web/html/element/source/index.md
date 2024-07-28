@@ -1,5 +1,5 @@
 ---
-title: "<source> – елемент джерела медійного ресурсу чи зображення"
+title: <source> – елемент джерела медійного ресурсу чи зображення
 slug: Web/HTML/Element/source
 page-type: html-element
 browser-compat: html.elements.source
@@ -10,59 +10,6 @@ browser-compat: html.elements.source
 Елемент [HTML](/uk/docs/Web/HTML) **`<source>`** (джерело) задає один або кілька медійних ресурсів для елементів {{HTMLElement("picture")}}, {{HTMLElement("audio")}} та {{HTMLElement("video")}}. Це {{glossary("void element", "пустий елемент")}}, тобто він не має вмісту і не вимагає кінцевого тегу. Нерідко він використовується для подачі одного й того ж медійного вмісту в кількох форматах файлів, щоб забезпечити сумісність з широким спектром браузерів, враховуючи їх різну підтримку [форматів файлів зображень](/uk/docs/Web/Media/Formats/Image_types) та [форматів медійних файлів](/uk/docs/Web/Media/Formats).
 
 {{EmbedInteractiveExample("pages/tabbed/source.html", "tabbed-standard")}}
-
-<table class="properties">
-  <tbody>
-    <tr>
-      <th scope="row">
-        <a href="/uk/docs/Web/HTML/Content_categories"
-          >Категорії вмісту</a
-        >
-      </th>
-      <td>Жодних.</td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволений вміст</th>
-      <td>Жодного; це {{Glossary("void element", "пустий елемент")}}.</td>
-    </tr>
-    <tr>
-      <th scope="row">Пропуск тега</th>
-      <td>Повинен мати початковий тег, але не мати кінцевого.</td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені батьківські елементи</th>
-      <td>
-        <div>
-          Медійний елемент – {{HTMLElement("audio")}} або
-          {{HTMLElement("video")}} – і він повинен бути розміщений перед
-          <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
-            >потоковим вмістом</a
-          >
-          або елементом {{HTMLElement("track")}}.
-        </div>
-        <div>
-          Елемент {{HTMLElement("picture")}}, і він повинен бути розміщений перед елементом {{HTMLElement("img")}}.
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Відповідна роль ARIA</th>
-      <td>
-        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"
-          >Немає відповідної ролі</a
-        >
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені ролі ARIA</th>
-      <td>Жодної дозволеної ролі</td>
-    </tr>
-    <tr>
-      <th scope="row">Інтерфейс DOM</th>
-      <td>{{domxref("HTMLSourceElement")}}</td>
-    </tr>
-  </tbody>
-</table>
 
 ## Атрибути
 
@@ -96,7 +43,7 @@ browser-compat: html.elements.source
 
 - `media`
 
-  - : Задає [медійний запит](/uk/docs/Web/CSS/CSS_media_queries) для бажаного медіа ресурсу.
+  - : Задає [медійний запит](/uk/docs/Web/CSS/CSS_media_queries) для бажаного медійного ресурсу.
 
 - `height`
 
@@ -198,6 +145,61 @@ browser-compat: html.elements.source
     height="400" />
 </picture>
 ```
+
+## Технічний підсумок
+
+<table class="properties">
+  <tbody>
+    <tr>
+      <th scope="row">
+        <a href="/uk/docs/Web/HTML/Content_categories"
+          >Категорії вмісту</a
+        >
+      </th>
+      <td>Жодних.</td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволений вміст</th>
+      <td>Жодного; це {{Glossary("void element", "пустий елемент")}}.</td>
+    </tr>
+    <tr>
+      <th scope="row">Пропуск тега</th>
+      <td>Повинен мати початковий тег і не мати кінцевого.</td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені батьківські елементи</th>
+      <td>
+        <div>
+          Медійний елемент – {{HTMLElement("audio")}} або
+          {{HTMLElement("video")}} – і він повинен бути розміщений перед
+          <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
+            >потоковим вмістом</a
+          >
+          або елементом {{HTMLElement("track")}}.
+        </div>
+        <div>
+          Елемент {{HTMLElement("picture")}}, і він повинен бути розміщений перед елементом {{HTMLElement("img")}}.
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Відповідна роль ARIA</th>
+      <td>
+        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"
+          >Немає відповідної ролі</a
+        >
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені ролі ARIA</th>
+      <td>Жодної дозволеної ролі</td>
+    </tr>
+    <tr>
+      <th scope="row">Інтерфейс DOM</th>
+      <td>{{domxref("HTMLSourceElement")}}</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Специфікації
 

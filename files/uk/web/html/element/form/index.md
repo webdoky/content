@@ -1,5 +1,5 @@
 ---
-title: "<form> – елемент форми"
+title: <form> – елемент форми
 slug: Web/HTML/Element/form
 page-type: html-element
 browser-compat: html.elements.form
@@ -30,20 +30,20 @@ browser-compat: html.elements.form
 
 - `autocapitalize`
 
-- : Контролює те, чи додаються великі літери до тексту, введеного у поля вводу, а також, якщо так — то яким чином. Шукайте більше інформації на сторінці глобального атрибута [`autocapitalize`](/uk/docs/Web/HTML/Global_attributes/autocapitalize).
+  - : Контролює те, чи додаються великі літери до тексту, введеного у поля вводу, а також, якщо так — то яким чином. Шукайте більше інформації на сторінці глобального атрибута [`autocapitalize`](/uk/docs/Web/HTML/Global_attributes/autocapitalize).
 
-- `autocomplete`
+- [`autocomplete`](/uk/docs/Web/HTML/Attributes/autocomplete)
 
   - : Позначає те, чи можуть поля введення усталено автоматично заповнюватись браузером. Атрибути `autocomplete` на елементах форми відкидають такий атрибут на `<form>`. Можливі значення:
 
-    - `off`: Браузер може не заповнювати автоматично поля. (Браузери мають тенденцію ігнорувати це там, де підозрюють форми автентифікації; дивіться [Атрибут autocomplete і поля автентифікації](/uk/docs/Web/Security/Securing_your_site/Turning_off_form_autocompletion#atrybut-autocomplete-i-polia-avtentyfikatsii).)
+    - `off`: Браузер може не заповнювати автоматично поля. (Браузери мають тенденцію ігнорувати це там, де підозрюють форми автентифікації; дивіться [Контроль автозаповнення для полів автентифікації](/uk/docs/Web/Security/Practical_implementation_guides/Turning_off_form_autocompletion#kontrol-avtozapovnennia-dlia-poliv-avtentyfikatsii).)
     - `on`: Браузер може заповнювати поля автоматично.
 
 - `name`
 
   - : Ім'я форми. Значення мусить не бути порожнім рядком, і бути унікальним серед елементів `form` у колекції форм, в котрій лежить форма, якщо така є.
 
-- `rel`
+- [`rel`](/uk/docs/Web/HTML/Attributes/rel)
   - : Контролює анотації й те, якого роду посилання породжує форма. Серед анотацій: [`external`](/uk/docs/Web/HTML/Attributes/rel#external), [`nofollow`](/uk/docs/Web/HTML/Attributes/rel#nofollow), [`opener`](/uk/docs/Web/HTML/Attributes/rel#opener), [`noopener`](/uk/docs/Web/HTML/Attributes/rel#noopener) і [`noreferrer`](/uk/docs/Web/HTML/Attributes/rel#noreferrer). Серед різновидів посилань: [`help`](/uk/docs/Web/HTML/Attributes/rel#help), [`prev`](/uk/docs/Web/HTML/Attributes/rel#prev), [`next`](/uk/docs/Web/HTML/Attributes/rel#next), [`search`](/uk/docs/Web/HTML/Attributes/rel#search) і [`license`](/uk/docs/Web/HTML/Attributes/rel#license). Значення [`rel`](/uk/docs/Web/HTML/Attributes/rel) є розділеним пробілами списком таких значень.
 
 ### Атрибути для подання форми
@@ -83,6 +83,7 @@ browser-compat: html.elements.form
     - `_blank`: Завантажувати в новий безіменний контекст перегляду. Це додає такої ж логіки, як задання [`rel="noopener"`](#rel), тобто відсутність заповнення [`window.opener`](/uk/docs/Web/API/Window/opener).
     - `_parent`: Завантажувати в батьківський щодо поточного контекст перегляду. Якщо батьківського немає, то діє так само як `_self`.
     - `_top`: Завантажувати в контекст перегляду найвищого рівня (тобто контекст перегляду, що є предком поточного і не має предка). Якщо батьківського контексту немає, то діє так само як `_self`.
+    - `_unfencedTop`: Завантажити відповідь на форму всередині вбудованого [обгородженого фрейму](/uk/docs/Web/API/Fenced_frame_API) в фрейм верхнього рівня (тобто вище кореня обгородженого фрейму, на відміну від решти зарезервованих призначень). Доступно лише всередині обгороджених фреймів.
 
     Це значення може бути відкинуто атрибутом [`formtarget`](/uk/docs/Web/HTML/Element/button#formtarget) на елементі {{HTMLElement("button")}}, [`<input type="submit">`](/uk/docs/Web/HTML/Element/input/submit) чи [`<input type="image">`](/uk/docs/Web/HTML/Element/input/image).
 
@@ -142,7 +143,7 @@ browser-compat: html.elements.form
     </tr>
     <tr>
       <th scope="row">Пропуск тега</th>
-      <td>{{no_tag_omission}}</td>
+      <td>Немає; і початковий, і кінцевий теги – обов'язкові.</td>
     </tr>
     <tr>
       <th scope="row">Дозволені батьківські елементи</th>

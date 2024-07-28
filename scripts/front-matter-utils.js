@@ -26,14 +26,13 @@ function areAttributesInOrder(frontMatter, order) {
   return orderedAttributes.every((item, index) => item === attributes[index]);
 }
 
-export async function checkFrontMatter(filePath, options) {
+export async function checkFrontMatter(filePath, { config, fix, validator }) {
   let content = await fs.readFile(filePath, "utf8");
   const document = grayMatter(content);
   const fmObject = document.data;
-  const order = options.config["attribute-order"];
+  const order = config["attribute-order"];
 
   // validate and collect errors
-  const { validator } = options;
   const valid = validator(fmObject);
   const validationErrors = betterAjvErrors({
     schema: validator.schema,
@@ -53,7 +52,6 @@ export async function checkFrontMatter(filePath, options) {
 
   const isInOrder = areAttributesInOrder(fmObject, order);
   let fixableError = null;
-  const { config, fix } = options;
 
   if (!fix && !isInOrder) {
     fixableError = `${getRelativePath(
