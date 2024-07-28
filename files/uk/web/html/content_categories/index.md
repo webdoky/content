@@ -118,11 +118,10 @@ page-type: guide
 - {{HTMLElement("area")}}, коли є нащадком елемента {{HTMLElement("map")}}
 - {{HTMLElement("link")}}, коли присутній атрибут [itemprop](/uk/docs/Web/HTML/Global_attributes/itemprop)
 - {{HTMLElement("meta")}}, коли присутній атрибут [itemprop](/uk/docs/Web/HTML/Global_attributes/itemprop)
-- {{HTMLElement("style")}}, коли присутній атрибут `scoped` {{deprecated_inline}}
 
 ### Розділовий вміст
 
-Розділовий вміст, підмножина потокового вмісту, утворює [розділ у поточному плані](/uk/docs/Web/HTML/Element/Heading_Elements), визначаючи область дії елементів {{HTMLElement("header")}}, {{HTMLElement("footer")}} і [заголовкового вмісту](#zaholovkovyi-vmist).
+Розділовий вміст, підмножина потокового вмісту, утворює [розділ у поточному плані](/uk/docs/Web/HTML/Element/Heading_Elements), визначаючи область дії елементів {{HTMLElement("header")}} і {{HTMLElement("footer")}}.
 
 Елементи, що належать до цієї категорії: {{HTMLElement("article")}}, {{HTMLElement("aside")}}, {{HTMLElement("nav")}} і {{HTMLElement("section")}}.
 
@@ -133,8 +132,6 @@ page-type: guide
 Елементи, що належать до цієї категорії – {{HTMLElement("Heading_Elements", "<code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code>")}} і {{HTMLElement("hgroup")}}.
 
 > **Примітка:** Хоч елемент {{HTMLElement("header")}} з високою ймовірністю міститиме заголовковий вміст, сам він не є заголовковим вмістом.
-
-> **Примітка:** Елемент {{HTMLElement("hgroup")}} не рекомендується до використання, адже він не працює як слід з допоміжними технологіями. Він був прибраний зі специфікації W3C HTML до завершення HTML 5, але досі є частиною специфікації WHATWG і принаймні частково підтримується більшістю браузерів.
 
 ### Оповідальний вміст
 

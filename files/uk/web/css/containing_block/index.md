@@ -32,7 +32,7 @@ page-type: guide
 1. Коли властивість `position` має значення **`static`**, **`relative`** або **`sticky`**, контейнерний блок формується на краю _рамок вмісту_ найближчого предка, котрий або є **блоковим контейнером** (наприклад, елементом inline-block, block або list-item) або **задає контекст форматування** (як то табличний контейнер, гнучкий контейнер, сітковий контейнер або сам блоковий контейнер).
 2. Коли властивість `position` має значення **`absolute`**, контейнерний блок формується на краю _рамок внутрішніх відступів_ найближчого предка, що має значення `position`, відмінне від `static` (тобто `fixed`, `absolute`, `relative` або `sticky`).
 3. Коли властивість `position` має значення **`fixed`**, контейнерний блок задається {{glossary("viewport", "областю перегляду")}} (у випадку безперервного виводу) або областю сторінки (у випадку виводу сторінками).
-4. Коли властивість `position` має значення **`absolute`** або **`fixed`**, контейнерний блок може також формуватися краєм _рамок внутрішніх відступів_ найближчого елемента-предка, котрий виконує наступні умови:
+4. Коли властивість `position` має значення **`absolute`** або **`fixed`**, контейнерний блок може також формуватися краєм _рамок внутрішніх відступів_ найближчого елемента-предка, котрий виконує одну з наступних умов:
 
    1. Має властивість {{cssxref("transform")}} чи {{cssxref("perspective")}}, чиє значення – не `none`
    2. Має властивість {{cssxref("will-change")}} зі значенням `transform` або `perspective`
@@ -250,22 +250,19 @@ p {
 
 ## Дивіться також
 
-- Властивість {{cssxref("all")}} відкидає усі оголошення CSS до заданого відомого стану
-- Ключові концепції CSS:
-  - [Синтаксис CSS](/uk/docs/Web/CSS/Syntax)
-  - [Директиви](/uk/docs/Web/CSS/At-rule)
-  - [Коментарі](/uk/docs/Web/CSS/Comments)
-  - [Специфічність](/uk/docs/Web/CSS/Specificity)
-  - [Успадкування](/uk/docs/Web/CSS/Inheritance)
-  - [Рамкова модель](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
-  - [Режими компонування](/uk/docs/Web/CSS/Layout_mode)
-  - [Моделі візуального форматування](/uk/docs/Web/CSS/Visual_formatting_model)
-  - [Перекриття зовнішніх відступів](/uk/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
-  - Значення
-    - [Початкові значення](/uk/docs/Web/CSS/initial_value)
-    - [Обчислені значення](/uk/docs/Web/CSS/computed_value)
-    - [Застосовані значення](/uk/docs/Web/CSS/used_value)
-    - [Фактичні значення](/uk/docs/Web/CSS/actual_value)
-  - [Синтаксис визначення значень](/uk/docs/Web/CSS/Value_definition_syntax)
-  - [Властивості-скорочення](/uk/docs/Web/CSS/Shorthand_properties)
-  - [Заміщені елементи](/uk/docs/Web/CSS/Replaced_element)
+- Властивість {{cssxref("all")}}
+- Властивість {{cssxref("contain")}}
+- Властивість {{cssxref("aspect-ratio")}}
+- Властивість {{cssxref("box-sizing")}}
+- Значення розміру {{cssxref("min-content")}} і {{cssxref("max-content")}}
+- [Цеглинка – Розміри елементів у CSS](/uk/docs/Learn/CSS/Building_blocks/Sizing_items_in_CSS)
+- [Рамкова модель](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
+- Модуль [Рамкової моделі CSS](/uk/docs/Web/CSS/CSS_box_model) module
+- [Режими компонування](/uk/docs/Web/CSS/Layout_mode)
+- [Моделі візуального форматування](/uk/docs/Web/CSS/Visual_formatting_model)
+- [Блоковий контекст форматування](/uk/docs/Web/CSS/CSS_display/Block_formatting_context)
+- [Контекст нагромадження](/uk/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context)
+- [Перекриття зовнішніх полів](/uk/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
+- [Початкові](/uk/docs/Web/CSS/initial_value), [обчислені](/uk/docs/Web/CSS/computed_value), [вжиті](/uk/docs/Web/CSS/used_value) та [фактичні](/uk/docs/Web/CSS/actual_value) значення
+- [Заміщені елементи](/uk/docs/Web/CSS/Replaced_element)
+- {{glossary("Intrinsic size", "Природний розмір")}}

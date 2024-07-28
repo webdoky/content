@@ -15,7 +15,7 @@ browser-compat: css.at-rules.media
 
 ## Синтаксис
 
-Директива `@media` повинна стояти на зовнішньому рівні коду або бути вкладена в якусь іншу [умовну групову директиву](/uk/docs/Web/CSS/At-rule#umovni-hrupovi-dyrektyvy).
+Директива `@media` повинна стояти на зовнішньому рівні коду або бути вкладена в якусь іншу умовну групову директиву.
 
 ```css
 /* На зовнішньому рівні коду */
@@ -42,7 +42,7 @@ browser-compat: css.at-rules.media
 ### Типи медіа
 
 _Типи медіа_ описують загальні категорії пристроїв.
-Коли не використовуються логічні оператори `not` і `only`, тип медіа є необов'язковим, – якщо він не вказаний, то вважається, що він дорівнює `all`.
+Коли не використовується логічний оператор `only`, тип медіа є необов'язковим, – якщо він не вказаний, то вважається, що він дорівнює `all`.
 
 - `all`
   - : Підходить для всіх пристроїв.
@@ -65,7 +65,7 @@ _Можливості медіа_ описують конкретні харак
   - : Чи є який-небудь доступний механізм уведення пристроєм-вказівником, і якщо так, то наскільки він точний?
     Додано в Медіазапитах рівня 4.
 - {{cssxref("@media/aspect-ratio", "aspect-ratio")}}
-  - : Співвідношення ширини до висоти області перегляду
+  - : {{glossary("aspect ratio", "Співвідношення")}} ширини до висоти області перегляду
 - {{cssxref("@media/color", "color")}}
   - : Число біт на колірний компонент пристрою виведення, або нуль, якщо пристрій не кольоровий
 - {{cssxref("@media/color-gamut", "color-gamut")}}
@@ -73,17 +73,17 @@ _Можливості медіа_ описують конкретні харак
     Додано в Медіазапитах рівня 4.
 - {{cssxref("@media/color-index", "color-index")}}
   - : Число записів у таблиці пошуку кольорів пристрою виведення, або нуль, якщо пристрій не використовує таку таблицю
-- {{cssxref("@media/device-aspect-ratio", "device-aspect-ratio")}} {{deprecated_inline}}
+- {{cssxref("@media/device-aspect-ratio", "device-aspect-ratio")}}
   - : Співвідношення ширини до висоти пристрою виведення.
     Нерекомендований від Медіазапитів рівня 4.
-- {{cssxref("@media/device-height", "device-height")}} {{deprecated_inline}}
+- {{cssxref("@media/device-height", "device-height")}}
   - : Висота поверхні візуалізації пристрою виведення.
     Нерекомендований від Медіазапитів рівня 4.
-- {{cssxref("@media/device-width", "device-width")}} {{deprecated_inline}}
+- {{cssxref("@media/device-width", "device-width")}}
   - : Ширина поверхні візуалізації пристрою виведення. Нерекомендований від Медіазапитів рівня 4.
 - {{cssxref("@media/display-mode", "display-mode")}}
-  - : Режим виведення застосунку, як це визначено в полі [`display`](/uk/docs/Web/Manifest#display) маніфесту вебзастосунку.
-    Визначено в [специфікації Маніфесту вебзастосунку](https://w3c.github.io/manifest/#the-display-mode-media-feature).
+  - : Режим, у якому виводиться застосунок: наприклад, [повноекранний](/uk/docs/Web/CSS/@media/display-mode#fullscreen) або [режим зображення в зображенні](/uk/docs/Web/CSS/@media/display-mode#picture-in-picture).
+    Додано в Медіазапитах рівня 5.
 - {{cssxref("@media/dynamic-range", "dynamic-range")}}
   - : Поєднання яскравості, контрастності та глибини кольору, які підтримуються користувацьким агентом і пристроєм виведення. Додано в Медіазапитах рівня 5.
 - {{cssxref("@media/forced-colors", "forced-colors")}}
@@ -123,6 +123,8 @@ _Можливості медіа_ описують конкретні харак
     Додано в Медіазапитах рівня 5.
 - {{cssxref("@media/resolution", "resolution")}}
   - : Піксельна щільність пристрою виведення.
+- {{cssxref("@media/scan", "scan")}}
+  - : Чи має дисплей прогресивну або черезрядкову розгортку.
 - {{cssxref("@media/scripting", "scripting")}}
   - : Визначає, чи доступно використання сценаріїв (тобто JavaScript).
     Додано в Медіазапитах рівня 5.
@@ -146,7 +148,6 @@ _Логічні оператори_ `not`, `and`, `only` й `or` можуть в
 
   - : Використовується для заперечення медіазапиту, повертаючи `true`, якщо інакше запит повернув би `false`.
     Якщо цей оператор присутній в розділеному комами списку запитів, то заперечує лише конкретний запит, до якого застосовується.
-    Якщо використовується оператор `not`, то _обов'язково_ повинен бути вказаний тип медіа.
 
     > **Примітка:** На рівні 3 ключове слово `not` не може використовуватися для заперечення окремого виразу можливості медіа, а лише цілого медіазапиту.
 
@@ -171,9 +172,9 @@ _Логічні оператори_ `not`, `and`, `only` й `or` можуть в
 
 ## Занепокоєння щодо доступності
 
-Щоб якнайкраще врахувати потреби людей, які змінюють розмір тексту на сайті, слід використовувати для ваших [медіазапитів](/uk/docs/Web/CSS/CSS_media_queries/Using_media_queries) одиниці [`em`](/uk/docs/Learn/CSS/Building_blocks/Values_and_units#chyslovi-znachennia), коли потрібні значення {{cssxref("&lt;length&gt;")}}.
+Щоб якнайкраще врахувати потреби людей, які змінюють розмір тексту на сайті, слід використовувати для ваших [медіазапитів](/uk/docs/Web/CSS/CSS_media_queries/Using_media_queries) одиниці [`em`](/uk/docs/Web/CSS/CSS_Values_and_Units#chyslovi-typy-danykh), коли потрібні значення {{cssxref("&lt;length&gt;")}}.
 
-Як [`em`](/uk/docs/Learn/CSS/Building_blocks/Values_and_units#chyslovi-znachennia), так і [`px`](/uk/docs/Learn/CSS/Building_blocks/Values_and_units#chyslovi-znachennia) є дійсними одиницями, але [`em`](/uk/docs/Learn/CSS/Building_blocks/Values_and_units#chyslovi-znachennia) працює краще, якщо користувач змінює розмір тексту в браузері.
+Як [`em`](/uk/docs/Web/CSS/CSS_Values_and_Units#chyslovi-znachennia), так і [`px`](/uk/docs/Web/CSS/CSS_Values_and_Units#chyslovi-znachennia) є дійсними одиницями, але [`em`](/uk/docs/Web/CSS/CSS_Values_and_Units#chyslovi-znachennia) працює краще, якщо користувач змінює розмір тексту в браузері.
 
 Також варто розглянути медіазапити чи [клієнтські підказки користувацькому агентові](/uk/docs/Web/HTTP/Client_hints#kliientski-pidkazky-korystuvatskomu-ahentovi), щоб покращити користувацький досвід.
 Наприклад, медіазапит [`prefers-reduced-motion`](/uk/docs/Web/CSS/@media/prefers-reduced-motion) або відповідний заголовок {{HTTPHeader("Sec-CH-Prefers-Reduced-Motion")}}) можна використати для мінімізації кількості анімації чи руху, на основі побажань користувача.
@@ -246,6 +247,7 @@ _Логічні оператори_ `not`, `and`, `only` й `or` можуть в
 
 ## Дивіться також
 
+- Модуль [Медіазапитів CSS](/uk/docs/Web/CSS/CSS_media_queries)
 - [Застосування медіазапитів](/uk/docs/Web/CSS/CSS_media_queries/Using_media_queries)
 - У JavaScript `@media` можна отримати через інтерфейс об'єктної моделі CSS {{domxref("CSSMediaRule")}}.
 - [Розширені можливості медіа Mozilla](/uk/docs/Web/CSS/Mozilla_Extensions#mozhlyvosti-media)

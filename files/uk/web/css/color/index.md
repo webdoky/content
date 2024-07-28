@@ -7,7 +7,7 @@ browser-compat: css.properties.color
 
 {{CSSRef}}
 
-Властивість CSS **`color`** (колір) задає [значення кольору](/uk/docs/Web/CSS/color_value) переднього плану тексту елемента й [оздоблення цього тексту](/uk/docs/Web/CSS/text-decoration), а також задає значення [`currentcolor`](/uk/docs/Web/CSS/color_value#kliuchove-slovo-currentcolor). `currentcolor` може використовуватися як непряме значення на _інших_ властивостях, а також як усталене значення інших властивостей кольору, як то {{cssxref("border-color")}}.
+Властивість [CSS](/uk/docs/Web/CSS) **`color`** (колір) задає [значення кольору](/uk/docs/Web/CSS/color_value) переднього плану тексту елемента й [оздоблення цього тексту](/uk/docs/Web/CSS/text-decoration), а також задає значення [`currentcolor`](/uk/docs/Web/CSS/color_value#kliuchove-slovo-currentcolor). `currentcolor` може використовуватися як непряме значення на _інших_ властивостях, а також як усталене значення інших властивостей кольору, як то {{cssxref("border-color")}}.
 
 {{EmbedInteractiveExample("pages/css/color.html")}}
 
@@ -31,20 +31,20 @@ color: #009900;
 color: #090a;
 color: #009900aa;
 
-/* Значення <rgb()> */
+/* Значення <rgb()> та історичні значення <rgba()> */
 color: rgb(34, 12, 64, 0.6);
 color: rgba(34, 12, 64, 0.6);
 color: rgb(34 12 64 / 0.6);
-color: rgba(34 12 64 / 0.3);
-color: rgb(34 12 64 / 60%);
-color: rgba(34.6 12 64 / 30%);
+color: rgba(34 12 64 / 0.6);
+color: rgb(34.6 12 64 / 60%);
+color: rgba(34.6 12 64 / 60%);
 
-/* Значення <hsl()> */
+/* Значення <hsl()> та історичні значення <hsla()> */
 color: hsl(30, 100%, 50%, 0.6);
 color: hsla(30, 100%, 50%, 0.6);
 color: hsl(30 100% 50% / 0.6);
 color: hsla(30 100% 50% / 0.6);
-color: hsl(30 100% 50% / 60%);
+color: hsl(30.2 100% 50% / 60%);
 color: hsla(30.2 100% 50% / 60%);
 
 /* Значення <hwb()> */
@@ -142,3 +142,4 @@ p {
 - Тип даних {{cssxref("&lt;color&gt;")}}
 - Інші пов'язані з кольором властивості: {{cssxref("background-color")}}, {{cssxref("border-color")}}, {{cssxref("outline-color")}}, {{cssxref("text-decoration-color")}}, {{cssxref("text-emphasis-color")}}, {{cssxref("text-shadow")}}, {{cssxref("caret-color")}}, {{cssxref("column-rule-color")}} і {{cssxref("print-color-adjust")}}
 - [Застосування кольору до елементів HTML за допомогою CSS](/uk/docs/Web/CSS/CSS_colors/Applying_color)
+- [WCAG – колірний контраст](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable/Color_contrast)

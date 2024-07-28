@@ -167,7 +167,7 @@ justifyContent.addEventListener("change", (evt) => {
 
 ## Дивіться також
 
-- Настанови із гнучких блоків CSS: _[Основні концепції гнучкого блока](/uk/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox)_
-- Настанови із гнучких блоків CSS: _[Шикування елементів у гнучкому контейнері](/uk/docs/Web/CSS/CSS_flexible_box_layout/Aligning_items_in_a_flex_container)_
-- Настанови із сітки CSS: _[Блокове шикування при сітковій розкладці CSS](/uk/docs/Web/CSS/CSS_Grid_Layout/Box_alignment_in_grid_layout)_
-- [Блокове шикування CSS](/uk/docs/Web/CSS/CSS_box_alignment)
+- _[Основні концепції флексбоксу](/uk/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox)_
+- _[Шикування елементів у гнучкому контейнері](/uk/docs/Web/CSS/CSS_flexible_box_layout/Aligning_items_in_a_flex_container)_
+- _[Блокове шикування при сітковому компонуванні CSS](/uk/docs/Web/CSS/CSS_Grid_Layout/Box_alignment_in_grid_layout)_
+- Модуль [Блокового шикування CSS](/uk/docs/Web/CSS/CSS_box_alignment)

@@ -102,6 +102,5 @@ p.custom {
 
 - Елемент {{HTMLElement("input")}}
 - Атрибут HTML [`contenteditable`](/uk/docs/Web/HTML/Global_attributes#contenteditable), завдяки якому можна зробити редаговним текст будь-якого елемента
-- [Застосування кольору до елементів HTML за допомогою CSS](/uk/docs/Web/CSS/CSS_colors/Applying_color)
 - Тип даних {{cssxref("&lt;color&gt;")}}
 - Інші властивості, пов'язані з кольором: {{cssxref("color")}}, {{cssxref("background-color")}}, {{cssxref("border-color")}}, {{cssxref("outline-color")}}, {{cssxref("text-decoration-color")}}, {{cssxref("text-emphasis-color")}}, {{cssxref("text-shadow")}}, {{cssxref("caret-color")}} і {{cssxref("column-rule-color")}}

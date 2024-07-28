@@ -13,41 +13,32 @@ browser-compat: javascript.builtins.Boolean
 
 ### Булеві примітиви та об'єкти Boolean
 
-Не слід плутати {{Glossary("Primitive", "примітивні")}} значення `Boolean`, `true` та `false`, зі значеннями `true` та `false` об'єкта `Boolean`.
+Для перетворення небулевих значень на булеві слід користуватися `Boolean` як функцією або оператором [подвійного НЕ](/uk/docs/Web/JavaScript/Reference/Operators/Logical_NOT#podviine-ne-). Не слід використовувати конструктор `Boolean()` з `new`.
 
-**Будь-який** об'єкт, в тому числі об'єкт `Boolean`, чиє значення – `false`, обчислюється до `true`, бувши переданим до умовної інструкції. Наприклад, умова в наступній інструкції {{jsxref("Statements/if...else", "if")}} спрацює як `true`:
+```js example-good
+const good = Boolean(expression);
+const good2 = !!expression;
+```
+
+```js example-bad
+const bad = new Boolean(expression); // не користуйтеся цим!
+```
+
+Це пов'язано з тим, що _всі_ об'єкти, включно з об'єктом `Boolean`, у який загорнуто значення `false`, є {{glossary("truthy", "істинними")}} і в умовних інструкціях обчислюються як `true`. (Див. також розділ [зведення до булевого](#zvedennia-do-bulevoho) нижче.)
 
 ```js
-const x = new Boolean(false);
-if (x) {
-  // цей код виконується
+if (new Boolean(true)) {
+  console.log("Це виведення – друкується.");
 }
-```
 
-Така логіка не застосовується до примітивів `Boolean`. Наприклад, умова у наступній інструкції {{jsxref("Statements/if...else", "if")}} – спрацьовує як `false`:
-
-```js
-const x = false;
-if (x) {
-  // цей код не виконується
+if (new Boolean(false)) {
+  console.log("Це виведення – ТАКОЖ друкується.");
 }
-```
 
-Не слід використовувати конструктор `Boolean()` із `new` для перетворення небулевого значення на булеве – натомість слід використовувати `Boolean` як функцію або [подвійне НЕ](/uk/docs/Web/JavaScript/Reference/Operators/Logical_NOT#podviine-ne-):
-
-```js
-const good = Boolean(expression); // використовуйте це
-const good2 = !!expression; // або це
-const bad = new Boolean(expression); // а це не використовуйте!
-```
-
-Якщо задати будь-який об'єкт, в тому числі об'єкт `Boolean`, чиє значення – `false`, як початкове значення об'єкта `Boolean`, то новий об'єкт `Boolean` матиме значення `true`.
-
-```js
-const myFalse = new Boolean(false); // початкове значення – false
-const g = Boolean(myFalse); // початкове значення – true
-const myString = new String("Привіт"); // рядковий об'єкт
-const s = Boolean(myString); // початкове значення – true
+const myFalse = new Boolean(false); // myFalse – це об'єкт Boolean (а не примітивне значення false)
+const g = Boolean(myFalse); // g дорівнює true
+const myString = new String("Привіт"); // myString – це об'єкт String
+const s = Boolean(myString); // s дорівнює true
 ```
 
 > **Застереження:** Використовувати `Boolean` як конструктор повинно доводитись нечасто.

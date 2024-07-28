@@ -176,7 +176,7 @@ Boolean(12n); // true
 
 ```js
 BigInt.prototype.toJSON = function () {
-  return this.toString();
+  return { $bigint: this.toString() };
 };
 ```
 
@@ -184,14 +184,14 @@ BigInt.prototype.toJSON = function () {
 
 ```js
 console.log(JSON.stringify({ a: 1n }));
-// {"a":"1"}
+// {"a":{"$bigint":"1"}}
 ```
 
 Коли не хочеться вносити зміни до `BigInt.prototype`, можна застосувати для серіалізації значень BigInt параметр `JSON.stringify` [`replacer`](/uk/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#parametr-replacer):
 
 ```js
 const replacer = (key, value) =>
-  typeof value === "bigint" ? value.toString() : value;
+  typeof value === "bigint" ? { $bigint: value.toString() } : value;
 
 const data = {
   number: 1,
@@ -200,22 +200,32 @@ const data = {
 const stringified = JSON.stringify(data, replacer);
 
 console.log(stringified);
-// {"number":1,"big":"18014398509481982"}
+// {"number":1,"big":{"$bigint":"18014398509481982"}}
 ```
 
-Коли є дані JSON, котрі містять значення, про котрі відомо, що там будуть великі цілі числа, то для їх обробки можна використати параметр [`reviver`](/uk/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse#zastosuvannia-parametra-reviver) методу `JSON.parse`:
+Потім для обробки такого значення можна передати параметр [`reviver`](/uk/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse#zastosuvannia-parametra-reviver) методу `JSON.parse`:
 
 ```js
-const reviver = (key, value) => (key === "big" ? BigInt(value) : value);
+const reviver = (key, value) =>
+  value !== null &&
+  typeof value === "object" &&
+  "$bigint" in value &&
+  typeof value.$bigint === "string"
+    ? BigInt(value.$bigint)
+    : value;
 
-const payload = '{"number":1,"big":"18014398509481982"}';
+const payload = '{"number":1,"big":{"$bigint":"18014398509481982"}}';
 const parsed = JSON.parse(payload, reviver);
 
 console.log(parsed);
 // { number: 1, big: 18014398509481982n }
 ```
 
-> **Примітка:** Хоч замінювач для `JSON.stringify()` можна зробити узагальненим, і коректно серіалізувати значення BigInt для всіх можливих об'єктів, та відновлювач для `JSON.parse()` мусить бути конкретним для структури очікуваного корисного навантаження, тому що серіалізація відбувається _зі втратами_: неможливо відрізнити рядок, котрий представляє BigInt, від звичайного рядка.
+> **Примітка:** Хоч замінювач для `JSON.stringify()` можна зробити узагальненим, і коректно серіалізувати значення BigInt для всіх можливих об'єктів, як це показано вище, відновника `JSON.parse()` слід використовувати з обережністю, оскільки серіалізація є _втратною_: неможливо відрізнити об'єкт, котрий, припустімо, просто має властивість з ім'ям `$bigint`, від справжнього BigInt.
+>
+> Крім цього, приклад вище створює цілий об'єкт під час заміни та відновлення, що може мати вплив на продуктивність або використання пам'яті для більших об'єктів, що містять багато BigInt. Якщо форма корисного навантаження відома, може бути краще просто серіалізувати BigInt як рядки та відновлювати їх на основі імен властивостей.
+
+Фактично JSON дозволяє числові літерали довільної довжини; їх просто не можна розібрати з повною точністю в JavaScript. Якщо відбувається комунікація з іншою програмою, написаною на мові, що підтримує довші цілі числа (наприклад, 64-бітові цілі), і необхідно передати BigInt як число JSON, а не рядок JSON, дивіться [Серіалізацію чисел без втрат](/uk/docs/Web/JavaScript/Reference/Global_Objects/JSON#vykorystannia-chysel-json).
 
 ### Зведення до BigInt
 
@@ -227,7 +237,7 @@ console.log(parsed);
 - Рядки перетворюються шляхом розбору їх так, ніби вони містять цілочисловий літерал. Будь-яка невдача розбору призводить до {{jsxref("SyntaxError")}}. Синтаксис є підмножиною [рядкових літералів чисел](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#zvedennia-do-chysla), у якій десятковий розділювач і експоненційний запис – заборонені.
 - [Number](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number) викидають {{jsxref("TypeError")}} для запобігання небажаному неявному зведенню, що призвело б до втрати точності.
 - [Symbol](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol) викидають {{jsxref("TypeError")}}.
-- Об'єкти спочатку [перетворюються на примітиви](/uk/docs/Web/JavaScript/Data_structures#zvedennia-do-prymityva) шляхом виклику їх методів [`[@@toPrimitive]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive) (з підказкою `"number"`), `valueOf()` і `toString()` – у такому порядку. Потім результівний примітив перетворюється на BigInt.
+- Об'єкти спочатку [перетворюються на примітиви](/uk/docs/Web/JavaScript/Data_structures#zvedennia-do-prymityva) шляхом виклику їх методів [`[Symbol.toPrimitive]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive) (з підказкою `"number"`), `valueOf()` і `toString()` – у такому порядку. Потім результівний примітив перетворюється на BigInt.
 
 Найкращий спосіб досягнути в JavaScript майже такого ж ефекту – функція [`BigInt()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/BigInt): `BigInt(x)` використовує такий же алгоритм для перетворення `x`, окрім того, що [Number](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number) не викидають {{jsxref("TypeError")}}, а перетворюються на BigInt, якщо є цілими числами.
 
@@ -236,7 +246,7 @@ console.log(parsed);
 ## Конструктор
 
 - {{jsxref("BigInt/BigInt", "BigInt()")}}
-  - : Створює нове значення BigInt.
+  - : Повертає примітивні значення типу BigInt. Викидає помилку, коли викликати його з `new`.
 
 ## Статичні методи
 
@@ -251,8 +261,8 @@ console.log(parsed);
 
 - {{jsxref("Object/constructor", "BigInt.prototype.constructor")}}
   - : Функція-конструктор, що створила об'єкт-примірник. Для примірників `BigInt` початкове значення – конструктор {{jsxref("BigInt/BigInt", "BigInt")}}.
-- `BigInt.prototype[@@toStringTag]`
-  - : Початкове значення [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"BigInt"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}. Проте у зв'язку з тим, що `BigInt` також має власну реалізацію метода [`toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/toString), ця властивість не використовується, якщо не викликати [`Object.prototype.toString.call()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/call) зі значенням BigInt як `thisArg`.
+- `BigInt.prototype[Symbol.toStringTag]`
+  - : Початкове значення [`[Symbol.toStringTag]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"BigInt"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}. Проте у зв'язку з тим, що `BigInt` також має власну реалізацію метода [`toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/toString), ця властивість не використовується, якщо не викликати [`Object.prototype.toString.call()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/call) зі значенням BigInt як `thisArg`.
 
 ## Методи примірника
 

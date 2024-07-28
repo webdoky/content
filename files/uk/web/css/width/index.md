@@ -7,7 +7,7 @@ browser-compat: css.properties.width
 
 {{CSSRef}}
 
-Властивість CSS **`width`** (ширина) встановлює ширину елемента. Усталено вона встановлює ширину [області вмісту](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model#oblast-vmistu), однак якщо властивість {{cssxref("box-sizing")}} має значення `border-box`, то вказане значення стає шириною [відмежованої області](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model#vidmezhovana-oblast).
+Властивість [CSS](/uk/docs/Web/CSS) **`width`** (ширина) встановлює ширину елемента. Усталено вона встановлює ширину [області вмісту](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model#oblast-vmistu), однак якщо властивість {{cssxref("box-sizing")}} має значення `border-box`, то вказане значення стає шириною [відмежованої області](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model#vidmezhovana-oblast).
 
 {{EmbedInteractiveExample("pages/css/width.html")}}
 
@@ -22,6 +22,8 @@ browser-compat: css.properties.width
 /* Значення <length> */
 width: 300px;
 width: 25em;
+width: anchor-size(--myAnchor inline, 120%);
+width: minmax(100px, anchor-size(width));
 
 /* Значення <percentage> */
 width: 75%;
@@ -55,7 +57,7 @@ width: unset;
   - : Внутрішньо найменша можлива ширина.
 - `fit-content`
   - : Використовує доступний простір, але не більше, ніж [max-content](/uk/docs/Web/CSS/max-content), тобто `min(max-content, max(min-content, stretch))`.
-- `fit-content({{cssxref("&lt;length-percentage&gt;")}})` {{Experimental_Inline}}
+- `fit-content({{cssxref("&lt;length-percentage&gt;")}})`
   - : Використовує формулу fit-content щодо доступного простору, заміненого вказаним аргументом, тобто `min(max-content, max(min-content, <length-percentage>))`.
 
 ## Занепокоєння щодо доступності
@@ -84,7 +86,7 @@ p.goldie {
 ```
 
 ```html
-<p class="goldie">Спільнота Mozilla виробляє чимало чудового ПЗ.</p>
+<p class="goldie">Спільнота MDN пише справді добру документацію.</p>
 ```
 
 {{EmbedLiveSample('ustalena-shyryna', '500px', '64px')}}
@@ -135,15 +137,12 @@ p.goldie {
 ```css
 p.maxgreen {
   background: lightgreen;
-  width: intrinsic; /* Safari/WebKit використовує нестандартне найменування */
-  width: -moz-max-content; /* Firefox/Gecko */
-  width: -webkit-max-content; /* Chrome */
   width: max-content;
 }
 ```
 
 ```html
-<p class="maxgreen">Спільнота Mozilla виробляє чимало чудового ПЗ.</p>
+<p class="maxgreen">Спільнота MDN пише справді добру документацію.</p>
 ```
 
 {{EmbedLiveSample('pryklad-iz-max-content', '500px', '64px')}}
@@ -153,14 +152,12 @@ p.maxgreen {
 ```css
 p.minblue {
   background: lightblue;
-  width: -moz-min-content; /* Firefox */
-  width: -webkit-min-content; /* Chrome */
   width: min-content;
 }
 ```
 
 ```html
-<p class="minblue">Спільнота Mozilla виробляє чимало чудового ПЗ.</p>
+<p class="minblue">Спільнота MDN пише справді добру документацію.</p>
 ```
 
 {{EmbedLiveSample('pryklad-iz-min-content', '500px', '155px')}}
@@ -180,3 +177,4 @@ p.minblue {
 - {{cssxref("box-sizing")}}
 - {{cssxref("min-width")}}, {{cssxref("max-width")}}
 - Відповідні логічні властивості: {{cssxref("block-size")}}, {{cssxref("inline-size")}}
+- {{cssxref("anchor-size()")}}
