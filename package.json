@@ -33,7 +33,7 @@
     "fux": "yarn finishupdatefix",
     "jest": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
     "lint": "eslint .",
-    "prepare": "husky install",
+    "prepare": "husky",
     "sl": "yarn sort-lines",
     "sort-lines": "node ./scripts/sort-lines.js",
     "test:front-matter-linter": "yarn jest tests"
