@@ -9,7 +9,6 @@ module.exports = {
     "plugin:promise/recommended",
     "plugin:array-func/all",
     "plugin:node/recommended",
-    "plugin:security/recommended",
     "plugin:unicorn/all",
     "plugin:prettier/recommended",
     "plugin:jest/all",
@@ -46,6 +45,7 @@ module.exports = {
         "no-magic-numbers": "off",
         "node/no-extraneous-import": "off",
         "jest/require-hook": "error",
+        "node/no-unpublished-import": "off",
       },
     },
     {
@@ -64,9 +64,15 @@ module.exports = {
         "import/extensions": ["error", "ignorePackages"],
       },
     },
+    {
+      files: ["**/front-matter-*.test.js"],
+      rules: {
+        "import/extensions": ["error", "never"],
+      },
+    },
   ],
   parserOptions: {
-    ecmaVersion: 2021,
+    ecmaVersion: 2024,
   },
   plugins: [
     "prettier",
@@ -77,7 +83,6 @@ module.exports = {
     "jest",
     "simple-import-sort",
     "editorconfig",
-    "security",
   ],
   root: true,
   rules: {
@@ -88,15 +93,7 @@ module.exports = {
     // 'import/prefer-await-to-then': 'off',
     // 'no-underscore-dangle': 'off',
     "unicorn/no-null": "off",
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        js: "never",
-        ts: "never",
-        tsx: "never",
-      },
-    ],
+    "import/extensions": ["error", "ignorePackages"],
     "no-void": ["error", { allowAsStatement: true }],
     "no-magic-numbers": [
       "error",
@@ -117,15 +114,19 @@ module.exports = {
         groups: [
           // Node.js builtins.
           // eslint-disable-next-line global-require
-          [`^(${require("module").builtinModules.join("|")})(/|$)`],
+          [`^(?:node:)?(${require("module").builtinModules.join("|")})(/|$)`],
           // Packages.
-          ["^@?(\\w|.)[^./]"],
+          [String.raw`^@?(\w|.)[^./]`],
           // Side effect imports.
-          ["^\\u0000"],
+          [String.raw`^\u0000`],
           // Parent imports. Put `..` last.
-          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+          [String.raw`^\.\.(?!/?$)`, String.raw`^\.\./?$`],
           // Other relative imports. Put same-folder imports and `.` last.
-          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+          [
+            String.raw`^\./(?=.*/)(?!/?$)`,
+            String.raw`^\.(?!/?$)`,
+            String.raw`^\./?$`,
+          ],
         ],
       },
     ],
