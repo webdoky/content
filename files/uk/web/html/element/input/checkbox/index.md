@@ -294,9 +294,9 @@ otherCheckbox.addEventListener("change", () => {
     <tr>
       <td><strong>Атрибути IDL</strong></td>
       <td>
-        <code><a href="#checked">checked</a></code>,
-        <code><a href="#indeterminate">indeterminate</a></code> і
-        <code><a href="#value">value</a></code>
+        <code><a href="/uk/docs/Web/API/HTMLInputElement/checked">checked</a></code>,
+        <code><a href="/uk/docs/Web/API/HTMLInputElement/indeterminate">indeterminate</a></code> і
+        <code><a href="/uk/docs/Web/API/HTMLInputElement/value">value</a></code>
       </td>
     </tr>
     <tr>

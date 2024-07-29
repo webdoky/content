@@ -55,7 +55,7 @@ splice(start, deleteCount, item1, item2, /* …, */ itemN)
 
 ## Опис
 
-Метод `splice()` – це [змінювальний метод](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#kopiiuvalni-ta-zminiuvalni-metody). Він може змінити вміст `this`. Якщо кількість наданих для вставки елементів відрізняється від кількості елементів, які видаляються, властивість `length` масиву зміниться також. Крім того, він використовує [`@@species`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/@@species) для створення нового примірника масиву, що повертається.
+Метод `splice()` – це [змінювальний метод](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#kopiiuvalni-ta-zminiuvalni-metody). Він може змінити вміст `this`. Якщо кількість наданих для вставки елементів відрізняється від кількості елементів, які видаляються, властивість `length` масиву зміниться також. Крім того, він використовує [`Symbol.species`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/Symbol.species) для створення нового примірника масиву, що повертається.
 
 Якщо видалена частка є [розрідженою](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy), то повернений `splice()` масив також буде розрідженим, і відповідні індекси будуть порожніми комірками.
 
