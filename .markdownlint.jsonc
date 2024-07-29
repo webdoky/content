@@ -252,14 +252,14 @@
       {
         "message": "Use notecard note marker",
         "name": "notecard-note",
-        "replace": "> [!NOTE]\n> ",
-        "searchPattern": "/> \\*\\*Примітка:\\*\\* /gm"
+        "replace": "$1> [!NOTE]\n$1> ",
+        "searchPattern": "/( *)> \\*\\*Примітка:\\*\\* /gm"
       },
       {
         "message": "Use notecard warning marker",
         "name": "notecard-warning",
-        "replace": "> [!WARNING]\n> ",
-        "searchPattern": "/> \\*\\*Застереження:\\*\\* /gm"
+        "replace": "$1> [!WARNING]\n$1> ",
+        "searchPattern": "/( *)> \\*\\*Застереження:\\*\\* /gm"
       }
     ]
   }
