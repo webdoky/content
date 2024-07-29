@@ -41,7 +41,7 @@ browser-compat: html.elements.label
 
 Цей елемент включає [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
 
-- `for`
+- [`for`](/uk/docs/Web/HTML/Attributes/for)
 
   - : Значення атрибута `for` мусить бути одним [`id`](/uk/docs/Web/HTML/Global_attributes#id) [підписуваного](/uk/docs/Web/HTML/Content_categories#pidpysni) елемента форми у тому самому документі, що й елемент `<label>`. Отже, будь-який елемент `label` може бути пов'язаний лише з одним контрольним елементом.
 
@@ -57,26 +57,7 @@ browser-compat: html.elements.label
 
 Немає жодних рекомендацій щодо оформлення елементів `<label>`: структурно вони є простими рядковими елементами, тож їх можна оформлювати так само як елемент {{htmlelement("span")}} чи {{htmlelement("a")}}. До них можна застосовувати будь-яке оформлення, за умови, що текст не стає складно читати.
 
-## Приклади
-
-### Визначення неявного підпису
-
-```html
-<label>Клацни мене <input type="text" /></label>
-```
-
-{{EmbedLiveSample('vyznachennia-neiavnoho-pidpysu', '200', '50')}}
-
-### Визначення явного підпису з атрибутом "for"
-
-```html
-<label for="username">Клацни мене для зосередження на полі введення</label>
-<input type="text" id="username" />
-```
-
-{{EmbedLiveSample('vyznachennia-yavnoho-pidpysu-z-atrybutom-for', '200', '50')}}
-
-## Занепокоєння щодо доступності
+## Доступність
 
 ### Інтерактивний вміст
 
@@ -130,6 +111,25 @@ browser-compat: html.elements.label
 ### Кнопки
 
 Елемент {{HTMLElement("input")}} з оголошенням `type="button"` та дійсним атрибутом `value` не потребує пов'язування з ним підпису. Така практика насправді може стати на заваді тому, як допоміжні технології розбирають кнопкове поле. Те саме стосується елемента {{HTMLElement("button")}}.
+
+## Приклади
+
+### Визначення неявного підпису
+
+```html
+<label>Клацни мене <input type="text" /></label>
+```
+
+{{EmbedLiveSample('vyznachennia-neiavnoho-pidpysu', '200', '50')}}
+
+### Визначення явного підпису з атрибутом "for"
+
+```html
+<label for="username">Клацни мене для зосередження на полі введення</label>
+<input type="text" id="username" />
+```
+
+{{EmbedLiveSample('vyznachennia-yavnoho-pidpysu-z-atrybutom-for', '200', '50')}}
 
 ## Технічний підсумок
 
