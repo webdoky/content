@@ -1,12 +1,12 @@
-// import AJV from "ajv";
-// import addFormats from "ajv-formats";
 import fs from "node:fs";
 import { fileURLToPath } from "node:url";
+
+import { describe, expect, it } from "@jest/globals";
 
 import {
   checkFrontMatter,
   getAjvValidator,
-} from "../scripts/front-matter-utils.js";
+} from "../scripts/front-matter-utils";
 
 const SAMPLES_DIRECTORY = new URL("front-matter_test_files/", import.meta.url);
 
@@ -26,7 +26,6 @@ function getPath(filePath) {
 function getContent(filePath) {
   return fs.readFileSync(getPath(filePath), "utf8");
 }
-
 describe("test front-matter linter", () => {
   it("should use double quotes and remove unwanted quotes", async () => {
     const filePath = getPath("./double_quotes.md");

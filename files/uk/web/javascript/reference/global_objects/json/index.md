@@ -89,8 +89,8 @@ DIGIT = %x30-39            ; 0-9
 
 ## Статичні властивості
 
-- `JSON[@@toStringTag]`
-  - : Початкове значення властивості [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"JSON"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}.
+- `JSON[Symbol.toStringTag]`
+  - : Початкове значення властивості [`[Symbol.toStringTag]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"JSON"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}.
 
 ## Статичні методи
 

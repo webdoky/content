@@ -41,7 +41,7 @@ const str = new TextDecoder().decode(buffer); // Цей рядок має роз
 
 Статична властивість `String.length` не має жодного відношення до довжин рядків. Це [арність](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/length) функції `String` (в широкому розумінні — число формальних аргументів функції), яка дорівнює 1.
 
-Оскільки довжина `length` рахує кодові одиниці, а не символи, то якщо необхідно отримати саме кількість символів, можна спершу розбити рядок за допомогою його [ітератора](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/@@iterator), що працює за символами:
+Оскільки довжина `length` рахує кодові одиниці, а не символи, то якщо необхідно отримати саме кількість символів, можна спершу розбити рядок за допомогою його [ітератора](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/Symbol.iterator), що працює за символами:
 
 ```js
 function getCharacterLength(str) {

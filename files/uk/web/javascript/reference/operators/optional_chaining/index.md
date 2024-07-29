@@ -91,13 +91,27 @@ printMagicIndex([0, 1, 2, 3, 4, 5]); // undefined
 printMagicIndex(); // undefined; якби не ?., тут викинуло б помилку "Cannot read properties of undefined (reading '42')"
 ```
 
-### Необов'язковий ланцюжок недійсний на лівому боці присвоєння
+### Недійсний необов'язковий ланцюжок
 
 Не можна намагатися присвоїти результат виразові необов'язкового ланцюжка:
 
 ```js-nolint example-bad
 const object = {};
 object?.property = 1; // SyntaxError: Invalid left-hand side in assignment
+```
+
+[Теги шаблонних літералів](/uk/docs/Web/JavaScript/Reference/Template_literals#tehovani-shablony) не можуть з'являтися в необов'язковому ланцюжку (дивіться [SyntaxError: tagged template cannot be used with optional chain](/uk/docs/Web/JavaScript/Reference/Errors/Bad_optional_template)):
+
+```js-nolint example-bad
+String?.raw`Привіт, світе!`;
+String.raw?.`Привіт, світе!`; // SyntaxError: Invalid tagged template on optional chain
+```
+
+Конструктор виразів {{jsxref("Operators/new", "new")}} не може бути частиною необов'язкового ланцюжка (дивіться [SyntaxError: new keyword cannot be used with an optional chain](/uk/docs/Web/JavaScript/Reference/Errors/Bad_new_optional)):
+
+```js-nolint example-bad
+new Intl?.DateTimeFormat(); // SyntaxError: Invalid optional chain from new expression
+new Map?.();
 ```
 
 ### Закорочення

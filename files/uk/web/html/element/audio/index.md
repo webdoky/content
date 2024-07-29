@@ -35,7 +35,7 @@ browser-compat: html.elements.audio
 
     Дозволені значення – `nodownload`, `nofullscreen` і `noremoteplayback`.
 
-- `crossorigin`
+- [`crossorigin`](/uk/docs/Web/HTML/Attributes/crossorigin)
 
   - : Цей {{Glossary("enumerated", "перелічений")}} атрибут позначає те, чи потрібно використовувати CORS для отримання пов'язаного аудіофайлу. [Ресурси, що підтримують CORS](/uk/docs/Web/HTML/CORS_enabled_image), можуть бути використані повторно в елементі {{HTMLElement("canvas")}}, не ставши _ославленими_. Дозволені значення:
 
@@ -297,47 +297,7 @@ elem.audioTrackList.onremovetrack = (event) => {
 
 Щоб відстежувати події {{domxref("AudioTrackList/addtrack_event", "addtrack")}} і {{domxref("AudioTrackList/removetrack_event", "removetrack")}}, можна також використовувати {{domxref("EventTarget.addEventListener", "addEventListener()")}}.
 
-## Приклади
-
-### Базове застосування
-
-Наступний приклад демонструє просте застосування елемента `<audio>` для відтворення файлу OGG. Він автоматично починає відтворення завдяки атрибуту `autoplay` – якщо сторінка має дозвіл на це – а також містить запасний вміст.
-
-```html
-<!-- Просте відтворення аудіо -->
-<audio src="AudioTest.ogg" autoplay>
-  <a href="AudioTest.ogg" download="AudioTest.ogg"
-    >Стягнути аудіо у форматі OGG</a
-  >.
-</audio>
-```
-
-Деталі про те, як працює автовідтворення, як отримати дозвіл на його використання, а також про те, коли і як його варто використовувати, див. в нашому [посібнику з автовідтворення](/uk/docs/Web/Media/Autoplay_guide).
-
-### Елемент \<audio> з елементом \<source>
-
-Цей приклад задає те, яку аудіодоріжку вбудувати, використовуючи атрибут `src` вкладеного елемента `<source>`, а не безпосередньо на елементі `<audio>`. Завжди корисно включати MIME-тип файлу в атрибут `type`, оскільки так браузер може миттєво визначити, чи здатен він відтворити цей файл, і не витрачати на нього час, якщо ні.
-
-```html
-<audio controls>
-  <source src="foo.wav" type="audio/wav" />
-  <a href="foo.wav" download="foo.wav">Стягнути аудіо у форматі WAV</a>.
-</audio>
-```
-
-### \<audio> з кількома елементами \<source>
-
-Цей приклад містить кілька елементів `<source>`. Браузер намагається завантажити перший елемент `<source>` (Opus), якщо здатен його відтворити; якщо ні, то переходить до другого (Vorbis), а в кінці – до MP3:
-
-```html
-<audio controls>
-  <source src="foo.opus" type="audio/ogg; codecs=opus" />
-  <source src="foo.ogg" type="audio/ogg; codecs=vorbis" />
-  <source src="foo.mp3" type="audio/mpeg" />
-</audio>
-```
-
-## Занепокоєння щодо доступності
+## Доступність
 
 Аудіо з усним діалогом повинно супроводжуватися і субтитрами, і стенограмами, які точно описують його вміст. Субтитри, які задаються за допомогою [WebVTT](/uk/docs/Web/API/WebVTT_API), дають людям з втратою слуху змогу розуміти вміст аудіозапису під час його відтворення, а стенограми дають людям, які потребують додаткового часу, змогу ознайомитися з вмістом запису у темпі та форматі, які зручні для них.
 
@@ -379,6 +339,46 @@ elem.audioTrackList.onremovetrack = (event) => {
 - [MDN Розуміння WCAG, пояснення Настанови 1.2](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#nastanova-1-2-nadannia-tekstovykh-alternatyv-chasozalezhnym-nosiiam)
 - [Розуміння критерію успіху 1.2.1 | W3C Розуміння WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/media-equiv-av-only-alt.html)
 - [Розуміння критерію успіху 1.2.2 | W3C Розуміння WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/media-equiv-captions.html)
+
+## Приклади
+
+### Базове застосування
+
+Наступний приклад демонструє просте застосування елемента `<audio>` для відтворення файлу OGG. Він автоматично починає відтворення завдяки атрибуту `autoplay` – якщо сторінка має дозвіл на це – а також містить запасний вміст.
+
+```html
+<!-- Просте відтворення аудіо -->
+<audio src="AudioTest.ogg" autoplay>
+  <a href="AudioTest.ogg" download="AudioTest.ogg"
+    >Стягнути аудіо у форматі OGG</a
+  >.
+</audio>
+```
+
+Деталі про те, як працює автовідтворення, як отримати дозвіл на його використання, а також про те, коли і як його варто використовувати, див. в нашому [посібнику з автовідтворення](/uk/docs/Web/Media/Autoplay_guide).
+
+### Елемент \<audio> з елементом \<source>
+
+Цей приклад задає те, яку аудіодоріжку вбудувати, використовуючи атрибут `src` вкладеного елемента `<source>`, а не безпосередньо на елементі `<audio>`. Завжди корисно включати MIME-тип файлу в атрибут `type`, оскільки так браузер може миттєво визначити, чи здатен він відтворити цей файл, і не витрачати на нього час, якщо ні.
+
+```html
+<audio controls>
+  <source src="foo.wav" type="audio/wav" />
+  <a href="foo.wav" download="foo.wav">Стягнути аудіо у форматі WAV</a>.
+</audio>
+```
+
+### \<audio> з кількома елементами \<source>
+
+Цей приклад містить кілька елементів `<source>`. Браузер намагається завантажити перший елемент `<source>` (Opus), якщо здатен його відтворити; якщо ні, то переходить до другого (Vorbis), а в кінці – до MP3:
+
+```html
+<audio controls>
+  <source src="foo.opus" type="audio/ogg; codecs=opus" />
+  <source src="foo.ogg" type="audio/ogg; codecs=vorbis" />
+  <source src="foo.mp3" type="audio/mpeg" />
+</audio>
+```
 
 ## Технічний підсумок
 
