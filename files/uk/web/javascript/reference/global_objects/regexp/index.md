@@ -62,13 +62,13 @@ const re = new RegExp("\\w+");
 
 Слід звернути увагу, що в більшості випадків відбудеться перевірка `Symbol.match`, а тобто:
 
-- Справжній об'єкт `RegExp`, значення чиєї властивості `Symbol.match` є [хибним](/uk/docs/Glossary/Falsy), але не `undefined` (навіть коли все решта на місці, як то [`exec`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec) і [`@@replace`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@replace)) може бути використаний так, ніби він не є регулярним виразом.
+- Справжній об'єкт `RegExp`, значення чиєї властивості `Symbol.match` є [хибним](/uk/docs/Glossary/Falsy), але не `undefined` (навіть коли все решта на місці, як то [`exec`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec) і [`[Symbol.replace]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.replace)) може бути використаний так, ніби він не є регулярним виразом.
 - Не-`RegExp` об'єкт зі властивістю `Symbol.match` буде оброблятися так, ніби він є регулярним виразом.
 
-Так було вирішено через те, що властивість `@@match` є найбільш показовою ознакою того, що щось створено для пошуку збігів. (`exec` також могла бути використана, але через те, що це не символьна властивість, було б забагато помилкових спрацювань.) Серед місць, що обробляють регулярні вирази по-особливому:
+Так було вирішено через те, що властивість `[Symbol.match]()` є найбільш показовою ознакою того, що щось створено для пошуку збігів. (`exec` також могла бути використана, але через те, що це не символьна властивість, було б забагато помилкових спрацювань.) Серед місць, що обробляють регулярні вирази по-особливому:
 
 - [`String.prototype.endsWith()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith), [`startsWith()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith) та [`includes()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/includes) викидають {{jsxref("TypeError")}}, якщо перший аргумент є регулярним виразом.
-- [`String.prototype.matchAll()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll) і [`replaceAll()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll) перевіряють, чи має регулярний вираз позначку [глобальності](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/global), якщо перший аргумент є регулярним виразом, до виклику його метода [`@@matchAll`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/matchAll) чи [`@@replace`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/replace).
+- [`String.prototype.matchAll()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll) і [`replaceAll()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll) перевіряють, чи має регулярний вираз позначку [глобальності](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/global), якщо перший аргумент є регулярним виразом, до виклику його метода [[Symbol.matchAll]()](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/matchAll) чи [`[Symbol.replace]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/replace).
 - Конструктор [`RegExp()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/RegExp) безпосередньо повертає аргумент `pattern` лише в тому випадку, коли `pattern` є регулярним виразом (серед інших умов). Якщо `pattern` є регулярним виразом, то також будуть перевірені властивості `pattern`: `source` і `flags`, замість зведення `pattern` до рядка.
 
 Наприклад, [`String.prototype.endsWith()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith) зводить усе своє введення до рядків, але викидає виняток, якщо аргумент є регулярним виразом, адже цей метод розроблений лише для зіставлення рядків, а використання регулярного виразу – ймовірно, помилка розробника.
@@ -78,7 +78,7 @@ const re = new RegExp("\\w+");
 "foobar".endsWith(/bar/); // TypeError: First argument to String.prototype.endsWith must not be a regular expression
 ```
 
-Перевірку можна обійти, присвоївши `@@match` [хибне](/uk/docs/Glossary/Falsy) значення, котре не є `undefined`. Це означає, що такий регулярний вираз не можна використати для `String.prototype.match()` (адже без `@@match`, `match()` створюватиме новий об'єкт `RegExp` з двома рисками на кінцях, доданими методом [`re.toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/toString)), але такий регулярний вираз можна використати для буквально будь-чого іншого.
+Перевірку можна обійти, присвоївши `[Symbol.match]` [хибне](/uk/docs/Glossary/Falsy) значення, котре не є `undefined`. Це означає, що такий регулярний вираз не можна використати для `String.prototype.match()` (адже без `[Symbol.match]`, `match()` створюватиме новий об'єкт `RegExp` з двома рисками на кінцях, доданими методом [`re.toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/toString)), але такий регулярний вираз можна використати для буквально будь-чого іншого.
 
 ```js
 const re = /bar/g;
@@ -111,7 +111,7 @@ re.exec("bar"); // [ 'bar', index: 0, input: 'bar', groups: undefined ]
   - : Статична властивість лише для зчитування, що містить підрядок, котрий передував останньому збігові.
 - {{jsxref("RegExp/rightContext", "RegExp.rightContext ($')")}} {{deprecated_inline}}
   - : Статична властивість лише для зчитування, що містить підрядок, котрий стояв після останнього збігу.
-- {{jsxref("RegExp/@@species", "RegExp[@@species]")}}
+- [`RegExp[Symbol.species]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.species)
   - : Функція-конструктор, що використовується для створення похідних об'єктів.
 
 ## Властивості примірника
@@ -156,15 +156,15 @@ re.exec("bar"); // [ 'bar', index: 0, input: 'bar', groups: undefined ]
   - : Перевіряє на збіг свій рядковий параметр.
 - {{jsxref("RegExp.prototype.toString()")}}
   - : Повертає рядок, що представляє вказаний об'єкт. Відкидає метод {{jsxref("Object.prototype.toString()")}}.
-- [`RegExp.prototype[@@match]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@match)
+- [`RegExp.prototype[Symbol.match]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.match)
   - : Виконує пошук збігу в наданому рядку й повертає результат.
-- [`RegExp.prototype[@@matchAll]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@matchAll)
+- [`RegExp.prototype[Symbol.matchAll]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.matchAll)
   - : Повертає усі збіги регулярного виразу в рядку.
-- [`RegExp.prototype[@@replace]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@replace)
+- [`RegExp.prototype[Symbol.replace]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.replace)
   - : Замінює збіги в даному рядку новим підрядком.
-- [`RegExp.prototype[@@search]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@search)
+- [`RegExp.prototype[Symbol.search]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.search)
   - : Шукає збіг в наданому рядку й повертає індекс, за яким патерн знайдений.
-- [`RegExp.prototype[@@split]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@split)
+- [`RegExp.prototype[Symbol.split]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.split)
   - : Розбиває наданий рядок на масив, поділяючи рядок на підрядки.
 
 ## Приклади
