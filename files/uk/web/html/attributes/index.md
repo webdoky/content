@@ -815,21 +815,6 @@ page-type: landing-page
     </tr>
     <tr>
       <td>
-        <code><a href="/uk/docs/Web/HTML/Element/html#manifest">manifest</a></code>
-        {{deprecated_inline}}
-      </td>
-      <td>{{HTMLElement("html")}}</td>
-      <td>
-        Задає URL маніфесту кешу документа.
-        <div class="note">
-          <p>
-            <strong>Примітка:</strong> Цей атрибут застарів, замість нього слід використовувати <a href="/uk/docs/Web/Manifest"><code>&#x3C;link rel="manifest"></code></a>.
-          </p>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>
         <code><a href="/uk/docs/Web/HTML/Attributes/max">max</a></code>
       </td>
       <td>

@@ -1,5 +1,5 @@
 ---
-title: "<header> – Елемент шапки"
+title: <header> – Елемент шапки
 slug: Web/HTML/Element/header
 page-type: html-element
 browser-compat: html.elements.header
@@ -26,6 +26,10 @@ browser-compat: html.elements.header
 ## Атрибути
 
 Це елемент приймає лише [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
+
+## Доступність
+
+Елемент `<header>` визначає віху [`banner`](/uk/docs/Web/Accessibility/ARIA/Roles/banner_role), коли його контекстом є {{HTMLElement('body')}}. Елемент шапки HTML не вважається віхою банера, коли є нащадком елемента {{HTMLElement('article')}}, {{HTMLElement('aside')}}, {{HTMLElement('main')}}, {{HTMLElement('nav')}} чи {{HTMLElement('section')}}.
 
 ## Приклади
 
@@ -64,10 +68,6 @@ browser-compat: html.elements.header
 #### Результат
 
 {{EmbedLiveSample('shapka-statti')}}
-
-## Занепокоєння щодо доступності
-
-Елемент `<header>` визначає віху [`banner`](/uk/docs/Web/Accessibility/ARIA/Roles/banner_role), коли його контекстом є {{HTMLElement('body')}}. Елемент шапки HTML не вважається віхою банера, коли є нащадком елемента {{HTMLElement('article')}}, {{HTMLElement('aside')}}, {{HTMLElement('main')}}, {{HTMLElement('nav')}} чи {{HTMLElement('section')}}.
 
 ## Технічний підсумок
 

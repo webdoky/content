@@ -7,7 +7,7 @@ browser-compat: css.properties.color
 
 {{CSSRef}}
 
-Властивість CSS **`color`** (колір) задає [значення кольору](/uk/docs/Web/CSS/color_value) переднього плану тексту елемента й [оздоблення цього тексту](/uk/docs/Web/CSS/text-decoration), а також задає значення [`currentcolor`](/uk/docs/Web/CSS/color_value#kliuchove-slovo-currentcolor). `currentcolor` може використовуватися як непряме значення на _інших_ властивостях, а також як усталене значення інших властивостей кольору, як то {{cssxref("border-color")}}.
+Властивість [CSS](/uk/docs/Web/CSS) **`color`** (колір) задає [значення кольору](/uk/docs/Web/CSS/color_value) переднього плану тексту елемента й [оздоблення цього тексту](/uk/docs/Web/CSS/text-decoration), а також задає значення [`currentcolor`](/uk/docs/Web/CSS/color_value#kliuchove-slovo-currentcolor). `currentcolor` може використовуватися як непряме значення на _інших_ властивостях, а також як усталене значення інших властивостей кольору, як то {{cssxref("border-color")}}.
 
 {{EmbedInteractiveExample("pages/css/color.html")}}
 

@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.Promise.then
 
 {{JSRef}}
 
-Метод **`then()`** (тоді) примірників {{jsxref("Promise")}} приймає до двох аргументів – функцій зворотного виклику на випадок успіху й невдачі `Promise`, відповідно. Він негайно повертає рівносильний об'єкт {{jsxref("Promise")}}, завдяки чому можна [утворювати ланцюжки](/uk/docs/Web/JavaScript/Guide/Using_promises#utvorennia-lantsiuzhkiv) з викликів інших методів промісів.
+Метод **`then()`** (тоді) примірників {{jsxref("Promise")}} приймає до двох аргументів – функцій зворотного виклику на випадок успіху й невдачі `Promise`, відповідно. Він негайно повертає інший об'єкт {{jsxref("Promise")}}, завдяки чому можна [утворювати ланцюжки](/uk/docs/Web/JavaScript/Guide/Using_promises#utvorennia-lantsiuzhkiv) з викликів інших методів промісів.
 
 {{EmbedInteractiveExample("pages/js/promise-then.html")}}
 
@@ -61,7 +61,7 @@ then(onFulfilled, onRejected)
 
 [Очікувані](/uk/docs/Web/JavaScript/Reference/Global_Objects/Promise#ochikuvani) об'єкти, що постають в ланцюжку `then()`, завжди [вирішуються](/uk/docs/Web/JavaScript/Reference/Global_Objects/Promise/Promise#funktsiia-resolve): обробник `onFulfilled` ніколи не отримує очікуваний об'єкт, і всі очікувані об'єкти, повернені будь-яким з обробників, завжди вирішуються перед переходом до наступного обробника. Так відбувається через те, що при конструюванні проміса функції `resolve` і `reject`, передані з `executor`, зберігаються, і коли поточний проміс залагоджується, то викликається відповідна функція, зі значенням сповнення або причиною відхилення. Логіка вирішення приходить з функції `resolve`, переданої конструктором {{jsxref("Promise/Promise", "Promise()")}}.
 
-Метод `then()` підтримує створення підкласів, а отже – його можна викликати на примірниках підкласів `Promise`, і результатом такого виклику буде проміс типу підкласу. Тип поверненого значення можна налаштувати за допомогою властивості [`@@species`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Promise/@@species).
+Метод `then()` підтримує створення підкласів, а отже – його можна викликати на примірниках підкласів `Promise`, і результатом такого виклику буде проміс типу підкласу. Тип поверненого значення можна налаштувати за допомогою властивості [`[Symbol.species]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Promise/Symbol.species).
 
 ## Приклади
 
