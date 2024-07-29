@@ -229,14 +229,17 @@ input:valid + span::after {
       <td>
         <a href="/uk/docs/Web/HTML/Element/input#autocomplete"><code>autocomplete</code></a>,
         <a href="/uk/docs/Web/HTML/Element/input#list-spysok"><code>list</code></a>,
-        <a href="/uk/docs/Web/HTML/Element/input#readonly-lyshe-dlia-chytannia"><code>readonly</code></a> і
+        <a href="/uk/docs/Web/HTML/Element/input#readonly-lyshe-dlia-chytannia"><code>readonly</code></a>,
         <a href="/uk/docs/Web/HTML/Element/input#step-krok"><code>step</code></a>
       </td>
     </tr>
     <tr>
       <td><strong>Атрибути IDL</strong></td>
       <td>
-        <code>list</code>, <code>value</code>, <code>valueAsNumber</code>.
+        <a href="/uk/docs/Web/HTML/Element/input#list-spysok"><code>list</code></a>,
+        <a href="/uk/docs/Web/HTML/Element/input#value-znachennia"><code>value</code></a>,
+        <code>valueAsDate</code>,
+        <code>valueAsNumber</code>
       </td>
     </tr>
     <tr>
@@ -271,5 +274,5 @@ input:valid + span::after {
 - Узагальнений елемент {{HTMLElement("input")}}, а також інтерфейс, що використовується для роботи з ним, – {{domxref("HTMLInputElement")}}
 - [`<input type="date">`](/uk/docs/Web/HTML/Element/input/date) і [`<input type="time">`](/uk/docs/Web/HTML/Element/input/time)
 - [Формати дати й часу, що використовуються в HTML](/uk/docs/Web/HTML/Date_and_time_formats)
-- [Підручник з інтерфейсу вибору дати та часу](/uk/docs/Learn/Forms/Basic_native_form_controls#interfeis-vyboru-daty-ta-chasu)
+- [Підручник з інтерфейсу вибору дати та часу](/uk/docs/Learn/Forms/HTML5_input_types#interfeis-vyboru-daty-ta-chasu)
 - [Сумісність властивостей CSS](/uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls)

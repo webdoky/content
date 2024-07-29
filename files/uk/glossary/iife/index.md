@@ -147,7 +147,6 @@ console.log(i); // Uncaught ReferenceError: i is not defined.
 ## Дивіться також
 
 - [IIFE](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression) (Wikipedia)
-- [Глосарій](/uk/docs/Glossary)
-
+- Споріднені терміни глосарія:
   - {{Glossary("Function", "Функція")}}
   - {{Glossary("Self-Executing Anonymous Function", "Самовиклична анонімна функція")}}

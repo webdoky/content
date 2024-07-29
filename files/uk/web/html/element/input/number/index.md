@@ -266,6 +266,12 @@ input:valid + span::after {
 
 Обґрунтування цього полягає в тому, що числові поля не є дійсними, коли містять що завгодно, крім чисел, а крім того, можна обмежити мінімальне й максимальне число дійсних цифр за допомогою атрибутів [`min`](/uk/docs/Web/HTML/Element/input#min-minimum) and [`max`](/uk/docs/Web/HTML/Element/input#max-maksymum) (як пояснено вище).
 
+## Доступність
+
+Неявна [роль](/uk/docs/Web/Accessibility/ARIA/Roles) елемента `<input type="number">` – [`spinbutton`](/uk/docs/Web/Accessibility/ARIA/Roles/spinbutton_role) (лічильник). Якщо лічильник не є важливою особливістю контрольного елемента, слід розглянути варіант _не_ використовувати `type="number"`. Натомість варто застосувати [`inputmode="numeric"`](/uk/docs/Web/HTML/Global_attributes/inputmode) вкупі з атрибутом [`pattern`](/uk/docs/Web/HTML/Attributes/pattern), котрий обмежить символи числами й пов'язаними символами. При використанні `<input type="number">` присутній ризик того, що користувачі випадково збільшать число, поки намагаються зробити щось інше. Крім того, якщо користувачі намагаються ввести щось, що не є числом, то не має явного пояснення того, що саме вони роблять не так.
+
+Також слід розглянути варіант використання атрибута [`autocomplete`](/uk/docs/Web/HTML/Attributes/autocomplete), аби допомогти користувачам заповнити форму швидше і з меншими шансами отримання помилок. Наприклад, для ввімкнення автозаповнення поштового індексу, слід задати `autocomplete="postal-code"`.
+
 ## Приклади
 
 Вище вже розгорнутий факт того, що усталено крок збільшення дорівнює `1`, і що можна застосувати атрибут [`step`](/uk/docs/Web/HTML/Element/input#step-krok), аби дозволити дробове введення. Розгляньмо цю тему уважніше.
@@ -392,12 +398,6 @@ switchBtn.addEventListener("click", () => {
 >
 > Якби це не було зроблено, довелось би вводити фути й дюйми **та** метри, аби мати змогу подати форму!
 
-## Занепокоєння щодо доступності
-
-Неявна [роль](/uk/docs/Web/Accessibility/ARIA/Roles) елемента `<input type="number">` – [`spinbutton`](/uk/docs/Web/Accessibility/ARIA/Roles/spinbutton_role) (лічильник). Якщо лічильник не є важливою особливістю контрольного елемента, слід розглянути варіант _не_ використовувати `type="number"`. Натомість варто застосувати [`inputmode="numeric"`](/uk/docs/Web/HTML/Global_attributes/inputmode) вкупі з атрибутом [`pattern`](/uk/docs/Web/HTML/Attributes/pattern), котрий обмежить символи числами й пов'язаними символами. При використанні `<input type="number">` присутній ризик того, що користувачі випадково збільшать число, поки намагаються зробити щось інше. Крім того, якщо користувачі намагаються ввести щось, що не є числом, то не має явного пояснення того, що саме вони роблять не так.
-
-Також слід розглянути варіант використання атрибута [`autocomplete`](/uk/docs/Web/HTML/Attributes/autocomplete), аби допомогти користувачам заповнити форму швидше і з меншими шансами отримання помилок. Наприклад, для ввімкнення автозаповнення поштового індексу, слід задати `autocomplete="postal-code"`.
-
 ## Технічний підсумок
 
 <table class="properties">
@@ -424,7 +424,11 @@ switchBtn.addEventListener("click", () => {
     </tr>
     <tr>
       <td><strong>Атрибути IDL</strong></td>
-      <td><code>list</code>, <code>value</code>, <code>valueAsNumber</code></td>
+      <td>
+        <a href="/uk/docs/Web/HTML/Element/input#list-spysok"><code>list</code></a>,
+        <a href="/uk/docs/Web/HTML/Element/input#value-znachennia"><code>value</code></a>,
+        <code>valueAsNumber</code>
+      </td>
     </tr>
     <tr>
       <td><strong>Інтерфейс DOM</strong></td>
