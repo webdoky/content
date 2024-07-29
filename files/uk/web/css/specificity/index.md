@@ -9,7 +9,8 @@ spec-urls: https://drafts.csswg.org/selectors/#specificity-rules
 
 **Специфічність** – це алгоритм, що використовується браузерами для визначення того [оголошення CSS](/uk/docs/Learn/CSS/First_steps/What_is_CSS#syntaksys-css), яке найбільше відповідає елементові. І котре, своєю чергою, визначає те значення властивості, яке буде застосовано до елемента. Алгоритм специфічності обчислює вагу [селектора CSS](/uk/docs/Web/CSS/Reference#selektory), щоб визначити, яке правило серед суперницьких оголошень CSS застосовується до елемента.
 
-> **Примітка:** Браузери розглядають специфічність **після** визначення [каскадних джерела та важливості](/uk/docs/Web/CSS/Cascade). Інакше кажучи, серед суперницьких властивостей специфічність грає роль та порівнюється лише між селекторами з одними [каскадними джерелом та шаром](/uk/docs/Web/CSS/@layer), що мають пріоритет для властивості. [Наближеність області видимості](/uk/docs/Web/CSS/@scope#yak-rozviazuiutsia-konflikty-scope) та порядок появи грають роль, коли специфічності селекторів суперницьких оголошень в межах каскадного шару з пріоритетом є рівними.
+> [!NOTE]
+> Браузери розглядають специфічність **після** визначення [каскадних джерела та важливості](/uk/docs/Web/CSS/Cascade). Інакше кажучи, серед суперницьких властивостей специфічність грає роль та порівнюється лише між селекторами з одними [каскадними джерелом та шаром](/uk/docs/Web/CSS/@layer), що мають пріоритет для властивості. [Наближеність області видимості](/uk/docs/Web/CSS/@scope#yak-rozviazuiutsia-konflikty-scope) та порядок появи грають роль, коли специфічності селекторів суперницьких оголошень в межах каскадного шару з пріоритетом є рівними.
 
 ## Як обчислюється специфічність
 
@@ -491,24 +492,17 @@ input[type="password"]:required {
 ## Дивіться також
 
 - ["Специфічність" у "Каскаді та успадкуванні"](/uk/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance#spetsyfichnist-2)
-- [SpeciFISHity (англ.)](https://specifishity.com)
-- [Калькулятор специфічності (англ.)](https://specificity.keegan.st/): інтерактивний вебсайт для перевірки та усвідомлення ваших власних правил CSS
-- [Вправа _ID-CLASS-TYPE_ (англ.)](https://estelle.github.io/CSS/selectors/exercises/specificity.html) – вікторина зі специфічності
-- Ключові концепції CSS:
-  - [Синтаксис CSS](/uk/docs/Web/CSS/Syntax)
-  - [Директиви](/uk/docs/Web/CSS/At-rule)
-  - [Коментарі](/uk/docs/Web/CSS/Comments)
-  - [Успадкування](/uk/docs/Web/CSS/Inheritance)
-  - [Рамкова модель](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
-  - [Режими компонування](/uk/docs/Web/CSS/Layout_mode)
-  - [Моделі візуального форматування](/uk/docs/Web/CSS/Visual_formatting_model)
-  - [Перекриття зовнішніх відступів](/uk/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
-  - Значення
-    - [Початкові значення](/uk/docs/Web/CSS/initial_value)
-    - [Обчислені значення](/uk/docs/Web/CSS/computed_value)
-    - [Застосовані значення](/uk/docs/Web/CSS/used_value)
-    - [Актуальні значення](/uk/docs/Web/CSS/actual_value)
-  - [Синтаксис визначення значень](/uk/docs/Web/CSS/Value_definition_syntax)
-  - [Властивості-скорочення](/uk/docs/Web/CSS/Shorthand_properties)
-  - [Заміщені елементи](/uk/docs/Web/CSS/Replaced_element)
-  - [Модуль Вкладеності CSS](/uk/docs/Web/CSS/CSS_nesting)
+- [SpeciFISHity](https://specifishity.com)
+- [Калькулятор специфічності](https://specificity.keegan.st/): інтерактивний вебсайт для перевірки та усвідомлення ваших власних правил CSS
+- [Вправа _ID-CLASS-TYPE_](https://estelle.github.io/CSS/selectors/exercises/specificity.html) – вікторина зі специфічності
+- Посібник [Синтакси CSS syntax](/uk/docs/Web/CSS/Syntax)
+- Модуль [Синтаксису CSS](/uk/docs/Web/CSS/CSS_syntax)
+- [Обробка помилок CSS](/uk/docs/Web/CSS/CSS_syntax/Error_handling)
+- [Директиви](/uk/docs/Web/CSS/At-rule)
+- [Успадкування](/uk/docs/Web/CSS/Inheritance)
+- [Початкові](/uk/docs/Web/CSS/initial_value), [обчислені](/uk/docs/Web/CSS/computed_value), [вжиті](/uk/docs/Web/CSS/used_value) та [фактичні](/uk/docs/Web/CSS/actual_value) значення
+- [Синтаксис визначення значень](/uk/docs/Web/CSS/Value_definition_syntax)
+- [Цеглинки – Каскадність CSS](/uk/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance)
+- [Цеглинки – Каскадні шари](/uk/docs/Learn/CSS/Building_blocks/Cascade_layers)
+- Модуль [Каскадності та успадкування CSS](/uk/docs/Web/CSS/CSS_cascade)
+- [Модуль Вкладеності CSS](/uk/docs/Web/CSS/CSS_nesting)
