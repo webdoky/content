@@ -260,6 +260,12 @@
         "name": "notecard-warning",
         "replace": "$1> [!WARNING]\n$1> ",
         "searchPattern": "/( *)> \\*\\*Застереження:\\*\\* /gm"
+      },
+      {
+        "message": "Remove English markers",
+        "name": "no-english-marker",
+        "replace": "$1",
+        "searchPattern": "/ \\(англ\\.\\)(]|>)/g"
       }
     ]
   }
