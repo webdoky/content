@@ -1,10 +1,5 @@
-// This file defines our configuration for Markdownlint. See
-// https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
-// for more details on each rule.
-
 {
   "default": true,
-  // Disabled, as some callouts include headings.
   "heading-increment": false,
   "ul-style": {
     "style": "dash"
@@ -17,7 +12,7 @@
   },
   "line-length": false,
   "no-duplicate-heading": {
-    "allow_different_nesting": true
+    "siblings_only": true
   },
   "single-title": {
     "front_matter_title": "^\\s*title\\s*[:=]"
@@ -25,9 +20,7 @@
   "no-trailing-punctuation": {
     "punctuation": ".,;:"
   },
-  // Consecutive Notes/Callouts currently don't conform with this rule
   "no-blanks-blockquote": false,
-  // Force ordered numbering to catch accidental list ending from indenting
   "ol-prefix": {
     "style": "ordered"
   },
@@ -103,10 +96,8 @@
     ]
   },
   "no-bare-urls": false,
-  // Produces too many false positives
   "no-space-in-emphasis": false,
   "fenced-code-language": true,
-  // See https://github.com/mdn/content/pull/20026, as macros currently break this
   "no-empty-links": false,
   "code-block-style": {
     "style": "fenced"
@@ -117,10 +108,8 @@
   "strong-style": {
     "style": "asterisk"
   },
-  // Disabled, as yari generates link fragments by replacing spaces with underscores, not dashes.
   "link-fragments": false,
 
-  // https://github.com/OnkarRuikar/markdownlint-rule-search-replace
   "search-replace": {
     "rules": [
       {
@@ -250,7 +239,7 @@
       },
       {
         "name": "un-closed-md-link",
-        "message": "Missng closing bracket ')'",
+        "message": "Missing closing bracket ')'",
         "searchPattern": "/(\\[[^\\]]*?\\]\\(([^\\)\\n]|\\([^\\)\\n]\\)|\\s[\"'])+?)(\\n|\\s|[,:][\\s\\n])/gm",
         "searchScope": "text"
       },
@@ -259,6 +248,18 @@
         "name": "backticks-wrapped-macro",
         "replace": "$1",
         "searchPattern": "/`({{[^{}]+?}})`/gm"
+      },
+      {
+        "message": "Use notecard note marker",
+        "name": "notecard-note",
+        "replace": "> [!NOTE]\n> ",
+        "searchPattern": "/> \\*\\*Примітка:\\*\\* /gm"
+      },
+      {
+        "message": "Use notecard warning marker",
+        "name": "notecard-warning",
+        "replace": "> [!WARNING]\n> ",
+        "searchPattern": "/> \\*\\*Застереження:\\*\\* /gm"
       }
     ]
   }

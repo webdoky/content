@@ -1,14 +1,11 @@
 import { execSync } from "child_process";
 
-import compact from "lodash/compact";
-import includes from "lodash/includes";
-import last from "lodash/last";
-import toString from "lodash/toString";
+import _ from "lodash";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 
-import doesGitBranchExistLocally from "./utils/does-git-branch-exist-locally";
-import doesGitBranchExistOnRemote from "./utils/does-git-branch-exist-on-remote";
+import doesGitBranchExistLocally from "./utils/does-git-branch-exist-locally.js";
+import doesGitBranchExistOnRemote from "./utils/does-git-branch-exist-on-remote.js";
 
 const { update } = yargs(hideBin(process.argv))
   .command("$0", "Finish update")
@@ -37,7 +34,7 @@ let changedTranslations;
 try {
   // List changes for index.md files
   changedTranslations = execSync(
-    'git status --porcelain | grep "files/.*/\\(index.md\\)\\?$"',
+    String.raw`git status --porcelain | grep "files/.*/\(index.md\)\?$"`,
     { encoding: "utf8" },
   )
     .trim()
@@ -61,7 +58,7 @@ if (numberOfTranslations > requiredTranslationNumber) {
 }
 
 // eslint-disable-next-line prefer-const
-let [actionMarker, translation] = compact(changedTranslations[0].split(" "));
+let [actionMarker, translation] = _.compact(changedTranslations[0].split(" "));
 let action;
 switch (actionMarker) {
   case "??":
@@ -71,7 +68,7 @@ switch (actionMarker) {
     break;
   }
   case "R": {
-    translation = last(changedTranslations[0].split(" -> "));
+    translation = _.last(changedTranslations[0].split(" -> "));
     // intentionally no break here
   }
   // eslint-disable-next-line no-fallthrough
@@ -157,7 +154,7 @@ if (!(update && currentBranchName.endsWith(targetBranchName))) {
     try {
       execSync(`git checkout -b ${targetBranchName}`);
     } catch (error) {
-      if (update && includes(toString(error), "already exists")) {
+      if (update && _.includes(toString(error), "already exists")) {
         execSync(`git checkout ${targetBranchName}`);
       } else {
         console.error(error);
@@ -193,6 +190,7 @@ section = alterSectionName(section);
 console.log("Staging LanguageTool corrections");
 // Always commit language alterings
 execSync("git add ./*_additions.txt");
+execSync("git add ./disabled_rules.txt");
 console.log("Git commit");
 execSync(`git commit -m "${action}(${section}): ${translationSlug}"`);
 console.log("Git push");
