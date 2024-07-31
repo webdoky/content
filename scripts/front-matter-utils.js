@@ -1,10 +1,11 @@
+import fs from "node:fs/promises";
+import path from "node:path";
+
 import { betterAjvErrors } from "@apideck/better-ajv-errors";
 import AJV from "ajv";
 import addFormats from "ajv-formats";
 import grayMatter from "gray-matter";
 import YAML from "js-yaml";
-import fs from "node:fs/promises";
-import path from "node:path";
 import * as prettier from "prettier";
 
 export function getRelativePath(filePath) {
@@ -38,16 +39,15 @@ export async function checkFrontMatter(filePath, { config, fix, validator }) {
     data: fmObject,
     errors: validator.errors,
   });
-  const errors = [];
+  let errors = [];
   if (!valid) {
-    // eslint-disable-next-line no-restricted-syntax
-    for (const error of validationErrors) {
+    errors = validationErrors.map((error) => {
       let message = error.message.replace("{base}", "Front matter");
       if (error.context.allowedValues) {
         message += `:\n\t${error.context.allowedValues.join(", ")}`;
       }
-      errors.push(message);
-    }
+      return message;
+    });
   }
 
   const isInOrder = areAttributesInOrder(fmObject, order);
@@ -64,8 +64,7 @@ export async function checkFrontMatter(filePath, { config, fix, validator }) {
   //  if --fix option is true, then fix the order and prettify
   if (fix) {
     const fmOrdered = {};
-    // eslint-disable-next-line no-restricted-syntax
-    for (const attribute of config["attribute-order"]) {
+    config["attribute-order"].forEach((attribute) => {
       const value = fmObject[attribute];
       if (value) {
         if (
@@ -84,7 +83,7 @@ export async function checkFrontMatter(filePath, { config, fix, validator }) {
           fmOrdered[attribute] = value;
         }
       }
-    }
+    });
 
     let yml = YAML.dump(fmOrdered, {
       skipInvalid: true,

@@ -47,7 +47,9 @@ Number(undefined); // NaN
 Мантиса – частина числа, що представляє фактичне значення (вагомі цифри). Експонента – степінь двійки, на котрий повинна бути помножена мантиса. У вигляді наукового запису:
 
 <!-- prettier-ignore-start -->
-<math display="block"><semantics><mrow><mtext>Number</mtext><mo>=</mo><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><msup><mo stretchy="false">)</mo><mtext>знак</mtext></msup><mo>⋅</mo><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mtext>мантиса</mtext><mo stretchy="false">)</mo><mo>⋅</mo><msup><mn>2</mn><mtext>експонента</mtext></msup></mrow><annotation encoding="TeX">\text{Number} = ({-1})^{\text{знак}} \cdot (1 + \text{мантиса}) \cdot 2^{\text{експонента}}</annotation></semantics></math>
+<math display="block">
+  <semantics><mrow><mtext>Number</mtext><mo>=</mo><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><msup><mo stretchy="false">)</mo><mtext>знак</mtext></msup><mo>⋅</mo><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mtext>мантиса</mtext><mo stretchy="false">)</mo><mo>⋅</mo><msup><mn>2</mn><mtext>експонента</mtext></msup></mrow><annotation encoding="TeX">\text{Number} = ({-1})^{\text{знак}} \cdot (1 + \text{мантиса}) \cdot 2^{\text{експонента}}</annotation></semantics>
+</math>
 <!-- prettier-ignore-end -->
 
 Мантиса зберігається в 52 бітах, що тлумачаться як цифри після `1.…` у двійковому дробовому числі. Таким чином, точність мантиси – 2<sup>-52</sup> (отримується за допомогою {{jsxref("Number.EPSILON")}}), або приблизно від 15 до 17 знаків після коми; арифметика понад цим рівнем точності підпадає під [округлення (англ.)](https://en.wikipedia.org/wiki/Floating-point_arithmetic#Representable_numbers,_conversion_and_rounding).
