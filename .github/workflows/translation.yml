@@ -208,8 +208,10 @@ jobs:
       - id: create-body
         run: |
           translation=${{ needs.prepare.outputs.translation }}
+          echo $translation
           # get "slug" frontmatter value
           slug=$(cat $translation | grep -E "^slug: " | sed 's/slug: //')
+          echo $slug
           # get "title" frontmatter value
           title=$(cat $translation | grep -E "^title: " | sed 's/title: //')
           # escape HTML entities from title
