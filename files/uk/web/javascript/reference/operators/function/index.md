@@ -37,7 +37,8 @@ function name(param0, param1, /* …, */ paramN) {
 }
 ```
 
-> [!Примітка] > [Інструкція-вираз](/uk/docs/Web/JavaScript/Reference/Statements/Expression_statement) не може починатися зі слова `function` щоб уникнути неоднозначності із [оголошенням функції](/uk/docs/Web/JavaScript/Reference/Statements/function). Ключове слово `function` починає вираз тільки тоді, коли воно з'являється в контексті, де інструкції не можуть бути прийняті.
+> [!NOTE]
+> Запис [інструкції-виразу](/uk/docs/Web/JavaScript/Reference/Statements/Expression_statement) не може починатися зі слова `function`, щоб уникнути плутанини щодо [оголошення функції](/uk/docs/Web/JavaScript/Reference/Statements/function). Ключове слово `function` починає вираз тільки тоді, коли з'являється в контексті, де інструкцій бути не може.
 
 ### Параметри
 
