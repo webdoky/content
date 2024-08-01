@@ -7,7 +7,7 @@ browser-compat: javascript.operators.function
 
 {{jsSidebar("Operators")}}
 
-Ключове слово **`function`** можна використовувати для визначення функції всередині виразу.
+Ключове слово **`function`** (функція) можна використовувати для визначення функції всередині виразу.
 
 Визначати функції також можна за допомогою [оголошення функції](/uk/docs/Web/JavaScript/Reference/Statements/function) чи [стрілкового синтаксису](/uk/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
 
