@@ -54,7 +54,7 @@ function name(param0, param1, /* …, */ paramN) {
 
 ### Підняття виразу функції
 
-Вирази функцій у JavaScript не мають підняття, на відміну від [оголошення функції](/uk/docs/Web/JavaScript/Reference/Statements/function#hoisting). Ви не можете використовувати вирази функцій до того, як вони створені:
+Вирази функцій у JavaScript не мають підняття, на відміну від [оголошень функцій](/uk/docs/Web/JavaScript/Reference/Statements/function#hoisting). Не можна використовувати вирази функцій до їх створення:
 
 ```js
 console.log(notHoisted); // undefined
