@@ -33,4 +33,4 @@ jobs:
             gh api repos/${{ github.repository }}/pulls/$PR_NUMBER/requested_reviewers -X POST -f team_reviewers[]=$REVIEWER
           fi
         env:
-          GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          GH_TOKEN: "${{ secrets.REVIEWER_SETTER_TOKEN }}"
