@@ -28,7 +28,7 @@ jobs:
             # Assuming 'webdoky/translators' is a team reviewer
             gh api repos/${{ github.repository_owner }}/${{ github.repository }}/pulls/$PR_NUMBER/requested_reviewers -X DELETE -f team_reviewers=$REVIEWERS
           else
-            gh pr review $PR_NUMBER --add-reviewer $REVIEWERS
+            gh api repos/${{ github.repository_owner }}/${{ github.repository }}/pulls/$PR_NUMBER/requested_reviewers -X POST -f team_reviewers=$REVIEWERS
           fi
         env:
           GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
