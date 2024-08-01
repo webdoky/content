@@ -202,7 +202,7 @@ jobs:
       - env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh pr edit ${{ github.event.pull_request.number }} --title "${{ needs.prepare.outputs.status }}(${{ steps.determine.outputs.section }}): ${{ steps.determine.outputs.slug }}"
+          gh pr edit ${{ github.event.pull_request.number }} --repo webdoky/content --title "${{ needs.prepare.outputs.status }}(${{ steps.determine.outputs.section }}): ${{ steps.determine.outputs.slug }}"
   set-translation-body:
     if: ${{ needs.prepare.outputs.translation != '' && needs.prepare.outputs.status == 'translation' }}
     name: Set translation body
@@ -237,7 +237,7 @@ jobs:
       - env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh pr edit ${{ github.event.pull_request.number }} --body "$(cat ./body.md)"
+          gh pr edit ${{ github.event.pull_request.number }} --body "$(cat ./body.md)"  --repo webdoky/content
   set-update-body:
     if: ${{ needs.prepare.outputs.translation != '' && needs.prepare.outputs.status == 'update' }}
     name: Set update body
@@ -303,4 +303,4 @@ jobs:
       - env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh pr edit ${{ github.event.pull_request.number }} --body "$(cat ./body.md)"
+          gh pr edit ${{ github.event.pull_request.number }} --body "$(cat ./body.md)"  --repo webdoky/content
