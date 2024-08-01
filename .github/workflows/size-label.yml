@@ -18,20 +18,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Assign/Remove reviewers based on size label
+      - id: determine-reviewers-needed
+        name: Determine if reviewers are needed
         run: |
           PR_NUMBER=${{ github.event.pull_request.number }}
           LABELS=$(gh pr view $PR_NUMBER --json labels --jq '.labels[].name')
-          echo ${{ vars.REVIEWERS }}
-          IFS=',' read -ra REVIEWERS <<< "${{ vars.REVIEWERS }}"
+          REVIEWER="${{ github.repository_owner }}/translators"
 
           if [[ $LABELS == *"size/XS"* ]] || [[ $LABELS != *"size/"* ]]; then
-            echo "No changes"
+            echo 'No review'
           else
-            for reviewer in "${REVIEWERS[@]}"; do
-              echo $reviewer
-              gh api repos/${{ github.repository_owner }}/${{ github.repository }}/pulls/$PR_NUMBER/requested_reviewers -X POST -f reviewers[]=$reviewer
-            done
+            echo "add_reviewers=true" >> $GITHUB_OUTPUT
           fi
         env:
           GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Add reviewers
+        if: steps.determine-reviewers-needed.outputs.add_reviewers == 'true'
+        uses: actions/add-reviewers@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          reviewers: ${{ github.repository_owner }}/translators
