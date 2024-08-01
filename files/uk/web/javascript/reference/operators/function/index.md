@@ -44,7 +44,7 @@ function name(param0, param1, /* …, */ paramN) {
 - `name` {{optional_inline}}
   - : Ім'я функції. Можна опустити, і в цьому випадку функція буде _анонімною_. Ім'я є локальним лише для тіла функції.
 - `paramN` {{optional_inline}}
-  - : Назва формального параметра для функції. Синтаксис для параметрів дивіться [Довідка про функції](/uk/docs/Web/JavaScript/Guide/Functions#function_parameters).
+  - : Назва формального параметра для функції. Синтаксис параметрів дивіться у [Довідці про функції](/uk/docs/Web/JavaScript/Guide/Functions#parametry-funktsii).
 - `statements` {{optional_inline}}
   - : Інструкції, що складають тіло функції.
 
