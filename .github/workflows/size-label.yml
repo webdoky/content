@@ -23,6 +23,8 @@ jobs:
           PR_NUMBER=${{ github.event.pull_request.number }}
           LABELS=$(gh pr view $PR_NUMBER --json labels --jq '.labels[].name')
           REVIEWERS="${{ github.repository_owner }}/translators"
+          echo $REVIEWERS
+          echo ${{ github.repository_owner }}/${{ github.repository }}
 
           if [[ $LABELS == *"size/XS"* ]] || [[ $LABELS != *"size/"* ]]; then
             # Assuming 'webdoky/translators' is a team reviewer
