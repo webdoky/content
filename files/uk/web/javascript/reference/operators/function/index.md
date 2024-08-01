@@ -150,6 +150,6 @@ button.addEventListener("click", function (event) {
 
 - Посібник [Функції](/uk/docs/Web/JavaScript/Guide/Functions)
 - [Функції](/uk/docs/Web/JavaScript/Reference/Functions)
-- {{jsxref("Statements/function", "функція")}}
+- {{jsxref("Statements/function", "function")}}
 - {{jsxref("Функція")}}
 - {{jsxref("Functions/Arrow_functions", "Стрілкові функції", "", 1)}}
