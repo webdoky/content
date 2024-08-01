@@ -1,5 +1,5 @@
 ---
-title: вираз функції
+title: Вираз function
 slug: Web/JavaScript/Reference/Operators/function
 page-type: javascript-operator
 browser-compat: javascript.operators.function
