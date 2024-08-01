@@ -25,9 +25,11 @@ jobs:
           REVIEWER="${{ github.repository_owner }}/translators"
 
           if [[ $LABELS == *"size/XS"* ]] || [[ $LABELS != *"size/"* ]]; then
+            echo 'Removing ${{ github.repository_owner }}/translators from reviewers'
             # Assuming 'webdoky/translators' is a team reviewer
             gh api repos/${{ github.repository }}/pulls/$PR_NUMBER/requested_reviewers -X DELETE -f team_reviewers[]=$REVIEWER
           else
+            echo 'Adding ${{ github.repository_owner }}/translators to reviewers'
             gh api repos/${{ github.repository }}/pulls/$PR_NUMBER/requested_reviewers -X POST -f team_reviewers[]=$REVIEWER
           fi
         env:

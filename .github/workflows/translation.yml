@@ -63,9 +63,6 @@ jobs:
       - name: Remove code blocks
         run: |
           file=${{ needs.prepare.outputs.translation }}
-          ls .
-          ls ./files
-          ls ./files/uk/web/javascript/reference/operators/function
           sed -i '/```/,/```/d' $file
       # Strip all macros
       - id: strip-macros
