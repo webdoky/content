@@ -114,7 +114,7 @@ const x = function (y) {
 
 ### Використання функції як зворотного виклику
 
-Найчастіше це використовується як {{Glossary("Callback_function", "callback")}}:
+Найчастіше такі функції використовуються як {{Glossary("Callback_function", "функції зворотного виклику")}}:
 
 ```js
 button.addEventListener("click", function (event) {
