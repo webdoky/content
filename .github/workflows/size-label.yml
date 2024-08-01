@@ -22,14 +22,22 @@ jobs:
         run: |
           PR_NUMBER=${{ github.event.pull_request.number }}
           LABELS=$(gh pr view $PR_NUMBER --json labels --jq '.labels[].name')
-          REVIEWER="translators"
+          REVIEWER="${{ github.repository_owner }}/translators"
 
           if [[ $LABELS == *"size/XS"* ]] || [[ $LABELS != *"size/"* ]]; then
-            echo 'Adding ${{ github.repository_owner }}/translators to reviewers'
-            # Assuming 'webdoky/translators' is a team reviewer
-            gh api repos/${{ github.repository }}/pulls/$PR_NUMBER/requested_reviewers -X DELETE -f team_reviewers[]=$REVIEWER
+            gh api \
+              --method DELETE \
+              -H "Accept: application/vnd.github+json" \
+              -H "X-GitHub-Api-Version: 2022-11-28" \
+              /repos/${{ github.repository }}/pulls/$PR_NUMBER/requested_reviewers \
+              -f "team_reviewers[]=$REVIEWER"
           else
-            gh api repos/${{ github.repository }}/pulls/$PR_NUMBER/requested_reviewers -X POST -f team_reviewers[]=$REVIEWER
+            gh api \
+              --method POST \
+              -H "Accept: application/vnd.github+json" \
+              -H "X-GitHub-Api-Version: 2022-11-28" \
+              /repos/${{ github.repository }}/pulls/$PR_NUMBER/requested_reviewers \
+              -f "team_reviewers[]=$REVIEWER"
           fi
         env:
           GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
