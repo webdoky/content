@@ -11,33 +11,33 @@ jobs:
         uses: "webdoky/size-label-action@main"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-  assign-reviewers:
-    needs: [size-label]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+  # assign-reviewers:
+  #   needs: [size-label]
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v4
 
-      - name: Assign/Remove reviewers based on size label
-        run: |
-          PR_NUMBER=${{ github.event.pull_request.number }}
-          LABELS=$(gh pr view $PR_NUMBER --json labels --jq '.labels[].name')
-          REVIEWER="${{ github.repository_owner }}/translators"
+  #     - name: Assign/Remove reviewers based on size label
+  #       run: |
+  #         PR_NUMBER=${{ github.event.pull_request.number }}
+  #         LABELS=$(gh pr view $PR_NUMBER --json labels --jq '.labels[].name')
+  #         REVIEWER="${{ github.repository_owner }}/translators"
 
-          if [[ $LABELS == *"size/XS"* ]] || [[ $LABELS != *"size/"* ]]; then
-            gh api \
-              --method DELETE \
-              -H "Accept: application/vnd.github+json" \
-              -H "X-GitHub-Api-Version: 2022-11-28" \
-              /repos/${{ github.repository }}/pulls/$PR_NUMBER/requested_reviewers \
-              -f "team_reviewers[]=$REVIEWER"
-          else
-            gh api \
-              --method POST \
-              -H "Accept: application/vnd.github+json" \
-              -H "X-GitHub-Api-Version: 2022-11-28" \
-              /repos/${{ github.repository }}/pulls/$PR_NUMBER/requested_reviewers \
-              -f "team_reviewers[]=$REVIEWER"
-          fi
-        env:
-          GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+  #         if [[ $LABELS == *"size/XS"* ]] || [[ $LABELS != *"size/"* ]]; then
+  #           gh api \
+  #             --method DELETE \
+  #             -H "Accept: application/vnd.github+json" \
+  #             -H "X-GitHub-Api-Version: 2022-11-28" \
+  #             /repos/${{ github.repository }}/pulls/$PR_NUMBER/requested_reviewers \
+  #             -f "team_reviewers[]=$REVIEWER"
+  #         else
+  #           gh api \
+  #             --method POST \
+  #             -H "Accept: application/vnd.github+json" \
+  #             -H "X-GitHub-Api-Version: 2022-11-28" \
+  #             /repos/${{ github.repository }}/pulls/$PR_NUMBER/requested_reviewers \
+  #             -f "team_reviewers[]=$REVIEWER"
+  #         fi
+  #       env:
+  #         GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
