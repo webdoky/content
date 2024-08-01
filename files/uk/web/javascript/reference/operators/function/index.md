@@ -148,7 +148,7 @@ button.addEventListener("click", function (event) {
 
 ## Дивіться також
 
-- [Функції](/uk/docs/Web/JavaScript/Guide/Functions) посібник
+- Посібник [Функції](/uk/docs/Web/JavaScript/Guide/Functions)
 - [Функції](/uk/docs/Web/JavaScript/Reference/Functions)
 - {{jsxref("Statements/function", "функція")}}
 - {{jsxref("Функція")}}
