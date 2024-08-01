@@ -22,6 +22,7 @@ jobs:
         run: |
           PR_NUMBER=${{ github.event.pull_request.number }}
           LABELS=$(gh pr view $PR_NUMBER --json labels --jq '.labels[].name')
+          echo ${{ env. REVIEWERS }}
           IFS=',' read -ra REVIEWERS <<< "${{ env.REVIEWERS }}"
 
           if [[ $LABELS == *"size/XS"* ]] || [[ $LABELS != *"size/"* ]]; then
