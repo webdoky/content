@@ -241,7 +241,7 @@ flexAuto.addEventListener("click", () => {
 
 Цей гнучкий контейнер вміщає два гнучкі елементи:
 
-- `flex: auto` має `flex` зі значенням [`auto`](auto)
+- `flex: auto` має `flex` зі значенням [`auto`](#auto)
 - `flex: initial` має `flex` зі значенням [`initial`](#initial)
 
 Елемент `flex: initial` займає стільки простору, скільки вимагає його ширина, але не розширюється, щоб зайняти більше. Весь вільний простір займає `flex: auto`.
