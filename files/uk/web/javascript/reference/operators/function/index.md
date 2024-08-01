@@ -118,7 +118,7 @@ const x = function (y) {
 
 ```js
 button.addEventListener("click", function (event) {
-  console.log("кнопку натиснуто!");
+  console.log("кнопку клацнуто!");
 });
 ```
 
