@@ -22,7 +22,7 @@ jobs:
         run: |
           PR_NUMBER=${{ github.event.pull_request.number }}
           LABELS=$(gh pr view $PR_NUMBER --json labels --jq '.labels[].name')
-          REVIEWER="${{ github.repository_owner }}/translators"
+          REVIEWER="@${{ github.repository_owner }}/translators"
 
           if [[ $LABELS == *"size/XS"* ]] || [[ $LABELS != *"size/"* ]]; then
             echo 'Adding ${{ github.repository_owner }}/translators to reviewers'
