@@ -1,5 +1,5 @@
 name: size-label
-on: pull_request
+on: pull_request_target
 jobs:
   size-label:
     permissions:
@@ -13,30 +13,23 @@ jobs:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
   assign-reviewers:
     needs: [size-label]
-    permissions:
-      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - id: determine-reviewers-needed
-        name: Determine if reviewers are needed
+      - name: Assign/Remove reviewers based on size label
         run: |
           PR_NUMBER=${{ github.event.pull_request.number }}
           LABELS=$(gh pr view $PR_NUMBER --json labels --jq '.labels[].name')
           REVIEWER="${{ github.repository_owner }}/translators"
 
           if [[ $LABELS == *"size/XS"* ]] || [[ $LABELS != *"size/"* ]]; then
-            echo 'No review'
+            echo 'Adding ${{ github.repository_owner }}/translators to reviewers'
+            # Assuming 'webdoky/translators' is a team reviewer
+            gh api repos/${{ github.repository }}/pulls/$PR_NUMBER/requested_reviewers -X DELETE -f team_reviewers[]=$REVIEWER
           else
-            echo "add_reviewers=true" >> $GITHUB_OUTPUT
+            gh api repos/${{ github.repository }}/pulls/$PR_NUMBER/requested_reviewers -X POST -f team_reviewers[]=$REVIEWER
           fi
         env:
           GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-      - name: Add reviewers
-        if: steps.determine-reviewers-needed.outputs.add_reviewers == 'true'
-        uses: madrapps/add-reviewers@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          reviewers: ${{ github.repository_owner }}/translators
