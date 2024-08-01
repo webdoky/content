@@ -9,7 +9,7 @@ browser-compat: javascript.operators.function
 
 Ключове слово **`function`** (функція) можна використовувати для визначення функції всередині виразу.
 
-Визначати функції також можна за допомогою [оголошення функції](/uk/docs/Web/JavaScript/Reference/Statements/function) чи [стрілкового синтаксису](/uk/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
+Визначати функції також можна за допомогою [оголошення функції](/uk/docs/Web/JavaScript/Reference/Statements/function) та [стрілкового синтаксису](/uk/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
 
 {{EmbedInteractiveExample("pages/js/expressions-functionexpression.html", "shorter")}}
 
