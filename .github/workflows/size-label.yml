@@ -22,13 +22,13 @@ jobs:
         run: |
           PR_NUMBER=${{ github.event.pull_request.number }}
           LABELS=$(gh pr view $PR_NUMBER --json labels --jq '.labels[].name')
-          REVIEWERS='["${{ github.repository_owner }}/translators"]'
+          REVIEWER="${{ github.repository_owner }}/translators"
 
           if [[ $LABELS == *"size/XS"* ]] || [[ $LABELS != *"size/"* ]]; then
             # Assuming 'webdoky/translators' is a team reviewer
-            gh api repos/${{ github.repository }}/pulls/$PR_NUMBER/requested_reviewers -X DELETE -f team_reviewers=$REVIEWERS
+            gh api repos/${{ github.repository }}/pulls/$PR_NUMBER/requested_reviewers -X DELETE -f team_reviewers[]=$REVIEWER
           else
-            gh api repos/${{ github.repository }}/pulls/$PR_NUMBER/requested_reviewers -X POST -f team_reviewers=$REVIEWERS
+            gh api repos/${{ github.repository }}/pulls/$PR_NUMBER/requested_reviewers -X POST -f team_reviewers[]=$REVIEWER
           fi
         env:
           GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
