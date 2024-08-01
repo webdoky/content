@@ -34,7 +34,7 @@ jobs:
           GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
       - name: Add reviewers
         if: steps.determine-reviewers-needed.outputs.add_reviewers == 'true'
-        uses: actions/add-reviewers@v1
+        uses: madrapps/add-reviewers@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           reviewers: ${{ github.repository_owner }}/translators
