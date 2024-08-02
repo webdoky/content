@@ -17,7 +17,8 @@ browser-compat: html.elements.p
 
 Цей елемент включає лише [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
 
-> **Примітка:** Атрибут `align` на тегах `<p>` є застарілим і не повинен використовуватися.
+> [!NOTE]
+> Атрибут `align` на тегах `<p>` є застарілим і не повинен використовуватися.
 
 ## Доступність
 
@@ -149,7 +150,7 @@ document.querySelector("button").addEventListener("click", (event) => {
       <th scope="row">Пропуск тега</th>
       <td>
         The start tag is required. Початковий тег – обов'язковий. Кінцевий тег можна пропустити, якщо після елемента
-        {{HTMLElement("p")}} зразу стоїть елемент
+        <code>&lt;p&gt;</code> зразу стоїть елемент
         {{HTMLElement("address")}},
         {{HTMLElement("article")}}, {{HTMLElement("aside")}},
         {{HTMLElement("blockquote")}}, {{HTMLElement("details")}}, {{HTMLElement("div")}},
@@ -163,7 +164,7 @@ document.querySelector("button").addEventListener("click", (event) => {
         {{HTMLElement("main")}}, {{HTMLElement("menu")}}, {{HTMLElement("nav")}},
         {{HTMLElement("ol")}}, {{HTMLElement("pre")}}, {{HTMLElement("search")}},
         {{HTMLElement("section")}}, {{HTMLElement("table")}},
-        {{HTMLElement("ul")}} або ще один {{HTMLElement("p")}},
+        {{HTMLElement("ul")}} або ще один <code>&lt;p&gt;</code>,
         або ж якщо в батьківському елементі більше немає вмісту і цей батьківський елемент не є елементом {{HTMLElement("a")}}, {{HTMLElement("audio")}},
         {{HTMLElement("del")}}, {{HTMLElement("ins")}}, {{HTMLElement("map")}},
         {{HTMLElement("noscript")}} або {{HTMLElement("video")}},
