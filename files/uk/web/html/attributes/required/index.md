@@ -1,5 +1,5 @@
 ---
-title: "Атрибут HTML – required"
+title: Атрибут HTML – required
 slug: Web/HTML/Attributes/required
 page-type: html-attribute
 ---
@@ -22,7 +22,7 @@ page-type: html-attribute
 
 ### Взаємодія між атрибутами
 
-У зв'язку з тим, що поле лише для прочитання не може мати значення, атрибут `required` не має жодного впливу на поля, на яких також задано [`readonly`](/uk/docs/Web/HTML/Attributes/readonly).
+У зв'язку з тим, що поле лише для прочитання не може бути змінено, атрибут `required` не має жодного впливу на поля, на яких також задано [`readonly`](/uk/docs/Web/HTML/Attributes/readonly).
 
 ### Зручність
 

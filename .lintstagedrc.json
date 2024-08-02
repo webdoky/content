@@ -1,6 +1,6 @@
 {
   "*.js": ["eslint --quiet --fix"],
-  "*.md": [
+  "files/**/*.md": [
     "node scripts/markdownlint.js",
     "node scripts/front-matter-linter.js --fix true",
     "prettier --write --ignore-unknown"

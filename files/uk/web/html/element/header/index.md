@@ -1,5 +1,5 @@
 ---
-title: "<header> – Елемент шапки"
+title: <header> – Елемент шапки
 slug: Web/HTML/Element/header
 page-type: html-element
 browser-compat: html.elements.header
@@ -21,11 +21,15 @@ browser-compat: html.elements.header
 
 ### Історичне використання
 
-Елемент `<header>` у самому початку існував у HTML для заголовків. Це можна спостерігати в [найпершому вебсайті](http://info.cern.ch/). В якийсь момент, заголовки стали [`<h1>` – `<h6>`](/uk/docs/Web/HTML/Element/Heading_Elements), що дозволило `<header>` зайняти іншу роль.
+Елемент `<header>` у самому початку існував у HTML для заголовків. Це можна спостерігати в [найпершому вебсайті](https://info.cern.ch/). В якийсь момент, заголовки стали [`<h1>` – `<h6>`](/uk/docs/Web/HTML/Element/Heading_Elements), що дозволило `<header>` зайняти іншу роль.
 
 ## Атрибути
 
 Це елемент приймає лише [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
+
+## Доступність
+
+Елемент `<header>` визначає віху [`banner`](/uk/docs/Web/Accessibility/ARIA/Roles/banner_role), коли його контекстом є {{HTMLElement('body')}}. Елемент шапки HTML не вважається віхою банера, коли є нащадком елемента {{HTMLElement('article')}}, {{HTMLElement('aside')}}, {{HTMLElement('main')}}, {{HTMLElement('nav')}} чи {{HTMLElement('section')}}.
 
 ## Приклади
 
@@ -64,10 +68,6 @@ browser-compat: html.elements.header
 #### Результат
 
 {{EmbedLiveSample('shapka-statti')}}
-
-## Занепокоєння щодо доступності
-
-Елемент `<header>` визначає віху [`banner`](/uk/docs/Web/Accessibility/ARIA/Roles/banner_role), коли його контекстом є {{HTMLElement('body')}}. Елемент шапки HTML не вважається віхою банера, коли є нащадком елемента {{HTMLElement('article')}}, {{HTMLElement('aside')}}, {{HTMLElement('main')}}, {{HTMLElement('nav')}} чи {{HTMLElement('section')}}.
 
 ## Технічний підсумок
 
@@ -109,7 +109,7 @@ browser-compat: html.elements.header
           >потоковий вміст</a
         >. Зверніть увагу, що елемент <code>&#x3C;header></code> не повинен бути нащадком {{HTMLElement("address")}},
         {{HTMLElement("footer")}} або іншого елемента
-        {{HTMLElement("header")}}.
+        <code>&lt;header&gt;</code>.
       </td>
     </tr>
     <tr>
