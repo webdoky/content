@@ -133,9 +133,9 @@ browser-compat: html.elements.button
 
 Проте варто зазначити, що якщо залишити текст кнопки видимим, то це допоможе людям, котрі можуть не бути знайомими зі значенням піктограми чи призначенням кнопки. Це особливо важливо для людей, котрі не є технологічно досвідченими, або тих, хто може мати інакші культурні інтерпретації піктограми, котру використовує кнопка.
 
-- [Що таке доступна назва? | The Paciello Group (англ.)](https://www.tpgi.com/what-is-an-accessible-name/)
+- [Що таке доступна назва? | The Paciello Group](https://www.tpgi.com/what-is-an-accessible-name/)
 - [MDN Розуміння WCAG, пояснення Настанов 4.1](/uk/docs/Web/Accessibility/Understanding_WCAG/Robust#guideline_4.1_—_compatible_maximize_compatibility_with_current_and_future_user_agents_including_assistive_technologies)
-- [Розуміння критерію успіху 4.1.2 | W3C розуміння WCAG 2.0 (англ.)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/ensure-compat-rsv.html)
+- [Розуміння критерію успіху 4.1.2 | W3C розуміння WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/ensure-compat-rsv.html)
 
 ### Розмір та суміжність
 
@@ -143,9 +143,9 @@ browser-compat: html.elements.button
 
 Інтерактивні елементи, як то кнопки, повинні надавати достатньо велику область, щоб їх легко було активувати. Це допомагає різним людям, в тому числі тим, хто має розлади контролю рухів, та тим, хто використовує засоби введення невисокої точності, наприклад, стилус чи пальці. Рекомендований мінімальний інтерактивний розмір – 44×44 [пікселів CSS](/uk/docs/Glossary/CSS_pixel).
 
-- [Розуміння критерію успіху 2.5.5: розмір мішені | W3C розуміння WCAG 2.1 (англ.)](https://www.w3.org/WAI/WCAG21/Understanding/target-size.html)
-- [Розмір мішені та 2.5.5 | Адріан Розеллі (англ.)](https://adrianroselli.com/2019/06/target-size-and-2-5-5.html)
-- [Швидка перевірка: Великі мішені дотику - The A11Y Project (англ.)](https://www.a11yproject.com/posts/large-touch-targets/)
+- [Розуміння критерію успіху 2.5.5: розмір мішені | W3C розуміння WCAG 2.1](https://www.w3.org/WAI/WCAG21/Understanding/target-size.html)
+- [Розмір мішені та 2.5.5 | Адріан Розеллі](https://adrianroselli.com/2019/06/target-size-and-2-5-5.html)
+- [Швидка перевірка: Великі мішені дотику - The A11Y Project](https://www.a11yproject.com/posts/large-touch-targets/)
 
 #### Суміжність
 
@@ -153,7 +153,7 @@ browser-compat: html.elements.button
 
 Відступи можуть бути створені за допомогою властивостей CSS, наприклад, {{cssxref("margin")}}.
 
-- [Тремтіння рук та проблема велетенської кнопки - Axess Lab (англ.)](https://axesslab.com/hand-tremors/)
+- [Тремтіння рук та проблема велетенської кнопки - Axess Lab](https://axesslab.com/hand-tremors/)
 
 ### Інформація про стан ARIA
 
@@ -165,15 +165,15 @@ browser-compat: html.elements.button
 
 Псевдоклас {{cssxref(":focus-visible")}} може вживатися для застосування стилів до елемента, що має {{cssxref(":focus")}}, але лише тоді, коли евристика користувацького агента визначила, що фокус слід виділити, наприклад, коли `<button>` отримує фокус за допомогою клавіатури. Дивіться більше в [:focus або :focus-visible](/uk/docs/Web/CSS/:focus-visible#focus-abo-focus-visible)
 
-Співвідношення колірного контрасту визначається порівнянням світності тексту кнопки й кольору тла зі тлом, на котрому розташована кнопка. Для виконання нинішніх [Настанов з доступності вебвмісту (WCAG) (англ.)](https://www.w3.org/WAI/standards-guidelines/wcag/) потрібне співвідношення 4.5:1 для текстового вмісту і 3:1 для великого тексту. (Великий текст – визначений як 18.66px і {{cssxref("font-weight", "грубий")}} чи більший, або 24px чи більший.)
+Співвідношення колірного контрасту визначається порівнянням світності тексту кнопки й кольору тла зі тлом, на котрому розташована кнопка. Для виконання нинішніх [Настанов з доступності вебвмісту (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/) потрібне співвідношення 4.5:1 для текстового вмісту і 3:1 для великого тексту. (Великий текст – визначений як 18.66px і {{cssxref("font-weight", "грубий")}} чи більший, або 24px чи більший.)
 
-- [WebAIM: Перевірка колірного контрасту (англ.)](https://webaim.org/resources/contrastchecker/)
+- [WebAIM: Перевірка колірного контрасту](https://webaim.org/resources/contrastchecker/)
 - [MDN розуміння WCAG, пояснення Настанов 1.4](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#guideline_1.4_make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
-- [Розуміння критерію успіху 1.4.3 | W3C Розуміння WCAG 2.0 (англ.)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html)
+- [Розуміння критерію успіху 1.4.3 | W3C Розуміння WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html)
 
 ### Клацання й фокус
 
-Те, чи передасть клацання кнопки {{HTMLElement("button")}} або {{HTMLElement("input")}} цій кнопці фокус, залежить від браузера й операційної системи. Більшість браузерів – це робить, але [Safari – ні, і це не помилка](https://webkit.org/b/22261).
+Те, чи передасть клацання кнопки `<button>` або {{HTMLElement("input")}} цій кнопці фокус, залежить від браузера й операційної системи. Більшість браузерів – це робить, але [Safari – ні, і це не помилка](https://webkit.org/b/22261).
 
 ## Приклади
 

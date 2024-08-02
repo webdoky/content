@@ -8,9 +8,10 @@ browser-compat: css.types.color
 {{CSSRef}}
 
 [Тип даних](/uk/docs/Web/CSS/CSS_Types) [CSS](/uk/docs/Web/CSS) **`<color>`** (колір) представляє колір.
-`<color>` також може включати _значення прозорості_ [альфа-каналу](https://uk.wikipedia.org/wiki/%D0%90%D0%BB%D1%8C%D1%84%D0%B0-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%B8%D0%BD%D0%B3), котре вказує на те, як колір повинен [комбінуватися (англ.)](https://www.w3.org/TR/compositing-1/#simplealphacompositing) зі своїм тлом.
+`<color>` також може включати _значення прозорості_ [альфа-каналу](https://uk.wikipedia.org/wiki/%D0%90%D0%BB%D1%8C%D1%84%D0%B0-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%B8%D0%BD%D0%B3), котре вказує на те, як колір повинен [комбінуватися](https://www.w3.org/TR/compositing-1/#simplealphacompositing) зі своїм тлом.
 
-> **Примітка:** Попри те, що значення `<color>` мають точну визначеність, їхній фактичний вигляд може відрізнятися (іноді суттєво) на різних пристроях. Це пов'язано з тим, що більшість пристроїв не відкалібровано, і частина браузерів не підтримує [колірні профілі](https://en.wikipedia.org/wiki/ICC_profile) пристроїв виведення.
+> [!NOTE]
+> Попри те, що значення `<color>` мають точну визначеність, їхній фактичний вигляд може відрізнятися (іноді суттєво) на різних пристроях. Це пов'язано з тим, що більшість пристроїв не відкалібровано, і частина браузерів не підтримує [колірні профілі](https://en.wikipedia.org/wiki/ICC_profile) пристроїв виведення.
 
 ## Синтаксис
 
@@ -69,15 +70,15 @@ light-dark(rgb(255 255 255), rgb(0 0 0))
 - Ключовими словами: {{CSSXref("&lt;named-color&gt;")}} (such as `blue` or `pink`), {{CSSXref("&lt;system-color&gt;")}} і [`currentcolor`](#kliuchove-slovo-currentcolor).
 - Шістнадцятковим записом: {{CSSXref("&lt;hex-color&gt;")}} (наприклад, `#ff0000`).
 - За допомогою `<color-function>`, з параметрами в {{glossary("color space", "колірному просторі")}}, за допомогою функційних записів:
-  - Колірного простору [sRGB](https://uk.wikipedia.org/wiki/SRGB): {{CSSXref("color_value/hsl", "hsl()")}}, {{CSSXref("color_value/hwb", "hwb()")}}, {{CSSXref("color_value/rgb", "rgb()")}};
-  - Колірного простору [CIELAB](https://uk.wikipedia.org/wiki/Lab): {{CSSXref("color_value/lab", "lab()")}}, {{CSSXref("color_value/lch", "lch()")}};
-  - Колірного простору [Oklab](https://bottosson.github.io/posts/oklab/): {{CSSXref("color_value/oklab", "oklab()")}}, {{CSSXref("color_value/oklch", "oklch()")}};
+  - Колірного простору [sRGB](https://uk.wikipedia.org/wiki/SRGB): {{CSSXref("color_value/hsl", "hsl()")}}, {{CSSXref("color_value/hwb", "hwb()")}} і {{CSSXref("color_value/rgb", "rgb()")}}.
+  - Колірного простору [CIELAB](https://uk.wikipedia.org/wiki/Lab): {{CSSXref("color_value/lab", "lab()")}} і {{CSSXref("color_value/lch", "lch()")}}.
+  - Колірного простору [Oklab](https://bottosson.github.io/posts/oklab/): {{CSSXref("color_value/oklab", "oklab()")}} і {{CSSXref("color_value/oklch", "oklch()")}}.
   - Інших колірних просторів: {{CSSXref("color_value/color", "color()")}}.
 - Шляхом застосування синтаксису [відносного кольору](/uk/docs/Web/CSS/CSS_colors/Relative_colors), щоб вивести новий колір на основі наявного. Кожна з колірних функцій вище може прийняти **початковий колір**, перед яким повинно стояти ключове слово `from`, після якого – визначення значень каналів для нового **результівного кольору**.
 - Шляхом змішування двох кольорів: {{CSSXref("color_value/color-mix", "color-mix()")}}.
 - Шляхом задання двох кольорів, перший з яких використовується для світлих колірних палітр, а другий – для темних: {{CSSXref("color_value/light-dark", "light-dark()")}}.
 
-### Ключове слово currentcolor
+### Ключове слово `currentcolor`
 
 Ключове слово `currentcolor` представляє значення властивості {{Cssxref("color")}} елемента. Це дає змогу використовувати значення `color` на властивостях, що усталено його не отримують.
 
@@ -127,7 +128,8 @@ color-mix(in oklch, oklch(none 0.2 10), oklch(60% none 30))
 color-mix(in oklch, oklch(60% 0.2 10), oklch(60% 0.2 30))
 ```
 
-> **Примітка:** Якщо компонента відсутня в обох кольорах, то така компонента буде відсутньою після інтерполяції.
+> [!NOTE]
+> Якщо компонента відсутня в обох кольорах, то така компонента буде відсутньою після інтерполяції.
 
 #### Інтерполяція кольорів з різних просторів – аналогічні компоненти
 
@@ -156,7 +158,7 @@ lch(80% 30 none)
 color(display-p3 0.7 0.5 none)
 ```
 
-процедура попередньої обробки:
+Процедура попередньої обробки:
 
 1. Замінити відсутні компоненти в обох кольорах нульовими значеннями:
 
@@ -188,7 +190,7 @@ color(display-p3 0.7 0.5 none)
    oklch(63.612% 0.1522 78.748)
    ```
 
-## Занепокоєння щодо доступності
+## Доступність
 
 Частина людей має проблеми з розрізненням кольорів. Рекомендація [WCAG 2.2](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable/Use_of_color) наполегливо радить не використовувати колір як єдиний засіб донесення певного повідомлення, дії чи результату. Дивіться подробиці в [кольорі та колірному контрасті](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable/Color_contrast).
 
@@ -198,7 +200,7 @@ color(display-p3 0.7 0.5 none)
 
 ## Приклад
 
-### Перевірка значення кольору
+### Дослідження колірних значень
 
 В цьому прикладі пропонується `<div>` і текстове поле. Введення в поле дійсного кольору призводить до того, що `<div>` набуває такого кольору, даючи змогу перевірити значення кольору.
 
@@ -245,9 +247,9 @@ inputElem.addEventListener("input", () => {
 
 #### Результат
 
-{{EmbedLiveSample('perevirka-znachennia-koloru','100%', 300)}}
+{{EmbedLiveSample('doslidzhennia-kolirnykh-znachen','100%', 300)}}
 
-### Цілком насичені кольори sRGB
+### Генерування цілком насичених кольорів sRGB
 
 Цей приклад демонструє цілком насичені кольори sRGB у колірному просторі sRGB.
 
@@ -323,9 +325,9 @@ div:nth-child(12) {
 
 #### Результат
 
-{{EmbedLiveSample("tsilkom-nasycheni-kolory-srgb", "100%", 200)}}
+{{EmbedLiveSample("heneruvannia-tsilkom-nasychenykh-koloriv-srgb", "100%", 200)}}
 
-### Різні відтінки червоного
+### Створення різних відтінків червоного
 
 Цей приклад демонструє різні відтінки червоного у колірному просторі sRGB.
 
@@ -379,9 +381,9 @@ div:nth-child(6) {
 
 #### Результат
 
-{{EmbedLiveSample("rizni-vidtinky-chervonoho", "100%", 150)}}
+{{EmbedLiveSample("stvorennia-riznykh-vidtinkiv-chervonoho", "100%", 150)}}
 
-### Різна насиченість червоного
+### Створення червоного різної насиченості
 
 Цей приклад демонструє різну насиченість червоного у колірному просторі sRGB.
 
@@ -433,7 +435,7 @@ div:nth-child(6) {
 
 #### Результат
 
-{{EmbedLiveSample("rizna-nasychenist-chervonoho", "100%", 150)}}
+{{EmbedLiveSample("stvorennia-chervonoho-riznoii-nasychenosti", "100%", 150)}}
 
 ## Специфікації
 
