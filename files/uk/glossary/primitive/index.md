@@ -6,7 +6,7 @@ page-type: glossary-definition
 
 {{GlossarySidebar}}
 
-У {{Glossary("JavaScript")}} **примітив** (примітивне значення, примітивний тип даних) – це дані, що не є {{Glossary("object", "об'єктом")}} і не мають {{glossary("method", "методів")}} або [властивостей](/uk/docs/Glossary/Property/JavaScript). Існує 7 примітивних типів даних:
+У {{Glossary("JavaScript")}} **примітив** (примітивне значення, примітивний тип даних) – це дані, що не є {{Glossary("object", "об'єктом")}} і не мають {{glossary("method", "методів")}} або {{Glossary("property/javascript", "властивостей")}}. Існує 7 примітивних типів даних:
 
 - {{Glossary("string", "рядок")}}
 - {{Glossary("number", "число")}}
