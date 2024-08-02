@@ -49,7 +49,6 @@ page-type: landing-page
 - {{SVGAttr("color")}}
 - {{SVGAttr("color-interpolation")}}
 - {{SVGAttr("color-interpolation-filters")}}
-- {{SVGAttr("color-profile")}}
 - {{SVGAttr("color-rendering")}}
 - {{SVGAttr("crossorigin")}}
 - {{SVGAttr("cursor")}}
@@ -74,7 +73,6 @@ page-type: landing-page
 
 - {{SVGAttr("edgeMode")}}
 - {{SVGAttr("elevation")}}
-- {{SVGAttr("enable-background")}}
 - {{SVGAttr("end")}}
 - {{SVGAttr("exponent")}}
 
@@ -138,7 +136,6 @@ page-type: landing-page
 - {{SVGAttr("k4")}}
 - {{SVGAttr("kernelMatrix")}}
 - {{SVGAttr("kernelUnitLength")}}
-- {{SVGAttr("kerning")}}
 - {{SVGAttr("keyPoints")}}
 - {{SVGAttr("keySplines")}}
 - {{SVGAttr("keyTimes")}}
@@ -322,7 +319,6 @@ page-type: landing-page
 - {{SVGAttr("xlink:show")}}
 - {{SVGAttr("xlink:title")}}
 - {{SVGAttr("xlink:type")}}
-- {{SVGAttr("xml:base")}}
 - {{SVGAttr("xml:lang")}}
 - {{SVGAttr("xml:space")}}
 
@@ -349,7 +345,6 @@ page-type: landing-page
   - {{SVGAttr("style")}}
   - {{SVGAttr("lang")}}
   - {{SVGAttr("tabindex")}}
-  - {{SVGAttr("xml:base")}}
   - {{SVGAttr("xml:lang")}}
   - {{SVGAttr("xml:space")}}
 
@@ -380,14 +375,12 @@ page-type: landing-page
 - {{SVGAttr("color")}}
 - {{SVGAttr("color-interpolation")}}
 - {{SVGAttr("color-interpolation-filters")}}
-- {{SVGAttr("color-profile")}}
 - {{SVGAttr("color-rendering")}}
 - {{SVGAttr("cursor")}}
 - {{SVGAttr("d")}}
 - {{SVGAttr("direction")}}
 - {{SVGAttr("display")}}
 - {{SVGAttr("dominant-baseline")}}
-- {{SVGAttr("enable-background")}}
 - {{SVGAttr("fill")}}
 - {{SVGAttr("fill-opacity")}}
 - {{SVGAttr("fill-rule")}}
@@ -404,7 +397,6 @@ page-type: landing-page
 - {{SVGAttr("glyph-orientation-horizontal")}}
 - {{SVGAttr("glyph-orientation-vertical")}}
 - {{SVGAttr("image-rendering")}}
-- {{SVGAttr("kerning")}}
 - {{SVGAttr("letter-spacing")}}
 - {{SVGAttr("lighting-color")}}
 - {{SVGAttr("marker-end")}}

@@ -23,9 +23,10 @@ browser-compat: html.elements.h1
 
 ### Уникайте використання кількох `<h1>` на одній сторінці
 
-Хоч використання кількох елементів `<h1>` на одній сторінці дозволено стандартом HTML (якщо вони не [вкладені](#vkladenist)), це не вважається найкращою практикою. Сторінка, як правило, повинна мати лише один елемент `<h1>`, що описує вміст сторінки (подібно до [елемента `<title>`](/uk/docs/Web/HTML/Element/title) документа).
+Хоч використання кількох елементів `<h1>` на одній сторінці дозволено стандартом HTML (якщо вони не [вкладені](#vkladenist)), це не вважається найкращою практикою. Сторінка, як правило, повинна мати лише один елемент `<h1>`, що описує вміст сторінки (подібно до елемента [`<title>`](/uk/docs/Web/HTML/Element/title) документа).
 
-> **Примітка:** Вкладеність кількох елементів `<h1>` у вкладених [розділових елементах](/uk/docs/Web/HTML/Element#rozdilennia-vmistu) була дозволена в старших версіях стандарту HTML. Проте це ніколи не вважалося найкращою практикою, і тепер – неправильно. Більше про це – в [Немає алгоритму плану документа](https://adrianroselli.com/2016/08/there-is-no-document-outline-algorithm.html).
+> [!NOTE]
+> Вкладеність кількох елементів `<h1>` у вкладених [розділових елементах](/uk/docs/Web/HTML/Element#rozdilennia-vmistu) була дозволена в старших версіях стандарту HTML. Проте це ніколи не вважалося найкращою практикою, і тепер – неправильно. Більше про це – в [Немає алгоритму плану документа](https://adrianroselli.com/2016/08/there-is-no-document-outline-algorithm.html).
 
 Краще використовувати лише один `<h1>` на сторінку і [вкладати заголовки одне в одного](#vkladenist), не перестрибуючи рівні.
 
@@ -83,13 +84,13 @@ browser-compat: html.elements.h1
 
 Коли заголовки вкладені, то рівні заголовків можуть бути "пропущені" при завершенні підрозділу.
 
-- [Заголовки • Структура сторінки • Підручники з вебдоступності WAI (англ.)](https://www.w3.org/WAI/tutorials/page-structure/headings/)
+- [Заголовки • Структура сторінки • Підручники з вебдоступності WAI](https://www.w3.org/WAI/tutorials/page-structure/headings/)
 - [MDN розуміння WCAG, пояснення Настанов 1.3](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#nastanovy-1.3-stvoriuite-vmist-shcho-mozhe-buty-predstavlenyi-v-riznyi-sposib)
-- [Розуміння критерію успіху 1.3.1 | W3C розуміння WCAG 2.0 (англ.)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/content-structure-separation-programmatic.html)
+- [Розуміння критерію успіху 1.3.1 | W3C розуміння WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/content-structure-separation-programmatic.html)
 - [MDN розуміння WCAG, пояснення Настанов 2.4](/uk/docs/Web/Accessibility/Understanding_WCAG/Operable#nastanovy-2.4-orientovnist-nadavaite-korystuvacham-zmohu-znaity-vmist-i-zrozumity-de-vony-znakhodiatsia)
-- [Розуміння критерію успіху 2.4.1 | W3C розуміння WCAG 2.0 (англ.)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html)
-- [Розуміння критерію успіху 2.4.6 | W3C розуміння WCAG 2.0 (англ.)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-descriptive.html)
-- [Розуміння критерію успіху 2.4.10 | W3C розуміння WCAG 2.0 (англ.)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-headings.html)
+- [Розуміння критерію успіху 2.4.1 | W3C розуміння WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html)
+- [Розуміння критерію успіху 2.4.6 | W3C розуміння WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-descriptive.html)
+- [Розуміння критерію успіху 2.4.10 | W3C розуміння WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-headings.html)
 
 ### Позначення вмісту розділу
 
@@ -122,7 +123,7 @@ browser-compat: html.elements.h1
 В цьому прикладі технологія читача з екрана оголосить, що є два розділи {{HTMLElement("nav")}}, один з яких називається "Первинна навігація", а другий – "Нижня навігація". Якби підписи не були надані, то особа, що використовує ПЗ читача з екрана була б змушена досліджувати вміст кожного елемента `nav`, аби з'ясувати його призначення.
 
 - [Застосування атрибута aria-labelledby](/uk/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby)
-- [Підписування областей • Структура сторінки • Підручники з вебдоступності W3C WAI (англ.)](https://www.w3.org/WAI/tutorials/page-structure/labels/#using-aria-labelledby)
+- [Підписування областей • Структура сторінки • Підручники з вебдоступності W3C WAI](https://www.w3.org/WAI/tutorials/page-structure/labels/#using-aria-labelledby)
 
 ## Приклади
 

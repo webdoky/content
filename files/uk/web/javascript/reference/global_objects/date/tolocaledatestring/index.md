@@ -1,6 +1,7 @@
 ---
 title: Date.prototype.toLocaleDateString()
 slug: Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString
+page-type: javascript-instance-method
 browser-compat: javascript.builtins.Date.toLocaleDateString
 ---
 
@@ -46,7 +47,7 @@ toLocaleDateString(locales, options)
 
 В реалізаціях, що містять `Intl.DateTimeFormat`, це еквівалентно викликові `new Intl.DateTimeFormat(locales, options).format(date)`, де параметр `options` нормалізовано так, як описано вище.
 
-> **Примітка:** В більшості випадків форматування, повернене `toLocaleDateString()`, є сталим. Однак вивід може відрізнятися залежно від часу, мови та реалізації: відмінності виводу є свідомими та дозволені специфікацією. Не слід порівнювати результати `toLocaleDateString()` зі статичними значеннями.
+> **Примітка:** В більшості випадків форматування, повернене `toLocaleDateString()`, є сталим. Проте вивід може відрізнятися в різних реалізаціях, навіть із використанням однієї локалі: відмінності виводу є свідомими та дозволені специфікацією. Також вивід може бути не таким, як ви очікуєте. Наприклад, рядок може містити нерозривні пробіли або бути оточеним символами контролю напрямку письма. Не слід порівнювати результати `toLocaleDateString()` із жорстко зафіксованими сталими значеннями.
 
 ## Приклади
 

@@ -474,13 +474,18 @@ function populateYears() {
       <td>
         <a href="/uk/docs/Web/HTML/Element/input#autocomplete"><code>autocomplete</code></a>,
         <a href="/uk/docs/Web/HTML/Element/input#list-spysok"><code>list</code></a>,
-        <a href="/uk/docs/Web/HTML/Element/input#readonly-lyshe-dlia-chytannia"><code>readonly</code></a> і
-        <a href="/uk/docs/Web/HTML/Element/input#step-krok"><code>step</code></a>.
+        <a href="/uk/docs/Web/HTML/Element/input#readonly-lyshe-dlia-chytannia"><code>readonly</code></a>,
+        <a href="/uk/docs/Web/HTML/Element/input#step-krok"><code>step</code></a>
       </td>
     </tr>
     <tr>
       <td><strong>Атрибути IDL</strong></td>
-      <td><code>value</code></td>
+      <td>
+        <a href="/uk/docs/Web/HTML/Element/input#list-spysok"><code>list</code></a>,
+        <a href="/uk/docs/Web/HTML/Element/input#value-znachennia"><code>value</code></a>,
+        <code>valueAsDate</code>,
+        <code>valueAsNumber</code>
+      </td>
     </tr>
     <tr>
       <td><strong>Інтерфейс DOM</strong></td>
@@ -513,6 +518,6 @@ function populateYears() {
 
 - Узагальнений елемент {{HTMLElement("input")}} та інтерфейс, що використовується для роботи з ним – {{domxref("HTMLInputElement")}}
 - [Формати дати та часу, що використовуються в HTML](/uk/docs/Web/HTML/Date_and_time_formats)
-- [Підручник з інтерфейсу вибору дати та часу](/uk/docs/Learn/Forms/Basic_native_form_controls#interfeis-vyboru-daty-ta-chasu)
+- [Підручник з інтерфейсу вибору дати та часу](/uk/docs/Learn/Forms/HTML5_input_types#interfeis-vyboru-daty-ta-chasu)
 - [`<input type="datetime-local">`](/uk/docs/Web/HTML/Element/input/datetime-local), [`<input type="date">`](/uk/docs/Web/HTML/Element/input/date), [`<input type="time">`](/uk/docs/Web/HTML/Element/input/time) і [`<input type="week">`](/uk/docs/Web/HTML/Element/input/week)
 - [Сумісність властивостей CSS](/uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls)
