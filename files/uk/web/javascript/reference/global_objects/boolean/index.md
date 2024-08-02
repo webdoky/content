@@ -11,11 +11,11 @@ browser-compat: javascript.builtins.Boolean
 
 ## Опис
 
-Значення Boolean зазвичай виробляються [операторами відношення](/uk/docs/Web/JavaScript/Reference/Operators#operatory-vidnoshennia), [операторами рівності](/uk/docs/Web/JavaScript/Reference/Operators#operatory-rivnosti) та [логічним НЕ (`!`)](/uk/docs/Web/JavaScript/Reference/Operators/Logical_NOT). Також вони можуть вироблятися функціями, що представляють умови, наприклад, {{jsxref("Array.isArray()")}}. Зверніть увагу на те, що [бінарні логічні оператори](/uk/docs/Web/JavaScript/Reference/Operators#binarni-lohichni-operatory), серед яких `&&` і `||`, повертають значення операндів, що можуть бути булевими значеннями, але можуть і не бути.
+Значення Boolean зазвичай повертаються [операторами відношення](/uk/docs/Web/JavaScript/Reference/Operators#operatory-vidnoshennia), [операторами рівності](/uk/docs/Web/JavaScript/Reference/Operators#operatory-rivnosti) та [логічним НЕ (`!`)](/uk/docs/Web/JavaScript/Reference/Operators/Logical_NOT). Також вони можуть повертатися функціями, що представляють умови, наприклад, {{jsxref("Array.isArray()")}}. Зверніть увагу на те, що [бінарні логічні оператори](/uk/docs/Web/JavaScript/Reference/Operators#binarni-lohichni-operatory), серед яких `&&` і `||`, повертають значення операндів, що можуть бути булевими значеннями, але можуть і не бути.
 
 Булеві значення здебільшого використовуються в перевірці умов, наприклад, умовах інструкцій {{jsxref("Statements/if...else", "if...else")}} і {{jsxref("Statements/while", "while")}}, [умовному операторі](/uk/docs/Web/JavaScript/Reference/Operators/Conditional_operator) (`? :`) та поверненому значенні предиката {{jsxref("Array.prototype.filter()")}}.
 
-Рідко трапляється необхідність явно перетворювати щось на булеве значення, адже JavaScript у булевих контекстах робить це автоматично, тож можна користуватися будь-яким значенням так, ніби воно булеве, послуговуючись його [істинністю](#zvedennia-do-bulevoho). Також заохочується використання у власному коді `if (condition)` і `if (!condition)` замість `if (condition === true)` і `if (condition === false)`, щоб послуговуватися користю від таких понять. Проте пересвідчення в тому, що значення, які представляють умови, завжди є булевими, може покращити зрозумілість призначення коду.
+Рідко трапляється необхідність явно перетворювати щось на булеве значення, адже JavaScript у булевих контекстах робить це автоматично, тож можна користуватися будь-яким значенням так, ніби воно булеве, послуговуючись його [істинністю](#zvedennia-do-bulevoho). Також заохочується використання у власному коді `if (condition)` і `if (!condition)` замість `if (condition === true)` і `if (condition === false)`, щоб послуговуватися користю від такої поведінки. Однак пересвідчення в тому, що значення умов завжди є булевими, допоможе краще роз'яснити призначення коду.
 
 ```js
 // Робіть так:
@@ -116,7 +116,7 @@ if ([] == false) {
 ## Конструктор
 
 - {{jsxref("Boolean/Boolean", "Boolean()")}}
-  - : Створює об'єкти `Boolean`. Бувши викликаним як функція, повертає примітивні значення типу Boolean.
+  - : Створює об'єкти `Boolean`. Якщо викликається як функція, повертає примітивні значення типу Boolean.
 
 ## Властивості примірника
 
