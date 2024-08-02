@@ -63,7 +63,8 @@ const myString = new String("Привіт"); // myString – це об'єкт St
 const s = Boolean(myString); // s дорівнює true
 ```
 
-> **Застереження:** Використовувати `Boolean` як конструктор повинно доводитись нечасто.
+> [!WARNING]
+> Використовувати `Boolean` як конструктор повинно доводитись нечасто.
 
 ### Зведення до булевого
 
@@ -78,9 +79,11 @@ const s = Boolean(myString); // s дорівнює true
 - [Символи](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol) стають `true`.
 - Усі об'єкти – стають `true`.
 
-> **Примітка:** Історична логіка змушує [`document.all`](/uk/docs/Web/API/Document/all) повертати `false`, коли вживається як булеве значення, всупереч тому, що це об'єкт. Ця властивість є історичною та нестандартною, її не варто використовувати.
+> [!NOTE]
+> Історична логіка змушує [`document.all`](/uk/docs/Web/API/Document/all) повертати `false`, коли вживається як булеве значення, всупереч тому, що це об'єкт. Ця властивість є історичною та нестандартною, її не варто використовувати.
 
-> **Примітка:** На відміну від інших перетворень типів, як то [зведення до рядка](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka) чи [зведення до числа](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#zvedennia-do-chysla), зведення до булевого не намагається [перетворювати об'єкти на примітиви](/uk/docs/Web/JavaScript/Data_structures#zvedennia-do-prymityva) шляхом виклику користувацьких методів.
+> [!NOTE]
+> На відміну від інших перетворень типів, як то [зведення до рядка](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka) чи [зведення до числа](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#zvedennia-do-chysla), зведення до булевого не намагається [перетворювати об'єкти на примітиви](/uk/docs/Web/JavaScript/Data_structures#zvedennia-do-prymityva) шляхом виклику користувацьких методів.
 
 Інакше кажучи, є вельми невелика кількість значень, що зводяться до `false`, — вони звуться [хибними](/uk/docs/Glossary/Falsy) значеннями. Всі решта – звуться [істинними](/uk/docs/Glossary/Truthy) значеннями. Істинність значення – важлива, коли воно використовується з логічними операторами, умовними інструкціями або будь-яким булевим контекстом.
 
@@ -127,7 +130,7 @@ if ([] == false) {
 - {{jsxref("Boolean.prototype.toString()")}}
   - : Повертає рядок – або `true`, або `false`, залежно від значення об'єкта. Заміщує метод {{jsxref("Object.prototype.toString()")}}.
 - {{jsxref("Boolean.prototype.valueOf()")}}
-  - : Повертає примітивне значення об'єкта {{jsxref("Boolean")}}. Заміщує метод{{jsxref("Object.prototype.valueOf()")}}.
+  - : Повертає примітивне значення об'єкта `Boolean`. Заміщує метод {{jsxref("Object.prototype.valueOf()")}}.
 
 ## Приклади
 
