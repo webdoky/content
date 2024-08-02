@@ -5,7 +5,6 @@ const IGNORE_PARAMS = 2;
 const parameters = process.argv.slice(IGNORE_PARAMS).join(" ");
 
 // Execute the command with arguments
-// eslint-disable-next-line security/detect-child-process
 exec(`markdownlint-cli2 ${parameters}`, (error, stdout, stderr) => {
   if (error) {
     console.log(`error: ${error.message}`);

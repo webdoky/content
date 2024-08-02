@@ -1,10 +1,11 @@
+import fs from "node:fs/promises";
+import os from "node:os";
+import path from "node:path";
+
 import caporal from "@caporal/core";
 import { eachLimit } from "async";
 import cliProgress from "cli-progress";
 import fdirPkg from "fdir";
-import fs from "node:fs/promises";
-import os from "node:os";
-import path from "node:path";
 
 import { checkFrontMatter, getAjvValidator } from "./front-matter-utils.js";
 
@@ -118,7 +119,7 @@ program
       const files = (args.files || []).map((f) => path.resolve(cwd, f));
       if (files.length === 0) {
         logger.info("No files to lint.");
-        return;
+        return null;
       }
       // eslint-disable-next-line consistent-return
       return lintFrontMatter(files, options);
