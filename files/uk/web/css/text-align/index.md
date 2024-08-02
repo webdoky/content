@@ -57,12 +57,12 @@ text-align: unset;
 - `match-parent`
   - : Подібне до `inherit`, але значення `start` і `end` обчислюються згідно з {{cssxref("direction")}} батьківського елемента і замінюються відповідним значенням – `left` чи `right`.
 
-## Занепокоєння щодо доступності
+## Доступність
 
 Непостійний розмір пробілів між словами, породжений рівномірним шикуванням тексту, може бути проблемним для людей з негараздами мислення, як то дислексією.
 
 - [MDN розуміння WCAG, пояснення Настанов 1.4](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#guideline_1.4_make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
-- [Розуміння критерію успіху 1.4.8 | Розуміння WCAG 2.0 (англ.)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-visual-presentation.html)
+- [Розуміння критерію успіху 1.4.8 | Розуміння WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-visual-presentation.html)
 
 ## Формальне визначення
 
@@ -149,29 +149,47 @@ text-align: unset;
 
 {{EmbedLiveSample('pryklad-z-vykorystanniam-justify',"100%","100%")}}
 
-### Вирівнювання таблиць
+### Шикування таблиць
 
-Цей приклад демонструє, як використовувати `text-align` на елементах {{htmlelement("table")}}, включно з рядами {{htmlelement("tr")}} і комірками {{htmlelement("td")}}.
+Цей приклад демонструє використання `text-align` на елементах {{htmlelement("table")}}:
+
+- {{htmlelement("caption")}} задано шикування праворуч.
+- Перші два елементи {{htmlelement("th")}} успадковують шикування ліворуч `text-align: left`, задане на {{htmlelement("thead")}}, а третьому задане шикування праворуч.
+- Inside the {{htmlelement("tbody")}} element, the first row is set to right-aligned, the second is set to center-aligned, and the third uses the default (left) alignment.
+- Всередині елемента {{htmlelement("tbody")}} першому ряду задано шикування праворуч, другому – шикування по центру, а третій користується усталеним шикуванням (ліворуч).
+- У кожному ряду певним коміркам (к12, к31) задано інше шикування, ніж у ряду.
 
 #### HTML
 
 ```html
 <table>
-  <tr id="r1">
-    <td id="c11">11</td>
-    <td id="c12">12</td>
-    <td id="c13">13</td>
-  </tr>
-  <tr id="r2">
-    <td id="c21">21</td>
-    <td id="c22">22</td>
-    <td id="c23">23</td>
-  </tr>
-  <tr id="r3">
-    <td id="c31">31</td>
-    <td id="c32">32</td>
-    <td id="c33">33</td>
-  </tr>
+  <caption>
+    Таблиця-приклад
+  </caption>
+  <thead>
+    <tr>
+      <th>Колонка 1</th>
+      <th>Колонка 2</th>
+      <th class="right">Колонка 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="right">
+      <td>11</td>
+      <td class="center">12</td>
+      <td>13</td>
+    </tr>
+    <tr class="center">
+      <td>21</td>
+      <td>22</td>
+      <td>23</td>
+    </tr>
+    <tr id="r3">
+      <td class="right">31</td>
+      <td>32</td>
+      <td>33</td>
+    </tr>
+  </tbody>
 </table>
 ```
 
@@ -184,26 +202,29 @@ table {
   width: 250px;
   height: 150px;
 }
-td {
+
+thead {
+  text-align: left;
+}
+
+td,
+th {
   border: solid 1px black;
 }
-#r1 {
-  text-align: right;
-}
-#c12 {
+
+.center {
   text-align: center;
 }
-#r2 {
-  text-align: center;
-}
-#c31 {
+
+.right,
+caption {
   text-align: right;
 }
 ```
 
 #### Результат
 
-{{EmbedLiveSample('vyrivniuvannia-tablyts', "100%", "100%")}}
+{{EmbedLiveSample('shykuvannia-tablyts', "100%", "200")}}
 
 ## Специфікації
 
