@@ -295,14 +295,16 @@ input[type="range"] {
         <a href="/uk/docs/Web/HTML/Element/input#autocomplete"><code>autocomplete</code></a>,
         <a href="/uk/docs/Web/HTML/Element/input#list-spysok"><code>list</code></a>,
         <a href="/uk/docs/Web/HTML/Element/input#max-maksymum"><code>max</code></a>,
-        <a href="/uk/docs/Web/HTML/Element/input#min-minimum"><code>min</code></a> і
+        <a href="/uk/docs/Web/HTML/Element/input#min-minimum"><code>min</code></a>,
         <a href="/uk/docs/Web/HTML/Element/input#step-krok"><code>step</code></a>
       </td>
     </tr>
     <tr>
       <td><strong>Атрибути IDL</strong></td>
       <td>
-        <code>list</code>, <code>value</code> і <code>valueAsNumber</code>
+        <a href="/uk/docs/Web/HTML/Element/input#list-spysok"><code>list</code></a>,
+        <a href="/uk/docs/Web/HTML/Element/input#value-znachennia"><code>value</code></a>,
+        <code>valueAsNumber</code>
       </td>
     </tr>
     <tr>

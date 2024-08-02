@@ -239,7 +239,7 @@ interface RTCStatsReport {
 
 `Map`-подібні об'єкти – це або лише для читання, або для читання та запису (див. ключове слово `readonly` у специфікації IDL вище).
 
-- `Map`-подібні об'єкти лише для читання мають властивість [`size`](#map.prototype.size), а також методи: [`entries()`](#map.prototype.entries), [`forEach()`](#map.prototype.foreach), [`get()`](#map.prototype.get), [`has()`](#map.prototype.has), [`keys()`](#map.prototype.keys), [`values()`](#map.prototype.values) та [`Symbol.iterator`](#map.prototypeiterator).
+- `Map`-подібні об'єкти лише для читання мають властивість [`size`](#map.prototype.size), а також методи: [`entries()`](#map.prototype.entries), [`forEach()`](#map.prototype.foreach), [`get()`](#map.prototype.get), [`has()`](#map.prototype.has), [`keys()`](#map.prototype.keys), [`values()`](#map.prototype.values) та [`Symbol.iterator`](#mapprototypesymboliterator).
 - Записувані `Map`-подібні об'єкти, на додачу, мають методи: [`clear()`](#map.prototype.clear), [`delete()`](#map.prototype.delete) та [`set()`](#map.prototype.set).
 
 Ці методи та властивості мають таку ж поведінку, як рівносильні сутності в `Map`, окрім обмеження на типи ключів та значень.
@@ -431,7 +431,8 @@ console.log(clone.get(1)); // one
 console.log(original === clone); // false (корисно для поверхневого порівняння)
 ```
 
-> **Зауваження:** Майте на увазі, що _власне дані_ тут клоновано не було.
+> [!NOTE]
+> Майте на увазі, що _власне дані_ тут клоновано не було.
 
 Об'єкти `Map` можна поєднувати, зберігаючи унікальність ключів:
 

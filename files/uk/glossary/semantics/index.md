@@ -72,6 +72,5 @@ HTML слід писати так, щоб представляти _дані_, �
 - [Довідка елементів HTML](/uk/docs/Web/HTML/Element#semantychni-tekstovi-elementy) на WebDoky
 - [Застосування розділів і планів HTML](/uk/docs/Web/HTML/Element/Heading_Elements#prymitky-shchodo-zastosuvannia) на WebDoky
 - [Значення семантики в комп'ютерних науках](https://en.wikipedia.org/wiki/Semantics#Computer_science) на Wikipedia
-- [Глосарій](/uk/docs/Glossary)
-
+- Споріднені терміни глосарія:
   - {{Glossary("SEO")}}

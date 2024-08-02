@@ -69,15 +69,15 @@ light-dark(rgb(255 255 255), rgb(0 0 0))
 - Ключовими словами: {{CSSXref("&lt;named-color&gt;")}} (such as `blue` or `pink`), {{CSSXref("&lt;system-color&gt;")}} і [`currentcolor`](#kliuchove-slovo-currentcolor).
 - Шістнадцятковим записом: {{CSSXref("&lt;hex-color&gt;")}} (наприклад, `#ff0000`).
 - За допомогою `<color-function>`, з параметрами в {{glossary("color space", "колірному просторі")}}, за допомогою функційних записів:
-  - Колірного простору [sRGB](https://uk.wikipedia.org/wiki/SRGB): {{CSSXref("color_value/hsl", "hsl()")}}, {{CSSXref("color_value/hwb", "hwb()")}}, {{CSSXref("color_value/rgb", "rgb()")}};
-  - Колірного простору [CIELAB](https://uk.wikipedia.org/wiki/Lab): {{CSSXref("color_value/lab", "lab()")}}, {{CSSXref("color_value/lch", "lch()")}};
-  - Колірного простору [Oklab](https://bottosson.github.io/posts/oklab/): {{CSSXref("color_value/oklab", "oklab()")}}, {{CSSXref("color_value/oklch", "oklch()")}};
+  - Колірного простору [sRGB](https://uk.wikipedia.org/wiki/SRGB): {{CSSXref("color_value/hsl", "hsl()")}}, {{CSSXref("color_value/hwb", "hwb()")}} і {{CSSXref("color_value/rgb", "rgb()")}}.
+  - Колірного простору [CIELAB](https://uk.wikipedia.org/wiki/Lab): {{CSSXref("color_value/lab", "lab()")}} і {{CSSXref("color_value/lch", "lch()")}}.
+  - Колірного простору [Oklab](https://bottosson.github.io/posts/oklab/): {{CSSXref("color_value/oklab", "oklab()")}} і {{CSSXref("color_value/oklch", "oklch()")}}.
   - Інших колірних просторів: {{CSSXref("color_value/color", "color()")}}.
 - Шляхом застосування синтаксису [відносного кольору](/uk/docs/Web/CSS/CSS_colors/Relative_colors), щоб вивести новий колір на основі наявного. Кожна з колірних функцій вище може прийняти **початковий колір**, перед яким повинно стояти ключове слово `from`, після якого – визначення значень каналів для нового **результівного кольору**.
 - Шляхом змішування двох кольорів: {{CSSXref("color_value/color-mix", "color-mix()")}}.
 - Шляхом задання двох кольорів, перший з яких використовується для світлих колірних палітр, а другий – для темних: {{CSSXref("color_value/light-dark", "light-dark()")}}.
 
-### Ключове слово currentcolor
+### Ключове слово `currentcolor`
 
 Ключове слово `currentcolor` представляє значення властивості {{Cssxref("color")}} елемента. Це дає змогу використовувати значення `color` на властивостях, що усталено його не отримують.
 
@@ -156,7 +156,7 @@ lch(80% 30 none)
 color(display-p3 0.7 0.5 none)
 ```
 
-процедура попередньої обробки:
+Процедура попередньої обробки:
 
 1. Замінити відсутні компоненти в обох кольорах нульовими значеннями:
 
@@ -198,7 +198,7 @@ color(display-p3 0.7 0.5 none)
 
 ## Приклад
 
-### Перевірка значення кольору
+### Дослідження колірних значень
 
 В цьому прикладі пропонується `<div>` і текстове поле. Введення в поле дійсного кольору призводить до того, що `<div>` набуває такого кольору, даючи змогу перевірити значення кольору.
 
@@ -245,9 +245,9 @@ inputElem.addEventListener("input", () => {
 
 #### Результат
 
-{{EmbedLiveSample('perevirka-znachennia-koloru','100%', 300)}}
+{{EmbedLiveSample('doslidzhennia-kolirnykh-znachen','100%', 300)}}
 
-### Цілком насичені кольори sRGB
+### Генерування цілком насичених кольорів sRGB
 
 Цей приклад демонструє цілком насичені кольори sRGB у колірному просторі sRGB.
 
@@ -323,9 +323,9 @@ div:nth-child(12) {
 
 #### Результат
 
-{{EmbedLiveSample("tsilkom-nasycheni-kolory-srgb", "100%", 200)}}
+{{EmbedLiveSample("heneruvannia-tsilkom-nasychenykh-koloriv-srgb", "100%", 200)}}
 
-### Різні відтінки червоного
+### Створення різних відтінків червоного
 
 Цей приклад демонструє різні відтінки червоного у колірному просторі sRGB.
 
@@ -379,9 +379,9 @@ div:nth-child(6) {
 
 #### Результат
 
-{{EmbedLiveSample("rizni-vidtinky-chervonoho", "100%", 150)}}
+{{EmbedLiveSample("stvorennia-riznykh-vidtinkiv-chervonoho", "100%", 150)}}
 
-### Різна насиченість червоного
+### Створення червоного різної насиченості
 
 Цей приклад демонструє різну насиченість червоного у колірному просторі sRGB.
 
@@ -433,7 +433,7 @@ div:nth-child(6) {
 
 #### Результат
 
-{{EmbedLiveSample("rizna-nasychenist-chervonoho", "100%", 150)}}
+{{EmbedLiveSample("stvorennia-chervonoho-riznoii-nasychenosti", "100%", 150)}}
 
 ## Специфікації
 
