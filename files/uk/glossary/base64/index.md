@@ -98,4 +98,4 @@ await dataUrlToBytes("data:application/octet-stream;base64,AAEC"); // Uint8Array
   - {{domxref("Window.btoa()")}} (також {{domxref("WorkerGlobalScope.btoa()", "доступна у воркерах", "", "nocode")}})
 - [URL даних](/uk/docs/Web/HTTP/Basics_of_HTTP/Data_URLs)
 - [Base64](https://uk.wikipedia.org/wiki/Base64) на Вікіпедії
-- Алгоритм Base64 описаний у [RFC 4648](https://datatracker.ietf.org/doc/html/rfc4648)
+- Алгоритм Base64, описаний у [RFC 4648](https://datatracker.ietf.org/doc/html/rfc4648)
