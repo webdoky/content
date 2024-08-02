@@ -495,7 +495,7 @@ input[type="password"]:required {
 - [SpeciFISHity](https://specifishity.com)
 - [Калькулятор специфічності](https://specificity.keegan.st/): інтерактивний вебсайт для перевірки та усвідомлення ваших власних правил CSS
 - [Вправа _ID-CLASS-TYPE_](https://estelle.github.io/CSS/selectors/exercises/specificity.html) – вікторина зі специфічності
-- Посібник [Синтакси CSS syntax](/uk/docs/Web/CSS/Syntax)
+- Посібник [Синтаксис CSS](/uk/docs/Web/CSS/Syntax)
 - Модуль [Синтаксису CSS](/uk/docs/Web/CSS/CSS_syntax)
 - [Обробка помилок CSS](/uk/docs/Web/CSS/CSS_syntax/Error_handling)
 - [Директиви](/uk/docs/Web/CSS/At-rule)
