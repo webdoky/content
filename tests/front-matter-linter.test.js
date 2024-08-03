@@ -1,12 +1,12 @@
 import fs from "node:fs";
 import { fileURLToPath } from "node:url";
-import AJV from "ajv";
-import addFormats from "ajv-formats";
+
+import { describe, expect, it } from "@jest/globals";
 
 import {
-  getAjvValidator,
   checkFrontMatter,
-} from "../scripts/front-matter_utils.js";
+  getAjvValidator,
+} from "../scripts/front-matter-utils";
 
 const SAMPLES_DIRECTORY = new URL("front-matter_test_files/", import.meta.url);
 
@@ -14,7 +14,7 @@ const options = {};
 
 options.config = JSON.parse(
   fs.readFileSync(
-    fileURLToPath(new URL("config.json", SAMPLES_DIRECTORY), "utf-8"),
+    fileURLToPath(new URL("config.json", SAMPLES_DIRECTORY), "utf8"),
   ),
 );
 options.validator = getAjvValidator(options.config.schema);
@@ -24,10 +24,9 @@ function getPath(filePath) {
 }
 
 function getContent(filePath) {
-  return fs.readFileSync(getPath(filePath), "utf-8");
+  return fs.readFileSync(getPath(filePath), "utf8");
 }
-
-describe("Test front-matter linter", () => {
+describe("test front-matter linter", () => {
   it("should use double quotes and remove unwanted quotes", async () => {
     const filePath = getPath("./double_quotes.md");
     const validContent = getContent("./double_quotes.valid.md");
@@ -67,7 +66,7 @@ describe("Test front-matter linter", () => {
     const filePath = getPath("./values.md");
 
     options.fix = false;
-    let result = await checkFrontMatter(filePath, options);
+    const result = await checkFrontMatter(filePath, options);
     const expected =
       "Error: tests/front-matter_test_files/values.md\n" +
       "'page-type' property must be equal to one of the allowed values:\n" +

@@ -131,7 +131,7 @@ const newColors = colors.toReversed(); // ['фіолетовий', undefined, un
 
 Решта методів змінює масив, на котрому викликано метод, у випадку чого їхнє повернене значення відрізняється залежно від методу: іноді це посилання на той самий масив, іноді – довжина нового масиву.
 
-Наступні методи створюють нові масиви шляхом звертання до [`this.constructor[Symbol.species]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/@@species) для визначення конструктора, який буде використаний: {{jsxref("Array/concat", "concat()")}}, {{jsxref("Array/filter", "filter()")}}, {{jsxref("Array/flat", "flat()")}}, {{jsxref("Array/flatMap", "flatMap()")}}, {{jsxref("Array/map", "map()")}}, {{jsxref("Array/slice", "slice()")}} і {{jsxref("Array/splice", "splice()")}} (для створення масиву вилучених елементів, що повертається).
+Наступні методи створюють нові масиви шляхом звертання до [`this.constructor[Symbol.species]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/Symbol.species) для визначення конструктора, який буде використаний: {{jsxref("Array/concat", "concat()")}}, {{jsxref("Array/filter", "filter()")}}, {{jsxref("Array/flat", "flat()")}}, {{jsxref("Array/flatMap", "flatMap()")}}, {{jsxref("Array/map", "map()")}}, {{jsxref("Array/slice", "slice()")}} і {{jsxref("Array/splice", "splice()")}} (для створення масиву вилучених елементів, що повертається).
 
 Наступні методи завжди створюють нові масиви за допомогою базового конструктора `Array`: {{jsxref("Array/toReversed", "toReversed()")}}, {{jsxref("Array/toSorted", "toSorted()")}}, {{jsxref("Array/toSpliced", "toSpliced()")}} і {{jsxref("Array/with", "with()")}}.
 
@@ -263,7 +263,7 @@ f("a", "b"); // 'a+b'
 
 ## Статичні властивості
 
-- {{jsxref("Array/@@species", "Array[@@species]")}} ("вид")
+- [`Array[Symbol.species]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/Symbol.species) ("вид")
   - : Повертає конструктор `Array`.
 
 ## Статичні методи
@@ -283,7 +283,7 @@ f("a", "b"); // 'a+b'
 
 - {{jsxref("Object/constructor", "Array.prototype.constructor")}}
   - : Функція-конструктор, котра створила об'єкт-примірник. Для примірників `Array` початковим значенням цієї властивості є конструктор {{jsxref("Array/Array", "Array")}}.
-- {{jsxref("Array/@@unscopables", "Array.prototype[@@unscopables]")}} ("недоступні для огляду")
+- [`Array.prototype[Symbol.unscopables]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/Symbol.unscopables) ("недоступні для огляду")
   - : Містить імена властивостей, котрі не були включені до стандарту ECMAScript до версії ES2015 та є ігнорованими інструкцією прив'язування [`with`](/uk/docs/Web/JavaScript/Reference/Statements/with).
 
 Ці властивості є власними властивостями кожного примірника `Array`.
@@ -369,14 +369,15 @@ f("a", "b"); // 'a+b'
   - : Повертає новий об'єкт [_ітератора масиву_](/uk/docs/Web/JavaScript/Guide/Iterators_and_generators), що містить значення за кожним індексом цього масиву.
 - {{jsxref("Array.prototype.with()")}} ("зі значенням")
   - : Повертає новий масив, у якому елемент за певним індексом замінений заданим значенням, не змінюючи вихідний масив.
-- [`Array.prototype[@@iterator]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/@@iterator) ("ітератор")
+- [`Array.prototype[Symbol.iterator]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/Symbol.iterator) ("ітератор")
   - : Усталено є псевдонімом функції [`values()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/values).
 
 ## Приклади
 
 Цей розділ пропонує кілька прикладів звичних операцій над масивами у JavaScript.
 
-> **Примітка:** Читачам, що поки не є тісно знайомими з основами масивів, варто спершу прочитати статтю [Перші кроки в JavaScript: масиви](/uk/docs/Learn/JavaScript/First_steps/Arrays), котра [пояснює, чим є масиви](/uk/docs/Learn/JavaScript/First_steps/Arrays#shcho-take-masyv), та містить інші приклади звичних операцій над масивами.
+> [!NOTE]
+> Читачам, що поки не є тісно знайомими з основами масивів, варто спершу прочитати статтю [Перші кроки в JavaScript: масиви](/uk/docs/Learn/JavaScript/First_steps/Arrays), котра [пояснює, чим є масиви](/uk/docs/Learn/JavaScript/First_steps/Arrays#shcho-take-masyv), та містить інші приклади звичних операцій над масивами.
 
 ### Створення масиву
 
@@ -483,7 +484,8 @@ console.log(removedItem);
 // Апельсин
 ```
 
-> **Примітка:** `pop()` може застосовуватись лише для усунення з масиву останнього елемента. Як прибрати з кінця масиву кілька елементів – дивіться наступний приклад.
+> [!NOTE]
+> Метод `pop()` може застосовуватись лише для усунення з масиву останнього елемента. Як прибрати з кінця масиву кілька елементів – дивіться наступний приклад.
 
 ### Усунення з кінця масиву кількох елементів
 
@@ -526,7 +528,8 @@ console.log(removedItem);
 // Яблуко
 ```
 
-> **Примітка:** `shift()` може використовуватись лише для усунення з масиву першого елемента. Як прибрати з початку масиву кілька елементів – дивіться наступний приклад.
+> [!NOTE]
+> Метод `shift()` може використовуватись лише для усунення з масиву першого елемента. Як прибрати з початку масиву кілька елементів – дивіться наступний приклад.
 
 ### Усунення з початку масиву кількох елементів
 
@@ -794,7 +797,8 @@ console.log(execResult); // [ "dbBd", "bB", "d" ]
 - Зміни до вже оброблених індексів не призводять до повторного заклику на них `callbackFn`.
 - Якщо наявний, але ще не оброблений елемент масиву змінює `callbackFn`, то значення, передане у `callbackFn`, буде значенням на мить обробки цього елемента. Вилучені елементи не обробляються.
 
-> **Застереження:** Рівночасне внесення змін такого роду, як описані вище, часто призводить до важкозрозумілого коду, і загалом цього варто уникати (за винятком особливих випадків).
+> [!WARNING]
+> Рівночасне внесення таких змін, як описані вище, часто призводить до важкозрозумілого коду, і загалом цього варто уникати (за винятком особливих випадків).
 > Наступні приклади використовують метод `forEach` як приклад, але інші методи, що обробляють індекси у порядку зростання, працюють так само. Спочатку визначається допоміжна функція:
 
 ```js

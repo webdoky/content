@@ -17,7 +17,7 @@ page-type: glossary-definition
 ```http
 OPTIONS /resource/foo
 Access-Control-Request-Method: DELETE
-Access-Control-Request-Headers: Origin, X-Requested-With
+Access-Control-Request-Headers: x-requested-with
 Origin: https://foo.bar.org
 ```
 
@@ -28,7 +28,7 @@ HTTP/1.1 204 No Content
 Connection: keep-alive
 Access-Control-Allow-Origin: https://foo.bar.org
 Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE
-Access-Control-Allow-Headers: Origin, X-Requested-With
+Access-Control-Allow-Headers: X-Requested-With
 Access-Control-Max-Age: 86400
 ```
 
@@ -36,5 +36,6 @@ Access-Control-Max-Age: 86400
 
 ## Дивіться також
 
-- {{Glossary("CORS")}}
+- Споріднені терміни глосарія:
+  - {{Glossary("CORS")}}
 - {{HTTPMethod("OPTIONS")}}

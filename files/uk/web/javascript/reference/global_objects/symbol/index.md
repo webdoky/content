@@ -66,7 +66,7 @@ Symbol.keyFor(Symbol.for("tokenString")) === "tokenString"; // true
 
 До появи загальновідомих символів JavaScript, для реалізації певних вбудованих операцій, використовував звичайні властивості. Наприклад, функція [`JSON.stringify`](/uk/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) намагається викликати на кожному об'єкті метод `toJSON()`, а функція [`String`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/String) викликає на об'єкті методи `toString()` і `valueOf()`. Проте, із доданням до мови більшої кількості операцій, виділення кожній з них "магічної властивості" могло зламати зворотну сумісність й ускладнити роботу з логікою мови. Загальновідомі символи дають кастомізаціям змогу бути "невидимими" для звичайного коду, котрий зазвичай зчитує лише рядкові властивості.
 
-На MDN та інших джерелах загальновідомі символьні значення стилізовані за допомогою префікса `@@`. Наприклад, {{jsxref("Symbol.hasInstance")}} записується як `@@hasInstance`. Це тому, що символи не мають фактичних літеральних форматів, а використання `Symbol.hasInstance` не відображає можливість використання інших псевдонімів для посилання на той самий символ. Це схоже на різницю між `Function.name` та `"Function"`.
+> **Примітка:** Раніше специфікація користувалася для позначення загальновідомих символів записом `@@<symbol-name>`. Наприклад, {{jsxref("Symbol.hasInstance")}} записувався як `@@hasInstance`, а метод `Array.prototype[Symbol.iterator]()` називався `Array.prototype[@@iterator]()`. Цей запис більше не вживається у специфікації, але його досі можна зустріти в старій документації й обговореннях.
 
 Загальновідомі символи не мають концепції збирання збирачем сміття, тому що вони входять до фіксованого набору і є унікальними протягом усього життя програми, подібно до вбудованих об'єктів, як то `Array.prototype`, тож вони також дозволені в об'єктах {{jsxref("WeakMap")}}, {{jsxref("WeakSet")}}, {{jsxref("WeakRef")}} і {{jsxref("FinalizationRegistry")}}.
 
@@ -77,7 +77,7 @@ Symbol.keyFor(Symbol.for("tokenString")) === "tokenString"; // true
 ## Конструктор
 
 - {{jsxref("Symbol/Symbol", "Symbol()")}}
-  - : Створює новий об'єкт `Symbol`. Це не конструктор в традиційному розумінні, тому що він може бути викликаний лише як функція, але не конструюватися за допомогою `new Symbol()`.
+  - : Повертає примітивні значення типу Symbol. Викидає помилку, коли викликається з `new`.
 
 ## Статичні властивості
 
@@ -113,7 +113,7 @@ Symbol.keyFor(Symbol.for("tokenString")) === "tokenString"; // true
 ## Статичні методи
 
 - {{jsxref("Symbol.for()")}}
-  - : Шукає наявні символи з переданим ключем `key` і повертає, якщо знайдено. Інакше – в глобальному реєстрі символів створюється новий символ із заданим ключем `key`.
+  - : Шукає серед наявних зареєстрованих символів у глобальному реєстрі Symbol за переданим ключем `key` і повертає, якщо знайдено. Інакше – створюється та реєструється новий символ із заданим ключем `key`.
 - {{jsxref("Symbol.keyFor()")}}
   - : Дістає зі глобального реєстру символів спільний символьний ключ для переданого символу.
 
@@ -125,8 +125,8 @@ Symbol.keyFor(Symbol.for("tokenString")) === "tokenString"; // true
   - : Функція-конструктор, що створила об'єкт-примірник. Для примірників `Symbol` початковим значенням є конструктор {{jsxref("Symbol/Symbol", "Symbol")}}.
 - {{jsxref("Symbol.prototype.description")}}
   - : Рядок лише для зчитування, що містить опис символу.
-- `Symbol.prototype[@@toStringTag]`
-  - : Початкове значення властивості [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"Symbol"`. Ця властивість використовується в методі {{jsxref("Object.prototype.toString()")}}. Проте через те, що `Symbol` має власний метод [`toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toString), то ця властивість не використовується, якщо не викликати [`Object.prototype.toString.call()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/call) з символьним значенням як `thisArg`.
+- `Symbol.prototype[Symbol.toStringTag]`
+  - : Початкове значення властивості [`[Symbol.toStringTag]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"Symbol"`. Ця властивість використовується в методі {{jsxref("Object.prototype.toString()")}}. Проте через те, що `Symbol` має власний метод [`toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toString), то ця властивість не використовується, якщо не викликати [`Object.prototype.toString.call()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/call) з символьним значенням як `thisArg`.
 
 ## Методи примірника
 
@@ -134,7 +134,7 @@ Symbol.keyFor(Symbol.for("tokenString")) === "tokenString"; // true
   - : Повертає рядок, що містить опис символу. Заміщає метод {{jsxref("Object.prototype.toString()")}}.
 - {{jsxref("Symbol.prototype.valueOf()")}}
   - : Повертає той же символ. Заміщає метод {{jsxref("Object.prototype.valueOf()")}}.
-- [`Symbol.prototype[@@toPrimitive]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/@@toPrimitive)
+- [`Symbol.prototype[Symbol.toPrimitive]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/Symbol.toPrimitive)
   - : Повертає той же символ.
 
 ## Приклади

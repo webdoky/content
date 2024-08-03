@@ -1,8 +1,8 @@
 {
   "*.js": ["eslint --quiet --fix"],
-  "*.md": [
-    "markdownlint-cli2 || true",
-    "node scripts/front-matter_linter.js --fix true",
+  "files/**/*.md": [
+    "node scripts/markdownlint.js",
+    "node scripts/front-matter-linter.js --fix true",
     "prettier --write --ignore-unknown"
   ],
   "tests/**/*.*": "yarn test:front-matter-linter",
