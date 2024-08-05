@@ -64,7 +64,8 @@ linear-gradient(45deg, red 0 50%, blue 50% 100%)
 - `<color-hint>`
   - : Підказка {{glossary("interpolation", "інтерполяції")}}, котра визначає те, як градієнт просувається між зупинками кольору. Довжина визначає те, у якій точці між двома кольоровими зупинками колір градієнта повинен досягнути середньої точки переходу кольору. Якщо цього значення немає, то середнє значення кольору досягається в середній точці між двома зупинками кольору.
 
-> **Примітка:** Відображення [кольорових зупинок градієнтів CSS](#kompozytsiia-liniinykh-hradiientiv) відповідає тим само правилам, що й кольорові зупинки [градієнтів SVG](/uk/docs/Web/SVG/Tutorial/Gradients).
+> [!NOTE]
+> Відображення [кольорових зупинок градієнтів CSS](#kompozytsiia-liniinykh-hradiientiv) відповідає тим само правилам, що й кольорові зупинки [градієнтів SVG](/uk/docs/Web/SVG/Tutorial/Gradients).
 
 ## Опис
 
@@ -172,7 +173,7 @@ body {
 }
 ```
 
-{{EmbedLiveSample("interpoliatsiia-v-pryamokutnomu-kolorovomu-prostori", 120, 120)}}
+{{EmbedLiveSample("interpoliatsiia-v-priamokutnomu-kolorovomu-prostori", 120, 120)}}
 
 ### Інтерполяція з відтінком
 
