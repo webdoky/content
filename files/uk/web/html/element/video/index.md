@@ -456,7 +456,7 @@ AddType video/webm .webm
 
 {{EmbedLiveSample('dekilka-dzherel', '', '400')}}
 
-Спершу виконується спроба відтворити AVI. Якщо це не вдається, наступна спроба [MP4](/uk/docs/Web/Media/Formats/Containers#mpeg-4_mp4). Запасне повідомлення виводиться, якщо елемент video не підтримується, але не тоді, коли всі джерела не спрацьовують.
+Спершу виконується спроба відтворити AVI. Якщо це не вдається, то [MP4](/uk/docs/Web/Media/Formats/Containers#mpeg-4_mp4). Запасне повідомлення виводиться, якщо елемент video не підтримується, але не тоді, коли всі джерела не спрацьовують.
 
 Певні типи мультимедійних файлів дають змогу надати більш конкретну інформацію за допомогою параметра [`codecs`](/uk/docs/Web/Media/Formats/codecs_parameter) як частини рядка типу файлу. Відносно простий приклад – `video/webm; codecs="vp8, vorbis"`; він вказує, що файл – це відео [WebM](/uk/docs/Web/Media/Formats/Containers#webm) з використанням [VP8](/uk/docs/Web/Media/Formats/Video_codecs#vp8) для самого відео й [Vorbis](/uk/docs/Web/Media/Formats/Audio_codecs#vorbis) для аудіо.
 
