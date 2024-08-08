@@ -284,6 +284,13 @@
         "name": "learn-microsoft",
         "replace": "https://learn.microsoft.com/uk-ua/",
         "search": "https://learn.microsoft.com/en-us/"
+      },
+      {
+        "message": "Use em dash between different words, not hyphen",
+        "name": "emdash-not-hyphen",
+        "replace": "$1 – ",
+        "searchPattern": "/([^ ]) - /gm",
+        "searchScope": "text"
       }
     ]
   }
