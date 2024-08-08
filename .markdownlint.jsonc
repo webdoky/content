@@ -260,6 +260,30 @@
         "name": "notecard-warning",
         "replace": "$1> [!WARNING]\n$1> ",
         "searchPattern": "/( *)> \\*\\*Застереження:\\*\\* /gm"
+      },
+      {
+        "message": "Remove English markers",
+        "name": "no-english-marker",
+        "replace": "$1",
+        "searchPattern": "/ \\(англ\\.\\)(]|>)/g"
+      },
+      {
+        "message": "Use notecard callout marker",
+        "name": "notecard-callout",
+        "replace": "$1> [!CALLOUT]",
+        "searchPattern": "/( *)> \\*\\*Callout:\\*\\*/gm"
+      },
+      {
+        "message": "Use notecard note marker",
+        "name": "notecard-note-2",
+        "replace": "$1> [!NOTE]\n$1> ",
+        "searchPattern": "/( *)> \\*\\*Зауваження:\\*\\* /gm"
+      },
+      {
+        "message": "Use Ukrainian Learn Microsoft",
+        "name": "learn-microsoft",
+        "replace": "https://learn.microsoft.com/uk-ua/",
+        "search": "https://learn.microsoft.com/en-us/"
       }
     ]
   }
