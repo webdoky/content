@@ -149,13 +149,12 @@ text-align: unset;
 
 {{EmbedLiveSample('pryklad-z-vykorystanniam-justify',"100%","100%")}}
 
-### Шикування таблиць
+### Вирівнювання таблиць
 
 Цей приклад демонструє використання `text-align` на елементах {{htmlelement("table")}}:
 
 - {{htmlelement("caption")}} задано шикування праворуч.
 - Перші два елементи {{htmlelement("th")}} успадковують шикування ліворуч `text-align: left`, задане на {{htmlelement("thead")}}, а третьому задане шикування праворуч.
-- Inside the {{htmlelement("tbody")}} element, the first row is set to right-aligned, the second is set to center-aligned, and the third uses the default (left) alignment.
 - Всередині елемента {{htmlelement("tbody")}} першому ряду задано шикування праворуч, другому – шикування по центру, а третій користується усталеним шикуванням (ліворуч).
 - У кожному ряду певним коміркам (к12, к31) задано інше шикування, ніж у ряду.
 
