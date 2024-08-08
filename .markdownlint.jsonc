@@ -278,6 +278,19 @@
         "name": "notecard-note-2",
         "replace": "$1> [!NOTE]\n$1> ",
         "searchPattern": "/( *)> \\*\\*Зауваження:\\*\\* /gm"
+      },
+      {
+        "message": "Use Ukrainian Learn Microsoft",
+        "name": "learn-microsoft",
+        "replace": "https://learn.microsoft.com/uk-ua/",
+        "search": "https://learn.microsoft.com/en-us/"
+      },
+      {
+        "message": "Use em dash between different words, not hyphen",
+        "name": "emdash-not-hyphen",
+        "replace": "$1 – ",
+        "searchPattern": "/([^ ]) - /gm",
+        "searchScope": "text"
       }
     ]
   }
