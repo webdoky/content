@@ -450,4 +450,3 @@ browser-compat: html.elements.link
 ## Дивіться також
 
 - Заголовок HTTP {{HTTPHeader("Link")}}
-- [Атрибут `integrity`](https://150daysofhtml.com/book/day010/) на 150daysofhtml.com (2021)
