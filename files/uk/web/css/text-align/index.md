@@ -223,7 +223,7 @@ caption {
 
 #### Результат
 
-{{EmbedLiveSample('shykuvannia-tablyts', "100%", "200")}}
+{{EmbedLiveSample('vyrivniuvannia-tablyts', "100%", "200")}}
 
 ## Специфікації
 
