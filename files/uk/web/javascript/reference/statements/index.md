@@ -131,8 +131,10 @@ if (condition) var i = 0;
 label: const a = 1; // SyntaxError: Lexical declaration cannot appear in a single-statement context
 ```
 
-> **Примітка:** є успадкована граматика, котра дозволяє [оголошенням функцій мати мітки](/uk/docs/Web/JavaScript/Reference/Statements/label#poznacheni-oholoshennia-funktsii), але вона була стандартизована лише для відповідності реаліям Вебу.
-> Щоб це обійти, можна загорнути оголошення в фігурні дужки, тим самим зробивши його частиною [інструкції блока](/uk/docs/Web/JavaScript/Reference/Statements/block).
+> [!NOTE]
+> Є історична граматика, котра дозволяє [оголошенням функцій мати мітки](/uk/docs/Web/JavaScript/Reference/Statements/label#poznacheni-oholoshennia-funktsii), але вона була стандартизована лише для відповідності реаліям Вебу.
+
+Щоб це обійти, можна загорнути оголошення в фігурні дужки, тим самим зробивши його частиною [інструкції блока](/uk/docs/Web/JavaScript/Reference/Statements/block).
 
 ```js example-good
 label: {

@@ -36,5 +36,6 @@ Access-Control-Max-Age: 86400
 
 ## Дивіться також
 
-- {{Glossary("CORS")}}
+- Споріднені терміни глосарія:
+  - {{Glossary("CORS")}}
 - {{HTTPMethod("OPTIONS")}}
