@@ -55,7 +55,7 @@ background-color: unset;
 - {{cssxref("&lt;color&gt;")}}
   - : Однорідний колір тла. Наноситься під сподом будь-яких вказаних {{cssxref("background-image")}}; втім, такий колір буде видимим крізь будь-яку прозорість зображення.
 
-## Занепокоєння щодо доступності
+## Доступність
 
 Важливо пересвідчитись, що співвідношення контрасту між кольором тла та кольором тексту, накладеного на тло, достатньо високе, аби люди зі слабким зором мали змогу прочитати вміст сторінки.
 
@@ -180,4 +180,3 @@ td {
 - [Множинні фони](/uk/docs/Web/CSS/CSS_backgrounds_and_borders/Using_multiple_backgrounds)
 - Тип даних {{cssxref("&lt;color&gt;")}}
 - Інші властивості, пов'язані з кольором: {{cssxref("color")}}, {{cssxref("border-color")}}, {{cssxref("outline-color")}}, {{cssxref("text-decoration-color")}}, {{cssxref("text-emphasis-color")}}, {{cssxref("text-shadow")}}, {{cssxref("caret-color")}} та {{cssxref("column-rule-color")}}
-- [Застосування кольору до елементів HTML за допомогою CSS](/uk/docs/Web/CSS/CSS_colors/Applying_color)

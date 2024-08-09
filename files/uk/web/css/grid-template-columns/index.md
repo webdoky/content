@@ -7,7 +7,7 @@ browser-compat: css.properties.grid-template-columns
 
 {{CSSRef}}
 
-Властивість CSS **`grid-template-columns`** визначає імена ліній і функції калібрування доріжок {{glossary("grid column", "сіткових колонок")}}.
+Властивість [CSS](/uk/docs/Web/CSS) **`grid-template-columns`** визначає імена ліній і функції калібрування доріжок {{glossary("grid column", "сіткових колонок")}}.
 
 {{EmbedInteractiveExample("pages/css/grid-template-columns.html")}}
 
