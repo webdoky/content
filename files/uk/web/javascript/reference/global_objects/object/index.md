@@ -133,7 +133,7 @@ JavaScript також має вбудовані API, що виробляють `
 
 - Повернене значення {{jsxref("Object.groupBy()")}}
 - Властивості `groups` та `indices.groups` результату {{jsxref("RegExp.prototype.exec()")}}
-- [`Array.prototype[@@unscopables]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/@@unscopables) (усі об'єкти `@@unscopables` повинні мати прототип `null`)
+- [`Array.prototype[Symbol.unscopables]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/Symbol.unscopables) (усі об'єкти `Symbol.unscopables` повинні мати прототип `null`)
 - [`import.meta`](/uk/docs/Web/JavaScript/Reference/Operators/import.meta)
 - Об'єкти простору імен модулів, отримані за допомогою [`import * as ns from "module";`](/uk/docs/Web/JavaScript/Reference/Statements/import#import-prostoru-imen) або [`import()`](/uk/docs/Web/JavaScript/Reference/Operators/import)
 

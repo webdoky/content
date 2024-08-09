@@ -41,7 +41,7 @@ encodeURIComponent(uriComponent)
 A–Z a–z 0–9 - _ . ! ~ * ' ( )
 ```
 
-Порівняно з {{jsxref("encodeURI()")}}, `encodeURIComponent()` екранує більшу множину символів. Функцію `encodeURIComponent()` слід застосовувати на введених користувачем полях форм, що надсилаються на сервер за допомогою {{HTTPMethod("POST")}}: вона екранує символи `&`, що можуть ненавмисно бути додані при введенні даних для певних сутностей HTML, та інші символи, що вимагають кодування й розкодування. Наприклад, якщо користувач напише `Jack & Jill`, то без `encodeURIComponent()` амперсанд може бути розтлумачений сервером як початок нового поля й поставити під загрозу цілісність даних.
+Порівняно з {{jsxref("encodeURI()")}}, `encodeURIComponent()` екранує більшу множину символів. Функцію `encodeURIComponent()` слід застосовувати на введених користувачем полях форм, що надсилаються на сервер за допомогою {{HTTPMethod("POST")}}: вона екранує символи `&`, що можуть ненавмисно бути додані при введенні даних {{glossary("character reference", "символьних посилань")}}, та інші символи, що вимагають кодування й розкодування. Наприклад, якщо користувач напише `Jack & Jill`, то без `encodeURIComponent()` амперсанд може бути розтлумачений сервером як початок нового поля й поставити під загрозу цілісність даних.
 
 Для [`application/x-www-form-urlencoded` (англ.)](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#application/x-www-form-urlencoded-encoding-algorithm) пробіли треба замінювати `+`, тож одним з варіантів – після перетворення `encodeURIComponent()` провести додаткову заміну `%20` на `+`.
 
@@ -82,7 +82,7 @@ function encodeRFC5987ValueChars(str) {
 
 ### Кодування для RFC3986
 
-Новіший стандарт [RFC3986](https://datatracker.ietf.org/doc/html/rfc3986) резервує !, ', (, ) і \*, навіть попри те, що ці символи не мають формалізованого використання як обмежувачі в URI. Наступна функція кодує рядок у сумісному з RFC3986 форматі компонента URL. Також вона кодує [ і ], котрі є частиною синтаксису URI {{Glossary("IPv6")}}. Сумісна з RFC3986 реалізація `encodeURI` їх екранувати не повинна, що продемонстровано в [прикладі `encodeURI()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/encodeURI#koduvannia-dlia-rfc3986).
+Новіший стандарт [RFC3986](https://datatracker.ietf.org/doc/html/rfc3986) резервує `!`, `'`, `(`, `)` і `*`, навіть попри те, що ці символи не мають формалізованого використання як обмежувачі в URI. Наступна функція кодує рядок у сумісному з RFC3986 форматі компонента URL. Також вона кодує `[` і `]`, котрі є частиною синтаксису URI {{Glossary("IPv6")}}. Сумісна з RFC3986 реалізація `encodeURI` їх екранувати не повинна, що продемонстровано в [прикладі `encodeURI()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/encodeURI#koduvannia-dlia-rfc3986).
 
 ```js
 function encodeRFC3986URIComponent(str) {
@@ -106,7 +106,7 @@ encodeURIComponent("\uD800");
 encodeURIComponent("\uDFFF");
 ```
 
-Можна скористатися методом {{jsxref("String.prototype.toWellFormed()")}}, котрий замінює самотні сурогати на символ заміни Unicode (U+FFFD), щоб уникнути цієї помилки. Також можна скористатися методом {{jsxref("String.prototype.isWellFormed()")}}, щоб перевірити, чи містить рядок самотні сурогати, перед тим, як передати його у `encodeURIComponent()`.
+Можна скористатися методом {{jsxref("String.prototype.toWellFormed()")}}, котрий замінює самотні сурогати на символ заміни Unicode (U+FFFD), щоб уникнути цієї помилки. Також можна скористатися методом {{jsxref("String.prototype.isWellFormed()")}}, щоб перевірити, чи містить рядок самотні сурогати, перед тим, як передати його в `encodeURIComponent()`.
 
 ## Специфікації
 

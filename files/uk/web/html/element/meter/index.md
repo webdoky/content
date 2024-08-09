@@ -11,63 +11,6 @@ browser-compat: html.elements.meter
 
 {{EmbedInteractiveExample("pages/tabbed/meter.html", "tabbed-shorter")}}
 
-<table class="properties">
-  <tbody>
-    <tr>
-      <th scope="row">
-        <a href="/uk/docs/Web/HTML/Content_categories"
-          >Категорії вмісту</a
-        >
-      </th>
-      <td>
-        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
-          >Потоковий вміст</a
-        >,
-        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
-          >оповідальний вміст</a
-        >, підписний вміст, відчутний вміст.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволений вміст</th>
-      <td>
-        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
-          >Оповідальний вміст</a
-        >, але серед його нащадків не повинно бути елементів <code>&#x3C;meter></code>.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Пропуск тега</th>
-      <td>{{no_tag_omission}}</td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені батьківські елементи</th>
-      <td>
-        Всі елементи, що приймають
-        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
-          >оповідальний вміст</a
-        >.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Неявна роль ARIA</th>
-      <td>
-        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"
-          >Немає відповідної ролі</a
-        >
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені ролі ARIA</th>
-      <td>Жодної дозволеної ролі</td>
-    </tr>
-    <tr>
-      <th scope="row">Інтерфейс DOM</th>
-      <td>{{domxref("HTMLMeterElement")}}</td>
-    </tr>
-  </tbody>
-</table>
-
 ## Атрибути
 
 Цей елемент приймає [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
@@ -131,6 +74,65 @@ browser-compat: html.elements.meter
 
 ![червоний лічильник у Google Chrome](screen_shot_2020-10-12_at_10.11.52_pm.png)
 
+## Технічний підсумок
+
+<table class="properties">
+  <tbody>
+    <tr>
+      <th scope="row">
+        <a href="/uk/docs/Web/HTML/Content_categories"
+          >Категорії вмісту</a
+        >
+      </th>
+      <td>
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
+          >Потоковий вміст</a
+        >,
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
+          >оповідальний вміст</a
+        >, підписний вміст, відчутний вміст.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволений вміст</th>
+      <td>
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
+          >Оповідальний вміст</a
+        >, але серед його нащадків не повинно бути елементів <code>&#x3C;meter></code>.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Пропуск тега</th>
+      <td>Немає; і початковий, і кінцевий теги – обов'язкові.</td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені батьківські елементи</th>
+      <td>
+        Всі елементи, що приймають
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist"
+          >оповідальний вміст</a
+        >.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Неявна роль ARIA</th>
+      <td>
+        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"
+          >Немає відповідної ролі</a
+        >
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені ролі ARIA</th>
+      <td>Жодної дозволеної ролі</td>
+    </tr>
+    <tr>
+      <th scope="row">Інтерфейс DOM</th>
+      <td>{{domxref("HTMLMeterElement")}}</td>
+    </tr>
+  </tbody>
+</table>
+
 ## Специфікації
 
 {{Specifications}}
@@ -141,4 +143,6 @@ browser-compat: html.elements.meter
 
 ## Дивіться також
 
+- [Створення вертикальних формових елементів](/uk/docs/Web/CSS/CSS_writing_modes/Vertical_controls)
 - {{HTMLElement("progress")}}
+- {{cssxref("::-webkit-meter-bar")}}, {{cssxref("::-webkit-meter-inner-element")}}, {{cssxref("::-webkit-meter-even-less-good-value")}}, {{cssxref("::-webkit-meter-optimum-value")}}, {{cssxref("::-webkit-meter-suboptimum-value")}} – нестандартні псевдоелементи
