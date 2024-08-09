@@ -47,7 +47,7 @@ browser-compat: javascript.builtins.Function
 - {{jsxref("Function.prototype.toString()")}}
   - : Повертає рядок, що представляє вихідний код функції.
     Переважає метод {{jsxref("Object.prototype.toString")}}.
-- [`Function.prototype[@@hasInstance]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/@@hasInstance)
+- [`Function.prototype[Symbol.hasInstance]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/Symbol.hasInstance)
   - : Задає усталену процедуру для визначення того, чи впізнає функція-конструктор об'єкт як один зі своїх примірників. Викликається оператором [`instanceof`](/uk/docs/Web/JavaScript/Reference/Operators/instanceof).
 
 ## Приклади
