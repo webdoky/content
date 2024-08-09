@@ -21,7 +21,7 @@ browser-compat: html.elements.header
 
 ### Історичне використання
 
-Елемент `<header>` у самому початку існував у HTML для заголовків. Це можна спостерігати в [найпершому вебсайті](http://info.cern.ch/). В якийсь момент, заголовки стали [`<h1>` – `<h6>`](/uk/docs/Web/HTML/Element/Heading_Elements), що дозволило `<header>` зайняти іншу роль.
+Елемент `<header>` у самому початку існував у HTML для заголовків. Це можна спостерігати в [найпершому вебсайті](https://info.cern.ch/). В якийсь момент, заголовки стали [`<h1>` – `<h6>`](/uk/docs/Web/HTML/Element/Heading_Elements), що дозволило `<header>` зайняти іншу роль.
 
 ## Атрибути
 
@@ -109,7 +109,7 @@ browser-compat: html.elements.header
           >потоковий вміст</a
         >. Зверніть увагу, що елемент <code>&#x3C;header></code> не повинен бути нащадком {{HTMLElement("address")}},
         {{HTMLElement("footer")}} або іншого елемента
-        {{HTMLElement("header")}}.
+        <code>&lt;header&gt;</code>.
       </td>
     </tr>
     <tr>
