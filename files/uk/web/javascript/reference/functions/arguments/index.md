@@ -13,7 +13,8 @@ browser-compat: javascript.functions.arguments
 
 ## Опис
 
-> **Примітка:** У сучасному коді краще віддавати перевагу [решті параметрів](/uk/docs/Web/JavaScript/Reference/Functions/rest_parameters).
+> [!NOTE]
+> У сучасному коді краще віддавати перевагу [решті параметрів](/uk/docs/Web/JavaScript/Reference/Functions/rest_parameters).
 
 Об'єкт `arguments` – це локальна змінна, доступна всередині всіх не[стрілкових](/uk/docs/Web/JavaScript/Reference/Functions/Arrow_functions) функцій. Всередині такої функції можна звертатися до її аргументів за допомогою її об'єкта `arguments`. Він містить записи для кожного аргументу, з яким була викликана функція, а перший запис має індекс `0`.
 
@@ -90,7 +91,8 @@ funcWithDefault3(); // undefined; 0
 
 Це та сама логіка, яку демонструють всі [функції суворого режиму](/uk/docs/Web/JavaScript/Reference/Strict_mode#sproshchennia-eval-i-arguments), незалежно від типів параметрів, які їм передаються. Тобто присвоєння нових значень до параметрів у тілі функції ніколи не впливає на об'єкт `arguments`, і так само присвоєння нових значень за індексами `arguments` не впливає на значення параметрів, навіть якщо функція має лише прості параметри.
 
-> **Примітка:** Не можна вписати директиву `"use strict";` у тіло визначення функції, що приймає решту, усталені або деструктуровані параметри. Це призведе до викидання [синтаксичної помилки](/uk/docs/Web/JavaScript/Reference/Errors/Strict_non_simple_params).
+> [!NOTE]
+> Не можна вписати директиву `"use strict";` у тіло визначення функції, що приймає решту, усталені або деструктуровані параметри. Це призведе до викидання [синтаксичної помилки](/uk/docs/Web/JavaScript/Reference/Errors/Strict_non_simple_params).
 
 ### arguments – це масивоподібний об'єкт
 
@@ -104,7 +106,7 @@ const args = Array.from(arguments);
 const args = [...arguments];
 ```
 
-Для поширених ситуацій використання `arguments` як масивоподібного об'єкта – достатньо, оскільки він водночас [є ітерованим](/uk/docs/Web/JavaScript/Reference/Functions/arguments/@@iterator) і має властивість `length` та числові індекси. Наприклад, метод {{jsxref("Function.prototype.apply()", "apply()")}} приймає масивоподібні об'єкти.
+Для поширених ситуацій використання `arguments` як масивоподібного об'єкта – достатньо, оскільки він водночас [є ітерованим](/uk/docs/Web/JavaScript/Reference/Functions/arguments/Symbol.iterator) і має властивість `length` та числові індекси. Наприклад, метод {{jsxref("Function.prototype.apply()", "apply()")}} приймає масивоподібні об'єкти.
 
 ```js
 function midpoint() {
@@ -122,8 +124,8 @@ console.log(midpoint(3, 1, 4, 1, 5)); // 3
   - : Посилання на поточну функцію, до якої належать аргументи. Заборонено в суворому режимі.
 - {{jsxref("Functions/arguments/length", "arguments.length")}}
   - : Число аргументів, що були передані функції.
-- {{jsxref("Functions/arguments/@@iterator", "arguments[@@iterator]")}}
-  - : Повертає новий об'єкт {{jsxref("Array/@@iterator", "ітератора Array", "", 0)}}, що містить значення для кожного індексу `arguments`.
+- [`arguments[Symbol.iterator]()`](/uk/docs/Web/JavaScript/Reference/Functions/arguments/Symbol.iterator)
+  - : Повертає новий об'єкт [ітератора масиву](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/Symbol.iterator), що містить значення для кожного індексу `arguments`.
 
 ## Приклади
 
