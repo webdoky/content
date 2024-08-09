@@ -1,5 +1,5 @@
 ---
-title: "<picture> – елемент ілюстрації"
+title: <picture> – елемент ілюстрації
 slug: Web/HTML/Element/picture
 page-type: html-element
 browser-compat: html.elements.picture
@@ -25,59 +25,12 @@ browser-compat: html.elements.picture
 - **Мистецьке спрямування.** Обрізання або зміна зображень для різних умов `media` (наприклад, завантаження простішої версії зображення, яке має занадто багато деталей, на менших дисплеях).
 - **Пропонування альтернативних форматів зображень**, для випадків, коли деякі формати не підтримуються.
 
-  > **Примітка:** Наприклад, нові формати, такі як [AVIF](/uk/docs/Web/Media/Formats/Image_types#zobrazhennia-avif) або [WEBP](/uk/docs/Web/Media/Formats/Image_types#zobrazhennia-webp), мають багато переваг, але можуть не підтримуватися браузером. Список підтримуваних форматів зображень можна знайти в: [Посібник з типів і форматів зображень](/uk/docs/Web/Media/Formats/Image_types).
+  > [!NOTE]
+  > Наприклад, нові формати, такі як [AVIF](/uk/docs/Web/Media/Formats/Image_types#zobrazhennia-avif) або [WEBP](/uk/docs/Web/Media/Formats/Image_types#zobrazhennia-webp), мають багато переваг, але можуть не підтримуватися браузером. Список підтримуваних форматів зображень можна знайти в: [Посібник з типів і форматів зображень](/uk/docs/Web/Media/Formats/Image_types).
 
 - **Збереження пропускної здатності та прискорення завантаження сторінки** шляхом завантаження зображення, найбільш відповідного для дисплея користувача.
 
 У випадку пропонування версій зображень з високою щільністю для дисплеїв з високою щільністю пікселів (Retina), слід натомість використовувати атрибут [`srcset`](/uk/docs/Web/HTML/Element/img#srcset) елемента `<img>`. Це дозволяє браузерам вибирати версії з низькою щільністю в режимах економії даних, і не потрібно писати явні умови `media`.
-
-<table class="properties">
-  <tbody>
-    <tr>
-      <th scope="row">
-        <a href="/uk/docs/Web/HTML/Content_categories"
-          >Категорії вмісту</a
-        >
-      </th>
-      <td>
-        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
-          >Потоковий вміст</a
-        >, оповідальний вміст, вбудований вміст
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволений вміст</th>
-      <td>
-        Нуль або більше елементів {{HTMLElement("source")}}, за якими слідує один
-        {{HTMLElement("img")}}, і це все необов'язково перемішано з елементами, якими користуються сценарії.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Пропуск тега</th>
-      <td>{{no_tag_omission}}</td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені батьківські елементи</th>
-      <td>Всі елементи, що приймають вбудований вміст.</td>
-    </tr>
-    <tr>
-      <th scope="row">Неявна роль ARIA</th>
-      <td>
-        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"
-          >Немає відповідної ролі</a
-        >
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені ролі ARIA</th>
-      <td>Жодної дозволеної ролі</td>
-    </tr>
-    <tr>
-      <th scope="row">Інтерфейс DOM</th>
-      <td>{{domxref("HTMLPictureElement")}}</td>
-    </tr>
-  </tbody>
-</table>
 
 ## Атрибути
 
@@ -87,7 +40,8 @@ browser-compat: html.elements.picture
 
 Можна скористатися властивістю {{cssxref("object-position")}}, щоб підлаштувати розташування зображення в межах рамки елемента, і властивістю {{cssxref("object-fit")}}, щоб керувати тим, як зображення масштабується для вписання в цю рамку.
 
-> **Примітка:** Ці властивості слід застосовувати до дочірнього елемента `<img>`, а **не** до елемента `<picture>`.
+> [!NOTE]
+> Ці властивості слід застосовувати до дочірнього елемента `<img>`, а **не** до елемента `<picture>`.
 
 ## Приклади
 
@@ -161,6 +115,56 @@ browser-compat: html.elements.picture
   <img src="photo.jpg" alt="photo" />
 </picture>
 ```
+
+## Технічний підсумок
+
+<table class="properties">
+  <tbody>
+    <tr>
+      <th scope="row">
+        <a href="/uk/docs/Web/HTML/Content_categories"
+          >Категорії вмісту</a
+        >
+      </th>
+      <td>
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
+          >Потоковий вміст</a
+        >, оповідальний вміст, вбудований вміст
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволений вміст</th>
+      <td>
+        Нуль або більше елементів {{HTMLElement("source")}}, за якими слідує один
+        {{HTMLElement("img")}}, і це все необов'язково перемішано з елементами, якими користуються сценарії.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Пропуск тега</th>
+      <td>Немає; і початковий, і кінцевий теги – обов'язкові.</td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені батьківські елементи</th>
+      <td>Всі елементи, що приймають вбудований вміст.</td>
+    </tr>
+    <tr>
+      <th scope="row">Неявна роль ARIA</th>
+      <td>
+        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"
+          >Немає відповідної ролі</a
+        >
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені ролі ARIA</th>
+      <td>Жодної дозволеної ролі</td>
+    </tr>
+    <tr>
+      <th scope="row">Інтерфейс DOM</th>
+      <td>{{domxref("HTMLPictureElement")}}</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Специфікації
 
