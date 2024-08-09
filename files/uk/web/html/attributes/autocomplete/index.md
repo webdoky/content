@@ -1,5 +1,6 @@
 ---
 title: "Атрибут HTML: autocomplete"
+short-title: autocomplete
 slug: Web/HTML/Attributes/autocomplete
 page-type: html-attribute
 browser-compat:
@@ -189,7 +190,7 @@ browser-compat:
 - "`address-level2`"
   - : Другий [адміністративний рівень](#administratyvni-rivni-v-adresakh) в адресах, що мають щонайменше два рівні. У країнах з двома адміністративними рівнями це зазвичай буде місто, селище, село або інше місце, де знаходиться адреса.
 - "`address-level1`"
-  - : Перший [адміністративний рівень](#administratyvni-rivni-v-adresakh) адреси. Зазвичай це провінція, де знаходиться адреса. У США це буде штат. У Швейцарії - кантон. У Великій Британії - поштове місто.
+  - : Перший [адміністративний рівень](#administratyvni-rivni-v-adresakh) адреси. Зазвичай це провінція, де знаходиться адреса. У США це буде штат. У Швейцарії – кантон. У Великій Британії – поштове місто.
 - "`country`"
   - : Код країни або території.
 - "`country-name`"
