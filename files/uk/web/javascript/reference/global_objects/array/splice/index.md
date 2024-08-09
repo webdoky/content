@@ -28,7 +28,7 @@ splice(start, deleteCount, item1, item2, /* …, */ itemN)
 - `start` (початок)
 
   - : Індекс, за яким почнуться зміни в масиві, [перетворений на ціле число](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#peretvorennia-na-tsile).
-    - Від'ємний індекс рахується від кінця масиву: якщо `start < 0`, використовується `start + array.length`.
+    - Від'ємний індекс рахується від кінця масиву: якщо `-array.length <= start < 0`, використовується `start + array.length`.
     - Якщо `start < -array.length`, використовується `0`.
     - Якщо `start >= array.length`, то жодний елемент не буде видалено, але метод спрацює як функція додавання, додаючи передані елементи.
     - Якщо `start` пропущено (і `splice()` викликано без аргументів), то нічого не видаляється. Це відрізняється від передачі значення `undefined`, яке перетворюється на `0`.
@@ -55,7 +55,7 @@ splice(start, deleteCount, item1, item2, /* …, */ itemN)
 
 ## Опис
 
-Метод `splice()` – це [змінювальний метод](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#kopiiuvalni-ta-zminiuvalni-metody). Він може змінити вміст `this`. Якщо кількість наданих для вставки елементів відрізняється від кількості елементів, які видаляються, властивість `length` масиву зміниться також. Крім того, він використовує [`@@species`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/@@species) для створення нового примірника масиву, що повертається.
+Метод `splice()` – це [змінювальний метод](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#kopiiuvalni-ta-zminiuvalni-metody). Він може змінити вміст `this`. Якщо кількість наданих для вставки елементів відрізняється від кількості елементів, які видаляються, властивість `length` масиву зміниться також. Крім того, він використовує [`Symbol.species`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/Symbol.species) для створення нового примірника масиву, що повертається.
 
 Якщо видалена частка є [розрідженою](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy), то повернений `splice()` масив також буде розрідженим, і відповідні індекси будуть порожніми комірками.
 

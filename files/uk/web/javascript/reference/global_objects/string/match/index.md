@@ -36,13 +36,13 @@ match(regexp)
 
 ## Опис
 
-Реалізація `String.prototype.match` сама по собі є вельми простою: вона просто викликає метод аргументу `Symbol.match` з рядком як першим параметром. Фактична реалізація надходить із [`RegExp.prototype[@@match]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@match).
+Реалізація `String.prototype.match` сама по собі є вельми простою: вона просто викликає метод аргументу `Symbol.match` з рядком як першим параметром. Фактична реалізація надходить із [`RegExp.prototype[Symbol.match]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.match).
 
 - Якщо потрібно визначити, чи рядок збігається з регулярним виразом {{jsxref("RegExp")}}, можна використати {{jsxref("RegExp.prototype.test()")}}.
 - Якщо потрібен лише перший знайдений збіг, можна натомість застосувати {{jsxref("RegExp.prototype.exec()")}}.
 - Якщо необхідно отримати захоплені групи та встановлено прапорець глобального пошуку, слід натомість використовувати {{jsxref("RegExp.prototype.exec()")}} чи {{jsxref("String.prototype.matchAll()")}}.
 
-Для отримання подробиць семантики `match()`, коли в нього передається регулярний вираз, дивіться [`RegExp.prototype[@@match]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@match).
+Для отримання подробиць семантики `match()`, коли в нього передається регулярний вираз, дивіться [`RegExp.prototype[Symbol.match]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.match).
 
 ## Приклади
 
@@ -105,7 +105,7 @@ const str = "Ніщо не вийде з нічого.";
 str.match(); // повертає [""]
 ```
 
-### Використання match() з чимось, що не є регулярним виразом, шляхом реалізації @@match
+### Використання match() з чимось, що не є регулярним виразом, шляхом реалізації `[Symbol.match]()`
 
 Якщо об'єкт має метод `Symbol.match`, то він може використовуватися як особливий відповідник. Повернене `Symbol.match` значення стає поверненим значенням `match()`.
 

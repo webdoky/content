@@ -398,7 +398,6 @@ label::after {
 - [`<input type="tel">`](/uk/docs/Web/HTML/Element/input/tel)
 - [`<input type="url">`](/uk/docs/Web/HTML/Element/input/url)
 - Атрибути:
-
   - [`list`](/uk/docs/Web/HTML/Element/input#list-spysok)
   - [`minlength`](/uk/docs/Web/HTML/Attributes/minlength)
   - [`maxlength`](/uk/docs/Web/HTML/Attributes/maxlength)
@@ -407,5 +406,4 @@ label::after {
   - [`placeholder`](/uk/docs/Web/HTML/Element/input#placeholder)
   - [`readonly`](/uk/docs/Web/HTML/Attributes/readonly)
   - [`size`](/uk/docs/Web/HTML/Attributes/size)
-
 - [Сумісність властивостей CSS](/uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls)

@@ -589,7 +589,7 @@ _Жолоби_ чи _коридори_ між сітковими комірка�
 }
 ```
 
-```html hidden
+```html
 <div class="wrapper">
   <div class="box box1">
     <div class="nested">а</div>

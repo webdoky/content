@@ -23,6 +23,8 @@ browser-compat: html.elements.iframe
 
   - : Задає [політику дозволів](/uk/docs/Web/HTTP/Permissions_Policy) для `<iframe>`. Політика визначає те, які можливості доступні `<iframe>` (наприклад, доступ до мікрофона, камери, батареї, поширення в Інтернеті тощо), залежно від походження запиту.
 
+    Дивіться приклади в [супутніх фреймах](/uk/docs/Web/HTTP/Headers/Permissions-Policy#suputni-freimy) на сторінці `Permissions-Policy`.
+
     > **Примітка:** Політика дозволів, задана атрибутом `allow`, реалізовує додаткові обмеження, поверх політики, заданої в заголовку {{httpheader("Permissions-Policy")}}. Перша не замінює другу.
 
 - `allowfullscreen`
@@ -37,7 +39,11 @@ browser-compat: html.elements.iframe
 
     > **Примітка:** Цей атрибут вважається застарілим, він був перевизначений як `allow="payment"`.
 
-- `credentialless` {{Experimental_Inline}} {{Non-standard_Inline}}
+- `browsingtopics` {{Experimental_Inline}} {{non-standard_inline}}
+
+  - : Булів атрибут, котрий, якщо присутній, задає те, що вибрані теми для поточного користувача мають бути надіслані разом із запитом на походження цього {{htmlelement("iframe")}}. Дивіться подробиці у [Використанні API тем](/uk/docs/Web/API/Topics_API/Using).
+
+- `credentialless` {{Experimental_Inline}}
 
   - : Можна задати `true`, аби зробити `<iframe>` безправним, тобто його вміст буде завантажений у новий, ефемерний контекст. Він не матиме доступу до мережі, реп'яшків та сховища даних, пов'язаних з його походженням. Такий фрейм використовуватиме новий контекст, локальний щодо часу життя документа верхнього рівня. Зате правила вбудовування {{httpheader("Cross-Origin-Embedder-Policy")}} (COEP) можуть не застосовуватися, тож документи, для яких задано COEP, можуть вбудовувати сторонні документи, для яких COEP не задано. Подробиці – на сторінці [безправного IFrame](/uk/docs/Web/Security/IFrame_credentialless)
 
@@ -230,8 +236,8 @@ browser-compat: html.elements.iframe
       <td>Жодного.</td>
     </tr>
     <tr>
-      <th scope="row">Упускання тегу</th>
-      <td>{{no_tag_omission}}</td>
+      <th scope="row">Пропуск тега</th>
+      <td>Немає; і початковий, і кінцевий теги – обов'язкові.</td>
     </tr>
     <tr>
       <th scope="row">Дозволені батьківські елементи</th>

@@ -81,8 +81,8 @@ li span {
       </td>
     </tr>
     <tr>
-      <th scope="row">Упускання тега</th>
-      <td>{{no_tag_omission}}</td>
+      <th scope="row">Пропуск тега</th>
+      <td>Немає; і початковий, і кінцевий теги – обов'язкові.</td>
     </tr>
     <tr>
       <th scope="row">Дозволені батьківські елементи</th>
