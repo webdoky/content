@@ -42,6 +42,6 @@ p {
 ## Дивіться також
 
 - [Вміст рядкового рівня](/uk/docs/Glossary/Inline-level_content)
-- [Контекст блокового форматування](/uk/docs/Web/Guide/CSS/Block_formatting_context)
+- [Контекст блокового форматування](/uk/docs/Web/CSS/CSS_display/Block_formatting_context)
 - {{cssxref("display")}}
 - [`writing-mode`](/uk/docs/Web/CSS/writing-mode)

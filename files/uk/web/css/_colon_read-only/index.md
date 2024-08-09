@@ -28,8 +28,6 @@ browser-compat: css.selectors.read-only
 Псевдоклас `:read-only` вживається для усунення всього оформлення, завдяки якому поля мають вигляд інтерактивних, а натомість змушує їх мати вигляд абзаців, доступних лише для зчитування. Псевдоклас `:read-write`, з іншого боку, використовується для надання трохи красивішого оформлення редагованому елементу `<textarea>`.
 
 ```css
-input:-moz-read-only,
-textarea:-moz-read-only,
 input:read-only,
 textarea:read-only {
   border: 0;
@@ -37,7 +35,6 @@ textarea:read-only {
   background-color: white;
 }
 
-textarea:-moz-read-write,
 textarea:read-write {
   box-shadow: inset 1px 1px 3px #ccc;
   border-radius: 5px;
@@ -77,7 +74,7 @@ p:read-write {
 }
 ```
 
-{{EmbedLiveSample('oformlennia-neformovykh-kontrolknykh-elementiv-lyshe-dlia-zchytuvannia', '100%', 400)}}
+{{EmbedLiveSample('oformlennia-neformovykh-kontrolnykh-elementiv-lyshe-dlia-zchytuvannia', '100%', 400)}}
 
 ## Специфікації
 

@@ -56,7 +56,7 @@ console.log(unsafeRedactName(report, "ха.*ер")); // "Хакер на ім'я
 console.log(safeRedactName(report, "ха.*ер")); // "Хакер на ім'я [ВИДАЛЕНО] використав спеціальні символи в своєму імені для зламу сервера."
 ```
 
-Якщо `pattern` є об'єктом з методом [`Symbol.replace`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/replace) (в т.ч. об'єктом `RegExp`), то такий метод викликається з цільовим рядком та `replacement` як аргументами. Повернене значення стає поверненим значенням `replaceAll()`. У такому випадку логіка `replaceAll()` повністю закодована у методі `@@replace`, а отже – матиме такий само результат, як `replace()` (окрім додаткової валідації введення – перевірки того, що регулярний вираз є глобальним).
+Якщо `pattern` є об'єктом з методом [`Symbol.replace`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/replace) (в т.ч. об'єктом `RegExp`), то такий метод викликається з цільовим рядком та `replacement` як аргументами. Повернене значення стає поверненим значенням `replaceAll()`. У такому випадку логіка `replaceAll()` повністю закодована у методі `[Symbol.replace]()`, а отже – матиме такий само результат, як `replace()` (окрім додаткової валідації введення – перевірки того, що регулярний вираз є глобальним).
 
 Якщо `pattern` є порожнім рядком, то заміна буде вставлена між кожними двома кодовими одиницями UTF-16, подібно до поведінки [`split()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/split).
 
@@ -64,7 +64,7 @@ console.log(safeRedactName(report, "ха.*ер")); // "Хакер на ім'я [
 "xxx".replaceAll("", "_"); // "_x_x_x_"
 ```
 
-Для отримання подробиць про те, як властивості регулярних виразів (особливо позначку [липкості](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/sticky)) взаємодіють із `replaceAll()` – дивіться [`RegExp.prototype[@@replace]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@replace).
+Для отримання подробиць про те, як властивості регулярних виразів (особливо позначку [липкості](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/sticky)) взаємодіють із `replaceAll()` – дивіться [`RegExp.prototype[Symbol.replace]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.replace).
 
 ## Приклади
 

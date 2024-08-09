@@ -29,9 +29,9 @@ spec-urls:
 - {{cssxref("text-justify")}}
 - {{cssxref("text-size-adjust")}}
 - {{cssxref("text-transform")}}
-- {{cssxref("text-wrap")}} {{experimental_inline}}
+- {{cssxref("text-wrap")}}
 - {{cssxref("white-space")}}
-- {{cssxref("white-space-collapse")}} {{experimental_inline}}
+- {{cssxref("white-space-collapse")}}
 - {{cssxref("word-break")}}
 - {{cssxref("word-spacing")}}
 

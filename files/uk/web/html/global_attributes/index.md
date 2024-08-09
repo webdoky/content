@@ -21,6 +21,8 @@ browser-compat: html.global_attributes
 
 - [`accesskey`](/uk/docs/Web/HTML/Global_attributes/accesskey)
   - : Надає підказку для створення комбінації клавіш для поточного елемента. Цей атрибут складається з розділеного пробілами списку символів. Браузер повинен використовувати перший з них, що існує в розкладці клавіатури комп'ютера.
+- [`anchor`](/uk/docs/Web/HTML/Global_attributes/anchor) {{non-standard_inline}}
+  - : Пов'язує позиційований елемент з якірним елементом. Значення атрибута – це значення [`id`](/uk/docs/Web/HTML/Global_attributes/id) елемента, до якого прив'язаний позиційований елемент. Цей елемент потім може бути позиційований [за допомогою якірного позиціювання CSS](/uk/docs/Web/CSS/CSS_anchor_positioning/Using).
 - [`autocapitalize`](/uk/docs/Web/HTML/Global_attributes/autocapitalize)
 
   - : Контролює те, чи додаються великі літери до тексту, введеного у поля вводу, а також, якщо так, то яким чином.
@@ -35,9 +37,8 @@ browser-compat: html.global_attributes
 
     - `true` чи _порожній рядок_, що вказує, що елемент повинен бути редагованим;
     - `false`, що вказує, що елемент повинен бути не редагованим.
+    - `plaintext-only`, який вказує на те, що можна редагувати необроблений текст елемента, але розширені можливості з форматування тексту вимкнені.
 
-- [`contextmenu`](/uk/docs/Web/HTML/Global_attributes/contextmenu) {{deprecated_inline}} {{non-standard_inline}}
-  - : [**`id`**](#id) елемента {{HTMLElement("menu")}}, котрий повинен використовуватися як контекстне меню цього елемента.
 - [`data-*`](/uk/docs/Web/HTML/Global_attributes/data-*)
   - : Утворює клас атрибутів, що звуться користувацькими атрибутами даних, котрі дають змогу обмінюватись власною інформацією між [HTML](/uk/docs/Web/HTML) та її представленням у {{glossary("DOM")}}, котру можуть використовувати сценарії. Такі користувацькі дані – доступні через інтерфейс {{DOMxRef("HTMLElement")}} елемента, на котрому задано такий атрибут. Доступ до них надає властивість {{DOMxRef("HTMLElement.dataset")}}.
 - [`dir`](/uk/docs/Web/HTML/Global_attributes/dir)
