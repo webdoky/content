@@ -331,16 +331,16 @@ function populateWeeks() {
       <td><strong>Події</strong></td>
       <td>
         {{domxref("HTMLElement/change_event", "change")}} та
-        {{domxref("HTMLElement/input_event", "input")}}
+        {{domxref("Element/input_event", "input")}}
       </td>
     </tr>
     <tr>
       <td><strong>Доступні спільні атрибути</strong></td>
       <td>
         <a href="/uk/docs/Web/HTML/Element/input#autocomplete"><code>autocomplete</code></a>,
-        <a href="/uk/docs/Web/HTML/Element/input#list"><code>list</code></a>,
-        <a href="/uk/docs/Web/HTML/Element/input#readonly"><code>readonly</code></a> та
-        <a href="/uk/docs/Web/HTML/Element/input#step"><code>step</code></a>
+        <a href="/uk/docs/Web/HTML/Element/input#list-spysok"><code>list</code></a>,
+        <a href="/uk/docs/Web/HTML/Element/input#readonly-lyshe-dlia-chytannia"><code>readonly</code></a> та
+        <a href="/uk/docs/Web/HTML/Element/input#step-krok"><code>step</code></a>
       </td>
     </tr>
     <tr>

@@ -1,5 +1,5 @@
 ---
-title: "<fieldset> – Елемент набору полів"
+title: <fieldset> – Елемент набору полів
 slug: Web/HTML/Element/fieldset
 page-type: html-element
 browser-compat: html.elements.fieldset
@@ -17,7 +17,7 @@ browser-compat: html.elements.fieldset
 
 Цей елемент приймає [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
 
-- `disabled`
+- [`disabled`](/uk/docs/Web/HTML/Attributes/disabled)
   - : Якщо заданий цей булів атрибут, то всі контрольні елементи форми, що є нащадками `<fieldset>`, вимикаються, тобто вони не можуть бути змінені та не будуть подані разом з {{htmlelement("form")}}. Вони не отримують жодних подій браузера, таких як клацання мишею або події, пов'язані з фокусом. Усталено браузери виводять такі контрольні елементи сірим кольором. Зверніть увагу, що елементи форми всередині елемента {{HTMLElement("legend")}} не будуть вимкнені.
 - `form`
   - : Цей атрибут приймає значення атрибута [`id`](/uk/docs/Web/HTML/Global_attributes#id) елемента {{HTMLElement("form", "форми")}}, частиною якої повинен стати `<fieldset>`, навіть якщо він не вкладений у неї. Зверніть увагу, що використання цього атрибута заплутує: якщо ви хочете, щоб елементи {{HTMLElement("input")}}, які знаходяться всередині `<fieldset>`, були пов'язані з тією ж формою, потрібно використовувати атрибут `form` безпосередньо на цих елементах. Перевірити, які елементи пов'язані з формою, можна за допомогою JavaScript, використовуючи {{domxref("HTMLFormElement.elements")}}.
@@ -31,7 +31,7 @@ browser-compat: html.elements.fieldset
 
 Є декілька особливих міркувань щодо оформлення елемента `<fieldset>`.
 
-Значенням його властивості {{cssxref("display")}} усталено є `block`, і це породжує [блоковий контекст форматування](/uk/docs/Web/Guide/CSS/Block_formatting_context). Якщо елемент `<fieldset>` оформлений значенням властивості `display` рядного рівня, то він буде поводитися як `inline-block`, а інакше – як `block`. Усталено навколо вмісту присутня межа `2px` `groove`, а також невеликий внутрішній відступ. Усталено цей елемент має {{cssxref("min-inline-size", "min-inline-size: min-content")}}.
+Значенням його властивості {{cssxref("display")}} усталено є `block`, і це породжує [контекст блокового форматування](/uk/docs/Web/CSS/CSS_display/Block_formatting_context). Якщо елемент `<fieldset>` оформлений значенням властивості `display` рядного рівня, то він буде поводитися як `inline-block`, а інакше – як `block`. Усталено навколо вмісту присутня межа `2px` `groove`, а також невеликий внутрішній відступ. Усталено цей елемент має {{cssxref("min-inline-size", "min-inline-size: min-content")}}.
 
 Якщо присутній елемент {{HTMLElement("legend")}}, то він розміщується над межею `block-start`. Елемент {{HTMLElement("legend")}} звужується до розміру свого вмісту, а також утворює контекст форматування. Значенням властивості `display` перетворюється на блокове. (Наприклад, `display: inline` поводиться як `block`.)
 
@@ -104,7 +104,7 @@ browser-compat: html.elements.fieldset
           >перелічений</a
         >,
         <a
-          href="/uk/docs/Web/HTML/Content_categories#formovi"
+          href="/uk/docs/Web/HTML/Content_categories#formovyi-vmist"
           >формовий</a
         >
         елемент, відчутний вміст.
@@ -118,7 +118,7 @@ browser-compat: html.elements.fieldset
     </tr>
     <tr>
       <th scope="row">Пропуск тега</th>
-      <td>{{no_tag_omission}}</td>
+      <td>Немає; і початковий, і кінцевий теги – обов'язкові.</td>
     </tr>
     <tr>
       <th scope="row">Дозволені батьківські елементи</th>

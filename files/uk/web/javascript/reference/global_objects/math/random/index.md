@@ -9,7 +9,7 @@ browser-compat: javascript.builtins.Math.random
 
 Статичний метод **`Math.random()`** (випадкове) повертає псевдовипадкове число з рухомою комою в діапазоні від 0 до 1 (включно з 0, але не включно з 1) з приблизно рівномірним розподілом протягом цього діапазону, який потім можна масштабувати до бажаного розміру. Реалізація обирає початкове число (так званий «seed») для алгоритму генерації випадкового числа; це число не може бути обрано чи скинуто користувачем.
 
-> **Примітка:** `Math.random()` _не надає_ криптографічно стійких випадкових чисел. Не варто їх використовувати для будь-чого, пов'язаного з безпекою. Натомість слід користуватись криптографічним веб-API, а точніше — методом {{domxref("Crypto/getRandomValues", "window.crypto.getRandomValues()")}}.
+> **Примітка:** `Math.random()` _не надає_ криптографічно стійких випадкових чисел. Не варто їх використовувати для будь-чого, пов'язаного з безпекою. Натомість слід користуватись криптографічним веб-API, а точніше — методом {{domxref("Crypto.getRandomValues()")}}.
 
 {{EmbedInteractiveExample("pages/js/math-random.html")}}
 
@@ -55,9 +55,9 @@ function getRandomArbitrary(min, max) {
 
 ```js
 function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min) + min); // Включно з мінімальним та невключно з максимальним значенням
+  const minCeiled = Math.ceil(min);
+  const maxFloored = Math.floor(max);
+  return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); // Включно з мінімальним та невключно з максимальним значенням
 }
 ```
 
@@ -69,9 +69,9 @@ function getRandomInt(min, max) {
 
 ```js
 function getRandomIntInclusive(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1) + min); // Включно з мінімальним та максимальним значеннями
+  const minCeiled = Math.ceil(min);
+  const maxFloored = Math.floor(max);
+  return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); // Включно з мінімальним та максимальним значеннями
 }
 ```
 
@@ -85,4 +85,4 @@ function getRandomIntInclusive(min, max) {
 
 ## Дивіться також
 
-- {{domxref("Crypto/getRandomValues", "window.crypto.getRandomValues()")}}
+- {{domxref("Crypto.getRandomValues()")}}

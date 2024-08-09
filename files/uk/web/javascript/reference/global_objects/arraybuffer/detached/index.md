@@ -35,6 +35,7 @@ console.log(newBuffer.detached); // false
 
 ## Дивіться також
 
+- [Поліфіл `ArrayBuffer.prototype.detached` у складі `core-js`](https://github.com/zloirock/core-js#arraybufferprototypetransfer-and-friends)
 - {{jsxref("ArrayBuffer")}}
 - {{jsxref("ArrayBuffer.prototype.transfer()")}}
 - {{jsxref("ArrayBuffer.prototype.transferToFixedLength()")}}

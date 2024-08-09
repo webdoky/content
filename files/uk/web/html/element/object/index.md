@@ -39,7 +39,7 @@ browser-compat: html.elements.object
   - : Повідомлення, яке браузер може показати під час завантаження реалізації та даних об'єкта.
 - `type`
   - : [Тип вмісту](/uk/docs/Glossary/MIME_type) ресурсу, заданого **data**. Як мінімум один з атрибутів **data** і **type** має бути заданий.
-- `usemap`
+- `usemap` {{deprecated_inline}}
   - : Хеш-ім'я посилання на елемент {{HTMLElement("map")}}; тобто символ '#', після якого стоїть [`name`](/uk/docs/Web/HTML/Element/map#name) елемента карти.
 - `width`
   - : Ширина виведеного ресурсу, в [пікселях CSS](https://drafts.csswg.org/css-values/#px). – (Тільки абсолютні значення. [ЖОДНИХ відсотків](https://html.spec.whatwg.org/multipage/embedded-content.html#dimension-attributes))
@@ -62,7 +62,7 @@ browser-compat: html.elements.object
 
 #### Результат
 
-{{EmbedLiveSample}}
+{{EmbedLiveSample("vbuduvannia-video")}}
 
 Якщо відео в прикладі не вдається завантажити, користувачу як запасний варіант показується зображення. Тег {{HTMLElement("img")}} використовується для відображення зображення. Атрибут `src` заданий зі шляхом до зображення, яке вбудовується. Також додано атрибут `alt`, який дає зображенню доступне ім'я. Якщо зображення також не виходить завантажити, то виводиться вміст атрибута `alt`.
 
@@ -78,7 +78,7 @@ browser-compat: html.elements.object
         <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist">Потоковий вміст</a>;
         <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist">оповідальний вміст</a>;
         <a href="/uk/docs/Web/HTML/Content_categories#vbudovanyi-vmist">вбудований вміст</a>, відчутний вміст; якщо елемент має атрибут
-        <a href="/uk/docs/Web/HTML/Element/object#usemap"><code>usemap</code></a>, то <a href="/uk/docs/Web/HTML/Content_categories#interaktyvnyi-vmist">інтерактивний вміст</a>;
+        <a href="#usemap"><code>usemap</code></a>, то <a href="/uk/docs/Web/HTML/Content_categories#interaktyvnyi-vmist">інтерактивний вміст</a>;
         <a href="/uk/docs/Web/HTML/Content_categories#perelicheni">перелічений</a>,
         <a href="/uk/docs/Web/HTML/Content_categories#podavalni">подавальний</a>
         <a href="/uk/docs/Web/HTML/Content_categories#formovyi-vmist">формовий</a> елемент.
@@ -92,7 +92,7 @@ browser-compat: html.elements.object
     </tr>
     <tr>
       <th scope="row">Пропуск тега</th>
-      <td>{{no_tag_omission}}</td>
+      <td>Немає; і початковий, і кінцевий теги – обов'язкові.</td>
     </tr>
     <tr>
       <th scope="row">Дозволені батьківські елементи</th>
