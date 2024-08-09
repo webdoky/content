@@ -17,6 +17,28 @@ browser-compat: html.elements.a
 
 Атрибути цього елемента включають [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
 
+- `attributionsrc` {{experimental_inline}}
+
+  - : Задає те, що ви хочете, аби браузер надіслав заголовок {{httpheader("Attribution-Reporting-Eligible")}}. На серверному боці такий заголовок використовується для запуску надсилання у відповіді заголовка {{httpheader("Attribution-Reporting-Register-Source")}} у відповіді, щоб зареєструвати [джерело атрибуції на основі навігації](/uk/docs/Web/API/Attribution_Reporting_API/Registering_sources#dzherela-atrybutsii-na-osnovi-navihatsii).
+
+    Браузер зберігає дані про джерело, пов'язані з джерелом атрибуції, заснованим на навігації (таким, яке задано в заголовку відповіді {{httpheader("Attribution-Reporting-Register-Source")}}), коли користувач клацає посилання. Дивіться подробиці в [API звітування про атрибуцію](/uk/docs/Web/API/Attribution_Reporting_API).
+
+    Можна задати одну з двох версій цього атрибуту:
+
+    - Булева версія, тобто просто запис `attributionsrc`. Це задає те, що ви хочете, аби до того ж сервера, що й заданий в атрибуті `href`, надсилався заголовок {{httpheader("Attribution-Reporting-Eligible")}}. Це прийнятно, коли реєстрація джерела атрибуції відбувається на тому ж самому сервері.
+    - Значення, що вміщає один або кілька URL, наприклад:
+
+      ```html
+      attributionsrc="https://a.example/register-source
+      https://b.example/register-source"
+      ```
+
+      Це корисно в тих випадках, коли запитаний ресурс не перебуває на сервері під вашим контролем або просто хочеться обробляти реєстрацію джерела атрибуції на іншому сервері. Тоді можна задати одну або більше адрес URL як значення `attributionsrc`. Коли відбувається запит на ресурс, заголовок {{httpheader("Attribution-Reporting-Eligible")}} надсилається на адреси URL, задані в `attributionsrc `, а не лише за походженням ресурсу. Ці адреси URL потім можуть відповісти заголовком {{httpheader("Attribution-Reporting-Register-Source")}} відповідно для завершення реєстрації.
+
+      > [!NOTE]
+      > Задання кількох адрес URL означає те, що на один елемент можна зареєструвати кілька джерел атрибуції. Можна, наприклад, мати різні кампанії, для вимірювання успішності яких потрібно генерувати різні звіти щодо різних даних.
+      > Елементи `<a>` не можуть використовуватися як пускачі атрибуції, а лише як її джерела.
+
 - `download`
 
   - : Змушує браузер обробляти заданий URL як завантаження. Може використовуватись як без, так і зі значенням `filename`:
@@ -67,18 +89,20 @@ browser-compat: html.elements.a
     - `strict-origin-when-cross-origin` (усталене значення): Надсилати увесь URL при виконанні запиту за тим само походженням, надсилати лише походження, коли рівень протоколу захисту залишається сталим (HTTPS→HTTPS), і не надсилати заголовка за менш захищеною адресою (HTTPS→HTTP).
     - `unsafe-url`: Посилач включатиме походження _та_ шлях (але не [фрагмент](/uk/docs/Web/API/HTMLAnchorElement/hash), [пароль](/uk/docs/Web/API/HTMLAnchorElement/password) чи [ім'я користувача](/uk/docs/Web/API/HTMLAnchorElement/username)). **Це значення є небезпечним**, тому що воно пропускає походження та шляхи з захищених TLS ресурсів до незахищених походжень.
 
-- `rel`
+- [`rel`](/uk/docs/Web/HTML/Attributes/rel)
   - : Відношення вказаного URL як розділені пробілами типи посилань.
 - `target`
 
   - : Де показувати вказаний URL; значенням є ім'я _контексту перегляду_ (вкладка, вікно чи {{HTMLElement("iframe")}}). Наступні ключові слова мають особливі значення щодо того, де завантажувати URL:
 
-    - `_self`: поточний контекст перегляду. (Усталене значення)
-    - `_blank`: зазвичай нова вкладка, але користувач може налаштувати свій браузер так, що він замість цього відкриватиме такі посилання у новому вікні.
-    - `_parent`: контекст перегляду, що є батьківським відносно поточного. Якщо такого контексту немає, це значення поводиться як `_self`.
-    - `_top`: найвищий контекст перегляду (серед тих, що є предками відносно поточного). Якщо предків немає, це значення поводиться як `_self`.
+    - `_self`: Поточний контекст перегляду. (Усталене значення)
+    - `_blank`: Зазвичай нова вкладка, але користувач може налаштувати свій браузер так, що він замість цього відкриватиме такі посилання у новому вікні.
+    - `_parent`: Контекст перегляду, що є батьківським відносно поточного. Якщо такого контексту немає, це значення поводиться як `_self`.
+    - `_top`: Верхній контекст перегляду. Якщо конкретніше, то це означає "найвищий" контекст, що є предком поточного контексту. Якщо предків немає, це значення поводиться як `_self`.
+    - `_unfencedTop`: Дозволяє вбудованим [огородженим фреймам](/uk/docs/Web/API/Fenced_frame_API) викликати перехід фрейму верхнього рівня (тобто виходити за межі кореня огородженого фрейму, на відміну від інших зарезервованих призначень). Зверніть увагу, що перехід все одно вдасться, якщо це використовується поза контекстом огородженого фрейму, але це не буде працювати як зарезервоване ключове слово.
 
-    > **Примітка:** `target="_blank"` на елементах `<a>` неявно встановлює таку саму поведінку `rel`, як встановлення [`rel="noopener"`](/uk/docs/Web/HTML/Attributes/rel/noopener), що не заповнює `window.opener`.
+    > [!NOTE]
+    > Атрибут `target="_blank"` на елементах `<a>` неявно встановлює таку саму поведінку `rel`, як встановлення [`rel="noopener"`](/uk/docs/Web/HTML/Attributes/rel/noopener), що не заповнює `window.opener`.
 
 - `type`
   - : Дає підказку щодо формату ресурсу за URL у вигляді {{Glossary("MIME type", "типу MIME")}}. Вбудованої функціональності немає.
@@ -89,7 +113,8 @@ browser-compat: html.elements.a
 
   - : Підказка щодо {{Glossary("character encoding", "кодування символів")}} ресурсу за URL.
 
-    > **Примітка:** Цей атрибут є нерекомендованим і **не повинен використовуватись авторами**. Використовуйте HTTP заголовок {{HTTPHeader("Content-Type")}} за вказаним URL.
+    > [!NOTE]
+    > Цей атрибут є нерекомендованим і **не повинен використовуватись авторами**. Використовуйте HTTP заголовок {{HTTPHeader("Content-Type")}} за вказаним URL.
 
 - `coords` {{Deprecated_Inline}}
   - : Використовується разом з [атрибутом `shape`](#shape). Розділений комами список координат.
@@ -97,7 +122,8 @@ browser-compat: html.elements.a
 
   - : Був необхідним для встановлення можливого цільового місця на сторінці. В HTML 4.01 і `id`, і `name` могли використовуватися на `<a>`, за умови що вони мали ідентичні значення.
 
-    > **Примітка:** Використовуйте натомість глобальний атрибут [`id`](/uk/docs/Web/HTML/Global_attributes#id).
+    > [!NOTE]
+    > Використовуйте натомість глобальний атрибут [`id`](/uk/docs/Web/HTML/Global_attributes#id).
 
 - `rev` {{Deprecated_Inline}}
   - : Вказував зворотне посилання; протилежність [атрибута `rel`](#rel). Став нерекомендованим через те, що збивав з пантелику.
@@ -105,170 +131,10 @@ browser-compat: html.elements.a
 
   - : Форма регіону гіперпосилання на бітовій карті.
 
-    > **Примітка:** Використовуйте натомість для бітових карт елемент {{HTMLElement("area")}}.
+    > [!NOTE]
+    > Використовуйте натомість для бітових карт елемент {{HTMLElement("area")}}.
 
-## Приклади
-
-### Посилання на абсолютний URL
-
-#### HTML
-
-```html
-<a href="https://www.mozilla.com">Mozilla</a>
-```
-
-#### Результат
-
-{{EmbedLiveSample('posylannia-na-absoliutnyi-url')}}
-
-### Посилання на відносні URL
-
-#### HTML
-
-```html
-<a href="//example.com">Відносний щодо схеми URL</a>
-<a href="/uk/docs/Web/HTML">Відносний щодо походження URL</a>
-<a href="./p">Відносний щодо директорії URL</a>
-```
-
-```css hidden
-a {
-  display: block;
-  margin-bottom: 0.5em;
-}
-```
-
-#### Результат
-
-{{EmbedLiveSample('posylannia-na-vidnosni-url')}}
-
-### Посилання на елемент в межах тієї самої сторінки
-
-```html
-<!-- <a> елемент посилається на секцію нижче -->
-<p><a href="#rozdil-nyzhche">Перескочити до заголовка нижче</a></p>
-
-<!-- Заголовок для посилання на нього -->
-<h2 id="rozdil-nyzhche">Розділ нижче</h2>
-```
-
-#### Результат
-
-{{EmbedLiveSample('posylannia-na-element-v-mezhakh-tiiei-samoi-storinky')}}
-
-> **Примітка:** Для посилання на верх поточної сторінки можна використовувати `href="#top"` чи пустий фрагмент (`href="#"`), [це описано в специфікації HTML (англ.)](https://html.spec.whatwg.org/multipage/browsing-the-web.html#scroll-to-the-fragment-identifier).
-
-### Посилання на адресу електронної пошти
-
-Щоб створити посилання, котрі відкривають програму електронної пошти користувача, щоб дати змогу надіслати нове повідомлення, слід використовувати схему `mailto:`:
-
-```html
-<a href="mailto:nowhere@mozilla.org">Послати в нікуди електронного листа</a>
-```
-
-#### Результат
-
-{{EmbedLiveSample('posylannia-na-adresu-elektronnoi-poshty')}}
-
-Для деталей щодо URL `mailto:`, наприклад, включення в них теми чи тіла листа, читайте [посилання електронної пошти](/uk/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#posylannia-elektronnoi-poshty) чи {{RFC(6068)}}.
-
-### Посилання на номери телефонів
-
-```html
-<a href="tel:+49.157.0156">+49 157 0156</a>
-<a href="tel:+1(800)555-0123">(800) 555-0123</a>
-```
-
-#### Результат
-
-{{EmbedLiveSample('posylannia-na-nomery-telefoniv')}}
-
-Поведінка посилання `tel:` відрізняється залежно від можливостей пристрою:
-
-- Стільникові пристрої автоматично починають дзвінок за номером.
-- Більшість операційних систем мають програми, котрі можуть робити дзвінки, наприклад, Skype чи FaceTime.
-- Вебсайти можуть робити телефонні дзвінки за допомогою {{domxref("Navigator/registerProtocolHandler", "registerProtocolHandler")}}, наприклад, через `web.skype.com`.
-- Інша можлива поведінка – збереження номера до контактів, надсилання номера на інший пристрій тощо.
-
-Дивіться {{RFC(3966)}} для синтаксису, додаткових можливостей та інших деталей щодо схеми URL `tel:`.
-
-### Використання атрибута download для збереження \<canvas> як PNG зображення
-
-Щоб зберегти вміст елемента {{HTMLElement("canvas")}} як зображення, треба створити посилання, в якого `href` буде даними полотна у вигляді URL `data:`, створеного за допомогою JavaScript, а атрибут `download` надаватиме ім'я файлу зображення PNG, що буде стягуватися:
-
-#### Приклад застосунку для малювання з посиланням для збереження
-
-##### HTML
-
-```html
-<p>
-  Малюйте, затискаючи ліву кнопку миші та рухаючи.
-  <a href="" download="my_painting.png">Стягнути мій малюнок</a>
-</p>
-
-<canvas width="300" height="300"></canvas>
-```
-
-##### CSS
-
-```css
-html {
-  font-family: sans-serif;
-}
-canvas {
-  background: #fff;
-  border: 1px dashed;
-}
-a {
-  display: inline-block;
-  background: #69c;
-  color: #fff;
-  padding: 5px 10px;
-}
-```
-
-##### JavaScript
-
-```js
-const canvas = document.querySelector("canvas");
-const c = canvas.getContext("2d");
-c.fillStyle = "hotpink";
-let isDrawing;
-
-function draw(x, y) {
-  if (isDrawing) {
-    c.beginPath();
-    c.arc(x, y, 10, 0, Math.PI * 2);
-    c.closePath();
-    c.fill();
-  }
-}
-
-canvas.addEventListener("mousemove", (event) =>
-  draw(event.offsetX, event.offsetY),
-);
-canvas.addEventListener("mousedown", () => (isDrawing = true));
-canvas.addEventListener("mouseup", () => (isDrawing = false));
-
-document
-  .querySelector("a")
-  .addEventListener(
-    "click",
-    (event) => (event.target.href = canvas.toDataURL()),
-  );
-```
-
-##### Результат
-
-{{EmbedLiveSample('pryklad-zastosunku-dlia-maliuvannia-z-posylanniam-dlia-zberezhennia', '100%', '400')}}
-
-## Захищеність та приватність
-
-Елементи `<a>` можуть мати наслідки для захищеності та приватності користувачів. Дивіться [Заголовок `Referer`: занепокоєння щодо приватності та захищеності](/uk/docs/Web/Security/Referer_header:_privacy_and_security_concerns) для отримання інформації на цю тему.
-
-Використання `target="_blank"` без [`rel="noreferrer"`](/uk/docs/Web/HTML/Attributes/rel/noreferrer) і [`rel="noopener"`](/uk/docs/Web/HTML/Attributes/rel/noopener) робить вебсайт вразливим то атак експлуатації API {{domxref("window.opener")}}; втім, майте на увазі, що в новіших версіях браузерів встановлення `target="_blank"` неявно додає такий само захист, як встановлення `rel="noopener"`. Дивіться [сумісність із браузерами](#sumisnist-iz-brauzeramy) для отримання деталей.
-
-## Занепокоєння щодо доступності
+## Доступність
 
 ### Виразний текст посилання
 
@@ -414,6 +280,170 @@ document
 
 - [Тремтіння рук та проблема велетенської кнопки (англ.)](https://axesslab.com/hand-tremors/)
 
+## Приклади
+
+### Посилання на абсолютний URL
+
+#### HTML
+
+```html
+<a href="https://www.mozilla.com">Mozilla</a>
+```
+
+#### Результат
+
+{{EmbedLiveSample('posylannia-na-absoliutnyi-url')}}
+
+### Посилання на відносні URL
+
+#### HTML
+
+```html
+<a href="//example.com">Відносний щодо схеми URL</a>
+<a href="/uk/docs/Web/HTML">Відносний щодо походження URL</a>
+<a href="p">Відносний щодо директорії URL</a>
+<a href="./p">Відносний щодо директорії URL</a>
+<a href="../p">Відносний щодо батьківської директорії URL</a>
+```
+
+```css hidden
+a {
+  display: block;
+  margin-bottom: 0.5em;
+}
+```
+
+#### Результат
+
+{{EmbedLiveSample('posylannia-na-vidnosni-url')}}
+
+### Посилання на елемент в межах тієї самої сторінки
+
+```html
+<!-- <a> елемент посилається на секцію нижче -->
+<p><a href="#rozdil-nyzhche">Перескочити до заголовка нижче</a></p>
+
+<!-- Заголовок для посилання на нього -->
+<h2 id="rozdil-nyzhche">Розділ нижче</h2>
+```
+
+#### Результат
+
+{{EmbedLiveSample('posylannia-na-element-v-mezhakh-tiiei-samoi-storinky')}}
+
+> [!NOTE]
+> Для посилання на верх поточної сторінки можна використовувати `href="#top"` чи пустий фрагмент (`href="#"`), [це описано в специфікації HTML (англ.)](https://html.spec.whatwg.org/multipage/browsing-the-web.html#scroll-to-the-fragment-identifier).
+
+### Посилання на адресу електронної пошти
+
+Щоб створити посилання, котрі відкривають програму електронної пошти користувача, щоб дати змогу надіслати нове повідомлення, слід використовувати схему `mailto:`:
+
+```html
+<a href="mailto:nowhere@mozilla.org">Послати в нікуди електронного листа</a>
+```
+
+#### Результат
+
+{{EmbedLiveSample('posylannia-na-adresu-elektronnoi-poshty')}}
+
+Для деталей щодо URL `mailto:`, наприклад, включення в них теми чи тіла листа, читайте [посилання електронної пошти](/uk/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#posylannia-elektronnoi-poshty) чи {{RFC(6068)}}.
+
+### Посилання на номери телефонів
+
+```html
+<a href="tel:+49.157.0156">+49 157 0156</a>
+<a href="tel:+1(800)555-0123">(800) 555-0123</a>
+```
+
+#### Результат
+
+{{EmbedLiveSample('posylannia-na-nomery-telefoniv')}}
+
+Поведінка посилання `tel:` відрізняється залежно від можливостей пристрою:
+
+- Стільникові пристрої автоматично починають дзвінок за номером.
+- Більшість операційних систем мають програми, котрі можуть робити дзвінки, наприклад, Skype чи FaceTime.
+- Вебсайти можуть робити телефонні дзвінки за допомогою {{domxref("Navigator/registerProtocolHandler", "registerProtocolHandler")}}, наприклад, через `web.skype.com`.
+- Інша можлива поведінка – збереження номера до контактів, надсилання номера на інший пристрій тощо.
+
+Дивіться {{RFC(3966)}} для синтаксису, додаткових можливостей та інших деталей щодо схеми URL `tel:`.
+
+### Використання атрибута download для збереження \<canvas> як PNG зображення
+
+Щоб зберегти вміст елемента {{HTMLElement("canvas")}} як зображення, треба створити посилання, в якого `href` буде даними полотна у вигляді URL `data:`, створеного за допомогою JavaScript, а атрибут `download` надаватиме ім'я файлу зображення PNG, що буде стягуватися:
+
+#### Приклад застосунку для малювання з посиланням для збереження
+
+##### HTML
+
+```html
+<p>
+  Малюйте, затискаючи ліву кнопку миші та рухаючи.
+  <a href="" download="my_painting.png">Стягнути мій малюнок</a>
+</p>
+
+<canvas width="300" height="300"></canvas>
+```
+
+##### CSS
+
+```css
+html {
+  font-family: sans-serif;
+}
+canvas {
+  background: #fff;
+  border: 1px dashed;
+}
+a {
+  display: inline-block;
+  background: #69c;
+  color: #fff;
+  padding: 5px 10px;
+}
+```
+
+##### JavaScript
+
+```js
+const canvas = document.querySelector("canvas");
+const c = canvas.getContext("2d");
+c.fillStyle = "hotpink";
+let isDrawing;
+
+function draw(x, y) {
+  if (isDrawing) {
+    c.beginPath();
+    c.arc(x, y, 10, 0, Math.PI * 2);
+    c.closePath();
+    c.fill();
+  }
+}
+
+canvas.addEventListener("mousemove", (event) =>
+  draw(event.offsetX, event.offsetY),
+);
+canvas.addEventListener("mousedown", () => (isDrawing = true));
+canvas.addEventListener("mouseup", () => (isDrawing = false));
+
+document
+  .querySelector("a")
+  .addEventListener(
+    "click",
+    (event) => (event.target.href = canvas.toDataURL()),
+  );
+```
+
+##### Результат
+
+{{EmbedLiveSample('pryklad-zastosunku-dlia-maliuvannia-z-posylanniam-dlia-zberezhennia', '100%', '400')}}
+
+## Захищеність та приватність
+
+Елементи `<a>` можуть мати наслідки для захищеності та приватності користувачів. Дивіться [Заголовок `Referer`: занепокоєння щодо приватності та захищеності](/uk/docs/Web/Security/Referer_header:_privacy_and_security_concerns) для отримання інформації на цю тему.
+
+Використання `target="_blank"` без [`rel="noreferrer"`](/uk/docs/Web/HTML/Attributes/rel/noreferrer) і [`rel="noopener"`](/uk/docs/Web/HTML/Attributes/rel/noopener) робить вебсайт вразливим то атак експлуатації API {{domxref("window.opener")}}; втім, майте на увазі, що в новіших версіях браузерів встановлення `target="_blank"` неявно додає такий само захист, як встановлення `rel="noopener"`. Дивіться [сумісність із браузерами](#sumisnist-iz-brauzeramy) для отримання деталей.
+
 ## Технічний підсумок
 
 <table class="properties">
@@ -448,9 +478,7 @@ document
           href="/uk/docs/Web/HTML/Content_categories#interaktyvnyi-vmist"
           >інтерактивним вмістом</a
         > чи елементом
-        <a href="/uk/docs/Web/HTML/Element/a"
-          >a</a
-        >; крім того, жодний нащадок не може мати атрибута
+        <code>&lt;a&gt;</code>; крім того, жодний нащадок не може мати атрибута
         <a
           href="/uk/docs/Web/HTML/Global_attributes/tabindex"
           >tabindex</a
@@ -458,8 +486,8 @@ document
       </td>
     </tr>
     <tr>
-      <th scope="row">Упущення тегів</th>
-      <td>{{no_tag_omission}}</td>
+      <th scope="row">Пропуск тега</th>
+      <td>Немає; і початковий, і кінцевий теги – обов'язкові.</td>
     </tr>
     <tr>
       <th scope="row">Дозволені батьківські елементи</th>
@@ -467,7 +495,7 @@ document
         Будь-який елемент, що приймає
         <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
           >потоковий вміст</a
-        >, але не інший елемент <code>&#x3C;a></code>.
+        >, але не інший елемент <code>&lt;a&gt;</code>.
       </td>
     </tr>
     <tr>

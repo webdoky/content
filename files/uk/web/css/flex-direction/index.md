@@ -49,7 +49,7 @@ flex-direction: unset;
 - `column-reverse`
   - : Поводиться так само, як `column`, але **main-start** і **main-end** – протилежні щодо спрямування тексту.
 
-## Занепокоєння щодо доступності
+## Доступність
 
 Застосування властивості `flex-direction` зі значенням `row-reverse` або `column-reverse` утворює неузгодженість між візуальним представленням вмісту та порядком вузлів DOM. Це негативно впливає на користувачів зі слабким зором, котрі орієнтуються за допомогою допоміжних технологій, як то читача з екрана. Якщо візуальний порядок (порядок CSS) є важливим, то користувачі читачів з екрана не матимуть доступу до коректного порядку прочитання.
 
@@ -138,5 +138,5 @@ flex-direction: unset;
 ## Дивіться також
 
 - Властивість-скорочення CSS {{CSSXRef("flex-flow")}} для властивостей CSS `flex-direction` і {{CSSXRef("flex-wrap")}}.
-- Посібник Флексбоксу CSS: _[Базові концепції Флексбоксу](/uk/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox)_
-- Посібник Флексбоксу CSS: _[Порядок гнучких елементів](/uk/docs/Web/CSS/CSS_flexible_box_layout/Ordering_flex_items)_
+- [Базові концепції флексбоксу](/uk/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox)
+- [Упорядкування гнучких елементів](/uk/docs/Web/CSS/CSS_flexible_box_layout/Ordering_flex_items)
