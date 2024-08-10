@@ -182,7 +182,7 @@ cursor: unset;
             <img src="no-drop.gif" alt="піктограма вказівника і піктограма заборони" />
           </td>
           <td>
-            Елемент не може бути кинутим в поточному положенні.<br />[Вада Firefox 275173](https://bugzil.la/275173): На Windows та macOS <code>no-drop</code> еквівалентно <code>not-allowed</code>.
+            Елемент не може бути кинутим в поточному положенні.<br /><a href="https://bugzil.la/275173">Вада Firefox 275173</a>: На Windows та macOS <code>no-drop</code> еквівалентно <code>not-allowed</code>.
           </td>
         </tr>
         <tr style="cursor: not-allowed">
@@ -208,7 +208,7 @@ cursor: unset;
           <td><img alt="піктограма крапки середнього розміру з чотирма трикутниками навколо." src="all-scroll.gif" /></td>
           <td>
             Дещо може бути прокручено у будь-якому напрямку (панорамовано).<br />
-            [Вада Firefox 275174](https://bugzil.la/275174): На Windows <code>all-scroll</code> еквівалентно <code>move</code>.
+            <a href="https://bugzil.la/275174">Вада Firefox 275174</a>: На Windows <code>all-scroll</code> еквівалентно <code>move</code>.
           </td>
         </tr>
         <tr style="cursor: col-resize">
