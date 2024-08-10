@@ -221,7 +221,8 @@ console.log(parsed);
 // { number: 1, big: 18014398509481982n }
 ```
 
-> **Примітка:** Хоч замінювач для `JSON.stringify()` можна зробити узагальненим, і коректно серіалізувати значення BigInt для всіх можливих об'єктів, як це показано вище, відновника `JSON.parse()` слід використовувати з обережністю, оскільки серіалізація є _втратною_: неможливо відрізнити об'єкт, котрий, припустімо, просто має властивість з ім'ям `$bigint`, від справжнього BigInt.
+> [!NOTE]
+> Хоч замінювач для `JSON.stringify()` можна зробити узагальненим, і коректно серіалізувати значення BigInt для всіх можливих об'єктів, як це показано вище, відновника `JSON.parse()` слід використовувати з обережністю, оскільки серіалізація є _незворотною_: неможливо відрізнити об'єкт, котрий, припустімо, просто має властивість з ім'ям `$bigint`, від справжнього BigInt.
 >
 > Крім цього, приклад вище створює цілий об'єкт під час заміни та відновлення, що може мати вплив на продуктивність або використання пам'яті для більших об'єктів, що містять багато BigInt. Якщо форма корисного навантаження відома, може бути краще просто серіалізувати BigInt як рядки та відновлювати їх на основі імен властивостей.
 
@@ -237,7 +238,7 @@ console.log(parsed);
 - Рядки перетворюються шляхом розбору їх так, ніби вони містять цілочисловий літерал. Будь-яка невдача розбору призводить до {{jsxref("SyntaxError")}}. Синтаксис є підмножиною [рядкових літералів чисел](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#zvedennia-do-chysla), у якій десятковий розділювач і експоненційний запис – заборонені.
 - [Number](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number) викидають {{jsxref("TypeError")}} для запобігання небажаному неявному зведенню, що призвело б до втрати точності.
 - [Symbol](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol) викидають {{jsxref("TypeError")}}.
-- Об'єкти спочатку [перетворюються на примітиви](/uk/docs/Web/JavaScript/Data_structures#zvedennia-do-prymityva) шляхом виклику їх методів [`[@@toPrimitive]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive) (з підказкою `"number"`), `valueOf()` і `toString()` – у такому порядку. Потім результівний примітив перетворюється на BigInt.
+- Об'єкти спочатку [перетворюються на примітиви](/uk/docs/Web/JavaScript/Data_structures#zvedennia-do-prymityva) шляхом виклику їх методів [`[Symbol.toPrimitive]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive) (з підказкою `"number"`), `valueOf()` і `toString()` – у такому порядку. Потім результівний примітив перетворюється на BigInt.
 
 Найкращий спосіб досягнути в JavaScript майже такого ж ефекту – функція [`BigInt()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/BigInt): `BigInt(x)` використовує такий же алгоритм для перетворення `x`, окрім того, що [Number](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number) не викидають {{jsxref("TypeError")}}, а перетворюються на BigInt, якщо є цілими числами.
 
@@ -246,7 +247,7 @@ console.log(parsed);
 ## Конструктор
 
 - {{jsxref("BigInt/BigInt", "BigInt()")}}
-  - : Створює нове значення BigInt.
+  - : Повертає примітивні значення типу BigInt. Викидає помилку, коли викликати його з `new`.
 
 ## Статичні методи
 
@@ -261,8 +262,8 @@ console.log(parsed);
 
 - {{jsxref("Object/constructor", "BigInt.prototype.constructor")}}
   - : Функція-конструктор, що створила об'єкт-примірник. Для примірників `BigInt` початкове значення – конструктор {{jsxref("BigInt/BigInt", "BigInt")}}.
-- `BigInt.prototype[@@toStringTag]`
-  - : Початкове значення [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"BigInt"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}. Проте у зв'язку з тим, що `BigInt` також має власну реалізацію метода [`toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/toString), ця властивість не використовується, якщо не викликати [`Object.prototype.toString.call()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/call) зі значенням BigInt як `thisArg`.
+- `BigInt.prototype[Symbol.toStringTag]`
+  - : Початкове значення [`[Symbol.toStringTag]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"BigInt"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}. Проте у зв'язку з тим, що `BigInt` також має власну реалізацію метода [`toString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt/toString), ця властивість не використовується, якщо не викликати [`Object.prototype.toString.call()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/call) зі значенням BigInt як `thisArg`.
 
 ## Методи примірника
 

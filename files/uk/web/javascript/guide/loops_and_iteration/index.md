@@ -340,7 +340,7 @@ car.model = Mustang
 Інструкція {{jsxref("Statements/for...of", "for...of")}} утворює цикл, що ітерує [ітеровані об'єкти](/uk/docs/Web/JavaScript/Reference/Iteration_protocols) (серед яких {{jsxref("Array")}}, {{jsxref("Map")}}, {{jsxref("Set")}}, об'єкт {{jsxref("functions/arguments", "arguments")}} і так далі), закликаючи особливий ітераційний гачок з інструкціями, котрі повинні бути виконані для значення кожної окремої властивості.
 
 ```js-nolint
-for (variable of object)
+for (variable of iterable)
   statement
 ```
 

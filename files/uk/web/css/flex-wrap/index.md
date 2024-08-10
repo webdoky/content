@@ -11,7 +11,7 @@ browser-compat: css.properties.flex-wrap
 
 {{EmbedInteractiveExample("pages/css/flex-wrap.html")}}
 
-Більше властивостей та інформації шукайте у [Використанні гнучких рамок CSS](/uk/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox).
+Властивість-скорочення {{cssxref("flex-flow")}} може вживатися для задання водночас властивостей {{CSSXRef("flex-direction")}} і `flex-wrap`, у такий спосіб визначаючи головну та поперечну осі гнучкого контейнера.
 
 ## Синтаксис
 
@@ -28,18 +28,16 @@ flex-wrap: revert-layer;
 flex-wrap: unset;
 ```
 
-Властивість `flex-wrap` задається у вигляді єдиного ключового слова, обраного зі списку значень нижче.
-
 ### Значення
 
-Приймаються наступні значення:
+Властивість `flex-wrap` задається у вигляді єдиного ключового слова, вибраного серед значень нижче:
 
 - `nowrap`
-  - : Гнучкі елементи розкладаються на єдиній лінії, що може призвести до переповнення гнучкого контейнера. Точка **cross-start** – рівносильна або **start**, або **before**, залежно від значення {{cssxref("flex-direction")}}. Це значення – усталене.
+  - : Гнучкі елементи розкладаються на єдиній лінії, що може призвести до переповнення гнучкого контейнера. Точка **cross-start** – рівносильна [inline-start або block-start](/uk/docs/Glossary/Flow_relative_values) залежно від значення {{cssxref("flex-direction")}}. Це значення – усталене.
 - `wrap`
-  - : Гнучкі елементи розриваються на декілька ліній. Точка **cross-start** – рівносильна або **start**, або **before**, залежно від значення `flex-direction`, а точка **cross-end** – протилежна заданій **cross-start**.
+  - : Гнучкі елементи розриваються на декілька ліній. Точка **cross-start** – рівносильна [inline-start або block-start](/uk/docs/Glossary/Flow_relative_values), залежно від поточного [напрямку письма](/uk/docs/Web/CSS/CSS_writing_modes), а також значення {{cssxref("flex-direction")}}.
 - `wrap-reverse`
-  - : Поводиться так само, як `wrap`, але **cross-start** і **cross-end** стоять навпаки.
+  - : Поводиться так само, як `wrap`, але cross-start і cross-end стоять навпаки.
 
 ## Формальне визначення
 
@@ -135,6 +133,8 @@ flex-wrap: unset;
 
 ## Дивіться також
 
-- Властивість-скорочення CSS {{CSSXRef("flex-flow")}} для властивостей `flex-wrap` і {{CSSXRef("flex-direction")}}.
-- Посібник з Флексбоксу: _[Базові концепції Флексбоксу](/uk/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox)_
-- Посібник з Флексбоксу CSS: _[Майстерність загортання гнучких елементів](/uk/docs/Web/CSS/CSS_flexible_box_layout/Mastering_wrapping_of_flex_items)_
+- {{CSSXRef("flex-direction")}}
+- Скорочення {{CSSXRef("flex-flow")}}
+- [Базові концепції флексбоксу](/uk/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox)
+- [Майстерність загортання гнучких елементів](/uk/docs/Web/CSS/CSS_flexible_box_layout/Mastering_wrapping_of_flex_items)
+- Модуль [Компонування гнучкої рамки CSS](/uk/docs/Web/CSS/CSS_flexible_box_layout)

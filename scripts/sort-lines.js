@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync } from "fs";
 import { EOL } from "os";
 
-import uniq from "lodash/uniq";
+import _ from "lodash";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 
@@ -16,6 +16,8 @@ if (!file) {
 
 const fileLines = readFileSync(file, "utf8", "r").split(EOL);
 
-const sortedLines = uniq(fileLines).sort((a, b) => a.localeCompare(b, "uk-UA"));
+const sortedLines = _.uniq(fileLines).sort((a, b) =>
+  a.localeCompare(b, "uk-UA"),
+);
 
 writeFileSync(file, sortedLines.join(EOL), "utf8", "w");
