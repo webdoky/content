@@ -1,0 +1,118 @@
+jobs:
+  prepare:
+    outputs:
+      status: ${{ steps.translation-check.outputs.status }}
+      translation: ${{ steps.translation-check.outputs.translation }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - id: changed-files
+        run: git diff --diff-filter=d --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} > ./changed_files.txt
+      - name: Check translation
+        # Check there is only one translation change
+        # If there are more than one, the workflow will fail
+        id: translation-changes
+        run: |
+          changed_files=$(cat ./changed_files.txt)
+          if [ -z "$changed_files" ]; then
+            echo "No files changed"
+          else
+            translation_files=$(echo "$changed_files" | grep -E ".*\.md" || ./pass.sh)
+            # Filter out files not in "files/uk" folder
+            translation_files=$(echo "$translation_files" | grep -E "^files/uk/.*\.md" || ./pass.sh)
+            echo "$translation_files"
+            echo "$translation_files" > ./translation_files.txt
+          fi
+      - id: translation-check
+        run: |
+          translation_files=$(cat ./translation_files.txt)
+          if [ -z "$translation_files" ]; then
+            echo "No translation files changed"
+          else
+            if [ $(echo "$translation_files" | wc -l) -gt 1 ]; then
+              echo "More than one translation file changed"
+              exit 1
+            else
+              echo "translation=$translation_files" >> $GITHUB_OUTPUT
+              # Does this file exist in the commit ${{ github.event.pull_request.base.sha }}?
+              if $(git show ${{ github.event.pull_request.base.sha }}:$translation_files > /dev/null 2>&1); then
+                echo "status=update" >> $GITHUB_OUTPUT
+              else
+                echo "status=translation" >> $GITHUB_OUTPUT
+              fi
+            fi
+          fi
+  check-actuality:
+    if: ${{ needs.prepare.outputs.translation != '' }}
+    needs: [prepare]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - id: latest-commit
+        name: Get latest commit timestamp
+        run: |
+          translation=${{ needs.prepare.outputs.translation }}
+          # Remove "files/uk/" prefix from $translation
+          translation=${translation/files\/uk\//}
+          # Remove "/index.md" suffix from $translation
+          translation=${translation/\/index.md/}
+          latest_commit_timestamp=$(git log --no-merges --grep $translation --format=%ct -1)
+          if [ -z "$latest_commit_timestamp" ]; then
+            echo 'Failed to find latest commit timestamp'
+            exit 1
+          else
+            echo "latest_commit_timestamp=$latest_commit_timestamp" >> $GITHUB_OUTPUT
+          fi
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          path: original
+          repository: mdn/content
+      - id: get-fresh-commits
+        name: Get fresh commits
+        run: |
+          cd ./original
+          original=${{ needs.prepare.outputs.translation }}
+          # replace '/uk/' with '/en-us/' in $original
+          original=${original/\/uk\//\/en-us\/}
+          # Get commits for ${{ needs.prepare.outputs.translation }} after ${{ steps.latest-commit.outputs.latest_commit_timestamp }} timestamp
+          git log --format=%H --since=${{ steps.latest-commit.outputs.latest_commit_timestamp }} -- $original > ../fresh_commits.txt
+          cat ../fresh_commits.txt
+          # has_fresh_commits is true when there are fresh commits, otherwise false
+          if [ -s ../fresh_commits.txt ]; then
+            echo "has_fresh_commits=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_fresh_commits=false" >> $GITHUB_OUTPUT
+          fi
+      - if: ${{ steps.get-fresh-commits.outputs.has_fresh_commits == 'true' }}
+        name: Create body
+        run: |
+          echo "Потрібно оновлення. Свіжі зміни:" > body.md
+          echo "" >> body.md
+          cd original
+          cat ../fresh_commits.txt | while read line; do
+            echo "- [$(git log --format=%s -1 $line)](https://github.com/mdn/content/commit/$line)" >> ../body.md
+          done
+          echo "" >> ../body.md
+          echo "Перевірте, будь ласка, чи вони впливають на переклад." >> ../body.md
+          echo "" >> ../body.md
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        if: ${{ steps.get-fresh-commits.outputs.has_fresh_commits == 'true' }}
+        name: Send comment
+        run: |
+          gh api \
+          --method POST \
+          -H "Accept: application/vnd.github+json" \
+          -H "X-GitHub-Api-Version: 2022-11-28" \
+          /repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments \
+          -f body="$(cat ./body.md)"
+      - if: ${{ steps.get-fresh-commits.outputs.has_fresh_commits == 'true' }}
+        name: Exit with error
+        run: exit 1
+name: PR actuality check
+on: [pull_request_review]

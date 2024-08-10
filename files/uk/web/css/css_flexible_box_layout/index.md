@@ -65,6 +65,8 @@ spec-urls: https://drafts.csswg.org/css-flexbox/
 
 ## Дивіться також
 
+- Модуль [Відображення CSS](/uk/docs/Web/CSS/CSS_display)
+- [Використання синтаксису із кількома значеннями у Відображенні CSS](/uk/docs/Web/CSS/display/multi-keyword_syntax_of_display)
 - Терміни Глосарія:
   - {{Glossary("Flexbox", "Флексбокс")}}
   - {{Glossary("Flex Container", "Гнучкий контейнер")}}

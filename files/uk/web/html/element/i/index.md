@@ -1,5 +1,5 @@
 ---
-title: "<i> – елемент ідіоматичного тексту"
+title: <i> – елемент ідіоматичного тексту
 slug: Web/HTML/Element/i
 page-type: html-element
 browser-compat: html.elements.i
@@ -80,7 +80,7 @@ browser-compat: html.elements.i
     </tr>
     <tr>
       <th scope="row">Пропуск тега</th>
-      <td>{{no_tag_omission}}</td>
+      <td>Немає; і початковий, і кінцевий теги – обов'язкові.</td>
     </tr>
     <tr>
       <th scope="row">Дозволені батьківські елементи</th>

@@ -1,5 +1,5 @@
 ---
-title: "<audio>: The Embed Audio element"
+title: <audio> – елемент вбудованого аудіо
 slug: Web/HTML/Element/audio
 page-type: html-element
 browser-compat: html.elements.audio
@@ -23,21 +23,22 @@ browser-compat: html.elements.audio
 
   - : Булів атрибут: коли він заданий, то аудіо буде автоматично починати відтворення, як тільки це можливо, не чекаючи завершення завантаження всього аудіофайлу.
 
-    > **Примітка:** Сайти, що автоматично відтворюють аудіо (або відео з доріжкою аудіо), можуть бути неприємними для користувачів, тому цього слід уникати, якщо можливо. Якщо ви все ж хочете надати функціональність автоматичного відтворення, то повинні зробити це лише доступним варіантом (вимагаючи від користувача спеціально ввімкнути це). Проте така можливість може бути корисною при створенні елементів медіа, джерело яких буде задано пізніше, під контролем користувача. Дивіться додаткову інформацію про те, як правильно використовувати автоматичне відтворення, у нашому [посібнику з автоматичного відтворення](/uk/docs/Web/Media/Autoplay_guide).
+    > [!NOTE]
+    > Сайти, що автоматично відтворюють аудіо (або відео з доріжкою аудіо), можуть бути неприємними для користувачів, тому цього слід уникати, якщо можливо. Якщо ви все ж хочете надати функціональність автоматичного відтворення, то повинні зробити це лише доступним варіантом (вимагаючи від користувача спеціально ввімкнути це). Проте така можливість може бути корисною при створенні елементів медіа, джерело яких буде задано пізніше, під контролем користувача. Дивіться додаткову інформацію про те, як правильно використовувати автоматичне відтворення, у нашому [посібнику з автоматичного відтворення](/uk/docs/Web/Media/Autoplay_guide).
 
 - `controls`
 
   - : Якщо цей атрибут присутній, то браузер надасть елементи керування, що дозволять користувачу керувати відтворенням аудіо, включно з гучністю, перемотуванням та паузою й продовженням відтворення.
 
-- `controlslist` {{experimental_inline}}{{non-standard_inline}}
+- `controlslist`
 
   - : Атрибут [`controlslist`](https://wicg.github.io/controls-list/explainer.html), коли заданий, допомагає браузерові обрати, які елементи керування показувати для елемента `audio`, коли браузер показує свій власний набір елементів керування (тобто коли заданий атрибут `controls`).
 
     Дозволені значення – `nodownload`, `nofullscreen` і `noremoteplayback`.
 
-- `crossorigin`
+- [`crossorigin`](/uk/docs/Web/HTML/Attributes/crossorigin)
 
-  - : Цей [перелічений](/uk/docs/Glossary/Enumerated) атрибут позначає те, чи потрібно використовувати CORS для отримання пов'язаного аудіофайлу. [Ресурси, що підтримують CORS](/uk/docs/Web/HTML/CORS_enabled_image), можуть бути використані повторно в елементі {{HTMLElement("canvas")}}, не ставши _ославленими_. Дозволені значення:
+  - : Цей {{Glossary("enumerated", "перелічений")}} атрибут позначає те, чи потрібно використовувати CORS для отримання пов'язаного аудіофайлу. [Ресурси, що підтримують CORS](/uk/docs/Web/HTML/CORS_enabled_image), можуть бути використані повторно в елементі {{HTMLElement("canvas")}}, не ставши _ославленими_. Дозволені значення:
 
     - `anonymous`
       - : Надсилає запит до іншого походження без відповідних облікових даних. Іншими словами, він надсилає HTTP-заголовок `Origin:` без реп'яшка, сертифіката X.509 і HTTP-автентифікації. Якщо сервер не надає облікові дані для сайту походження (не задаючи заголовок HTTP `Access-Control-Allow-Origin:`), то ресурс буде _ославленим_, і його використання буде обмеженим.
@@ -46,11 +47,11 @@ browser-compat: html.elements.audio
 
     Коли цього атрибута немає, то ресурс отримується без CORS-запиту (тобто без надсилання заголовка HTTP `Origin:`), що запобігає його неославленому використанню в елементах {{HTMLElement('canvas')}}. Якщо значення недійсне, то воно обробляється так, ніби було використано перелічене ключове слово **anonymous**. Більше про це – в [Атрибутах налаштування CORS](/uk/docs/Web/HTML/Attributes/crossorigin).
 
-- `disableremoteplayback` {{experimental_inline}}
+- `disableremoteplayback`
 
   - : Булів атрибут, що використовується для відключення можливості віддаленого відтворення на пристроях, що підключені за допомогою дротових (HDMI, DVI тощо) і бездротових технологій (Miracast, Chromecast, DLNA, AirPlay тощо). Більше інформації – у [цій запропонованій специфікації](https://www.w3.org/TR/remote-playback/#the-disableremoteplayback-attribute).
 
-    > **Примітка:** У Safari можна використовувати запасний варіант[`x-webkit-airplay="deny"`](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/AirPlayGuide/OptingInorOutofAirPlay/OptingInorOutofAirPlay.html).
+    У Safari можна використовувати запасний варіант [`x-webkit-airplay="deny"`](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/AirPlayGuide/OptingInorOutofAirPlay/OptingInorOutofAirPlay.html).
 
 - `loop`
   - : Булів атрибут: коли він заданий, то аудіопрогравач автоматично перейде на початок, коли досягне кінця аудіофайлу.
@@ -235,8 +236,9 @@ browser-compat: html.elements.audio
   <source src="myAudio.mp3" type="audio/mpeg" />
   <source src="myAudio.ogg" type="audio/ogg" />
   <p>
-    Стягнути аудіо в форматі <a href="myAudio.mp3">MP3</a> або
-    <a href="myAudio.ogg">OGG</a>.
+    Стягнути аудіо в форматі
+    <a href="myAudio.mp3" download="myAudio.mp3">MP3</a> або
+    <a href="myAudio.ogg" download="myAudio.ogg">OGG</a>.
   </p>
 </audio>
 ```
@@ -263,7 +265,7 @@ browser-compat: html.elements.audio
 
 Щоб отримати сталі вигляд і відчуття в різних браузерах, необхідно створити власні елементи керування; їх можна розмітити та оформити будь-яким зручним способом, а потім за допомогою JavaScript та API {{domxref("HTMLMediaElement")}} підключити їхню функціональність.
 
-Посібник [Основи стилізації плеєра відео](/uk/docs/Web/Guide/Audio_and_video_delivery/Video_player_styling_basics) надає деякі корисні способи стилізації – він написаний у контексті `<video>`, але більшість способів так само застосовні до `<audio>`.
+Посібник [Основи стилізації плеєра відео](/uk/docs/Web/Media/Audio_and_video_delivery/Video_player_styling_basics) надає деякі корисні способи стилізації – він написаний у контексті `<video>`, але більшість способів так само застосовні до `<audio>`.
 
 ### Відстеження додавання та видалення доріжок
 
@@ -276,7 +278,8 @@ browser-compat: html.elements.audio
 - {{domxref("HTMLMediaElement.textTracks")}}
   - : Додайте до об'єкта {{domxref("TextTrackList")}} слухач подій `addtrack`, щоб отримати звістку про додавання до елемента нових текстових доріжок.
 
-> **Примітка:** Навіть попри те, що це елемент `<audio>`, він все одно має списки відео та текстових доріжок, і насправді може використовуватися для відтворення відео, хоч наслідки для користувацького інтерфейсу можуть бути дивними.
+> [!NOTE]
+> Навіть попри те, що це елемент `<audio>`, він все одно має списки відео та текстових доріжок, і насправді може використовуватися для відтворення відео, хоч наслідки для користувацького інтерфейсу можуть бути дивними.
 
 Наприклад, щоб відстежити, коли до елемента `<audio>` додаються або видаляються доріжки аудіо, можна використовувати такий код:
 
@@ -296,45 +299,7 @@ elem.audioTrackList.onremovetrack = (event) => {
 
 Щоб відстежувати події {{domxref("AudioTrackList/addtrack_event", "addtrack")}} і {{domxref("AudioTrackList/removetrack_event", "removetrack")}}, можна також використовувати {{domxref("EventTarget.addEventListener", "addEventListener()")}}.
 
-## Приклади
-
-### Базове застосування
-
-Наступний приклад демонструє просте застосування елемента `<audio>` для відтворення файлу OGG. Він автоматично починає відтворення завдяки атрибуту `autoplay` – якщо сторінка має дозвіл на це – а також містить запасний вміст.
-
-```html
-<!-- Просте відтворення аудіо -->
-<audio src="AudioTest.ogg" autoplay>
-  <a href="AudioTest.ogg">Стягнути аудіо у форматі OGG</a>.
-</audio>
-```
-
-Деталі про те, як працює автовідтворення, як отримати дозвіл на його використання, а також про те, коли і як його варто використовувати, див. в нашому [посібнику з автовідтворення](/uk/docs/Web/Media/Autoplay_guide).
-
-### Елемент \<audio> з елементом \<source>
-
-Цей приклад задає те, яку аудіодоріжку вбудувати, використовуючи атрибут `src` вкладеного елемента `<source>`, а не безпосередньо на елементі `<audio>`. Завжди корисно включати MIME-тип файлу в атрибут `type`, оскільки так браузер може миттєво визначити, чи здатен він відтворити цей файл, і не витрачати на нього час, якщо ні.
-
-```html
-<audio controls>
-  <source src="foo.wav" type="audio/wav" />
-  <a href="foo.wav">Стягнути аудіо у форматі WAV</a>.
-</audio>
-```
-
-### \<audio> з кількома елементами \<source>
-
-Цей приклад містить кілька елементів `<source>`. Браузер намагається завантажити перший елемент `<source>` (Opus), якщо здатен його відтворити; якщо ні, то переходить до другого (Vorbis), а в кінці – до MP3:
-
-```html
-<audio controls>
-  <source src="foo.opus" type="audio/ogg; codecs=opus" />
-  <source src="foo.ogg" type="audio/ogg; codecs=vorbis" />
-  <source src="foo.mp3" type="audio/mpeg" />
-</audio>
-```
-
-## Занепокоєння щодо доступності
+## Доступність
 
 Аудіо з усним діалогом повинно супроводжуватися і субтитрами, і стенограмами, які точно описують його вміст. Субтитри, які задаються за допомогою [WebVTT](/uk/docs/Web/API/WebVTT_API), дають людям з втратою слуху змогу розуміти вміст аудіозапису під час його відтворення, а стенограми дають людям, які потребують додаткового часу, змогу ознайомитися з вмістом запису у темпі та форматі, які зручні для них.
 
@@ -366,16 +331,56 @@ elem.audioTrackList.onremovetrack = (event) => {
   <source src="myAudio.ogg" type="audio/ogg" />
   <p>
     Стягнути аудіо у форматах <a href="myAudio.mp3">MP3</a> або
-    <a href="myAudio.ogg">OGG</a>.
+    <a href="myAudio.ogg" download="myAudio.ogg">OGG</a>.
   </p>
 </audio>
 ```
 
 - [Формат текстових доріжок вебвідео (WebVTT)](/uk/docs/Web/API/WebVTT_API)
-- [WebAIM – Субтитри, стенограми та описи аудіо](https://webaim.org/techniques/captions/
+- [WebAIM – Субтитри, стенограми та описи аудіо](https://webaim.org/techniques/captions/)
 - [MDN Розуміння WCAG, пояснення Настанови 1.2](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#nastanova-1-2-nadannia-tekstovykh-alternatyv-chasozalezhnym-nosiiam)
 - [Розуміння критерію успіху 1.2.1 | W3C Розуміння WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/media-equiv-av-only-alt.html)
 - [Розуміння критерію успіху 1.2.2 | W3C Розуміння WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/media-equiv-captions.html)
+
+## Приклади
+
+### Базове застосування
+
+Наступний приклад демонструє просте застосування елемента `<audio>` для відтворення файлу OGG. Він автоматично починає відтворення завдяки атрибуту `autoplay` – якщо сторінка має дозвіл на це – а також містить запасний вміст.
+
+```html
+<!-- Просте відтворення аудіо -->
+<audio src="AudioTest.ogg" autoplay>
+  <a href="AudioTest.ogg" download="AudioTest.ogg"
+    >Стягнути аудіо у форматі OGG</a
+  >.
+</audio>
+```
+
+Деталі про те, як працює автовідтворення, як отримати дозвіл на його використання, а також про те, коли і як його варто використовувати, див. в нашому [посібнику з автовідтворення](/uk/docs/Web/Media/Autoplay_guide).
+
+### Елемент \<audio> з елементом \<source>
+
+Цей приклад задає те, яку аудіодоріжку вбудувати, використовуючи атрибут `src` вкладеного елемента `<source>`, а не безпосередньо на елементі `<audio>`. Завжди корисно включати MIME-тип файлу в атрибут `type`, оскільки так браузер може миттєво визначити, чи здатен він відтворити цей файл, і не витрачати на нього час, якщо ні.
+
+```html
+<audio controls>
+  <source src="foo.wav" type="audio/wav" />
+  <a href="foo.wav" download="foo.wav">Стягнути аудіо у форматі WAV</a>.
+</audio>
+```
+
+### \<audio> з кількома елементами \<source>
+
+Цей приклад містить кілька елементів `<source>`. Браузер намагається завантажити перший елемент `<source>` (Opus), якщо здатен його відтворити; якщо ні, то переходить до другого (Vorbis), а в кінці – до MP3:
+
+```html
+<audio controls>
+  <source src="foo.opus" type="audio/ogg; codecs=opus" />
+  <source src="foo.ogg" type="audio/ogg; codecs=vorbis" />
+  <source src="foo.mp3" type="audio/mpeg" />
+</audio>
+```
 
 ## Технічний підсумок
 
@@ -391,18 +396,18 @@ elem.audioTrackList.onremovetrack = (event) => {
         <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist"
           >Потоковий вміст</a
         >, оповідальний вміст, вбудований вміст. Якщо елемент має атрибут
-        <a href="/uk/docs/Web/HTML/Element/audio#controls"><code>controls</code></a> – інтерактивний вміст та відчутний вміст.
+        <a href="#controls"><code>controls</code></a> – інтерактивний вміст та відчутний вміст.
       </td>
     </tr>
     <tr>
       <th scope="row">Дозволений вміст</th>
       <td>
-        Якщо елемент має атрибут <a href="/uk/docs/Web/HTML/Element/audio#src"><code>src</code></a>: нуль або більше елементів {{HTMLElement("track")}}, після яких – прозорий вміст, що не містить елементів медіа {{HTMLElement("audio")}} і {{HTMLElement("video")}}.<br />Інакше – нуль або більше елементів {{HTMLElement("source")}}, після яких – нуль або більше елементів {{HTMLElement("track")}}, після яких – прозорий вміст, що не містить елементів медіа {{HTMLElement("audio")}} і {{HTMLElement("video")}}.
+        Якщо елемент має атрибут <a href="#src"><code>src</code></a>: нуль або більше елементів {{HTMLElement("track")}}, після яких – прозорий вміст, що не містить елементів медіа <code>&lt;audio&gt;</code> і {{HTMLElement("video")}}.<br />Інакше – нуль або більше елементів {{HTMLElement("source")}}, після яких – нуль або більше елементів {{HTMLElement("track")}}, після яких – прозорий вміст, що не містить елементів медіа <code>&lt;audio&gt;</code> і {{HTMLElement("video")}}.
       </td>
     </tr>
     <tr>
       <th scope="row">Пропуск тега</th>
-      <td>{{no_tag_omission}}</td>
+      <td>Немає; і початковий, і кінцевий теги – обов'язкові.</td>
     </tr>
     <tr>
       <th scope="row">Дозволені батьківські елементи</th>
@@ -447,4 +452,4 @@ elem.audioTrackList.onremovetrack = (event) => {
 - {{htmlelement("source")}}
 - {{htmlelement("video")}}
 - [Зона навчання – Аудіо та відео вміст](/uk/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content)
-- [Кросбраузерні основи аудіо](/uk/docs/Web/Guide/Audio_and_video_delivery/Cross-browser_audio_basics)
+- [Кросбраузерні основи аудіо](/uk/docs/Web/Media/Audio_and_video_delivery/Cross-browser_audio_basics)

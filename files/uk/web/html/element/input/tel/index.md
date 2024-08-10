@@ -31,13 +31,13 @@ browser-compat: html.elements.input.type_tel
 
 Максимальна довжина рядка (в кодових одиницях UTF-16), котрий користувач може ввести в поле номера телефону. Це повинно бути ціле числове значення, 0 або більше. Якщо не задано `maxlength`, або якщо задано недійсне значення, то таке поле не має максимальної довжини. Це значення також повинно бути більшим або рівним значенню `minlength`.
 
-Поле не пройде [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation), якщо довжина введеного в поле тексту перевищує `maxlength` кодових одиниць UTF-16 завдовжки.
+Поле не пройде [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation), якщо довжина введеного в поле тексту перевищує `maxlength` кодових одиниць UTF-16 завдовжки. Валідація обмежень відбувається лише тоді, коли значення змінюється користувачем.
 
 ### minlength
 
 Мінімальна довжина рядка (в кодових одиницях UTF-16), котрий користувач може ввести в поле номера телефону. Це повинно бути невід'ємне ціле числове значення, менше або рівне значенню, заданому `maxlength`. Якщо не задано `minlength`, або якщо задано недійсне значення, то таке поле не має мінімальної довжини.
 
-Поле номера телефону не пройде [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation), якщо довжина введеного в поле тексту – менша за `minlength` кодових одиниць UTF-16 завдовжки.
+Поле номера телефону не пройде [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation), якщо довжина введеного в поле тексту – менша за `minlength` кодових одиниць UTF-16 завдовжки. Валідація обмежень відбувається лише тоді, коли значення змінюється користувачем.
 
 ### pattern
 
@@ -175,7 +175,7 @@ browser-compat: html.elements.input.type_tel
 
 #### Пропонування значень
 
-Іще краще: можна запропонувати список з усталених значень номерів телефонів, серед яких користувач може обрати. Щоб таке реалізувати, слід застосувати атрибут [`list`](/uk/docs/Web/HTML/Element/input#list-spysok). Це не обмежує користувача такими варіантами, а й так само дозволяє їм обрати найчастіше вживані номери телефонів швидше. Також це надає підказку для [`autocomplete`](/uk/docs/Web/HTML/Element/input#autocomplete-avtozapovnennia). Атрибут `list` задає ідентифікатор елемента {{HTMLElement("datalist")}}, котрий своєю чергою містить по одному елементу {{HTMLElement("option")}} на пропоноване значення; `value` кожного `option` є відповідним пропонованим значенням для поля номера телефону.
+Іще краще: можна запропонувати список з усталених значень номерів телефонів, серед яких користувач може обрати. Щоб таке реалізувати, слід застосувати атрибут [`list`](/uk/docs/Web/HTML/Element/input#list-spysok). Це не обмежує користувача такими варіантами, а й так само дозволяє їм обрати найчастіше вживані номери телефонів швидше. Також це надає підказку для [`autocomplete`](/uk/docs/Web/HTML/Element/input#autocomplete). Атрибут `list` задає ідентифікатор елемента {{HTMLElement("datalist")}}, котрий своєю чергою містить по одному елементу {{HTMLElement("option")}} на пропоноване значення; `value` кожного `option` є відповідним пропонованим значенням для поля номера телефону.
 
 ```html
 <label for="telNo">Номер телефону: </label>
@@ -462,7 +462,7 @@ input:valid + span::after {
 <table class="properties">
   <tbody>
     <tr>
-      <td><strong><a href="#zhachennia">Значення</a></strong></td>
+      <td><strong><a href="#znachennia">Значення</a></strong></td>
       <td>
         Рядок, що представляє телефонний номер, або є порожнім
       </td>
@@ -471,13 +471,13 @@ input:valid + span::after {
       <td><strong>Події</strong></td>
       <td>
         {{domxref("HTMLElement/change_event", "change")}} та
-        {{domxref("HTMLElement/input_event", "input")}}
+        {{domxref("Element/input_event", "input")}}
       </td>
     </tr>
     <tr>
       <td><strong>Доступні спільні атрибути</strong></td>
       <td>
-        <a href="/uk/docs/Web/HTML/Element/input#autocomplete-avtozapovnennia"><code>autocomplete</code></a>,
+        <a href="/uk/docs/Web/HTML/Element/input#autocomplete"><code>autocomplete</code></a>,
         <a href="/uk/docs/Web/HTML/Element/input#list-spysok"><code>list</code></a>,
         <a href="/uk/docs/Web/HTML/Element/input#maxlength-maksymalna-dovzhyna"><code>maxlength</code></a>,
         <a href="/uk/docs/Web/HTML/Element/input#minlength-minimalna-dovzhyna"><code>minlength</code></a>,
@@ -528,8 +528,6 @@ input:valid + span::after {
 
 - [Посібник з форм HTML](/uk/docs/Learn/Forms)
 - {{HTMLElement("input")}}
-
   - [`<input type="text">`](/uk/docs/Web/HTML/Element/input/text)
   - [`<input type="email">`](/uk/docs/Web/HTML/Element/input/email)
-
 - [Сумісність властивостей CSS](/uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls)

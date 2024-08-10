@@ -43,7 +43,7 @@ spec-urls: https://drafts.csswg.org/css-box/
 - {{CSSxRef("margin-left")}}
 - {{CSSxRef("margin-right")}}
 - {{CSSxRef("margin-top")}}
-- {{CSSxRef("margin-trim")}} {{Experimental_Inline}}
+- {{CSSxRef("margin-trim")}}
 
 ### Властивості для контролю внутрішніх відступів рамки
 
