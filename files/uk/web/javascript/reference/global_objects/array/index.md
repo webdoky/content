@@ -182,7 +182,7 @@ method(callbackFn, thisArg)
 
 Усі ітеративні методи є [копіювальними](#kopiiuvalni-ta-zminiuvalni-metody) та [узагальненими](#uzahalneni-metody-masyvu), хоч вони по-різному поводяться з [порожніми комірками](#metody-masyvu-y-porozhni-komirky).
 
-Наступні методи - ітеративні: {{jsxref("Array/every", "every()")}}, {{jsxref("Array/filter", "filter()")}}, {{jsxref("Array/find", "find()")}}, {{jsxref("Array/findIndex", "findIndex()")}}, {{jsxref("Array/findLast", "findLast()")}}, {{jsxref("Array/findLastIndex", "findLastIndex()")}}, {{jsxref("Array/flatMap", "flatMap()")}}, {{jsxref("Array/forEach", "forEach()")}}, {{jsxref("Array/map", "map()")}} і {{jsxref("Array/some", "some()")}}.
+Наступні методи – ітеративні: {{jsxref("Array/every", "every()")}}, {{jsxref("Array/filter", "filter()")}}, {{jsxref("Array/find", "find()")}}, {{jsxref("Array/findIndex", "findIndex()")}}, {{jsxref("Array/findLast", "findLast()")}}, {{jsxref("Array/findLastIndex", "findLastIndex()")}}, {{jsxref("Array/flatMap", "flatMap()")}}, {{jsxref("Array/forEach", "forEach()")}}, {{jsxref("Array/map", "map()")}} і {{jsxref("Array/some", "some()")}}.
 
 А саме – {{jsxref("Array/every", "every()")}}, {{jsxref("Array/find", "find()")}}, {{jsxref("Array/findIndex", "findIndex()")}}, {{jsxref("Array/findLast", "findLast()")}}, {{jsxref("Array/findLastIndex", "findLastIndex()")}} і {{jsxref("Array/some", "some()")}} не завжди закликають `callbackFn` на кожному елементі: вони зупиняють ітерування, щойно повернене значення визначено.
 
@@ -208,7 +208,7 @@ function method(callbackFn, thisArg) {
 
 1. Не всі методи виконують перевірку `i in this`. Методи `find`, `findIndex`, `findLast` і `findLastIndex` цього не роблять, а інші – роблять.
 2. Значення `length` запам'ятовується перед початком циклу. Це впливає на те, як обробляються вставляння та видалення (дивіться [внесення змін до вихідного масиву в ітеративних методах](#vnesennia-zmin-do-vykhidnoho-masyvu-v-iteratyvnykh-metodakh)).
-3. Метод не запам'ятовує вміст масиву, тож якщо який-небудь індекс змінюється під час ітерування - може бути оброблено нове значення.
+3. Метод не запам'ятовує вміст масиву, тож якщо який-небудь індекс змінюється під час ітерування – може бути оброблено нове значення.
 4. Код вище ітерує масив у порядку зростання індексів. Частина методів ітерує в порядку спадання індексів (`for (let i = length - 1; i >= 0; i--)`): `reduceRight()`, `findLast()` і `findLastIndex()`.
 5. Методи `reduce` і `reduceRight` мають трохи різні сигнатури й не завжди починають ітерування з першого або останнього елемента.
 
@@ -227,9 +227,9 @@ console.log(Array.prototype.join.call(arrayLike, "+")); // 'a+b'
 
 #### Нормалізація властивості length
 
-Властивість `length` [перетворюється на ціле число](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#peretvorennia-na-tsile), а потім обрізається до діапазону між 0 і 2<sup>53</sup> - 1. `NaN` стає `0`, тож навіть тоді, коли `length` немає або в ній `undefined`, це працює так, ніби довжина дорівнює `0`.
+Властивість `length` [перетворюється на ціле число](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#peretvorennia-na-tsile), а потім обрізається до діапазону між 0 і 2<sup>53</sup> – 1. `NaN` стає `0`, тож навіть тоді, коли `length` немає або в ній `undefined`, це працює так, ніби довжина дорівнює `0`.
 
-Мова JavaScript уникає задання `length` зі значенням [небезпечного цілого числа](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER). Всі вбудовані методи викидають {{jsxref("TypeError")}}, коли `length` задається з числом, більшим за 2<sup>53</sup> - 1. Однак оскільки властивість масивів {{jsxref("Array/length", "length")}} завжди викидає помилку, коли отримує значення, більше за 2<sup>32</sup> - 1, то зазвичай поріг небезпечних цілих чисел не досягається, якщо метод не викликається на об'єкті, що не є масивом.
+Мова JavaScript уникає задання `length` зі значенням [небезпечного цілого числа](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER). Всі вбудовані методи викидають {{jsxref("TypeError")}}, коли `length` задається з числом, більшим за 2<sup>53</sup> – 1. Однак оскільки властивість масивів {{jsxref("Array/length", "length")}} завжди викидає помилку, коли отримує значення, більше за 2<sup>32</sup> – 1, то зазвичай поріг небезпечних цілих чисел не досягається, якщо метод не викликається на об'єкті, що не є масивом.
 
 ```js
 Array.prototype.flat.call({}); // []
@@ -245,7 +245,7 @@ console.log(a.length); // 0
 
 #### Масивоподібні об'єкти
 
-Термін [_масивоподібний об'єкт_](/uk/docs/Web/JavaScript/Guide/Indexed_collections#robota-z-masyvopodibnymy-obiektamy) позначає будь-який об'єкт, що не викидає помилки при процесі перетворення `length`, описаному вище. На практиці очікується, що такий об'єкт має властивість `length`, а також індексовані елементи в діапазоні від `0` до `length - 1`. (Якщо він має не всі індекси, то це на практиці буде рівносильно [розрідженому масивові](#metody-masyvu-y-porozhni-komirky).) Усі індекси - цілі числа, менші за нуль або більші за `length - 1`, ігноруються, коли метод масиву працює над масивоподібним об'єктом.
+Термін [_масивоподібний об'єкт_](/uk/docs/Web/JavaScript/Guide/Indexed_collections#robota-z-masyvopodibnymy-obiektamy) позначає будь-який об'єкт, що не викидає помилки при процесі перетворення `length`, описаному вище. На практиці очікується, що такий об'єкт має властивість `length`, а також індексовані елементи в діапазоні від `0` до `length - 1`. (Якщо він має не всі індекси, то це на практиці буде рівносильно [розрідженому масивові](#metody-masyvu-y-porozhni-komirky).) Усі індекси – цілі числа, менші за нуль або більші за `length - 1`, ігноруються, коли метод масиву працює над масивоподібним об'єктом.
 
 Масивоподібними є чимало об'єктів DOM – наприклад, [`NodeList`](/uk/docs/Web/API/NodeList) і [`HTMLCollection`](/uk/docs/Web/API/HTMLCollection). Об'єкт [`arguments`](/uk/docs/Web/JavaScript/Reference/Functions/arguments) так само є масивоподібним. На них можна викликати методи масиву, навіть якщо вони самі цих методів не мають.
 
@@ -484,7 +484,7 @@ console.log(removedItem);
 // Апельсин
 ```
 
-> [!NOTE] 
+> [!NOTE]
 > Метод `pop()` може застосовуватись лише для усунення з масиву останнього елемента. Як прибрати з кінця масиву кілька елементів – дивіться наступний приклад.
 
 ### Усунення з кінця масиву кількох елементів
@@ -865,7 +865,7 @@ testSideEffect((arr) => arr.push("новий"));
 // Остаточний масив: [e1, e2, e3, e4, новий, новий, новий, новий]
 ```
 
-Вставляння _n_ елементів за індексами, що вже були оброблені, не призведе до того, що вони будуть оброблені, але зсуне решту елементів на _n_ назад, тож поточний індекс і _n - 1_ елементів перед ним будуть оброблені знову:
+Вставляння _n_ елементів за індексами, що вже були оброблені, не призведе до того, що вони будуть оброблені, але зсуне решту елементів на _n_ назад, тож поточний індекс і _n – 1_ елементів перед ним будуть оброблені знову:
 
 ```js
 testSideEffect((arr, index) => arr.splice(index, 0, "new"));
