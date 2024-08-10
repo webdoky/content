@@ -136,7 +136,7 @@ Child.prototype = Object.create(Parent.prototype);
 
 Значенням `constructor` примірників `Child` буде `Parent`, оскільки `Child.prototype` присвоєно нове значення.
 
-Зазвичай це не є великою проблемою: мова майже ніколи не читає властивість `constructor` об'єкта. Єдиним винятком є використання [`@@species`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/species) для створення нових екземплярів класу, але такі випадки рідкісні, та й усе одно слід використовувати запис [`extends`](/uk/docs/Web/JavaScript/Reference/Classes/extends) для підкласів вбудованих класів.
+Зазвичай це не є великою проблемою: мова майже ніколи не читає властивість `constructor` об'єкта. Єдиним винятком є використання [`[Symbol.species]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/species) для створення нових екземплярів класу, але такі випадки рідкісні, та й усе одно слід використовувати запис [`extends`](/uk/docs/Web/JavaScript/Reference/Classes/extends) для підкласів вбудованих класів.
 
 Проте слідкувати, що `Child.prototype.constructor` завжди посилається на сам `Child`, важливо, коли якийсь викликач використовує `constructor` для доступу до початкового класу з екземпляра. Розгляньте наступний випадок: об'єкт має метод `create()`, щоб створювати себе.
 

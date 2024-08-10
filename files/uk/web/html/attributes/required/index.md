@@ -1,5 +1,6 @@
 ---
-title: "Атрибут HTML – required"
+title: Атрибут HTML – required
+short-title: required
 slug: Web/HTML/Attributes/required
 page-type: html-attribute
 ---
@@ -18,11 +19,12 @@ page-type: html-attribute
 
 У випадку однойменної групи полів типу {{HTMLElement("input/checkbox","checkbox")}} – обов'язковими є лише ті поля для галочок, що мають атрибут `required`.
 
-> **Примітка:** Якщо задати [`aria-required="true"`](/uk/docs/Web/Accessibility/ARIA/Attributes/aria-required), то це повідомляє читачам з екрана, що елемент (будь-який елемент) є обов'язковим, але на фактичну обов'язковість це не впливає.
+> [!NOTE]
+> Якщо задати [`aria-required="true"`](/uk/docs/Web/Accessibility/ARIA/Attributes/aria-required), то це повідомляє читачам з екрана, що елемент (будь-який елемент) є обов'язковим, але на фактичну обов'язковість це не впливає.
 
 ### Взаємодія між атрибутами
 
-У зв'язку з тим, що поле лише для прочитання не може мати значення, атрибут `required` не має жодного впливу на поля, на яких також задано [`readonly`](/uk/docs/Web/HTML/Attributes/readonly).
+У зв'язку з тим, що поле лише для прочитання не може бути змінено, атрибут `required` не має жодного впливу на поля, на яких також задано [`readonly`](/uk/docs/Web/HTML/Attributes/readonly).
 
 ### Зручність
 

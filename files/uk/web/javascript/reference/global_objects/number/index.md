@@ -46,7 +46,11 @@ Number(undefined); // NaN
 
 Мантиса – частина числа, що представляє фактичне значення (вагомі цифри). Експонента – степінь двійки, на котрий повинна бути помножена мантиса. У вигляді наукового запису:
 
-<math display="block"><semantics><mrow><mtext>Number</mtext><mo>=</mo><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><msup><mo stretchy="false">)</mo><mtext>знак</mtext></msup><mo>⋅</mo><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mtext>мантиса</mtext><mo stretchy="false">)</mo><mo>⋅</mo><msup><mn>2</mn><mtext>експонента</mtext></msup></mrow><annotation encoding="TeX">\text{Number} = ({-1})^{\text{знак}} \cdot (1 + \text{мантиса}) \cdot 2^{\text{експонента}}</annotation></semantics></math>
+<!-- prettier-ignore-start -->
+<math display="block">
+  <semantics><mrow><mtext>Number</mtext><mo>=</mo><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><msup><mo stretchy="false">)</mo><mtext>знак</mtext></msup><mo>⋅</mo><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mtext>мантиса</mtext><mo stretchy="false">)</mo><mo>⋅</mo><msup><mn>2</mn><mtext>експонента</mtext></msup></mrow><annotation encoding="TeX">\text{Number} = ({-1})^{\text{знак}} \cdot (1 + \text{мантиса}) \cdot 2^{\text{експонента}}</annotation></semantics>
+</math>
+<!-- prettier-ignore-end -->
 
 Мантиса зберігається в 52 бітах, що тлумачаться як цифри після `1.…` у двійковому дробовому числі. Таким чином, точність мантиси – 2<sup>-52</sup> (отримується за допомогою {{jsxref("Number.EPSILON")}}), або приблизно від 15 до 17 знаків після коми; арифметика понад цим рівнем точності підпадає під [округлення (англ.)](https://en.wikipedia.org/wiki/Floating-point_arithmetic#Representable_numbers,_conversion_and_rounding).
 
@@ -73,7 +77,7 @@ Number(undefined); // NaN
   - [Числові роздільники](/uk/docs/Web/JavaScript/Reference/Lexical_grammar#rozdiliuvachi-rozriadiv) не дозволені.
 - [BigInt](/uk/docs/Web/JavaScript/Reference/Global_Objects/BigInt) викидають {{jsxref("TypeError")}}, аби запобігти ненавмисному неявному зведенню, і як наслідок – втраті точності.
 - [Символи](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol) викидають {{jsxref("TypeError")}}.
-- Об'єкти спершу [перетворюються на примітиви](/uk/docs/Web/JavaScript/Data_structures#zvedennia-do-prymityva) шляхом виклику їх методів [`[@@toPrimitive]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive) (з підказкою `"number"`), `valueOf()` і `toString()` – в такому порядку. Результівний примітив опісля перетворюється на число.
+- Об'єкти спершу [перетворюються на примітиви](/uk/docs/Web/JavaScript/Data_structures#zvedennia-do-prymityva) шляхом виклику їх методів [`[Symbol.toPrimitive]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive) (з підказкою `"number"`), `valueOf()` і `toString()` – в такому порядку. Результівний примітив опісля перетворюється на число.
 
 У JavaScript є два способи досягнути майже такого самого ефекту.
 
@@ -111,11 +115,7 @@ new Uint8Array([257, -257]); // Uint8Array(2) [ 1, 255 ]
 ## Конструктор
 
 - {{jsxref("Number/Number", "Number()")}}
-  - : Створює нове значення `Number`.
-
-Коли `Number` викликається як конструктор (із `new`), це породжує об'єкт {{jsxref("Number")}}, котрий **не** є примітивом. Наприклад, `typeof new Number(42) === "object"`, і `new Number(42) !== 42` (проте `new Number(42) == 42`).
-
-> **Застереження:** Навряд вам доведеться часто застосовувати `Number` як конструктор.
+  - : Створює об'єкти `Number`. Бувши викликаним як функція, повертає примітивні значення типу Number.
 
 ## Статичні властивості
 

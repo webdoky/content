@@ -1,5 +1,5 @@
 ---
-title: "<area> – Елемент області на карті зображення"
+title: <area> – Елемент області на карті зображення
 slug: Web/HTML/Element/area
 page-type: html-element
 browser-compat: html.elements.area
@@ -138,7 +138,7 @@ browser-compat: html.elements.area
     <tr>
       <th scope="row">Неявна роль ARIA</th>
       <td>
-       <a href="/uk/docs/Web/Accessibility/ARIA/Roles/link_role"><code>link</code></a>, якщо присутній атрибут <a href="/uk/docs/Web/HTML/Element/area#href"><code>href</code></a>, інакше – <a href="/uk/docs/Web/Accessibility/ARIA/Roles/generic_role"><code>generic</code></a>
+       <a href="/uk/docs/Web/Accessibility/ARIA/Roles/link_role"><code>link</code></a>, якщо присутній атрибут <a href="#href"><code>href</code></a>, інакше – <a href="/uk/docs/Web/Accessibility/ARIA/Roles/generic_role"><code>generic</code></a>
       </td>
     </tr>
     <tr>

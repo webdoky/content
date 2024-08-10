@@ -31,9 +31,9 @@ search(regexp)
 
 ## Опис
 
-Реалізація `String.prototype.search()` сама по собі є дуже простою: вона лишень викликає метод `Symbol.search` переданого аргументу зі своїм рядком як першим параметром. Фактична реалізація надходить з [`RegExp.prototype[@@search]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@search).
+Реалізація `String.prototype.search()` сама по собі є дуже простою: вона лишень викликає метод `Symbol.search` переданого аргументу зі своїм рядком як першим параметром. Фактична реалізація надходить з [`RegExp.prototype[Symbol.search]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.search).
 
-Позначка `g` виразу `regexp` не впливає на результат `search()`, і пошук завжди відбувається так, ніби властивість `lastIndex` регулярного виразу має значення `0`. Більше інформації про логіку `search()` дивіться на сторінці [`RegExp.prototype[@@search]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@search).
+Позначка `g` виразу `regexp` не впливає на результат `search()`, і пошук завжди відбувається так, ніби властивість `lastIndex` регулярного виразу має значення `0`. Більше інформації про логіку `search()` дивіться на сторінці [`RegExp.prototype[Symbol.search]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.search).
 
 Коли треба знати, чи був знайдений патерн, а _також_ індекс збігу в рядку, слід використовувати `search()`.
 
@@ -68,4 +68,4 @@ console.log(str.search(reDot)); // повертає -1 — не може зна�
 - Посібник [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_expressions)
 - {{jsxref("String.prototype.match()")}}
 - {{jsxref("RegExp.prototype.exec()")}}
-- [`RegExp.prototype[@@search]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@search)
+- [`RegExp.prototype[Symbol.search]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.search)

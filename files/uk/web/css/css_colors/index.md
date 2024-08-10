@@ -39,7 +39,7 @@ spec-urls:
 
 ### Функції
 
-- Абсолютні функції кольору, серед яких
+- Колірні функції:
   - [`rgb()`](/uk/docs/Web/CSS/color_value/rgb) та її псевдонім `rgba()`
   - [`hsl()`](/uk/docs/Web/CSS/color_value/hsl) та її псевдонім `hsla()`
   - [`hwb()`](/uk/docs/Web/CSS/color_value/hwb)
@@ -48,15 +48,15 @@ spec-urls:
   - [`oklab()`](/uk/docs/Web/CSS/color_value/oklab)
   - [`oklch()`](/uk/docs/Web/CSS/color_value/oklch)
   - [`color()`](/uk/docs/Web/CSS/color_value/color)
-- [`color-contrast()`](/uk/docs/Web/CSS/color_value/color-contrast) {{Experimental_Inline}}
+- [`color-contrast()`](/uk/docs/Web/CSS/color_value/color-contrast) {{experimental_inline}}
 - [`color-mix()`](/uk/docs/Web/CSS/color_value/color-mix)
-- [`device-cmyk()`](/uk/docs/Web/CSS/color_value/device-cmyk) {{Experimental_Inline}}
-- {{CSSXref("color_value/light-dark", "light-dark()")}} {{Experimental_Inline}}
+- [`device-cmyk()`](/uk/docs/Web/CSS/color_value/device-cmyk)
+- {{CSSXref("color_value/light-dark", "light-dark()")}}
 
 ### Типи даних
 
 - {{cssxref("&lt;color&gt;")}}
-- [`<absolute-color-function>`](#funktsii)
+- [`<color-function>`](#funktsii)
 - {{cssxref("hex-color")}}
 - {{cssxref("named-color")}}
 - {{cssxref("alpha-value")}}
@@ -64,25 +64,32 @@ spec-urls:
 - {{cssxref("system-color")}}
 - [`<colorspace-params>`](/uk/docs/Web/CSS/color_value/color#vykorystannia-napered-vyzhachenykh-kolirnykh-prostoriv-vkupi-z-color)
 
-### Ключові слова
+### Терміни глосарія та ключові слова
 
+- {{glossary("color space", "колірний простір")}}
 - [`currentcolor`](/uk/docs/Web/CSS/color_value#kliuchove-slovo-currentcolor)
+- {{glossary("interpolation", "інтерполяція")}}
+- {{glossary("RGB")}}
 - [`transparent`](/uk/docs/Web/CSS/named-color#transparent)
 
 ### Інтерфейси
 
-- `CSSColorProfileRule` {{Experimental_Inline}}
+- `CSSColorProfileRule`
 
 ## Посібники
 
 - [Застосування кольору до елементів HTML за допомогою CSS](/uk/docs/Web/CSS/CSS_colors/Applying_color)
-  - : Посібник з використання CSS для застосування кольору до різноманітного вмісту. Торкається всіх властивостей CSS, пов'язаних з кольором.
+  - : Посібник з використання CSS для застосування кольору до різноманітного вмісту; містить усі властивості CSS, що приймають `<color>` як значення.
+- [Колірні значення CSS](/uk/docs/Web/CSS/CSS_colors/Color_values)
+  - : Огляд колірних просторів і різних функційних записів `<color>`, доступних у CSS.
+- [Мудре використання кольорів](/uk/docs/Web/CSS/CSS_colors/Using_color_wisely)
+  - : Колірна теорія та ресурси, включно з пошуком доречних кольорів для створення доступної колірної палітри, контрастом і кольоровим друком.
+- [Застосування відносних кольорів](/uk/docs/Web/CSS/CSS_colors/Relative_colors)
+  - : Ця стаття пояснює синтаксис відносних кольорів CSS, показує, які є варіанти, та розглядає деякі ілюстративні приклади.
 - [Розуміння кольору та світності](/uk/docs/Web/Accessibility/Understanding_Colors_and_Luminance)
   - : Сприйняття кольору та використання кольорів для потреб нечутливих до кольору (колірно-сліпих) користувачів, користувачів зі зниженим зором та користувачів з вестибулярними або іншими неврологічними порушеннями.
 - [WCAG 1.4.1: Колірний контраст](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable/Color_contrast)
   - : Пояснення вимог до контрасту між заднім і переднім планами для забезпечення читабельності.
-- [Інструмент вибору кольору](/uk/docs/Web/CSS/CSS_colors/Color_picker_tool)
-  - : Завдяки цьому інструменту легко створювати, налаштовувати та експериментувати зі власними кольорами.
 
 ## Споріднені концепції
 

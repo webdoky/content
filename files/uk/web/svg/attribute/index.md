@@ -1,5 +1,6 @@
 ---
 title: Довідка атрибутів SVG
+short-title: Атрибути
 slug: Web/SVG/Attribute
 page-type: landing-page
 ---
@@ -48,7 +49,6 @@ page-type: landing-page
 - {{SVGAttr("color")}}
 - {{SVGAttr("color-interpolation")}}
 - {{SVGAttr("color-interpolation-filters")}}
-- {{SVGAttr("color-profile")}}
 - {{SVGAttr("color-rendering")}}
 - {{SVGAttr("crossorigin")}}
 - {{SVGAttr("cursor")}}
@@ -73,7 +73,6 @@ page-type: landing-page
 
 - {{SVGAttr("edgeMode")}}
 - {{SVGAttr("elevation")}}
-- {{SVGAttr("enable-background")}}
 - {{SVGAttr("end")}}
 - {{SVGAttr("exponent")}}
 
@@ -137,7 +136,6 @@ page-type: landing-page
 - {{SVGAttr("k4")}}
 - {{SVGAttr("kernelMatrix")}}
 - {{SVGAttr("kernelUnitLength")}}
-- {{SVGAttr("kerning")}}
 - {{SVGAttr("keyPoints")}}
 - {{SVGAttr("keySplines")}}
 - {{SVGAttr("keyTimes")}}
@@ -321,7 +319,6 @@ page-type: landing-page
 - {{SVGAttr("xlink:show")}}
 - {{SVGAttr("xlink:title")}}
 - {{SVGAttr("xlink:type")}}
-- {{SVGAttr("xml:base")}}
 - {{SVGAttr("xml:lang")}}
 - {{SVGAttr("xml:space")}}
 
@@ -343,26 +340,32 @@ page-type: landing-page
 
 - Головні атрибути
 
-  - : [Головні атрибути](/uk/docs/Web/SVG/Attribute/Core)
-
-    {{SVGAttr("id")}}, {{SVGAttr("lang")}}, {{SVGAttr("tabindex")}}, {{SVGAttr("xml:base")}}, {{SVGAttr("xml:lang")}}, {{SVGAttr("xml:space")}}
-
-- Стилістичні атрибути
-
-  - : [Стилістичні атрибути](/uk/docs/Web/SVG/Attribute/Styling)
-
-    {{SVGAttr("class")}}, {{SVGAttr("style")}}
+  - {{SVGAttr("id")}}
+  - {{SVGAttr("class")}}
+  - {{SVGAttr("style")}}
+  - {{SVGAttr("lang")}}
+  - {{SVGAttr("tabindex")}}
+  - {{SVGAttr("xml:lang")}}
+  - {{SVGAttr("xml:space")}}
 
 - Атрибути умовної обробки
-  - : {{SVGAttr("requiredExtensions")}}, {{SVGAttr("requiredFeatures")}}, {{SVGAttr("systemLanguage")}}.
+  - {{SVGAttr("requiredExtensions")}}
+  - {{SVGAttr("requiredFeatures")}}
+  - {{SVGAttr("systemLanguage")}}
 
 ### Атрибути XLink
 
-{{SVGAttr("xlink:href")}}{{deprecated_inline}}, {{SVGAttr("xlink:type")}}, {{SVGAttr("xlink:role")}}, {{SVGAttr("xlink:arcrole")}}, {{SVGAttr("xlink:title")}}, {{SVGAttr("xlink:show")}}, {{SVGAttr("xlink:actuate")}}
+- {{SVGAttr("xlink:href")}}{{deprecated_inline}}
+- {{SVGAttr("xlink:type")}}
+- {{SVGAttr("xlink:role")}}
+- {{SVGAttr("xlink:arcrole")}}
+- {{SVGAttr("xlink:title")}}
+- {{SVGAttr("xlink:show")}}
+- {{SVGAttr("xlink:actuate")}}
 
 ### Атрибути представлення
 
-> **Примітка:** Всі [атрибути представлення SVG](/uk/docs/Web/SVG/Attribute/Presentation) можуть бути використані як властивості CSS.
+> **Примітка:** Всі атрибути представлення SVG можуть бути використані як властивості CSS.
 
 - {{SVGAttr("alignment-baseline")}}
 - {{SVGAttr("baseline-shift")}}
@@ -372,13 +375,12 @@ page-type: landing-page
 - {{SVGAttr("color")}}
 - {{SVGAttr("color-interpolation")}}
 - {{SVGAttr("color-interpolation-filters")}}
-- {{SVGAttr("color-profile")}}
 - {{SVGAttr("color-rendering")}}
 - {{SVGAttr("cursor")}}
+- {{SVGAttr("d")}}
 - {{SVGAttr("direction")}}
 - {{SVGAttr("display")}}
 - {{SVGAttr("dominant-baseline")}}
-- {{SVGAttr("enable-background")}}
 - {{SVGAttr("fill")}}
 - {{SVGAttr("fill-opacity")}}
 - {{SVGAttr("fill-rule")}}
@@ -395,7 +397,6 @@ page-type: landing-page
 - {{SVGAttr("glyph-orientation-horizontal")}}
 - {{SVGAttr("glyph-orientation-vertical")}}
 - {{SVGAttr("image-rendering")}}
-- {{SVGAttr("kerning")}}
 - {{SVGAttr("letter-spacing")}}
 - {{SVGAttr("lighting-color")}}
 - {{SVGAttr("marker-end")}}
@@ -449,32 +450,76 @@ page-type: landing-page
 
 ### Атрибути подій
 
-- Атрибути подій анімації
-
-  - : [Атрибути подій анімації](/uk/docs/Web/SVG/Attribute/Events#atrybuty-podii-animatsii)
-
-    **`onbegin`**, **`onend`**, **`onrepeat`**
-
-- Атрибути подій документа
-
-  - : [Атрибути подій документа](/uk/docs/Web/SVG/Attribute/Events#atrybuty-podii-dokumenta)
-
-    **`onabort`**, **`onerror`**, **`onresize`**, **`onscroll`**, **`onunload`**
-
-- Глобальні атрибути подій
-
-  - : [Глобальні атрибути подій](/uk/docs/Web/SVG/Attribute/Events#hlobalni-atrybuty-podii)
-
-    **`oncancel`**, **`oncanplay`**, **`oncanplaythrough`**, **`onchange`**, **`onclick`**, **`onclose`**, **`oncuechange`**, **`ondblclick`**, **`ondrag`**, **`ondragend`**, **`ondragenter`**, **`ondragleave`**, **`ondragover`**, **`ondragstart`**, **`ondrop`**, **`ondurationchange`**, **`onemptied`**, **`onended`**, **`onerror`**, **`onfocus`**, **`oninput`**, **`oninvalid`**, **`onkeydown`**, **`onkeypress`**, **`onkeyup`**, **`onload`**, **`onloadeddata`**, **`onloadedmetadata`**, **`onloadstart`**, **`onmousedown`**, **`onmouseenter`**, **`onmouseleave`**, **`onmousemove`**, **`onmouseout`**, **`onmouseover`**, **`onmouseup`**, **`onmousewheel`**, **`onpause`**, **`onplay`**, **`onplaying`**, **`onprogress`**, **`onratechange`**, **`onreset`**, **`onresize`**, **`onscroll`**, **`onseeked`**, **`onseeking`**, **`onselect`**, **`onshow`**, **`onstalled`**, **`onsubmit`**, **`onsuspend`**, **`ontimeupdate`**, **`ontoggle`**, **`onvolumechange`**, **`onwaiting`**
-
-- Атрибути графічних подій
-
-  - : [Атрибути графічних подій](/uk/docs/Web/SVG/Attribute/Events#atrybuty-hrafichnykh-podii)
-
-    **`onactivate`**, **`onfocusin`**, **`onfocusout`**
+- **`onabort`**
+- **`onactivate`**
+- **`onbegin`**
+- **`oncancel`**
+- **`oncanplay`**
+- **`oncanplaythrough`**
+- **`onchange`**
+- **`onclick`**
+- **`onclose`**
+- **`oncuechange`**
+- **`ondblclick`**
+- **`ondrag`**
+- **`ondragend`**
+- **`ondragenter`**
+- **`ondragleave`**
+- **`ondragover`**
+- **`ondragstart`**
+- **`ondrop`**
+- **`ondurationchange`**
+- **`onemptied`**
+- **`onend`**
+- **`onended`**
+- **`onerror`**
+- **`onerror`**
+- **`onfocus`**
+- **`onfocusin`**
+- **`onfocusout`**
+- **`oninput`**
+- **`oninvalid`**
+- **`onkeydown`**
+- **`onkeypress`**
+- **`onkeyup`**
+- **`onload`**
+- **`onloadeddata`**
+- **`onloadedmetadata`**
+- **`onloadstart`**
+- **`onmousedown`**
+- **`onmouseenter`**
+- **`onmouseleave`**
+- **`onmousemove`**
+- **`onmouseout`**
+- **`onmouseover`**
+- **`onmouseup`**
+- **`onmousewheel`**
+- **`onpause`**
+- **`onplay`**
+- **`onplaying`**
+- **`onprogress`**
+- **`onratechange`**
+- **`onrepeat`**
+- **`onreset`**
+- **`onresize`**
+- **`onresize`**
+- **`onscroll`**
+- **`onscroll`**
+- **`onseeked`**
+- **`onseeking`**
+- **`onselect`**
+- **`onshow`**
+- **`onstalled`**
+- **`onsubmit`**
+- **`onsuspend`**
+- **`ontimeupdate`**
+- **`ontoggle`**
+- **`onunload`**
+- **`onvolumechange`**
+- **`onwaiting`**
 
 ## Дивіться також
 
 - [Довідка елементів SVG](/uk/docs/Web/SVG/Element)
 - [Підручник з SVG](/uk/docs/Web/SVG/Tutorial)
-- [Довідка з інтерфейсу SVG](/uk/docs/Web/API/Document_Object_Model#interfeisy-svg)
+- [Довідка з інтерфейсу SVG](/uk/docs/Web/API/SVG_API#interfeisy)
