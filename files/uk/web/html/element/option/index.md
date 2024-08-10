@@ -1,5 +1,5 @@
 ---
-title: "<option>: Елемент варіанту HTML"
+title: <option> – Елемент варіанту HTML
 slug: Web/HTML/Element/option
 page-type: html-element
 browser-compat: html.elements.option
@@ -15,7 +15,7 @@ browser-compat: html.elements.option
 
 Цей елемент приймає [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
 
-- `disabled`
+- [`disabled`](/uk/docs/Web/HTML/Attributes/disabled)
   - : Якщо заданий цей булів атрибут, то такий варіант не можна вибрати. Нерідко браузери виділяють його сірим, і він не отримує жодних браузерних подій штибу клацання мишею чи пов'язаних з фокусом. Якщо цей атрибут не задано, то елемент може все одно бути вимкнений, якщо одним з його предків є вимкнений елемент {{HTMLElement("optgroup")}}.
 - `label`
   - : Цей атрибут – текст для підпису, що позначає значення варіанту. Якщо атрибут `label` не визначено, то його значення – це текстовий вміст елемента.

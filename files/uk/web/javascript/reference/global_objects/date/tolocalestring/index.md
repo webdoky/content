@@ -1,12 +1,15 @@
 ---
 title: Date.prototype.toLocaleString()
 slug: Web/JavaScript/Reference/Global_Objects/Date/toLocaleString
+page-type: javascript-instance-method
 browser-compat: javascript.builtins.Date.toLocaleString
 ---
 
 {{JSRef}}
 
-Метод **`toLocaleString()`** (до рядка згідно з локаллю) примірників {{jsxref("Date")}} повертає рядок з чутливим до мови представленням дати. У реалізаціях без підтримки [API `Intl.DateTimeFormat`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat) цей метод просто викликає `Intl.DateTimeFormat`.
+Метод **`toLocaleString()`** (до рядка згідно з локаллю) примірників {{jsxref("Date")}} повертає рядок з чутливим до мови представленням дати в локальній часовій зоні. У реалізаціях з підтримкою [API `Intl.DateTimeFormat`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat) цей метод просто викликає `Intl.DateTimeFormat`.
+
+Щоразу, коли викликається `toLocaleString`, цей метод мусить виконати пошук у великій базі даних рядків локалізації, що потенційно може бути неефективним. Коли цей метод викликається багато разів з однаковими аргументами, краще створити об'єкт {{jsxref("Intl.DateTimeFormat")}} і використовувати його метод {{jsxref("Intl/DateTimeFormat/format", "format()")}}, оскільки об'єкт `DateTimeFormat` запам'ятовує передані йому аргументи, і може вирішити кешувати частину бази даних, щоб майбутні виклики `format` могли шукати рядки локалізації в більш обмеженому контексті.
 
 {{EmbedInteractiveExample("pages/js/date-tolocalestring.html")}}
 
@@ -20,7 +23,7 @@ toLocaleString(locales, options)
 
 ### Параметри
 
-Аргументи `locales` та `options` підлаштовують поведінку функції, і дають застосункам змогу задати ту мову, чиї правила форматування слід застосувати.
+Параметри `locales` та `options` підлаштовують поведінку функції, і дають застосункам змогу задати ту мову, чиї правила форматування слід застосувати.
 
 В тих реалізаціях, які підтримують [API `Intl.DateTimeFormat`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat), ці параметри чітко відповідають параметрам конструктора [`Intl.DateTimeFormat()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat). Від реалізацій, що не мають підтримки `Intl.DateTimeFormat`, вимагається ігнорувати обидва параметри, що робить вжиту локаль та форму поверненого рядка цілковито залежною від реалізацій.
 
@@ -44,13 +47,13 @@ toLocaleString(locales, options)
 
 В реалізаціях, що містять `Intl.DateTimeFormat`, це еквівалентно викликові `new Intl.DateTimeFormat(locales, options).format(date)`.
 
-> **Примітка:** У більшості випадків форматування, котре повертає `toLocaleString()`, є сталим. Проте вивід може відрізнятися відповідно до часу, мови та реалізації: варіація виводу є частиною задуму цього методу й дозволена специфікацією. Не можна порівнювати результати `toLocaleString()` зі статичними значеннями.
+> **Примітка:** В більшості випадків форматування, повернене `toLocaleString()`, є сталим. Проте вивід може відрізнятися в різних реалізаціях, навіть із використанням однієї локалі: відмінності виводу є свідомими та дозволені специфікацією. Також вивід може бути не таким, як ви очікуєте. Наприклад, рядок може містити нерозривні пробіли або бути оточеним символами контролю напрямку письма. Не слід порівнювати результати `toLocaleString()` із жорстко зафіксованими сталими значеннями.
 
 ## Приклади
 
 ### Застосування toLocaleString()
 
-В найпростішому випадку, без вказання конкретної локалі, буде повернено рядок, відформатований згідно з усталеними локаллю та опціями.
+В найпростішому випадку, без вказання значення `locale`, буде повернено рядок, відформатований згідно з усталеними локаллю та опціями.
 
 ```js
 const date = new Date(Date.UTC(2012, 11, 12, 3, 0, 0));
@@ -113,7 +116,7 @@ console.log(date.toLocaleString(["ban", "id"]));
 
 ### Застосування опцій
 
-Результат, наданий методом `toLocaleString()`, можна налаштувати за допомогою аргументу `options`:
+Результат, наданий методом `toLocaleString()`, можна налаштувати за допомогою параметра `options`:
 
 ```js
 const date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
@@ -125,14 +128,12 @@ const options = {
   month: "long",
   day: "numeric",
 };
-
 console.log(date.toLocaleString("de-DE", options));
 // "Donnerstag, 20. Dezember 2012"
 
 // якийсь застосунок може вирішити вжити часовий пояс UTC, і явно показати це
 options.timeZone = "UTC";
 options.timeZoneName = "short";
-
 console.log(date.toLocaleString("en-US", options));
 // "Thursday, December 20, 2012, GMT"
 

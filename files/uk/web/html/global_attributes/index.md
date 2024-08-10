@@ -21,6 +21,8 @@ browser-compat: html.global_attributes
 
 - [`accesskey`](/uk/docs/Web/HTML/Global_attributes/accesskey)
   - : Надає підказку для створення комбінації клавіш для поточного елемента. Цей атрибут складається з розділеного пробілами списку символів. Браузер повинен використовувати перший з них, що існує в розкладці клавіатури комп'ютера.
+- [`anchor`](/uk/docs/Web/HTML/Global_attributes/anchor) {{non-standard_inline}}
+  - : Пов'язує позиційований елемент з якірним елементом. Значення атрибута – це значення [`id`](/uk/docs/Web/HTML/Global_attributes/id) елемента, до якого прив'язаний позиційований елемент. Цей елемент потім може бути позиційований [за допомогою якірного позиціювання CSS](/uk/docs/Web/CSS/CSS_anchor_positioning/Using).
 - [`autocapitalize`](/uk/docs/Web/HTML/Global_attributes/autocapitalize)
 
   - : Контролює те, чи додаються великі літери до тексту, введеного у поля вводу, а також, якщо так, то яким чином.
@@ -35,9 +37,8 @@ browser-compat: html.global_attributes
 
     - `true` чи _порожній рядок_, що вказує, що елемент повинен бути редагованим;
     - `false`, що вказує, що елемент повинен бути не редагованим.
+    - `plaintext-only`, який вказує на те, що можна редагувати необроблений текст елемента, але розширені можливості з форматування тексту вимкнені.
 
-- [`contextmenu`](/uk/docs/Web/HTML/Global_attributes/contextmenu) {{deprecated_inline}}
-  - : [**`id`**](#id) елемента {{HTMLElement("menu")}}, котрий повинен використовуватися як контекстне меню цього елемента.
 - [`data-*`](/uk/docs/Web/HTML/Global_attributes/data-*)
   - : Утворює клас атрибутів, що звуться користувацькими атрибутами даних, котрі дають змогу обмінюватись власною інформацією між [HTML](/uk/docs/Web/HTML) та її представленням у {{glossary("DOM")}}, котру можуть використовувати сценарії. Такі користувацькі дані – доступні через інтерфейс {{DOMxRef("HTMLElement")}} елемента, на котрому задано такий атрибут. Доступ до них надає властивість {{DOMxRef("HTMLElement.dataset")}}.
 - [`dir`](/uk/docs/Web/HTML/Global_attributes/dir)
@@ -57,7 +58,7 @@ browser-compat: html.global_attributes
 
 - [`enterkeyhint`](/uk/docs/Web/HTML/Global_attributes/enterkeyhint)
   - : Підказує, який підпис дії (чи піктограму) показувати на клавіші введення віртуальних клавіатур.
-- [`exportparts`](/uk/docs/Web/HTML/Global_attributes/exportparts) {{Experimental_Inline}}
+- [`exportparts`](/uk/docs/Web/HTML/Global_attributes/exportparts)
   - : Використовується для транзитивного експорту тіньових частин зі вкладеного тіньового дерева до контейнерного світлого дерева.
 - [`hidden`](/uk/docs/Web/HTML/Global_attributes/hidden)
   - : Перелічений атрибут, що вказує, що елемент поки що, чи уже, не є _доречним_. Наприклад, може застосовуватися для приховування елементів сторінки, що не можуть використовуватися, поки не завершено процес автентифікації. Браузер не виведе такі елементи. Цей атрибут не повинен використовуватися для приховування вмісту, що може бути правомірно показаний.
@@ -120,9 +121,9 @@ browser-compat: html.global_attributes
     - порожній рядок чи `yes`, що означає, що елемент буде перекладений.
     - `no`, що означає, що елемент не буде перекладений.
 
-- [`virtualkeyboardpolicy`](/uk/docs/Web/HTML/Global_attributes/virtualkeyboardpolicy)
+- [`virtualkeyboardpolicy`](/uk/docs/Web/HTML/Global_attributes/virtualkeyboardpolicy) {{Experimental_Inline}}
 
-  - : [Перелічений](/uk/docs/Glossary/Enumerated) атрибут, що використовується для контролю поведінки екранної віртуальної клавіатури на пристроях штибу планшетів, мобільних телефонів та інших, на яких апаратної клавіатури може не бути, для елементів, котрі також підтримують атрибут [`contenteditable`](#contenteditable).
+  - : [Перелічений](/uk/docs/Glossary/Enumerated) атрибут, що використовується для контролю поведінки екранної віртуальної клавіатури на пристроях штибу планшетів, мобільних телефонів та інших, на яких апаратної клавіатури може не бути, для елементів, вміст котрих можна редагувати (наприклад, елементів {{htmlelement("input")}} і {{htmlelement("textarea")}}, а також тих, що мають заданий атрибут [`contenteditable`](/uk/docs/Web/HTML/Global_attributes/contenteditable)).
 
     - `auto` або _порожній рядок_ – коли на елемент перевели фокус або торкнулися його, автоматично виводиться віртуальна клавіатура.
     - `manual` – фокус і дотик елемента відв'язані від стану віртуальної клавіатури.

@@ -103,7 +103,7 @@ image-set('cat.jpg' 1x, 'dog.jpg' 1x) /* Кожне зображення в на
 ## Дивіться також
 
 - {{CSSxRef("&lt;gradient&gt;")}}
-- {{CSSxRef("element","element()")}} {{Experimental_Inline}}
+- {{CSSxRef("element","element()")}}
 - {{CSSxRef("image/image", "image()")}}
 - {{CSSxRef("image/image-set","image-set()")}}
 - {{CSSxRef("cross-fade","cross-fade()")}}

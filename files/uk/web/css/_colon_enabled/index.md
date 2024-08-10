@@ -29,7 +29,7 @@ browser-compat: css.selectors.enabled
   <input type="text" id="FirstField" value="Lorem" /><br />
 
   <label for="SecondField">Друге поле (вимкнене):</label>
-  <input type="text" id="SecondField" value="Ipsum" disabled="disabled" /><br />
+  <input type="text" id="SecondField" value="Ipsum" disabled /><br />
 
   <input type="button" value="Submit" />
 </form>

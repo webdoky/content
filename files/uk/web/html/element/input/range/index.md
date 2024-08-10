@@ -13,7 +13,7 @@ browser-compat: html.elements.input.type_range
 
 {{EmbedInteractiveExample("pages/tabbed/input-range.html", "tabbed-standard")}}
 
-Якщо браузер користувача не підтримує `range`, то це поле відступить і працюватиме як поле `{{HTMLElement('input/text', 'text')}}`.
+Якщо браузер користувача не підтримує `range`, то це поле відступить і працюватиме як поле {{HTMLElement('input/text', 'text')}}.
 
 ### Валідація
 
@@ -40,6 +40,8 @@ defaultValue =
 ## Додаткові атрибути
 
 На додачу до атрибутів, спільних для всіх елементів {{HTMLElement("input")}}, поля діапазону приймають наступні.
+
+> **Примітка:** Наступні атрибути полів не застосовуються до полів діапазону: `accept`, `alt`, `checked`, `dirname`, `formaction`, `formenctype`, `formmethod`, `formnovalidate`, `formtarget`, `height`, `maxlength`, `minlength`, `multiple`, `pattern`, `placeholder`, `readonly`, `required`, `size` і `src`. Усі вони, бувши заданими, ігноруються.
 
 ### list
 
@@ -76,8 +78,6 @@ defaultValue =
 ### orient
 
 Подібно до нестандартної властивості CSS -moz-orient, що впливає на елементи {{htmlelement('progress')}} і {{htmlelement('meter')}}, атрибут `orient` визначає орієнтацію повзуна діапазону. Серед значень – `horizontal`, тобто горизонтальна візуалізація діапазону, та `vertical`, що позначає візуалізацію по вертикалі.
-
-> **Примітка:** Наступні атрибути полів не застосовуються до полів діапазону: `accept`, `alt`, `checked`, `dirname`, `formaction`, `formenctype`, `formmethod`, `formnovalidate`, `formtarget`, `height`, `maxlength`, `minlength`, `multiple`, `pattern`, `placeholder`, `readonly`, `required`, `size` і `src`. Усі вони, бувши заданими, ігноруються.
 
 ## Приклади
 
@@ -249,92 +249,25 @@ input[type="range"] {
 
 Усталено браузери візуалізують поля діапазону як повзуни з ручкою, що ковзає вліво-вправо.
 
-Щоб створити вертикальний діапазон, в якого ручка ковзатиме вгору-вниз, слід задати властивість CSS {{cssxref('appearance')}} зі значенням `slider-vertical` і нестандартний атрибут `orient` для Firefox.
+Щоб створити вертикальний діапазон, в якого ручка ковзатиме вгору-вниз, слід задати властивість CSS {{cssxref("writing-mode")}} зі значенням або `vertical-rl`, або `vertical-lr`.
 
-#### Горизонтальне поле діапазону
-
-Погляньте на цей контрольний елемент діапазону:
-
-```html
-<input type="range" id="volume" min="0" max="11" value="7" step="1" />
+```html hidden
+<input type="range" min="0" max="10" value="8" />
 ```
-
-{{EmbedLiveSample("horyzontalne-pole-diapazonu", 200, 40)}}
-
-Цей контрольний елемент – горизонтальний (принаймні на більшості, якщо не на всіх головних браузерах; інші можуть показувати його по-різному).
-
-#### Застосування властивості appearance
-
-Властивість {{cssxref('appearance')}} має нестандартне значення `slider-vertical`, котре, зрештою, робить повзуни вертикальними.
-
-Використаймо такий же HTML, як в попередніх прикладах:
-
-```html
-<input type="range" min="0" max="11" value="7" step="1" />
-```
-
-Ціллю є лише поля з типом діапазону:
 
 ```css
 input[type="range"] {
-  appearance: slider-vertical;
+  writing-mode: vertical-lr;
 }
 ```
 
-{{EmbedLiveSample("zastosuvannia-vlastyvosti-appearance", 200, 200)}}
+Це змушує повзун візуалізуватися вертикально:
 
-#### Застосування атрибута orient
+{{EmbedLiveSample("stvorennia-vertykalnykh-poliv-diapazonu", 200, 200)}}
 
-Виключно в Firefox є нестандартна властивість `orient`.
+Також можна задати властивість CSS {{cssxref('appearance')}} з нестандартним значенням `slider-vertical`, якщо потрібно підтримувати старі версії Chrome та Safari, і додати нестандартний атрибут `orient="vertical"`, щоб підтримувалися старі версії Firefox.
 
-Використаймо HTML, подібний до попередніх прикладів, додавши цей атрибут зі значенням `vertical`:
-
-```html
-<input type="range" min="0" max="11" value="7" step="1" orient="vertical" />
-```
-
-{{EmbedLiveSample("zastosuvannia-atrybuta-orient", 200, 200)}}
-
-#### writing-mode: bt-lr
-
-Властивість {{cssxref('writing-mode')}}, загалом, не слід використовувати для зміни напрямку письма для потреб інтернаціоналізації чи локалізації, але її можна використовувати для особливих ефектів.
-
-Використаймо такий же HTML, як в попередніх прикладах:
-
-```html
-<input type="range" min="0" max="11" value="7" step="1" />
-```
-
-Ціллю є лише поля з типом діапазону; до них застосовується зміна напряму письма з усталеного на `bt-lr`, тобто знизу-вгору та зліва-направо:
-
-```css
-input[type="range"] {
-  writing-mode: bt-lr;
-}
-```
-
-{{EmbedLiveSample("writing-mode-bt-lr", 200, 40)}}
-
-#### Збирання всього докупи
-
-Оскільки кожний з прикладів вище працює в різних браузерах, їх можна зібрати докупи, щоб це працювало в різних браузерах:
-
-Для Firefox – зберігається атрибут `orient` зі значенням `vertical`:
-
-```html
-<input type="range" min="0" max="11" value="7" step="1" orient="vertical" />
-```
-
-Ціллю є лише `input` з `type` зі значенням `range` та `orient` зі значенням `vertical`, і застосовується зміна `writing-mode` з усталеного на `bt-lr`, тобто знизу-вгору та зліва-направо, для версій Edge до Blink, а також `appearance: slider-vertical`, що підтримується в браузерах Blink і Webkit:
-
-```css
-input[type="range"][orient="vertical"] {
-  writing-mode: bt-lr;
-  appearance: slider-vertical;
-}
-```
-
-{{EmbedLiveSample("zbyrannia-vsoho-dokupy", 200, 200)}}
+Дивіться приклади в [Створенні вертикальних формових елементів](/uk/docs/Web/CSS/CSS_writing_modes/Vertical_controls).
 
 ## Технічний підсумок
 
@@ -353,7 +286,7 @@ input[type="range"][orient="vertical"] {
       <td><strong>Події</strong></td>
       <td>
         {{domxref("HTMLElement/change_event", "change")}} і
-        {{domxref("HTMLElement/input_event", "input")}}
+        {{domxref("Element/input_event", "input")}}
       </td>
     </tr>
     <tr>
@@ -362,14 +295,16 @@ input[type="range"][orient="vertical"] {
         <a href="/uk/docs/Web/HTML/Element/input#autocomplete"><code>autocomplete</code></a>,
         <a href="/uk/docs/Web/HTML/Element/input#list-spysok"><code>list</code></a>,
         <a href="/uk/docs/Web/HTML/Element/input#max-maksymum"><code>max</code></a>,
-        <a href="/uk/docs/Web/HTML/Element/input#min-minimum"><code>min</code></a> і
+        <a href="/uk/docs/Web/HTML/Element/input#min-minimum"><code>min</code></a>,
         <a href="/uk/docs/Web/HTML/Element/input#step-krok"><code>step</code></a>
       </td>
     </tr>
     <tr>
       <td><strong>Атрибути IDL</strong></td>
       <td>
-        <code>list</code>, <code>value</code> і <code>valueAsNumber</code>
+        <a href="/uk/docs/Web/HTML/Element/input#list-spysok"><code>list</code></a>,
+        <a href="/uk/docs/Web/HTML/Element/input#value-znachennia"><code>value</code></a>,
+        <code>valueAsNumber</code>
       </td>
     </tr>
     <tr>
@@ -407,5 +342,6 @@ input[type="range"][orient="vertical"] {
 - [`<input type="number">`](/uk/docs/Web/HTML/Element/input/number)
 - {{domxref('validityState.rangeOverflow')}} і {{domxref('validityState.rangeUnderflow')}}
 - [Контроль декількох параметрів за допомогою ConstantSourceNode](/uk/docs/Web/API/Web_Audio_API/Controlling_multiple_parameters_with_ConstantSourceNode)
+- [Створення вертикальних формових елементів](/uk/docs/Web/CSS/CSS_writing_modes/Vertical_controls)
 - [Оформлення елемента діапазону](https://css-tricks.com/sliding-nightmare-understanding-range-input/)
 - [Сумісність властивостей CSS](/uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls)
