@@ -16,6 +16,9 @@ browser-compat: css.properties.width
 - Якщо значення `width` менше за значення `min-width`, то `min-width` відкидає `width`.
 - Якщо значення `width` більше за значення `max-width`, то `max-width` відкидає `width`.
 
+> [!NOTE]
+> Як геометрична властивість, `width` також застосовується до елементів SVG {{SVGElement("svg")}}, {{SVGElement("rect")}}, {{SVGElement("image")}} і {{SVGElement("foreignObject")}}, причому `auto` вирішується як `100%` для `<svg>` і як `0` для інших елементів, а відсоткові значення відносні щодо ширини області перегляду SVG для `<rect>`. Значення властивості CSS `width` перемагає значення атрибуту SVG {{SVGAttr("width")}}, якщо на елементі SVG такий задано.
+
 ## Синтаксис
 
 ```css
