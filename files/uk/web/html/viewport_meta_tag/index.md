@@ -46,7 +46,8 @@ spec-urls: https://drafts.csswg.org/css-viewport/#viewport-meta
 - `interactive-widget`
   - : Задає те, як інтерактивні віджети UI, наприклад, віртуальна клавіатура, впливають на область перегляду сторінки. Дійсні значення: `resizes-visual`, `resizes-content` і `overlays-content`. Усталене – `resizes-visual`.
 
-> **Застереження:** Застосування `user-scalable=no` може призвести до проблем доступності для користувачів з порушеннями зору, як от слабким зором. [WCAG](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#guideline_1.4_make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background) вимагає щонайменше двократного наближення; проте найкращим підходом є дозволити п'ятикратне наближення.
+> [!WARNING]
+> Застосування `user-scalable=no` може призвести до проблем доступності для користувачів з порушеннями зору, як от слабким зором. [WCAG](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#guideline_1.4_make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background) вимагає щонайменше двократного наближення; проте найкращим підходом є дозволити п'ятикратне наближення.
 
 ## Роздільна здатність екрана
 
@@ -85,7 +86,7 @@ spec-urls: https://drafts.csswg.org/css-viewport/#viewport-meta
 
 ## Поширені розміри області перегляду для мобільних та планшетних пристроїв
 
-Коли треба знати, які мобільні й планшетні пристрої мають яку ширину області перегляду, можна звернутися до вичерпного списку [розмірів мобільних та планшетних областей перегляду тут](https://experienceleague.adobe.com/docs/target/using/experiences/vec/mobile-viewports.html). Він надає таку інформацію, як ширину області перегляду в портретній та пейзажній орієнтації, а також фізичні розміри екрана, операційну систему та роздільну здатність пристрою.
+Коли треба знати, які мобільні й планшетні пристрої мають яку ширину області перегляду, можна звернутися до вичерпного списку [розмірів мобільних та планшетних областей перегляду тут](https://experienceleague.adobe.com/en/docs/target/using/experiences/vec/mobile-viewports). Він надає таку інформацію, як ширину області перегляду в портретній та пейзажній орієнтації, а також фізичні розміри екрана, операційну систему та роздільну здатність пристрою.
 
 ## Специфікації
 
