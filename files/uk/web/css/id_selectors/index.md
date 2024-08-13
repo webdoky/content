@@ -28,7 +28,7 @@ browser-compat: css.selectors.id
 [id=id_value] { style properties }
 ```
 
-Значення `id_value` мусить бути валідним [ідентифікатором CSS](/uk/docs/Web/CSS/ident). Атрибути HTML `id`, що не є валідними ідентифікаторами CSS, повинні бути [екрановані](/uk/docs/Web/CSS/ident#escaping_characters) для вжитку в класових селекторах.
+Значення `id_value` мусить бути валідним [ідентифікатором CSS](/uk/docs/Web/CSS/ident). Атрибути HTML `id`, що не є валідними ідентифікаторами CSS, повинні бути [екрановані](/uk/docs/Web/CSS/ident#escaping_characters) для вжитку в селекторах ідентифікаторів.
 
 ## Приклади
 
