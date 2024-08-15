@@ -7,7 +7,7 @@ browser-compat: css.selectors.read-only
 
 {{CSSRef}}
 
-[Псевдоклас](/uk/docs/Web/CSS/Pseudo-classes) [CSS](/uk/docs/Web/CSS) **`:read-only`** (лише для зчитування) вибирає елементи (наприклад, певні типи {{htmlelement("input")}}, а також {{htmlelement("textarea")}}), які не може редагувати користувач. Елементи, на які не діє атрибут HTML [`readonly`](/uk/docs/Web/HTML/Attributes/readonly) (наприклад, [`<input type="radio">`](/uk/docs/Web/HTML/Element/input/radio), [`<input type="checkbox">`](/uk/docs/Web/HTML/Element/input/checkbox), а також усі неформові елементи), також вибираються псевдокласом `:read-only`. Фактично `:read-only` дає збіг з усім, з чим не дає збігу {{cssxref(":read-write")}}, що робить його рівносильним `:not(:read-write)`.
+[Псевдоклас](/uk/docs/Web/CSS/Pseudo-classes) [CSS](/uk/docs/Web/CSS) **`:read-only`** (лише для зчитування) вибирає елементи (наприклад, певні типи {{htmlelement("input")}}, а також {{htmlelement("textarea")}}), які не може редагувати користувач. Елементи, на які не діє атрибут HTML [`readonly`](/uk/docs/Web/HTML/Attributes/readonly) (наприклад, [`<input type="radio">`](/uk/docs/Web/HTML/Element/input/radio), [`<input type="checkbox">`](/uk/docs/Web/HTML/Element/input/checkbox) та усі неформові елементи), також вибираються псевдокласом `:read-only`. Фактично `:read-only` дає збіг з усім, з чим не дає збігу {{cssxref(":read-write")}}, що робить його рівносильним `:not(:read-write)`.
 
 {{EmbedInteractiveExample("pages/tabbed/pseudo-class-read-only.html", "tabbed-shorter")}}
 
