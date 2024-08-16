@@ -14,7 +14,7 @@ browser-compat: css.properties.height
 Властивості {{cssxref("min-height")}} та {{cssxref("max-height")}} зневажають `height`.
 
 > [!NOTE]
-> Як геометрична властивість, `height` також застосовується до елементів SVG {{SVGElement("svg")}}, {{SVGElement("rect")}}, {{SVGElement("image")}} і {{SVGElement("foreignObject")}}, причому `auto` вирішується як `100%` для `<svg>` і як `0` для інших елементів, а відсоткові значення відносні щодо висоти області перегляду SVG для `<rect>`. Значення властивості CSS `height` перемагає значення атрибуту SVG {{SVGAttr("width")}}, якщо на елементі SVG такий задано.
+> Як геометрична властивість, `height` також застосовується до елементів SVG {{SVGElement("svg")}}, {{SVGElement("rect")}}, {{SVGElement("image")}} і {{SVGElement("foreignObject")}}, причому `auto` вирішується як `100%` для `<svg>` і як `0` для інших елементів, а відсоткові значення відносні щодо висоти області перегляду SVG для `<rect>`. Значення властивості CSS `height` перемагає значення атрибута SVG {{SVGAttr("width")}}, якщо на елементі SVG такий задано.
 
 ## Синтаксис
 
