@@ -31,7 +31,7 @@ overflow-x: unset;
 
 Властивість `overflow-x` задається у вигляді єдиного значення – ключового слова {{CSSXref("overflow_value", "&lt;overflow&gt;")}}.
 
-Якщо {{cssxref("overflow-y")}} має значення `hidden`, `scroll` або `auto` а `overflow-x` – `visible` (усталене значення), то це значення неявно буде обчислено як `auto`.
+Якщо {{cssxref("overflow-y")}} має значення `hidden`, `scroll` або `auto`, а `overflow-x` – `visible` (усталене значення), то це значення неявно буде обчислено як `auto`.
 
 ### Значення
 
