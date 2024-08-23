@@ -50,11 +50,11 @@ function longestString() {
 arguments[1] = "нове значення";
 ```
 
-Несуворі функції, що мають лише прості параметри (тобто не мають решти, усталених параметрів або їх деструктурування), синхронізують нове значення параметрів з об'єктом `arguments`, і навпаки:
+Несуворі функції, що мають лише прості параметри (тобто не мають решти, усталених параметрів або їх деструктурування), синхронізують і нове значення параметрів з об'єктом `arguments`, і навпаки:
 
 ```js
 function func(a) {
-  arguments[0] = 99; // оновлення arguments[0] also змінює a
+  arguments[0] = 99; // оновлення arguments[0] також змінює a
   console.log(a);
 }
 func(10); // 99
@@ -66,7 +66,7 @@ function func2(a) {
 func2(10); // 99
 ```
 
-Несуворі функції, що _мають_ передані [решту](/uk/docs/Web/JavaScript/Reference/Functions/rest_parameters), [усталені](/uk/docs/Web/JavaScript/Reference/Functions/Default_parameters) або [деструктуровані](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) параметри, не синхронізують нові значення, присвоєні параметрам у тілі функції, з об'єктом `arguments`. Замість цього об'єкт `arguments` у несуворих функцій зі складними параметрами завжди відображатиме значення, передані функції при її виклику.
+Несуворі функції, до яких _було_ передано [решту](/uk/docs/Web/JavaScript/Reference/Functions/rest_parameters), [усталені](/uk/docs/Web/JavaScript/Reference/Functions/Default_parameters) або [деструктуровані](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) параметри, не синхронізують нові значення, присвоєні параметрам у тілі функції, з об'єктом `arguments`. Замість цього об'єкт `arguments` у несуворих функцій зі складними параметрами завжди відображатиме значення, передані функції під час її виклику.
 
 ```js
 function funcWithDefault(a = 55) {
@@ -89,14 +89,14 @@ function funcWithDefault3(a = 55) {
 funcWithDefault3(); // undefined; 0
 ```
 
-Це та сама логіка, яку демонструють всі [функції суворого режиму](/uk/docs/Web/JavaScript/Reference/Strict_mode#sproshchennia-eval-i-arguments), незалежно від типів параметрів, які їм передаються. Тобто присвоєння нових значень до параметрів у тілі функції ніколи не впливає на об'єкт `arguments`, і так само присвоєння нових значень за індексами `arguments` не впливає на значення параметрів, навіть якщо функція має лише прості параметри.
+Цю саму поведінку демонструють усі [функції суворого режиму](/uk/docs/Web/JavaScript/Reference/Strict_mode#sproshchennia-eval-i-arguments), незалежно від типів параметрів, які їм передаються. Тобто присвоєння нових значень до параметрів у тілі функції ніколи не впливає на об'єкт `arguments`, і так само присвоєння нових значень за індексами `arguments` не впливає на значення параметрів, навіть якщо функція має лише прості параметри.
 
 > [!NOTE]
 > Не можна вписати директиву `"use strict";` у тіло визначення функції, що приймає решту, усталені або деструктуровані параметри. Це призведе до викидання [синтаксичної помилки](/uk/docs/Web/JavaScript/Reference/Errors/Strict_non_simple_params).
 
 ### arguments – це масивоподібний об'єкт
 
-`arguments` – це масивоподібний об'єкт, тобто `arguments` має властивість {{jsxref("Functions/arguments/length", "length")}} і властивості з індексами від нуля, але не має вбудованих методів {{jsxref("Array")}}, таких як {{jsxref("Array/forEach", "forEach()")}} або {{jsxref("Array/map", "map()")}}. Однак його можна перетворити на справжній масив за допомогою [`slice()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/slice), {{jsxref("Array.from()")}} або [синтаксису розгортання](/uk/docs/Web/JavaScript/Reference/Operators/Spread_syntax).
+`arguments` – це масивоподібний об'єкт, тобто `arguments` має властивість {{jsxref("Functions/arguments/length", "length")}} і властивості з індексами від нуля, але не має вбудованих методів {{jsxref("Array")}}, як-от {{jsxref("Array/forEach", "forEach()")}} або {{jsxref("Array/map", "map()")}}. Однак його можна перетворити на справжній масив за допомогою [`slice()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/slice), {{jsxref("Array.from()")}} або [синтаксису розгортання](/uk/docs/Web/JavaScript/Reference/Operators/Spread_syntax).
 
 ```js
 const args = Array.prototype.slice.call(arguments);
@@ -106,7 +106,7 @@ const args = Array.from(arguments);
 const args = [...arguments];
 ```
 
-Для поширених ситуацій використання `arguments` як масивоподібного об'єкта – достатньо, оскільки він водночас [є ітерованим](/uk/docs/Web/JavaScript/Reference/Functions/arguments/Symbol.iterator) і має властивість `length` та числові індекси. Наприклад, метод {{jsxref("Function.prototype.apply()", "apply()")}} приймає масивоподібні об'єкти.
+Для поширених ситуацій достатньо використовувати `arguments` як масивоподібний об'єкт, оскільки він водночас [є ітерованим](/uk/docs/Web/JavaScript/Reference/Functions/arguments/Symbol.iterator) і має властивість `length` та числові індекси. Наприклад, метод {{jsxref("Function.prototype.apply()", "apply()")}} приймає масивоподібні об'єкти.
 
 ```js
 function midpoint() {
@@ -131,7 +131,7 @@ console.log(midpoint(3, 1, 4, 1, 5)); // 3
 
 ### Визначення функції, що з'єднує докупи декілька рядків
 
-Цей приклад визначає функцію, що з'єднує докупи декілька рядків. Її єдиний формальний аргумент – це рядок, що містить символи, які розділяють елементи, котрі з'єднуються.
+Цей приклад визначає функцію, що з'єднує докупи декілька рядків. Її єдиний формальний аргумент – це рядок символів між з'єднуваними елементами.
 
 ```js
 function myConcat(separator) {
@@ -176,7 +176,7 @@ list("u", "Один", "Два", "Три");
 
 ### Застосування typeof до arguments
 
-Оператор {{jsxref("Operators/typeof", "typeof")}} повертає `'object'`, коли його застосувати до `arguments`:
+Оператор {{jsxref("Operators/typeof", "typeof")}} повертає `'object'` для `arguments`:
 
 ```js
 console.log(typeof arguments); // 'object'
