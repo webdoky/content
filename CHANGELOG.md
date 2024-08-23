@@ -3,6 +3,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2024-08-16 - 2024-08-23]
+
+* **Переклад(HTML):** web/html/constraint_validation (#1766) ([80829954](https://github.com/webdoky/content/commit/808299547571b1350fa9cc3a19531357e85bca79))
+* **Оновлення перекладу(CSS):** web/css/width (#3283) ([a740c95d](https://github.com/webdoky/content/commit/a740c95d6de4e601f538b9422e788dbec36bb2f7))
+* **Оновлення перекладу(CSS):** web/css/height (#3284) ([5fb98d97](https://github.com/webdoky/content/commit/5fb98d977a3405f2345c4717dfcadc82fd32bfae))
+* **Переклад(JS):** web/javascript/reference/functions/arguments (#2732) ([8c075572](https://github.com/webdoky/content/commit/8c07557205d4ab884b3a9c34c69ddb64effbc9b1))
+* **Оновлення перекладу(HTML):** web/html/global_attributes/class (#3290) ([8b8809aa](https://github.com/webdoky/content/commit/8b8809aa0562826d6f73de06dadf3900d5b786fd))
+* **Оновлення перекладу(CSS):** web/css/containing_block (#3287) ([7363ed6c](https://github.com/webdoky/content/commit/7363ed6cbb1f3a678a32fb59f07a9284dd3671bf))
+* **Переклад(CSS):** web/css/counters (#3297) ([c6ec3ff6](https://github.com/webdoky/content/commit/c6ec3ff64a9bdc4bc38e282b050733b1639787f0))
+* **Оновлення перекладу(CSS):** web/css/at-rule (#3306) ([c1a15921](https://github.com/webdoky/content/commit/c1a159210a8d68c9ebec4bf8de6ccf64b7999a59))
+* **Оновлення перекладу(CSS):** web/css/_colon_read-only (#3302) ([9ca8e321](https://github.com/webdoky/content/commit/9ca8e3210c16e00921bf2b54b95f25be8dd19657))
+* **Переклад(CSS):** web/css/_doublecolon_before (#3311) ([091ea619](https://github.com/webdoky/content/commit/091ea6193ae7ad698f9826ae71b96cd0f03c40cf))
+* **Переклад(HTML):** web/html/element/picture (#3308) ([e3c2746b](https://github.com/webdoky/content/commit/e3c2746b802dc6420ae9b8bbef9dd97a83b785e9))
+
 ## [2024-08-09 - 2024-08-16]
 
 * **Переклад(JS):** web/javascript/reference/global_objects/object/is (#3309) ([52751ff3](https://github.com/webdoky/content/commit/52751ff32d99ab4f4941fd01444436ad08df3e0b))
