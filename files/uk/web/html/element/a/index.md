@@ -1,5 +1,5 @@
 ---
-title: "<a>: Якірний елемент"
+title: <a> – якірний елемент
 slug: Web/HTML/Element/a
 page-type: html-element
 browser-compat: html.elements.a
@@ -33,7 +33,7 @@ browser-compat: html.elements.a
       https://b.example/register-source"
       ```
 
-      Це корисно в тих випадках, коли запитаний ресурс не перебуває на сервері під вашим контролем або просто хочеться обробляти реєстрацію джерела атрибуції на іншому сервері. Тоді можна задати одну або більше адрес URL як значення `attributionsrc`. Коли відбувається запит на ресурс, заголовок {{httpheader("Attribution-Reporting-Eligible")}} надсилається на адреси URL, задані в `attributionsrc `, а не лише за походженням ресурсу. Ці адреси URL потім можуть відповісти заголовком {{httpheader("Attribution-Reporting-Register-Source")}} відповідно для завершення реєстрації.
+      Це корисно в тих випадках, коли запитаний ресурс не перебуває на сервері під вашим контролем або просто хочеться обробляти реєстрацію джерела атрибуції на іншому сервері. Тоді можна задати одну або більше адрес URL як значення `attributionsrc`. Коли відбувається запит на ресурс, заголовок {{httpheader("Attribution-Reporting-Eligible")}} надсилається на адреси URL, задані в `attributionsrc`, а не лише за походженням ресурсу. Ці адреси URL потім можуть відповісти заголовком {{httpheader("Attribution-Reporting-Register-Source")}} відповідно для завершення реєстрації.
 
       > [!NOTE]
       > Задання кількох адрес URL означає те, що на один елемент можна зареєструвати кілька джерел атрибуції. Можна, наприклад, мати різні кампанії, для вимірювання успішності яких потрібно генерувати різні звіти щодо різних даних.
@@ -47,7 +47,7 @@ browser-compat: html.elements.a
 
       - Заголовка HTTP {{HTTPHeader("Content-Disposition")}}
       - Останнього сегмента [шляху](/uk/docs/Web/API/URL/pathname) URL
-      - {{Glossary("MIME_type", "Типу медіаданих")}} (із заголовка {{HTTPHeader("Content-Type")}}, початку [URL `data:`](/uk/docs/Web/HTTP/Basics_of_HTTP/Data_URLs) чи {{domxref("Blob.type")}} в [URL `blob:`](/uk/docs/Web/API/URL/createObjectURL_static))
+      - {{Glossary("MIME_type", "Типу медіаданих")}} (із заголовка {{HTTPHeader("Content-Type")}}, початку [URL `data:`](/uk/docs/Web/URI/Schemes/data) чи {{domxref("Blob.type")}} в [URL `blob:`](/uk/docs/Web/API/URL/createObjectURL_static))
 
     - `filename`: якщо значення задане, то воно буде запропоновано як назва файлу. Символи `/` і `\` перетворюються на підкреслення (`_`). Файлові системи можуть забороняти інші символи в іменах файлів, тож браузери підлаштовуватимуть запропоноване ім'я, якщо це необхідно.
 
@@ -65,7 +65,7 @@ browser-compat: html.elements.a
   - : URL, на котрий вказує гіперпосилання. Посилання не обмежені HTTP URL: вони можуть використовувати будь-яку схему URL, котру підтримують браузери:
 
     - Розділи сторінки – за допомогою фрагментів документів
-    - Конкретні частини тексту - за допомогою [текстових фрагментів](/uk/docs/Web/Text_fragments)
+    - Конкретні частини тексту – за допомогою [текстових фрагментів](/uk/docs/Web/URI/Fragment/Text_fragments)
     - Шматочки медіафайлів – за допомогою фрагментів медіа
     - Номери телефонів – за допомогою URL `tel:`
     - Адреси електронної пошти – за допомогою URL `mailto:`
@@ -216,10 +216,10 @@ browser-compat: html.elements.a
 
 {{EmbedLiveSample('posylannia-na-ne-html-resurs')}}
 
-- [WebAIM: Посилання та гіпертекст – гіпертекстові посилання (англ.)](https://webaim.org/techniques/hypertext/hypertext_links)
+- [WebAIM: Посилання та гіпертекст – гіпертекстові посилання](https://webaim.org/techniques/hypertext/hypertext_links)
 - [MDN / Розуміння WCAG, Настанови 3.2](/uk/docs/Web/Accessibility/Understanding_WCAG/Understandable#guideline_3.2_—_predictable_make_web_pages_appear_and_operate_in_predictable_ways)
-- [G200: Відкривання посилань в нових вікнах та вкладках лише тоді, коли це необхідно (англ.)](https://www.w3.org/TR/WCAG20-TECHS/G200.html)
-- [G201: Покращене попередження користувачів про відкривання нового вікна (англ.)](https://www.w3.org/TR/WCAG20-TECHS/G201.html)
+- [G200: Відкривання посилань в нових вікнах та вкладках лише тоді, коли це необхідно](https://www.w3.org/TR/WCAG20-TECHS/G200.html)
+- [G201: Покращене попередження користувачів про відкривання нового вікна](https://www.w3.org/TR/WCAG20-TECHS/G201.html)
 
 ### Стрибкові посилання
 
@@ -255,22 +255,22 @@ browser-compat: html.elements.a
 
 Стрибкові посилання особливо корисні для тих, хто орієнтується за допомогою допоміжних технологій, як то управління за допомогою перемикачів, голосових команд чи ротових або наголовних паличок, коли проходження крізь повторювані посилання може бути працемістким.
 
-- [WebAIM: посилання "стрибкового переходу" (англ.)](https://webaim.org/techniques/skipnav/)
-- [Довідка: Використовуйте посилання стрибкового переходу (англ.)](https://www.a11yproject.com/posts/skip-nav-links/)
+- [WebAIM: посилання "стрибкового переходу"](https://webaim.org/techniques/skipnav/)
+- [Довідка: Використовуйте посилання стрибкового переходу](https://www.a11yproject.com/posts/skip-nav-links/)
 - [MDN / Розуміння WCAG, пояснення Настанов 2.4](/uk/docs/Web/Accessibility/Understanding_WCAG/Operable#guideline_2.4_%e2%80%94_navigable_provide_ways_to_help_users_navigate_find_content_and_determine_where_they_are)
-- [Розуміння критеріїв успіху 2.4.1 (англ.)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html)
+- [Розуміння критеріїв успіху 2.4.1](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html)
 
 ### Розмір та суміжність
 
 #### Розмір
 
-Інтерактивні елементи типу посилань повинні надавати достатньо велику зону, щоб їх легко було активувати. Це корисно для різних людей, включно з тими, хто має розлади контролю рухів та тих, хто має малоточні засоби введення, наприклад, сенсорний екран. Рекомендований мінімальний розмір – 44×44 [пікселів CSS (англ.)](https://www.w3.org/TR/WCAG21/#dfn-css-pixels).
+Інтерактивні елементи типу посилань повинні надавати достатньо велику зону, щоб їх легко було активувати. Це корисно для різних людей, включно з тими, хто має розлади контролю рухів та тих, хто має малоточні засоби введення, наприклад, сенсорний екран. Рекомендований мінімальний розмір – 44×44 [пікселів CSS](https://www.w3.org/TR/WCAG21/#dfn-css-pixels).
 
 Суто текстові посилання всередині оповідального вмісту звільняються від цієї вимоги, але все ж є доброю думкою пересвідчитись, що тексту всередині посилання достатньо, щоб посилання легко було активувати.
 
-- [Розуміння критеріїв успіху 2.5.5: Розмір мішені (англ.)](https://www.w3.org/WAI/WCAG21/Understanding/target-size.html)
+- [Розуміння критеріїв успіху 2.5.5: Розмір мішені](https://www.w3.org/WAI/WCAG21/Understanding/target-size.html)
 - [Розмір мішені та 2.5.5](https://adrianroselli.com/2019/06/target-size-and-2-5-5.html)
-- [Хуткий тест: Великі мішені для дотику (англ.)](https://www.a11yproject.com/posts/large-touch-targets/)
+- [Хуткий тест: Великі мішені для дотику](https://www.a11yproject.com/posts/large-touch-targets/)
 
 #### Суміжність
 
@@ -278,7 +278,7 @@ browser-compat: html.elements.a
 
 Відступи можна утворити за допомогою властивостей CSS типу {{CSSxRef("margin")}}.
 
-- [Тремтіння рук та проблема велетенської кнопки (англ.)](https://axesslab.com/hand-tremors/)
+- [Тремтіння рук та проблема велетенської кнопки](https://axesslab.com/hand-tremors/)
 
 ## Приклади
 
@@ -332,7 +332,7 @@ a {
 {{EmbedLiveSample('posylannia-na-element-v-mezhakh-tiiei-samoi-storinky')}}
 
 > [!NOTE]
-> Для посилання на верх поточної сторінки можна використовувати `href="#top"` чи пустий фрагмент (`href="#"`), [це описано в специфікації HTML (англ.)](https://html.spec.whatwg.org/multipage/browsing-the-web.html#scroll-to-the-fragment-identifier).
+> Для посилання на верх поточної сторінки можна використовувати `href="#top"` чи пустий фрагмент (`href="#"`), [це описано в специфікації HTML](https://html.spec.whatwg.org/multipage/browsing-the-web.html#scroll-to-the-fragment-identifier).
 
 ### Посилання на адресу електронної пошти
 
@@ -552,4 +552,4 @@ document
 - {{CSSxRef(":link")}} – це псевдоклас CSS, що дає збіг з елементами `<a>`, в атрибуті `href` яких задані URL, котрі користувач поки не відвідував.
 - {{CSSxRef(":visited")}} – це псевдоклас CSS, що дає збіг з елементами `<a>`, в атрибуті `href` яких задані URL, котрі користувач уже відвідував у минулому.
 - {{CSSxRef(":any-link")}} – це псевдоклас CSS, що дає збіг з елементами `<a>`, котрі мають атрибут `href`.
-- [Текстові фрагменти](/uk/docs/Web/Text_fragments) – це інструкції користувацькому агентові, додані до URL, що дають змогу авторам вмісту посилатися на конкретний текст на сторінці, не вимагаючи від елементів мати ID.
+- [Текстові фрагменти](/uk/docs/Web/URI/Fragment/Text_fragments) – це інструкції користувацькому агентові, додані до URL, що дають змогу авторам вмісту посилатися на конкретний текст на сторінці, не вимагаючи від елементів мати ID.
