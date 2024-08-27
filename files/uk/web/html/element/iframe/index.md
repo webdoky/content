@@ -127,7 +127,7 @@ browser-compat: html.elements.iframe
     - `allow-top-navigation-by-user-activation`
       - : Дає ресурсові виконувати переходи в навігаційному контексті вищого рівня, але лише тоді, коли це ініційовано рухом користувача.
     - `allow-top-navigation-to-custom-protocols`
-      - : Дозволяє перехід за протоколами, відмінними від `http`, вбудованими в браузер чи [зареєстрованими вебсайтом](/uk/docs/Web/API/Navigator/registerProtocolHandler/Web-based_protocol_handlers). Ця можливість також вмикається ключовими словами `allow-popups` і `allow-top-navigation`.
+      - : Дозволяє перехід за протоколами, відмінними від `http`, вбудованими в браузер чи [зареєстрованими вебсайтом](/uk/docs/Web/API/Navigator/registerProtocolHandler). Ця можливість також вмикається ключовими словами `allow-popups` і `allow-top-navigation`.
 
     > [!NOTE]
     >
