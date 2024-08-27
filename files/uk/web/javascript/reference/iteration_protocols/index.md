@@ -494,6 +494,98 @@ console.log([...someString]); // ["bye"]
 console.log(`${someString}`); // "hi"
 ```
 
+### Конкурентне внесення змін при ітеруванні
+
+Майже всі ітеровані мають однакову внутрішню семантику: вони не копіюють дані, коли починається ітерування. Замість цього вони зберігають вказівник і змінюють його значення. Таким чином, якщо додати, видалити або змінити елементи в колекції, ітеруючи по ній, можна ненароком змінити те, чи будуть оброблені інші, _незмінені_ елементи колекції. Це дуже схоже на те, як працюють [ітерувальні методи масивів](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#vnesennia-zmin-do-vykhidnoho-masyvu-v-iteratyvnykh-metodakh).
+
+Для прикладу – наступний зразок, з використанням {{domxref("URLSearchParams")}}:
+
+```js
+const searchParams = new URLSearchParams(
+  "deleteme1=value1&key2=value2&key3=value3",
+);
+
+// Видалити небажані ключі
+for (const [key, value] of searchParams) {
+  console.log(key);
+  if (key.startsWith("deleteme")) {
+    searchParams.delete(key);
+  }
+}
+
+// Вивід:
+// deleteme1
+// key3
+```
+
+Зверніть увагу на те, що `key2` взагалі не виводиться. Це пов'язано з тим, що `URLSearchParams` усередині є списком пар ключа та значення. Коли `deleteme1` обробляється та видаляється, всі інші записи зсуваються на один уліво, тож `key2` займає те місце, в якому раніше був `deleteme1`, і коли вказівник переходить до наступного ключа, то опиняється на `key3`.
+
+Певні реалізації ітерованих уникають цієї проблеми, задаючи "надгробки" значень, аби не зсувати решту значень. Для прикладу – подібний код з використанням `Map`:
+
+```js
+const myMap = new Map([
+  ["deleteme1", "value1"],
+  ["key2", "value2"],
+  ["key3", "value3"],
+]);
+
+for (const [key, value] of myMap) {
+  console.log(key);
+  if (key.startsWith("deleteme")) {
+    myMap.delete(key);
+  }
+}
+
+// Вивід:
+// deleteme1
+// key2
+// key3
+```
+
+Зверніть увагу на те, що виводяться всі ключі. Це пов'язано з тим, що `Map` не зсуває решту ключів, коли один з них видалено. Якщо хочете реалізувати щось подібне, то ось який вигляд це може мати:
+
+```js
+const tombstone = Symbol("tombstone");
+
+class MyIterable {
+  #data;
+  constructor(data) {
+    this.#data = data;
+  }
+  delete(deletedKey) {
+    for (let i = 0; i < this.#data.length; i++) {
+      if (this.#data[i][1] === deletedKey) {
+        this.#data[i] = tombstone;
+        return true;
+      }
+    }
+    return false;
+  }
+  *[Symbol.iterator]() {
+    for (let i = 0; i < this.#data.length; i++) {
+      if (this.#data[i] !== tombstone) {
+        yield this.#data[i];
+      }
+    }
+  }
+}
+
+const myIterable = new MyIterable([
+  ["deleteme1", "value1"],
+  ["key2", "value2"],
+  ["key3", "value3"],
+]);
+for (const [key, value] of myIterable) {
+  console.log(key);
+  if (key.startsWith("deleteme")) {
+    myIterable.delete(key);
+  }
+}
+```
+
+> [!WARNING]
+> Конкурентні зміни загалом дуже часто приводять до вад і плутанини. Якщо не знаєте з кришталевою ясністю, як працює ітерований об'єкт, краще уникати внесення змін до колекції, по якій відбувається ітерація.
+
 ## Специфікації
 
 {{Specifications}}
