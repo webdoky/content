@@ -46,7 +46,7 @@ timeControl.value = "15:30";
   <label for="startTime">Час початку: </label>
   <input type="time" id="startTime" />
   <p>
-    Значення поля <code>time</code>: <code> "<span id="value">–</span>"</code>.
+    Значення поля <code>time</code>: <code>"<span id="value">–</span>"</code>.
   </p>
 </form>
 ```
