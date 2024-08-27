@@ -73,7 +73,7 @@ browser-compat:
       ```
 
     - Вкупі з атрибутом [`hreflang`](/uk/docs/Web/HTML/Element/link#hreflang), що відрізняється від мови документа, це позначає переклад.
-    - Вкупі з атрибутом [`type`](/uk/docs/Web/HTML/Element/link#type) зі значенням `"application/rss+xml"`або `"application/atom+xml"`, це утворює гіперпосилання, що вказує на стрічку синдикації.
+    - Вкупі з атрибутом [`type`](/uk/docs/Web/HTML/Element/link#type) зі значенням `"application/rss+xml"` або `"application/atom+xml"`, це утворює гіперпосилання, що вказує на стрічку синдикації.
 
       ```html
       <link
