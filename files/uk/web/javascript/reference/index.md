@@ -336,6 +336,29 @@ page-type: landing-page
 - {{jsxref("Classes/static", "static")}}
 - [Блоки статичної ініціалізації](/uk/docs/Web/JavaScript/Reference/Classes/Static_initialization_blocks)
 
+## Регулярні вирази
+
+[Регулярні вирази JavaScript.](/uk/docs/Web/JavaScript/Reference/Regular_expressions)
+
+- [Зворотні посилання: `\1`, `\2`](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Backreference)
+- [Групи захоплення: `(...)`](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Capturing_group)
+- [Класи символів: `[...]`, `[^...]`](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Character_class)
+- [Екранування класів символів: `\d`, `\D`, `\w`, `\W`, `\s`, `\S`](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Character_class_escape)
+- [Екранування символів: `\n`, `\u{...}`](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Character_escape)
+- [Диз'юнкція: `|`](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Disjunction)
+- [Твердження про межу вихідної послідовності: `^`, `$`](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Input_boundary_assertion)
+- [Буквальні символи: `a`, `b`](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Literal_character)
+- [Твердження зазирання: `(?=...)`, `(?!...)`](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Lookahead_assertion)
+- [Твердження озирання: `(?<=...)`, `(?<!...)`](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Lookbehind_assertion)
+- [Модифікатори: `(?ims-ims:...)`](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Modifier)
+- [Іменовані зворотні посилання: `\k<name>`](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Named_backreference)
+- [Іменовані групи захоплення: `(?<name>...)`](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Named_capturing_group)
+- [Незахоплювальні групи: `(?:...)`](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Non-capturing_group)
+- [Квантори: `*`, `+`, `?`, `{n}`, `{n,}`, `{n,m}`](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Quantifier)
+- [Екранування класів символів Unicode: `\p{...}`, `\P{...}`](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Unicode_character_class_escape)
+- [Джокер: `.`](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Wildcard)
+- [Твердження про межі слів: `\b`, `\B`](/uk/docs/Web/JavaScript/Reference/Regular_expressions/Word_boundary_assertion)
+
 ## Додаткові довідкові сторінки
 
 - {{jsxref("Lexical_grammar", "Лексична граматика", "", 1)}}
