@@ -74,10 +74,10 @@ light-dark(rgb(255 255 255), rgb(0 0 0))
   - Колірного простору [CIELAB](https://uk.wikipedia.org/wiki/Lab): {{CSSXref("color_value/lab", "lab()")}} і {{CSSXref("color_value/lch", "lch()")}}.
   - Колірного простору [Oklab](https://bottosson.github.io/posts/oklab/): {{CSSXref("color_value/oklab", "oklab()")}} і {{CSSXref("color_value/oklch", "oklch()")}}.
   - Інших колірних просторів: {{CSSXref("color_value/color", "color()")}}.
-- Шляхом застосування синтаксису [відносного кольору](/uk/docs/Web/CSS/CSS_colors/Relative_colors), щоб вивести новий колір на основі наявного. Кожна з колірних функцій вище може прийняти **початковий колір**, перед яким повинно стояти ключове слово `from`, після якого – визначення значень каналів для нового **результівного кольору**.
-- Шляхом змішування двох кольорів: {{CSSXref("color_value/color-mix", "color-mix()")}}.
-- Шляхом вибору кольору на основі співвідношень контрасту: {{CSSXref("color_value/color-contrast", "color-contrast()")}}.
-- Шляхом задання двох кольорів, перший з яких використовується для світлих колірних палітр, а другий – для темних: {{CSSXref("color_value/light-dark", "light-dark()")}}.
+- Через застосування синтаксису [відносного кольору](/uk/docs/Web/CSS/CSS_colors/Relative_colors), щоб вивести новий колір на основі наявного. Кожна з колірних функцій вище може прийняти **початковий колір**, перед яким повинно стояти ключове слово `from`, після якого – визначення значень каналів для нового **результівного кольору**.
+- Через змішування двох кольорів: {{CSSXref("color_value/color-mix", "color-mix()")}}.
+- Через вибір кольору на основі співвідношень контрасту: {{CSSXref("color_value/color-contrast", "color-contrast()")}}.
+- Через задання двох кольорів, перший з яких використовується для світлих колірних палітр, а другий – для темних: {{CSSXref("color_value/light-dark", "light-dark()")}}.
 
 ### Ключове слово `currentcolor`
 
