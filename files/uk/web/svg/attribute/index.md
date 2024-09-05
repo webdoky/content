@@ -9,7 +9,7 @@ page-type: landing-page
 
 Елементи SVG можуть бути модифіковані за допомогою атрибутів, що задають деталі того, як саме елемент повинен бути оброблений або візуалізований.
 
-Нижче - список усіх атрибутів, доступних у SVG, а також посилання на довідкову документацію, щоб допомогти вам дізнатися, які елементи їх підтримують і як вони працюють.
+Нижче – список усіх атрибутів, доступних у SVG, а також посилання на довідкову документацію, щоб допомогти вам дізнатися, які елементи їх підтримують і як вони працюють.
 
 ## Атрибути SVG від A до Z
 
@@ -58,7 +58,9 @@ page-type: landing-page
 ### D
 
 - {{SVGAttr("d")}}
+- {{SVGAttr("data-*")}}
 - {{SVGAttr("decelerate")}}
+- {{SVGAttr("decoding")}}
 - {{SVGAttr("descent")}}
 - {{SVGAttr("diffuseConstant")}}
 - {{SVGAttr("direction")}}
@@ -117,6 +119,7 @@ page-type: landing-page
 - {{SVGAttr("hreflang")}}
 - {{SVGAttr("horiz-adv-x")}}
 - {{SVGAttr("horiz-origin-x")}}
+- {{SVGAttr("horiz-origin-y")}}
 
 ### I
 
@@ -228,6 +231,7 @@ page-type: landing-page
 - {{SVGAttr("scale")}}
 - {{SVGAttr("seed")}}
 - {{SVGAttr("shape-rendering")}}
+- {{SVGAttr("side")}}
 - {{SVGAttr("slope")}}
 - {{SVGAttr("spacing")}}
 - {{SVGAttr("specularConstant")}}
@@ -365,7 +369,8 @@ page-type: landing-page
 
 ### Атрибути представлення
 
-> **Примітка:** Всі атрибути представлення SVG можуть бути використані як властивості CSS.
+> [!NOTE]
+> Всі атрибути представлення SVG можуть бути використані як властивості CSS.
 
 - {{SVGAttr("alignment-baseline")}}
 - {{SVGAttr("baseline-shift")}}
