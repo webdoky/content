@@ -3,6 +3,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2024-08-30 - 2024-09-06]
+
+* **Оновлення перекладу(CSS):** web/css/color_value (#3362) ([ac5407a1](https://github.com/webdoky/content/commit/ac5407a16f555713403e38df496ae1b494929f31))
+* **Оновлення перекладу(HTML):** web/html/attributes/readonly (#3360) ([df9c5b3d](https://github.com/webdoky/content/commit/df9c5b3d8e5213f3f8892d244ea90b9e3f28b5e3))
+* **Оновлення перекладу(CSS):** web/css/white-space (#3361) ([92901b55](https://github.com/webdoky/content/commit/92901b55a8b2a608cef59e7c003b90e6571ef5c2))
+* **Оновлення перекладу(CSS):** web/css/@media (#3363) ([76b4f55b](https://github.com/webdoky/content/commit/76b4f55bc9ba93ae2e0ab8afd0804bd509127a50))
+* **Оновлення перекладу(HTML):** web/html/element/input/text (#3364) ([e790649a](https://github.com/webdoky/content/commit/e790649a811b492095e1e0289e446d8b8d3044ac))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/math/abs (#3367) ([92f158fd](https://github.com/webdoky/content/commit/92f158fd4d8f6e3e8b1d2748415a41d83e371cad))
+* **Оновлення перекладу(JS):** web/javascript/reference/lexical_grammar (#3368) ([1906b872](https://github.com/webdoky/content/commit/1906b87294db63c9512482c4db5ad0f942fad8de))
+* **Оновлення перекладу(SVG):** web/svg/attribute (#3369) ([0cc9c537](https://github.com/webdoky/content/commit/0cc9c537ec0058c6c2bda732f1fa414d28e6a600))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/json (#3366) ([159543ad](https://github.com/webdoky/content/commit/159543addfc5895fc290114317bf9587563aae0a))
+* **Оновлення перекладу(JS):** web/javascript/reference/template_literals (#3365) ([c7cf05ff](https://github.com/webdoky/content/commit/c7cf05ff021f2bd03eb38b398c3a2aa8524f9413))
+* **Переклад(CSS):** web/css/filter (#3354) ([4a1b58a7](https://github.com/webdoky/content/commit/4a1b58a7de3445f039466691e04fa3af9bfd2ae8))
+* **Оновлення перекладу(CSS):** web/css/universal_selectors (#3359) ([aebdfc4c](https://github.com/webdoky/content/commit/aebdfc4cdb466e5149ee3055c10f7470c74e2c13))
+* **Оновлення перекладу(CSS):** web/css/caret-color (#3358) ([aa13bf80](https://github.com/webdoky/content/commit/aa13bf80f57e79ecca9c3e18f0b5c9a770b67e01))
+* **Оновлення перекладу(HTML):** web/html/element/input (#3357) ([5d0a732c](https://github.com/webdoky/content/commit/5d0a732c00c9230896114f4b8fbfd66864624538))
+* **Оновлення перекладу(HTML):** web/html/element (#3356) ([b83481ab](https://github.com/webdoky/content/commit/b83481ab2e0aff033d3a7f4acc176d16ccc57063))
+* **Виправлення:** make PR actuality flow check only new files ([adf7e147](https://github.com/webdoky/content/commit/adf7e1478e7f445bf2872caa4ac5186dd2f768ca))
+
 ## [2024-08-23 - 2024-08-30]
 
 * **Оновлення перекладу(JS):** web/javascript/reference/global_objects/intl (#3351) ([513ff563](https://github.com/webdoky/content/commit/513ff563d6e28e7589a0f0931b9644bd911aae8e))
