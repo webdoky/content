@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2024-09-06 - 2024-09-13]
+
+* **Оновлення перекладу(JS):** web/javascript/reference (#3355) ([ba00d948](https://github.com/webdoky/content/commit/ba00d9481db1c6fb3bfbae0bd2eb75b847ca11af))
+
 ## [2024-08-30 - 2024-09-06]
 
 * **Оновлення перекладу(CSS):** web/css/color_value (#3362) ([ac5407a1](https://github.com/webdoky/content/commit/ac5407a16f555713403e38df496ae1b494929f31))
