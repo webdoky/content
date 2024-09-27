@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2024-09-20 - 2024-09-27]
+
+...
+
 ## [2024-09-13 - 2024-09-20]
 
 * **Переклад(JS):** web/javascript/reference/functions/default_parameters (#3374) ([76f7ef80](https://github.com/webdoky/content/commit/76f7ef807d7826c3f6678acf5b5ebfbfe4d5db1d))
