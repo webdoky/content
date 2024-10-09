@@ -14,12 +14,12 @@ browser-compat: html.elements.output
 Цей елемент приймає [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
 
 - [`for`](/uk/docs/Web/HTML/Attributes/for)
-  - : Розділений пробілами список [`id`](/uk/docs/Web/HTML/Global_attributes#id) інших елементів, який вказує на те, що ці елементи доклали вихідних значень для обчислень (або ще якось вплинули на них).
+  - : Розділений пробілами список [`id`](/uk/docs/Web/HTML/Global_attributes/id) інших елементів, який вказує на те, що ці елементи доклали вихідних значень для обчислень (або ще якось вплинули на них).
 - `form`
 
-  - : Елемент {{HTMLElement("form")}}, яким пов'язане виведення (його _форма-власник_). Значення цього атрибута повинно бути [`id`](/uk/docs/Web/HTML/Global_attributes#id) елемента `<form>` у тому ж документі. (Якщо цей атрибут не задано, то `<output>` пов'язано з його предком `<form>`, якщо такий є.)
+  - : Елемент {{HTMLElement("form")}}, яким пов'язане виведення (його _форма-власник_). Значення цього атрибута повинно бути [`id`](/uk/docs/Web/HTML/Global_attributes/id) елемента `<form>` у тому ж документі. (Якщо цей атрибут не задано, то `<output>` пов'язано з його предком `<form>`, якщо такий є.)
 
-    Цей атрибут дає змогу пов'язувати елементи `<output>` з елементами `<form>` у будь-якому місці документа, а не лише всередині `<form>`. Він також може переважити елемент-предок `<form>`.
+    Цей атрибут дає змогу пов'язувати елементи `<output>` з елементами `<form>` у будь-якому місці документа, а не лише всередині `<form>`. Він також може переважити елемент-предок `<form>`. Назва та вміст елемента `<output>` не подаються вкупі з формою.
 
 - `name`
   - : Назва елемента. Використовується в API {{domxref("HTMLFormElement.elements", "form.elements")}}.
@@ -35,11 +35,25 @@ browser-compat: html.elements.output
 У наступному прикладі форма надає повзун, значення якого може змінюватися в межах від `0` до `100`, і елемент {{HTMLElement("input")}}, в який можна ввести друге число. Два числа додаються, а результат відображається в елементі `<output>` кожного разу, коли змінюється значення будь-якого з елементів керування.
 
 ```html
-<form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+<form id="example-form">
   <input type="range" id="b" name="b" value="50" /> +
   <input type="number" id="a" name="a" value="10" /> =
   <output name="result" for="a b">60</output>
 </form>
+```
+
+```js
+const form = document.getElementById("example-form");
+const a = form.elements["a"];
+const b = form.elements["b"];
+const result = form.elements["result"];
+function updateResult() {
+  const aValue = parseInt(a.value);
+  const bValue = parseInt(b.value);
+  result.value = aValue + bValue;
+}
+form.addEventListener("input", updateResult);
+updateResult();
 ```
 
 ### Результат
