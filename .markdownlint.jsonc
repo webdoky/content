@@ -289,7 +289,7 @@
         "message": "Use em dash between different words, not hyphen",
         "name": "emdash-not-hyphen",
         "replace": "$1 – ",
-        "searchPattern": "/([^ ]) - /gm",
+        "searchPattern": "/([^ >]) - /gm",
         "searchScope": "text"
       }
     ]

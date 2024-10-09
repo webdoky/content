@@ -774,7 +774,7 @@ page-type: landing-page
       <td>Визначає мову сценарію, що вживається в елементі.</td>
     </tr>
     <tr>
-      <td><code>loading</code> {{experimental_inline}}</td>
+      <td><code>loading</code></td>
       <td>
         {{HTMLElement("img")}}, {{HTMLElement("iframe")}}
       </td>

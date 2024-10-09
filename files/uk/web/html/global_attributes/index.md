@@ -71,7 +71,8 @@ browser-compat: html.global_attributes
 - [`is`](/uk/docs/Web/HTML/Global_attributes/is)
   - : Дає змогу вказати, що стандартний елемент HTML повинен поводитись як зареєстрований користувацький вбудований елемент (подробиці у [Використанні користувацьких елементів](/uk/docs/Web/API/Web_components/Using_custom_elements)).
 
-> **Примітка:** Атрибути `item*` є частиною [Функціональності мікроданих HTML WHATWG (англ.)](https://html.spec.whatwg.org/multipage/microdata.html#microdata).
+> [!NOTE]
+> Атрибути `item*` є частиною [Функціональності мікроданих HTML WHATWG](https://html.spec.whatwg.org/multipage/microdata.html#microdata).
 
 - [`itemid`](/uk/docs/Web/HTML/Global_attributes/itemid)
   - : Унікальний, глобальний ідентифікатор елемента даних.
@@ -127,6 +128,13 @@ browser-compat: html.global_attributes
 
     - `auto` або _порожній рядок_ – коли на елемент перевели фокус або торкнулися його, автоматично виводиться віртуальна клавіатура.
     - `manual` – фокус і дотик елемента відв'язані від стану віртуальної клавіатури.
+
+- [`writingsuggestions`](/uk/docs/Web/HTML/Global_attributes/writingsuggestions)
+
+  - : Використовується для контролю логіки пропозицій щодо написання з боку браузера й може застосовуватись до поля введення, розділу чи всієї сторінки.
+
+    - `false`, що вимикає пропозиції з боку браузера.
+    - `true` або _порожній рядок_, що вмикає пропозиції.
 
 ## Специфікації
 

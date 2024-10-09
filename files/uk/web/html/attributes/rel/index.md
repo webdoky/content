@@ -1,5 +1,6 @@
 ---
 title: Атрибут HTML – rel
+short-title: rel
 slug: Web/HTML/Attributes/rel
 page-type: html-attribute
 browser-compat:
@@ -72,7 +73,7 @@ browser-compat:
       ```
 
     - Вкупі з атрибутом [`hreflang`](/uk/docs/Web/HTML/Element/link#hreflang), що відрізняється від мови документа, це позначає переклад.
-    - Вкупі з атрибутом [`type`](/uk/docs/Web/HTML/Element/link#type) зі значенням `"application/rss+xml"`або `"application/atom+xml"`, це утворює гіперпосилання, що вказує на стрічку синдикації.
+    - Вкупі з атрибутом [`type`](/uk/docs/Web/HTML/Element/link#type) зі значенням `"application/rss+xml"` або `"application/atom+xml"`, це утворює гіперпосилання, що вказує на стрічку синдикації.
 
       ```html
       <link
@@ -112,7 +113,8 @@ browser-compat:
 
     Для {{htmlelement('link')}} це позначає автора всього документа.
 
-    > **Примітка:** Через історичні причини застаріле значення атрибута `rev="made"` працює як `rel="author"`.
+    > [!NOTE]
+    > Через історичні причини застаріле значення атрибута `rev="made"` працює як `rel="author"`.
 
 - `bookmark`
   - : Має зміст як значення атрибута `rel` для елементів {{htmlelement('a')}} та {{htmlelement('area')}}. Надає постійне посилання для найближчого елемента-предка {{htmlelement('article')}}, якщо такий є. Якщо елемента-предка `<article>` немає, то надає постійне посилання для розділу, з яким поточний елемент найтісніше сполучений.
@@ -125,7 +127,8 @@ browser-compat:
 - `expect` {{experimental_inline}}
 
   - : Дозволяє сторінці бути [візуалізаційно заблокованою](/uk/docs/Glossary/Render_blocking), поки не розібрано ключові частини документа, щоб візуалізація була послідовною. Зверніть увагу на те, що візуалізаційне блокування трапляється лише тоді, коли на нього також вказує атрибут [`blocking="render"`](/uk/docs/Web/HTML/Element/link#blocking).
-  - > **Примітка:** Більше інформації про його застосування дивіться в [Стабілізації стану сторінки для формування послідовності міждокументних переходів](/uk/docs/Web/API/View_Transitions_API/Using#stabilizatsiia-stanu-storinky-dlia-formuvannia-poslidovnosti-mizhdokumentnykh-perekhodiv).
+  - > [!NOTE]
+    > Більше інформації про його застосування дивіться в [Стабілізації стану сторінки для формування послідовності міждокументних переходів](/uk/docs/Web/API/View_Transitions_API/Using#stabilizatsiia-stanu-storinky-dlia-formuvannia-poslidovnosti-mizhdokumentnykh-perekhodiv).
 
 - `help`
   - : Ключове слово `help` має зміст для {{htmlelement('form')}}, {{htmlelement('link')}}, {{htmlelement('a')}} та {{htmlelement('area')}} і позначає те, що пов'язаний вміст надає чутливу до контексту допомогу, вміщаючи інформацію про батьківський елемент щодо елемента, що визначає гіперпосилання, та його дочірні елементи. Коли використовується всередині `<link>`, така допомога стосується всього документа. Коли використовується з {{htmlelement('a')}} та {{htmlelement('area')}} і підтримується, то типовий {{cssxref('cursor')}} буде `help`, а не `pointer`.
@@ -141,12 +144,15 @@ browser-compat:
 
     Якщо є кілька елементів `<link rel="icon">`, то браузер використовує їх атрибути [`media`](/uk/docs/Web/HTML/Element/link#media), [`type`](/uk/docs/Web/HTML/Element/link#type) і [`sizes`](/uk/docs/Web/HTML/Element/link#sizes) для вибору найбільш підхожої піктограми. Якщо декілька піктограм однаково підходять, то використовується остання з них. Якщо найбільш підхожа піктограма пізніше виявиться непідхожою, наприклад, через те, що вона використовує непідтримуваний формат, то браузер переходить до наступної найбільш підхожої, і т.д.
 
-    > **Примітка:** Атрибут [`crossorigin`](/uk/docs/Web/HTML/Attributes/crossorigin) не підтримується для `rel="icon"` у браузерах на основі Chromium. Дивіться [відкриту проблему Chromium](https://crbug.com/1121645).
+    > [!NOTE]
+    > Атрибут [`crossorigin`](/uk/docs/Web/HTML/Attributes/crossorigin) не підтримується для `rel="icon"` у браузерах на основі Chromium. Дивіться [відкриту проблему Chromium](https://crbug.com/1121645).
 
-    > **Примітка:** Apple iOS не використовує для вибору піктограми вебсторінки для Web Clip чи стартового заповнювача ані цей тип зв'язку, ані атрибут [`sizes`](/uk/docs/Web/HTML/Element/link#sizes), як це роблять інші браузери.
+    > [!NOTE]
+    > Apple iOS не використовує для вибору піктограми вебсторінки для Web Clip чи стартового заповнювача ані цей тип зв'язку, ані атрибут [`sizes`](/uk/docs/Web/HTML/Element/link#sizes), як це роблять інші браузери.
     > Замість цього використовуються нестандартні можливості [`apple-touch-icon`](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html#//apple_ref/doc/uid/TP40002051-CH3-SW4) і [`apple-touch-startup-image`](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html#//apple_ref/doc/uid/TP40002051-CH3-SW6), відповідно.
 
-    > **Примітка:** Нерідко перед `icon` спостерігається тип зв'язку `shortcut`, але він є невідповідним, ігнорованим, і **веброзробники більше не повинні його використовувати**.
+    > [!NOTE]
+    > Нерідко перед `icon` спостерігається тип зв'язку `shortcut`, але він є невідповідним, ігнорованим, і **веброзробники більше не повинні його використовувати**.
 
 - `license`
 
@@ -156,7 +162,8 @@ browser-compat:
     <link rel="license" href="#license" />
     ```
 
-    > **Примітка:** Синонім `copyright`, хоч він і розпізнається, є неправильним, його слід уникати.
+    > [!NOTE]
+    > Синонім `copyright`, хоч він і розпізнається, є неправильним, його слід уникати.
 
 - `manifest`
   - : [Декларація вебзастосунку](/uk/docs/Web/Manifest). Вимагає використання протоколу CORS для отримання ресурсів з іншого походження.
