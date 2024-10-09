@@ -15,7 +15,8 @@ browser-compat: html.elements.input.type_file
 
 Атрибут файлового поля [`value`](/uk/docs/Web/HTML/Element/input#value-znachennia) містить рядок, що представляє шлях до обраного файлу (або файлів). Поки жоден файл не обраний, значенням є порожній рядок (`""`). Коли користувач обирає декілька файлів, то `value` представляє перший файл з обраних. Решта файлів можуть бути встановлені за допомогою [властивості поля `HTMLInputElement.files`](/uk/docs/Web/API/File_API/Using_files_from_web_applications#otrymannia-informatsii-pro-obrani-faily).
 
-> **Примітка:** Значенням [завжди є ім'я файлу, перед котрим додано `C:\fakepath\` (англ.)](https://html.spec.whatwg.org/multipage/input.html#fakepath-srsly), що не є справжнім шляхом до файлу. Так зроблено, щоб не дати зловмисним програмам дізнатися про файлову структуру пристрою користувача.
+> [!NOTE]
+> Значенням [завжди є ім'я файлу, перед котрим додано `C:\fakepath\` (англ.)](https://html.spec.whatwg.org/multipage/input.html#fakepath-srsly), що не є справжнім шляхом до файлу. Так зроблено, щоб не дати зловмисним програмам дізнатися про файлову структуру пристрою користувача.
 
 ## Додаткові атрибути
 
@@ -38,7 +39,8 @@ browser-compat: html.elements.input.type_file
 
 Значення атрибута [`capture`](/uk/docs/Web/HTML/Attributes/capture) – рядок, що вказує яку камеру слід використовувати для захоплення фото чи відео, якщо атрибут [`accept`](/uk/docs/Web/HTML/Attributes/accept) вказує, що введені дані повинні бути фото чи відео. Значення `user` ("користувач") вказує, що повинні використовуватися фронтальні камера чи мікрофон. Значення `environment` ("середовище") вказує, що повинні використовуватися камера чи мікрофон, спрямовані назовні. Якщо такого атрибута немає, то {{Glossary("user agent", "користувацький агент")}} вільний сам вирішувати, що робити. Якщо вказаний фронтальний режим, але він недоступний, то користувацький агент може відступити до свого усталеного режиму.
 
-> **Примітка:** `capture` раніше був булевим атрибутом, котрий призводив до запиту на використання захоплення медіа, камери чи мікрофона, а не введення файлу.
+> [!NOTE]
+> Атрибут `capture` раніше був булевим і призводив до запиту на використання захоплення медіа, камери чи мікрофона, а не введення файлу.
 
 ### multiple
 
@@ -96,7 +98,8 @@ This produces the following output:
 
 {{EmbedLiveSample('naiprostishyi-pryklad', 650, 90)}}
 
-> **Примітка:** Також цей приклад можна знайти на GitHub, дивіться [вихідний код](https://github.com/mdn/learning-area/blob/main/html/forms/file-examples/simple-file.html), а також [погляньте на нього в дії](https://mdn.github.io/learning-area/html/forms/file-examples/simple-file.html).
+> [!NOTE]
+> Також цей приклад можна знайти на GitHub, дивіться [вихідний код](https://github.com/mdn/learning-area/blob/main/html/forms/file-examples/simple-file.html), а також [погляньте на нього в дії](https://mdn.github.io/learning-area/html/forms/file-examples/simple-file.html).
 
 Незалежно від пристрою чи операційної системи користувача, файлове поле надає кнопку, що відкриває діалог вибору файлу, котрий дає користувачеві змогу вибрати файл.
 
@@ -121,7 +124,8 @@ This produces the following output:
 - `webkitRelativePath` (відносний шлях WebKit) {{non-standard_inline}}
   - : Рядок, що представляє шлях до файлу відносно базової директорії, обраної при виборі директорії (тобто в інтерфейсі вибору `file`, що має атрибут [`webkitdirectory`](#webkitdirectory). _Ця властивість є нестандартною, її слід використовувати з обережністю._
 
-> **Примітка:** У всіх сучасних браузерах значення `HTMLInputElement.files` можна як отримати, так і встановити; останнім з браузерів цю функціональність додав Firefox у версії 57 (дивіться [ваду Firefox 1384030](https://bugzil.la/1384030)).
+> [!NOTE]
+> У всіх сучасних браузерах значення `HTMLInputElement.files` можна як отримати, так і встановити; останнім з браузерів цю функціональність додав Firefox у версії 57 (дивіться [ваду Firefox 1384030](https://bugzil.la/1384030)).
 
 ### Обмеження прийнятних типів файлу
 
@@ -162,7 +166,8 @@ div {
 
 {{EmbedLiveSample('obmezhennia-pryiniatnykh-typiv-failu', 650, 90)}}
 
-> **Примітка:** Цей приклад також можна знайти на GitHub, – дивіться [вихідний код](https://github.com/mdn/learning-area/blob/main/html/forms/file-examples/file-with-accept.html), а також [той самий приклад у дії](https://mdn.github.io/learning-area/html/forms/file-examples/file-with-accept.html).
+> [!NOTE]
+> Цей приклад також можна знайти на GitHub, – дивіться [вихідний код](https://github.com/mdn/learning-area/blob/main/html/forms/file-examples/file-with-accept.html), а також [той самий приклад у дії](https://mdn.github.io/learning-area/html/forms/file-examples/file-with-accept.html).
 
 Це може здаватися схожим, але якщо спробувати вибрати файл із таким полем, то стане помітно, що інтерфейс вибору файлу дозволяє вибрати файли лише тих типів, що вказані у значенні `accept` (конкретний інтерфейс відрізняється в різних браузерах та операційних системах).
 
@@ -205,7 +210,8 @@ elem.click();
 
 У цьому прикладі представлений дещо ускладнений вибір файлу, що користується інформацією про файл, доступною у властивості `HTMLInputElement.files`, а також демонструє кілька кмітливих фокусів.
 
-> **Примітка:** Повний вихідний код цього прикладу доступний на GitHub: [file-example.html](https://github.com/mdn/learning-area/blob/main/html/forms/file-examples/file-example.html) ([дивіться також у дії](https://mdn.github.io/learning-area/html/forms/file-examples/file-example.html)). Пояснювати CSS не будемо, JavaScript є головною темою.
+> [!NOTE]
+> Повний вихідний код цього прикладу доступний на GitHub: [file-example.html](https://github.com/mdn/learning-area/blob/main/html/forms/file-examples/file-example.html) ([дивіться також у дії](https://mdn.github.io/learning-area/html/forms/file-examples/file-example.html)). Пояснювати CSS не будемо, JavaScript є головною темою.
 
 Перш за все, погляньмо на HTML:
 
@@ -303,7 +309,8 @@ const preview = document.querySelector(".preview");
 input.style.opacity = 0;
 ```
 
-> **Примітка:** Для приховування файлового поля використовується {{cssxref("opacity")}}, а не {{cssxref("visibility", "visibility: hidden")}} чи {{cssxref("display", "display: none")}}, тому що допоміжні технології інтерпретують два останні стилі так, ніби файлове поле не є інтерактивним.
+> [!NOTE]
+> Для приховування файлового поля використовується {{cssxref("opacity")}}, а не {{cssxref("visibility", "visibility: hidden")}} чи {{cssxref("display", "display: none")}}, тому що допоміжні технології інтерпретують два останні стилі так, ніби файлове поле не є інтерактивним.
 
 Далі – до поля додається [слухач подій](/uk/docs/Web/API/EventTarget/addEventListener), щоб відстежувати зміни його значення (у цьому випадку це відповідає вибору файлів). Слухач подій викликає самописну функцію `updateImageDisplay()`.
 
@@ -390,15 +397,18 @@ function validFileType(file) {
 
 ```js
 function returnFileSize(number) {
-  if (number < 1024) {
+  if (number < 1e3) {
     return `${number} bytes`;
-  } else if (number >= 1024 && number < 1048576) {
-    return `${(number / 1024).toFixed(1)} KB`;
-  } else if (number >= 1048576) {
-    return `${(number / 1048576).toFixed(1)} MB`;
+  } else if (number >= 1e3 && number < 1e6) {
+    return `${(number / 1e3).toFixed(1)} кБ`;
+  } else {
+    return `${(number / 1e6).toFixed(1)} МБ`;
   }
 }
 ```
+
+> [!NOTE]
+> Одиниці вимірювання "кБ" і "МБ" тут використовують прийняті [префікси міжнародної системи числення (SI)](https://uk.wikipedia.org/wiki/%D0%94%D0%B2%D1%96%D0%B9%D0%BA%D0%BE%D0%B2%D1%96_%D0%BF%D1%80%D0%B5%D1%84%D1%96%D0%BA%D1%81%D0%B8): 1 кБ = 1000 Б, подібно до того, як це працює в macOS. Інші системи представляють розміри файлів інакше: наприклад, Ubuntu користується префіксами Міжнародної електротехнічної комісії (IEC), в яких 1 КіБ = 1024 Б, а специфікації RAM нерідко використовують префікси SI для представлення степенів двійки (1 кБ = 1024 Б). У зв'язку з цим тут використовуються `1e3` (`1000`) і `1e6` (`100000`), а не `1024` і `1048576`. У власному застосунку вам слід чітко роз'яснити систему одиниць вимірювання користувачам, якщо важливий точний розмір.
 
 ```js hidden
 const button = document.querySelector("form button");
@@ -458,7 +468,7 @@ button.addEventListener("click", (e) => {
     </tr>
     <tr>
       <td><strong>Неявна роль ARIA</strong></td>
-      <td><a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"><code>немає відповідної ролі</code></a></td>
+      <td><a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role">немає відповідної ролі</a></td>
     </tr>
   </tbody>
 </table>

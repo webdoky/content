@@ -19,7 +19,7 @@ spec-urls: https://drafts.csswg.org/selectors/
 
 - `+` ([Комбінатор наступної сестри](/uk/docs/Web/CSS/Next-sibling_combinator))
 - `>` ([Дочірній комбінатор](/uk/docs/Web/CSS/Child_combinator))
-- `||` ([Колонковий комбінатор](/uk/docs/Web/CSS/Column_combinator)) {{Experimental_Inline}}
+- `||` ([Колонковий комбінатор](/uk/docs/Web/CSS/Column_combinator))
 - `~` ([Комбінатор подальших сестер](/uk/docs/Web/CSS/Subsequent-sibling_combinator))
 - " " ([Комбінатор нащадків](/uk/docs/Web/CSS/Descendant_combinator))
 - `|` ([Розділювач областей імен](/uk/docs/Web/CSS/Namespace_separator))
@@ -90,7 +90,7 @@ spec-urls: https://drafts.csswg.org/selectors/
 - {{CSSXref(":visited")}}
 - {{CSSXref(":volume-locked")}}
 - {{CSSXref(":where", ":where()")}}
-- [Псевдокласи `:-webkit-`](/uk/docs/Web/CSS/WebKit_Extensions#pseudo-classes)
+- [Псевдокласи `:-webkit-`](/uk/docs/Web/CSS/WebKit_Extensions#psevdoklasy)
 - [Селектори атрибутів](/uk/docs/Web/CSS/Attribute_selectors)
 - [Селектор класів](/uk/docs/Web/CSS/Class_selectors)
 - [Селектори ідентифікаторів](/uk/docs/Web/CSS/ID_selectors)
@@ -102,10 +102,10 @@ spec-urls: https://drafts.csswg.org/selectors/
 - Термін глосарія {{glossary("Pseudo-class", "псевдоклас")}}
 - [Функційні псевдокласи](/uk/docs/Web/CSS/Pseudo-classes#funktsiini-psevdoklasy)
 - [Комбінатори](/uk/docs/Web/CSS/CSS_selectors/Selectors_and_combinators#kombinatory)
-- [Простий селектор](/uk/docs/Web/CSS/CSS_selectors/Selectors_and_combinators#prostyi-selektor)
-- [Складений селектор](/uk/docs/Web/CSS/CSS_selectors/Selectors_and_combinators#skladenyi-selektor)
-- [Складний селектор](/uk/docs/Web/CSS/CSS_selectors/Selectors_and_combinators#skladnyi-selektor)
-- [Відносний селектор](/uk/docs/Web/CSS/CSS_selectors/Selectors_and_combinators#vidnosnyi-selektor)
+- [Простий селектор](/uk/docs/Web/CSS/CSS_selectors/Selector_structure#prostyi-selektor)
+- [Складений селектор](/uk/docs/Web/CSS/CSS_selectors/Selector_structure#skladenyi-selektor)
+- [Складний селектор](/uk/docs/Web/CSS/CSS_selectors/Selector_structure#skladnyi-selektor)
+- [Відносний селектор](/uk/docs/Web/CSS/CSS_selectors/Selector_structure#vidnosnyi-selektor)
 - [Список селекторів](/uk/docs/Web/CSS/Selector_list)
 - [Специфічність](/uk/docs/Web/CSS/Specificity)
 
@@ -113,11 +113,11 @@ spec-urls: https://drafts.csswg.org/selectors/
 
 - [Селектори та комбінатори CSS](/uk/docs/Web/CSS/CSS_selectors/Selectors_and_combinators)
 
-  - : Огляд різних типів простих селекторів та різних комбінаторів, визначених у модулях селекторів CSS та псевдо CSS.
+  - : Огляд різних типів простих селекторів та різних комбінаторів, визначених у модулях Селекторів CSS та Псевдо CSS.
 
 - [Структура селекторів CSS](/uk/docs/Web/CSS/CSS_selectors/Selector_structure)
 
-  - : Пояснення структури селекторів CSS і термінології, запровадженої в модулі селекторів CSS, від "простого селектора" до "поблажливого списку відносних селекторів".
+  - : Пояснення структури селекторів CSS і термінології, запровадженої в модулі Селекторів CSS, від "простого селектора" до "поблажливого списку відносних селекторів".
 
 - [Псевдокласи](/uk/docs/Web/CSS/Pseudo-classes)
 
@@ -142,6 +142,10 @@ spec-urls: https://drafts.csswg.org/selectors/
 ## Споріднені концепції
 
 - Псевдоклас {{CSSXref(":popover-open")}}
+- Псевдоклас {{CSSXref(":state","state()")}}
+- Модуль [Вкладеності CSS](/uk/docs/Web/CSS/CSS_nesting)
+
+  - : [Селектор вкладеності `&`](/uk/docs/Web/CSS/Nesting_selector)
 
 - Модуль [Контексту CSS](/uk/docs/Web/CSS/CSS_scoping)
 
@@ -150,7 +154,7 @@ spec-urls: https://drafts.csswg.org/selectors/
   - Псевдоклас {{cssxref(":host-context", ":host-context()")}}
   - Псевдоелемент {{CSSXref("::slotted")}}
 
-- [Модуль псевдоелементів CSS](/uk/docs/Web/CSS/CSS_pseudo-elements) (представляє сутності, не включені в HTML)
+- [Модуль Псевдоелементів CSS](/uk/docs/Web/CSS/CSS_pseudo-elements) (представляє сутності, не включені в HTML)
 
   - {{CSSXref("::after")}}
   - {{CSSXref("::before")}}
@@ -164,15 +168,15 @@ spec-urls: https://drafts.csswg.org/selectors/
   - {{CSSXref("::spelling-error")}}
   - {{CSSXref("::target-text")}}
 
-- [Модуль тіньових частин HTML](/uk/docs/Web/CSS/CSS_shadow_parts)
+- [Модуль Тіньових частин CSS](/uk/docs/Web/CSS/CSS_shadow_parts)
 
   - Псевдоелемент {{CSSXref("::part")}}
 
-- [Модуль позиційного компонування CSS](/uk/docs/Web/CSS/CSS_positioned_layout)
+- [Модуль Позиційного компонування CSS](/uk/docs/Web/CSS/CSS_positioned_layout)
 
   - {{CSSxRef("::backdrop")}}
 
-- Інші [Псевдоелементи](/uk/docs/Web/CSS/Pseudo-elements)
+- Інші [псевдоелементи](/uk/docs/Web/CSS/Pseudo-elements)
 
   - {{CSSxRef("::cue")}}
   - {{CSSxRef("::cue-region")}}
@@ -193,7 +197,7 @@ spec-urls: https://drafts.csswg.org/selectors/
 
 ## Дивіться також
 
-- [Модуль псевдоелементів CSS](/uk/docs/Web/CSS/CSS_pseudo-elements)
-- [Модуль каскаду та успадкування CSS](/uk/docs/Web/CSS/CSS_cascade)
+- [Модуль Псевдоелементів CSS](/uk/docs/Web/CSS/CSS_pseudo-elements)
+- [Модуль Каскаду та успадкування CSS](/uk/docs/Web/CSS/CSS_cascade)
 - [Модуль Вкладеності CSS](/uk/docs/Web/CSS/CSS_nesting)
 - [Застосування тіньового DOM](/uk/docs/Web/API/Web_components/Using_shadow_DOM)

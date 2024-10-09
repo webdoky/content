@@ -1,5 +1,6 @@
 ---
 title: Довідка атрибутів HTML
+short-title: Атрибути
 slug: Web/HTML/Attributes
 page-type: landing-page
 ---
@@ -97,6 +98,15 @@ page-type: landing-page
     </tr>
     <tr>
       <td>
+        <code><a href="/uk/docs/Web/HTML/Element/link#as">as</a></code>
+      </td>
+      <td>
+        {{HTMLElement("link")}}
+      </td>
+      <td>Задає тип вмісту, який завантажується зв'язком.</td>
+    </tr>
+    <tr>
+      <td>
         <code><a href="/uk/docs/Web/HTML/Element/script#async">async</a></code>
       </td>
       <td>{{HTMLElement("script")}}</td>
@@ -188,19 +198,6 @@ page-type: landing-page
             <strong>Примітка:</strong> Це історичний атрибут. Будь ласка, використовуйте замість нього властивість CSS {{Cssxref("border")}}.
           </p>
         </div>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <code><a href="/uk/docs/Web/HTML/Attributes/buffered">buffered</a></code>
-      </td>
-      <td>
-        {{HTMLElement("audio")}},
-        {{HTMLElement("video")}}
-      </td>
-      <td>
-        Вміщає часовий діапазон вже буферизованих медіаданих.
-      </td>
       </td>
     </tr>
     <tr>
@@ -312,17 +309,6 @@ page-type: landing-page
       </td>
       <td>
         Позначає те, чи доступний вміст елемента для редагування.
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <code><a href="/uk/docs/Web/HTML/Global_attributes/contextmenu">contextmenu</a></code> {{non-standard_inline}} {{deprecated_inline}}
-      </td>
-      <td>
-        <a href="/uk/docs/Web/HTML/Global_attributes">Глобальний атрибут</a>
-      </td>
-      <td>
-        Визначає ідентифікатор елемента {{HTMLElement("menu")}}, який буде служити контекстним меню елемента.
       </td>
     </tr>
     <tr>
@@ -497,7 +483,7 @@ page-type: landing-page
     </tr>
     <tr>
       <td>
-        <code><a href="/uk/docs/Web/HTML/Attributes/enterkeyhint">enterkeyhint</a></code>
+        <code><a href="/uk/docs/Web/HTML/Global_attributes/enterkeyhint">enterkeyhint</a></code>
         {{experimental_inline}}
       </td>
       <td>
@@ -788,7 +774,7 @@ page-type: landing-page
       <td>Визначає мову сценарію, що вживається в елементі.</td>
     </tr>
     <tr>
-      <td><code>loading</code> {{experimental_inline}}</td>
+      <td><code>loading</code></td>
       <td>
         {{HTMLElement("img")}}, {{HTMLElement("iframe")}}
       </td>
@@ -826,21 +812,6 @@ page-type: landing-page
       </td>
       <td>{{HTMLElement("meter")}}</td>
       <td>Позначає верхню межу нижнього діапазону.</td>
-    </tr>
-    <tr>
-      <td>
-        <code><a href="/uk/docs/Web/HTML/Element/html#manifest">manifest</a></code>
-        {{deprecated_inline}}
-      </td>
-      <td>{{HTMLElement("html")}}</td>
-      <td>
-        Задає URL маніфесту кешу документа.
-        <div class="note">
-          <p>
-            <strong>Примітка:</strong> Цей атрибут застарів, замість нього слід використовувати <a href="/uk/docs/Web/Manifest"><code>&#x3C;link rel="manifest"></code></a>.
-          </p>
-        </div>
-      </td>
     </tr>
     <tr>
       <td>
@@ -1467,7 +1438,8 @@ HTML визначає обмеження щодо дозволених знач�
 
 ## Атрибути обробників подій
 
-> **Застереження:** Використання атрибутів обробників подій не рекомендується. Суміш HTML та JavaScript нерідко призводить до непідтримуваного коду, а виконання атрибутів обробників подій також може бути заблоковано політиками безпеки вмісту.
+> [!WARNING]
+> Використання атрибутів обробників подій не рекомендується. Суміш HTML та JavaScript нерідко призводить до непідтримуваного коду, а виконання атрибутів обробників подій також може бути заблоковано політиками безпеки вмісту.
 
 На додачу до атрибутів, перелічених у таблиці вище, на всіх елементах також можуть бути задані глобальні [обробники подій](/uk/docs/Web/Events/Event_handlers#zastosuvannia-vlastyvostei-onevent), такі як [`onclick`](/uk/docs/Web/API/Element/click_event), як [атрибути вмісту](#atrybuty-vmistu-ta-atrybuty-idl).
 

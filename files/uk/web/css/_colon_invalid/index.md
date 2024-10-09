@@ -21,6 +21,13 @@ browser-compat: css.selectors.invalid
 }
 ```
 
+## Доступність
+
+Загальноприйнято для позначення недійсного введення використовується червоний колір. Люди, що мають певного роду колірну сліпоту, не зможуть з'ясувати стан поля, якщо колір не доповнюється ще якимось індикатором, що не покладається для донесення змісту на колір. Зазвичай використовується текст чи піктограма.
+
+- [MDN Розуміння WCAG, пояснення Настанов 1.4](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#guideline_1.4_make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
+- [Розуміння Критерію успіху 1.4.1 | W3C Розуміння WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-without-color.html)
+
 ## Приклади
 
 ### Фарбування елементів для показу валідації
@@ -146,13 +153,6 @@ button {
 #### Результат
 
 {{EmbedLiveSample('pokaz-sektsii-poetapno', 600, 300)}}
-
-## Занепокоєння щодо доступності
-
-Загальноприйнято для позначення недійсного введення використовується червоний колір. Люди, що мають певного роду колірну сліпоту, не зможуть з'ясувати стан поля, якщо колір не доповнюється ще якимось індикатором, що не покладається для донесення змісту на колір. Зазвичай використовується текст чи піктограма.
-
-- [MDN Розуміння WCAG, пояснення Настанов 1.4](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#guideline_1.4_make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
-- [Розуміння Критерію успіху 1.4.1 | W3C Розуміння WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-without-color.html)
 
 ## Примітки
 

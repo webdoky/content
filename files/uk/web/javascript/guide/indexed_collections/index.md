@@ -522,8 +522,19 @@ const inventory = [
 
 ```js
 const result = Object.groupBy(inventory, ({ type }) => type);
-console.log(result.vegetables);
-// [{ name: "asparagus", type: "vegetables" }]
+console.log(result);
+// Виводить
+// {
+//   vegetables: [{ name: 'asparagus', type: 'vegetables' }],
+//   fruit: [
+//     { name: 'bananas', type: 'fruit' },
+//     { name: 'cherries', type: 'fruit' }
+//   ],
+//   meat: [
+//     { name: 'goat', type: 'meat' },
+//     { name: 'fish', type: 'meat' }
+//   ]
+// }
 ```
 
 Зверніть увагу на те, що повернений об'єкт посилається на _ті самі_ елементи, що й у вихідному масиві (а не їхні {{Glossary("deep copy", "глибокі копії")}}). Внесення змін до внутрішньої структури цих елементів відбиватиметься і на вихідному масиві, і на поверненому об'єкті.
