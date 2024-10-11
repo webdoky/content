@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2024-10-04 - 2024-10-11]
+
+* **Переклад(Glossary):** glossary/control_flow (#3352) ([063efa90](https://github.com/webdoky/content/commit/063efa90950fd95735cf7694b9618150889b2490))
+* **Переклад(CSS):** web/css/overflow-x (#3312) ([1cbce0a4](https://github.com/webdoky/content/commit/1cbce0a401bc2253fec80a284de2a540cf5509c5))
+
 ## [2024-09-27 - 2024-10-04]
 
 * **Переклад(CSS):** web/css/transition (#3376) ([7b31beae](https://github.com/webdoky/content/commit/7b31beae193a4a175a62dcb80aec6dd5c3b7d1e2))
