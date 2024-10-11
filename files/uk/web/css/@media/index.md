@@ -120,9 +120,13 @@ _Можливості медіа_ описують конкретні харак
 - {{cssxref("@media/prefers-contrast", "prefers-contrast")}}
   - : З'ясовує, чи вимагає користувач від системи збільшити або зменшити контрастність між сусідніми кольорами.
     Додано в Медіазапитах рівня 5.
+- {{cssxref("@media/prefers-reduced-data", "prefers-reduced-data")}} {{experimental_inline}}
+  - : З'ясовує, чи запитав користувач вебвміст, що менше навантажує Інтернет-канал.
 - {{cssxref("@media/prefers-reduced-motion", "prefers-reduced-motion")}}
   - : Користувач віддає перевагу меншому рівню руху на сторінці.
     Додано в Медіазапитах рівня 5.
+- {{cssxref("@media/prefers-reduced-transparency", "prefers-reduced-transparency")}} {{experimental_inline}}
+  - : З'ясовує, чи ввімкнув користувач на своєму пристрої налаштування для зменшення прозорих або напівпрозорих шарових ефектів.
 - {{cssxref("@media/resolution", "resolution")}}
   - : Піксельна щільність пристрою виведення.
 - {{cssxref("@media/scan", "scan")}}
@@ -130,6 +134,8 @@ _Можливості медіа_ описують конкретні харак
 - {{cssxref("@media/scripting", "scripting")}}
   - : Визначає, чи доступно використання сценаріїв (тобто JavaScript).
     Додано в Медіазапитах рівня 5.
+- {{cssxref("@media/shape", "shape")}} {{experimental_inline}}
+  - : З'ясовує форму пристрою, щоб розрізнити прямокутні та круглі дисплеї.
 - {{cssxref("@media/update", "update")}}
   - : Як часто пристрій виведення може змінювати вигляд вмісту.
     Додано в Медіазапитах рівня 4.

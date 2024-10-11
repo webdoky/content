@@ -7,7 +7,7 @@ browser-compat: css.properties.caret-color
 
 {{CSSRef}}
 
-Властивість CSS **`caret-color`** (колір каретки) задає колір **каретки вставлення**, видимого маркера в місці, куди буде вставлено наступний набраний символ. Його іноді називають **курсором текстового введення**. Каретка з'являється в елементах штибу {{HTMLElement("input")}} або тих, що мають атрибут [`contenteditable`](/uk/docs/Web/HTML/Global_attributes#contenteditable). Зазвичай вона є тонкою вертикальною лінією, яка блимає, щоб бути більш помітною. Усталено вона чорна, але її колір можна змінити за допомогою цієї властивості.
+Властивість [CSS](/uk/docs/Web/CSS) **`caret-color`** (колір каретки) задає колір **каретки вставлення**, видимого маркера в місці, куди буде вставлено наступний набраний символ. Його іноді називають **курсором текстового введення**. Каретка з'являється в елементах штибу {{HTMLElement("input")}} або тих, що мають атрибут [`contenteditable`](/uk/docs/Web/HTML/Global_attributes#contenteditable). Зазвичай вона є тонкою вертикальною лінією, яка блимає, щоб бути більш помітною. Усталено вона чорна, але її колір можна змінити за допомогою цієї властивості.
 
 {{EmbedInteractiveExample("pages/css/caret-color.html")}}
 
@@ -41,7 +41,8 @@ caret-color: unset;
 
   - : Користувацький агент обирає відповідний колір для каретки. Зазвичай це {{cssxref("&lt;color&gt;","currentcolor","#kliuchove-slovo-currentcolor")}}, але користувацький агент може обрати інший колір, щоб забезпечити хорошу видимість і контрастність щодо навколишнього вмісту, враховуючи значення `currentcolor`, фон, тіні та інші чинники.
 
-    > **Примітка:** Попри те, що користувацькі агенти можуть використовувати значення `currentcolor` (яке зазвичай анімується) для значення `auto`, `auto` не інтерполюється в переходах та анімаціях.
+    > [!NOTE]
+    > Попри те, що користувацькі агенти можуть використовувати значення `currentcolor` (яке зазвичай анімується) для значення `auto`, `auto` не інтерполюється в переходах та анімаціях.
 
 - {{cssxref("&lt;color&gt;")}}
   - : Колір каретки.
@@ -103,4 +104,4 @@ p.custom {
 - Елемент {{HTMLElement("input")}}
 - Атрибут HTML [`contenteditable`](/uk/docs/Web/HTML/Global_attributes#contenteditable), завдяки якому можна зробити редаговним текст будь-якого елемента
 - Тип даних {{cssxref("&lt;color&gt;")}}
-- Інші властивості, пов'язані з кольором: {{cssxref("color")}}, {{cssxref("background-color")}}, {{cssxref("border-color")}}, {{cssxref("outline-color")}}, {{cssxref("text-decoration-color")}}, {{cssxref("text-emphasis-color")}}, {{cssxref("text-shadow")}}, {{cssxref("caret-color")}} і {{cssxref("column-rule-color")}}
+- Інші властивості, пов'язані з кольором: {{cssxref("color")}}, {{cssxref("background-color")}}, {{cssxref("border-color")}}, {{cssxref("outline-color")}}, {{cssxref("text-decoration-color")}}, {{cssxref("text-emphasis-color")}}, {{cssxref("text-shadow")}} і {{cssxref("column-rule-color")}}
