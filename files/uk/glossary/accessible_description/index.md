@@ -30,7 +30,7 @@ page-type: glossary-definition
    - Кнопки {{htmlelement("input")}} (з атрибутом типу `button`, `submit` або `reset`) описуються значенням свого атрибута `value`.
    - У SVG це вміст елемента [`<desc>`](/uk/docs/Web/SVG/Element/desc), якщо він є, а інакше – текст, вміщений у нащадках, що є текстовими контейнерами (наприклад, [`<text>`](/uk/docs/Web/SVG/Element/text)), якщо він ще не вжитий для {{glossary("accessible name", "доступної назви")}}.
 
-4. Якщо ніщо з переліченого вище не задало опису, вживається атрибут [`title`](/uk/docs/Web/HTML/Global_attributes#title), якщо він не є {{glossary("accessible name", "доступною назвою")}} цього елемента.
+4. Якщо ніщо з переліченого вище не задало опису, вживається атрибут [`title`](/uk/docs/Web/HTML/Global_attributes/title), якщо він не є {{glossary("accessible name", "доступною назвою")}} цього елемента.
 
 5. Якщо нічого з переліченого вище не визначає доступного опису, то доступний опис – порожній.
 
