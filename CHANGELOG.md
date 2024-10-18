@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2024-10-11 - 2024-10-18]
+
+* **Переклад(Glossary):** glossary/accessible_name (#3345) ([a57858b4](https://github.com/webdoky/content/commit/a57858b42932dfc2d1d5379cc3e403eb84efa13b))
+* **Переклад(Glossary):** glossary/accessible_description (#3346) ([73ffb804](https://github.com/webdoky/content/commit/73ffb8047a3310af56e52357c2cbe799b5d38947))
+
 ## [2024-10-04 - 2024-10-11]
 
 * **Переклад(Glossary):** glossary/control_flow (#3352) ([063efa90](https://github.com/webdoky/content/commit/063efa90950fd95735cf7694b9618150889b2490))
