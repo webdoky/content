@@ -1,5 +1,5 @@
 name: spellcheck
-on: [pull_request]
+on: [pull_request_target]
 jobs:
   prepare:
     outputs:
@@ -10,8 +10,10 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ github.head_ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
       - id: changed-files
-        run: git diff --diff-filter=d --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} > ./changed_files.txt
+        run: git diff --diff-filter=d --name-only origin/${{ github.base_ref }}...${{ github.event.pull_request.head.sha }} > ./changed_files.txt
       - name: Check translation
         # Check there is only one translation change
         # If there are more than one, the workflow will fail
@@ -55,6 +57,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
       - name: Remove code blocks
         run: |
           file=${{ needs.prepare.outputs.translation }}
@@ -130,6 +135,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
       - uses: actions/download-artifact@v3
         with:
           name: result
@@ -156,9 +164,15 @@ jobs:
     if: ${{ needs.prepare.outputs.translation != '' }}
     name: Set title
     needs: [prepare]
+    permissions:
+      contents: read
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
       - id: determine
         run: |
           translation=${{ needs.prepare.outputs.translation }}
@@ -185,20 +199,28 @@ jobs:
       - env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh pr edit ${{ github.event.pull_request.number }} --title "${{ needs.prepare.outputs.status }}(${{ steps.determine.outputs.section }}): ${{ steps.determine.outputs.slug }}"
+          gh pr edit ${{ github.event.pull_request.number }} --repo webdoky/content --title "${{ needs.prepare.outputs.status }}(${{ steps.determine.outputs.section }}): ${{ steps.determine.outputs.slug }}"
   set-translation-body:
     if: ${{ needs.prepare.outputs.translation != '' && needs.prepare.outputs.status == 'translation' }}
     name: Set translation body
     needs: [prepare]
+    permissions:
+      contents: read
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
       # set the last section of slug as name
       - id: create-body
         run: |
           translation=${{ needs.prepare.outputs.translation }}
+          echo $translation
           # get "slug" frontmatter value
           slug=$(cat $translation | grep -E "^slug: " | sed 's/slug: //')
+          echo $slug
           # get "title" frontmatter value
           title=$(cat $translation | grep -E "^title: " | sed 's/title: //')
           # escape HTML entities from title
@@ -212,11 +234,14 @@ jobs:
       - env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh pr edit ${{ github.event.pull_request.number }} --body "$(cat ./body.md)"
+          gh pr edit ${{ github.event.pull_request.number }} --body "$(cat ./body.md)"  --repo webdoky/content
   set-update-body:
     if: ${{ needs.prepare.outputs.translation != '' && needs.prepare.outputs.status == 'update' }}
     name: Set update body
     needs: [prepare]
+    permissions:
+      contents: read
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -275,4 +300,4 @@ jobs:
       - env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh pr edit ${{ github.event.pull_request.number }} --body "$(cat ./body.md)"
+          gh pr edit ${{ github.event.pull_request.number }} --body "$(cat ./body.md)"  --repo webdoky/content

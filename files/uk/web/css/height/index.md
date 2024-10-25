@@ -13,6 +13,9 @@ browser-compat: css.properties.height
 
 Властивості {{cssxref("min-height")}} та {{cssxref("max-height")}} зневажають `height`.
 
+> [!NOTE]
+> Як геометрична властивість, `height` також застосовується до елементів SVG {{SVGElement("svg")}}, {{SVGElement("rect")}}, {{SVGElement("image")}} і {{SVGElement("foreignObject")}}, причому `auto` вирішується як `100%` для `<svg>` і як `0` для інших елементів, а відсоткові значення відносні щодо висоти області перегляду SVG для `<rect>`. Значення властивості CSS `height` перемагає значення атрибута SVG {{SVGAttr("width")}}, якщо на елементі SVG такий задано.
+
 ## Синтаксис
 
 ```css
@@ -59,13 +62,19 @@ height: unset;
   - : Використовує доступний простір, але не більше, ніж [max-content](/uk/docs/Web/CSS/max-content), тобто `min(max-content, max(min-content, stretch))`.
 - `fit-content({{cssxref("&lt;length-percentage&gt;")}})`
   - : Використовує формулу fit-content щодо доступного простору, заміненого вказаним аргументом, тобто `min(max-content, max(min-content, <length-percentage>))`.
+- `stretch`
 
-## Занепокоєння щодо доступності
+  - : Задає висоті [рамки зовнішніх відступів](/uk/docs/Learn/CSS/Building_blocks/The_box_model#chastyny-ramky) елемента висоту його [контейнерного блока](/uk/docs/Web/CSS/Containing_block#vybir-konteinernoho-bloka). Намагається змусити рамку зовнішніх відступів заповнити доступний у контейнерному блоці простір так, щоб це вийшло схоже на `100%`, але застосовуючи результівний розмір до рамки зовнішніх відступів, а не рамки, визначеної [box-sizing](/uk/docs/Web/CSS/box-sizing).
+
+    > [!NOTE]
+    > Аби перевірити псевдоніми значення `stretch`, що використовуються браузерами, та статус реалізації цього значення, дивіться наш розділ [Сумісності з браузерами](#sumisnist-iz-brauzeramy).
+
+## Доступність
 
 Слід пересвідчитись, що елементи, для котрих вказана `height`, не обрізаються і не затуляються іншим вмістом, коли до сторінки застосовується збільшення для укрупнення тексту.
 
 - [MDN Розуміння WCAG, Пояснення Настанов 1.4](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#nastanovy-1.4-polehshennia-perehliadu-ta-proslukhovuvannia-dlia-korystuvachiv-vkliuchno-iz-viddilenniam-perednioho-planu-vid-tla)
-- [Розуміння мірила успіху 1.4.4 | W3C Розуміння WCAG 2.0 (англ.)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html)
+- [Розуміння мірила успіху 1.4.4 | W3C Розуміння WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html)
 
 ## Формальне визначення
 

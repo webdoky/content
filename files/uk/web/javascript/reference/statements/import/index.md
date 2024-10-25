@@ -40,6 +40,8 @@ import "module-name";
 - `aliasN`
   - : Псевдонім, що вказує на іменовані імпорти. Має бути дійсним ідентифікатором JavaScript.
 
+Після `"module-name"` може писатися набір [атрибутів імпорту](/uk/docs/Web/JavaScript/Reference/Statements/import/with), що починається з ключового слова `with`.
+
 ## Опис
 
 Оголошення `import` можуть знаходитися лише всередині модулів, і лише на найвищому рівні (тобто не всередині блоків, функцій тощо). Якщо оголошення `import` зустрічається у немодульному контексті (як от у скриптових файлах, `eval`, `new Function`, які після розбору мають оформитися у "скрипт" чи "функцію") — викидається помилка `SyntaxError`. Аби завантажити модуль у немодульному контексті — слід використовувати [динамічний імпорт](/uk/docs/Web/JavaScript/Reference/Operators/import).
@@ -91,7 +93,8 @@ export { a as "a-b" };
 import { "a-b" as a } from "/modules/my-module.js";
 ```
 
-> **Примітка:** Інструкція `import { x, y } from "mod"` не є еквівалентною до `import defaultExport from "mod"` і потім деструктурування `x` та `y` із `defaultExport`. Усталений та іменований імпорт — це різні синтаксичні конструкції модулів JavaScript.
+> [!NOTE]
+> Інструкція `import { x, y } from "mod"` не є еквівалентною до `import defaultExport from "mod"` і потім деструктурування `x` та `y` із `defaultExport`. Усталений та іменований імпорт — це різні синтаксичні конструкції модулів JavaScript.
 
 #### Усталений імпорт
 
@@ -138,7 +141,8 @@ myModule.doAllTheAmazingThings();
 
 Значення `myModule` — це [запечатаний](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object/isSealed) об'єкт, [чиїм прототипом є `null`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#null-prototypni-obiekty). Усталений експорт доступний за ключем, що зветься `default`. Більше інформації про це – в розділі [об'єкта простору імен модуля](/uk/docs/Web/JavaScript/Reference/Operators/import#obiekt-prostoru-imen-modulia).
 
-> **Примітка:** JavaScript не підтримує довільні імпорти, як от `import * from "module-name"`, через високу ймовірність конфліктів імен.
+> [!NOTE]
+> JavaScript не підтримує довільні імпорти, як от `import * from "module-name"`, через високу ймовірність конфліктів імен.
 
 #### Імпортування модуля лише заради його побічних ефектів
 
@@ -236,6 +240,7 @@ setTimeout(() => {
 - {{jsxref("Statements/export", "export")}}
 - [`import()`](/uk/docs/Web/JavaScript/Reference/Operators/import)
 - [`import.meta`](/uk/docs/Web/JavaScript/Reference/Operators/import.meta)
+- [Атрибути імпорту](/uk/docs/Web/JavaScript/Reference/Statements/import/with)
 - [Попередній огляд модулів ES6 та інше, з ES2015, ES2016 і далі](https://blogs.windows.com/msedgedev/2016/05/17/es6-modules-and-beyond/) на blogs.windows.com (2016)
 - [Заглиблення в ES6: Модулі](https://hacks.mozilla.org/2015/08/es6-in-depth-modules/) на hacks.mozilla.org (2015)
 - [Модулі ES: Занурення в малюнках](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/) на hacks.mozilla.org (2018)
