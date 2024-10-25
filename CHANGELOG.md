@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2024-10-18 - 2024-10-25]
+
+* **Оновлення перекладу(CSS):** web/css/background-image (#3395) ([2aa271c7](https://github.com/webdoky/content/commit/2aa271c7dcc1853b38790058ac31da3425995569))
+* **Оновлення перекладу(CSS):** web/css/using_css_custom_properties (#3394) ([8494eee2](https://github.com/webdoky/content/commit/8494eee2972e8bb2bff103debeca3b3e718f49f2))
+* **Оновлення перекладу(HTML):** web/html (#3385) ([ee906935](https://github.com/webdoky/content/commit/ee906935125f021d7b7e6178b2ea265ddcbc158e))
+* **Оновлення перекладу(HTML):** web/html/element (#3386) ([f7e87d6e](https://github.com/webdoky/content/commit/f7e87d6eaf87127e54a7a401a7550a949f543ef2))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array (#3384) ([9922ad43](https://github.com/webdoky/content/commit/9922ad439a36c91ac33157d761887e4edea400a3))
+* **Переклад(JS):** web/javascript/reference/global_objects/array/flatmap (#3381) ([31c480a0](https://github.com/webdoky/content/commit/31c480a067084062e9dfa874330c00a54ac75da1))
+
 ## [2024-10-11 - 2024-10-18]
 
 * **Переклад(Glossary):** glossary/accessible_name (#3345) ([a57858b4](https://github.com/webdoky/content/commit/a57858b42932dfc2d1d5379cc3e403eb84efa13b))
