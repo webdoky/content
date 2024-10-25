@@ -50,7 +50,7 @@ transform: skewY(1.07rad);
 
 /* Декілька функційних значень */
 transform: translateX(10px) rotate(10deg) translateY(5px);
-transform: perspective(500px) translate(10px, 0, 20px) rotateY(3deg);
+transform: perspective(500px) translate3d(10px, 0, 20px) rotateY(30deg);
 
 /* Глобальні значення */
 transform: inherit;
@@ -80,7 +80,7 @@ transform: unset;
 Більше подробиць:
 
 - [MDN розуміння WCAG, пояснення Настанов 2.3](/uk/docs/Web/Accessibility/Understanding_WCAG/Operable#guideline_2.3_—_seizures_and_physical_reactions_do_not_design_content_in_a_way_that_is_known_to_cause_seizures_or_physical_reactions)
-- [Розуміння критерію успіху 2.3.3 | W3C розуміння WCAG 2.1 (англ.)](https://www.w3.org/WAI/WCAG21/Understanding/animation-from-interactions)
+- [Розуміння критерію успіху 2.3.3 | W3C розуміння WCAG 2.1](https://www.w3.org/WAI/WCAG21/Understanding/animation-from-interactions)
 
 ## Формальне визначення
 
