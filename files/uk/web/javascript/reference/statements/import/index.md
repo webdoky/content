@@ -202,7 +202,7 @@ const utils = require("./utils/index.js"); // Найбільш явна форм
 
 - [URL `node:`](https://nodejs.org/api/esm.html#node-imports) розв'язуються до вбудованих модулів Node.js. Вони підтримуються Node та іншими середовищами виконання, що заявляють про сумісність з Node, як от Bun.
   Голі специфікатори, популяризовані CommonJS, розв'язуються в директорії `node_modules`. Наприклад, якщо є `import x from "foo"`, то середовище виконання шукає пакет `foo` всередині будь-якої з директорій `node_modules` у батьківських щодо поточного модуля директоріях. Така логіка може відтворюватися в браузерах за допомогою [карт імпортування](/uk/docs/Web/JavaScript/Guide/Modules#import-moduliv-za-dopomohoiu-kart-importuvannia), які також дають змогу налаштувати розв'язання в інші способи.
-  Алгоритм розв'язання модулю також можна виконати програмно, скориставшись функцією [`import.meta.resolve`](/uk/docs/Web/JavaScript/Reference/Operators/import.meta/resolve), визначеною специфікацією HTML.
+  Алгоритм розв'язання модуля також можна виконати програмно, скориставшись функцією [`import.meta.resolve`](/uk/docs/Web/JavaScript/Reference/Operators/import.meta/resolve), визначеною специфікацією HTML.
 
 ## Приклади
 
