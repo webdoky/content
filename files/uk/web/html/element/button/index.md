@@ -118,8 +118,11 @@ browser-compat: html.elements.button
 
 ```html
 <button name="favorite">
-  <svg aria-hidden="true" viewBox="0 0 10 10">
-    <path d="M7 9L5 8 3 9V6L1 4h3l1-3 1 3h3L7 6z" />
+  <svg fill="#000000" viewBox="0 0 42 42">
+    <path
+      d="M21,1c1.081,0,5.141,12.315,6.201,13.126s13.461,1.053,13.791,2.137 c0.34,1.087-9.561,8.938-9.961,10.252c-0.409,1.307,
+      3.202,13.769,2.331,14.442c-0.879,0.673-11.05-6.79-12.361-6.79 c-1.311,0-11.481,7.463-12.36,6.79c-0.871-0.674,2.739-13.136,
+      2.329-14.442c-0.399-1.313-10.3-9.165-9.96-10.252 c0.33-1.084,12.731-1.326,13.791-2.137S19.91,1,21,1z"></path>
   </svg>
   Додати до улюблених
 </button>
@@ -145,7 +148,7 @@ browser-compat: html.elements.button
 
 - [Розуміння критерію успіху 2.5.5: розмір мішені | W3C розуміння WCAG 2.1](https://www.w3.org/WAI/WCAG21/Understanding/target-size.html)
 - [Розмір мішені та 2.5.5 | Адріан Розеллі](https://adrianroselli.com/2019/06/target-size-and-2-5-5.html)
-- [Швидка перевірка: Великі мішені дотику - The A11Y Project](https://www.a11yproject.com/posts/large-touch-targets/)
+- [Швидка перевірка: Великі мішені дотику – The A11Y Project](https://www.a11yproject.com/posts/large-touch-targets/)
 
 #### Суміжність
 
@@ -153,7 +156,7 @@ browser-compat: html.elements.button
 
 Відступи можуть бути створені за допомогою властивостей CSS, наприклад, {{cssxref("margin")}}.
 
-- [Тремтіння рук та проблема велетенської кнопки - Axess Lab](https://axesslab.com/hand-tremors/)
+- [Тремтіння рук та проблема велетенської кнопки – Axess Lab](https://axesslab.com/hand-tremors/)
 
 ### Інформація про стан ARIA
 
@@ -173,7 +176,7 @@ browser-compat: html.elements.button
 
 ### Клацання й фокус
 
-Те, чи передасть клацання кнопки `<button>` або {{HTMLElement("input")}} цій кнопці фокус, залежить від браузера й операційної системи. Більшість браузерів – це робить, але [Safari – ні, і це не помилка](https://webkit.org/b/22261).
+Те, чи передасть клацання кнопки `<button>` або {{HTMLElement("input")}} цій кнопці фокус, залежить від браузера й операційної системи. Більшість браузерів – це робить, але [Safari – ні, і це не помилка](https://webkit.org/b/22261#c68).
 
 ## Приклади
 
