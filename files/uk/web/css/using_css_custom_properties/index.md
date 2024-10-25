@@ -379,6 +379,8 @@ div {
 
 Фактично ми це вже бачили в розділі [Успадкування з `@property`](#vykorystannia-property-dlia-keruvannia-uspadkuvanniam).
 
+<!-- cSpell:ignore aqumarine -->
+
 Наступний приклад за допомогою правила `@property` задає початкове значення `--box-color` як `cornflowerblue`.
 У наборі правил, що стоїть після директиви, хотілося задати `--box-color` як `aquamarine`, але в назві значення є хибодрук.
 Те саме істинно для третього `<div>`, де використано `2rem` для кастомної властивості, яка очікує дійсне [значення `<color>`](/uk/docs/Web/CSS/color_value).
