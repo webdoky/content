@@ -276,5 +276,5 @@ td {
 
 - [Типові випадки використання флексбоксу, розділ "Центрування елемента"](/uk/docs/Web/CSS/CSS_flexible_box_layout/Typical_use_cases_of_flexbox#tsentruvannia-elementa)
 - {{Cssxref("line-height")}}, {{Cssxref("text-align")}}, {{Cssxref("margin")}}
-- [Розуміння `vertical-align`, або "Як (не варто) центрувати вміст вертикально"](http://phrogz.net/css/vertical-align/index.html)
+- [Розуміння `vertical-align`, або "Як (не варто) центрувати вміст вертикально"](https://phrogz.net/css/vertical-align/index.html)
 - [Vertical-Align: Усе, що варто знати](https://christopheraue.net/design/vertical-align)
