@@ -25,7 +25,7 @@ browser-compat: css.properties.background-image
 ```css
 /* одне зображення */
 background-image: linear-gradient(black, white);
-background-image: url("catfront.png");
+background-image: url("cat-front.png");
 
 /* кілька зображень */
 background-image: radial-gradient(circle, #0000 45%, #000f 48%),
@@ -83,9 +83,9 @@ background-image: unset;
 
 ```html
 <div>
-  <p class="catsandstars">Цей параграф сповнений котів<br />та зірок.</p>
+  <p class="cats-and-stars">Цей параграф сповнений котів<br />та зірок.</p>
   <p>А цей – ні.</p>
-  <p class="catsandstars">Ось іще коти для вас.<br />Погляньте на них!</p>
+  <p class="cats-and-stars">Ось іще коти для вас.<br />Погляньте на них!</p>
   <p>І – це все.</p>
 </div>
 ```
@@ -106,8 +106,8 @@ div {
   background-image: url("mdn_logo_only_color.png");
 }
 
-.catsandstars {
-  background-image: url("startransparent.gif"), url("catfront.png");
+.cats-and-stars {
+  background-image: url("star-transparent.gif"), url("cat-front.png");
   background-color: transparent;
 }
 ```
@@ -134,7 +134,7 @@ div {
   - {{cssxref("gradient/repeating-linear-gradient", "repeating-linear-gradient()")}}
   - {{cssxref("gradient/repeating-radial-gradient", "repeating-radial-gradient()")}}
   - {{cssxref("gradient/repeating-conic-gradient", "repeating-conic-gradient()")}}
-  - {{cssxref("url", "url()")}}
+  - {{cssxref("url_value", "&lt;url&gt;")}}
 - [Використання градієнтів CSS](/uk/docs/Web/CSS/CSS_images/Using_CSS_gradients)
 - [Реалізація спрайтових зображень за допомогою CSS](/uk/docs/Web/CSS/CSS_images/Implementing_image_sprites_in_CSS)
 - Модуль [Зображень CSS](/uk/docs/Web/CSS/CSS_images)
