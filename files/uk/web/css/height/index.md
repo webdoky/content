@@ -139,11 +139,12 @@ div {
 
 ## Дивіться також
 
-- [Блокова модель](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
 - {{cssxref("width")}}
 - {{cssxref("box-sizing")}}
 - {{cssxref("min-height")}}, {{cssxref("max-height")}}
-- Відповідні логічні властивості: {{cssxref("block-size")}}, {{cssxref("inline-size")}}
+- {{cssxref("block-size")}}, {{cssxref("inline-size")}}
 - {{cssxref("anchor-size()")}}
 - {{cssxref("clamp", "clamp()")}}
 - {{cssxref("clamp", "minmax()")}}
+- [Вступ у Базову рамкову модель CSS](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
+- Модуль [Рамкової моделі CSS](/uk/docs/Web/CSS/CSS_box_model)
