@@ -1,5 +1,5 @@
 ---
-title: "<tr> – Елемент ряду таблиці"
+title: <tr> – Елемент ряду таблиці
 slug: Web/HTML/Element/tr
 page-type: html-element
 browser-compat: html.elements.tr
@@ -7,7 +7,7 @@ browser-compat: html.elements.tr
 
 {{HTMLSidebar}}
 
-Елемент [HTML](/uk/docs/Web/HTML) **`<tr>`** (table row – ряд таблиці)  визначає ряд комірок у таблиці. Комірки ряду можуть бути визначені за допомогою поєднання елементів {{HTMLElement("td")}} (комірка даних) та {{HTMLElement("th")}} (заголовкова комірка).
+Елемент [HTML](/uk/docs/Web/HTML) **`<tr>`** (table row – ряд таблиці) визначає ряд комірок у таблиці. Комірки ряду можуть бути визначені за допомогою поєднання елементів {{HTMLElement("td")}} (комірка даних) та {{HTMLElement("th")}} (заголовкова комірка).
 
 {{EmbedInteractiveExample("pages/tabbed/tr.html","tabbed-taller")}}
 
@@ -25,7 +25,7 @@ browser-compat: html.elements.tr
 
 - `bgcolor` {{deprecated_inline}}
 
-  - : Визначає фоновий колір кожної комірки ряду. Значення – колір HTML; це або [6-значний шістнадцятковий код RGB](/uk/docs/Web/CSS/hex-color), з префіксом '`#`', або [ключове слово кольору](/uk/docs/Web/CSS/named-color). Інші значення CSS {{cssxref("color_value", "&lt;color&gt")}} не підтримуються. Використовуйте замість цього атрибута властивість CSS {{cssxref("background-color")}}, оскільки він нерекомендований.
+  - : Визначає фоновий колір кожної комірки ряду. Значення – колір HTML; це або [6-значний шістнадцятковий код RGB](/uk/docs/Web/CSS/hex-color), з префіксом `#`, або [ключове слово кольору](/uk/docs/Web/CSS/named-color). Інші значення CSS {{cssxref("color_value", "&lt;color&gt")}} не підтримуються. Використовуйте замість цього атрибута властивість CSS {{cssxref("background-color")}}, оскільки він нерекомендований.
 
 - `char` {{deprecated_inline}}
 
@@ -61,26 +61,28 @@ browser-compat: html.elements.tr
 
 ```html
 <table>
-  <tr>
-    <th scope="row">A</th>
-    <td>Alfa</td>
-    <td>AL fah</td>
-  </tr>
-  <tr>
-    <th scope="row">B</th>
-    <td>Bravo</td>
-    <td>BRAH voh</td>
-  </tr>
-  <tr>
-    <th scope="row">C</th>
-    <td>Charlie</td>
-    <td>CHAR lee</td>
-  </tr>
-  <tr>
-    <th scope="row">D</th>
-    <td>Delta</td>
-    <td>DELL tah</td>
-  </tr>
+  <tbody>
+    <tr>
+      <th scope="row">A</th>
+      <td>Alfa</td>
+      <td>AL fah</td>
+    </tr>
+    <tr>
+      <th scope="row">B</th>
+      <td>Bravo</td>
+      <td>BRAH voh</td>
+    </tr>
+    <tr>
+      <th scope="row">C</th>
+      <td>Charlie</td>
+      <td>CHAR lee</td>
+    </tr>
+    <tr>
+      <th scope="row">D</th>
+      <td>Delta</td>
+      <td>DELL tah</td>
+    </tr>
+  </tbody>
 </table>
 ```
 
@@ -129,31 +131,35 @@ td {
 
 ```html
 <table>
-  <tr>
-    <th scope="col">Символ</th>
-    <th scope="col">Слово</th>
-    <th scope="col">Вимова</th>
-  </tr>
-  <tr>
-    <th scope="row">A</th>
-    <td>Alfa</td>
-    <td>AL fah</td>
-  </tr>
-  <tr>
-    <th scope="row">B</th>
-    <td>Bravo</td>
-    <td>BRAH voh</td>
-  </tr>
-  <tr>
-    <th scope="row">C</th>
-    <td>Charlie</td>
-    <td>CHAR lee</td>
-  </tr>
-  <tr>
-    <th scope="row">D</th>
-    <td>Delta</td>
-    <td>DELL tah</td>
-  </tr>
+  <thead>
+    <tr>
+      <th scope="col">Символ</th>
+      <th scope="col">Слово</th>
+      <th scope="col">Вимова</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">A</th>
+      <td>Alfa</td>
+      <td>AL fah</td>
+    </tr>
+    <tr>
+      <th scope="row">B</th>
+      <td>Bravo</td>
+      <td>BRAH voh</td>
+    </tr>
+    <tr>
+      <th scope="row">C</th>
+      <td>Charlie</td>
+      <td>CHAR lee</td>
+    </tr>
+    <tr>
+      <th scope="row">D</th>
+      <td>Delta</td>
+      <td>DELL tah</td>
+    </tr>
+  </tbody>
 </table>
 ```
 
