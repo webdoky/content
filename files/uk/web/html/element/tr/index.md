@@ -131,31 +131,35 @@ td {
 
 ```html
 <table>
-  <tr>
-    <th scope="col">Символ</th>
-    <th scope="col">Слово</th>
-    <th scope="col">Вимова</th>
-  </tr>
-  <tr>
-    <th scope="row">A</th>
-    <td>Alfa</td>
-    <td>AL fah</td>
-  </tr>
-  <tr>
-    <th scope="row">B</th>
-    <td>Bravo</td>
-    <td>BRAH voh</td>
-  </tr>
-  <tr>
-    <th scope="row">C</th>
-    <td>Charlie</td>
-    <td>CHAR lee</td>
-  </tr>
-  <tr>
-    <th scope="row">D</th>
-    <td>Delta</td>
-    <td>DELL tah</td>
-  </tr>
+  <thead>
+    <tr>
+      <th scope="col">Символ</th>
+      <th scope="col">Слово</th>
+      <th scope="col">Вимова</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">A</th>
+      <td>Alfa</td>
+      <td>AL fah</td>
+    </tr>
+    <tr>
+      <th scope="row">B</th>
+      <td>Bravo</td>
+      <td>BRAH voh</td>
+    </tr>
+    <tr>
+      <th scope="row">C</th>
+      <td>Charlie</td>
+      <td>CHAR lee</td>
+    </tr>
+    <tr>
+      <th scope="row">D</th>
+      <td>Delta</td>
+      <td>DELL tah</td>
+    </tr>
+  </tbody>
 </table>
 ```
 
