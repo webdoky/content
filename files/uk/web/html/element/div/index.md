@@ -11,13 +11,14 @@ browser-compat: html.elements.div
 
 {{EmbedInteractiveExample("pages/tabbed/div.html","tabbed-standard")}}
 
-Як "щирий" контейнер, елемент `<div>` сам по собі нічого не означає. Натомість він використовується для групування вмісту, щоб його можна було легко стилізувати за допомогою атрибутів [`class`](/uk/docs/Web/HTML/Global_attributes#class) та [`id`](/uk/docs/Web/HTML/Global_attributes#id), вказуючи частину документа як написану іншою мовою (за допомогою атрибута [`lang`](/uk/docs/Web/HTML/Global_attributes#lang)), і так далі.
+Як "щирий" контейнер, елемент `<div>` сам по собі нічого не означає. Натомість він використовується для групування вмісту, щоб його можна було легко стилізувати за допомогою атрибутів [`class`](/uk/docs/Web/HTML/Global_attributes/class) та [`id`](/uk/docs/Web/HTML/Global_attributes/id), вказуючи частину документа як написану іншою мовою (за допомогою атрибута [`lang`](/uk/docs/Web/HTML/Global_attributes/lang)), і так далі.
 
 ## Атрибути
 
 Цей елемент приймає [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
 
-> **Примітка:** Атрибут `align` вийшов з ужитку; не слід його використовувати. Натомість для шикування та розташування `<div>` елементів на сторінці варто використовувати властивості CSS чи техніки штибу [сітки CSS](/uk/docs/Web/CSS/CSS_Grid_Layout) або [Флексбоксу CSS](/uk/docs/Learn/CSS/CSS_layout/Flexbox).
+> [!NOTE]
+> Атрибут `align` вийшов з ужитку; не слід його використовувати. Натомість для шикування та розташування `<div>` елементів на сторінці варто використовувати властивості CSS чи техніки штибу [сітки CSS](/uk/docs/Web/CSS/CSS_Grid_Layout) або [Флексбоксу CSS](/uk/docs/Learn/CSS/CSS_layout/Flexbox).
 
 ## Примітки щодо використання
 
@@ -46,7 +47,7 @@ browser-compat: html.elements.div
 
 ### Стилізований приклад
 
-Цей приклад створює рамки з тінню, за допомогою CSS застосовуючи до `<div>` стиль. Зверніть увагу на використання на `<div>` атрибута [`class`](/uk/docs/Web/HTML/Global_attributes#class) для застосування до елемента стилю `"shadowbox"`.
+Цей приклад створює рамки з тінню, за допомогою CSS застосовуючи до `<div>` стиль. Зверніть увагу на використання на `<div>` атрибута [`class`](/uk/docs/Web/HTML/Global_attributes/class) для застосування до елемента стилю `"shadowbox"`.
 
 #### HTML
 
