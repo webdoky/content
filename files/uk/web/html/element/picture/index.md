@@ -104,7 +104,7 @@ browser-compat: html.elements.picture
 
 ### Атрибут `type`
 
-Атрибут `type` визначає [MIME тип](/uk/docs/Web/HTTP/Basics_of_HTTP/MIME_types) для URL-адреси, вказаної в атрибуті `srcset` елемента {{HTMLElement("source")}}. Якщо користувацький агент не підтримує заданий тип, то елемент {{HTMLElement("source")}} пропускається.
+Атрибут `type` визначає [MIME тип](/uk/docs/Web/HTTP/MIME_types) для URL-адреси, вказаної в атрибуті `srcset` елемента {{HTMLElement("source")}}. Якщо користувацький агент не підтримує заданий тип, то елемент {{HTMLElement("source")}} пропускається.
 
 ```html
 <picture>
