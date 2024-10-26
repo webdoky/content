@@ -15,7 +15,7 @@ browser-compat: css.selectors.not
 
 ## Синтаксис
 
-Псевдоклас `:not()` потребує як аргумент [список селекторів](/uk/docs/Web/CSS/CSS_selectors/Selector_structure#spysok-selektoriv) — розділений комами список з одного чи більше селекторів. Цей список не повинен містити іще одного селектора заперечення та [псевдоелементів](/uk/docs/Web/CSS/Pseudo-elements), проте всі інші прості, складені та складні селектори дозволені.
+Псевдоклас `:not()` потребує як аргумент [список селекторів](/uk/docs/Web/CSS/CSS_selectors/Selector_structure#spysok-selektoriv) — розділений комами список з одного чи більше селекторів. Цей список не повинен містити [псевдоелементів](/uk/docs/Web/CSS/Pseudo-elements), проте всі інші прості, складені та складні селектори дозволені.
 
 ```
 :not( <complex-selector-list> )
