@@ -154,5 +154,5 @@ margin: auto; /* згори та знизу: 0 відступу     */
 - {{cssxref("margin-block-start")}}, {{cssxref("margin-block-end")}}, {{cssxref("margin-inline-start")}} і {{cssxref("margin-inline-end")}}
 - Скорочення {{cssxref("margin-block")}} і {{cssxref("margin-inline")}}
 - [Опанування перекриття зовнішніх відступів](/uk/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
-- [Вступ до Базової рамкової моделі CSS](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
+- [Вступ у Базову рамкову модель CSS](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
 - Модуль [Рамкової моделі CSS](/uk/docs/Web/CSS/CSS_box_model)
