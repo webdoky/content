@@ -9,7 +9,7 @@ browser-compat: html.elements.input.type_time
 
 Елементи {{HTMLElement("input")}} типу **`time`** (час) утворюють поля введення, призначені для того, щоб дозволити користувачам легко вводити час (години та хвилини, а також, за бажанням, секунди).
 
-Попри те, що зовнішній вигляд користувацького інтерфейсу цього контрольного елемента залежить від браузера та операційної системи, можливості в нього одні й ті ж. Значення завжди є 24-годинним відформатованим часом `hh:mm` або `hh:mm:ss` з провідними нулями, незалежно від формату введення UI.
+Попри те, що зовнішній вигляд користувацького інтерфейсу цього контрольного елемента залежить від браузера та операційної системи, можливості в нього одні й ті ж. Значення завжди є 24-годинним відформатованим часом `HH:mm` або `HH:mm:ss` з провідними нулями, незалежно від формату введення UI.
 
 {{EmbedInteractiveExample("pages/tabbed/input-time.html", "tabbed-standard")}}
 
@@ -18,8 +18,12 @@ browser-compat: html.elements.input.type_time
 Усталене значення поля можна задати при створенні елемента `<input>` шляхом включення в атрибут [`value`](/uk/docs/Web/HTML/Element/input#value-znachennia) дійсного часу, наприклад:
 
 ```html
-<label for="appt-time">Виберіть час запису: </label>
-<input id="appt-time" type="time" name="appt-time" value="13:30" />
+<label for="appointment-time">Виберіть час запису: </label>
+<input
+  id="appointment-time"
+  type="time"
+  name="appointment-time"
+  value="13:30" />
 ```
 
 {{EmbedLiveSample('zadannia-atrybuta-value', 600, 60)}}
@@ -35,7 +39,7 @@ timeControl.value = "15:30";
 
 ### Формат значення часу
 
-Значення поля `time` завжди має 24-годинний формат, що включає нулі на початку: `hh:mm`, незалежно від формату введення, який, ймовірно, вибирається на основі локалі користувача (або з боку користувацького агента). Якщо час включає секунди (дивіться [Використання атрибута step](#vykorystannia-atrybuta-step)), то формат завжди має вигляд `hh:mm:ss`. Дізнатися більше про формат значення часу, який використовується цим типом поля вводу, можна у розділі [Рядків часу](/uk/docs/Web/HTML/Date_and_time_formats#riadky-chasu).
+Значення поля `time` завжди має 24-годинний формат, що включає нулі на початку: `HH:mm`, незалежно від формату введення, який, ймовірно, вибирається на основі локалі користувача (або з боку користувацького агента). Якщо час включає секунди (дивіться [Використання атрибута step](#vykorystannia-atrybuta-step)), то формат завжди має вигляд `HH:mm:ss`. Дізнатися більше про формат значення часу, який використовується цим типом поля вводу, можна у розділі [Рядків часу](/uk/docs/Web/HTML/Date_and_time_formats#riadky-chasu).
 
 У цьому прикладі можна побачити значення поля часу, увівши час та побачивши, як це значення змінюється.
 
@@ -68,7 +72,7 @@ startTime.addEventListener(
 
 {{EmbedLiveSample("format-znachennia-chasu", 600, 80)}}
 
-Коли подається форма, що містить поле `time`, то його значення перед додаванням до даних форми – кодується. Запис у дані форми для поля часу завжди має форму `name=hh%3Amm`, або `name=hh%3Amm%3Ass`, якщо включено секунди (дивіться [Використання атрибута step](#vykorystannia-atrybuta-step)).
+Коли подається форма, що містить поле `time`, то його значення перед додаванням до даних форми – кодується. Запис у дані форми для поля часу завжди має форму `name=HH%3Amm`, або `name=HH%3Amm%3Ass`, якщо включено секунди (дивіться [Використання атрибута step](#vykorystannia-atrybuta-step)).
 
 ## Додаткові атрибути
 
@@ -117,8 +121,8 @@ startTime.addEventListener(
 
 ```html
 <form>
-  <label for="appt-time">Оберіть час запису: </label>
-  <input id="appt-time" type="time" name="appt-time" />
+  <label for="appointment-time">Оберіть час запису: </label>
+  <input id="appointment-time" type="time" name="appointment-time" />
 </form>
 ```
 
@@ -136,8 +140,8 @@ startTime.addEventListener(
 
 ```html
 <form>
-  <label for="appt-time">Оберіть час запису: </label>
-  <input id="appt-time" type="time" name="appt-time" step="2" />
+  <label for="appointment-time">Оберіть час запису: </label>
+  <input id="appointment-time" type="time" name="appointment-time" step="2" />
 </form>
 ```
 
@@ -155,10 +159,15 @@ startTime.addEventListener(
 
 ```html
 <form>
-  <label for="appt-time">
+  <label for="appointment-time">
     Оберіть час запису (робочі години з 12:00 до 18:00):
   </label>
-  <input id="appt-time" type="time" name="appt-time" min="12:00" max="18:00" />
+  <input
+    id="appointment-time"
+    type="time"
+    name="appointment-time"
+    min="12:00"
+    max="18:00" />
   <span class="validity"></span>
 </form>
 ```
@@ -225,13 +234,13 @@ if (input.validity.valid && input.type === "time") {
 ```html
 <form>
   <div>
-    <label for="appt-time">
+    <label for="appointment-time">
       Оберіть час запису (робочі години з 12:00 до 18:00):
     </label>
     <input
-      id="appt-time"
+      id="appointment-time"
       type="time"
-      name="appt-time"
+      name="appointment-time"
       min="12:00"
       max="18:00"
       required />
@@ -258,13 +267,13 @@ if (input.validity.valid && input.type === "time") {
 
 ```html
 <form>
-  <label for="appt-time">
+  <label for="appointment-time">
       Оберіть час запису (робочі години від 12:00 до 18:00):
   </label>
   <input
-    id="appt-time"
+    id="appointment-time"
     type="time"
-    name="appt-time"
+    name="appointment-time"
     min="12:00"
     max="18:00"
     required />
