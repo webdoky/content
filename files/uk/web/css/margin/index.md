@@ -150,7 +150,9 @@ margin: auto; /* згори та знизу: 0 відступу     */
 
 ## Дивіться також
 
-- [Вступ до Базової рамкової моделі CSS](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
-- [Опанування явища складання берегів](/uk/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
 - {{cssxref("margin-top")}}, {{cssxref("margin-right")}}, {{cssxref("margin-bottom")}} і {{cssxref("margin-left")}}
-- Відповідні логічні властивості: {{cssxref("margin-block-start")}}, {{cssxref("margin-block-end")}}, {{cssxref("margin-inline-start")}} і {{cssxref("margin-inline-end")}}, а також скорочення {{cssxref("margin-block")}} і {{cssxref("margin-inline")}}
+- {{cssxref("margin-block-start")}}, {{cssxref("margin-block-end")}}, {{cssxref("margin-inline-start")}} і {{cssxref("margin-inline-end")}}
+- Скорочення {{cssxref("margin-block")}} і {{cssxref("margin-inline")}}
+- [Опанування перекриття зовнішніх відступів](/uk/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
+- [Вступ у Базову рамкову модель CSS](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
+- Модуль [Рамкової моделі CSS](/uk/docs/Web/CSS/CSS_box_model)
