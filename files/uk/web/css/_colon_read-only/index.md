@@ -44,8 +44,13 @@ browser-compat: css.selectors.read-only
       >
     </div>
     <div>
-      <label for="pcode">Поштовий індекс: </label>
-      <input id="pcode" name="pcode" type="text" value="76002" readonly />
+      <label for="postal-code">Поштовий індекс: </label>
+      <input
+        id="postal-code"
+        name="postal-code"
+        type="text"
+        value="76002"
+        readonly />
     </div>
   </fieldset>
 
@@ -189,4 +194,4 @@ p:read-write {
 ## Дивіться також
 
 - {{cssxref(":read-write")}}
-- Атрибут HTML [`contenteditable`](/uk/docs/Web/HTML/Global_attributes#contenteditable)
+- Атрибут HTML [`contenteditable`](/uk/docs/Web/HTML/Global_attributes/contenteditable)
