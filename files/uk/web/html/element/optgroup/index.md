@@ -1,5 +1,5 @@
 ---
-title: "<optgroup> – елемент групи варіантів"
+title: <optgroup> – елемент групи варіантів
 slug: Web/HTML/Element/optgroup
 page-type: html-element
 browser-compat: html.elements.optgroup
@@ -11,13 +11,14 @@ browser-compat: html.elements.optgroup
 
 {{EmbedInteractiveExample("pages/tabbed/optgroup.html", "tabbed-standard")}}
 
-> **Примітка:** Елементи optgroup не можна вкладати один в одного.
+> [!NOTE]
+> Елементи optgroup не можна вкладати один в одного.
 
 ## Атрибути
 
 Цей елемент приймає [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
 
-- `disabled`
+- [`disabled`](/uk/docs/Web/HTML/Attributes/disabled)
   - : Якщо задано цей Булів атрибут, то жоден з елементів цієї групи варіантів не може бути вибраним. Зазвичай браузери позначають такі контрольні елементи сірим кольором і не передають їм жодних браузерних подій, таких як клацання мишею або події, пов'язані з фокусом.
 - `label`
   - : Назва групи варіантів, яку браузер може використовувати при позначенні варіантів у користувацькому інтерфейсі. Цей атрибут є обов'язковим, якщо цей елемент використовується.
