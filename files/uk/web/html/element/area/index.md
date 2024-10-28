@@ -1,5 +1,5 @@
 ---
-title: "<area> – Елемент області на карті зображення"
+title: <area> – Елемент області на карті зображення
 slug: Web/HTML/Element/area
 page-type: html-element
 browser-compat: html.elements.area
@@ -60,7 +60,7 @@ browser-compat: html.elements.area
     - `unsafe-url`: Посилач уміщатиме походження _та_ шлях (але не [фрагмент](/uk/docs/Web/API/HTMLAnchorElement/hash), не [пароль](/uk/docs/Web/API/HTMLAnchorElement/password) і не [ім'я користувача](/uk/docs/Web/API/HTMLAnchorElement/username)).
       **Це значення є небезпечним**, оскільки воно випускає походження та шляхи з ресурсів, захищених TLS, до незахищених походжень.
 
-- `rel`
+- [`rel`](/uk/docs/Web/HTML/Attributes/rel)
   - : Для якорів, що вміщають атрибут [`href`](#href), цей атрибут визначає відношення об'єкта-цілі до об'єкта-посилання.
     Значення – список типів посилань, розділених пробілами.
     Значення та їхня семантика реєструються певним органом, що може мати значення для автора документа.
@@ -81,7 +81,8 @@ browser-compat: html.elements.area
 
     Цей атрибут слід використовувати лише тоді, коли присутній атрибут [`href`](#href).
 
-    > **Примітка:** Задання на елементах `<area>` `target="_blank"` неявно задає таку ж логіку `rel`, як задання [`rel="noopener"`](/uk/docs/Web/HTML/Attributes/rel/noopener), який не задає `window.opener`. Дивіться статус підтримки у [Сумісності з браузерами](#sumisnist-iz-brauzeramy).
+    > [!NOTE]
+    > Задання на елементах `<area>` `target="_blank"` неявно задає таку ж логіку `rel`, як задання [`rel="noopener"`](/uk/docs/Web/HTML/Attributes/rel/noopener), який не задає `window.opener`. Дивіться статус підтримки у [Сумісності з браузерами](#sumisnist-iz-brauzeramy).
 
 ## Приклади
 
@@ -100,7 +101,7 @@ browser-compat: html.elements.area
 </map>
 <img
   usemap="#primary"
-  src="https://via.placeholder.com/350x150"
+  src="https://dummyimage.com/350x150"
   alt="350 x 150 pic" />
 ```
 
