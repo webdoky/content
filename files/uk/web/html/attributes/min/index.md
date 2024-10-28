@@ -1,5 +1,6 @@
 ---
-title: "Атрибут HTML – min"
+title: Атрибут HTML – min
+short-title: min
 slug: Web/HTML/Attributes/min
 page-type: html-attribute
 browser-compat:
@@ -15,7 +16,7 @@ browser-compat:
 
 Цей атрибут прийнятний для типів полів, серед яких {{HTMLElement("input/date", "date")}}, {{HTMLElement("input/month", "month")}}, {{HTMLElement("input/week", "week")}}, {{HTMLElement("input/time", "time")}}, {{HTMLElement("input/datetime-local", "datetime-local")}}, {{HTMLElement("input/number", "number")}} and {{HTMLElement("input/range", "range")}}, а також елемент {{htmlelement('meter')}}.
 
-### Синтаксис
+## Синтаксис
 
 <table class="no-markdown">
   <caption>
@@ -48,14 +49,14 @@ browser-compat:
     </tr>
     <tr>
       <td>{{HTMLElement("input/time", "time")}}</td>
-      <td><code>hh:mm</code></td>
+      <td><code>HH:mm</code></td>
       <td><code>&#x3C;input type="time" min="09:00" step="900"></code></td>
     </tr>
     <tr>
       <td>
         {{HTMLElement("input/datetime-local", "datetime-local")}}
       </td>
-      <td><code>yyyy-mm-ddThh:mm</code></td>
+      <td><code>yyyy-mm-ddTHH:mm</code></td>
       <td>
         <code>&#x3C;input type="datetime-local" min="2019-12-25T19:30"></code>
       </td>
@@ -77,11 +78,12 @@ browser-compat:
   </tbody>
 </table>
 
-> **Примітка:** Коли дані, введені користувачем, не відповідають заданому мінімальному значенню, то значення поля вважається неприйнятним при валідації обмежень і дає збіг з псевдокласами {{cssxref(':invalid')}} і {{cssxref(':out-of-range')}}.
+> [!NOTE]
+> Коли дані, введені користувачем, не відповідають заданому мінімальному значенню, то значення поля вважається неприйнятним при валідації обмежень і дає збіг з псевдокласами {{cssxref(':invalid')}} і {{cssxref(':out-of-range')}}.
 
 Дивіться докладніше у [Валідації на клієнтському боці](/uk/docs/Web/HTML/Constraint_validation) та {{domxref("ValidityState.rangeUnderflow", "rangeUnderflow")}}.
 
-У випадку елемента {{htmlelement('meter')}} атрибут `min` визначає нижню числову межу вимірюваного діапазону. Це значення повинно бути меншим за мінімальне значення (атрибут [`max`](/uk/docs/Web/HTML/Attributes/max)), якщо воно задане. В обох випадках у разі відсутності цього атрибута береться усталене значення 1.
+У випадку елемента {{htmlelement('meter')}} атрибут `min` визначає нижню числову межу вимірюваного діапазону. Це значення повинно бути меншим за максимальне значення (атрибут [`max`](/uk/docs/Web/HTML/Attributes/max)), якщо воно задане. В обох випадках у разі відсутності цього атрибута береться усталене значення 1.
 
 <table class="no-markdown">
   <caption>
