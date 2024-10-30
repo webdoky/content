@@ -18,7 +18,7 @@ browser-compat: html.elements.textarea
 - Атрибути `rows` і `cols`, що дають змогу задати точний розмір, котрий займе `<textarea>`. Задавати їх – добре для сталості, адже усталена логіка браузера може відрізнятися.
 - Елемент `<textarea>` по-різному задає свій вміст у контекстах HTML і JavaScript:
   - У HTML початковий вміст `<textarea>` задається між його початковим і кінцевим тегами, а не в атрибуті `value`.
-  - У JavaScript елементи `<textarea>` мають властивість [`value`](/uk/docs/Web/API/HTMLTextAreaElement/value), якою можна скористатися для отримання чи задання поточного вмісту, а також [`defaultValue`](/uk/docs/Web/API/HTMLTextAreaElement/defaultValue) – для отримання та задання початкового значення (що рівносильно щодо звертання до текстового вмісту елемента HTML).
+  - У JavaScript елементи `<textarea>` мають властивість [`value`](/uk/docs/Web/API/HTMLTextAreaElement/value), якою можна скористатися для отримання чи задання поточного вмісту, а також [`defaultValue`](/uk/docs/Web/API/HTMLTextAreaElement/defaultValue) – для отримання та задання початкового значення (що рівносильно звертанню до текстового вмісту елемента HTML).
 
 Крім цього, елемент `<textarea>` підтримує декілька атрибутів, спільних з елементом `<input>`, як то `autocapitalize`, `autocomplete`, `autofocus`, `disabled`, `placeholder`, `readonly` та `required`.
 
@@ -38,7 +38,7 @@ browser-compat: html.elements.textarea
     - `on`: Браузер може автоматично доповнити значення на основі значень, котрі користувач уводив при попередніх використаннях.
     - [`<token-list>`](/uk/docs/Web/HTML/Attributes/autocomplete#leksemy-token-list): Упорядкований набір розділених пробілами лексем подробиць автозаповнення, перед якими необов'язково стоїть розділова лексема, лексема групування даних оплати або доставлення чи лексема, що вказує на тип отримувача.
 
-    Елементи `<textarea>`, що не задають атрибут `autocomplete`, успадковують статус `autocomplete`, `on` або `off`, від своєї форми-власника. Форма-власник – це або елемент {{HTMLElement("form")}}, нащадком якого є цей елемент `<textarea>`, або елемент форми, чий `id` заданий в атрибуті `form` елемента поля. Щоб отримати більше інформації, шукайте атрибут [`autocomplete`](/uk/docs/Web/HTML/Element/form#autocomplete) у {{HTMLElement("form")}}.
+    Елементи `<textarea>`, що не задають атрибут `autocomplete`, успадковують статус `autocomplete`, `on` або `off` від своєї форми-власника. Форма-власник – це або елемент {{HTMLElement("form")}}, нащадком якого є цей елемент `<textarea>`, або елемент форми, чий `id` заданий в атрибуті `form` елемента поля. Щоб отримати більше інформації, шукайте атрибут [`autocomplete`](/uk/docs/Web/HTML/Element/form#autocomplete) у {{HTMLElement("form")}}.
 
 - `autocorrect` {{non-standard_inline}}
 
