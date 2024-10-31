@@ -463,7 +463,7 @@ const o = { a: 1 };
 // Object.prototype містить null у своєму [[Prototype]].
 // o ---> Object.prototype ---> null
 
-const b = ["yo", "whadup", "?"];
+const b = ["yo", "sup", "?"];
 // Масиви успадковують від Array.prototype
 // (котрий має методи indexOf, forEach тощо)
 // Ланцюжок прототипів має наступний вигляд:
