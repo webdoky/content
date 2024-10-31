@@ -74,7 +74,7 @@ var notHoisted = function () {
 
 ```js
 const math = {
-  factit: function factorial(n) {
+  factorial: function factorial(n) {
     console.log(n);
     if (n <= 1) {
       return 1;
@@ -83,7 +83,7 @@ const math = {
   },
 };
 
-math.factit(3); //3;2;1;
+math.factorial(3); //3;2;1;
 ```
 
 Якщо вираз функції є іменованим, властивість функції [`name`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function/name) встановлюється як її ім'я, замість неявного імені, виведеного з синтаксису (наприклад, змінна, до якої присвоюється функція).
