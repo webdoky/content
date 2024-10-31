@@ -39,17 +39,17 @@ function myFunc(theObject) {
   theObject.make = "Toyota";
 }
 
-const mycar = {
+const myCar = {
   make: "Honda",
   model: "Accord",
   year: 1998,
 };
 
-console.log(mycar.make); // "Honda"
+console.log(myCar.make); // "Honda"
 
 // властивість make змінена функцією
-myFunc(mycar);
-console.log(mycar.make); // "Toyota"
+myFunc(myCar);
+console.log(myCar.make); // "Toyota"
 ```
 
 Коли як параметр передається масив, то якщо функція змінює будь-яке зі значень масиву, то такі зміни помітні поза функцією, як показано в наступному прикладі:
