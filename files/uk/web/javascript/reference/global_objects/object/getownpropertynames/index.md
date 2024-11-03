@@ -103,9 +103,9 @@ console.log(Object.getOwnPropertyNames(new ChildClass()));
 
 ```js
 const target = myObject;
-const enumAndNonenum = Object.getOwnPropertyNames(target);
+const enumAndNonEnum = Object.getOwnPropertyNames(target);
 const enumOnly = new Set(Object.keys(target));
-const nonenumOnly = enumAndNonenum.filter((key) => !enumOnly.has(key));
+const nonenumOnly = enumAndNonEnum.filter((key) => !enumOnly.has(key));
 
 console.log(nonenumOnly);
 ```
