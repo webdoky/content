@@ -63,10 +63,10 @@ font: caption;
   - {{cssxref("&lt;font-stretch&gt;")}}
   - {{cssxref("&lt;line-height&gt;")}}
 
-- `font-style`, `font-variant` і `font-weight` повинні стояти перед `font-size`
-- `font-variant` може задавати лише значення, задані в CSS 2.1, тобто `normal` або `small-caps`
+- `font-style`, `font-variant` і `font-weight` повинні стояти перед `font-size`.
+- `font-variant` може задавати лише значення, задані в CSS 2.1, тобто `normal` або `small-caps`.
 - `font-stretch` може бути лише єдиним значенням – ключовим словом.
-- `line-height` повинно стояти зразу після `font-size`, з префіксом "/", наприклад, "`16px/3`
+- `line-height` повинно стояти зразу після `font-size`, з префіксом "/", наприклад, `16px/3`.
 - `font-family` повинно бути останнім заданим значенням.
 
 ### Значення

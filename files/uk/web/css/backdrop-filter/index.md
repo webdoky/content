@@ -18,7 +18,7 @@ browser-compat: css.properties.backdrop-filter
 backdrop-filter: none;
 
 /* Фільтр з URL до SVG */
-backdrop-filter: url(commonfilters.svg#filter);
+backdrop-filter: url(common-filters.svg#filter);
 
 /* Значення <filter-function> */
 backdrop-filter: blur(2px);

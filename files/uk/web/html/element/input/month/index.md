@@ -7,7 +7,7 @@ browser-compat: html.elements.input.type_month
 
 {{HTMLSidebar}}
 
-Елементи {{HTMLElement("input")}} типу **`month`** (місяць) створює поля введення, що дають користувачеві змогу задати місяць і рік, дозволяючи легко їх ввести. Значенням є рядок, чиє значення має формат "`YYYY-MM`", де `YYYY` – це чотирицифровий рік, а `MM` – номер місяця.
+Елементи {{HTMLElement("input")}} типу **`month`** (місяць) створює поля введення, що дають користувачеві змогу задати місяць і рік, дозволяючи легко їх ввести. Значенням є рядок, чиє значення має формат `YYYY-MM`, де `YYYY` – це чотирицифровий рік, а `MM` – номер місяця.
 
 {{EmbedInteractiveExample("pages/tabbed/input-month.html", "tabbed-shorter")}}
 
@@ -25,7 +25,7 @@ browser-compat: html.elements.input.type_month
 
 ## Значення
 
-Рядок, що представляє значення місяця та року, введене в поле, у формі YYYY-MM (чотири або більше цифр року, потім дефіс ("`-`"), після якого – дві цифри місяця).
+Рядок, що представляє значення місяця та року, введене в поле, у формі YYYY-MM (чотири або більше цифр року, потім дефіс (`-`), після якого – дві цифри місяця).
 Такий формат рядка місяця, вживаний цим типом поля, описаний в [Рядках місяця](/uk/docs/Web/HTML/Date_and_time_formats#riadky-misiatsia).
 
 ### Задання усталеного значення
@@ -74,13 +74,13 @@ monthControl.value = "2001-06";
 
 Найпізніші рік з місяцем, що приймаються, у форматі рядка, описаному в розділі [Значення](#znachennia) вище.
 Якщо введене в елемент [`value`](/uk/docs/Web/HTML/Element/input#value-znachennia) перевищує це значення, то елемент не проходить [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation).
-Якщо значення атрибута `max` не є дійсним рядком у форматі "`yyyy-MM`", то елемент не має максимального значення.
+Якщо значення атрибута `max` не є дійсним рядком у форматі `yyyy-MM`, то елемент не має максимального значення.
 
 Це значення повинно задавати пару року та місяця, що є пізнішою або рівною парі, заданій в атрибуті `min`.
 
 ### min
 
-Найраніші рік з місяцем, в тому самому форматі "`yyyy-MM`", описаному вище.
+Найраніші рік з місяцем, в тому самому форматі `yyyy-MM`, описаному вище.
 Якщо [`value`](/uk/docs/Web/HTML/Element/input#value-znachennia) елемента менше за це значення, то такий елемент не проходить [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation).
 Якщо значення, задане для `min`, не є дійсним рядком року та місяця, то поле не має мінімального значення.
 
@@ -91,7 +91,8 @@ monthControl.value = "2001-06";
 Булів атрибут, котрий, коли присутній, означає, що таке поле не може бути змінено користувачем.
 Проте його `value` все одно може бути змінено з коду JavaScript, що безпосередньо задає значення властивості {{domxref("HTMLInputElement.value")}}.
 
-> **Примітка:** У зв'язку з тим, що поле, доступне лише для прочитання, не може мати значення, `required` ніяк не діє на поля, на котрих також задано атрибут `readonly`.
+> [!NOTE]
+> У зв'язку з тим, що поле, доступне лише для прочитання, не може мати значення, `required` ніяк не діє на поля, на котрих також задано атрибут `readonly`.
 
 ### step
 
@@ -100,7 +101,8 @@ monthControl.value = "2001-06";
 
 Рядкове значення `any` означає, що крокування не накладається, і приймається будь-яке значення (з урахуванням інших обмежень, як то [`min`](#min) і [`max`](#max)).
 
-> **Примітка:** Коли дані, введені користувачем, не відповідають налаштуванням крокування, то {{Glossary("User agent", "користувацький агент")}} може заокруглити до найближчого дійсного значення, віддаючи перевагу числам в додатному напрямку, коли є два рівновіддалені варіанти.
+> [!NOTE]
+> Коли дані, введені користувачем, не відповідають налаштуванням крокування, то {{Glossary("User agent", "користувацький агент")}} може заокруглити до найближчого дійсного значення, віддаючи перевагу числам в додатному напрямку, коли є два рівновіддалені варіанти.
 
 Для полів `month` значення `step` задаються в місяцях, з масштабним фактором 1 (оскільки числове значення за лаштунками – також в місяцях).
 Усталене значення `step` – 1 місяць.
@@ -224,7 +226,8 @@ input:valid + span::after {
 }
 ```
 
-> **Застереження:** Валідація форм HTML _не_ є заміною сценаріїв, котрі пересвідчуються, що введені дані мають відповідний формат.
+> [!WARNING]
+> Валідація форм HTML _не_ є заміною сценаріїв, котрі пересвідчуються, що введені дані мають відповідний формат.
 > Занадто легко будь-кому підлаштувати HTML, дозволивши собі обійти валідацію, чи взагалі її прибрати.
 > Також хтось може обійти HTML узагалі та подати дані безпосередньо на сервер.
 > Якщо ваш серверний код не може валідувати дані, котрі отримує, то може статись лихо, коли подадуть некоректно відформатовані дані (або завеликі дані, дані не того типу, і так далі).
@@ -449,7 +452,8 @@ function populateYears() {
 }
 ```
 
-> **Примітка:** Пам'ятайте, що частина років уміщає 53 тижні (дивіться [Кількість тижнів у році](https://en.wikipedia.org/wiki/ISO_week_date#Weeks_per_year))!
+> [!NOTE]
+> Пам'ятайте, що частина років уміщає 53 тижні (дивіться [Кількість тижнів у році](https://en.wikipedia.org/wiki/ISO_week_date#Weeks_per_year))!
 > Це доведеться враховувати при розробці промислових застосунків.
 
 ## Технічний підсумок
@@ -474,13 +478,18 @@ function populateYears() {
       <td>
         <a href="/uk/docs/Web/HTML/Element/input#autocomplete"><code>autocomplete</code></a>,
         <a href="/uk/docs/Web/HTML/Element/input#list-spysok"><code>list</code></a>,
-        <a href="/uk/docs/Web/HTML/Element/input#readonly-lyshe-dlia-chytannia"><code>readonly</code></a> і
-        <a href="/uk/docs/Web/HTML/Element/input#step-krok"><code>step</code></a>.
+        <a href="/uk/docs/Web/HTML/Element/input#readonly-lyshe-dlia-chytannia"><code>readonly</code></a>,
+        <a href="/uk/docs/Web/HTML/Element/input#step-krok"><code>step</code></a>
       </td>
     </tr>
     <tr>
       <td><strong>Атрибути IDL</strong></td>
-      <td><code>value</code></td>
+      <td>
+        <a href="/uk/docs/Web/HTML/Element/input#list-spysok"><code>list</code></a>,
+        <a href="/uk/docs/Web/HTML/Element/input#value-znachennia"><code>value</code></a>,
+        <code>valueAsDate</code>,
+        <code>valueAsNumber</code>
+      </td>
     </tr>
     <tr>
       <td><strong>Інтерфейс DOM</strong></td>
@@ -496,7 +505,7 @@ function populateYears() {
     </tr>
     <tr>
       <td><strong>Неявна роль ARIA</strong></td>
-      <td><a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"><code>немає відповідної ролі</code></a></td>
+      <td><a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role">немає відповідної ролі</a></td>
     </tr>
   </tbody>
 </table>
@@ -513,6 +522,6 @@ function populateYears() {
 
 - Узагальнений елемент {{HTMLElement("input")}} та інтерфейс, що використовується для роботи з ним – {{domxref("HTMLInputElement")}}
 - [Формати дати та часу, що використовуються в HTML](/uk/docs/Web/HTML/Date_and_time_formats)
-- [Підручник з інтерфейсу вибору дати та часу](/uk/docs/Learn/Forms/Basic_native_form_controls#interfeis-vyboru-daty-ta-chasu)
+- [Підручник з інтерфейсу вибору дати та часу](/uk/docs/Learn/Forms/HTML5_input_types#interfeis-vyboru-daty-ta-chasu)
 - [`<input type="datetime-local">`](/uk/docs/Web/HTML/Element/input/datetime-local), [`<input type="date">`](/uk/docs/Web/HTML/Element/input/date), [`<input type="time">`](/uk/docs/Web/HTML/Element/input/time) і [`<input type="week">`](/uk/docs/Web/HTML/Element/input/week)
 - [Сумісність властивостей CSS](/uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls)

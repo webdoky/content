@@ -55,15 +55,15 @@ background-color: unset;
 - {{cssxref("&lt;color&gt;")}}
   - : Однорідний колір тла. Наноситься під сподом будь-яких вказаних {{cssxref("background-image")}}; втім, такий колір буде видимим крізь будь-яку прозорість зображення.
 
-## Занепокоєння щодо доступності
+## Доступність
 
 Важливо пересвідчитись, що співвідношення контрасту між кольором тла та кольором тексту, накладеного на тло, достатньо високе, аби люди зі слабким зором мали змогу прочитати вміст сторінки.
 
-Співвідношення контрасту кольору визначається порівнянням яскравості кольорових значень тексту та тла. Аби відповідати поточним [Настановам із доступності вебконтенту (WCAG) (англ.)](https://www.w3.org/WAI/standards-guidelines/wcag/), для звичайного тексту необхідне співвідношення 4.5:1, а для більшого тексту штибу заголовків – 3:1. Великим вважається текст розміру 18.66 пікселів або більше, якщо [грубим шрифтом](/uk/docs/Web/CSS/font-weight), інакше – 24 пікселів або більше.
+Співвідношення контрасту кольору визначається порівнянням яскравості кольорових значень тексту та тла. Аби відповідати поточним [Настановам із доступності вебконтенту (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/), для звичайного тексту необхідне співвідношення 4.5:1, а для більшого тексту штибу заголовків – 3:1. Великим вважається текст розміру 18.66 пікселів або більше, якщо [грубим шрифтом](/uk/docs/Web/CSS/font-weight), інакше – 24 пікселів або більше.
 
-- [WebAIM: Перевірка контрасту кольору (англ.)](https://webaim.org/resources/contrastchecker/)
+- [WebAIM: Перевірка контрасту кольору](https://webaim.org/resources/contrastchecker/)
 - [MDN Розуміння WCAG, Пояснення настанов 1.4](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#guideline_1.4_make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
-- [Розуміння критеріїв успіху 1.4.3 | W3C Розуміння WCAG 2.0 (англ.)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html)
+- [Розуміння критеріїв успіху 1.4.3 | W3C Розуміння WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html)
 
 ## Формальне визначення
 
@@ -75,37 +75,97 @@ background-color: unset;
 
 ## Приклади
 
-### HTML
+### Розфарбування блоків
+
+Цей приклад демонструє застосування до елементів HTML {{HTMLelement("div")}} властивості `background-color` з використанням різних значень CSS {{cssxref("color_value", "&lt;color&gt;")}}.
+
+#### HTML
 
 ```html
-<div class="exampleone">Але щоб ви зрозуміли, звідки</div>
+<div class="example-one">Але щоб ви зрозуміли, звідки</div>
 
-<div class="exampletwo">Але щоб ви зрозуміли, звідки</div>
+<div class="example-two">Але щоб ви зрозуміли, звідки</div>
 
 <div class="examplethree">Але щоб ви зрозуміли, звідки</div>
 ```
 
-### CSS
+#### CSS
 
 ```css
-.exampleone {
+.example-one {
   background-color: transparent;
 }
 
-.exampletwo {
+.example-two {
   background-color: rgb(153 102 153);
   color: rgb(255 255 204);
 }
 
-.examplethree {
+.example-three {
   background-color: #777799;
   color: #ffffff;
 }
 ```
 
-### Результат
+#### Результат
 
-{{EmbedLiveSample("pryklady", 200, 150)}}
+{{EmbedLiveSample("rozfarbuvannia-blokiv", 200, 150)}}
+
+### Розфарбування таблиць
+
+Цей приклад демонструє застосування властивості `background-color` до елементів HTML {{HTMLelement("table")}}, у тому числі рядів {{HTMLelement("tr")}} і комірок {{HTMLelement("td")}}.
+
+#### HTML
+
+```html
+<table>
+  <tr id="r1">
+    <td id="c11">11</td>
+    <td id="c12">12</td>
+    <td id="c13">13</td>
+  </tr>
+  <tr id="r2">
+    <td id="c21">21</td>
+    <td id="c22">22</td>
+    <td id="c23">23</td>
+  </tr>
+  <tr id="r3">
+    <td id="c31">31</td>
+    <td id="c32">32</td>
+    <td id="c33">33</td>
+  </tr>
+</table>
+```
+
+#### CSS
+
+```css
+table {
+  border-collapse: collapse;
+  border: solid black 1px;
+  width: 250px;
+  height: 150px;
+}
+td {
+  border: solid 1px black;
+}
+#r1 {
+  background-color: lightblue;
+}
+#c12 {
+  background-color: cyan;
+}
+#r2 {
+  background-color: grey;
+}
+#r3 {
+  background-color: olive;
+}
+```
+
+#### Результат
+
+{{EmbedLiveSample('rozfarbuvannia-tablyts', "100%", "100%")}}
 
 ## Специфікації
 
@@ -120,4 +180,3 @@ background-color: unset;
 - [Множинні фони](/uk/docs/Web/CSS/CSS_backgrounds_and_borders/Using_multiple_backgrounds)
 - Тип даних {{cssxref("&lt;color&gt;")}}
 - Інші властивості, пов'язані з кольором: {{cssxref("color")}}, {{cssxref("border-color")}}, {{cssxref("outline-color")}}, {{cssxref("text-decoration-color")}}, {{cssxref("text-emphasis-color")}}, {{cssxref("text-shadow")}}, {{cssxref("caret-color")}} та {{cssxref("column-rule-color")}}
-- [Застосування кольору до елементів HTML за допомогою CSS](/uk/docs/Web/CSS/CSS_colors/Applying_color)

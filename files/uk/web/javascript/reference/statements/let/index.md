@@ -94,11 +94,13 @@ let name1 = value1, name2, /* …, */ nameN = valueN;
 }
 ```
 
-Застосування оператора `typeof` на змінній `let` у її TDZ викидає {{jsxref("ReferenceError")}}:
+Застосування оператора `typeof` на змінній у її TDZ викидає {{jsxref("ReferenceError")}}:
 
 ```js example-bad
-typeof i; // ReferenceError: Cannot access 'i' before initialization
-let i = 10;
+{
+  typeof i; // ReferenceError: Cannot access 'i' before initialization
+  let i = 10;
+}
 ```
 
 Це відрізняється від вживання `typeof` для невизначених змінних та змінних, що мають значення `undefined`:
@@ -107,7 +109,8 @@ let i = 10;
 console.log(typeof undeclaredVariable); // "undefined"
 ```
 
-> **Примітка:** Оголошення `let` і `const` обробляються лише тоді, коли обробляється поточний сценарій. Якщо є два елементи `<script>`, які працюють в сценарному режимі в межах одного HTML, то перший з них не підлягає обмеженням TDZ для змінних `let` і `const` зовнішнього рівня, оголошених у другому, проте якщо оголосити змінну `let` або `const` у першому сценарії, то повторне оголошення її у другому призведе до [помилки повторного оголошення](#povtorni-oholoshennia).
+> [!NOTE]
+> Оголошення `let` і `const` обробляються лише тоді, коли обробляється поточний сценарій. Якщо є два елементи `<script>`, які працюють в сценарному режимі в межах одного HTML, то перший з них не підлягає обмеженням TDZ для змінних `let` і `const` зовнішнього рівня, оголошених у другому, проте якщо оголосити змінну `let` або `const` у першому сценарії, то повторне оголошення її у другому призведе до [помилки повторного оголошення](#povtorni-oholoshennia).
 
 ### Повторні оголошення
 
@@ -272,7 +275,7 @@ let [, a, b, c] = result;
 console.log(a, b, c); // "aaa" "b" "cc"
 ```
 
-Більше про це - в [Присвоєнні з деструктуруванням](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
+Більше про це – в [Присвоєнні з деструктуруванням](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
 
 ## Специфікації
 

@@ -1,5 +1,5 @@
 ---
-title: "<progress>: Елемент – індикатор прогресу"
+title: <progress> – Елемент – індикатор прогресу
 slug: Web/HTML/Element/progress
 page-type: html-element
 browser-compat: html.elements.progress
@@ -15,7 +15,7 @@ browser-compat: html.elements.progress
 
 Цей елемент приймає [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
 
-- `max`
+- [`max`](/uk/docs/Web/HTML/Attributes/max)
   - : Цей атрибут описує те, скільки роботи вимагає завдання, позначене елементом `progress`. Якщо атрибут `max` присутній, він повинен мати значення більше за `0` і бути дійсним числом з рухомою комою. Усталене значення — `1`.
 - `value`
   - : Цей атрибут задає те, скільки роботи виконано. Він повинен бути дійсним числом з рухомою комою між `0` і `max`, або між `0` і `1`, якщо `max` пропущено. Якщо атрибут `value` відсутній, смуга прогресу є невизначеною; це означає, що дія триває, але немає вказівок на те, скільки часу вона буде тривати.
@@ -24,17 +24,7 @@ browser-compat: html.elements.progress
 
 > **Примітка:** Псевдоклас {{cssxref(":indeterminate")}} можна використовувати для збігу з невизначеними смугами прогресу. Щоб змінити смугу прогресу на невизначену після того, як їй надано значення, необхідно видалити атрибут `value` за допомогою {{domxref("Element.removeAttribute", "element.removeAttribute('value')")}}.
 
-## Приклади
-
-```html
-<progress value="70" max="100">70 %</progress>
-```
-
-### Результат
-
-{{EmbedLiveSample("pryklady", 200, 50)}}
-
-## Занепокоєння щодо доступності
+## Доступність
 
 ### Підписування
 
@@ -79,6 +69,16 @@ browser-compat: html.elements.progress
 ##### Результат
 
 {{EmbedLiveSample('opysuvannia-pevnoho-rehionu')}}
+
+## Приклади
+
+```html
+<progress value="70" max="100">70 %</progress>
+```
+
+### Результат
+
+{{EmbedLiveSample("pryklady", 200, 50)}}
 
 ## Технічний підсумок
 
@@ -136,6 +136,7 @@ browser-compat: html.elements.progress
 
 ## Дивіться також
 
+- [Створення вертикальних формових елементів](/uk/docs/Web/CSS/CSS_writing_modes/Vertical_controls)
 - {{htmlelement("meter")}}
 - {{cssxref(":indeterminate")}}
 - {{cssxref("-moz-orient")}}

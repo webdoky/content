@@ -67,7 +67,7 @@ background-position: unset;
     - Одне зі значень – ключових слів `top`, `left`, `bottom`, `right`. Якщо задано `left` або `right`, то це задає X, а інше значення – задає Y. Якщо задано `top` або `bottom`, то це задає Y, а інше значення – X.
     - {{cssxref("&lt;length&gt;")}} або {{cssxref("&lt;percentage&gt;")}}. Якщо інше значення – `left` або `right`, то це значення задає Y відносно верхнього краю. Якщо інше значення – `top` або `bottom`, то це значення задає X відносно лівого краю. Якщо обидва значення – `<length>` або `<percentage>`, то перше з них задає X, а друге – Y.
     - Зверніть увагу, що: якщо одне зі значень – `top` або `bottom`, то інше значення не може бути `top` або `bottom`. Аналогічно, якщо одне зі значень – `left` або `right`, то інше значення не може бути `left` або `right`. Це означає, що, наприклад, `top top` і `left right` – недійсні значення.
-    - Порядок: при паруванні ключових слів, їх розташування в списку неважливе, адже браузер сам може їх переставити, і значення `top left` і `left top` дадуть однаковий результат. При паруванні {{cssxref("&lt;length&gt;")}} або {{cssxref("&lt;percentage&gt;")}} з ключовим словом – порядок є важливим, спершу повинно стояти значення X, а потім – Y, і значення `right 20px` не тотожне `20px right`: перше значення – дійсне, а друге – ні. Значення `left 20%` і `20% bottom` – є дійсними, адже значення X та Y чітко визначені, і їх порядок є правильним.
+    - Порядок: при паруванні ключових слів їх розташування в списку неважливе, адже браузер сам може їх переставити; значення `top left` і `left top` дадуть однаковий результат. При паруванні {{cssxref("&lt;length&gt;")}} або {{cssxref("&lt;percentage&gt;")}} з ключовим словом – порядок є важливим: спершу повинно стояти значення X, а потім – Y, тож значення `right 20px` – дійсне, а `20px right` – ні. Значення `left 20%` і `20% bottom` – є дійсними, адже значення X та Y чітко визначені, і їх порядок є коректним.
     - Усталене значення – `left top`, або `0% 0%`.
 
     **Синтаксис 3 значень:** Два значення – значення – ключові слова, а третє – відступ для попереднього значення:
@@ -135,9 +135,9 @@ background-position: unset;
 #### HTML
 
 ```html
-<div class="exampleone">Приклад один</div>
-<div class="exampletwo">Приклад два</div>
-<div class="examplethree">Приклад три</div>
+<div class="example-one">Приклад один</div>
+<div class="example-two">Приклад два</div>
+<div class="example-three">Приклад три</div>
 ```
 
 #### CSS
@@ -153,17 +153,17 @@ div {
 }
 
 /* Ці приклади використовують властивість-скорочення `background` */
-.exampleone {
-  background: url("startransparent.gif") #ffee99 2.5cm bottom no-repeat;
+.example-one {
+  background: url("star-transparent.gif") #ffee99 2.5cm bottom no-repeat;
 }
-.exampletwo {
-  background: url("startransparent.gif") #ffee99 left 4em bottom 1em no-repeat;
+.example-two {
+  background: url("star-transparent.gif") #ffee99 left 4em bottom 1em no-repeat;
 }
 
 /* Декілька зображень тла: для кожного зображення вказано
    відповідну йому позицію, від першої до останньої. */
-.examplethree {
-  background-image: url("startransparent.gif"), url("catfront.png");
+.example-three {
+  background-image: url("star-transparent.gif"), url("cat-front.png");
   background-position:
     0px 0px,
     right 3em bottom 2em;

@@ -46,7 +46,7 @@ browser-compat: html.elements.input.type_submit
 Рядок, що позначає метод кодування при поданні даних форми на сервер. Є три дозволені значення:
 
 - `application/x-www-form-urlencoded`
-  - : Це усталене значення, котре надсилає дані форми як рядок після [відсоткового кодування](https://uk.wikipedia.org/wiki/%D0%92%D1%96%D0%B4%D1%81%D0%BE%D1%82%D0%BA%D0%BE%D0%B2%D0%B5_%D0%BA%D0%BE%D0%B4%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F) тексту за допомогою алгоритму штибу {{jsxref("encodeURI", "encodeURI()")}}.
+  - : Це усталене значення, котре надсилає дані форми як рядок після {{Glossary("Percent-encoding", "відсоткового кодування")}} тексту за допомогою алгоритму штибу {{jsxref("encodeURI", "encodeURI()")}}.
 - `multipart/form-data`
   - : Використовує для керування даними API {{domxref("FormData")}}, даючи змогу подавати на сервер файли. Цей тип кодування _повинен_ використовуватися, якщо форма містить елементи {{HTMLElement("input")}} з [`type`](/uk/docs/Web/HTML/Element/input#type-typ) `file` ([`<input type="file">`](/uk/docs/Web/HTML/Element/input/file)).
 - `text/plain`
@@ -120,7 +120,7 @@ browser-compat: html.elements.input.type_submit
 
 Спробуйте ввести в текстове поле трохи тексту, а потім подати форму.
 
-При поданні пара ім'я-значення надсилається на сервер. У цьому прикладі ця пара буде `text=usertext`, де "usertext" – це текст, введений користувачем, закодований для збереження спеціальних символів. Те, де і як подаються дані, залежать від налаштувань `<form>`; дивіться більше деталей в [Надсиланні даних форми](/uk/docs/Learn/Forms/Sending_and_retrieving_form_data).
+При поданні пара ім'я-значення надсилається на сервер. У цьому прикладі ця пара буде `text=user-text`, де "user-text" – це текст, введений користувачем, закодований для збереження спеціальних символів. Те, де і як подаються дані, залежать від налаштувань `<form>`; дивіться більше деталей в [Надсиланні даних форми](/uk/docs/Learn/Forms/Sending_and_retrieving_form_data).
 
 ### Додавання до кнопки подання комбінації клавіш
 
@@ -158,7 +158,8 @@ browser-compat: html.elements.input.type_submit
 
 На ходу вмикати та вимикати кнопки можна шляхом присвоєння `disabled` зі значенням `true` або `false`; у JavaScript це має вигляд `btn.disabled = true` або `btn.disabled = false`.
 
-> **Примітка:** Більше ідей щодо вмикання та вимикання кнопок дивіться на сторінці [`<input type="button">`](/uk/docs/Web/HTML/Element/input/button#vymknennia-ta-vmykannia-knopky).
+> [!NOTE]
+> Більше ідей щодо вмикання та вимикання кнопок дивіться на сторінці [`<input type="button">`](/uk/docs/Web/HTML/Element/input/button#vymknennia-ta-vmykannia-knopky).
 
 ## Валідація
 

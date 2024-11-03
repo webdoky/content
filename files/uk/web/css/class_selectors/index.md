@@ -7,7 +7,7 @@ browser-compat: css.selectors.class
 
 {{CSSRef}}
 
-**Селектор класу** [CSS](/uk/docs/Web/CSS) дає збіг з елементами на основі їхнього атрибута [`class`](/uk/docs/Web/HTML/Global_attributes#class).
+**Селектор класу** [CSS](/uk/docs/Web/CSS) дає збіг з елементами на основі їхнього атрибута [`class`](/uk/docs/Web/HTML/Global_attributes/class).
 
 ```css
 /* Усі елементи з class="spacious" */
@@ -33,15 +33,36 @@ li.spacious.elegant {
 .class_name { style properties }
 ```
 
-Зверніть увагу на те, що це рівносильно наступному {{Cssxref("Attribute_selectors", "селектору атрибута")}}:
+Зверніть увагу на те, що це рівносильно наступному [селектору атрибута](/uk/docs/Web/CSS/Attribute_selectors):
 
 ```css
 [class~=class_name] { style properties }
 ```
 
+Значення `class_name` мусить бути дійсним [ідентифікатором CSS](/uk/docs/Web/CSS/ident). Атрибути HTML `class`, що не є дійсними ідентифікаторами CSS, повинні бути [екрановані](/uk/docs/Web/CSS/ident#escaping_characters) перед вживанням їх у класових селекторах.
+
 ## Приклади
 
-### CSS
+### Дійсні селектори класу
+
+#### HTML
+
+```html
+<p class="red">Цей абзац має червоний текст.</p>
+<p class="red yellow-bg">Цей абзац має червоний текст і жовте тло.</p>
+<p class="red fancy">Цей абзац має червоний текст і "вишуканий" стиль.</p>
+<p>Це просто звичайний абзац.</p>
+```
+
+```html
+<!-- Наступні два абзаци мають атрибути class,
+ що містять символи, які необхідно екранувати в CSS -->
+
+<p class="item?one">Цей абзац має рожеве тло.</p>
+<p class="123item">Цей абзац має жовте тло.</p>
+```
+
+#### CSS
 
 ```css
 .red {
@@ -58,18 +79,35 @@ li.spacious.elegant {
 }
 ```
 
-### HTML
+```css
+/* У наступних двох правилах атрибути class необхідно екранувати */
 
-```html
-<p class="red">Цей абзац має червоний текст.</p>
-<p class="red yellow-bg">Цей абзац має червоний текст і жовтий фон.</p>
-<p class="red fancy">Цей абзац має червоний текст і "вишукане" оформлення.</p>
-<p>Це лишень звичайний абзац.</p>
+.item\?one {
+  background-color: pink;
+}
+
+.\00003123item {
+  background-color: yellow;
+}
 ```
 
-### Результат
+#### Результат
 
-{{EmbedLiveSample('pryklady')}}
+{{EmbedLiveSample('pryklady', "", 300)}}
+
+### Невалідні селектори класу
+
+Селектори класу в наступних правилах не є валідними ідентифікаторами CSS, а тому ігноруються.
+
+```css example-bad
+.item?one {
+  background-color: green;
+}
+
+.123item {
+  background-color: green;
+}
+```
 
 ## Специфікації
 

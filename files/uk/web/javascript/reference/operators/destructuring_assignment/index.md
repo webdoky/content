@@ -116,7 +116,8 @@ const obj = { a: 1, b: 2 };
 // Властивості `a` й `b` присвоюються властивостям `numbers`
 ```
 
-> **Примітка:** Дужки `( ... )` навколо інструкції присвоєння є обов'язковими, коли деструктурування присвоєння літерала об'єкта використовується без оголошення.
+> [!NOTE]
+> Дужки `( ... )` навколо інструкції присвоєння є обов'язковими, коли деструктурування присвоєння літерала об'єкта використовується без оголошення.
 >
 > `{ a, b } = { a: 1, b: 2 }` не є дійсним синтаксисом сам по собі, оскільки `{a, b}` зліва вважається блоком коду, а не літералом об'єкта, згідно з правилами [інструкцій-виразів](/uk/docs/Web/JavaScript/Reference/Statements/Expression_statement). Проте `({ a, b } = { a: 1, b: 2 })` є дійсним, як і `const { a, b } = { a: 1, b: 2 }`.
 >
@@ -306,7 +307,7 @@ function parseProtocol(url) {
   // ["https://webdoky.org/uk/docs/Web/JavaScript",
   // "https", "webdoky.org", "uk/docs/Web/JavaScript"]
 
-  const [, protocol, fullhost, fullpath] = parsedURL;
+  const [, protocol, fullHost, fullPath] = parsedURL;
   return protocol;
 }
 
