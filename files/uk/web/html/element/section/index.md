@@ -1,5 +1,5 @@
 ---
-title: "<section> – узагальнений елемент розділу"
+title: <section> – узагальнений елемент розділу
 slug: Web/HTML/Element/section
 page-type: html-element
 browser-compat: html.elements.section
@@ -26,7 +26,7 @@ browser-compat: html.elements.section
 - Якщо вміст представляє головну область вмісту документа, використовуйте {{HTMLElement("main")}}.
 - Якщо елемент використовується суто як обгортка для стилізації, використовуйте краще {{HTMLElement("div")}}.
 
-Іще одне повторення: кожен `<section>` повинен бути підписаний, зазвичай шляхом додавання заголовка (елемент {{HTMLElement("Heading_Elements", "h1")}} - {{HTMLElement("Heading_Elements", "h6")}}) як дочірнього щодо `<section>` елемента, де це можливо. Нижче дивіться приклади того, де можна зустріти `<section>` без заголовка.
+Іще одне повторення: кожен `<section>` повинен бути підписаний, зазвичай шляхом додавання заголовка (елемент {{HTMLElement("Heading_Elements", "h1")}} – {{HTMLElement("Heading_Elements", "h6")}}) як дочірнього щодо `<section>` елемента, де це можливо. Нижче дивіться приклади того, де можна зустріти `<section>` без заголовка.
 
 ## Приклади
 
@@ -138,7 +138,7 @@ browser-compat: html.elements.section
           ></code
         >, якщо елемент має
         <a
-          href="https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/"
+          href="/uk/docs/Glossary/Accessible_name"
           >доступну назву</a
         >, інакше –
         <code
