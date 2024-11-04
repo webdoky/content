@@ -122,7 +122,7 @@ spec-urls: https://drafts.csswg.org/css-backgrounds/
 - Властивість {{cssxref("box-decoration-break")}}
 - Властивість {{cssxref("text-shadow")}}
 
-- Функція CSS {{cssxref("url", "url()")}}
+- Тип CSS {{cssxref("url_value", "&lt;url&gt;")}}
 - Тип даних [`<color>`](/uk/docs/Web/CSS/color)
 - Тип даних [`<image>`](/uk/docs/Web/CSS/image)
 - Тип даних [`<position>`](/uk/docs/Web/CSS/position)
