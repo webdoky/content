@@ -291,6 +291,18 @@
         "replace": "$1 – ",
         "searchPattern": "/([^ >]) - /gm",
         "searchScope": "text"
+      },
+      {
+        "message": "Forbidden: шикування",
+        "name": "forbidden-shykuvannia",
+        "replace": "вирівнювання",
+        "search": "шикування"
+      },
+      {
+        "message": "Forbidden: Шикування",
+        "name": "forbidden-shykuvannia-capitalized",
+        "replace": "Вирівнювання",
+        "search": "Шикування"
       }
     ]
   }
