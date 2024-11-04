@@ -22,8 +22,8 @@ page-type: glossary-definition
 - {{domxref("navigator.userAgent")}}
 - [З'ясування браузера за допомогою користувацького агента](/uk/docs/Web/HTTP/Browser_detection_using_the_user_agent)
 - {{RFC(2616, "", "14.43")}}: Заголовок `User-Agent`
-- {{Glossary("Browser", "Браузер")}} (глосарій)
-
+- Споріднені терміни глосарія:
+  - {{Glossary("Browser", "Браузер")}}
 - Заголовки HTTP
 
   - {{HTTPHeader("User-agent")}}
