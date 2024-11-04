@@ -2,20 +2,13 @@
 title: <color-interpolation-method>
 slug: Web/CSS/color-interpolation-method
 page-type: css-type
-browser-compat:
-  - css.types.color.color-mix
-  - css.types.image.gradient.conic-gradient.interpolation_color_space
-  - css.types.image.gradient.linear-gradient.interpolation_color_space
-  - css.types.image.gradient.radial-gradient.interpolation_color_space
-  - css.types.image.gradient.repeating-conic-gradient.interpolation_color_space
-  - css.types.image.gradient.repeating-linear-gradient.interpolation_color_space
-  - css.types.image.gradient.repeating-radial-gradient.interpolation_color_space
+browser-compat: css.types.color.color-mix
 spec-urls: https://drafts.csswg.org/css-color/#interpolation-space
 ---
 
 {{CSSRef}}
 
-[Тип даних](/uk/docs/Web/CSS/CSS_Types) [CSS](/uk/docs/Web/CSS) **`<color-interpolation-method>`** (метод інтерполяції кольору) представляє колірний простір, що вживається для інтерполяції між значеннями {{CSSXref("&lt;color&gt;")}}. Він може використовуватися для перевизначення усталеного колірного простору інтерполяції для функційних записів, пов'язаних з кольором, наприклад, {{CSSXref("color_value/color-mix", "color-mix()")}} і {{CSSXref("gradient/linear-gradient", "linear-gradient()")}}.
+[Тип даних](/uk/docs/Web/CSS/CSS_Types) [CSS](/uk/docs/Web/CSS) **`<color-interpolation-method>`** (метод інтерполяції кольору) представляє [колірний простір](/uk/docs/Glossary/Color_space), що вживається для інтерполяції між значеннями {{CSSXref("&lt;color&gt;")}}. Він може використовуватися для перевизначення усталеного колірного простору інтерполяції для функційних записів, пов'язаних з кольором, наприклад, {{CSSXref("color_value/color-mix", "color-mix()")}} і {{CSSXref("gradient/linear-gradient", "linear-gradient()")}}.
 
 При інтерполяції значень `<color>` усталено використовується колірний простір інтерполяції Oklab.
 
@@ -33,7 +26,7 @@ in <polar-color-space>[ <hue-interpolation method>]
 
 - `<rectangular-color-space>`
 
-  - : Одне з ключових слів: `srgb`, `srgb-linear`, `lab`, `oklab`, `xyz`, `xyz-d50` або `xyz-d65`.
+  - : Одне з ключових слів: `srgb`, `srgb-linear`, `display-p3`, `a98-rgb`, `prophoto-rgb`, `rec2020`, `lab`, `oklab`, `xyz`, `xyz-d50` або `xyz-d65`.
 
 - `<polar-color-space>`
 
@@ -42,6 +35,9 @@ in <polar-color-space>[ <hue-interpolation method>]
 - {{CSSXref("&lt;hue-interpolation-method&gt;")}} {{optional_inline}}
 
   - : Алгоритм інтерполяції барв. Усталено – `shorter hue`.
+
+- `<custom-color-space>`
+  - : Значення [`<dashed-ident>`](/uk/docs/Web/CSS/dashed-ident#zastosuvannia-vkupi-z-profilem-color), що вказує на кастомний [профіль @color](/uk/docs/Web/CSS/@color-profile).
 
 ## Формальний синтаксис
 
@@ -66,49 +62,6 @@ in <polar-color-space>[ <hue-interpolation method>]
 
 #### CSS
 
-```css hidden
-/* Запасні стилі */
-.srgb {
-  background-image: linear-gradient(
-    to right,
-    rgb(0% 0% 100%),
-    rgb(20% 0% 80%),
-    rgb(40% 0% 60%),
-    rgb(60% 0% 40%),
-    rgb(80% 0% 20%),
-    rgb(100% 0% 0%)
-  );
-}
-.oklab {
-  background-image: linear-gradient(
-    to right,
-    oklab(45.2% -0.032 -0.312),
-    oklab(48.7% 0.019 -0.224),
-    oklab(52.2% 0.07 -0.137),
-    oklab(55.8% 0.122 -0.049),
-    oklab(59.3% 0.173 0.038),
-    oklab(62.8% 0.225 0.126)
-  );
-}
-.oklch-longer {
-  background-image: linear-gradient(
-    to right,
-    oklch(45.2% 0.313 264),
-    oklch(46.8% 0.308 243),
-    oklch(48.4% 0.303 221),
-    oklch(50% 0.298 200),
-    oklch(51.6% 0.293 179),
-    oklch(53.2% 0.288 157),
-    oklch(54.8% 0.283 136),
-    oklch(56.4% 0.278 115),
-    oklch(58% 0.273 93),
-    oklch(59.6% 0.268 72),
-    oklch(61.2% 0.263 51),
-    oklch(62.8% 0.258 29)
-  );
-}
-```
-
 ```css
 .gradient {
   height: 50px;
@@ -128,6 +81,66 @@ in <polar-color-space>[ <hue-interpolation method>]
 #### Результат
 
 {{EmbedLiveSample("porivniannia-kolirnykh-prostoriv-interpoliatsii-za-dopomohoiu-hradiientiv", "100%", 250)}}
+
+### Колірна інтерполяція з повторюваними градієнтами
+
+Наступний приклад показує, як задати колірний простір для інтерполяції кольорів у разі повторюваних градієнтів.
+Три рамки демонструють різні види повторюваних градієнтів – використовуючи функції [`repeating-conic-gradient()`](/uk/docs/Web/CSS/gradient/repeating-conic-gradient), [`repeating-linear-gradient()`](/uk/docs/Web/CSS/gradient/repeating-linear-gradient) і [`repeating-radial-gradient()`](/uk/docs/Web/CSS/gradient/repeating-radial-gradient).
+Перша рамка користується для інтерполяції між двома колірними значеннями колірним простором Lab.
+Друга та третя рамки користуються для задання того, як інтерполювати між двома значеннями барв, Oklch, а також задають [`<hue-interpolation-method>`](/uk/docs/Web/CSS/hue-interpolation-method).
+
+#### HTML
+
+```html
+<div class="gradient conic">конічний</div>
+<div class="gradient linear">лінійний</div>
+<div class="gradient radial">радіальний</div>
+```
+
+#### CSS
+
+У кожному з градієнтів використано ті самі два кольори, щоб продемонструвати різний вплив [`<hue-interpolation-method>`](/uk/docs/Web/CSS/hue-interpolation-method) і {{glossary("color space", "колірного простору")}} на колірну інтерполяцію в градієнтах.
+
+```css hidden
+.gradient {
+  height: 200px;
+  width: 200px;
+  display: inline-block;
+  font-family: monospace;
+  margin: 10px;
+  font-size: 16px;
+}
+```
+
+```css
+.conic {
+  background-image: repeating-conic-gradient(
+    in lab,
+    burlywood,
+    blueviolet 120deg
+  );
+}
+.linear {
+  background-image: repeating-linear-gradient(
+    in oklch,
+    burlywood,
+    blueviolet 75px
+  );
+}
+.radial {
+  background-image: repeating-radial-gradient(
+    in oklch longer hue,
+    blueviolet 50px,
+    burlywood 100px
+  );
+}
+```
+
+#### Результат
+
+{{EmbedLiveSample("interpoliatsiia-barv-z-povtoriuvanymy-hradiientamy", "100%", 250)}}
+Коли порівняти першу та другу рамки, видно різницю інтерполювання між двома кольорами в різних колірних просторах.
+Коли порівняти другу та третю рамки, видно різницю між різними значеннями [`<hue-interpolation-method>`](/uk/docs/Web/CSS/hue-interpolation-method), а саме – лінійний градієнт користується коротшим методом (усталеним), а радіальний – довшим.
 
 ## Специфікації
 
