@@ -47,6 +47,8 @@ substring(indexStart, indexEnd)
 
 Наступний приклад використовує метод `substring()` для показування символів з рядка `'Mozilla'`:
 
+<!-- cSpell:ignore Mozill -->
+
 ```js
 const anyString = "Mozilla";
 
@@ -63,6 +65,8 @@ console.log(anyString.substring(0, 10)); // 'Mozilla'
 ### Застосування методу substring() з властивістю довжини
 
 Наступний приклад застосовує метод `substring()` з властивістю {{jsxref("String/length", "length")}} для вибирання останніх символів певного рядка. Ймовірно запам'ятати цей метод буде простіше аніж попередні приклади, оскільки тут не потрібно знати початковий та кінцевий індекси.
+
+<!-- cSpell:ignore illa zilla -->
 
 ```js
 const text = "Mozilla";
