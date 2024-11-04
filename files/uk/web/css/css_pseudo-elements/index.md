@@ -61,7 +61,6 @@ spec-urls: https://drafts.csswg.org/css-pseudo/
 
   - {{cssxref("::cue")}}
   - {{cssxref("::cue", "::cue()")}}
-  - {{cssxref("::cue-region")}}
 
 - Модуль [Області видимості CSS](/uk/docs/Web/CSS/CSS_scoping)
 
@@ -73,6 +72,14 @@ spec-urls: https://drafts.csswg.org/css-pseudo/
 - Модуль [Тіньових частин CSS](/uk/docs/Web/CSS/CSS_shadow_parts)
 
   - {{CSSXref("::part")}}
+
+- Модуль [Переходів представлення CSS](/uk/docs/Web/CSS/CSS_view_transitions)
+
+  - {{cssxref("::view-transition")}} {{Experimental_Inline}}
+  - {{cssxref("::view-transition-image-pair()")}} {{Experimental_Inline}}
+  - {{cssxref("::view-transition-group()")}} {{Experimental_Inline}}
+  - {{cssxref("::view-transition-new()")}} {{Experimental_Inline}}
+  - {{cssxref("::view-transition-old()")}} {{Experimental_Inline}}
 
 - [Селектори CSS](/uk/docs/Web/CSS/CSS_selectors)
 
@@ -92,7 +99,7 @@ spec-urls: https://drafts.csswg.org/css-pseudo/
   - Властивість {{cssxref("content")}}
   - Властивість {{cssxref("quotes")}}
 
-- [Текстові уривки](/uk/docs/Web/Text_fragments)
+- [Текстові уривки](/uk/docs/Web/URI/Fragment/Text_fragments)
 
 - Властивість {{DOMXref("AnimationEvent.pseudoElement")}}
 - Властивість {{DOMXref("KeyframeEffect.pseudoElement")}}
