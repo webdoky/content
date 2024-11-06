@@ -2,77 +2,139 @@
 title: Рамкова модель CSS
 slug: Web/CSS/CSS_box_model
 page-type: css-module
-spec-urls: https://drafts.csswg.org/css-box/
+spec-urls:
+  - https://drafts.csswg.org/css-box-4/
+  - https://drafts.csswg.org/css-box-3/
 ---
 
 {{CSSRef}}
 
-Модуль **Рамкової моделі CSS** визначає прямокутні рамки, включно з їхніми внутрішніми та зовнішніми відступами, що створюються для елементів і компонуються згідно з [моделлю візуального форматування](/uk/docs/Web/CSS/Visual_formatting_model).
+Модуль **Рамкової моделі CSS** визначає властивості `height`, `width`, `margin` і `padding`, які разом із [властивостями меж](/uk/docs/Web/CSS/CSS_backgrounds_and_borders) утворюють [рамкову модель](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model) CSS.
 
-## Огляд рамкової моделі
+Кожний видимий елемент на вебсторінці – це рамка, скомпонована згідно з [моделлю візуального форматування](/uk/docs/Web/CSS/Visual_formatting_model). Властивості CSS визначають для цих рамок їхні розмір, положення та рівень у нагромадженні (stacking level), а властивості рамкової моделі (серед інших) визначають власний розмір кожної рамки та вільний простір навколо неї.
 
-Рамка в CSS складається з області вмісту, в якій виводяться текст, зображення чи інші елементи HTML. Навколо неї необов'язково присутній внутрішній відступ, межа, а також зовнішній відступ, усе це з одного або більше боків. Рамкова модель описує те, як ці елементи працюють разом, щоб створити рамку, яка відображається за допомогою CSS. Щоб дізнатися більше про це, прочитайте [Вступ до рамкової моделі CSS](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model).
+Кожна рамка має прямокутну область вмісту, всередині якої виводяться текст, зображення та інший вміст. Цей вміст може бути оточений внутрішніми відступами, межею та зовнішніми відступами на одному або декількох боках. Внутрішні відступи – навколо вмісту, межа – навколо внутрішніх відступів, а зовнішні відступи – поза межами. Рамкова модель описує, як ці аспекти – вміст, внутрішні відступи, межі та зовнішні відступи – взаємодіють для утворення рамки, яку відображає CSS.
 
-### Ключові слова країв рамки
+![Складові частини Рамкової моделі CSS](boxmodel.png)
 
-Специфікація Рамкової моделі визначає набір ключових слів, що вказують на краї кожної частини рамки, які використовуються в CSS як значення – ключові слова, в тому числі як значення властивості {{cssxref("box-sizing")}}, для керування тим, як рамкова модель обчислює свій розмір.
-
-- `content-box`
-  - : Край області вмісту рамки.
-- `padding-box`
-  - : Край внутрішніх відступів рамки, а якщо з цього боку внутрішнього вмісту немає, то це те саме, що й `content-box`.
-- `border-box`
-  - : Край меж рамки, а якщо з цього боку межі немає, то це те саме, що й `padding-box`.
-- `margin-box`
-  - : Край зовнішніх полів рамки, а якщо з цього боку зовнішнього поля немає, то це те саме, що й `border-box`.
-- `stroke-box`
-  - : У SVG позначає контурну рамку, а в CSS працює як `content-box`.
-- `view-box`
-  - : У SVG позначає вихідну рамку найближчого елемента області перегляду SVG, яка є прямокутником з шириною та висотою початкової користувацької координатної системи SVG, встановленої атрибутом {{svgattr("viewBox")}} для цього елемента. У CSS працює як `border-box`.
+Модуль Рамкової моделі CSS визначає фізичні (тобто "відносні щодо сторінки") властивості, штибу `width` та `margin-top`. Плинові властивості, штибу `inline-size` та `margin-block-start` (які стосуються напрямку тексту), визначені в [Логічних властивостях та значеннях](/uk/docs/Web/CSS/CSS_logical_properties_and_values). Модуль рамкової моделі розширюється [модулем Розмірності рамки CSS](/uk/docs/Web/CSS/CSS_box_sizing), який вводить значення {{glossary("intrinsic size", "власного розміру")}} та дає змогу визначати {{glossary("aspect ratio", "співвідношення сторін")}} для елементів, які автоматично змінюють розмір принаймні в одному напрямку.
 
 ## Довідка
 
-> **Примітка:** Ця специфікація визначає фізичні властивості внутрішніх і зовнішніх відступів. Потокові властивості, що стосуються напрямку тексту, визначені в [Логічних властивостях і значеннях](/uk/docs/Web/CSS/CSS_logical_properties_and_values).
+### Властивості
 
-### Властивості для контролю зовнішніх відступів рамки
+- {{cssxref("box-sizing")}}
+- {{cssxref("height")}}
+- {{cssxref("margin")}}
+- {{cssxref("margin-bottom")}}
+- {{cssxref("margin-left")}}
+- {{cssxref("margin-right")}}
+- {{cssxref("margin-top")}}
+- {{cssxref("margin-trim")}}
+- {{cssxref("max-height")}}
+- {{cssxref("max-width")}}
+- {{cssxref("min-height")}}
+- {{cssxref("min-width")}}
+- {{cssxref("padding")}}
+- {{cssxref("padding-bottom")}}
+- {{cssxref("padding-left")}}
+- {{cssxref("padding-right")}}
+- {{cssxref("padding-top")}}
+- {{cssxref("width")}}
 
-Зовнішні відступи оточують край межі рамки та створюють проміжки між рамками.
+### Типи даних
 
-- {{CSSxRef("margin")}}
-- {{CSSxRef("margin-bottom")}}
-- {{CSSxRef("margin-left")}}
-- {{CSSxRef("margin-right")}}
-- {{CSSxRef("margin-top")}}
-- {{CSSxRef("margin-trim")}} {{Experimental_Inline}}
-
-### Властивості для контролю внутрішніх відступів рамки
-
-Внутрішні відступи додаються між краєм вмісту та краєм межі рамки.
-
-- {{CSSxRef("padding")}}
-- {{CSSxRef("padding-bottom")}}
-- {{CSSxRef("padding-left")}}
-- {{CSSxRef("padding-right")}}
-- {{CSSxRef("padding-top")}}
-
-### Інші властивості
-
-Є інші властивості, що стосуються рамкової моделі, але визначені в інших місцях.
-
-- [Межі](/uk/docs/Web/CSS/CSS_backgrounds_and_borders)
-  - : Властивості меж задають товщину межі, її стиль накреслення та колір.
-- [Переповнення](/uk/docs/Web/CSS/overflow)
-  - : Контролює те, що відбувається, коли вмісту занадто багато, щоб поміститися в рамку.
+- [`<box>`](/uk/docs/Web/CSS/box-edge)
+  - [`<visual-box>`](/uk/docs/Web/CSS/box-edge#visual-box)
+  - [`<layout-box>`](/uk/docs/Web/CSS/box-edge#layout-box)
+  - [`<paint-box>`](/uk/docs/Web/CSS/box-edge#paint-box)
+  - [`<coord-box>`](/uk/docs/Web/CSS/box-edge#coord-box)
+  - [`<geometry-box>`](/uk/docs/Web/CSS/box-edge#geometry-box)
 
 ## Посібники
 
 - [Вступ у Рамкову модель CSS](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
+
   - : Пояснює одну з фундаментальних концепцій CSS – рамкову модель. Ця модель визначає, як CSS компонує елементи, включно з їхніми областями вмісту, внутрішніми відступами, межами та зовнішніми відступами.
+
 - [Опанування перекриття зовнішніх полів](/uk/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
+
   - : Іноді два сусідні зовнішні відступи перекриваються. Ця стаття описує правила, що керують тим, коли та чому це відбувається, і як це контролювати.
+
 - [Модель візуального форматування](/uk/docs/Web/CSS/Visual_formatting_model)
+
   - : Пояснює модель візуального форматування.
+
+## Споріднені концепції
+
+- Модуль [Фонів і меж CSS](/uk/docs/Web/CSS/CSS_backgrounds_and_borders)
+  - Скорочення {{cssxref("border-width")}}
+  - {{cssxref("border-bottom-width")}}
+  - {{cssxref("border-left-width")}}
+  - {{cssxref("border-right-width")}}
+  - {{cssxref("border-top-width")}}
+- Модуль [Логічних властивостей CSS](/uk/docs/Web/CSS/CSS_logical_properties_and_values)
+  - {{CSSxRef("block-size")}}
+  - {{CSSxRef("inline-size")}}
+  - {{CSSxRef("max-block-size")}}
+  - {{CSSxRef("max-inline-size")}}
+  - {{CSSxRef("min-block-size")}}
+  - {{CSSxRef("min-inline-size")}}
+  - {{CSSxRef("margin-block")}}
+  - {{CSSxRef("margin-block-end")}}
+  - {{CSSxRef("margin-block-start")}}
+  - {{CSSxRef("margin-inline")}}
+  - {{CSSxRef("margin-inline-end")}}
+  - {{CSSxRef("margin-inline-start")}}
+  - {{CSSxRef("padding-block")}}
+  - {{CSSxRef("padding-block-end")}}
+  - {{CSSxRef("padding-block-start")}}
+  - {{CSSxRef("padding-inline")}}
+  - {{CSSxRef("padding-inline-end")}}
+  - {{CSSxRef("padding-inline-start")}}
+  - {{CSSxRef("border-block")}}
+  - {{CSSxRef("border-block-end")}}
+  - {{CSSxRef("border-block-end-width")}}
+  - {{CSSxRef("border-block-start")}}
+  - {{CSSxRef("border-block-start-width")}}
+  - {{CSSxRef("border-block-style")}}
+  - {{CSSxRef("border-block-width")}}
+  - {{CSSxRef("border-inline")}}
+  - {{CSSxRef("border-inline-end")}}
+  - {{CSSxRef("border-inline-end-width")}}
+  - {{CSSxRef("border-inline-start")}}
+  - {{CSSxRef("border-inline-start-width")}}
+  - {{CSSxRef("border-inline-width")}}
+- Модуль [Розмірності рамок CSS](/uk/docs/Web/CSS/CSS_box_sizing)
+  - {{cssxref("aspect-ratio")}}
+  - {{cssxref("contain-intrinsic-block-size")}}
+  - {{cssxref("contain-intrinsic-height")}}
+  - {{cssxref("contain-intrinsic-inline-size")}}
+  - {{cssxref("contain-intrinsic-size")}}
+  - {{cssxref("contain-intrinsic-width")}}
+  - {{cssxref("max-height")}}
+  - {{cssxref("max-width")}}
+  - {{cssxref("min-height")}}
+  - {{cssxref("min-width")}}
+- Модуль [Переповнення CSS](/uk/docs/Web/CSS/CSS_overflow)
+  - Скорочення {{CSSxRef("overflow")}}
+  - {{CSSxRef("overflow-block")}}
+  - {{CSSxRef("overflow-clip-margin")}}
+  - {{CSSxRef("overflow-inline")}}
+  - {{CSSxRef("overflow-x")}}
+  - {{CSSxRef("overflow-y")}}
+  - {{CSSxRef("text-overflow")}}
 
 ## Специфікації
 
 {{Specifications}}
+
+## Дивіться також
+
+- Модуль [Відображення CSS](/uk/docs/Web/CSS/CSS_display)
+- Модуль [Гнучкого компонування CSS](/uk/docs/Web/CSS/CSS_flexible_box_layout)
+- Модуль [Сіткового компонування CSS](/uk/docs/Web/CSS/CSS_grid_layout)
+- Модуль [Таблиць CSS](/uk/docs/Web/CSS/CSS_table)
+- Модуль [Позиційного компонування CSS](/uk/docs/Web/CSS/CSS_positioned_layout)
+- Модуль [Подрібнення CSS](/uk/docs/Web/CSS/CSS_fragmentation)
+- [Розуміння співвідношення сторін](/uk/docs/Web/CSS/CSS_box_sizing/Understanding_aspect-ratio)

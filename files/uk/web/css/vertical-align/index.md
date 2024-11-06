@@ -198,26 +198,26 @@ p {
 
 ### Вертикальне шикування у комірці таблиці
 
+У цьому прикладі таблиця з одним рядом, що містить шість комірок. Ряд задає усталене значення `bottom` для `vertical-align`.
+
+- Кожна з перших чотирьох комірок має власне значення `vertical-align`, і ці значення перевизначають значення від ряду.
+- П'ята комірка не має жодного значення `vertical-align`, тому успадковує значення від ряду.
+
+Шоста комірка використовується лише для того, щоб комірки були достатньо високими, аби дія властивості була помітна.
+
 #### HTML
 
 ```html
 <table>
-  <tr>
-    <td style="vertical-align: baseline">baseline</td>
-    <td style="vertical-align: top">top</td>
-    <td style="vertical-align: middle">middle</td>
-    <td style="vertical-align: bottom">bottom</td>
+  <tr class="bottom">
+    <td class="baseline">baseline</td>
+    <td class="top">top</td>
+    <td class="middle">middle</td>
+    <td>bottom</td>
+    <td>Стиль ряду</td>
     <td>
-      <p>
-        Щастя — єдине мірило і критерій. Ради нього люди воюють, страждають.
-        Його шукають у мандрах, у подвигах. Заради нього запускають ракети,
-        будують машини, клопочуться за квартиру. Ради нього ми прагнемо кудись у
-        неоглядну далину, в майбуття.
-      </p>
-      <p>
-        А може, все це фікція, химера? Воно не десь, а тут, поруч з нами. Оця
-        дивовижна, неповторна мить... Зараз, тепер. Як її зберегти?
-      </p>
+      Ми впевнені, що впровадження продуктів харчування (збільшення асортименту
+      товарів) критично необхідне для розвитку.
     </td>
   </tr>
 </table>
@@ -242,6 +242,22 @@ td {
   padding: 0.5em;
   font-family: monospace;
 }
+
+.bottom {
+  vertical-align: bottom;
+}
+
+.baseline {
+  vertical-align: baseline;
+}
+
+.top {
+  vertical-align: top;
+}
+
+.middle {
+  vertical-align: middle;
+}
 ```
 
 #### Result
@@ -260,5 +276,5 @@ td {
 
 - [Типові випадки використання флексбоксу, розділ "Центрування елемента"](/uk/docs/Web/CSS/CSS_flexible_box_layout/Typical_use_cases_of_flexbox#tsentruvannia-elementa)
 - {{Cssxref("line-height")}}, {{Cssxref("text-align")}}, {{Cssxref("margin")}}
-- [Розуміння `vertical-align`, або "Як (не варто) центрувати вміст вертикально" (англ.)](http://phrogz.net/css/vertical-align/index.html)
-- [Vertical-Align: Усе, що варто знати (англ.)](https://christopheraue.net/design/vertical-align)
+- [Розуміння `vertical-align`, або "Як (не варто) центрувати вміст вертикально"](https://phrogz.net/css/vertical-align/index.html)
+- [Vertical-Align: Усе, що варто знати](https://christopheraue.net/design/vertical-align)

@@ -148,7 +148,8 @@ console.log(proxy3.message2); // світе
 - {{jsxref("Proxy/Proxy", "Proxy()")}}
   - : Створює новий об'єкт `Proxy`.
 
-> **Примітка:** Властивості `Proxy.prototype` немає, тож примірники `Proxy` не мають жодних особливих властивостей або методів.
+> [!NOTE]
+> Властивості `Proxy.prototype` немає, тож примірники `Proxy` не мають жодних особливих властивостей або методів.
 
 ## Статичні методи
 
@@ -307,20 +308,20 @@ const view = new Proxy(
     selected: null,
   },
   {
-    set(obj, prop, newval) {
-      const oldval = obj[prop];
+    set(obj, prop, newVal) {
+      const oldVal = obj[prop];
 
       if (prop === "selected") {
-        if (oldval) {
-          oldval.setAttribute("aria-selected", "false");
+        if (oldVal) {
+          oldVal.setAttribute("aria-selected", "false");
         }
-        if (newval) {
-          newval.setAttribute("aria-selected", "true");
+        if (newVal) {
+          newVal.setAttribute("aria-selected", "true");
         }
       }
 
       // Усталена логіка для збереження значення
-      obj[prop] = newval;
+      obj[prop] = newVal;
 
       // Повідомити про успіх
       return true;

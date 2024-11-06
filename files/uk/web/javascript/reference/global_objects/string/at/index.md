@@ -34,15 +34,15 @@ at(index)
 
 ```js
 // Функція, яка повертає останній символ переданого рядка
-function returnLast(arr) {
-  return arr.at(-1);
+function returnLast(str) {
+  return str.at(-1);
 }
 
-let invoiceRef = "мійІнвойс01";
+let invoiceRef = "мій-інвойс01";
 
 console.log(returnLast(invoiceRef)); // '1'
 
-invoiceRef = "мійІнвойс02";
+invoiceRef = "мій-інвойс02";
 
 console.log(returnLast(invoiceRef)); // '2'
 ```

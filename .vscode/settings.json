@@ -3,11 +3,7 @@
     "editor.formatOnSave": false
   },
   "editor.formatOnSave": true,
-  "eslint.alwaysShowStatus": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
-  },
-  "spellright.language": [],
-  "spellright.documentTypes": ["latex", "plaintext"],
-  "cSpell.enabled": false
+    "source.fixAll": "explicit"
+  }
 }

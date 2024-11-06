@@ -13,7 +13,8 @@ browser-compat: css.properties.padding
 
 Розмах внутрішніх відступів елемента – простір між елементом та його межами.
 
-> **Примітка:** Зовнішні відступи створюють додатковий простір всередині елемента. На відміну від них, {{cssxref("margin", "зовнішні відступи")}} створюють додатковий простір _навколо_ елемента.
+> [!NOTE]
+> Зовнішні відступи створюють додатковий простір всередині елемента. На відміну від них, {{cssxref("margin", "зовнішні відступи")}} створюють додатковий простір _навколо_ елемента.
 
 ## Складові властивості
 
@@ -133,6 +134,8 @@ padding: 1em 3px 30px 5px;
 
 ## Дивіться також
 
+- {{cssxref("padding-top")}}, {{cssxref("padding-right")}}, {{cssxref("padding-bottom")}} і {{cssxref("padding-left")}}
+- {{cssxref("padding-block-start")}}, {{cssxref("padding-block-end")}}, {{cssxref("padding-inline-start")}} і {{cssxref("padding-inline-end")}}
+- Скорочення {{cssxref("padding-block")}} і {{cssxref("padding-inline")}}
 - [Вступ до базової рамкової моделі CSS](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
-- {{cssxref("padding-top")}}, {{cssxref("padding-right")}}, {{cssxref("padding-bottom")}} та {{cssxref("padding-left")}}.
-- Відповідні логічні властивості: {{cssxref("padding-block-start")}}, {{cssxref("padding-block-end")}}, {{cssxref("padding-inline-start")}} та {{cssxref("padding-inline-end")}}, а також скорочення {{cssxref("padding-block")}} і {{cssxref("padding-inline")}}
+- Модуль [Рамкової моделі CSS](/uk/docs/Web/CSS/CSS_box_model)

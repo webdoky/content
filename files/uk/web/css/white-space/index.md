@@ -7,7 +7,7 @@ browser-compat: css.properties.white-space
 
 {{CSSRef}}
 
-Властивість CSS **`white-space`** (пробіл) задає те, як обробляються {{Glossary("whitespace", "пробіли")}} всередині елемента.
+Властивість [CSS](/uk/docs/Web/CSS) **`white-space`** (пробіл) задає те, як обробляються {{Glossary("whitespace", "пробіли")}} всередині елемента.
 
 {{EmbedInteractiveExample("pages/css/white-space.html")}}
 
@@ -16,7 +16,8 @@ browser-compat: css.properties.white-space
 - Чи [перекриваються](#perekryttia-probiliv) пробіли, і якщо перекриваються — то як.
 - Чи може відбутися перенос рядка, і як він відбувається.
 
-> **Примітка:** Аби слова розривались _посередині_, слід натомість використати {{CSSxRef("overflow-wrap")}}, {{CSSxRef("word-break")}} або {{CSSxRef("hyphens")}}.
+> [!NOTE]
+> Аби слова розривались _посередині_, слід натомість використати {{CSSxRef("overflow-wrap")}}, {{CSSxRef("word-break")}} або {{CSSxRef("hyphens")}}.
 
 ## Синтаксис
 
@@ -48,9 +49,9 @@ white-space: unset;
 Значення властивості `white-space` може бути задано у вигляді одного ключового слова, вибраного зі списку значень нижче, або двох значень, що являють скорочення властивостей {{CSSxRef("white-space-collapse")}} і {{cssxref("text-wrap")}}.
 
 - `normal`
-  - : Кілька пробілів підряд – [перекриваються](#perekryttia-probiliv). Символи нового рядка у вихідному коді обробляються як додаткові пробіли. Рядки розриваються так, як необхідно для заповнення їхніх рамок.
+  - : Кілька пробілів підряд – [перекриваються](#perekryttia-probiliv). Символи нового рядка у вихідному коді обробляються так само, як всі інші пробільні символи. Рядки розриваються так, як необхідно для заповнення їхніх рамок.
 - `nowrap`
-  - : [Перекриває](#perekryttia-probiliv) пробіли, як із `normal`, але нейтралізує розриви шеренги символів (переведення тексту на новий рядок), присутні у вихідному коді.
+  - : [Перекриває](#perekryttia-probiliv) пробіли, як це робить значення `normal`, але нейтралізує розриви шеренги символів (переведення тексту на новий рядок), присутні у вихідному коді.
 - `pre`
   - : Кілька пробілів підряд – зберігаються. Шеренги символів розриваються лише на символах нового рядка з вихідного коду та елементах {{HTMLElement("br")}}.
 - `pre-wrap`
@@ -63,7 +64,7 @@ white-space: unset;
 
     - Пробіли підряд завжди займають місце, в тому числі в кінці шеренги.
     - Точка розриву шеренги стоїть після кожного збереженого символу пробілу, в тому числі між двома символами пробілу.
-    - Такі збережені проміжки займають простір і не повисають, чим впливають на природний розмір рамки (розміри min-content і max-content).
+    - Такі збережені проміжки займають простір і не повисають, чим впливають на природний розмір рамки (розміри {{cssxref("min-content")}} і {{cssxref("max-content")}}).
 
 Наступна таблиця підсумовує логіку різних значень `white-space` – ключових слів:
 
@@ -130,7 +131,10 @@ white-space: unset;
   </tbody>
 </table>
 
-> **Примітка:** Є різниця між **пробілами** та **іншими пробільними розділювачами**. Ці групи визначені наступним чином:
+Табуляція усталено відповідає 8 пробілам, але може бути налаштована за допомогою властивості [`tab-size`](/uk/docs/Web/CSS/tab-size). У разі значень `normal`, `nowrap` і `pre-line` кожна табуляція перетворюється на символ пробілу (U+0020).
+
+> [!NOTE]
+> Є різниця між **пробілами** та **іншими пробільними розділювачами**. Ці групи визначені наступним чином:
 >
 > - пробіли
 >   - : Пробіли (U+0020), табуляції (U+0009) та сегментні розриви (як то символи нового рядка).
@@ -181,7 +185,6 @@ pre {
     <option>pre-wrap</option>
     <option>pre-line</option>
     <option>break-spaces</option>
-    <option>preserve nowrap</option>
   </select>
   }
 </div>
@@ -199,7 +202,7 @@ pre {
 
 ```css hidden
 .box {
-  width: 300px;
+  width: 350px;
   padding: 16px;
 }
 
@@ -211,6 +214,7 @@ pre {
 
 #css-code select {
   font-family: inherit;
+  width: 100px;
 }
 
 #results {
@@ -225,11 +229,83 @@ pre {
 const select = document.querySelector("#css-code select");
 const results = document.querySelector("#results p");
 select.addEventListener("change", (e) => {
-  results.setAttribute("style", `white-space: ${e.target.value}`);
+  results.style.setProperty("white-space", e.target.value);
 });
 ```
 
-{{EmbedLiveSample("u-dii", "100%", 500)}}
+{{EmbedLiveSample("u-dii", "100%", 450)}}
+
+### Контроль перенесення в таблицях
+
+#### HTML
+
+```html
+<table>
+  <tr>
+    <td></td>
+    <td>Дуже довгий вміст, що розривається</td>
+    <td class="nw">Дуже довгий вміст, що не розривається</td>
+  </tr>
+  <tr>
+    <td class="nw">white-space:</td>
+    <td>normal</td>
+    <td>nowrap</td>
+  </tr>
+</table>
+```
+
+#### CSS
+
+```css
+table {
+  border-collapse: collapse;
+  border: solid black 1px;
+  width: 250px;
+  height: 150px;
+}
+td {
+  border: solid 1px black;
+  text-align: center;
+}
+.nw {
+  white-space: nowrap;
+}
+```
+
+#### Результат
+
+{{EmbedLiveSample('kontrol-perenesennia-v-tablytsiakh', "100%", "100%")}}
+
+### Кілька ліній у елементі SVG text
+
+Властивість CSS `white-space` може бути використана для створення кількох рядків у елементі {{SVGElement("text")}}, який усталено не має перенесення тексту.
+
+#### HTML
+
+Текст всередині елемента `<text>` потрібно розбити на кілька рядків, щоб були виявлені символи нового рядка. Після першого рядка решта не повинні мати пробілів.
+
+```html-nolint
+<svg viewBox="0 0 320 150">
+  <text y="20" x="10">Це абзац українською мовою,
+який розбитий на кілька ліній
+у вихідному коді, щоб його було
+легше читати та редагувати
+у текстовому редакторі.</text>
+  </text>
+</svg>
+```
+
+#### CSS
+
+```css
+text {
+  white-space: break-spaces;
+}
+```
+
+#### Результат
+
+{{EmbedLiveSample("kilka-linii-u-elementi-svg-text", "100%", 350)}}
 
 ## Специфікації
 
@@ -242,3 +318,4 @@ select.addEventListener("change", (e) => {
 ## Дивіться також
 
 - Властивості, котрі визначають те, як слова розриваються _посередині_: {{CSSxRef("overflow-wrap")}}, {{CSSxRef("word-break")}}, {{CSSxRef("hyphens")}}
+- [`tab-size`](/uk/docs/Web/CSS/tab-size)

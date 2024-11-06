@@ -72,31 +72,31 @@ f1();
 [Очікувані об'єкти](/uk/docs/Web/JavaScript/Reference/Global_Objects/Promise#ochikuvani) вирішуються так само, як справжні об'єкти `Promise`.
 
 ```js
-async function f() {
+async function f2() {
   const thenable = {
-    then(resolve, _reject) {
+    then(resolve) {
       resolve("вирішено!");
     },
   };
   console.log(await thenable); // "вирішено!"
 }
 
-f();
+f2();
 ```
 
 Вони так само можуть бути відхилені:
 
 ```js
-async function f() {
+async function f2() {
   const thenable = {
-    then(resolve, reject) {
+    then(_, reject) {
       reject(new Error("відхилено!"));
     },
   };
   await thenable; // Викидає Error: відхилено!
 }
 
-f();
+f2();
 ```
 
 ### Перетворення на проміс
@@ -237,7 +237,7 @@ function foo(name) {
 
 Хоч додатковий `then()` не є необхідністю – він може бути поєднаний з функцією-виконавцем, переданою в конструктор, та існування обробника `then()` означає, що код витратить на своє завершення на один такт більше. Те саме відбувається з `await`. Таким чином, слід слідкувати, аби `await` вживався лише тоді, коли це необхідно (для розгортання промісів до інших значень).
 
-Інші мікрозадачі можуть виконуватись до того, як відновить виконання призупинена асинхронна функція. Приклад нижче застосовує [`queueMicrotask()`](/uk/docs/Web/API/queueMicrotask), аби продемонструвати те, як обробляється черга мікрозадач, коли зустрічається кожний вираз `await`.
+Інші мікрозадачі можуть виконуватись до того, як відновить виконання призупинена асинхронна функція. Приклад нижче застосовує {{domxref("Window.queueMicrotask()", "queueMicrotask()")}}, аби продемонструвати те, як обробляється черга мікрозадач, коли зустрічається кожний вираз `await`.
 
 ```js
 let i = 0;
@@ -329,7 +329,7 @@ withAwait();
 //    at async withAwait
 ```
 
-Проте `return await` приносить невеликий штраф щодо швидкодії, тому що проміс доводиться розгортати й загортати знов.
+Усупереч поширеному уявленню, `return await promise` – щонайменш так само швидка операція, як `return promise`, що пов'язано з тим, як специфікація та рушії оптимізують розв'язання нативних промісів. Існує пропозиція [зробити `return promise` швидшою](https://github.com/tc39/proposal-faster-promise-adoption), а також можна прочитати про [оптимізацію V8 щодо асинхронних функцій](https://v8.dev/blog/fast-async). Отже, за винятком стилістичних міркувань, майже завжди краще використовувати `return await`.
 
 ## Специфікації
 
@@ -345,3 +345,4 @@ withAwait();
 - [Вираз `async function`](/uk/docs/Web/JavaScript/Reference/Operators/async_function)
 - {{jsxref("AsyncFunction")}}
 - [await зовнішнього рівня](https://v8.dev/features/top-level-await) на v8.dev (2019)
+- [Правило typescript-eslint – `return-await`](https://typescript-eslint.io/rules/return-await/)

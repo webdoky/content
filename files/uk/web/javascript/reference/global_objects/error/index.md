@@ -13,7 +13,7 @@ browser-compat: javascript.builtins.Error
 
 Помилки часу виконання призводять до створення і викидання нових об'єктів `Error`.
 
-`Error` – це {{Glossary("serializable object", "серіалізовний об'єкт")}}, тож він може бути клонований за допомогою {{domxref("structuredClone()")}} і скопійований між [воркерами](/uk/docs/Web/API/Worker) за допомогою {{domxref("Worker/postMessage()", "postMessage()")}}.
+`Error` – це {{Glossary("serializable object", "серіалізовний об'єкт")}}, тож він може бути клонований за допомогою {{DOMxRef("Window.structuredClone", "structuredClone()")}} і скопійований між [воркерами](/uk/docs/Web/API/Worker) за допомогою {{domxref("Worker/postMessage()", "postMessage()")}}.
 
 ### Типи помилок
 
@@ -152,7 +152,8 @@ try {
 }
 ```
 
-> **Примітка:** При написанні бібліотеки краще використовувати причину помилки для розрізнення різних помилок, що породжуються, а не просити користувачів бібліотеки розбирати повідомлення помилок. Шукайте приклад на [сторінці причини помилки](/uk/docs/Web/JavaScript/Reference/Global_Objects/Error/cause#nadannia-strukturovanykh-danykh-yak-prychyny-pomylky).
+> [!NOTE]
+> При написанні бібліотеки краще використовувати причину помилки для розрізнення різних помилок, що породжуються, а не просити користувачів бібліотеки розбирати повідомлення помилок. Шукайте приклад на [сторінці причини помилки](/uk/docs/Web/JavaScript/Reference/Global_Objects/Error/cause#nadannia-strukturovanykh-danykh-yak-prychyny-pomylky).
 
 [Власні типи помилок](#vlasni-typy-pomylok) також можуть використовувати властивість `cause`, за умови, що конструктор підкласів передає параметр `options` при виклику `super()`. Конструктор базового класу `Error()` зчитає `options.cause` та означить на новому примірнику помилки властивість `cause`.
 
@@ -174,9 +175,11 @@ console.log(new MyError("перевірка", { cause: new Error("причина
 
 Читайте заглиблену дискусію на StackOverflow – ["Що є добрим способом розширювати Error у JavaScript?"](https://stackoverflow.com/questions/1382107/whats-a-good-way-to-extend-error-in-javascript).
 
-> **Застереження:** Вбудоване створення підкласів не може бути надійно трансльовано у код до ES6, тому що немає способу сконструювати базовий клас із конкретним значенням `new.target` без {{jsxref("Reflect.construct()")}}. Необхідне [додаткове налаштування](https://github.com/loganfsmyth/babel-plugin-transform-builtin-extend) або ручний виклик {{jsxref("Object/setPrototypeOf", "Object.setPrototypeOf(this, CustomError.prototype)")}} у кінці конструктора; без цього сконструйований примірник не буде примірником `CustomError`. Більше інформації – у [ЧаПах TypeScript](https://github.com/microsoft/TypeScript/wiki/FAQ#why-doesnt-extending-built-ins-like-error-array-and-map-work).
+> [!WARNING]
+> Вбудоване створення підкласів не може бути надійно трансльовано у код до ES6, тому що немає способу сконструювати базовий клас із конкретним значенням `new.target` без {{jsxref("Reflect.construct()")}}. Необхідне [додаткове налаштування](https://github.com/loganfsmyth/babel-plugin-transform-builtin-extend) або ручний виклик {{jsxref("Object/setPrototypeOf", "Object.setPrototypeOf(this, CustomError.prototype)")}} у кінці конструктора; без цього сконструйований примірник не буде примірником `CustomError`. Більше інформації – у [ЧаПах TypeScript](https://github.com/microsoft/TypeScript/wiki/FAQ#why-doesnt-extending-built-ins-like-error-array-and-map-work).
 
-> **Примітка:** Частина браузерів включає конструктор `CustomError` у трасування стека при використанні класів ES2015.
+> [!NOTE]
+> Частина браузерів включає конструктор `CustomError` у трасування стека при використанні класів ES2015.
 
 ```js
 class CustomError extends Error {

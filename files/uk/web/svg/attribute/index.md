@@ -1,5 +1,6 @@
 ---
 title: Довідка атрибутів SVG
+short-title: Атрибути
 slug: Web/SVG/Attribute
 page-type: landing-page
 ---
@@ -8,7 +9,7 @@ page-type: landing-page
 
 Елементи SVG можуть бути модифіковані за допомогою атрибутів, що задають деталі того, як саме елемент повинен бути оброблений або візуалізований.
 
-Нижче - список усіх атрибутів, доступних у SVG, а також посилання на довідкову документацію, щоб допомогти вам дізнатися, які елементи їх підтримують і як вони працюють.
+Нижче – список усіх атрибутів, доступних у SVG, а також посилання на довідкову документацію, щоб допомогти вам дізнатися, які елементи їх підтримують і як вони працюють.
 
 ## Атрибути SVG від A до Z
 
@@ -48,7 +49,6 @@ page-type: landing-page
 - {{SVGAttr("color")}}
 - {{SVGAttr("color-interpolation")}}
 - {{SVGAttr("color-interpolation-filters")}}
-- {{SVGAttr("color-profile")}}
 - {{SVGAttr("color-rendering")}}
 - {{SVGAttr("crossorigin")}}
 - {{SVGAttr("cursor")}}
@@ -58,7 +58,9 @@ page-type: landing-page
 ### D
 
 - {{SVGAttr("d")}}
+- {{SVGAttr("data-*")}}
 - {{SVGAttr("decelerate")}}
+- {{SVGAttr("decoding")}}
 - {{SVGAttr("descent")}}
 - {{SVGAttr("diffuseConstant")}}
 - {{SVGAttr("direction")}}
@@ -73,7 +75,6 @@ page-type: landing-page
 
 - {{SVGAttr("edgeMode")}}
 - {{SVGAttr("elevation")}}
-- {{SVGAttr("enable-background")}}
 - {{SVGAttr("end")}}
 - {{SVGAttr("exponent")}}
 
@@ -118,6 +119,7 @@ page-type: landing-page
 - {{SVGAttr("hreflang")}}
 - {{SVGAttr("horiz-adv-x")}}
 - {{SVGAttr("horiz-origin-x")}}
+- {{SVGAttr("horiz-origin-y")}}
 
 ### I
 
@@ -137,7 +139,6 @@ page-type: landing-page
 - {{SVGAttr("k4")}}
 - {{SVGAttr("kernelMatrix")}}
 - {{SVGAttr("kernelUnitLength")}}
-- {{SVGAttr("kerning")}}
 - {{SVGAttr("keyPoints")}}
 - {{SVGAttr("keySplines")}}
 - {{SVGAttr("keyTimes")}}
@@ -230,6 +231,7 @@ page-type: landing-page
 - {{SVGAttr("scale")}}
 - {{SVGAttr("seed")}}
 - {{SVGAttr("shape-rendering")}}
+- {{SVGAttr("side")}}
 - {{SVGAttr("slope")}}
 - {{SVGAttr("spacing")}}
 - {{SVGAttr("specularConstant")}}
@@ -321,7 +323,6 @@ page-type: landing-page
 - {{SVGAttr("xlink:show")}}
 - {{SVGAttr("xlink:title")}}
 - {{SVGAttr("xlink:type")}}
-- {{SVGAttr("xml:base")}}
 - {{SVGAttr("xml:lang")}}
 - {{SVGAttr("xml:space")}}
 
@@ -348,7 +349,6 @@ page-type: landing-page
   - {{SVGAttr("style")}}
   - {{SVGAttr("lang")}}
   - {{SVGAttr("tabindex")}}
-  - {{SVGAttr("xml:base")}}
   - {{SVGAttr("xml:lang")}}
   - {{SVGAttr("xml:space")}}
 
@@ -369,7 +369,8 @@ page-type: landing-page
 
 ### Атрибути представлення
 
-> **Примітка:** Всі атрибути представлення SVG можуть бути використані як властивості CSS.
+> [!NOTE]
+> Всі атрибути представлення SVG можуть бути використані як властивості CSS.
 
 - {{SVGAttr("alignment-baseline")}}
 - {{SVGAttr("baseline-shift")}}
@@ -379,14 +380,12 @@ page-type: landing-page
 - {{SVGAttr("color")}}
 - {{SVGAttr("color-interpolation")}}
 - {{SVGAttr("color-interpolation-filters")}}
-- {{SVGAttr("color-profile")}}
 - {{SVGAttr("color-rendering")}}
 - {{SVGAttr("cursor")}}
 - {{SVGAttr("d")}}
 - {{SVGAttr("direction")}}
 - {{SVGAttr("display")}}
 - {{SVGAttr("dominant-baseline")}}
-- {{SVGAttr("enable-background")}}
 - {{SVGAttr("fill")}}
 - {{SVGAttr("fill-opacity")}}
 - {{SVGAttr("fill-rule")}}
@@ -403,7 +402,6 @@ page-type: landing-page
 - {{SVGAttr("glyph-orientation-horizontal")}}
 - {{SVGAttr("glyph-orientation-vertical")}}
 - {{SVGAttr("image-rendering")}}
-- {{SVGAttr("kerning")}}
 - {{SVGAttr("letter-spacing")}}
 - {{SVGAttr("lighting-color")}}
 - {{SVGAttr("marker-end")}}
@@ -529,4 +527,4 @@ page-type: landing-page
 
 - [Довідка елементів SVG](/uk/docs/Web/SVG/Element)
 - [Підручник з SVG](/uk/docs/Web/SVG/Tutorial)
-- [Довідка з інтерфейсу SVG](/uk/docs/Web/API/Document_Object_Model#interfeisy-svg)
+- [Довідка з інтерфейсу SVG](/uk/docs/Web/API/SVG_API#interfeisy)
