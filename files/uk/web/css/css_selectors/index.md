@@ -135,7 +135,7 @@ spec-urls: https://drafts.csswg.org/selectors/
 
   - : Вивчіть різні псевдокласи користувацького інтерфейсу, доступні для оформлення форм у різних станах.
 
-- [Віднаходження елементів DOM за допомогою селекторів](/uk/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors)
+- [Віднаходження елементів DOM за допомогою селекторів](/uk/docs/Web/API/Document_Object_Model/Locating_DOM_elements_using_selectors)
 
   - : API селекторів дає змогу використовувати селектори в JavaScript для отримання вузлів елементів з DOM.
 
@@ -144,9 +144,7 @@ spec-urls: https://drafts.csswg.org/selectors/
 - Псевдоклас {{CSSXref(":popover-open")}}
 - Псевдоклас {{CSSXref(":state","state()")}}
 - Модуль [Вкладеності CSS](/uk/docs/Web/CSS/CSS_nesting)
-
-  - : [Селектор вкладеності `&`](/uk/docs/Web/CSS/Nesting_selector)
-
+  - [Селектор вкладеності `&`](/uk/docs/Web/CSS/Nesting_selector)
 - Модуль [Контексту CSS](/uk/docs/Web/CSS/CSS_scoping)
 
   - Псевдоклас {{CSSXref(":host")}}
@@ -179,7 +177,6 @@ spec-urls: https://drafts.csswg.org/selectors/
 - Інші [псевдоелементи](/uk/docs/Web/CSS/Pseudo-elements)
 
   - {{CSSxRef("::cue")}}
-  - {{CSSxRef("::cue-region")}}
 
 - Директива {{CSSXref("@namespace")}}
 
