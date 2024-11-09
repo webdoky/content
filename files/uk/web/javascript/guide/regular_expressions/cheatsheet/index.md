@@ -26,20 +26,22 @@ page-type: guide
       </td>
       <td>
         <p>
-          Клас символів. Дає збіг з одним із символів у дужках. За допомогою дефіса можна задати діапазон символів, але якщо дефіс стоїть першим або останнім символом у квадратних дужках, то сприймається як буквальний символ дефіса, що є частиною описаного класу символів.
+          <a href="/uk/docs/Web/JavaScript/Reference/Regular_expressions/Character_class"><strong>Клас символів:</strong></a>
+          Дає збіг з одним із символів у дужках. За допомогою дефіса можна задати діапазон символів, але якщо дефіс стоїть першим або останнім символом у квадратних дужках, то сприймається як буквальний символ дефіса, що є частиною описаного класу символів.
         </p>
         <p>
           Наприклад, <code>[abcd]</code> – те саме, що <code>[a-d]</code>.
-          Це дасть збіг з "b" у "brisket" та "a" чи "c" у "arch",
-          але не з "-" (дефісом) у "non-profit".
+          Це дасть збіг з "b" у "brisket" і "c" у "chop".
         </p>
         <p>
           Наприклад, <code>[abcd-]</code> і <code>[-abcd]</code> дають збіг з
-          "b" у "brisket", "a" чи "c" у "arch" і "-" (дефісом)
-          у "non-profit".
+          "b" у "brisket", "c" у "chop" і "-" (дефісом) у
+          "non-profit".
         </p>
         <p>
-          Наприклад, <code>[\w-]</code> – те саме, що <code>[A-Za-z0-9_-]</code>. Обидва ці класи дають збіг з кожним символом "no_reply@example-server.com", окрім "@" і ".".
+          Наприклад, <code>[\w-]</code> – те саме, що
+          <code>[A-Za-z0-9_-]</code>. Обидва ці класи даютьз збіг з "b" у "brisket",
+          "c" у "chop" і "n" у "non-profit".
         </p>
       </td>
     </tr>
@@ -51,7 +53,8 @@ page-type: guide
       </td>
       <td>
         <p>
-          Клас символів з відкиданням, або ж доповненням. Тобто він дасть збіг з чим завгодно, чого немає в квадратних дужках. За допомогою дефіса можна задати діапазон символів, але якщо дефіс стоїть першим або останнім символом у квадратних дужках, то сприймається як буквальний символ дефіса, що є частиною описаного класу символів. Наприклад, <code>[^abc]</code> – те саме, що <code>[^a-c]</code>. Ці класи дають збіг з "o" у "bacon" і "h" у "chop".
+          <a href="/uk/docs/Web/JavaScript/Reference/Regular_expressions/Character_class"><strong>Клас символів із запереченням:</strong></a>
+          Дає збіг з чим завгодно, чого немає в квадратних дужках. За допомогою дефіса можна задати діапазон символів, але якщо дефіс стоїть першим символом після <code>^</code> або останнім у дужках, то сприймається як буквальний дефіс, що стає членом класу символів, як звичайний символ. Наприклад, <code>[^abc]</code> – те саме, що <code>[^a-c]</code>. Ці класи дають збіг з "o" у "bacon" і "h" у "chop".
         </p>
         <div class="notecard note">
           <p>
@@ -64,20 +67,13 @@ page-type: guide
     <tr>
       <td><code>.</code></td>
       <td>
-        <p>Має одне з наступних значень:</p>
-        <ul>
-          <li>
-            Дає збіг з кожним символом, <em>окрім</em> символів кінця рядка: <code>\n</code>, <code>\r</code>, <code>\u2028</code> і            <code>\u2029</code>. Наприклад, <code>/.y/</code> дає збіг з "my" і "ay", але не "yes" у "yes make my day".
-          </li>
-          <li>
-            Всередині класу символів крапка втрачає своє особливе значення і дає збіг з буквальною крапкою.
-          </li>
-        </ul>
         <p>
-          Зверніть увагу на те, що позначка багаторядковості <code>m</code> ніяк не впливає на логіку крапки. Тож аби патерн давав збіг на кількох рядках, можна використати клас символів <code>[^]</code>: він дасть збіг з будь-яким символом, включно з символами нового рядка.
-        </p>
-        <p>
-          Позначка "dotAll" <code>s</code> дозволяє крапці також давати збіг з символами кінця рядка.
+          <a href="/uk/docs/Web/JavaScript/Reference/Regular_expressions/Wildcard"><strong>Джокер:</strong></a>
+          Дає збіг з кожним символом, <em>окрім</em> символів кінця рядка:
+          <code>\n</code>, <code>\r</code>, <code>\u2028</code> і
+          <code>\u2029</code>. Наприклад, <code>/.y/</code> у "yes make my day" дає збіг з "my" і
+          "ay", але не з "yes", адже перед "y" у "yes" не стоїть інша літера. Якщо ввімкнена позначка <a href="/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/dotAll"><code>dotAll</code></a> (s), то джокер також дає збіг з символами кінця рядка.
+          Всередині класу символів крапка втрачає своє особливе значення та дає збіг з буквальною крапкою.
         </p>
       </td>
     </tr>
@@ -85,6 +81,7 @@ page-type: guide
       <td><code>\d</code></td>
       <td>
         <p>
+          <a href="/uk/docs/Web/JavaScript/Reference/Regular_expressions/Character_class_escape"><strong>Екранувальний клас цифрових символів:</strong></a>
           Дає збіг з будь-якою (арабською) цифрою. Рівносильний <code>[0-9]</code>. Наприклад, <code>/\d/</code> і <code>/[0-9]/</code> дають збіг з "2" у "B2 is the suite number".
         </p>
       </td>
@@ -93,6 +90,7 @@ page-type: guide
       <td><code>\D</code></td>
       <td>
         <p>
+          <a href="/uk/docs/Web/JavaScript/Reference/Regular_expressions/Character_class_escape"><strong>Екранувальний клас нецифрових символів:</strong></a>
           Дає збіг з будь-яким символом, котрий не є (арабською) цифрою. Рівносильний <code>[^0-9]</code>. Наприклад, <code>/\D/</code> і
           <code>/[^0-9]/</code> дають збіг з "B" у "B2 is the suite number".
         </p>
@@ -102,7 +100,9 @@ page-type: guide
       <td><code>\w</code></td>
       <td>
         <p>
-          Дає збіг з будь-яким алфавітно-цифровим символом базового латинського алфавіту, включно з підкресленням. Рівносильний <code>[A-Za-z0-9_]</code>. Наприклад, <code>/\w/</code> дає збіг з "a" у "apple", "5" у "$5.28" і "3" у "3D".
+          <a href="/uk/docs/Web/JavaScript/Reference/Regular_expressions/Character_class_escape"><strong>Екранувальний клас літер:</strong></a>
+          Дає збіг з будь-яким алфавітно-цифровим символом базового латинського алфавіту, включно з підкресленням. Рівносильний <code>[A-Za-z0-9_]</code>. Наприклад, <code>/\w/</code> дає збіг з "a" у "apple", "5" у "$5.28" і "3"
+          in "3D" and "m" in "Émanuel".
         </p>
       </td>
     </tr>
@@ -110,7 +110,8 @@ page-type: guide
       <td><code>\W</code></td>
       <td>
         <p>
-          Дає збіг з будь-яким символом, що не є алфавітно-цифровим символом базового латинського алфавіту. Рівносильний <code>[^A-Za-z0-9_]</code>. Наприклад, <code>/\W/</code> і <code>/[^A-Za-z0-9_]/</code> дають збіг з "%" у "50%".
+          <a href="/uk/docs/Web/JavaScript/Reference/Regular_expressions/Character_class_escape"><strong>Екранувальний клас нелітер:</strong></a>
+          Дає збіг з будь-яким символом, що не є алфавітно-цифровим символом базового латинського алфавіту. Рівносильний <code>[^A-Za-z0-9_]</code>. Наприклад, <code>/\W/</code> і <code>/[^A-Za-z0-9_]/</code> дають збіг з "%" у "50%" and "É" in "Émanuel".
         </p>
       </td>
     </tr>
@@ -118,8 +119,8 @@ page-type: guide
       <td><code>\s</code></td>
       <td>
         <p>
-          Дає збіг з пробільним символом, в тому числі пробілом, табуляцією, розривом сторінки, розривом рядка та іншими пробілами Unicode. Рівносильний <code>[
-            \f\n\r\t\v\u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]</code>. Наприклад, <code>/\s\w*/</code> дає збіг з " bar" у "foo bar".
+          <a href="/uk/docs/Web/JavaScript/Reference/Regular_expressions/Character_class_escape"><strong>Екранувальний клас пробільних символів:</strong></a>
+          Дає збіг з пробільним символом, в тому числі пробілом, табуляцією, розривом сторінки, розривом рядка та іншими пробілами Unicode. Рівносильний <code>[\f\n\r\t\v\u0020\u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]</code>. Наприклад, <code>/\s\w*/</code> дає збіг з " bar" у "foo bar".
         </p>
       </td>
     </tr>
@@ -127,8 +128,9 @@ page-type: guide
       <td><code>\S</code></td>
       <td>
         <p>
-          Дає збіг з символом, котрий не є пробільним. Рівносильний <code>[^
-            \f\n\r\t\v\u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]</code>. Наприклад, <code>/\S\w*/</code> дає збіг з "foo" у "foo bar".
+          <a href="/uk/docs/Web/JavaScript/Reference/Regular_expressions/Character_class_escape"><strong>Екранувальний клас непробільних символів:</strong></a>
+          Дає збіг з символом, котрий не є пробільним. Рівносильний
+          <code>[^\f\n\r\t\v\u0020\u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]</code>. Наприклад, <code>/\S\w*/</code> дає збіг з "foo" у "foo bar".
         </p>
       </td>
     </tr>
@@ -155,7 +157,7 @@ page-type: guide
     <tr>
       <td><code>[\b]</code></td>
       <td>
-        Дає збіг із забоєм. Якщо шукаєте символ кінця слова (<code>\b</code>), то погляньте в <a href="/uk/docs/Web/JavaScript/Guide/Regular_expressions/Assertions">Межах</a>.
+        Дає збіг із забоєм. Якщо шукаєте судження про кінець слова (<code>\b</code>), то погляньте в <a href="/uk/docs/Web/JavaScript/Guide/Regular_expressions/Assertions">Судженнях</a>.
       </td>
     </tr>
     <tr>
@@ -168,7 +170,7 @@ page-type: guide
       </td>
       <td>
         <p>
-          Дає збіг з контрольним символом, що використовує <a href="https://en.wikipedia.org/wiki/Caret_notation">каретний запис</a>, де "X" – літера з діапазону A–Z (відповідає кодовим точкам <code>U+0001</code><em>–</em><code>U+001F</code>). Наприклад, <code>/\cM/</code> дає збіг з "\r" у "\r\n".
+          Дає збіг з контрольним символом, що використовує <a href="https://en.wikipedia.org/wiki/Caret_notation">каретний запис</a>, де "X" – літера з діапазону A–Z (відповідає кодовим точкам <code>U+0001</code><em>–</em><code>U+001A</code>). Наприклад, <code>/\cM\cJ/</code> дає збіг з "\r" у "\r\n".
         </p>
       </td>
     </tr>
@@ -197,6 +199,19 @@ page-type: guide
       </td>
     </tr>
     <tr>
+      <td>
+        <code>\p{<em>UnicodeProperty</em>}</code>,
+        <code>\P{<em>UnicodeProperty</em>}</code>
+      </td>
+      <td>
+        <p>
+          <a href="/uk/docs/Web/JavaScript/Reference/Regular_expressions/Unicode_character_class_escape"><strong>Екранувальний клас символу Unicode:</strong></a>
+          Дає збіг з символом на основі властивостей його символу Unicode: наприклад, символи емоджі, чи японські
+          символи <em>катакана</em>, або китайсько-японські знаки Хань чи кандзі тощо).
+        </p>
+      </td>
+    </tr>
+    <tr>
       <td><code>\</code></td>
       <td>
         <p>
@@ -210,13 +225,6 @@ page-type: guide
             Для символів, котрі зазвичай сприймаються по-особливому, вказує, що наступний символ не є спеціальним і повинен тлумачитись буквально. Наприклад, "*" – спеціальний символ, котрий збіг з 0 або більше входженнями символу перед ним; наприклад, <code>/a*/</code> означає 0 або більше входжень літери "a". Щоб отримати збіг буквально з <code>*</code>, перед нею треба поставити зворотну скісну риску; наприклад, <code>/a\*/</code> дасть збіг з "a*".
           </li>
         </ul>
-        <p>
-          Зверніть увагу, що певні символи, як то <code>:</code>, <code>-</code>,
-          <code>@</code> тощо не мають спеціального значення ані коли екрановані, ані коли неекрановані. Послідовності екранування виду <code>\:</code>,
-          <code>\-</code>, <code>\@</code> у регулярних виразах рівносильні власним літеральним, неекранованим еквівалентам. Проте в регулярних виразах з <a
-            href="/uk/docs/Web/JavaScript/Guide/Regular_expressions#pohlyblenyi-poshuk-z-poznachkamy"
-            >позначкою Unicode</a> вони призводять до помилки <em>invalid identity escape</em> (недійсна екранована одиниця). Так зроблено для надійної зворотної сумісності з наявним кодом, котрий використовує нові послідовності екранування, наприклад, <code>\p</code> чи <code>\k</code>.
-        </p>
         <div class="notecard note">
           <p>
             <strong>Примітка:</strong> Щоб отримати буквальний збіг з цим символом, його треба екранувати самим собою. Інакше кажучи, для пошуку <code>\</code> слід застосовувати <code>/\\/</code>.
@@ -230,7 +238,9 @@ page-type: guide
       </td>
       <td>
         <p>
-          <strong>Диз'юнкція: </strong>Дає збіг або з "x", або з "y". Кожна компонента, відділена вертикальною рискою (<code>|</code>), зветься <em>варіантом</em>. Наприклад, <code>/green|red/</code> дає збіг з "green" у "green apple" і з "red" у "red apple".
+          <a href="/uk/docs/Web/JavaScript/Reference/Regular_expressions/Disjunction"><strong>Диз'юнкція:</strong></a>
+          Дає збіг або з "x", або з "y". Кожна складова, відділена вертикальною рискою (<code>|</code>), зветься <em>варіантом</em>. Наприклад,
+          <code>/green|red/</code> дає збіг з "green" у "green apple" і з "red" у "red apple".
         </p>
         <div class="notecard note">
           <p>
@@ -260,7 +270,9 @@ page-type: guide
       <td><code>^</code></td>
       <td>
         <p>
-          Дає збіг з початком введення. Якщо задана позначка багаторядковості, то також дає збіг зразу після символу розриву рядка. Наприклад, <code>/^A/</code> не дає збігу з "A" в "an A", але дає збіг з першою "A" в "An A".
+          <a href="/uk/docs/Web/JavaScript/Reference/Regular_expressions/Input_boundary_assertion"><strong>Судження початкової межі введення:</strong></a>
+          Дає збіг з початком введення. Якщо задана позначка <a href="/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/multiline"><code>multiline</code></a> (m),
+          то також дає збіг зразу після символу розриву рядка. Наприклад, <code>/^A/</code> не дає збігу з "A" в "an A", але дає збіг з першою "A" в "An A".
         </p>
         <div class="notecard note">
           <p>
@@ -273,7 +285,9 @@ page-type: guide
       <td><code>$</code></td>
       <td>
         <p>
-          Дає збіг з кінцем введення. Коли задана позначка багаторядковості, то також дає збіг зразу перед символом розриву рядка. Наприклад, <code>/t$/</code> не дає збігу з "t" в "eater", але дає – в "eat".
+          <a href="/uk/docs/Web/JavaScript/Reference/Regular_expressions/Input_boundary_assertion"><strong>Судження кінцевої межі введення:</strong></a>
+          Дає збіг з кінцем введення. Якщо задана позначка <a href="/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/multiline"><code>multiline</code></a> (m),
+          то також дає збіг зразу перед символом розриву рядка. Наприклад, <code>/t$/</code> не дає збігу з "t" в "eater", але дає – в "eat".
         </p>
       </td>
     </tr>
@@ -281,6 +295,7 @@ page-type: guide
       <td><code>\b</code></td>
       <td>
         <p>
+          <a href="/uk/docs/Web/JavaScript/Reference/Regular_expressions/Word_boundary_assertion"><strong>Судження про межу слова:</strong></a>
           Дає збіг з межею слова. Це положення, в якому перед або після алфавітно-цифрового символу не стоїть інший алфавітно-цифровий символ, як то між літерою та пробілом. Зверніть увагу, що межа слова, що дала збіг, не включається у збіг. Інакше кажучи, довжина збігу з межею слова – нуль.
         </p>
         <p>Приклади:</p>
@@ -307,6 +322,7 @@ page-type: guide
       <td><code>\B</code></td>
       <td>
         <p>
+          <a href="/uk/docs/Web/JavaScript/Reference/Regular_expressions/Word_boundary_assertion"><strong>Судження про відсутність межі слова:</strong></a>
           Дає збіг з положенням, котре не є межею слова. Це таке положення, в якому і попередній, і наступний символи належать до одно типу: Або обидва алфавітно-цифрові, або обидва не алфавітно-цифрові, наприклад, між двома літерами або між двома пробілами. Початок і кінець рядка вважаються не алфавітно-цифровими символами. Так само, як зі збігом межі слова, збіг з не межею слова не включається до збігу. Наприклад, <code>/\Bon/</code> дає збіг з "on" у "at noon", а <code>/ye\B/</code> дає збіг з "ye" у "possibly yesterday".
         </p>
       </td>
@@ -316,7 +332,8 @@ page-type: guide
 
 ### Інші судження
 
-> **Примітка:** Символ `?` також може застосовуватись як квантор.
+> [!NOTE]
+> Символ `?` також може застосовуватись як квантифікатор.
 
 <table class="standard-table">
   <thead>
@@ -330,7 +347,9 @@ page-type: guide
       <td><code>x(?=y)</code></td>
       <td>
         <p>
-          <strong>Судження зазирання: </strong>Дає збіг з "x" лише тоді, коли після "x" стоїть "y". Наприклад, /<code>Jack(?=Sprat)/</code> дає збіг з "Jack" лише тоді, коли далі стоїть "Sprat".<br /><code>/Jack(?=Sprat|Frost)/</code> дає збіг з "Jack" лише тоді, коли далі стоїть "Sprat" або "Frost". Проте ані "Sprat", ані "Frost" не є частинами результатів зіставлення.
+          <a href="/uk/docs/Web/JavaScript/Reference/Regular_expressions/Lookahead_assertion"><strong>Судження зазирання:</strong></a>
+          Дає збіг з "x" лише тоді, коли "x"
+          стоїть перед "y". Наприклад, <code>/Jack(?=Sprat)/</code> дає збіг з "Jack" лише тоді, коли далі стоїть "Sprat".<br /><code>/Jack(?=Sprat|Frost)/</code> дає збіг з "Jack" лише тоді, коли далі стоїть "Sprat" або "Frost". Проте ані "Sprat", ані "Frost" не є частинами результатів зіставлення.
         </p>
       </td>
     </tr>
@@ -338,7 +357,9 @@ page-type: guide
       <td><code>x(?!y)</code></td>
       <td>
         <p>
-          <strong>Судження зазирання з запереченням: </strong>Дає збіг з "x" лише тоді, коли після "x" не стоїть "y". Наприклад, <code>/\d+(?!\.)/</code> дає збіг з числом лише тоді, коли після нього не стоїть десятковий розділювач. <code>/\d+(?!\.)/.exec('3.141')</code
+          <a href="/uk/docs/Web/JavaScript/Reference/Regular_expressions/Lookahead_assertion"><strong>Судження зазирання з запереченням:</strong></a>
+          Дає збіг з "x" лише тоді, коли "x"
+          не стоїть перед "y". Наприклад, <code>/\d+(?!\.)/</code> дає збіг з числом лише тоді, коли після нього не стоїть десятковий розділювач. <code>/\d+(?!\.)/.exec('3.141')</code
           > дасть збіг з "141", але не з "3".
         </p>
       </td>
@@ -347,7 +368,9 @@ page-type: guide
       <td><code>(?&#x3C;=y)x</code></td>
       <td>
         <p>
-          <strong>Судження озирання: </strong>Дає збіг з "x" лише тоді, коли перед "x" стоїть "y". Наприклад, <code>/(?&#x3C;=Jack)Sprat/</code> дає збіг зі "Sprat" лише тоді, коли перед цим стоїть "Jack". <code>/(?&#x3C;=Jack|Tom)Sprat/</code> дає збіг зі "Sprat" лише тоді, коли перед цим стоїть "Jack" або "Tom", Утім, ані "Jack", ані "Tom" не є частиною результатів зіставлення.
+          <a href="/uk/docs/Web/JavaScript/Reference/Regular_expressions/Lookbehind_assertion"><strong>Судження озирання:</strong></a>
+          Дає збіг з "x" лише тоді, коли "x"
+          стоїть після "y". Наприклад, <code>/(?&#x3C;=Jack)Sprat/</code> дає збіг зі "Sprat" лише тоді, коли перед цим стоїть "Jack". <code>/(?&#x3C;=Jack|Tom)Sprat/</code> дає збіг зі "Sprat" лише тоді, коли перед цим стоїть "Jack" або "Tom", Утім, ані "Jack", ані "Tom" не є частиною результатів зіставлення.
         </p>
       </td>
     </tr>
@@ -355,7 +378,9 @@ page-type: guide
       <td><code>(?&#x3C;!y)x</code></td>
       <td>
         <p>
-          <strong>Судження озирання з запереченням: </strong>Дає збіг з "x" лише тоді, коли перед "x" не стоїть "y". Наприклад, <code>/(?&#x3C;!-)\d+/</code> дає збіг з числом лише тоді, коли перед ним не стоїть знак мінуса. <code>/(?&#x3C;!-)\d+/.exec('3')</code>
+          <a href="/uk/docs/Web/JavaScript/Reference/Regular_expressions/Lookbehind_assertion"><strong>Судження озирання з запереченням:</strong></a>
+          Дає збіг з "x" лише тоді, коли "x"
+          не стоїть після "y". Наприклад, <code>/(?&#x3C;!-)\d+/</code> дає збіг з числом лише тоді, коли перед ним не стоїть знак мінуса. <code>/(?&#x3C;!-)\d+/.exec('3')</code>
           дає збіг з "3". Зіставлення <code>/(?&#x3C;!-)\d+/.exec('-3')</code> не знаходить збігу, тому що перед числом стоїть знак мінуса.
         </p>
       </td>
@@ -379,7 +404,9 @@ page-type: guide
       <td><code>(<em>x</em>)</code></td>
       <td>
         <p>
-          <strong>Група захоплення: </strong>Дає збіг з <code><em>x</em></code> і запам'ятовує збіг. Наприклад, <code>/(foo)/</code> дає збіг і запам'ятовує "foo" у "foo bar".
+          <a href="/uk/docs/Web/JavaScript/Reference/Regular_expressions/Capturing_group"><strong>Група захоплення:</strong></a>
+          Дає збіг з <code><em>x</em></code> і
+          запам'ятовує збіг. Наприклад, <code>/(foo)/</code> дає збіг і запам'ятовує "foo" у "foo bar".
         </p>
         <p>
           Регулярний вираз може мати декілька груп захоплення. Як наслідок, збіги з групами захоплення здебільшого зберігаються в масиві, чиї елементи мають такий же порядок, як їхні ліві дужки в патерні. Зазвичай це просто порядок самих груп захоплення. Це стає важливим, коли групи захоплення мають вкладеність. Збіги доступні через індекси елементів результату (<code>[1], …, [n]</code>) і через наперед визначені властивості об'єкта <code>RegExp</code> (<code>$1, …, $9</code>).
@@ -408,7 +435,9 @@ page-type: guide
       <td><code>(?&#x3C;Name>x)</code></td>
       <td>
         <p>
-          <strong>Іменована група захоплення: </strong>Дає збіг з "x", і зберігає його у властивості `groups` повернених збігів, за ім'ям, заданим у вигляді <code>&#x3C;Name></code>. Кутові дужки (<code>&#x3C;</code>
+          <a href="/uk/docs/Web/JavaScript/Reference/Regular_expressions/Named_capturing_group"><strong>Іменована група захоплення:</strong></a>
+          Дає збіг з "x" і зберігає його
+          у властивості `groups` повернених збігів, за ім'ям, заданим у вигляді <code>&#x3C;Name></code>. Кутові дужки (<code>&#x3C;</code>
           і <code>></code>) для назви групи — обов'язкові.
         </p>
         <p>
@@ -419,7 +448,22 @@ page-type: guide
     <tr>
       <td><code>(?:<em>x</em>)</code></td>
       <td>
-        <strong>Група без захоплення: </strong>Дає збіг з "x", але не запам'ятовує цього збігу. Підрядок збігу не можна відтворити з елементів результівного масиву (<code>[1], …, [n]</code>) чи властивостей (<code>$1, …, $9</code>) заздалегідь означеного об'єкта <code>RegExp</code>.
+        <p>
+          <a href="/uk/docs/Web/JavaScript/Reference/Regular_expressions/Non-capturing_group"><strong>Група без захоплення:</strong></a>
+          Дає збіг з "x", але не запам'ятовує
+          його. Підрядок-збіг не можна отримати з елементів результівного масиву (<code>[1], …, [n]</code>) чи наперед визначених властивостей об'єкта
+          <code>RegExp</code> (<code>$1, …, $9</code>).
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td><code>(?<em>flags</em>:<em>x</em>)</code>, <code>(?:<em>flags</em>-<em>flags</em>:<em>x</em>)</code></td>
+      <td>
+        <p>
+          <a href="/uk/docs/Web/JavaScript/Reference/Regular_expressions/Modifier"><strong>Модифікатор:</strong></a>
+          Enables or disables the specified flags only to the enclosed pattern. Only the <code>i</code>, <code>m</code>, and <code>s</code> flags can be used in a modifier.
+          Вмикає чи вимикає конкретні позначки лише для патерну в дужках. В модифікаторах можна застосовувати лише позначки <code>i</code>, <code>m</code> і <code>s</code>.
+        </p>
       </td>
     </tr>
     <tr>
@@ -428,18 +472,23 @@ page-type: guide
       </td>
       <td>
         <p>
-          Де "n" – це додатне ціле число. Зворотне посилання на останній підрядок, що дав збіг з дужками номер n у регулярному виразі (рахуючи за лівою дужкою). Наприклад, <code>/apple(,)\sorange\1/</code> дає збіг з "apple, orange," у "apple, orange, cherry, peach".
+          <a href="/uk/docs/Web/JavaScript/Reference/Regular_expressions/Backreference"><strong>Зворотне посилання:</strong></a>
+          Де "n" – це додатне ціле число. Дає збіг з тим же підрядком, що був збігом групи захоплення номер n у тому самому регулярному виразі
+          (рахуючи за лівою дужкою). Наприклад, <code>/apple(,)\sorange\1/</code> дає збіг з "apple, orange," у "apple, orange, cherry, peach".
         </p>
       </td>
     </tr>
     <tr>
-      <td>\k&#x3C;Name></td>
+      <td><code>\k&#x3C;Name></code></td>
       <td>
         <p>
-          Зворотне посилання на останній підрядок збігу <strong>Іменованої групи захоплення </strong>, заданої як <code>&#x3C;Name></code>.
+          <a href="/uk/docs/Web/JavaScript/Reference/Regular_expressions/Named_backreference"><strong>Іменоване зворотне посилання:</strong></a>
+          Зворотне посилання на останній підрядок, що дав збіг з <strong>Іменованою групою захоплення</strong>, заданою як <code>&#x3C;Name></code>.
         </p>
         <p>
-          Наприклад, <code>/(?&#x3C;title>\w+), yes \k&#x3C;title>/</code> дає збіг з "Sir, yes Sir" у "Do you copy? Sir, yes Sir!".
+          Наприклад,
+          <code>/(?&#x3C;title>\w+), yes \k&#x3C;title>/</code> у "Do you copy? Sir, yes Sir!" дає збіг "Sir,
+          yes Sir".
         </p>
         <div class="notecard note">
           <p>
@@ -451,11 +500,12 @@ page-type: guide
   </tbody>
 </table>
 
-## Квантори
+## Квантифікатори
 
-[Квантори](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Quantifiers) позначають кількість символів або виразів, котрі повинні давати збіг.
+[Квантифікатори](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Quantifiers) позначають кількість символів або виразів, котрі повинні давати збіг.
 
-> **Примітка:** У тексті нижче _елементами_ звуться не лише окремі символи, а й також [класи символів](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Character_classes) і [групи та зворотні посилання](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Groups_and_backreferences).
+> [!NOTE]
+> У тексті нижче _елементами_ звуться не лише окремі символи, а й також [класи символів](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Character_classes) і [групи та зворотні посилання](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Groups_and_backreferences).
 
 <table class="standard-table">
   <thead>
@@ -494,7 +544,7 @@ page-type: guide
           Дає збіг з попереднім елементом "x" 0 або 1 раз. Наприклад, <code>/e?le?/</code> дає збіг з "el" у "angel" і "le" у "angle."
         </p>
         <p>
-          Бувши застосованим зразу після одного з наступних кванторів: <code>*</code>, <code>+</code>, <code>?</code> і <code>{}</code>, робить такий квантор нежадібним (змушує його дати збіг з якнайменшою кількістю входжень), на противагу усталеній поведінці – жадібній (коли збіг дається з якнайбільшою кількістю входжень).
+          Бувши застосованим зразу після одного з наступних квантифікаторів: <code>*</code>, <code>+</code>, <code>?</code> і <code>{}</code>, робить такий квантифікатор нежадібним (змушує його дати збіг з якнайменшою кількістю входжень), на противагу усталеній поведінці – жадібній (коли збіг дається з якнайбільшою кількістю входжень).
         </p>
       </td>
     </tr>
@@ -504,7 +554,7 @@ page-type: guide
       </td>
       <td>
         <p>
-          Де "n" – це додатне ціле число, дає збіг з рівно "n" входженнями попереднього елемента "x". Наприклад, <code>/a{2}/</code> не дає збігу з "a" у "candy", але дає збіг з усіма "a" у "caandy", а також першими двома "a" у "caaandy".
+          Де "n" – це невід'ємне ціле число, дає збіг з рівно "n" входженнями попереднього елемента "x". Наприклад, <code>/a{2}/</code> не дає збігу з "a" у "candy", але дає збіг з усіма "a" у "caandy", а також першими двома "a" у "caaandy".
         </p>
       </td>
     </tr>
@@ -514,7 +564,7 @@ page-type: guide
       </td>
       <td>
         <p>
-          Де "n" – це додатне ціле число, дає збіг зі щонайменше "n" входженнями попереднього елемента "x". Наприклад, <code>/a{2,}/</code> не дає збігу з "a" у "candy", але дає збіг з усіма a у "caandy" та в "caaaaaaandy".
+          Де "n" – це невід'ємне ціле число, дає збіг зі щонайменше "n" входженнями попереднього елемента "x". Наприклад, <code>/a{2,}/</code> не дає збігу з "a" у "candy", але дає збіг з усіма a у "caandy" та в "caaaaaaandy".
         </p>
       </td>
     </tr>
@@ -523,8 +573,11 @@ page-type: guide
         <code><em>x</em>{<em>n</em>,<em>m</em>}</code>
       </td>
       <td>
+        <!-- cSpell:ignore cndy -->
         <p>
-          Де "n" – це 0 або додатне ціле число, а "m" – ціле число, і <code><em>m</em> > <em>n</em></code>, дає збіг зі щонайменше "n" і щонайбільше "m" входженнями попереднього елемента "x". Наприклад, <code>/a{1,3}/</code> не дає жодного збігу в "cndy", дає збіг з "a" у "candy", зі двома "a" у "caandy" і першими трьома "a" у "caaaaaaandy". Зверніть увагу, що при зіставленні з "caaaaaaandy" збігом є "aaa", навіть попри те, що у вихідному рядку більше літер "a".
+          Де "n" і "m" – це невід'ємні цілі числа, і <code>m >= n</code>,
+          дає збіг зі щонайменше "n" і щонайбільше "m" входженнями попереднього
+          елемента "x". Наприклад, <code>/a{1,3}/</code> не дає жодного збігу в "cndy", дає збіг з "a" у "candy", зі двома "a" у "caandy" і першими трьома "a" у "caaaaaaandy". Зверніть увагу, що при зіставленні з "caaaaaaandy" збігом є "aaa", навіть попри те, що у вихідному рядку більше літер "a".
         </p>
       </td>
     </tr>
@@ -539,7 +592,7 @@ page-type: guide
       </td>
       <td>
         <p>
-          Усталено квантори штибу <code>*</code> і <code>+</code> є "жадібними", тобто намагаються дати збіг з якомога більшою частиною рядка. Символ <code>?</code> після квантора робить такий квантор "нежадібним", тобто він зупиниться, щойно знайде який-небудь збіг. Наприклад, у рядку "some &#x3C;foo> &#x3C;bar> new &#x3C;/bar> &#x3C;/foo> thing":
+          Усталено квантифікатори штибу <code>*</code> і <code>+</code> є "жадібними", тобто намагаються дати збіг з якомога більшою частиною рядка. Символ <code>?</code> після квантифікатора робить такий квантифікатор "нежадібним", тобто він зупиниться, щойно знайде який-небудь збіг. Наприклад, у рядку "some &#x3C;foo> &#x3C;bar> new &#x3C;/bar> &#x3C;/foo> thing":
         </p>
         <ul>
           <li>
