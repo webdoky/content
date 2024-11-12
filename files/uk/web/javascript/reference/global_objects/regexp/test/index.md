@@ -53,8 +53,8 @@ console.log(result); // true
 
 ```js
 function testInput(re, str) {
-  const midstring = re.test(str) ? "містить" : "не містить";
-  console.log(`${str} ${midstring} ${re.source}`);
+  const midString = re.test(str) ? "містить" : "не містить";
+  console.log(`${str} ${midString} ${re.source}`);
 }
 ```
 
@@ -64,7 +64,8 @@ function testInput(re, str) {
 
 Подальші виклики `test(str)` відновлять пошук у `str`, починаючи від `lastIndex`. Властивість `lastIndex` збільшуватиметься далі щоразу, коли `test()` повертатиме `true`.
 
-> **Примітка:** Поки `test()` повертає `true`, `lastIndex` _не_ буде скинуто – навіть при перевірці іншого рядка!
+> [!NOTE]
+> Поки `test()` повертає `true`, `lastIndex` _не_ буде скинуто – навіть при перевірці іншого рядка!
 
 Коли `test()` повертає `false`, властивість `lastIndex` регулярного виразу виклику скидається до `0`.
 
