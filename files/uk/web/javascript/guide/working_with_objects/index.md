@@ -87,8 +87,8 @@ const myCar = new Car("Eagle", "Talon TSi", 1993);
 Викликаючи `new`, можна створити довільну кількість об'єктів `Car`. Наприклад:
 
 ```js
-const kenscar = new Car("Nissan", "300ZX", 1992);
-const vpgscar = new Car("Mazda", "Miata", 1990);
+const randCar = new Car("Nissan", "300ZX", 1992);
+const kenCar = new Car("Mazda", "Miata", 1990);
 ```
 
 Об'єкт може містити властивість, яка сама є іншим об'єктом. Наприклад, припустімо, що нам потрібно означити об'єкт під назвою `Person`, як це показано нижче:
@@ -180,7 +180,7 @@ const myCar = {
 };
 ```
 
-Подібно до змінних JavaScript, імена властивостей - чутливі до регістру. Вони можуть бути лише рядками чи примірниками Symbol: усі ключі [перетворюються на рядки](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka), окрім Symbol. [Індекси масивів](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#indeksy-masyvu) фактично є властивостями з рядковими ключами, що містять цілі числа.
+Подібно до змінних JavaScript, імена властивостей – чутливі до регістру. Вони можуть бути лише рядками чи примірниками Symbol: усі ключі [перетворюються на рядки](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka), окрім Symbol. [Індекси масивів](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#indeksy-masyvu) фактично є властивостями з рядковими ключами, що містять цілі числа.
 
 ### Звертання до властивостей
 
@@ -247,7 +247,7 @@ myCar[propertyName] = "Mustang";
 console.log(myCar); // { make: 'Ford', model: 'Mustang' }
 ```
 
-Проте слід остерігатися використання квадратних дужок для звертання до властивостей, чиї імена взяті з зовнішніх даних. Це може зробити код сприйнятливим щодо [атак ін'єкції об'єктів](https://github.com/nodesecurity/eslint-plugin-security/blob/main/docs/the-dangers-of-square-bracket-notation.md).
+Проте слід остерігатися використання квадратних дужок для звертання до властивостей, чиї імена взяті з зовнішніх даних. Це може зробити код сприйнятливим щодо [атак ін'єкції об'єктів](https://github.com/eslint-community/eslint-plugin-security/blob/main/docs/the-dangers-of-square-bracket-notation.md).
 
 Відсутні властивості об'єкта мають значення {{jsxref("undefined")}} (а не [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null)).
 
@@ -320,13 +320,13 @@ function listAllProperties(myObj) {
 Неуспадковану властивість можна прибрати за допомогою оператора [`delete`](/uk/docs/Web/JavaScript/Reference/Operators/delete). Наступний код демонструє, як можна прибрати властивість.
 
 ```js
-// Створюється новий об'єкт, myobj, з двома властивостями, a та b.
-const myobj = new Object();
-myobj.a = 5;
-myobj.b = 12;
-// Прибирається властивість a, залишаючи myobj лише властивість b.
-delete myobj.a;
-console.log("a" in myobj); // false
+// Створюється новий об'єкт, myObj, з двома властивостями, a та b.
+const myObj = new Object();
+myObj.a = 5;
+myObj.b = 12;
+// Прибирається властивість a, залишаючи myObj лише властивість b.
+delete myObj.a;
+console.log("a" in myObj); // false
 ```
 
 ## Успадкування
@@ -449,7 +449,7 @@ console.log(myObj.a); // 25
 - `myObj.b` — гетер, який додає 1 до значення `myObj.a` і повертає результат
 - `myObj.c` — сетер, який встановлює значенням `myObj.a` половину того числа, яке присвоюється до `myObj.c`
 
-Також можна додавати гетери й сетери до об'єкта будь-коли після його створення, за допомогою методу {{jsxref("Object.defineProperties()")}}. Перший параметр цього методу — це об'єкт, на якому потрібно додати гетер чи сетер. Другий параметр - це об'єкт, чиї імена властивостей є назвами гетерів чи сетерів, а значення властивостей містять об'єкти з означенням функції гетера чи сетера. Ось приклад, як можна означити такі само гетер і сетер, які було вжито в попередньому прикладі:
+Також можна додавати гетери й сетери до об'єкта будь-коли після його створення, за допомогою методу {{jsxref("Object.defineProperties()")}}. Перший параметр цього методу — це об'єкт, на якому потрібно додати гетер чи сетер. Другий параметр – це об'єкт, чиї імена властивостей є назвами гетерів чи сетерів, а значення властивостей містять об'єкти з означенням функції гетера чи сетера. Ось приклад, як можна означити такі само гетер і сетер, які було вжито в попередньому прикладі:
 
 ```js
 const myObj = { a: 0 };
@@ -480,23 +480,23 @@ console.log(myObj.b); // Запускає гетер, який віддає a + 
 ```js
 // Дві змінні, два окремі об'єкти з однаковими властивостями
 const fruit = { name: "apple" };
-const fruitbear = { name: "apple" };
+const anotherFruit = { name: "apple" };
 
-fruit == fruitbear; // повертає false
-fruit === fruitbear; // повертає false
+fruit == anotherFruit; // повертає false
+fruit === anotherFruit; // повертає false
 ```
 
 ```js
 // Дві змінні, єдиний об'єкт
 const fruit = { name: "apple" };
-const fruitbear = fruit; // До fruitbear присвоюється посилання об'єкта fruit
+const anotherFruit = fruit; // До anotherFruit присвоюється посилання об'єкта fruit
 
-// Тут fruit та fruitbear вказують на один об'єкт
-fruit == fruitbear; // повертає true
-fruit === fruitbear; // повертає true
+// Тут fruit та anotherFruit вказують на один об'єкт
+fruit == anotherFruit; // повертає true
+fruit === anotherFruit; // повертає true
 
 fruit.name = "grape";
-console.log(fruitbear); // { name: "grape" }; не { name: "apple" }
+console.log(anotherFruit); // { name: "grape" }; не { name: "apple" }
 ```
 
 Більше інформації про оператори порівняння можна знайти у розділі [операторів рівності](/uk/docs/Web/JavaScript/Reference/Operators#operatory-rivnosti).
