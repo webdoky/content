@@ -40,8 +40,8 @@ spec-urls:
 ### Функції
 
 - Колірні функції:
-  - [`rgb()`](/uk/docs/Web/CSS/color_value/rgb) та її псевдонім `rgba()`
-  - [`hsl()`](/uk/docs/Web/CSS/color_value/hsl) та її псевдонім `hsla()`
+  - [`rgb()`](/uk/docs/Web/CSS/color_value/rgb)
+  - [`hsl()`](/uk/docs/Web/CSS/color_value/hsl)
   - [`hwb()`](/uk/docs/Web/CSS/color_value/hwb)
   - [`lab()`](/uk/docs/Web/CSS/color_value/lab)
   - [`lch()`](/uk/docs/Web/CSS/color_value/lch)
