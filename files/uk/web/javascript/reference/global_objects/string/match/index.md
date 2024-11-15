@@ -36,7 +36,7 @@ match(regexp)
 
 ## Опис
 
-Реалізація `String.prototype.match` сама по собі є вельми простою: вона просто викликає метод аргументу `Symbol.match` з рядком як першим параметром. Фактична реалізація надходить із [`RegExp.prototype[Symbol.match]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.match).
+Реалізація `String.prototype.match` майже суто викликає метод аргументу `Symbol.match` з рядком як першим параметром. Фактична реалізація надходить із [`RegExp.prototype[Symbol.match]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.match).
 
 - Якщо потрібно визначити, чи рядок збігається з регулярним виразом {{jsxref("RegExp")}}, можна використати {{jsxref("RegExp.prototype.test()")}}.
 - Якщо потрібен лише перший знайдений збіг, можна натомість застосувати {{jsxref("RegExp.prototype.exec()")}}.
@@ -83,7 +83,8 @@ console.log(matches);
 // ['A', 'B', 'C', 'D', 'E', 'a', 'b', 'c', 'd', 'e']
 ```
 
-> **Примітка:** також зверніть увагу на метод {{jsxref("String.prototype.matchAll()")}} та [Розширений пошук з прапорцями](/uk/docs/Web/JavaScript/Guide/Regular_expressions#pohlyblenyi-poshuk-z-poznachkamy).
+> [!NOTE]
+> також зверніть увагу на метод {{jsxref("String.prototype.matchAll()")}} та [Розширений пошук з прапорцями](/uk/docs/Web/JavaScript/Guide/Regular_expressions#pohlyblenyi-poshuk-z-poznachkamy).
 
 ### Застосування іменованих груп захоплення
 
