@@ -129,7 +129,9 @@ browser-compat: javascript.operators
 - {{jsxref("Operators/in", "in")}}
   - : Оператор `in` встановлює, чи має об'єкт дану властивість.
 
-> [!NOTE] > `=>` — це не оператор, а позначення для [стрілкових функцій](/uk/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
+> [!NOTE]
+>
+> `=>` — це не оператор, а позначення для [стрілкових функцій](/uk/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
 
 ### Оператори рівності
 
