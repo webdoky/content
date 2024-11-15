@@ -34,4 +34,5 @@ spec-urls: https://drafts.csswg.org/css-transitions/
 
 ## Дивіться також
 
-- Споріднені з Переходами CSS [Анімації CSS](/uk/docs/Web/CSS/CSS_animations) пропонують більш детальне керування анімованими властивостями.
+- Властивість {{cssxref("interpolate-size")}} і функція {{cssxref("calc-size()")}} для вмикання переходів до та від [значень природного розміру](/uk/docs/Glossary/Intrinsic_Size).
+- Модуль [Анімацій CSS](/uk/docs/Web/CSS/CSS_animations).
