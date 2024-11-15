@@ -94,7 +94,7 @@ display: unset;
     - `flow`
 
       - : Елемент розміщує свій вміст за допомогою потокової розкладки (комбінації блокової та рядкової).
-        Якщо його зовнішній тип представлення – `inline`, і він бере участь у блоковому чи рядковому контексті форматування, то генерує рядкові рамки. Інакше – утворює рамки блокового контейнера.
+        Якщо його зовнішній тип представлення – `inline`, і він бере участь у блоковому чи рядковому контексті форматування, то генерує рядкові рамки. Інакше – утворює блокову рамку.
         Залежно від значень інших властивостей (наприклад, {{CSSxRef("position")}}, {{CSSxRef("float")}} чи {{CSSxRef("overflow")}}) та від того, чи він бере участь у блоковому, чи рядковому контексті форматування, він або створює новий [контекст блокового форматування](/uk/docs/Web/CSS/CSS_display/Block_formatting_context) (КБФ) для свого вмісту, або інтегрує свій вміст у батьківський контекст форматування.
 
     - `flow-root`
@@ -119,7 +119,7 @@ display: unset;
 Окреме значення `list-item` змусить елемент поводити себе як елемент списку.
 Це можна використовувати разом з властивостями {{CSSxRef("list-style-type")}} і {{CSSxRef("list-style-position")}}.
 
-`list-item` також може бути скомбінований з будь-яким ключовим значенням {{CSSxRef("&lt;display-outside&gt;")}}, а також із ключовими словами {{CSSxRef("&lt;display-inside&gt;")}} `flow` чи `flow-root`.
+`list-item` також може бути скомбінований з будь-яким ключовим значенням {{CSSxRef("&lt;display-outside&gt;")}}, а також із ключовим словом {{CSSxRef("&lt;display-inside&gt;")}} `flow` або `flow-root`.
 
 > [!NOTE]
 > У браузерах, що підтримують синтаксис із кількома значеннями – ключовими словами, якщо внутрішнє значення не вказане, то воно вважається рівним `flow`.
@@ -347,19 +347,33 @@ display: unset;
   <label for="display">Оберіть значення display:</label>
   <select id="display">
     <option selected>block</option>
+    <option>block flow</option>
     <option>inline</option>
-    <option>inline-block</option>
-    <option>inline flow-root</option>
-    <option>none</option>
-    <option>flex</option>
-    <option>inline-flex</option>
-    <option>inline flex</option>
-    <option>grid</option>
-    <option>inline-grid</option>
-    <option>inline grid</option>
+    <option>inline flow</option>
+    <option>flow</option>
+    <option>flow-root</option>
+    <option>block flow-root</option>
     <option>table</option>
     <option>block table</option>
+    <option>flex</option>
+    <option>block flex</option>
+    <option>grid</option>
+    <option>block grid</option>
     <option>list-item</option>
+    <option>block flow list-item</option>
+    <option>inline flow list-item</option>
+    <option>block flow-root list-item</option>
+    <option>inline flow-root list-item</option>
+    <option>contents</option>
+    <option>none</option>
+    <option>inline-block</option>
+    <option>inline flow-root</option>
+    <option>inline-table</option>
+    <option>inline table</option>
+    <option>inline-flex</option>
+    <option>inline flex</option>
+    <option>inline-grid</option>
+    <option>inline grid</option>
   </select>
 </div>
 ```
@@ -418,12 +432,20 @@ updateDisplay();
 
 Зверніть увагу на те, що частина значень із кількома ключовими словами додана для ілюстрації, і вони мають наступні еквіваленти:
 
+- `block` = `block flow`
+- `inline` = `inline flow`
+- `flow` = `block flow`
+- `flow-root` = `block flow-root`
+- `table` = `block table`
+- `flex` = `block flex`
+- `grid` = `block grid`
+- `list-item` = `block flow list-item`
 - `inline-block` = `inline flow-root`
+- `inline-table` = `inline table`
 - `inline-flex` = `inline flex`
 - `inline-grid` = `inline grid`
-- `table` = `block table`
 
-Більше прикладів можна знайти на сторінках для кожного окремого типу даних display у розділі [Згрупованих значень](#zghrupovani-znachennia).
+Більше прикладів можна знайти на сторінках для кожного окремого типу display у розділі [Згрупованих значень](#zghrupovani-znachennia).
 
 ## Специфікації
 
