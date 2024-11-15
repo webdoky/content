@@ -387,7 +387,7 @@ const obj = {
 };
 // Присвоєння "num" на globalThis для демонстрування того, як це значення НЕ використовується.
 globalThis.num = 42;
-// Проста традиційна функція для роботи з "this"
+// Традиційна функція для роботи з "this"
 const add = function (a, b, c) {
   return this.num + a + b + c;
 };

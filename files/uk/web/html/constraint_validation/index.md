@@ -286,10 +286,10 @@ page-type: guide
 
 ```html
 <form>
-  <label for="ZIP">Поштовий індекс : </label>
-  <input type="text" id="ZIP" />
-  <label for="Country">Країна : </label>
-  <select id="Country">
+  <label for="postal-code">Поштовий індекс: </label>
+  <input type="text" id="postal-code" />
+  <label for="country">Країна: </label>
+  <select id="country">
     <option value="ch">Швейцарія</option>
     <option value="fr">Франція</option>
     <option value="de">Німеччина</option>
@@ -306,45 +306,45 @@ page-type: guide
 По-перше, напишімо функцію, що перевіряє саме обмеження:
 
 ```js
-function checkZIP() {
-  // Для кожної країни визначмо патерн, котрому повинен відповідати індекс
+function checkPostalCode() {
+  // Для кожної країни визначмо патерн, котрому повинен відповідати поштовий індекс
   const constraints = {
     ch: [
       "^(CH-)?\\d{4}$",
-      "Швейцарські індекси повинні мати рівно 4 цифри: наприклад, CH-1950 або 1950",
+      "Швейцарські поштові індекси повинні мати рівно 4 цифри: наприклад, CH-1950 або 1950",
     ],
     fr: [
       "^(F-)?\\d{5}$",
-      "Французькі індекси повинні мати рівно 5 цифр: наприклад, F-75012 або 75012",
+      "Французькі поштові індекси повинні мати рівно 5 цифр: наприклад, F-75012 або 75012",
     ],
     de: [
       "^(D-)?\\d{5}$",
-      "Німецькі індекси повинні мати рівно 5 цифр: наприклад, D-12345 або 12345",
+      "Німецькі поштові індекси повинні мати рівно 5 цифр: наприклад, D-12345 або 12345",
     ],
     nl: [
       "^(NL-)?\\d{4}\\s*([A-RT-Z][A-Z]|S[BCE-RT-Z])$",
-      "Нідерландські індекси повинні мати рівно 4 цифри, після яких – 2 літери, що не є SA, SD і SS",
+      "Нідерландські поштові індекси повинні мати рівно 4 цифри, після яких – 2 літери, що не є SA, SD і SS",
     ],
   };
 
   // Отримати ідентифікатор країни
-  const country = document.getElementById("Country").value;
+  const country = document.getElementById("country").value;
 
   // Отримати поле NPA
-  const ZIPField = document.getElementById("ZIP");
+  const postalCodeField = document.getElementById("postal-code");
 
   // Сформувати перевірник обмеження
   const constraint = new RegExp(constraints[country][0], "");
   console.log(constraint);
 
   // Перевірити!
-  if (constraint.test(ZIPField.value)) {
-    // Якщо індекс відповідає обмеженню, використовується API обмежень, щоб про це сповістити
-    ZIPField.setCustomValidity("");
+  if (constraint.test(postalCodeField.value)) {
+    // Якщо поштовий індекс відповідає обмеженню, використовується API обмежень, щоб про це сповістити
+    postalCodeField.setCustomValidity("");
   } else {
-    // Якщо індекс не відповідає обмеженню, використовується API обмежень, щоб
+    // Якщо поштовий індекс не відповідає обмеженню, використовується API обмежень, щоб
     // надати повідомлення про формат, що вимагається для відповідної країни
-    ZIPField.setCustomValidity(constraints[country][1]);
+    postalCodeField.setCustomValidity(constraints[country][1]);
   }
 }
 ```
@@ -353,8 +353,8 @@ function checkZIP() {
 
 ```js
 window.onload = () => {
-  document.getElementById("Country").onchange = checkZIP;
-  document.getElementById("ZIP").oninput = checkZIP;
+  document.getElementById("country").onchange = checkPostalCode;
+  document.getElementById("postal-code").oninput = checkPostalCode;
 };
 ```
 
@@ -365,8 +365,8 @@ window.onload = () => {
 Ось частина мовою HTML:
 
 ```html
-<label for="FS">Оберіть файл, менший за 75 кБ : </label>
-<input type="file" id="FS" />
+<label for="fs">Оберіть файл, менший за 75 кБ : </label>
+<input type="file" id="fs" />
 ```
 
 Це виводить:
@@ -377,20 +377,20 @@ JavaScript зчитує вибраний файл, використовує ме
 
 ```js
 function checkFileSize() {
-  const FS = document.getElementById("FS");
-  const files = FS.files;
+  const fs = document.getElementById("fs");
+  const files = fs.files;
 
   // Якщо є (щонайменше) один вибраний файл
   if (files.length > 0) {
-    if (files[0].size > 75 * 1024) {
+    if (files[0].size > 75 * 1000) {
       // Перевірити умову
-      FS.setCustomValidity("Вибраний файл не повинен бути більшим за 75 кБ");
-      FS.reportValidity();
+      fs.setCustomValidity("Вибраний файл не повинен бути більшим за 75 кБ");
+      fs.reportValidity();
       return;
     }
   }
   // Немає порушення власного обмеження
-  FS.setCustomValidity("");
+  fs.setCustomValidity("");
 }
 ```
 
@@ -398,7 +398,7 @@ function checkFileSize() {
 
 ```js
 window.onload = () => {
-  document.getElementById("FS").onchange = checkFileSize;
+  document.getElementById("fs").onchange = checkFileSize;
 };
 ```
 

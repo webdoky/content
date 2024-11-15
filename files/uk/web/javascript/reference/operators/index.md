@@ -52,9 +52,9 @@ browser-compat: javascript.operators
   - : Оператор необов'язкового зв'язування повертає `undefined` замість спричинення помилки, коли посилання є [порожнім](/uk/docs/Glossary/Nullish) (дорівнює [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) або [`undefined`](/uk/docs/Web/JavaScript/Reference/Global_Objects/undefined)).
 - {{jsxref("Operators/new", "new")}} (нове)
   - : Оператор `new` створює новий екземпляр об'єкта за допомогою переданого конструктора.
-- {{jsxref("Operators/new%2Etarget", "new.target")}} (нове.цільовий)
+- {{jsxref("Operators/new.target", "new.target")}} (нове.цільовий)
   - : Всередині конструктора `new.target` посилається на конструктор, який було викликано оператором {{jsxref("Operators/new", "new")}}.
-- {{jsxref("Operators/import%2Emeta", "import.meta")}} (імпорт.метадані)
+- {{jsxref("Operators/import.meta", "import.meta")}} (імпорт.метадані)
   - : Об'єкт, що розкриває контекстно-специфічні метадані JavaScript-модуля.
 - {{jsxref("Operators/super", "super")}} (вищий)
   - : Ключове слово `super` викликає батьківський конструктор або дає змогу звертатися до властивостей батьківського об'єкта.
@@ -129,7 +129,9 @@ browser-compat: javascript.operators
 - {{jsxref("Operators/in", "in")}}
   - : Оператор `in` встановлює, чи має об'єкт дану властивість.
 
-> **Примітка:** `=>` — це не оператор, а позначення для [стрілкових функцій](/uk/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
+> [!NOTE]
+>
+> `=>` — це не оператор, а позначення для [стрілкових функцій](/uk/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
 
 ### Оператори рівності
 
