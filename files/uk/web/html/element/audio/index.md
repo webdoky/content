@@ -244,7 +244,7 @@ browser-compat: html.elements.audio
 ```
 
 Джерелом аудіо може бути заданий будь-який валідний [URL](/uk/docs/Web/URI), наприклад, URL HTTP(S) і [URL даних](/uk/docs/Web/URI/Schemes/data). Використовуючи URL HTTP(S), слід пам'ятати, що логіка кешування в браузері впливатиме на те, наскільки часто файл буде запитаний із сервера. URL даних вбудовують дані аудіо безпосередньо в HTML, що може бути корисно для невеликих аудіофайлів, але не рекомендується для більших файлів, адже це збільшує розмір файлу HTML.
-Також можна використати [API Web Audio](/uk/docs/Web/API/Web_Audio_API) – для безпосереднього створення та обробки потоків аудіо з коду JavaScript, а не потокового відтворення наявних файлів аудіо. У JavaScript можна присвоїти [`srcObject`](/uk/docs/Web/API/HTMLMediaElement/srcObject) об'єкт {{jsxref("MediaStream")}}. Це широко застосовується для живих аудіопотоків та обробки звуку в реальному часі.
+Також можна використати [API Web Audio](/uk/docs/Web/API/Web_Audio_API) – для безпосереднього створення та обробки потоків аудіо з коду JavaScript, а не потокового відтворення наявних файлів аудіо. У JavaScript можна присвоїти [`srcObject`](/uk/docs/Web/API/HTMLMediaElement/srcObject) об'єкт {{domxref("MediaStream")}}. Це широко застосовується для живих аудіопотоків та обробки звуку в реальному часі.
 
 ```js
 const audioElement = document.querySelector("audio");
