@@ -38,7 +38,7 @@ matchAll(regexp)
 
 ## Опис
 
-Реалізація `String.prototype.matchAll` сама по собі є дуже простою: цей метод просто викликає метод `Symbol.matchAll` свого аргументу з вихідним рядком як першим параметром (коли не рахувати додаткової валідації вихідних даних на предмет того, що регулярний вираз є глобальним). Фактична реалізація надходить із [`RegExp.prototype[Symbol.matchAll]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.matchAll).
+Реалізація `String.prototype.matchAll` робить небагато, крім виклику метода `Symbol.matchAll` свого аргументу з вихідним рядком як першим параметром (коли не рахувати додаткової валідації вихідних даних на предмет того, що регулярний вираз є глобальним). Фактична реалізація надходить із [`RegExp.prototype[Symbol.matchAll]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.matchAll).
 
 ## Приклади
 
