@@ -327,7 +327,7 @@ const myIterable = {
 console.log([...myIterable]); // [1, 2, 3]
 ```
 
-### Простий ітератор
+### Базовий ітератор
 
 Ітератори за своєю природою мають стан. Якщо не означити ітератор як [генераторну функцію](/uk/docs/Web/JavaScript/Reference/Statements/function*) (як це показано в прикладі вище), то, ймовірно, доведеться інкапсулювати цей стан в замиканні.
 
@@ -381,14 +381,14 @@ console.log(it.next().value); // 2
 ### Означення ітерованого об'єкта за допомогою генератора
 
 ```js
-function* makeSimpleGenerator(array) {
+function* makeGenerator(array) {
   let nextIndex = 0;
   while (nextIndex < array.length) {
     yield array[nextIndex++];
   }
 }
 
-const gen = makeSimpleGenerator(["yo", "ya"]);
+const gen = makeGenerator(["yo", "ya"]);
 
 console.log(gen.next().value); // 'yo'
 console.log(gen.next().value); // 'ya'
