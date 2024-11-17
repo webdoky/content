@@ -36,7 +36,7 @@ browser-compat: html.elements.input.type_password
 На додачу до [глобальних атрибутів](/uk/docs/Web/HTML/Global_attributes) та атрибутів, що працюють на всіх елементах {{HTMLElement("input")}}, незалежно від їхніх типів, поля телефонних номерів підтримують наступні атрибути.
 
 > [!NOTE]
-> Глобальний атрибут [`autocorrect`](/uk/docs/Web/HTML/Global_attributes/autocorrect) можна додати до полів паролю, проте доступне в ньому значення завжди буде `off`.
+> Глобальний атрибут [`autocorrect`](/uk/docs/Web/HTML/Global_attributes/autocorrect) можна додати до полів пароля, проте доступне в ньому значення завжди буде `off`.
 
 ### maxlength
 
