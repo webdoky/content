@@ -40,7 +40,8 @@ browser-compat: css.at-rules.font-face
 
   - : Значення {{cssxref("font-weight")}}. Приймає два значення для задання діапазону, котрий підтримується гарнітурою, наприклад, `font-weight: 100 400;`
 
-    > **Примітка:** Дескриптор font-variant був прибраний зі специфікації у 2018 році. Підтримуються значення властивості {{cssxref("font-variant")}}, але немає рівносильного дескриптора.
+    > [!NOTE]
+    > Дескриптор font-variant був прибраний зі специфікації у 2018 році. Підтримуються значення властивості {{cssxref("font-variant")}}, але немає рівносильного дескриптора.
 
 - {{cssxref("@font-face/font-feature-settings", "font-feature-settings")}}
   - : Дає змогу контролювати передові типографські можливості в шрифтах OpenType.
@@ -66,7 +67,8 @@ browser-compat: css.at-rules.font-face
 
 Даючи розробникам змогу задавати власні шрифти, `@font-face` уможливлює проєктування вмісту без обмеження так званими "безпечними для Вебу" шрифтами (тобто шрифтами, котрі так поширені, що вважаються загальнодоступними). Змога задати назву встановленого локально шрифту для його пошуку та застосування – уможливлює налаштування шрифту понад базові можливості, до того ж – без покладання на зв'язок з Інтернетом.
 
-> **Примітка:** Запасні стратегії завантаження шрифтів, для старих браузерів, описані на [сторінці дескриптора `src`](/uk/docs/Web/CSS/@font-face/src#zadannia-zapasnykh-znachen-dlia-starykh-brauzeriv).
+> [!NOTE]
+> Запасні стратегії завантаження шрифтів, для старих браузерів, описані на [сторінці дескриптора `src`](/uk/docs/Web/CSS/@font-face/src#zadannia-zapasnykh-znachen-dlia-starykh-brauzeriv).
 
 Директива `@font-face` може використовуватися не лише на зовнішньому рівні CSS, а й також всередині будь-якої [директиви умовного групування CSS](/uk/docs/Web/CSS/CSS_conditional_rules#dyrektyvy).
 
@@ -105,33 +107,24 @@ browser-compat: css.at-rules.font-face
 
 Цей приклад задає використання віддаленого шрифту, застосовуючи його до всього тіла документа:
 
-```html
-<!doctype html>
-<html lang="uk">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Зразок вебшрифту</title>
-    <style media="screen, print">
-      @font-face {
-        font-family: "Bitstream Vera Serif Bold";
-        src: url("https://webdoky.github.io/css-examples/web-fonts/VeraSeBd.ttf");
-      }
-
-      body {
-        font-family: "Bitstream Vera Serif Bold", serif;
-      }
-    </style>
-  </head>
-  <body>
-    Це – Bitstream Vera Serif Bold.
-  </body>
-</html>
+```html live-sample___web-font-example
+<body>
+  Це Bitstream Vera Serif Bold.
+</body>
 ```
 
-Вивід цього коду прикладу матиме такий вигляд:
+```css live-sample___web-font-example
+@font-face {
+  font-family: "Bitstream Vera Serif Bold";
+  src: url("https://mdn.github.io/shared-assets/fonts/VeraSeBd.ttf");
+}
 
-{{EmbedGHLiveSample("css-examples/web-fonts/basic-web-font.html", '100%', '100')}}
+body {
+  font-family: "Bitstream Vera Serif Bold", serif;
+}
+```
+
+{{EmbedLiveSample("web-font-example", "", "100px")}}
 
 ### Задання взаємозамінних локальних шрифтів
 
