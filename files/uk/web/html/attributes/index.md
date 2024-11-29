@@ -158,7 +158,7 @@ page-type: landing-page
       </td>
       <td>
         Задає URL файлу зображення.
-        <div class="note">
+        <div class="note notecard">
           <p>
             <strong>Примітка:</strong> Попри те, що браузери та клієнти електронної пошти досі можуть підтримувати цей атрибут, він є застарілим. Замість нього слід використовувати CSS {{Cssxref("background-image")}}.
           </p>
@@ -178,7 +178,7 @@ page-type: landing-page
       </td>
       <td>
         <p>Колір фону елемента.</p>
-        <div class="note">
+        <div class="note notecard">
           <p>
             <strong>Примітка:</strong> Це історичний атрибут. Замість нього слід використовувати властивість CSS {{Cssxref("background-color")}}.
           </p>
@@ -193,7 +193,7 @@ page-type: landing-page
       </td>
       <td>
         <p>Ширина межі.</p>
-        <div class="note">
+        <div class="note notecard">
           <p>
             <strong>Примітка:</strong> Це історичний атрибут. Будь ласка, використовуйте замість нього властивість CSS {{Cssxref("border")}}.
           </p>
@@ -264,7 +264,7 @@ page-type: landing-page
         <p>
           Цей атрибут задає колір тексту за допомогою або назви кольору, або кольору, заданого в шістнадцятковому форматі #RRGGBB.
         </p>
-        <div class="note">
+        <div class="note notecard">
           <p>
             <strong>Примітка:</strong> Це історичний атрибут. Будь ласка, використовуйте замість нього властивість CSS {{Cssxref("color")}}.
           </p>
@@ -611,7 +611,7 @@ page-type: landing-page
         <p>
           Задає висоту елементів, перелічених тут. Для всіх інших елементів слід використовувати властивість CSS {{cssxref("height")}}.
         </p>
-        <div class="note">
+        <div class="note notecard">
           <p>
             <strong>Примітка:</strong> У певних випадках, наприклад, для {{HTMLElement("div")}}, це історичний атрибут, і в такому разі слід натомість використовувати властивість CSS {{Cssxref("height")}}.
           </p>
@@ -1386,7 +1386,7 @@ page-type: landing-page
         <p>
           Для елементів, перерахованих тут, це встановлює їх ширину.
         </p>
-        <div class="note">
+        <div class="note notecard">
           <p>
             <strong>Примітка:</strong> Для всіх інших елементів, таких як {{HTMLElement("div")}}, це історичний атрибут, і в такому випадку слід використовувати властивість CSS {{Cssxref("width")}}.
           </p>

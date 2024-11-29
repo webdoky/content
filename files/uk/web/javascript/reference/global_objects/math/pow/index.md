@@ -52,7 +52,7 @@ Math.pow(base, exponent)
 ### Застосування Math.pow()
 
 ```js
-// Прості випадки
+// Базові випадки
 Math.pow(7, 2); // 49
 Math.pow(7, 3); // 343
 Math.pow(2, 10); // 1024
