@@ -15,7 +15,7 @@ browser-compat: javascript.builtins.TypeError
 - при спробі змінити значення, котре не може бути змінене; або
 - при спробі використати значення у невідповідний спосіб.
 
-`TypeError` – це {{Glossary("serializable object", "серіалізовний об'єкт")}}, тож може бути клонований за допомогою {{domxref("structuredClone()")}} або скопійований між [воркерами](/uk/docs/Web/API/Worker) за допомогою {{domxref("Worker/postMessage()", "postMessage()")}}.
+`TypeError` – це {{Glossary("serializable object", "серіалізовний об'єкт")}}, тож може бути клонований за допомогою {{DOMxRef("Window.structuredClone", "structuredClone()")}} або скопійований між [воркерами](/uk/docs/Web/API/Worker) за допомогою {{domxref("Worker/postMessage()", "postMessage()")}}.
 
 `TypeError` є підкласом {{jsxref("Error")}}.
 
