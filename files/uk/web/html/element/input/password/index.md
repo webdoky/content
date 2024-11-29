@@ -87,7 +87,7 @@ browser-compat: html.elements.input.type_password
 
 Загалом поля пароля працюють так само як і будь-які інші текстові поля; головна відмінність полягає в приховуванні вмісту, аби запобігти прочитанню вмісту людьми, що перебувають поруч з користувачем.
 
-### Просте поле пароля
+### Базове поле пароля
 
 Тут – найпростіше поле пароля, з підписом, заданим за допомогою елемента {{HTMLElement("label")}}.
 
@@ -96,7 +96,7 @@ browser-compat: html.elements.input.type_password
 <input id="userPassword" type="password" />
 ```
 
-{{EmbedLiveSample("proste-pole-parolia", 600, 40)}}
+{{EmbedLiveSample("bazove-pole-parolia", 600, 40)}}
 
 ### Дозвіл на самозаповнення
 
