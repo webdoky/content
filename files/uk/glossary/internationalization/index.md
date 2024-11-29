@@ -21,7 +21,8 @@ page-type: glossary-definition
 
 ## Дивіться також
 
-- {{glossary("Localization", "Локалізація")}}
+- Споріднені терміни глосарія:
+  - {{glossary("Localization", "Локалізація")}}
 - [Діяльність з інтернаціоналізації W3C](https://www.w3.org/International/)
 - [Консорціум Unicode](https://home.unicode.org/)
 - [API інтернаціоналізації JavaScript](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl)
