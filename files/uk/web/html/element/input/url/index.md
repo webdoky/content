@@ -24,7 +24,7 @@ browser-compat: html.elements.input.type_url
 
 ## Додаткові атрибути
 
-На додачу до [глобальних атрибутів](/uk/docs/Web/HTML/Global_attributes) та атрибутів, що працюють на всіх елементах {{HTMLElement("input")}}, незалежно від їхніх типів, поля телефонних номерів підтримують наступні атрибути.
+На додачу до [глобальних атрибутів](/uk/docs/Web/HTML/Global_attributes) та атрибутів, що працюють на всіх елементах {{HTMLElement("input")}}, незалежно від їхніх типів, поля URL підтримують наступні атрибути.
 
 > [!NOTE]
 > Глобальний атрибут [`autocorrect`](/uk/docs/Web/HTML/Global_attributes/autocorrect) можна додати до полів URL, проте доступне в ньому значення завжди буде `off`.
