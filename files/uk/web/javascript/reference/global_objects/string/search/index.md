@@ -31,7 +31,7 @@ search(regexp)
 
 ## Опис
 
-Реалізація `String.prototype.search()` сама по собі є дуже простою: вона лишень викликає метод `Symbol.search` переданого аргументу зі своїм рядком як першим параметром. Фактична реалізація надходить з [`RegExp.prototype[Symbol.search]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.search).
+Реалізація `String.prototype.search()` робить небагато, окрім виклику метода `Symbol.search` переданого аргументу зі своїм рядком як першим параметром. Фактична реалізація надходить з [`RegExp.prototype[Symbol.search]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.search).
 
 Позначка `g` виразу `regexp` не впливає на результат `search()`, і пошук завжди відбувається так, ніби властивість `lastIndex` регулярного виразу має значення `0`. Більше інформації про логіку `search()` дивіться на сторінці [`RegExp.prototype[Symbol.search]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/Symbol.search).
 
