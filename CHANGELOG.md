@@ -3,6 +3,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2024-11-22 - 2024-11-29]
+
+* **Оновлення перекладу(CSS):** web/css/css_syntax (#3554) ([91e85407](https://github.com/webdoky/content/commit/91e854077246eb3ae05f32526a2a8f4f09f2f160))
+* **Оновлення перекладу(CSS):** web/css/font-weight (#3599) ([56270680](https://github.com/webdoky/content/commit/56270680e013c87186b41c8bc0739d2ff6423413))
+* **Оновлення перекладу(HTML):** web/html/element/input/email (#3620) ([c2092d17](https://github.com/webdoky/content/commit/c2092d17c00262e89c5e58a69e70e9335438b2f3))
+* **Оновлення перекладу(HTML):** web/html/element/input/url (#3622) ([07f4af61](https://github.com/webdoky/content/commit/07f4af612bda39f8024fc250f71e186752c8cbae))
+* **Оновлення перекладу(HTML):** web/html/element/input/search (#3621) ([bf3189df](https://github.com/webdoky/content/commit/bf3189df99767767074e4007cf11d854a2cea47c))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/matchall (#3624) ([70fd3d67](https://github.com/webdoky/content/commit/70fd3d6702cf9711afa7ceb28b2d38d968792322))
+* **Оновлення перекладу(CSS):** web/css/-moz-image-rect (#3628) ([1ef6ef15](https://github.com/webdoky/content/commit/1ef6ef15ef5989cddd3327724e4db7d7d376cd59))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/promise/promise (#3523) ([aa6d0d15](https://github.com/webdoky/content/commit/aa6d0d152cc91965b5d9fd93b7829061687a0a02))
+* **Оновлення перекладу(HTML):** web/html/element/textarea (#3608) ([8d7cc2cb](https://github.com/webdoky/content/commit/8d7cc2cbfd22386ae966b446a27bdb376a88de29))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/math/trunc (#3627) ([2289572f](https://github.com/webdoky/content/commit/2289572f4161b7aebba6304183b772e40daa9199))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/search (#3623) ([0c8b1f8b](https://github.com/webdoky/content/commit/0c8b1f8bf4cd133a18e419151e40f541659a78cc))
+
 ## [2024-11-15 - 2024-11-22]
 
 * **Оновлення перекладу(JS):** web/javascript/reference/global_objects/typeerror (#3638) ([f1c38281](https://github.com/webdoky/content/commit/f1c38281d6cee36301981a673d122772a3fc998c))
