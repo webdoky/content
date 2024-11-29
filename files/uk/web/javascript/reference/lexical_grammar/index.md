@@ -158,7 +158,7 @@ lbl: console.log(1); // Підписи
 
 У JavaScript ідентифікатори здебільшого складаються з алфавітно-цифрових символів, підкреслень (`_`) і знаків долара (`$`). Вони не можуть починатися з цифр. Проте ідентифікатори JavaScript не обмежені {{Glossary("ASCII")}}: так само дозволені чимало кодових точок Unicode. А саме:
 
-- Перший символ може бути будь-яким символом категорії [ID_Start](https://util.unicode.org/UnicodeJsps/list-unicodeset.jsp?a=%5Cp%7BID_Start%7D), плюс `_` і `$`.
+- Перший символ може бути будь-яким символом категорії [ID_Start](https://util.unicode.org/UnicodeJsps/list-unicodeset.jsp?a=%5Cp%7BID_Start%7D) плюс `_` і `$`.
 - Після першого символу можна використовувати всі символи категорії [ID_Continue](https://util.unicode.org/UnicodeJsps/list-unicodeset.jsp?a=%5Cp%7BID_Continue%7D) плюс U+200C (ZWNJ) і U+200D (ZWJ).
 
 > [!NOTE]
