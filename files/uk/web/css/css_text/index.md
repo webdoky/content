@@ -21,7 +21,7 @@ spec-urls:
 - {{cssxref("hyphens")}}
 - {{cssxref("letter-spacing")}}
 - {{cssxref("line-break")}}
-- {{cssxref("overflow-wrap")}} (вкупі з псевдонімом `word-wrap`)
+- {{cssxref("overflow-wrap")}} (вкупі із псевдонімом `word-wrap`)
 - {{cssxref("tab-size")}}
 - {{cssxref("text-align")}}
 - {{cssxref("text-align-last")}}
@@ -41,8 +41,8 @@ spec-urls:
 
 ### Посібники
 
-- [Переведення на новий рядок і розривання тексту](/uk/docs/Web/CSS/CSS_text/Wrapping_breaking_text)
-  - : Посібник з різними способами, в які можна керувати в CSS текстом, що не вміщається.
+- [Перенесення на новий рядок і розривання тексту](/uk/docs/Web/CSS/CSS_text/Wrapping_breaking_text)
+  - : Посібник із різними способами керування переповненим текстом у CSS.
 
 ## Споріднені концепції
 
