@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2024-11-29 - 2024-12-06]
+
+...
+
 ## [2024-11-22 - 2024-11-29]
 
 * **Оновлення перекладу(CSS):** web/css/css_syntax (#3554) ([91e85407](https://github.com/webdoky/content/commit/91e854077246eb3ae05f32526a2a8f4f09f2f160))
