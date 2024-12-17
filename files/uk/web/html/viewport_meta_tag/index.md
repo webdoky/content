@@ -21,7 +21,7 @@ spec-urls: https://drafts.csswg.org/css-viewport/#viewport-meta
 
 ## Основне про область перегляду
 
-Типовий оптимізований для мобільних сайт містить щось схоже на таке:
+Область перегляду – це розділений пробілами список пар можливості та значення. Типовий оптимізований для мобільних сайт містить щось схоже на таке:
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -81,6 +81,10 @@ spec-urls: https://drafts.csswg.org/css-viewport/#viewport-meta
   - : Інтерактивний віджет змінює розмір {{Glossary("viewport", "області перегляду")}}.
 - `overlays-content`
   - : Інтерактивний віджет не змінює ані {{Glossary("viewport", "області перегляду")}}, ані {{Glossary("visual viewport", "візуальної області перегляду")}}.
+
+```html
+<meta name="viewport" content="interactive-widget=resizes-content" />
+```
 
 Коли {{Glossary("viewport", "область перегляду")}} змінює розмір, то початковий [контейнерний блок](/uk/docs/Web/CSS/Containing_block) також змінює розмір, у такий спосіб впливаючи на обчислені величини [одиниць вимірювання на основі області перегляду](/uk/docs/Web/CSS/length#vidnosni-odynytsi-vymiriuvannia-dovzhyny-zasnovani-na-oblasti-perehliadu).
 
