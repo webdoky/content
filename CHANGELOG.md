@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2024-12-06 - 2024-12-13]
+
+* **Оновлення перекладу(JS):** web/javascript/reference/lexical_grammar (#3569) ([b595e44c](https://github.com/webdoky/content/commit/b595e44c8be0b8bd4e016c39415a3e5462ed8b31))
+* **Оновлення перекладу(HTML):** web/html/global_attributes (#3612) ([cafb3e51](https://github.com/webdoky/content/commit/cafb3e51a47d37dc0d4a4357db74666571d6cd3c))
+* **Оновлення перекладу(Glossary):** glossary/base64 (#3617) ([749a0ff2](https://github.com/webdoky/content/commit/749a0ff28a2bec797bdda2e600ed1bc2c69d6e36))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/promise (#3637) ([646b47f6](https://github.com/webdoky/content/commit/646b47f603c00860bf3132c3475e50f9ad994aa9))
+
 ## [2024-11-29 - 2024-12-06]
 
 ...
