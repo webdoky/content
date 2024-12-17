@@ -194,22 +194,34 @@ browser-compat: html.elements.a
 
 #### Посилання на не-HTML ресурс
 
-```html
-<a href="2017-annual-report.ppt">2017 Річний звіт (PowerPoint)</a>
-```
-
-Якщо призначення посилання позначено іконкою, слід пересвідчитись, що ця іконка має [_текстову альтернативу_](/uk/docs/Web/HTML/Element/img#alt):
+Якщо для позначення поведінки посилання застосована піктограма, слід пересвідчитись, що ця піктограма має [атрибут `alt`](/uk/docs/Web/HTML/Element/img#alt), який описує її призначення. Коли ця піктограма буде відсутня, то вміст атрибута `alt` усе одно пояснить поведінку посилання.
 
 ```html
-<a target="_blank" href="https://uk.wikipedia.org">
-  Вікіпедія
-  <img alt="(відкривається в новій вкладці)" src="newtab.svg" />
-</a>
-
-<a href="2017-annual-report.ppt">
-  2017 Річний звіт
-  <img alt="(файл PowerPoint)" src="ppt-icon.svg" />
-</a>
+<p>
+  <a href="https://uk.wikipedia.org/" target="_blank">
+    Вікіпедія
+    <img src="new-tab.svg" width="14" alt="(Відкривається в новій вкладці)" />
+  </a>
+  <br />
+  <a href="2017-annual-report.ppt">
+    Річний звіт 2017
+    <img src="powerpoint.svg" width="14" alt="(Файл PowerPoint)" />
+  </a>
+</p>
+<p>
+  <a href="https://uk.wikipedia.org/" target="_blank">
+    Вікіпедія
+    <img
+      src="missing-icon.svg"
+      width="14"
+      alt="(Відкривається в новій вкладці)" />
+  </a>
+  <br />
+  <a href="2017-annual-report.ppt">
+    Річний звіт 2017
+    <img src="missing-icon.svg" width="14" alt="(Файл PowerPoint)" />
+  </a>
+</p>
 ```
 
 ##### Результат
