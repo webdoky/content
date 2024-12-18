@@ -7,13 +7,17 @@ browser-compat: javascript.builtins.Math.LOG2E
 
 {{JSRef}}
 
-Статична властивість даних **`Math.LOG2E`** відображає логарифм [e](/uk/docs/Web/JavaScript/Reference/Global_Objects/Math/E) за основою 2, що наближено дорівнює 1.442.
+Статична властивість даних **`Math.LOG2E`** відображає логарифм [e](/uk/docs/Web/JavaScript/Reference/Global_Objects/Math/E) за основою 2, що наближено дорівнює 1,443.
 
 {{EmbedInteractiveExample("pages/js/math-log2e.html", "shorter")}}
 
 ## Значення
 
-<math display="block"><semantics><mrow><mi>𝙼𝚊𝚝𝚑.𝙻𝙾𝙶𝟸𝙴</mi><mo>=</mo><msub><mo lspace="0em" rspace="0em">log</mo><mn>2</mn></msub><mo stretchy="false">(</mo><mi mathvariant="normal">e</mi><mo stretchy="false">)</mo><mo>≈</mo><mn>1.442</mn></mrow><annotation encoding="TeX">\mathtt{\mi{Math.LOG2E}} = \log_2(\mathrm{e}) \approx 1.442</annotation></semantics></math>
+<!-- prettier-ignore-start -->
+<math display="block">
+  <semantics><mrow><mi>𝙼𝚊𝚝𝚑.𝙻𝙾𝙶𝟸𝙴</mi><mo>=</mo><msub><mo lspace="0em" rspace="0em">log</mo><mn>2</mn></msub><mo stretchy="false">(</mo><mi mathvariant="normal">e</mi><mo stretchy="false">)</mo><mo>≈</mo><mn>1.443</mn></mrow><annotation encoding="TeX">\mathtt{Math.LOG2E} = \log_2(\mathrm{e}) \approx 1.443</annotation></semantics>
+</math>
+<!-- prettier-ignore-end -->
 
 {{js_property_attributes(0, 0, 0)}}
 
