@@ -4,7 +4,7 @@ slug: Web/CSS/:blank
 page-type: css-pseudo-class
 status:
   - experimental
-browser-compat: css.selectors.blank
+spec-urls: https://drafts.csswg.org/selectors/#blank-pseudo
 ---
 
 {{CSSRef}}{{SeeCompatTable}}
@@ -54,7 +54,7 @@ textarea:blank {
 
 ## Сумісність із браузерами
 
-{{Compat}}
+Наразі ще жодний браузер не реалізував цю можливість.
 
 ## Дивіться також
 
