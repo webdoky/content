@@ -42,9 +42,9 @@ browser-compat: html.elements.fieldset
 
 ## Приклади
 
-### Простий fieldset
+### Базовий fieldset
 
-Цей приклад демонструє справді простий приклад `<fieldset>`, з `<legend>` і одним контрольним елементом всередині нього.
+Цей приклад містить `<fieldset>` з `<legend>` і одним контрольним елементом всередині нього.
 
 ```html
 <form action="#">
@@ -58,7 +58,7 @@ browser-compat: html.elements.fieldset
 
 #### Результат
 
-{{EmbedLiveSample('prostyi-fieldset', '100%', '80')}}
+{{EmbedLiveSample('bazovyi-fieldset', '100%', '80')}}
 
 ### Вимкнений fieldset
 
