@@ -13,7 +13,32 @@ spec-urls: https://drafts.csswg.org/css-flexbox/
 
 В наступному прикладі контейнер отримує `display: flex`, що означає, що три дочірні елементи стають гнучкими елементами. Значенням `justify-content` стало `space-between`, щоб розташувати елементи рівномірно на головній осі. Однакова кількість простору розташовується між всіма елементами, а лівий і правий елементи знаходяться на краях гнучкого контейнера. Також можна спостерігати, що елементи розтягуються вздовж поперечної осі, адже значення `align-items` – `stretch`. Елементи розтягуються до висоти гнучкого контейнера, тобто кожен з них стає настільки ж високим, як найвищий елемент.
 
-{{EmbedGHLiveSample("css-examples/flexbox/basics/simple-example.html", '100%', 600)}}
+```html live-sample___simple-example
+<div class="box">
+  <div>Один</div>
+  <div>Два</div>
+  <div>Три <br />містить <br />додатковий <br />текст</div>
+</div>
+```
+
+```css live-sample___simple-example
+body {
+  font-family: sans-serif;
+}
+.box {
+  border: 2px dotted rgb(96 139 168);
+  display: flex;
+  justify-content: space-between;
+}
+.box > * {
+  border: 2px solid rgb(96 139 168);
+  border-radius: 5px;
+  background-color: rgb(96 139 168 / 0.2);
+  padding: 1em;
+}
+```
+
+{{EmbedLiveSample("simple-example")}}
 
 ## Довідка
 
@@ -43,39 +68,22 @@ spec-urls: https://drafts.csswg.org/css-flexbox/
 ## Посібники
 
 - [Базові концепції флексбоксу](/uk/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox)
-
   - : Огляд можливостей Флексбоксу
-
 - [Взаємини між флексбоксом та іншими способами компонування](/uk/docs/Web/CSS/CSS_flexible_box_layout/Relationship_of_flexbox_to_other_layout_methods)
-
   - : Порівняння Флексбоксу з іншими способами компонування та іншими специфікаціями CSS
-
 - [Вирівнювання елементів у гнучкому контейнері](/uk/docs/Web/CSS/CSS_flexible_box_layout/Aligning_items_in_a_flex_container)
-
   - : Те, як властивості рамкового вирівнювання працюють зі Флексбоксом.
-
 - [Упорядкування гнучких елементів](/uk/docs/Web/CSS/CSS_flexible_box_layout/Ordering_flex_items)
-
   - : Пояснення різних способів для змінювання порядку й напряму елементів, а також роз'яснення потенційних негативних наслідків цього.
-
 - [Контроль співвідношень гнучких елементів за головною віссю](/uk/docs/Web/CSS/CSS_flexible_box_layout/Controlling_ratios_of_flex_items_along_the_main_axis)
-
   - : Пояснення властивостей flex-grow, flex-shrink і flex-basis.
-
 - [Освоєння загортання гнучких елементів](/uk/docs/Web/CSS/CSS_flexible_box_layout/Mastering_wrapping_of_flex_items)
-
   - : Про те, як створювати гнучкі контейнери з багатьма рядами й контролювати виведення елементів на цих рядах.
-
 - [Типові ситуації для використання флексбоксу](/uk/docs/Web/CSS/CSS_flexible_box_layout/Typical_use_cases_of_flexbox)
-
   - : Поширені патерни проєктування, котрі є типовими випадками для використання Флексбоксу.
-
 - [Компонування CSS – флексбокс](/uk/docs/Learn/CSS/CSS_layout/Flexbox)
-
   - : Дізнайтеся, як користуватися для створення макетів у вебі компонуванням флексбоксу.
-
 - [Рамкове вирівнювання у флексбоксі](/uk/docs/Web/CSS/CSS_box_alignment/Box_alignment_in_flexbox)
-
   - : Детально описує можливості [Рамкового вирівнювання CSS](/uk/docs/Web/CSS/CSS_box_alignment), що є притаманними саме флексбоксу.
 
 ## Споріднені концепції
