@@ -2,10 +2,12 @@
 title: font-synthesis-position
 slug: Web/CSS/font-synthesis-position
 page-type: css-property
+status:
+  - experimental
 browser-compat: css.properties.font-synthesis-position
 ---
 
-{{CSSRef}}
+{{CSSRef}}{{SeeCompatTable}}
 
 Властивість [CSS](/uk/docs/Web/CSS) **`font-synthesis-position`** (шрифт, синтез позиційних) дає змогу задати те, чи повинен браузер синтезувати підрядкові та надрядкові "позиційні" гарнітури, коли вони відсутні в сімействі шрифтів, використовуючи {{cssxref("font-variant-position")}} для задання позицій.
 
