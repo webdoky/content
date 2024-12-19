@@ -23,11 +23,14 @@ spec-urls: https://drafts.csswg.org/css-pseudo/
 - {{CSSXref("::first-letter")}}
 - {{CSSXref("::first-line")}}
 - {{CSSXref("::grammar-error")}}
+- {{CSSXref("::highlight()")}}
 - {{CSSXref("::marker")}}
 - {{CSSXref("::placeholder")}}
 - {{CSSXref("::selection")}}
 - {{CSSXref("::spelling-error")}}
 - {{CSSXref("::target-text")}}
+
+Специфікація також описує псевдоелементи `::details-content` і `::search-text`, а також підпсевдоелементи `::postfix` і `::prefix`. Вони поки не підтримуються жодним браузером. Псевдоелемент {{CSSXref("::highlight()")}} входить до складу цього модуля, але більшість подробиць про нього розміщені на сторінці [API кастомного виділення CSS](/uk/docs/Web/API/CSS_Custom_Highlight_API).
 
 ### Інтерфейси
 
@@ -61,7 +64,6 @@ spec-urls: https://drafts.csswg.org/css-pseudo/
 
   - {{cssxref("::cue")}}
   - {{cssxref("::cue", "::cue()")}}
-  - {{cssxref("::cue-region")}}
 
 - Модуль [Області видимості CSS](/uk/docs/Web/CSS/CSS_scoping)
 
@@ -73,6 +75,14 @@ spec-urls: https://drafts.csswg.org/css-pseudo/
 - Модуль [Тіньових частин CSS](/uk/docs/Web/CSS/CSS_shadow_parts)
 
   - {{CSSXref("::part")}}
+
+- Модуль [Переходів представлення CSS](/uk/docs/Web/CSS/CSS_view_transitions)
+
+  - {{cssxref("::view-transition")}} {{Experimental_Inline}}
+  - {{cssxref("::view-transition-image-pair()")}} {{Experimental_Inline}}
+  - {{cssxref("::view-transition-group()")}} {{Experimental_Inline}}
+  - {{cssxref("::view-transition-new()")}} {{Experimental_Inline}}
+  - {{cssxref("::view-transition-old()")}} {{Experimental_Inline}}
 
 - [Селектори CSS](/uk/docs/Web/CSS/CSS_selectors)
 
@@ -92,7 +102,7 @@ spec-urls: https://drafts.csswg.org/css-pseudo/
   - Властивість {{cssxref("content")}}
   - Властивість {{cssxref("quotes")}}
 
-- [Текстові уривки](/uk/docs/Web/Text_fragments)
+- [Текстові уривки](/uk/docs/Web/URI/Fragment/Text_fragments)
 
 - Властивість {{DOMXref("AnimationEvent.pseudoElement")}}
 - Властивість {{DOMXref("KeyframeEffect.pseudoElement")}}
@@ -109,3 +119,4 @@ spec-urls: https://drafts.csswg.org/css-pseudo/
 - Модуль [Тіньових частин CSS](/uk/docs/Web/CSS/CSS_shadow_parts)
 - Модуль [Породженого вмісту CSS](/uk/docs/Web/CSS/CSS_generated_content)
 - Модуль [Позиційного компонування CSS](/uk/docs/Web/CSS/CSS_positioned_layout)
+- [API кастомного виділення CSS](/uk/docs/Web/API/CSS_Custom_Highlight_API)
