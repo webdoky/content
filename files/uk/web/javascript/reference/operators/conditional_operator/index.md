@@ -32,7 +32,7 @@ condition ? exprIfTrue : exprIfFalse
 
 ## Приклади
 
-### Простий приклад
+### Базовий приклад
 
 ```js
 const age = 26;
@@ -63,10 +63,10 @@ function example() {
   return condition1
     ? value1
     : condition2
-    ? value2
-    : condition3
-    ? value3
-    : value4;
+      ? value2
+      : condition3
+        ? value3
+        : value4;
 }
 ```
 
