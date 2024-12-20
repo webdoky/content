@@ -382,20 +382,20 @@ const pattern = {
     return "Я завжди повертаю цей рядок, незалежно від того, що мені присвоєно";
   },
   set() {
-    this.myname = "це рядок із моїм іменем";
+    this.myName = "це рядок із моїм іменем";
   },
 };
 
 function TestDefineSetAndGet() {
-  Object.defineProperty(this, "myproperty", pattern);
+  Object.defineProperty(this, "myProperty", pattern);
 }
 
 const instance = new TestDefineSetAndGet();
-instance.myproperty = "test";
-console.log(instance.myproperty);
+instance.myProperty = "test";
+console.log(instance.myProperty);
 // Я завжди повертаю цей рядок, незалежно від того, що мені присвоєно
 
-console.log(instance.myname); // це рядок із моїм іменем
+console.log(instance.myName); // це рядок із моїм іменем
 ```
 
 ### Успадкування властивостей

@@ -3,6 +3,128 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2024-12-06 - 2024-12-13]
+
+* **Оновлення перекладу(JS):** web/javascript/reference/lexical_grammar (#3569) ([b595e44c](https://github.com/webdoky/content/commit/b595e44c8be0b8bd4e016c39415a3e5462ed8b31))
+* **Оновлення перекладу(HTML):** web/html/global_attributes (#3612) ([cafb3e51](https://github.com/webdoky/content/commit/cafb3e51a47d37dc0d4a4357db74666571d6cd3c))
+* **Оновлення перекладу(Glossary):** glossary/base64 (#3617) ([749a0ff2](https://github.com/webdoky/content/commit/749a0ff28a2bec797bdda2e600ed1bc2c69d6e36))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/promise (#3637) ([646b47f6](https://github.com/webdoky/content/commit/646b47f603c00860bf3132c3475e50f9ad994aa9))
+
+## [2024-11-29 - 2024-12-06]
+
+...
+
+## [2024-11-22 - 2024-11-29]
+
+* **Оновлення перекладу(CSS):** web/css/css_syntax (#3554) ([91e85407](https://github.com/webdoky/content/commit/91e854077246eb3ae05f32526a2a8f4f09f2f160))
+* **Оновлення перекладу(CSS):** web/css/font-weight (#3599) ([56270680](https://github.com/webdoky/content/commit/56270680e013c87186b41c8bc0739d2ff6423413))
+* **Оновлення перекладу(HTML):** web/html/element/input/email (#3620) ([c2092d17](https://github.com/webdoky/content/commit/c2092d17c00262e89c5e58a69e70e9335438b2f3))
+* **Оновлення перекладу(HTML):** web/html/element/input/url (#3622) ([07f4af61](https://github.com/webdoky/content/commit/07f4af612bda39f8024fc250f71e186752c8cbae))
+* **Оновлення перекладу(HTML):** web/html/element/input/search (#3621) ([bf3189df](https://github.com/webdoky/content/commit/bf3189df99767767074e4007cf11d854a2cea47c))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/matchall (#3624) ([70fd3d67](https://github.com/webdoky/content/commit/70fd3d6702cf9711afa7ceb28b2d38d968792322))
+* **Оновлення перекладу(CSS):** web/css/-moz-image-rect (#3628) ([1ef6ef15](https://github.com/webdoky/content/commit/1ef6ef15ef5989cddd3327724e4db7d7d376cd59))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/promise/promise (#3523) ([aa6d0d15](https://github.com/webdoky/content/commit/aa6d0d152cc91965b5d9fd93b7829061687a0a02))
+* **Оновлення перекладу(HTML):** web/html/element/textarea (#3608) ([8d7cc2cb](https://github.com/webdoky/content/commit/8d7cc2cbfd22386ae966b446a27bdb376a88de29))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/math/trunc (#3627) ([2289572f](https://github.com/webdoky/content/commit/2289572f4161b7aebba6304183b772e40daa9199))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/search (#3623) ([0c8b1f8b](https://github.com/webdoky/content/commit/0c8b1f8bf4cd133a18e419151e40f541659a78cc))
+
+## [2024-11-15 - 2024-11-22]
+
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/typeerror (#3638) ([f1c38281](https://github.com/webdoky/content/commit/f1c38281d6cee36301981a673d122772a3fc998c))
+* **Оновлення перекладу(CSS):** web/css/@starting-style (#3639) ([91b61077](https://github.com/webdoky/content/commit/91b610778d882c8be24eb1e9cf24eba757f0ad12))
+* **Оновлення перекладу(CSS):** web/css/css_animations (#3640) ([f48e4127](https://github.com/webdoky/content/commit/f48e41273b2e5890231592550c738b5806098ed0))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/math/atan2 (#3636) ([cf202525](https://github.com/webdoky/content/commit/cf202525d8f963133b0ffb28a7fe0abd06f80bc5))
+* **Оновлення перекладу(JS):** web/javascript/guide/indexed_collections (#3635) ([bd49c22c](https://github.com/webdoky/content/commit/bd49c22cef6d422acfd944fa21dfa780333cb041))
+* **Оновлення перекладу(HTML):** web/html/element/object (#3634) ([31c9cde3](https://github.com/webdoky/content/commit/31c9cde3219deefc44db260c0eef469606b001c8))
+* **Оновлення перекладу(CSS):** web/css/_doublecolon_before (#3632) ([617928d9](https://github.com/webdoky/content/commit/617928d94cb734b4efdd7e7a70dfc286404e7b97))
+* **Оновлення перекладу(CSS):** web/css/_colon_not (#3631) ([2b8930b7](https://github.com/webdoky/content/commit/2b8930b742ffe5f242316f57244a1275319784b9))
+* **Оновлення перекладу(CSS):** web/css/_colon_blank (#3630) ([28f5ec53](https://github.com/webdoky/content/commit/28f5ec539b2c1c023923cf0554958570200bf109))
+* **Оновлення перекладу(HTML):** web/html/element/select (#3600) ([b95d1ee2](https://github.com/webdoky/content/commit/b95d1ee2df259eb3f102a003bfb02ff5867e3b42))
+* **Оновлення перекладу(HTML):** web/html/element/li (#3610) ([dae17ed8](https://github.com/webdoky/content/commit/dae17ed8189f5443924ab39ca9dc029801566890))
+* **Оновлення перекладу(HTML):** web/html/element/input/text (#3609) ([9b1e0792](https://github.com/webdoky/content/commit/9b1e0792ea40356e52814e4a8cdab712456e8af6))
+* **Оновлення перекладу(CSS):** web/css/@font-face (#3607) ([f28633f4](https://github.com/webdoky/content/commit/f28633f43dc8dc0cca5e65f7bfaba47bf7b90b41))
+* **Оновлення перекладу(JS):** web/javascript/reference/operators/await (#3606) ([4210ec7c](https://github.com/webdoky/content/commit/4210ec7c9446f532f1b50216953159784909fc6b))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/proxy (#3605) ([a1481fb0](https://github.com/webdoky/content/commit/a1481fb0203026a5607449e263ae1f05e3e6da77))
+* **Оновлення перекладу(JS):** web/javascript/guide/functions (#3604) ([eee60d30](https://github.com/webdoky/content/commit/eee60d30880a48b31e7b0dee42f988b818a294dd))
+* **Оновлення перекладу(JS):** web/javascript/guide/modules (#3603) ([411e6f9f](https://github.com/webdoky/content/commit/411e6f9f3d353fee6070f8c2a606ab82a5d61f6b))
+* **Оновлення перекладу(HTML):** web/html/element/script (#3602) ([40b753ea](https://github.com/webdoky/content/commit/40b753ea74203c34b219b1efb4469136841797da))
+* **Оновлення перекладу(HTML):** web/html/element/link (#3611) ([e0b97506](https://github.com/webdoky/content/commit/e0b975069ce7b8009b10edcb916e12191fe34d64))
+* **Оновлення перекладу(JS):** web/javascript/reference/operators/function (#3626) ([3bd66fd4](https://github.com/webdoky/content/commit/3bd66fd4acd54c9715df239dbc52a3250af239d8))
+* **Оновлення перекладу(JS):** web/javascript/guide/grammar_and_types (#3625) ([9b992759](https://github.com/webdoky/content/commit/9b9927597a5064c7f0e01485a71df7f59f303d8a))
+* **Оновлення перекладу(HTML):** web/html/element/input/tel (#3618) ([cc6d8945](https://github.com/webdoky/content/commit/cc6d8945f8795ea37a254a5aaa15ccd29cca3be5))
+* **Оновлення перекладу(JS):** web/javascript/reference/iteration_protocols (#3616) ([873a582b](https://github.com/webdoky/content/commit/873a582bcfb470912fc7970da6859ec81c5c07a5))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/math/pow (#3615) ([4c0b485d](https://github.com/webdoky/content/commit/4c0b485d72b7f247d840504c512f370fd19dfe7f))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/regexp/test (#3614) ([9ce11105](https://github.com/webdoky/content/commit/9ce111056710e331250d093281c465fff458ca4c))
+* **Оновлення перекладу(HTML):** web/html/attributes (#3613) ([36161b5c](https://github.com/webdoky/content/commit/36161b5c4ddadc7c125a1a15e6ac1dd1830e3dc2))
+
+## [2024-11-08 - 2024-11-15]
+
+* **Оновлення перекладу(Glossary):** glossary/boolean/html (#3576) ([7188589d](https://github.com/webdoky/content/commit/7188589d630ab13dcd5cfc07c26d761602c3f794))
+* **Оновлення перекладу(Glossary):** glossary/baseline/typography (#3584) ([55551a70](https://github.com/webdoky/content/commit/55551a7062883aa7b69b7fb4a5b16769ee9c47c3))
+* **Оновлення перекладу(JS):** web/javascript/reference/regular_expressions (#3570) ([f39d3e0b](https://github.com/webdoky/content/commit/f39d3e0bcedc6fe85e6077fce650272407b9edcd))
+* **Оновлення перекладу(CSS):** web/css/css_transitions (#3558) ([92538542](https://github.com/webdoky/content/commit/9253854267d097c89aab62d86f4ecc995967d747))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/match (#3597) ([bcc5cd31](https://github.com/webdoky/content/commit/bcc5cd31c15df2ba568b7223f584c4288fdc66d8))
+* **Оновлення перекладу(HTML):** web/html/element/input/file (#3596) ([e7bc72ed](https://github.com/webdoky/content/commit/e7bc72ed1a675bb06c9d648f252754f811aba91f))
+* **Оновлення перекладу(JS):** web/javascript/reference/statements/import (#3595) ([3a8ad2d0](https://github.com/webdoky/content/commit/3a8ad2d0017c12bd4ddbec7916674f161a4b4124))
+* **Оновлення перекладу(JS):** web/javascript/reference/functions/arrow_functions (#3594) ([7ed7eee1](https://github.com/webdoky/content/commit/7ed7eee1f0edaee70fa5fcb789899a6c4af83c87))
+* **Оновлення перекладу(JS):** web/javascript/reference/template_literals (#3593) ([8a639d16](https://github.com/webdoky/content/commit/8a639d162def783f5b2c1b1190ac7dd4199b6361))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/object/keys (#3592) ([c01dd687](https://github.com/webdoky/content/commit/c01dd687cc183fc47494357cca811306f6edf907))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/map (#3591) ([84f2630a](https://github.com/webdoky/content/commit/84f2630a11061c1c5f74b035ab76a1066e9811b0))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string (#3590) ([abff1c70](https://github.com/webdoky/content/commit/abff1c701f85be0b164dd41d0c8d7c16171deb4e))
+* **Оновлення перекладу(JS):** web/javascript/reference/operators (#3589) ([398f136b](https://github.com/webdoky/content/commit/398f136b1dadfed460e575314e345988dcbfe523))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/promise (#3588) ([7bd7a383](https://github.com/webdoky/content/commit/7bd7a38362e7f635f0c3cb4065fbde72ee97bf37))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/reduce (#3587) ([867c4053](https://github.com/webdoky/content/commit/867c4053b2275688de26b95a200b9c4d28f2ff61))
+* **Оновлення перекладу(HTML):** web/html/element/input (#3586) ([aef7383d](https://github.com/webdoky/content/commit/aef7383dd26b063224af61362475e96bbcc51970))
+* **Оновлення перекладу(CSS):** web/css/display (#3585) ([87857651](https://github.com/webdoky/content/commit/87857651fda3acb2e0dc54fc6c5a4255b1d4d34d))
+* **Оновлення перекладу(glossary):** glossary/snake_case (#3583) ([8c886bb3](https://github.com/webdoky/content/commit/8c886bb39cf6b75fdb22fd2324347d62c7b3ce3e))
+* **Оновлення перекладу(glossary):** glossary/repaint (#3582) ([c68ae3cb](https://github.com/webdoky/content/commit/c68ae3cbf3c5547c94f202c490e6615294b92828))
+* **Оновлення перекладу(glossary):** glossary/kebab_case (#3581) ([a02ff87c](https://github.com/webdoky/content/commit/a02ff87c39606ffc77cd1f600dad96511290a222))
+* **Оновлення перекладу(glossary):** glossary/json_type_representation (#3580) ([261cf9e6](https://github.com/webdoky/content/commit/261cf9e63546ee2f6c24d420b94fe4aee017ff5b))
+* **Оновлення перекладу(glossary):** glossary/internationalization (#3579) ([33da46c0](https://github.com/webdoky/content/commit/33da46c0f987798c566b05422c2b1266c60d5f96))
+* **Оновлення перекладу(glossary):** glossary/block-level_content (#3578) ([5b819ffe](https://github.com/webdoky/content/commit/5b819ffe233aedc359f6e99a7d0538063c0d8b18))
+* **Оновлення перекладу(Glossary):** glossary/camel_case (#3577) ([e1da0b4c](https://github.com/webdoky/content/commit/e1da0b4c03b7bc0a0684dd8ffd8e835b4b76c169))
+* **Оновлення перекладу(glossary):** glossary/baseline (#3575) ([12a7e84b](https://github.com/webdoky/content/commit/12a7e84bd375f1035110c6270aeafc096e26c6e1))
+* **Оновлення перекладу(glossary):** glossary/symbol (#3574) ([1d198578](https://github.com/webdoky/content/commit/1d198578b1324ad4336a38450cca03f42d8dea16))
+* **Оновлення перекладу(glossary):** glossary/accessible_name (#3573) ([bb29a637](https://github.com/webdoky/content/commit/bb29a6371cdddf1db7c42b9aea58bcee93f2b946))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/set/difference (#3572) ([bb639907](https://github.com/webdoky/content/commit/bb639907b2fc3ebe8c356b764e689a3f227433d8))
+* **Оновлення перекладу(JS):** web/javascript/reference/regular_expressions/character_escape (#3571) ([37e55f47](https://github.com/webdoky/content/commit/37e55f474d3246f21a91df28598499660d3271bf))
+* **Оновлення перекладу(JS):** web/javascript/reference (#3568) ([268e82ed](https://github.com/webdoky/content/commit/268e82eddcce244ec3176b8b51312ef83d38a2da))
+* **Оновлення перекладу(JS):** web/javascript/guide/working_with_objects (#3565) ([a7d16ecb](https://github.com/webdoky/content/commit/a7d16ecb2ac4350778b59a6be2548bab2bfc308c))
+* **Оновлення перекладу(HTML):** web/html/element/script/type (#3563) ([2301583f](https://github.com/webdoky/content/commit/2301583ffa7ec82b7fb136863bf5a2ccbb515e33))
+* **Оновлення перекладу(HTML):** web/html/attributes/dirname (#3562) ([aa059d35](https://github.com/webdoky/content/commit/aa059d3536fa979a1808bb880ef8f1caad95e4a8))
+* **Оновлення перекладу(HTML):** web/html/constraint_validation (#3560) ([a767c327](https://github.com/webdoky/content/commit/a767c32716b59eaf43de715b1c6021e2b6d2f02d))
+* **Оновлення перекладу(CSS):** web/css/css_transitions/using_css_transitions (#3559) ([0bc6124f](https://github.com/webdoky/content/commit/0bc6124f3eb8357ad38af440d82e75329b59c82b))
+* **Оновлення перекладу(CSS):** web/css/css_text/wrapping_breaking_text (#3557) ([3e8ac285](https://github.com/webdoky/content/commit/3e8ac2851cab0279dc7d59c1faec556c8a7dc425))
+* **Оновлення перекладу(CSS):** web/css/css_syntax/error_handling (#3556) ([0917a4c0](https://github.com/webdoky/content/commit/0917a4c06738f7b5aa36dbb60718dfeb5ef84fb4))
+* **Оновлення перекладу(CSS):** web/css/css_selectors (#3553) ([96cda5a6](https://github.com/webdoky/content/commit/96cda5a67ee16e409e948bb8139396133beadfdb))
+* **Оновлення перекладу(CSS):** web/css/css_grid_layout (#3551) ([68ad4edc](https://github.com/webdoky/content/commit/68ad4edca8b9ff3bad2aa3c27858821d7ddcbda3))
+* **Оновлення перекладу(CSS):** web/css/css_colors/applying_color (#3548) ([101f6279](https://github.com/webdoky/content/commit/101f627943d9bf1c1f4e1cfe81fb13ba21e330a8))
+* **Оновлення перекладу(CSS):** web/css/css_colors (#3547) ([a570ecf6](https://github.com/webdoky/content/commit/a570ecf6e90b13ddbaccb7b1ecc7cabb1b4e2bed))
+* **Оновлення перекладу(CSS):** web/css/css_backgrounds_and_borders/resizing_background_images (#3546) ([7d811fc8](https://github.com/webdoky/content/commit/7d811fc80b7fd8ce60dfb3babb3a4e0438afbc75))
+* **Оновлення перекладу(CSS):** web/css/css_backgrounds_and_borders (#3545) ([1a27da1e](https://github.com/webdoky/content/commit/1a27da1ef0fad3f4ac2d14fb109aefdc5560c940))
+* **Оновлення перекладу(CSS):** web/css/color_value/light-dark (#3544) ([3445d344](https://github.com/webdoky/content/commit/3445d3449863bd0697942a7b8ffda4fe7784c306))
+* **Оновлення перекладу(CSS):** web/css/@media/prefers-reduced-transparency (#3543) ([d00ee5ac](https://github.com/webdoky/content/commit/d00ee5acdfed34a9fc7e0542422afaa056f1a30b))
+* **Оновлення перекладу(CSS):** web/css/@starting-style (#3539) ([fae20e68](https://github.com/webdoky/content/commit/fae20e68538638e5f7b7ede1ae102c2a8d6f8ba9))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/regexp/test (#3524) ([e857ca14](https://github.com/webdoky/content/commit/e857ca14b2af5bbb65efb9e0f7e655c990481282))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/object/getownpropertynames (#3522) ([e1fbf017](https://github.com/webdoky/content/commit/e1fbf0175fb4acc7d0f9fe156e6681177602abed))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/object/defineproperty (#3521) ([366e44e8](https://github.com/webdoky/content/commit/366e44e8b70787fd4168bb367f52d015063fe10d))
+
+## [2024-11-01 - 2024-11-08]
+
+* **Виправлення:** remove шикування forbid ([9ad2e7f9](https://github.com/webdoky/content/commit/9ad2e7f981d5f4b3562d7e20839b1eac17e82085))
+* **Оновлення перекладу(JS):** web/javascript/reference/statements/import (#3393) ([485f98b1](https://github.com/webdoky/content/commit/485f98b12b6bbb132e6387c2fbc6b0a926e5d2a0))
+* **Переклад(HTML):** web/html/element/output (#2725) ([af9a58f0](https://github.com/webdoky/content/commit/af9a58f07f2396fd4d3b4823a9447fd0f5ef45b8))
+* **Оновлення перекладу(Glossary):** glossary/user_agent (#3538) ([2b3611a7](https://github.com/webdoky/content/commit/2b3611a723342accb4000e6e73357c16c5ee62af))
+* **Оновлення перекладу(glossary):** glossary/first-class_function (#3537) ([6ad2d3d1](https://github.com/webdoky/content/commit/6ad2d3d1c23c8e2eba30438d40700aa6089b5278))
+* **Оновлення перекладу(glossary):** glossary/void_element (#3535) ([c3238560](https://github.com/webdoky/content/commit/c323856067f95169332633bc0b91e8b3ed66b5c5))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/intl/numberformat (#3533) ([5c633110](https://github.com/webdoky/content/commit/5c6331107248c0da5c4f64c5cdb52443fc696114))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/proxy (#3532) ([4a76c178](https://github.com/webdoky/content/commit/4a76c17864ea9613505e0d1711c53757e4686c74))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/tostring (#3531) ([73c78d7e](https://github.com/webdoky/content/commit/73c78d7eb51dee4e36daa5f482adab6e9f99d290))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/substring (#3530) ([264fc2d3](https://github.com/webdoky/content/commit/264fc2d3af85bc952bfdbe4a1fa5da8392901c7c))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/substr (#3528) ([10108668](https://github.com/webdoky/content/commit/101086686d4acf01d1bd5a38671cf3686bd785b1))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/codepointat (#3526) ([51997561](https://github.com/webdoky/content/commit/51997561d66938875e31ffe56563c94ded3040f4))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/at (#3525) ([457d319b](https://github.com/webdoky/content/commit/457d319b9718cad760a34a33bcf057e0cba4889c))
+
 ## [2024-10-25 - 2024-11-01]
 
 * **Переклад(CSS):** web/css/pointer-events (#3383) ([68d295f5](https://github.com/webdoky/content/commit/68d295f51cf22e3fe99accd978e330d728cb1d80))
