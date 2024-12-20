@@ -7,7 +7,7 @@ page-type: guide
 {{jsSidebar("JavaScript Guide")}} {{PreviousNext("Web/JavaScript/Guide/Text_formatting", "Web/JavaScript/Guide/Indexed_collections")}}
 
 Регулярні вирази — це патерни, які застосовуються для пошуку збігів з комбінаціями символів у рядках. У JavaScript регулярні вирази також є об'єктами. Ці патерни використовуються методами об'єкта {{jsxref("RegExp")}}: {{jsxref("RegExp/exec", "exec()")}} і {{jsxref("RegExp/test", "test()")}}, а також методами {{jsxref("String")}}: {{jsxref("String/match", "match()")}}, {{jsxref("String/matchAll", "matchAll()")}}, {{jsxref("String/replace", "replace()")}}, {{jsxref("String/replaceAll", "replaceAll()")}}, {{jsxref("String/search", "search()")}} і {{jsxref("String/split", "split()")}}.
-Цей розділ описує регулярні вирази у JavaScript. Він пропонує стислий огляд кожного елемента синтаксису. Докладне пояснення семантики кожного з ниж читайте довідник [регулярних виразів](/uk/docs/Web/JavaScript/Reference/Regular_expressions).
+Цей розділ описує регулярні вирази у JavaScript. Він пропонує стислий огляд кожного елемента синтаксису. Докладне пояснення семантики кожного з них читайте довідник [регулярних виразів](/uk/docs/Web/JavaScript/Reference/Regular_expressions).
 
 ## Створення регулярного виразу
 
