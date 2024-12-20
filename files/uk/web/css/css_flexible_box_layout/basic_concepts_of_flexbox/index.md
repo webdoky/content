@@ -76,9 +76,30 @@ page-type: guide
 
 Як наслідок – елементи стануть в ряд, використовуючи розмір вмісту як свій розмір за головною віссю. Якщо елементів більше, ніж може вмістити контейнер, то вони будуть переповнювати його, а не перейдуть на наступний ряд. Якщо деякі елементи вищі за інших, то всі елементи будуть розтягнені за всією довжиною поперечної осі.
 
-У живому прикладі нижче видно, як це працює. Спробуйте редагувати елементи або додати елементи, щоб перевірити усталену поведінку флексбокса.
+У живому зразку нижче видно, як це працює. Клацніть "Відтворити", аби відкрити цей приклад на Ігровому майданчику MDN та відредагувати елементи або додати нові, щоб спробувати початкову логіку флексбокса:
 
-{{EmbedGHLiveSample("css-examples/flexbox/basics/the-flex-container.html", '100%', 480)}}
+````html live-sample___flex-container
+```html live-sample___the-flex-container
+<div class="box">
+  <div>Один</div>
+  <div>Два</div>
+  <div>Три <br />має <br />додатковий <br />текст</div>
+</div>
+````
+
+```css live-sample___the-flex-container
+.box > * {
+  border: 2px solid rgb(96 139 168);
+  border-radius: 5px;
+  background-color: rgb(96 139 168 / 0.2);
+}
+.box {
+  border: 2px dotted rgb(96 139 168);
+  display: flex;
+}
+```
+
+{{EmbedLiveSample("the-flex-container")}}
 
 ### Зміна flex-direction
 
@@ -86,9 +107,31 @@ page-type: guide
 
 Якщо змінити значення `flex-direction` на `column`, то головна вісь перемкнеться, і елементи будуть виведені у стовпчик. Якщо задати `column-reverse`, то початок та кінець знову поміняються місцями.
 
-У живому прикладі нижче `flex-direction` має значення `row-reverse`. Спробуйте інші значення: `row`, `column` і `column-reverse`, – і погляньте, що станеться із вмістом.
+У живому зразку нижче `flex-direction` має значення `row-reverse`. Спробуйте інші значення: `row`, `column` і `column-reverse`, – і погляньте, що станеться із вмістом.
 
-{{EmbedGHLiveSample("css-examples/flexbox/basics/flex-direction.html", '100%', 350)}}
+```html live-sample___flex-direction
+<div class="box">
+  <div>Один</div>
+  <div>Два</div>
+  <div>Три</div>
+</div>
+```
+
+```css live-sample___flex-direction
+.box > * {
+  border: 2px solid rgb(96 139 168);
+  border-radius: 5px;
+  background-color: rgb(96 139 168 / 0.2);
+}
+
+.box {
+  border: 2px dotted rgb(96 139 168);
+  display: flex;
+  flex-direction: row-reverse;
+}
+```
+
+{{EmbedLiveSample("flex-direction")}}
 
 ## Багаторядні гнучкі контейнери із flex-wrap
 
@@ -96,7 +139,30 @@ page-type: guide
 
 Щоб ввімкнути переведення рядів, слід додати властивість {{cssxref("flex-wrap")}} зі значенням `wrap`. Після цього, якщо елементи завеликі, аби бути виведеними в одному ряду, вони будуть перенесені на наступний. Живий приклад нижче містить елементи зі заданою шириною, і сумарна ширина елементів завелика для гнучкого контейнера. Оскільки властивість `flex-wrap` має значення `wrap`, то елементи переходять на нові ряди. Якщо встановити значення `nowrap`, котре, до речі, є початковим, то елементи скоротяться, щоб вміститись у контейнері. Вони скоротяться, тому що мають початкові значення флексбокса, серед яких `flex-shrink: 1`, що дає елементам змогу скорочуватись. Використання `nowrap` призвело б до [переповнення](/uk/docs/Learn/CSS/Building_blocks/Overflowing_content), якби елементи не могли скорочуватись, або якби не могли скоротитись настільки, щоб поміститися.
 
-{{EmbedGHLiveSample("css-examples/flexbox/basics/flex-wrap.html", '100%', 400)}}
+```html live-sample___flex-wrap
+<div class="box">
+  <div>Один</div>
+  <div>Два</div>
+  <div>Три</div>
+</div>
+```
+
+```css live-sample___flex-wrap
+.box > * {
+  border: 2px solid rgb(96 139 168);
+  border-radius: 5px;
+  background-color: rgb(96 139 168 / 0.2);
+  width: 200px;
+}
+.box {
+  width: 500px;
+  border: 2px dotted rgb(96 139 168);
+  display: flex;
+  flex-wrap: wrap;
+}
+```
+
+{{EmbedLiveSample("flex-wrap")}}
 
 Довідайтесь більше про перенесення гнучких елементів на новий ряд у настановах [Опанування переведення гнучких елементів на новий ряд](/uk/docs/Web/CSS/CSS_flexible_box_layout/Mastering_wrapping_of_flex_items).
 
@@ -104,9 +170,32 @@ page-type: guide
 
 Можна поєднати властивості `flex-direction` та `flex-wrap` у скороченні {{cssxref("flex-flow")}}.
 
-У живому прикладі нижче спробуйте змінити перше значення на одне з дозволених значень `flex-direction` - `row`, `row-reverse`, `column` чи `column-reverse`, а також змінити друге на `wrap` чи `nowrap`.
+У живому зразку нижче спробуйте змінити перше значення на одне з дозволених значень `flex-direction` - `row`, `row-reverse`, `column` чи `column-reverse`, а також змінити друге на `wrap` чи `nowrap`.
 
-{{EmbedGHLiveSample("css-examples/flexbox/basics/flex-flow.html", '100%', 400)}}
+```html live-sample___flex-flow
+<div class="box">
+  <div>Один</div>
+  <div>Два</div>
+  <div>Три</div>
+</div>
+```
+
+```css live-sample___flex-flow
+.box > * {
+  border: 2px solid rgb(96 139 168);
+  border-radius: 5px;
+  background-color: rgb(96 139 168 / 0.2);
+  width: 200px;
+}
+.box {
+  width: 500px;
+  border: 2px dotted rgb(96 139 168);
+  display: flex;
+  flex-flow: row wrap;
+}
+```
+
+{{EmbedLiveSample("flex-flow")}}
 
 ## Властивості, що застосовуються до гнучких елементів
 
@@ -151,9 +240,39 @@ page-type: guide
 
 Рідко можна побачити використання окремо властивостей `flex-grow`, `flex-shrink` і `flex-basis`; натомість їх поєднують у скорочення {{cssxref("flex")}}. Скорочення `flex` дає змогу встановити три значення у такому порядку: `flex-grow`, `flex-shrink`, `flex-basis`.
 
-Живий приклад нижче дає змогу спробувати різні значення скорочення `flex`; пам'ятайте, що перше значення – `flex-grow`. Коли це значення – додатне, то це означає, що елемент може зростати. Друге значення – `flex-shrink`: із додатним значенням тут елементи можуть скорочуватись, втім, це може відбутись лише за умови, що сума розмірів елементів за головною віссю утворює переповнення. Останнє значення – `flex-basis`; це значення, котре елементи використовують як свій базовий розмір, від котрого відбувається зростання та скорочення.
+Живий зразок нижче дає змогу спробувати різні значення скорочення `flex`; пам'ятайте, що перше значення – `flex-grow`. Коли це значення – додатне, то це означає, що елемент може зростати. Друге значення – `flex-shrink`: із додатним значенням тут елементи можуть скорочуватись, втім, це може відбутись лише за умови, що сума розмірів елементів за головною віссю утворює переповнення. Останнє значення – `flex-basis`; це значення, котре елементи використовують як свій базовий розмір, від котрого відбувається зростання та скорочення.
 
-{{EmbedGHLiveSample("css-examples/flexbox/basics/flex-properties.html", '100%', 510)}}
+```html live-sample___flex-properties
+<div class="box">
+  <div class="one">Один</div>
+  <div class="two">Два</div>
+  <div class="three">Три</div>
+</div>
+```
+
+```css live-sample___flex-properties
+.box > * {
+  border: 2px solid rgb(96 139 168);
+  border-radius: 5px;
+  background-color: rgb(96 139 168 / 0.2);
+}
+.box {
+  border: 2px dotted rgb(96 139 168);
+  display: flex;
+}
+.one {
+  flex: 1 1 auto;
+}
+
+.two {
+  flex: 1 1 auto;
+}
+.three {
+  flex: 1 1 auto;
+}
+```
+
+{{EmbedLiveSample("flex-properties")}}
 
 Також є наперед визначені значення скорочення, що покривають більшість випадків. Їх часто можна побачити у настановах, і в багатьох випадках достатньо буде їх. Наперед визначені значення – наступні:
 
@@ -170,9 +289,38 @@ page-type: guide
 
 Скорочений запис, котрий часто можна побачити у настановах: `flex: 1`, `flex: 2`, і так далі. Це те саме, що `flex: 1 1 0` або, відповідно, `flex: 2 1 0`. Елементи можуть зростати та скорочуватись, маючи `flex-basis` зі значенням `0`.
 
-Спробуйте такі значення скороченого запису у живому прикладі нижче.
+Спробуйте такі значення скороченого запису у живому зразку нижче.
 
-{{EmbedGHLiveSample("css-examples/flexbox/basics/flex-shorthands.html", '100%', 510)}}
+```html live-sample___flex-shorthands
+<div class="box">
+  <div class="one">Один</div>
+  <div class="two">Два</div>
+  <div class="three">Три</div>
+</div>
+```
+
+```css live-sample___flex-shorthands
+.box > * {
+  border: 2px solid rgb(96 139 168);
+  border-radius: 5px;
+  background-color: rgb(96 139 168 / 0.2);
+}
+.box {
+  border: 2px dotted rgb(96 139 168);
+  display: flex;
+}
+.one {
+  flex: 1;
+}
+.two {
+  flex: 1;
+}
+.three {
+  flex: 1;
+}
+```
+
+{{EmbedLiveSample("flex-shorthands")}}
 
 ## Вирівнювання та розподіл вільного простору між елементами
 
@@ -184,7 +332,7 @@ page-type: guide
 
 Початкове значення цієї властивості – `stretch`, і саме тому гнучкі елементи усталено розтягуються до висоти гнучкого контейнера (або ширини, якщо `flex-direction` має значення `column` або `column-reverse`). Така висота може бути продиктована висотою найвищого елемента у контейнері або розміром, заданим на самому контейнері.
 
-Натомість можна задати `align-items` зі значенням `flex-start`, або просто `start`, аби елементи вишикувалися на початку гнучкого контейнера, `flex-end` або просто `end` – щоб вирівняти їх до кінця, або `center` – аби вирівняти їх по центру. Спробуйте це в живому прикладі: я задав гнучкому контейнері висоту, аби ви могли побачити, як елементи можна рухати всередині контейнера. Подивіться, що відбудеться, якщо задати значення align-items:
+Натомість можна задати `align-items` зі значенням `flex-start`, або просто `start`, аби елементи вишикувалися на початку гнучкого контейнера, `flex-end` або просто `end` – щоб вирівняти їх до кінця, або `center` – аби вирівняти їх по центру. Спробуйте це в живому зразку: я задав гнучкому контейнері висоту, аби ви могли побачити, як елементи можна рухати всередині контейнера. Подивіться, що відбудеться, якщо задати значення align-items:
 
 - `stretch`
 - `flex-start`
@@ -195,7 +343,30 @@ page-type: guide
 - `baseline`
 - `last baseline`
 
-{{EmbedGHLiveSample("css-examples/flexbox/basics/align-items.html", '100%', 520)}}
+```html live-sample___align-items
+<div class="box">
+  <div>Один</div>
+  <div>Два</div>
+  <div>Три <br />має <br />додатковий <br />текст</div>
+</div>
+```
+
+```css live-sample___align-items
+.box > * {
+  border: 2px solid rgb(96 139 168);
+  border-radius: 5px;
+  background-color: rgb(96 139 168 / 0.2);
+}
+.box {
+  width: 500px;
+  height: 130px;
+  border: 2px dotted rgb(96 139 168);
+  display: flex;
+  align-items: flex-start;
+}
+```
+
+{{EmbedLiveSample("align-items")}}
 
 Властивість `align-items` задана на гнучкому контейнері та впливає на всі гнучкі елементи. Якщо хочеться вирівняти один гнучкий елемент не так, як інші, можна задати на ньому {{cssxref("align-self")}}.
 
@@ -205,7 +376,7 @@ page-type: guide
 
 Також можна використати значення `space-between`, аби захопити увесь незайнятий після розкладання елементів простір, і поділити його порівну між елементами так, щоб між кожними двома суміжними елементами був однаковий проміжок. Щоб зліва та справа (або, у разі колонок, – згори та знизу) від кожного елемента був однаковий простір, потрібно встановити значення `space-around`. З `space-around` же елементи отримують по половинці простору з обох боків. Іще можна змусити елементи мати однаковий простір навколо себе за допомогою значення `space-evenly`. З `space-evenly` елементи мають цілий однаковий простір з обох кінців.
 
-Спробуйте наступні значення `justify-content` у живому прикладі:
+Спробуйте наступні значення `justify-content` у живому зразку:
 
 - `start`
 - `end`
@@ -220,7 +391,28 @@ page-type: guide
 - `space-evenly`
 - `stretch`
 
-{{EmbedGHLiveSample("css-examples/flexbox/basics/justify-content.html", '100%', 380)}}
+```html live-sample___justify-content
+<div class="box">
+  <div>Один</div>
+  <div>Два</div>
+  <div>Три</div>
+</div>
+```
+
+```css live-sample___justify-content
+.box > * {
+  border: 2px solid rgb(96 139 168);
+  border-radius: 5px;
+  background-color: rgb(96 139 168 / 0.2);
+}
+.box {
+  border: 2px dotted rgb(96 139 168);
+  display: flex;
+  justify-content: flex-start;
+}
+```
+
+{{EmbedLiveSample("justify-content")}}
 
 Стаття [Вирівнювання елементів у гнучкому контейнері](/uk/docs/Web/CSS/CSS_flexible_box_layout/Aligning_items_in_a_flex_container) більше заглиблюється в ці властивості, аби отримати краще розуміння їх роботи. Втім, у більшості випадків будуть корисними й наведені вище прості приклади.
 
