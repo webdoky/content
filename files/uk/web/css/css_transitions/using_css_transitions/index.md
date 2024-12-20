@@ -300,28 +300,55 @@ function showHide() {
 
 Переходи – чудовий інструмент, аби зробити речі куди плавнішими на вигляд, без потреби будь-що робити з функціональністю JavaScript. Про це – наступний приклад.
 
-```html
+```html live-sample___js-transitions
 <p>Клацніть будь-де, аби перемістити м'яч</p>
 <div id="foo" class="ball"></div>
+<script>
+  // Змусити м'яч переміститись на певну позицію:
+  const f = document.getElementById("foo");
+  document.addEventListener(
+    "click",
+    (ev) => {
+      f.style.transform = `translateY(${ev.clientY - 25}px)`;
+      f.style.transform += `translateX(${ev.clientX - 25}px)`;
+    },
+    false,
+  );
+</script>
 ```
 
-За допомогою JavaScript можна реалізувати ефект руху м'яча до певного положення:
+За допомогою CSS можна згладити стилі, що застосовуються через JavaScript. Додайте перехід до елемента, і будь-яка зміна буде відбуватися плавно:
 
-```js
-const f = document.getElementById("foo");
-document.addEventListener(
-  "click",
-  (ev) => {
-    f.style.transform = `translateY(${ev.clientY - 25}px)`;
-    f.style.transform += `translateX(${ev.clientX - 25}px)`;
-  },
-  false,
-);
+```css hidden live-sample___js-transitions
+body {
+  background-color: #fff;
+  color: #333;
+  font:
+    1.2em / 1.5 Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  margin-top: 3em;
+}
+
+main {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 660px;
+  height: 400px;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
 ```
 
-За допомогою CSS такий рух можна без зайвих зусиль зробити плавним. Слід додати до елемента перехід, і будь-які зміни відбудуться плавно:
-
-```css
+```css live-sample___js-transitions
 .ball {
   border-radius: 25px;
   width: 50px;
@@ -334,7 +361,7 @@ document.addEventListener(
 }
 ```
 
-{{EmbedGHLiveSample("css-examples/transitions/js-transitions.html", '100%', 500)}}
+{{EmbedLiveSample("js-transitions", "", "400px")}}
 
 ### Відстеження початку й завершення переходу
 
