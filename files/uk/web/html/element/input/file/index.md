@@ -54,7 +54,7 @@ browser-compat: html.elements.input.type_file
 
 Булів атрибут `webkitdirectory`, коли присутній, вказує, що для вибору користувачем в інтерфейсі вибору файлу повинні бути доступні лише директорії. Дивіться {{domxref("HTMLInputElement.webkitdirectory")}} для отримання подробиць та прикладів.
 
-Бувши спершу реалізованим лише в браузерах на основі WebKit, `webkitdirectory` також працює в Microsoft Edge, а також Firefox 50 і новішим. Втім, навіть попри його відносно широку підтримку, він все ж є нестандартним і не повинен використовуватись, окрім випадків, коли немає інших варіантів.
+Бувши спершу реалізованим лише в браузерах на основі WebKit, `webkitdirectory` також працює в Firefox. Втім, навіть попри його відносно широку підтримку, він все ж є нестандартним і не повинен використовуватись, окрім випадків, коли немає інших варіантів.
 
 ## Унікальні вказівки типу файлу
 
@@ -123,9 +123,6 @@ This produces the following output:
   - : [MIME-тип](/uk/docs/Web/HTTP/MIME_types) файлу.
 - `webkitRelativePath` (відносний шлях WebKit) {{non-standard_inline}}
   - : Рядок, що представляє шлях до файлу відносно базової директорії, обраної при виборі директорії (тобто в інтерфейсі вибору `file`, що має атрибут [`webkitdirectory`](#webkitdirectory). _Ця властивість є нестандартною, її слід використовувати з обережністю._
-
-> [!NOTE]
-> У всіх сучасних браузерах значення `HTMLInputElement.files` можна як отримати, так і встановити; останнім з браузерів цю функціональність додав Firefox у версії 57 (дивіться [ваду Firefox 1384030](https://bugzil.la/1384030)).
 
 ### Обмеження прийнятних типів файлу
 
@@ -437,7 +434,7 @@ button.addEventListener("click", (e) => {
     <tr>
       <td><strong>Події</strong></td>
       <td>
-        {{domxref("HTMLElement/change_event", "change")}}, {{domxref("Element/input_event", "input")}} і {{domxref("HTMLElement/cancel_event", "cancel")}}
+        {{domxref("HTMLElement/change_event", "change")}}, {{domxref("Element/input_event", "input")}} і {{domxref("HTMLInputElement/cancel_event", "cancel")}}
       </td>
     </tr>
     <tr>

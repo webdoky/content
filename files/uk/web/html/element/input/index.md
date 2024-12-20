@@ -626,16 +626,9 @@ browser-compat: html.elements.input
   </thead>
   <tbody>
     <tr>
-      <td><a href="#autocorrect"><code>autocorrect</code></a></td>
-      <td>
-        Рядок, котрий вказує, чи є автокорекція <code>on</code> (ввімкнена) або <code>off</code> (вимкнена). <strong>Лише Safari.</strong>
-      </td>
-    </tr>
-    <tr>
       <td><a href="#incremental"><code>incremental</code></a></td>
       <td>
-        Чи слід посилати повторювані події {{domxref("HTMLInputElement/search_event", "search")}},
-        щоб дати змогу оновлювати результати пошуку в реальному часі, поки користувач продовжує редагування значення поля.
+        Чи слід посилати повторювані події {{domxref("HTMLInputElement/search_event", "search")}}, щоб дати змогу оновлювати результати пошуку в реальному часі, поки користувач продовжує редагування значення поля.
         <strong>Лише WebKit і Blink (Safari, Chrome, Opera тощо).</strong>
       </td>
     </tr>
@@ -667,15 +660,6 @@ browser-compat: html.elements.input
     </tr>
   </tbody>
 </table>
-
-- `autocorrect` {{non-standard_inline}} (автокоригування)
-
-  - : (Лише Safari). Рядок, котрий вказує, чи вмикати автоматичне коригування, поки користувач редагує поле. Дозволені значення:
-
-    - `on`
-      - : Ввімкнути автоматичне коригування хибодруків, а також обробку текстових замін, якщо вони налаштовані.
-    - `off`
-      - : Вимкнути автоматичне коригування та текстові заміни.
 
 - `incremental` {{non-standard_inline}} (інкрементальний)
 

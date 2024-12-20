@@ -1,5 +1,5 @@
 ---
-title: "<div>: елемент поділу вмісту"
+title: <div> – елемент поділу вмісту
 slug: Web/HTML/Element/div
 page-type: html-element
 browser-compat: html.elements.div
@@ -30,7 +30,7 @@ browser-compat: html.elements.div
 
 ## Приклади
 
-### Простий приклад
+### Базовий приклад
 
 ```html
 <div>
@@ -43,7 +43,7 @@ browser-compat: html.elements.div
 
 #### Результат
 
-{{EmbedLiveSample("prostyi-pryklad", 650, 60)}}
+{{EmbedLiveSample("bazovyi-pryklad", 650, 60)}}
 
 ### Стилізований приклад
 

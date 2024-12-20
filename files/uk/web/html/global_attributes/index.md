@@ -24,9 +24,10 @@ browser-compat: html.global_attributes
 - [`anchor`](/uk/docs/Web/HTML/Global_attributes/anchor) {{non-standard_inline}}
   - : Пов'язує позиційований елемент з якірним елементом. Значення атрибута – це значення [`id`](/uk/docs/Web/HTML/Global_attributes/id) елемента, до якого прив'язаний позиційований елемент. Цей елемент потім може бути позиційований [за допомогою якірного позиціювання CSS](/uk/docs/Web/CSS/CSS_anchor_positioning/Using).
 - [`autocapitalize`](/uk/docs/Web/HTML/Global_attributes/autocapitalize)
-
   - : Контролює те, чи додаються великі літери до тексту, введеного у поля вводу, а також, якщо так, то яким чином.
-
+- [`autocorrect`](/uk/docs/Web/HTML/Global_attributes/autocorrect)
+  - : Контролює те, чи виправляється введений текст автоматично щодо помилок правопису.
+    Може застосовуватися до елементів, що містять текст, який можна редагувати, окрім елементів {{HTMLElement("input")}} з атрибутом: [`type="password"`](/uk/docs/Web/HTML/Element/input/password), [`type="email"`](/uk/docs/Web/HTML/Element/input/email), or [`type="url"`](/uk/docs/Web/HTML/Element/input/url).
 - [`autofocus`](/uk/docs/Web/HTML/Global_attributes/autofocus)
   - : Вказує, що елемент повинен отримати фокус при завантаженні сторінки, або щойно {{HTMLElement("dialog")}}, частиною якого є елемент, був показаний. Цей атрибут – булів, початково – хибний.
 - [`class`](/uk/docs/Web/HTML/Global_attributes/class)

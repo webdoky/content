@@ -214,7 +214,7 @@ browser-compat: html.elements.iframe
 
 ## Приклади
 
-### Простий \<iframe>
+### Базовий \<iframe>
 
 Цей приклад вбудовує сторінку <https://example.org> в супутній фрейм. Це поширений випадок для використання супутніх фреймів: вбудовування вмісту з іншого сайту. Наприклад, як у самому живому зразку нижче, так і в прикладі ["спробуйте його в дії"](#sprobuite-yoho-v-dii) нагорі, `<iframe>` вбудовує вміст з іншого сайту WebDoky.
 
@@ -231,7 +231,7 @@ browser-compat: html.elements.iframe
 
 #### Результат
 
-{{EmbedLiveSample('prostyi-iframe', 640,400)}}
+{{EmbedLiveSample('bazovyi-iframe', 640,400)}}
 
 ### Вбудовування в \<iframe> вихідного коду
 
