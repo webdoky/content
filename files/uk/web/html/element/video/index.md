@@ -287,7 +287,7 @@ browser-compat: html.elements.video
 - За допомогою елемента `<video>` можна відтворювати аудіо. Це може бути корисним, якщо, наприклад, треба відтворювати аудіо вкупі з розшифровкою [WebVTT](/uk/docs/Web/API/WebVTT_API), оскільки елемент {{HTMLElement("audio")}} не дозволяє субтитрів WebVTT.
 - Щоб перевірити запасний вміст у браузерах, що підтримують елемент, можна замінити `<video>` вигаданим елементом, наприклад, `<notavideo>`.
 
-Добрим загальним джерелом інформації про використання HTML `<video>` є підручник для початківців [Відео й аудіо вміст](/uk/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content).
+Добрим загальним джерелом інформації про використання HTML `<video>` є підручник для початківців [Відео й аудіо HTML](/uk/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio).
 
 ### Стилізація за допомогою CSS
 
@@ -529,6 +529,6 @@ AddType video/webm .webm
 
 - Позиціонування та розмір картинки всередині її рамок: {{cssxref("object-position")}} і {{cssxref("object-fit")}}
 - {{htmlelement("audio")}}
-- [Використання аудіо й відео HTML](/uk/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content)
+- [Відео й аудіо HTML](/uk/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio)
 - [Взаємодія з відео за допомогою полотна](/uk/docs/Web/API/Canvas_API/Manipulating_video_using_canvas)
 - [Налаштування серверів для мультимедійних даних Ogg](/uk/docs/Web/Media/Formats/Configuring_servers_for_Ogg_media)
