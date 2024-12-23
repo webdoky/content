@@ -52,7 +52,7 @@ browser-compat: html.elements.area
 
     - `no-referrer`: Заголовок {{HTTPHeader("Referer")}} не буде надіслано.
     - `no-referrer-when-downgrade`: Заголовок {{HTTPHeader("Referer")}} не буде надіслано до {{Glossary("origin", "походжень")}} без {{Glossary("TLS")}} ({{Glossary("HTTPS")}}).
-    - `origin`: Надісланий посилач буде обмежений до походження сторінки-посилача: її [схеми](/uk/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL), {{Glossary("host", "хоста")}} та {{Glossary("port", "порту")}}.
+    - `origin`: Надісланий посилач буде обмежений до походження сторінки-посилача: її [схеми](/uk/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_URL), {{Glossary("host", "хоста")}} та {{Glossary("port", "порту")}}.
     - `origin-when-cross-origin`: Посилач, надісланий іншим походженням, буде обмежений схемою, хостом і портом. Переходи в межах того ж самого походження включатимуть в посилач увесь шлях.
     - `same-origin`: Посилач буде надісланий в межах {{Glossary("Same-origin policy", "того самого походження")}}, а запити до інших походжень не міститимуть інформації про посилача.
     - `strict-origin`: Надсилати походження документа як посилача, коли рівень безпеки протоколу залишається таким самим (HTTPS→HTTPS), але не надсилати його менш безпечному призначенню (HTTPS→HTTP).
