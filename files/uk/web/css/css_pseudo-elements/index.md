@@ -48,11 +48,11 @@ spec-urls: https://drafts.csswg.org/css-pseudo/
 
   - : Алфавітний список псевдоелементів, визначених усіма специфікаціями CSS і WebVTT.
 
-- [Цеглинки: Псевдокласи та псевдоелементи](/uk/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements)
+- [Навчання – Псевдокласи та псевдоелементи](/uk/docs/Learn_web_development/Core/Styling_basics/Pseudo_classes_and_elements)
 
   - : Частина розділу Цеглинок CSS щодо селекторів. Ця стаття описує те, чим є псевдоелемент, і те, як він може бути поєднаний з псевдокласами та вживатися для породження вмісту за допомогою псевдоелементів `::before` і `::after`.
 
-- [Як створювати круті рамки за допомогою псевдоелементів](/uk/docs/Learn/CSS/Howto/Create_fancy_boxes#psevdoelementy)
+- [Як створювати круті рамки за допомогою псевдоелементів](/uk/docs/Learn_web_development/Howto/Solve_CSS_problems/Create_fancy_boxes#psevdoelementy)
 
   - : Приклад оформлення породженого вмісту за допомогою псевдоелементів `::before` і `::after` заради візуальних ефектів.
 
