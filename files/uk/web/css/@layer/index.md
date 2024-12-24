@@ -214,6 +214,6 @@ p {
 - [`!important`](/uk/docs/Web/CSS/important)
 - [`revert-layer`](/uk/docs/Web/CSS/revert-layer)
 - [Знайомство з Каскадом CSS](/uk/docs/Web/CSS/Cascade)
-- [Каскад, специфічність і успадкування](/uk/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance)
-- [Каскадні шари](/uk/docs/Learn/CSS/Building_blocks/Cascade_layers)
+- [Навчання – Обробка конфліктів](/uk/docs/Learn_web_development/Core/Styling_basics/Handling_conflicts)
+- [Навчання – Каскадні шари](/uk/docs/Learn_web_development/Core/Styling_basics/Cascade_layers)
 - [Майбутнє CSS – каскадні шари](https://www.bram.us/2021/09/15/the-future-of-css-cascade-layers-css-at-layer/) на bram.us (2021)
