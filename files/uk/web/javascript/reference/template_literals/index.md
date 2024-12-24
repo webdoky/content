@@ -84,7 +84,7 @@ console.log(`рядок тексту лінія 1 \
 
 ### Інтерполяція рядків
 
-За відсутності шаблонних літералів, коли є потреба скомбінувати вивід виразу із рядками, знадобилося б [зчепити їх докупи](/uk/docs/Learn/JavaScript/First_steps/Strings#ziednannia-za-dopomohoiu) за допомогою [оператора додавання](/uk/docs/Web/JavaScript/Reference/Operators/Addition) `+`:
+За відсутності шаблонних літералів, коли є потреба скомбінувати вивід виразу із рядками, знадобилося б [зчепити їх докупи](/uk/docs/Learn_web_development/Core/Scripting#zcheplennia-za-dopomohoiu) за допомогою [оператора додавання](/uk/docs/Web/JavaScript/Reference/Operators/Addition) `+`:
 
 ```js
 const a = 5;
