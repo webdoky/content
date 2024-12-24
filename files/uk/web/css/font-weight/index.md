@@ -267,5 +267,5 @@ span {
 
 - {{cssxref("font-family")}}
 - {{cssxref("font-style")}}
-- [Основи оформлення тексту й шрифту](/uk/docs/Learn/CSS/Styling_text/Fundamentals)
+- [Навчання – Основи оформлення тексту й шрифту](/uk/docs/Learn_web_development/Core/Text_styling/Fundamentals)
 - Модуль [Шрифтів CSS](/uk/docs/Web/CSS/CSS_fonts)
