@@ -1,5 +1,5 @@
 ---
-title: "<iframe>: Елемент супутнього фрейму"
+title: <iframe> – Елемент супутнього фрейму
 slug: Web/HTML/Element/iframe
 page-type: html-element
 browser-compat: html.elements.iframe
@@ -84,7 +84,7 @@ browser-compat: html.elements.iframe
     - `no-referrer-when-downgrade`
       - : Заголовок {{HTTPHeader("Referer")}} не буде надісланий {{Glossary("origin", "походженням")}}, що не мають {{Glossary("TLS")}} ({{Glossary("HTTPS")}}).
     - `origin`
-      - : Надісланий посилач буде обмежений походженням сторінки, що звертається: її [схемою](/uk/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL), {{Glossary("host", "хостом")}} і {{Glossary("port", "портом")}}.
+      - : Надісланий посилач буде обмежений походженням сторінки, що звертається: її [схемою](/uk/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_URL), {{Glossary("host", "хостом")}} і {{Glossary("port", "портом")}}.
     - `origin-when-cross-origin`
       - : Посилач, надісланий до інших походжень, буде обмежений схемою, хостом і портом. Переходи в межах того самого походження все ж включатимуть повний шлях.
     - `same-origin`
