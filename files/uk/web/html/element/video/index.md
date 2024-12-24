@@ -32,7 +32,7 @@ browser-compat: html.elements.video
   - : Якщо присутній цей атрибут, то браузер запропонує користувачеві контрольні засоби для керування відтворенням відео, в тому числі гучністю, перемоткою та паузою-відновленням відтворення.
 - `controlslist`
 
-  - : Атрибут [`controlslist` (англ.)](https://wicg.github.io/controls-list/explainer.html), бувши вказаним, допомагає браузеру обрати, які контрольні елементи показати на елементі `video`, коли браузер показує власний набір контрольних елементів (тобто коли вказаний атрибут `controls`).
+  - : Атрибут [`controlslist`](https://wicg.github.io/controls-list/explainer.html), бувши вказаним, допомагає браузеру обрати, які контрольні елементи показати на елементі `video`, коли браузер показує власний набір контрольних елементів (тобто коли вказаний атрибут `controls`).
 
     Дозволені значення: `nodownload`, `nofullscreen` і `noremoteplayback`.
 
@@ -55,10 +55,10 @@ browser-compat: html.elements.video
 
   - : Булів атрибут, що використовується для вимкнення можливості віддаленого відтворення на пристроях, що під'єднані за допомогою провідних (HDMI, DVI тощо) та безпровідних технологій (Miracast, Chromecast, DLNA, AirPlay тощо).
 
-    У Safari як запасний варіант можна використати [`x-webkit-airplay="deny"` (англ.)](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/AirPlayGuide/OptingInorOutofAirPlay/OptingInorOutofAirPlay.html).
+    У Safari як запасний варіант можна використати [`x-webkit-airplay="deny"`](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/AirPlayGuide/OptingInorOutofAirPlay/OptingInorOutofAirPlay.html).
 
 - `height`
-  - : Висота області відтворення відео, задана в [пікселях CSS (англ.)](https://drafts.csswg.org/css-values/#px) (приймаються лише абсолютні значення; [жодних відсотків (англ.)](https://html.spec.whatwg.org/multipage/embedded-content.html#dimension-attributes)).
+  - : Висота області відтворення відео, задана в [пікселях CSS](https://drafts.csswg.org/css-values/#px) (приймаються лише абсолютні значення; [жодних відсотків](https://html.spec.whatwg.org/multipage/embedded-content.html#dimension-attributes)).
 - `loop`
   - : Булів атрибут; коли вказаний, браузер автоматично перемотуватиме на початок після досягнення кінця відео.
 - `muted`
@@ -86,7 +86,7 @@ browser-compat: html.elements.video
 - `src`
   - : URL відео, що має бути вбудоване. Цей атрибут необов'язковий; натомість для вказівки, яке відео вбудовувати, можна використати елемент {{HTMLElement("source")}} всередині блока `<video>`.
 - `width`
-  - : Ширина області відтворення відео, задана в [пікселях CSS (англ.)](https://drafts.csswg.org/css-values/#px) (приймаються лише абсолютні значення; [жодних відсотків (англ.)](https://html.spec.whatwg.org/multipage/embedded-content.html#dimension-attributes)).
+  - : Ширина області відтворення відео, задана в [пікселях CSS](https://drafts.csswg.org/css-values/#px) (приймаються лише абсолютні значення; [жодних відсотків](https://html.spec.whatwg.org/multipage/embedded-content.html#dimension-attributes)).
 
 ## Події
 
@@ -287,7 +287,7 @@ browser-compat: html.elements.video
 - За допомогою елемента `<video>` можна відтворювати аудіо. Це може бути корисним, якщо, наприклад, треба відтворювати аудіо вкупі з розшифровкою [WebVTT](/uk/docs/Web/API/WebVTT_API), оскільки елемент {{HTMLElement("audio")}} не дозволяє субтитрів WebVTT.
 - Щоб перевірити запасний вміст у браузерах, що підтримують елемент, можна замінити `<video>` вигаданим елементом, наприклад, `<notavideo>`.
 
-Добрим загальним джерелом інформації про використання HTML `<video>` є підручник для початківців [Відео й аудіо вміст](/uk/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content).
+Добрим загальним джерелом інформації про використання HTML `<video>` є підручник для початківців [Відео й аудіо HTML](/uk/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio).
 
 ### Стилізація за допомогою CSS
 
@@ -399,7 +399,7 @@ AddType video/webm .webm
 #### HTML
 
 ```html
-<!-- Простий приклад відео -->
+<!-- Базовий приклад відео -->
 <!-- 'Big Buck Bunny' ліцензовано Blender foundation під CC 3.0. Розміщено на archive.org -->
 <!-- Анонс із peach.blender.org -->
 <video
@@ -529,6 +529,6 @@ AddType video/webm .webm
 
 - Позиціонування та розмір картинки всередині її рамок: {{cssxref("object-position")}} і {{cssxref("object-fit")}}
 - {{htmlelement("audio")}}
-- [Використання аудіо й відео HTML](/uk/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content)
+- [Відео й аудіо HTML](/uk/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio)
 - [Взаємодія з відео за допомогою полотна](/uk/docs/Web/API/Canvas_API/Manipulating_video_using_canvas)
-- [Налаштування серверів для мультимедійних даних Ogg](/uk/docs/Web/HTTP/Configuring_servers_for_Ogg_media)
+- [Налаштування серверів для мультимедійних даних Ogg](/uk/docs/Web/Media/Formats/Configuring_servers_for_Ogg_media)

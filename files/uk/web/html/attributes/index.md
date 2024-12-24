@@ -35,7 +35,7 @@ page-type: landing-page
       </td>
       <td>{{HTMLElement("form")}}</td>
       <td>
-      Список кодувань, що підтримуються.
+      Набір символів, який, якщо заданий, повинен бути <code>"UTF-8"</code>.
       </td>
     </tr>
     <tr>

@@ -87,7 +87,7 @@ browser-compat: html.elements.input.type_tel
 | -------------------------------------------------------- | --------------------------------------------------------------- |
 | ![Знімок екрана Firefox для Android](fx-android-tel.png) | ![Знімок екрана Firefox для iOS](iphone-tel-keyboard-50pct.png) |
 
-### Просте телефонне поле
+### Базове телефонне поле
 
 У своїй найпростішій формі телефонне поле може бути реалізовано так:
 
@@ -96,7 +96,7 @@ browser-compat: html.elements.input.type_tel
 <input id="telNo" name="telNo" type="tel" />
 ```
 
-{{EmbedLiveSample('proste-telefonne-pole', 600, 40)}}
+{{EmbedLiveSample('bazove-telefonne-pole', 600, 40)}}
 
 Тут не відбувається нічого магічного. При поданні на сервер дані поля вище могли б бути представлені, наприклад, як `telNo=+12125553151`.
 
@@ -301,7 +301,7 @@ input:valid + span::after {
 
 ## Приклади
 
-У цьому прикладі виводиться простий інтерфейс з елементом {{htmlelement("select")}}, що дає користувачам змогу вибрати те, в якій вони країні перебувають, і набір з елементів `<input type="tel">`, що дають змогу вводити окремі частини номерів телефонів; немає жодних перешкод щодо того, щоб мати декілька полів `tel`.
+У цьому прикладі виводиться елемент {{htmlelement("select")}}, що дає користувачам змогу вибрати те, в якій вони країні перебувають, і набір з елементів `<input type="tel">`, що дають змогу вводити окремі частини номерів телефонів; немає жодних перешкод щодо того, щоб мати декілька полів `tel`.
 
 Кожне поле має атрибути [`placeholder`](/uk/docs/Web/HTML/Element/input#placeholder-zapovniuvach), для виведення для зрячих користувачів підказку щодо того, що в таке поле вводити, [`pattern`](/uk/docs/Web/HTML/Element/input#pattern-patern) – щоб змушувати вводити як відповідну частину конкретну кількість символів, і атрибут [`aria-label`](/uk/docs/Web/Accessibility/ARIA/Attributes/aria-label) – щоб вміщати підказку про те, що вводити, котра буде озвучена користувачам читачів з екрана.
 
@@ -357,7 +357,7 @@ input:valid + span::after {
 </form>
 ```
 
-JavaScript – відносно простий: він містить обробник подій {{domxref("HTMLElement.change_event", "onchange")}}, котрий, коли змінюється значення `<select>`, оновлює `pattern`, `placeholder` і `aria-label` елемента `<input>`, щоб відповідати форматові телефонних номерів для відповідної країни чи території.
+JavaScript містить обробник подій {{domxref("HTMLElement.change_event", "onchange")}}, котрий, коли змінюється значення `<select>`, оновлює `pattern`, `placeholder` і `aria-label` елемента `<input>`, щоб відповідати форматові телефонних номерів для відповідної країни чи території.
 
 ```js
 const selectElem = document.querySelector("select");

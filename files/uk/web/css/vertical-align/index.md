@@ -11,7 +11,7 @@ browser-compat: css.properties.vertical-align
 
 {{EmbedInteractiveExample("pages/css/vertical-align.html")}}
 
-Властивість vertical-align може застосовуватися у двох контекстах:
+Властивість `vertical-align` може застосовуватися у двох контекстах:
 
 - Для вертикального шикування рамки елемента рядкового рівня всередині лінійної рамки, що його вміщає. Наприклад, це можна застосувати для [вертикального розташування зображення в рядку тексту](#vertykalne-shykuvannia-v-riadkovykh-ramkakh).
 - Для вертикального шикування [вмісту в комірці таблиці](#vertykalne-shykuvannia-u-komirtsi-tablytsi).

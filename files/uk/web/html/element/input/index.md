@@ -857,7 +857,7 @@ input:checked + label {
 
 ### Селектори атрибутів
 
-Можна цілитись на різноманітні контрольні елементи на основі їх типу [`type`](#type-typ) за допомогою [селекторів атрибутів](/uk/docs/Learn/CSS/Building_blocks/Selectors/Attribute_selectors). Селектори атрибутів CSS вказують на елементи, спираючись або лиш на присутність атрибута, або на наявність атрибута з певним значенням.
+Можна цілитись на різноманітні контрольні елементи на основі їх типу [`type`](#type-typ) за допомогою [селекторів атрибутів](/uk/docs/Learn_web_development/Core/Styling_basics/Attribute_selectors). Селектори атрибутів CSS вказують на елементи, спираючись або лиш на присутність атрибута, або на наявність атрибута з певним значенням.
 
 ```css
 /* відповідає полю введення пароля */
@@ -938,11 +938,10 @@ input.custom {
 
 Також дивіться:
 
-- [Стилізація форм HTML](/uk/docs/Learn/Forms/Styling_web_forms)
-- [Розширена стилізація для форм HTML](/uk/docs/Learn/Forms/Advanced_form_styling) і
-- [таблиця сумісності властивостей CSS](/uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls).
+- [Стилізація форм HTML](/uk/docs/Learn_web_development/Extensions/Forms/Styling_web_forms)
+- [Розширена стилізація для форм HTML](/uk/docs/Learn_web_development/Extensions/Forms/Advanced_form_styling) і
 
-## Додаткова функціональність
+## Додаткові можливості
 
 ### Підписи
 
@@ -1116,7 +1115,7 @@ function validate(input) {
 
 #### Приклад особливої помилки валідації
 
-Якщо необхідно показати особливе повідомлення помилки, коли поле провалює валідацію, слід використовувати [API валідації обмежень](/uk/docs/Learn/Forms/Form_validation#validuvannia-form-zasobamy-javascript), доступну на елементі `<input>` (та споріднених до нього). Розберімо наступну форму:
+Якщо необхідно показати особливе повідомлення помилки, коли поле провалює валідацію, слід використовувати [API валідації обмежень](/uk/docs/Learn_web_development/Extensions/Forms/Form_validation#validuvannia-form-zasobamy-javascript), доступну на елементі `<input>` (та споріднених до нього). Розберімо наступну форму:
 
 ```html
 <form>
@@ -1393,14 +1392,13 @@ Firefox використовує наступну евристику для ви
 ## Дивіться також
 
 - [Валідація обмежень форми](/uk/docs/Web/HTML/Constraint_validation)
-- [Ваша перша форма HTML](/uk/docs/Learn/Forms/Your_first_form)
-- [Як упорядковувати форму HTML](/uk/docs/Learn/Forms/How_to_structure_a_web_form)
-- [Нативні віджети форми](/uk/docs/Learn/Forms/Basic_native_form_controls)
-- [Надсилання даних форми](/uk/docs/Learn/Forms/Sending_and_retrieving_form_data)
-- [Валідація даних форми](/uk/docs/Learn/Forms/Form_validation)
-- [Як будувати власні віджети форми](/uk/docs/Learn/Forms/How_to_build_custom_form_controls)
-- [Форми HTML у застарілих браузерах](/uk/docs/Learn/Forms/HTML_forms_in_legacy_browsers)
-- [Стилізація форм HTML](/uk/docs/Learn/Forms/Styling_web_forms)
-- [Розширена стилізація для форм HTML](/uk/docs/Learn/Forms/Advanced_form_styling)
-- [Таблиця сумісності властивостей CSS](/uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls)
+- [Ваша перша форма HTML](/uk/docs/Learn_web_development/Extensions/Forms/Your_first_form)
+- [Як структурувати форму HTML](/uk/docs/Learn_web_development/Extensions/Forms/How_to_structure_a_web_form)
+- [Нативні віджети форм](/uk/docs/Learn_web_development/Extensions/Forms/Basic_native_form_controls)
+- [Надсилання даних форми](/uk/docs/Learn_web_development/Extensions/Forms/Sending_and_retrieving_form_data)
+- [Валідація даних форми](/uk/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [Як створювати кастомні віджети форми](/uk/docs/Learn_web_development/Extensions/Forms/How_to_build_custom_form_controls)
+- [Форми HTML у історичних браузерах](/uk/docs/Learn_web_development/Extensions/Forms/HTML_forms_in_legacy_browsers)
+- [Стилізація форм HTML](/uk/docs/Learn_web_development/Extensions/Forms/Styling_web_forms)
+- [Розширена стилізація для форм HTML](/uk/docs/Learn_web_development/Extensions/Forms/Advanced_form_styling)
 - [Створення вертикальних формових елементів](/uk/docs/Web/CSS/CSS_writing_modes/Vertical_controls)
