@@ -205,7 +205,7 @@ page-type: guide
 - `align-content: space-around`
 - `align-content: space-evenly`
 - `align-content: stretch`
-- `align-content: normal` (behaves as `stretch`)
+- `align-content: normal` (працює як `stretch`)
 - `align-content: baseline`
 - `align-content: first baseline`
 - `align-content: last baseline`
