@@ -48,7 +48,6 @@ spec-urls:
   - [`oklab()`](/uk/docs/Web/CSS/color_value/oklab)
   - [`oklch()`](/uk/docs/Web/CSS/color_value/oklch)
   - [`color()`](/uk/docs/Web/CSS/color_value/color)
-- [`color-contrast()`](/uk/docs/Web/CSS/color_value/color-contrast) {{experimental_inline}}
 - [`color-mix()`](/uk/docs/Web/CSS/color_value/color-mix)
 - [`device-cmyk()`](/uk/docs/Web/CSS/color_value/device-cmyk)
 - {{CSSXref("color_value/light-dark", "light-dark()")}}

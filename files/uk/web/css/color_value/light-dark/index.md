@@ -46,9 +46,9 @@ color: light-dark(var(--light), var(--dark));
 - `dark-color`
   - : Значення {{CSSXref("&lt;color&gt;")}}, яке буде задано для темної {{CSSXref("color-scheme")}}.
 
-### Формальний синтаксис
+## Формальний синтаксис
 
-{{csssyntax}}
+{{CSSSyntax}}
 
 ## Приклад
 

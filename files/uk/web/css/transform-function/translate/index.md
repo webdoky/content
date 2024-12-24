@@ -72,11 +72,9 @@ transform: translate(30%, 50%);
    </tbody>
 </table>
 
-### Формальний синтаксис
+## Формальний синтаксис
 
-```plain
-translate({{cssxref("&lt;length-percentage&gt;")}}, {{cssxref("&lt;length-percentage&gt;")}}?)
-```
+{{CSSSyntax}}
 
 ## Приклади
 

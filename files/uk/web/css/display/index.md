@@ -290,7 +290,7 @@ display: unset;
 
 ### display: none
 
-Використання `display` значення `none` на елементі прибере його із [дерева доступності](/uk/docs/Learn/Accessibility/What_is_accessibility#api-dostupnosti). Це призведе до того, що елемент та його нащадки більше не будуть оголошені технологією зчитування з екрана.
+Використання `display` значення `none` на елементі прибере його із [дерева доступності](/uk/docs/Learn_web_development/Core/Accessibility/What_is_accessibility#api-dostupnosti). Це призведе до того, що елемент та його нащадки більше не будуть оголошені технологією зчитування з екрана.
 
 Якщо потрібно візуально приховати елемент, більш доступною альтернативою є використання [комбінації властивостей](https://webaim.org/techniques/css/invisiblecontent/) для видимого усунення з екрана, але збереження доступності для допоміжних технологій, наприклад, читачів з екрана.
 
@@ -298,14 +298,14 @@ display: unset;
 
 ### display: contents
 
-Поточні реалізації у частині браузерів приберуть із [дерева доступності](/uk/docs/Learn/Accessibility/What_is_accessibility#api-dostupnosti) будь-який елемент зі значенням `contents` властивості `display` (залишивши у дереві його нащадків). Це призведе до того, що сам елемент більше не буде оголошений технологією читання екрана. Це некоректна поведінка згідно зі [специфікацією CSS](https://drafts.csswg.org/css-display/#valdef-display-contents).
+Поточні реалізації у частині браузерів приберуть із [дерева доступності](/uk/docs/Learn_web_development/Core/Accessibility/What_is_accessibility#api-dostupnosti) будь-який елемент зі значенням `contents` властивості `display` (залишивши у дереві його нащадків). Це призведе до того, що сам елемент більше не буде оголошений технологією читання екрана. Це некоректна поведінка згідно зі [специфікацією CSS](https://drafts.csswg.org/css-display/#valdef-display-contents).
 
 - [Більш доступна розмітка із display: contents | Гідде де Вріс](https://hidde.blog/more-accessible-markup-with-display-contents/)
 - [Display: Contents не є скиданням CSS | Адріан Розеллі](https://adrianroselli.com/2018/05/display-contents-is-not-a-css-reset.html)
 
 ### Таблиці
 
-У частині браузерів зміна значення `display` для елемента {{HTMLElement("table")}} на `block`, `grid` чи `flex` змінить його представлення у [дереві доступності](/uk/docs/Learn/Accessibility/What_is_accessibility#accessibility_apis). Це спричинить до того, що така таблиця не буде коректно оголошена технологією читання з екрана.
+У частині браузерів зміна значення `display` для елемента {{HTMLElement("table")}} на `block`, `grid` чи `flex` змінить його представлення у [дереві доступності](/uk/docs/Learn_web_development/Core/Accessibility/What_is_accessibility#accessibility_apis). Це спричинить до того, що така таблиця не буде коректно оголошена технологією читання з екрана.
 
 - [Коротка нотатка про те, що властивість CSS display робить із семантикою таблиці — The Paciello Group](https://www.tpgi.com/short-note-on-what-css-display-properties-do-to-table-semantics/)
 - [Прихований вміст для кращої доступності | Go Make Things](https://gomakethings.com/hidden-content-for-better-a11y/)
