@@ -76,7 +76,7 @@ spec-urls: https://drafts.csswg.org/css-pseudo/
 
   - {{CSSXref("::part")}}
 
-- Модуль [Переходів представлення CSS](/uk/docs/Web/CSS/CSS_view_transitions)
+- Модуль [Переходів виглядів CSS](/uk/docs/Web/CSS/CSS_view_transitions)
 
   - {{cssxref("::view-transition")}} {{Experimental_Inline}}
   - {{cssxref("::view-transition-image-pair()")}} {{Experimental_Inline}}
