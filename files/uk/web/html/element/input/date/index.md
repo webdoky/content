@@ -275,6 +275,5 @@ input:valid + span::after {
 ## Додаткова інформація
 
 - Загальний елемент {{HTMLElement("input")}} та інтерфейс для керування ним, {{domxref("HTMLInputElement")}}
-- [Настанови з віджетів вибору дати й часу](/uk/docs/Learn/Forms/HTML5_input_types#date_and_time_pickers)
+- [Настанови з віджетів вибору дати й часу](/uk/docs/Learn_web_development/Extensions/Forms/HTML5_input_types#date_and_time_pickers)
 - [Вживані в HTML формати дати й часу](/uk/docs/Web/HTML/Date_and_time_formats)
-- [Сумісність властивостей CSS](/uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls)
