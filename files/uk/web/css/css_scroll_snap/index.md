@@ -165,7 +165,7 @@ li {
       scroll-snap-stop: normal (усталене);
 
   CSS змінюється за допомогою JavaScript, коли змінюються елементи керування.
-  the following can be set:
+  можна задати наступні значення:
       scroll-snap-stop: always | normal;
       scroll-snap-align: start | center | end {2}
         */
