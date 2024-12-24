@@ -333,4 +333,3 @@ otherCheckbox.addEventListener("change", () => {
 
 - {{cssxref(":checked")}}, {{cssxref(":indeterminate")}} – селектори CSS, що дають змогу оформлювати поля для галочки на основі їхнього поточного стану
 - {{domxref("HTMLInputElement")}} – API DOM HTML, що реалізовує елемент `<input>`
-- [Таблиця сумісності властивостей CSS з контрольними елементами форм](/uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls)
