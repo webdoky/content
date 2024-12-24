@@ -454,4 +454,4 @@ div {
 
 ## Дивіться також
 
-- [Вивчаймо CSS: позиціонування](/uk/docs/Learn_web_development/Core/CSS_layout/Positioningg)
+- [Навчання CSS – Позиціювання](/uk/docs/Learn_web_development/Core/CSS_layout/Positioning)
