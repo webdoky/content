@@ -185,7 +185,7 @@ browser-compat: html.elements.form
 
 ## Дивіться також
 
-- [Посібник форм HTML](/uk/docs/Learn/Forms)
+- [Посібник форм HTML](/uk/docs/Learn_web_development/Extensions/Forms)
 - Інші елементи, що використовуються при створенні форм: {{HTMLElement("button")}}, {{HTMLElement("datalist")}}, {{HTMLElement("fieldset")}}, {{HTMLElement("input")}}, {{HTMLElement("label")}}, {{HTMLElement("legend")}}, {{HTMLElement("meter")}}, {{HTMLElement("optgroup")}}, {{HTMLElement("option")}}, {{HTMLElement("output")}}, {{HTMLElement("progress")}}, {{HTMLElement("select")}}, {{HTMLElement("textarea")}}.
 - Отримання списку елементів у формі: {{domxref("HTMLFormElement.elements")}}
 - [ARIA – роль form](/uk/docs/Web/Accessibility/ARIA/Roles/form_role)
