@@ -148,7 +148,7 @@ div {
   - {{cssxref("background-repeat")}}
   - {{cssxref("background-size")}}
   - Скорочення {{cssxref("background")}}
-- [Вивчаймо CSS – Фони та межі](/uk/docs/Learn/CSS/Building_blocks/Backgrounds_and_borders)
+- [Навчання – Фони та межі](/uk/docs/Learn_web_development/Core/Styling_basics/Backgrounds_and_borders)
 - [Застосування кількох фонів](/uk/docs/Web/CSS/CSS_backgrounds_and_borders/Using_multiple_backgrounds)
 - [Зміна розмірів фонових зображень](/uk/docs/Web/CSS/CSS_backgrounds_and_borders/Resizing_background_images)
 - Модуль [Фонів і меж CSS](/uk/docs/Web/CSS/CSS_backgrounds_and_borders)
