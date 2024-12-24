@@ -7,7 +7,7 @@ browser-compat: html.elements.input.type_file
 
 {{HTMLSidebar}}
 
-Елементи {{HTMLElement("input")}} з атрибутом **`type="file"`** дають користувачеві змогу обрати один чи більше файлів з його пристрою. Бувши обраними, файли можуть бути завантажені на сервер за допомогою [подання форми](/uk/docs/Learn/Forms), або ж використані за допомогою коду на JavaScript та [файлового API](/uk/docs/Web/API/File_API/Using_files_from_web_applications).
+Елементи {{HTMLElement("input")}} з атрибутом **`type="file"`** дають користувачеві змогу обрати один чи більше файлів з його пристрою. Бувши обраними, файли можуть бути завантажені на сервер за допомогою [подання форми](/uk/docs/Learn_web_development/Extensions/Forms), або ж використані за допомогою коду на JavaScript та [файлового API](/uk/docs/Web/API/File_API/Using_files_from_web_applications).
 
 {{EmbedInteractiveExample("pages/tabbed/input-file.html", "tabbed-shorter")}}
 
@@ -481,4 +481,3 @@ button.addEventListener("click", (e) => {
 ## Дивіться також
 
 - [Використання файлів у вебзастосунках](/uk/docs/Web/API/File_API/Using_files_from_web_applications) — містить низку інших корисних прикладів, що стосуються `<input type="file">` і [File API](/uk/docs/Web/API/File).
-- [Сумісність властивостей CSS](/uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls)
