@@ -82,7 +82,7 @@ in <polar-color-space>[ <hue-interpolation method>]
 
 {{EmbedLiveSample("porivniannia-kolirnykh-prostoriv-interpoliatsii-za-dopomohoiu-hradiientiv", "100%", 250)}}
 
-### Колірна інтерполяція з повторюваними градієнтами
+### Інтерполяція кольору з повторюваними градієнтами
 
 Наступний приклад показує, як задати колірний простір для інтерполяції кольорів у разі повторюваних градієнтів.
 Три рамки демонструють різні види повторюваних градієнтів – використовуючи функції [`repeating-conic-gradient()`](/uk/docs/Web/CSS/gradient/repeating-conic-gradient), [`repeating-linear-gradient()`](/uk/docs/Web/CSS/gradient/repeating-linear-gradient) і [`repeating-radial-gradient()`](/uk/docs/Web/CSS/gradient/repeating-radial-gradient).
