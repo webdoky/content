@@ -160,11 +160,11 @@ function setSST() {
 ```css hidden live-sample___scroll_snap
 li {
   /*
-  starts with:
+  починається з:
       scroll-snap-align: center center;
-      scroll-snap-stop: normal (defaults);
+      scroll-snap-stop: normal (усталене);
 
-  CSS gets changed with JavaScript when you change the controls.
+  CSS змінюється за допомогою JavaScript, коли змінюються елементи керування.
   the following can be set:
       scroll-snap-stop: always | normal;
       scroll-snap-align: start | center | end {2}
