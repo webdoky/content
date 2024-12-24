@@ -461,7 +461,6 @@ page-type: guide
       <td>
         <p>
           <a href="/uk/docs/Web/JavaScript/Reference/Regular_expressions/Modifier"><strong>Модифікатор:</strong></a>
-          Enables or disables the specified flags only to the enclosed pattern. Only the <code>i</code>, <code>m</code>, and <code>s</code> flags can be used in a modifier.
           Вмикає чи вимикає конкретні позначки лише для патерну в дужках. В модифікаторах можна застосовувати лише позначки <code>i</code>, <code>m</code> і <code>s</code>.
         </p>
       </td>
