@@ -13,7 +13,7 @@ spec-urls: https://drafts.csswg.org/css-grid/
 
 ## Базовий приклад
 
-Приклад нижче демонструє сітку триколонкової доріжки, в котрій нові ряди створюються щонайменше зі 100 пікселями, а щонайбільше - з auto. Елементи розміщені на сітці за допомогою розташування на основі ліній.
+Приклад нижче демонструє сітку триколонкової доріжки, в котрій нові ряди створюються щонайменше зі 100 пікселями, а щонайбільше – з auto. Елементи розміщені на сітці за допомогою розташування на основі ліній.
 
 ```css hidden
 * {
@@ -106,9 +106,6 @@ spec-urls: https://drafts.csswg.org/css-grid/
 - {{CSSxRef("row-gap")}}
 - {{CSSxRef("column-gap")}}
 - {{CSSxRef("gap")}}
-- {{CSSxRef("masonry-auto-flow")}}
-- {{CSSxRef("align-tracks")}}
-- {{CSSxRef("justify-tracks")}}
 
 ### Функції
 
@@ -128,7 +125,7 @@ spec-urls: https://drafts.csswg.org/css-grid/
 - [Сіткове компонування з розташуванням на основі ліній](/uk/docs/Web/CSS/CSS_grid_layout/Grid_layout_using_line-based_placement)
 - [Сіткове компонування з іменованими сітковими лініями](/uk/docs/Web/CSS/CSS_grid_layout/Grid_layout_using_named_grid_lines)
 - [Автоматичне розташування при сітковому компонуванні](/uk/docs/Web/CSS/CSS_grid_layout/Auto-placement_in_grid_layout)
-- [Рамкове шикування при сітковому компонуванні](/uk/docs/Web/CSS/CSS_grid_layout/Box_alignment_in_grid_layout)
+- [Рамкове вирівнювання при сітковому компонуванні](/uk/docs/Web/CSS/CSS_grid_layout/Box_alignment_in_grid_layout)
 - [Сітки, логічні значення та напрям письма](/uk/docs/Web/CSS/CSS_grid_layout/Grids_logical_values_and_writing_modes)
 - [Сіткове компонування та доступність](/uk/docs/Web/CSS/CSS_grid_layout/Grid_layout_and_accessibility)
 - [Реалізація поширених макетів за допомогою сіток](/uk/docs/Web/CSS/CSS_grid_layout/Realizing_common_layouts_using_grids)
@@ -141,7 +138,7 @@ spec-urls: https://drafts.csswg.org/css-grid/
 
 ## Дивіться також
 
-- Терміни глосарія:
+- Глосарій:
   - [Сітка](/uk/docs/Glossary/Grid)
   - [Строї сітки](/uk/docs/Glossary/Grid_Lines)
   - [Доріжки сітки](/uk/docs/Glossary/Grid_Tracks)
@@ -153,8 +150,8 @@ spec-urls: https://drafts.csswg.org/css-grid/
   - [Колонка сітки](/uk/docs/Glossary/Grid_Column)
 - Модуль [Компонування гнучкої рамки CSS](/uk/docs/Web/CSS/CSS_flexible_box_layout)
 - Модуль [Відображення CSS](/uk/docs/Web/CSS/CSS_display)
-- [Сітка за прикладом](https://gridbyexample.com/) - Колекція прикладів застосування та відеоуроків
-- [Довідка сітки CSS - Codrops (англ.)](https://tympanus.net/codrops/css_reference/grid/)
-- [Інспектор сітки CSS - Firefox DevTools (англ.)](https://firefox-source-docs.mozilla.org/devtools-user/page_inspector/how_to/examine_grid_layouts/index.html)
+- [Сітка за прикладом](https://gridbyexample.com/)
+- [Довідка сітки CSS](https://tympanus.net/codrops/css_reference/grid/) від Codrops
+- [Інспектор сітки CSS – Firefox DevTools](https://firefox-source-docs.mozilla.org/devtools-user/page_inspector/how_to/examine_grid_layouts/index.html)
 - [Ігровий майданчик сітки CSS](https://mozilladevelopers.github.io/playground/css-grid/)
-- [Сад сітки CSS](https://cssgridgarden.com) - Гра для вивчення сітки CSS
+- [Сад сітки CSS](https://cssgridgarden.com/) – Гра для вивчення сітки CSS

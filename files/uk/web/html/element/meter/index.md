@@ -1,5 +1,5 @@
 ---
-title: "<meter>: Елемент лічильника HTML"
+title: <meter> – елемент лічильника HTML
 slug: Web/HTML/Element/meter
 page-type: html-element
 browser-compat: html.elements.meter
@@ -37,7 +37,7 @@ browser-compat: html.elements.meter
 
 ## Приклади
 
-### Простий приклад
+### Базовий приклад
 
 #### HTML
 
@@ -47,7 +47,7 @@ browser-compat: html.elements.meter
 
 #### Результат
 
-{{EmbedLiveSample("prostyi-pryklad", 300, 60)}}
+{{EmbedLiveSample("bazovyi-pryklad", 300, 60)}}
 
 ### Приклад з високим і низьким діапазонами
 
