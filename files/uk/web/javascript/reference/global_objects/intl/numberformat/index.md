@@ -147,5 +147,5 @@ console.log(
 
 ## Дивіться також
 
-- [Поліфіл `Intl.NumberFormat` у складі FormatJS](https://formatjs.io/docs/polyfills/intl-numberformat/)
+- [Поліфіл `Intl.NumberFormat` у складі FormatJS](https://formatjs.github.io/docs/polyfills/intl-numberformat/)
 - {{jsxref("Intl")}}

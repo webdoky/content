@@ -173,7 +173,7 @@ console.log(new MyError("перевірка", { cause: new Error("причина
 
 Може з'явитись потреба означити власні типи помилок, похідні від `Error`, аби мати змогу виконувати `throw new MyError()` і використовувати `instanceof MyError` для перевірки ґатунку помилки в обробнику помилок. Такий підхід призводить до чистішого та сталішого коду обробки помилок.
 
-Читайте заглиблену дискусію на StackOverflow – ["Що є добрим способом розширювати Error у JavaScript?"](https://stackoverflow.com/questions/1382107/whats-a-good-way-to-extend-error-in-javascript).
+Читайте заглиблену дискусію на Stack Overflow – ["Який добрий спосіб розширювати Error у JavaScript?"](https://stackoverflow.com/questions/1382107/whats-a-good-way-to-extend-error-in-javascript).
 
 > [!WARNING]
 > Вбудоване створення підкласів не може бути надійно трансльовано у код до ES6, тому що немає способу сконструювати базовий клас із конкретним значенням `new.target` без {{jsxref("Reflect.construct()")}}. Необхідне [додаткове налаштування](https://github.com/loganfsmyth/babel-plugin-transform-builtin-extend) або ручний виклик {{jsxref("Object/setPrototypeOf", "Object.setPrototypeOf(this, CustomError.prototype)")}} у кінці конструктора; без цього сконструйований примірник не буде примірником `CustomError`. Більше інформації – у [ЧаПах TypeScript](https://github.com/microsoft/TypeScript/wiki/FAQ#why-doesnt-extending-built-ins-like-error-array-and-map-work).

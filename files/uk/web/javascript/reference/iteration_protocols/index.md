@@ -128,7 +128,7 @@ console.log(aGeneratorObject[Symbol.iterator]() === aGeneratorObject);
 
 [Генераторні функції](/uk/docs/Web/JavaScript/Reference/Statements/function*) повертають [генераторні об'єкти](/uk/docs/Web/JavaScript/Reference/Global_Objects/Generator), котрі є ітерованими ітераторами. [Асинхронні генераторні функції](/uk/docs/Web/JavaScript/Reference/Statements/async_function*) повертають [асинхронні генераторні об'єкти](/uk/docs/Web/JavaScript/Reference/Global_Objects/AsyncGenerator), котрі є асинхронними ітерованими ітераторами.
 
-Ітератори, повернені зі вбудованих ітерованих об'єктів, успадковують від спільного класу {{jsxref("Iterator")}} (наразі прихованого), котрий має реалізацію вищезгаданого методу `[Symbol.iterator]() { return this; }`, що робить їх всіх ітерованими ітераторами. У майбутньому ці вбудовані ітератори можуть отримати додаткові [допоміжні методи](https://github.com/tc39/proposal-iterator-helpers), на додачу до методу `next()`, котрий вимагається протоколом ітератора. Ланцюжок прототипів ітератора можна дослідити шляхом виведення його в графічну консоль.
+Ітератори, повернені зі вбудованих ітерованих об'єктів, успадковують від спільного класу {{jsxref("Iterator")}} (наразі прихованого), котрий має реалізацію вищезгаданого методу `[Symbol.iterator]() { return this; }`, що робить їх всіх ітерованими ітераторами. У майбутньому ці вбудовані ітератори можуть отримати додаткові [методи-помічники](/uk/docs/Web/JavaScript/Reference/Global_Objects/Iterator#metody-pomichnyky-iteratoriv), на додачу до методу `next()`, котрий вимагається протоколом ітератора. Ланцюжок прототипів ітератора можна дослідити шляхом виведення його в графічну консоль.
 
 ```plain
 console.log([][Symbol.iterator]());
@@ -303,7 +303,7 @@ function* gen() {
 
 ### Переспрямування помилок
 
-Частина вбудованих записів синтаксису загортає ітератор в інший ітератор. Серед них ітератор, що створюється методом {{jsxref("Iterator.from()")}}, [ітераторні помічники](/uk/docs/Web/JavaScript/Reference/Global_Objects/Iterator#iteratorni-pomichnyky) (`map()`, `filter()`, `take()`, `drop()` і `flatMap()`), [`yield*`](/uk/docs/Web/JavaScript/Reference/Operators/yield*) і прихована обгортка, коли щодо синхронного ітератора використовується асинхронна ітерація (`for await...of`, `Array.fromAsync`). Загорнутий ітератор тоді відповідає за переспрямування помилок між внутрішнім ітератором і викликачем.
+Частина вбудованих записів синтаксису загортає ітератор в інший ітератор. Серед них ітератор, що створюється методом {{jsxref("Iterator.from()")}}, [ітераторні методи-помічники](/uk/docs/Web/JavaScript/Reference/Global_Objects/Iterator#metody-pomichnyky-iteratoriv) (`map()`, `filter()`, `take()`, `drop()` і `flatMap()`), [`yield*`](/uk/docs/Web/JavaScript/Reference/Operators/yield*) і прихована обгортка, коли щодо синхронного ітератора використовується асинхронна ітерація (`for await...of`, `Array.fromAsync`). Загорнутий ітератор тоді відповідає за переспрямування помилок між внутрішнім ітератором і викликачем.
 
 - Усі ітератори-обгортки безпосередньо переспрямовують метод `next()` внутрішнього ітератора, включно з поверненими значеннями та викинутими помилками.
 - Ітератори-обгортки загалом безпосередньо переспрямовують метод `return()` внутрішнього ітератора. Якщо метод `return()` на внутрішньому ітераторі не існує, то зовнішній повертає натомість `{ done: true, value: undefined }`. У разі ітераторних помічників: якщо метод `next()` ітераторного помічника ще не був викликаний, то після спроби викликати `return()` на внутрішньому ітераторі поточний ітератор завжди повертає `{ done: true, value: undefined }`. Ця поведінка узгоджена з функціями-генераторами, в яких плин виконання ще не дійшов до виразу `yield*`.
@@ -327,7 +327,7 @@ const myIterable = {
 console.log([...myIterable]); // [1, 2, 3]
 ```
 
-### Простий ітератор
+### Базовий ітератор
 
 Ітератори за своєю природою мають стан. Якщо не означити ітератор як [генераторну функцію](/uk/docs/Web/JavaScript/Reference/Statements/function*) (як це показано в прикладі вище), то, ймовірно, доведеться інкапсулювати цей стан в замиканні.
 
@@ -381,14 +381,14 @@ console.log(it.next().value); // 2
 ### Означення ітерованого об'єкта за допомогою генератора
 
 ```js
-function* makeSimpleGenerator(array) {
+function* makeGenerator(array) {
   let nextIndex = 0;
   while (nextIndex < array.length) {
     yield array[nextIndex++];
   }
 }
 
-const gen = makeSimpleGenerator(["yo", "ya"]);
+const gen = makeGenerator(["yo", "ya"]);
 
 console.log(gen.next().value); // 'yo'
 console.log(gen.next().value); // 'ya'

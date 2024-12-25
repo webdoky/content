@@ -33,7 +33,10 @@ browser-compat: html.elements.input.type_password
 
 ## Додаткові атрибути
 
-На додачу до атрибутів, що діють на всіх елементах {{HTMLElement("input")}}, незалежно від їх типу, поля паролів приймають наступні.
+На додачу до [глобальних атрибутів](/uk/docs/Web/HTML/Global_attributes) та атрибутів, що працюють на всіх елементах {{HTMLElement("input")}}, незалежно від їхніх типів, поля пароля підтримують наступні атрибути.
+
+> [!NOTE]
+> Глобальний атрибут [`autocorrect`](/uk/docs/Web/HTML/Global_attributes/autocorrect) можна додати до полів пароля, проте доступне в ньому значення завжди буде `off`.
 
 ### maxlength
 
@@ -84,7 +87,7 @@ browser-compat: html.elements.input.type_password
 
 Загалом поля пароля працюють так само як і будь-які інші текстові поля; головна відмінність полягає в приховуванні вмісту, аби запобігти прочитанню вмісту людьми, що перебувають поруч з користувачем.
 
-### Просте поле пароля
+### Базове поле пароля
 
 Тут – найпростіше поле пароля, з підписом, заданим за допомогою елемента {{HTMLElement("label")}}.
 
@@ -93,7 +96,7 @@ browser-compat: html.elements.input.type_password
 <input id="userPassword" type="password" />
 ```
 
-{{EmbedLiveSample("proste-pole-parolia", 600, 40)}}
+{{EmbedLiveSample("bazove-pole-parolia", 600, 40)}}
 
 ### Дозвіл на самозаповнення
 
@@ -229,7 +232,7 @@ document.getElementById("selectAll").onclick = () => {
 
 #### JavaScript
 
-Це лишень трохи простого коду для виведення введеного SSN на екран, щоб його було видно. Зрозуміло, що це позбавляє змісту поле пароля, але корисно для дослідів з `pattern`.
+JavaScript виводить введений SSN на екран, щоб його було видно. Це позбавляє змісту використання поля пароля, але корисно для дослідів з `pattern`.
 
 ```js
 const ssn = document.getElementById("ssn");

@@ -4,12 +4,13 @@ slug: Web/CSS/:blank
 page-type: css-pseudo-class
 status:
   - experimental
-browser-compat: css.selectors.blank
+spec-urls: https://drafts.csswg.org/selectors/#blank-pseudo
 ---
 
 {{CSSRef}}{{SeeCompatTable}}
 
-> **Примітка:** Селектор `:blank` вважається ризикованим, оскільки CSSWG постійно його змінює.
+> [!NOTE]
+> Селектор `:blank` вважається ризикованим, оскільки CSSWG постійно його змінює.
 >
 > Дивіться [проблему CSSWG #1967](https://github.com/w3c/csswg-drafts/issues/1967).
 
@@ -25,7 +26,7 @@ browser-compat: css.selectors.blank
 
 ## Приклади
 
-### Простий приклад :blank
+### Базовий приклад :blank
 
 У браузерах, що врешті-решт його підтримуватимуть, псевдоклас `:blank` дасть розробникам змогу певним чином виділяти контрольні поля, які не є обов'язковими, але все ж не мають введеного вмісту, можливо, як нагадування для користувачів.
 
@@ -45,7 +46,7 @@ textarea:blank {
 
 #### Результат
 
-{{EmbedLiveSample('prostyi-pryklad-blank', '100%', 150)}}
+{{EmbedLiveSample('bazovyi-pryklad-blank', '100%', 150)}}
 
 ## Специфікації
 
@@ -53,7 +54,7 @@ textarea:blank {
 
 ## Сумісність із браузерами
 
-{{Compat}}
+Наразі ще жодний браузер не реалізував цю можливість.
 
 ## Дивіться також
 

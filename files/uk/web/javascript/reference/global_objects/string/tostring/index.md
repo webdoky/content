@@ -31,7 +31,7 @@ toString()
 
 Метод `toString()`вимагає, щоб його значення `this` було примітивом або об'єктом-обгорткою `String`. Він викидає {{jsxref("TypeError")}} у випадку інших значень `this`, не намагаючись звести їх до рядкових значень.
 
-У зв'язку з тим, що `String` не має методу [`[@@toPrimitive]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive), JavaScript викликає метод `toString()` автоматично, коли _об'єкт_ `String` вживається в контексті, що очікує на рядок, наприклад, у [шаблонному літералі](/uk/docs/Web/JavaScript/Reference/Template_literals). Проте _примітивні_ значення String не радяться з методом `toString()` для свого [зведення до рядків](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka): оскільки вони вже є рядками, перетворення не виконується.
+У зв'язку з тим, що `String` не має методу [`[Symbol.toPrimitive]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive), JavaScript викликає метод `toString()` автоматично, коли _об'єкт_ `String` вживається в контексті, що очікує на рядок, наприклад, у [шаблонному літералі](/uk/docs/Web/JavaScript/Reference/Template_literals). Проте _примітивні_ значення String не радяться з методом `toString()` для свого [зведення до рядків](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka): оскільки вони вже є рядками, перетворення не виконується.
 
 ```js
 String.prototype.toString = () => "Відкинуто";

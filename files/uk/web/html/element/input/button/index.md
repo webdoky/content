@@ -40,9 +40,9 @@ browser-compat: html.elements.input.type_button
 
 Елементи `<input type="button">` не мають усталеної логіки (їхні родичі, `<input type="submit">` і [`<input type="reset">`](/uk/docs/Web/HTML/Element/input/reset), застосовуються для подання та скидання форм відповідно). Щоб кнопка щось робила, треба написати код JavaScript, котрий виконуватиме роботу.
 
-### Проста кнопка
+### Базова кнопка
 
-Почнімо з простої кнопки з обробником події {{domxref("Element/click_event", "клацання")}}, що запускає машину (зрештою, він перемикає `value` кнопки й текстовий вміст відповідного абзацу):
+Почнімо з базової кнопки з обробником події {{domxref("Element/click_event", "клацання")}}, що запускає машину (зрештою, він перемикає `value` кнопки й текстовий вміст відповідного абзацу):
 
 ```html
 <form>
@@ -70,7 +70,7 @@ function updateButton() {
 
 Цей сценарій отримує посилання на об'єкт {{domxref("HTMLInputElement")}}, що представляє `<input>` у DOM, зберігши це посилання в змінній `button`. Далі використовується {{domxref("EventTarget.addEventListener", "addEventListener()")}} – для встановлення функції, що запуститься, коли на кнопці відбудеться подія {{domxref("Element/click_event", "клацання")}}.
 
-{{EmbedLiveSample("prosta-knopka", 650, 100)}}
+{{EmbedLiveSample("bazova-knopka", 650, 100)}}
 
 ### Додавання до кнопок комбінацій клавіш
 

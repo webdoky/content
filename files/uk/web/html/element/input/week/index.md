@@ -81,7 +81,7 @@ _Наразі неясно, що означає для `step` значення `
 
 ### Базове застосування week
 
-Найпростіше застосування `<input type="week">` включає базову комбінацію з елементів `<input>` і {{htmlelement("label")}}, як видно нижче:
+Найбазовіше застосування `<input type="week">` включає базову комбінацію з елементів `<input>` і {{htmlelement("label")}}, як видно нижче:
 
 ```html
 <form>
@@ -388,4 +388,3 @@ function populateWeeks() {
 - Узагальнений елемент {{HTMLElement("input")}} та інтерфейс, що використовується для роботи з ним, {{domxref("HTMLInputElement")}}
 - [Формати дати та часу, що вживаються в HTML](/uk/docs/Web/HTML/Date_and_time_formats)
 - [`<input type="datetime-local">`](/uk/docs/Web/HTML/Element/input/datetime-local), [`<input type="date">`](/uk/docs/Web/HTML/Element/input/date), [`<input type="time">`](/uk/docs/Web/HTML/Element/input/time) і [`<input type="month">`](/uk/docs/Web/HTML/Element/input/month)
-- [Сумісність властивостей CSS](/uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls)

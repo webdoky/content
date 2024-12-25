@@ -167,9 +167,33 @@ font-weight: unset;
 
 У змінних шрифтах TrueType та OpenType для реалізації змінної ширини застосовується варіація "wght".
 
-Це демо завантажується з заданим `font-weight: 500;`. Змініть значення властивості `font-weight`, аби побачити, як зміниться вага тексту.
+Це демо завантажується з заданим `font-weight: 500;`. Змініть значення властивості `font-weight` у селекторі `.sample`, аби побачити, як зміниться вага тексту (наприклад, поставте 200, 700). Клацніть "Грати" у блоках коду нижче, щоб редагувати приклад на Ігровому майданчику MDN:
 
-{{EmbedGHLiveSample("css-examples/variable-fonts/font-weight.html", '100%', 860)}}
+```html live-sample___font-weight-example
+<p class="sample">
+  ...зустріти дванадцятиметрового мегалозавра, що шкандибає Лисою горою, неначе
+  слоноподібна ящірка, було б не дуже весело.
+</p>
+```
+
+```css live-sample___font-weight-example
+@font-face {
+  src: url("https://mdn.github.io/shared-assets/fonts/variable-fonts/MutatorSans.ttf");
+  font-family: "MutatorSans";
+  font-style: normal;
+  font-weight: 1 1000;
+}
+
+.sample {
+  text-transform: uppercase;
+  font-weight: 500;
+  font:
+    1.5rem "MutatorSans",
+    sans-serif;
+}
+```
+
+{{EmbedLiveSample("font-weight-example", "", "200px")}}
 
 ## Доступність
 
@@ -243,5 +267,5 @@ span {
 
 - {{cssxref("font-family")}}
 - {{cssxref("font-style")}}
-- [Основи оформлення тексту й шрифту](/uk/docs/Learn/CSS/Styling_text/Fundamentals)
+- [Навчання – Основи оформлення тексту й шрифту](/uk/docs/Learn_web_development/Core/Text_styling/Fundamentals)
 - Модуль [Шрифтів CSS](/uk/docs/Web/CSS/CSS_fonts)

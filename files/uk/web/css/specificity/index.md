@@ -7,7 +7,7 @@ spec-urls: https://drafts.csswg.org/selectors/#specificity-rules
 
 {{CSSRef}}
 
-**Специфічність** – це алгоритм, що використовується браузерами для визначення того [оголошення CSS](/uk/docs/Learn/CSS/First_steps/What_is_CSS#syntaksys-css), яке найбільше відповідає елементові. І котре, своєю чергою, визначає те значення властивості, яке буде застосовано до елемента. Алгоритм специфічності обчислює вагу [селектора CSS](/uk/docs/Web/CSS/Reference#selektory), щоб визначити, яке правило серед суперницьких оголошень CSS застосовується до елемента.
+**Специфічність** – це алгоритм, що використовується браузерами для визначення того [оголошення CSS](/uk/docs/Learn_web_development/Core/Styling_basics/What_is_CSS#osnovy-syntaksysu-css), яке найбільше відповідає елементові. І котре, своєю чергою, визначає те значення властивості, яке буде застосовано до елемента. Алгоритм специфічності обчислює вагу [селектора CSS](/uk/docs/Web/CSS/Reference#selektory), щоб визначити, яке правило серед суперницьких оголошень CSS застосовується до елемента.
 
 > [!NOTE]
 > Браузери розглядають специфічність **після** визначення [каскадних джерела та важливості](/uk/docs/Web/CSS/Cascade). Інакше кажучи, серед суперницьких властивостей специфічність грає роль та порівнюється лише між селекторами з одними [каскадними джерелом та шаром](/uk/docs/Web/CSS/@layer), що мають пріоритет для властивості. [Наближеність області видимості](/uk/docs/Web/CSS/@scope#yak-rozviazuiutsia-konflikty-scope) та порядок появи грають роль, коли специфічності селекторів суперницьких оголошень в межах каскадного шару з пріоритетом є рівними.
@@ -491,7 +491,7 @@ input[type="password"]:required {
 
 ## Дивіться також
 
-- ["Специфічність" у "Каскаді та успадкуванні"](/uk/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance#spetsyfichnist-2)
+- ["Специфічність" у "Обробці конфліктів"](/uk/docs/Learn_web_development/Core/Styling_basics/Handling_conflicts#spetsyfichnist-2)
 - [SpeciFISHity](https://specifishity.com/)
 - [Калькулятор специфічності](https://specificity.keegan.st/): інтерактивний вебсайт для перевірки та усвідомлення ваших власних правил CSS
 - [Вправа _ID-CLASS-TYPE_](https://estelle.github.io/CSS/selectors/exercises/specificity.html) – вікторина зі специфічності
@@ -502,7 +502,7 @@ input[type="password"]:required {
 - [Успадкування](/uk/docs/Web/CSS/Inheritance)
 - [Початкові](/uk/docs/Web/CSS/initial_value), [обчислені](/uk/docs/Web/CSS/computed_value), [вжиті](/uk/docs/Web/CSS/used_value) та [фактичні](/uk/docs/Web/CSS/actual_value) значення
 - [Синтаксис визначення значень](/uk/docs/Web/CSS/Value_definition_syntax)
-- [Цеглинки – Каскадність CSS](/uk/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance)
-- [Цеглинки – Каскадні шари](/uk/docs/Learn/CSS/Building_blocks/Cascade_layers)
+- [Навчання – Обробка конфліктів](/uk/docs/Learn_web_development/Core/Styling_basics/Handling_conflicts)
+- [Навчання – Каскадні шари](/uk/docs/Learn_web_development/Core/Styling_basics/Cascade_layers)
 - Модуль [Каскадності та успадкування CSS](/uk/docs/Web/CSS/CSS_cascade)
 - [Модуль Вкладеності CSS](/uk/docs/Web/CSS/CSS_nesting)

@@ -82,7 +82,7 @@ browser-compat: html.elements.a
 
     - `no-referrer`: Заголовок {{HTTPHeader("Referer")}} не буде надісланий.
     - `no-referrer-when-downgrade`: Заголовок {{HTTPHeader("Referer")}} не буде надісланий на ті {{Glossary("origin", "походження")}}, що не мають {{Glossary("TLS")}} ({{Glossary("HTTPS")}}).
-    - `origin`: Надісланий посилач буде обмежений походженням сторінки, що містить посилання: її [схемою](/uk/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL), {{Glossary("host", "хостом")}} та {{Glossary("port", "портом")}}.
+    - `origin`: Надісланий посилач буде обмежений походженням сторінки, що містить посилання: її [схемою](/uk/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_URL), {{Glossary("host", "хостом")}} та {{Glossary("port", "портом")}}.
     - `origin-when-cross-origin`: Посилач, надісланий іншим походженням, буде обмежений схемою, хостом та портом. Переходи в межах того самого походження включатимуть увесь шлях.
     - `same-origin`: Посилач буде надісланий, якщо {{Glossary("Same-origin policy", "збігається походження")}}, натомість запити між різними походженнями не міститимуть інформації про посилача.
     - `strict-origin`: Надсилати як посилач походження документа, коли рівень протоколу захисту залишається сталим (HTTPS→HTTPS), але не надсилати його за менш захищеною адресою (HTTPS→HTTP).
@@ -194,22 +194,34 @@ browser-compat: html.elements.a
 
 #### Посилання на не-HTML ресурс
 
-```html
-<a href="2017-annual-report.ppt">2017 Річний звіт (PowerPoint)</a>
-```
-
-Якщо призначення посилання позначено іконкою, слід пересвідчитись, що ця іконка має [_текстову альтернативу_](/uk/docs/Web/HTML/Element/img#alt):
+Якщо для позначення поведінки посилання застосована піктограма, слід пересвідчитись, що ця піктограма має [атрибут `alt`](/uk/docs/Web/HTML/Element/img#alt), який описує її призначення. Коли ця піктограма буде відсутня, то вміст атрибута `alt` усе одно пояснить поведінку посилання.
 
 ```html
-<a target="_blank" href="https://uk.wikipedia.org">
-  Вікіпедія
-  <img alt="(відкривається в новій вкладці)" src="newtab.svg" />
-</a>
-
-<a href="2017-annual-report.ppt">
-  2017 Річний звіт
-  <img alt="(файл PowerPoint)" src="ppt-icon.svg" />
-</a>
+<p>
+  <a href="https://uk.wikipedia.org/" target="_blank">
+    Вікіпедія
+    <img src="new-tab.svg" width="14" alt="(Відкривається в новій вкладці)" />
+  </a>
+  <br />
+  <a href="2017-annual-report.ppt">
+    Річний звіт 2017
+    <img src="powerpoint.svg" width="14" alt="(Файл PowerPoint)" />
+  </a>
+</p>
+<p>
+  <a href="https://uk.wikipedia.org/" target="_blank">
+    Вікіпедія
+    <img
+      src="missing-icon.svg"
+      width="14"
+      alt="(Відкривається в новій вкладці)" />
+  </a>
+  <br />
+  <a href="2017-annual-report.ppt">
+    Річний звіт 2017
+    <img src="missing-icon.svg" width="14" alt="(Файл PowerPoint)" />
+  </a>
+</p>
 ```
 
 ##### Результат
@@ -346,7 +358,7 @@ a {
 
 {{EmbedLiveSample('posylannia-na-adresu-elektronnoi-poshty')}}
 
-Для деталей щодо URL `mailto:`, наприклад, включення в них теми чи тіла листа, читайте [посилання електронної пошти](/uk/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#posylannia-elektronnoi-poshty) чи {{RFC(6068)}}.
+Для деталей щодо URL `mailto:`, наприклад, включення в них теми чи тіла листа, читайте [посилання електронної пошти](/uk/docs/Learn_web_development/Core/Structuring_content/Creating_links#posylannia-elektronnoi-poshty) чи {{RFC(6068)}}.
 
 ### Посилання на номери телефонів
 
