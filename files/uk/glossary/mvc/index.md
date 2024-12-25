@@ -16,8 +16,6 @@ page-type: glossary-definition
 
 ## Приклад Моделі – Вигляду – Контролера
 
-Imagine a simple shopping list app. All we want is a list of the name, quantity and price of each item we need to buy this week. Below we'll describe how we could implement some of this functionality using MVC.
-
 Уявімо нескладний застосунок для списку покупок. Усе, що потрібно – список з назвою, кількістю й ціною кожної речі, яку треба купити цього тижня. Нижче описано, як можна було б реалізувати частину цих можливостей за допомогою MVC.
 
 ![Діаграма, що показує різні частини архітектури MVC.](model-view-controller-light-blue.png)
