@@ -16,6 +16,9 @@ browser-compat: css.properties.width
 - Якщо значення `width` менше за значення `min-width`, то `min-width` відкидає `width`.
 - Якщо значення `width` більше за значення `max-width`, то `max-width` відкидає `width`.
 
+> [!NOTE]
+> Як геометрична властивість, `width` також застосовується до елементів SVG {{SVGElement("svg")}}, {{SVGElement("rect")}}, {{SVGElement("image")}} і {{SVGElement("foreignObject")}}, причому `auto` вирішується як `100%` для `<svg>` і як `0` для інших елементів, а відсоткові значення відносні щодо ширини області перегляду SVG для `<rect>`. Значення властивості CSS `width` перемагає значення атрибута SVG {{SVGAttr("width")}}, якщо на елементі SVG такий задано.
+
 ## Синтаксис
 
 ```css
@@ -34,6 +37,7 @@ width: min-content;
 width: fit-content;
 width: fit-content(20em);
 width: auto;
+width: stretch;
 
 /* Глобальні значення */
 width: inherit;
@@ -59,6 +63,12 @@ width: unset;
   - : Використовує доступний простір, але не більше, ніж [max-content](/uk/docs/Web/CSS/max-content), тобто `min(max-content, max(min-content, stretch))`.
 - `fit-content({{cssxref("&lt;length-percentage&gt;")}})`
   - : Використовує формулу fit-content щодо доступного простору, заміненого вказаним аргументом, тобто `min(max-content, max(min-content, <length-percentage>))`.
+- `stretch`
+
+  - : Задає ширині [рамки зовнішніх відступів](/uk/docs/Learn/CSS/Building_blocks/The_box_model#chastyny-ramky) елемента ширину його [контейнерного блока](/uk/docs/Web/CSS/Containing_block#vybir-konteinernoho-bloka). Намагається змусити рамку зовнішніх відступів заповнити доступний у контейнерному блоці простір так, щоб це вийшло схоже на `100%`, але застосовуючи результівний розмір до рамки зовнішніх відступів, а не рамки, визначеної [box-sizing](/uk/docs/Web/CSS/box-sizing).
+
+    > [!NOTE]
+    > Аби перевірити псевдоніми значення `stretch`, що використовуються браузерами, та статус реалізації цього значення, дивіться наш розділ [Сумісності з браузерами](#sumisnist-iz-brauzeramy).
 
 ## Доступність
 
@@ -135,14 +145,14 @@ p.goldie {
 ### Приклад із max-content
 
 ```css
-p.maxgreen {
+p.max-green {
   background: lightgreen;
   width: max-content;
 }
 ```
 
 ```html
-<p class="maxgreen">Спільнота MDN пише справді добру документацію.</p>
+<p class="max-green">Спільнота MDN пише справді добру документацію.</p>
 ```
 
 {{EmbedLiveSample('pryklad-iz-max-content', '500px', '64px')}}
@@ -150,14 +160,14 @@ p.maxgreen {
 ### Приклад із min-content
 
 ```css
-p.minblue {
+p.min-blue {
   background: lightblue;
   width: min-content;
 }
 ```
 
 ```html
-<p class="minblue">Спільнота MDN пише справді добру документацію.</p>
+<p class="min-blue">Спільнота MDN пише справді добру документацію.</p>
 ```
 
 {{EmbedLiveSample('pryklad-iz-min-content', '500px', '155px')}}
@@ -172,9 +182,10 @@ p.minblue {
 
 ## Дивіться також
 
-- [Блокова модель](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
 - {{cssxref("height")}}
 - {{cssxref("box-sizing")}}
 - {{cssxref("min-width")}}, {{cssxref("max-width")}}
-- Відповідні логічні властивості: {{cssxref("block-size")}}, {{cssxref("inline-size")}}
+- {{cssxref("block-size")}}, {{cssxref("inline-size")}}
 - {{cssxref("anchor-size()")}}
+- [Вступ у Базову рамкову модель CSS](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
+- Модуль [Рамкової моделі CSS](/uk/docs/Web/CSS/CSS_box_model)

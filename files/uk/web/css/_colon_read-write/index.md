@@ -50,7 +50,7 @@ textarea:read-write {
 
 ### Оформлення неформових контрольних елементів read-write
 
-Цей селектор не просто вибирає елементи {{htmlElement("input")}} і{{htmlElement("textarea")}} – він вибирає _всі_ елементи, що можуть редагуватися користувачем, наприклад, елемент {{htmlelement("p")}} з атрибутом [`contenteditable`](/uk/docs/Web/HTML/Global_attributes#contenteditable).
+Цей селектор не просто вибирає елементи {{htmlElement("input")}} і{{htmlElement("textarea")}} – він вибирає _всі_ елементи, що можуть редагуватися користувачем, наприклад, елемент {{htmlelement("p")}} з атрибутом [`contenteditable`](/uk/docs/Web/HTML/Global_attributes/contenteditable).
 
 ```html
 <p contenteditable>
@@ -90,4 +90,4 @@ p:read-write {
 ## Дивіться також
 
 - {{cssxref(":read-only")}}
-- Атрибут HTML [`contenteditable`](/uk/docs/Web/HTML/Global_attributes#contenteditable)
+- Атрибут HTML [`contenteditable`](/uk/docs/Web/HTML/Global_attributes/contenteditable)

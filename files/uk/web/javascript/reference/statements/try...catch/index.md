@@ -168,7 +168,7 @@ try {
 
 ```js
 try {
-  myroutine(); // може викидати винятки трьох типів
+  myRoutine(); // може викидати винятки трьох типів
 } catch (e) {
   if (e instanceof TypeError) {
     // інструкції для обробки винятків TypeError

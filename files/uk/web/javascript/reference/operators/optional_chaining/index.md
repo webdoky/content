@@ -69,7 +69,8 @@ const result = someInterface.customMethod?.();
 
 Проте якщо властивість з таким іменем є, але вона не є функцією, то `?.` все одно призведе до винесення винятку {{jsxref("TypeError")}} (`someInterface.customMethod is not a function`).
 
-> **Примітка:** Якщо сам `someInterface` є `null` чи `undefined`, все ж буде винесений виняток {{jsxref("TypeError")}} (`someInterface is null`). Якщо очікується, що сам `someInterface` може бути `null` чи `undefined`, слід використовувати `?.` також на іншій позиції: `someInterface?.customMethod?.()`.
+> [!NOTE]
+> Якщо сам `someInterface` є `null` чи `undefined`, все ж буде винесений виняток {{jsxref("TypeError")}} (`someInterface is null`). Якщо очікується, що сам `someInterface` може бути `null` чи `undefined`, слід використовувати `?.` також на іншій позиції: `someInterface?.customMethod?.()`.
 
 `eval?.()` – найстисліший спосіб ввійти у режим [_непрямого обчислення_](/uk/docs/Web/JavaScript/Reference/Global_Objects/eval#priame-ta-nepriame-obchyslennia).
 
@@ -167,13 +168,13 @@ const prop = temp.b;
 
 ### Найпростіший приклад
 
-Цей приклад шукає значення властивості `name` елемента відображення `bar`, де такого елемента немає. Таким чином, результатом є `undefined`.
+Цей приклад шукає значення властивості `name` елемента відображення `CSS`, де такого елемента немає. Таким чином, результатом є `undefined`.
 
 ```js
 const myMap = new Map();
-myMap.set("foo", { name: "baz", desc: "inga" });
+myMap.set("JS", { name: "Денис", desc: "Я обслуговую всіляке" });
 
-const nameBar = myMap.get("bar")?.name;
+const nameBar = myMap.get("CSS")?.name;
 ```
 
 ### Виклик необов'язкових функцій зворотного виклику чи обробників подій

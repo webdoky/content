@@ -42,7 +42,9 @@ Object.assign(target, source1, source2, /* …, */ sourceN)
 
 В разі помилки (наприклад, якщо властивість недоступна для запису) викидається {{jsxref("TypeError")}}, а об'єкт `target` залишається модифікованим, якщо якісь властивості були вже додані до виникнення помилки.
 
-> **Примітка:** `Object.assign()` не викидає помилок на таких донорах, як [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) чи {{jsxref("undefined")}}.
+> [!NOTE]
+>
+> `Object.assign()` не викидає помилок на таких донорах, як [`null`](/uk/docs/Web/JavaScript/Reference/Operators/null) чи {{jsxref("undefined")}}.
 
 ## Приклади
 
@@ -56,7 +58,7 @@ console.log(copy); // { a: 1 }
 
 ### Застереження щодо глибинного клонування
 
-Для [глибокого клонування](/uk/docs/Glossary/Deep_copy) необхідно використовувати альтернативи штибу [`structuredClone()`](/uk/docs/Web/API/structuredClone), оскільки `Object.assign()` копіює значення властивостей.
+Для [глибокого клонування](/uk/docs/Glossary/Deep_copy) необхідно використовувати альтернативи штибу {{DOMxRef("Window.structuredClone", "structuredClone()")}}, оскільки `Object.assign()` копіює значення властивостей.
 
 Якщо значення в донорі містить посилання на об'єкт, `Object.assign()` скопіює лише це посилання.
 

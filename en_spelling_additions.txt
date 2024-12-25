@@ -19,6 +19,7 @@ enumerables
 ICNS
 Igalia
 IIFE
+labeledby
 Miata
 mozactionhint
 nolint
@@ -34,4 +35,5 @@ UNSC
 Vorbis
 webdoky
 WHATWG
+Yari
 ZWNBSP

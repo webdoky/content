@@ -9,7 +9,11 @@ browser-compat: javascript.builtins.Math.cbrt
 
 Статичний метод **`Math.cbrt()`** (cubic root – кубічний корінь) повертає кубічний корінь числа. А саме
 
-<math display="block"><semantics><mrow><mrow><mo lspace="0em" rspace="0.16666666666666666em">𝙼𝚊𝚝𝚑.𝚌𝚋𝚛𝚝</mo><mo stretchy="false">(</mo><mi>𝚡</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><mroot><mi>x</mi><mn>3</mn></mroot><mo>=</mo><mtext>унікальний&nbsp;</mtext><mi>y</mi><mtext>&nbsp;для якого&nbsp;</mtext><msup><mi>y</mi><mn>3</mn></msup><mo>=</mo><mi>x</mi></mrow><annotation encoding="TeX">\mathtt{\operatorname{Math.cbrt}(x)} = \sqrt[3]{x} = \text{унікальний } y \text{ для якого } y^3 = x</annotation></semantics></math>
+<!-- prettier-ignore-start -->
+<math display="block">
+  <semantics><mrow><mrow><mo lspace="0em" rspace="0.16666666666666666em">𝙼𝚊𝚝𝚑.𝚌𝚋𝚛𝚝</mo><mo stretchy="false">(</mo><mi>𝚡</mi><mo stretchy="false">)</mo></mrow><mo>=</mo><mroot><mi>x</mi><mn>3</mn></mroot><mo>=</mo><mtext>унікальний&nbsp;</mtext><mi>y</mi><mtext>&nbsp;для якого&nbsp;</mtext><msup><mi>y</mi><mn>3</mn></msup><mo>=</mo><mi>x</mi></mrow><annotation encoding="TeX">\mathtt{\operatorname{Math.cbrt}(x)} = \sqrt[3]{x} = \text{унікальний } y \text{ для якого } y^3 = x</annotation></semantics>
+</math>
+<!-- prettier-ignore-end -->
 
 {{EmbedInteractiveExample("pages/js/math-cbrt.html")}}
 
