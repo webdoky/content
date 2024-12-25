@@ -77,7 +77,7 @@ console.log(dateControl.valueAsNumber); // виводить 1496275200000, мі�
 
 ### Базове використання полів дати
 
-Найпростіше використання `<input type="date">` залучає один `<input>` разом із його {{htmlelement("label")}}, дивіться нижче:
+Найбазовіше використання `<input type="date">` залучає один `<input>` разом із його {{htmlelement("label")}}, дивіться нижче:
 
 ```html
 <form action="https://example.com">
@@ -275,6 +275,5 @@ input:valid + span::after {
 ## Додаткова інформація
 
 - Загальний елемент {{HTMLElement("input")}} та інтерфейс для керування ним, {{domxref("HTMLInputElement")}}
-- [Настанови з віджетів вибору дати й часу](/uk/docs/Learn/Forms/HTML5_input_types#date_and_time_pickers)
+- [Настанови з віджетів вибору дати й часу](/uk/docs/Learn_web_development/Extensions/Forms/HTML5_input_types#date_and_time_pickers)
 - [Вживані в HTML формати дати й часу](/uk/docs/Web/HTML/Date_and_time_formats)
-- [Сумісність властивостей CSS](/uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls)

@@ -7,7 +7,7 @@ browser-compat: css.selectors.class
 
 {{CSSRef}}
 
-**Селектор класу** [CSS](/uk/docs/Web/CSS) дає збіг з елементами на основі їхнього атрибута [`class`](/uk/docs/Web/HTML/Global_attributes#class).
+**Селектор класу** [CSS](/uk/docs/Web/CSS) дає збіг з елементами на основі їхнього атрибута [`class`](/uk/docs/Web/HTML/Global_attributes/class).
 
 ```css
 /* Усі елементи з class="spacious" */

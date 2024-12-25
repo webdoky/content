@@ -24,9 +24,10 @@ browser-compat: html.global_attributes
 - [`anchor`](/uk/docs/Web/HTML/Global_attributes/anchor) {{non-standard_inline}}
   - : Пов'язує позиційований елемент з якірним елементом. Значення атрибута – це значення [`id`](/uk/docs/Web/HTML/Global_attributes/id) елемента, до якого прив'язаний позиційований елемент. Цей елемент потім може бути позиційований [за допомогою якірного позиціювання CSS](/uk/docs/Web/CSS/CSS_anchor_positioning/Using).
 - [`autocapitalize`](/uk/docs/Web/HTML/Global_attributes/autocapitalize)
-
   - : Контролює те, чи додаються великі літери до тексту, введеного у поля вводу, а також, якщо так, то яким чином.
-
+- [`autocorrect`](/uk/docs/Web/HTML/Global_attributes/autocorrect)
+  - : Контролює те, чи виправляється введений текст автоматично щодо помилок правопису.
+    Може застосовуватися до елементів, що містять текст, який можна редагувати, окрім елементів {{HTMLElement("input")}} з атрибутом: [`type="password"`](/uk/docs/Web/HTML/Element/input/password), [`type="email"`](/uk/docs/Web/HTML/Element/input/email), or [`type="url"`](/uk/docs/Web/HTML/Element/input/url).
 - [`autofocus`](/uk/docs/Web/HTML/Global_attributes/autofocus)
   - : Вказує, що елемент повинен отримати фокус при завантаженні сторінки, або щойно {{HTMLElement("dialog")}}, частиною якого є елемент, був показаний. Цей атрибут – булів, початково – хибний.
 - [`class`](/uk/docs/Web/HTML/Global_attributes/class)
@@ -71,7 +72,8 @@ browser-compat: html.global_attributes
 - [`is`](/uk/docs/Web/HTML/Global_attributes/is)
   - : Дає змогу вказати, що стандартний елемент HTML повинен поводитись як зареєстрований користувацький вбудований елемент (подробиці у [Використанні користувацьких елементів](/uk/docs/Web/API/Web_components/Using_custom_elements)).
 
-> **Примітка:** Атрибути `item*` є частиною [Функціональності мікроданих HTML WHATWG (англ.)](https://html.spec.whatwg.org/multipage/microdata.html#microdata).
+> [!NOTE]
+> Атрибути `item*` є частиною [Функціональності мікроданих HTML WHATWG](https://html.spec.whatwg.org/multipage/microdata.html#microdata).
 
 - [`itemid`](/uk/docs/Web/HTML/Global_attributes/itemid)
   - : Унікальний, глобальний ідентифікатор елемента даних.
@@ -123,10 +125,17 @@ browser-compat: html.global_attributes
 
 - [`virtualkeyboardpolicy`](/uk/docs/Web/HTML/Global_attributes/virtualkeyboardpolicy) {{Experimental_Inline}}
 
-  - : [Перелічений](/uk/docs/Glossary/Enumerated) атрибут, що використовується для контролю поведінки екранної віртуальної клавіатури на пристроях штибу планшетів, мобільних телефонів та інших, на яких апаратної клавіатури може не бути, для елементів, вміст котрих можна редагувати (наприклад, елементів {{htmlelement("input")}} і {{htmlelement("textarea")}}, а також тих, що мають заданий атрибут [`contenteditable`](/uk/docs/Web/HTML/Global_attributes/contenteditable)).
+  - : {{Glossary("enumerated", "Перелічений")}} атрибут, що використовується для контролю поведінки екранної віртуальної клавіатури на пристроях штибу планшетів, мобільних телефонів та інших, на яких апаратної клавіатури може не бути, для елементів, вміст котрих можна редагувати (наприклад, елементів {{htmlelement("input")}} і {{htmlelement("textarea")}}, а також тих, що мають заданий атрибут [`contenteditable`](/uk/docs/Web/HTML/Global_attributes/contenteditable)).
 
     - `auto` або _порожній рядок_ – коли на елемент перевели фокус або торкнулися його, автоматично виводиться віртуальна клавіатура.
     - `manual` – фокус і дотик елемента відв'язані від стану віртуальної клавіатури.
+
+- [`writingsuggestions`](/uk/docs/Web/HTML/Global_attributes/writingsuggestions)
+
+  - : {{Glossary("enumerated", "Перелічений")}} атрибут, що позначає те, чи повинні бути ввімкнені пропозиції, надані браузером, для цього елемента, чи ні.
+
+    - `false`, що вимикає пропозиції з боку браузера.
+    - `true` або _порожній рядок_, що вмикає пропозиції.
 
 ## Специфікації
 
