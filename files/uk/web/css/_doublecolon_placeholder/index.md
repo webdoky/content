@@ -66,7 +66,7 @@ browser-compat: css.selectors.placeholder
 
 ### Підписи
 
-Заповнювачі – це не заміна для елемента {{htmlelement("label")}}. Без підпису, який був програмно пов'язаний із полем введення за допомогою комбінації атрибутів [`for`](/uk/docs/Web/HTML/Element/label#for) і [`id`](/uk/docs/Web/HTML/Global_attributes#id), допоміжні технології, як то читачі з екрана, не можуть розібрати елементи {{htmlelement("input")}}.
+Заповнювачі – це не заміна для елемента {{htmlelement("label")}}. Без підпису, який був програмно пов'язаний із полем введення за допомогою комбінації атрибутів [`for`](/uk/docs/Web/HTML/Element/label#for) і [`id`](/uk/docs/Web/HTML/Global_attributes/id), допоміжні технології, як то читачі з екрана, не можуть розібрати елементи {{htmlelement("input")}}.
 
 - [Заповнювачі в полях форми – шкідливі, – Nielsen Norman Group](https://www.nngroup.com/articles/form-design-placeholders/)
 

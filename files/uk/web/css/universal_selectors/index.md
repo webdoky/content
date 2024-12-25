@@ -75,7 +75,7 @@ browser-compat: css.selectors.universal
 У цьому прикладі селектор дає збіг лише з елементами в просторі імен _example_.
 
 ```css
-@namespace example url(http://www.example.com);
+@namespace example url(http://www.example.com/);
 example|* {
   color: blue;
 }

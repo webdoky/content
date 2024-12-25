@@ -79,7 +79,7 @@ browser-compat: javascript.builtins.Map
       <th scope="row">Порядок ключів</th>
       <td>
         <p>
-          Ключі в <code>Map</code> впорядковані простим і прямолінійним чином, а саме: об'єкт <code>Map</code> перебирає записи, ключі та значення в порядку, в якому вони були вставлені.
+          Ключі в <code>Map</code> впорядковані прямолінійним чином, а саме: об'єкт <code>Map</code> перебирає записи, ключі та значення в порядку, в якому вони були вставлені.
         </p>
       </td>
       <td>
@@ -472,9 +472,9 @@ const second = new Map([
 ]);
 
 // Зливаємо докупи об'єкти `Map` з масивом. У разі конфлікту ключів наступний перезапише попередній.
-const merged = new Map([...first, ...second, [1, "eins"]]);
+const merged = new Map([...first, ...second, [1, "un"]]);
 
-console.log(merged.get(1)); // eins
+console.log(merged.get(1)); // un
 console.log(merged.get(2)); // dos
 console.log(merged.get(3)); // three
 ```

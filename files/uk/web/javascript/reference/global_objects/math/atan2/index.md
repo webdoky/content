@@ -32,7 +32,7 @@ Math.atan2(y, x)
 
 Метод `Math.atan2()` вимірює кут проти годинникової стрілки θ, в радіанах, між додатним напрямком осі Ox і точкою `(x, y)`. Зверніть увагу, що аргументи цієї функції – спочатку координата y, а потім координата x.
 
-![Проста діаграма, яка показує кут, повернений atan2(y, x)](atan2.png)
+![Діаграма, яка показує кут, повернений atan2(y, x)](atan2.png)
 
 `Math.atan2()` передають аргументи `x` та `y` окремо, а [`Math.atan()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Math/atan) передають співвідношення між цими двома аргументами. `Math.atan2(y, x)` відрізняється від `Math.atan(y / x)` у наступних випадках:
 
@@ -87,7 +87,7 @@ function format(template, ...args) {
     ...args.map((num) =>
       (Object.is(num, -0)
         ? "-0"
-        : formattedNumbers.get(num) ?? String(num)
+        : (formattedNumbers.get(num) ?? String(num))
       ).padEnd(5),
     ),
   );

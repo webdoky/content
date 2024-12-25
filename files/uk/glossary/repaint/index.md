@@ -10,5 +10,6 @@ page-type: glossary-definition
 
 ## Дивіться також
 
-- [Перетасування](/uk/docs/Glossary/Reflow)
+- Споріднені терміни глосарія:
+  - {{Glossary("Reflow", "Перетасування")}}
 - [Розуміння перетасування та перемальовування у браузері](https://drukarnia.com.ua/articles/rozuminnya-peretasuvannya-ta-peremalovuvannya-v-brauzeri-pereklad-G5vRt) – переклад на Друкарні (2023) статті з dev.to (2020)

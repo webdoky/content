@@ -1,5 +1,5 @@
 ---
-title: "<object> – елемент зовнішнього об'єкта"
+title: <object> – елемент зовнішнього об'єкта
 slug: Web/HTML/Element/object
 page-type: html-element
 browser-compat: html.elements.object
@@ -52,7 +52,7 @@ browser-compat: html.elements.object
 
 ```html
 <object
-  type="video/mp4"
+  type="video/webm"
   data="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm"
   width="600"
   height="140">
