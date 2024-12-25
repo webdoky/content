@@ -46,9 +46,9 @@ color: light-dark(var(--light), var(--dark));
 - `dark-color`
   - : Значення {{CSSXref("&lt;color&gt;")}}, яке буде задано для темної {{CSSXref("color-scheme")}}.
 
-### Формальний синтаксис
+## Формальний синтаксис
 
-{{csssyntax}}
+{{CSSSyntax}}
 
 ## Приклад
 
@@ -107,7 +107,8 @@ code {
 
 На додачу до вмикання функції `light-dark()`, властивість `color-scheme` дозволяє перевизначати колірну палітру користувача для розділів документа. Примусове використання світлої або темної колірної палітри для розділу сторінки можна зробити, задавши властивість `color-scheme` зі значенням `light` або `dark`.
 
-> **Примітка:** Загалом, так не слід робити, а тут це використовується для демонстрації. Якщо користувач висловлює побажання, його налаштування зазвичай не слід відкидати.
+> [!NOTE]
+> Загалом, так не слід робити, а тут це використовується для демонстрації. Якщо користувач висловлює побажання, його налаштування зазвичай не слід відкидати.
 
 ```css
 .light {
@@ -142,4 +143,8 @@ section {
 
 - {{CSSXref("color-scheme")}}
 - {{CSSXref("&lt;color&gt;")}}
-- Модуль [Колір CSS](/uk/docs/Web/CSS/CSS_colors)
+- Модуль [Кольорів CSS](/uk/docs/Web/CSS/CSS_colors)
+- {{cssxref("@media", "Медійна")}} ознака [`prefers-contrast`](/uk/docs/Web/CSS/@media/prefers-contrast)
+- [`contrast()`](/uk/docs/Web/CSS/filter-function/contrast)
+- [WCAG – колірний контраст](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable/Color_contrast)
+- [Кастомні властивості CSS](/uk/docs/Web/CSS/--*) і {{cssxref("var")}}

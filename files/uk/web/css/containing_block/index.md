@@ -34,16 +34,17 @@ page-type: guide
 3. Коли властивість `position` має значення **`fixed`**, контейнерний блок задається {{glossary("viewport", "областю перегляду")}} (у випадку безперервного виводу) або областю сторінки (у випадку виводу сторінками).
 4. Коли властивість `position` має значення **`absolute`** або **`fixed`**, контейнерний блок може також формуватися краєм _рамок внутрішніх відступів_ найближчого елемента-предка, котрий виконує одну з наступних умов:
 
-   1. Має властивість {{cssxref("transform")}} чи {{cssxref("perspective")}}, чиє значення – не `none`
-   2. Має властивість {{cssxref("will-change")}} зі значенням `transform` або `perspective`
-   3. Має властивість {{cssxref("filter")}}, чиє значення – не `none`, або властивість `will-change` зі значенням `filter` (останнє працює лише в Firefox)
-   4. Має властивість {{cssxref("contain")}} зі значенням `layout`, `paint`, `strict` або `content` (наприклад, `contain: paint;`)
-   5. Має властивість {{cssxref("container-type")}} зі значенням, відмінним від `normal`
-   6. Має властивість {{cssxref("backdrop-filter")}}, чи значення – не `none` (наприклад, `backdrop-filter: blur(10px);`)
+   - Властивість {{cssxref("filter")}}, {{cssxref("backdrop-filter")}}, {{cssxref("transform")}} або {{cssxref("perspective")}} зі значенням, відмінним від `none`.
+   - Властивість {{cssxref("contain")}} зі значенням `layout`, `paint`, `strict` або `content` (наприклад, `contain: paint;`).
+   - Властивість {{cssxref("container-type")}} зі значенням, відмінним від `normal`.
+   - Властивість {{cssxref("will-change")}}, що містить назву властивості, для якої будь-яке значення, крім `initial`, породить контейнерний блок (наприклад, `filter` або `transform`).
+   - Властивість {{cssxref("content-visibility")}} зі значенням `auto`.
 
-> **Примітка:** Контейнерний блок, в котрому знаходиться кореневий елемент ({{HTMLElement("html")}}), – це прямокутник, що зветься **початковим контейнерним блоком**. Він має розміри, що дорівнюють розмірам області перегляду (при безперервному виводі) або області сторінки (при сторінковому виводі).
+> [!NOTE]
+> Контейнерний блок, в котрому знаходиться кореневий елемент ({{HTMLElement("html")}}), – це прямокутник, що зветься **початковим контейнерним блоком**. Він має розміри, що дорівнюють розмірам області перегляду (при безперервному виводі) або області сторінки (при сторінковому виводі).
 
-> **Примітка:** Браузери по-різному обробляють властивості `perspective` і `filter` при формуванні контейнерного блока.
+> [!NOTE]
+> Браузери по-різному обробляють властивості `perspective` і `filter` під час формування контейнерного блока.
 
 ## Обчислення відсоткових значень на основі контейнерного блока
 
@@ -52,7 +53,9 @@ page-type: guide
 1. Властивості {{cssxref("height")}}, {{cssxref("top")}} і {{cssxref("bottom")}} обчислюють відсоткові значення відносно `height` контейнерного блока.
 2. Властивості {{cssxref("width")}}, {{cssxref("left")}}, {{cssxref("right")}}, {{cssxref("padding")}} і {{cssxref("margin")}} обчислюють відсоткові значення відносно `width` контейнерного блока.
 
-> **Примітка:** **Контейнери-блоки** (як то елементи inline-block, block або list-item) містять або лише рамки рядкового рівня, що беруть участь в рядковому контексті форматування, або лише рамки блокового рівня, що беруть участь в блоковому контексті форматування. Елемент є контейнером-блоком лише тоді, коли він містить рамки блокового рівня або рядкового рівня.
+> [!NOTE]
+>
+> **Контейнери-блоки** (як то елементи inline-block, block або list-item) містять або лише рамки рядкового рівня, що беруть участь в рядковому контексті форматування, або лише рамки блокового рівня, що беруть участь в блоковому контексті форматування. Елемент є контейнером-блоком лише тоді, коли він містить рамки блокового рівня або рядкового рівня.
 
 ## Трохи прикладів
 
@@ -250,22 +253,19 @@ p {
 
 ## Дивіться також
 
-- Властивість {{cssxref("all")}} відкидає усі оголошення CSS до заданого відомого стану
-- Ключові концепції CSS:
-  - [Синтаксис CSS](/uk/docs/Web/CSS/Syntax)
-  - [Директиви](/uk/docs/Web/CSS/At-rule)
-  - [Коментарі](/uk/docs/Web/CSS/Comments)
-  - [Специфічність](/uk/docs/Web/CSS/Specificity)
-  - [Успадкування](/uk/docs/Web/CSS/Inheritance)
-  - [Рамкова модель](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
-  - [Режими компонування](/uk/docs/Web/CSS/Layout_mode)
-  - [Моделі візуального форматування](/uk/docs/Web/CSS/Visual_formatting_model)
-  - [Перекриття зовнішніх відступів](/uk/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
-  - Значення
-    - [Початкові значення](/uk/docs/Web/CSS/initial_value)
-    - [Обчислені значення](/uk/docs/Web/CSS/computed_value)
-    - [Застосовані значення](/uk/docs/Web/CSS/used_value)
-    - [Фактичні значення](/uk/docs/Web/CSS/actual_value)
-  - [Синтаксис визначення значень](/uk/docs/Web/CSS/Value_definition_syntax)
-  - [Властивості-скорочення](/uk/docs/Web/CSS/Shorthand_properties)
-  - [Заміщені елементи](/uk/docs/Web/CSS/Replaced_element)
+- Властивість {{cssxref("all")}}
+- Властивість {{cssxref("contain")}}
+- Властивість {{cssxref("aspect-ratio")}}
+- Властивість {{cssxref("box-sizing")}}
+- Значення розміру {{cssxref("min-content")}} і {{cssxref("max-content")}}
+- [Цеглинка – Розміри елементів у CSS](/uk/docs/Learn/CSS/Building_blocks/Sizing_items_in_CSS)
+- [Рамкова модель](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
+- Модуль [Рамкової моделі CSS](/uk/docs/Web/CSS/CSS_box_model) module
+- [Режими компонування](/uk/docs/Web/CSS/Layout_mode)
+- [Моделі візуального форматування](/uk/docs/Web/CSS/Visual_formatting_model)
+- [Блоковий контекст форматування](/uk/docs/Web/CSS/CSS_display/Block_formatting_context)
+- [Контекст нагромадження](/uk/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context)
+- [Перекриття зовнішніх полів](/uk/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
+- [Початкові](/uk/docs/Web/CSS/initial_value), [обчислені](/uk/docs/Web/CSS/computed_value), [вжиті](/uk/docs/Web/CSS/used_value) та [фактичні](/uk/docs/Web/CSS/actual_value) значення
+- [Заміщені елементи](/uk/docs/Web/CSS/Replaced_element)
+- {{glossary("Intrinsic size", "Природний розмір")}}

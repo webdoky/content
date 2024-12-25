@@ -1,0 +1,2 @@
+# Ignore merge commits, for others run lint-staged
+git rev-parse -q --no-revs --verify MERGE_HEAD || npx lint-staged

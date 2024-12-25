@@ -37,7 +37,9 @@ browser-compat: css.selectors.first-line
 
 ## Приклади
 
-### HTML
+### Оформлення першої лінії абзацу
+
+#### HTML
 
 ```html
 <p>
@@ -51,12 +53,19 @@ browser-compat: css.selectors.first-line
 </span>
 ```
 
-### CSS
+#### CSS
+
+```css hidden
+* {
+  font-size: 20px;
+  font-family: sans-serif;
+}
+```
 
 ```css
 ::first-line {
   color: blue;
-  text-transform: uppercase;
+  font-weight: bold;
 
   /* ЗАСТЕРЕЖЕННЯ: НЕ РОБІТЬ ТАК */
   /* Чимало властивостей недійсні для псевдоелементів ::first-line */
@@ -67,7 +76,52 @@ browser-compat: css.selectors.first-line
 
 ### Результат
 
-{{EmbedLiveSample('pryklady', 350, 160)}}
+{{EmbedLiveSample('oformlennia-pershoii-linii-abzatsu', 350, 130)}}
+
+### Оформлення першої лінії елемента SVG text
+
+У цьому прикладі за допомогою псевдоелемента `::first-line` оформлюється перша лінія елемента SVG {{SVGElement("text")}}.
+
+> **Примітка:** На час написання цих рядків ця можливість має [обмежену підтримку](#sumisnist-iz-brauzeramy).
+
+#### HTML
+
+```html-nolint
+<svg viewBox="0 0 320 150">
+  <text y="20">Це абзац українською мовою,
+розбитий на кілька ліній
+у вихідному коді, щоб його
+можна було легше читати та редагувати
+в текстовому редакторі.
+  </text>
+</svg>
+```
+
+#### CSS
+
+Щоб змусити елемент SVG `<text>` переноситися на кілька ліній, використовується властивість CSS {{cssxref("white-space", "", "#kilka-linii-u-elementi-svg-text")}}. Потім перша лінія обирається за допомогою псевдоелемента `::first-line`.
+
+```css hidden
+text {
+  font-size: 20px;
+  font-family: sans-serif;
+}
+```
+
+```css
+text {
+  white-space: break-spaces;
+}
+
+text::first-line {
+  fill: blue;
+  font-weight: bold;
+}
+```
+
+#### Результат
+
+{{EmbedLiveSample("oformlennia-pershoii-linii-elementa-svg-text", "100%", 150)}}
 
 ## Специфікації
 
@@ -80,3 +134,4 @@ browser-compat: css.selectors.first-line
 ## Дивіться також
 
 - {{cssxref("::first-letter")}}
+- {{cssxref("white-space")}}

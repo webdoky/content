@@ -6,7 +6,7 @@ page-type: glossary-definition
 
 {{GlossarySidebar}}
 
-**Підняттям** (підніманням) JavaScript називають процес, при якому здається, ніби інтерпретатор переміщує _оголошення_ функцій, змінних, класів та імпортів нагору їхньої області видимості, перед виконанням коду.
+**Підняттям** (підніманням) JavaScript називають процес, при якому здається, ніби інтерпретатор переміщує _оголошення_ функцій, змінних, класів та імпортів нагору їхньої {{glossary("scope", "області видимості")}}, перед виконанням коду.
 
 _Підняття_ не є терміном, нормативно визначеним у специфікації ECMAScript. Специфікація визначає групу оголошень як [_HoistableDeclaration_](https://tc39.es/ecma262/multipage/ecmascript-language-statements-and-declarations.html#prod-HoistableDeclaration) (піднімне оголошення), але це стосується лише оголошень [`function`](/uk/docs/Web/JavaScript/Reference/Statements/function), [`function*`](/uk/docs/Web/JavaScript/Reference/Statements/function*), [`async function`](/uk/docs/Web/JavaScript/Reference/Statements/async_function) і [`async function*`](/uk/docs/Web/JavaScript/Reference/Statements/async_function*). Підняття нерідко вважається також можливістю оголошень [`var`](/uk/docs/Web/JavaScript/Reference/Statements/var), хоч і в інший спосіб. Простими словами, будь-яку з наступних логік можна вважати підняттям:
 
@@ -49,7 +49,9 @@ console.log(x); // 1
 
 ## Дивіться також
 
-- [Інструкція `var`](/uk/docs/Web/JavaScript/Reference/Statements/var) — WebDoky
-- [Інструкція `let`](/uk/docs/Web/JavaScript/Reference/Statements/let) — WebDoky
-- [Інструкція `const`](/uk/docs/Web/JavaScript/Reference/Statements/const) — WebDoky
-- [Інструкція `function`](/uk/docs/Web/JavaScript/Reference/Statements/function) — WebDoky
+- [Інструкція `var`](/uk/docs/Web/JavaScript/Reference/Statements/var)
+- [Інструкція `let`](/uk/docs/Web/JavaScript/Reference/Statements/let)
+- [Інструкція `const`](/uk/docs/Web/JavaScript/Reference/Statements/const)
+- [Інструкція `function`](/uk/docs/Web/JavaScript/Reference/Statements/function)
+- [Інструкція `class`](/uk/docs/Web/JavaScript/Reference/Statements/class)
+- [Інструкція `import`](/uk/docs/Web/JavaScript/Reference/Statements/import)

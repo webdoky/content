@@ -14,7 +14,8 @@ spec-urls: https://www.w3.org/TR/CSS22/cascade.html#specified-value
 
 Використання початкового значення можна задати явно за допомогою ключового слова {{cssxref("initial")}}.
 
-> **Примітка:** Не слід плутати початкове значення зі значенням, заданим у таблиці стилів браузера.
+> [!NOTE]
+> Не слід плутати початкове значення зі значенням, заданим у таблиці стилів браузера.
 
 ## Специфікації
 
@@ -36,6 +37,7 @@ spec-urls: https://www.w3.org/TR/CSS22/cascade.html#specified-value
   - Значення
     - [Обчислені значення](/uk/docs/Web/CSS/computed_value)
     - [Застосовані значення](/uk/docs/Web/CSS/used_value)
+    - [Вирішені значення](/uk/docs/Web/CSS/resolved_value)
     - [Фактичні значення](/uk/docs/Web/CSS/actual_value)
   - [Синтаксис визначення значень](/uk/docs/Web/CSS/Value_definition_syntax)
   - [Властивості-скорочення](/uk/docs/Web/CSS/Shorthand_properties)

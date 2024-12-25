@@ -3,7 +3,7 @@ import { readFileSync } from "fs";
 
 const MARKDOWN_ESCAPE_REGEX = /([!"#'()*+.[\\\]_`{}-])/g;
 function escapeTextForMarkdown(text) {
-  return text.replaceAll(MARKDOWN_ESCAPE_REGEX, "\\$1");
+  return text.replaceAll(MARKDOWN_ESCAPE_REGEX, String.raw`\$1`);
 }
 
 function convertOffsetToLineAndColumn(markdownRunes, offset) {

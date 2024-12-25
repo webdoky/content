@@ -37,7 +37,7 @@ Object.keys(obj)
 ### Застосування Object.keys()
 
 ```js
-// простий масив
+// Базовий масив
 const arr = ["a", "b", "c"];
 console.log(Object.keys(arr)); // ['0', '1', '2']
 
@@ -77,7 +77,8 @@ console.log(Object.keys("foo")); // ['0', '1', '2']
 console.log(Object.keys(100)); // []
 ```
 
-> **Примітка:** В середовищі ES5 передача необ'єкта в `Object.keys()` призводить до викидання {{jsxref("TypeError")}}.
+> [!NOTE]
+> В середовищі ES5 передача необ'єкта в `Object.keys()` призводить до викидання {{jsxref("TypeError")}}.
 
 ## Специфікації
 
