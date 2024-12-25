@@ -7,7 +7,7 @@ browser-compat: css.properties.grid-template-columns
 
 {{CSSRef}}
 
-Властивість CSS **`grid-template-columns`** визначає імена ліній і функції калібрування доріжок {{glossary("grid column", "сіткових колонок")}}.
+Властивість [CSS](/uk/docs/Web/CSS) **`grid-template-columns`** визначає імена ліній і функції калібрування доріжок {{glossary("grid column", "сіткових колонок")}}.
 
 {{EmbedInteractiveExample("pages/css/grid-template-columns.html")}}
 
@@ -19,8 +19,8 @@ grid-template-columns: none;
 
 /* Значення <track-list> */
 grid-template-columns: 100px 1fr;
-grid-template-columns: [linename] 100px;
-grid-template-columns: [linename1] 100px [linename2 linename3];
+grid-template-columns: [line-name] 100px;
+grid-template-columns: [line-name1] 100px [line-name2 line-name3];
 grid-template-columns: minmax(100px, 1fr);
 grid-template-columns: fit-content(40%);
 grid-template-columns: repeat(3, 200px);
@@ -33,12 +33,12 @@ grid-template-columns:
   minmax(100px, max-content)
   repeat(auto-fill, 200px) 20%;
 grid-template-columns:
-  [linename1] 100px [linename2]
-  repeat(auto-fit, [linename3 linename4] 300px)
+  [line-name1] 100px [line-name2]
+  repeat(auto-fit, [line-name3 line-name4] 300px)
   100px;
 grid-template-columns:
-  [linename1 linename2] 100px
-  repeat(auto-fit, [linename1] 300px) [linename3];
+  [line-name1 line-name2] 100px
+  repeat(auto-fit, [line-name1] 300px) [line-name3];
 
 /* Глобальні значення */
 grid-template-columns: inherit;
@@ -52,7 +52,7 @@ grid-template-columns: unset;
 
 - `none` (жодного)
   - : Вказує на те, що немає явної сітки. Усі колонки будуть породжені неявно, а їх розміри будуть визначені властивістю {{cssxref("grid-auto-columns")}}.
-- `[linename]` (ім'я ряду)
+- `[line-name]` (ім'я ряду)
   - : [`<custom-ident>`](/uk/docs/Web/CSS/custom-ident), що вказує ім'я для лінії в відповідному місці. Відступ може бути будь-яким дійсним рядком, окрім зарезервованих слів `span` і `auto`. Лінії можуть мати декілька імен, розділених пробілом, всередині квадратних дужок, наприклад: `[line-name-a line-name-b]`.
 - {{cssxref("&lt;length&gt;")}} (довжина)
   - : Невід'ємна довжина, що задає ширину колонки.
@@ -66,9 +66,9 @@ grid-template-columns: unset;
     З'явившись поза записом `minmax()`, значення `<flex>` призводить до автоматичного мінімуму (тобто `minmax(auto, <flex>)`).
 
 - {{cssxref("max-content")}}
-  - : Є ключовим словом, що представляє [внесок максимального вмісту (англ.)](https://www.w3.org/TR/css-sizing-3/#max-content) елементів сітки, що займають доріжку сітки. Наприклад, якщо перший елемент доріжки сітки містить речення _"Repetitio est mater studiorum"_, а другий елемент містить речення _"Dum spiro, spero"_, то внесок максимального вмісту буде визначений розміром найбільшого речення з усіх елементів сітки – _"Repetitio est mater studiorum"_.
+  - : Є ключовим словом, що представляє [внесок максимального вмісту](https://www.w3.org/TR/css-sizing-3/#max-content) елементів сітки, що займають доріжку сітки. Наприклад, якщо перший елемент доріжки сітки містить речення _"Repetitio est mater studiorum"_, а другий елемент містить речення _"Dum spiro, spero"_, то внесок максимального вмісту буде визначений розміром найбільшого речення з усіх елементів сітки – _"Repetitio est mater studiorum"_.
 - {{cssxref("min-content")}}
-  - : Є ключовим словом, що представляє [внесок мінімального вмісту (англ.)](https://www.w3.org/TR/css-sizing-3/#min-content) елементів сітки, що займають доріжку сітки. Наприклад, якщо перший елемент доріжки сітки містить речення _"Repetitio est mater studiorum"_, а другий елемент містить речення _"Dum spiro, spero"_, то внесок мінімального вмісту буде визначений розміром найбільшого слова з усіх речень в елементах сітки – _"studiorum"_.
+  - : Є ключовим словом, що представляє [внесок мінімального вмісту](https://www.w3.org/TR/css-sizing-3/#min-content) елементів сітки, що займають доріжку сітки. Наприклад, якщо перший елемент доріжки сітки містить речення _"Repetitio est mater studiorum"_, а другий елемент містить речення _"Dum spiro, spero"_, то внесок мінімального вмісту буде визначений розміром найбільшого слова з усіх речень в елементах сітки – _"studiorum"_.
 - {{cssxref("minmax", "minmax(min, max)")}}
   - : Є функційним записом, що визначає діапазон розмірів, котрі більші чи дорівнюють _min_, і менші чи дорівнюють _max_. Якщо _max_ менше за _min_, то _max_ ігнорується, і функція обробляється як _min_. Значення`<flex>`, встановлене як максимум, задає флексфактор доріжки. Воно є недійсним, якщо задано як мінімум.
 - `auto`
@@ -79,7 +79,8 @@ grid-template-columns: unset;
 
     Бувши застосованим поза записом {{cssxref("minmax", "minmax()")}}, `auto` представляє діапазон між мінімумом і максимумом, описаний вище. У більшості випадків поводиться подібно до `minmax(min-content,max-content)`.
 
-    > **Примітка:** Розміри доріжок `auto` (і лише розміри доріжок `auto`) можуть бути розтягнені властивостями {{cssxref("align-content")}} і {{cssxref("justify-content")}}. Таким чином, усталено доріжка з розміром `auto` займатиме увесь незайнятий у контейнері сітки простір.
+    > [!NOTE]
+    > Розміри доріжок `auto` (і лише розміри доріжок `auto`) можуть бути розтягнені властивостями {{cssxref("align-content")}} і {{cssxref("justify-content")}}. Таким чином, усталено доріжка з розміром `auto` займатиме увесь незайнятий у контейнері сітки простір.
 
 - {{cssxref("fit-content_function", "fit-content( [ &lt;length&gt; | &lt;percentage&gt; ] )")}}
 
@@ -147,5 +148,5 @@ grid-template-columns: unset;
 
 - Пов'язані властивості CSS: {{cssxref("grid-template-rows")}}, {{cssxref("grid-template-areas")}}, {{cssxref("grid-template")}}
 - Посібник з сіткового компонування: _[Базові концепції сіткового компонування – сіткові доріжки](/uk/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout#sitkovi-dorizhky)_
-- Відеоурок: _[Визначення сітки (англ.)](https://gridbyexample.com/video/series-define-a-grid/)_
+- Відеоурок: _[Визначення сітки](https://gridbyexample.com/video/series-define-a-grid/)_
 - [Subgrid](/uk/docs/Web/CSS/CSS_grid_layout/Subgrid)

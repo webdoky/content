@@ -1,5 +1,5 @@
 ---
-title: "<hr> – Елемент тематичного розриву (горизонтальна лінія)"
+title: <hr> – Елемент тематичного розриву (горизонтальна лінія)
 slug: Web/HTML/Element/hr
 page-type: html-element
 browser-compat: html.elements.hr
@@ -111,4 +111,4 @@ browser-compat: html.elements.hr
 ## Дивіться також
 
 - {{HTMLElement('p')}}
-- [`<hr>` усередині `<select>`](/uk/docs/Web/HTML/Element/select#hr-useredyni-select)
+- [`<hr>` усередині `<select>`](/uk/docs/Web/HTML/Element/select#select-z-hrupuvanniam-variantiv)
