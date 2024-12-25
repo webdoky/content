@@ -15,3 +15,11 @@ page-type: glossary-definition
 ## Прокрутний порт
 
 Прокрутний порт (scrollport) – це видима частина прокрутного контейнера, що збігається з рамкою внутрішніх відступів прокрутного контейнера. Смуги прокручення використовуються для переміщення вмісту до та назовні віконця прокручення, щоб можна було переглянути весь вміст.
+
+## See also
+
+- [Навчання – Вміст, що переливається через край](/uk/docs/Learn_web_development/Core/Styling_basics/Overflow)
+- [Схоплення прокручення](/uk/docs/Glossary/Scroll_snap), а також [контейнер схоплення прокручення](/uk/docs/Glossary/Scroll_snap#konteiner-skhoplennia-prokruchennia)
+- Модуль [Переповнення CSS](/uk/docs/Web/CSS/CSS_overflow)
+- Модуль [Логіки перепрокручення CSS](/uk/docs/Web/CSS/CSS_overscroll_behavior)
+- Модуль [Схоплення прокручення CSS](/uk/docs/Web/CSS/CSS_scroll_snap)
