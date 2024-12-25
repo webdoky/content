@@ -21,12 +21,14 @@ browser-compat: html.elements.form
 
   - : Розділені комами [типи вмісту](/uk/docs/Web/SVG/Content_type), котрі приймає сервер.
 
-    > **Примітка:** **Цей атрибут тепер нерекомендований, його не слід використовувати.** Натомість слід використовувати атрибут [`accept`](/uk/docs/Web/HTML/Element/input#accept-pryimannia) на елементах `<input type=file>`.
+    > [!NOTE]
+    >
+    > **Цей атрибут тепер нерекомендований, його не слід використовувати.** Натомість слід використовувати атрибут [`accept`](/uk/docs/Web/HTML/Element/input#accept-pryimannia) на елементах `<input type=file>`.
 
 - `accept-charset`
 
-  - : Розділені пробілами {{Glossary("character encoding", "кодування символів")}}, котрі приймає сервер. Браузер використає їх в порядку, в якому вони вказані. Усталене значення – [таке саме кодування, яке має сторінка](/uk/docs/Web/HTTP/Headers/Content-Encoding).
-    (У попередніх версіях HTML кодування символів також могли бути розділені комами.)
+  - : {{Glossary("character encoding", "Кодування символів")}}, що приймається сервером.
+    Специфікація дозволяє одне незалежне від регістру значення `"UTF-8"`, що показує повсюдність цього кодування (в минулому можна було задавати кілька кодувань символів, розділених комами або пробілами).
 
 - `autocapitalize`
 
@@ -183,7 +185,7 @@ browser-compat: html.elements.form
 
 ## Дивіться також
 
-- [Посібник форм HTML](/uk/docs/Learn/Forms)
+- [Посібник форм HTML](/uk/docs/Learn_web_development/Extensions/Forms)
 - Інші елементи, що використовуються при створенні форм: {{HTMLElement("button")}}, {{HTMLElement("datalist")}}, {{HTMLElement("fieldset")}}, {{HTMLElement("input")}}, {{HTMLElement("label")}}, {{HTMLElement("legend")}}, {{HTMLElement("meter")}}, {{HTMLElement("optgroup")}}, {{HTMLElement("option")}}, {{HTMLElement("output")}}, {{HTMLElement("progress")}}, {{HTMLElement("select")}}, {{HTMLElement("textarea")}}.
 - Отримання списку елементів у формі: {{domxref("HTMLFormElement.elements")}}
 - [ARIA – роль form](/uk/docs/Web/Accessibility/ARIA/Roles/form_role)
