@@ -7,7 +7,7 @@ browser-compat: css.types.overflow
 
 {{CSSRef}}
 
-{{glossary("enumerated", "Перелічений")}} тип даних **`<overflow>`** представляє значення – ключові слова для розгорнутих властивостей {{cssxref("overflow-block")}}, {{cssxref("overflow-inline")}}, {{cssxref("overflow-x")}} і {{cssxref("overflow-y")}} та властивості-скорочення {{cssxref("overflow")}}. Ці властивості застосовуються до блокових контейнерів, гнучких контейнерів і сіткових контейнерів.
+{{glossary("enumerated", "Перелічений")}} тип даних **`<overflow>`** представляє значення – ключові слова для розгорнутих властивостей {{cssxref("overflow-block")}}, {{cssxref("overflow-inline")}}, {{cssxref("overflow-x")}} і {{cssxref("overflow-y")}} та властивості-скорочення {{cssxref("overflow")}}. Ці властивості застосовуються до блокових, гнучких і сіткових контейнерів.
 
 ## Синтаксис
 
