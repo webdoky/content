@@ -582,9 +582,9 @@ closeBtn.addEventListener("click", () => {
 ## Дивіться також
 
 - Інтерфейс {{domxref("HTMLDialogElement")}} interface
-- Подія {{domxref("HTMLDialogElement/close_event", "close")}}
-- Подія {{domxref("HTMLElement/cancel_event", "cancel")}}
+- Подія {{domxref("HTMLDialogElement/close_event", "close")}} інтерфейсу `HTMLDialogElement`
+- Подія {{domxref("HTMLDialogElement/cancel_event", "cancel")}} інтерфейсу `HTMLDialogElement`
 - Властивість {{domxref("HTMLDialogElement/open", "open")}} інтерфейсу `HTMLDialogElement`
 - Глобальний атрибут елементів HTML [`inert`](/uk/docs/Web/HTML/Global_attributes/inert)
 - Псевдоелемент CSS {{CSSXref("::backdrop")}}
-- [Вебформи](/uk/docs/Learn/Forms) в Області навчання
+- [Вебформи](/uk/docs/Learn_web_development/Extensions/Forms) в області Навчання
