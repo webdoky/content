@@ -471,8 +471,7 @@ switchBtn.addEventListener("click", () => {
 
 ## Дивіться також
 
-- [Посібник з форм HTML](/uk/docs/Learn/Forms)
+- [Посібник з форм HTML](/uk/docs/Learn_web_development/Extensions/Forms)
 - {{HTMLElement("input")}}
 - [`<input type="tel">`](/uk/docs/Web/HTML/Element/input/tel)
-- [Сумісність властивостей CSS](/uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls)
 - [Стаття: Чому Gov.UK змінив тип полів для чисел](https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/)
