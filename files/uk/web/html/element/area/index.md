@@ -1,5 +1,5 @@
 ---
-title: "<area> – Елемент області на карті зображення"
+title: <area> – Елемент області на карті зображення
 slug: Web/HTML/Element/area
 page-type: html-element
 browser-compat: html.elements.area
@@ -37,7 +37,7 @@ browser-compat: html.elements.area
     Ці значення – числа пікселів CSS.
 
 - `download`
-  - : Цей атрибут, якщо він є, позначає те, що автор має намір використовувати гіперпосилання для завантаження ресурсу.
+  - : Цей атрибут, якщо присутній, вказує на те, що заданий ресурс призначений для звантаження, а не відображення в браузері.
     Дивіться повний опис атрибута [`download`](/uk/docs/Web/HTML/Element/a#download) на сторінці {{HTMLElement("a")}}.
 - `href`
   - : Ціль гіперпосилання області.
@@ -52,7 +52,7 @@ browser-compat: html.elements.area
 
     - `no-referrer`: Заголовок {{HTTPHeader("Referer")}} не буде надіслано.
     - `no-referrer-when-downgrade`: Заголовок {{HTTPHeader("Referer")}} не буде надіслано до {{Glossary("origin", "походжень")}} без {{Glossary("TLS")}} ({{Glossary("HTTPS")}}).
-    - `origin`: Надісланий посилач буде обмежений до походження сторінки-посилача: її [схеми](/uk/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL), {{Glossary("host", "хоста")}} та {{Glossary("port", "порту")}}.
+    - `origin`: Надісланий посилач буде обмежений до походження сторінки-посилача: її [схеми](/uk/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_URL), {{Glossary("host", "хоста")}} та {{Glossary("port", "порту")}}.
     - `origin-when-cross-origin`: Посилач, надісланий іншим походженням, буде обмежений схемою, хостом і портом. Переходи в межах того ж самого походження включатимуть в посилач увесь шлях.
     - `same-origin`: Посилач буде надісланий в межах {{Glossary("Same-origin policy", "того самого походження")}}, а запити до інших походжень не міститимуть інформації про посилача.
     - `strict-origin`: Надсилати походження документа як посилача, коли рівень безпеки протоколу залишається таким самим (HTTPS→HTTPS), але не надсилати його менш безпечному призначенню (HTTPS→HTTP).
@@ -60,7 +60,7 @@ browser-compat: html.elements.area
     - `unsafe-url`: Посилач уміщатиме походження _та_ шлях (але не [фрагмент](/uk/docs/Web/API/HTMLAnchorElement/hash), не [пароль](/uk/docs/Web/API/HTMLAnchorElement/password) і не [ім'я користувача](/uk/docs/Web/API/HTMLAnchorElement/username)).
       **Це значення є небезпечним**, оскільки воно випускає походження та шляхи з ресурсів, захищених TLS, до незахищених походжень.
 
-- `rel`
+- [`rel`](/uk/docs/Web/HTML/Attributes/rel)
   - : Для якорів, що вміщають атрибут [`href`](#href), цей атрибут визначає відношення об'єкта-цілі до об'єкта-посилання.
     Значення – список типів посилань, розділених пробілами.
     Значення та їхня семантика реєструються певним органом, що може мати значення для автора документа.
@@ -81,7 +81,8 @@ browser-compat: html.elements.area
 
     Цей атрибут слід використовувати лише тоді, коли присутній атрибут [`href`](#href).
 
-    > **Примітка:** Задання на елементах `<area>` `target="_blank"` неявно задає таку ж логіку `rel`, як задання [`rel="noopener"`](/uk/docs/Web/HTML/Attributes/rel/noopener), який не задає `window.opener`. Дивіться статус підтримки у [Сумісності з браузерами](#sumisnist-iz-brauzeramy).
+    > [!NOTE]
+    > Задання на елементах `<area>` `target="_blank"` неявно задає таку ж логіку `rel`, як задання [`rel="noopener"`](/uk/docs/Web/HTML/Attributes/rel/noopener), який не задає `window.opener`. Дивіться статус підтримки у [Сумісності з браузерами](#sumisnist-iz-brauzeramy).
 
 ## Приклади
 
@@ -100,7 +101,7 @@ browser-compat: html.elements.area
 </map>
 <img
   usemap="#primary"
-  src="https://via.placeholder.com/350x150"
+  src="https://dummyimage.com/350x150"
   alt="350 x 150 pic" />
 ```
 
@@ -138,7 +139,7 @@ browser-compat: html.elements.area
     <tr>
       <th scope="row">Неявна роль ARIA</th>
       <td>
-       <a href="/uk/docs/Web/Accessibility/ARIA/Roles/link_role"><code>link</code></a>, якщо присутній атрибут <a href="/uk/docs/Web/HTML/Element/area#href"><code>href</code></a>, інакше – <a href="/uk/docs/Web/Accessibility/ARIA/Roles/generic_role"><code>generic</code></a>
+       <a href="/uk/docs/Web/Accessibility/ARIA/Roles/link_role"><code>link</code></a>, якщо присутній атрибут <a href="#href"><code>href</code></a>, інакше – <a href="/uk/docs/Web/Accessibility/ARIA/Roles/generic_role"><code>generic</code></a>
       </td>
     </tr>
     <tr>

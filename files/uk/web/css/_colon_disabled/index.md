@@ -56,29 +56,22 @@ input[type="text"]:disabled {
 
 ### JavaScript
 
+Перемкнути вимкненість полів введення, коли клацнуто полем для галочки
+
 ```js
-// Дочекатися завершення завантаження сторінки
-document.addEventListener(
-  "DOMContentLoaded",
-  () => {
-    // Додати до поля для галочки обробник події `change`
-    document.getElementById("billing-checkbox").onchange = toggleBilling;
-  },
-  false,
-);
+const checkbox = document.querySelector("#billing-checkbox");
+const billingItems = document.querySelectorAll('#billing input[type="text"]');
 
-function toggleBilling() {
-  // Вибрати текстові поля для рахунків
-  const billingItems = document.querySelectorAll('#billing input[type="text"]');
-
-  // Перемкнути текстові поля для рахунків
+checkbox.addEventListener("change", () => {
   billingItems.forEach((item) => {
     item.disabled = !item.disabled;
   });
-}
+});
 ```
 
 ### Результат
+
+Додайте чи приберіть галочку, щоб змінити оформлення полів оплати.
 
 {{EmbedLiveSample('pryklady', 300, 250)}}
 
