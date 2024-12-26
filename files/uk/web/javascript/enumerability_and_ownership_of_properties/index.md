@@ -16,7 +16,7 @@ _Перелічувані властивості_ – ті властивост�
 
 Власність властивостей визначається тим, чи належить властивість безпосередньо об'єктові, а не його ланцюжкові прототипів.
 
-До всіх властивостей, перелічуваних і ні, рядкових і символьних, власних і успадкованих, можна звернутися за допомогою [запису крапки або квадратних дужок](/uk/docs/Web/JavaScript/Reference/Operators/Property_accessors). Цей розділ зосереджується на засобах JavaScript, що обробляють один за одним елементи групи властивостей об'єкта.
+До всіх властивостей, перелічуваних і ні, рядкових і символьних, власних і успадкованих, можна звернутися за допомогою [запису крапки або квадратних дужок](/uk/docs/Web/JavaScript/Reference/Operators/Property_accessors). Цей розділ зосереджується на засобах, які JavaScript надає для послідовної обробки групи властивостей об'єкта.
 
 ## Перевірка властивості об'єкта
 
@@ -55,14 +55,14 @@ _Перелічувані властивості_ – ті властивост�
 
 ```js
 const SimplePropertyRetriever = {
-  getOwnEnumerables(obj) {
+  getOwnEnumProps(obj) {
     return this._getPropertyNames(obj, true, false, this._enumerable);
     // Або можна було б використати for...in, відфільтрований за Object.hasOwn, або просто таке: return Object.keys(obj);
   },
-  getOwnNonenumerables(obj) {
+  getOwnNonEnumProps(obj) {
     return this._getPropertyNames(obj, true, false, this._notEnumerable);
   },
-  getOwnEnumerablesAndNonenumerables(obj) {
+  getOwnProps(obj) {
     return this._getPropertyNames(
       obj,
       true,
@@ -71,13 +71,13 @@ const SimplePropertyRetriever = {
     );
     // Або просто використайте: return Object.getOwnPropertyNames(obj);
   },
-  getPrototypeEnumerables(obj) {
+  getPrototypeEnumProps(obj) {
     return this._getPropertyNames(obj, false, true, this._enumerable);
   },
-  getPrototypeNonenumerables(obj) {
+  getPrototypeNonEnumProps(obj) {
     return this._getPropertyNames(obj, false, true, this._notEnumerable);
   },
-  getPrototypeEnumerablesAndNonenumerables(obj) {
+  getPrototypeProps(obj) {
     return this._getPropertyNames(
       obj,
       false,
@@ -85,14 +85,14 @@ const SimplePropertyRetriever = {
       this._enumerableAndNotEnumerable,
     );
   },
-  getOwnAndPrototypeEnumerables(obj) {
+  getOwnAndPrototypeEnumProps(obj) {
     return this._getPropertyNames(obj, true, true, this._enumerable);
     // Або ж можна використати невідфільтрований for...in
   },
-  getOwnAndPrototypeNonenumerables(obj) {
+  getOwnAndPrototypeNonEnumProps(obj) {
     return this._getPropertyNames(obj, true, true, this._notEnumerable);
   },
-  getOwnAndPrototypeEnumerablesAndNonenumerables(obj) {
+  getOwnAndPrototypeEnumAndNonEnumProps(obj) {
     return this._getPropertyNames(
       obj,
       true,

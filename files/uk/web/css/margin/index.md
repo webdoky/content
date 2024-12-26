@@ -68,9 +68,9 @@ margin: unset;
 
 ### Горизонтальне центрування
 
-Аби центрувати щось по горизонталі, в сучасних браузерах можна застосувати {{cssxref("display")}}`: flex;` {{cssxref("justify-content")}}`: center;`.
+Центрувати елемент за горизонталлю в межах його батьківського елемента можна, задавши йому `margin: 0 auto;`.
 
-Проте в старих браузерах, як то IE 8 чи 9, що не підтримують Компонування гнучкого блока, описаний вище підхід не доступний. Аби центрувати елемент всередині свого предка, там слід застосовувати `margin: 0 auto;`.
+Поширеніший метод центрування елемента за горизонталлю – задання контейнеру `display: flex;` і [`justify-content: center;`](/uk/docs/Web/CSS/justify-content), у такий спосіб [центруючи його гнучкі дочірні елементи](/uk/docs/Web/CSS/CSS_flexible_box_layout/Aligning_items_in_a_flex_container).
 
 ### Стягування зовнішніх відступів
 
@@ -150,7 +150,9 @@ margin: auto; /* згори та знизу: 0 відступу     */
 
 ## Дивіться також
 
-- [Вступ до Базової рамкової моделі CSS](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
-- [Опанування явища складання берегів](/uk/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
 - {{cssxref("margin-top")}}, {{cssxref("margin-right")}}, {{cssxref("margin-bottom")}} і {{cssxref("margin-left")}}
-- Відповідні логічні властивості: {{cssxref("margin-block-start")}}, {{cssxref("margin-block-end")}}, {{cssxref("margin-inline-start")}} і {{cssxref("margin-inline-end")}}, а також скорочення {{cssxref("margin-block")}} і {{cssxref("margin-inline")}}
+- {{cssxref("margin-block-start")}}, {{cssxref("margin-block-end")}}, {{cssxref("margin-inline-start")}} і {{cssxref("margin-inline-end")}}
+- Скорочення {{cssxref("margin-block")}} і {{cssxref("margin-inline")}}
+- [Опанування перекриття зовнішніх відступів](/uk/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
+- [Вступ у Базову рамкову модель CSS](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
+- Модуль [Рамкової моделі CSS](/uk/docs/Web/CSS/CSS_box_model)

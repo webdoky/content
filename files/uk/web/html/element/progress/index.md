@@ -1,5 +1,5 @@
 ---
-title: "<progress>: Елемент – індикатор прогресу"
+title: <progress> – Елемент – індикатор прогресу
 slug: Web/HTML/Element/progress
 page-type: html-element
 browser-compat: html.elements.progress
@@ -11,55 +11,11 @@ browser-compat: html.elements.progress
 
 {{EmbedInteractiveExample("pages/tabbed/progress.html", "tabbed-standard")}}
 
-<table class="properties">
-  <tbody>
-    <tr>
-      <th scope="row">
-        <a href="/uk/docs/Web/HTML/Content_categories">Категорії вмісту</a>
-      </th>
-      <td>
-        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist">Потоковий вміст</a>,
-        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist">оповідальний вміст</a>, підписний вміст,
-        <a href="/uk/docs/Web/HTML/Content_categories#vidchutnyi-vmist">відчутний вміст</a>.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволений вміст</th>
-      <td>
-        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist">Оповідальний вміст</a>, але серед нащадків не повинно бути елементів <code>&#x3C;progress></code>.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Пропуск тега</th>
-      <td>{{no_tag_omission}}</td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені батьківські елементи</th>
-      <td>
-        Усі, що приймають
-        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist">оповідальний вміст</a>.
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Неявна роль ARIA</th>
-      <td><a href="/uk/docs/Web/Accessibility/ARIA/Roles/progressbar_role"><code>progressbar</code></a></td>
-    </tr>
-    <tr>
-      <th scope="row">Дозволені ролі ARIA</th>
-      <td>Немає дозволеної ролі</td>
-    </tr>
-    <tr>
-      <th scope="row">Інтерфейс DOM</th>
-      <td>{{domxref("HTMLProgressElement")}}</td>
-    </tr>
-  </tbody>
-</table>
-
 ## Атрибути
 
 Цей елемент приймає [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
 
-- `max`
+- [`max`](/uk/docs/Web/HTML/Attributes/max)
   - : Цей атрибут описує те, скільки роботи вимагає завдання, позначене елементом `progress`. Якщо атрибут `max` присутній, він повинен мати значення більше за `0` і бути дійсним числом з рухомою комою. Усталене значення — `1`.
 - `value`
   - : Цей атрибут задає те, скільки роботи виконано. Він повинен бути дійсним числом з рухомою комою між `0` і `max`, або між `0` і `1`, якщо `max` пропущено. Якщо атрибут `value` відсутній, смуга прогресу є невизначеною; це означає, що дія триває, але немає вказівок на те, скільки часу вона буде тривати.
@@ -68,17 +24,7 @@ browser-compat: html.elements.progress
 
 > **Примітка:** Псевдоклас {{cssxref(":indeterminate")}} можна використовувати для збігу з невизначеними смугами прогресу. Щоб змінити смугу прогресу на невизначену після того, як їй надано значення, необхідно видалити атрибут `value` за допомогою {{domxref("Element.removeAttribute", "element.removeAttribute('value')")}}.
 
-## Приклади
-
-```html
-<progress value="70" max="100">70 %</progress>
-```
-
-### Результат
-
-{{EmbedLiveSample("pryklady", 200, 50)}}
-
-## Занепокоєння щодо доступності
+## Доступність
 
 ### Підписування
 
@@ -102,7 +48,7 @@ browser-compat: html.elements.progress
 
 #### Результат
 
-{{EmbedLiveSample('pidpysuvannia)}}
+{{EmbedLiveSample('pidpysuvannia')}}
 
 ### Описування певного регіону
 
@@ -124,6 +70,62 @@ browser-compat: html.elements.progress
 
 {{EmbedLiveSample('opysuvannia-pevnoho-rehionu')}}
 
+## Приклади
+
+```html
+<progress value="70" max="100">70 %</progress>
+```
+
+### Результат
+
+{{EmbedLiveSample("pryklady", 200, 50)}}
+
+## Технічний підсумок
+
+<table class="properties">
+  <tbody>
+    <tr>
+      <th scope="row">
+        <a href="/uk/docs/Web/HTML/Content_categories">Категорії вмісту</a>
+      </th>
+      <td>
+        <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist">Потоковий вміст</a>,
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist">оповідальний вміст</a>, підписний вміст,
+        <a href="/uk/docs/Web/HTML/Content_categories#vidchutnyi-vmist">відчутний вміст</a>.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволений вміст</th>
+      <td>
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist">Оповідальний вміст</a>, але серед нащадків не повинно бути елементів <code>&#x3C;progress></code>.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Пропуск тега</th>
+      <td>Немає; і початковий, і кінцевий теги – обов'язкові.</td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені батьківські елементи</th>
+      <td>
+        Усі, що приймають
+        <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist">оповідальний вміст</a>.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Неявна роль ARIA</th>
+      <td><a href="/uk/docs/Web/Accessibility/ARIA/Roles/progressbar_role"><code>progressbar</code></a></td>
+    </tr>
+    <tr>
+      <th scope="row">Дозволені ролі ARIA</th>
+      <td>Немає дозволеної ролі</td>
+    </tr>
+    <tr>
+      <th scope="row">Інтерфейс DOM</th>
+      <td>{{domxref("HTMLProgressElement")}}</td>
+    </tr>
+  </tbody>
+</table>
+
 ## Специфікації
 
 {{Specifications}}
@@ -134,6 +136,7 @@ browser-compat: html.elements.progress
 
 ## Дивіться також
 
+- [Створення вертикальних формових елементів](/uk/docs/Web/CSS/CSS_writing_modes/Vertical_controls)
 - {{htmlelement("meter")}}
 - {{cssxref(":indeterminate")}}
 - {{cssxref("-moz-orient")}}

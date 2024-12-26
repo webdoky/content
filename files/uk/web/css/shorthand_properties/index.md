@@ -170,73 +170,89 @@ CSS має універсальну властивість-скорочення,
 
 Більше про те, як в CSS працює успадкування, читайте в [Каскадності та успадкуванні](/uk/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance) та [Знайомстві з каскадністю CSS](/uk/docs/Web/CSS/Cascade).
 
+## Властивості-скорочення
+
+- {{cssxref("all")}}
+- {{cssxref("animation")}}
+- {{cssxref("animation-range")}}
+- {{cssxref("background")}}
+- {{cssxref("border")}}
+- {{cssxref("border-block")}}
+- {{cssxref("border-block-end")}}
+- {{cssxref("border-block-start")}}
+- {{cssxref("border-bottom")}}
+- {{cssxref("border-color")}}
+- {{cssxref("border-image")}}
+- {{cssxref("border-inline")}}
+- {{cssxref("border-inline-end")}}
+- {{cssxref("border-inline-start")}}
+- {{cssxref("border-left")}}
+- {{cssxref("border-radius")}}
+- {{cssxref("border-right")}}
+- {{cssxref("border-style")}}
+- {{cssxref("border-top")}}
+- {{cssxref("border-width")}}
+- {{cssxref("column-rule")}}
+- {{cssxref("columns")}}
+- {{cssxref("contain-intrinsic-size")}}
+- {{cssxref("container")}}
+- {{cssxref("flex")}}
+- {{cssxref("flex-flow")}}
+- {{cssxref("font")}}
+- {{cssxref("font-synthesis")}}
+- {{cssxref("font-variant")}}
+- {{cssxref("gap")}}
+- {{cssxref("grid")}}
+- {{cssxref("grid-area")}}
+- {{cssxref("grid-column")}}
+- {{cssxref("grid-row")}}
+- {{cssxref("grid-template")}}
+- {{cssxref("inset")}}
+- {{cssxref("inset-block")}}
+- {{cssxref("inset-inline")}}
+- {{cssxref("list-style")}}
+- {{cssxref("margin")}}
+- {{cssxref("margin-block")}}
+- {{cssxref("margin-inline")}}
+- {{cssxref("mask")}}
+- {{cssxref("mask-border")}}
+- {{cssxref("offset")}}
+- {{cssxref("outline")}}
+- {{cssxref("overflow")}}
+- {{cssxref("overscroll-behavior")}}
+- {{cssxref("padding")}}
+- {{cssxref("padding-block")}}
+- {{cssxref("padding-inline")}}
+- {{cssxref("place-content")}}
+- {{cssxref("place-items")}}
+- {{cssxref("place-self")}}
+- {{cssxref("position-try")}}
+- {{cssxref("scroll-margin")}}
+- {{cssxref("scroll-margin-block")}}
+- {{cssxref("scroll-margin-inline")}}
+- {{cssxref("scroll-padding")}}
+- {{cssxref("scroll-padding-block")}}
+- {{cssxref("scroll-padding-inline")}}
+- {{cssxref("scroll-timeline")}}
+- {{cssxref("text-decoration")}}
+- {{cssxref("text-emphasis")}}
+- {{cssxref("text-wrap")}}
+- {{cssxref("transition")}}
+- {{cssxref("view-timeline")}}
+- {{cssxref("-webkit-text-stroke")}}
+- {{cssxref("-webkit-border-before")}}
+- {{cssxref("-webkit-mask-box-image")}}
+
 ## Дивіться також
 
-- Ключові концепції CSS:
-  - [Синтаксис CSS](/uk/docs/Web/CSS/Syntax)
-  - [Директиви](/uk/docs/Web/CSS/At-rule)
-  - [Коментарі](/uk/docs/Web/CSS/Comments)
-  - [Специфічність](/uk/docs/Web/CSS/Specificity)
-  - [Успадкування](/uk/docs/Web/CSS/Inheritance)
-  - [Рамкова модель](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
-  - [Режими компонування](/uk/docs/Web/CSS/Layout_mode)
-  - [Моделі візуального форматування](/uk/docs/Web/CSS/Visual_formatting_model)
-  - [Перекриття зовнішніх відступів](/uk/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
-  - Значення
-    - [Початкові значення](/uk/docs/Web/CSS/initial_value)
-    - [Обчислені значення](/uk/docs/Web/CSS/computed_value)
-    - [Застосовані значення](/uk/docs/Web/CSS/used_value)
-    - [Фактичні значення](/uk/docs/Web/CSS/actual_value)
-  - [Синтаксис визначення значень](/uk/docs/Web/CSS/Value_definition_syntax)
-  - [Заміщені елементи](/uk/docs/Web/CSS/Replaced_element)
-- Властивості-скорочення:
-  - {{cssxref("all")}}
-  - {{cssxref("animation")}}
-  - {{cssxref("background")}}
-  - {{cssxref("border")}}
-  - {{cssxref("border-block-end")}}
-  - {{cssxref("border-block-start")}}
-  - {{cssxref("border-bottom")}}
-  - {{cssxref("border-color")}}
-  - {{cssxref("border-image")}}
-  - {{cssxref("border-inline-end")}}
-  - {{cssxref("border-inline-start")}}
-  - {{cssxref("border-left")}}
-  - {{cssxref("border-radius")}}
-  - {{cssxref("border-right")}}
-  - {{cssxref("border-style")}}
-  - {{cssxref("border-top")}}
-  - {{cssxref("border-width")}}
-  - {{cssxref("column-rule")}}
-  - {{cssxref("columns")}}
-  - {{cssxref("container")}}
-  - {{cssxref("contain-intrinsic-size")}}
-  - {{cssxref("flex")}}
-  - {{cssxref("flex-flow")}}
-  - {{cssxref("font")}}
-  - {{cssxref("font-synthesis")}}
-  - {{cssxref("font-variant")}}
-  - {{cssxref("gap")}}
-  - {{cssxref("grid")}}
-  - {{cssxref("grid-area")}}
-  - {{cssxref("grid-column")}}
-  - {{cssxref("grid-row")}}
-  - {{cssxref("grid-template")}}
-  - {{cssxref("inset")}}
-  - {{cssxref("list-style")}}
-  - {{cssxref("margin")}}
-  - {{cssxref("mask")}}
-  - {{cssxref("mask-border")}}
-  - {{cssxref("offset")}}
-  - {{cssxref("outline")}}
-  - {{cssxref("overflow")}}
-  - {{cssxref("padding")}}
-  - {{cssxref("place-content")}}
-  - {{cssxref("place-items")}}
-  - {{cssxref("place-self")}}
-  - {{cssxref("scroll-margin")}}
-  - {{cssxref("scroll-padding")}}
-  - {{cssxref("scroll-timeline")}}
-  - {{cssxref("text-decoration")}}
-  - {{cssxref("text-emphasis")}}
-  - {{cssxref("transition")}}
+- [Синтаксис CSS](/uk/docs/Web/CSS/Syntax)
+- [Директиви](/uk/docs/Web/CSS/At-rule)
+- [Специфічність](/uk/docs/Web/CSS/Specificity)
+- [Успадкування](/uk/docs/Web/CSS/Inheritance)
+- [Знайомство з Каскадністю CSS](/uk/docs/Web/CSS/Cascade)
+- [Вивчаймо – Каскадність, специфічність та успадкування](/uk/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance)
+- [Вивчаймо – Каскадні шари](/uk/docs/Learn/CSS/Building_blocks/Cascade_layers)
+- Модуль [Каскадності та успадкування CSS](/uk/docs/Web/CSS/CSS_cascade)
+- [Моделі візуального форматування](/uk/docs/Web/CSS/Visual_formatting_model)
+- [Початкові](/uk/docs/Web/CSS/initial_value), [обчислені](/uk/docs/Web/CSS/computed_value), [вжиті](/uk/docs/Web/CSS/used_value) та [фактичні](/uk/docs/Web/CSS/actual_value) значення
+- [Синтаксис визначення значень](/uk/docs/Web/CSS/Value_definition_syntax)
