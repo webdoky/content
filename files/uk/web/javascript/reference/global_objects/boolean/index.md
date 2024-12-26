@@ -7,50 +7,64 @@ browser-compat: javascript.builtins.Boolean
 
 {{JSRef}}
 
-Об'єкт **`Boolean`** (булів) представляє логічне значення: `true` (істину) або `false` (хибу).
+Значення **`Boolean`** (булеві) можуть мати одне з двох значень: `true` (істина) або `false` (хиба), що представляють значення істинності логічного твердження.
 
 ## Опис
 
+Значення Boolean зазвичай повертаються [операторами відношення](/uk/docs/Web/JavaScript/Reference/Operators#operatory-vidnoshennia), [операторами рівності](/uk/docs/Web/JavaScript/Reference/Operators#operatory-rivnosti) та [логічним НЕ (`!`)](/uk/docs/Web/JavaScript/Reference/Operators/Logical_NOT). Також вони можуть повертатися функціями, що представляють умови, наприклад, {{jsxref("Array.isArray()")}}. Зверніть увагу на те, що [бінарні логічні оператори](/uk/docs/Web/JavaScript/Reference/Operators#binarni-lohichni-operatory), серед яких `&&` і `||`, повертають значення операндів, що можуть бути булевими значеннями, але можуть і не бути.
+
+Булеві значення здебільшого використовуються в перевірці умов, наприклад, умовах інструкцій {{jsxref("Statements/if...else", "if...else")}} і {{jsxref("Statements/while", "while")}}, [умовному операторі](/uk/docs/Web/JavaScript/Reference/Operators/Conditional_operator) (`? :`) та поверненому значенні предиката {{jsxref("Array.prototype.filter()")}}.
+
+Рідко трапляється необхідність явно перетворювати щось на булеве значення, адже JavaScript у булевих контекстах робить це автоматично, тож можна користуватися будь-яким значенням так, ніби воно булеве, послуговуючись його [істинністю](#zvedennia-do-bulevoho). Також заохочується використання у власному коді `if (condition)` і `if (!condition)` замість `if (condition === true)` і `if (condition === false)`, щоб послуговуватися користю від такої поведінки. Однак пересвідчення в тому, що значення умов завжди є булевими, допоможе краще роз'яснити призначення коду.
+
+```js
+// Робіть так:
+// Це завжди повертає булеве значення
+const isObject = (obj) => !!obj && typeof obj === "object";
+
+// Або так:
+const isObject = (obj) => Boolean(obj) && typeof obj === "object";
+
+// Або так:
+const isObject = (obj) => obj !== null && typeof obj === "object";
+
+// А не так:
+// Це може повернути хибні значення, що не дорівнюють false
+const isObject = (obj) => obj && typeof obj === "object";
+```
+
 ### Булеві примітиви та об'єкти Boolean
 
-Не слід плутати {{Glossary("Primitive", "примітивні")}} значення `Boolean`, `true` та `false`, зі значеннями `true` та `false` об'єкта `Boolean`.
+Для перетворення небулевих значень на булеві слід користуватися `Boolean` як функцією або оператором [подвійного НЕ](/uk/docs/Web/JavaScript/Reference/Operators/Logical_NOT#podviine-ne-). Не слід використовувати конструктор `Boolean()` з `new`.
 
-**Будь-який** об'єкт, в тому числі об'єкт `Boolean`, чиє значення – `false`, обчислюється до `true`, бувши переданим до умовної інструкції. Наприклад, умова в наступній інструкції {{jsxref("Statements/if...else", "if")}} спрацює як `true`:
+```js example-good
+const good = Boolean(expression);
+const good2 = !!expression;
+```
+
+```js example-bad
+const bad = new Boolean(expression); // не користуйтеся цим!
+```
+
+Це пов'язано з тим, що _всі_ об'єкти, включно з об'єктом `Boolean`, у який загорнуто значення `false`, є {{glossary("truthy", "істинними")}} і в умовних інструкціях обчислюються як `true`. (Див. також розділ [зведення до булевого](#zvedennia-do-bulevoho) нижче.)
 
 ```js
-const x = new Boolean(false);
-if (x) {
-  // цей код виконується
+if (new Boolean(true)) {
+  console.log("Це виведення – друкується.");
 }
-```
 
-Така логіка не застосовується до примітивів `Boolean`. Наприклад, умова у наступній інструкції {{jsxref("Statements/if...else", "if")}} – спрацьовує як `false`:
-
-```js
-const x = false;
-if (x) {
-  // цей код не виконується
+if (new Boolean(false)) {
+  console.log("Це виведення – ТАКОЖ друкується.");
 }
+
+const myFalse = new Boolean(false); // myFalse – це об'єкт Boolean (а не примітивне значення false)
+const g = Boolean(myFalse); // g дорівнює true
+const myString = new String("Привіт"); // myString – це об'єкт String
+const s = Boolean(myString); // s дорівнює true
 ```
 
-Не слід використовувати конструктор `Boolean()` із `new` для перетворення небулевого значення на булеве – натомість слід використовувати `Boolean` як функцію або [подвійне НЕ](/uk/docs/Web/JavaScript/Reference/Operators/Logical_NOT#podviine-ne-):
-
-```js
-const good = Boolean(expression); // використовуйте це
-const good2 = !!expression; // або це
-const bad = new Boolean(expression); // а це не використовуйте!
-```
-
-Якщо задати будь-який об'єкт, в тому числі об'єкт `Boolean`, чиє значення – `false`, як початкове значення об'єкта `Boolean`, то новий об'єкт `Boolean` матиме значення `true`.
-
-```js
-const myFalse = new Boolean(false); // початкове значення – false
-const g = Boolean(myFalse); // початкове значення – true
-const myString = new String("Привіт"); // рядковий об'єкт
-const s = Boolean(myString); // початкове значення – true
-```
-
-> **Застереження:** Використовувати `Boolean` як конструктор повинно доводитись нечасто.
+> [!WARNING]
+> Використовувати `Boolean` як конструктор повинно доводитись нечасто.
 
 ### Зведення до булевого
 
@@ -65,9 +79,11 @@ const s = Boolean(myString); // початкове значення – true
 - [Символи](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol) стають `true`.
 - Усі об'єкти – стають `true`.
 
-> **Примітка:** Історична логіка змушує [`document.all`](/uk/docs/Web/API/Document/all) повертати `false`, коли вживається як булеве значення, всупереч тому, що це об'єкт. Ця властивість є історичною та нестандартною, її не варто використовувати.
+> [!NOTE]
+> Історична логіка змушує [`document.all`](/uk/docs/Web/API/Document/all) повертати `false`, коли вживається як булеве значення, всупереч тому, що це об'єкт. Ця властивість є історичною та нестандартною, її не варто використовувати.
 
-> **Примітка:** На відміну від інших перетворень типів, як то [зведення до рядка](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka) чи [зведення до числа](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#zvedennia-do-chysla), зведення до булевого не намагається перетворювати об'єкти на примітиви.
+> [!NOTE]
+> На відміну від інших перетворень типів, як то [зведення до рядка](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka) чи [зведення до числа](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#zvedennia-do-chysla), зведення до булевого не намагається [перетворювати об'єкти на примітиви](/uk/docs/Web/JavaScript/Data_structures#zvedennia-do-prymityva) шляхом виклику користувацьких методів.
 
 Інакше кажучи, є вельми невелика кількість значень, що зводяться до `false`, — вони звуться [хибними](/uk/docs/Glossary/Falsy) значеннями. Всі решта – звуться [істинними](/uk/docs/Glossary/Truthy) значеннями. Істинність значення – важлива, коли воно використовується з логічними операторами, умовними інструкціями або будь-яким булевим контекстом.
 
@@ -100,7 +116,7 @@ if ([] == false) {
 ## Конструктор
 
 - {{jsxref("Boolean/Boolean", "Boolean()")}}
-  - : Створює новий об'єкт `Boolean`.
+  - : Створює об'єкти `Boolean`. Якщо викликається як функція, повертає примітивні значення типу Boolean.
 
 ## Властивості примірника
 
@@ -114,29 +130,29 @@ if ([] == false) {
 - {{jsxref("Boolean.prototype.toString()")}}
   - : Повертає рядок – або `true`, або `false`, залежно від значення об'єкта. Заміщує метод {{jsxref("Object.prototype.toString()")}}.
 - {{jsxref("Boolean.prototype.valueOf()")}}
-  - : Повертає примітивне значення об'єкта {{jsxref("Boolean")}}. Заміщує метод{{jsxref("Object.prototype.valueOf()")}}.
+  - : Повертає примітивне значення об'єкта `Boolean`. Заміщує метод {{jsxref("Object.prototype.valueOf()")}}.
 
 ## Приклади
 
-### Створення об'єктів Boolean з початковим значенням false
+### Створення хибних значень
 
 ```js
-const bNoParam = new Boolean();
-const bZero = new Boolean(0);
-const bNull = new Boolean(null);
-const bEmptyString = new Boolean("");
-const bfalse = new Boolean(false);
+const bNoParam = Boolean();
+const bZero = Boolean(0);
+const bNull = Boolean(null);
+const bEmptyString = Boolean("");
+const bfalse = Boolean(false);
 ```
 
-### Створення об'єктів Boolean з початковим значенням true
+### Створення істинних значень
 
 ```js
-const btrue = new Boolean(true);
-const btrueString = new Boolean("true");
-const bfalseString = new Boolean("false");
-const bSuLin = new Boolean("Su Lin");
-const bArrayProto = new Boolean([]);
-const bObjProto = new Boolean({});
+const btrue = Boolean(true);
+const btrueString = Boolean("true");
+const bfalseString = Boolean("false");
+const bSuLin = Boolean("Su Lin");
+const bArrayProto = Boolean([]);
+const bObjProto = Boolean({});
 ```
 
 ## Специфікації

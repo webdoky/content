@@ -16,6 +16,7 @@ page-type: glossary-definition
 
 ## Дивіться також
 
-- [Верблюдячий регістр](/uk/docs/Glossary/Camel_case)
-- [Шашличний регістр](/uk/docs/Glossary/Kebab_case)
+- Споріднені терміни глосарія:
+  - {{Glossary("Camel case", "Верблюдячий регістр")}}
+  - {{Glossary("Kebab case", "Шашличний регістр")}}
 - [Правило typescript-eslint: `naming-convention`](https://typescript-eslint.io/rules/naming-convention/)

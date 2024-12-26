@@ -24,7 +24,7 @@ includes(searchElement, fromIndex)
   - : Значення для пошуку.
 - `fromIndex` {{optional_inline}}
   - : Індекс від нуля, з якого почнеться пошук, [перетворений на ціле число](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#peretvorennia-na-tsile).
-    - Від'ємний індекс рахується від кінця масиву: якщо `fromIndex < 0`, то використовується `fromIndex + array.length`. Проте в такому випадку пошук все одно відбувається від початку до кінця масиву.
+    - Від'ємний індекс рахується від кінця масиву: якщо `-array.length <= fromIndex < 0`, то використовується `fromIndex + array.length`. Проте в такому випадку пошук все одно відбувається від початку до кінця масиву.
     - Якщо `fromIndex < -array.length`, або якщо `fromIndex` опущено, то використовується `0`, що призводить до пошуку в усьому масиві.
     - Якщо `fromIndex >= array.length`, то пошук не відбувається, і повертається `false`.
 

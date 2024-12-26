@@ -24,7 +24,7 @@ page-type: glossary-definition
 | `""`                        | String    | Значення порожнього [рядка](/uk/docs/Web/JavaScript/Reference/Global_Objects/String), в тому числі `''` і ` `` `.                                        |
 | {{domxref("document.all")}} | Object    | Єдиний хибний об'єкт у JavaScript – це вбудоване значення {{domxref("document.all")}}.                                                                   |
 
-Значення `null` і `undefined` також є [нульовими](/uk/docs/Glossary/Nullish).
+Значення `null` і `undefined` також є {{Glossary("nullish", "нульовими")}}.
 
 ## Приклади
 
@@ -78,7 +78,8 @@ console.log(0 && "пес");
 
 ## Дивіться також
 
-- {{Glossary("Truthy", "Істинні значення")}}
-- {{Glossary("Type_coercion", "Зведення типів")}}
-- {{Glossary("Boolean", "Булеве значення")}}
+- Споріднені терміни глосарія:
+  - {{Glossary("Truthy", "Істинні значення")}}
+  - {{Glossary("Type_coercion", "Зведення типів")}}
+  - {{Glossary("Boolean", "Булеве значення")}}
 - [Зведення до булевого](/uk/docs/Web/JavaScript/Reference/Global_Objects/Boolean#zvedennia-do-bulevoho)
