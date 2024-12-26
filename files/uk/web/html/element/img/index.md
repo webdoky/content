@@ -20,7 +20,7 @@ browser-compat: html.elements.img
 
 - Контроль [посилача](/uk/docs/Web/HTTP/Headers/Referrer-Policy)/{{glossary("CORS")}} для безпеки й приватності: дивіться [`crossorigin`](#crossorigin) й [`referrerpolicy`](#referrerpolicy).
 - Щоб задати зображенню його природний розмір, слід задати й атрибут [`width`](#width), і атрибут [`height`](#height): це дасть змогу зарезервувати для зображення місце й уникнути зсувів компонування вмісту.
-- Підказки чуйності зображень за допомогою [`sizes`](#sizes) і [`srcset`](#srcset) (також дивіться елемент {{htmlelement("picture")}} і наш підручник [Чуйні зображення](/uk/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)).
+- Підказки чуйності зображень за допомогою [`sizes`](#sizes) і [`srcset`](#srcset) (також дивіться елемент {{htmlelement("picture")}} і наш підручник [Чуйні зображення](/uk/docs/Web/HTML/Responsive_images)).
 
 ## Підтримувані формати зображень
 
@@ -192,7 +192,7 @@ SVG залишається рекомендованим форматом для 
 
     - `no-referrer`: Заголовок {{HTTPHeader("Referer")}} не буде надісланий.
     - `no-referrer-when-downgrade`: Заголовок {{HTTPHeader("Referer")}} не буде надісланий на ті {{Glossary("origin", "походження")}}, що не мають {{Glossary("TLS")}} ({{Glossary("HTTPS")}}).
-    - `origin`: Надісланий посилач буде обмежений походженням сторінки, що містить посилання: її [схемою](/uk/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL), {{Glossary("host", "хостом")}} та {{Glossary("port", "портом")}}.
+    - `origin`: Надісланий посилач буде обмежений походженням сторінки, що містить посилання: її [схемою](/uk/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_URL), {{Glossary("host", "хостом")}} та {{Glossary("port", "портом")}}.
     - `origin-when-cross-origin`: Посилач, надісланий іншим походженням, буде обмежений схемою, хостом та портом. Переходи в межах того самого походження включатимуть увесь шлях.
     - `same-origin`: Посилач буде надісланий, якщо {{Glossary("Same-origin policy", "збігається походження")}}, натомість запити між різними походженнями не міститимуть інформації про посилача.
     - `strict-origin`: Надсилати як посилач походження документа, коли рівень протоколу захисту залишається сталим (HTTPS→HTTPS), але не надсилати його за менш захищеною адресою (HTTPS→HTTP).
@@ -228,7 +228,7 @@ SVG залишається рекомендованим форматом для 
 
     Якщо атрибут `srcset` використовує дескриптори ширини, то атрибут `sizes` також повинен бути присутній, інакше – `srcset` буде ігноруватися.
 
-    Користувацький агент обирає будь-яке з доступних джерел на свій розсуд. Це дає йому значну свободу дій, щоб адаптувати свій вибір на основі речей штибу користувацьких налаштувань чи умов {{glossary("bandwidth", "пропускної здатності")}}. Дивіться наш підручник [Чуйні зображення](/uk/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) для отримання прикладів.
+    Користувацький агент обирає будь-яке з доступних джерел на свій розсуд. Це дає йому значну свободу дій, щоб адаптувати свій вибір на основі речей штибу користувацьких налаштувань чи умов {{glossary("bandwidth", "пропускної здатності")}}. Дивіться наш підручник [Чуйні зображення](/uk/docs/Web/HTML/Responsive_images) для отримання прикладів.
 
 - `width`
   - : Природна ширина зображення в пікселях. Повинна бути цілим числом без одиниць вимірювання.
@@ -522,6 +522,6 @@ SVG залишається рекомендованим форматом для 
 - Елементи {{HTMLElement("picture")}}, {{HTMLElement("object")}} і {{HTMLElement("embed")}}
 - {{cssxref("object-fit")}}, {{cssxref("object-position")}}, {{cssxref("image-orientation")}}, {{cssxref("image-rendering")}} й {{cssxref("image-resolution")}} – властивості, пов'язані з зображеннями.
 - Інтерфейс {{domxref("HTMLImageElement")}} для цього елемента
-- [Зображення в HTML](/uk/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML)
+- [Зображення HTML](/uk/docs/Learn_web_development/Core/Structuring_content/HTML_images)
 - [Тип файлу зображення й настанови щодо форматів](/uk/docs/Web/Media/Formats/Image_types)
-- [Чуйні зображення](/uk/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
+- [Чуйні зображення](/uk/docs/Web/HTML/Responsive_images)
