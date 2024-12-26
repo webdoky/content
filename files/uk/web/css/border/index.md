@@ -5,7 +5,7 @@ page-type: css-shorthand-property
 browser-compat: css.properties.border
 ---
 
-{{CSSRef("CSS Borders")}}
+{{CSSRef}}
 
 [Скорочення](/uk/docs/Web/CSS/Shorthand_properties) [CSS](/uk/docs/Web/CSS) **`border`** ("межі") встановлює межі елемента. Воно задає значення властивостей {{Cssxref("border-width")}}, {{Cssxref("border-style")}} та {{Cssxref("border-color")}}.
 
@@ -15,9 +15,9 @@ browser-compat: css.properties.border
 
 Ця властивість є скороченим записом наступних властивостей CSS:
 
-- [`border-color`](/uk/docs/Web/CSS/border-color) (колір меж)
-- [`border-style`](/uk/docs/Web/CSS/border-style) (стиль меж)
 - [`border-width`](/uk/docs/Web/CSS/border-width) (ширина меж)
+- [`border-style`](/uk/docs/Web/CSS/border-style) (стиль меж)
+- [`border-color`](/uk/docs/Web/CSS/border-color) (колір меж)
 
 ## Синтаксис
 
@@ -44,7 +44,8 @@ border: unset;
 
 Властивість `border` може бути вказана за допомогою одного, двох чи трьох значень, перелічених нижче. Порядок значень не важливий.
 
-> **Примітка:** Межі будуть невидимими, якщо не вказаний їх стиль. Так виходить, тому що усталений стиль – `none`.
+> [!NOTE]
+> Межі будуть невидимими, якщо не вказаний їх стиль. Так виходить, тому що усталений стиль – `none`.
 
 ### Значення
 
@@ -120,4 +121,4 @@ div {
 - {{Cssxref("border-color")}}
 - {{Cssxref("outline")}}
 - [Фони та межі](/uk/docs/Web/CSS/CSS_backgrounds_and_borders)
-- [Вивчаймо CSS: Фони та межі](/uk/docs/Learn/CSS/Building_blocks/Backgrounds_and_borders)
+- [Навчання CSS – Фони та межі](/uk/docs/Learn_web_development/Core/Styling_basics/Backgrounds_and_borders)
