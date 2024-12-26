@@ -28,13 +28,18 @@ isSupersetOf(other)
 
 У математичному записі _надмножина_ визначається так:
 
-<math display="block"><semantics><mrow><mi>A</mi><mo>⊇</mo><mi>B</mi><mo stretchy="false">⇔</mo><mo>∀</mo><mi>x</mi><mo>∊</mo><mi>B</mi><mo>,</mo><mspace width="0.16666666666666666em"></mspace><mi>x</mi><mo>∊</mo><mi>A</mi></mrow><annotation encoding="TeX">A\supseteq B \Leftrightarrow \forall x\in B,\,x\in A</annotation></semantics></math>
+<!-- prettier-ignore-start -->
+<math display="block">
+  <semantics><mrow><mi>A</mi><mo>⊇</mo><mi>B</mi><mo stretchy="false">⇔</mo><mo>∀</mo><mi>x</mi><mo>∊</mo><mi>B</mi><mo>,</mo><mspace width="0.16666666666666666em"></mspace><mi>x</mi><mo>∊</mo><mi>A</mi></mrow><annotation encoding="TeX">A\supseteq B \Leftrightarrow \forall x\in B,\,x\in A</annotation></semantics>
+</math>
+<!-- prettier-ignore-end -->
 
 А за допомогою діаграми Венна:
 
 ![Діаграма Венна з двома колами. A є надмножиною B, тому що B повністю міститься в A.](diagram.svg)
 
-> **Примітка:** Відносини _надмножини_ не є _правильною надмножиною_, тобто `isSupersetOf()` повертає `true`, якщо `this` і `other` містять одні й ті ж елементи.
+> [!NOTE]
+> Відносини _надмножини_ не є _правильною надмножиною_, тобто `isSupersetOf()` повертає `true`, якщо `this` і `other` містять одні й ті ж елементи.
 
 Метод `isSupersetOf()` приймає [множиноподібні](/uk/docs/Web/JavaScript/Reference/Global_Objects/Set#mnozhynopodibni-obiekty) об'єкти в параметрі `other`. Він вимагає, щоб {{jsxref("Operators/this", "this")}} було справжнім примірником {{jsxref("Set")}}, оскільки безпосередньо отримує базові дані, збережені в `this`, без закликання будь-якого користувацького коду. Далі, його логіка залежить від розмірів `this` і `other`:
 
