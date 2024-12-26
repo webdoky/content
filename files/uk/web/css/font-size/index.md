@@ -225,4 +225,4 @@ span {
 - {{cssxref("font-weight")}}
 - {{cssxref("math-depth")}}
 - {{cssxref("math-style")}}
-- [Засади стилізації тексту та шрифту](/uk/docs/Learn/CSS/Styling_text/Fundamentals)
+- [Навчання – Основи стилізації тексту та шрифту](/uk/docs/Learn_web_development/Core/Text_styling/Fundamentals)
