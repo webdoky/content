@@ -38,6 +38,7 @@ spec-urls: https://www.w3.org/TR/CSS22/cascade.html#actual-value
     - [Початкові значення](/uk/docs/Web/CSS/initial_value)
     - [Обчислені значення](/uk/docs/Web/CSS/computed_value)
     - [Вжиті значення](/uk/docs/Web/CSS/used_value)
+    - [Вирішені значення](/uk/docs/Web/CSS/resolved_value)
   - [Синтаксис визначення значень](/uk/docs/Web/CSS/Value_definition_syntax)
   - [Властивості-скорочення](/uk/docs/Web/CSS/Shorthand_properties)
   - [Заміщені елементи](/uk/docs/Web/CSS/Replaced_element)
