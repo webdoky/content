@@ -18,7 +18,7 @@ browser-compat: html.elements.div
 Цей елемент приймає [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes).
 
 > [!NOTE]
-> Атрибут `align` вийшов з ужитку; не слід його використовувати. Натомість для шикування та розташування `<div>` елементів на сторінці варто використовувати властивості CSS чи техніки штибу [сітки CSS](/uk/docs/Web/CSS/CSS_Grid_Layout) або [Флексбоксу CSS](/uk/docs/Learn/CSS/CSS_layout/Flexbox).
+> Атрибут `align` вийшов з ужитку; не слід його використовувати. Натомість для шикування та розташування `<div>` елементів на сторінці варто використовувати властивості CSS чи техніки штибу [сітки CSS](/uk/docs/Web/CSS/CSS_Grid_Layout) або [Флексбоксу CSS](/uk/docs/Learn_web_development/Core/CSS_layout/Flexbox).
 
 ## Примітки щодо використання
 
