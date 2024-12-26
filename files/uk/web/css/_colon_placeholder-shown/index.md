@@ -96,7 +96,7 @@ input:placeholder-shown {
       pattern="[0-9]{8}"
       title="8-цифровий номер"
       id="sid"
-      class="studentid"
+      class="student-id"
       placeholder="8-цифровий номер" />
   </p>
   <input type="submit" />
@@ -111,7 +111,7 @@ input {
   color: black;
 }
 
-input.studentid:placeholder-shown {
+input.student-id:placeholder-shown {
   background-color: yellow;
   color: red;
   font-style: italic;

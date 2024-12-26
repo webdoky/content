@@ -2,12 +2,10 @@
 title: Set.prototype.difference()
 slug: Web/JavaScript/Reference/Global_Objects/Set/difference
 page-type: javascript-instance-method
-status:
-  - experimental
 browser-compat: javascript.builtins.Set.difference
 ---
 
-{{JSRef}}{{SeeCompatTable}}
+{{JSRef}}
 
 Метод **`difference()`** (різниця) примірників {{jsxref("Set")}} приймає іншу множину та повертає нову множину, що вміщає елементи поточної множини, не присутні в переданій множині.
 
@@ -30,7 +28,12 @@ difference(other)
 
 У математичний спосіб _difference_ визначається так:
 
-<math display="block"><semantics><mrow><mi>A</mi><mo>∖</mo><mi>B</mi><mo>=</mo><mo stretchy="false">{</mo><mi>x</mi><mo>∊</mo><mi>A</mi><mo>∣</mo><mi>x</mi><mo>∉</mo><mi>B</mi><mo stretchy="false">}</mo></mrow><annotation encoding="TeX">A\setminus B = \{x\in A\mid x\notin B\}</annotation></semantics></math>
+<!-- Примітка: {} потребують подвійного екранування; додаткове екранування потрібне для Yari -->
+<!-- prettier-ignore-start -->
+<math display="block">
+  <semantics><mrow><mi>A</mi><mo>∖</mo><mi>B</mi><mo>=</mo><mo stretchy="false">{</mo><mi>x</mi><mo>∊</mo><mi>A</mi><mo>∣</mo><mi>x</mi><mo>∉</mo><mi>B</mi><mo stretchy="false">}</mo></mrow><annotation encoding="TeX">A\setminus B = \\{x\in A\mid x\notin B\\}</annotation></semantics>
+</math>
+<!-- prettier-ignore-end -->
 
 І – з використанням діаграми Венна:
 

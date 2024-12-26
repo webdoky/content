@@ -69,7 +69,8 @@ const result = someInterface.customMethod?.();
 
 Проте якщо властивість з таким іменем є, але вона не є функцією, то `?.` все одно призведе до винесення винятку {{jsxref("TypeError")}} (`someInterface.customMethod is not a function`).
 
-> **Примітка:** Якщо сам `someInterface` є `null` чи `undefined`, все ж буде винесений виняток {{jsxref("TypeError")}} (`someInterface is null`). Якщо очікується, що сам `someInterface` може бути `null` чи `undefined`, слід використовувати `?.` також на іншій позиції: `someInterface?.customMethod?.()`.
+> [!NOTE]
+> Якщо сам `someInterface` є `null` чи `undefined`, все ж буде винесений виняток {{jsxref("TypeError")}} (`someInterface is null`). Якщо очікується, що сам `someInterface` може бути `null` чи `undefined`, слід використовувати `?.` також на іншій позиції: `someInterface?.customMethod?.()`.
 
 `eval?.()` – найстисліший спосіб ввійти у режим [_непрямого обчислення_](/uk/docs/Web/JavaScript/Reference/Global_Objects/eval#priame-ta-nepriame-obchyslennia).
 
@@ -91,13 +92,27 @@ printMagicIndex([0, 1, 2, 3, 4, 5]); // undefined
 printMagicIndex(); // undefined; якби не ?., тут викинуло б помилку "Cannot read properties of undefined (reading '42')"
 ```
 
-### Необов'язковий ланцюжок недійсний на лівому боці присвоєння
+### Недійсний необов'язковий ланцюжок
 
 Не можна намагатися присвоїти результат виразові необов'язкового ланцюжка:
 
 ```js-nolint example-bad
 const object = {};
 object?.property = 1; // SyntaxError: Invalid left-hand side in assignment
+```
+
+[Теги шаблонних літералів](/uk/docs/Web/JavaScript/Reference/Template_literals#tehovani-shablony) не можуть з'являтися в необов'язковому ланцюжку (дивіться [SyntaxError: tagged template cannot be used with optional chain](/uk/docs/Web/JavaScript/Reference/Errors/Bad_optional_template)):
+
+```js-nolint example-bad
+String?.raw`Привіт, світе!`;
+String.raw?.`Привіт, світе!`; // SyntaxError: Invalid tagged template on optional chain
+```
+
+Конструктор виразів {{jsxref("Operators/new", "new")}} не може бути частиною необов'язкового ланцюжка (дивіться [SyntaxError: new keyword cannot be used with an optional chain](/uk/docs/Web/JavaScript/Reference/Errors/Bad_new_optional)):
+
+```js-nolint example-bad
+new Intl?.DateTimeFormat(); // SyntaxError: Invalid optional chain from new expression
+new Map?.();
 ```
 
 ### Закорочення
@@ -153,13 +168,13 @@ const prop = temp.b;
 
 ### Найпростіший приклад
 
-Цей приклад шукає значення властивості `name` елемента відображення `bar`, де такого елемента немає. Таким чином, результатом є `undefined`.
+Цей приклад шукає значення властивості `name` елемента відображення `CSS`, де такого елемента немає. Таким чином, результатом є `undefined`.
 
 ```js
 const myMap = new Map();
-myMap.set("foo", { name: "baz", desc: "inga" });
+myMap.set("JS", { name: "Денис", desc: "Я обслуговую всіляке" });
 
-const nameBar = myMap.get("bar")?.name;
+const nameBar = myMap.get("CSS")?.name;
 ```
 
 ### Виклик необов'язкових функцій зворотного виклику чи обробників подій

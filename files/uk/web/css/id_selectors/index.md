@@ -22,32 +22,70 @@ browser-compat: css.selectors.id
 #id_value { style properties }
 ```
 
-Зверніть увагу на те, що синтаксично (але не щодо специфічності) це рівносильно наступному {{Cssxref("Attribute_selectors", "селектору атрибута")}}:
+Зверніть увагу на те, що синтаксично (але не щодо специфічності) це рівносильно наступному [селектору атрибута](/uk/docs/Web/CSS/Attribute_selectors):
 
 ```css
 [id=id_value] { style properties }
 ```
 
+Значення `id_value` мусить бути валідним [ідентифікатором CSS](/uk/docs/Web/CSS/ident). Атрибути HTML `id`, що не є валідними ідентифікаторами CSS, повинні бути [екрановані](/uk/docs/Web/CSS/ident#escaping_characters) для вжитку в селекторах ідентифікаторів.
+
 ## Приклади
 
-### CSS
+### Валідні селектори ідентифікатора
+
+#### HTML
+
+```html
+<p id="blue">Цей абзац має блакитне тло.</p>
+<p>Це просто звичайний абзац.</p>
+```
+
+```html
+<!-- Наступні два абзаци мають атрибути id,
+що містять символи, які необхідно екранувати в CSS -->
+
+<p id="item?one">Цей абзац має рожеве тло.</p>
+<p id="123item">Цей абзац має жовте тло.</p>
+```
+
+#### CSS
 
 ```css
-#identified {
+#blue {
   background-color: skyblue;
 }
 ```
 
-### HTML
+```css
+/* У наступних двох правилах необхідно екранувати атрибути id */
 
-```html
-<div id="identified">На цьому div є особливий ідентифікатор!</div>
-<div>Це лишень звичайний div.</div>
+#item\?one {
+  background-color: pink;
+}
+
+#\00003123item {
+  background-color: yellow;
+}
 ```
 
-### Результат
+#### Результат
 
-{{EmbedLiveSample("pryklady", '100%', 50)}}
+{{EmbedLiveSample("pryklady", '100%', 200)}}
+
+### Невалідні селектори ідентифікатора
+
+Селектори ідентифікатора в наступних правилах не є валідними ідентифікаторами CSS, а тому ігноруються.
+
+```css example-bad
+#item?one {
+  background-color: green;
+}
+
+#123item {
+  background-color: green;
+}
+```
 
 ## Специфікації
 

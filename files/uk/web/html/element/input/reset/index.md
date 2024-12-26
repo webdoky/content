@@ -11,11 +11,12 @@ browser-compat: html.elements.input.type_reset
 
 {{EmbedInteractiveExample("pages/tabbed/input-reset.html", "tabbed-standard")}}
 
-> **Примітка:** Зазвичай слід уникати додавання до форм кнопок скидання. Вони рідко корисні й з більшою ймовірністю спантеличать користувачів, що випадково їх клацнуть (нерідко при намаганні клацнути [кнопку подання](/uk/docs/Web/HTML/Element/input/submit)).
+> [!NOTE]
+> Зазвичай слід уникати додавання до форм кнопок скидання. Вони рідко корисні й з більшою ймовірністю спантеличать користувачів, що випадково їх клацнуть (нерідко при намаганні клацнути [кнопку подання](/uk/docs/Web/HTML/Element/input/submit)).
 
 ## Значення
 
-Атрибут [`value`](/uk/docs/Web/HTML/Element/input#value) елемента `<input type="reset">` містить рядок, що використовується як підпис кнопки. Кнопки штибу `reset` не мають інших значень.
+Атрибут [`value`](/uk/docs/Web/HTML/Element/input#value-znachennia) елемента `<input type="reset">` містить рядок, що використовується як підпис кнопки, забезпечуючи тим самим кнопці {{glossary("accessible description", "доступний опис")}}. Кнопки штибу `reset` не мають інших значень.
 
 ### Задання атрибута value
 
@@ -27,7 +28,7 @@ browser-compat: html.elements.input.type_reset
 
 ### Пропускання атрибута value
 
-Якщо не задати `value`, то вийде кнопка з усталеним підписом (зазвичай "Reset," але може бути й щось інше, залежно від {{Glossary("User agent", "користувацького агента")}}):
+Якщо не задати `value`, то вийде кнопка з усталеним підписом (зазвичай "Reset", але може бути й щось інше, залежно від {{Glossary("User agent", "користувацького агента")}}):
 
 ```html
 <input type="reset" />
@@ -39,9 +40,9 @@ browser-compat: html.elements.input.type_reset
 
 Кнопки `<input type="reset">` використовуються для скидання форм. При потребі створити особливу кнопку, а потім налаштувати її поведінку за допомогою JavaScript – необхідно використати [`<input type="button">`](/uk/docs/Web/HTML/Element/input/button), а ще краще – елемент {{htmlelement("button")}}.
 
-### Проста кнопка скидання
+### Базова кнопка скидання
 
-Почнімо зі створення простої кнопки скидання:
+Почнімо зі створення базової кнопки скидання:
 
 ```html
 <form>
@@ -57,15 +58,15 @@ browser-compat: html.elements.input.type_reset
 
 Це візуалізується так:
 
-{{EmbedLiveSample("prosta-knopka-skydannia", 650, 100)}}
+{{EmbedLiveSample("bazova-knopka-skydannia", 650, 100)}}
 
 Спробуйте ввести в текстове поле якийсь текст, а потім натиснути кнопку скидання.
 
 ### Додавання комбінації клавіш для скидання
 
-Щоб додати до кнопки скидання комбінацію клавіш – як і до будь-якого {{HTMLElement("input")}}, для якого це має зміст – використовується глобальний атрибут [`accesskey`](/uk/docs/Web/HTML/Global_attributes#accesskey).
+Щоб додати до кнопки скидання комбінацію клавіш – як і до будь-якого {{HTMLElement("input")}}, для якого це має зміст – використовується глобальний атрибут [`accesskey`](/uk/docs/Web/HTML/Global_attributes/accesskey).
 
-У цьому прикладі <kbd>r</kbd> задано як комбінацію клавіш (знадобиться натиснути <kbd>r</kbd> плюс певні клавіші-модифікатори, відповідні для комбінації браузера та ОС; дивіться змістовний список таких клавіш в розділі [`accesskey`](/uk/docs/Web/HTML/Global_attributes#accesskey)).
+У цьому прикладі <kbd>r</kbd> задано як комбінацію клавіш (знадобиться натиснути <kbd>r</kbd> плюс певні клавіші-модифікатори, відповідні для комбінації браузера та ОС; дивіться змістовний список таких клавіш в розділі [`accesskey`](/uk/docs/Web/HTML/Global_attributes/accesskey)).
 
 ```html
 <form>
@@ -81,11 +82,11 @@ browser-compat: html.elements.input.type_reset
 
 {{EmbedLiveSample("dodavannia-kombinatsii-klavish-dlia-skydannia", 650, 100)}}
 
-Проблема з прикладом вище полягає в тому, що користувач не може дізнатися про комбінацію клавіш! Це особливо важливо, оскільки модифікатори зазвичай є нестандартними, аби уникати їхніх конфліктів. При розробці сайту слід обов'язково подати цю інформацію в формі, що не шкодить дизайну сайту (наприклад, шляхом надання легкодоступного посилання, що веде до інформації про комбінації клавіш на сайті). Додавання підказки до кнопки (за допомогою атрибута [`title`](/uk/docs/Web/HTML/Global_attributes#title)) також може допомогти, попри те, що у зв'язку з потребами доступності, таке рішення не є повним.
+Проблема з прикладом вище полягає в тому, що користувач не може дізнатися про комбінацію клавіш! Це особливо важливо, оскільки модифікатори зазвичай є нестандартними, аби уникати їхніх конфліктів. При розробці сайту слід обов'язково подати цю інформацію в формі, що не шкодить дизайну сайту (наприклад, шляхом надання легкодоступного посилання, що веде до інформації про комбінації клавіш на сайті). Додавання підказки до кнопки (за допомогою атрибута [`title`](/uk/docs/Web/HTML/Global_attributes/title)) також може допомогти, попри те, що у зв'язку з потребами доступності, таке рішення не є повним.
 
 ### Вимикання та вмикання кнопки скидання
 
-Щоб вимкнути кнопку скидання, слід задати на ній атрибут [`disabled`](/uk/docs/Web/HTML/Element/input#disabled), отак:
+Щоб вимкнути кнопку скидання, слід задати на ній атрибут [`disabled`](/uk/docs/Web/HTML/Element/input#disabled-vymknene), отак:
 
 ```html
 <input type="reset" value="Вимкнено" disabled />
@@ -93,7 +94,8 @@ browser-compat: html.elements.input.type_reset
 
 На ходу вмикати та вимикати кнопки можна шляхом присвоєння `disabled` зі значенням `true` або `false`; у JavaScript це має вигляд `btn.disabled = true` або `btn.disabled = false`.
 
-> **Примітка:** Більше ідей щодо вмикання та вимикання кнопок дивіться на сторінці [`<input type="button">`](/uk/docs/Web/HTML/Element/input/button#disabling_and_enabling_a_button).
+> [!NOTE]
+> Більше ідей щодо вмикання та вимикання кнопок дивіться на сторінці [`<input type="button">`](/uk/docs/Web/HTML/Element/input/button#vymknennia-ta-vmykannia-knopky).
 
 ## Валідація
 
@@ -101,7 +103,7 @@ browser-compat: html.elements.input.type_reset
 
 ## Приклади
 
-Прості приклади наведено вище. Насправді про кнопки скидання більше нічого додати.
+Базові приклади наведено вище. Насправді про кнопки скидання більше нічого додати.
 
 ## Технічний підсумок
 
@@ -118,8 +120,8 @@ browser-compat: html.elements.input.type_reset
     <tr>
       <td><strong>Доступні спільні атрибути</strong></td>
       <td>
-        <a href="/uk/docs/Web/HTML/Element/input#type"><code>type</code></a> і
-        <a href="/uk/docs/Web/HTML/Element/input#value"><code>value</code></a>
+        <a href="/uk/docs/Web/HTML/Element/input#type-typ"><code>type</code></a> і
+        <a href="/uk/docs/Web/HTML/Element/input#value-znachennia"><code>value</code></a>
       </td>
     </tr>
     <tr>
