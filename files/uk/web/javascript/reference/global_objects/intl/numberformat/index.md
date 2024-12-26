@@ -27,15 +27,15 @@ browser-compat: javascript.builtins.Intl.NumberFormat
 
 - {{jsxref("Object/constructor", "Intl.NumberFormat.prototype.constructor")}}
   - : Функція-конструктор, котра створила цей об'єкт-примірник. Для примірників `Intl.NumberFormat` початковим значенням є конструктор {{jsxref("Intl/NumberFormat/NumberFormat", "Intl.NumberFormat")}}.
-- `Intl.NumberFormat.prototype[@@toStringTag]`
-  - : Початковим значенням властивості [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) є рядок `"Intl.NumberFormat"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}.
+- `Intl.NumberFormat.prototype[Symbol.toStringTag]`
+  - : Початковим значенням властивості [`Symbol.toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) є рядок `"Intl.NumberFormat"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}.
 
 ## Методи примірника
 
 - {{jsxref("Intl/NumberFormat/format", "Intl.NumberFormat.prototype.format()")}}
-  - : Функція-гетер, котра форматує число згідно з локаллю та опціями форматування цього об'єкта {{jsxref("Intl.NumberFormat")}}.
+  - : Функція-гетер, котра форматує число згідно з локаллю та опціями форматування цього об'єкта `Intl.NumberFormat`.
 - {{jsxref("Intl/NumberFormat/formatRange", "Intl.NumberFormat.prototype.formatRange()")}}
-  - : Функція-гетер, котра форматує діапазон чисел згідно з локаллю та опціями форматування об'єкта {{jsxref("Intl.NumberFormat")}}, з якого цей метод викликано.
+  - : Функція-гетер, котра форматує діапазон чисел згідно з локаллю та опціями форматування об'єкта `Intl.NumberFormat`, з якого цей метод викликано.
 - {{jsxref("Intl/NumberFormat/formatRangeToParts", "Intl.NumberFormat.prototype.formatRangeToParts()")}}
   - : Повертає {{jsxref("Array")}} з об'єктів, що представляють діапазон числових рядків у вигляді частин, що можуть бути використані для виконання власного форматування з урахуванням локалі.
 - {{jsxref("Intl/NumberFormat/formatToParts", "Intl.NumberFormat.prototype.formatToParts()")}}
@@ -147,5 +147,5 @@ console.log(
 
 ## Дивіться також
 
-- [Поліфіл `Intl.NumberFormat` у складі FormatJS](https://formatjs.io/docs/polyfills/intl-numberformat/)
+- [Поліфіл `Intl.NumberFormat` у складі FormatJS](https://formatjs.github.io/docs/polyfills/intl-numberformat/)
 - {{jsxref("Intl")}}

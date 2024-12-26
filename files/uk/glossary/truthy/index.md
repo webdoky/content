@@ -42,7 +42,8 @@ true && "пес"
 
 ## Дивіться також
 
-- {{Glossary("Falsy", "Хибні значення"}}
-- {{Glossary("Type_Coercion", "Зведення типів")}}
-- {{Glossary("Boolean", "Булеве значення")}}
+- Споріднені терміни глосарія:
+  - {{Glossary("Falsy", "Хибні значення")}}
+  - {{Glossary("Type_Coercion", "Зведення типів")}}
+  - {{Glossary("Boolean", "Булеве значення")}}
 - [Зведення до булевого](/uk/docs/Web/JavaScript/Reference/Global_Objects/Boolean#zvedennia-do-bulevoho)

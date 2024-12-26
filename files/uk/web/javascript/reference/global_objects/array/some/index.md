@@ -49,7 +49,8 @@ some(callbackFn, thisArg)
 - Зміни до вже оброблених індексів не призводять до повторного виклику на них `callbackFn`.
 - Якщо наявний, поки необроблений елемент масиву змінюється `callbackFn`, то його значення, передане в `callbackFn`, буде значенням на ту мить, коли цей елемент обробляється. [Видалені](/uk/docs/Web/JavaScript/Reference/Operators/delete) елементи – не обробляються.
 
-> **Застереження:** Паралельні зміни, подібні до описаних вище, часто призводять до складно зрозумілого коду і, як правило, їх слід уникати (за винятком спеціальних випадків).
+> [!WARNING]
+> Паралельні зміни, подібні до описаних вище, часто призводять до складно зрозумілого коду і, як правило, їх слід уникати (за винятком спеціальних випадків).
 
 Метод `some()` є [узагальненим](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#uzahalneni-metody-masyvu). Він лишень очікує, що значення `this` матиме властивість `length`, а також властивості з цілочисловими ключами.
 
@@ -88,7 +89,7 @@ function checkAvailability(arr, val) {
   return arr.some((arrVal) => val === arrVal);
 }
 
-checkAvailability(fruits, "кела"); // false
+checkAvailability(fruits, "грейпфрут"); // false
 checkAvailability(fruits, "банан"); // true
 ```
 

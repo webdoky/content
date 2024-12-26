@@ -29,9 +29,12 @@ for (variable of iterable)
 
 Цикл `for...of` обробляє значення, одне за одним отримані з ітерованого. Кожна обробка значення циклом зветься _ітерацією_, а цикл називають _ітеруванням ітерованого_. Кожна ітерація виконує інструкції, що можуть звертатися до поточного значення з послідовності.
 
-Коли `for...of` ітерує ітероване, то спершу викликає метод ітерованого [`[@@iterator]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/iterator), котрий повертає [ітератор](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#protokol-iteratora), а потім раз за разом викликає метод результівного ітератора [`next()`](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#protokol-iteratora), аби отримати послідовність значень, що по черзі присвоюються `variable`.
+Коли `for...of` ітерує ітероване, то спершу викликає метод ітерованого [`[Symbol.iterator]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/iterator), котрий повертає [ітератор](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#protokol-iteratora), а потім раз за разом викликає метод результівного ітератора [`next()`](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#protokol-iteratora), аби отримати послідовність значень, що по черзі присвоюються `variable`.
 
-Вихід з циклу `for...of` відбувається, коли завершується ітератор (коли метод ітератора `next()` повертає об'єкт, що містить `done: true`). Також для зміни звичайного ходу виконання можна використовувати інструкції контролю ходу виконання. [`break`](/uk/docs/Web/JavaScript/Reference/Statements/break) спричиняє вихід з циклу і перехід до першої інструкції після тіла циклу, натомість [`continue`](/uk/docs/Web/JavaScript/Reference/Statements/continue) призводить до пропуску решти інструкцій поточної ітерації та переходу до наступної ітерації.
+Вихід з циклу `for...of` відбувається, коли завершується ітератор (коли метод ітератора `next()` повертає об'єкт, що містить `done: true`). Як і у випадку інших інструкцій циклів, всередині `statement` можна користуватися [інструкціями керування плином виконання](/uk/docs/Web/JavaScript/Reference/Statements#keruvannia-plynom-vykonannia):
+
+- {{jsxref("Statements/break", "break")}} зупиняє виконання `statement` і переходить до першої інструкції після циклу.
+- {{jsxref("Statements/continue", "continue")}} зупиняє виконання `statement` і переходить до наступної ітерації циклу.
 
 Якщо з циклу `for...of` відбувається ранній вихід (наприклад, якщо зустрілася інструкція `break` чи була викинута помилка), то викликається метод [`return()`](/uk/docs/Web/JavaScript/Reference/Iteration_protocols#protokol-iteratora), щоб виконати прибирання.
 
@@ -78,7 +81,7 @@ for (const value of iterable) {
 
 ### Ітерування рядка
 
-Рядки є [ітерованими за кодовими точками Unicode](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/@@iterator).
+Рядки є [ітерованими за кодовими точками Unicode](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/Symbol.iterator).
 
 ```js
 const iterable = "boo";
@@ -169,7 +172,7 @@ for (const paragraph of articleParagraphs) {
 
 ### Ітерування ітерованого, визначеного користувачем
 
-Ітерування об'єкта з методом `@@iterator`, що повертає самописний ітератор:
+Ітерування об'єкта з методом `[Symbol.iterator]()`, що повертає самописний ітератор:
 
 ```js
 const iterable = {
@@ -193,7 +196,7 @@ for (const value of iterable) {
 // 3
 ```
 
-Ітерування об'єкта з генераторним методом `@@iterator`:
+Ітерування об'єкта з генераторним методом `[Symbol.iterator]()`:
 
 ```js
 const iterable = {
@@ -211,7 +214,7 @@ for (const value of iterable) {
 // 3
 ```
 
-_Ітеровані ітератори_ (ітератори з методом `[@@iterator]()`, що повертає `this`) є доволі поширеним підходом, щоб зробити ітератори застосовними в синтаксичних конструкціях, що очікують на ітеровані об'єкти, як то `for...of`.
+_Ітеровані ітератори_ (ітератори з методом `[Symbol.iterator]()`, що повертає `this`) є доволі поширеним підходом, щоб зробити ітератори застосовними в синтаксичних конструкціях, що очікують на ітеровані об'єкти, як то `for...of`.
 
 ```js
 let i = 1;
@@ -341,7 +344,7 @@ for (const i of iterable) {
 
 Другий цикл – подібний до першого, але він використовує {{jsxref("Object.hasOwn()")}}, аби перевіряти, чи є знайдена перелічувана властивість власною властивістю об'єкта, тобто не успадкованою. Якщо це так, то властивість виводиться. Властивості `0`, `1`, `2` і `foo` – виводяться, тому що є власними. Властивості `arrCustom` і `objCustom` не виводяться, бо є успадкованими.
 
-Цикл `for...of` ітерує й виводить _значення_, котрі об'єкт `iterable`, як масив (а масиви є [ітерованими](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/@@iterator)), визначає для ітерування. Демонструються _елементи_ об'єкта – `3`, `5`, `7`, але жодна з _властивостей_ об'єкта.
+Цикл `for...of` ітерує й виводить _значення_, котрі об'єкт `iterable`, як масив (а масиви є [ітерованими](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/Symbol.iterator)), визначає для ітерування. Демонструються _елементи_ об'єкта – `3`, `5`, `7`, але жодна з _властивостей_ об'єкта.
 
 ## Специфікації
 

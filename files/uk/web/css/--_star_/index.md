@@ -1,5 +1,5 @@
 ---
-title: "Своєрідні властивості (--*) – змінні CSS"
+title: Кастомні властивості (--*) – змінні CSS
 slug: Web/CSS/--*
 page-type: guide
 browser-compat: css.properties.custom-property
@@ -16,15 +16,16 @@ browser-compat: css.properties.custom-property
 ## Синтаксис
 
 ```css
---somekeyword: left;
---somecolor: #0000ff;
---somecomplexvalue: 3px 6px rgb(20 32 54);
+--some-keyword: left;
+--some-color: #0000ff;
+--some-complex-value: 3px 6px rgb(20 32 54);
 ```
 
 - `<declaration-value>`
   - : Це значення захоплює будь-яку послідовність з однієї чи більше лексем, поки не зустрінеться неприпустима лексема. Воно представляє усю повноту того, що дійсне оголошення може мати за своє значення.
 
-> **Примітка:** Імена своєрідних властивостей чутливі до регістру: `--my-color` вважатиметься окремою своєрідною властивістю поруч із `--My-color`.
+> [!NOTE]
+> Імена своєрідних властивостей чутливі до регістру: `--my-color` вважатиметься окремою своєрідною властивістю поруч із `--My-color`.
 
 ## Приклад
 
