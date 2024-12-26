@@ -98,14 +98,14 @@ browser-compat: html.elements.table
 
 Це допоможе людям орієнтуватися за допомогою допоміжної технології штибу читача з екрана, людям зі слабким зором і людям з когнітивними негараздами.
 
-- [ВебДоки – Додавання підпису до таблиці за допомогою \<caption>](/uk/docs/Learn/HTML/Tables/Advanced#dodavannia-pidpysu-do-tablytsi-za-dopomohoiu-caption)
+- [ВебДоки – Додавання підпису до таблиці за допомогою \<caption>](/uk/docs/Learn_web_development/Core/Structuring_content/Table_accessibility#dodavannia-pidpysu-do-tablytsi-za-dopomohoiu-caption)
 - [Підпис і підсумок • Таблиці • Підручники з вебдоступності WAI W3C](https://www.w3.org/WAI/tutorials/tables/caption-summary/)
 
 ### Область дії на рядах і стовпцях
 
 Атрибут [`scope`](/uk/docs/Web/HTML/Element/th#scope) на комірках-заголовках (елементах {{HTMLElement("th")}}) є надлишковим у простих контекстах, бо в таких випадках область дії виводиться автоматично. Проте частина допоміжних технологій може не змогти правильно виконати виведення, тож задання області дії заголовка може покращити взаємодію з сайтом. У складних таблицях атрибут [`scope`](/uk/docs/Web/HTML/Element/th#scope) можна задати, щоб надати необхідну інформацію про комірки, пов'язані з заголовком.
 
-- [ВебДоки – Таблиці для користувачів з вадами зору](/uk/docs/Learn/HTML/Tables/Advanced#tablytsi-dlia-korystuvachiv-z-vadamy-zoru)
+- [ВебДоки – Таблиці для користувачів з вадами зору](/uk/docs/Learn_web_development/Core/Structuring_content/Table_accessibility#tablytsi-dlia-korystuvachiv-z-vadamy-zoru)
 - [Таблиці з двома заголовками • Таблиці • Підручники з вебдоступності WAI W3C](https://www.w3.org/WAI/tutorials/tables/two-headers/)
 - [Таблиці з неоднорідними заголовками • Таблиці • Підручники з вебдоступності WAI W3C](https://www.w3.org/WAI/tutorials/tables/irregular/)
 - [H63 – Використання атрибута scope для встановлення зв'язку між комірками-заголовками та комірками даних у таблицях даних | Техніки W3C для WCAG 2.0](https://www.w3.org/Translations/WCAG20-TECHS/H63.html)
@@ -118,13 +118,13 @@ browser-compat: html.elements.table
 
 Якщо таблицю не можна розбити на частини, слід скористатися поєднанням атрибутів [`id`](/uk/docs/Web/HTML/Global_attributes/id) і [`headers`](/uk/docs/Web/HTML/Element/td#headers), щоб програмно пов'язати кожну комірку таблиці з заголовками (елементами {{HTMLElement("th")}}), з якими вона пов'язана.
 
-- [ВебДоки – Таблиці для користувачів з вадами зору](/uk/docs/Learn/HTML/Tables/Advanced#tablytsi-dlia-korystuvachiv-z-vadamy-zoru)
+- [ВебДоки – Таблиці для користувачів з вадами зору](/uk/docs/Learn_web_development/Core/Structuring_content/Table_accessibility#tablytsi-dlia-korystuvachiv-z-vadamy-zoru)
 - [Таблиці з багаторівневими заголовками • Таблиці • Підручники з вебдоступності WAI W3C](https://www.w3.org/WAI/tutorials/tables/multi-level/)
 - [H43 – Використання атрибутів id та headers для встановлення зв'язку між комірками даних та комірками-заголовками у таблицях даних | Техніки W3C для WCAG 2.0](https://www.w3.org/Translations/WCAG20-TECHS/H43.html)
 
 ## Приклади
 
-Приклади нижче містять таблиці з поступовим зростанням складності. Більше прикладів, в тому числі поглиблений підручник, можна знайти в серії [Таблиць HTML](/uk/docs/Learn/HTML/Tables) у нашій області [Вивчення веброзробки](/uk/docs/Learn), де можна дізнатися, як використовувати елементи таблиці та їхні атрибути для коректного структурування табличних даних. Посібник "[Стилізація таблиць](/uk/docs/Learn/CSS/Building_blocks/Styling_tables)" надає інформацію про стилізацію таблиць, вміщаючи поширені корисні техніки.
+Приклади нижче містять таблиці з поступовим зростанням складності. Також шукайте поширені корисні техніки в нашому посібнику для початківців [Стилізація таблиць](/uk/docs/Learn_web_development/Core/Styling_basics/Tables).
 
 Оскільки структура `<table>` включає використання кількох табличних елементів HTML, а також різних пов'язаних атрибутів, наступні приклади мають на меті надати спрощене пояснення, що охоплює основи та загальні стандарти. Додаткову та більш детальну інформацію можна знайти на відповідних сторінках, на які ведуть посилання.
 
@@ -1005,7 +1005,7 @@ tr:last-child td {
 
 ## Дивіться також
 
-- [Вивчення – Таблиці HTML](/uk/docs/Learn/HTML/Tables)
+- [Навчання – Основи таблиць HTML](/uk/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics)
 - {{HTMLElement("caption")}}, {{HTMLElement("col")}}, {{HTMLElement("colgroup")}}, {{HTMLElement("tbody")}}, {{HTMLElement("td")}}, {{HTMLElement("tfoot")}}, {{HTMLElement("th")}}, {{HTMLElement("thead")}}, {{HTMLElement("tr")}} – інші елементи, пов'язані з таблицями
 - {{cssxref("background-color")}} – властивість CSS для задання фонового кольору таблиці
 - {{cssxref("border")}}, {{cssxref("border-collapse")}}, {{cssxref("border-spacing")}} – властивості CSS для керування виглядом меж комірок, лінійок і обрамлення
