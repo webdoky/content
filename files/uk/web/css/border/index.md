@@ -15,9 +15,9 @@ browser-compat: css.properties.border
 
 Ця властивість є скороченим записом наступних властивостей CSS:
 
-- [`border-color`](/uk/docs/Web/CSS/border-color) (колір меж)
-- [`border-style`](/uk/docs/Web/CSS/border-style) (стиль меж)
 - [`border-width`](/uk/docs/Web/CSS/border-width) (ширина меж)
+- [`border-style`](/uk/docs/Web/CSS/border-style) (стиль меж)
+- [`border-color`](/uk/docs/Web/CSS/border-color) (колір меж)
 
 ## Синтаксис
 
@@ -44,7 +44,8 @@ border: unset;
 
 Властивість `border` може бути вказана за допомогою одного, двох чи трьох значень, перелічених нижче. Порядок значень не важливий.
 
-> **Примітка:** Межі будуть невидимими, якщо не вказаний їх стиль. Так виходить, тому що усталений стиль – `none`.
+> [!NOTE]
+> Межі будуть невидимими, якщо не вказаний їх стиль. Так виходить, тому що усталений стиль – `none`.
 
 ### Значення
 

@@ -1,5 +1,5 @@
 ---
-title: "<object> – елемент зовнішнього об'єкта"
+title: <object> – елемент зовнішнього об'єкта
 slug: Web/HTML/Element/object
 page-type: html-element
 browser-compat: html.elements.object
@@ -52,7 +52,7 @@ browser-compat: html.elements.object
 
 ```html
 <object
-  type="video/mp4"
+  type="video/webm"
   data="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm"
   width="600"
   height="140">
@@ -78,7 +78,7 @@ browser-compat: html.elements.object
         <a href="/uk/docs/Web/HTML/Content_categories#potokovyi-vmist">Потоковий вміст</a>;
         <a href="/uk/docs/Web/HTML/Content_categories#opovidalnyi-vmist">оповідальний вміст</a>;
         <a href="/uk/docs/Web/HTML/Content_categories#vbudovanyi-vmist">вбудований вміст</a>, відчутний вміст; якщо елемент має атрибут
-        <a href="/uk/docs/Web/HTML/Element/object#usemap"><code>usemap</code></a>, то <a href="/uk/docs/Web/HTML/Content_categories#interaktyvnyi-vmist">інтерактивний вміст</a>;
+        <a href="#usemap"><code>usemap</code></a>, то <a href="/uk/docs/Web/HTML/Content_categories#interaktyvnyi-vmist">інтерактивний вміст</a>;
         <a href="/uk/docs/Web/HTML/Content_categories#perelicheni">перелічений</a>,
         <a href="/uk/docs/Web/HTML/Content_categories#podavalni">подавальний</a>
         <a href="/uk/docs/Web/HTML/Content_categories#formovyi-vmist">формовий</a> елемент.
@@ -92,7 +92,7 @@ browser-compat: html.elements.object
     </tr>
     <tr>
       <th scope="row">Пропуск тега</th>
-      <td>{{no_tag_omission}}</td>
+      <td>Немає; і початковий, і кінцевий теги – обов'язкові.</td>
     </tr>
     <tr>
       <th scope="row">Дозволені батьківські елементи</th>

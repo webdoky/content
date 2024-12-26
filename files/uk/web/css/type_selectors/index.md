@@ -55,7 +55,7 @@ span {
 У цьому прикладі селектор дає збіг лише з елементами `<h1>` у просторі імен example.
 
 ```css
-@namespace example url(http://www.example.com);
+@namespace example url(http://www.example.com/);
 example|h1 {
   color: blue;
 }
