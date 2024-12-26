@@ -66,7 +66,7 @@ for (let i = 0; i < str.length; i++) {
 // '1f40e', 'dc0e', '1f471', 'dc71', '2764'
 ```
 
-Натомість краще вжити інструкцію [`for...of`](/uk/docs/Web/JavaScript/Guide/Loops_and_iteration#instruktsiia-forof) або [розгорнути рядок](/uk/docs/Web/JavaScript/Reference/Operators/Spread_syntax), – обидва способи закликають [`@@iterator`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/@@iterator) рядка, що ітерує за кодовими точками. Потім – використати `codePointAt(0)`, щоб отримати кодову точку кожного елемента.
+Натомість краще вжити інструкцію [`for...of`](/uk/docs/Web/JavaScript/Guide/Loops_and_iteration#instruktsiia-forof) або [розгорнути рядок](/uk/docs/Web/JavaScript/Reference/Operators/Spread_syntax), – обидва способи закликають [`[Symbol.iterator]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/String/Symbol.iterator) рядка, що ітерує за кодовими точками. Потім – використати `codePointAt(0)`, щоб отримати кодову точку кожного елемента.
 
 ```js
 for (const codePoint of str) {

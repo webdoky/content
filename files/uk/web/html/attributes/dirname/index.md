@@ -1,5 +1,6 @@
 ---
-title: "Атрибут HTML – dirname"
+title: Атрибут HTML – dirname
+short-title: dirname
 slug: Web/HTML/Attributes/dirname
 page-type: html-attribute
 browser-compat:
@@ -9,13 +10,13 @@ browser-compat:
 
 {{HTMLSidebar}}
 
-Атрибут **`dirname`** (назва напрямку) може вживатися на елементах {{htmlelement("textarea")}} і {{htmlelement("input")}}; він описує напрям текстового вмісту елемента під час подання форми.
+Атрибут **`dirname`** (назва напрямку) може вживатися на елементах {{htmlelement("textarea")}} і кількох типах {{htmlelement("input")}}; він описує напрям текстового вмісту елемента під час подання форми.
 Браузер використовує значення цього атрибута для з'ясування того, чи є текст, введений користувачем, орієнтованим зліва направо, чи справа наліво.
 Коли цей атрибут вжито, то напрям тексту елемента включається до даних, що подаються в формі, вкупі зі значенням атрибута `dirname` як іменем поля.
 
 ## Примітки щодо використання
 
-Атрибут `dirname` може вживатися на будь-яких елементах {{htmlelement("textarea")}}, а також будь-яких елементах {{htmlelement("input")}}, що мають тип {{htmlelement("input/text", "text")}}, {{htmlelement("input/search", "search")}}, {{htmlelement("input/tel", "tel")}}, {{htmlelement("input/url", "url")}} або {{htmlelement("input/email", "email")}}.
+Атрибут `dirname` може вживатися на будь-яких елементах {{htmlelement("textarea")}}, а також будь-яких елементах {{htmlelement("input")}}, що мають тип {{htmlelement("input/hidden", "hidden")}}, {{htmlelement("input/text", "text")}}, {{htmlelement("input/search", "search")}}, {{htmlelement("input/tel", "tel")}}, {{htmlelement("input/url", "url")}}, {{htmlelement("input/email", "email")}}, {{htmlelement("input/password", "password")}}, {{htmlelement("input/submit", "submit")}}, {{htmlelement("input/reset", "reset")}} або {{htmlelement("input/button", "button")}}.
 
 Формат подання даних такий: `{dirname_value}={direction}`, де `{dirname_value}` – значення атрибута `dirname`, а `{direction}` – напрям тексту.
 Наприклад, якщо користувач ввів "Привіт" в елемент з атрибутами `name="comment"` і `dirname="comment-direction"`, то закодовані в URL дані, що подаються в формі для запитів `GET`, будуть `comment=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82&comment-direction=ltr`.

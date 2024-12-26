@@ -145,14 +145,14 @@ p.goldie {
 ### Приклад із max-content
 
 ```css
-p.maxgreen {
+p.max-green {
   background: lightgreen;
   width: max-content;
 }
 ```
 
 ```html
-<p class="maxgreen">Спільнота MDN пише справді добру документацію.</p>
+<p class="max-green">Спільнота MDN пише справді добру документацію.</p>
 ```
 
 {{EmbedLiveSample('pryklad-iz-max-content', '500px', '64px')}}
@@ -160,14 +160,14 @@ p.maxgreen {
 ### Приклад із min-content
 
 ```css
-p.minblue {
+p.min-blue {
   background: lightblue;
   width: min-content;
 }
 ```
 
 ```html
-<p class="minblue">Спільнота MDN пише справді добру документацію.</p>
+<p class="min-blue">Спільнота MDN пише справді добру документацію.</p>
 ```
 
 {{EmbedLiveSample('pryklad-iz-min-content', '500px', '155px')}}
@@ -182,9 +182,10 @@ p.minblue {
 
 ## Дивіться також
 
-- [Блокова модель](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
 - {{cssxref("height")}}
 - {{cssxref("box-sizing")}}
 - {{cssxref("min-width")}}, {{cssxref("max-width")}}
-- Відповідні логічні властивості: {{cssxref("block-size")}}, {{cssxref("inline-size")}}
+- {{cssxref("block-size")}}, {{cssxref("inline-size")}}
 - {{cssxref("anchor-size()")}}
+- [Вступ у Базову рамкову модель CSS](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
+- Модуль [Рамкової моделі CSS](/uk/docs/Web/CSS/CSS_box_model)

@@ -1,5 +1,5 @@
 ---
-title: "<input>: Елемент введення (форм)"
+title: <input> – Елемент поля HTML
 slug: Web/HTML/Element/input
 page-type: html-element
 browser-compat: html.elements.input
@@ -7,7 +7,7 @@ browser-compat: html.elements.input
 
 {{HTMLSidebar}}
 
-Елемент [HTML](/uk/docs/Web/HTML) **`<input>`** використовується для створення інтерактивних засобів керування у вебформах, щоб приймати дані від користувача; доступно широке розмаїття типів даних введення та контрольних віджетів, залежно від пристрою та {{Glossary("User agent", "користувацького агента")}}. Елемент `<input>` – один із найпотужніших та найскладніших у всій HTML, тому що має безліч комбінацій типів введення та атрибутів.
+Елемент [HTML](/uk/docs/Web/HTML) **`<input>`** (поле, введення) використовується для створення інтерактивних засобів керування у вебформах, щоб приймати дані від користувача; доступно широке розмаїття типів даних введення та контрольних віджетів, залежно від пристрою та {{Glossary("User agent", "користувацького агента")}}. Елемент `<input>` – один із найпотужніших та найскладніших у всій HTML, тому що має безліч комбінацій типів введення та атрибутів.
 
 {{EmbedInteractiveExample("pages/tabbed/input-text.html", "tabbed-shorter")}}
 
@@ -517,9 +517,12 @@ browser-compat: html.elements.input
 
 - [`pattern`](/uk/docs/Web/HTML/Attributes/pattern) (патерн)
 
-  - : Чинний для полів типів `text`, `search`, `url`, `tel`, `email` і `password` атрибут `pattern` – регулярний вираз, котрому повинно відповідати значення [`value`](#value-znachennia) поля введення, щоб пройти [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation). Значенням атрибута має бути дійсний регулярний вираз JavaScript, такий, як використовується типом {{jsxref("RegExp")}} і як документовано у наших [настановах із регулярних виразів](/uk/docs/Web/JavaScript/Guide/Regular_expressions). При компіляції регулярного виразу автоматично вказується прапорець `'u'`, тож схема розглядається як послідовність кодових точок Unicode, а не як {{Glossary("ASCII")}}. Текст схеми не повинен бути оточений рисками.
+  - : Чинний для полів типів `text`, `search`, `url`, `tel`, `email` і `password` атрибут `pattern` використовується для компілювання регулярного виразу, котрому повинно відповідати значення [`value`](#value-znachennia) поля введення, щоб пройти [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation). Значенням атрибута має бути дійсний регулярний вираз JavaScript, такий, як використовується типом {{jsxref("RegExp")}} і як документовано у наших [настановах із регулярних виразів](/uk/docs/Web/JavaScript/Guide/Regular_expressions). Текст схеми не повинен бути оточений рисками. Під час компілювання регулярного виразу:
 
-    Якщо атрибут `pattern` присутній, але не має значення, або має недійсне значення, то регулярний вираз не застосовується, і такий атрибут цілком ігнорується. Якщо атрибут з патерном дійсний, і непусте значення поля введення не відповідає йому, то валідація обмежень перешкодить поданню форми.
+    1. патерн неявно загортається в `^(?:` і `)$`, тож збіг вимагається щодо _всього_ введеного значення: `^(?:<pattern>)$`.
+    2. задається прапорець `'v'`, тож патерн розглядається як послідовність кодових точок Unicode, а не як {{Glossary("ASCII")}}.
+
+    Якщо атрибут `pattern` присутній, але не має значення, або має невалідне значення, то регулярний вираз не застосовується і такий атрибут цілком ігнорується. Якщо атрибут з патерном валідний і непусте значення поля введення не відповідає йому, то валідація обмежень перешкодить поданню форми. Якщо присутній атрибут [`multiple`](/uk/docs/Web/HTML/Attributes/multiple), то скомпільований регулярний вираз зіставляється з кожним зі значень, розділених комами.
 
     > [!NOTE]
     > При використанні атрибута `pattern` слід повідомити користувача про очікуваний формат за допомогою пояснювального тексту поруч. Також можна використати атрибут [`title`](#title-zaholovok) для пояснення вимог для відповідності схемі; більшість браузерів покажуть цей атрибут як підказку. Візуальне пояснення необхідне для доступності, підказка – лише поліпшення.
@@ -623,16 +626,9 @@ browser-compat: html.elements.input
   </thead>
   <tbody>
     <tr>
-      <td><a href="#autocorrect"><code>autocorrect</code></a></td>
-      <td>
-        Рядок, котрий вказує, чи є автокорекція <code>on</code> (ввімкнена) або <code>off</code> (вимкнена). <strong>Лише Safari.</strong>
-      </td>
-    </tr>
-    <tr>
       <td><a href="#incremental"><code>incremental</code></a></td>
       <td>
-        Чи слід посилати повторювані події {{domxref("HTMLInputElement/search_event", "search")}},
-        щоб дати змогу оновлювати результати пошуку в реальному часі, поки користувач продовжує редагування значення поля.
+        Чи слід посилати повторювані події {{domxref("HTMLInputElement/search_event", "search")}}, щоб дати змогу оновлювати результати пошуку в реальному часі, поки користувач продовжує редагування значення поля.
         <strong>Лише WebKit і Blink (Safari, Chrome, Opera тощо).</strong>
       </td>
     </tr>
@@ -664,15 +660,6 @@ browser-compat: html.elements.input
     </tr>
   </tbody>
 </table>
-
-- `autocorrect` {{non-standard_inline}} (автокоригування)
-
-  - : (Лише Safari). Рядок, котрий вказує, чи вмикати автоматичне коригування, поки користувач редагує поле. Дозволені значення:
-
-    - `on`
-      - : Ввімкнути автоматичне коригування хибодруків, а також обробку текстових замін, якщо вони налаштовані.
-    - `off`
-      - : Вимкнути автоматичне коригування та текстові заміни.
 
 - `incremental` {{non-standard_inline}} (інкрементальний)
 
@@ -870,7 +857,7 @@ input:checked + label {
 
 ### Селектори атрибутів
 
-Можна цілитись на різноманітні контрольні елементи на основі їх типу [`type`](#type-typ) за допомогою [селекторів атрибутів](/uk/docs/Learn/CSS/Building_blocks/Selectors/Attribute_selectors). Селектори атрибутів CSS вказують на елементи, спираючись або лиш на присутність атрибута, або на наявність атрибута з певним значенням.
+Можна цілитись на різноманітні контрольні елементи на основі їх типу [`type`](#type-typ) за допомогою [селекторів атрибутів](/uk/docs/Learn_web_development/Core/Styling_basics/Attribute_selectors). Селектори атрибутів CSS вказують на елементи, спираючись або лиш на присутність атрибута, або на наявність атрибута з певним значенням.
 
 ```css
 /* відповідає полю введення пароля */
@@ -951,11 +938,10 @@ input.custom {
 
 Також дивіться:
 
-- [Стилізація форм HTML](/uk/docs/Learn/Forms/Styling_web_forms)
-- [Розширена стилізація для форм HTML](/uk/docs/Learn/Forms/Advanced_form_styling) і
-- [таблиця сумісності властивостей CSS](/uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls).
+- [Стилізація форм HTML](/uk/docs/Learn_web_development/Extensions/Forms/Styling_web_forms)
+- [Розширена стилізація для форм HTML](/uk/docs/Learn_web_development/Extensions/Forms/Advanced_form_styling) і
 
-## Додаткова функціональність
+## Додаткові можливості
 
 ### Підписи
 
@@ -1129,7 +1115,7 @@ function validate(input) {
 
 #### Приклад особливої помилки валідації
 
-Якщо необхідно показати особливе повідомлення помилки, коли поле провалює валідацію, слід використовувати [API валідації обмежень](/uk/docs/Learn/Forms/Form_validation#validuvannia-form-zasobamy-javascript), доступну на елементі `<input>` (та споріднених до нього). Розберімо наступну форму:
+Якщо необхідно показати особливе повідомлення помилки, коли поле провалює валідацію, слід використовувати [API валідації обмежень](/uk/docs/Learn_web_development/Extensions/Forms/Form_validation#validuvannia-form-zasobamy-javascript), доступну на елементі `<input>` (та споріднених до нього). Розберімо наступну форму:
 
 ```html
 <form>
@@ -1406,14 +1392,13 @@ Firefox використовує наступну евристику для ви
 ## Дивіться також
 
 - [Валідація обмежень форми](/uk/docs/Web/HTML/Constraint_validation)
-- [Ваша перша форма HTML](/uk/docs/Learn/Forms/Your_first_form)
-- [Як упорядковувати форму HTML](/uk/docs/Learn/Forms/How_to_structure_a_web_form)
-- [Нативні віджети форми](/uk/docs/Learn/Forms/Basic_native_form_controls)
-- [Надсилання даних форми](/uk/docs/Learn/Forms/Sending_and_retrieving_form_data)
-- [Валідація даних форми](/uk/docs/Learn/Forms/Form_validation)
-- [Як будувати власні віджети форми](/uk/docs/Learn/Forms/How_to_build_custom_form_controls)
-- [Форми HTML у застарілих браузерах](/uk/docs/Learn/Forms/HTML_forms_in_legacy_browsers)
-- [Стилізація форм HTML](/uk/docs/Learn/Forms/Styling_web_forms)
-- [Розширена стилізація для форм HTML](/uk/docs/Learn/Forms/Advanced_form_styling)
-- [Таблиця сумісності властивостей CSS](/uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls)
+- [Ваша перша форма HTML](/uk/docs/Learn_web_development/Extensions/Forms/Your_first_form)
+- [Як структурувати форму HTML](/uk/docs/Learn_web_development/Extensions/Forms/How_to_structure_a_web_form)
+- [Нативні віджети форм](/uk/docs/Learn_web_development/Extensions/Forms/Basic_native_form_controls)
+- [Надсилання даних форми](/uk/docs/Learn_web_development/Extensions/Forms/Sending_and_retrieving_form_data)
+- [Валідація даних форми](/uk/docs/Learn_web_development/Extensions/Forms/Form_validation)
+- [Як створювати кастомні віджети форми](/uk/docs/Learn_web_development/Extensions/Forms/How_to_build_custom_form_controls)
+- [Форми HTML у історичних браузерах](/uk/docs/Learn_web_development/Extensions/Forms/HTML_forms_in_legacy_browsers)
+- [Стилізація форм HTML](/uk/docs/Learn_web_development/Extensions/Forms/Styling_web_forms)
+- [Розширена стилізація для форм HTML](/uk/docs/Learn_web_development/Extensions/Forms/Advanced_form_styling)
 - [Створення вертикальних формових елементів](/uk/docs/Web/CSS/CSS_writing_modes/Vertical_controls)

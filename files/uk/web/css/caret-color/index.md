@@ -7,7 +7,7 @@ browser-compat: css.properties.caret-color
 
 {{CSSRef}}
 
-Властивість [CSS](/uk/docs/Web/CSS) **`caret-color`** (колір каретки) задає колір **каретки вставлення**, видимого маркера в місці, куди буде вставлено наступний набраний символ. Його іноді називають **курсором текстового введення**. Каретка з'являється в елементах штибу {{HTMLElement("input")}} або тих, що мають атрибут [`contenteditable`](/uk/docs/Web/HTML/Global_attributes#contenteditable). Зазвичай вона є тонкою вертикальною лінією, яка блимає, щоб бути більш помітною. Усталено вона чорна, але її колір можна змінити за допомогою цієї властивості.
+Властивість [CSS](/uk/docs/Web/CSS) **`caret-color`** (колір каретки) задає колір **каретки вставлення**, видимого маркера в місці, куди буде вставлено наступний набраний символ. Його іноді називають **курсором текстового введення**. Каретка з'являється в елементах штибу {{HTMLElement("input")}} або тих, що мають атрибут [`contenteditable`](/uk/docs/Web/HTML/Global_attributes/contenteditable). Зазвичай вона є тонкою вертикальною лінією, яка блимає, щоб бути більш помітною. Усталено вона чорна, але її колір можна змінити за допомогою цієї властивості.
 
 {{EmbedInteractiveExample("pages/css/caret-color.html")}}
 
@@ -102,6 +102,6 @@ p.custom {
 ## Дивіться також
 
 - Елемент {{HTMLElement("input")}}
-- Атрибут HTML [`contenteditable`](/uk/docs/Web/HTML/Global_attributes#contenteditable), завдяки якому можна зробити редаговним текст будь-якого елемента
+- Атрибут HTML [`contenteditable`](/uk/docs/Web/HTML/Global_attributes/contenteditable), завдяки якому можна зробити редаговним текст будь-якого елемента
 - Тип даних {{cssxref("&lt;color&gt;")}}
 - Інші властивості, пов'язані з кольором: {{cssxref("color")}}, {{cssxref("background-color")}}, {{cssxref("border-color")}}, {{cssxref("outline-color")}}, {{cssxref("text-decoration-color")}}, {{cssxref("text-emphasis-color")}}, {{cssxref("text-shadow")}} і {{cssxref("column-rule-color")}}

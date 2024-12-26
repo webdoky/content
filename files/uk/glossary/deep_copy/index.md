@@ -48,10 +48,11 @@ console.log(ingredientsList[1].list);
 
 Проте попри те, що об'єкт у коді вище достатньо простий, щоб бути {{Glossary("serialization", "серіалізованим")}}, чимало об'єктів JavaScript не можна серіалізувати взагалі – наприклад, [функції](/uk/docs/Web/JavaScript/Guide/Functions) (із їхніми замиканнями), [символи](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol), об'єкти, що представляють елементи HTML в [API DOM HTML](/uk/docs/Web/API/HTML_DOM_API), рекурсивні дані та багато інших ситуацій. Виклик `JSON.stringify()` для серіалізації об'єктів у таких випадках призведе до помилки. Тому немає способу створити глибокі копії таких об'єктів.
 
-API Вебу [`structuredClone()`](/uk/docs/Web/API/structuredClone) також створює глибокі копії, маючи при цьому перевагу в тому, що дозволяє [переносним об'єктам](/uk/docs/Web/API/Web_Workers_API/Transferable_objects) у джерелі _переноситися_ до нової копії, а не просто клонуватися. Він також обробляє більше типів даних, наприклад, `Error`. Але слід зауважити, що `structuredClone()` не є можливістю мови JavaScript – це можливість браузерів та інших середовищ виконання JavaScript, які мають реалізацію API Вебу. І виклик `structuredClone()` для клонування несеріалізовного об'єкта призведе до помилки так само, як і виклик `JSON.stringify()` для серіалізації.
+API Вебу {{DOMxRef("Window.structuredClone", "structuredClone()")}} також створює глибокі копії, маючи при цьому перевагу в тому, що дозволяє [переносним об'єктам](/uk/docs/Web/API/Web_Workers_API/Transferable_objects) у джерелі _переноситися_ до нової копії, а не просто клонуватися. Він також обробляє більше типів даних, наприклад, `Error`. Але слід зауважити, що `structuredClone()` не є можливістю мови JavaScript – це можливість браузерів та інших середовищ виконання JavaScript, які мають реалізацію API Вебу. І виклик `structuredClone()` для клонування несеріалізовного об'єкта призведе до помилки так само, як і виклик `JSON.stringify()` для серіалізації.
 
 ## Дивіться також
 
 - Споріднені терміни глосарія:
   - {{glossary("Shallow copy", "Поверхневе копіювання")}}
-- [`window.structuredClone()`](/uk/docs/Web/API/structuredClone)
+- {{DOMxRef("Window.structuredClone()")}}
+- {{DOMxRef("WorkerGlobalScope.structuredClone()")}}

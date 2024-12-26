@@ -135,9 +135,9 @@ background-position: unset;
 #### HTML
 
 ```html
-<div class="exampleone">Приклад один</div>
-<div class="exampletwo">Приклад два</div>
-<div class="examplethree">Приклад три</div>
+<div class="example-one">Приклад один</div>
+<div class="example-two">Приклад два</div>
+<div class="example-three">Приклад три</div>
 ```
 
 #### CSS
@@ -153,17 +153,17 @@ div {
 }
 
 /* Ці приклади використовують властивість-скорочення `background` */
-.exampleone {
-  background: url("startransparent.gif") #ffee99 2.5cm bottom no-repeat;
+.example-one {
+  background: url("star-transparent.gif") #ffee99 2.5cm bottom no-repeat;
 }
-.exampletwo {
-  background: url("startransparent.gif") #ffee99 left 4em bottom 1em no-repeat;
+.example-two {
+  background: url("star-transparent.gif") #ffee99 left 4em bottom 1em no-repeat;
 }
 
 /* Декілька зображень тла: для кожного зображення вказано
    відповідну йому позицію, від першої до останньої. */
-.examplethree {
-  background-image: url("startransparent.gif"), url("catfront.png");
+.example-three {
+  background-image: url("star-transparent.gif"), url("cat-front.png");
   background-position:
     0px 0px,
     right 3em bottom 2em;

@@ -7,7 +7,7 @@ spec-urls: https://drafts.csswg.org/css-conditional/
 
 {{CSSRef}}
 
-**Директиви** – це [інструкції CSS](/uk/docs/Web/CSS/Syntax#instruktsii-css), що вказують CSS, як поводитися. Вони починаються зі знаку «равлика», '`@`' (`U+0040 COMMERCIAL AT`), за яким слідує ідентифікатор, і включають усе до наступної крапки з комою, '`;`' (`U+003B SEMICOLON`), або наступного [блоку CSS](/uk/docs/Web/CSS/Syntax#bloky-oholoshen-css), залежно від того, що зустрінеться першим.
+**Директиви** – це [інструкції CSS](/uk/docs/Web/CSS/Syntax#instruktsii-css), що вказують CSS, як поводитися. Вони починаються зі знаку «равлика», `@` (U+0040 COMMERCIAL AT), за яким слідує ідентифікатор, і включають усе до наступної крапки з комою, `;` (U+003B SEMICOLON), або наступного [блоку CSS](/uk/docs/Web/CSS/Syntax#bloky-oholoshen-css), залежно від того, що зустрінеться першим.
 
 ## Синтаксис
 

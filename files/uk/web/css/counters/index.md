@@ -19,10 +19,10 @@ browser-compat: css.types.counters
 
 ```css
 /* Просте використання  - стиль усталено decimal */
-counters(countername, '.');
+counters(counter-name, '.');
 
 /* змінення виведення лічильника */
-counters(countername, '-', upper-roman)
+counters(counter-name, '-', upper-roman)
 ```
 
 [Лічильник](/uk/docs/Web/CSS/CSS_counter_styles/Using_CSS_counters) сам собою не має видимого ефекту. Функція `counters()` (а також функція {{cssxref("counter", "counter()")}}) – ось що робить його корисним, повертаючи визначений розробником вміст.
@@ -43,7 +43,7 @@ counters(countername, '-', upper-roman)
 > [!NOTE]
 > Інформацію про незчеплені лічильники дивіться на сторінці функції {{cssxref("counter", "counter()")}}, що не має параметра `<string>`
 
-### Формальний синтаксис
+## Формальний синтаксис
 
 {{CSSSyntax}}
 
