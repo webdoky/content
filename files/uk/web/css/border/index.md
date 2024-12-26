@@ -121,4 +121,4 @@ div {
 - {{Cssxref("border-color")}}
 - {{Cssxref("outline")}}
 - [Фони та межі](/uk/docs/Web/CSS/CSS_backgrounds_and_borders)
-- [Вивчаймо CSS: Фони та межі](/uk/docs/Learn/CSS/Building_blocks/Backgrounds_and_borders)
+- [Навчання CSS – Фони та межі](/uk/docs/Learn_web_development/Core/Styling_basics/Backgrounds_and_borders)
