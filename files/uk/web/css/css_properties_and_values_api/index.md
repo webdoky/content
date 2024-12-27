@@ -54,7 +54,7 @@ CSS.registerProperty({
 ```
 
 ```html hidden
-<div class="box"><p>Linear gradient with transition</p></div>
+<div class="box"><p>Лінійний градієнт з переходом</p></div>
 ```
 
 {{EmbedLiveSample("api-vlastyvostei-i-znachen-v-dii",600,120)}}
