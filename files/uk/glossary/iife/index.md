@@ -25,7 +25,7 @@ page-type: glossary-definition
 
 Це патерн проєктування, який також відомий як {{glossary("Self-Executing Anonymous Function", "самовиклична анонімна функція")}} і має дві основні частини:
 
-1. Перша з них – це анонімна функція з лексичною областю видимості, обмежена {{jsxref("Operators/Grouping", "оператором групування")}} `()`. Це запобігає звертанням до змінних всередині IIFE та забрудненню глобальної області видимості.
+1. Перша з них – це анонімна функція з лексичною областю видимості, обмежена [оператором групування](/uk/docs/Web/JavaScript/Reference/Operators/Grouping) `()`. Це запобігає звертанням до змінних всередині IIFE та забрудненню глобальної області видимості.
 2. Друга частина створює негайно закличний вираз функції `()`, завдяки чому рушій JavaScript зразу ж інтерпретує функцію.
 
 ## Ситуації для використання
@@ -46,7 +46,7 @@ page-type: glossary-definition
 
 ### Виконання асинхронної функції
 
-IIFE з [`async`](/uk/docs/Web/JavaScript/Reference/Operators/async_function) дає змогу користуватися [`await`](/uk/docs/Web/JavaScript/Reference/Operators/await) і [`for-await`](/uk/docs/Web/JavaScript/Reference/Statements/for-await...of) навіть у старих браузерах і середовищах JavaScript, які не мають [await на верхньому рівні](/uk/docs/Web/JavaScript/Reference/Operators/await#await-na-zovnishniomu-rivni):
+IIFE з [`async`](/uk/docs/Web/JavaScript/Reference/Operators/async_function) дає змогу користуватися [`await`](/uk/docs/Web/JavaScript/Reference/Operators/await) і [`for-await`](/uk/docs/Web/JavaScript/Reference/Statements/for-await...of) навіть у старих браузерах і середовищах JavaScript, які не мають [await на верхньому рівні](/uk/docs/Web/JavaScript/Reference/Operators/await#await-na-zovnishnomu-rivni):
 
 ```js
 const getFileStream = async (url) => {
@@ -147,7 +147,6 @@ console.log(i); // Uncaught ReferenceError: i is not defined.
 ## Дивіться також
 
 - [IIFE](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression) (Wikipedia)
-- [Глосарій](/uk/docs/Glossary)
-
+- Споріднені терміни глосарія:
   - {{Glossary("Function", "Функція")}}
   - {{Glossary("Self-Executing Anonymous Function", "Самовиклична анонімна функція")}}

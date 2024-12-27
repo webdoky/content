@@ -11,7 +11,8 @@ spec-urls: https://www.w3.org/TR/CSS22/cascade.html#used-value
 
 Після того, як {{glossary("User agent", "користувацький агент")}} завершив усі необхідні обчислення, кожна властивість CSS отримує вжите значення. Вжиті значення розмірностей (наприклад, {{cssxref("width")}}, {{cssxref("line-height")}}) – у пікселях. Вжиті значення властивостей-скорочень (наприклад, {{cssxref("background")}}) узгоджені зі значеннями своїх властивостей-складових (наприклад, {{cssxref("background-color")}} або {{cssxref("background-size")}}) та зі значеннями {{cssxref("position")}} та {{cssxref("float")}}.
 
-> **Примітка:** API DOM {{domxref("Window.getComputedStyle", "getComputedStyle()")}} повертає [вирішене значення](/uk/docs/Web/CSS/resolved_value), котре може бути або [обчисленим значенням](/uk/docs/Web/CSS/computed_value), або вжитим значенням, залежно від властивості.
+> [!NOTE]
+> API DOM {{domxref("Window.getComputedStyle", "getComputedStyle()")}} повертає [вирішене значення](/uk/docs/Web/CSS/resolved_value), котре може бути або [обчисленим значенням](/uk/docs/Web/CSS/computed_value), або вжитим значенням, залежно від властивості.
 
 ## Приклад
 
@@ -113,7 +114,7 @@ window.addEventListener("resize", updateAllUsedWidths);
   - Значення
     - [Початкові значення](/uk/docs/Web/CSS/initial_value)
     - [Обчислені значення](/uk/docs/Web/CSS/computed_value)
-    - **Вжиті значення**
+    - [Вирішені значення](/uk/docs/Web/CSS/resolved_value)
     - [Фактичні значення](/uk/docs/Web/CSS/actual_value)
   - [Синтаксис визначення значень](/uk/docs/Web/CSS/Value_definition_syntax)
   - [Властивості-скорочення](/uk/docs/Web/CSS/Shorthand_properties)
