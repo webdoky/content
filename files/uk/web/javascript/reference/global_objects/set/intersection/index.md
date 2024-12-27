@@ -28,7 +28,12 @@ intersection(other)
 
 У математичному записі _перетин_ визначається так:
 
-<math display="block"><semantics><mrow><mi>A</mi><mo>∩</mo><mi>B</mi><mo>=</mo><mo stretchy="false">{</mo><mi>x</mi><mo>∊</mo><mi>A</mi><mo>∣</mo><mi>x</mi><mo>∊</mo><mi>B</mi><mo stretchy="false">}</mo></mrow><annotation encoding="TeX">A\cap B = \{x\in A\mid x\in B\}</annotation></semantics></math>
+<!-- Примітка: {} потребують подвійного екранування; додаткове екранування потрібне для Yari -->
+<!-- prettier-ignore-start -->
+<math display="block">
+  <semantics><mrow><mi>A</mi><mo>∩</mo><mi>B</mi><mo>=</mo><mo stretchy="false">{</mo><mi>x</mi><mo>∊</mo><mi>A</mi><mo>∣</mo><mi>x</mi><mo>∊</mo><mi>B</mi><mo stretchy="false">}</mo></mrow><annotation encoding="TeX">A\cap B = \\{x\in A\mid x\in B\\}</annotation></semantics>
+</math>
+<!-- prettier-ignore-end -->
 
 А за допомогою діаграми Венна
 
