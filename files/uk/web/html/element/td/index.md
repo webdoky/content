@@ -7,7 +7,7 @@ browser-compat: html.elements.td
 
 {{HTMLSidebar}}
 
-Елемент [HTML](/uk/docs/Web/HTML) **`<td>`** визначає комірку таблиці, яка містить дані і може використовуватися як дочірній елемент елемента {{HTMLElement("tr")}}.
+Елемент [HTML](/uk/docs/Web/HTML) **`<td>`** визначає комірку таблиці, яка містить дані та може використовуватися як дочірній елемент елемента {{HTMLElement("tr")}}.
 
 {{EmbedInteractiveExample("pages/tabbed/td.html","tabbed-taller")}}
 
