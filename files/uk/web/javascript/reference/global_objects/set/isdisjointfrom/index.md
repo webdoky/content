@@ -28,7 +28,11 @@ isDisjointFrom(other)
 
 Дві множини _не перетинаються_, якщо вони не мають спільних елементів. У математичному записі:
 
-<math display="block"><semantics><mrow><mi>A</mi><mtext>&nbsp;не перетинається з&nbsp;</mtext><mi>B</mi><mo stretchy="false">⇔</mo><mi>A</mi><mo>∩</mo><mi>B</mi><mo>=</mo><mi>∅</mi></mrow><annotation encoding="TeX">A\text{ не перетинається з }B \Leftrightarrow A\cap B = \empty</annotation></semantics></math>
+<!-- prettier-ignore-start -->
+<math display="block">
+  <semantics><mrow><mi>A</mi><mtext>&nbsp;не перетинається з&nbsp;</mtext><mi>B</mi><mo stretchy="false">⇔</mo><mi>A</mi><mo>∩</mo><mi>B</mi><mo>=</mo><mi>∅</mi></mrow><annotation encoding="TeX">A\text{ не перетинається з }B \Leftrightarrow A\cap B = \empty</annotation></semantics>
+</math>
+<!-- prettier-ignore-end -->
 
 А за допомогою діаграми Венна:
 
