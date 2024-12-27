@@ -1,5 +1,5 @@
 ---
-title: "<script> – Атрибут type"
+title: <script> – Атрибут type
 slug: Web/HTML/Element/script/type
 page-type: html-attribute
 browser-compat: html.elements.script.type
@@ -16,7 +16,7 @@ browser-compat: html.elements.script.type
 - **Атрибут не заданий (усталено), порожній рядок або MIME-тип JavaScript**
   - : Вказує на те, що цей сценарій є "класичним сценарієм", що вміщає код JavaScript.
     Розробникам рекомендується пропускати цей атрибут, якщо сценарій вказує на код JavaScript, а не вказувати MIME-тип.
-    MIME-типи JavaScript [перераховані в специфікації типів медіа IANA](/uk/docs/Web/HTTP/Basics_of_HTTP/MIME_types#textjavascript).
+    MIME-типи JavaScript [перераховані в специфікації типів медіа IANA](/uk/docs/Web/HTTP/MIME_types#textjavascript).
 - [`importmap`](/uk/docs/Web/HTML/Element/script/type/importmap)
   - : Це значення вказує на те, що тіло цього елемента містить карту імпортування.
     Карта імпортування – це об'єкт JSON, який розробники можуть використовувати для керування тим, як браузер розв'язує специфікатори модулів при імпортуванні [модулів JavaScript](/uk/docs/Web/JavaScript/Guide/Modules#import-moduliv-za-dopomohoiu-kart-importuvannia).
@@ -34,7 +34,8 @@ browser-compat: html.elements.script.type
     Розробники повинні використовувати дійсні MIME-типи, які не є MIME-типом JavaScript, позначаючи блоки даних
     Усі інші атрибути ігноруються, включно з атрибутом `src`.
 
-> **Примітка:** В раніших браузерах тип ідентифікував мову сценарію вбудованого або імпортованого (за допомогою атрибута `src`) коду.
+> [!NOTE]
+> В раніших браузерах тип ідентифікував мову сценарію вбудованого або імпортованого (за допомогою атрибута `src`) коду.
 
 ## Специфікації
 

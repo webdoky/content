@@ -1,6 +1,6 @@
 ---
 title: "Глосарій ВебДоків: Означення термінів Інтернету"
-short-title: "Глосарій ВебДоків"
+short-title: Глосарій
 slug: Glossary
 page-type: landing-page
 ---
