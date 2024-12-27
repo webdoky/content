@@ -57,7 +57,7 @@ const proxy2 = new Proxy(target, handler2);
 
 Тут задана реалізація обробника {{jsxref("Proxy/Proxy/get", "get()")}}, котра перехоплює спроби звернутися до властивостей цілі.
 
-Функції-обробники іноді називають _пастками_ – здогадно, через те, що вони вловлюють виклики до цільового об'єкта. Вкрай проста пастка у `handler2` вище перевизначає усі аксесори властивостей:
+Функції-обробники іноді називають _пастками_ – здогадно, через те, що вони вловлюють виклики до цільового об'єкта. Пастка у `handler2` вище перевизначає усі аксесори властивостей:
 
 ```js
 console.log(proxy2.message1); // світе
@@ -148,7 +148,8 @@ console.log(proxy3.message2); // світе
 - {{jsxref("Proxy/Proxy", "Proxy()")}}
   - : Створює новий об'єкт `Proxy`.
 
-> **Примітка:** Властивості `Proxy.prototype` немає, тож примірники `Proxy` не мають жодних особливих властивостей або методів.
+> [!NOTE]
+> Властивості `Proxy.prototype` немає, тож примірники `Proxy` не мають жодних особливих властивостей або методів.
 
 ## Статичні методи
 
@@ -159,7 +160,7 @@ console.log(proxy3.message2); // світе
 
 ### Базовий приклад
 
-У цьому простому прикладі число `37` повертається як усталене значення, коли імені властивості немає в об'єкті. Він використовує обробник {{jsxref("Proxy/Proxy/get", "get()")}}.
+У цьому прикладі число `37` повертається як усталене значення, коли імені властивості немає в об'єкті. Він використовує обробник {{jsxref("Proxy/Proxy/get", "get()")}}.
 
 ```js
 const handler = {
@@ -307,20 +308,20 @@ const view = new Proxy(
     selected: null,
   },
   {
-    set(obj, prop, newval) {
-      const oldval = obj[prop];
+    set(obj, prop, newVal) {
+      const oldVal = obj[prop];
 
       if (prop === "selected") {
-        if (oldval) {
-          oldval.setAttribute("aria-selected", "false");
+        if (oldVal) {
+          oldVal.setAttribute("aria-selected", "false");
         }
-        if (newval) {
-          newval.setAttribute("aria-selected", "true");
+        if (newVal) {
+          newVal.setAttribute("aria-selected", "true");
         }
       }
 
       // Усталена логіка для збереження значення
-      obj[prop] = newval;
+      obj[prop] = newVal;
 
       // Повідомити про успіх
       return true;

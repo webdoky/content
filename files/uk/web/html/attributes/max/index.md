@@ -1,5 +1,6 @@
 ---
-title: "Атрибут HTML – max"
+title: Атрибут HTML – max
+short-title: max
 slug: Web/HTML/Attributes/max
 page-type: html-attribute
 browser-compat:
@@ -10,13 +11,13 @@ browser-compat:
 
 {{HTMLSidebar}}
 
-Атрибут **`max`** (максимум) визначає максимальне значення, що є прийнятним і дійсним для поля, що містить цей атрибут. Якщо [`value`](/uk/docs/Web/HTML/Element/input#value-znachennia) елемента перевищує значення `max`, то елемент провалює [валідацію](/uk/docs/Learn/Forms/Form_validation). Це значення повинно бути більшим або рівним значенню атрибута [`min`](min). Якщо атрибут `max` присутній, але його значення не задане або недійсне, то не застосовується жодне значення `max`. Якщо атрибут `max` є дійсним, а непорожнє значення поля перевищує максимальне значення, дозволене атрибутом `max`, то валідація обмежень зупиняє подачу форми.
+Атрибут **`max`** (максимум) визначає максимальне значення, що є прийнятним і дійсним для поля, що містить цей атрибут. Якщо [`value`](/uk/docs/Web/HTML/Element/input#value-znachennia) елемента перевищує значення `max`, то елемент провалює [валідацію](/uk/docs/Learn/Forms/Form_validation). Це значення повинно бути більшим або рівним значенню атрибута [`min`](/uk/docs/Web/HTML/Attributes/min). Якщо атрибут `max` присутній, але його значення не задане або недійсне, то не застосовується жодне значення `max`. Якщо атрибут `max` є дійсним, а непорожнє значення поля перевищує максимальне значення, дозволене атрибутом `max`, то валідація обмежень зупиняє подачу форми.
 
-Атрибут `max`, дійсний для числових типів полів, серед яких {{HTMLElement("input/date", "date")}}, {{HTMLElement("input/month", "month")}}, {{HTMLElement("input/week", "week")}}, {{HTMLElement("input/time", "time")}}, {{HTMLElement("input/datetime-local", "datetime-local")}}, {{HTMLElement("input/number", "number")}} і {{HTMLElement("input/range", "range")}}, а також елементи {{htmlelement('progress')}} і {{htmlelement('meter')}}, є числом, яке задає найбільше допустиме значення, при якому елемент форми вважається дійсним.
+Атрибут `max` валідний для полів числових типів, серед яких {{HTMLElement("input/date", "date")}}, {{HTMLElement("input/month", "month")}}, {{HTMLElement("input/week", "week")}}, {{HTMLElement("input/time", "time")}}, {{HTMLElement("input/datetime-local", "datetime-local")}}, {{HTMLElement("input/number", "number")}} і {{HTMLElement("input/range", "range")}}, а також елементи {{htmlelement('progress')}} і {{htmlelement('meter')}}. Це число, яке задає найбільше допустиме значення, з яким елемент форми вважається дійсним.
 
 Якщо значення поля перевищує дозволений максимум, то властивість {{domxref('validityState.rangeOverflow')}} буде істинною, а контрольний елемент дасть збіг з псевдокласами {{cssxref(':out-of-range')}} і {{cssxref(':invalid')}}.
 
-### Синтаксис
+## Синтаксис
 
 <table class="no-markdown">
   <caption>
@@ -49,14 +50,14 @@ browser-compat:
     </tr>
     <tr>
       <td>{{HTMLElement("input/time", "time")}}</td>
-      <td><code>hh:mm</code></td>
+      <td><code>HH:mm</code></td>
       <td><code>&#x3C;input type="time" max="17:00" step="900"></code></td>
     </tr>
     <tr>
       <td>
         {{HTMLElement("input/datetime-local", "datetime-local")}}
       </td>
-      <td><code>yyyy-mm-ddThh:mm</code></td>
+      <td><code>yyyy-mm-ddTHH:mm</code></td>
       <td>
         <code>&#x3C;input type="datetime-local" max="2019-12-25T23:59"></code>
       </td>
@@ -78,7 +79,8 @@ browser-compat:
   </tbody>
 </table>
 
-> **Примітка:** Коли дані, введені користувачем, не відповідають заданому максимальному значенню, то значення поля вважається недійсним, а поле дає збіг з псевдокласами {{cssxref(':invalid')}} і {{cssxref(':out-of-range')}}.
+> [!NOTE]
+> Коли дані, введені користувачем, не відповідають заданому максимальному значенню, то значення поля вважається недійсним, а поле дає збіг з псевдокласами {{cssxref(':invalid')}} і {{cssxref(':out-of-range')}}.
 
 Дивіться докладніше у [Валідації на клієнтському боці](/uk/docs/Web/HTML/Constraint_validation) та {{domxref("ValidityState.rangeOverflow", "rangeOverflow")}}.
 

@@ -146,20 +146,20 @@ font-weight: unset;
 
 ### Загальноприйняте відображення імен ваг
 
-Числові значення від `100` до `900` приблизно відповідають наступним загальноприйнятим іменам ваг (дивіться [Специфікацію OpenType (англ.)](https://docs.microsoft.com/typography/opentype/spec/os2#usweightclass)):
+Числові значення від `100` до `900` приблизно відповідають наступним загальноприйнятим іменам ваг (дивіться [Специфікацію OpenType](https://learn.microsoft.com/uk-ua/typography/opentype/spec/os2#usweightclass)):
 
-| Значення | Загальноприйняте ім'я ваги                                                                                                             |
-| -------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| 100      | Тонка (волосинна)                                                                                                                      |
-| 200      | Особливо легка (украй легка)                                                                                                           |
-| 300      | Легка                                                                                                                                  |
-| 400      | Звична (звичайна)                                                                                                                      |
-| 500      | Середня                                                                                                                                |
-| 600      | Напівгруба                                                                                                                             |
-| 700      | Груба                                                                                                                                  |
-| 800      | Особливо груба (украй груба)                                                                                                           |
-| 900      | Чорна (Тяжка)                                                                                                                          |
-| 950      | [Особливо чорна (украй чорна) (англ.)](https://docs.microsoft.com/dotnet/api/system.windows.fontweights?view=netframework-4.8#remarks) |
+| Значення | Загальноприйняте ім'я ваги                                                                                                            |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| 100      | Тонка (волосинна)                                                                                                                     |
+| 200      | Особливо легка (украй легка)                                                                                                          |
+| 300      | Легка                                                                                                                                 |
+| 400      | Звична (звичайна)                                                                                                                     |
+| 500      | Середня                                                                                                                               |
+| 600      | Напівгруба                                                                                                                            |
+| 700      | Груба                                                                                                                                 |
+| 800      | Особливо груба (украй груба)                                                                                                          |
+| 900      | Чорна (Тяжка)                                                                                                                         |
+| 950      | [Особливо чорна (украй чорна)](https://learn.microsoft.com/uk-ua/dotnet/api/system.windows.fontweights?view=netframework-4.8#remarks) |
 
 ### Змінні шрифти
 
@@ -167,16 +167,40 @@ font-weight: unset;
 
 У змінних шрифтах TrueType та OpenType для реалізації змінної ширини застосовується варіація "wght".
 
-Це демо завантажується з заданим `font-weight: 500;`. Змініть значення властивості `font-weight`, аби побачити, як зміниться вага тексту.
+Це демо завантажується з заданим `font-weight: 500;`. Змініть значення властивості `font-weight` у селекторі `.sample`, аби побачити, як зміниться вага тексту (наприклад, поставте 200, 700). Клацніть "Грати" у блоках коду нижче, щоб редагувати приклад на Ігровому майданчику MDN:
 
-{{EmbedGHLiveSample("css-examples/variable-fonts/font-weight.html", '100%', 860)}}
+```html live-sample___font-weight-example
+<p class="sample">
+  ...зустріти дванадцятиметрового мегалозавра, що шкандибає Лисою горою, неначе
+  слоноподібна ящірка, було б не дуже весело.
+</p>
+```
+
+```css live-sample___font-weight-example
+@font-face {
+  src: url("https://mdn.github.io/shared-assets/fonts/variable-fonts/MutatorSans.ttf");
+  font-family: "MutatorSans";
+  font-style: normal;
+  font-weight: 1 1000;
+}
+
+.sample {
+  text-transform: uppercase;
+  font-weight: 500;
+  font:
+    1.5rem "MutatorSans",
+    sans-serif;
+}
+```
+
+{{EmbedLiveSample("font-weight-example", "", "200px")}}
 
 ## Доступність
 
 Люди з проблемами зору можуть мати складнощі при читанні тексту, чиє значення `font-weight` – `100` (тонкий, волосинний шрифт) чи `200` (украй легкий), особливо коли шрифт має [низьке співвідношення контрасту кольорів](/uk/docs/Web/CSS/color#dostupnist).
 
 - [MDN розуміння WCAG, пояснення Настанов 1.4](/uk/docs/Web/Accessibility/Understanding_WCAG/Perceivable#guideline_1.4_make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background)
-- [Розуміння критерію успіху 1.4.8 | W3C розуміння WCAG 2.0 (англ.)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-visual-presentation.html)
+- [Розуміння критерію успіху 1.4.8 | W3C розуміння WCAG 2.0](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-visual-presentation.html)
 
 ## Формальне визначення
 
@@ -243,5 +267,5 @@ span {
 
 - {{cssxref("font-family")}}
 - {{cssxref("font-style")}}
-- [Основи оформлення тексту й шрифту](/uk/docs/Learn/CSS/Styling_text/Fundamentals)
+- [Навчання – Основи оформлення тексту й шрифту](/uk/docs/Learn_web_development/Core/Text_styling/Fundamentals)
 - Модуль [Шрифтів CSS](/uk/docs/Web/CSS/CSS_fonts)

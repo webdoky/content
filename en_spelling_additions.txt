@@ -1,3 +1,5 @@
+nolint
+webdoky
 Adlam
 Ahom
 APNG
@@ -19,6 +21,7 @@ enumerables
 ICNS
 Igalia
 IIFE
+labeledby
 Miata
 mozactionhint
 nolint
@@ -34,4 +37,5 @@ UNSC
 Vorbis
 webdoky
 WHATWG
+Yari
 ZWNBSP

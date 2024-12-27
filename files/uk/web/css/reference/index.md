@@ -44,7 +44,7 @@ div.menu-bar li:hover > ul {
 }
 ```
 
-Знайомство з синтаксисом селекторів початкового рівня – шукайте в нашому [посібнику з селекторів CSS](/uk/docs/Learn/CSS/Building_blocks/Selectors). Майте на увазі, що будь-яка [синтаксична](/uk/docs/Web/CSS/Syntax) помилка у визначенні правила робить недійсним усе правило. Недійсні правила ігноруються браузерами. Зверніть увагу на те, що визначення правил CSS цілком [засновані на тексті (англ.)](https://www.w3.org/TR/css-syntax-3/#intro) ({{Glossary("ASCII")}}), натомість DOM-CSS / CSSOM (система управління правилами) [заснована на об'єктах (англ.)](https://www.w3.org/TR/cssom/#introduction).
+Знайомство з синтаксисом селекторів початкового рівня – шукайте в нашому [посібнику з селекторів CSS](/uk/docs/Learn/CSS/Building_blocks/Selectors). Майте на увазі, що будь-яка [синтаксична](/uk/docs/Web/CSS/Syntax) помилка у визначенні правила робить недійсним усе правило. Недійсні правила ігноруються браузерами. Зверніть увагу на те, що визначення правил CSS цілком [засновані на тексті](https://www.w3.org/TR/css-syntax-3/#intro) ({{Glossary("ASCII")}}), натомість DOM-CSS / CSSOM (система управління правилами) [заснована на об'єктах](https://www.w3.org/TR/cssom/#introduction).
 
 ### Синтаксис директив
 
@@ -52,9 +52,11 @@ div.menu-bar li:hover > ul {
 
 ## Покажчик
 
-> **Примітка:** Цей покажчик не включає ексклюзивні для SVG атрибути відображення, котрі можна використовувати як властивості CSS на елементах [SVG](/uk/docs/Web/SVG).
+> [!NOTE]
+> Цей покажчик не включає ексклюзивні для SVG атрибути відображення, котрі можна використовувати як властивості CSS на елементах [SVG](/uk/docs/Web/SVG).
 
-> **Примітка:** Імена властивостей у цьому покажчику **не** містять імен JavaScript, котрі відрізняються від стандартних імен CSS.
+> [!NOTE]
+> Імена властивостей у цьому покажчику **не** містять імен JavaScript, котрі відрізняються від стандартних імен CSS.
 
 {{CSS_Ref}}
 
@@ -99,7 +101,7 @@ div.menu-bar li:hover > ul {
 - [Псевдоелементи](/uk/docs/Web/CSS/Pseudo-elements) `::`
   - : Представляють сутності, що не включені в HTML.
 
-> **Callout:**
+> [!CALLOUT]
 >
 > Дивіться також [селектори в специфікації Селекторів](https://drafts.csswg.org/selectors/) і [специфікацію псевдоелементів](https://drafts.csswg.org/css-pseudo/).
 
@@ -144,13 +146,14 @@ div.menu-bar li:hover > ul {
 ### Головні типи об'єктів
 
 - {{DOMxRef("Document.styleSheets")}}
-- `{{DOMxRef("StyleSheetList", "styleSheets", "", 1)}}[i].{{DOMxRef("CSSRuleList", "cssRules", "", 1)}}`
-- `cssRules[i].{{DOMxRef("CSSRule.cssText", "cssText", "", 1)}}` (селектор і стиль)
-- `cssRules[i].{{DOMxRef("CSSStyleRule.selectorText", "selectorText", "", 1)}}`
 - {{DOMxRef("HTMLElement.style")}}
-- `HTMLElement.style.{{DOMxRef("CSSStyleDeclaration.cssText", "cssText", "", 1)}}` (лише стиль)
 - {{DOMxRef("Element.className")}}
 - {{DOMxRef("Element.classList")}}
+- {{DOMxRef("StyleSheetList")}}
+- {{DOMxRef("CSSRuleList")}}
+- {{DOMxRef("CSSRule")}}
+- {{DOMxRef("CSSStyleRule")}}
+- {{DOMxRef("CSSStyleDeclaration")}}
 
 ### Важливі методи
 

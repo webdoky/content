@@ -17,13 +17,15 @@ browser-compat: javascript.functions
 
 Значення функцій зазвичай є примірниками [`Function`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Function). Дивіться інформацію про властивості та методи об'єктів `Function` на сторінці {{jsxref("Function")}}. Викличні значення змушують [`typeof`](/uk/docs/Web/JavaScript/Reference/Operators/typeof) повертати `"function"`, а не `"object"`.
 
-> **Примітка:** Не всі викличні значення є примірниками `Function`. Наприклад, об'єкт `Function.prototype` є викличним, але не є примірником `Function`. Також можна вручну задати [ланцюжок прототипів](/uk/docs/Web/JavaScript/Inheritance_and_the_prototype_chain) функції так, щоб вона більше не успадковувала властивості `Function.prototype`. Однак такі випадки дуже рідкісні.
+> [!NOTE]
+> Не всі викличні значення є примірниками `Function`. Наприклад, об'єкт `Function.prototype` є викличним, але не є примірником `Function`. Також можна вручну задати [ланцюжок прототипів](/uk/docs/Web/JavaScript/Inheritance_and_the_prototype_chain) функції так, щоб вона більше не успадковувала властивості `Function.prototype`. Однак такі випадки дуже рідкісні.
 
 ### Повернене значення
 
 Усталено, якщо виконання функції не закінчується інструкцією [`return`](/uk/docs/Web/JavaScript/Reference/Statements/return), або якщо після ключового слова `return` немає виразу, то поверненим значенням стає {{jsxref("undefined")}}. Інструкція `return` дає змогу повернути з функції довільне значення. Один виклик функції може повернути лише одне значення, але можна імітувати ефект повернення декількох значень, повернувши об'єкт або масив і [деструктурувавши](/uk/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) результат.
 
-> **Примітка:** Конструктори, викликані з [`new`](/uk/docs/Web/JavaScript/Reference/Operators/new), використовують для визначення поверненого значення іншу логіку.
+> [!NOTE]
+> Конструктори, викликані з [`new`](/uk/docs/Web/JavaScript/Reference/Operators/new), використовують для визначення поверненого значення іншу логіку.
 
 ### Передача аргументів
 
@@ -76,7 +78,7 @@ console.log(car.brand); // Toyota
 - Асинхронна функція – повертає [`Promise`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Promise); може бути призупинена та відновлена оператором [`await`](/uk/docs/Web/JavaScript/Reference/Operators/await)
 - Асинхронна генераторна функція – повертає об'єкт [`AsyncGenerator`](/uk/docs/Web/JavaScript/Reference/Global_Objects/AsyncGenerator); можна використовувати як оператор `await`, так і оператор `yield`
 
-Для кожного різновиду функції є три способи визначення:
+Для кожного різновиду функції є кілька способів визначення:
 
 - Оголошення
   - : [`function`](/uk/docs/Web/JavaScript/Reference/Statements/function), [`function*`](/uk/docs/Web/JavaScript/Reference/Statements/function*), [`async function`](/uk/docs/Web/JavaScript/Reference/Statements/async_function), [`async function*`](/uk/docs/Web/JavaScript/Reference/Statements/async_function*)
