@@ -15,7 +15,8 @@ browser-compat: css.properties.transform
 Якщо властивість має значення, відмінне від `none`, то створюється [контекст нагромадження](/uk/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context).
 В такому випадку елемент діє для будь-яких `position: fixed;` чи `position: absolute;` елементів, котрі містить, як [контейнерний блок](/uk/docs/Web/CSS/Containing_block).
 
-> **Застереження:** Перетворені за допомогою `transform` можуть бути лише елементи, котрі піддаються перетворенню.
+> [!WARNING]
+> Перетворені за допомогою `transform` можуть бути лише елементи, котрі піддаються перетворенню.
 > А саме – всі елементи, чиє компонування обумовлене рамковою моделлю CSS, окрім: [незаміщених рядкових рамок](/uk/docs/Glossary/Inline-level_content), [рамок колонок таблиці](/uk/docs/Web/HTML/Element/col) й [рамок груп колонок таблиці](/uk/docs/Web/HTML/Element/colgroup).
 
 ## Синтаксис
@@ -49,7 +50,7 @@ transform: skewY(1.07rad);
 
 /* Декілька функційних значень */
 transform: translateX(10px) rotate(10deg) translateY(5px);
-transform: perspective(500px) translate(10px, 0, 20px) rotateY(3deg);
+transform: perspective(500px) translate3d(10px, 0, 20px) rotateY(30deg);
 
 /* Глобальні значення */
 transform: inherit;
@@ -69,7 +70,7 @@ transform: unset;
 - `none`
   - : Вказує, що не застосовується жодне перетворення.
 
-## Занепокоєння щодо доступності
+## Доступність
 
 Анімації масштабування й наближення є проблемними для доступності, адже вони є поширеним тригером певних різновидів мігрені.
 Якщо є потреба додати до вебсайту такі анімації, слід надати користувачам контроль для їх вимкнення, бажано для всього сайту.
@@ -79,7 +80,7 @@ transform: unset;
 Більше подробиць:
 
 - [MDN розуміння WCAG, пояснення Настанов 2.3](/uk/docs/Web/Accessibility/Understanding_WCAG/Operable#guideline_2.3_—_seizures_and_physical_reactions_do_not_design_content_in_a_way_that_is_known_to_cause_seizures_or_physical_reactions)
-- [Розуміння критерію успіху 2.3.3 | W3C розуміння WCAG 2.1 (англ.)](https://www.w3.org/WAI/WCAG21/Understanding/animation-from-interactions)
+- [Розуміння критерію успіху 2.3.3 | W3C розуміння WCAG 2.1](https://www.w3.org/WAI/WCAG21/Understanding/animation-from-interactions)
 
 ## Формальне визначення
 

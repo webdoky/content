@@ -70,9 +70,11 @@ display: unset;
     - `inline`
       - : Елемент утворює одну або більше рядкових рамок, що не утворюють розривів рядка до або після них. У нормальному потоці наступний елемент буде розташований на тому ж самому рядку, що й попередній, якщо в рядку достатньо місця для нього.
 
-> **Примітка:** Коли браузери, що підтримують синтаксис із кількома значеннями, зустрічають властивість display, що містить лише **зовнішнє** значення (наприклад, `display: block` чи `display: inline`), то внутрішнє значення встановлюється в `flow` (наприклад, `display: block flow` чи `display: inline flow`).
+> [!NOTE]
+> Коли браузери, що підтримують синтаксис із кількома значеннями, зустрічають властивість display, що містить лише **зовнішнє** значення (наприклад, `display: block` чи `display: inline`), то внутрішнє значення встановлюється в `flow` (наприклад, `display: block flow` чи `display: inline flow`).
 
-> **Примітка:** Щоб мати впевненість, що компонування працює в старіших браузерах, можна скористатися синтаксисом з одним значенням, наприклад, `display: inline flex` може мати наступний запасний варіант
+> [!NOTE]
+> Щоб мати впевненість, що компонування працює в старіших браузерах, можна скористатися синтаксисом з одним значенням, наприклад, `display: inline flex` може мати наступний запасний варіант
 >
 > ```css
 > .container {
@@ -89,24 +91,25 @@ display: unset;
 
   - : Ці ключові слова вказують внутрішній тип представлення елемента, що визначає тип форматування контексту, в якому його вміст розташовано (припускаючи, що елемент не заміщується):
 
-    - `flow` {{Experimental_Inline}}
+    - `flow`
 
       - : Елемент розміщує свій вміст за допомогою потокової розкладки (комбінації блокової та рядкової).
-        Якщо його зовнішній тип представлення – `inline` чи `run-in`, і він бере участь у блоковому чи рядковому контексті форматування, то генерує рядкові рамки. Інакше – утворює рамки блокового контейнера.
-        Залежно від значень інших властивостей (наприклад, {{CSSxRef("position")}}, {{CSSxRef("float")}} чи {{CSSxRef("overflow")}}) та від того, чи він бере участь у блоковому, чи рядковому контексті форматування, він або створює новий [блоковий контекст форматування](/uk/docs/Web/Guide/CSS/Block_formatting_context) (БКФ) для свого вмісту, або інтегрує свій вміст у батьківський контекст форматування.
+        Якщо його зовнішній тип представлення – `inline`, і він бере участь у блоковому чи рядковому контексті форматування, то генерує рядкові рамки. Інакше – утворює блокову рамку.
+        Залежно від значень інших властивостей (наприклад, {{CSSxRef("position")}}, {{CSSxRef("float")}} чи {{CSSxRef("overflow")}}) та від того, чи він бере участь у блоковому, чи рядковому контексті форматування, він або створює новий [контекст блокового форматування](/uk/docs/Web/CSS/CSS_display/Block_formatting_context) (КБФ) для свого вмісту, або інтегрує свій вміст у батьківський контекст форматування.
 
     - `flow-root`
-      - : Елемент породжує блокову рамку, що утворює новий [блоковий контекст форматування](/uk/docs/Web/Guide/CSS/Block_formatting_context), визначаючи розташування кореня форматування.
+      - : Елемент породжує блокову рамку, що утворює новий [контекст блокового форматування](/uk/docs/Web/CSS/CSS_display/Block_formatting_context), визначаючи розташування кореня форматування.
     - `table`
       - : Такі елементи поводяться неначе HTML-елементи {{HTMLElement("table")}}. Вони визначають рамки блокового рівня.
     - `flex`
       - : Елемент поводиться як елемент блокового рівня, і розкладає свій вміст згідно з [моделлю flexbox](/uk/docs/Web/CSS/CSS_flexible_box_layout).
     - `grid`
       - : Елемент поводиться як елемент блокового рівня, і розглядає свій вміст згідно з [сітковою моделлю](/uk/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout)
-    - `ruby` {{Experimental_Inline}}
+    - `ruby`
       - : Елемент поводиться як елемент рядкового рівня, і розкладає свій вміст згідно з моделлю форматування рубі. Він поводиться як відповідний елемент HTML {{HTMLElement("ruby")}}.
 
-> **Примітка:** Коли браузери, що підтримують синтаксис із кількома значеннями – ключовими словами, зустрічають властивість display, що містить лише **внутрішнє** значення (наприклад, `display: flex` чи `display: grid`), то зовнішнє значення встановлюється в `block` (наприклад, `display: block flex` чи `display: block grid`).
+> [!NOTE]
+> Коли браузери, що підтримують синтаксис із кількома значеннями – ключовими словами, зустрічають властивість display, що містить лише **внутрішнє** значення (наприклад, `display: flex` чи `display: grid`), то зовнішнє значення встановлюється в `block` (наприклад, `display: block flex` чи `display: block grid`).
 
 ### Пункт списку
 
@@ -116,9 +119,10 @@ display: unset;
 Окреме значення `list-item` змусить елемент поводити себе як елемент списку.
 Це можна використовувати разом з властивостями {{CSSxRef("list-style-type")}} і {{CSSxRef("list-style-position")}}.
 
-`list-item` також може бути скомбінований з будь-яким ключовим значенням {{CSSxRef("&lt;display-outside&gt;")}}, а також із ключовими словами {{CSSxRef("&lt;display-inside&gt;")}} `flow` чи `flow-root`.
+`list-item` також може бути скомбінований з будь-яким ключовим значенням {{CSSxRef("&lt;display-outside&gt;")}}, а також із ключовим словом {{CSSxRef("&lt;display-inside&gt;")}} `flow` або `flow-root`.
 
-> **Примітка:** У браузерах, що підтримують синтаксис із кількома значеннями – ключовими словами, якщо внутрішнє значення не вказане, то воно вважається рівним `flow`.
+> [!NOTE]
+> У браузерах, що підтримують синтаксис із кількома значеннями – ключовими словами, якщо внутрішнє значення не вказане, то воно вважається рівним `flow`.
 > Якщо не вказане зовнішнє значення, головні рамки елемента матимуть тип зовнішнього представлення `block`.
 
 ### Внутрішні
@@ -145,13 +149,13 @@ display: unset;
       - : Такі елементи поводяться неначе елементи HTML {{HTMLElement("col")}}.
     - `table-caption`
       - : Такі елементи поводяться неначе елементи HTML {{HTMLElement("caption")}}.
-    - `ruby-base` {{Experimental_Inline}}
+    - `ruby-base`
       - : Такі елементи поводяться неначе елементи HTML {{HTMLElement("rb")}}.
-    - `ruby-text` {{Experimental_Inline}}
+    - `ruby-text`
       - : Такі елементи поводяться неначе елементи HTML {{HTMLElement("rt")}}.
-    - `ruby-base-container` {{Experimental_Inline}}
+    - `ruby-base-container`
       - : Такі елементи утворюються як анонімні рамки.
-    - `ruby-text-container` {{Experimental_Inline}}
+    - `ruby-text-container`
       - : Такі елементи поводяться неначе елементи HTML {{HTMLElement("rtc")}}.
 
 ### Блокові
@@ -282,24 +286,26 @@ display: unset;
 
 Приклади переходів за властивістю `display` дивіться на сторінках [`@starting-style`](/uk/docs/Web/CSS/@starting-style#pryklady) і [`transition-behavior`](/uk/docs/Web/CSS/transition-behavior#pryklady).
 
-## Занепокоєння щодо доступності
+## Доступність
 
 ### display: none
 
-Використання `display` значення `none` на елементі прибере його із [дерева доступності](/uk/docs/Learn/Accessibility/What_is_accessibility#api-dostupnosti). Це призведе до того, що елемент та його нащадки більше не будуть оголошені технологією зчитування з екрана.
+Використання `display` значення `none` на елементі прибере його із [дерева доступності](/uk/docs/Learn_web_development/Core/Accessibility/What_is_accessibility#api-dostupnosti). Це призведе до того, що елемент та його нащадки більше не будуть оголошені технологією зчитування з екрана.
 
-Якщо потрібно візуально приховати елемент, більш доступною альтернативою є використання [комбінації властивостей](https://gomakethings.com/hidden-content-for-better-a11y/#hiding-the-link) для видимого усунення з екрана, але збереження для розбору допоміжними технологіями, наприклад, читачами екрана.
+Якщо потрібно візуально приховати елемент, більш доступною альтернативою є використання [комбінації властивостей](https://webaim.org/techniques/css/invisiblecontent/) для видимого усунення з екрана, але збереження доступності для допоміжних технологій, наприклад, читачів з екрана.
+
+Хоч `display: none` приховує вміст із дерева доступності, але приховані елементи, на які є посилання з боку видимих елементів через атрибути `aria-describedby` чи `aria-labelledby`, доступні для допоміжних технологій.
 
 ### display: contents
 
-Поточні реалізації у частині браузерів приберуть із [дерева доступності](/uk/docs/Learn/Accessibility/What_is_accessibility#api-dostupnosti) будь-який елемент зі значенням `contents` властивості `display` (залишивши у дереві його нащадків). Це призведе до того, що сам елемент більше не буде оголошений технологією читання екрана. Це некоректна поведінка згідно зі [специфікацією CSS](https://drafts.csswg.org/css-display/#valdef-display-contents).
+Поточні реалізації у частині браузерів приберуть із [дерева доступності](/uk/docs/Learn_web_development/Core/Accessibility/What_is_accessibility#api-dostupnosti) будь-який елемент зі значенням `contents` властивості `display` (залишивши у дереві його нащадків). Це призведе до того, що сам елемент більше не буде оголошений технологією читання екрана. Це некоректна поведінка згідно зі [специфікацією CSS](https://drafts.csswg.org/css-display/#valdef-display-contents).
 
 - [Більш доступна розмітка із display: contents | Гідде де Вріс](https://hidde.blog/more-accessible-markup-with-display-contents/)
 - [Display: Contents не є скиданням CSS | Адріан Розеллі](https://adrianroselli.com/2018/05/display-contents-is-not-a-css-reset.html)
 
 ### Таблиці
 
-У частині браузерів зміна значення `display` для елемента {{HTMLElement("table")}} на `block`, `grid` чи `flex` змінить його представлення у [дереві доступності](/uk/docs/Learn/Accessibility/What_is_accessibility#accessibility_apis). Це спричинить до того, що така таблиця не буде коректно оголошена технологією читання з екрана.
+У частині браузерів зміна значення `display` для елемента {{HTMLElement("table")}} на `block`, `grid` чи `flex` змінить його представлення у [дереві доступності](/uk/docs/Learn_web_development/Core/Accessibility/What_is_accessibility#accessibility_apis). Це спричинить до того, що така таблиця не буде коректно оголошена технологією читання з екрана.
 
 - [Коротка нотатка про те, що властивість CSS display робить із семантикою таблиці — The Paciello Group](https://www.tpgi.com/short-note-on-what-css-display-properties-do-to-table-semantics/)
 - [Прихований вміст для кращої доступності | Go Make Things](https://gomakethings.com/hidden-content-for-better-a11y/)
@@ -341,19 +347,33 @@ display: unset;
   <label for="display">Оберіть значення display:</label>
   <select id="display">
     <option selected>block</option>
+    <option>block flow</option>
     <option>inline</option>
-    <option>inline-block</option>
-    <option>inline flow-root</option>
-    <option>none</option>
-    <option>flex</option>
-    <option>inline-flex</option>
-    <option>inline flex</option>
-    <option>grid</option>
-    <option>inline-grid</option>
-    <option>inline grid</option>
+    <option>inline flow</option>
+    <option>flow</option>
+    <option>flow-root</option>
+    <option>block flow-root</option>
     <option>table</option>
     <option>block table</option>
+    <option>flex</option>
+    <option>block flex</option>
+    <option>grid</option>
+    <option>block grid</option>
     <option>list-item</option>
+    <option>block flow list-item</option>
+    <option>inline flow list-item</option>
+    <option>block flow-root list-item</option>
+    <option>inline flow-root list-item</option>
+    <option>contents</option>
+    <option>none</option>
+    <option>inline-block</option>
+    <option>inline flow-root</option>
+    <option>inline-table</option>
+    <option>inline table</option>
+    <option>inline-flex</option>
+    <option>inline flex</option>
+    <option>inline-grid</option>
+    <option>inline grid</option>
   </select>
 </div>
 ```
@@ -412,12 +432,20 @@ updateDisplay();
 
 Зверніть увагу на те, що частина значень із кількома ключовими словами додана для ілюстрації, і вони мають наступні еквіваленти:
 
+- `block` = `block flow`
+- `inline` = `inline flow`
+- `flow` = `block flow`
+- `flow-root` = `block flow-root`
+- `table` = `block table`
+- `flex` = `block flex`
+- `grid` = `block grid`
+- `list-item` = `block flow list-item`
 - `inline-block` = `inline flow-root`
+- `inline-table` = `inline table`
 - `inline-flex` = `inline flex`
 - `inline-grid` = `inline grid`
-- `table` = `block table`
 
-Більше прикладів можна знайти на сторінках для кожного окремого типу даних display у розділі [Згрупованих значень](#zhrupovani-znachennia).
+Більше прикладів можна знайти на сторінках для кожного окремого типу display у розділі [Згрупованих значень](#zghrupovani-znachennia).
 
 ## Специфікації
 

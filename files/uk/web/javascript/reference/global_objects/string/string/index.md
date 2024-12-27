@@ -16,7 +16,8 @@ new String(thing)
 String(thing)
 ```
 
-> **Примітка:** `String()` можна викликати як з, так і без [`new`](/uk/docs/Web/JavaScript/Reference/Operators/new), але з різним результатом. Дивіться [Повернене значення](#povernene-znachennia).
+> [!NOTE]
+> Конструктор `String()` можна викликати як з, так і без [`new`](/uk/docs/Web/JavaScript/Reference/Operators/new), але з різним результатом. Дивіться [Повернене значення](#povernene-znachennia).
 
 ### Параметри
 
@@ -25,11 +26,13 @@ String(thing)
 
 ### Повернене значення
 
-Коли `String` викликається як конструктор (з `new`), то він створює об'єкт {{jsxref("String")}}, що **не** є примітивом.
+Коли `String()` викликається як функція (без [`new`](/uk/docs/Web/JavaScript/Reference/Operators/new)), то повертає `value`, [зведене до рядкового примітива](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka). А саме, значення [Symbol](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol) перетворюються на `"Symbol(опис)"`, де `опис` – це [опис](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/description) значення Symbol, без викидання винятку.
 
-Коли `String` викликається як функція, вона зводить свій параметр до рядкового примітиву. Значення [Symbol](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol) перетворюються на `"Symbol(опис)"`, де `опис` – це [опис](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/description) значення Symbol, без викидання помилки.
+Коли `String` викликається як конструктор (з додаванням `new`), то `value` зводиться до рядкового примітива (без особливої обробки символів), і повертається об'єкт-обгортка {{jsxref("String")}}, який **не** є примітивом.
 
-> **Застереження:** `String` рідко доводиться використовувати як конструктор.
+> [!WARNING]
+>
+> `String` рідко доводиться використовувати як конструктор.
 
 ## Приклади
 
