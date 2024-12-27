@@ -146,7 +146,7 @@ table {
 }
 ```
 
-#### Результа
+#### Результат
 
 {{EmbedLiveSample("bazovi-komirky-danykh", 650, 140)}}
 
