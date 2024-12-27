@@ -19,7 +19,8 @@ spec-urls: https://drafts.csswg.org/css-transitions/
 
 Веброзробник може визначати, яка властивість буде анімована і як. Це дає змогу створювати складні переходи. Проте частина властивостей є [неанімованими](/uk/docs/Web/CSS/CSS_animated_properties), адже їх немає змісту анімувати.
 
-> **Примітка:** Значення `auto` нерідко є дуже складним випадком. Специфікація радить не анімувати від і до `auto`. Частина користувацьких агентів, як то засновані на Gecko, реалізовують цю вимогу, а інші, як то засновані на WebKit, є менш суворими. Використання анімацій з `auto` може приводити до неочікуваних результатів, залежних від браузера та його версії, його слід уникати.
+> [!NOTE]
+> Значення `auto` нерідко є дуже складним випадком. Специфікація радить не анімувати від і до `auto`. Частина користувацьких агентів, як то засновані на Gecko, реалізовують цю вимогу, а інші, як то засновані на WebKit, є менш суворими. Використання анімацій з `auto` може приводити до неочікуваних результатів, залежних від браузера та його версії, його слід уникати.
 
 ## Визначення переходів
 
@@ -220,7 +221,7 @@ HTML тут містить два елементи {{htmlelement("p")}} з {{htm
 
 <p>
   Це інший абзац, потрібний для того, щоб показати, що
-  <code>display: none; </code> застосовується й вилучається до
+  <code>display: none;</code> застосовується й вилучається до
   <code>&lt;div&gt; </code> вище. Якби змінювалася лише його
   <code>opacity</code>, він завжди займав би місце в DOM.
 </p>
@@ -287,7 +288,8 @@ function showHide() {
 
 ## Приклади JavaScript
 
-> **Примітка:** Особлива обережність необхідна, коли перехід застосовується відразу після:
+> [!NOTE]
+> Особлива обережність необхідна, коли перехід застосовується відразу після:
 >
 > - додавання елемента до DOM за допомогою `.appendChild()`
 > - усунення властивості елемента `display: none;`.
@@ -298,28 +300,55 @@ function showHide() {
 
 Переходи – чудовий інструмент, аби зробити речі куди плавнішими на вигляд, без потреби будь-що робити з функціональністю JavaScript. Про це – наступний приклад.
 
-```html
+```html live-sample___js-transitions
 <p>Клацніть будь-де, аби перемістити м'яч</p>
 <div id="foo" class="ball"></div>
+<script>
+  // Змусити м'яч переміститись на певну позицію:
+  const f = document.getElementById("foo");
+  document.addEventListener(
+    "click",
+    (ev) => {
+      f.style.transform = `translateY(${ev.clientY - 25}px)`;
+      f.style.transform += `translateX(${ev.clientX - 25}px)`;
+    },
+    false,
+  );
+</script>
 ```
 
-За допомогою JavaScript можна реалізувати ефект руху м'яча до певного положення:
+За допомогою CSS можна згладити стилі, що застосовуються через JavaScript. Додайте перехід до елемента, і будь-яка зміна буде відбуватися плавно:
 
-```js
-const f = document.getElementById("foo");
-document.addEventListener(
-  "click",
-  (ev) => {
-    f.style.transform = `translateY(${ev.clientY - 25}px)`;
-    f.style.transform += `translateX(${ev.clientX - 25}px)`;
-  },
-  false,
-);
+```css hidden live-sample___js-transitions
+body {
+  background-color: #fff;
+  color: #333;
+  font:
+    1.2em / 1.5 Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  margin-top: 3em;
+}
+
+main {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 660px;
+  height: 400px;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
 ```
 
-За допомогою CSS такий рух можна без зайвих зусиль зробити плавним. Слід додати до елемента перехід, і будь-які зміни відбудуться плавно:
-
-```css
+```css live-sample___js-transitions
 .ball {
   border-radius: 25px;
   width: 50px;
@@ -332,7 +361,7 @@ document.addEventListener(
 }
 ```
 
-{{EmbedGHLiveSample("css-examples/transitions/js-transitions.html", '100%', 500)}}
+{{EmbedLiveSample("js-transitions", "", "400px")}}
 
 ### Відстеження початку й завершення переходу
 
@@ -356,7 +385,8 @@ el.addEventListener("transitionrun", signalStart, true);
 el.addEventListener("transitionstart", signalStart, true);
 ```
 
-> **Примітка:** Подія `transitionend` не спрацьовує, якщо перехід переривається до свого завершення через те, що елемент став {{cssxref("display")}}`: none`, чи те, що анімована властивість змінила своє значення.
+> [!NOTE]
+> Подія `transitionend` не спрацьовує, якщо перехід переривається до свого завершення через те, що елемент став {{cssxref("display", "display: none")}}, чи те, що анімована властивість змінила своє значення.
 
 ## Специфікації
 

@@ -1,0 +1,11 @@
+# This .prettierignore file uses .gitignore syntax
+# see https://prettier.io/docs/en/ignore.html#ignoring-files-prettierignore
+
+build/
+/files/uk/_githistory.json
+/tests/front-matter_test_files
+.markdownlint*
+
+# XXX Ignored until https://github.com/prettier/prettier/issues/15032 is fixed
+/files/uk/web/javascript/reference/operators/exponentiation/index.md
+/files/uk/web/javascript/reference/operators/exponentiation_assignment/index.md

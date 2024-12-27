@@ -25,15 +25,16 @@ valueOf()
 
 Значення `this` перетворене на об'єкт.
 
-> **Примітка:** Щоб `valueOf` був корисним під час перетворення типів, він мусить повертати примітив. Через те, що всі примітивні типи мають власні методи `valueOf()`, загалом `aPrimitiveValue.valueOf()` не закликає `Object.prototype.valueOf()`.
+> [!NOTE]
+> Щоб `valueOf` був корисним під час перетворення типів, він мусить повертати примітив. Через те, що всі примітивні типи мають власні методи `valueOf()`, загалом `aPrimitiveValue.valueOf()` не закликає `Object.prototype.valueOf()`.
 
 ## Опис
 
 JavaScript викликає метод `valueOf` для [перетворення об'єкта на примітивне значення](/uk/docs/Web/JavaScript/Data_structures#zvedennia-typiv). Закликати `valueOf` власноруч доводиться рідко; його автоматично закликає JavaScript, коли зустрічає об'єкт у місці, де очікується примітив.
 
-Цей метод у першу чергу викликається алгоритмами [зведення до числового значення](/uk/docs/Web/JavaScript/Data_structures#zvedennia-do-chysla) та [зведення до примітива](/uk/docs/Web/JavaScript/Data_structures#zvedennia-do-prymityva), однак [зведення до рядка](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka) у першу чергу викликає `toString()`, а `toString()`, із високою імовірністю, поверне рядкове значення (навіть у базовій реалізації {{jsxref("Object.prototype.toString()")}}), тож `valueOf()` у цьому випадку зазвичай не викликається.
+Цей метод у першу чергу викликається алгоритмами [зведення до числового значення](/uk/docs/Web/JavaScript/Data_structures#zvedennia-do-chyslovoho) та [зведення до примітива](/uk/docs/Web/JavaScript/Data_structures#zvedennia-do-prymityva), однак [зведення до рядка](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka) у першу чергу викликає `toString()`, а `toString()`, із високою імовірністю, поверне рядкове значення (навіть у базовій реалізації {{jsxref("Object.prototype.toString()")}}), тож `valueOf()` у цьому випадку зазвичай не викликається.
 
-Усі об'єкти, що успадковують від `Object.prototype` (тобто всі, крім [`null`-прототипних об'єктів](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#null-prototypni-obiekty)), успадковують метод `toString()`. Базова реалізація `Object.prototype.valueOf()` навмисно зроблена непридатною: вона повертає об'єкт, тож повернене нею значення ніколи не буде використано жодним [алгоритмом зведення до примітива](/uk/docs/Web/JavaScript/Data_structures#zvedennia-typiv). Чимало вбудованих об'єктів перевизначає цей метод, аби повертати відповідне примітивне значення. При створенні власного об'єкта можна перевизначити `valueOf()`, аби викликався власний метод, щоб такий власний об'єкт міг бути перетворений на примітивне значення. Загалом, `valueOf()` використовується для повертання значення, що є найсуттєвішим в об'єкті – на відміну від `toString()`, це не обов'язково повинен бути рядок. Інший варіант: можна додати метод [`@@toPrimitive`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive), котрий дає змогу іще краще контролювати процес перетворення; такий об'єкт завжди матиме пріоритет над `valueOf` і `toString`, при будь-якому перетворенні типів.
+Усі об'єкти, що успадковують від `Object.prototype` (тобто всі, крім [`null`-прототипних об'єктів](/uk/docs/Web/JavaScript/Reference/Global_Objects/Object#null-prototypni-obiekty)), успадковують метод `toString()`. Базова реалізація `Object.prototype.valueOf()` навмисно зроблена непридатною: вона повертає об'єкт, тож повернене нею значення ніколи не буде використано жодним [алгоритмом зведення до примітива](/uk/docs/Web/JavaScript/Data_structures#zvedennia-typiv). Чимало вбудованих об'єктів перевизначає цей метод, аби повертати відповідне примітивне значення. При створенні власного об'єкта можна перевизначити `valueOf()`, аби викликався власний метод, щоб такий власний об'єкт міг бути перетворений на примітивне значення. Загалом, `valueOf()` використовується для повертання значення, що є найсуттєвішим в об'єкті – на відміну від `toString()`, це не обов'язково повинен бути рядок. Інший варіант: можна додати метод [`[Symbol.toPrimitive]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive), котрий дає змогу іще краще контролювати процес перетворення; такий об'єкт завжди матиме пріоритет над `valueOf` і `toString`, при будь-якому перетворенні типів.
 
 ## Приклади
 
@@ -83,7 +84,7 @@ box.valueOf();
 
 ### Застосування до об'єктів унарного плюса
 
-[Унарний плюс](/uk/docs/Web/JavaScript/Reference/Operators/Unary_plus) виконує над своїм операндом [зведення до числового значення](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#zvedennia-do-chysla), що для більшості об'єктів без [`@@toPrimitive`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive) означає виклик їхніх методів `valueOf()`. Проте якщо об'єкт не має власного методу `valueOf()`, то базова реалізація призведе до ігнорування `valueOf()`, і натомість використовуватиметься повернене значення `toString()`.
+[Унарний плюс](/uk/docs/Web/JavaScript/Reference/Operators/Unary_plus) виконує над своїм операндом [зведення до числового значення](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number#zvedennia-do-chysla), що для більшості об'єктів без [`[Symbol.toPrimitive]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive) означає виклик їхніх методів `valueOf()`. Проте якщо об'єкт не має власного методу `valueOf()`, то базова реалізація призведе до ігнорування `valueOf()`, і натомість використовуватиметься повернене значення `toString()`.
 
 ```js
 +new Date(); // Поточна мітка часу; те саме, що й new Date().getTime()

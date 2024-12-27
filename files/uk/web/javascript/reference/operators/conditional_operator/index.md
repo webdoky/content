@@ -32,7 +32,7 @@ condition ? exprIfTrue : exprIfFalse
 
 ## Приклади
 
-### Простий приклад
+### Базовий приклад
 
 ```js
 const age = 26;
@@ -63,10 +63,10 @@ function example() {
   return condition1
     ? value1
     : condition2
-    ? value2
-    : condition3
-    ? value3
-    : value4;
+      ? value2
+      : condition3
+        ? value3
+        : value4;
 }
 ```
 
@@ -99,5 +99,5 @@ function example() {
 - [`if...else`](/uk/docs/Web/JavaScript/Reference/Statements/if...else)
 - [Оператор null-злиття (`??`)](/uk/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing)
 - [Необов'язковий ланцюжок (`?.`)](/uk/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
-- [Приймання рішень в коді — умовні вирази](/uk/docs/Learn/JavaScript/Building_blocks/conditionals)
+- [Навчання – Приймання рішень у коді — умовні вирази](/uk/docs/Learn_web_development/Core/Scripting/Conditionals)
 - Посібник [Вирази та оператори](/uk/docs/Web/JavaScript/Guide/Expressions_and_operators)

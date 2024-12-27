@@ -19,11 +19,63 @@ spec-urls: https://drafts.csswg.org/css-backgrounds/
 
 Цей зразок меж, фонів і рамкових тіней складається з відцентрованих зображень фонів, зроблених з лінійних і радіальних градієнтів. Низка рамкових тіней змушує межу ніби "виступати". В елемента зліва задано зображення межі. Елемент справа має закруглену пунктирну межу.
 
-{{EmbedGHLiveSample("css-examples/modules/backgrounds.html", '100%', 430)}}
+```html hidden live-sample___backgrounds
+<article>
+  <div></div>
+  <div></div>
+</article>
+```
+
+```css hidden live-sample___backgrounds
+article {
+  display: flex;
+  gap: 10px;
+}
+div {
+  color: #58ade3;
+  height: 320px;
+  width: 240px;
+  padding: 20px;
+  margin: 10px;
+  border: dotted 15px; /* усталено `currentcolor` */
+  border-radius: 100px 0;
+  background-image: radial-gradient(
+      circle,
+      transparent 60%,
+      currentcolor 60% 70%,
+      transparent 70%
+    ),
+    linear-gradient(45deg, currentcolor, white),
+    linear-gradient(transparent, transparent);
+  /* третє фонове зображення (прозоре) додано для того, щоб фоновий колір міг проступати */
+  background-color: currentcolor;
+  background-position: center;
+  background-size:
+    60px 60px,
+    120px 120px;
+  background-clip: content-box, content-box, padding-box;
+  box-shadow:
+    inset 5px 5px 5px rgb(0 0 0 / 0.4),
+    inset -5px -5px 5px rgb(0 0 0 / 0.4),
+    5px 5px 5px rgb(0 0 0 / 0.4),
+    -5px -5px 5px rgb(0 0 0 / 0.4);
+}
+div:first-of-type {
+  border-radius: 0;
+  border-image-source: repeating-conic-gradient(
+    from 3deg at 25% 25%,
+    currentColor 0 3deg,
+    transparent 3deg 6deg
+  );
+  border-image-slice: 30;
+}
+```
+
+{{EmbedLiveSample("backgrounds", "", "450px")}}
 
 Фонові зображення визначені за допомогою {{cssxref("background-image")}}. Вони відцентровані за допомогою {{cssxref("background-position")}}. Різні значення властивості {{cssxref("background-clip")}} для кількох фонових зображень використовуються для того, щоб ці фонові зображення залишалися всередині рамки вмісту. Колір фону обрізається до рамки внутрішніх відступів, що не дає фону проступати крізь прозорі секції для {{cssxref("border-image")}} та {{cssxref("border-style", "пунктирний")}} {{cssxref("border")}}. Закруглені кути в елементі справа створюються за допомогою властивості {{cssxref("border-radius")}}. Одне оголошення {{cssxref("box-shadow")}} використовується для задання всіх тіней, як внутрішніх, так і зовнішніх.
 
-Щоб переглянути код цього зразка, [дивіться його вихідний код на GitHub](https://github.com/webdoky/css-examples/blob/main/modules/backgrounds.html).
+Клацніть "Відтворити" в прикладі вище, щоб переглянути або відредагувати код для анімації на Ігровому майданчику MDN.
 
 ## Довідка
 
@@ -38,10 +90,10 @@ spec-urls: https://drafts.csswg.org/css-backgrounds/
 - {{cssxref("background-repeat")}}
 - {{cssxref("background-size")}}
 - Скорочення {{cssxref("background")}}
-- {{cssxref("background-position-x")}} {{experimental_inline}}
-- {{cssxref("background-position-y")}} {{experimental_inline}}
-- {{cssxref("background-position-inline")}} {{experimental_inline}}
-- {{cssxref("background-position-block")}} {{experimental_inline}}
+- {{cssxref("background-position-x")}}
+- {{cssxref("background-position-y")}}
+- {{cssxref("background-position-inline")}}
+- {{cssxref("background-position-block")}}
 
 - {{cssxref("border-bottom-color")}}
 - {{cssxref("border-bottom-style")}}
@@ -122,7 +174,7 @@ spec-urls: https://drafts.csswg.org/css-backgrounds/
 - Властивість {{cssxref("box-decoration-break")}}
 - Властивість {{cssxref("text-shadow")}}
 
-- Функція CSS {{cssxref("url", "url()")}}
+- Тип CSS {{cssxref("url_value", "&lt;url&gt;")}}
 - Тип даних [`<color>`](/uk/docs/Web/CSS/color)
 - Тип даних [`<image>`](/uk/docs/Web/CSS/image)
 - Тип даних [`<position>`](/uk/docs/Web/CSS/position)
