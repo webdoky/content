@@ -28,13 +28,18 @@ isSubsetOf(other)
 
 У математичному записі _підмножина_ визначається як:
 
-<math display="block"><semantics><mrow><mi>A</mi><mo>⊆</mo><mi>B</mi><mo stretchy="false">⇔</mo><mo>∀</mo><mi>x</mi><mo>∊</mo><mi>A</mi><mo>,</mo><mspace width="0.16666666666666666em"></mspace><mi>x</mi><mo>∊</mo><mi>B</mi></mrow><annotation encoding="TeX">A\subseteq B \Leftrightarrow \forall x\in A,\,x\in B</annotation></semantics></math>
+<!-- prettier-ignore-start -->
+<math display="block">
+  <semantics><mrow><mi>A</mi><mo>⊆</mo><mi>B</mi><mo stretchy="false">⇔</mo><mo>∀</mo><mi>x</mi><mo>∊</mo><mi>A</mi><mo>,</mo><mspace width="0.16666666666666666em"></mspace><mi>x</mi><mo>∊</mo><mi>B</mi></mrow><annotation encoding="TeX">A\subseteq B \Leftrightarrow \forall x\in A,\,x\in B</annotation></semantics>
+</math>
+<!-- prettier-ignore-end -->
 
 А за допомогою діаграми Венна:
 
 ![Діаграма Венна з двома колами. A є підмножиною B, оскільки A повністю вміщена всередині B.](diagram.svg)
 
-> **Примітка:** Відношення _підмножини_ не є _справжньою підмножиною_, тобто `isSubsetOf()` повертає `true`, якщо `this` і `other` містять одні й ті ж елементи.
+> [!NOTE]
+> Відношення _підмножини_ не є _справжньою підмножиною_, тобто `isSubsetOf()` повертає `true`, якщо `this` і `other` містять одні й ті ж елементи.
 
 Метод `isSubsetOf()` приймає [множиноподібні](/uk/docs/Web/JavaScript/Reference/Global_Objects/Set#mnozhynopodibni-obiekty) об'єкти в параметрі `other`. Він вимагає, щоб {{jsxref("Operators/this", "this")}} було справжнім примірником {{jsxref("Set")}}, оскільки безпосередньо отримує базові дані, збережені в `this`, без закликання будь-якого користувацького коду. Далі, його логіка залежить від розмірів `this` і `other`:
 
