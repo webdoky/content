@@ -24,7 +24,7 @@ new constructor(arg1, arg2, /* …, */ argN)
 ### Параметри
 
 - `constructor`
-  - : Клас чи функція, що задає тип примірника об'єкта.
+  - : Клас чи функція, що задає тип примірника об'єкта. Цей вираз може бути чим завгодно, що має достатній [пріоритет](/uk/docs/Web/JavaScript/Reference/Operators/Operator_precedence#tablytsia), включно з ідентифікатором, [звертанням до властивості](/uk/docs/Web/JavaScript/Reference/Operators/Property_accessors) чи ще одним виразом `new`, проте [необов'язкові ланцюжки](/uk/docs/Web/JavaScript/Reference/Operators/Optional_chaining) тут заборонені.
 - `arg1`, `arg2`, …, `argN`
   - : Список значень, з якими буде викликаний `constructor`. Запис `new Foo` – рівносильний `new Foo()`, тобто якщо список аргументів не заданий, то `Foo` викликається без аргументів.
 

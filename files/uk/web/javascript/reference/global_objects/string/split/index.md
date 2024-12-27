@@ -21,7 +21,7 @@ split(separator, limit)
 ### Параметри
 
 - `separator` (розділювач) {{optional_inline}}
-  - : Патерн, що вказує, де повинно відбутися кожне розщеплення. Може бути або `undefined`, або рядком, або об'єктом з методом [`Symbol.split`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/split); типовим прикладом такого об'єкта є {{jsxref("RegExp", "регулярний вираз", "", 1)}}. Пропуск `separator` чи передача в ньому `undefined` призводить до того, що `split()` повертає масив, єдиним елементом якого є вихідний рядок. Усі значення, котрі не є ані `undefined`, ані об'єктами з методом `@@split`, [зводяться до рядків](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka).
+  - : Патерн, що вказує, де повинно відбутися кожне розщеплення. Може бути або `undefined`, або рядком, або об'єктом з методом [`Symbol.split`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/split); типовим прикладом такого об'єкта є {{jsxref("RegExp", "регулярний вираз", "", 1)}}. Пропуск `separator` чи передача в ньому `undefined` призводить до того, що `split()` повертає масив, єдиним елементом якого є вихідний рядок. Усі значення, котрі не є ані `undefined`, ані об'єктами з методом `[Symbol.split]()`, [зводяться до рядків](/uk/docs/Web/JavaScript/Reference/Global_Objects/String#zvedennia-do-riadka).
 - `limit` (обмеження) {{optional_inline}}
   - : Невід'ємне ціле число, котре позначає обмеження кількості підрядків, які буде включено в повернений масив. Якщо цей параметр задано, рядок розділяється в кожному місці, де трапляється вказаний `separator`, проте зупиняється, коли в масиві опиняється вказана в `limit` кількість елементів. Будь-який залишок тексту не буде включено в масив узагалі.
     - Масив може містити менше елементів, ніж вказано в `limit`, якщо функція дійшла до кінця рядка раніше, ніж був вибраний `limit`.
@@ -37,9 +37,11 @@ split(separator, limit)
 
 Якщо `separator` – порожній рядок (`""`), то `str` перетворюється на масив своїх "символів" UTF-16, котрий не містить порожніх рядків на жодному зі своїх кінців.
 
-> **Примітка:** Таким чином, при передачі рядка як `separator` і `limit` зі значенням 0 – `"".split("")` є єдиним способом отримати порожній масив.
+> [!NOTE]
+> Таким чином, при передачі рядка як `separator` і `limit` зі значенням 0 – `"".split("")` є єдиним способом отримати порожній масив.
 
-> **Застереження:** Коли як розділювач використовується порожній рядок (`""`), то рядок **не** ділиться на _видимі символи_ ([графемні кластери (англ.)](https://unicode.org/reports/tr29/#Grapheme_Cluster_Boundaries)) чи символи Unicode (кодові точки), натомість – на кодові одиниці UTF-16. Отже – руйнуються [сурогатні пари (англ.)](https://unicode.org/faq/utf_bom.html#utf16-2). Дивіться ["Як на JavaScript отримати з рядка масив символів?" на StackOverflow (англ.)](https://stackoverflow.com/questions/4547609/how-to-get-character-array-from-a-string/34717402#34717402).
+> [!WARNING]
+> Коли як розділювач використовується порожній рядок (`""`), то рядок **не** ділиться на _видимі символи_ ([графемні кластери](https://unicode.org/reports/tr29/#Grapheme_Cluster_Boundaries)) чи символи Unicode (кодові точки), натомість – на кодові одиниці UTF-16. Отже – руйнуються [сурогатні пари](https://unicode.org/faq/utf_bom.html#utf16-2). Дивіться ["Як на JavaScript отримати з рядка масив символів?" на Stack Overflow](https://stackoverflow.com/questions/4547609/how-to-get-character-array-from-a-string/34717402#34717402).
 
 Якщо `separator` є регулярним виразом, що дає збіг з порожніми рядками, то те, чи розбивається збіг на кодові одиниці UTF-16, чи на кодові точки Unicode, залежить від того, чи [враховує регулярний вираз Unicode](/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp/unicode#rezhym-vrakhuvannia-unicode).
 
@@ -172,7 +174,9 @@ console.log(splits);
 ["Здрастуй ", "1", " слово. Речення номер ", "2", "."];
 ```
 
-> **Примітка:** `\d` шукає збіги з [класом символів](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Character_classes), що відповідає цифрам від 0 до 9.
+> [!NOTE]
+>
+> `\d` шукає збіги з [класом символів](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Character_classes), що відповідає цифрам від 0 до 9.
 
 ### Використання власного розщеплювача
 
