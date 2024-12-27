@@ -1,5 +1,5 @@
 ---
-title: <th> – елемент заголовку таблиці
+title: <th> – елемент заголовка таблиці
 slug: Web/HTML/Element/th
 page-type: html-element
 browser-compat: html.elements.th
@@ -7,7 +7,7 @@ browser-compat: html.elements.th
 
 {{HTMLSidebar}}
 
-Елемент [HTML](/uk/docs/Web/HTML) **`<th>`** визначає комірку як заголовок групи комірок таблиці і може використовуватися як дочірній елемент елемента {{HTMLElement("tr")}}. Конкретна природа цієї групи визначається атрибутами [`scope`](#scope) і [`headers`](#headers).
+Елемент [HTML](/uk/docs/Web/HTML) **`<th>`** визначає комірку як заголовок групи комірок таблиці та може використовуватися як дочірній елемент елемента {{HTMLElement("tr")}}. Конкретна природа цієї групи визначається атрибутами [`scope`](#scope) і [`headers`](#headers).
 
 {{EmbedInteractiveExample("pages/tabbed/th.html","tabbed-taller")}}
 
@@ -40,7 +40,7 @@ browser-compat: html.elements.th
 
 - `align` {{deprecated_inline}}
 
-  - : Задає горизонтальне вирівнювання комірки-заголовка. Можливі значення {{Glossary("enumerated", "перелічені")}}: `left`, `center`, `right`, `justify` і `char`. Значення `char`, коли підтримується, вирівнює текстовий вміст за символом, визначеним у атрибуті [`char`](#char) і зміщенням, визначеним у атрибуті [`charoff`](#charoff). Натомість слід використовувати властивість CSS {{cssxref("text-align")}}, адже цей атрибут – нерекомендований.
+  - : Задає горизонтальне вирівнювання комірки-заголовка. Можливі значення {{Glossary("enumerated", "перелічені")}}: `left`, `center`, `right`, `justify` і `char`. Значення `char`, коли підтримується, вирівнює текстовий вміст за символом, визначеним у атрибуті [`char`](#char) і зміщенням, визначеним в атрибуті [`charoff`](#charoff). Натомість слід використовувати властивість CSS {{cssxref("text-align")}}, адже цей атрибут – нерекомендований.
 
 - `axis` {{deprecated_inline}}
 
