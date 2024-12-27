@@ -18,7 +18,7 @@ browser-compat: css.properties.backdrop-filter
 backdrop-filter: none;
 
 /* Фільтр з URL до SVG */
-backdrop-filter: url(commonfilters.svg#filter);
+backdrop-filter: url(common-filters.svg#filter);
 
 /* Значення <filter-function> */
 backdrop-filter: blur(2px);
@@ -64,7 +64,7 @@ backdrop-filter: unset;
 
 ```css
 .box {
-  background-color: rgb(255 255 255 / 0.3);
+  background-color: rgb(255 255 255 / 30%);
   backdrop-filter: blur(10px);
 }
 

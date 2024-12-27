@@ -25,13 +25,13 @@ browser-compat: css.types.image.gradient
 
 Радіальні градієнти поступово змінюють колір від центральної точки (джерела). Вони породжуються функцією {{cssxref("gradient/radial-gradient", "radial-gradient()")}}.
 
-### Повторювальний градієнт
-
-Повторювальні градієнти дублюють градієнт стільки разів, скільки потрібно, щоб заповнити задану область. Вони породжуються функціями {{cssxref("gradient/repeating-linear-gradient", "repeating-linear-gradient()")}} та {{cssxref("gradient/repeating-radial-gradient", "repeating-radial-gradient()")}}.
-
 ### Конічний градієнт
 
 Конічні градієнти поступово змінюють колір по колу. Вони породжуються функцією {{cssxref("gradient/conic-gradient", "conic-gradient()")}}.
+
+### Повторювальний градієнт
+
+Повторювальні градієнти дублюють градієнт стільки разів, скільки потрібно, щоб заповнити задану область. Вони породжуються функціями {{cssxref("gradient/repeating-linear-gradient", "repeating-linear-gradient()")}}, {{cssxref("gradient/repeating-radial-gradient", "repeating-radial-gradient()")}} і {{cssxref("gradient/repeating-conic-gradient", "repeating-conic-gradient()")}}.
 
 ## Інтерполяція
 
@@ -92,51 +92,11 @@ div {
 
 ```css
 .radial-gradient {
-  background: radial-gradient(red, yellow, rgb(30, 144, 255));
+  background: radial-gradient(red, yellow, rgb(30 144 255));
 }
 ```
 
 {{EmbedLiveSample('pryklad-radialnoho-hradiienta', 240, 120)}}
-
-### Приклади повторювальних градієнтів
-
-Приклади простих повторювальних лінійного та радіального градієнтів.
-
-```html hidden
-<div class="linear-repeat">Повторювальний лінійний градієнт</div>
-<br />
-<div class="radial-repeat">Повторювальний радіальний градієнт</div>
-```
-
-```css hidden
-div {
-  width: 240px;
-  height: 80px;
-}
-```
-
-```css
-.linear-repeat {
-  background: repeating-linear-gradient(
-    to top left,
-    lightpink,
-    lightpink 5px,
-    white 5px,
-    white 10px
-  );
-}
-
-.radial-repeat {
-  background: repeating-radial-gradient(
-    powderblue,
-    powderblue 8px,
-    white 8px,
-    white 16px
-  );
-}
-```
-
-{{EmbedLiveSample('pryklady-povtoriuvalnykh-hradiientiv', 240, 220)}}
 
 ### Приклад конічного градієнта
 
@@ -155,11 +115,66 @@ div {
 
 ```css
 .conic-gradient {
-  background: conic-gradient(lightpink, white, powderblue);
+  background: conic-gradient(pink, coral, lime);
 }
 ```
 
 {{EmbedLiveSample('pryklad-konichnoho-hradiienta', 240, 240)}}
+
+### Приклади повторювальних градієнтів
+
+Приклади простих повторювальних лінійного та радіального градієнтів.
+
+```html hidden
+<div class="linear-repeat"></div>
+<span>Повторювальний лінійний градієнт</span>
+<hr />
+<div class="radial-repeat"></div>
+<span>Повторювальний радіальний градієнт</span>
+<hr />
+<div class="conic-repeat"></div>
+<span>Повторювальний конічний градієнт</span>
+```
+
+```css hidden
+div {
+  display: inline-block;
+  width: 240px;
+  height: 80px;
+}
+
+span {
+  font-weight: bold;
+  vertical-align: top;
+}
+```
+
+```css
+.linear-repeat {
+  background: repeating-linear-gradient(
+    to top left,
+    pink,
+    pink 5px,
+    white 5px,
+    white 10px
+  );
+}
+
+.radial-repeat {
+  background: repeating-radial-gradient(
+    lime,
+    lime 15px,
+    white 15px,
+    white 30px
+  );
+}
+
+.conic-repeat {
+  background: repeating-conic-gradient(lime, pink 30deg);
+}
+```
+
+{{EmbedLiveSample('pryklady-povtoriuvalnykh-hradiientiv', 240, 300)}}
 
 ## Специфікації
 

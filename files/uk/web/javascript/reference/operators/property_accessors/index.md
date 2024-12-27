@@ -16,6 +16,7 @@ browser-compat: javascript.operators.property_accessors
 ```js-nolint
 object.propertyName
 object[expression]
+object.#privateProperty
 ```
 
 ## Опис
@@ -67,6 +68,8 @@ document.createElement("pre");
 // тому що 77. === 77.0, немає двозначності
 ```
 
+На додачу до цього, до [приватної властивості](/uk/docs/Web/JavaScript/Reference/Classes/Private_properties) можна звертатися лише за допомогою крапкової нотації всередині класу, який її визначає.
+
 ### Дужкова нотація
 
 У синтаксисі `object[expression]`, `expression` має обчислюватися до рядка або [Symbol](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol), який представляє назву властивості. Таким чином, це може бути будь-який рядковий літерал, наприклад, `'1foo'`, `'!bar!'` або навіть `' '` (пробіл).
@@ -100,7 +103,7 @@ Obj[key]; // обчислюється як Obj["name"] і повертає "Мі
 Obj[getKey()]; // обчислюється як Obj["name"] і повертає "Міхал"
 ```
 
-А проте, стережіться використання квадратних дужок для звертання до властивостей, назви яких прийшли зовні. Вони можуть зробити код сприйнятливим до [атак втручання в об'єкти](https://github.com/nodesecurity/eslint-plugin-security/blob/main/docs/the-dangers-of-square-bracket-notation.md).
+А проте, стережіться використання квадратних дужок для звертання до властивостей, назви яких прийшли зовні. Вони можуть зробити код сприйнятливим до [атак втручання в об'єкти](https://github.com/eslint-community/eslint-plugin-security/blob/main/docs/the-dangers-of-square-bracket-notation.md).
 
 ### Назви властивостей
 

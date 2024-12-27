@@ -89,20 +89,30 @@ arr.findIndex((n) => Number.isNaN(n)); // 2
 
 ### Помітно відмінні значення NaN
 
-Є підстави для того, щоб `NaN` не було рівним самому собі. Можливо виробити два числа з рухомою точкою з різними двійковими представленнями, котрі обидва будуть `NaN`, тому що в [кодуванні IEEE 754](https://uk.wikipedia.org/wiki/%D0%A7%D0%B8%D1%81%D0%BB%D0%BE_%D0%B7_%D1%80%D1%83%D1%85%D0%BE%D0%BC%D0%BE%D1%8E_%D0%BA%D0%BE%D0%BC%D0%BE%D1%8E) будь-яке число з рухомою точкою з експонентою `0x7ff` і ненульовою мантисою є `NaN`. У JavaScript маніпуляції бітового рівня можна виконати за допомогою [типізованих масивів](/uk/docs/Web/JavaScript/Guide/Typed_arrays).
+Можливо виробити два числа з рухомою точкою з різними двійковими представленнями, котрі обидва будуть `NaN`, тому що в [кодуванні IEEE 754](https://uk.wikipedia.org/wiki/%D0%A7%D0%B8%D1%81%D0%BB%D0%BE_%D0%B7_%D1%80%D1%83%D1%85%D0%BE%D0%BC%D0%BE%D1%8E_%D0%BA%D0%BE%D0%BC%D0%BE%D1%8E) будь-яке число з рухомою точкою з експонентою `0x7ff` і ненульовою мантисою є `NaN`. У JavaScript маніпуляції бітового рівня можна виконати за допомогою [типізованих масивів](/uk/docs/Web/JavaScript/Guide/Typed_arrays).
 
 ```js
 const f2b = (x) => new Uint8Array(new Float64Array([x]).buffer);
 const b2f = (x) => new Float64Array(x.buffer)[0];
 // Отримання байтового представлення NaN
 const n = f2b(NaN);
-// Змінити перший біт, котрий є бітом знаку і не грає ролі для NaN
-n[0] = 1;
+const m = f2b(NaN);
+// Змінити біт знаку, який не має значення для NaN
+n[7] += 2 ** 7;
+// n[0] += 2**7; для тупокінцевих процесорів
 const nan2 = b2f(n);
 console.log(nan2); // NaN
 console.log(Object.is(nan2, NaN)); // true
 console.log(f2b(NaN)); // Uint8Array(8) [0, 0, 0, 0, 0, 0, 248, 127]
-console.log(f2b(nan2)); // Uint8Array(8) [1, 0, 0, 0, 0, 0, 248, 127]
+console.log(f2b(nan2)); // Uint8Array(8) [0, 0, 0, 0, 0, 0, 248, 255]
+// Змінити перший біт, який є найменш значущим бітом мантиси і не має значення для NaN
+m[0] = 1;
+// m[7] = 1; для тупокінцевих процесорів
+const nan3 = b2f(m);
+console.log(nan3); // NaN
+console.log(Object.is(nan3, NaN)); // true
+console.log(f2b(NaN)); // Uint8Array(8) [0, 0, 0, 0, 0, 0, 248, 127]
+console.log(f2b(nan3)); // Uint8Array(8) [1, 0, 0, 0, 0, 0, 248, 127]
 ```
 
 ### Тихе екранування NaN

@@ -13,20 +13,20 @@ browser-compat: html.elements.input.type_range
 
 {{EmbedInteractiveExample("pages/tabbed/input-range.html", "tabbed-standard")}}
 
-Якщо браузер користувача не підтримує `range`, то це поле відступить і працюватиме як поле `{{HTMLElement('input/text', 'text')}}`.
+Якщо браузер користувача не підтримує `range`, то це поле відступить і працюватиме як поле {{HTMLElement('input/text', 'text')}}.
 
 ### Валідація
 
 Валідація патерном недоступна, проте виконуються наступні автоматичні валідування:
 
-- Якщо [`value`](/uk/docs/Web/HTML/Element/input#value) задано таке значення, яке не може бути перетворено на дійсне число з рухомою комою, то валідація не проходить, адже тоді поле має невідповідне значення.
-- Значення не може бути меншим за [`min`](/uk/docs/Web/HTML/Element/input#min). Усталено – 0.
-- Значення не може бути більшим за [`max`](/uk/docs/Web/HTML/Element/input#max). Усталено – 100.
-- Значення повинно бути кратним [`step`](/uk/docs/Web/HTML/Element/input#step). Усталено – 1.
+- Якщо [`value`](/uk/docs/Web/HTML/Element/input#value-znachennia) задано таке значення, яке не може бути перетворено на дійсне число з рухомою комою, то валідація не проходить, адже тоді поле має невідповідне значення.
+- Значення не може бути меншим за [`min`](/uk/docs/Web/HTML/Element/input#min-minimum). Усталено – 0.
+- Значення не може бути більшим за [`max`](/uk/docs/Web/HTML/Element/input#max-maksymum). Усталено – 100.
+- Значення повинно бути кратним [`step`](/uk/docs/Web/HTML/Element/input#step-krok). Усталено – 1.
 
 ### Значення
 
-Атрибут [`value`](/uk/docs/Web/HTML/Element/input#value) містить рядок, що містить рядкове представлення вибраного числа. Це значення ніколи не є порожнім рядком (`""`). Усталене значення – це середнє арифметичне заданих мінімуму та максимуму, якщо максимум не є меншим за мінімум, у разі чого усталеним значенням стає атрибут `min`. Алгоритм визначення усталеного значення – такий:
+Атрибут [`value`](/uk/docs/Web/HTML/Element/input#value-znachennia) містить рядок, що містить рядкове представлення вибраного числа. Це значення ніколи не є порожнім рядком (`""`). Усталене значення – це середнє арифметичне заданих мінімуму та максимуму, якщо максимум не є меншим за мінімум, у разі чого усталеним значенням стає атрибут `min`. Алгоритм визначення усталеного значення – такий:
 
 ```js
 defaultValue =
@@ -41,21 +41,23 @@ defaultValue =
 
 На додачу до атрибутів, спільних для всіх елементів {{HTMLElement("input")}}, поля діапазону приймають наступні.
 
+> **Примітка:** Наступні атрибути полів не застосовуються до полів діапазону: `accept`, `alt`, `checked`, `dirname`, `formaction`, `formenctype`, `formmethod`, `formnovalidate`, `formtarget`, `height`, `maxlength`, `minlength`, `multiple`, `pattern`, `placeholder`, `readonly`, `required`, `size` і `src`. Усі вони, бувши заданими, ігноруються.
+
 ### list
 
-Значення атрибута `list` – це {{domxref("Element.id", "id")}} елемента {{HTMLElement("datalist")}}, розташованого в тому самому документі. Елемент {{HTMLElement("datalist")}} надає список наперед визначених значень, що будуть запропоновані користувачам для цього поля. Усі значення в списку, що не є сумісними з [`type`](/uk/docs/Web/HTML/Element/input#type), не включаються в список варіантів. Запропоновані значення є пропозиціями, а не вимогою: користувачі можуть як обирати з такого наперед визначеного списку, так і вводити інші значення.
+Значення атрибута `list` – це {{domxref("Element.id", "id")}} елемента {{HTMLElement("datalist")}}, розташованого в тому самому документі. Елемент {{HTMLElement("datalist")}} надає список наперед визначених значень, що будуть запропоновані користувачам для цього поля. Усі значення в списку, що не є сумісними з [`type`](/uk/docs/Web/HTML/Element/input#type-typ), не включаються в список варіантів. Запропоновані значення є пропозиціями, а не вимогою: користувачі можуть як обирати з такого наперед визначеного списку, так і вводити інші значення.
 
 Дивіться приклад того, як варіанти для діапазону виводяться в різних браузерах, в розділі [додавання позначок](#dodavannia-poznachok) нижче.
 
 ### max
 
-Найбільше значення в діапазоні прийнятних значень. Якщо [`value`](/uk/docs/Web/HTML/Element/input#value), введене в елемент, перевищує `max`, то елемент не проходить [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation). Якщо значення атрибута [`max`](/uk/docs/Web/HTML/Attributes/max) не є числом, то такий елемент не має максимального значення.
+Найбільше значення в діапазоні прийнятних значень. Якщо [`value`](/uk/docs/Web/HTML/Element/input#value-znachennia), введене в елемент, перевищує `max`, то елемент не проходить [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation). Якщо значення атрибута [`max`](/uk/docs/Web/HTML/Attributes/max) не є числом, то такий елемент не має максимального значення.
 
 Це значення повинно бути більшим або рівним значенню атрибута [`min`](/uk/docs/Web/HTML/Attributes/min). Читайте про атрибут HTML [`max`](/uk/docs/Web/HTML/Attributes/max).
 
 ### min
 
-Найменше значення в діапазоні прийнятних значень. Якщо [`value`](/uk/docs/Web/HTML/Element/input#value), введене в елемент, менше за `min`, то елемент не проходить [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation). Якщо значення атрибута `min` не є дійсним числом, то такий елемент не має мінімального значення.
+Найменше значення в діапазоні прийнятних значень. Якщо [`value`](/uk/docs/Web/HTML/Element/input#value-znachennia), введене в елемент, менше за `min`, то елемент не проходить [валідацію обмежень](/uk/docs/Web/HTML/Constraint_validation). Якщо значення атрибута `min` не є дійсним числом, то такий елемент не має мінімального значення.
 
 Це значення повинно бути меншим або рівним значенню атрибута [`max`](/uk/docs/Web/HTML/Attributes/max). Читайте про атрибут HTML [`min`](/uk/docs/Web/HTML/Attributes/min).
 
@@ -63,7 +65,7 @@ defaultValue =
 
 ### step
 
-Атрибут `step` – це число, що задає гранулярність, якій повинно відповідати значення. Лише значення, що відповідають заданому інтервалові крокування ([`min`](#min), якщо цей атрибут задано, а інакше – [`value`](/uk/docs/Web/HTML/Element/input#value), або ж відповідному усталеному значенню, якщо цих атрибутів немає), є дійсними.
+Атрибут `step` – це число, що задає гранулярність, якій повинно відповідати значення. Лише значення, що відповідають заданому інтервалові крокування ([`min`](#min), якщо цей атрибут задано, а інакше – [`value`](/uk/docs/Web/HTML/Element/input#value-znachennia), або ж відповідному усталеному значенню, якщо цих атрибутів немає), є дійсними.
 
 Атрибут `step` також може бути заданий з рядковим значенням `any`. Таке значення `step` означає, що інтервал крокування не накладається, і що в заданому діапазоні приймаються будь-які значення (з урахуванням інших обмежень, як то [`min`](#min) і [`max`](#max)). Дивіться те, як це працює в браузерах, що це підтримують, в прикладі [Задання step зі значенням `any`](#zadannia-step-zi-znachenniam-any).
 
@@ -76,8 +78,6 @@ defaultValue =
 ### orient
 
 Подібно до нестандартної властивості CSS -moz-orient, що впливає на елементи {{htmlelement('progress')}} і {{htmlelement('meter')}}, атрибут `orient` визначає орієнтацію повзуна діапазону. Серед значень – `horizontal`, тобто горизонтальна візуалізація діапазону, та `vertical`, що позначає візуалізацію по вертикалі.
-
-> **Примітка:** Наступні атрибути полів не застосовуються до полів діапазону: `accept`, `alt`, `checked`, `dirname`, `formaction`, `formenctype`, `formmethod`, `formnovalidate`, `formtarget`, `height`, `maxlength`, `minlength`, `multiple`, `pattern`, `placeholder`, `readonly`, `required`, `size` і `src`. Усі вони, бувши заданими, ігноруються.
 
 ## Приклади
 
@@ -94,7 +94,7 @@ defaultValue =
 
 ### Задання мінімуму та максимуму
 
-Усталено мінімум дорівнює 0, а максимум – 100. Якщо це не те, що потрібно, то легко можна задати інші межі, змінивши значення атрибутів [`min`](/uk/docs/Web/HTML/Element/input#min) і [`max`](/uk/docs/Web/HTML/Element/input#max). Їх значення можуть бути будь-якими числами з рухомою комою.
+Усталено мінімум дорівнює 0, а максимум – 100. Якщо це не те, що потрібно, то легко можна задати інші межі, змінивши значення атрибутів [`min`](/uk/docs/Web/HTML/Element/input#min-minimum) і [`max`](/uk/docs/Web/HTML/Element/input#max-maksymum). Їх значення можуть бути будь-якими числами з рухомою комою.
 
 Наприклад, щоб запитати в користувача значення між -10 та 10, можна використати:
 
@@ -106,7 +106,7 @@ defaultValue =
 
 ### Задання гранулярності значення
 
-Усталено гранулярність дорівнює 1, а отже – значення завжди є цілим числом. Щоб контролювати гранулярність, можна задати атрибут [`step`](/uk/docs/Web/HTML/Element/input#step). Наприклад, Коли потрібно, щоб значення було посередині між 5 і 10, варто задати `step` зі значенням 0.5:
+Усталено гранулярність дорівнює 1, а отже – значення завжди є цілим числом. Щоб контролювати гранулярність, можна задати атрибут [`step`](/uk/docs/Web/HTML/Element/input#step-krok). Наприклад, Коли потрібно, щоб значення було посередині між 5 і 10, варто задати `step` зі значенням 0.5:
 
 #### Задання атрибута step
 
@@ -116,9 +116,9 @@ defaultValue =
 
 {{EmbedLiveSample("zadannia-atrybuta-step", 600, 40)}}
 
-#### Задання step зі значенням "any"
+#### Задання step зі значенням `any`
 
-При потребі прийняти будь-яке значення, незалежно від того, скільки в ньому знаків після коми, то можна задати атрибут [`step`](/uk/docs/Web/HTML/Element/input#step) зі значенням `any`:
+При потребі прийняти будь-яке значення, незалежно від того, скільки в ньому знаків після коми, то можна задати атрибут [`step`](/uk/docs/Web/HTML/Element/input#step-krok) зі значенням `any`:
 
 ##### HTML
 
@@ -249,92 +249,25 @@ input[type="range"] {
 
 Усталено браузери візуалізують поля діапазону як повзуни з ручкою, що ковзає вліво-вправо.
 
-Щоб створити вертикальний діапазон, в якого ручка ковзатиме вгору-вниз, слід задати властивість CSS {{cssxref('appearance')}} зі значенням `slider-vertical` і нестандартний атрибут `orient` для Firefox.
+Щоб створити вертикальний діапазон, в якого ручка ковзатиме вгору-вниз, слід задати властивість CSS {{cssxref("writing-mode")}} зі значенням або `vertical-rl`, або `vertical-lr`.
 
-#### Горизонтальне поле діапазону
-
-Погляньте на цей контрольний елемент діапазону:
-
-```html
-<input type="range" id="volume" min="0" max="11" value="7" step="1" />
+```html hidden
+<input type="range" min="0" max="10" value="8" />
 ```
-
-{{EmbedLiveSample("horyzontalne-pole-diapazonu", 200, 40)}}
-
-Цей контрольний елемент – горизонтальний (принаймні на більшості, якщо не на всіх головних браузерах; інші можуть показувати його по-різному).
-
-#### Застосування властивості appearance
-
-Властивість {{cssxref('appearance')}} має нестандартне значення `slider-vertical`, котре, зрештою, робить повзуни вертикальними.
-
-Використаймо такий же HTML, як в попередніх прикладах:
-
-```html
-<input type="range" min="0" max="11" value="7" step="1" />
-```
-
-Ціллю є лише поля з типом діапазону:
 
 ```css
 input[type="range"] {
-  appearance: slider-vertical;
+  writing-mode: vertical-lr;
 }
 ```
 
-{{EmbedLiveSample("zastosuvannia-vlastyvosti-appearance", 200, 200)}}
+Це змушує повзун візуалізуватися вертикально:
 
-#### Застосування атрибута orient
+{{EmbedLiveSample("stvorennia-vertykalnykh-poliv-diapazonu", 200, 200)}}
 
-Виключно в Firefox є нестандартна властивість `orient`.
+Також можна задати властивість CSS {{cssxref('appearance')}} з нестандартним значенням `slider-vertical`, якщо потрібно підтримувати старі версії Chrome та Safari, і додати нестандартний атрибут `orient="vertical"`, щоб підтримувалися старі версії Firefox.
 
-Використаймо HTML, подібний до попередніх прикладів, додавши цей атрибут зі значенням `vertical`:
-
-```html
-<input type="range" min="0" max="11" value="7" step="1" orient="vertical" />
-```
-
-{{EmbedLiveSample("zastosuvannia-atrybuta-orient", 200, 200)}}
-
-#### writing-mode: bt-lr
-
-Властивість {{cssxref('writing-mode')}}, загалом, не слід використовувати для зміни напрямку письма для потреб інтернаціоналізації чи локалізації, але її можна використовувати для особливих ефектів.
-
-Використаймо такий же HTML, як в попередніх прикладах:
-
-```html
-<input type="range" min="0" max="11" value="7" step="1" />
-```
-
-Ціллю є лише поля з типом діапазону; до них застосовується зміна напряму письма з усталеного на `bt-lr`, тобто знизу-вгору та зліва-направо:
-
-```css
-input[type="range"] {
-  writing-mode: bt-lr;
-}
-```
-
-{{EmbedLiveSample("writing-mode-bt-lr", 200, 40)}}
-
-#### Збирання всього докупи
-
-Оскільки кожний з прикладів вище працює в різних браузерах, їх можна зібрати докупи, щоб це працювало в різних браузерах:
-
-Для Firefox – зберігається атрибут `orient` зі значенням `vertical`:
-
-```html
-<input type="range" min="0" max="11" value="7" step="1" orient="vertical" />
-```
-
-Ціллю є лише `input` з `type` зі значенням `range` та `orient` зі значенням `vertical`, і застосовується зміна `writing-mode` з усталеного на `bt-lr`, тобто знизу-вгору та зліва-направо, для версій Edge до Blink, а також `appearance: slider-vertical`, що підтримується в браузерах Blink і Webkit:
-
-```css
-input[type="range"][orient="vertical"] {
-  writing-mode: bt-lr;
-  appearance: slider-vertical;
-}
-```
-
-{{EmbedLiveSample("zbyrannia-vsoho-dokupy", 200, 200)}}
+Дивіться приклади в [Створенні вертикальних формових елементів](/uk/docs/Web/CSS/CSS_writing_modes/Vertical_controls).
 
 ## Технічний підсумок
 
@@ -353,23 +286,25 @@ input[type="range"][orient="vertical"] {
       <td><strong>Події</strong></td>
       <td>
         {{domxref("HTMLElement/change_event", "change")}} і
-        {{domxref("HTMLElement/input_event", "input")}}
+        {{domxref("Element/input_event", "input")}}
       </td>
     </tr>
     <tr>
       <td><strong>Доступні спільні атрибути</strong></td>
       <td>
         <a href="/uk/docs/Web/HTML/Element/input#autocomplete"><code>autocomplete</code></a>,
-        <a href="/uk/docs/Web/HTML/Element/input#list"><code>list</code></a>,
-        <a href="/uk/docs/Web/HTML/Element/input#max"><code>max</code></a>,
-        <a href="/uk/docs/Web/HTML/Element/input#min"><code>min</code></a> і
-        <a href="/uk/docs/Web/HTML/Element/input#step"><code>step</code></a>
+        <a href="/uk/docs/Web/HTML/Element/input#list-spysok"><code>list</code></a>,
+        <a href="/uk/docs/Web/HTML/Element/input#max-maksymum"><code>max</code></a>,
+        <a href="/uk/docs/Web/HTML/Element/input#min-minimum"><code>min</code></a>,
+        <a href="/uk/docs/Web/HTML/Element/input#step-krok"><code>step</code></a>
       </td>
     </tr>
     <tr>
       <td><strong>Атрибути IDL</strong></td>
       <td>
-        <code>list</code>, <code>value</code> і <code>valueAsNumber</code>
+        <a href="/uk/docs/Web/HTML/Element/input#list-spysok"><code>list</code></a>,
+        <a href="/uk/docs/Web/HTML/Element/input#value-znachennia"><code>value</code></a>,
+        <code>valueAsNumber</code>
       </td>
     </tr>
     <tr>
@@ -407,5 +342,6 @@ input[type="range"][orient="vertical"] {
 - [`<input type="number">`](/uk/docs/Web/HTML/Element/input/number)
 - {{domxref('validityState.rangeOverflow')}} і {{domxref('validityState.rangeUnderflow')}}
 - [Контроль декількох параметрів за допомогою ConstantSourceNode](/uk/docs/Web/API/Web_Audio_API/Controlling_multiple_parameters_with_ConstantSourceNode)
+- [Створення вертикальних формових елементів](/uk/docs/Web/CSS/CSS_writing_modes/Vertical_controls)
 - [Оформлення елемента діапазону](https://css-tricks.com/sliding-nightmare-understanding-range-input/)
 - [Сумісність властивостей CSS](/uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls)

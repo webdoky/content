@@ -1,0 +1,32 @@
+{
+  "css_ref_title": {
+    "uk": "Довідник CSS"
+  },
+  "at_rules": {
+    "uk": "Директиви"
+  },
+  "types": {
+    "uk": "Типи даних"
+  },
+  "missing": {
+    "uk": "Значення не знайдено в базі даних!"
+  },
+  "info_in_preview_not_available": {
+    "uk": "Інформація про CSS в попередньому перегляді не доступна"
+  },
+  "tag_selectors": {
+    "uk": "Селектори"
+  },
+  "Basic Selectors": {
+    "uk": "Базові селектори"
+  },
+  "Combinators": {
+    "uk": "Комбінатори"
+  },
+  "Pseudo-classes": {
+    "uk": "Псевдокласи"
+  },
+  "Pseudo-elements": {
+    "uk": "Псевдоелементи"
+  }
+}

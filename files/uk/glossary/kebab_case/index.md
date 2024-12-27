@@ -14,6 +14,7 @@ page-type: glossary-definition
 
 ## Дивіться також
 
-- [Верблюдячий регістр](/uk/docs/Glossary/Camel_case)
-- [Зміїний регістр](/uk/docs/Glossary/Snake_case)
+- Споріднені терміни глосарія:
+  - {{Glossary("Camel case", "Верблюдячий регістр")}}
+  - {{Glossary("Snake case", "Зміїний регістр")}}
 - [Правило typescript-eslint: `naming-convention`](https://typescript-eslint.io/rules/naming-convention/)

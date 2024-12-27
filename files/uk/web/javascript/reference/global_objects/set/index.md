@@ -40,43 +40,57 @@ browser-compat: javascript.builtins.Set
     <tr>
       <td>{{jsxref("Set/difference", "A.difference(B)")}}</td>
       <td><code>Set</code></td>
-      <td><math display="inline"><semantics><mrow><mi>A</mi><mo>∖</mo><mi>B</mi></mrow><annotation encoding="TeX">A\setminus B</annotation></semantics></math></td>
+      <td>
+        <math><semantics><mrow><mi>A</mi><mo>∖</mo><mi>B</mi></mrow><annotation encoding="TeX">A\setminus B</annotation></semantics></math>
+      </td>
       <td style="margin:0;padding:0"><img src="difference/diagram.svg" alt="Діаграма Венна, в якій два кола перетинаються. Різниця між A і B – це та частина A, що не перетинається з B. " style="margin:0;border:0;border-radius:0" width="200" /></td>
     </tr>
     <tr>
       <td>{{jsxref("Set/intersection", "A.intersection(B)")}}</td>
       <td><code>Set</code></td>
-      <td><math display="inline"><semantics><mrow><mi>A</mi><mo>∩</mo><mi>B</mi></mrow><annotation encoding="TeX">A\cap B</annotation></semantics></math></td>
+      <td>
+        <math><semantics><mrow><mi>A</mi><mo>∩</mo><mi>B</mi></mrow><annotation encoding="TeX">A\cap B</annotation></semantics></math>
+      </td>
       <td style="margin:0;padding:0"><img src="intersection/diagram.svg" alt="Діаграма Венна, в якій два кола перетинаються. Перетин між A і B – це та частина, якою вони перетинаються." style="margin:0;border:0;border-radius:0" width="200" /></td>
     </tr>
     <tr>
       <td>{{jsxref("Set/symmetricDifference", "A.symmetricDifference(B)")}}</td>
       <td><code>Set</code></td>
-      <td><math display="inline"><semantics><mrow><mo stretchy="false">(</mo><mi>A</mi><mo>∖</mo><mi>B</mi><mo stretchy="false">)</mo><mo>∪</mo><mo stretchy="false">(</mo><mi>B</mi><mo>∖</mo><mi>A</mi><mo stretchy="false">)</mo></mrow><annotation encoding="TeX">(A\setminus B)\cup(B\setminus A)</annotation></semantics></math></td>
+      <td>
+        <math><semantics><mrow><mo stretchy="false">(</mo><mi>A</mi><mo>∖</mo><mi>B</mi><mo stretchy="false">)</mo><mo>∪</mo><mo stretchy="false">(</mo><mi>B</mi><mo>∖</mo><mi>A</mi><mo stretchy="false">)</mo></mrow><annotation encoding="TeX">(A\setminus B)\cup(B\setminus A)</annotation></semantics></math>
+      </td>
       <td style="margin:0;padding:0"><img src="symmetricDifference/diagram.svg" alt="Діаграма Венна, в якій два кола перетинаються. Симетрична різниця між A і B – це область, охоплена одним з кіл, але не двома." style="margin:0;border:0;border-radius:0" width="200" /></td>
     </tr>
     <tr>
       <td>{{jsxref("Set/union", "A.union(B)")}}</td>
       <td><code>Set</code></td>
-      <td><math display="inline"><semantics><mrow><mi>A</mi><mo>∪</mo><mi>B</mi></mrow><annotation encoding="TeX">A\cup B</annotation></semantics></math></td>
+      <td>
+        <math><semantics><mrow><mi>A</mi><mo>∪</mo><mi>B</mi></mrow><annotation encoding="TeX">A\cup B</annotation></semantics></math>
+      </td>
       <td style="margin:0;padding:0"><img src="union/diagram.svg" alt="Діаграма Венна, в якій два кола перетинаються. Симетрична різниця між A і B – це область, охоплена одним або двома колами." style="margin:0;border:0;border-radius:0" width="200" /></td>
     </tr>
     <tr>
       <td>{{jsxref("Set/isDisjointFrom", "A.isDisjointFrom(B)")}}</td>
       <td><code>Boolean</code></td>
-      <td><math display="inline"><semantics><mrow><mi>A</mi><mo>∩</mo><mi>B</mi><mo>=</mo><mi>∅</mi></mrow><annotation encoding="TeX">A\cap B = \empty</annotation></semantics></math></td>
+      <td>
+        <math><semantics><mrow><mi>A</mi><mo>∩</mo><mi>B</mi><mo>=</mo><mi>∅</mi></mrow><annotation encoding="TeX">A\cap B = \empty</annotation></semantics></math>
+      </td>
       <td style="margin:0;padding:0"><img src="isDisjointFrom/diagram.svg" alt="Діаграма Венна з двома колами. A i B є неперетинними, тому що ці два кола не мають області перетину." style="margin:0;border:0;border-radius:0" width="200" /></td>
     </tr>
     <tr>
       <td>{{jsxref("Set/isSubsetOf", "A.isSubsetOf(B)")}}</td>
       <td><code>Boolean</code></td>
-      <td><math display="inline"><semantics><mrow><mi>A</mi><mo>⊆</mo><mi>B</mi></mrow><annotation encoding="TeX">A\subseteq B</annotation></semantics></math></td>
+      <td>
+        <math><semantics><mrow><mi>A</mi><mo>⊆</mo><mi>B</mi></mrow><annotation encoding="TeX">A\subseteq B</annotation></semantics></math>
+      </td>
       <td style="margin:0;padding:0"><img src="isSubsetOf/diagram.svg" alt="Діаграма Венна з двома колами. A є підмножиною B, тому що A повністю вміщена в B." style="margin:0;border:0;border-radius:0" width="200" /></td>
     </tr>
     <tr>
       <td>{{jsxref("Set/isSupersetOf", "A.isSupersetOf(B)")}}</td>
       <td><code>Boolean</code></td>
-      <td><math display="inline"><semantics><mrow><mi>A</mi><mo>⊇</mo><mi>B</mi></mrow><annotation encoding="TeX">A\supseteq B</annotation></semantics></math></td>
+      <td>
+        <math><semantics><mrow><mi>A</mi><mo>⊇</mo><mi>B</mi></mrow><annotation encoding="TeX">A\supseteq B</annotation></semantics></math>
+      </td>
       <td style="margin:0;padding:0"><img src="isSupersetOf/diagram.svg" alt="Діаграма Венна з двома колами. A є надмножиною B, тому що B повністю вміщена в A." style="margin:0;border:0;border-radius:0" width="200" /></td>
     </tr>
   </tbody>
@@ -86,7 +100,7 @@ browser-compat: javascript.builtins.Set
 
 ### Множиноподібні об'єкти
 
-Усі [методи множин](#metody-mnozhyn) вимагають того, щоб значення {{jsxref("Operators/this", "this")}} було справжнім примірником `Set`, але їх аргументи повинні бути хоча б множиноподібними. _Множиноподібний об'єкт_ – це об'єкт, що має наступне:
+Усі [методи композиції множин](#kompozytsiia-mnozhyn) вимагають того, щоб значення {{jsxref("Operators/this", "this")}} було справжнім примірником `Set`, але їх аргументи повинні бути хоча б множиноподібними. _Множиноподібний об'єкт_ – це об'єкт, що має наступне:
 
 - Властивість {{jsxref("Set/size", "size")}}, що містить число.
 - Метод {{jsxref("Set/has", "has()")}}, який приймає елемент і повертає булеве значення.
@@ -104,7 +118,7 @@ const b = new Map([
 console.log(a.union(b)); // Set(4) {1, 2, 3, 4}
 ```
 
-> **Примітка:** Протокол множиноподібності закликає для видачі елементів метод `keys()`, а не [`[@@iterator]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Set/@@iterator). Це зроблено для того, щоб відображення були дієвими множиноподібними об'єктами, адже в випадку відображень ітератор видає _записи_, проте метод `has()` приймає _ключі_.
+> **Примітка:** Протокол множиноподібності закликає для видачі елементів метод `keys()`, а не [`[Symbol.iterator]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Set/Symbol.iterator). Це зроблено для того, щоб відображення були дієвими множиноподібними об'єктами, адже в випадку відображень ітератор видає _записи_, проте метод `has()` приймає _ключі_.
 > [Масиви](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array) не є множиноподібними, тому що не мають метода `has()` і властивості `size`, а їх метод `keys()` видає індекси, а не елементи. Об'єкти {{jsxref("WeakSet")}} також не є множиноподібними, оскільки не мають метода `keys()`.
 
 ### Set-подібні API браузера
@@ -127,7 +141,7 @@ interface GPUSupportedFeatures {
 
 `Set`-подібні об'єкти – або доступні лише для зчитування, або також і для запису (дивіться ключове слово `readonly` в IDL вище).
 
-- `Set`-подібні об'єкти лише для зчитування мають властивість [`size`](#set.prototype.size) і методи: [`entries()`](#set.prototype.entries), [`forEach()`](#set.prototype.foreach), [`has()`](#set.prototype.has), [`keys()`](#set.prototype.keys), [`values()`](#set.prototype.values) та [`@@iterator`](#set.prototypeiterator).
+- `Set`-подібні об'єкти лише для зчитування мають властивість [`size`](#set.prototype.size) і методи: [`entries()`](#set.prototype.entries), [`forEach()`](#set.prototype.foreach), [`has()`](#set.prototype.has), [`keys()`](#set.prototype.keys), [`values()`](#set.prototype.values) та [`Symbol.iterator`](#set.prototypeiterator).
 - Записні `Set`-подібні об'єкти на додачу мають такі методи: [`clear()`](#set.prototype.clear), [`delete()`](#set.prototype.delete) та [`add()`](#set.prototype.add).
 
 Ці методи та властивості мають таку ж логіку, як рівносильні аналоги в `Set`, окрім обмеження щодо типів елементів.
@@ -150,7 +164,7 @@ interface GPUSupportedFeatures {
 
 ## Статичні властивості
 
-- {{jsxref("Set/@@species", "Set[@@species]")}}
+- [`Set[Symbol.species]`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Set/Symbol.species)
   - : Функція-конструктор, що використовується для створення похідних об'єктів.
 
 ## Властивості примірника
@@ -161,8 +175,8 @@ interface GPUSupportedFeatures {
   - : Функція-конструктор, що створила об'єкт-примірник. Для примірників `Set` початковим значенням є конструктор {{jsxref("Set/Set", "Set")}}.
 - {{jsxref("Set.prototype.size")}} (розмір)
   - : Повертає кількість значень, присутніх в об'єкті `Set`.
-- `Set.prototype[@@toStringTag]`
-  - : Початкове значення властивості [`@@toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"Set"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}.
+- `Set.prototype[Symbol.toStringTag]`
+  - : Початкове значення властивості [`Symbol.toStringTag`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toStringTag) – рядок `"Set"`. Ця властивість використовується в {{jsxref("Object.prototype.toString()")}}.
 
 ## Методи примірника
 
@@ -172,7 +186,7 @@ interface GPUSupportedFeatures {
   - : Усуває з об'єкта `Set` всі значення.
 - {{jsxref("Set.prototype.delete()")}} (видалити)
   - : Усуває елемент, пов'язаний із `value`, та повертає булеве значення, що вказує, чи був елемент успішно усунутий. Після цього `Set.prototype.has(value)` поверне `false`.
-- {{jsxref("Set.prototype.difference()")}} {{experimental_inline}}
+- {{jsxref("Set.prototype.difference()")}}
   - : Приймає множину та повертає нову множину, що містить елементи, присутні в поточній множині, але відсутні в переданій.
 - {{jsxref("Set.prototype.entries()")}} (записи)
   - : Повертає новий об'єкт-ітератор, що містить **масив із `[value, value]`** для кожного елемента в об'єкті `Set`, у порядку їх додання. Це подібно до об'єкта {{jsxref("Map")}}, якби _ключ_ кожного запису був би водночас власним _значенням_.
@@ -180,23 +194,23 @@ interface GPUSupportedFeatures {
   - : Один раз викликає `callbackFn` для кожного значення, присутнього в об'єкті `Set`, у порядку їх додання. Якщо наданий параметр `thisArg`, то він використовуватиметься при кожному виклику `callbackFn` як значення `this`.
 - {{jsxref("Set.prototype.has()")}} (має)
   - : Повертає булеве значення, що вказує, чи є елемент із даним значенням в об'єкті `Set`.
-- {{jsxref("Set.prototype.intersection()")}} {{experimental_inline}}
+- {{jsxref("Set.prototype.intersection()")}}
   - : Приймає множину та повертає нову множину, що вміщає елементи, присутні як у поточній множині, так і в переданій.
-- {{jsxref("Set.prototype.isDisjointFrom()")}} {{experimental_inline}}
+- {{jsxref("Set.prototype.isDisjointFrom()")}}
   - : Приймає множину та повертає булеве значення, яке вказує на те, чи відсутні в поточної та переданої множини спільні елементи.
-- {{jsxref("Set.prototype.isSubsetOf()")}} {{experimental_inline}}
+- {{jsxref("Set.prototype.isSubsetOf()")}}
   - : Приймає множину та повертає булеве значення, яке вказує на те, чи всі елементи поточної множини присутні в переданій.
-- {{jsxref("Set.prototype.isSupersetOf()")}} {{experimental_inline}}
+- {{jsxref("Set.prototype.isSupersetOf()")}}
   - : Приймає множину та повертає булеве значення, яке вказує на те, чи всі елементи переданої множини присутні в поточній.
 - {{jsxref("Set.prototype.keys()")}} (ключі)
   - : Псевдонім для {{jsxref("Set.prototype.values()")}}.
-- {{jsxref("Set.prototype.symmetricDifference()")}} {{experimental_inline}}
+- {{jsxref("Set.prototype.symmetricDifference()")}}
   - : Приймає множину та повертає нову множину, що вміщає елементи, присутні в поточній множині або в переданій, але не в них обох.
-- {{jsxref("Set.prototype.union()")}} {{experimental_inline}}
+- {{jsxref("Set.prototype.union()")}}
   - : Приймає множину та повертає нову множину, що вміщає елементи, присутні в одній з множин або в них обох.
 - {{jsxref("Set.prototype.values()")}} (значення)
   - : Повертає новий об'єкт-ітератор, що видає **значення** для кожного елемента в об'єкті `Set`, у порядку їх додання.
-- {{jsxref("Set.prototype.@@iterator()", "Set.prototype[@@iterator]()")}}
+- [`Set.prototype[Symbol.iterator]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Set/Symbol.iterator)
   - : Повертає новий об'єкт-ітератор, що видає **значення** для кожного елемента в об'єкті `Set`, у порядку їх додання.
 
 ## Приклади
@@ -373,25 +387,19 @@ console.log([...mySet]); // Покаже точно такий самий мас
 
 ```js
 // Використання для усунення дублікатів з масиву
-
 const numbers = [2, 13, 4, 4, 2, 13, 13, 4, 4, 5, 5, 6, 6, 7, 5, 32, 13, 4, 5];
 
-console.log([...new Set(numbers)]);
-
-// [2, 13, 4, 5, 6, 7, 32]
+console.log([...new Set(numbers)]); // [2, 13, 4, 5, 6, 7, 32]
 ```
 
 ### Зв'язок із рядками
 
 ```js
-const text = "Індія";
+// Чутливо до регістру (множина буде містити "F" і "f" окремо)
+new Set("Firefox"); // Set(7) [ "F", "i", "r", "e", "f", "o", "x" ]
 
-const mySet = new Set(text); // Set(5) {'І', 'н', 'д', 'і', 'я'}
-mySet.size; // 5
-
-// чутливість до регістру та усунення дублікатів
-new Set("Firefox"); // Set(7) { "F", "i", "r", "e", "f", "o", "x" }
-new Set("firefox"); // Set(6) { "f", "i", "r", "e", "o", "x" }
+// Пропуск дублікатів ("f" зустрічається в рядку двічі, але множина буде містити лише одне входження)
+new Set("firefox"); // Set(6) [ "f", "i", "r", "e", "o", "x" ]
 ```
 
 ### Використання множини для пересвідчення щодо унікальності всіх значень у списку

@@ -35,7 +35,7 @@ browser-compat: css.types.angle
 <table class="standard-table">
   <tbody>
     <tr>
-      <td><img class="default internal" src="angle90.png" /></td>
+      <td><img class="default internal" src="angle90.png" alt="Діаграма, що показує обертання на 90 градусів за годинниковою стрілкою, згори направо." /></td>
       <td><code>90deg = 100grad = 0.25turn ≈ 1.5708rad</code></td>
     </tr>
   </tbody>
@@ -46,7 +46,7 @@ browser-compat: css.types.angle
 <table class="standard-table">
   <tbody>
     <tr>
-      <td><img class="default internal" src="angle180.png" /></td>
+      <td><img class="default internal" src="angle180.png" alt="Діаграма, що показує обертання на 180 градусів за годинниковою стрілкою, згори донизу." /></td>
       <td><code>180deg = 200grad = 0.5turn ≈ 3.1416rad</code></td>
     </tr>
   </tbody>
@@ -57,7 +57,7 @@ browser-compat: css.types.angle
 <table class="standard-table">
   <tbody>
     <tr>
-      <td><img class="default internal" src="angleminus90.png" /></td>
+      <td><img class="default internal" src="angleminus90.png" alt="Діаграма, що показує обертання на 90 градусів проти годинникової стрілки, згори наліво." /></td>
       <td><code>-90deg = -100grad = -0.25turn ≈ -1.5708rad</code></td>
     </tr>
   </tbody>
@@ -68,7 +68,7 @@ browser-compat: css.types.angle
 <table class="standard-table">
   <tbody>
     <tr>
-      <td><img class="default internal" src="angle0.png" /></td>
+      <td><img class="default internal" src="angle0.png" alt="Діаграма, що показує обертання на 0 градусів. Руху немає." /></td>
       <td><code>0 = 0deg = 0grad = 0turn = 0rad</code></td>
     </tr>
   </tbody>

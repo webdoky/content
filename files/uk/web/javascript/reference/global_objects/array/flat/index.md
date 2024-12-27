@@ -32,7 +32,7 @@ flat(depth)
 
 Метод `flat()` – [копіювальний метод](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#kopiiuvalni-ta-zminiuvalni-metody). Він не змінює `this`, а повертає [поверхневу копію](/uk/docs/Glossary/Shallow_copy), що містить ті самі елементи, що присутні у вихідному масиві.
 
-Метод `flat()` ігнорує порожні комірки, якщо сплощуваний масив є [розрідженим](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy). Наприклад, якщо `depth` – 1, то порожні комірки, як в кореневому масиві, так і в масивах першого рівня вкладеності – ігноруються, але порожні комірки в масивах глибших рівнів зберігаються вкупі з самими цими масивами.
+Метод `flat()` вилучає порожні комірки, якщо сплощуваний масив є [розрідженим](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy). Наприклад, якщо `depth` – 1, то порожні комірки, як в кореневому масиві, так і в масивах першого рівня вкладеності – ігноруються, але порожні комірки в масивах глибших рівнів зберігаються вкупі з самими цими масивами.
 
 Метод `pop()` є [узагальненим](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array#uzahalneni-metody-masyvu). Він лишень очікує, що значення `this` матиме властивість `length`, а також цілочислові властивості. Проте його елементи мусять бути масивами, аби бути сплощеними.
 
@@ -60,7 +60,7 @@ arr4.flat(Infinity);
 
 ### Використання flat() на розріджених масивах
 
-Метод `flat()` прибирає порожні комірки масивів:
+Метод `flat()` вилучає [порожні комірки](/uk/docs/Web/JavaScript/Guide/Indexed_collections#rozridzheni-masyvy) масивів:
 
 ```js
 const arr5 = [1, 2, , 4, 5];
@@ -69,9 +69,9 @@ console.log(arr5.flat()); // [1, 2, 4, 5]
 const array = [1, , 3, ["a", , "c"]];
 console.log(array.flat()); // [ 1, 3, "a", "c" ]
 
-const array2 = [1, , 3, ["a", , ["d", , "e"]]];
-console.log(array2.flat()); // [ 1, 3, "a", ["d", порожньо, "e"] ]
-console.log(array2.flat(2)); // [ 1, 3, "a", "d", "e"]
+const array2 = [1, , 3, undefined, ["a", , ["d", , "e"]], null];
+console.log(array2.flat()); // [ 1, 3, undefined, "a", ["d", порожньо, "e"], null ]
+console.log(array2.flat(2)); // [ 1, 3, undefined, "a", "d", "e", null ]
 ```
 
 ### Виклик flat() на об'єктах-немасивах

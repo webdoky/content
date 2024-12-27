@@ -11,13 +11,14 @@ browser-compat: html.elements.input.type_button
 
 {{EmbedInteractiveExample("pages/tabbed/input-button.html", "tabbed-shorter")}}
 
-> **Примітка:** Хоч елементи `<input>` типу `button` досі є цілковито дійсним HTML, та бажаним способом створювати кнопки є новіший елемент {{HTMLElement("button")}}. Враховуючи, що текст підпису {{HTMLElement("button")}} вставляється між початковим і кінцевим тегами, можна додати в підпис код на HTML, навіть зображення.
+> [!NOTE]
+> Хоч елементи `<input>` типу `button` досі є цілковито дійсним HTML, та бажаним способом створювати кнопки є новіший елемент {{HTMLElement("button")}}. Враховуючи, що текст підпису {{HTMLElement("button")}} вставляється між початковим і кінцевим тегами, можна додати в підпис код на HTML, навіть зображення.
 
 ## Значення
 
 ### Кнопка зі значенням
 
-Атрибут [`value`](/uk/docs/Web/HTML/Element/input#value) елементів `<input type="button">` містить рядок, що використовується як підпис кнопки.
+Атрибут [`value`](/uk/docs/Web/HTML/Element/input#value-znachennia) елементів `<input type="button">` містить рядок, що використовується як підпис кнопки. Цей атрибут забезпечує кнопці {{glossary("accessible description", "доступний опис")}}.
 
 ```html
 <input type="button" value="Клацни мене" />
@@ -39,9 +40,9 @@ browser-compat: html.elements.input.type_button
 
 Елементи `<input type="button">` не мають усталеної логіки (їхні родичі, `<input type="submit">` і [`<input type="reset">`](/uk/docs/Web/HTML/Element/input/reset), застосовуються для подання та скидання форм відповідно). Щоб кнопка щось робила, треба написати код JavaScript, котрий виконуватиме роботу.
 
-### Проста кнопка
+### Базова кнопка
 
-Почнімо з простої кнопки з обробником події {{domxref("Element/click_event", "клацання")}}, що запускає машину (зрештою, він перемикає `value` кнопки й текстовий вміст відповідного абзацу):
+Почнімо з базової кнопки з обробником події {{domxref("Element/click_event", "клацання")}}, що запускає машину (зрештою, він перемикає `value` кнопки й текстовий вміст відповідного абзацу):
 
 ```html
 <form>
@@ -69,7 +70,7 @@ function updateButton() {
 
 Цей сценарій отримує посилання на об'єкт {{domxref("HTMLInputElement")}}, що представляє `<input>` у DOM, зберігши це посилання в змінній `button`. Далі використовується {{domxref("EventTarget.addEventListener", "addEventListener()")}} – для встановлення функції, що запуститься, коли на кнопці відбудеться подія {{domxref("Element/click_event", "клацання")}}.
 
-{{EmbedLiveSample("prosta-knopka", 650, 100)}}
+{{EmbedLiveSample("bazova-knopka", 650, 100)}}
 
 ### Додавання до кнопок комбінацій клавіш
 
@@ -103,7 +104,8 @@ function updateButton() {
 
 {{EmbedLiveSample("dodavannia-do-knopok-kombinatsii-klavish", 650, 100)}}
 
-> **Примітка:** Проблема з прикладом вище, звісно, в тому, що користувач не знатиме, яка клавіша є клавішею звертання! На реальному сайті доведеться надати цю інформацію в спосіб, що не суперечить дизайну сайту (наприклад, шляхом надання легкодоступного посилання, що вказує на інформацію про те, які в сайту клавіші звертання).
+> [!NOTE]
+> Проблема з прикладом вище, звісно, в тому, що користувач не знатиме, яка клавіша є клавішею звертання! На реальному сайті доведеться надати цю інформацію в спосіб, що не суперечить дизайну сайту (наприклад, шляхом надання легкодоступного посилання, що вказує на інформацію про те, які в сайту клавіші звертання).
 
 ### Вимкнення та вмикання кнопки
 
@@ -115,7 +117,7 @@ function updateButton() {
 
 #### Задання атрибута disabled
 
-Вмикати й вимикати кнопки динамічно можна за допомогою присвоєння `disabled` значень `true` і `false`. У цьому прикладі кнопка з'являється ввімкненою, однак коли її натиснути, вона вимикається за допомогою `button.disabled = true`. Потім використовується функція {{domxref("setTimeout()")}}, щоб скинути кнопку до її ввімкненого стану за дві секунди.
+Вмикати й вимикати кнопки динамічно можна за допомогою присвоєння `disabled` значень `true` і `false`. У цьому прикладі кнопка з'являється ввімкненою, однак коли її натиснути, вона вимикається за допомогою `button.disabled = true`. Потім використовується функція {{domxref("Window.setTimeout", "setTimeout()")}}, щоб скинути кнопку до її ввімкненого стану за дві секунди.
 
 ```html
 <input type="button" value="Ввімкнена" />
@@ -140,7 +142,7 @@ function disableButton() {
 
 #### Успадкування стану вимкненості
 
-Якщо атрибут `disabled` не заданий, то кнопка успадковує свій стан `disabled` від свого елемента-предка. Це уможливлює ввімкнення й вимкнення груп елементів водночас, шляхом загортання їх у контейнер, наприклад, поставивши їх у елемент {{HTMLElement("fieldset")}}, а потім додавши такому контейнеру `disabled`.
+Якщо атрибут `disabled` не заданий, то кнопка успадковує свій стан `disabled` від свого елемента-предка. Це уможливлює ввімкнення й вимкнення груп елементів водночас, шляхом загортання їх у контейнер, наприклад, поставивши їх в елемент {{HTMLElement("fieldset")}}, а потім додавши такому контейнеру `disabled`.
 
 Приклад нижче демонструє це в дії. Він вельми подібний до попереднього, окрім того, що атрибут `disabled` задається на `<fieldset>`, коли натискається перша кнопка – це призводить до того, що всі три кнопки вимикаються, поки не спливе двосекундний період.
 
@@ -169,7 +171,8 @@ function disableButton() {
 
 {{EmbedLiveSample("uspadkuvannia-stanu-vymknenosti", 650, 100)}}
 
-> **Примітка:** Firefox, на відміну від решти браузерів, усталено [зберігає динамічний стан вимкненості](https://stackoverflow.com/questions/5985839/bug-with-firefox-disabled-attribute-of-input-not-resetting-when-refreshing) елемента {{HTMLElement("button")}} між окремими завантаженнями сторінки. Для контролю цієї можливості слід використовувати атрибут [`autocomplete`](/uk/docs/Web/HTML/Element/button#autocomplete).
+> [!NOTE]
+> Firefox, на відміну від решти браузерів, зберігає стан `disabled` елемента `<input>` при перезавантаженні сторінки. Щоб це обійти, можна задати атрибут [`autocomplete`](/uk/docs/Web/HTML/Element/button#autocomplete) елемента `<input>` зі значенням `off`. (Дивіться подробиці у [Ваді Firefox 654072](https://bugzil.la/654072).)
 
 ## Валідація
 
@@ -233,7 +236,7 @@ const width = (canvas.width = window.innerWidth);
 const height = (canvas.height = window.innerHeight - 85);
 const ctx = canvas.getContext("2d");
 
-ctx.fillStyle = "rgb(0,0,0)";
+ctx.fillStyle = "rgb(0 0 0)";
 ctx.fillRect(0, 0, width, height);
 
 const colorPicker = document.querySelector('input[type="color"]');
@@ -272,7 +275,7 @@ canvas.onmouseup = () => {
 };
 
 clearBtn.onclick = () => {
-  ctx.fillStyle = "rgb(0,0,0)";
+  ctx.fillStyle = "rgb(0 0 0)";
   ctx.fillRect(0, 0, width, height);
 };
 
@@ -286,7 +289,7 @@ function draw() {
       sizePicker.value,
       degToRad(0),
       degToRad(360),
-      false
+      false,
     );
     ctx.fill();
   }
@@ -304,7 +307,7 @@ draw();
 <table class="properties">
   <tbody>
     <tr>
-      <td><strong><a href="#value">Значення</a></strong></td>
+      <td><strong><a href="#znachennia">Значення</a></strong></td>
       <td>Рядок, що використовується як підпис кнопки</td>
     </tr>
     <tr>
@@ -314,8 +317,8 @@ draw();
     <tr>
       <td><strong>Підтримувані спільні атрибути</strong></td>
       <td>
-        <a href="/uk/docs/Web/HTML/Element/input#type"><code>type</code></a> і
-        <a href="/uk/docs/Web/HTML/Element/input#value"><code>value</code></a>
+        <a href="/uk/docs/Web/HTML/Element/input#type-typ"><code>type</code></a> і
+        <a href="/uk/docs/Web/HTML/Element/input#value-znachennia"><code>value</code></a>
       </td>
     </tr>
     <tr>

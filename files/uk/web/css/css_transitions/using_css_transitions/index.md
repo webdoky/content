@@ -19,7 +19,8 @@ spec-urls: https://drafts.csswg.org/css-transitions/
 
 Веброзробник може визначати, яка властивість буде анімована і як. Це дає змогу створювати складні переходи. Проте частина властивостей є [неанімованими](/uk/docs/Web/CSS/CSS_animated_properties), адже їх немає змісту анімувати.
 
-> **Примітка:** Значення `auto` нерідко є дуже складним випадком. Специфікація радить не анімувати від і до `auto`. Частина користувацьких агентів, як то засновані на Gecko, реалізовують цю вимогу, а інші, як то засновані на WebKit, є менш суворими. Використання анімацій з `auto` може приводити до неочікуваних результатів, залежних від браузера та його версії, його слід уникати.
+> [!NOTE]
+> Значення `auto` нерідко є дуже складним випадком. Специфікація радить не анімувати від і до `auto`. Частина користувацьких агентів, як то засновані на Gecko, реалізовують цю вимогу, а інші, як то засновані на WebKit, є менш суворими. Використання анімацій з `auto` може приводити до неочікуваних результатів, залежних від браузера та його версії, його слід уникати.
 
 ## Визначення переходів
 
@@ -46,7 +47,7 @@ div {
 
 ## Приклади
 
-### Простий приклад
+### Базовий приклад
 
 Цей приклад виконує чотирисекундну зміну розміру шрифту з двосекундною затримкою між часом, коли користувач навів курсор на елемент, і початком ефекту анімації:
 
@@ -185,9 +186,110 @@ a:focus {
 
 {{EmbedLiveSample("zastosuvannia-perekhodiv-dlia-vydilennia-meniu")}}
 
+### Переходи display та content-visibility
+
+Цей приклад демонструє те, як можна застосовувати переходи до властивостей [`display`](/uk/docs/Web/CSS/display) та [`content-visibility`](/uk/docs/Web/CSS/content-visibility). Це корисно для створення анімацій входу-виходу, коли хочеться, наприклад, вилучити контейнер з DOM за допомогою `display: none`, але зробити його зникнення плавним за допомогою [`opacity`](/uk/docs/Web/CSS/opacity), а не миттєвим.
+
+Браузери, що це підтримують, виконують переходи `display` та `content-visibility` за допомогою варіації на [дискретному типі анімації](/uk/docs/Web/CSS/CSS_animated_properties#dyskretni). Це, як правило, означає, що властивість перемикається між двома значеннями на 50% шляху анімації між ними.
+
+Проте є виняток, а саме – коли анімується `display: none` чи `content-visibility: hidden`. У цьому випадку браузер перемикається між двома значеннями так, щоб перехідний вміст був видимим протягом усієї тривалості анімації.
+
+Отже, наприклад:
+
+- Коли `display` анімується від `none` до `block` (чи іншого видимого значення `display`), значення перемикається на `block` на `0%` тривалості анімації, щоб воно було видимим протягом усієї анімації.
+- Коли `display` анімується від `block` (чи іншого видимого значення `display`) до `none`, значення перемикається на `none` на `100%` тривалості анімації, щоб воно було видимим протягом усієї анімації.
+
+На переходах за цими властивостями повинно бути задано [`transition-behavior: allow-discrete`](/uk/docs/Web/CSS/transition-behavior). Фактично це вмикає переходи `display` і `content-visibility`.
+
+Коли відбувається перехід за `display`, необхідна директива [`@starting-style`](/uk/docs/Web/CSS/@starting-style), щоб задати на елементі стартові значення, від яких повинен початися перехід, коли елемент отримує перше оновлення стилю. Це потрібно для того, щоб уникнути неочікуваної поведінки. Усталено переходи CSS не запускаються при перших оновленнях стилів, уперше з'явившись у DOM, в тому числі при зміні значення `display` з `none` на якийсь інший стан. Анімації `content-visibility` не потребують задання початкових значень у блоку `@starting-style`. Це пов'язано з тим, що `content-visibility` не приховує елемент з DOM, як це робить `display` – він просто пропускає візуалізацію його вмісту.
+
+#### HTML
+
+HTML тут містить два елементи {{htmlelement("p")}} з {{htmlelement("div")}} між ними, котрий ми анімуємо від `display` `none` до `block`.
+
+```html
+<p>
+  Клацніть десь на екрані чи натисніть будь-яку клавішу, щоб перемкнути
+  <code>&lt;div&gt;</code> між прихованістю та показом.
+</p>
+
+<div>
+  Це елемент <code>&lt;div&gt;</code>, що переходить між
+  <code>display: none; opacity: 0</code> та
+  <code>display: block; opacity: 1</code>. Цікаво, чи не так?
+</div>
+
+<p>
+  Це інший абзац, потрібний для того, щоб показати, що
+  <code>display: none;</code> застосовується й вилучається до
+  <code>&lt;div&gt; </code> вище. Якби змінювалася лише його
+  <code>opacity</code>, він завжди займав би місце в DOM.
+</p>
+```
+
+#### CSS
+
+```css
+html {
+  height: 100vh;
+}
+
+div {
+  font-size: 1.6rem;
+  padding: 20px;
+  border: 3px solid red;
+  border-radius: 20px;
+  width: 480px;
+
+  display: none;
+  opacity: 0;
+  transition:
+    opacity 1s,
+    display 1s allow-discrete;
+  /* Еквівалентно щодо
+  transition: all 1s allow-discrete; */
+}
+
+.showing {
+  opacity: 1;
+  display: block;
+}
+
+@starting-style {
+  .showing {
+    opacity: 0;
+  }
+}
+```
+
+Зверніть увагу на те, що використовується блок `@starting-style`, аби задати стартовий стиль для переходу, а також на включення властивості `display` до списку переходу, зі значенням `allow-discrete`.
+
+#### JavaScript
+
+Врешті-решт, додаймо трохи JavaScript, щоб налаштувати слухачі подій, які запускатимуть перехід (за допомогою класу `showing`).
+
+```js
+const divElem = document.querySelector("div");
+const htmlElem = document.querySelector(":root");
+
+htmlElem.addEventListener("click", showHide);
+document.addEventListener("keydown", showHide);
+
+function showHide() {
+  divElem.classList.toggle("showing");
+}
+```
+
+#### Результат
+
+Цей код візуалізується так:
+
+{{EmbedLiveSample("perekhody-display-ta-content-visibility", "100%", "350")}}
+
 ## Приклади JavaScript
 
-> **Примітка:** Особлива обережність необхідна, коли перехід застосовується відразу після:
+> [!NOTE]
+> Особлива обережність необхідна, коли перехід застосовується відразу після:
 >
 > - додавання елемента до DOM за допомогою `.appendChild()`
 > - усунення властивості елемента `display: none;`.
@@ -198,28 +300,55 @@ a:focus {
 
 Переходи – чудовий інструмент, аби зробити речі куди плавнішими на вигляд, без потреби будь-що робити з функціональністю JavaScript. Про це – наступний приклад.
 
-```html
+```html live-sample___js-transitions
 <p>Клацніть будь-де, аби перемістити м'яч</p>
 <div id="foo" class="ball"></div>
+<script>
+  // Змусити м'яч переміститись на певну позицію:
+  const f = document.getElementById("foo");
+  document.addEventListener(
+    "click",
+    (ev) => {
+      f.style.transform = `translateY(${ev.clientY - 25}px)`;
+      f.style.transform += `translateX(${ev.clientX - 25}px)`;
+    },
+    false,
+  );
+</script>
 ```
 
-За допомогою JavaScript можна реалізувати ефект руху м'яча до певного положення:
+За допомогою CSS можна згладити стилі, що застосовуються через JavaScript. Додайте перехід до елемента, і будь-яка зміна буде відбуватися плавно:
 
-```js
-const f = document.getElementById("foo");
-document.addEventListener(
-  "click",
-  (ev) => {
-    f.style.transform = `translateY(${ev.clientY - 25}px)`;
-    f.style.transform += `translateX(${ev.clientX - 25}px)`;
-  },
-  false,
-);
+```css hidden live-sample___js-transitions
+body {
+  background-color: #fff;
+  color: #333;
+  font:
+    1.2em / 1.5 Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  margin-top: 3em;
+}
+
+main {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 660px;
+  height: 400px;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
 ```
 
-За допомогою CSS такий рух можна без зайвих зусиль зробити плавним. Слід додати до елемента перехід, і будь-які зміни відбудуться плавно:
-
-```css
+```css live-sample___js-transitions
 .ball {
   border-radius: 25px;
   width: 50px;
@@ -232,7 +361,7 @@ document.addEventListener(
 }
 ```
 
-{{EmbedGHLiveSample("css-examples/transitions/js-transitions.html", '100%', 500)}}
+{{EmbedLiveSample("js-transitions", "", "400px")}}
 
 ### Відстеження початку й завершення переходу
 
@@ -256,7 +385,8 @@ el.addEventListener("transitionrun", signalStart, true);
 el.addEventListener("transitionstart", signalStart, true);
 ```
 
-> **Примітка:** Подія `transitionend` не спрацьовує, якщо перехід переривається до свого завершення через те, що елемент став {{cssxref("display")}}`: none`, чи те, що анімована властивість змінила своє значення.
+> [!NOTE]
+> Подія `transitionend` не спрацьовує, якщо перехід переривається до свого завершення через те, що елемент став {{cssxref("display", "display: none")}}, чи те, що анімована властивість змінила своє значення.
 
 ## Специфікації
 
