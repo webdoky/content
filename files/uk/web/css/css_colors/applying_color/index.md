@@ -24,12 +24,12 @@ page-type: guide
 Щоразу, коли візуалізується елемент, ці властивості використовуються для з'ясування кольорів тексту, його фону та можливих прикрас тексту.
 
 - {{cssxref("color")}}
-- : Колір до застосування при нанесенні тексту та будь-яких [прикрас тексту](/uk/docs/Learn/CSS/Styling_text/Fundamentals#font-style-font-weight-text-transform-i-text-decoration) (наприклад, додавання підкреслень, надкреслень, перекреслень і так далі.
+- : Колір до застосування при нанесенні тексту та будь-яких [прикрас тексту](/uk/docs/Learn_web_development/Core/Text_styling/Fundamentals#font-style-font-weight-text-transform-i-text-decoration) (наприклад, додавання підкреслень, надкреслень, перекреслень і так далі.
 - {{cssxref("background-color")}}
   - : Колір тла тексту.
 - {{cssxref("text-shadow")}}
 
-  - : Задає ефект тіні, що застосовується до тексту. Серед параметрів тіні є базовий колір тіні (який потім розмивається і змішується з фоном на основі інших параметрів). Дивіться [Тіні тексту](/uk/docs/Learn/CSS/Styling_text/Fundamentals#padinnia-tini-vid-tekstu), щоб дізнатися більше.
+  - : Задає ефект тіні, що застосовується до тексту. Серед параметрів тіні є базовий колір тіні (який потім розмивається і змішується з фоном на основі інших параметрів). Дивіться [Тіні тексту](/uk/docs/Learn_web_development/Core/Text_styling/Fundamentals#padinnia-tini-vid-tekstu), щоб дізнатися більше.
 
 - {{cssxref("text-decoration-color")}}
 
@@ -65,11 +65,11 @@ page-type: guide
 
 - {{cssxref("outline-color")}}
 
-  - : Колір для використання при нанесенні окреслення навколо елемента. Це окреслення відрізняється від меж тим, що для нього не відводиться місце в документі. Окреслення не бере участі в [рамковій моделі](/uk/docs/Learn/CSS/Building_blocks/The_box_model), накладаючись на інший вміст. Зазвичай окреслення використовується як ознака фокуса, показуючи, який елемент наразі має фокус і отримає події введення з клавіатури.
+  - : Колір для використання при нанесенні окреслення навколо елемента. Це окреслення відрізняється від меж тим, що для нього не відводиться місце в документі. Окреслення не бере участі в [рамковій моделі](/uk/docs/Learn_web_development/Core/Styling_basics/Box_model), накладаючись на інший вміст. Зазвичай окреслення використовується як ознака фокуса, показуючи, який елемент наразі має фокус і отримає події введення з клавіатури.
 
 ### Межі
 
-Навколо будь-якого елемента може бути нанесена [межа](/uk/docs/Learn/CSS/Building_blocks/Backgrounds_and_borders). Базова межа елемента – це лінія, нанесена навколо країв вмісту елемента. Дивіться [Рамкову модель](/uk/docs/Learn/CSS/Building_blocks/The_box_model), щоб дізнатися про відносини між елементами та їх межами, а також статтю [Оформлення меж за допомогою CSS](/uk/docs/Learn/CSS/Building_blocks/Backgrounds_and_borders), щоб дізнатися більше про застосування стилів до меж.
+Навколо будь-якого елемента може бути нанесена межа. Базова межа елемента – це лінія, нанесена навколо країв вмісту елемента. Дивіться [Рамкову модель](/uk/docs/Learn_web_development/Core/Styling_basics/Box_model), щоб дізнатися про відносини між елементами та їх межами, а також статтю [Оформлення меж за допомогою CSS](/uk/docs/Learn_web_development/Core/Styling_basics/Backgrounds_and_borders), щоб дізнатися більше про застосування стилів до меж.
 
 Можна скористатися властивістю-скороченням {{cssxref("border")}}, яка дає змогу налаштувати все, що стосується межі, за один раз (в тому числі неколірні особливості меж, як то їх [ширину](/uk/docs/Web/CSS/border-width), [стиль](/uk/docs/Web/CSS/border-style) (суцільний, штриховий тощо) і так далі.
 
@@ -95,7 +95,7 @@ page-type: guide
 
 Погляньмо спершу на результат, а потім перейдемо до коду, необхідного для його створення:
 
-{{EmbedLiveSample("zadannia-koloriv-yak-znachen-u-spyskakh-koloriv", 650, 150)}}
+{{EmbedLiveSample("zadannia-koloriv-yak-znachen-u-spyskakh-styliv", 650, 150)}}
 
 ### HTML
 
@@ -205,5 +205,4 @@ CSS – не єдина вебтехнологія, що підтримує ко
 - Посібник [Колірних значень CSS](/uk/docs/Web/CSS/CSS_colors/Color_values)
 - [Використання кольорів з розумом](/uk/docs/Web/CSS/CSS_colors/Using_color_wisely)
 - [Модуль Кольору CSS](/uk/docs/Web/CSS/CSS_colors)
-- [Нанесення графіки](/uk/docs/Learn/JavaScript/Client-side_web_APIs/Drawing_graphics)
-- [Графіка у Вебі](/uk/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML#insha-hrafika-u-vebi)
+- [Нанесення графіки](/uk/docs/Learn_web_development/Extensions/Client-side_APIs/Drawing_graphics)
