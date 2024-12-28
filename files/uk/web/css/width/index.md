@@ -7,7 +7,7 @@ browser-compat: css.properties.width
 
 {{CSSRef}}
 
-Властивість [CSS](/uk/docs/Web/CSS) **`width`** (ширина) встановлює ширину елемента. Усталено вона встановлює ширину [області вмісту](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model#oblast-vmistu), однак якщо властивість {{cssxref("box-sizing")}} має значення `border-box`, то вказане значення стає шириною [відмежованої області](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model#vidmezhovana-oblast).
+Властивість [CSS](/uk/docs/Web/CSS) **`width`** (ширина) встановлює ширину елемента. Усталено вона встановлює ширину [області вмісту](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model#oblast-vmistu), однак якщо властивість {{cssxref("box-sizing")}} має значення `border-box`, то вказане значення стає шириною [області меж](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model#oblast-mezh).
 
 {{EmbedInteractiveExample("pages/css/width.html")}}
 
@@ -65,7 +65,7 @@ width: unset;
   - : Використовує формулу fit-content щодо доступного простору, заміненого вказаним аргументом, тобто `min(max-content, max(min-content, <length-percentage>))`.
 - `stretch`
 
-  - : Задає ширині [рамки зовнішніх відступів](/uk/docs/Learn/CSS/Building_blocks/The_box_model#chastyny-ramky) елемента ширину його [контейнерного блока](/uk/docs/Web/CSS/Containing_block#vybir-konteinernoho-bloka). Намагається змусити рамку зовнішніх відступів заповнити доступний у контейнерному блоці простір так, щоб це вийшло схоже на `100%`, але застосовуючи результівний розмір до рамки зовнішніх відступів, а не рамки, визначеної [box-sizing](/uk/docs/Web/CSS/box-sizing).
+  - : Задає ширині [рамки зовнішніх відступів](/uk/docs/Learn_web_development/Core/Styling_basics/Box_model#chastyny-ramky) елемента ширину його [контейнерного блока](/uk/docs/Web/CSS/Containing_block#vybir-konteinernoho-bloka). Намагається змусити рамку зовнішніх відступів заповнити доступний у контейнерному блоці простір так, щоб це вийшло схоже на `100%`, але застосовуючи результівний розмір до рамки зовнішніх відступів, а не рамки, визначеної [box-sizing](/uk/docs/Web/CSS/box-sizing).
 
     > [!NOTE]
     > Аби перевірити псевдоніми значення `stretch`, що використовуються браузерами, та статус реалізації цього значення, дивіться наш розділ [Сумісності з браузерами](#sumisnist-iz-brauzeramy).
