@@ -86,9 +86,9 @@ h2 :not(span.foo) {
 
 #### Результат
 
-{{EmbedLiveSample('vykorystannia-not-na-diisnykh-selektorakh', '100%', 320)}}
+{{EmbedLiveSample('vykorystannia-not-na-validnykh-selektorakh', '100%', 320)}}
 
-### Використання :not() на недійсних селекторах
+### Використання :not() на невалідних селекторах
 
 Цей приклад демонструє використання `:not()` з недійсними селекторами та те, як запобігти нечинності всього селектора.
 
@@ -121,7 +121,7 @@ p:is(:not(.foo), :not(:invalid-pseudo-class)) {
 
 #### Результат
 
-{{EmbedLiveSample('vykorystannia-not-na-nediisnykh-selektorakh', '100%', 320)}}
+{{EmbedLiveSample('vykorystannia-not-na-nevalidnykh-selektorakh', '100%', 320)}}
 
 ## Специфікації
 
@@ -134,7 +134,7 @@ p:is(:not(.foo), :not(:invalid-pseudo-class)) {
 ## Дивіться також
 
 - [Псевдокласи](/uk/docs/Web/CSS/Pseudo-classes)
-- [Псевдокласи та псевдоелементи](/uk/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements)
+- [Навчання – Псевдокласи та псевдоелементи](/uk/docs/Learn_web_development/Core/Styling_basics/Pseudo_classes_and_elements)
 - Інші функційні псевдокласи CSS:
 
   - {{cssxref(":has", ":has()")}}
