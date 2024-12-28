@@ -12,7 +12,7 @@ spec-urls:
 
 Модуль **Медіазапитів CSS** дає змогу перевіряти та робити запити щодо значень області перегляду та характеристик браузера чи пристрою, щоб умовно застосовувати стилі CSS на основі поточного користувацького середовища. Медіазапити використовуються в директиві CSS `@media` та інших контекстах та мовах, таких як HTML та JavaScript.
 
-Медіазапити – це ключова компонента [чуйного дизайну](/uk/docs/Learn/CSS/CSS_layout/Responsive_Design). Вони дають змогу умовно задавати стилі CSS, залежно від присутності чи значень характеристик пристрою. Поширено використання медіазапитів на основі розміру {{Glossary("viewport", "області перегляду")}}, щоб задавати відповідні макети на пристроях з різними розмірами екранів – наприклад, три колонки на широкому екрані чи одна колонка на вузькому.
+Медіазапити – це ключова компонента [чуйного дизайну](/uk/docs/Learn_web_development/Core/CSS_layout/Responsive_Design). Вони дають змогу умовно задавати стилі CSS, залежно від присутності чи значень характеристик пристрою. Поширено використання медіазапитів на основі розміру {{Glossary("viewport", "області перегляду")}}, щоб задавати відповідні макети на пристроях з різними розмірами екранів – наприклад, три колонки на широкому екрані чи одна колонка на вузькому.
 
 Серед інших поширених прикладів – збільшення розміру шрифту та приховування навігаційних меню при друку сторінки, припасування внутрішніх відступів між абзацами, коли сторінку переглядають у портретному чи ландшафтному режимі, або збільшення розміру кнопок, щоб забезпечити більшу площу для натискання на сенсорних екранах.
 
@@ -62,15 +62,17 @@ spec-urls:
 - {{cssxref("@media/video-dynamic-range", "video-dynamic-range")}}
 - {{cssxref("@media/width", "width")}}
 
-> **Примітка:** Медіазапити CSS рівня 5 додали п'ять дескрипторів `@media`, які ще не отримали реалізації: {{cssxref("@media/environment-blending", "environment-blending")}}, {{cssxref("@media/horizontal-viewport-segments", "horizontal-viewport-segments")}}, {{cssxref("@media/nav-controls", "nav-controls")}}, {{cssxref("@media/vertical-viewport-segments", "vertical-viewport-segments")}} і {{cssxref("@media/video-color-gamut", "video-color-gamut")}}.
-> **Примітка:** Медіазапити CSS рівня 4 зробили нерекомендованими три дескриптори `@media`: {{cssxref("@media/device-aspect-ratio", "device-aspect-ratio")}}, {{cssxref("@media/device-height", "device-height")}} і {{cssxref("@media/device-width", "device-width")}}.
+> [!NOTE]
+> Медіазапити CSS рівня 5 додали п'ять дескрипторів `@media`, які ще не отримали реалізації: {{cssxref("@media/environment-blending", "environment-blending")}}, {{cssxref("@media/horizontal-viewport-segments", "horizontal-viewport-segments")}}, {{cssxref("@media/nav-controls", "nav-controls")}}, {{cssxref("@media/vertical-viewport-segments", "vertical-viewport-segments")}} і {{cssxref("@media/video-color-gamut", "video-color-gamut")}}.
+> [!NOTE]
+> Медіазапити CSS рівня 4 зробили нерекомендованими три дескриптори `@media`: {{cssxref("@media/device-aspect-ratio", "device-aspect-ratio")}}, {{cssxref("@media/device-height", "device-height")}} і {{cssxref("@media/device-width", "device-width")}}.
 
 ### Типи даних та оператори
 
-- [`<media-types>`](/uk/docs/Web/CSS/@media#mediini-typy)
-- [`<media-features>`](/uk/docs/Web/CSS/@media#mediini-mozhlyvosti)
+- [`<media-types>`](/uk/docs/Web/CSS/@media#typy-media)
+- [`<media-features>`](/uk/docs/Web/CSS/@media#mozhlyvosti-media)
 - [`<resolution>`](/uk/docs/Web/CSS/resolution)
-- [Логічні оператори](/uk/docs/Web/CSS/@media#lohichni_operatory)
+- [Логічні оператори](/uk/docs/Web/CSS/@media#lohichni-operatory)
 
 ### Терміни глосарія
 
@@ -83,7 +85,7 @@ spec-urls:
 
   - : Знайомить з медіазапитами, їхнім синтаксисом, а також операторами та медійними можливостями, які використовуються для створення виразів медіазапитів.
 
-- [Посібник початківця з медіазапитів](/uk/docs/Learn/CSS/CSS_layout/Media_queries)
+- [Навчання – Основи медіазапитів](/uk/docs/Learn_web_development/Core/CSS_layout/Media_queries)
 
   - : Знайомить з медіазапитами та підходами до їхнього використання для створення чуйних дизайнів.
 
@@ -99,7 +101,7 @@ spec-urls:
 
   - : Поради та техніки, які допоможуть покращити виведення вебвмісту на принтер.
 
-- [Вивчення – чуйні зображення](/uk/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
+- [Чуйні зображення](/uk/docs/Web/HTML/Responsive_images)
 
   - : Дізнайтеся, як використовувати медіазапити вкупі з `sizes` для реалізації чуйних зображень на вебсайтах.
 
