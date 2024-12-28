@@ -11,7 +11,8 @@ browser-compat: css.selectors.nth-child
 
 {{EmbedInteractiveExample("pages/tabbed/pseudo-class-nth-child.html", "tabbed-shorter")}}
 
-> **Примітка:** В записі `element:nth-child()` підрахунок дочірніх елементів включає дочірні елементи усіх типів; проте збіг вважається збігом лише тоді, коли елемент _на відповідній дочірній позиції_ дає збіг з рештою компонент селектора.
+> [!NOTE]
+> В записі `element:nth-child()` підрахунок дочірніх елементів включає дочірні елементи усіх типів; проте збіг вважається збігом лише тоді, коли елемент _на відповідній дочірній позиції_ дає збіг з рештою компонент селектора.
 
 ## Синтаксис
 
@@ -470,5 +471,5 @@ tbody tr :nth-child(3) {
 - {{Cssxref(":nth-of-type", ":nth-of-type()")}}
 - {{Cssxref(":nth-last-child", ":nth-last-child()")}}
 - {{Cssxref(":has", ":has()")}} – псевдоклас для вибору батьківського елемента
-- [Деревно-структурні псевдокласи](/uk/docs/Web/CSS/Pseudo-classes#derevno-strukturni-psevdoklasy)
+- [Псевдокласи деревної структури](/uk/docs/Web/CSS/Pseudo-classes#psevdoklasy-derevnoi-struktury)
 - Модуль [Селекторів CSS](/uk/docs/Web/CSS/CSS_selectors)
