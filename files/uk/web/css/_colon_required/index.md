@@ -7,7 +7,7 @@ browser-compat: css.selectors.required
 
 {{CSSRef}}
 
-[Псевдоклас](/uk/docs/Web/CSS/Pseudo-classes) [CSS](/uk/docs/Web/CSS) **`:required`** (обов'язковий) представляє всі елементи {{HTMLElement("input")}}, {{HTMLElement("select")}} і {{HTMLElement("textarea")}}, які мають атрибут [`required`](/uk/docs/Web/HTML/Element/input#required).
+[Псевдоклас](/uk/docs/Web/CSS/Pseudo-classes) [CSS](/uk/docs/Web/CSS) **`:required`** (обов'язковий) представляє всі елементи {{HTMLElement("input")}}, {{HTMLElement("select")}} і {{HTMLElement("textarea")}}, які мають атрибут [`required`](/uk/docs/Web/HTML/Element/input#required-oboviazkovyi).
 
 {{EmbedInteractiveExample("pages/tabbed/pseudo-class-required.html", "tabbed-standard")}}
 
@@ -92,4 +92,4 @@ input:required:invalid {
 ## Дивіться також
 
 - Інші псевдокласи, що стосуються валідації: {{cssxref(":optional")}}, {{cssxref(":invalid")}}, {{cssxref(":valid")}}
-- [Валідація даних форми](/uk/docs/Learn/Forms/Form_validation)
+- [Валідація даних форми](/uk/docs/Learn_web_development/Extensions/Forms/Form_validation)
