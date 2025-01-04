@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2024-12-27 - 2025-01-03]
+
+* **Оновлення перекладу(CSS):** web/css/_colon_not (#3754) ([b8dfa058](https://github.com/webdoky/content/commit/b8dfa058f7dfb44952bcc8592752a7d2aa4a3d14))
+* **Оновлення перекладу(CSS):** web/css/css_media_queries (#3760) ([7173cea0](https://github.com/webdoky/content/commit/7173cea08f39b53792d9af343d199332a6432d90))
+* **Оновлення перекладу(CSS):** web/css/width (#3759) ([c1aa2771](https://github.com/webdoky/content/commit/c1aa27718a659f872350f8b47d7102020ad39eb0))
+* **Оновлення перекладу(CSS):** web/css/_colon_required (#3758) ([0cb2fdb4](https://github.com/webdoky/content/commit/0cb2fdb4df24dbd77923957dae67e297e20b9207))
+* **Оновлення перекладу(CSS):** web/css/_colon_nth-child (#3757) ([f6769588](https://github.com/webdoky/content/commit/f6769588daa2009293795b0e11d11caf315e9f3b))
+* **Оновлення перекладу(CSS):** web/css/animation-range (#3756) ([b82df73a](https://github.com/webdoky/content/commit/b82df73a31e6d6feefba3e6761d303cc58e1feae))
+* **Оновлення перекладу(CSS):** web/css/css_colors/applying_color (#3755) ([87ca1bd2](https://github.com/webdoky/content/commit/87ca1bd2764e9f7c51d2aa64f6df5de123905954))
+
 ## [2024-12-20 - 2024-12-27]
 
 * **Переклад(CSS):** web/css/css_properties_and_values_api (#2670) ([5c9675b5](https://github.com/webdoky/content/commit/5c9675b581599efe8af6041537b579645bf3746e))
