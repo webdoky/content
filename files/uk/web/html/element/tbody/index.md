@@ -123,7 +123,7 @@ td {
 
 #### HTML
 
-We introduce a table head ({{HTMLElement("thead")}} element) and explicitly use a `<tbody>` element to structure the table into {{Glossary("semantics", "semantic")}} sections. The table head contains the column headers ({{HTMLElement("th")}} elements). The `<tbody>` element represents the body section of the table, which contains a number of rows ({{HTMLElement("tr")}} elements) with the table's main data, which is the data of each student.
+Додано заголовок таблиці (елемент {{HTMLElement("thead")}}), а також явно застосовано елемент `<tbody>`, аби поділити таблицю на {{Glossary("semantics", "семантичні")}} розділи. Заголовок таблиці містить заголовки стовпців (елементи {{HTMLElement("th")}}). Елемент `<tbody>` представляє головний розділ таблиці, що містить низку рядів (елементів {{HTMLElement("tr")}}), у яких вміщено основні дані таблиці, тобто дані про кожного студента.
 
 The use of such table content groups and {{Glossary("semantics", "semantic")}} markup is not only useful for visual presentation (via CSS styling) and contextual information for assistive technologies; moreover, the explicit use of the `<tbody>` element helps the browser to create the intended table structure, avoiding unwanted results.
 
