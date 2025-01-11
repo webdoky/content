@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2025-01-03 - 2025-01-10]
+
+* **Переклад(JS):** web/javascript/reference/global_objects/isnan (#3764) ([878ada1d](https://github.com/webdoky/content/commit/878ada1d014d36b4bed754c04d8232dbb84af762))
+* **Переклад(CSS):** web/css/layout_cookbook (#3753) ([75152066](https://github.com/webdoky/content/commit/751520661b3296a37c73023c919a5df77d56d218))
+* **Переклад(CSS):** web/css/_colon_has-slotted (#3761) ([63e092cd](https://github.com/webdoky/content/commit/63e092cdb4ad745cf4e64c9c8ed9767d362b7767))
+
 ## [2024-12-27 - 2025-01-03]
 
 * **Оновлення перекладу(CSS):** web/css/_colon_not (#3754) ([b8dfa058](https://github.com/webdoky/content/commit/b8dfa058f7dfb44952bcc8592752a7d2aa4a3d14))
