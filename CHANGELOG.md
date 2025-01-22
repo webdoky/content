@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2025-01-10 - 2025-01-17]
+
+* **Переклад(CSS):** web/css/scroll-padding-block (#3770) ([3cfac270](https://github.com/webdoky/content/commit/3cfac27057eb5ea74f28011bbcf1aacb3b658844))
+* **Переклад(HTML):** web/html/global_attributes/id (#3768) ([bebfe613](https://github.com/webdoky/content/commit/bebfe613734ca25e78e45fc7a2e715d579b8f3df))
+* **Переклад(CSS):** web/css/scroll-padding (#3767) ([a4c6f230](https://github.com/webdoky/content/commit/a4c6f2303e66fb838fdb259b52c8fde1861a0ea0))
+
 ## [2025-01-03 - 2025-01-10]
 
 * **Переклад(JS):** web/javascript/reference/global_objects/isnan (#3764) ([878ada1d](https://github.com/webdoky/content/commit/878ada1d014d36b4bed754c04d8232dbb84af762))
