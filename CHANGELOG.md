@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2025-01-17 - 2025-01-24]
+
+...
+
 ## [2025-01-10 - 2025-01-17]
 
 * **Переклад(CSS):** web/css/scroll-padding-block (#3770) ([3cfac270](https://github.com/webdoky/content/commit/3cfac27057eb5ea74f28011bbcf1aacb3b658844))
