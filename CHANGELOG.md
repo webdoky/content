@@ -3,6 +3,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2025-01-24 - 2025-01-31]
+
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/json/stringify (#3781) ([f56f5b15](https://github.com/webdoky/content/commit/f56f5b15056e5c372a6432b90d5cef51f224f468))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string/replace (#3780) ([df544e71](https://github.com/webdoky/content/commit/df544e71bf377e1cd2e079ca532e96b3f8439e38))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/string (#3779) ([dc8c6c8d](https://github.com/webdoky/content/commit/dc8c6c8d35d87d347ec2908de10be020c07457ff))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/date (#3778) ([e30455cf](https://github.com/webdoky/content/commit/e30455cf2fab34cd3fc83ec1d664447bed31c9c7))
+* **Виправлення:** download-artifact@v4 ([699b4bf0](https://github.com/webdoky/content/commit/699b4bf04ac5008e2f677ecfdf56445dc17f73b3))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/array/find (#3777) ([e96ab25b](https://github.com/webdoky/content/commit/e96ab25beb5323aef9f309be3a0716816b6010a7))
+* **Оновлення перекладу(JS):** web/javascript/reference (#3776) ([84968356](https://github.com/webdoky/content/commit/849683566610592700b13362a0cdfda70be2d29b))
+* **Оновлення перекладу(JS):** web/javascript (#3775) ([cfebe946](https://github.com/webdoky/content/commit/cfebe9461da5e95bf9d8928bd9a716100a10a2fd))
+* **Виправлення:** toshimaru/auto-author-assign@v2.1.1 ([cab99f23](https://github.com/webdoky/content/commit/cab99f23c0825d3d762249b629879e67904fb860))
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects (#3774) ([25f126ed](https://github.com/webdoky/content/commit/25f126edccfd9d796af1705b2b590611800290a5))
+* **Виправлення:** upgrade Github Actions ([7a354de5](https://github.com/webdoky/content/commit/7a354de5619283ae504c368b60fc392ec5026e8e))
+
 ## [2025-01-10 - 2025-01-17]
 
 * **Переклад(CSS):** web/css/scroll-padding-block (#3770) ([3cfac270](https://github.com/webdoky/content/commit/3cfac27057eb5ea74f28011bbcf1aacb3b658844))
