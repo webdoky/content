@@ -62,6 +62,7 @@ page-type: landing-page
 - {{jsxref("BigInt")}}
 - {{jsxref("Math")}}
 - {{jsxref("Date")}}
+- {{jsxref("Temporal")}}
 
 ### Робота з текстом
 
