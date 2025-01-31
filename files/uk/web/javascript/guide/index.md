@@ -59,7 +59,7 @@ page-type: guide
 
 - [Визначення функцій](/uk/docs/Web/JavaScript/Guide/Functions#vyznachennia-funktsii)
 - [Виклик функцій](/uk/docs/Web/JavaScript/Guide/Functions#vyklyk-funktsii)
-- [Функційна область видимості](/uk/docs/Web/JavaScript/Guide/Functions#funktsiina-oblast-vydymosti)
+- [Функційні області видимості та замикання](/uk/docs/Web/JavaScript/Guide/Functions#funktsiini-oblasti-vydymosti-ta-zamykannia)
 - [Замикання](/uk/docs/Web/JavaScript/Guide/Functions#zamykannia)
 - [Аргументи](/uk/docs/Web/JavaScript/Guide/Functions#vykorystannia-obiekta-arguments) й [параметри](/uk/docs/Web/JavaScript/Guide/Functions#parametry-funktsii)
 - [Стрілкові функції](/uk/docs/Web/JavaScript/Guide/Functions#strilkovi-funktsii)
