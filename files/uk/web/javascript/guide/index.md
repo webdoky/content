@@ -73,24 +73,33 @@ page-type: guide
 - [Побітові](/uk/docs/Web/JavaScript/Guide/Expressions_and_operators#bitovi-operatory) й [логічні оператори](/uk/docs/Web/JavaScript/Guide/Expressions_and_operators#lohichni-operatory)
 - [Умовний (тернарний) оператор](/uk/docs/Web/JavaScript/Guide/Expressions_and_operators#umovnyi-ternarnyi-operator)
 
-## Числа та дати
+## Числа та рядки
 
-Огляд: [Числа та дати](/uk/docs/Web/JavaScript/Guide/Numbers_and_dates)
+Огляд: [Числа та рядки](/uk/docs/Web/JavaScript/Guide/Numbers_and_strings)
 
-- [Числові літерали](/uk/docs/Web/JavaScript/Guide/Numbers_and_dates#chysla)
-- [Об'єкт `Number`](/uk/docs/Web/JavaScript/Guide/Numbers_and_dates#obiekt-number)
-- [Об'єкт `Math`](/uk/docs/Web/JavaScript/Guide/Numbers_and_dates#obiekt-math)
-- [Об'єкт `Date`](/uk/docs/Web/JavaScript/Guide/Numbers_and_dates#obiekt-date)
+- [Числа](/uk/docs/Web/JavaScript/Guide/Numbers_and_strings#chysla)
+- [Об'єкт `Number`](/uk/docs/Web/JavaScript/Guide/Numbers_and_strings#obiekt-number)
+- [Об'єкт `Math`](/uk/docs/Web/JavaScript/Guide/Numbers_and_strings#obiekt-math)
+- [Рядки](/uk/docs/Web/JavaScript/Guide/Numbers_and_strings#riadky)
+- [Об'єкт `String`](/uk/docs/Web/JavaScript/Guide/Numbers_and_strings#obiekt-string)
+- [Шаблонні літерали](/uk/docs/Web/JavaScript/Guide/Numbers_and_strings#shablonni-literaly)
 
-## Форматування тексту
+## Подання дат і часу
 
-Огляд: [Форматування тексту](/uk/docs/Web/JavaScript/Guide/Text_formatting)
+Огляд: [Подання дат і часу](/uk/docs/Web/JavaScript/Guide/Representing_dates_times)
 
-- [Рядкові літерали](/uk/docs/Web/JavaScript/Guide/Text_formatting#riadkovi-literaly)
-- [Об'єкт `String`](/uk/docs/Web/JavaScript/Guide/Text_formatting#obiekty-string)
-- [Літерали шаблонів](/uk/docs/Web/JavaScript/Guide/Text_formatting#bahatoriadkovi-shablonni-literaly)
-- [Інтернаціоналізація](/uk/docs/Web/JavaScript/Guide/Text_formatting#internatsionalizatsiia)
-- [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_expressions)
+- [Об'єкт `Date`](/uk/docs/Web/JavaScript/Guide/Representing_dates_times#obiekt-date)
+
+## Регулярні вирази
+
+Огляд: [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_expressions)
+
+- [Створення регулярного виразу](/uk/docs/Web/JavaScript/Guide/Regular_expressions#stvorennia-rehuliarnoho-vyrazu)
+- [Написання патерну регулярного виразу](/uk/docs/Web/JavaScript/Guide/Regular_expressions#napysannia-paternu-rehuliarnoho-vyrazu)
+  - [Твердження](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Assertions)
+  - [Класи символів](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Character_classes)
+  - [Групи та зворотні посилання](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Groups_and_backreferences)
+  - [Квантифікатори](/uk/docs/Web/JavaScript/Guide/Regular_expressions/Quantifiers)
 
 ## Колекції з індексами
 
@@ -144,6 +153,14 @@ page-type: guide
 - [Ітератори](/uk/docs/Web/JavaScript/Guide/Iterators_and_generators#iteratory)
 - [Ітеровані об'єкти](/uk/docs/Web/JavaScript/Guide/Iterators_and_generators#iterovani-obiekty)
 - [Генератори](/uk/docs/Web/JavaScript/Guide/Iterators_and_generators#funktsii-heneratory)
+
+## Інтернаціоналізація
+
+Огляд: [Інтернаціоналізація](/uk/docs/Web/JavaScript/Guide/Internationalization)
+
+- [Форматування дат і часу](/uk/docs/Web/JavaScript/Guide/Internationalization#formatuvannia-daty-ta-chasu)
+- [Форматування чисел](/uk/docs/Web/JavaScript/Guide/Internationalization#formatuvannia-chysel)
+- [Звіряння](/uk/docs/Web/JavaScript/Guide/Internationalization#zviriannia)
 
 ## Метапрограмування
 
