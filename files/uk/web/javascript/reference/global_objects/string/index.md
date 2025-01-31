@@ -370,5 +370,5 @@ String(undefinedVar); // "undefined"
 
 ## Дивіться також
 
-- Посібник [Форматування тексту](/uk/docs/Web/JavaScript/Guide/Text_formatting)
+- Посібник [Числа та рядки](/uk/docs/Web/JavaScript/Guide/Numbers_and_strings)
 - {{jsxref("RegExp")}}
