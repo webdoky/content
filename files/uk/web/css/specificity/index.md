@@ -504,5 +504,5 @@ input[type="password"]:required {
 - [Синтаксис визначення значень](/uk/docs/Web/CSS/Value_definition_syntax)
 - [Навчання – Обробка конфліктів](/uk/docs/Learn_web_development/Core/Styling_basics/Handling_conflicts)
 - [Навчання – Каскадні шари](/uk/docs/Learn_web_development/Core/Styling_basics/Cascade_layers)
-- Модуль [Каскадності та успадкування CSS](/uk/docs/Web/CSS/CSS_cascade)
+- Модуль [Каскадування та успадкування CSS](/uk/docs/Web/CSS/CSS_cascade)
 - [Модуль Вкладеності CSS](/uk/docs/Web/CSS/CSS_nesting)
