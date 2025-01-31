@@ -47,7 +47,7 @@ backdrop-filter: unset;
 
 - `none`
   - : До задника не застосовується жодний фільтр.
-- `<filter-function-list>`
+- `<filter-value-list>`
   - : Розділений пробілами список значень {{cssxref("&lt;filter-function&gt;")}}, або [SVG-фільтр](/uk/docs/Web/SVG/Element/filter), що буде застосовано до задника. Серед значень `<filter-function>` CSS – {{CSSxRef("filter-function/blur", "blur()")}}, {{CSSxRef("filter-function/brightness", "brightness()")}}, {{CSSxRef("filter-function/contrast", "contrast()")}}, {{CSSxRef("filter-function/drop-shadow", "drop-shadow()")}}, {{CSSxRef("filter-function/grayscale", "grayscale()")}}, {{CSSxRef("filter-function/hue-rotate", "hue-rotate()")}}, {{CSSxRef("filter-function/invert", "invert()")}}, {{CSSxRef("filter-function/opacity", "opacity()")}}, {{CSSxRef("filter-function/saturate", "saturate()")}} і {{CSSxRef("filter-function/sepia", "sepia()")}}.
 
 ## Формальне визначення
