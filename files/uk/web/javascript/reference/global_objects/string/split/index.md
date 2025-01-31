@@ -286,8 +286,8 @@ console.log(commands.split(splitCommands, 3)); // ["світло увімкну�
 ## Дивіться також
 
 - [Поліфіл `String.prototype.split` у складі `core-js`, з виправленнями й реалізацією сучасної логіки, як то підтримки `Symbol.split`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
+- Посібник [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_expressions)
 - {{jsxref("String.prototype.charAt()")}}
 - {{jsxref("String.prototype.indexOf()")}}
 - {{jsxref("String.prototype.lastIndexOf()")}}
 - {{jsxref("Array.prototype.join()")}}
-- Посібник [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_expressions)
