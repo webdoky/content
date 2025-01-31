@@ -66,7 +66,7 @@ JSON.stringify(value, replacer, space)
     - якщо це масив, то індекс в масиві, у вигляді рядка
     - якщо `JSON.stringify()` напряму викликається на об'єкті, то порожній рядок
 
-    Усі об'єкти {{jsxref("Temporal")}} мають реалізацію метода `toJSON()`, який повертає рядок (це те саме, що викликати `toString()`). Таким чином, вони серіалізуються як рядки. Подібним чином, об'єкти {{jsxref("Date")}} мають реалізацію `toJSON()`, яка повертає те саме, що й [`toISOString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).
+    Усі об'єкти {{jsxref("Temporal")}} мають реалізацію метода `toJSON()`, який повертає рядок (такий самий, що і при виклику `toString()`). Таким чином, вони будуть серіалізуватися як рядки. Подібним чином, об'єкти {{jsxref("Date")}} мають реалізацію `toJSON()`, яка повертає те саме, що й [`toISOString()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).
 
   - Обробляються лише [власні перелічувані властивості](/uk/docs/Web/JavaScript/Enumerability_and_ownership_of_properties). А отже, {{jsxref("Map")}}, {{jsxref("Set")}} тощо – стануть `"{}"`. Можна застосувати параметр [`replacer`](#parametr-replacer), аби серіалізувати їх у щось більш корисне.
 
