@@ -84,7 +84,7 @@ page-type: guide
 - [Об'єкт `String`](/uk/docs/Web/JavaScript/Guide/Numbers_and_strings#obiekt-string)
 - [Шаблонні літерали](/uk/docs/Web/JavaScript/Guide/Numbers_and_strings#shablonni-literaly)
 
-## Подання дат і часу
+## Представлення дат і часу
 
 Огляд: [Подання дат і часу](/uk/docs/Web/JavaScript/Guide/Representing_dates_times)
 
@@ -158,7 +158,7 @@ page-type: guide
 
 Огляд: [Інтернаціоналізація](/uk/docs/Web/JavaScript/Guide/Internationalization)
 
-- [Форматування дат і часу](/uk/docs/Web/JavaScript/Guide/Internationalization#formatuvannia-daty-ta-chasu)
+- [Форматування дат і часу](/uk/docs/Web/JavaScript/Guide/Internationalization#formatuvannia-dat-i-chasu)
 - [Форматування чисел](/uk/docs/Web/JavaScript/Guide/Internationalization#formatuvannia-chysel)
 - [Звіряння](/uk/docs/Web/JavaScript/Guide/Internationalization#zviriannia)
 
