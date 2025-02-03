@@ -1,5 +1,5 @@
 ---
-title: "Атрибут HTML: autocomplete"
+title: Атрибут HTML – autocomplete
 short-title: autocomplete
 slug: Web/HTML/Attributes/autocomplete
 page-type: html-attribute
@@ -379,5 +379,5 @@ TN99 8ZZ
 - Елемент {{htmlelement("select")}}
 - Елемент {{htmlelement("textarea")}}
 - Елемент {{htmlelement("form")}}
-- [Форми HTML](/uk/docs/Learn/Forms)
+- [Форми HTML](/uk/docs/Learn_web_development/Extensions/Forms)
 - Усі [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes)
