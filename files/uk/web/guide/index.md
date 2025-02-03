@@ -12,23 +12,23 @@ page-type: landing-page
 
 ## HTML
 
-- [Структурування Вебу за допомогою HTML](/uk/docs/Learn/HTML)
+- [Структурування Вебу за допомогою HTML](/uk/docs/Learn_web_development/Core/Structuring_content)
   - : Область вивчення HTML пропонує підручники, які допомагають вивчити HTML з нуля.
-- [Основи HTML](/uk/docs/Learn/Getting_started_with_the_web/HTML_basics)
+- [Основи HTML](/uk/docs/Learn_web_development/Getting_started/Your_first_website/Creating_the_content)
   - : Ця стаття надає базове розуміння HTML. Прочитавши цей посібник, ви зможете далі ознайомитися з матеріалом в Області вивчення HTML.
 
 ## CSS
 
-- [Вчимося стилізувати HTML засобами CSS](/uk/docs/Learn/CSS)
+- [Вчимося стилізувати HTML засобами CSS](/uk/docs/Learn_web_development/Core/Styling_basics)
   - : Наш повний посібник з CSS, який допоможе вивчити CSS з нуля, від перших кроків до стилізації тексту, створення макетів і багатьох інших речей.
-- [Посібники з компонування CSS](/uk/docs/Web/Guide/CSS/CSS_Layout)
+- [Посібники з компонування CSS](/uk/docs/Web/CSS/Guides)
   - : У WebDoky є чимало посібників з Компонування CSS, а ця сторінка збирає їх всі докупи.
 - [Застосування анімацій CSS](/uk/docs/Web/CSS/CSS_animations/Using_CSS_animations)
   - : Завдяки анімаціям CSS можна анімувати переходи від одного налаштування стилю CSS до іншого. Цей посібник допоможе ознайомитися з властивостями анімації.
 
 ## JavaScript
 
-- [Область вивчення JavaScript](/uk/docs/Learn/JavaScript)
+- [Область вивчення JavaScript](/uk/docs/Learn_web_development/Core/Scripting)
   - : Чи ви цілковитий початківець, чи сподіваєтеся оновити свої навички, це місце, з якого варто почати.
 
 ## Мультимедіа
@@ -54,7 +54,7 @@ page-type: landing-page
 
 ## Мобільна веброзробка
 
-- [Мобільна веброзробка](/uk/docs/Learn/CSS/CSS_layout/Responsive_Design)
+- [Навчання – Чуйний дизайн](/uk/docs/Learn_web_development/Core/CSS_layout/Responsive_Design)
   - : Ця стаття надає огляд деяких основних технік, необхідних для створення вебсайтів, що працюють добре на мобільних пристроях.
 
 ## Шрифти
@@ -66,5 +66,5 @@ page-type: landing-page
 
 ## Розробка користувацьких інтерфейсів
 
-- [Користувацьке введення та контрольні елементи](/uk/docs/Learn/Forms/User_input_methods)
+- [Користувацьке введення та контрольні елементи](/uk/docs/Learn_web_development/Extensions/Forms/User_input_methods)
   - : Користувацьке введення не обмежується мишею та клавіатурою: згадайте, наприклад, про сенсорні екрани. Ця стаття надає рекомендації щодо керування користувацьким введенням та реалізації контрольних елементів у відкритих вебзастосунках, а також ЧаПи, реальні приклади та посилання на додаткову інформацію для тих, хто потребує більш детальної інформації про технології за лаштунками.
