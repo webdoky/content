@@ -5,5 +5,9 @@
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit"
-  }
+  },
+  "github.copilot.enable": {
+    "markdown": true
+  },
+  "cSpell.blockCheckingWhenTextChunkSizeGreaterThan": 5000
 }
