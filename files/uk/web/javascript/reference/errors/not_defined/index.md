@@ -23,7 +23,8 @@ ReferenceError: Can't find variable: x (Safari)
 
 Десь відбувається звертання до відсутньої змінної. Така змінна повинна бути оголошена, тобто слід пересвідчитися, що вона доступна для поточних сценарію та [області видимості](/uk/docs/Glossary/Scope).
 
-> **Примітка:** При завантаженні бібліотеки (наприклад, jQuery) слід пересвідчитися, що вона завантажується до звертання до змінних цієї бібліотеки, як то "$". Слід поставити елемент {{HTMLElement("script")}}, котрий завантажує цю бібліотеку, до власного коду, що її використовує.
+> [!NOTE]
+> При завантаженні бібліотеки (наприклад, jQuery) слід пересвідчитися, що вона завантажується до звертання до змінних цієї бібліотеки, як то "$". Слід поставити елемент {{HTMLElement("script")}}, котрий завантажує цю бібліотеку, до власного коду, що її використовує.
 
 ## Приклади
 
@@ -71,4 +72,4 @@ console.log(numbers()); // 5
 
 - [Область видимості](/uk/docs/Glossary/Scope)
 - [Оголошення змінних у Посібнику JavaScript](/uk/docs/Web/JavaScript/Guide/Grammar_and_types#oholoshennia-zminnykh)
-- [Функційна область видимості в Посібнику JavaScript](/uk/docs/Web/JavaScript/Guide/Functions#funktsiina-oblast-vydymosti)
+- [Функційна область видимості в Посібнику JavaScript](/uk/docs/Web/JavaScript/Guide/Functions#funktsiini-oblasti-vydymosti-ta-zamykannia)
