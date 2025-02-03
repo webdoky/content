@@ -10,7 +10,7 @@ page-type: landing-page
 
 Помилки, виведені у вебконсолі, можуть містити посилання на відповідну сторінку нижче, щоб допомогти швидко зрозуміти проблему у коді.
 
-Вступний підручник початківця з усунення помилок JavaScript дивіться [Що пішло не так? Зневадження JavaScript](/uk/docs/Learn/JavaScript/First_steps/What_went_wrong).
+Вступний підручник початківця з усунення помилок JavaScript дивіться [Що пішло не так? Зневадження JavaScript](/uk/docs/Learn_web_development/Core/Scripting/What_went_wrong).
 
 ## Список помилок
 
