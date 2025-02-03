@@ -240,7 +240,6 @@ const parsedData = JSON.parse(str, (key, value, context) => {
 
 ## Дивіться також
 
-- {{jsxref("Date.prototype.toJSON()")}}
 - [Порівнювач JSON](https://json-diff.com/)
 - [Прикрашальник і редактор JSON](https://jsonbeautifier.org/)
 - [Розбирач JSON](https://jsonparser.org/)
