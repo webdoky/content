@@ -67,7 +67,7 @@ browser-compat: javascript.builtins.Set
       <td>
         <math><semantics><mrow><mi>A</mi><mo>∪</mo><mi>B</mi></mrow><annotation encoding="TeX">A\cup B</annotation></semantics></math>
       </td>
-      <td style="margin:0;padding:0"><img src="union/diagram.svg" alt="Діаграма Венна, в якій два кола перетинаються. Симетрична різниця між A і B – це область, охоплена одним або двома колами." style="margin:0;border:0;border-radius:0" width="200" /></td>
+      <td style="margin:0;padding:0"><img src="union/diagram.svg" alt="Діаграма Венна, в якій два кола перетинаються. Об'єднання A і B – це область, охоплена одним або обома колами." style="margin:0;border:0;border-radius:0" width="200" /></td>
     </tr>
     <tr>
       <td>{{jsxref("Set/isDisjointFrom", "A.isDisjointFrom(B)")}}</td>
@@ -118,12 +118,13 @@ const b = new Map([
 console.log(a.union(b)); // Set(4) {1, 2, 3, 4}
 ```
 
-> **Примітка:** Протокол множиноподібності закликає для видачі елементів метод `keys()`, а не [`[Symbol.iterator]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Set/Symbol.iterator). Це зроблено для того, щоб відображення були дієвими множиноподібними об'єктами, адже в випадку відображень ітератор видає _записи_, проте метод `has()` приймає _ключі_.
+> [!NOTE]
+> Протокол множиноподібності закликає для видачі елементів метод `keys()`, а не [`[Symbol.iterator]()`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Set/Symbol.iterator). Це зроблено для того, щоб відображення були дієвими множиноподібними об'єктами, адже в випадку відображень ітератор видає _записи_, проте метод `has()` приймає _ключі_.
 > [Масиви](/uk/docs/Web/JavaScript/Reference/Global_Objects/Array) не є множиноподібними, тому що не мають метода `has()` і властивості `size`, а їх метод `keys()` видає індекси, а не елементи. Об'єкти {{jsxref("WeakSet")}} також не є множиноподібними, оскільки не мають метода `keys()`.
 
 ### Set-подібні API браузера
 
-**`Set`-подібні об'єкти** браузера (або "множиноподібні об'єкти") - це інтерфейси [API Вебу](/uk/docs/Web/API), що з багатьох боків поводяться подібно до `Set`.
+**`Set`-подібні об'єкти** браузера (або "множиноподібні об'єкти") – це інтерфейси [API Вебу](/uk/docs/Web/API), що з багатьох боків поводяться подібно до `Set`.
 
 Як і в `Set`, елементи можуть бути ітеровані в тому ж порядку, в якому вони додані до такого об'єкта.
 Також `Set`-подібні об'єкти та `Set` мають властивості та методи, що поділяють однакові назви та поведінку.
