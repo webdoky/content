@@ -149,3 +149,4 @@ console.log(
 
 - [Поліфіл `Intl.NumberFormat` у складі FormatJS](https://formatjs.github.io/docs/polyfills/intl-numberformat/)
 - {{jsxref("Intl")}}
+- {{jsxref("Number.prototype.toLocaleString()")}}
