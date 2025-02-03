@@ -135,4 +135,4 @@ input::placeholder {
 
 - Псевдоклас {{cssxref(":placeholder-shown")}} оформлює елемент, який _має_ активний заповнювач.
 - Споріднені елементи HTML: {{HTMLElement("input")}}, {{HTMLElement("textarea")}}
-- [Форми HTML](/uk/docs/Learn/Forms)
+- [Форми HTML](/uk/docs/Learn_web_development/Extensions/Forms)
