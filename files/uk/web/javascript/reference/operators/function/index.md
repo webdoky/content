@@ -125,20 +125,175 @@ button.addEventListener("click", function (event) {
 });
 ```
 
-### Використання зразу закличного виразу функції (IIFE)
+### Використання негайно закличного виразу-функції (IIFE)
 
-Створюється та викликається анонімна функція:
+IIFE є поширеним патерном, що вживається для виконання довільної кількості інструкцій у власній області видимості (і, можливо, повернення значення), в місці, де повинен бути лише один вираз. Чимало традиційних використань IIFE застаріли у зв'язку з новими синтаксичними можливостями, наприклад, [модулями](/uk/docs/Web/JavaScript/Guide/Modules) і [оголошеннями з блоковою областю видимості](/uk/docs/Web/JavaScript/Reference/Statements/let). Самі IIFE тепер частіше пишуться за допомогою [стрілкових функцій](/uk/docs/Web/JavaScript/Reference/Functions/Arrow_functions), але концепція залишається тією ж. Загалом IIFE мають такий вигляд:
 
-```js-nolint
+```js
+// стандартний IIFE
 (function () {
-  console.log("Код працює!");
+  // інструкції…
 })();
 
-// або
+// IIFE з аргументами
+(function (a, b) {
+  console.log(a + b);
+})(1, 2); // виводить 3
 
-!function () {
-  console.log("Код працює!");
-}();
+
+// IIFE використовується для ініціалізації змінної
+const value = (() => {
+  const randomValue = Math.random();
+  if (randomValue > 0.5) {
+    return "лік";
+  } else {
+    return "лик";
+  }
+}());
+```
+
+Тут наводяться кілька варіантів застосування з прикладами.
+
+### Уникання забруднення глобального простору імен у коді сценаріїв
+
+Область видимості найвищого рівня є спільною для всіх сценаріїв, вона може вміщати чимало функцій і глобальних змінних з різних файлів, тож аби уникнути конфліктів назв, важливо обмежувати число назв, оголошених глобально (це є значно меншою проблемою в [модулях](/uk/docs/Web/JavaScript/Guide/Modules#inshi-vidminnosti-mizh-moduliamy-ta-klasychnymy-stsenariiamy), але іноді обмеження області видимості тимчасових змінних досі є корисним, особливо коли файл дуже великий). Якщо є деякий ініціалізаційний код, який немає потреби використовувати повторно, можна скористатися патерном IIFE, і це краще, ніж використання оголошення функції або виразу-функції, оскільки такий підхід гарантує, що код виконується лише в одному місці один раз.
+
+```js
+// найвищий рівень сценарію (не модуля)
+
+var globalVariable = (() => {
+  // якийсь ініціалізаційний код
+  let firstVariable = something();
+  let secondVariable = somethingElse();
+  return firstVariable + secondVariable;
+})();
+
+// до firstVariable і secondVariable не можна звернутися поза тілом функції.
+```
+
+### Патерн модуля
+
+Також можна скористатися IIFE, аби створювати приватні та публічні змінні та методи. Про складніше використання патерну модуля та інших варіантів використання IIFE можна прочитати в книзі Addy Osmani "Learning JavaScript Design Patterns".
+
+```js
+const makeWithdraw = (balance) =>
+  ((copyBalance) => {
+    let balance = copyBalance; // Ця змінна є приватною
+    const doBadThings = () => {
+      console.log("Я зроблю твоєму гаманцеві зле");
+    };
+    doBadThings();
+    return {
+      withdraw(amount) {
+        if (balance >= amount) {
+          balance -= amount;
+          return balance;
+        }
+        return "Недостатньо коштів";
+      },
+    };
+  })(balance);
+
+const firstAccount = makeWithdraw(100); // "Я зроблю твоєму гаманцеві зле"
+console.log(firstAccount.balance); // undefined
+console.log(firstAccount.withdraw(20)); // 80
+console.log(firstAccount.withdraw(30)); // 50
+console.log(firstAccount.doBadThings); // undefined; цей метод – приватний
+const secondAccount = makeWithdraw(20); // "Я зроблю твоєму гаманцеві зле"
+console.log(secondAccount.withdraw(30)); // "Недостатньо коштів"
+console.log(secondAccount.withdraw(20)); // 0
+```
+
+### Цикл for з var до ES6
+
+Наступне застосування IIFE можна побачити в старому коді, написаному до запровадження оголошень `let` і `const` з блоковою областю видимості. У разі оператора `var` є лише функційні та глобальна області видимості.
+Уявімо, що треба створити 2 кнопки з текстом Кнопка 0 та Кнопка 1, і коли на них
+клацають, вони мають виводити 0 та 1. Наступний код не працює:
+
+```js
+for (var i = 0; i < 2; i++) {
+  const button = document.createElement("button");
+  button.innerText = `Кнопка ${i}`;
+  button.onclick = function () {
+    console.log(i);
+  };
+  document.body.appendChild(button);
+}
+console.log(i); // 2
+```
+
+Бувши клацнутими, і кнопка Кнопка 0, і кнопка Кнопка 1 виводять 2, тому що `i` є глобальною,
+і її останнє значення – 2. Аби виправити цю проблему до ES6, можна було б скористатися патерном IIFE:
+
+```js
+for (var i = 0; i < 2; i++) {
+  const button = document.createElement("button");
+  button.innerText = `Кнопка ${i}`;
+  button.onclick = (function (copyOfI) {
+    return function () {
+      console.log(copyOfI);
+    };
+  })(i);
+  document.body.appendChild(button);
+}
+console.log(i); // 2
+```
+
+Бувши клацнутими, кнопки Кнопка 0 та Кнопка 1 виводять 0 та 1 відповідно. За допомогою інструкції `let` можна зробити так:
+
+```js
+for (let i = 0; i < 2; i++) {
+  const button = document.createElement("button");
+  button.innerText = `Кнопка ${i}`;
+  button.onclick = function () {
+    console.log(i);
+  };
+  document.body.appendChild(button);
+}
+console.log(i); // Uncaught ReferenceError: i is not defined.
+```
+
+Бувши клацнутими, ці кнопки виводять 0 і 1.
+
+### Інструкції контролю плину виконання на місці виразів
+
+IIFE дає змогу використовувати мовні конструкції, такі як `switch`, у виразах.
+
+```js
+someObject.property = (() => {
+  switch (someVariable) {
+    case 0:
+      return "нуль";
+    case 1:
+      return "один";
+    default:
+      return "невідомо";
+  }
+})();
+```
+
+Цей підхід може бути особливо корисним, коли хочеться зробити змінну `const`, але
+змушені використовувати `let` або `var` під час ініціалізації:
+
+```js
+let onlyAssignedOnce;
+try {
+  onlyAssignedOnce = someFunctionThatMightThrow();
+} catch (e) {
+  onlyAssignedOnce = null;
+}
+```
+
+За допомогою IIFE можна зробити цю змінну `const`:
+
+```js
+const onlyAssignedOnce = (() => {
+  try {
+    return someFunctionThatMightThrow();
+  } catch (e) {
+    return null;
+  }
+})();
 ```
 
 ## Специфікації
