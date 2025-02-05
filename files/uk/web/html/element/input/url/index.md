@@ -228,7 +228,7 @@ browser-compat: html.elements.input.type_url
 
 Браузери, що підтримують тип поля `url`, автоматично надають валідацію, щоб пересвідчитися, що в поле введено лише такий текст, який відповідає стандартному форматові URL.
 
-Синтаксис URL – досить складна річ. Він визначений у стандарті WHATWG [Живий стандарт URL](https://url.spec.whatwg.org/), а для новачків описаний у статті [Що таке URL?](/uk/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL)
+Синтаксис URL – досить складна річ. Він визначений у стандарті WHATWG [Живий стандарт URL](https://url.spec.whatwg.org/), а для новачків описаний у статті [Що таке URL?](/uk/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_URL)
 
 ### Обов'язковість URL
 
@@ -393,8 +393,7 @@ input:valid + span::after {
 
 ## Дивіться також
 
-- [Посібник з форм HTML](/uk/docs/Learn/HTML/Forms)
+- [Посібник з форм HTML](/uk/docs/Learn_web_development/Extensions/Forms)
 - {{HTMLElement("input")}}
 - [`<input type="tel">`](/uk/docs/Web/HTML/Element/input/tel)
 - [`<input type="email">`](/uk/docs/Web/HTML/Element/input/email)
-- [Сумісність властивостей CSS](/uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls)
