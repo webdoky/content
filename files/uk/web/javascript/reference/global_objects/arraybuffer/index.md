@@ -21,7 +21,7 @@ browser-compat: javascript.builtins.ArrayBuffer
 
 Об'єкти `ArrayBuffer` легко можуть мати змінний розмір, завдяки наданню налаштування `maxByteLength` при виклику конструктора {{jsxref("ArrayBuffer/ArrayBuffer", "ArrayBuffer()")}}. Дізнатися, чи має `ArrayBuffer` змінний розмір, і який його максимум, можна шляхом звертання до його властивостей {{jsxref("ArrayBuffer/resizable", "resizable")}} і {{jsxref("ArrayBuffer/maxByteLength", "maxByteLength")}} відповідно. Новий розмір `ArrayBuffer` змінного розміру можна задати за допомогою виклику {{jsxref("ArrayBuffer/resize", "resize()")}}. Нові байти ініціалізуються 0.
 
-Завдяки цим можливостям зміна розміру `ArrayBuffer` ефективніша: без них довелось би створювати копію буфера з новим розміром. Це також дає JavaScript паритет щодо WebAssembly у цьому відношенні (лінійна пам'ять Wasm може змінювати розмір за допомогою [`WebAssembly.Memory.prototype.grow()`](/uk/docs/WebAssembly/JavaScript_interface/Memory/grow)).
+Завдяки цим можливостям зміна розміру `ArrayBuffer` ефективніша: без них довелось би створювати копію буфера з новим розміром. Це також дає JavaScript паритет щодо WebAssembly у цьому відношенні (лінійна пам'ять Wasm може змінювати розмір за допомогою [`WebAssembly.Memory.prototype.grow()`](/uk/docs/WebAssembly/Reference/JavaScript_interface/Memory/grow)).
 
 ### Перенесення ArrayBuffer
 
