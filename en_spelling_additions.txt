@@ -1,5 +1,3 @@
-nolint
-webdoky
 Adlam
 Ahom
 APNG
@@ -26,6 +24,7 @@ Miata
 mozactionhint
 nolint
 Paciello
+quicktime
 SESAC
 SMIL
 SmooshGate
