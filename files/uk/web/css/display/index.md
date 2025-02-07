@@ -457,7 +457,8 @@ updateDisplay();
 
 ## Дивіться також
 
-- [Блокове та рядкове компонування у звичайному потоці](/uk/docs/Web/CSS/CSS_flow_layout/Block_and_inline_layout_in_normal_flow)
-- [Вступ до контекстів форматування](/uk/docs/Web/CSS/CSS_flow_layout/Introduction_to_formatting_contexts)
 - {{CSSxRef("visibility")}}, {{CSSxRef("float")}}, {{CSSxRef("position")}}
 - {{CSSxRef("grid")}}, {{CSSxRef("flex")}}
+- Атрибут SVG {{SVGAttr("display")}}
+- [Блокове та рядне компонування у звичайному потоці](/uk/docs/Web/CSS/CSS_flow_layout/Block_and_inline_layout_in_normal_flow)
+- [Вступ до контекстів форматування](/uk/docs/Web/CSS/CSS_flow_layout/Introduction_to_formatting_contexts)
