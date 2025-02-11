@@ -20,6 +20,7 @@ disableremoteplayback
 divs
 Emscripten
 enumerables
+Exampleville
 ICNS
 Igalia
 IIFE
@@ -45,5 +46,7 @@ UNSC
 Vorbis
 webdoky
 WHATWG
+Whereshire
+Winchelsea
 Yari
 ZWNBSP

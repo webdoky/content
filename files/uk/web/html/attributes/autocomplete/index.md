@@ -1,5 +1,5 @@
 ---
-title: "Атрибут HTML: autocomplete"
+title: Атрибут HTML – autocomplete
 short-title: autocomplete
 slug: Web/HTML/Attributes/autocomplete
 page-type: html-attribute
@@ -187,7 +187,7 @@ browser-compat:
 - `address-level2`
   - : Другий [адміністративний рівень](#administratyvni-rivni-v-adresakh) в адресах, що мають щонайменше два рівні. У країнах з двома адміністративними рівнями це зазвичай буде місто, селище, село або інше місце, де знаходиться адреса.
 - `address-level1`
-  - : Перший [адміністративний рівень](#administratyvni-rivni-v-adresakh) адреси. Зазвичай це провінція, де знаходиться адреса. У США це буде штат. У Швейцарії – кантон. У Великій Британії – поштове місто.
+  - : Перший [адміністративний рівень](#administratyvni-rivni-v-adresakh) адреси. Зазвичай це провінція, де знаходиться адреса. У США це буде штат. У Швейцарії – кантон. У Великій Британії – графство.
 - `country`
   - : Код країни або території.
 - `country-name`
@@ -291,16 +291,18 @@ Exampleville CA 95555
 
 #### Великобританія
 
-Форми адреси у Великобританії повинні містити один рівень адреси та один, два або три рядки адреси, в залежності від адреси. Повна адреса має такий вигляд:
+Форми адреси у Великобританії повинні містити один або два рівні адреси та один, два або три рядки адреси, в залежності від адреси. Повна адреса має такий вигляд:
 
 103 Frogmarch Street
 Upper-Wapping
 Winchelsea
+Whereshire
 TN99 8ZZ
 
 Рівні адреси:
 
-- `address-level1`: Поштове місто – у цьому випадку "Winchelsea".
+- `address-level1`: Графство – у цьому випадку "Winchelsea".
+- `address-level2`: Поштове місто — у цьому випадку "Winchelsea".
 - `address-line2`: Місцевість – у цьому випадку "Upper-Wapping".
 - `address-line1`: Конкретика щодо будинку та вулиці – "103 Frogmarch Street".
 
@@ -379,5 +381,5 @@ TN99 8ZZ
 - Елемент {{htmlelement("select")}}
 - Елемент {{htmlelement("textarea")}}
 - Елемент {{htmlelement("form")}}
-- [Форми HTML](/uk/docs/Learn/Forms)
+- [Форми HTML](/uk/docs/Learn_web_development/Extensions/Forms)
 - Усі [глобальні атрибути](/uk/docs/Web/HTML/Global_attributes)
