@@ -128,4 +128,5 @@ text-decoration: unset;
 
 - Окремі властивості text-decoration: {{cssxref("text-decoration-line")}}, {{cssxref("text-decoration-color")}}, {{cssxref("text-decoration-style")}}, and {{cssxref("text-decoration-thickness")}}.
 - Властивості {{cssxref("text-decoration-skip-ink")}}, {{cssxref("text-underline-offset")}} і {{cssxref("text-underline-position")}} також впливають на text-decoration, але не включені в скорочення.
-- Атрибут {{cssxref("list-style")}} контролює вигляд елементів у списках HTML {{HTMLElement("ol")}} та {{HTMLElement("ul")}}.
+- Властивість {{cssxref("list-style")}} контролює вигляд елементів у списках HTML {{HTMLElement("ol")}} та {{HTMLElement("ul")}}.
+- Атрибут SVG {{SVGAttr("text-decoration")}}
