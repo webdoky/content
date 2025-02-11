@@ -28,20 +28,20 @@ browser-compat: html.elements.img
 
 > [!NOTE]
 >
-> [Настанови з типів файлів та форматів](/uk/docs/Web/Media/Formats/Image_types) надають всебічну інформацію про формати зображень та їх підтримку веббраузерами.
+> [Посібник з типів файлів та форматів](/uk/docs/Web/Media/Guides/Formats/Image_types) надає всебічну інформацію про формати зображень та їх підтримку веббраузерами.
 > Цей розділ – лишень стислий конспект!
 
 Формати файлів зображень, що найбільш поширені у Вебі:
 
-- [APNG (анімована переносна мережева графіка)](/uk/docs/Web/Media/Formats/Image_types#apng-animovana-perenosna-merezheva-hrafika) — Добрий вибір для послідовностей анімації без втрат (GIF має меншу ефективність)
-- [AVIF (формат файлів зображень AV1)](/uk/docs/Web/Media/Formats/Image_types#zobrazhennia-avif) — У зв'язку з високою ефективністю є добрим вибором і для простих, і для анімованих зображень.
-- [GIF (формат обміну графікою)](/uk/docs/Web/Media/Formats/Image_types#gif-format-obminu-hrafikoiu) — Добрий вибір для _простих_ зображень та анімацій.
-- [JPEG (зображення Об'єднаної експертної групи з фотографій)](/uk/docs/Web/Media/Formats/Image_types#jpeg-zobrazhennia-obiednanoi-ekspertnoi-hrupy-z-fotohrafii) — Добрий вибір для стиснення зі втратами нерухомих зображень (наразі найпопулярніший).
-- [PNG (переносна мережева графіка)](/uk/docs/Web/Media/Formats/Image_types#png-perenosna-merezheva-hrafika) — Добрий вибір для стиснення без втрат нерухомих зображень (дещо краща якість, ніж в JPEG).
-- [SVG (масштабована векторна графіка)](/uk/docs/Web/Media/Formats/Image_types#svg-masshtabovana-vektorna-hrafika) — Векторний формат зображень. Його слід використовувати для зображень, що повинні бути точно відтворені в різних розмірах.
-- [WebP (формат вебзображень)](/uk/docs/Web/Media/Formats/Image_types#zobrazhennia-webp) — Чудовий варіант як для простих, так і анімованих зображень
+- [APNG (анімована переносна мережева графіка)](/uk/docs/Web/Media/Guides/Formats/Image_types#apng-animovana-perenosna-merezheva-hrafika) — Добрий вибір для послідовностей анімації без втрат (GIF має меншу ефективність)
+- [AVIF (формат файлів зображень AV1)](/uk/docs/Web/Media/Guides/Formats/Image_types#zobrazhennia-avif) — У зв'язку з високою ефективністю є добрим вибором і для простих, і для анімованих зображень.
+- [GIF (формат обміну графікою)](/uk/docs/Web/Media/Guides/Formats/Image_types#gif-format-obminu-hrafikoiu) — Добрий вибір для _простих_ зображень та анімацій.
+- [JPEG (зображення Об'єднаної експертної групи з фотографій)](/uk/docs/Web/Media/Guides/Formats/Image_types#jpeg-zobrazhennia-obiednanoi-ekspertnoi-hrupy-z-fotohrafii) — Добрий вибір для стиснення зі втратами нерухомих зображень (наразі найпопулярніший).
+- [PNG (переносна мережева графіка)](/uk/docs/Web/Media/Guides/Formats/Image_types#png-perenosna-merezheva-hrafika) — Добрий вибір для стиснення без втрат нерухомих зображень (дещо краща якість, ніж в JPEG).
+- [SVG (масштабована векторна графіка)](/uk/docs/Web/Media/Guides/Formats/Image_types#svg-masshtabovana-vektorna-hrafika) — Векторний формат зображень. Його слід використовувати для зображень, що повинні бути точно відтворені в різних розмірах.
+- [WebP (формат вебзображень)](/uk/docs/Web/Media/Guides/Formats/Image_types#zobrazhennia-webp) — Чудовий варіант як для простих, так і анімованих зображень
 
-Формати штибу [WebP](/uk/docs/Web/Media/Formats/Image_types#zobrazhennia-webp) та [AVIF](/uk/docs/Web/Media/Formats/Image_types#zobrazhennia-avif) є рекомендованими, адже вони мають набагато кращу ефективність, ніж PNG, JPEG, GIF, як для нерухомих, так для анімованих зображень.
+Формати штибу [WebP](/uk/docs/Web/Media/Guides/Formats/Image_types#zobrazhennia-webp) та [AVIF](/uk/docs/Web/Media/Guides/Formats/Image_types#zobrazhennia-avif) є рекомендованими, адже вони мають набагато кращу ефективність, ніж PNG, JPEG, GIF, як для нерухомих, так для анімованих зображень.
 
 SVG залишається рекомендованим форматом для зображень, що повинні бути точно відтворені в різних розмірах.
 
@@ -523,5 +523,5 @@ SVG залишається рекомендованим форматом для 
 - {{cssxref("object-fit")}}, {{cssxref("object-position")}}, {{cssxref("image-orientation")}}, {{cssxref("image-rendering")}} й {{cssxref("image-resolution")}} – властивості, пов'язані з зображеннями.
 - Інтерфейс {{domxref("HTMLImageElement")}} для цього елемента
 - [Зображення HTML](/uk/docs/Learn_web_development/Core/Structuring_content/HTML_images)
-- [Тип файлу зображення й настанови щодо форматів](/uk/docs/Web/Media/Formats/Image_types)
+- [Тип файлу зображення й настанови щодо форматів](/uk/docs/Web/Media/Guides/Formats/Image_types)
 - [Чуйні зображення](/uk/docs/Web/HTML/Responsive_images)

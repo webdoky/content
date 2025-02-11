@@ -52,7 +52,7 @@ browser-compat: html.elements.input.type_submit
 - `text/plain`
   - : Простий текст; найкорисніше лише для зневадження, щоб можна було легко бачити дані до подання.
 
-Якщо атрибут `formenctype` задано, то його значення відкидає атрибут [`action`](/uk/docs/Web/HTML/Element/form#action) форми-власника.
+Якщо атрибут `formenctype` задано, то його значення відкидає атрибут [`enctype`](/uk/docs/Web/HTML/Element/form#enctype) форми-власника.
 
 Цей атрибут також доступний на елементах [`<input type="image">`](/uk/docs/Web/HTML/Element/input/image) і {{HTMLElement("button")}}.
 
@@ -120,7 +120,7 @@ browser-compat: html.elements.input.type_submit
 
 Спробуйте ввести в текстове поле трохи тексту, а потім подати форму.
 
-При поданні пара ім'я-значення надсилається на сервер. У цьому прикладі ця пара буде `text=user-text`, де "user-text" – це текст, введений користувачем, закодований для збереження спеціальних символів. Те, де і як подаються дані, залежать від налаштувань `<form>`; дивіться більше деталей в [Надсиланні даних форми](/uk/docs/Learn/Forms/Sending_and_retrieving_form_data).
+При поданні пара ім'я-значення надсилається на сервер. У цьому прикладі ця пара буде `text=user-text`, де "user-text" – це текст, введений користувачем, закодований для збереження спеціальних символів. Те, де і як подаються дані, залежать від налаштувань `<form>`; дивіться докладніше в [Надсиланні даних форми](/uk/docs/Learn_web_development/Extensions/Forms/Sending_and_retrieving_form_data).
 
 ### Додавання до кнопки подання комбінації клавіш
 
@@ -218,7 +218,6 @@ browser-compat: html.elements.input.type_submit
 ## Дивіться також
 
 - {{HTMLElement("input")}} та інтерфейс {{domxref("HTMLInputElement")}}, що його реалізовує.
-- [Форми та кнопки](/uk/docs/Learn/Forms/Basic_native_form_controls#spravzhni-knopky)
-- [Форми HTML](/uk/docs/Learn/Forms)
+- [Форми та кнопки](/uk/docs/Learn_web_development/Extensions/Forms/Basic_native_form_controls#spravzhni-knopky)
+- [Форми HTML](/uk/docs/Learn_web_development/Extensions/Forms)
 - Елемент {{HTMLElement("button")}}
-- [Сумісність властивостей CSS](/uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls)

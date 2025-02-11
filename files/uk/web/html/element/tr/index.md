@@ -429,7 +429,7 @@ th {
 
 ## Дивіться також
 
-- [Вивчення – Таблиці HTML](/uk/docs/Learn/HTML/Tables)
+- [Вивчення – Основи таблиць HTML](/uk/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics)
 - {{HTMLElement("caption")}}, {{HTMLElement("col")}}, {{HTMLElement("colgroup")}}, {{HTMLElement("table")}}, {{HTMLElement("tbody")}}, {{HTMLElement("td")}}, {{HTMLElement("tfoot")}}, {{HTMLElement("th")}}, {{HTMLElement("thead")}}: Інші елементи, пов'язані з таблицями
 - {{cssxref("background-color")}}: Властивість CSS для задання кольору фону кожної комірки ряду
 - {{cssxref("border")}}: Властивість CSS для керування межами комірок ряду

@@ -225,6 +225,7 @@ const [b, c, d] = obj;
 // Повернення 3
 // Уже досягнутий кінець (останній виклик повернув `done: true`),
 // тож `return` не викликається
+console.log([b, c, d]); // [1, 2, undefined]; значення, пов'язане з `done: true`, не є доступним
 
 for (const b of obj) {
   break;

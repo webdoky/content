@@ -7,7 +7,7 @@ browser-compat: javascript.builtins.BigInt
 
 {{JSRef}}
 
-Значення **`BigInt`** (велике ціле) представляють числові значення, котрі [завеликі](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER) для представлення {{Glossary("Primitive", "примітивом")}} `number`.
+Значення **`BigInt`** (велике ціле) представляють цілочислові значення, котрі [завеликі](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER) або [замалі](/uk/docs/Web/JavaScript/Reference/Global_Objects/Number/MIN_SAFE_INTEGER) для представлення {{Glossary("Primitive", "примітивом")}} `number`.
 
 ## Опис
 

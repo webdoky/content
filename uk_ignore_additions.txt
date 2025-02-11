@@ -28,7 +28,3 @@
 ТіБ
 Трехлеба
 Хейсей
-Exampleville
-webauthn
-Whereshire
-Winchelsea
