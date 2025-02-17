@@ -102,7 +102,7 @@ browser-compat: html.elements.textarea
 
 `<textarea>` є [заміщеним елементом](/uk/docs/Web/CSS/Replaced_element): він має природні розміри, як растрове зображення. Усталено його значення {{cssxref("display")}} – `inline-block`. У порівнянні з іншими елементами форми його порівняно легко оформлювати, адже його рамкову модель, шрифти, колірну гаму тощо легко змінити за допомогою звичайного CSS.
 
-[Оформлення форм HTML](/uk/docs/Learn/Forms/Styling_web_forms) пропонує трохи корисних порад щодо оформлення елементів `<textarea>`.
+[Оформлення форм HTML](/uk/docs/Learn_web_development/Extensions/Forms/Styling_web_forms) пропонує трохи корисних порад щодо оформлення елементів `<textarea>`.
 
 ### Ненадійність базової лінії
 
