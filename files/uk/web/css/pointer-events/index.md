@@ -137,8 +137,7 @@ a[href="http://example.com"]
 
 ## Дивіться також
 
+- {{cssxref("user-select")}}
 - Атрибут SVG {{SVGAttr("pointer-events")}}
 - Атрибут SVG {{SVGAttr("visibility")}}
-- API {{domxref("PointerEvent")}}
-- [Специфікації WebKit PointerEventsProperty](https://webkit.org/specs/PointerEventsProperty.html), розширені для використання у вмісті (X)HTML
-- {{cssxref("user-select")}} – контролює, чи може користувач виділяти текст
+- {{domxref("PointerEvent")}}

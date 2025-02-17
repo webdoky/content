@@ -196,8 +196,8 @@ img:nth-of-type(2) {
 ```css
 #MDN-logo {
   border: 1px solid blue;
-  filter: drop-shadow(5px 5px 0 red) hue-rotate(180deg) drop-shadow(5px 5px 0
-        red);
+  filter: drop-shadow(5px 5px 0 red) hue-rotate(180deg)
+    drop-shadow(5px 5px 0 red);
 }
 ```
 
@@ -233,8 +233,9 @@ img:nth-of-type(2) {
 
 ## Дивіться також
 
-- Властивість CSS {{cssxref("backdrop-filter")}}
+- {{cssxref("backdrop-filter")}}
+- {{cssxref("mask")}}
+- Атрибут SVG {{SVGAttr("filter")}}
 - Модуль [композиції та змішування](/uk/docs/Web/CSS/CSS_compositing_and_blending) CSS, який містить властивості {{cssxref("background-blend-mode")}} і {{cssxref("mix-blend-mode")}}.
-- Властивість CSS {{cssxref("mask")}}
 - [SVG](/uk/docs/Web/SVG), включно з елементом {{SVGElement("filter")}} та атрибутом {{SVGAttr("filter")}}.
 - [Застосування ефектів SVG до вмісту HTML](/uk/docs/Web/SVG/Applying_SVG_effects_to_HTML_content)

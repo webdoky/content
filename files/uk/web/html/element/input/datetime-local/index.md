@@ -279,5 +279,4 @@ input:valid + span::after {
 - Узагальнений елемент {{HTMLElement("input")}}, а також інтерфейс, що використовується для роботи з ним, – {{domxref("HTMLInputElement")}}
 - [`<input type="date">`](/uk/docs/Web/HTML/Element/input/date) і [`<input type="time">`](/uk/docs/Web/HTML/Element/input/time)
 - [Формати дати й часу, що використовуються в HTML](/uk/docs/Web/HTML/Date_and_time_formats)
-- [Підручник з інтерфейсу вибору дати та часу](/uk/docs/Learn/Forms/HTML5_input_types#interfeis-vyboru-daty-ta-chasu)
-- [Сумісність властивостей CSS](/uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls)
+- [Підручник з інтерфейсу вибору дати та часу](/uk/docs/Learn_web_development/Extensions/Forms/HTML5_input_types#interfeis-vyboru-daty-ta-chasu)

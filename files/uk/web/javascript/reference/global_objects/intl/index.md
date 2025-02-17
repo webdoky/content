@@ -154,11 +154,6 @@ const formattedCount = new Intl.NumberFormat(navigator.languages).format(count);
 
 ## Дивіться також
 
-- {{jsxref("String.prototype.localeCompare()")}}
-- {{jsxref("Number.prototype.toLocaleString()")}}
-- {{jsxref("Date.prototype.toLocaleString()")}}
-- {{jsxref("Date.prototype.toLocaleDateString()")}}
-- {{jsxref("Date.prototype.toLocaleTimeString()")}}
 - {{domxref("Keyboard.getLayoutMap()")}}
 - {{domxref("navigator.language")}}
 - {{domxref("navigator.languages")}}

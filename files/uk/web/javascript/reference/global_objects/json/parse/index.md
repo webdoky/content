@@ -137,7 +137,7 @@ const jsonText = JSON.stringify(map, (key, value) =>
 console.log(jsonText);
 // [[1,"один"],[2,"два"],[3,"три"]]
 const map2 = JSON.parse(jsonText, (key, value) =>
-  Array.isArray(value) ? new Map(value) : value,
+  Array.isArray(value) && value.every(Array.isArray) ? new Map(value) : value,
 );
 console.log(map2);
 // Map { 1 => "один", 2 => "два", 3 => "три" }

@@ -269,7 +269,7 @@ navigator.mediaDevices
 - Елементи `<audio>` не можуть мати субтитрів або підписів, пов'язаних з ними, як це можуть елементи `<video>`. Корисна інформація про це та обхідні шляхи – в статті Яна Девліна [WebVTT та аудіо](https://www.iandevlin.com/blog/2015/12/html5/webvtt-and-audio/).
 - Щоб перевірити запасний вміст у браузерах, що підтримують цей елемент, можна замінити `<audio>` на відсутній елемент, наприклад, `<notanaudio>`.
 
-Добре загальне джерело інформації щодо використання `<audio>` HTML – це підручник для початківців [Відео та аудіо вміст](/uk/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content).
+Добре загальне джерело інформації щодо використання `<audio>` HTML – це підручник для початківців [Відео й аудіо вміст](/uk/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio).
 
 ### Оформлення засобами CSS
 
@@ -467,5 +467,5 @@ elem.audioTrackList.onremovetrack = (event) => {
 - {{domxref("HTMLAudioElement")}}
 - {{htmlelement("source")}}
 - {{htmlelement("video")}}
-- [Зона навчання – Аудіо та відео вміст](/uk/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content)
-- [Кросбраузерні основи аудіо](/uk/docs/Web/Media/Audio_and_video_delivery/Cross-browser_audio_basics)
+- [Зона навчання – Відео й аудіо вміст](/uk/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio)
+- [Основи кросбраузерного аудіо](/uk/docs/Web/Media/Audio_and_video_delivery/Cross-browser_audio_basics)

@@ -103,6 +103,7 @@ console.log(safeRedactName(report, "ха.*ер")); // "Хакер на ім'я [
 ## Дивіться також
 
 - Поліфіл методу `String.prototype.replaceAll` доступний у [`core-js`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
+- Посібник [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_expressions)
 - {{jsxref("String.prototype.replace()")}}
 - {{jsxref("String.prototype.match()")}}
 - {{jsxref("RegExp.prototype.exec()")}}
