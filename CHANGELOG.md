@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2025-02-07 - 2025-02-14]
+
+* **Оновлення перекладу(JS):** web/javascript/reference/global_objects/date/tolocaledatestring (#3800) ([98b6c271](https://github.com/webdoky/content/commit/98b6c27169c9f6836acf9581bd833ab37cc0b7a2))
+* **Оновлення перекладу(HTML):** web/html/attributes/autocomplete (#3822) ([c68d00a9](https://github.com/webdoky/content/commit/c68d00a99b6d4ce6fef645408825c88e2478c28c))
+* **Оновлення перекладу(HTML):** web/html/element/heading_elements (#3815) ([896a9917](https://github.com/webdoky/content/commit/896a9917810559d324a6c1db44142bfceb6e6dee))
+* **Оновлення перекладу(CSS):** web/css/pseudo-classes (#3860) ([8982140b](https://github.com/webdoky/content/commit/8982140b04576678f61bb9bbf4acbe6f7ceac709))
+* **Оновлення перекладу(CSS):** web/css/pointer-events (#3859) ([3ca73b41](https://github.com/webdoky/content/commit/3ca73b41c0fae5478da8682e02204614655c49a1))
+* **Оновлення перекладу(CSS):** web/css/filter (#3858) ([86fdc2a3](https://github.com/webdoky/content/commit/86fdc2a3dc19431ed12b009121844b3aca7bc211))
+* **Оновлення перекладу(HTML):** web/html/element/input (#3846) ([756b0aef](https://github.com/webdoky/content/commit/756b0aefb3cc55b762a7fe64d3976ce2ddd94972))
+
 ## [2025-01-31 - 2025-02-07]
 
 * **Оновлення перекладу(HTML):** web/html/element/img (#3856) ([11d77f1f](https://github.com/webdoky/content/commit/11d77f1f024f3603c41350a985e1c578fa9232e4))
