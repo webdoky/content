@@ -23,7 +23,7 @@ browser-compat: css.properties.margin
 ## Синтаксис
 
 ```css
-/* Застосовується до всіх чотирьох боків */
+/* застосовується до всіх чотирьох боків */
 margin: 1em;
 margin: -3px;
 
@@ -35,6 +35,14 @@ margin: 1em auto 2em;
 
 /* згори | справа | знизу | знизу */
 margin: 2px 1em 0 auto;
+
+/* значення anchor-size() */
+margin: 5% anchor-size(width);
+margin: calc(anchor-size(width) / 4) 1em 0
+  anchor-size(--myAnchor self-inline, 50px);
+
+/* Значення - ключові слова */
+margin: auto;
 
 /* Глобальні значення */
 margin: inherit;
@@ -54,9 +62,12 @@ margin: unset;
 ### Значення
 
 - {{cssxref("length")}}
+
   - : Розмір зовнішнього поля як фіксоване значення.
+    - У разі _якірно-позиційних елементів_ функція {{cssxref("anchor-size()")}} вирішується до значення {{cssxref("&lt;length&gt;")}}, відносного щодо ширини або висоти пов'язаного _якірного елемента_ (дивіться [Задання зовнішніх відступів елемента, залежних від розміру якоря](/uk/docs/Web/CSS/CSS_anchor_positioning/Using#zadannia-zovnishnikh-vidstupiv-elementa-zalezhnykh-vid-rozmiru-yakoria)).
+
 - {{cssxref("percentage")}}
-  - : Розмір зовнішнього поля як відсоткове значення, відносне щодо рядкового розміру (_ширини_ для горизонтальної мови, визначеної {{cssxref("writing-mode")}}) [контейнерного блока](/uk/docs/Web/CSS/Containing_block).
+  - : Розмір зовнішнього поля як відсоткове значення, відносне щодо рядкового розміру (_ширини_ для горизонтальної мови, визначеної {{cssxref("writing-mode")}}) [контейнерного блока](/uk/docs/Web/CSS/CSS_display/Containing_block).
 - `auto`
   - : Браузер сам обирає годящий зовнішній відступ. Наприклад, у певних випадках це значення може використовуватися для центрування елемента.
 
