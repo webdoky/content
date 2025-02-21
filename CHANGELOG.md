@@ -3,6 +3,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2025-02-14 - 2025-02-21]
+
+* **Оновлення перекладу(CSS):** web/css/css_cascade/actual_value (#3872) ([2265f6c5](https://github.com/webdoky/content/commit/2265f6c5d5724241ed30298abec9a60063854391))
+* **Оновлення перекладу(CSS):** web/css/css_cascade/specificity (#3871) ([efb2442e](https://github.com/webdoky/content/commit/efb2442e25558cab8e4541b11d559e646aee8f27))
+* **Оновлення перекладу(HTML):** web/html/element/input/search (#3869) ([978579be](https://github.com/webdoky/content/commit/978579befe7688fce34d2055e8adf15f326870cf))
+* **Оновлення перекладу(CSS):** web/css/css_flexible_box_layout/aligning_items_in_a_flex_container (#3867) ([e58ad366](https://github.com/webdoky/content/commit/e58ad36680477a5b103fde13ebe1f810bc6ff2e3))
+* **Оновлення перекладу(HTML):** web/html/element/input/email (#3866) ([b7eb6817](https://github.com/webdoky/content/commit/b7eb68179e333b16fbbe5659ef42521cfa288220))
+* **Оновлення перекладу(HTML):** web/html/element/input/tel (#3864) ([b0b63b57](https://github.com/webdoky/content/commit/b0b63b57e15f9ee24c8ab60a088f510b99461b15))
+* **Оновлення перекладу(mdn):** mdn/guides (#3863) ([3de929e1](https://github.com/webdoky/content/commit/3de929e12f3b89bfd79b22251b547cc85d9fb567))
+* **Переклад(HTML):** web/html/element/thead (#3771) ([03df41f7](https://github.com/webdoky/content/commit/03df41f72a48675c74c4d0582b7c63e405cd2a66))
+* **Оновлення перекладу(CSS):** web/css/@font-face (#3805) ([20cc1dd7](https://github.com/webdoky/content/commit/20cc1dd757cd70039249bd0e8dbe4b5bee5f64ce))
+* **Оновлення перекладу(CSS):** web/css/margin (#3804) ([8f07ad48](https://github.com/webdoky/content/commit/8f07ad4884da2a64715227887a8821180bd5f19b))
+
 ## [2025-02-07 - 2025-02-14]
 
 * **Оновлення перекладу(JS):** web/javascript/reference/global_objects/date/tolocaledatestring (#3800) ([98b6c271](https://github.com/webdoky/content/commit/98b6c27169c9f6836acf9581bd833ab37cc0b7a2))
