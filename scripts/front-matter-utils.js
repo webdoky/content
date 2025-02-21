@@ -5,8 +5,8 @@ import { betterAjvErrors } from "@apideck/better-ajv-errors";
 import AJV from "ajv";
 import addFormats from "ajv-formats";
 import grayMatter from "gray-matter";
-import YAML from "js-yaml";
 import * as prettier from "prettier";
+import YAML from "yaml";
 
 export function getRelativePath(filePath) {
   return path.relative(process.cwd(), filePath);
@@ -85,10 +85,8 @@ export async function checkFrontMatter(filePath, { config, fix, validator }) {
       }
     });
 
-    let yml = YAML.dump(fmOrdered, {
-      skipInvalid: true,
+    let yml = YAML.stringify(fmOrdered, null, {
       lineWidth: config.lineWidth,
-      quotingType: '"',
     });
     yml = yml.replaceAll(/\s+$/g, "");
     yml = await prettier.format(yml, { parser: "yaml" });

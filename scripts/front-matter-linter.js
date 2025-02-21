@@ -19,12 +19,18 @@ async function resolveDirectory(file) {
       .withErrors()
       .withFullPaths()
       .filter((filePath) => filePath.endsWith("index.md"))
+      .exclude(
+        (directoryName) =>
+          directoryName === "conflicting" || directoryName === "orphaned",
+      )
       .crawl(file);
     return api.withPromise();
   }
   if (
     stats.isFile() &&
     file.endsWith("index.md") &&
+    !file.includes("/conflicting/") &&
+    !file.includes("/orphaned/") &&
     !file.includes("tests/front-matter_test_files")
   ) {
     return [file];
@@ -119,7 +125,7 @@ program
       const files = (args.files || []).map((f) => path.resolve(cwd, f));
       if (files.length === 0) {
         logger.info("No files to lint.");
-        return null;
+        return;
       }
       // eslint-disable-next-line consistent-return
       return lintFrontMatter(files, options);
