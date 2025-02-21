@@ -513,8 +513,7 @@ input:valid + span::after {
 
 ## Дивіться також
 
-- [Посібник з форм HTML](/uk/docs/Learn/Forms)
+- [Посібник з форм HTML](/uk/docs/Learn_web_development/Extensions/Forms)
 - {{HTMLElement("input")}}
   - [`<input type="text">`](/uk/docs/Web/HTML/Element/input/text)
   - [`<input type="email">`](/uk/docs/Web/HTML/Element/input/email)
-- [Сумісність властивостей CSS](/uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls)
