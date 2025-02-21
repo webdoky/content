@@ -222,7 +222,7 @@ browser-compat: html.elements.input.type_email
 /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 ```
 
-Аби дізнатись більше про те, як працює валідація форм, і як скористатися властивостями CSS {{cssxref(":valid")}} і {{cssxref(":invalid")}} для оформлення поля залежно від того, чи є його поточне значення дійсним, дивіться [Валідацію даних форми](/uk/docs/Learn/Forms/Form_validation).
+Аби дізнатись більше про те, як працює валідація форм, і як скористатися властивостями CSS {{cssxref(":valid")}} і {{cssxref(":invalid")}} для оформлення поля залежно від того, чи є його поточне значення дійсним, дивіться [Валідацію даних форми](/uk/docs/Learn_web_development/Extensions/Forms/Form_validation).
 
 > [!NOTE]
 > Відомі проблеми специфікації, пов'язані з міжнародними доменними іменами й валідацією адрес електронної пошти в HTML. Дивіться подробиці у [Ваді W3C 15489](https://www.w3.org/Bugs/Public/show_bug.cgi?id=15489).
@@ -405,7 +405,7 @@ label::after {
 
 ## Дивіться також
 
-- [Посібник форм HTML](/uk/docs/Learn/Forms)
+- [Посібник форм HTML](/uk/docs/Learn_web_development/Extensions/Forms)
 - {{HTMLElement("input")}}
 - [`<input type="tel">`](/uk/docs/Web/HTML/Element/input/tel)
 - [`<input type="url">`](/uk/docs/Web/HTML/Element/input/url)
@@ -418,4 +418,3 @@ label::after {
   - [`placeholder`](/uk/docs/Web/HTML/Element/input#placeholder)
   - [`readonly`](/uk/docs/Web/HTML/Attributes/readonly)
   - [`size`](/uk/docs/Web/HTML/Attributes/size)
-- [Сумісність властивостей CSS](/uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls)
