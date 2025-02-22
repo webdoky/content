@@ -1,18 +1,20 @@
 ---
 title: Вжите значення
-slug: Web/CSS/used_value
+slug: Web/CSS/CSS_cascade/used_value
 page-type: guide
-spec-urls: https://www.w3.org/TR/CSS22/cascade.html#used-value
+spec-urls:
+  - https://www.w3.org/TR/CSS22/cascade.html#used-value
+  - https://drafts.csswg.org/css-cascade-5/#used-value
 ---
 
 {{CSSRef}}
 
-**Вжите значення** властивості [CSS](/uk/docs/Web/CSS) – це її значення після того, як над [обчисленим значенням](/uk/docs/Web/CSS/computed_value) були виконані всі обчислення.
+**Вжите значення** властивості [CSS](/uk/docs/Web/CSS) – це її значення після того, як над [обчисленим значенням](/uk/docs/Web/CSS/CSS_cascade/computed_value) були виконані всі обчислення.
 
 Після того, як {{glossary("User agent", "користувацький агент")}} завершив усі необхідні обчислення, кожна властивість CSS отримує вжите значення. Вжиті значення розмірностей (наприклад, {{cssxref("width")}}, {{cssxref("line-height")}}) – у пікселях. Вжиті значення властивостей-скорочень (наприклад, {{cssxref("background")}}) узгоджені зі значеннями своїх властивостей-складових (наприклад, {{cssxref("background-color")}} або {{cssxref("background-size")}}) та зі значеннями {{cssxref("position")}} та {{cssxref("float")}}.
 
 > [!NOTE]
-> API DOM {{domxref("Window.getComputedStyle", "getComputedStyle()")}} повертає [вирішене значення](/uk/docs/Web/CSS/resolved_value), котре може бути або [обчисленим значенням](/uk/docs/Web/CSS/computed_value), або вжитим значенням, залежно від властивості.
+> API DOM {{domxref("Window.getComputedStyle", "getComputedStyle()")}} повертає [вирішене значення](/uk/docs/Web/CSS/resolved_value), котре може бути або [обчисленим значенням](/uk/docs/Web/CSS/CSS_cascade/computed_value), або вжитим значенням, залежно від властивості.
 
 ## Приклад
 
@@ -106,16 +108,16 @@ window.addEventListener("resize", updateAllUsedWidths);
   - [Синтаксис CSS](/uk/docs/Web/CSS/Syntax)
   - [Коментарі](/uk/docs/Web/CSS/Comments)
   - [Специфічність](/uk/docs/Web/CSS/Specificity)
-  - [Успадкування](/uk/docs/Web/CSS/inheritance)
+  - [Успадкування](/uk/docs/Web/CSS/CSS_cascade/Inheritance)
   - [Рамкова модель](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model)
   - [Режими компонування](/uk/docs/Web/CSS/Layout_mode)
   - [Моделі візуального форматування](/uk/docs/Web/CSS/Visual_formatting_model)
   - [Перекриття зовнішніх відступів](/uk/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
   - Значення
-    - [Початкові значення](/uk/docs/Web/CSS/initial_value)
-    - [Обчислені значення](/uk/docs/Web/CSS/computed_value)
-    - [Вирішені значення](/uk/docs/Web/CSS/resolved_value)
-    - [Фактичні значення](/uk/docs/Web/CSS/actual_value)
+    - [Початкові значення](/uk/docs/Web/CSS/CSS_cascade/initial_value)
+    - [Обчислені значення](/uk/docs/Web/CSS/CSS_cascade/computed_value)
+    - [Вирішені значення](/uk/docs/Web/CSS/CSS_cascade/resolved_value)
+    - [Фактичні значення](/uk/docs/Web/CSS/CSS_cascade/actual_value)
   - [Синтаксис визначення значень](/uk/docs/Web/CSS/Value_definition_syntax)
   - [Властивості-скорочення](/uk/docs/Web/CSS/Shorthand_properties)
   - [Заміщені елементи](/uk/docs/Web/CSS/Replaced_element)
