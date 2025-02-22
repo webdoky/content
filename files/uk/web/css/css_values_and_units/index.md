@@ -171,7 +171,7 @@ spec-urls:
 ### Ключові концепції
 
 - {{glossary("Advance measure", "Повний розмір")}}
-- [Запис діапазону в квадратних дужках](/uk/docs/Web/CSS/CSS_Values_and_Units/Value_definition_syntax#zapys-diapazonu-z-kvadratnymy-duzhkamy-min-max)
+- [Запис діапазону з квадратними дужками](/uk/docs/Web/CSS/CSS_Values_and_Units/Value_definition_syntax#zapys-diapazonu-z-kvadratnymy-duzhkamy-min-max)
 - [Комбінатори значень компонентів](/uk/docs/Web/CSS/CSS_Values_and_Units/Value_definition_syntax#kombinatory-znachen-komponentiv)
 - [Ключові слова рівня мови CSS](/uk/docs/Web/CSS/CSS_Values_and_Units/CSS_data_types#kliuchovi-slova-rivnia-movy)
 - {{glossary("Device pixel", "Піксель пристрою")}}
