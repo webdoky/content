@@ -27,15 +27,15 @@ CSS належить до ключових мов **відкритого веб�
 
 [Довідка CSS](/uk/docs/Web/CSS/Reference) – це вичерпна довідка для загартованих веброзробників описує кожну властивість і кожну концепцію CSS, серед яких:
 
-- [Синтаксис та форми мови](/uk/docs/Web/CSS/Syntax)
-- [Специфічність](/uk/docs/Web/CSS/Specificity), [успадкування](/uk/docs/Web/CSS/Inheritance) та [каскадність](/uk/docs/Web/CSS/Cascade)
+- [Синтаксис та форми мови](/uk/docs/Web/CSS/CSS_syntax/Syntax)
+- [Специфічність](/uk/docs/Web/CSS/Specificity), [успадкування](/uk/docs/Web/CSS/CSS_cascade/Inheritance) та [каскадність](/uk/docs/Web/CSS/CSS_cascade/Cascade)
 - [Селектори CSS](/uk/docs/Web/CSS/CSS_selectors), включно з [псевдоелементами](/uk/docs/Web/CSS/CSS_pseudo-elements), [вкладеністю](/uk/docs/Web/CSS/CSS_nesting), [контекстністю](/uk/docs/Web/CSS/CSS_scoping) і [тіньовими частинами](/uk/docs/Web/CSS/CSS_shadow_parts)
-- [Директиви CSS](/uk/docs/Web/CSS/At-rule), у тому числі [медійні](/uk/docs/Web/CSS/CSS_media_queries) та [контейнерні](/uk/docs/Web/CSS/CSS_containment) запити
-- [Одиниці вимірювання та значення CSS](/uk/docs/Web/CSS/CSS_Values_and_Units) і [функційні записи](/uk/docs/Web/CSS/CSS_Functions)
+- [Директиви CSS](/uk/docs/Web/CSS/CSS_syntax/At-rule), у тому числі [медійні](/uk/docs/Web/CSS/CSS_media_queries) та [контейнерні](/uk/docs/Web/CSS/CSS_containment) запити
+- Модуль [Значень та одиниць вимірювання CSS](/uk/docs/Web/CSS/CSS_Values_and_Units), що вміщає [числові типи даних](/uk/docs/Web/CSS/CSS_Values_and_Units/Numeric_data_types), [текстові типи даних](/uk/docs/Web/CSS/CSS_Values_and_Units/Textual_data_types) і [функційні записи](/uk/docs/Web/CSS/CSS_Values_and_Units/CSS_Value_Functions)
 - [Рамкова модель](/uk/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model) і [перекриття зовнішніх полів](/uk/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)
-- [Контейнерний блок](/uk/docs/Web/CSS/Containing_block)
+- [Контейнерний блок](/uk/docs/Web/CSS/CSS_display/Containing_block)
 - [Нагромаджувальні](/uk/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context) та [блоково-форматувальні](/uk/docs/Web/CSS/CSS_display/Block_formatting_context) контексти
-- [Початкові](/uk/docs/Web/CSS/initial_value), [обчислені](/uk/docs/Web/CSS/computed_value), [вжиті](/uk/docs/Web/CSS/used_value) та [фактичні](/uk/docs/Web/CSS/actual_value) значення
+- [Початкові](/uk/docs/Web/CSS/CSS_cascade/initial_value), [обчислені](/uk/docs/Web/CSS/CSS_cascade/computed_value), [вжиті](/uk/docs/Web/CSS/CSS_cascade/used_value) та [фактичні](/uk/docs/Web/CSS/CSS_cascade/actual_value) значення
 - [Властивості-скорочення CSS](/uk/docs/Web/CSS/Shorthand_properties)
 - [Гнучка рамка CSS](/uk/docs/Web/CSS/CSS_flexible_box_layout), [багатоколонкове](/uk/docs/Web/CSS/CSS_multicol_layout) та [сіткове](/uk/docs/Web/CSS/CSS_grid_layout) компонування
 - [Анімація](/uk/docs/Web/CSS/CSS_animations), [переходи](/uk/docs/Web/CSS/CSS_transitions) та [перетворення](/uk/docs/Web/CSS/CSS_transforms)
