@@ -11,7 +11,26 @@ browser-compat: javascript.builtins.Date.toLocaleString
 
 Щоразу, коли викликається `toLocaleString`, цей метод мусить виконати пошук у великій базі даних рядків локалізації, що потенційно може бути неефективним. Коли цей метод викликається багато разів з однаковими аргументами, краще створити об'єкт {{jsxref("Intl.DateTimeFormat")}} і використовувати його метод {{jsxref("Intl/DateTimeFormat/format", "format()")}}, оскільки об'єкт `DateTimeFormat` запам'ятовує передані йому аргументи, і може вирішити кешувати частину бази даних, щоб майбутні виклики `format` могли шукати рядки локалізації в більш обмеженому контексті.
 
-{{EmbedInteractiveExample("pages/js/date-tolocalestring.html")}}
+{{InteractiveExample("Демо JavaScript: Date.toLocaleDateString()", "taller")}}
+
+```js interactive-example
+const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+const options = {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
+
+console.log(event.toLocaleDateString("de-DE", options));
+// Очікуваний вивід (залежить від місцевої часової зони): Donnerstag, 20. Dezember 2012
+
+console.log(event.toLocaleDateString("ar-EG", options));
+// Очікуваний вивід (залежить від місцевої часової зони): الخميس، ٢٠ ديسمبر ٢٠١٢
+
+console.log(event.toLocaleDateString(undefined, options));
+// Очікуваний вивід (залежить від місцевої часової зони та усталеної локалі): четвер, 20 грудня 2012 р.
+```
 
 ## Синтаксис
 
