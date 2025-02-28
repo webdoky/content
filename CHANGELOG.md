@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2025-02-21 - 2025-02-28]
+
+* **Оновлення перекладу(CSS):** web/css/css_cascade/used_value (#3879) ([8202f4e7](https://github.com/webdoky/content/commit/8202f4e72dc9396970ab6c86ac013245c5394f26))
+* **Оновлення перекладу(CSS):** web/css/css_values_and_units/value_definition_syntax (#3876) ([64feb1fa](https://github.com/webdoky/content/commit/64feb1face3821867079c7a7bf316db9d84d700c))
+* **Оновлення перекладу(CSS):** web/css/css_values_and_units/using_css_math_functions (#3875) ([c6d8e097](https://github.com/webdoky/content/commit/c6d8e097c6de8818d7c60156aa990abaf326b7f7))
+* **Оновлення перекладу(CSS):** web/css/css_values_and_units/css_value_functions (#3874) ([0038ba75](https://github.com/webdoky/content/commit/0038ba752c8f43f934524fa09f6b7dc534fe2c9b))
+
 ## [2025-02-14 - 2025-02-21]
 
 * **Оновлення перекладу(CSS):** web/css/css_cascade/actual_value (#3872) ([2265f6c5](https://github.com/webdoky/content/commit/2265f6c5d5724241ed30298abec9a60063854391))
