@@ -9,7 +9,20 @@ browser-compat: html.elements.img
 
 Елемент [HTML](/uk/docs/Web/HTML) **`<img>`** вбудовує в документ зображення.
 
-{{EmbedInteractiveExample("pages/tabbed/img.html", "tabbed-standard")}}
+{{InteractiveExample("Демо HTML: &lt;img&gt;", "tabbed-standard")}}
+
+```html interactive-example
+<img
+  class="fit-picture"
+  src="/shared-assets/images/examples/grapefruit-slice.jpg"
+  alt="Скибочка грейпфрута поверх купи інших скибочок" />
+```
+
+```css interactive-example
+.fit-picture {
+  width: 250px;
+}
+```
 
 Приклад вище демонструє використання елемента `<img>`:
 
