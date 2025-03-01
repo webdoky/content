@@ -9,7 +9,23 @@ browser-compat: javascript.builtins.JSON.stringify
 
 Статичний метод **`JSON.stringify()`** (перетворити на рядок) перетворює значення JavaScript на рядок JSON, додатково замінюючи значення, якщо була вказана необов'язкова функція-замінювач, або ж додатково вибираючи лише вказані властивості, якщо було передано замінювач-масив.
 
-{{EmbedInteractiveExample("pages/js/json-stringify.html", "taller")}}
+{{InteractiveExample("Демо JavaScript: JSON.stringify()", "taller")}}
+
+```js interactive-example
+console.log(JSON.stringify({ x: 5, y: 6 }));
+// Очікуваний вивід: '{"x":5,"y":6}'
+
+console.log(
+  JSON.stringify([new Number(3), new String("false"), new Boolean(false)]),
+);
+// Очікуваний вивід: '[3,"false",false]'
+
+console.log(JSON.stringify({ x: [10, undefined, function () {}, Symbol("")] }));
+// Очікуваний вивід: '{"x":[10,null,null,null]}'
+
+console.log(JSON.stringify(new Date(2006, 0, 2, 15, 4, 5)));
+// Очікуваний вивід: '"2006-01-02T15:04:05.000Z"'
+```
 
 ## Синтаксис
 
