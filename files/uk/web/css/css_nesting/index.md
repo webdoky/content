@@ -40,6 +40,6 @@ spec-urls: https://drafts.csswg.org/css-nesting-1/
 
 ## Дивіться також
 
-- [Специфічність](/uk/docs/Web/CSS/Specificity)
-- [Модуль Каскадності та успадкування CSS](/uk/docs/Web/CSS/CSS_cascade)
+- [Специфічність](/uk/docs/Web/CSS/CSS_cascade/Specificity)
+- [Модуль Каскадування та успадкування CSS](/uk/docs/Web/CSS/CSS_cascade)
 - [Модуль Селекторів CSS](/uk/docs/Web/CSS/CSS_selectors)
