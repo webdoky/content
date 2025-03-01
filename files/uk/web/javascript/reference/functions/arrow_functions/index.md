@@ -13,7 +13,14 @@ browser-compat: javascript.functions.arrow_functions
 - Стрілкові функції не можуть використовуватися як [конструктори](/uk/docs/Glossary/Constructor). Виклик їх з [`new`](/uk/docs/Web/JavaScript/Reference/Operators/new) викидає {{jsxref("TypeError")}}. Крім цього, вони не мають доступу до ключового слова [`new.target`](/uk/docs/Web/JavaScript/Reference/Operators/new.target)
 - Стрілкові функції не можуть використовувати у своєму тілі [`yield`](/uk/docs/Web/JavaScript/Reference/Operators/yield) і не можуть створюватися як генераторні функції.
 
-{{EmbedInteractiveExample("pages/js/functions-arrow.html")}}
+{{InteractiveExample("Демо JavaScript: Функції =>")}}
+
+```js interactive-example
+const materials = ["Гідроген", "Гелій", "Літій", "Берилій"];
+
+console.log(materials.map((material) => material.length));
+// Очікуваний вивід: Array [8, 6, 7, 9]
+```
 
 ## Синтаксис
 
