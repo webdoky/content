@@ -148,7 +148,7 @@ spec-urls:
 - [`vw`](/uk/docs/Web/CSS/length#vw)
 - [`x`](/uk/docs/Web/CSS/length#x)
 
-[Гнучкі](/uk/docs/Web/CSS/CSS_Values_and_Units/Numeric_data_types#hnuchki-odynytsi) (`fr`) та [контейнерні](/uk/docs/Web/CSS/CSS_Values_and_Units/Numeric_data_types#konteinerni-odynytsi) (`cqb`,`cqh`,`cqi`,`cqmax`,`cqmin`,`cqw`) одиниці вимірювання визначені в модулях [Компонування гнучкої рамки CSS](/uk/docs/Web/CSS/CSS_flexible_box_layout) та [Умовних правил CSS conditional rules](/uk/docs/Web/CSS/CSS_conditional_rules) відповідно.
+[Гнучкі](/uk/docs/Web/CSS/CSS_Values_and_Units/Numeric_data_types#hnuchki-odynytsi) (`fr`) та [контейнерні](/uk/docs/Web/CSS/CSS_Values_and_Units/Numeric_data_types#konteinerni-odynytsi) (`cqb`,`cqh`,`cqi`,`cqmax`,`cqmin`,`cqw`) одиниці вимірювання визначені в модулях [Сіткового компонування CSS](/uk/docs/Web/CSS/CSS_grid_layout) та [Умовних правил CSS](/uk/docs/Web/CSS/CSS_conditional_rules) відповідно.
 
 #### Класифікації одиниць вимірювання
 
@@ -228,7 +228,7 @@ spec-urls:
   - {{cssxref("unset")}}
   - {{cssxref("all")}}
 
-- Модуль [Компонування гнучкої рамки CSS](/uk/docs/Web/CSS/CSS_flexible_box_layout)
+- Модуль [Сіткового компонування CSS](/uk/docs/Web/CSS/CSS_grid_layout)
 
   - {{cssxref("&lt;flex&gt;")}}
   - [Гнучкі одиниці вимірювання](/uk/docs/Web/CSS/CSS_Values_and_Units/Numeric_data_types#hnuchki-odynytsi) (`fr`)
