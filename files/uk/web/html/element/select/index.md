@@ -9,7 +9,34 @@ browser-compat: html.elements.select
 
 Елемент [HTML](/uk/docs/Web/HTML) **`<select>`** (вибір) представляє контрольний елемент, що надає меню з варіантів вибору.
 
-{{EmbedInteractiveExample("pages/tabbed/select.html", "tabbed-standard")}}
+{{InteractiveExample("Демо HTML: &lt;select&gt;", "tabbed-standard")}}
+
+```html interactive-example
+<label for="pet-select">Оберіть домашню тваринку:</label>
+
+<select name="pets" id="pet-select">
+  <option value="">--Оберіть якийсь варіант, будь ласка--</option>
+  <option value="dog">Собака</option>
+  <option value="cat">Кішка</option>
+  <option value="hamster">Хом'як</option>
+  <option value="parrot">Папуга</option>
+  <option value="spider">Павук</option>
+  <option value="goldfish">Золота рибка</option>
+</select>
+```
+
+```css interactive-example
+label {
+  font-family: sans-serif;
+  font-size: 1rem;
+  padding-right: 10px;
+}
+
+select {
+  font-size: 0.9rem;
+  padding: 2px 5px;
+}
+```
 
 Приклад вище показує типове використання `<select>`. Елемент отримує атрибут `id`, котрий дає змогу пов'язати його з елементом {{htmlelement("label")}} для потреб доступності, а також атрибут `name`, котрий представляє ім'я відповідної порції даних при поданні форми на сервер. Кожен варіант меню описується елементом {{htmlelement("option")}}, дочірнім щодо `<select>`.
 
