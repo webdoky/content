@@ -11,7 +11,23 @@ browser-compat: html.elements.a
 
 Вміст всередині кожного `<a>` _повинен_ відображати спрямування посилання. Якщо присутній атрибут `href`, то натискання клавіші `Enter`, коли фокус знаходиться на елементі `<a>`, активує перехід.
 
-{{EmbedInteractiveExample("pages/tabbed/a.html", "tabbed-shorter")}}
+{{InteractiveExample("HTML Demo: &lt;a&gt;", "tabbed-shorter")}}
+
+```html interactive-example
+<p>Контакти пані Ірини:</p>
+
+<ul>
+  <li><a href="https://example.com">Вебсайт</a></li>
+  <li><a href="mailto:i.toivovych@example.com">Адреса електронної пошти</a></li>
+  <li><a href="tel:+123456789">Номер телефону</a></li>
+</ul>
+```
+
+```css interactive-example
+li {
+  margin-bottom: 0.5rem;
+}
+```
 
 ## Атрибути
 
