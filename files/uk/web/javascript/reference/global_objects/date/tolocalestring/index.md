@@ -7,11 +7,30 @@ browser-compat: javascript.builtins.Date.toLocaleString
 
 {{JSRef}}
 
-Метод **`toLocaleString()`** (до рядка згідно з локаллю) примірників {{jsxref("Date")}} повертає рядок з чутливим до мови представленням дати в локальній часовій зоні. У реалізаціях з підтримкою [API `Intl.DateTimeFormat`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat) цей метод просто викликає `Intl.DateTimeFormat`.
+Метод **`toLocaleString()`** (до рядка згідно з локаллю) примірників {{jsxref("Date")}} повертає рядок із чутливим до мови представленням дати в локальній часовій зоні. У реалізаціях із підтримкою [API `Intl.DateTimeFormat`](/uk/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat) цей метод просто делегує виконання до `Intl.DateTimeFormat`.
 
 Щоразу, коли викликається `toLocaleString`, цей метод мусить виконати пошук у великій базі даних рядків локалізації, що потенційно може бути неефективним. Коли цей метод викликається багато разів з однаковими аргументами, краще створити об'єкт {{jsxref("Intl.DateTimeFormat")}} і використовувати його метод {{jsxref("Intl/DateTimeFormat/format", "format()")}}, оскільки об'єкт `DateTimeFormat` запам'ятовує передані йому аргументи, і може вирішити кешувати частину бази даних, щоб майбутні виклики `format` могли шукати рядки локалізації в більш обмеженому контексті.
 
-{{EmbedInteractiveExample("pages/js/date-tolocalestring.html")}}
+{{InteractiveExample("Демо JavaScript: Date.toLocaleDateString()", "taller")}}
+
+```js interactive-example
+const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+const options = {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
+
+console.log(event.toLocaleDateString("de-DE", options));
+// Очікуваний вивід (залежить від місцевої часової зони): Donnerstag, 20. Dezember 2012
+
+console.log(event.toLocaleDateString("ar-EG", options));
+// Очікуваний вивід (залежить від місцевої часової зони): الخميس، ٢٠ ديسمبر ٢٠١٢
+
+console.log(event.toLocaleDateString(undefined, options));
+// Очікуваний вивід (залежить від місцевої часової зони та усталеної локалі): четвер, 20 грудня 2012 р.
+```
 
 ## Синтаксис
 
@@ -47,7 +66,8 @@ toLocaleString(locales, options)
 
 В реалізаціях, що містять `Intl.DateTimeFormat`, це еквівалентно викликові `new Intl.DateTimeFormat(locales, options).format(date)`.
 
-> **Примітка:** В більшості випадків форматування, повернене `toLocaleString()`, є сталим. Проте вивід може відрізнятися в різних реалізаціях, навіть із використанням однієї локалі: відмінності виводу є свідомими та дозволені специфікацією. Також вивід може бути не таким, як ви очікуєте. Наприклад, рядок може містити нерозривні пробіли або бути оточеним символами контролю напрямку письма. Не слід порівнювати результати `toLocaleString()` із жорстко зафіксованими сталими значеннями.
+> [!NOTE]
+> Форматування, повернене `toLocaleString()`, здебільшого є сталим. Проте вивід може відрізнятися в різних реалізаціях, навіть із використанням однієї локалі: відмінності виводу є свідомими та дозволені специфікацією. Також вивід може бути не таким, як ви очікуєте. Наприклад, рядок може містити нерозривні пробіли або бути оточеним символами контролю напрямку письма. Не слід порівнювати результати `toLocaleString()` із жорстко зафіксованими сталими значеннями.
 
 ## Приклади
 
