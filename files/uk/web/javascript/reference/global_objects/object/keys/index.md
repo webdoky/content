@@ -9,7 +9,18 @@ browser-compat: javascript.builtins.Object.keys
 
 Статичний метод **`Object.keys()`** (ключі) повертає масив, що складається з імен власних перелічуваних властивостей переданого об'єкта, що мають рядкові ключі.
 
-{{EmbedInteractiveExample("pages/js/object-keys.html")}}
+{{InteractiveExample("Демо JavaScript: Object.keys()")}}
+
+```js interactive-example
+const object1 = {
+  a: "якийсь рядок",
+  b: 42,
+  c: false,
+};
+
+console.log(Object.keys(object1));
+// Очікуваний вивід: Array ["a", "b", "c"]
+```
 
 ## Синтаксис
 
