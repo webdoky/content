@@ -9,7 +9,19 @@ browser-compat: javascript.builtins.String.replace
 
 Метод **`replace()`** (замінити) примірників {{jsxref("String")}} повертає новий рядок, в якому один, деякі чи всі збіги з переданим патерном заміщені переданою заміною. Патерн може бути рядком або {{jsxref("RegExp", "регулярним виразом")}}, а заміна може бути як рядком, так і функцією, яка буде викликана для кожного збігу. Якщо патерн — рядок, то заміняється лише перший збіг. Початковий рядок залишається незмінним.
 
-{{EmbedInteractiveExample("pages/js/string-replace.html")}}
+{{InteractiveExample("Демо JavaScript: String.replace()")}}
+
+```js interactive-example
+const paragraph =
+  "Гей, хлопці, не вспію - на ґанку ваша файна їжа знищується бурундучком. Певне справді файна була!";
+
+console.log(p.replace("файна", "смачна"));
+// Expected output: "I think my dog is cuter than your dog!"
+
+const regex = /Файна/i;
+console.log(p.replace(regex, "гаряча"));
+// Очікуваний вивід: "Гей, хлопці, не вспію - на ґанку ваша гаряча їжа знищується бурундучком. Певне справді файна була!"
+```
 
 ## Синтаксис
 
