@@ -41,7 +41,8 @@ defaultValue =
 
 На додачу до атрибутів, спільних для всіх елементів {{HTMLElement("input")}}, поля діапазону приймають наступні.
 
-> **Примітка:** Наступні атрибути полів не застосовуються до полів діапазону: `accept`, `alt`, `checked`, `dirname`, `formaction`, `formenctype`, `formmethod`, `formnovalidate`, `formtarget`, `height`, `maxlength`, `minlength`, `multiple`, `pattern`, `placeholder`, `readonly`, `required`, `size` і `src`. Усі вони, бувши заданими, ігноруються.
+> [!NOTE]
+> Наступні атрибути полів не застосовуються до полів діапазону: `accept`, `alt`, `checked`, `dirname`, `formaction`, `formenctype`, `formmethod`, `formnovalidate`, `formtarget`, `height`, `maxlength`, `minlength`, `multiple`, `pattern`, `placeholder`, `readonly`, `required`, `size` і `src`. Усі вони, бувши заданими, ігноруються.
 
 ### list
 
@@ -61,7 +62,8 @@ defaultValue =
 
 Це значення повинно бути меншим або рівним значенню атрибута [`max`](/uk/docs/Web/HTML/Attributes/max). Читайте про атрибут HTML [`min`](/uk/docs/Web/HTML/Attributes/min).
 
-> **Примітка:** Якщо значення `min` і `max` рівні, або значення `max` менше за значення `min`, то користувач не зможе взаємодіяти з полем діапазону.
+> [!NOTE]
+> Якщо значення `min` і `max` рівні, або значення `max` менше за значення `min`, то користувач не зможе взаємодіяти з полем діапазону.
 
 ### step
 
@@ -69,7 +71,8 @@ defaultValue =
 
 Атрибут `step` також може бути заданий з рядковим значенням `any`. Таке значення `step` означає, що інтервал крокування не накладається, і що в заданому діапазоні приймаються будь-які значення (з урахуванням інших обмежень, як то [`min`](#min) і [`max`](#max)). Дивіться те, як це працює в браузерах, що це підтримують, в прикладі [Задання step зі значенням `any`](#zadannia-step-zi-znachenniam-any).
 
-> **Примітка:** Коли значення, введене користувачем, не відповідає налаштуванням крокування, то {{Glossary("User agent", "користувацький агент")}} може округлити значення до найближчого дійсного, віддаючи перевагу числам в додатному напрямку, коли є два рівновіддалені варіанти.
+> [!NOTE]
+> Коли значення, введене користувачем, не відповідає налаштуванням крокування, то {{Glossary("User agent", "користувацький агент")}} може округлити значення до найближчого дійсного, віддаючи перевагу числам в додатному напрямку, коли є два рівновіддалені варіанти.
 
 Усталене значення крокування для полів `range` – 1, що дозволяє вводити лише цілі числа, _окрім випадків, коли_ основа крокування не є цілим числом: наприклад, якщо задати `min` зі значенням -10 і `value` зі значенням 1.5, то `step` зі значенням 1 дозволятиме лише значення, подібні до 1,5; 2,5; 3,5;… у додатному напрямку та -0,5; -1,5; -2,5;… у від'ємному. Дивіться [атрибут HTML `step`](/uk/docs/Web/HTML/Attributes/step).
 
@@ -169,7 +172,8 @@ input.addEventListener("input", (event) => {
 
 Щоб уникнути повторення коду, можна повторно використати один {{HTMLElement("datalist")}} для кількох елементів `<input type="range">`, а також інших типів {{HTMLElement("input")}}.
 
-> **Примітка:** Щоб [показати підписи](#dodavannia-pidpysiv), як у прикладі нижче, потрібен окремий `datalist` для кожного поля діапазону.
+> [!NOTE]
+> Щоб [показати підписи](#dodavannia-pidpysiv), як у прикладі нижче, потрібен окремий `datalist` для кожного поля діапазону.
 
 #### HTML
 
@@ -337,11 +341,10 @@ input[type="range"] {
 
 ## Дивіться також
 
-- [Форми HTML](/uk/docs/Learn/Forms)
+- [Форми HTML](/uk/docs/Learn_web_development/Extensions/Forms)
 - {{HTMLElement("input")}} та інтерфейс {{domxref("HTMLInputElement")}}, на якому він заснований
 - [`<input type="number">`](/uk/docs/Web/HTML/Element/input/number)
 - {{domxref('validityState.rangeOverflow')}} і {{domxref('validityState.rangeUnderflow')}}
 - [Контроль декількох параметрів за допомогою ConstantSourceNode](/uk/docs/Web/API/Web_Audio_API/Controlling_multiple_parameters_with_ConstantSourceNode)
 - [Створення вертикальних формових елементів](/uk/docs/Web/CSS/CSS_writing_modes/Vertical_controls)
 - [Оформлення елемента діапазону](https://css-tricks.com/sliding-nightmare-understanding-range-input/)
-- [Сумісність властивостей CSS](/uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls)

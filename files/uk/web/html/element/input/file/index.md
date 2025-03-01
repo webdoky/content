@@ -371,7 +371,7 @@ function updateImageDisplay() {
 Самописна функція `validFileType()` приймає як параметр об'єкт {{domxref("File")}}, а потім використовує {{jsxref("Array.prototype.includes()")}}, щоб перевірити, чи відповідає будь-яке з `fileTypes` значення властивості файлу `type`. Якщо відповідність знайдена, то функція повертає `true`. Якщо не знайдена – `false`.
 
 ```js
-// https://webdoky.org/uk/docs/Web/Media/Formats/Image_types
+// https://webdoky.org/uk/docs/Web/Media/Guides/Formats/Image_types
 const fileTypes = [
   "image/apng",
   "image/bmp",

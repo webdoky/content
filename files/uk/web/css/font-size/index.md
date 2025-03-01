@@ -225,4 +225,5 @@ span {
 - {{cssxref("font-weight")}}
 - {{cssxref("math-depth")}}
 - {{cssxref("math-style")}}
+- Атрибут SVG {{SVGAttr("font-size")}}
 - [Навчання – Основи стилізації тексту та шрифту](/uk/docs/Learn_web_development/Core/Text_styling/Fundamentals)

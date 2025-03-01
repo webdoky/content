@@ -3,7 +3,7 @@ name: CI
 # Controls when the workflow will run
 on:
   schedule:
-    - cron:  '0 19 * * 5'
+    - cron: "0 19 * * 5"
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -12,7 +12,7 @@ jobs:
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -25,13 +25,13 @@ jobs:
 
       - name: Create Pull Request
         id: cpr
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v7
         with:
-          commit-message: 'chore: bump changelog'
+          commit-message: "chore: bump changelog"
           branch: chore/changelog-update
           branch-suffix: timestamp
           delete-branch: true
-          title: '[${{ steps.date.outputs.date }}] changelog'
+          title: "[${{ steps.date.outputs.date }}] changelog"
           base: master
           body: |
             Changelog updates for ${{ steps.date.outputs.date }}.

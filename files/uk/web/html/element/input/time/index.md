@@ -283,7 +283,7 @@ if (input.validity.valid && input.type === "time") {
 ### CSS
 
 ```css
-input[type="number"] {
+input[type="time"] {
   width: 100px;
 }
 
@@ -377,5 +377,4 @@ input:valid + span::after {
 - [`<input type="month">`](/uk/docs/Web/HTML/Element/input/month)
 - Загальний елемент {{HTMLElement("input")}} та інтерфейс, що використовується для роботи з ним, – {{domxref("HTMLInputElement")}}
 - [Формати дати та часу, що використовуються в HTML](/uk/docs/Web/HTML/Date_and_time_formats)
-- [Підручник з інтерфейсу вибору дати та часу](/uk/docs/Learn/Forms/HTML5_input_types#interfeis-vyboru-daty-ta-chasu)
-- [Сумісність властивостей CSS](/uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls)
+- [Підручник з інтерфейсу вибору дати та часу](/uk/docs/Learn_web_development/Extensions/Forms/HTML5_input_types#date_and_time_pickers#interfeis-vyboru-daty-ta-chasu)

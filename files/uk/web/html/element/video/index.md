@@ -276,14 +276,14 @@ browser-compat: html.elements.video
 </video>
 ```
 
-Ми пропонуємо змістовний і вичерпний [посібник з типів мультимедійних файлів](/uk/docs/Web/Media/Formats) і [посібник щодо кодеків, котрі підтримуються для відео](/uk/docs/Web/Media/Formats/Video_codecs). Також доступний посібник з [аудіокодеків, які можна з ними використовувати](/uk/docs/Web/Media/Formats/Audio_codecs).
+Ми пропонуємо змістовний і вичерпний [посібник з типів мультимедійних файлів](/uk/docs/Web/Media/Guides/Formats) і [посібник щодо кодеків, котрі підтримуються для відео](/uk/docs/Web/Media/Guides/Formats/Video_codecs). Також доступний посібник з [аудіокодеків, які можна з ними використовувати](/uk/docs/Web/Media/Guides/Formats/Audio_codecs).
 
 Інші примітки щодо використання:
 
-- Якщо не вказати атрибута `controls`, то відео не включатиме усталених контрольних елементів браузера; можна створити власні контрольні елементи за допомогою JavaScript й API {{domxref("HTMLMediaElement")}}. Дивіться [Створення кросбраузерного програвача відео](/uk/docs/Web/Media/Audio_and_video_delivery/cross_browser_video_player) для отримання подробиць.
+- Якщо не вказати атрибута `controls`, то відео не включатиме усталених контрольних елементів браузера; можна створити власні контрольні елементи за допомогою JavaScript й API {{domxref("HTMLMediaElement")}}. Дивіться [Створення кросбраузерного програвача відео](/uk/docs/Web/Media/Guides/Audio_and_video_delivery/cross_browser_video_player) для отримання подробиць.
 - Щоб дати змогу контролювати відео (та аудіо) вміст з високою точністю, `HTMLMediaElement` викидає багато різних [подій](/uk/docs/Web/API/HTMLMediaElement#podii). На додачу до надання контрольованості, ці події дають змогу контролювати прогрес як стягнення, так і відтворення мультимедійного об'єкта, а також стан та позицію відтворення.
 - Для прилаштування позиціонування відео всередині рамок елемента можна використовувати властивість {{cssxref("object-position")}}, а для контролю того, як розмір відео припасовується для вміщення в рамки – {{cssxref("object-fit")}}.
-- Для демонстрації разом з відео субтитрів можна використати трохи JavaScript разом з елементом {{htmlelement("track")}} і форматом [WebVTT](/uk/docs/Web/API/WebVTT_API). Дивіться [Додавання до відео HTML підписів та субтитрів](/uk/docs/Web/Media/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video) для отримання додаткової інформації.
+- Для демонстрації разом з відео субтитрів можна використати трохи JavaScript разом з елементом {{htmlelement("track")}} і форматом [WebVTT](/uk/docs/Web/API/WebVTT_API). Дивіться [Додавання до відео HTML підписів та субтитрів](/uk/docs/Web/Media/Guides/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video) для отримання додаткової інформації.
 - За допомогою елемента `<video>` можна відтворювати аудіо. Це може бути корисним, якщо, наприклад, треба відтворювати аудіо вкупі з розшифровкою [WebVTT](/uk/docs/Web/API/WebVTT_API), оскільки елемент {{HTMLElement("audio")}} не дозволяє субтитрів WebVTT.
 - Щоб перевірити запасний вміст у браузерах, що підтримують елемент, можна замінити `<video>` вигаданим елементом, наприклад, `<notavideo>`.
 
@@ -293,7 +293,7 @@ browser-compat: html.elements.video
 
 Елемент `<video>` є заміщеним елементом: його значення {{cssxref("display")}} усталено дорівнює `inline`, але його усталені ширина й висота в області перегляду визначаються відео, що вбудовується.
 
-Особливих міркувань щодо стилізації `<video>` немає; загальною стратегією є надати йому властивість `display` зі значенням `block`, щоб йому було легше задати розташування, розмір тощо, а потім надати стилізацію та інформацію про компонування, як необхідно. Певні методи стилізації наведено в [основах стилізації програвача відео](/uk/docs/Web/Media/Audio_and_video_delivery/Video_player_styling_basics).
+Особливих міркувань щодо стилізації `<video>` немає; загальною стратегією є надати йому властивість `display` зі значенням `block`, щоб йому було легше задати розташування, розмір тощо, а потім надати стилізацію та інформацію про компонування, як необхідно. Певні методи стилізації наведено в [основах стилізації програвача відео](/uk/docs/Web/Media/Guides/Audio_and_video_delivery/Video_player_styling_basics).
 
 ### Додавання титрів та інших хронометрованих текстових доріжок
 
@@ -359,7 +359,7 @@ AddType video/webm .webm
 
 ## Доступність
 
-Відео повинні пропонувати як субтитри, так і стенограми, що з точністю описують їхній вміст (читайте більше про те, як це реалізувати, в [Додаванні субтитрів і титрів до відео HTML](/uk/docs/Web/Media/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video)). Субтитри дають змогу тим, хто має проблеми зі слухом, розуміти звуковий вміст відео під час його відтворення, тоді як стенограми дозволяють тим, хто потребує додаткового часу, сприймати аудіовміст у зручних для себе темпі та форматі.
+Відео повинні пропонувати як субтитри, так і стенограми, що з точністю описують їхній вміст (читайте більше про те, як це реалізувати, в [Додаванні субтитрів і титрів до відео HTML](/uk/docs/Web/Media/Guides/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video)). Субтитри дають змогу тим, хто має проблеми зі слухом, розуміти звуковий вміст відео під час його відтворення, тоді як стенограми дозволяють тим, хто потребує додаткового часу, сприймати аудіовміст у зручних для себе темпі та форматі.
 
 Варто зазначити, що хоч і можна субтитрувати суто звуковий вміст, це можливо лише при відтворенні аудіо в елементі `<video>`, оскільки область відео в елементі використовується для подачі субтитрів. Це один з особливих сценаріїв, коли корисно відтворювати аудіо в елементі відео.
 
@@ -456,9 +456,9 @@ AddType video/webm .webm
 
 {{EmbedLiveSample('dekilka-dzherel', '', '400')}}
 
-Спершу виконується спроба відтворити AVI. Якщо це не вдається, то [MP4](/uk/docs/Web/Media/Formats/Containers#mpeg-4_mp4). Запасне повідомлення виводиться, якщо елемент video не підтримується, але не тоді, коли всі джерела не спрацьовують.
+Спершу виконується спроба відтворити AVI. Якщо це не вдається, то [MP4](/uk/docs/Web/Media/Guides/Formats/Containers#mpeg-4_mp4). Запасне повідомлення виводиться, якщо елемент video не підтримується, але не тоді, коли всі джерела не спрацьовують.
 
-Певні типи мультимедійних файлів дають змогу надати більш конкретну інформацію за допомогою параметра [`codecs`](/uk/docs/Web/Media/Formats/codecs_parameter) як частини рядка типу файлу. Відносно простий приклад – `video/webm; codecs="vp8, vorbis"`; він вказує, що файл – це відео [WebM](/uk/docs/Web/Media/Formats/Containers#webm) з використанням [VP8](/uk/docs/Web/Media/Formats/Video_codecs#vp8) для самого відео й [Vorbis](/uk/docs/Web/Media/Formats/Audio_codecs#vorbis) для аудіо.
+Певні типи мультимедійних файлів дають змогу надати більш конкретну інформацію за допомогою параметра [`codecs`](/uk/docs/Web/Media/Guides/Formats/codecs_parameter) як частини рядка типу файлу. Відносно простий приклад – `video/webm; codecs="vp8, vorbis"`; він вказує, що файл – це відео [WebM](/uk/docs/Web/Media/Guides/Formats/Containers#webm) з використанням [VP8](/uk/docs/Web/Media/Guides/Formats/Video_codecs#vp8) для самого відео й [Vorbis](/uk/docs/Web/Media/Guides/Formats/Audio_codecs#vorbis) для аудіо.
 
 ## Технічний підсумок
 
@@ -521,14 +521,14 @@ AddType video/webm .webm
 
 ## Дивіться також
 
-- [Настанови щодо типів та форматів мультимедіа у вебі](/uk/docs/Web/Media/Formats)
+- [Настанови щодо типів та форматів мультимедіа у вебі](/uk/docs/Web/Media/Guides/Formats)
 
-  - [Формати контейнерів мультимедіа (типи файлів)](/uk/docs/Web/Media/Formats/Containers)
-  - [Настанови щодо кодеків вебвідео](/uk/docs/Web/Media/Formats/Video_codecs)
-  - [Настанови щодо кодеків вебаудіо](/uk/docs/Web/Media/Formats/Audio_codecs)
+  - [Формати контейнерів мультимедіа (типи файлів)](/uk/docs/Web/Media/Guides/Formats/Containers)
+  - [Настанови щодо кодеків вебвідео](/uk/docs/Web/Media/Guides/Formats/Video_codecs)
+  - [Настанови щодо кодеків вебаудіо](/uk/docs/Web/Media/Guides/Formats/Audio_codecs)
 
 - Позиціонування та розмір картинки всередині її рамок: {{cssxref("object-position")}} і {{cssxref("object-fit")}}
 - {{htmlelement("audio")}}
 - [Відео й аудіо HTML](/uk/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio)
 - [Взаємодія з відео за допомогою полотна](/uk/docs/Web/API/Canvas_API/Manipulating_video_using_canvas)
-- [Налаштування серверів для мультимедійних даних Ogg](/uk/docs/Web/Media/Formats/Configuring_servers_for_Ogg_media)
+- [Налаштування серверів для мультимедійних даних Ogg](/uk/docs/Web/Media/Guides/Formats/Configuring_servers_for_Ogg_media)

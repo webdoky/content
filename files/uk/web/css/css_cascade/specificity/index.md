@@ -495,14 +495,14 @@ input[type="password"]:required {
 - [SpeciFISHity](https://specifishity.com/)
 - [Калькулятор специфічності](https://specificity.keegan.st/): інтерактивний вебсайт для перевірки та усвідомлення ваших власних правил CSS
 - [Вправа _ID-CLASS-TYPE_](https://estelle.github.io/CSS/selectors/exercises/specificity.html) – вікторина зі специфічності
-- Посібник [Синтаксис CSS](/uk/docs/Web/CSS/Syntax)
+- Посібник [Синтаксис CSS](/uk/docs/Web/CSS/CSS_syntax/Syntax)
 - Модуль [Синтаксису CSS](/uk/docs/Web/CSS/CSS_syntax)
 - [Обробка помилок CSS](/uk/docs/Web/CSS/CSS_syntax/Error_handling)
-- [Директиви](/uk/docs/Web/CSS/At-rule)
-- [Успадкування](/uk/docs/Web/CSS/Inheritance)
-- [Початкові](/uk/docs/Web/CSS/initial_value), [обчислені](/uk/docs/Web/CSS/computed_value), [вжиті](/uk/docs/Web/CSS/used_value) та [фактичні](/uk/docs/Web/CSS/actual_value) значення
-- [Синтаксис визначення значень](/uk/docs/Web/CSS/Value_definition_syntax)
+- [Директиви](/uk/docs/Web/CSS/CSS_syntax/At-rule)
+- [Успадкування](/uk/docs/Web/CSS/CSS_cascade/Inheritance)
+- [Початкові](/uk/docs/Web/CSS/CSS_cascade/initial_value), [обчислені](/uk/docs/Web/CSS/CSS_cascade/computed_value), [вжиті](/uk/docs/Web/CSS/CSS_cascade/used_value) та [фактичні](/uk/docs/Web/CSS/CSS_cascade/actual_value) значення
+- [Синтаксис визначення значень](/uk/docs/Web/CSS/CSS_Values_and_Units/Value_definition_syntax)
 - [Навчання – Обробка конфліктів](/uk/docs/Learn_web_development/Core/Styling_basics/Handling_conflicts)
 - [Навчання – Каскадні шари](/uk/docs/Learn_web_development/Core/Styling_basics/Cascade_layers)
-- Модуль [Каскадності та успадкування CSS](/uk/docs/Web/CSS/CSS_cascade)
+- Модуль [Каскадування та успадкування CSS](/uk/docs/Web/CSS/CSS_cascade)
 - [Модуль Вкладеності CSS](/uk/docs/Web/CSS/CSS_nesting)

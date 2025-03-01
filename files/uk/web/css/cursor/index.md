@@ -398,3 +398,4 @@ iPadOS підтримує пристрої-вказівники штибу тр�
 
 - {{cssxref("pointer-events")}}
 - Тип {{cssxref("url_value", "&lt;url&gt;")}}
+- Атрибут SVG {{SVGAttr("cursor")}}

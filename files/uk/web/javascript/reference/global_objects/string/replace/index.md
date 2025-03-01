@@ -246,6 +246,7 @@ console.log("abcd".replace(/(?<group>bc)/, addOffset)); // "abc (1) d"
 ## Дивіться також
 
 - [Поліфіл `String.prototype.replace` у складі `core-js`, з виправленнями й реалізацією сучасної логіки, як то підтримки `Symbol.replace`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
+- Посібник [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_expressions)
 - {{jsxref("String.prototype.replaceAll()")}}
 - {{jsxref("String.prototype.match()")}}
 - {{jsxref("RegExp.prototype.exec()")}}

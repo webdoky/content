@@ -162,6 +162,7 @@ console.log("123".match("1\\.3")); // null
 ## Дивіться також
 
 - [Поліфіл `String.prototype.match` доступний у складі `core-js`, з виправленнями й реалізацією сучасної логіки, наприклад, підтримки `Symbol.match`](https://github.com/zloirock/core-js#ecmascript-string-and-regexp)
+- Посібник [Регулярні вирази](/uk/docs/Web/JavaScript/Guide/Regular_expressions)
 - {{jsxref("String.prototype.matchAll()")}}
 - {{jsxref("RegExp")}}
 - {{jsxref("RegExp.prototype.exec()")}}

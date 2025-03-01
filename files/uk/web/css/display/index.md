@@ -7,9 +7,9 @@ browser-compat: css.properties.display
 
 {{CSSRef}}
 
-Властивість [CSS](/uk/docs/Web/CSS) **`display`** (зображувати) задає те, як обробляється елемент: як [блокова чи рядкова рамка](/uk/docs/Web/CSS/CSS_flow_layout), і яке компонування буде застосовано до його нащадків: [потокове](/uk/docs/Web/CSS/CSS_flow_layout), [сіткове](/uk/docs/Web/CSS/CSS_grid_layout) чи [гнучке](/uk/docs/Web/CSS/CSS_flexible_box_layout).
+Властивість [CSS](/uk/docs/Web/CSS) **`display`** (зображувати) задає те, як обробляється елемент: як [блокова чи рядкова рамка](/uk/docs/Web/CSS/CSS_display/flow_layout), і яке компонування буде застосовано до його нащадків: [потокове](/uk/docs/Web/CSS/CSS_display/flow_layout), [сіткове](/uk/docs/Web/CSS/CSS_grid_layout) чи [гнучке](/uk/docs/Web/CSS/CSS_flexible_box_layout).
 
-Формально кажучи, властивість **`display`** встановлює для елемента внутрішній та зовнішній _типи відображення_. Зовнішній тип визначає участь елемента у [потоковому компонуванні](/uk/docs/Web/CSS/CSS_flow_layout); внутрішній тип визначає компонування нащадків. Деякі значення `display` повністю описані у власних специфікаціях; до прикладу, деталі того, що відбувається при встановленні `display: flex` визначено у специфікації Гнучкої блокової моделі CSS.
+Формально кажучи, властивість **`display`** встановлює для елемента внутрішній та зовнішній _типи відображення_. Зовнішній тип визначає участь елемента у [потоковому компонуванні](/uk/docs/Web/CSS/CSS_display/flow_layout); внутрішній тип визначає компонування нащадків. Деякі значення `display` повністю описані у власних специфікаціях; до прикладу, деталі того, що відбувається при встановленні `display: flex` визначено у специфікації Гнучкої блокової моделі CSS.
 
 {{EmbedInteractiveExample("pages/css/display.html")}}
 
@@ -83,7 +83,7 @@ display: unset;
 > }
 > ```
 >
-> Дивіться більше інформації у статті [Використання синтаксису із кількома значеннями у Відображенні CSS](/uk/docs/Web/CSS/display/multi-keyword_syntax_of_display).
+> Дивіться більше інформації у статті [Використання синтаксису із кількома значеннями у Відображенні CSS](/uk/docs/Web/CSS/CSS_display/multi-keyword_syntax_of_display).
 
 ### Спрямовані всередину
 
@@ -215,7 +215,7 @@ display: unset;
 }
 ```
 
-Більше інформації про ці зміни – в посібнику [Використання синтаксису із кількома значеннями у Відображенні CSS](/uk/docs/Web/CSS/display/multi-keyword_syntax_of_display).
+Більше інформації про ці зміни – в посібнику [Використання синтаксису із кількома значеннями у Відображенні CSS](/uk/docs/Web/CSS/CSS_display/multi-keyword_syntax_of_display).
 
 ### Глобальні
 
@@ -232,15 +232,15 @@ display: unset;
 
 ### Значення з кількома ключовими словами
 
-- [Використання синтаксису із кількома значеннями у Відображенні CSS](/uk/docs/Web/CSS/display/multi-keyword_syntax_of_display)
+- [Використання синтаксису із кількома значеннями у Відображенні CSS](/uk/docs/Web/CSS/CSS_display/multi-keyword_syntax_of_display)
 
 ### Потокове компонування CSS (display: block, display: inline)
 
-- [Блокове та рядкове компонування у звичайному потоці](/uk/docs/Web/CSS/CSS_flow_layout/Block_and_inline_layout_in_normal_flow)
-- [Потокове компонування та переповнення](/uk/docs/Web/CSS/CSS_flow_layout/Flow_layout_and_overflow)
-- [Потокове компонування та режими письма](/uk/docs/Web/CSS/CSS_flow_layout/Flow_layout_and_writing_modes)
-- [Контексти форматування: пояснення](/uk/docs/Web/CSS/CSS_flow_layout/Introduction_to_formatting_contexts)
-- [В потоці та поза потоком](/uk/docs/Web/CSS/CSS_flow_layout/In_flow_and_out_of_flow)
+- [Блокове та рядкове компонування у звичайному потоці](/uk/docs/Web/CSS/CSS_display/Block_and_inline_layout_in_normal_flow)
+- [Потокове компонування та переповнення](/uk/docs/Web/CSS/CSS_display/Flow_layout_and_overflow)
+- [Потокове компонування та режими письма](/uk/docs/Web/CSS/CSS_display/Flow_layout_and_writing_modes)
+- [Вступ у контексти форматування](/uk/docs/Web/CSS/CSS_display/Introduction_to_formatting_contexts)
+- [В потоці та поза потоком](/uk/docs/Web/CSS/CSS_display/In_flow_and_out_of_flow)
 
 ### display: flex
 
@@ -260,10 +260,9 @@ display: unset;
 - [Шаблонні зони в сітках](/uk/docs/Web/CSS/CSS_grid_layout/Grid_template_areas)
 - [Компонування з використанням іменованих grid-ліній](/uk/docs/Web/CSS/CSS_grid_layout/Grid_layout_using_named_grid_lines)
 - [Автоматичне розташування у сітковому компонуванні](/uk/docs/Web/CSS/CSS_grid_layout/Auto-placement_in_grid_layout)
-- [Шикування блоків у сітковому компонуванні](/uk/docs/Web/CSS/CSS_grid_layout/Box_alignment_in_grid_layout)
+- [Вирівнювання елементів у Сітковому компонуванні CSS](/uk/docs/Web/CSS/CSS_grid_layout/Box_alignment_in_grid_layout)
 - [Сітки, логічні значення та режими письма](/uk/docs/Web/CSS/CSS_grid_layout/Grids_logical_values_and_writing_modes)
 - [Сіткове компонування CSS та доступність](/uk/docs/Web/CSS/CSS_grid_layout/Grid_layout_and_accessibility)
-- [Сіткове компонування CSS та поступове поліпшення підтримки](/uk/docs/Web/CSS/CSS_grid_layout/Grid_layout_and_progressive_enhancement)
 - [Втілення звичних макетів за допомогою сіток](/uk/docs/Web/CSS/CSS_grid_layout/Realizing_common_layouts_using_grids)
 
 ### Анімування display
@@ -457,7 +456,8 @@ updateDisplay();
 
 ## Дивіться також
 
-- [Блокове та рядкове компонування у звичайному потоці](/uk/docs/Web/CSS/CSS_flow_layout/Block_and_inline_layout_in_normal_flow)
-- [Вступ до контекстів форматування](/uk/docs/Web/CSS/CSS_flow_layout/Introduction_to_formatting_contexts)
 - {{CSSxRef("visibility")}}, {{CSSxRef("float")}}, {{CSSxRef("position")}}
 - {{CSSxRef("grid")}}, {{CSSxRef("flex")}}
+- Атрибут SVG {{SVGAttr("display")}}
+- [Блокове та рядне компонування у звичайному потоці](/uk/docs/Web/CSS/CSS_display/Block_and_inline_layout_in_normal_flow)
+- [Вступ до контекстів форматування](/uk/docs/Web/CSS/CSS_display/Introduction_to_formatting_contexts)

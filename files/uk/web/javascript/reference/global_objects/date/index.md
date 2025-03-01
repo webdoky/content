@@ -10,7 +10,7 @@ browser-compat: javascript.builtins.Date
 Об'єкти **`Date`** (дата) в JavaScript представляють єдиний момент часу в платформонезалежному форматі. Об'єкти типу `Date` інкапсулюють ціле число, яке відповідає кількості мілісекунд, що минули з півночі на початку 1 січня 1970 року за UTC (Всесвітнім координованим часом) – _епоху_.
 
 > [!NOTE]
-> TC39 наразі працює над [Temporal](https://tc39.es/proposal-temporal/docs/index.html), новим API для дати й часу. Більше про це [в блозі Igalia](https://blogs.igalia.com/compilers/2020/06/23/dates-and-times-in-javascript/). Однак цей інтерфейс іще не готовий для застосування в програмних продуктах.
+> Від часу запровадження API {{jsxref("Temporal")}} об'єкт `Date` вважається історичною можливістю. Розгляньте варіант використання `Temporal` у новому коді та переведіть на `Temporal` наявний код, якщо це можливо (перевірте [сумісність із браузерами](/uk/docs/Web/JavaScript/Reference/Global_Objects/Temporal#sumisnist_iz_brauzeramy). Невдовзі ми напишемо посібник з його застосування!
 
 ## Опис
 
@@ -273,7 +273,7 @@ YYYY-MM-DDTHH:mm:ss.sssZ
 - {{jsxref("Date.prototype.toISOString()")}} (до рядка у форматі ISO)
   - : Перетворює дату на рядок відповідно до формату ISO 8601 Extended Format.
 - {{jsxref("Date.prototype.toJSON()")}} (до JSON)
-  - : Повертає рядок, що відповідає даті в `Date`, сформований за допомогою {{jsxref("Date/toISOString", "toISOString()")}}. Призначений для використання функцією {{jsxref("JSON.stringify()")}}.
+  - : Повертає рядок, що відповідає даті в `Date`, сформований за допомогою {{jsxref("Date/toISOString", "toISOString()")}}. Призначений для неявного виклику функцією {{jsxref("JSON.stringify()")}}.
 - {{jsxref("Date.prototype.toLocaleDateString()")}} (до місцевого рядка дати)
   - : Повертає порцію об'єкта `Date`, що містить дату, як рядок, оформлений з урахуванням локально специфічних деталей на основі системних налаштувань.
 - {{jsxref("Date.prototype.toLocaleString()")}} (до місцевого рядка)
@@ -282,6 +282,8 @@ YYYY-MM-DDTHH:mm:ss.sssZ
   - : Повертає порцію об'єкта `Date`, що містить час, як рядок, оформлений з урахуванням локально специфічних деталей на основі системних налаштувань.
 - {{jsxref("Date.prototype.toString()")}} (до рядка)
   - : Повертає рядок, який позначає вказаний об'єкт `Date`. Заміщує метод {{jsxref("Object.prototype.toString()")}}.
+- {{jsxref("Date.prototype.toTemporalInstant()")}} {{experimental_inline}}
+  - : Повертає новий об'єкт {{jsxref("Temporal.Instant")}} з таким же значенням {{jsxref("Temporal/Instant/epochMilliseconds", "epochMilliseconds")}}, що й у [мітки часу](#epokha-mitky-chasu-ta-nediisna-data) поточної дати.
 - {{jsxref("Date.prototype.toTimeString()")}} (до рядка часу)
   - : Повертає порцію об'єкта `Date`, що містить час, як зрозумілий людині рядок.
 - {{jsxref("Date.prototype.toUTCString()")}} (до рядка відповідно до всесвітнього часу)

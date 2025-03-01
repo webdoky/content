@@ -1,6 +1,6 @@
 ---
 title: Застосування математичних функцій CSS
-slug: Web/CSS/CSS_Functions/Using_CSS_math_functions
+slug: Web/CSS/CSS_Values_and_Units/Using_CSS_math_functions
 page-type: guide
 ---
 
@@ -20,7 +20,7 @@ page-type: guide
 
 У багатьох випадках, в тому числі прикладах вище, **замість цього можна скористатися математичними функціями, вбудованими безпосередньо в CSS**. Таке рішення нерідко простіше реалізувати, а також швидше виконується браузером, ніж використання JavaScript.
 
-В цілому розробники можуть скористатися поєднанням [більш ніж двох десятків математичних функцій CSS](/uk/docs/Web/CSS/CSS_Functions#matematychni-funktsii) у своїх списках стилів. У цьому посібнику вводяться чотири з найбільш поширених, а також складніші.
+В цілому розробники можуть скористатися поєднанням [більш ніж двох десятків математичних функцій CSS](/uk/docs/Web/CSS/CSS_Values_and_Units/CSS_Value_Functions#matematychni-funktsii) у своїх списках стилів. У цьому посібнику вводяться чотири з найбільш поширених, а також складніші.
 
 ## `calc()` – базові математичні операції
 
@@ -319,11 +319,11 @@ div > code {
 
 При компонуванні та оформленні елементів DOM нерідко достатньо чотирьох базових математичних функцій – {{CSSxRef("calc", "calc()")}}, {{CSSxRef("min", "min()")}}, {{CSSxRef("max", "max()")}} і {{CSSxRef("clamp", "clamp()")}}. Проте для складних випадків, таких як навчальні матеріали з математики, тривимірні візуалізації чи анімації CSS, можна розглянути використання:
 
-- [Функцій крокових значень](/uk/docs/Web/CSS/CSS_Functions#funktsii-krokovykh-znachen)
+- [Функцій крокових значень](/uk/docs/Web/CSS/CSS_Values_and_Units/CSS_Value_Functions#funktsii-krokovykh-znachen)
   - {{CSSxRef("round", "round()")}} – обчислює **значення на основі переданої стратегії округлення**
   - {{CSSxRef("mod", "mod()")}} – обчислює **остачу** від ділення з **таким же знаком, як у дільника**
   - {{CSSxRef("rem", "rem()")}} – обчислює **остачу** від ділення з **таким же знаком, як у діленого**
-- [Тригонометричні функції](/uk/docs/Web/CSS/CSS_Functions#tryhonometrychni-funktsii)
+- [Тригонометричні функції](/uk/docs/Web/CSS/CSS_Values_and_Units/CSS_Value_Functions#tryhonometrychni-funktsii)
   - {{CSSxRef("sin", "sin()")}} – обчислює **тригонометричний синус** числа
   - {{CSSxRef("cos", "cos()")}} – обчислює **тригонометричний косинус** числа
   - {{CSSxRef("tan", "tan()")}} – обчислює **тригонометричний тангенс** числа
@@ -331,13 +331,13 @@ div > code {
   - {{CSSxRef("acos", "acos()")}} – обчислює **тригонометричний арккосинус** числа
   - {{CSSxRef("atan", "atan()")}} – обчислює **тригонометричний арктангенс** числа
   - {{CSSxRef("atan2", "atan2()")}} – обчислює **тригонометричний арктангенс**, приймаючи два числа
-- [Експоненційні функції](/uk/docs/Web/CSS/CSS_Functions#eksponentsiini-funktsii)
+- [Експоненційні функції](/uk/docs/Web/CSS/CSS_Values_and_Units/CSS_Value_Functions#eksponentsiini-funktsii)
   - {{CSSxRef("pow", "pow()")}} – обчислює число, **піднесене до степеня** іншого числа
   - {{CSSxRef("sqrt", "sqrt()")}} – обчислює **квадратний корінь** числа
   - {{CSSxRef("hypot", "hypot()")}} – обчислює **квадратний корінь суми квадратів** переданих чисел
   - {{CSSxRef("log", "log()")}} – обчислює **логарифм** числа (з `e` як усталеною основою)
   - {{CSSxRef("exp", "exp()")}} – обчислює **`e`, піднесене до степеня** іншого числа
-- [Знакові функції](/uk/docs/Web/CSS/CSS_Functions#znakovi-funktsii)
+- [Знакові функції](/uk/docs/Web/CSS/CSS_Values_and_Units/CSS_Value_Functions#znakovi-funktsii)
   - {{CSSxRef("abs", "abs()")}} – обчислює **модуль** числа
   - {{CSSxRef("sign", "sign()")}} – обчислює **знак (додатний, від'ємний або нуль)** числа
 
