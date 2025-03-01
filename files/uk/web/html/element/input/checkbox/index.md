@@ -9,7 +9,36 @@ browser-compat: html.elements.input.type_checkbox
 
 Елементи {{htmlelement("input")}} типу **`checkbox`** (поле для галочки) усталено зображаються як прямокутники, котрі отримують позначку (галочку), схоже до того, що можна побачити в офіційних бланках документів. Конкретний вигляд залежить від налаштувань операційної системи, на котрій працює браузер. Зазвичай це квадрат, але в такого квадрата бувають скруглені кути. Поле для галочки дає змогу обрати (або не обрати) для подання у формі прості значення.
 
-{{EmbedInteractiveExample("pages/tabbed/input-checkbox.html", "tabbed-standard")}}
+{{InteractiveExample("Демо HTML: &lt;input type=&quot;checkbox&quot;&gt;", "tabbed-standard")}}
+
+```html interactive-example
+<fieldset>
+  <legend>Оберіть особливості свого монстра:</legend>
+
+  <div>
+    <input type="checkbox" id="scales" name="scales" checked />
+    <label for="scales">Луска</label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="horns" name="horns" />
+    <label for="horns">Роги</label>
+  </div>
+</fieldset>
+```
+
+```css interactive-example
+p,
+label {
+  font:
+    1rem "Fira Sans",
+    sans-serif;
+}
+
+input {
+  margin: 0.4rem;
+}
+```
 
 > [!NOTE]
 >
