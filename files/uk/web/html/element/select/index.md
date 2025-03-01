@@ -9,7 +9,34 @@ browser-compat: html.elements.select
 
 Елемент [HTML](/uk/docs/Web/HTML) **`<select>`** (вибір) представляє контрольний елемент, що надає меню з варіантів вибору.
 
-{{EmbedInteractiveExample("pages/tabbed/select.html", "tabbed-standard")}}
+{{InteractiveExample("Демо HTML: &lt;select&gt;", "tabbed-standard")}}
+
+```html interactive-example
+<label for="pet-select">Оберіть домашню тваринку:</label>
+
+<select name="pets" id="pet-select">
+  <option value="">--Оберіть якийсь варіант, будь ласка--</option>
+  <option value="dog">Собака</option>
+  <option value="cat">Кішка</option>
+  <option value="hamster">Хом'як</option>
+  <option value="parrot">Папуга</option>
+  <option value="spider">Павук</option>
+  <option value="goldfish">Золота рибка</option>
+</select>
+```
+
+```css interactive-example
+label {
+  font-family: sans-serif;
+  font-size: 1rem;
+  padding-right: 10px;
+}
+
+select {
+  font-size: 0.9rem;
+  padding: 2px 5px;
+}
+```
 
 Приклад вище показує типове використання `<select>`. Елемент отримує атрибут `id`, котрий дає змогу пов'язати його з елементом {{htmlelement("label")}} для потреб доступності, а також атрибут `name`, котрий представляє ім'я відповідної порції даних при поданні форми на сервер. Кожен варіант меню описується елементом {{htmlelement("option")}}, дочірнім щодо `<select>`.
 
@@ -82,6 +109,8 @@ browser-compat: html.elements.select
 Елемент `<select>` відомий складністю ефективного оформлення засобами CSS. Можна повпливати на певні аспекти, як і в будь-якого елемента, – наприклад, оперуючи [рамковою моделлю](/uk/docs/Learn_web_development/Core/Styling_basics/Box_model), [використаним шрифтом](/uk/docs/Web/CSS/CSS_fonts) тощо, а також можна використати властивість {{cssxref("appearance")}}, щоб усунути усталений системний вигляд.
 
 Втім, ці властивості не дають сталих результатах на всіх браузерах, тож важко робити речі штибу шикування різних типів елементів форми одне з одним в один стовпець. Внутрішня структура елемента `<select>` – складна, а також важка для контролю. При потребі отримати повний контроль слід розглянути варіанти використання бібліотеки з добрими можливостями з оформленнями віджетів форми та розгортання власного спадного меню за допомогою несемантичних елементів і JavaScript, а також [WAI-ARIA](/uk/docs/Learn_web_development/Core/Accessibility/WAI-ARIA_basics) для надання семантики.
+
+Також можна скористатися псевдокласом {{cssxref(":open")}}, щоб додати стилі до елемента `<select>` у відкритому стані, тобто коли показано спадний список варіантів. Це не стосується багаторядкових елементів `<select>` (тобто тих, що мають атрибут [`multiple`](/uk/docs/Web/HTML/Attributes/multiple)) – вони схильні візуалізуватися як прокрутна рамка-список, а не спадний список, тому не мають стану відкритості.
 
 Більше інформації про оформлення `<select>`:
 
