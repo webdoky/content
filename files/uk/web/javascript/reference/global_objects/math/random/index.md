@@ -12,7 +12,22 @@ browser-compat: javascript.builtins.Math.random
 > [!NOTE]
 > Статичний метод `Math.random()` _не надає_ криптографічно стійких випадкових чисел. Не варто їх використовувати для будь-чого, пов'язаного з безпекою. Натомість слід користуватись криптографічним веб-API, а точніше — методом {{domxref("Crypto.getRandomValues()")}}.
 
-{{EmbedInteractiveExample("pages/js/math-random.html")}}
+{{InteractiveExample("Демо JavaScript: Math.random()")}}
+
+```js interactive-example
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+console.log(getRandomInt(3));
+// Очікуваний вивід: 0, 1 або 2
+
+console.log(getRandomInt(1));
+// Очікуваний вивід: 0
+
+console.log(Math.random());
+// Очікуваний вивід: число від 0 до <1
+```
 
 ## Синтаксис
 
