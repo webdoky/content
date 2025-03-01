@@ -4,7 +4,7 @@ slug: Web/JavaScript/Guide/Expressions_and_operators
 page-type: guide
 ---
 
-{{jsSidebar("JavaScript Guide")}} {{PreviousNext("Web/JavaScript/Guide/Functions", "Web/JavaScript/Guide/Numbers_and_dates")}}
+{{jsSidebar("JavaScript Guide")}} {{PreviousNext("Web/JavaScript/Guide/Functions", "Web/JavaScript/Guide/Numbers_and_strings")}}
 
 Цей розділ описує вирази та оператори JavaScript, включно з операторами присвоєння, порівняння, арифметичними, бітовими, логічними, рядковими, тернарним і так далі.
 
@@ -937,16 +937,16 @@ const myCar = { make: "Honda", model: "Accord", year: 1998 };
 object instanceof objectType
 ```
 
-де `object` – це об'єкт для перевірки щодо `objectType`, а `objectType` – конструктор, що представляє тип, наприклад, {{jsxref("Date")}} або {{jsxref("Array")}}.
+де `object` – це об'єкт для перевірки щодо `objectType`, а `objectType` – конструктор, що представляє тип, наприклад, {{jsxref("Map")}} або {{jsxref("Array")}}.
 
 Використовувати `instanceof` слід тоді, коли необхідно перевірити тип об'єкта під час виконання.
 Наприклад, при перехопленні винятків, може бути потреба обробляти по-різному викинуті винятки, залежно від їх типу.
 
-Наприклад, наступний код використовує `instanceof` для з'ясування того, чи є `theDay` об'єктом `Date`. Оскільки `theDay` є об'єктом `Date`, то інструкції всередині інструкції `if` – виконуються.
+Наприклад, наступний код використовує `instanceof` для з'ясування того, чи є `obj` об'єктом `Map`. Оскільки `obj` є об'єктом `Map`, то інструкції всередині блоку `if` – виконуються.
 
 ```js
-const theDay = new Date(1995, 12, 17);
-if (theDay instanceof Date) {
+const obj = new Map();
+if (obj instanceof Map) {
   // інструкції до виконання
 }
 ```
@@ -1045,4 +1045,4 @@ super(args); // викликається батьківський констру
 super.functionOnParent(args);
 ```
 
-{{PreviousNext("Web/JavaScript/Guide/Functions", "Web/JavaScript/Guide/Numbers_and_dates")}}
+{{PreviousNext("Web/JavaScript/Guide/Functions", "Web/JavaScript/Guide/Numbers_and_strings")}}
