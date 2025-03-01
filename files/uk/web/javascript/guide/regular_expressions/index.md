@@ -4,7 +4,7 @@ slug: Web/JavaScript/Guide/Regular_expressions
 page-type: guide
 ---
 
-{{jsSidebar("JavaScript Guide")}} {{PreviousNext("Web/JavaScript/Guide/Text_formatting", "Web/JavaScript/Guide/Indexed_collections")}}
+{{jsSidebar("JavaScript Guide")}} {{PreviousNext("Web/JavaScript/Guide/Representing_dates_times", "Web/JavaScript/Guide/Indexed_collections")}}
 
 Регулярні вирази — це патерни, які застосовуються для пошуку збігів з комбінаціями символів у рядках. У JavaScript регулярні вирази також є об'єктами. Ці патерни використовуються методами об'єкта {{jsxref("RegExp")}}: {{jsxref("RegExp/exec", "exec()")}} і {{jsxref("RegExp/test", "test()")}}, а також методами {{jsxref("String")}}: {{jsxref("String/match", "match()")}}, {{jsxref("String/matchAll", "matchAll()")}}, {{jsxref("String/replace", "replace()")}}, {{jsxref("String/replaceAll", "replaceAll()")}}, {{jsxref("String/search", "search()")}} і {{jsxref("String/split", "split()")}}.
 Цей розділ описує регулярні вирази у JavaScript. Він пропонує стислий огляд кожного елемента синтаксису. Докладне пояснення семантики кожного з них читайте в довіднику [регулярних виразів](/uk/docs/Web/JavaScript/Reference/Regular_expressions).
@@ -282,16 +282,16 @@ console.log("Поле lastIndex має значення " + /d(b+)d/g.lastIndex)
 
 Регулярні вирази мають необов'язкові опції, що дає змогу використовувати таку функціональність, як глобальний пошук чи пошук без врахування регістру літер. Ці опції можна використовувати окремо або разом, у будь-якому порядку, і вони входять в сам регулярний вираз.
 
-| Позначка | Опис                                                                                  | Відповідна властивість                          |
-| -------- | ------------------------------------------------------------------------------------- | ----------------------------------------------- |
-| `d`      | Згенерувати індекси для збігів підрядків.                                             | {{jsxref("RegExp/hasIndices", "hasIndices")}}   |
-| `g`      | Глобальний пошук.                                                                     | {{jsxref("RegExp/global", "global")}}           |
-| `i`      | Пошук, нечутливий до регістру.                                                        | {{jsxref("RegExp/ignoreCase", "ignoreCase")}}   |
-| `m`      | Дозволяє `^` та `$` давати збіг поруч з символами нового рядка.                       | {{jsxref("RegExp/multiline", "multiline")}}     |
-| `s`      | Дозволяє символові `.` давати збіг з символами нового рядка.                          | {{jsxref("RegExp/dotAll", "dotAll")}}           |
-| `u`      | "Unicode"; сприймає патерн як послідовність кодових точок Unicode.                    | {{jsxref("RegExp/unicode", "unicode")}}         |
-| `v`      | Оновлена версія режиму `u`, з більшою кількістю можливостей Unicode.                  | {{jsxref("RegExp/unicodeSets", "unicodeSets")}} |
-| `y`      | Виконує «липкий» пошук, який починає пошук збігів з поточної позиції цільового рядка. | {{jsxref("RegExp/sticky", "sticky")}}           |
+| Позначка | Опис                                                                                                              | Відповідна властивість                          |
+| -------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
+| `d`      | Згенерувати індекси для збігів підрядків.                                                                         | {{jsxref("RegExp/hasIndices", "hasIndices")}}   |
+| `g`      | Глобальний пошук.                                                                                                 | {{jsxref("RegExp/global", "global")}}           |
+| `i`      | Пошук, нечутливий до регістру.                                                                                    | {{jsxref("RegExp/ignoreCase", "ignoreCase")}}   |
+| `m`      | Змушує `^` і `$` давати збіг з початком і кінцем кожного рядка тексту, а не лише початком і кінцем всього тексту. | {{jsxref("RegExp/multiline", "multiline")}}     |
+| `s`      | Дозволяє символові `.` давати збіг з символами нового рядка.                                                      | {{jsxref("RegExp/dotAll", "dotAll")}}           |
+| `u`      | "Unicode"; сприймає патерн як послідовність кодових точок Unicode.                                                | {{jsxref("RegExp/unicode", "unicode")}}         |
+| `v`      | Оновлена версія режиму `u`, з більшою кількістю можливостей Unicode.                                              | {{jsxref("RegExp/unicodeSets", "unicodeSets")}} |
+| `y`      | Виконує «липкий» пошук, який починає пошук збігів з поточної позиції цільового рядка.                             | {{jsxref("RegExp/sticky", "sticky")}}           |
 
 Щоб включити позначку в регулярний вираз, використовується такий синтаксис:
 
@@ -442,4 +442,4 @@ form.addEventListener("submit", (event) => {
 - [Regex visualizer](https://extendsclass.com/regex-tester.html)
   - : Візуальний онлайн-інструмент для тестування регулярних виразів.
 
-{{PreviousNext("Web/JavaScript/Guide/Text_formatting", "Web/JavaScript/Guide/Indexed_collections")}}
+{{PreviousNext("Web/JavaScript/Guide/Representing_dates_times", "Web/JavaScript/Guide/Indexed_collections")}}
