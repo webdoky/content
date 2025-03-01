@@ -9,7 +9,28 @@ browser-compat: html.elements.input.type_search
 
 Елементи {{HTMLElement("input")}} типу **`search`** (пошук) – це текстові поля, розроблені для введення користувачами пошукових запитів. Функціонально вони ідентичні до полів [`text`](/uk/docs/Web/HTML/Element/input/text), але можуть бути оформлені інакше з боку {{Glossary("User agent", "користувацького агента")}}.
 
-{{EmbedInteractiveExample("pages/tabbed/input-search.html", "tabbed-standard")}}
+{{InteractiveExample("Демо HTML: &lt;input type=&quot;search&quot;&gt;", "tabbed-standard")}}
+
+```html interactive-example
+<label for="site-search">Пошук на сайті:</label>
+<input type="search" id="site-search" name="q" />
+
+<button>Шукати</button>
+```
+
+```css interactive-example
+label {
+  display: block;
+  font:
+    1rem "Fira Sans",
+    sans-serif;
+}
+
+input,
+label {
+  margin: 0.4rem 0;
+}
+```
 
 ## Значення
 
