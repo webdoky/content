@@ -1,5 +1,5 @@
 ---
-title: <table> – елемент таблиці
+title: <table> – елемент-таблиця
 slug: Web/HTML/Element/table
 page-type: html-element
 browser-compat: html.elements.table
@@ -9,7 +9,93 @@ browser-compat: html.elements.table
 
 Елемент [HTML](/uk/docs/Web/HTML) **`<table>`** (таблиця) представляє табличні дані — тобто інформацію, представлену у двовимірній таблиці, що складається з рядів і колонок комірок, що вміщають дані.
 
-{{EmbedInteractiveExample("pages/tabbed/table.html","tabbed-taller")}}
+{{InteractiveExample("Демо HTML: &lt;table&gt;", "tabbed-taller")}}
+
+```html interactive-example
+<table>
+  <caption>
+    Курс для веброзробників фронтенду 2021
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col">Особа</th>
+      <th scope="col">Найбільше зацікавлення</th>
+      <th scope="col">Вік</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Христина</th>
+      <td>Таблиці HTML</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th scope="row">Денис</th>
+      <td>Вебдоступність</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <th scope="row">Софія</th>
+      <td>Фреймворки JavaScript</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th scope="row">Катерина</th>
+      <td>Вебпродуктивність</td>
+      <td>36</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th scope="row" colspan="2">Середній вік</th>
+      <td>33</td>
+    </tr>
+  </tfoot>
+</table>
+```
+
+```css interactive-example
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(140 140 140);
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+caption {
+  caption-side: bottom;
+  padding: 10px;
+  font-weight: bold;
+}
+
+thead,
+tfoot {
+  background-color: rgb(228 240 245);
+}
+
+th,
+td {
+  border: 1px solid rgb(160 160 160);
+  padding: 8px 10px;
+}
+
+td:last-of-type {
+  text-align: center;
+}
+
+tbody > tr:nth-of-type(even) {
+  background-color: rgb(237 238 242);
+}
+
+tfoot th {
+  text-align: right;
+}
+
+tfoot td {
+  font-weight: bold;
+}
+```
 
 ## Атрибути
 
@@ -161,7 +247,7 @@ browser-compat: html.elements.table
 
 #### Результат
 
-До цієї таблиці не застосовується жодний кастомний [CSS](/uk/docs/Web/CSS) або [користувацькі списки стилів](/uk/docs/Web/CSS/Cascade#avtorski-spysky-styliv). Стилізація відбувається виключно завдяки [стилям користувацького агента](/uk/docs/Web/CSS/Cascade#spysky-styliv-korystuvatskoho-ahenta).
+До цієї таблиці не застосовується жодний кастомний [CSS](/uk/docs/Web/CSS) або [користувацькі списки стилів](/uk/docs/Web/CSS/CSS_cascade/Cascade#avtorski-spysky-styliv). Стилізація відбувається виключно завдяки [стилям користувацького агента](/uk/docs/Web/CSS/CSS_cascade/Cascade#spysky-styliv-korystuvatskoho-ahenta).
 
 {{EmbedLiveSample('bazova-tablytsia', 650, 80)}}
 
