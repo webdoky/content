@@ -1,5 +1,5 @@
 ---
-title: "<label>: Елемент підпису"
+title: <label> – елемент-підпис
 slug: Web/HTML/Element/label
 page-type: html-element
 browser-compat: html.elements.label
@@ -9,7 +9,28 @@ browser-compat: html.elements.label
 
 Елемент [HTML](/uk/docs/Web/HTML) **`<label>`** (підпис, позначка) представляє підпис для елемента користувацького інтерфейсу.
 
-{{EmbedInteractiveExample("pages/tabbed/label.html", "tabbed-shorter")}}
+{{InteractiveExample("Демо HTML: &lt;label&gt;", "tabbed-shorter")}}
+
+```html interactive-example
+<div class="preference">
+  <label for="borsch">Любите борщ?</label>
+  <input type="checkbox" name="borsch" id="borsch" />
+</div>
+
+<div class="preference">
+  <label for="varenyky">Любите вареники?</label>
+  <input type="checkbox" name="varenyky" id="varenyky" />
+</div>
+```
+
+```css interactive-example
+.preference {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: 0.5rem;
+}
+```
 
 Пов'язання `<label>` з контрольним елементом, як то {{htmlelement("input")}} чи {{htmlelement("textarea")}}, пропонує доволі суттєві переваги:
 
