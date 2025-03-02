@@ -7,9 +7,36 @@ browser-compat: html.elements.hr
 
 {{HTMLSidebar}}
 
-Елемент [HTML](/uk/docs/Web/HTML) **`<hr>`** (horizontal rule - горизонтальна лінія) служить для розділення елементів рівня абзацу: наприклад, коли змінюється сцена в історії, чи тема всередині розділу.
+Елемент [HTML](/uk/docs/Web/HTML) **`<hr>`** (horizontal rule – горизонтальна лінія) служить для розділення елементів рівня абзацу: наприклад, коли змінюється сцена в історії, чи тема всередині розділу.
 
-{{EmbedInteractiveExample("pages/tabbed/hr.html", "tabbed-shorter")}}
+{{InteractiveExample("Демо HTML: &lt;hr&gt;", "tabbed-shorter")}}
+
+```html interactive-example
+<p>§1: Перше правило Бійцівського клубу: не говорити про Бійцівський клуб.</p>
+
+<hr />
+
+<p>§2: Друге правило Бійцівського клубу: завжди приносити тістечка.</p>
+```
+
+```css interactive-example
+hr {
+  border: none;
+  border-top: 3px double #333;
+  color: #333;
+  overflow: visible;
+  text-align: center;
+  height: 5px;
+}
+
+hr::after {
+  background: #fff;
+  content: "§";
+  padding: 0 4px;
+  position: relative;
+  top: -13px;
+}
+```
 
 Історично цей елемент зображався як горизонтальна лінійка чи лінія. Позаяк він все ще може мати вигляд горизонтальної лінії у візуальних браузерах, цей елемент тепер має більше семантичний зміст, аніж візуальний. Отже, якщо потрібно просто провести горизонтальну лінію, слід робити це за допомогою відповідного CSS.
 
