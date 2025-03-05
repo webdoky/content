@@ -1,15 +1,19 @@
 ---
 title: Директиви
-slug: Web/CSS/At-rule
+slug: Web/CSS/CSS_syntax/At-rule
 page-type: guide
-spec-urls: https://drafts.csswg.org/css-conditional/
+spec-urls: https://drafts.csswg.org/css-syntax/
 ---
 
 {{CSSRef}}
 
-**Директиви** – це [інструкції CSS](/uk/docs/Web/CSS/Syntax#instruktsii-css), що вказують CSS, як поводитися. Вони починаються зі знаку «равлика», `@` (U+0040 COMMERCIAL AT), за яким слідує ідентифікатор, і включають усе до наступної крапки з комою, `;` (U+003B SEMICOLON), або наступного [блоку CSS](/uk/docs/Web/CSS/Syntax#bloky-oholoshen-css), залежно від того, що зустрінеться першим.
+**Директиви** – це [інструкції CSS](/uk/docs/Web/CSS/CSS_syntax/Syntax#instruktsii-css), що вказують CSS, як поводитися. Вони починаються зі знаку «равлика», `@` (U+0040 COMMERCIAL AT), за яким слідує ідентифікатор. Директива охоплює все від директивного ключового слова до наступної крапки з комою, `;` (U+003B SEMICOLON), або наступного [блоку CSS](/uk/docs/Web/CSS/CSS_syntax/Syntax#bloky-oholoshen-css), залежно від того, що зустрінеться першим.
+
+Директиви вживаються для групування та структурування стилістичних правил та інших директив, оголошення стилістичної інформації, не пов'язаної безпосередньо з вибраним вмістом і керування синтаксичними конструкціями, такими як імпорти та відображення ключових слів у просторах імен.
 
 ## Синтаксис
+
+Директиви як такі визначені в модулі [Синтаксису CSS](/uk/docs/Web/CSS/CSS_syntax), а конкретні директиви – у їхніх відповідних модулях. Зазвичай вони мають одну з двох форм, залежно від конкретної директиви та її призначення: директиви-інструкції та директиви-блоки, які можуть містити вкладені кваліфіковані правила, директиви або оголошення.
 
 ### Директиви-інструкції
 
@@ -99,9 +103,9 @@ spec-urls: https://drafts.csswg.org/css-conditional/
 
 - [Функції директив CSS](/uk/docs/Web/CSS/At-rule-functions)
 - [Вкладеність директив CSS](/uk/docs/Web/CSS/CSS_nesting/Nesting_at-rules)
-- [Інструкції CSS](/uk/docs/Web/CSS/Syntax#instruktsii-css)
+- [Інструкції CSS](/uk/docs/Web/CSS/CSS_syntax/Syntax#instruktsii-css)
 - Інтерфейс [CSSRule](/uk/docs/Web/API/CSSRule)
 - Модуль [Умовних директив CSS](/uk/docs/Web/CSS/CSS_conditional_rules)
-- [Синтаксис CSS](/uk/docs/Web/CSS/Syntax)
+- [Синтаксис CSS](/uk/docs/Web/CSS/CSS_syntax/Syntax)
 - [Специфічність](/uk/docs/Web/CSS/Specificity)
 - [Успадкування](/uk/docs/Web/CSS/Inheritance)
