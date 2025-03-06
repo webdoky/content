@@ -7,7 +7,7 @@ browser-compat: css.types.gradient.linear-gradient
 
 {{CSSRef}}
 
-[Функція](/uk/docs/Web/CSS/CSS_Functions) [CSS](/uk/docs/Web/CSS) **`linear-gradient()`** (лінійний градієнт) створює зображення, що складається з поступового переходу між двома або більше кольорами уздовж прямої лінії. Її результатом є об'єкт типу даних {{CSSxRef("&lt;gradient&gt;")}}, котрий є особливим різновидом {{CSSxRef("&lt;image&gt;")}}.
+[Функція](/uk/docs/Web/CSS/CSS_Values_and_Units/CSS_Value_Functions) [CSS](/uk/docs/Web/CSS) **`linear-gradient()`** (лінійний градієнт) створює зображення, що складається з поступового переходу між двома або більше кольорами уздовж прямої лінії. Її результатом є об'єкт типу даних {{CSSxRef("&lt;gradient&gt;")}}, котрий є особливим різновидом {{CSSxRef("&lt;image&gt;")}}.
 
 {{EmbedInteractiveExample("pages/css/function-linear-gradient.html")}}
 
