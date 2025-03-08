@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
+## [2025-02-28 - 2025-03-07]
+
+* **Оновлення перекладу(CSS):** web/css (#3882) ([3132523b](https://github.com/webdoky/content/commit/3132523b37a3bb9c3171554a28cd38247cf7f743))
+* **Оновлення перекладу(JS):** web/javascript/guide/expressions_and_operators (#3923) ([27635736](https://github.com/webdoky/content/commit/27635736f8aece0c6c652a0b2ec6340bacc57459))
+* **Оновлення перекладу(CSS):** web/css/gradient/linear-gradient (#3921) ([c99bdf15](https://github.com/webdoky/content/commit/c99bdf15ac1260718e109a426eb1a15da3dc2fb6))
+* **Оновлення перекладу(CSS):** web/css/css_nesting (#3920) ([4a78c8a9](https://github.com/webdoky/content/commit/4a78c8a9856d2950f3e0b2b4acf9631798d27526))
+* **Оновлення перекладу(JS):** web/javascript/reference/statements/import (#3904) ([b3a0a23c](https://github.com/webdoky/content/commit/b3a0a23c87c5222e940307e3cdac9291c522a2c4))
+* **Оновлення перекладу(CSS):** web/css/position (#3900) ([aa1b518b](https://github.com/webdoky/content/commit/aa1b518bfff0288e9003a1dcb589fa7cdfd0b586))
+* **Оновлення перекладу(CSS):** web/css/display (#3888) ([44fc9039](https://github.com/webdoky/content/commit/44fc9039316d50ac2428c4ec54e9e698c6afccac))
+
 ## [2025-02-21 - 2025-02-28]
 
 * **Оновлення перекладу(CSS):** web/css/css_cascade/used_value (#3879) ([8202f4e7](https://github.com/webdoky/content/commit/8202f4e72dc9396970ab6c86ac013245c5394f26))
