@@ -9,7 +9,34 @@ browser-compat: html.elements.input
 
 Елемент [HTML](/uk/docs/Web/HTML) **`<input>`** (поле, введення) використовується для створення інтерактивних засобів керування у вебформах, щоб приймати дані від користувача; доступно широке розмаїття типів даних введення та контрольних віджетів, залежно від пристрою та {{Glossary("User agent", "користувацького агента")}}. Елемент `<input>` – один із найпотужніших та найскладніших у всій HTML, тому що має безліч комбінацій типів введення та атрибутів.
 
-{{EmbedInteractiveExample("pages/tabbed/input-text.html", "tabbed-shorter")}}
+{{InteractiveExample("HTML Demo: &lt;input type=&quot;text&quot;&gt;", "tabbed-shorter")}}
+
+```html interactive-example
+<label for="name">Ім'я (від 4 до 8 символів):</label>
+
+<input
+  type="text"
+  id="name"
+  name="name"
+  required
+  minlength="4"
+  maxlength="8"
+  size="10" />
+```
+
+```css interactive-example
+label {
+  display: block;
+  font:
+    1rem "Fira Sans",
+    sans-serif;
+}
+
+input,
+label {
+  margin: 0.4rem 0;
+}
+```
 
 ## Типи \<input>
 
@@ -538,7 +565,10 @@ browser-compat: html.elements.input
 
 - `popovertarget`
 
-  - : Перетворює елемент `<input type="button">` на контрольну кнопку спливного віконця; приймає ідентифікатор елемента спливного елемента, котрим керуватиме, як своє значення. Детальніше дивіться на сторінці {{domxref("Popover API", "Popover API", "", "nocode")}}.
+  - : Перетворює елемент `<input type="button">` на контрольну кнопку спливного віконця; приймає ідентифікатор елемента спливного елемента, котрим керуватиме, як своє значення. Детальніше дивіться на сторінці {{domxref("Popover API", "Popover API", "", "nocode")}}. Оформлення стосунків між спливним віконцем і його кнопкою-закличником за допомогою атрибута `popovertarget` має два додаткові корисні ефекти:
+
+    - Браузер утворює між спливним віконцем і закличником неявні взаємини [`aria-details`](/uk/docs/Web/Accessibility/ARIA/Attributes/aria-details) and [`aria-expanded`](/uk/docs/Web/Accessibility/ARIA/Attributes/aria-expanded), і поміщає віконце, коли воно показане, в логічне місце в порядку навігації фокусу клавіатури. Це робить спливне віконце доступнішим для користувачів клавіатури та допоміжних технологій (AT) (дивіться також [Можливості доступності спливного віконця](/uk/docs/Web/API/Popover_API/Using#mozhlyvosti-dostupnosti-splyvnoho-vikontsia)).
+    - Браузер утворює між ними двома неявний якірний зв'язок, завдяки чому дуже зручно позиціювати спливні віконця відносно їх контрольних елементів за допомогою [якірного позиціювання CSS](/uk/docs/Web/CSS/CSS_anchor_positioning). Детальніше про це на сторінці [Якірного позиціювання спливного віконця](/uk/docs/Web/API/Popover_API/Using#yakirne-pozytsiiuvannia-splyvnoho-vikontsia).
 
 - `popovertargetaction`
 
