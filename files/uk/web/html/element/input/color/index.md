@@ -13,7 +13,34 @@ browser-compat: html.elements.input.type_color
 
 Представлення елемента може суттєво відрізнятися в різних браузерах чи платформах: може бути базовим текстовим полем, що автоматично валідує введений колір на коректність формату, або ж залежним від платформи інтерфейсом вибору кольору, або ж якимсь особливим віконцем.
 
-{{EmbedInteractiveExample("pages/tabbed/input-color.html", "tabbed-standard")}}
+{{InteractiveExample("Демо HTML: &lt;input type=&quot;color&quot;&gt;", "tabbed-standard")}}
+
+```html interactive-example
+<p>Оберіть кольори свого чудовиська:</p>
+
+<div>
+  <input type="color" id="head" name="head" value="#e66465" />
+  <label for="head">Голова</label>
+</div>
+
+<div>
+  <input type="color" id="body" name="body" value="#f6b73c" />
+  <label for="body">Тіло</label>
+</div>
+```
+
+```css interactive-example
+p,
+label {
+  font:
+    1rem "Fira Sans",
+    sans-serif;
+}
+
+input {
+  margin: 0.4rem;
+}
+```
 
 ## Значення
 
@@ -208,7 +235,3 @@ function updateAll(event) {
 ## Сумісність із браузерами
 
 {{Compat}}
-
-## Дивіться також
-
-- [Сумісність властивостей CSS](/uk/docs/Learn/Forms/Property_compatibility_table_for_form_controls)
