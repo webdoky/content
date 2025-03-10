@@ -9,7 +9,22 @@ browser-compat: javascript.builtins.Object.entries
 
 Статичний метод **`Object.entries()`** (записи) повертає власні перелічувані властивості об'єкта, котрі мають рядкові ключі, у вигляді масиву пар ключ-значення.
 
-{{EmbedInteractiveExample("pages/js/object-entries.html")}}
+{{InteractiveExample("Демо JavaScript: Object.entries()")}}
+
+```js interactive-example
+const object1 = {
+  a: "якийсь рядок",
+  b: 42,
+};
+
+for (const [key, value] of Object.entries(object1)) {
+  console.log(`${key}: ${value}`);
+}
+
+// Очікуваний вивід:
+// "a: якийсь рядок"
+// "b: 42"
+```
 
 ## Синтаксис
 
