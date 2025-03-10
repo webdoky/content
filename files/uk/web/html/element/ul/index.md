@@ -9,7 +9,30 @@ browser-compat: html.elements.ul
 
 Елемент [HTML](/uk/docs/Web/HTML) `<ul>` позначає невпорядкований перелік елементів, який зазвичай зображується як список з маркерами.
 
-{{EmbedInteractiveExample("pages/tabbed/ul.html", "tabbed-standard")}}
+{{InteractiveExample("Демо HTML: &lt;ul&gt;", "tabbed-standard")}}
+
+```html interactive-example
+<ul>
+  <li>Молоко</li>
+  <li>
+    Сир
+    <ul>
+      <li>Блакитний сир</li>
+      <li>Фета</li>
+    </ul>
+  </li>
+</ul>
+```
+
+```css interactive-example
+li {
+  list-style-type: circle;
+}
+
+li li {
+  list-style-type: square;
+}
+```
 
 ## Атрибути
 
