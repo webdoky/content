@@ -11,7 +11,41 @@ browser-compat: html.elements.input.type_range
 
 Через те, що віджет такого роду є неточним, він повинен використовуватися лише тоді, коли точне значення – неважливе.
 
-{{EmbedInteractiveExample("pages/tabbed/input-range.html", "tabbed-standard")}}
+{{InteractiveExample("HTML Demo: &lt;input type=&quot;range&quot;&gt;", "tabbed-standard")}}
+
+```html interactive-example
+<p>Звукові налаштування:</p>
+
+<div>
+  <input type="range" id="volume" name="volume" min="0" max="11" />
+  <label for="volume">Гучність</label>
+</div>
+
+<div>
+  <input
+    type="range"
+    id="cowbell"
+    name="cowbell"
+    min="0"
+    max="100"
+    value="90"
+    step="10" />
+  <label for="cowbell">Ковбел</label>
+</div>
+```
+
+```css interactive-example
+p,
+label {
+  font:
+    1rem "Fira Sans",
+    sans-serif;
+}
+
+input {
+  margin: 0.4rem;
+}
+```
 
 Якщо браузер користувача не підтримує `range`, то це поле відступить і працюватиме як поле {{HTMLElement('input/text', 'text')}}.
 
