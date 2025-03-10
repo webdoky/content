@@ -11,7 +11,41 @@ browser-compat: html.elements.input.type_radio
 
 Лише одна радіокнопка з даної групи може бути водночас вибраною. Радіокнопки зазвичай зображаються як маленькі кружечки, котрі є зафарбованими чи підсвіченими, коли вибрані.
 
-{{EmbedInteractiveExample("pages/tabbed/input-radio.html", "tabbed-standard")}}
+{{InteractiveExample("Демо HTML: &lt;input type=&quot;radio&quot;&gt;", "tabbed-standard")}}
+
+```html interactive-example
+<fieldset>
+  <legend>Оберіть дрона підтримки:</legend>
+
+  <div>
+    <input type="radio" id="huey" name="drone" value="huey" checked />
+    <label for="huey">Біллі</label>
+  </div>
+
+  <div>
+    <input type="radio" id="dewey" name="drone" value="dewey" />
+    <label for="dewey">Віллі</label>
+  </div>
+
+  <div>
+    <input type="radio" id="louie" name="drone" value="louie" />
+    <label for="louie">Діллі</label>
+  </div>
+</fieldset>
+```
+
+```css interactive-example
+p,
+label {
+  font:
+    1rem "Fira Sans",
+    sans-serif;
+}
+
+input {
+  margin: 0.4rem;
+}
+```
 
 Радіокнопками їх звуть, тому що вони схожі за виглядом і працюють подібно до натисних кнопок в старих радіоприймачах, таких, як зображений нижче.
 
