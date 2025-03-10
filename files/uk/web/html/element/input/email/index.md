@@ -9,7 +9,27 @@ browser-compat: html.elements.input.type_email
 
 Елементи {{HTMLElement("input")}} типу **`email`** (електронна пошта) використовуються, аби дати користувачам змогу вводити й редагувати адресу електронної пошти, або, якщо заданий атрибут [`multiple`](/uk/docs/Web/HTML/Attributes/multiple), список таких адрес.
 
-{{EmbedInteractiveExample("pages/tabbed/input-email.html", "tabbed-shorter")}}
+{{InteractiveExample("Демо HTML: &lt;input type=&quot;email&quot;&gt;", "tabbed-shorter")}}
+
+```html interactive-example
+<label for="email">Уведіть вашу електронну пошту на example.com:</label>
+
+<input type="email" id="email" pattern=".+@example\.com" size="30" required />
+```
+
+```css interactive-example
+label {
+  display: block;
+  font:
+    1rem "Fira Sans",
+    sans-serif;
+}
+
+input,
+label {
+  margin: 0.4rem 0;
+}
+```
 
 Значення поля автоматично валідується, аби пересвідчитись, що воно або порожнє, або є коректно відформатованою адресою електронної пошти (або списком таких адрес), перед поданням форми. Автоматично застосовуються псевдокласи CSS {{cssxref(":valid")}} і {{cssxref(":invalid")}} – аби візуально позначити те, чи є поточне значення поля дійсною адресою електронної пошти.
 
