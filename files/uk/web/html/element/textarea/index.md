@@ -9,7 +9,37 @@ browser-compat: html.elements.textarea
 
 Елемент [HTML](/uk/docs/Web/HTML) **`<textarea>`** (текстова область) представляє контрольний елемент для редагування багаторядкового простого тексту, корисний тоді, коли є потреба дати користувачам змогу вводити чималу кількість тексту довільної форми, наприклад, коментар до відгуку чи форму зворотного зв'язку.
 
-{{EmbedInteractiveExample("pages/tabbed/textarea.html", "tabbed-standard")}}
+{{InteractiveExample("Демо HTML: &lt;textarea&gt;", "tabbed-standard")}}
+
+```html interactive-example
+<label for="story">Розкажіть свою повість:</label>
+
+<textarea id="story" name="story" rows="5" cols="33">
+В ніч темну, грозову...
+</textarea>
+```
+
+```css interactive-example
+label,
+textarea {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+textarea {
+  padding: 10px;
+  max-width: 100%;
+  line-height: 1.5;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px #999;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+```
 
 Приклад вище демонструє низку можливостей `<textarea>`:
 
