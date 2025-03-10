@@ -9,7 +9,17 @@ browser-compat: javascript.builtins.Array.map
 
 Метод **`map()`** (відобразити) примірників {{jsxref("Array")}} створює новий масив, наповнений результатами виклику переданої функції на кожному з елементів початкового масиву.
 
-{{EmbedInteractiveExample("pages/js/array-map.html")}}
+{{InteractiveExample("Демо JavaScript: Array.map()")}}
+
+```js interactive-example
+const array1 = [1, 4, 9, 16];
+
+// Передати до map функцію
+const map1 = array1.map((x) => x * 2);
+
+console.log(map1);
+// Очікуваний вивід: Array [2, 8, 18, 32]
+```
 
 ## Синтаксис
 
