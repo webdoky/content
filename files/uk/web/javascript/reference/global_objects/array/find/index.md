@@ -16,7 +16,16 @@ browser-compat: javascript.builtins.Array.find
 - Якщо ж потрібно взнати, чи хоч якийсь елемент задовольняє передану перевіркову функцію, слід застосувати {{jsxref("Array/some", "some()")}}.
 - Якщо ж потрібно знайти всі елементи, що задовольняють передану перевіркову функцію, слід застосувати {{jsxref("Array/filter", "filter()")}}.
 
-{{EmbedInteractiveExample("pages/js/array-find.html", "shorter")}}
+{{InteractiveExample("JavaScript Demo: Array.find()", "shorter")}}
+
+```js interactive-example
+const array1 = [5, 12, 8, 130, 44];
+
+const found = array1.find((element) => element > 10);
+
+console.log(found);
+// Очікуваний вивід: 12
+```
 
 ## Синтаксис
 
