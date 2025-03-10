@@ -9,7 +9,21 @@ browser-compat: html.elements.video
 
 Елемент [HTML](/uk/docs/Web/HTML) **`<video>`** вставляє в документ мультимедійний програвач, що підтримує відтворення відео. Також `<video>` можна використовувати для аудіо, однак елемент {{HTMLElement("audio")}} може запропонувати більш відповідний для цього користувацький досвід.
 
-{{EmbedInteractiveExample("pages/tabbed/video.html", "tabbed-standard")}}
+{{InteractiveExample("Демо HTML: &lt;video&gt;", "tabbed-standard")}}
+
+```html interactive-example
+<video controls width="250">
+  <source src="/shared-assets/videos/flower.webm" type="video/webm" />
+
+  <source src="/shared-assets/videos/flower.mp4" type="video/mp4" />
+
+  Стягніть відео
+  <a href="/shared-assets/videos/flower.webm">WEBM</a>
+  or
+  <a href="/shared-assets/videos/flower.mp4">MP4</a>
+  .
+</video>
+```
 
 Приклад вище показує просте використання елемента `<video>`. Подібно до елемента {{htmlelement("img")}}, шлях до мультимедійного ресурсу, котрий треба показати, вказується як значення атрибута `src`; можна вказати інші атрибути, щоб задати інформацію типу ширини й висоти відео, чи потрібно його автоматично відтворювати й зациклювати, чи треба показувати усталені в браузері контрольні засоби відео тощо.
 
