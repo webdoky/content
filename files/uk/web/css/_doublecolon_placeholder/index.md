@@ -1,5 +1,5 @@
 ---
-title: "::placeholder"
+title: ::placeholder
 slug: Web/CSS/::placeholder
 page-type: css-pseudo-element
 browser-compat: css.selectors.placeholder
@@ -89,6 +89,7 @@ input::placeholder {
   color: red;
   font-size: 1.2em;
   font-style: italic;
+  opacity: 0.5;
 }
 ```
 
@@ -98,30 +99,39 @@ input::placeholder {
 
 ### Непрозорий текст
 
-Частина браузерів (наприклад, Firefox) задає усталене значення {{cssxref("opacity")}} для заповнювачів меншим за 100%. Якщо ви хочете, щоб текст-заповнювач був повністю непрозорим, задайте значення `opacity` рівним `1`.
+Деякі браузери роблять текст заповнювача прозорішим. Якщо потрібен цілком непрозорий текст, слід задати значення властивості {{CSSXref("color")}} явно. Можна скористатися значенням [`currentColor`](/uk/docs/Web/CSS/color_value#kliuchove-slovo-currentcolor), щоб задати той же колір, що заданий для відповідного елемента поля.
 
 #### HTML
 
 ```html
-<input placeholder="Усталена непрозорість" />
-<input placeholder="Повна непрозорість" class="force-opaque" />
+<input placeholder="Колір, заданий браузером" />
+<input placeholder="Той самий колір, що в полі" class="explicit-color" />
+<input placeholder="Текст напівпрозорого кольору" class="opacity-change" />
 ```
 
 #### CSS
 
 ```css
-::placeholder {
+input {
+  font-weight: bold;
   color: green;
 }
 
-.force-opaque::placeholder {
-  opacity: 1;
+.explicit-color::placeholder {
+  /* використовувати той самий колір, що й в елементі поля, щоб уникнути задання усталеного кольору браузером */
+  color: currentColor;
+}
+
+.opacity-change::placeholder {
+  /* прозоріший текст */
+  color: color-mix(in srgb, currentColor 70%, transparent);
 }
 ```
 
-#### Результат
-
 {{EmbedLiveSample("neprozoryi-tekst", 200, 60)}}
+
+> [!NOTE]
+> Зверніть увагу на те, що різні браузери використовують для тексту заповнювача різні кольори. Наприклад, Firefox використовує колір елемента поля з непрозорістю 54%, а Chrome використовує колір `darkgray`. Якщо потрібен однаковий колір тексту заповнювача у всіх браузерах, слід задавати властивість `color` явно.
 
 ## Специфікації
 
@@ -135,4 +145,4 @@ input::placeholder {
 
 - Псевдоклас {{cssxref(":placeholder-shown")}} оформлює елемент, який _має_ активний заповнювач.
 - Споріднені елементи HTML: {{HTMLElement("input")}}, {{HTMLElement("textarea")}}
-- [Форми HTML](/uk/docs/Learn/Forms)
+- [Форми HTML](/uk/docs/Learn_web_development/Extensions/Forms)
