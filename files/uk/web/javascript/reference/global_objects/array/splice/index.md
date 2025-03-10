@@ -11,7 +11,20 @@ browser-compat: javascript.builtins.Array.splice
 
 Щоб створити новий масив, в якому частина видалена чи замінена, не змінюючи вихідний масив, слід скористатися {{jsxref("Array/toSpliced", "toSpliced()")}}. Щоб отримати доступ до частини масиву без його зміни, дивіться {{jsxref("Array/slice", "slice()")}}.
 
-{{EmbedInteractiveExample("pages/js/array-splice.html")}}
+{{InteractiveExample("JavaScript Demo: Array.splice()")}}
+
+```js interactive-example
+const months = ["Січ", "Березень", "Квітень", "Червень"];
+months.splice(1, 0, "Лют");
+// Вставляє елемент за індексом 1
+console.log(months);
+// Очікуваний вивід: Array ["Січ", "Лют", "Березень", "Квітень", "Червень"]
+
+months.splice(4, 1, "Травень");
+// Замінює 1 елемент за індексом 4
+console.log(months);
+// Очікуваний вивід: Array ["Січ", "Лют", "Березень", "Квітень", "Травень"]
+```
 
 ## Синтаксис
 
