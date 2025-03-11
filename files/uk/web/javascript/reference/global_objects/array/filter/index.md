@@ -9,7 +9,16 @@ browser-compat: javascript.builtins.Array.filter
 
 Метод **`filter()`** (фільтрувати) примірників {{jsxref("Array")}} створює [поверхневу копію](/uk/docs/Glossary/Shallow_copy) частини даного масиву, відфільтрованого до тих елементів даного масиву, що проходять перевірку, реалізовану в переданій функції.
 
-{{EmbedInteractiveExample("pages/js/array-filter.html", "shorter")}}
+{{InteractiveExample("JavaScript Demo: Array.filter()", "shorter")}}
+
+```js interactive-example
+const words = ["спрей", "межа", "розкішний", "згуба", "еліта", "дарунок"];
+
+const result = words.filter((word) => word.length > 6);
+
+console.log(result);
+// Очікуваний вивід: Array ['розкішний', 'дарунок']
+```
 
 ## Синтаксис
 
