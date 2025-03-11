@@ -9,7 +9,29 @@ browser-compat: javascript.builtins.Array.slice
 
 Метод **`slice()`** (вирізати скибку, зріз) примірників {{jsxref("Array")}} повертає [поверхневу копію (зріз)](/uk/docs/Glossary/Shallow_copy) певної частини масиву, взяту від елемента за індексом `start` (включно) до елемента за індексом `end` (не включно), у вигляді нового масиву. Початковий масив не змінюється.
 
-{{EmbedInteractiveExample("pages/js/array-slice.html", "taller")}}
+{{InteractiveExample("Демо JavaScript: Array.slice()", "taller")}}
+
+```js interactive-example
+const animals = ["мураха", "зубр", "верблюд", "качка", "слон"];
+
+console.log(animals.slice(2));
+// Очікуваний вивід: Array ['верблюд', 'качка', 'слон']
+
+console.log(animals.slice(2, 4));
+// Очікуваний вивід: Array ['верблюд', 'качка']
+
+console.log(animals.slice(1, 5));
+// Очікуваний вивід: Array ['зубр', 'верблюд', 'качка', 'слон']
+
+console.log(animals.slice(-2));
+// Очікуваний вивід: Array ['качка', 'слон']
+
+console.log(animals.slice(2, -1));
+// Очікуваний вивід: Array ['верблюд', 'качка']
+
+console.log(animals.slice());
+// Очікуваний вивід: Array ['мураха', 'зубр', 'верблюд', 'качка', 'слон']
+```
 
 ## Синтаксис
 
